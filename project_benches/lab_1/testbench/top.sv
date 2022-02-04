@@ -5,6 +5,7 @@ module top();
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 1;
+//	parameter bit [6:0] I2C_SLAVE_ADDR = 7'h44;
 
 	bit  clk;
 	bit  rst = 1'b1;
@@ -32,7 +33,12 @@ module top();
 	initial reset_generator();
 	initial wishbone_monitor();
 	initial test_flow();
+	initial simple_receive_data();
 
+	task simple_receive_data();
+		bit [8:0] localreg;
+		i2c_slave.wait_for_start(localreg);	
+	endtask
 
 	// ****************************************************************************
 	task clock_generator();
@@ -96,12 +102,33 @@ module top();
 		wb_bus.master_read(2'h2, adr_in);	////TODO: The NACK bit needs to be checked here; if we receive a NACK, need to stop.
 		@(posedge clk);
 
-		wb_bus.master_write(2'b01, 8'h78); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'b01, 8'hde); 				//78 (DATA) to dpr STEP 9
 		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
 		
-		wait(irq==1'b1); 								// STEP 11
-		wb_bus.master_read(2'h2, adr_in);
-		@(posedge clk);
+		wait_interrupt();
+		
+		wb_bus.master_write(2'b01, 8'had); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hbe); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hef); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hfe); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hed); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hbe); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+		wb_bus.master_write(2'b01, 8'hef); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(2'h2, 8'bxxxxx001); 		// WRITE Command STEP 10
+		wait_interrupt();
+
 
 		wb_bus.master_write(2'h2, 8'bxxxxx101); 		// STOP Command STEP 12
 	
@@ -113,7 +140,27 @@ module top();
 
 	endtask
 
+task wait_interrupt();
+	wait(irq==1'b1); 								// STEP 11
+	wb_bus.master_read(2'h2, adr_in);
+	@(posedge clk);
+endtask
+
 	// ****************************************************************************
+	// Instatiate the slave I2C BFM
+	i2c_if		#(
+		.ADDR_WIDTH(WB_ADDR_WIDTH),
+		.DATA_WIDTH(WB_DATA_WIDTH)//,
+		//.SLAVE_ADDRESS(I2C_SLAVE_ADDR)
+	)
+	i2c_slave (
+		.clk_i(clk),
+		.rst_i(rst),
+		.scl_i(scl),
+		.sda_i(sda),
+		.sda_o(sda)
+	);
+	
 	// Instantiate the Wishbone master Bus Functional Model
 	wb_if       #(
 	.ADDR_WIDTH(WB_ADDR_WIDTH),
