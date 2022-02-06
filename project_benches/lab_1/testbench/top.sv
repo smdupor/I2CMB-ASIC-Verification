@@ -1,12 +1,20 @@
 `timescale 1ns / 10ps
 
 module top();
-
+	
+	//Physical Parameters
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 1;
+	
+	parameter bit VERBOSE_DEBUG_MODE=0;
+
+	// Test Parameters
+	parameter int I2C_SLAVE_PER_BUS = 1;
+	parameter int QTY_WORDS_TO_WRITE=8;
 //	parameter bit [6:0] I2C_SLAVE_ADDR = 7'h44;
 
+	// Physical DUT Interface networks
 	bit  clk;
 	bit  rst = 1'b1;
 	wire cyc;
@@ -20,6 +28,7 @@ module top();
 	tri  [NUM_I2C_BUSSES-1:0] scl;
 	tri  [NUM_I2C_BUSSES-1:0] sda;
 
+	// Test Logical Buffers
 	logic we_mon;
 	logic [WB_ADDR_WIDTH-1:0] adr_mon;
 	logic [WB_DATA_WIDTH-1:0] dat_mon;
@@ -28,19 +37,40 @@ module top();
 	logic [WB_DATA_WIDTH-1:0] dat_in;
 	logic we_in;
 	
+	// Device Configuration and Command Logics
 	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx, SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, 
 						I2C_WRITE=8'bxxxxx001, I2C_STOP=8'bxxxxx101} cmd;
 	enum bit [2:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
+	bit [8:0] i2c_slave_addr = 9'h12;
+	
+	// Test Bank Data Buffers
+	bit [7:0] output_buffer [QTY_WORDS_TO_WRITE];
+	bit [7:0] input_buffer [QTY_WORDS_TO_WRITE]; 
 
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
 	initial reset_generator();
+	initial populate_test_buffers();
 	initial wishbone_monitor();
 	initial test_flow();
 	initial simple_receive_data();
 
+	task populate_test_buffers();
+		output_buffer[0]=8'hfe;
+		output_buffer[1]=8'hed;
+		output_buffer[2]=8'hbe;
+		output_buffer[3]=8'hef;
+		output_buffer[4]=8'hde;
+		output_buffer[5]=8'had;
+		output_buffer[6]=8'hbe;
+		output_buffer[7]=8'hef;
+			
+	endtask
+
 	task simple_receive_data();
 		bit [8:0] localreg;
+		i2c_slave_addr = i2c_slave_addr << 2;
+		i2c_slave.configure(i2c_slave_addr);
 		i2c_slave.wait_for_start(localreg);	
 	endtask
 
@@ -62,6 +92,7 @@ module top();
 	// ****************************************************************************
 	// Monitor Wishbone bus and display transfers in the transcript
 	task wishbone_monitor();
+		if(VERBOSE_DEBUG_MODE) begin
 		forever begin
 			#10 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
 			if(adr_mon == 0) begin
@@ -75,6 +106,7 @@ module top();
 				$display("Address: %h Data: %h we: %h", adr_mon, dat_mon, we_mon);
 			end
 		end
+		end
 	endtask
 
 
@@ -84,61 +116,22 @@ module top();
 
 		$display("STARTING TEST FLOW");
 
-		#1000 wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); 	// Enable core by writing to CSR (EXAMPLE 1)
+		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); 	// Enable core by writing to CSR (EXAMPLE 1)
 
-		wb_bus.master_write(DPR, 8'h00); 				// 005 to DPR (EXAMPLE 3 STEP 1)
-		wb_bus.master_write(CMDR, SET_I2C_BUS);		 	// 110 to cmdr STEP 2
-
-		wait(irq==1'b1); 								// STEP 3
-		wb_bus.master_read(CMDR, adr_in);
-		@(posedge clk);
-
-		wb_bus.master_write(CMDR, I2C_START); 		//100 to cmdr STEP 4
+		select_I2C_bus(8'h00);
+		repeat(2) begin
+		issue_start_command();
+		transmit_slave_address(i2c_slave_addr[8:1]);
 		
-		wait(irq==1'b1); 								// STEP 5
-		wb_bus.master_read(CMDR, adr_in);
-		@(posedge clk);
-
-		wb_bus.master_write(DPR, 8'h44); 				//44 (SLAVE ADDR) to dpr STEP 6
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 7
-		
-		wait(irq==1'b1); 								// STEP 8
-		wb_bus.master_read(CMDR, adr_in);	////TODO: The NACK bit needs to be checked here; if we receive a NACK, need to stop.
-		@(posedge clk);
-
-		wb_bus.master_write(DPR, 8'hde); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		
-		wait_interrupt();
-		
-		wb_bus.master_write(DPR, 8'had); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 	 	// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hbe); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hef); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hfe); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hed); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hbe); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-		wb_bus.master_write(DPR, 8'hef); 				//78 (DATA) to dpr STEP 9
-		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		wait_interrupt();
-
+		// Write contents of "output Buffer" to selected I2C Slave in a single stream
+		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) begin
+			write_data_byte(output_buffer[i]);
+		end
 
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
-	
-		wait(irq==1'b1); 								// STEP 13	
-		wb_bus.master_read(CMDR, adr_in);
+		wait_interrupt();
 		
+		end
 		$display("TASK DONE");
 
 
@@ -150,11 +143,40 @@ task wait_interrupt();
 	@(posedge clk);
 endtask
 
-task select_I2C_bus(input bit [7:0] i);
-
-	
+task wait_interrupt_with_NACK();
+	wait(irq==1'b1); 								// STEP 11
+	wb_bus.master_read(2'h2, adr_in);
+	@(posedge clk);
 endtask
 
+task select_I2C_bus(input bit [7:0] selected_bus);
+		wb_bus.master_write(DPR, selected_bus); 				// 005 to DPR (EXAMPLE 3 STEP 1)
+		wb_bus.master_write(CMDR, SET_I2C_BUS);		 	// 110 to cmdr STEP 2
+
+		wait_interrupt;
+endtask
+
+task issue_start_command();
+		wb_bus.master_write(CMDR, I2C_START); 		//100 to cmdr STEP 4
+		wait_interrupt();
+endtask
+
+task transmit_slave_address(input bit [7:0] addr);
+	
+			wb_bus.master_write(DPR, addr); 				//44 (SLAVE ADDR) to dpr STEP 6
+		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 7
+		
+	wait_interrupt_with_NACK();	// In case of a down/inresponsive slave, we'd get a nack//TODO: Handle NACK
+		
+		endtask
+
+task write_data_byte(input bit [7:0] data);
+			wb_bus.master_write(DPR, data); 				//78 (DATA) to dpr STEP 9
+		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
+		
+		wait_interrupt_with_NACK();
+	endtask
+	
 	// ****************************************************************************
 	// Instatiate the slave I2C BFM
 	i2c_if		#(
