@@ -27,6 +27,7 @@ module top();
 	wire irq;
 	tri  [NUM_I2C_BUSSES-1:0] scl;
 	tri  [NUM_I2C_BUSSES-1:0] sda;
+	//triand  [NUM_I2C_BUSSES-1:0] sda_o;
 
 	// Test Logical Buffers
 	logic we_mon;
@@ -35,6 +36,7 @@ module top();
 
 	logic [WB_ADDR_WIDTH-1:0] adr_in;
 	logic [WB_DATA_WIDTH-1:0] dat_in;
+	logic [WB_DATA_WIDTH-1:0] buf_in;
 	logic we_in;
 	
 	// Device Configuration and Command Logics
@@ -56,14 +58,14 @@ module top();
 	initial simple_receive_data();
 
 	task populate_test_buffers();
-		output_buffer[0]=8'hfe;
-		output_buffer[1]=8'hed;
-		output_buffer[2]=8'hbe;
-		output_buffer[3]=8'hef;
-		output_buffer[4]=8'hde;
-		output_buffer[5]=8'had;
-		output_buffer[6]=8'hbe;
-		output_buffer[7]=8'b0101_0101;
+		output_buffer[0]=8'hff;
+		output_buffer[1]=8'h1;
+		output_buffer[2]=8'hfe;
+		output_buffer[3]=8'h2;
+		output_buffer[4]=8'hfd;
+		output_buffer[5]=8'h3;
+		output_buffer[6]=8'hfc;
+		output_buffer[7]=8'h4;
 			
 	endtask
 
@@ -138,7 +140,7 @@ module top();
 		write_data_byte(output_buffer[7]);
 		issue_start_command();
 		request_read_from_address(i2c_slave_addr[8:1]);
-		for(int i=15;i>=10;i--) begin
+		for(int i=15;i>=0;i--) begin
 			$display("Attempt WB read %d",i);
 			read_data_byte(short_buffer);
 			input_buffer[i]=short_buffer;
@@ -150,28 +152,32 @@ module top();
 	endtask
 	
 	task print_read_report();
-		static string s;// = " Received Bytes (0x): ";
-		static string temp;
-		s = " Master Read Received Bytes (0x): ";
+	//	static string s;// = " Received Bytes (0x): ";
+		//static string temp;
+		//s = " Master Read Received Bytes (0x): ";
 			foreach(input_buffer[i]) begin
-				temp.hextoa(integer'(input_buffer[i]));
+			//	temp.hextoa(integer'(input_buffer[i]));
 				//temp=temp.substr(6,7);
-				s = {s, temp};
+				//s = {s, temp};
+				$display("Received at master %h  VS %h", input_buffer[i], output_buffer[i]);
 			end
-			s = {s, " ."};
-			$display("%s", s);
+			//s = {s, " ."};
+			//$display("%s", s);
 			endtask
 
 task wait_interrupt();
 	wait(irq==1'b1); 								// STEP 11
-	wb_bus.master_read(2'h2, adr_in);
-	@(posedge clk);
+	wb_bus.master_read(2'h2, buf_in);
+	$display("BufferDump %b", buf_in);
+	//@(posedge clk);
 endtask
 
 task wait_interrupt_with_NACK();
 	wait(irq==1'b1); 								// STEP 11
-	wb_bus.master_read(2'h2, adr_in);
-	@(posedge clk);
+	wb_bus.master_read(2'h2, buf_in);
+	if(buf_in[6]==1'b1) #50 $display("Got a nack.");
+	$display("BufferDump %b", buf_in);
+	//@(posedge clk);
 endtask
 
 task select_I2C_bus(input bit [7:0] selected_bus);
@@ -210,9 +216,9 @@ task write_data_byte(input bit [7:0] data);
 		
 		wait_interrupt_with_NACK();
 	endtask
-task read_data_byte(input bit [7:0] iobuf);
+task read_data_byte(output bit [7:0] iobuf);
 			
-	wb_bus.master_write(CMDR, READ_WITH_NACK); 		// WRITE Command STEP 10
+	wb_bus.master_write(CMDR, READ_WITH_ACK); 		// WRITE Command STEP 10
 	wait_interrupt_with_NACK();
 	wb_bus.master_read(DPR, iobuf); 				//78 (DATA) to dpr STEP 9
 		

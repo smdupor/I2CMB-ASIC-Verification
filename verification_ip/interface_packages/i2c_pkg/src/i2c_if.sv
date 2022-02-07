@@ -12,7 +12,7 @@ interface i2c_if       #(
 	// Master signals
 	input wire scl_i,
 	input triand sda_i,
-	output wire sda_o
+	output reg sda_o
 );
 	logic sda_drive=1'b1;
 	assign sda_o = sda_drive;
@@ -179,12 +179,13 @@ interface i2c_if       #(
 	endtask
 
 	task transmit_data();
-		static bit local_ack = 0;
+		static bit local_ack;
 		static int i, j;
 		$display("Attempt xmit data");
+		local_ack = 0;
 		
 		//swallow a byte of data
-		for(i=8;i>=0;i--) begin
+		for(i=8;i>=1;i--) begin
 				@(posedge scl_i);
 				//$display("timestep %d",simulation_cycles);
 				buffer[i] = sda_i;
@@ -195,7 +196,7 @@ interface i2c_if       #(
 					end
 				end
 			end
-			//swallow the ack
+			//Send back the ack
 			sda_drive <= 1'b0;
 			while(scl_i == 1'b1) begin
 					@(posedge clk_i);
@@ -205,15 +206,15 @@ interface i2c_if       #(
 				end
 
 		//	test_received_data.push_back(buffer[8:1]);
-		$display("Attempt xmit data");
+		$display("Actually Attempt xmit data");
 		
-		for(j=test_received_data.size()-1;j>=0;j--)begin
-			local_ack = j inside{0} ? 1:0;
+		for(j=0;j<=15;j++)begin
+			local_ack = j == 0 ? 1:0;
 			buffer[8:1]=test_received_data[j];
 			$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
 			for(i=8;i>=1;i--) begin
 				
-				//$display("timestep %d",simulation_cycles);
+				$display("write %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
 				sda_drive = buffer[i] ;
 				@(posedge scl_i);
 				while(scl_i == 1'b1) begin
@@ -227,6 +228,7 @@ interface i2c_if       #(
 			sda_drive = 1'bz;
 			@(posedge scl_i);
 			buffer[0]=sda_i;
+			$display("goack %b at timestep %d",buffer[0],simulation_cycles);
 			while(scl_i == 1'b1) begin
 				@(posedge clk_i);
 				if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART )begin//|| buffer[0]==1'b1) begin
