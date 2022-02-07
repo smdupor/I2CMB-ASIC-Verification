@@ -39,13 +39,13 @@ module top();
 	
 	// Device Configuration and Command Logics
 	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx, SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, 
-						I2C_WRITE=8'bxxxxx001, I2C_STOP=8'bxxxxx101} cmd;
-	enum bit [2:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
+						I2C_WRITE=8'bxxxxx001, I2C_STOP=8'bxxxxx101, READ_WITH_NACK=8'bxxxxx011, READ_WITH_ACK=8'bxxxxx010} cmd;
+	enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
 	bit [8:0] i2c_slave_addr = 9'h12;
 	
 	// Test Bank Data Buffers
 	bit [7:0] output_buffer [QTY_WORDS_TO_WRITE];
-	bit [7:0] input_buffer [QTY_WORDS_TO_WRITE]; 
+	bit [7:0] input_buffer [QTY_WORDS_TO_WRITE * 2]; 
 
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
@@ -63,7 +63,7 @@ module top();
 		output_buffer[4]=8'hde;
 		output_buffer[5]=8'had;
 		output_buffer[6]=8'hbe;
-		output_buffer[7]=8'hef;
+		output_buffer[7]=8'b0101_0101;
 			
 	endtask
 
@@ -113,7 +113,7 @@ module top();
 	// ****************************************************************************
 	// Define the flow of the simulation
 	task test_flow();
-
+		logic [7:0] short_buffer;
 		$display("STARTING TEST FLOW");
 
 		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); 	// Enable core by writing to CSR (EXAMPLE 1)
@@ -132,10 +132,35 @@ module top();
 		wait_interrupt();
 		
 		end
-		$display("TASK DONE");
-
-
+		$display(" WRITE ALL TASK DONE, Begin READ ALL");
+		#1000000 issue_start_command();
+		transmit_slave_address(i2c_slave_addr[8:1]);
+		write_data_byte(output_buffer[7]);
+		issue_start_command();
+		request_read_from_address(i2c_slave_addr[8:1]);
+		for(int i=15;i>=10;i--) begin
+			$display("Attempt WB read %d",i);
+			read_data_byte(short_buffer);
+			input_buffer[i]=short_buffer;
+		end
+		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
+		wait_interrupt();
+		$display("READ ALL TASK DONE.");
+		print_read_report;
 	endtask
+	
+	task print_read_report();
+		static string s;// = " Received Bytes (0x): ";
+		static string temp;
+		s = " Master Read Received Bytes (0x): ";
+			foreach(input_buffer[i]) begin
+				temp.hextoa(integer'(input_buffer[i]));
+				//temp=temp.substr(6,7);
+				s = {s, temp};
+			end
+			s = {s, " ."};
+			$display("%s", s);
+			endtask
 
 task wait_interrupt();
 	wait(irq==1'b1); 								// STEP 11
@@ -161,12 +186,21 @@ task issue_start_command();
 		wait_interrupt();
 endtask
 
-task transmit_slave_address(input bit [7:0] addr);
-	
-			wb_bus.master_write(DPR, addr); 				//44 (SLAVE ADDR) to dpr STEP 6
+task transmit_slave_address(input bit [7:0] addr); // Request a write
+		addr[0]=1'b0;
+		wb_bus.master_write(DPR, addr); 				//44 (SLAVE ADDR) to dpr STEP 6
 		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 7
 		
 	wait_interrupt_with_NACK();	// In case of a down/inresponsive slave, we'd get a nack//TODO: Handle NACK
+		
+endtask
+
+task request_read_from_address(input bit [7:0] addr);
+		addr[0]=1'b1;
+		wb_bus.master_write(DPR, addr); 				//44 (SLAVE ADDR) to dpr STEP 6
+		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 7
+		
+		wait_interrupt_with_NACK();	// In case of a down/inresponsive slave, we'd get a nack//TODO: Handle NACK
 		
 		endtask
 
@@ -175,6 +209,14 @@ task write_data_byte(input bit [7:0] data);
 		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
 		
 		wait_interrupt_with_NACK();
+	endtask
+task read_data_byte(input bit [7:0] iobuf);
+			
+	wb_bus.master_write(CMDR, READ_WITH_NACK); 		// WRITE Command STEP 10
+	wait_interrupt_with_NACK();
+	wb_bus.master_read(DPR, iobuf); 				//78 (DATA) to dpr STEP 9
+		
+		
 	endtask
 	
 	// ****************************************************************************
