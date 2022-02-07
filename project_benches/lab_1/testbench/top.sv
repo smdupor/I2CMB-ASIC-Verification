@@ -47,7 +47,7 @@ module top();
 	
 	// Test Bank Data Buffers
 	bit [7:0] output_buffer [QTY_WORDS_TO_WRITE];
-	bit [7:0] input_buffer [QTY_WORDS_TO_WRITE * 2]; 
+	byte input_buffer [QTY_WORDS_TO_WRITE * 2]; 
 
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
@@ -58,14 +58,24 @@ module top();
 	initial simple_receive_data();
 
 	task populate_test_buffers();
-		output_buffer[0]=8'hff;
+		/*output_buffer[0]=8'hff;
 		output_buffer[1]=8'h1;
 		output_buffer[2]=8'hfe;
 		output_buffer[3]=8'h2;
 		output_buffer[4]=8'hfd;
 		output_buffer[5]=8'h3;
 		output_buffer[6]=8'hfc;
-		output_buffer[7]=8'h4;
+		output_buffer[7]=8'h4;*/
+		output_buffer[0]=8'hff;
+		output_buffer[1]=8'hfe;
+		output_buffer[2]=8'hfd;
+		output_buffer[3]=8'hfc;
+		output_buffer[4]=8'hfb;
+		output_buffer[5]=8'hfa;
+		output_buffer[6]=8'hf9;
+		output_buffer[7]=8'hf8;
+		
+		
 			
 	endtask
 
@@ -140,9 +150,10 @@ module top();
 		write_data_byte(output_buffer[7]);
 		issue_start_command();
 		request_read_from_address(i2c_slave_addr[8:1]);
-		for(int i=15;i>=0;i--) begin
-			$display("Attempt WB read %d",i);
+		for(int i=0;i<=15;i++) begin
+			//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAttempt WB read %d",i);
 			read_data_byte(short_buffer);
+			//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEmplacing %h into array at %d",short_buffer, i);
 			input_buffer[i]=short_buffer;
 		end
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
@@ -159,7 +170,7 @@ module top();
 			//	temp.hextoa(integer'(input_buffer[i]));
 				//temp=temp.substr(6,7);
 				//s = {s, temp};
-				$display("Received at master %h  VS %h", input_buffer[i], output_buffer[i]);
+				$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tReceived at master %h  VS %h", input_buffer[i], output_buffer[i]);
 			end
 			//s = {s, " ."};
 			//$display("%s", s);
@@ -168,15 +179,15 @@ module top();
 task wait_interrupt();
 	wait(irq==1'b1); 								// STEP 11
 	wb_bus.master_read(2'h2, buf_in);
-	$display("BufferDump %b", buf_in);
+	//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBufferDump %b", buf_in);
 	//@(posedge clk);
 endtask
 
 task wait_interrupt_with_NACK();
 	wait(irq==1'b1); 								// STEP 11
 	wb_bus.master_read(2'h2, buf_in);
-	if(buf_in[6]==1'b1) #50 $display("Got a nack.");
-	$display("BufferDump %b", buf_in);
+	if(buf_in[6]==1'b1) $display("\t[ WB ] NACK");
+	//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBufferDump %b", buf_in);
 	//@(posedge clk);
 endtask
 
@@ -221,7 +232,7 @@ task read_data_byte(output bit [7:0] iobuf);
 	wb_bus.master_write(CMDR, READ_WITH_ACK); 		// WRITE Command STEP 10
 	wait_interrupt_with_NACK();
 	wb_bus.master_read(DPR, iobuf); 				//78 (DATA) to dpr STEP 9
-		
+	//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tWISHBONE REGISTER READS %h", iobuf);	
 		
 	endtask
 	

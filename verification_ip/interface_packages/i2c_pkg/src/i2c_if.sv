@@ -139,13 +139,15 @@ interface i2c_if       #(
 		$display("Address read complete, Addr: 0x%h, Read: 0b%b, NAK:0b%b",buffer[8:2],buffer[1],buffer[0]);
 		address=buffer;
 		if(buffer[8:2]==slave_address[8:2] || buffer[8:2]==7'b000_0000) begin // Possible bug with all-call and read
-			$display("Address match! Receive Data");
+			//$display("Address match! Receive Data");
 			we=buffer[1];
 			nack=buffer[0];
 			if(!we) begin
+				$display("Address match! Receive Data");
 				receive_data();
 			end
 			else begin
+					$display("Address match! Transmit Data");
 				transmit_data();
 			end
 		end
@@ -184,57 +186,40 @@ interface i2c_if       #(
 		$display("Attempt xmit data");
 		local_ack = 0;
 		
-		//swallow a byte of data
-		for(i=8;i>=1;i--) begin
-				@(posedge scl_i);
-				//$display("timestep %d",simulation_cycles);
-				buffer[i] = sda_i;
-				while(scl_i == 1'b1) begin
-					@(posedge clk_i);
-					if(interrupt == RAISE_STOP||interrupt == RAISE_RESTART) begin
-						return;
-					end
-				end
-			end
-			//Send back the ack
-			sda_drive <= 1'b0;
-			while(scl_i == 1'b1) begin
-					@(posedge clk_i);
-					if(interrupt == RAISE_STOP||interrupt == RAISE_RESTART) begin
-						return;
-					end
-				end
-
 		//	test_received_data.push_back(buffer[8:1]);
-		$display("Actually Attempt xmit data");
+		//$display("Actually Attempt xmit data");
 		
 		for(j=0;j<=15;j++)begin
-			local_ack = j == 0 ? 1:0;
+			//local_ack <= j == 0 ? 1:0;
 			buffer[8:1]=test_received_data[j];
-			$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
+			//$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
 			for(i=8;i>=1;i--) begin
 				
-				$display("write %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
-				sda_drive = buffer[i] ;
+			//	$display("\t\t\t\t\t\t\t\t\t\t\t\twrite %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
+				sda_drive <= buffer[i] ;
 				@(posedge scl_i);
-				while(scl_i == 1'b1) begin
+				/*while(scl_i == 1'b1) begin
 					@(posedge clk_i);
 					if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART) begin
 						return;
 					end
-				end
+				end*/
+				@(negedge scl_i) if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART)return;
 			end
 			//@(negedge scl_i);
-			sda_drive = 1'bz;
+			//sda_drive = 1'bz;
 			@(posedge scl_i);
-			buffer[0]=sda_i;
-			$display("goack %b at timestep %d",buffer[0],simulation_cycles);
-			while(scl_i == 1'b1) begin
+			buffer[0]<=sda_i;
+			if(buffer[0]==1'b0) $display("\t[I2C]ACK");
+			if(buffer[0]==1'b1) $display("\t[I2C]NACK");
+			//$display("goack %b at timestep %d",buffer[0],simulation_cycles);
+			/*while(scl_i == 1'b1) begin
 				@(posedge clk_i);
 				if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART )begin//|| buffer[0]==1'b1) begin
 					return;
 				end
-			end
+			end*/
+			@(negedge scl_i) if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART)return;
 			
 		end
 		sda_drive=1'bz;
