@@ -8,6 +8,7 @@ module top();
 	parameter int NUM_I2C_BUSSES = 1;
 	
 	parameter bit VERBOSE_DEBUG_MODE=0;
+	parameter bit TRANSFER_DEBUG_MODE=1;
 
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 1;
@@ -38,6 +39,7 @@ module top();
 	logic [WB_DATA_WIDTH-1:0] dat_in;
 	logic [WB_DATA_WIDTH-1:0] buf_in;
 	logic we_in;
+	byte slv_most_recent_xfer;
 	
 	// Device Configuration and Command Logics
 	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx, SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, 
@@ -46,8 +48,8 @@ module top();
 	bit [8:0] i2c_slave_addr = 9'h12;
 	
 	// Test Bank Data Buffers
-	bit [7:0] output_buffer [QTY_WORDS_TO_WRITE];
-	byte input_buffer [QTY_WORDS_TO_WRITE * 2]; 
+	bit [7:0] master_transmit_buffer [$];
+	byte master_receive_buffer [$]; 
 
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
@@ -58,38 +60,21 @@ module top();
 	initial simple_receive_data();
 
 	task populate_test_buffers();
-		/*output_buffer[0]=8'hff;
-		output_buffer[1]=8'h1;
-		output_buffer[2]=8'hfe;
-		output_buffer[3]=8'h2;
-		output_buffer[4]=8'hfd;
-		output_buffer[5]=8'h3;
-		output_buffer[6]=8'hfc;
-		output_buffer[7]=8'h4;*/
-		/*output_buffer[0]=8'hff;
-		output_buffer[1]=8'hfe;
-		output_buffer[2]=8'hfd;
-		output_buffer[3]=8'hfc;
-		output_buffer[4]=8'hfb;
-		output_buffer[5]=8'hfa;
-		output_buffer[6]=8'hf9;
-		output_buffer[7]=8'hf8;*/
-		output_buffer[0]=8'hde;
-		output_buffer[1]=8'had;
-		output_buffer[2]=8'hbe;
-		output_buffer[3]=8'hef;
-		output_buffer[4]=8'hfe;
-		output_buffer[5]=8'hed;
-		output_buffer[6]=8'hbe;
-		output_buffer[7]=8'hef;
+		/*master_transmit_buffer[0]=8'hde;
+		master_transmit_buffer[1]=8'had;
+		master_transmit_buffer[2]=8'hbe;
+		master_transmit_buffer[3]=8'hef;
+		master_transmit_buffer[4]=8'hfe;
+		master_transmit_buffer[5]=8'hed;
+		master_transmit_buffer[6]=8'hbe;
+		master_transmit_buffer[7]=8'hef;*/
+		int i;
+		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
+		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
 		i2c_slave.reset_test_buffers();
-				repeat(2) begin
-			for(int i=0;i<8;i++) begin
-				i2c_slave.bypass_push_transmit_buf(output_buffer[i]);
-			end
-		end
-			
-		
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave.bypass_push_transmit_buf(byte'(i));
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave.bypass_push_transmit_buf(byte'(i));
+				
 			
 	endtask
 
@@ -147,49 +132,90 @@ module top();
 		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); 	// Enable core by writing to CSR (EXAMPLE 1)
 
 		select_I2C_bus(8'h00);
-		repeat(2) begin
+		//repeat(2) begin
+		
 		issue_start_command();
 		transmit_slave_address(i2c_slave_addr[8:1]);
 		
 		// Write contents of "output Buffer" to selected I2C Slave in a single stream
 		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) begin
-			write_data_byte(output_buffer[i]);
+			write_data_byte(master_transmit_buffer[i]);
 		end
 
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
 		wait_interrupt();
 		
-		end
+		//end
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
+		
 		#1000000 issue_start_command();
-		transmit_slave_address(i2c_slave_addr[8:1]);
-		write_data_byte(output_buffer[7]);
-		issue_start_command();
+		//transmit_slave_address(i2c_slave_addr[8:1]);
+		//write_data_byte(master_transmit_buffer[7]);
+		//issue_start_command();
 		request_read_from_address(i2c_slave_addr[8:1]);
-		for(int i=0;i<=15;i++) begin
+		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
 			//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAttempt WB read %d",i);
 			read_data_byte(short_buffer);
 			//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEmplacing %h into array at %d",short_buffer, i);
-			input_buffer[i]=short_buffer;
+			master_receive_buffer.push_back(short_buffer);
 		end
+			read_data_byte_final(short_buffer);
+			//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEmplacing %h into array at %d",short_buffer, i);
+			master_receive_buffer.push_back(short_buffer);
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
 		wait_interrupt();
-		$display("READ ALL TASK DONE.");
-		print_read_report;
+		
+		#1000000 $display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
+		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
+			issue_start_command();
+			//$display("Start write %d", i);
+			transmit_slave_address(i2c_slave_addr[8:1]);
+			write_data_byte(master_transmit_buffer[i]);
+			issue_start_command();
+			//$display("Start read %d", i);
+			request_read_from_address(i2c_slave_addr[8:1]);
+			read_data_byte_final(short_buffer);
+			master_receive_buffer.push_back(short_buffer);
+		end
+			issue_start_command();
+			transmit_slave_address(i2c_slave_addr[8:1]);
+			write_data_byte(master_transmit_buffer[QTY_WORDS_TO_WRITE-1]);
+			issue_start_command();
+			request_read_from_address(i2c_slave_addr[8:1]);
+			read_data_byte_final(short_buffer);
+			master_receive_buffer.push_back(short_buffer);
+		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
+		wait_interrupt();
+		i2c_slave.print_read_report();
+		master_print_read_report;
 	endtask
 	
-	task print_read_report();
+	task master_print_read_report();
 	//	static string s;// = " Received Bytes (0x): ";
 		//static string temp;
 		//s = " Master Read Received Bytes (0x): ";
-			foreach(input_buffer[i]) begin
+			/*foreach(master_receive_buffer[i]) begin
 			//	temp.hextoa(integer'(input_buffer[i]));
 				//temp=temp.substr(6,7);
 				//s = {s, temp};
-				$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tReceived at master %h  VS %h", input_buffer[i], output_buffer[i]);
+				$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tReceived at master %h  VS %h", master_receive_buffer[i], master_transmit_buffer[i]);
 			end
 			//s = {s, " ."};
 			//$display("%s", s);
+			
+			*/
+			static string s;
+					static string temp;
+					s = " Master Received Bytes (0x): ";
+					$display("%s", s);
+					foreach(master_receive_buffer[i]) begin
+						//temp.hextoa(integer'(master_receive_buffer[i]));
+						//temp=temp.substr(temp.len-2,temp.len-1);
+						//s = {s, temp};
+						$display("[WB]: %d",master_receive_buffer[i]);
+					end
+		//s = {s, " ."};
+		//$display("%s", s);
 			endtask
 
 task wait_interrupt();
@@ -238,16 +264,26 @@ task request_read_from_address(input bit [7:0] addr);
 		endtask
 
 task write_data_byte(input bit [7:0] data);
-			wb_bus.master_write(DPR, data); 				//78 (DATA) to dpr STEP 9
+		if(TRANSFER_DEBUG_MODE) $write("\t%d -->>> [WB]  {DUT}",data);
+		wb_bus.master_write(DPR, data); 				//78 (DATA) to dpr STEP 9
 		wb_bus.master_write(CMDR, I2C_WRITE); 		// WRITE Command STEP 10
-		
 		wait_interrupt_with_NACK();
 	endtask
 task read_data_byte(output bit [7:0] iobuf);
-			
+	
 	wb_bus.master_write(CMDR, READ_WITH_ACK); 		// WRITE Command STEP 10
 	wait_interrupt_with_NACK();
 	wb_bus.master_read(DPR, iobuf); 				//78 (DATA) to dpr STEP 9
+	if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
+	//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tWISHBONE REGISTER READS %h", iobuf);	
+		
+endtask
+task read_data_byte_final(output bit [7:0] iobuf);
+			
+	wb_bus.master_write(CMDR, READ_WITH_NACK); 		// WRITE Command STEP 10
+	wait_interrupt_with_NACK();
+	wb_bus.master_read(DPR, iobuf); 				//78 (DATA) to dpr STEP 9
+	if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
 	//$display("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tWISHBONE REGISTER READS %h", iobuf);	
 		
 	endtask
@@ -256,7 +292,8 @@ task read_data_byte(output bit [7:0] iobuf);
 	// Instatiate the slave I2C BFM
 	i2c_if		#(
 		.ADDR_WIDTH(WB_ADDR_WIDTH),
-		.DATA_WIDTH(WB_DATA_WIDTH)//,
+		.DATA_WIDTH(WB_DATA_WIDTH),
+		.TRANSFER_DEBUG_MODE(TRANSFER_DEBUG_MODE)//,
 		//.SLAVE_ADDRESS(I2C_SLAVE_ADDR)
 	)
 	i2c_slave (
@@ -264,7 +301,8 @@ task read_data_byte(output bit [7:0] iobuf);
 		.rst_i(rst),
 		.scl_i(scl),
 		.sda_i(sda),
-		.sda_o(sda)
+		.sda_o(sda),
+		.most_recent_xfer(slv_most_recent_xfer)
 	);
 	
 	// Instantiate the Wishbone master Bus Functional Model

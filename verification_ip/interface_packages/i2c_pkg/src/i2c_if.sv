@@ -2,7 +2,8 @@
 
 interface i2c_if       #(
 	int ADDR_WIDTH = 32,
-	int DATA_WIDTH = 16 //,
+	int DATA_WIDTH = 16, 
+	bit TRANSFER_DEBUG_MODE=0 //,
 	//bit [6:0] SLAVE_ADDRESS = 0                          
 )
 (
@@ -12,7 +13,8 @@ interface i2c_if       #(
 	// Master signals
 	input wire scl_i,
 	input triand sda_i,
-	output reg sda_o
+	output reg sda_o, 
+	output byte most_recent_xfer
 );
 	logic sda_drive=1'b1;
 	assign sda_o = sda_drive;
@@ -47,7 +49,7 @@ interface i2c_if       #(
 	endtask
 	
 	task bypass_push_transmit_buf(input byte slv_xmit_value);
-		$display("Push back %h size before %d", slv_xmit_value, slave_transmit_buffer.size());
+		//$display("Push back %h size before %d", slv_xmit_value, slave_transmit_buffer.size());
 		slave_transmit_buffer.push_back(slv_xmit_value);
 		
 	endtask
@@ -57,18 +59,20 @@ interface i2c_if       #(
 		slave_transmit_buffer.delete();
 	endtask
 	
-	task print_report();
+	task print_read_report();
 		static string s; // = " Received Bytes (0x): ";
 
 		static string temp;
-		s = " Received Bytes (0x): ";
-		foreach(slave_receive_buffer[i]) begin
-			temp.hextoa(integer'(slave_receive_buffer[i]));
-			temp=temp.substr(6,7);
-			s = {s, temp};
-		end
-		s = {s, " ."};
+		s = " \t\t\tSlave Received Bytes (0x): ";
 		$display("%s", s);
+		foreach(slave_receive_buffer[i]) begin
+			//temp.hextoa(integer'(slave_receive_buffer[i]));
+			//temp=temp.substr(temp.len-2,temp.len-1);
+			//s = {s, temp};
+			$display("\t\t\t %d", slave_receive_buffer[i]);
+		end
+		//s = {s, " ."};
+		//$display("%s", s);
 	endtask
 
 	task detect_connection_negotiation();
@@ -92,14 +96,16 @@ interface i2c_if       #(
 				2'b01: begin //start
 					if(start==1'b0) begin
 						interrupt = RAISE_START;
-						$display("STart! %d", simulation_cycles); end
+						//$display("STart! %d", simulation_cycles);
+						 end
 					else begin
 						interrupt = RAISE_RESTART;
-						$display("RE-STart! %d", simulation_cycles); end
+						//$display("RE-STart! %d", simulation_cycles); 
+						end
 					start = 1'b1;end
 				2'b10: begin //end
 					interrupt = RAISE_STOP;
-					$display("STop!%d", simulation_cycles);
+					//$display("STop!%d", simulation_cycles);
 					start = 1'b0;
 				end
 			endcase
@@ -126,7 +132,7 @@ interface i2c_if       #(
 				/*foreach(test_received_data[i]) begin
 					$display("Received a byte: 0x%h",test_received_data[i]);
 				end*/
-				print_report();
+				//print_report();
 			end
 		join;
 	endtask
@@ -175,6 +181,7 @@ interface i2c_if       #(
 			@(posedge scl_i);
 			@(negedge scl_i) sda_drive =1'bz;
 			slave_receive_buffer.push_back(buffer[8:1]);
+			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",buffer[8:1]);
 			/*	counter += 1;
 			if(counter == 16) begin
 				break;
@@ -187,28 +194,34 @@ interface i2c_if       #(
 	task transmit_data();
 		static bit local_ack;
 		static int i, j;
-		$display("Attempt xmit data");
+		//$display("Attempt xmit data");
 		local_ack = 0;
 		
 		//	test_received_data.push_back(buffer[8:1]);
 		//$display("Actually Attempt xmit data");
 		
-		for(j=0;j<=15;j++)begin
+		for(j=0;j<=128;j++)begin
 			//local_ack <= j == 0 ? 1:0;
 			buffer[8:1] = slave_transmit_buffer.pop_front();
+			
 			//$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
 			for(i=8;i>=1;i--) begin
 				
 			//	$display("\t\t\t\t\t\t\t\t\t\t\t\twrite %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
 				sda_drive <= buffer[i] ;
 				@(posedge scl_i);
-				@(negedge scl_i) if(intr_raised()) return;
+				@(negedge scl_i); //begin if(intr_raised()) return;
+				//	sda_drive <= 1'bz;
+					//end
 			end
-			sda_drive = 1'bz;
-			@(posedge scl_i);
-			buffer[0]<=sda_i;
-			if(buffer[0]==1'b0) $display("\t[I2C]ACK");
-			if(buffer[0]==1'b1) $display("\t[I2C]NACK");
+			sda_drive <= 1'bz;
+			//$display("SDA: %b", sda_i);
+			@(posedge scl_i) local_ack = sda_i;
+			//$display("SDA: %b", sda_i);
+			//$display("Lack: %b", local_ack);
+			//if(local_ack==1'b0) $display("\t[I2C]ACK");
+			if(TRANSFER_DEBUG_MODE) most_recent_xfer <= byte'(buffer[8:1]);//$write("\t\t\t {DUT}  [I2C] <<<-- %d\n",buffer[8:1]);
+			if(local_ack==1'b1) return;//$display("\t[I2C]NACK");
 			@(negedge scl_i) if(intr_raised()) return;
 			
 		end
