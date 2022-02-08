@@ -148,7 +148,7 @@ module top();
 		//end
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
 		
-		#1000000 issue_start_command();
+		issue_start_command();
 		//transmit_slave_address(i2c_slave_addr[8:1]);
 		//write_data_byte(master_transmit_buffer[7]);
 		//issue_start_command();
@@ -165,7 +165,7 @@ module top();
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
 		wait_interrupt();
 		
-		#1000000 $display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
+		$display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
 		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
 			issue_start_command();
 			//$display("Start write %d", i);
@@ -188,6 +188,7 @@ module top();
 		wait_interrupt();
 		i2c_slave.print_read_report();
 		master_print_read_report;
+		$finish;
 	endtask
 	
 	task master_print_read_report();
