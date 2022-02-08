@@ -66,15 +66,29 @@ module top();
 		output_buffer[5]=8'h3;
 		output_buffer[6]=8'hfc;
 		output_buffer[7]=8'h4;*/
-		output_buffer[0]=8'hff;
+		/*output_buffer[0]=8'hff;
 		output_buffer[1]=8'hfe;
 		output_buffer[2]=8'hfd;
 		output_buffer[3]=8'hfc;
 		output_buffer[4]=8'hfb;
 		output_buffer[5]=8'hfa;
 		output_buffer[6]=8'hf9;
-		output_buffer[7]=8'hf8;
-		
+		output_buffer[7]=8'hf8;*/
+		output_buffer[0]=8'hde;
+		output_buffer[1]=8'had;
+		output_buffer[2]=8'hbe;
+		output_buffer[3]=8'hef;
+		output_buffer[4]=8'hfe;
+		output_buffer[5]=8'hed;
+		output_buffer[6]=8'hbe;
+		output_buffer[7]=8'hef;
+		i2c_slave.reset_test_buffers();
+				repeat(2) begin
+			for(int i=0;i<8;i++) begin
+				i2c_slave.bypass_push_transmit_buf(output_buffer[i]);
+			end
+		end
+			
 		
 			
 	endtask
@@ -83,6 +97,8 @@ module top();
 		bit [8:0] localreg;
 		i2c_slave_addr = i2c_slave_addr << 2;
 		i2c_slave.configure(i2c_slave_addr);
+		
+
 		i2c_slave.wait_for_start(localreg);	
 	endtask
 

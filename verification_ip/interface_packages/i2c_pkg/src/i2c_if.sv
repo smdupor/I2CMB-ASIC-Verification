@@ -34,7 +34,8 @@ interface i2c_if       #(
 	bit [8:0] buffer;
 	bit we;
 	bit nack;
-	byte test_received_data[$];
+	byte slave_receive_buffer[$];
+	byte slave_transmit_buffer[$];
 
 	always @(posedge clk_i) simulation_cycles += 1;
 
@@ -44,14 +45,25 @@ interface i2c_if       #(
 		slave_address = input_addr;
 		start = 1'b0;
 	endtask
-
+	
+	task bypass_push_transmit_buf(input byte slv_xmit_value);
+		$display("Push back %h size before %d", slv_xmit_value, slave_transmit_buffer.size());
+		slave_transmit_buffer.push_back(slv_xmit_value);
+		
+	endtask
+	
+	task reset_test_buffers();
+		slave_receive_buffer.delete();
+		slave_transmit_buffer.delete();
+	endtask
+	
 	task print_report();
 		static string s; // = " Received Bytes (0x): ";
 
 		static string temp;
 		s = " Received Bytes (0x): ";
-		foreach(test_received_data[i]) begin
-			temp.hextoa(integer'(test_received_data[i]));
+		foreach(slave_receive_buffer[i]) begin
+			temp.hextoa(integer'(slave_receive_buffer[i]));
 			temp=temp.substr(6,7);
 			s = {s, temp};
 		end
@@ -120,34 +132,29 @@ interface i2c_if       #(
 	endtask
 
 	task receive_address(output bit [8:0] address);
-		$display("Attempting to read address");
+		//$display("Attempting to read address");
 		//status = 2'b0;
 		counter = 8;
 		for(int i=8;i>=1;i--) begin
 			@(posedge scl_i);
 			buffer[i] = sda_i;
-			while(scl_i == 1'b1) begin
-				@(posedge clk_i);
-				if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART) begin
-					return;
-				end
-			end
+			@(negedge scl_i) if(intr_raised()) return;
 		end
 		sda_drive <= 1'b0;
-		sda_drive <= 1'b0;
+		//sda_drive <= 1'b0;
 		@(negedge scl_i) sda_drive <= 1'bz;
-		$display("Address read complete, Addr: 0x%h, Read: 0b%b, NAK:0b%b",buffer[8:2],buffer[1],buffer[0]);
+		//$display("Address read complete, Addr: 0x%h, Read: 0b%b, NAK:0b%b",buffer[8:2],buffer[1],buffer[0]);
 		address=buffer;
 		if(buffer[8:2]==slave_address[8:2] || buffer[8:2]==7'b000_0000) begin // Possible bug with all-call and read
 			//$display("Address match! Receive Data");
 			we=buffer[1];
-			nack=buffer[0];
+			nack=1'b0;
 			if(!we) begin
-				$display("Address match! Receive Data");
+			//	$display("Address match! Receive Data");
 				receive_data();
 			end
 			else begin
-					$display("Address match! Transmit Data");
+				//	$display("Address match! Transmit Data");
 				transmit_data();
 			end
 		end
@@ -162,15 +169,10 @@ interface i2c_if       #(
 				@(posedge scl_i);
 				//$display("timestep %d",simulation_cycles);
 				buffer[i] = sda_i;
-				while(scl_i == 1'b1) begin
-					@(posedge clk_i);
-					if(interrupt == RAISE_STOP||interrupt == RAISE_RESTART) begin
-						return;
-					end
-				end
+				@(negedge scl_i) if(intr_raised()) return;
 			end
 
-			test_received_data.push_back(buffer[8:1]);
+			slave_receive_buffer.push_back(buffer[8:1]);
 			/*	counter += 1;
 			if(counter == 16) begin
 				break;
@@ -191,37 +193,28 @@ interface i2c_if       #(
 		
 		for(j=0;j<=15;j++)begin
 			//local_ack <= j == 0 ? 1:0;
-			buffer[8:1]=test_received_data[j];
-			//$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
+			buffer[8:1] = slave_transmit_buffer.pop_front();
+			$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
 			for(i=8;i>=1;i--) begin
 				
 			//	$display("\t\t\t\t\t\t\t\t\t\t\t\twrite %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
 				sda_drive <= buffer[i] ;
 				@(posedge scl_i);
-				/*while(scl_i == 1'b1) begin
-					@(posedge clk_i);
-					if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART) begin
-						return;
-					end
-				end*/
-				@(negedge scl_i) if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART)return;
+				@(negedge scl_i) if(intr_raised()) return;
 			end
-			//@(negedge scl_i);
-			//sda_drive = 1'bz;
+
 			@(posedge scl_i);
 			buffer[0]<=sda_i;
 			if(buffer[0]==1'b0) $display("\t[I2C]ACK");
 			if(buffer[0]==1'b1) $display("\t[I2C]NACK");
-			//$display("goack %b at timestep %d",buffer[0],simulation_cycles);
-			/*while(scl_i == 1'b1) begin
-				@(posedge clk_i);
-				if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART )begin//|| buffer[0]==1'b1) begin
-					return;
-				end
-			end*/
-			@(negedge scl_i) if(interrupt == RAISE_STOP || interrupt == RAISE_RESTART)return;
+			@(negedge scl_i) if(intr_raised()) return;
 			
 		end
 		sda_drive=1'bz;
 	endtask
+	
+	
+	function bit intr_raised();
+		intr_raised = (interrupt == RAISE_STOP || interrupt == RAISE_RESTART || interrupt == RAISE_START);
+	endfunction
 endinterface
