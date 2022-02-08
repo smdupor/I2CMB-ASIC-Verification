@@ -165,13 +165,15 @@ interface i2c_if       #(
 		counter=0;
 		while(1) begin
 			//$display("Attempt read byte %d", counter);
-			for(int i=8;i>=0;i--) begin
+			for(int i=8;i>=1;i--) begin
 				@(posedge scl_i);
 				//$display("timestep %d",simulation_cycles);
 				buffer[i] = sda_i;
 				@(negedge scl_i) if(intr_raised()) return;
 			end
-
+			sda_drive = 1'b0;
+			@(posedge scl_i);
+			@(negedge scl_i) sda_drive =1'bz;
 			slave_receive_buffer.push_back(buffer[8:1]);
 			/*	counter += 1;
 			if(counter == 16) begin
@@ -194,7 +196,7 @@ interface i2c_if       #(
 		for(j=0;j<=15;j++)begin
 			//local_ack <= j == 0 ? 1:0;
 			buffer[8:1] = slave_transmit_buffer.pop_front();
-			$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
+			//$display("Attempt xmit byte %d, contents: %h,  with ack %b", j, buffer[8:1], local_ack);
 			for(i=8;i>=1;i--) begin
 				
 			//	$display("\t\t\t\t\t\t\t\t\t\t\t\twrite %b of %h at timestep %d",buffer[i], buffer[8:1],simulation_cycles);
@@ -202,7 +204,7 @@ interface i2c_if       #(
 				@(posedge scl_i);
 				@(negedge scl_i) if(intr_raised()) return;
 			end
-
+			sda_drive = 1'bz;
 			@(posedge scl_i);
 			buffer[0]<=sda_i;
 			if(buffer[0]==1'b0) $display("\t[I2C]ACK");
