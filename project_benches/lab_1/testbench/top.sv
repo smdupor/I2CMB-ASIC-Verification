@@ -5,7 +5,11 @@ module top();
 	//Physical Parameters
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
-	parameter int NUM_I2C_BUSSES = 1;
+	parameter int NUM_I2C_BUSSES = 16;
+	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100};
+	
+	// {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100} 6 and 16 are default rate. 0 is max.
+	parameter int SELECTED_I2C_BUS = 6; 
 	
 	parameter bit VERBOSE_DEBUG_MODE=0;
 	parameter bit TRANSFER_DEBUG_MODE=1;
@@ -131,7 +135,9 @@ module top();
 
 		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); 	// Enable core by writing to CSR (EXAMPLE 1)
 
-		select_I2C_bus(8'h00);
+		select_I2C_bus(SELECTED_I2C_BUS);
+		//wb_bus.master_read(CSR,buf_in);
+		//$display("buf_in: %b",buf_in);
 		//repeat(2) begin
 		
 		issue_start_command();
@@ -300,9 +306,9 @@ task read_data_byte_final(output bit [7:0] iobuf);
 	i2c_slave (
 		.clk_i(clk),
 		.rst_i(rst),
-		.scl_i(scl),
-		.sda_i(sda),
-		.sda_o(sda),
+		.scl_i(scl[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_i(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
 		.most_recent_xfer(slv_most_recent_xfer)
 	);
 	
@@ -334,7 +340,24 @@ task read_data_byte_final(output bit [7:0] iobuf);
 
 	// ****************************************************************************
 	// Instantiate the DUT - I2C Multi-Bus Controller
-	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES)) DUT
+	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES), 
+		.g_f_scl_0(I2C_BUS_RATES[0]),
+		.g_f_scl_1(I2C_BUS_RATES[1]),
+		.g_f_scl_2(I2C_BUS_RATES[2]),
+		.g_f_scl_3(I2C_BUS_RATES[3]),
+		.g_f_scl_4(I2C_BUS_RATES[4]),
+		.g_f_scl_5(I2C_BUS_RATES[5]),
+		.g_f_scl_6(I2C_BUS_RATES[6]),
+		.g_f_scl_7(I2C_BUS_RATES[7]),
+		.g_f_scl_8(I2C_BUS_RATES[8]),
+		.g_f_scl_9(I2C_BUS_RATES[9]),
+		.g_f_scl_a(I2C_BUS_RATES[10]),
+		.g_f_scl_b(I2C_BUS_RATES[11]),
+		.g_f_scl_c(I2C_BUS_RATES[12]),
+		.g_f_scl_d(I2C_BUS_RATES[13]),
+		.g_f_scl_e(I2C_BUS_RATES[14]),
+		.g_f_scl_f(I2C_BUS_RATES[15])
+	) DUT
 	(
 		// ------------------------------------
 		// -- Wishbone signals:
