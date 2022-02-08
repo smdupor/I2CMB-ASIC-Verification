@@ -6,16 +6,14 @@ module top();
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
-	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100};
-	
-	// {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100} 6 and 16 are default rate. 0 is max.
-	parameter int SELECTED_I2C_BUS = 6; 
+	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
+	parameter int SELECTED_I2C_BUS = 0; 
 	
 	parameter bit VERBOSE_DEBUG_MODE=0;
 	parameter bit TRANSFER_DEBUG_MODE=1;
 
 	// Test Parameters
-	parameter int I2C_SLAVE_PER_BUS = 1;
+	parameter int I2C_SLAVE_PER_BUS = 2;
 	parameter int QTY_WORDS_TO_WRITE=8;
 //	parameter bit [6:0] I2C_SLAVE_ADDR = 7'h44;
 
@@ -75,20 +73,27 @@ module top();
 		int i;
 		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
 		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
-		i2c_slave.reset_test_buffers();
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave.bypass_push_transmit_buf(byte'(i));
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave.bypass_push_transmit_buf(byte'(i));
+		i2c_slave0.reset_test_buffers();
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave0.bypass_push_transmit_buf(byte'(i));
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave0.bypass_push_transmit_buf(byte'(i));
 				
 			
 	endtask
 
 	task simple_receive_data();
 		bit [8:0] localreg;
-		i2c_slave_addr = i2c_slave_addr << 2;
-		i2c_slave.configure(i2c_slave_addr);
-		
+		i2c_slave_addr = i2c_slave_addr<<2;
+		i2c_slave0.configure(i2c_slave_addr);
+		i2c_slave_addr = i2c_slave_addr>>2;
+		i2c_slave_addr+=1;
+		i2c_slave_addr = i2c_slave_addr<<2;
+		i2c_slave1.configure(i2c_slave_addr);
+				i2c_slave_addr = i2c_slave_addr>>2;
+		i2c_slave_addr-=1;
+		i2c_slave_addr = i2c_slave_addr<<2;
 
-		i2c_slave.wait_for_start(localreg);	
+		i2c_slave0.wait_for_start(localreg);
+		i2c_slave1.wait_for_start(localreg);	
 	endtask
 
 	// ****************************************************************************
@@ -192,7 +197,7 @@ module top();
 			master_receive_buffer.push_back(short_buffer);
 		wb_bus.master_write(CMDR, I2C_STOP); 		// STOP Command STEP 12
 		wait_interrupt();
-		i2c_slave.print_read_report();
+		i2c_slave0.print_read_report();
 		master_print_read_report;
 		$finish;
 	endtask
@@ -297,19 +302,35 @@ task read_data_byte_final(output bit [7:0] iobuf);
 	
 	// ****************************************************************************
 	// Instatiate the slave I2C BFM
+	
+	
 	i2c_if		#(
 		.ADDR_WIDTH(WB_ADDR_WIDTH),
 		.DATA_WIDTH(WB_DATA_WIDTH),
 		.TRANSFER_DEBUG_MODE(TRANSFER_DEBUG_MODE)//,
 		//.SLAVE_ADDRESS(I2C_SLAVE_ADDR)
 	)
-	i2c_slave (
+	i2c_slave0 (
 		.clk_i(clk),
 		.rst_i(rst),
 		.scl_i(scl[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
 		.sda_i(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.most_recent_xfer(slv_most_recent_xfer)
+		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])//,
+		//.most_recent_xfer(slv_most_recent_xfer)
+	);
+	i2c_if		#(
+		.ADDR_WIDTH(WB_ADDR_WIDTH),
+		.DATA_WIDTH(WB_DATA_WIDTH),
+		.TRANSFER_DEBUG_MODE(TRANSFER_DEBUG_MODE)//,
+		//.SLAVE_ADDRESS(I2C_SLAVE_ADDR)
+	)
+	i2c_slave1 (
+		.clk_i(clk),
+		.rst_i(rst),
+		.scl_i(scl[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_i(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])//,
+		//.most_recent_xfer(slv_most_recent_xfer)
 	);
 	
 	// Instantiate the Wishbone master Bus Functional Model

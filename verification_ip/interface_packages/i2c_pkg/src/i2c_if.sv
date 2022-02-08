@@ -13,8 +13,8 @@ interface i2c_if       #(
 	// Master signals
 	input wire scl_i,
 	input triand sda_i,
-	output reg sda_o, 
-	output byte most_recent_xfer
+	output reg sda_o//, 
+	//output byte most_recent_xfer
 );
 	logic sda_drive=1'b1;
 	assign sda_o = sda_drive;
@@ -22,7 +22,8 @@ interface i2c_if       #(
 	parameter SCL_RATE = 1e5; // In kHz
 	parameter int SCL_PERIOD = 5000;
 	//parameter SLAVE_ADDRESS = 7'h44;
-
+	byte most_recent_xfer;
+	
 	enum bit [1:0] {INTR_RST=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} stst;
 
 	longint simulation_cycles;
