@@ -1,5 +1,6 @@
 `timescale 1ns / 10ps
 
+
 module top();
 	
 	//Physical Parameters
@@ -52,7 +53,7 @@ module top();
 	// Test Bank Data Buffers
 	bit [7:0] master_transmit_buffer [$];
 	byte master_receive_buffer [$]; 
-
+	
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
 	initial reset_generator();

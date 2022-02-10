@@ -40,6 +40,10 @@ interface i2c_if       #(
 	byte slave_receive_buffer[$];
 	byte slave_transmit_buffer[$];
 
+	//TEMP
+//	import banclas::my_str_t;
+
+	
 	always @(posedge clk_i) simulation_cycles += 1;
 
 	// ****************************************************************************
