@@ -17,7 +17,7 @@ comp_I2C_MB:
 	vcom ../rtl/conditioner_mux.vhd
 	vcom ../rtl/iicmb_m.vhd
 	vcom ../rtl/regblock.vhd
-	vcom ../rtl/wishbone.vhd
+	vcom ../rtl/wishbone.vhd 
 	vcom ../rtl/iicmb_m_wb.vhd
 
 
@@ -33,11 +33,40 @@ optimize:
 compile: comp_I2C_MB comp_slave optimize
 
 simulate:
-	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
+	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do; run 100ms" optimized_debug_top_tb &
 
 debug: clean compile simulate
 
 restart: clean compile
 
 console: clean compile
-	vsim  -ic -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
+	
+silent: clean compile_sil
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
+	
+comp_I2C_MB_sil:
+	vcom ../rtl/iicmb_int_pkg.vhd > /dev/null
+	vcom ../rtl/iicmb_pkg.vhd > /dev/null
+	vcom ../rtl/mbyte.vhd > /dev/null
+	vcom ../rtl/mbit.vhd > /dev/null
+	vcom ../rtl/bus_state.vhd > /dev/null
+	vcom ../rtl/filter.vhd > /dev/null
+	vcom ../rtl/conditioner.vhd > /dev/null
+	vcom ../rtl/conditioner_mux.vhd > /dev/null
+	vcom ../rtl/iicmb_m.vhd > /dev/null
+	vcom ../rtl/regblock.vhd > /dev/null
+	vcom ../rtl/wishbone.vhd  > /dev/null
+	vcom ../rtl/iicmb_m_wb.vhd > /dev/null
+
+
+comp_bench_sil: comp_wb_pkg_sil
+	vlog ../testbench/top.sv > /dev/null
+
+comp_slave_sil:	comp_i2c_pkg_sil comp_wb_pkg_sil
+	vlog ../testbench/top.sv > /dev/null
+
+optimize_sil:
+	vopt +acc top -o optimized_debug_top_tb > /dev/null
+
+compile_sil: comp_I2C_MB_sil comp_slave_sil optimize_sil
