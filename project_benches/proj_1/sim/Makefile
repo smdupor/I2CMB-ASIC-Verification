@@ -36,3 +36,8 @@ simulate:
 	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
 
 debug: clean compile simulate
+
+restart: clean compile
+
+console: clean compile
+	vsim  -ic -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb
