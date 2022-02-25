@@ -52,6 +52,8 @@ module top();
 	// Test Bank Data Buffers
 	bit [7:0] master_transmit_buffer [$];
 	byte master_receive_buffer [$]; 
+	byte validation_write_buffer[$];
+	byte validation_read_buffer[$];
 	
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
@@ -63,12 +65,52 @@ module top();
 
 	task populate_test_buffers();
 		int i;
-		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
-		for(i=0;i<QTY_WORDS_TO_WRITE;i++) master_transmit_buffer.push_back(byte'(i));
+		for(i=0;i<QTY_WORDS_TO_WRITE;i++) begin
+			master_transmit_buffer.push_back(byte'(i));
+			validation_write_buffer.push_back(byte'(i));
+			end
+		for(i=0;i<QTY_WORDS_TO_WRITE;i++)begin
+			master_transmit_buffer.push_back(byte'(i));
+			validation_write_buffer.push_back(byte'(i));
+			end
 		i2c_slave0.reset_test_buffers();
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave0.bypass_push_transmit_buf(byte'(i));
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) i2c_slave0.bypass_push_transmit_buf(byte'(i));
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) begin
+			i2c_slave0.bypass_push_transmit_buf(byte'(i));
+			validation_read_buffer.push_back(byte'(i));
+			end
+		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) begin
+			i2c_slave0.bypass_push_transmit_buf(byte'(i));
+			validation_read_buffer.push_back(byte'(i));
+			end
 	endtask
+	
+	task check_and_scoreboard();
+		int pass, fail,pauser;
+		int failed_cases[$];
+		foreach(validation_write_buffer[i]) begin
+			//$display ("Val: %d, Got: %d",validation_write_buffer[i],i2c_slave0.get_receive_entry(i));
+			if(validation_write_buffer[i] != i2c_slave0.get_receive_entry(i)) begin
+				++fail;
+				failed_cases.push_back(i);
+				end
+			else ++pass;
+			pauser=i;
+		end
+		++pauser;
+		foreach(validation_read_buffer[i]) begin
+			if(validation_read_buffer[i] != master_receive_buffer[i]) begin
+				++fail;
+				failed_cases.push_back(pauser+i);
+			end
+			else ++pass;
+		end
+		
+		if(fail>0) begin
+			$display("\n\nTEST CASES FAILED: %d\n", fail);
+			foreach(failed_cases[i]) $display("FAIL Transaction # %d ",failed_cases[i]);
+			end
+		else $display("\n\nALL TEST CASES PASSED, QTY %d\n",pass);
+		endtask
 
 	task simple_receive_data();
 		bit [8:0] localreg;
@@ -173,8 +215,10 @@ module top();
 		issue_stop_command();
 		
 		// Print Results of test flow/Reports
+		check_and_scoreboard();
 		i2c_slave0.print_read_report();
 		master_print_read_report;
+		
 
 		// Exit the tests
 		$finish;

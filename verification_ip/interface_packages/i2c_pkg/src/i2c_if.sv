@@ -55,6 +55,10 @@ interface i2c_if       #(
 	task bypass_push_transmit_buf(input byte slv_xmit_value);
 		slave_transmit_buffer.push_back(slv_xmit_value);
 	endtask
+	
+	function byte get_receive_entry(int i);
+		return slave_receive_buffer[i];
+	endfunction
 
 	task reset_test_buffers();
 		slave_receive_buffer.delete();
