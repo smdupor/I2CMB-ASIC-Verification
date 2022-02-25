@@ -124,13 +124,9 @@ module top();
 	// ****************************************************************************
 	// Define the flow of the simulation
 	task test_flow();
-		logic [7:0] short_buffer;
+		logic [7:0] tf_buffer;
 		$display("STARTING TEST FLOW");
-/*
-		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT*/
 
-		
-		
 		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
 		
@@ -138,35 +134,25 @@ module top();
 		transmit_address_req_write(i2c_slave_addr[8:1]);
 		
 		// Write contents of "output Buffer" to selected I2C Slave in a single stream
-		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) begin
-			write_data_byte(master_transmit_buffer[i]);
-		end
-
+		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) write_data_byte(master_transmit_buffer[i]);
 		issue_stop_command();
-		
-		/*wb_bus.master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
-		wait_interrupt();*/
-		
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
-		/***** TRY INSTREAM RESET */
-		//disable_dut();
-		#1000 reset_generator();
-		/*@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DU
 
-		select_I2C_bus(SELECTED_I2C_BUS);
-		*/
+		/***** TRY OPTIONAL INSTREAM RESET */
+		//disable_dut();
+		/* #1000 reset_generator();
 		enable_dut_with_interrupt();
-		select_I2C_bus(SELECTED_I2C_BUS);
+		select_I2C_bus(SELECTED_I2C_BUS);*/
 		
 		// Start negotiation and perform read-all task
 		issue_start_command();
 		transmit_address_req_read(i2c_slave_addr[8:1]);
 		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin 
-			read_data_byte_with_continue(short_buffer); // Read all but the last byte
-			master_receive_buffer.push_back(short_buffer);
+			read_data_byte_with_continue(tf_buffer); // Read all but the last byte
+			master_receive_buffer.push_back(tf_buffer);
 		end
-		read_data_byte_with_stop(short_buffer); // Read the last byte
-		master_receive_buffer.push_back(short_buffer);
+		read_data_byte_with_stop(tf_buffer); // Read the last byte
+		master_receive_buffer.push_back(tf_buffer);
 
 		issue_stop_command();
 		
@@ -179,8 +165,8 @@ module top();
 			write_data_byte(master_transmit_buffer[i]);
 			issue_start_command();
 			transmit_address_req_read(i2c_slave_addr[8:1]);
-			read_data_byte_with_stop(short_buffer);
-			master_receive_buffer.push_back(short_buffer);
+			read_data_byte_with_stop(tf_buffer);
+			master_receive_buffer.push_back(tf_buffer);
 		end
 		/*wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
 		wait_interrupt();**/
