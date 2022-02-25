@@ -44,7 +44,7 @@ module top();
 	byte slv_most_recent_xfer;
 	
 	// Device Configuration and Command Logics
-	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx, SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, 
+	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx,DISABLE_CORE=8'b0xxxxxxx, SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, 
 						I2C_WRITE=8'bxxxxx001, I2C_STOP=8'bxxxxx101, READ_WITH_NACK=8'bxxxxx011, READ_WITH_ACK=8'bxxxxx010} cmd;
 	enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
 	bit [8:0] i2c_slave_addr = 9'h12;
@@ -126,9 +126,12 @@ module top();
 	task test_flow();
 		logic [7:0] short_buffer;
 		$display("STARTING TEST FLOW");
+/*
+		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT*/
 
-		@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT
-
+		
+		
+		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
 		
 		issue_start_command();
@@ -139,10 +142,21 @@ module top();
 			write_data_byte(master_transmit_buffer[i]);
 		end
 
-		wb_bus.master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
-		wait_interrupt();
+		issue_stop_command();
+		
+		/*wb_bus.master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
+		wait_interrupt();*/
 		
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
+		/***** TRY INSTREAM RESET */
+		//disable_dut();
+		#1000 reset_generator();
+		/*@(negedge rst) wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DU
+
+		select_I2C_bus(SELECTED_I2C_BUS);
+		*/
+		enable_dut_with_interrupt();
+		select_I2C_bus(SELECTED_I2C_BUS);
 		
 		// Start negotiation and perform read-all task
 		issue_start_command();
@@ -151,10 +165,10 @@ module top();
 			read_data_byte_with_continue(short_buffer); // Read all but the last byte
 			master_receive_buffer.push_back(short_buffer);
 		end
-			read_data_byte_with_stop(short_buffer); // Read the last byte
-			master_receive_buffer.push_back(short_buffer);
-		wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
-		wait_interrupt();
+		read_data_byte_with_stop(short_buffer); // Read the last byte
+		master_receive_buffer.push_back(short_buffer);
+
+		issue_stop_command();
 		
 		$display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
 		
@@ -168,8 +182,9 @@ module top();
 			read_data_byte_with_stop(short_buffer);
 			master_receive_buffer.push_back(short_buffer);
 		end
-		wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
-		wait_interrupt();
+		/*wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
+		wait_interrupt();**/
+		issue_stop_command();
 		
 		// Print Results of test flow/Reports
 		i2c_slave0.print_read_report();
@@ -189,6 +204,20 @@ module top();
 					end
 					$display("%s", s.substr(0,s.len-2));
 			endtask
+
+task issue_stop_command();
+	wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
+	wait_interrupt();
+endtask
+
+task enable_dut_with_interrupt();
+	wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT
+endtask
+
+task disable_dut();
+	wb_bus.master_write(CSR, DISABLE_CORE); // Enable DUT
+	repeat(2) begin @(posedge clk); $display("Stall"); end
+	endtask
 
 task wait_interrupt();
 	wait(irq==1'b1);

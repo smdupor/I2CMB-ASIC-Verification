@@ -13,7 +13,7 @@ interface i2c_if       #(
 	// Master signals
 	input wire scl_i,
 	input triand sda_i,
-	output reg sda_o,
+	output wire sda_o,
 	output byte most_recent_xfer
 );
 	logic sda_drive=1'b1;

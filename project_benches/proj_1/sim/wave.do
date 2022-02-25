@@ -1,4 +1,7 @@
 onerror {resume}
+quietly set PrefSource(OpenOnBreak) 0
+quietly set PrefSource(OpenOnFinish) 0
+quietly set PrefSource(OpenOnStep) 0
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -divider I2C_MB
 add wave -noupdate -divider {WB Signals}
