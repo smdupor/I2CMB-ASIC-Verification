@@ -15,8 +15,7 @@ module top();
 
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 2;
-	parameter int QTY_WORDS_TO_WRITE=8;
-//	parameter bit [6:0] I2C_SLAVE_ADDR = 7'h44;
+	parameter int QTY_WORDS_TO_WRITE=32;
 
 	// Physical DUT Interface networks
 	bit  clk;
@@ -48,12 +47,16 @@ module top();
 						I2C_WRITE=8'bxxxxx001, I2C_STOP=8'bxxxxx101, READ_WITH_NACK=8'bxxxxx011, READ_WITH_ACK=8'bxxxxx010} cmd;
 	enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
 	bit [8:0] i2c_slave_addr = 9'h12;
+	typedef struct {
+		bit [6:0] address;
+		bit [7:0] data;
+	} tuple;
 	
 	// Test Bank Data Buffers
 	bit [7:0] master_transmit_buffer [$];
-	byte master_receive_buffer [$]; 
-	byte validation_write_buffer[$];
-	byte validation_read_buffer[$];
+	tuple master_receive_buffer [$]; 
+	bit [7:0] validation_write_buffer[$];
+	bit [7:0] validation_read_buffer[$];
 	
 	// FIRE INITIAL LOGIC BLOCKS
 	initial clock_generator();
@@ -69,16 +72,16 @@ module top();
 			master_transmit_buffer.push_back(byte'(i));
 			validation_write_buffer.push_back(byte'(i));
 			end
-		for(i=0;i<QTY_WORDS_TO_WRITE;i++)begin
+		for(i=64;i<=127;i++)begin
 			master_transmit_buffer.push_back(byte'(i));
 			validation_write_buffer.push_back(byte'(i));
 			end
 		i2c_slave0.reset_test_buffers();
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) begin
+		for(i=100;i<=131;i++) begin
 			i2c_slave0.bypass_push_transmit_buf(byte'(i));
 			validation_read_buffer.push_back(byte'(i));
 			end
-		for(i=QTY_WORDS_TO_WRITE;i<QTY_WORDS_TO_WRITE*2;i++) begin
+		for(i=63;i>=0;i--) begin
 			i2c_slave0.bypass_push_transmit_buf(byte'(i));
 			validation_read_buffer.push_back(byte'(i));
 			end
@@ -98,7 +101,7 @@ module top();
 		end
 		++pauser;
 		foreach(validation_read_buffer[i]) begin
-			if(validation_read_buffer[i] != master_receive_buffer[i]) begin
+			if(validation_read_buffer[i] != master_receive_buffer[i].data) begin
 				++fail;
 				failed_cases.push_back(pauser+i);
 			end
@@ -167,8 +170,8 @@ module top();
 	// Define the flow of the simulation
 	task test_flow();
 		logic [7:0] tf_buffer;
+		tuple tf_tup;
 		$display("STARTING TEST FLOW");
-
 		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
 		
@@ -176,39 +179,39 @@ module top();
 		transmit_address_req_write(i2c_slave_addr[8:1]);
 		
 		// Write contents of "output Buffer" to selected I2C Slave in a single stream
-		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) write_data_byte(master_transmit_buffer[i]);
+		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) write_data_byte(master_transmit_buffer.pop_front());
 		issue_stop_command();
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
 
-		/***** TRY OPTIONAL INSTREAM RESET */
-		//disable_dut();
-		/* #1000 reset_generator();
-		enable_dut_with_interrupt();
-		select_I2C_bus(SELECTED_I2C_BUS);*/
-		
 		// Start negotiation and perform read-all task
 		issue_start_command();
 		transmit_address_req_read(i2c_slave_addr[8:1]);
 		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin 
 			read_data_byte_with_continue(tf_buffer); // Read all but the last byte
-			master_receive_buffer.push_back(tf_buffer);
+			tf_tup.address = i2c_slave_addr[8:2];
+			tf_tup.data = tf_buffer;
+			master_receive_buffer.push_back(tf_tup);
 		end
 		read_data_byte_with_stop(tf_buffer); // Read the last byte
-		master_receive_buffer.push_back(tf_buffer);
+			tf_tup.address = i2c_slave_addr[8:2];
+			tf_tup.data = tf_buffer;
+			master_receive_buffer.push_back(tf_tup);
 
 		issue_stop_command();
 		
 		$display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
 		
 		// Start alternating read/write task
-		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) begin
+		for(int i=0;i<QTY_WORDS_TO_WRITE*2;i++) begin
 			issue_start_command();
 			transmit_address_req_write(i2c_slave_addr[8:1]);
 			write_data_byte(master_transmit_buffer[i]);
 			issue_start_command();
 			transmit_address_req_read(i2c_slave_addr[8:1]);
 			read_data_byte_with_stop(tf_buffer);
-			master_receive_buffer.push_back(tf_buffer);
+			tf_tup.address = i2c_slave_addr[8:2];
+			tf_tup.data = tf_buffer;
+			master_receive_buffer.push_back(tf_tup);
 		end
 		/*wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
 		wait_interrupt();**/
@@ -229,7 +232,7 @@ module top();
 					static string temp;
 					s = " Master Received Bytes (0x): ";
 					foreach(master_receive_buffer[i]) begin
-						temp.itoa(integer'(master_receive_buffer[i]));
+						temp.itoa(integer'(master_receive_buffer[i].data));
 						s = {s,temp,","};
 					end
 					$display("%s", s.substr(0,s.len-2));
