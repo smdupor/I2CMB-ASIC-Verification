@@ -153,6 +153,7 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 	endtask
 
 	task receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+		static bit [7:0] write_buf[$];
 		// Read Address and opcode from serial bus
 		//$display("Attempt addr");
 		for(int i=8;i>=1;i--) begin
@@ -171,18 +172,19 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 			// Branch to handle requested op
 			if(!slv_write_response)begin
 				op=I2_READ;
-				receive_data(write_data);
+				receive_data(write_buf);
 			end
 			else begin
 				op=I2_WRITE;
 				transmit_data();
 			end
 		end
+		write_data = write_buf;
 	endtask
 
-	task receive_data(output bit [I2C_DATA_WIDTH-1:0] write_data []);
-		
+	task receive_data(output bit [I2C_DATA_WIDTH-1:0] write_data [$]);
 		static int index;
+		//write_data = new[64];
 		//$display("Attempt recv");
 		while(1) begin
 			if(scl_i==1'b1)
@@ -199,7 +201,7 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 			@(posedge scl_i);
 			@(negedge scl_i) sda_drive =1'bz;
 			slave_receive_buffer.push_back(i2c_slv_io_buffer[8:1]);
-			write_data[index]=i2c_slv_io_buffer[8:1];
+			write_data.push_back(i2c_slv_io_buffer[8:1]);
 			++index;
 			
 			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[8:1]);

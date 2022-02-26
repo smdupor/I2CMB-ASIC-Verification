@@ -177,6 +177,7 @@ module top();
 		i2c_op_t operation;
 		logic [7:0] tf_buffer;
 		tuple tf_tup;
+		localreg = new[32];
 		$display("STARTING TEST FLOW");
 		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
@@ -191,7 +192,7 @@ module top();
 			end
 		join;
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
-
+		foreach(localreg[i]) $display("Recv: %d", localreg[i]);
 		// Start negotiation and perform read-all task
 		fork
 			i2c_slave0.wait_for_start(operation,localreg);
