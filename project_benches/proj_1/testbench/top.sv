@@ -10,7 +10,7 @@ module top();
 	parameter int I2C_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
 	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
-	parameter int SELECTED_I2C_BUS = 0;
+	parameter int SELECTED_I2C_BUS = 2;
 
 	parameter bit VERBOSE_DEBUG_MODE=0;
 	parameter bit TRANSFER_DEBUG_MODE=1;
@@ -130,7 +130,7 @@ module top();
 
 		// Select Slave 0 For testflow
 		//i2c_slave_addr-=1;
-		i2c_slave0.wait_for_start(operation,localreg);
+		//i2c_slave0.wait_for_start(operation,localreg);
 		//i2c_slave1.wait_for_start(operation,localreg);	
 	endtask
 
@@ -173,52 +173,70 @@ module top();
 	// ****************************************************************************
 	// Define the flow of the simulation
 	task test_flow();
+		bit [I2C_DATA_WIDTH-1:0] localreg[];
+		i2c_op_t operation;
 		logic [7:0] tf_buffer;
 		tuple tf_tup;
 		$display("STARTING TEST FLOW");
 		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
+		fork i2c_slave0.wait_for_start(operation,localreg);
+			begin
+				issue_start_command();
+				transmit_address_req_write(i2c_slave_addr[8:1]);
 
-		issue_start_command();
-		transmit_address_req_write(i2c_slave_addr[8:1]);
-
-		// Write contents of "output Buffer" to selected I2C Slave in a single stream
-		for(int i=0;i<QTY_WORDS_TO_WRITE;i++) write_data_byte(master_transmit_buffer.pop_front());
-		issue_stop_command();
+				// Write contents of "output Buffer" to selected I2C Slave in a single stream
+				for(int i=0;i<QTY_WORDS_TO_WRITE;i++) write_data_byte(master_transmit_buffer.pop_front());
+				issue_stop_command();
+			end
+		join;
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
 
 		// Start negotiation and perform read-all task
-		issue_start_command();
-		transmit_address_req_read(i2c_slave_addr[8:1]);
-		for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
-			read_data_byte_with_continue(tf_buffer); // Read all but the last byte
-			tf_tup.address = i2c_slave_addr[8:2];
-			tf_tup.data = tf_buffer;
-			master_receive_buffer.push_back(tf_tup);
-		end
-		read_data_byte_with_stop(tf_buffer); // Read the last byte
-		tf_tup.address = i2c_slave_addr[8:2];
-		tf_tup.data = tf_buffer;
-		master_receive_buffer.push_back(tf_tup);
+		fork
+			i2c_slave0.wait_for_start(operation,localreg);
+			begin
+				issue_start_command();
+				transmit_address_req_read(i2c_slave_addr[8:1]);
+				for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
+					read_data_byte_with_continue(tf_buffer); // Read all but the last byte
+					tf_tup.address = i2c_slave_addr[8:2];
+					tf_tup.data = tf_buffer;
+					master_receive_buffer.push_back(tf_tup);
+				end
+				read_data_byte_with_stop(tf_buffer); // Read the last byte
+				tf_tup.address = i2c_slave_addr[8:2];
+				tf_tup.data = tf_buffer;
+				master_receive_buffer.push_back(tf_tup);
 
-		issue_stop_command();
-
+				issue_stop_command();
+			end
+		join;
 		$display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
 
 		// Start alternating read/write task
 		for(int i=0;i<QTY_WORDS_TO_WRITE*2;i++) begin
-			issue_start_command();
-			transmit_address_req_write(i2c_slave_addr[8:1]);
-			write_data_byte(master_transmit_buffer[i]);
-			issue_start_command();
-			transmit_address_req_read(i2c_slave_addr[8:1]);
-			read_data_byte_with_stop(tf_buffer);
-			tf_tup.address = i2c_slave_addr[8:2];
-			tf_tup.data = tf_buffer;
-			master_receive_buffer.push_back(tf_tup);
+			fork
+				i2c_slave0.wait_for_start(operation,localreg);
+				begin
+					issue_start_command();
+					transmit_address_req_write(i2c_slave_addr[8:1]);
+					write_data_byte(master_transmit_buffer[i]);
+					issue_start_command();
+				end
+			join;
+			fork
+				i2c_slave0.wait_for_start(operation,localreg);
+				begin
+
+					transmit_address_req_read(i2c_slave_addr[8:1]);
+					read_data_byte_with_stop(tf_buffer);
+					tf_tup.address = i2c_slave_addr[8:2];
+					tf_tup.data = tf_buffer;
+					master_receive_buffer.push_back(tf_tup);
+				end
+			join;
 		end
-		/*wb_bus.master_write(CMDR, I2C_STOP); 		// Stop the transaction/Close connection
-		wait_interrupt();**/
 		issue_stop_command();
 
 		// Print Results of test flow/Reports

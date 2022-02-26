@@ -30,9 +30,9 @@ interface i2c_if       #(
 
 	bit start;
 	bit sampler_running;
-	bit [1:0] interrupt;
-	bit [8:0] buffer;
-	bit we;
+	bit [1:0] i2c_slv_interrupt;
+	bit [8:0] i2c_slv_io_buffer;
+	bit slv_write_response;
 	bit [7:0] slave_receive_buffer[$];
 	bit [7:0] slave_transmit_buffer[$];
 
@@ -40,7 +40,7 @@ interface i2c_if       #(
 		slave_address = (input_addr << 2);
 		start = 1'b0;
 		sampler_running=1'b0;
-		interrupt = INTR_RST;
+		i2c_slv_interrupt = INTR_RST;
 		detect_connection_negotiation();
 	endtask
 
@@ -90,51 +90,52 @@ interface i2c_if       #(
 			case(control)
 				2'b01: begin // start or Re-start
 					if(start==1'b0) begin
-						interrupt = RAISE_START;
+						i2c_slv_interrupt = RAISE_START;
 					end
 					else begin
-						interrupt = RAISE_RESTART;
+						i2c_slv_interrupt = RAISE_RESTART;
 					end
 					start = 1'b1;end
 				2'b10: begin // end condition
-					interrupt = RAISE_STOP;
+					i2c_slv_interrupt = RAISE_STOP;
 					start = 1'b0;
 				end
 			endcase
-			if(~sampler_running) return;
+			//if(~sampler_running) return;
 		end
 	endtask
 
 	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 
-		$display("REPORT SUCCESSFUL BOOT!");
+		//$display("REPORT SUCCESSFUL BOOT!");
 		//if(~sampler_running) fork detect_connection_negotiation();
 
-			forever begin
-				wait(start == 1'b1 && (interrupt == RAISE_START || interrupt == RAISE_RESTART));
-				interrupt = INTR_RST; // Reset the interrupt on detected
+		//	forever begin
+				wait(start == 1'b1 && (i2c_slv_interrupt == RAISE_START || i2c_slv_interrupt == RAISE_RESTART));
+				i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
 				receive_address(op, write_data); // Handle the request
-			end
+			//end
 		//join;
 	endtask
 
 	task receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 		// Read Address and opcode from serial bus
+		//$display("Attempt addr");
 		for(int i=8;i>=1;i--) begin
 			@(posedge scl_i);
-			buffer[i] = sda_i;
+			i2c_slv_io_buffer[i] = sda_i;
 			@(negedge scl_i) if(intr_raised()) return;
 		end
-		if(buffer[8:2]==slave_address[8:2] || buffer[8:2]==7'b000_0000) begin
+		if(i2c_slv_io_buffer[8:2]==slave_address[8:2] || i2c_slv_io_buffer[8:2]==7'b000_0000) begin
 			// SEND THE ACK Back to master upon a match
 			sda_drive <= 1'b0;
 			@(negedge scl_i) sda_drive <= 1'bz;
 
 			// Select the writeenable to branch from
-			we=buffer[1];
+			slv_write_response=i2c_slv_io_buffer[1];
 
 			// Branch to handle requested op
-			if(!we)begin
+			if(!slv_write_response)begin
 				op=I2_READ;
 				receive_data(write_data);
 			end
@@ -146,20 +147,28 @@ interface i2c_if       #(
 	endtask
 
 	task receive_data(output bit [I2C_DATA_WIDTH-1:0] write_data []);
+		
 		static int index;
+		//$display("Attempt recv");
 		while(1) begin
+			if(scl_i==1'b1)
+			if(intr_raised()) return;
 			for(int i=8;i>=1;i--) begin
+				if(intr_raised()) return;
 				@(posedge scl_i);
-				buffer[i] = sda_i;
-				@(negedge scl_i) if(intr_raised()) return;
+				while(scl_i ==1'b1 && !intr_raised())
+					#10 i2c_slv_io_buffer[i] = sda_i; 
+				if(intr_raised()) return;
+				//@(negedge scl_i) if(intr_raised()) return;
 			end
 			sda_drive = 1'b0;
 			@(posedge scl_i);
 			@(negedge scl_i) sda_drive =1'bz;
-			slave_receive_buffer.push_back(buffer[8:1]);
-			write_data[index]=buffer[8:1];
+			slave_receive_buffer.push_back(i2c_slv_io_buffer[8:1]);
+			write_data[index]=i2c_slv_io_buffer[8:1];
 			++index;
-			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",buffer[8:1]);
+			
+			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[8:1]);
 		end
 	endtask
 
@@ -169,11 +178,11 @@ interface i2c_if       #(
 		local_ack = 0;
 		for(j=0;j<=128;j++)begin // TODO!!!!!! NEED TO READ FOREVER NOT UPTO 128
 		// Get data out of buffer to send
-			buffer[8:1] = slave_transmit_buffer.pop_front();
+			i2c_slv_io_buffer[8:1] = slave_transmit_buffer.pop_front();
 
 			//Send a byte on sda while clock is high			
 			for(i=8;i>=1;i--) begin
-				sda_drive <= buffer[i];
+				sda_drive <= i2c_slv_io_buffer[i];
 				@(posedge scl_i);
 				@(negedge scl_i);
 			end
@@ -183,7 +192,7 @@ interface i2c_if       #(
 			@(posedge scl_i) local_ack = sda_i;
 
 			// Debug output
-			next_xfer_oracle=buffer[8:1];
+			next_xfer_oracle=i2c_slv_io_buffer[8:1];
 
 			// Check for NACK/DONE or STOP/RESTART CONDTION
 			if(local_ack==1'b1) return;
@@ -195,6 +204,6 @@ interface i2c_if       #(
 
 
 	function bit intr_raised();
-		intr_raised = (interrupt == RAISE_STOP || interrupt == RAISE_RESTART || interrupt == RAISE_START);
+		intr_raised = (i2c_slv_interrupt == RAISE_STOP || i2c_slv_interrupt == RAISE_RESTART || i2c_slv_interrupt == RAISE_START);
 	endfunction
 endinterface
