@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 
 interface i2c_if       #(
-	int ADDR_WIDTH = 32,
-	int DATA_WIDTH = 16,
+	int I2C_ADDR_WIDTH = 10,
+	int I2C_DATA_WIDTH = 8,
 	bit TRANSFER_DEBUG_MODE=0 //,
 	//bit [6:0] SLAVE_ADDRESS = 0                          
 )
@@ -16,46 +16,38 @@ interface i2c_if       #(
 	output wire sda_o,
 	output byte most_recent_xfer
 );
+	import i2c_types_pkg::*;
+
 	logic sda_drive=1'b1;
 	assign sda_o = sda_drive;
-
-	parameter SCL_RATE = 1e5; // In kHz
-	parameter int SCL_PERIOD = 5000;
-	//parameter SLAVE_ADDRESS = 7'h44;
 
 	logic [7:0] next_xfer_oracle;
 	assign most_recent_xfer = next_xfer_oracle;
 
-
 	enum bit [1:0] {INTR_RST=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} stst;
-
-	longint simulation_cycles;
 
 	bit [8:0] slave_address;
 
-	bit start = 1'b0;
-	bit [3:0] status = 2'b0;
-	bit [1:0] interrupt = 2'b0;
-	int counter;
+	bit start;
+	bit sampler_running;
+	bit [1:0] interrupt;
 	bit [8:0] buffer;
 	bit we;
-	bit nack;
-	byte slave_receive_buffer[$];
-	byte slave_transmit_buffer[$];
+	bit [7:0] slave_receive_buffer[$];
+	bit [7:0] slave_transmit_buffer[$];
 
-	always @(posedge clk_i) simulation_cycles += 1;
-
-	// ****************************************************************************
-
-	task configure(input bit [8:0] input_addr);
+	task reset_and_configure(input bit [8:0] input_addr);
 		slave_address = (input_addr << 2);
 		start = 1'b0;
+		sampler_running=1'b0;
+		interrupt = INTR_RST;
+		detect_connection_negotiation();
 	endtask
 
 	task bypass_push_transmit_buf(input byte slv_xmit_value);
 		slave_transmit_buffer.push_back(slv_xmit_value);
 	endtask
-	
+
 	function byte get_receive_entry(int i);
 		return slave_receive_buffer[i];
 	endfunction
@@ -79,7 +71,8 @@ interface i2c_if       #(
 	task detect_connection_negotiation();
 		static bit [1:0] control;
 		static logic [3:0] sample;
-		@(posedge clk_i); // Wait for Serial clock to rise to init
+		sampler_running = 1'b1;
+		@(posedge clk_i); // Wait for Serial clock to rise to 
 		forever begin
 			// Continuously sample sda and scl at 100MHz
 			sample[0]=sda_i;
@@ -108,23 +101,24 @@ interface i2c_if       #(
 					start = 1'b0;
 				end
 			endcase
+			if(~sampler_running) return;
 		end
 	endtask
 
-	task wait_for_start(output bit [8:0] data);
+	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 
 		$display("REPORT SUCCESSFUL BOOT!");
-		fork detect_connection_negotiation();
+		//if(~sampler_running) fork detect_connection_negotiation();
 
 			forever begin
 				wait(start == 1'b1 && (interrupt == RAISE_START || interrupt == RAISE_RESTART));
 				interrupt = INTR_RST; // Reset the interrupt on detected
-				receive_address(); // Handle the request
+				receive_address(op, write_data); // Handle the request
 			end
-		join;
+		//join;
 	endtask
 
-	task receive_address();
+	task receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 		// Read Address and opcode from serial bus
 		for(int i=8;i>=1;i--) begin
 			@(posedge scl_i);
@@ -140,12 +134,19 @@ interface i2c_if       #(
 			we=buffer[1];
 
 			// Branch to handle requested op
-			if(!we) receive_data();
-			else transmit_data();
+			if(!we)begin
+				op=I2_READ;
+				receive_data(write_data);
+			end
+			else begin
+				op=I2_WRITE;
+				transmit_data();
+			end
 		end
 	endtask
 
-	task receive_data();
+	task receive_data(output bit [I2C_DATA_WIDTH-1:0] write_data []);
+		static int index;
 		while(1) begin
 			for(int i=8;i>=1;i--) begin
 				@(posedge scl_i);
@@ -156,6 +157,8 @@ interface i2c_if       #(
 			@(posedge scl_i);
 			@(negedge scl_i) sda_drive =1'bz;
 			slave_receive_buffer.push_back(buffer[8:1]);
+			write_data[index]=buffer[8:1];
+			++index;
 			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",buffer[8:1]);
 		end
 	endtask
