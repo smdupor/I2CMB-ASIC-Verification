@@ -30,8 +30,10 @@ interface i2c_if       #(
 
 	bit start;
 	bit sampler_running;
+	bit monitor_only;
 	bit [1:0] i2c_slv_interrupt;
 	bit [8:0] i2c_slv_io_buffer;
+	bit [8:0] i2c_slv_mon_buffer;
 	bit slv_write_response;
 	bit [7:0] slave_receive_buffer[$];
 	bit [7:0] slave_transmit_buffer[$];
@@ -40,6 +42,7 @@ interface i2c_if       #(
 		slave_address = (input_addr << 2);
 		start = 1'b0;
 		sampler_running=1'b0;
+		monitor_only = 1'b1;
 		i2c_slv_interrupt = INTR_RST;
 		detect_connection_negotiation();
 	endtask
@@ -105,8 +108,39 @@ interface i2c_if       #(
 		end
 	endtask
 
-	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data []);
+	//static bit[6:0] addr;
+	static bit we;
+	static bit ack;
+	//static bit [7:0] data[];
+	static int mon_index;
+	wait(start == 1'b1 && (i2c_slv_interrupt == RAISE_START || i2c_slv_interrupt == RAISE_RESTART));
+	if(monitor_only) i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
+	for(int i=8;i>=0;i--) begin
+			@(posedge scl_i);
+			i2c_slv_mon_buffer[i] = sda_i;
+			@(negedge scl_i) if(intr_raised()) return;
+		end
+		addr=i2c_slv_mon_buffer[8:2];
+		op = i2c_slv_mon_buffer[1]? I2_WRITE : I2_READ;
+		ack=i2c_slv_mon_buffer[0];
+	while(1) begin
+			if(scl_i==1'b1 && intr_raised())return;
+			
+			for(int i=8;i>=0;i--) begin
+				if(intr_raised()) return;
+				@(posedge scl_i);
+				while(scl_i ==1'b1 && !intr_raised())
+					#10 i2c_slv_mon_buffer[i] = sda_i; 
+			end
+			data[mon_index]=i2c_slv_mon_buffer[8:1];
+			ack=i2c_slv_mon_buffer[0];
+			++mon_index;
+			end
+	endtask
 
+	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+		monitor_only <= 1'b0;
 		//$display("REPORT SUCCESSFUL BOOT!");
 		//if(~sampler_running) fork detect_connection_negotiation();
 
