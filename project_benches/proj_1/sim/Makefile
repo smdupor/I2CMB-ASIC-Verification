@@ -33,7 +33,7 @@ optimize:
 compile: comp_I2C_MB comp_slave optimize
 
 simulate:
-	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do; run 100ms" optimized_debug_top_tb &
+	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
 
 debug: clean compile simulate
 

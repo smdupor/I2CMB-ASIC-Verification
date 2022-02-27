@@ -15,18 +15,16 @@ add wave -noupdate /top/DUT/we_i
 add wave -noupdate /top/DUT/dat_i
 add wave -noupdate /top/DUT/dat_o
 add wave -noupdate /top/DUT/irq
-add wave -noupdate -divider {I2C Signals}
+add wave -noupdate -divider {I2C System-Wide Signals}
 add wave -noupdate /top/DUT/scl_i
 add wave -noupdate /top/DUT/sda_i
 add wave -noupdate /top/DUT/scl_o
 add wave -noupdate /top/DUT/sda_o
-add wave -noupdate -divider {I2C Slave BFM Internal Signals}
-add wave -noupdate /top/i2c_slave0/i2c_slv_interrupt
-add wave -noupdate /top/i2c_slave0/i2c_slv_io_buffer
-add wave -noupdate /top/i2c_slave0/slv_write_reponse
-add wave -noupdate /top/i2c_slave0/sda_drive
-add wave -noupdate /top/i2c_slave0/sda_o
-add wave -noupdate -divider {I2C MON Internal Signals}
+add wave -noupdate -divider {I2C Slave BFM Driver Internal Signals}
+add wave -noupdate /top/i2c_bus/driver_interrupt
+add wave -noupdate /top/i2c_bus/driver_buffer
+add wave -noupdate /top/i2c_bus/sda_drive
+add wave -noupdate /top/i2c_bus/sda_o
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ns} 0}
 quietly wave cursor active 0

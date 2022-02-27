@@ -82,7 +82,7 @@ module top();
 	// ****************************************************************************
 	// System-level clock: Generate a 10ns system clock which drives DUT logic
 	// ****************************************************************************
-	initial begin : clock_generator
+	initial begin : clk_generator
 		clk <= 1;
 		forever #5 clk = ~clk;
 	end
@@ -90,7 +90,7 @@ module top();
 	// ****************************************************************************
 	// Hard Reset: Reset BOTH the DUT and the I2C Slave BFM
 	// ****************************************************************************
-	initial begin : reset_generator
+	initial begin : rst_generator
 		i2c_slave_addr = SELECTED_I2C_SLAVE_ADDRESS;
 		fork i2c_bus.reset_and_configure(i2c_slave_addr); join_none;
 		rst <= 1;
@@ -356,11 +356,12 @@ module top();
 	task check_and_scoreboard();
 		int pass, fail,pauser;
 		int failed_cases[$];
+		$display("");
 		display_hstars();
 		$display("\t TRANSFERS COMPLETE; VALIDATING STORED TRANSFERS");
 		display_hrule();
+		
 		foreach(validation_write_buffer[i]) begin
-			//$display ("Val: %d, Got: %d",validation_write_buffer[i],i2c_slave0.get_receive_entry(i));
 			if(validation_write_buffer[i] != i2c_bus.get_receive_entry(i)) begin
 				++fail;
 				failed_cases.push_back(i);
@@ -381,7 +382,7 @@ module top();
 			$display("\t\tTEST CASES FAILED: %d\n", fail);
 			foreach(failed_cases[i]) $display("FAIL Transaction # %d ",failed_cases[i]);
 		end
-		else $display("ALL test cases PASSED: Total valid bytes transferred: %d",pass);
+		else $display("ALL test cases PASSED: %d Test cases validated.",pass);
 
 	endtask
 
@@ -393,6 +394,7 @@ module top();
 		static string s;
 		static string temp;
 		display_hstars();
+		$display("");
 		$display("\t\tCOMPACT COMPLETE TRANSFER REPORT \n\t\t\t\t(In-Order)");
 		display_hrule();
 		$display("MASTER WB-Bus Received Bytes from READS:");
