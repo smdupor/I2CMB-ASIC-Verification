@@ -16,8 +16,8 @@ module top();
 	// Verbosity Debug Printing Levels
 	parameter bit VERBOSE_DEBUG_MODE = 0;
 	parameter bit TRANSFER_DEBUG_MODE = 0;
-	parameter bit ENABLE_WISHBONE_MON = 0;
-
+	parameter bit ENABLE_WISHBONE_VERBOSE_DEBUG = 0;
+	parameter bit ENABLE_WISHBONE_SIMPLE_DEBUG = 0;
 
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 2;
@@ -55,6 +55,11 @@ module top();
 	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx,DISABLE_CORE=8'b0xxxxxxx,
 		SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, I2C_WRITE=8'bxxxxx001,
 		I2C_STOP=8'bxxxxx101, READ_WITH_NACK=8'bxxxxx011, READ_WITH_ACK=8'bxxxxx010} cmd;
+	
+	enum logic[2:0] {M_SET_I2C_BUS=3'b110, M_I2C_START=3'b100, M_I2C_WRITE=3'b001,
+		M_I2C_STOP=3'b101, M_READ_WITH_NACK=3'b011, M_READ_WITH_ACK=3'b010} mon;
+	
+	
 	enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
 
 	bit [8:0] i2c_slave_addr;
@@ -225,16 +230,36 @@ module top();
 	// 			Wishbone-transfer monitoring is disabled at this time.
 	// ****************************************************************************
 	initial begin : wishbone_monitor
+		static bit transfer_in_progress, print_next_read;
+		static bit [7:0] last_dpr;
 		forever begin
-			#10 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
+			#20 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
 			if(adr_mon == 0) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-			end else if(adr_mon == 1) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: DPR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
-			end else if(adr_mon == 2) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: CMDR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
-			end else begin
-				if(ENABLE_WISHBONE_MON) $display("Address: %h Data: %h we: %h", adr_mon, dat_mon, we_mon);
+				// DUT Enable/Disable
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
+			end 
+			else if(adr_mon == 1) begin
+					if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
+				last_dpr = dat_mon;
+				if(print_next_read) begin
+					print_next_read = 1'b0;
+					$display("\tWB_BUS Read 0x%h", last_dpr);
+				end
+				end
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] DPR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
+			end 
+			else if(adr_mon == 2) begin
+				if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
+				if(dat_mon[2:0] == M_I2C_START) $display("\tWB_BUS: Sent START");
+				if(dat_mon[2:0] == M_I2C_STOP) $display("\tWB_BUS: Sent STOP");
+				if(dat_mon[2:0] == M_I2C_WRITE) $display("\tWB_BUS: Wrote 0x%h", last_dpr);
+				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
+				end 
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
+			
+			end
+			 else begin
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end
 		end
 	end
