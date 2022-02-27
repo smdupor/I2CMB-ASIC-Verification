@@ -70,75 +70,35 @@ module top();
 	recv_tuple_t master_receive_buffer [$];
 	bit [7:0] slave_read_transmit_buffer[2][$];
 
+	//_____________________________________________________________________________________\\
+	//                           SYSTEM-LEVEL SIGNAL GENERATORS                            \\
+	//_____________________________________________________________________________________\\
 
-	// Generate all required values for all tests, and store in both
-	// driver buffers (will be destroyed) and validation buffers
-	// which are not modifed after this step. This allows for
-	// straightforward test flow and automated checking of results
-	// at conclusion of simulation.
-	initial begin : generator_populate_test_buffers
-		int i;
-		// Generate data for first series of writes
-		for(i=0;i<=31;i++) begin
-			master_transmit_buffer.push_back(byte'(i));
-			validation_write_buffer.push_back(byte'(i));
-		end
-		// Generate data for reads in second series of reads
-		i2c_bus.reset_test_buffers();
-		for(i=100;i<=131;i++) begin
-			slave_read_transmit_buffer[0].push_back(byte'(i));
-			validation_read_buffer.push_back(byte'(i));
-		end
-		// Generate data for writes in third alternating r/w series
-		for(i=64;i<=127;i++)begin
-			master_transmit_buffer.push_back(byte'(i));
-			validation_write_buffer.push_back(byte'(i));
-		end
-		// Generate data for reads in third alternating r/w series
-		for(i=63;i>=0;i--) begin
-			slave_read_transmit_buffer[1].push_back(byte'(i));
-			validation_read_buffer.push_back(byte'(i));
-		end
-	end
-
+	// ****************************************************************************
 	// System-level clock: Generate a 10ns system clock which drives DUT logic
+	// ****************************************************************************
 	initial begin : clock_generator
 		clk <= 1;
 		forever #5 clk = ~clk;
 	end
 
-
+	// ****************************************************************************
 	// Hard Reset: Reset BOTH the DUT and the I2C Slave BFM
+	// ****************************************************************************
 	initial begin : reset_generator
 		i2c_slave_addr = SELECTED_I2C_SLAVE_ADDRESS;
 		fork i2c_bus.reset_and_configure(i2c_slave_addr); join_none;
 		rst <= 1;
 		#133 rst = ~rst;
 	end
-
-
-	// ****************************************************************************
-	// Monitor Wishbone bus and display transfers in the transcript
-	// NB: Control of monitoring level is parameterized and BY DEFAULT,
-	// Wishbone-transfer monitoring is disabled at this time.
-	initial begin : wishbone_monitor
-		forever begin
-			#10 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
-			if(adr_mon == 0) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-			end else if(adr_mon == 1) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: DPR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
-
-			end else if(adr_mon == 2) begin
-				if(ENABLE_WISHBONE_MON) $display("Address: CMDR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
-			end else begin
-				if(ENABLE_WISHBONE_MON) $display("Address: %h Data: %h we: %h", adr_mon, dat_mon, we_mon);
-			end
-		end
-	end
+	
+	//_____________________________________________________________________________________\\
+	//                           TOP-LEVEL TEST FLOW                                       \\
+	//_____________________________________________________________________________________\\
 
 	// ****************************************************************************
 	// Define the flow of the simulation
+	// ****************************************************************************
 	initial begin : test_flow
 		bit [I2C_DATA_WIDTH-1:0] localreg[];
 		bit transfer_complete;
@@ -253,9 +213,36 @@ module top();
 		// Exit the tests
 		$finish;
 	end
+	
+	
+	//_____________________________________________________________________________________\\
+	//                           CMD/SIGNAL MONITORING                                     \\
+	//_____________________________________________________________________________________\\
 
+	// ****************************************************************************
+	// Monitor Wishbone bus and display transfers in the transcript
+	// 			NB: Control of monitoring level is parameterized and BY DEFAULT,
+	// 			Wishbone-transfer monitoring is disabled at this time.
+	// ****************************************************************************
+	initial begin : wishbone_monitor
+		forever begin
+			#10 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
+			if(adr_mon == 0) begin
+				if(ENABLE_WISHBONE_MON) $display("Address: CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
+			end else if(adr_mon == 1) begin
+				if(ENABLE_WISHBONE_MON) $display("Address: DPR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
+			end else if(adr_mon == 2) begin
+				if(ENABLE_WISHBONE_MON) $display("Address: CMDR (%h) Data: %h we: %h", adr_mon, dat_mon, we_mon);
+			end else begin
+				if(ENABLE_WISHBONE_MON) $display("Address: %h Data: %h we: %h", adr_mon, dat_mon, we_mon);
+			end
+		end
+	end
+
+	// ****************************************************************************
 	// Monitor I2C Bus and display all transfers with DIRECTION, associated ADDRESS, 
 	// and captured DATA for each transfer. Messages are grouped by complete transfer.
+	// ****************************************************************************
 	initial begin : monitor_i2c_bus
 		bit[I2C_ADDR_WIDTH-1:0] i2mon_addr;
 		i2c_op_t i2mon_op;
@@ -293,7 +280,54 @@ module top();
 			if(s.len>60) display_hrule;
 		end
 	end
+	
+	//_____________________________________________________________________________________\\
+	//                                 VALUE GENERATION                                    \\
+	//_____________________________________________________________________________________\\
+	
+	// ****************************************************************************
+	// Generate all required values for all tests, and store in
+	// 		driver buffers (which will be destroyed) and validation buffers
+	// 		(which are not modified after this step). This allows for
+	// 		straightforward test flow and automated checking of results
+	// 		at conclusion of simulation.
+	// ****************************************************************************
+	initial begin : generator_populate_test_buffers
+		int i;
+		// Generate data for first series of writes
+		for(i=0;i<=31;i++) begin
+			master_transmit_buffer.push_back(byte'(i));
+			validation_write_buffer.push_back(byte'(i));
+		end
+		// Generate data for reads in second series of reads
+		i2c_bus.reset_test_buffers();
+		for(i=100;i<=131;i++) begin
+			slave_read_transmit_buffer[0].push_back(byte'(i));
+			validation_read_buffer.push_back(byte'(i));
+		end
+		// Generate data for writes in third alternating r/w series
+		for(i=64;i<=127;i++)begin
+			master_transmit_buffer.push_back(byte'(i));
+			validation_write_buffer.push_back(byte'(i));
+		end
+		// Generate data for reads in third alternating r/w series
+		for(i=63;i>=0;i--) begin
+			slave_read_transmit_buffer[1].push_back(byte'(i));
+			validation_read_buffer.push_back(byte'(i));
+		end
+	end
 
+	//_____________________________________________________________________________________\\
+	//                           VALUE VALIDATION AND REPORTING                            \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// Utilizing stored unaltered validation queues, test the values of all bytes transferred,
+	// both writes and reads, utilizing the storage memories of the driver modules.
+	// If all values match their predicted value, report ALL test cases passed and continue.
+	// If some test cases failed, report quantity failed, and report which (in numerical order)
+	// test cases show a mismatched value.
+	// ****************************************************************************
 	task check_and_scoreboard();
 		int pass, fail,pauser;
 		int failed_cases[$];
@@ -326,6 +360,10 @@ module top();
 
 	endtask
 
+	// ****************************************************************************
+	// Print the compact complete report of ALL bytes READ by the WB-Master from 
+	// the I2C slave since the last system reset.
+	// ****************************************************************************
 	task master_print_read_report();
 		static string s;
 		static string temp;
@@ -342,43 +380,77 @@ module top();
 		$display("%s", s.substr(0,s.len-2));
 		display_hrule();
 	endtask
+	
+	//_____________________________________________________________________________________\\
+	//                           WISHBONE DRIVER ABSTRACTIONS                              \\
+	//_____________________________________________________________________________________\\
 
-	task issue_stop_command();
-		wb_bus.master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
-		wait_interrupt();
-	endtask
-
+	// ****************************************************************************
+	// Enable the DUT core. Effectively, a soft reset after a disable command
+	// 		NB: Also sets the enable_interrupt bit of the DUT such that we can use
+	// 			raised interrupts to determine DUT-ready rather than polling
+	//			DUT registers for readiness.
+	// ****************************************************************************
 	task enable_dut_with_interrupt();
 		wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT
 	endtask
-
-	task disable_dut();
-		wb_bus.master_write(CSR, DISABLE_CORE); // Enable DUT
-		repeat(2) begin @(posedge clk); $display("Stall"); end
-	endtask
-
-	task wait_interrupt();
-		wait(irq==1'b1);
-		wb_bus.master_read(CMDR, buf_in);
-	endtask
-
-	task wait_interrupt_with_NACK();
-		wait(irq==1'b1);
-		wb_bus.master_read(CMDR, buf_in);
-		if(buf_in[6]==1'b1) $display("\t[ WB ] NACK");
-	endtask
-
+	
+	// ****************************************************************************
+	// Select desired I2C bus of DUT to use for transfers.
+	// ****************************************************************************
 	task select_I2C_bus(input bit [7:0] selected_bus);
 		wb_bus.master_write(DPR, selected_bus);
 		wb_bus.master_write(CMDR, SET_I2C_BUS);
 		wait_interrupt;
 	endtask
 
+	// ****************************************************************************
+	// Disable the DUT and STALL for 2 system cycles
+	// ****************************************************************************
+	task disable_dut();
+		wb_bus.master_write(CSR, DISABLE_CORE); // Enable DUT
+		repeat(2) begin @(posedge clk); $display("Stall"); end
+	endtask
+
+	// ****************************************************************************
+	// Wait for, and clear, interrupt rising from WB-end of DUT. 
+	// Do not check incoming status bits.
+	// ****************************************************************************
+	task wait_interrupt();
+		wait(irq==1'b1);
+		wb_bus.master_read(CMDR, buf_in);
+	endtask
+
+	// ****************************************************************************
+	// Wait for, and clear, interrupt rising from WB-end of DUT. 
+	// Check status register and alert user to problem if a NACK was received.
+	// ****************************************************************************
+	task wait_interrupt_with_NACK();
+		wait(irq==1'b1);
+		wb_bus.master_read(CMDR, buf_in);
+		if(buf_in[6]==1'b1) $display("\t[ WB ] NACK");
+	endtask
+
+	// ****************************************************************************
+	// Send a start command to I2C nets via DUT
+	// ****************************************************************************
 	task issue_start_command();
 		wb_bus.master_write(CMDR, I2C_START);
 		wait_interrupt();
 	endtask
 
+	// ****************************************************************************
+	// Send a stop command to I2C Nets via DUT
+	// ****************************************************************************
+	task issue_stop_command();
+		wb_bus.master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
+		wait_interrupt();
+	endtask
+
+	// ****************************************************************************
+	// Format incoming address byte and set R/W bit to request a WRITE.
+	// Transmit this formatted address byte on the I2C bus
+	// ****************************************************************************
 	task transmit_address_req_write(input bit [7:0] addr);
 		addr = addr << 2;
 		addr[0]=1'b0;
@@ -387,6 +459,10 @@ module top();
 		wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
 	endtask
 
+	// ****************************************************************************
+	// Format incoming address byte and set R/W bit to request a READ.
+	// Transmit this formatted address byte on the I2C bus
+	// ****************************************************************************
 	task transmit_address_req_read(input bit [7:0] addr);
 		addr = addr << 2;
 		addr[0]=1'b1;
@@ -395,6 +471,10 @@ module top();
 		wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack
 	endtask
 
+	// ****************************************************************************
+	// Write a single byte of data to a previously-addressed I2C Slave
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
 	task write_data_byte(input bit [7:0] data);
 		if(TRANSFER_DEBUG_MODE) $write("\t%d -->>> [WB]  {DUT}",data);
 		wb_bus.master_write(DPR, data);
@@ -402,6 +482,11 @@ module top();
 		wait_interrupt_with_NACK();
 	endtask
 
+	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that we are REQUESTING ANOTHER byte after this byte.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
 	task read_data_byte_with_continue(output bit [7:0] iobuf);
 		wb_bus.master_write(CMDR, READ_WITH_ACK);
 		wait_interrupt_with_NACK();
@@ -409,6 +494,12 @@ module top();
 		if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
 	endtask
 
+	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that this is the LAST BYTE of this transfer, and the next
+	// 		bus action will be a STOP signal.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
 	task read_data_byte_with_stop(output bit [7:0] iobuf);
 		wb_bus.master_write(CMDR, READ_WITH_NACK);
 		wait_interrupt_with_NACK();
@@ -416,7 +507,10 @@ module top();
 		if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
 	endtask
 
-
+	//_____________________________________________________________________________________\\
+	//                           INTERFACE/DUT INSTANTIATIONS                              \\
+	//_____________________________________________________________________________________\\
+	
 	// ****************************************************************************
 	// Instantiate the slave I2C Bus Functional Model
 	i2c_if		#(
@@ -432,6 +526,7 @@ module top();
 		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
 	);
 
+	// ****************************************************************************
 	// Instantiate the Wishbone master Bus Functional Model
 	wb_if       #(
 	.ADDR_WIDTH(WB_ADDR_WIDTH),
