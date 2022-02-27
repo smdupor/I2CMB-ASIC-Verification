@@ -17,7 +17,7 @@ package i2c_types_pkg;
 
 	function void display_header_banner();
 		display_hstars();
-		$display("\t\t\tSTARTING TEST FLOW");
+		$display("\t\t\tSTARTING TEST FLOW:\n\tTransfer data from monitors follows.");
 		display_hstars();
 	endfunction
 
@@ -27,9 +27,9 @@ package i2c_types_pkg;
 		$display("\t\t\tNCSU ECE745 SPRING 2022 Project Author:\n");
 		$display("\tStevan Dupor : smdupor@ncsu.edu : Section 001");
 		display_h_lowbar();
-		$display("Author's Note: For your convenience, Wishbone-Side Monitor Messaging has been disabled.");
-		$display(" Increasing levels of monitor verbosity may be enabled using the \n ENABLE_WISHBONE_SIMPLE_DEBUG and ");
-		$display(" ENABLE_WISHBONE_VERBOSE_DEBUG parameters (set to 1). Thank you. \n\n\n");
+		//$display("Author's Note: For your convenience, Wishbone-Side Monitor Messaging has been disabled.");
+		//$display(" Increasing levels of monitor verbosity may be enabled using the \n ENABLE_WISHBONE_SIMPLE_DEBUG and ");
+		//$display(" ENABLE_WISHBONE_VERBOSE_DEBUG parameters (set to 1). Thank you. \n\n\n");
 		//display_hstars();
 	endfunction
 	

@@ -17,7 +17,7 @@ module top();
 	parameter bit VERBOSE_DEBUG_MODE = 0;
 	parameter bit TRANSFER_DEBUG_MODE = 0;
 	parameter bit ENABLE_WISHBONE_VERBOSE_DEBUG = 0;
-	parameter bit ENABLE_WISHBONE_SIMPLE_DEBUG = 0;
+	parameter bit ENABLE_WISHBONE_SIMPLE_DEBUG = 1;
 
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 2;
@@ -230,35 +230,57 @@ module top();
 	// 			Wishbone-transfer monitoring is disabled at this time.
 	// ****************************************************************************
 	initial begin : wishbone_monitor
-		static bit transfer_in_progress, print_next_read;
+		static bit transfer_in_progress, print_next_read, address_state;
 		static bit [7:0] last_dpr;
+		string s,t;
 		forever begin
-			#20 wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
+			// Initiate Wishbone master monitoring no more than once per system clock
+			@(posedge clk) wb_bus.master_monitor(adr_mon, dat_mon, we_mon);
 			if(adr_mon == 0) begin
-				// DUT Enable/Disable
+				// Monitor for DUT Enable/Disable
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end 
-			else if(adr_mon == 1) begin
+			else if(adr_mon == 1) begin // Monitor for commands passed to DUT
 					if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
 				last_dpr = dat_mon;
-				if(print_next_read) begin
+				if(print_next_read) begin // Swallow interrupt reads and print transfers only
 					print_next_read = 1'b0;
-					$display("\tWB_BUS Read 0x%h", last_dpr);
+					$display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
 				end
-				end
+			end
+			//	Verbose mode: Show all register reads
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] DPR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end 
 			else if(adr_mon == 2) begin
 				if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
-				if(dat_mon[2:0] == M_I2C_START) $display("\tWB_BUS: Sent START");
-				if(dat_mon[2:0] == M_I2C_STOP) $display("\tWB_BUS: Sent STOP");
-				if(dat_mon[2:0] == M_I2C_WRITE) $display("\tWB_BUS: Wrote 0x%h", last_dpr);
+					// Detect start condition and prepare start && address report
+				if(dat_mon[2:0] == M_I2C_START && we_mon) begin
+					s = "\t\t\t\t\t\t\t\tWB_BUS: Sent START";
+					transfer_in_progress = 1'b1;
+					address_state = 1'b1;
+				end
+					// Detect stop condition and immediately report 
+				if(dat_mon[2:0] == M_I2C_STOP && we_mon) begin
+					$display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
+					transfer_in_progress = 1'b0;
+				end
+					// Determine whether write action is requesting an address transmit,  a write, or a read
+				if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !address_state) begin $display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);end
+				else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
+						t.itoa(integer'(last_dpr[8:1]));
+						if(last_dpr[0]==1'b0) s = {s," && Address ", t," : req. WRITE"};
+						else s = {s," && Address ", t, " : req. READ"};
+						$display("%s",s);
+					address_state = 1'b0;
+				end
+					// Detect that we are swallowing an interrupt read for a COMMAND READ and notify statemachine
 				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
 				end 
-				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-			
+					// If verbose debugging, display all command register actions
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);			
 			end
-			 else begin
+			else begin
+					// if verbose debugging, display all non-specific commands outside of prior decision tree
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end
 		end
@@ -298,6 +320,7 @@ module top();
 				temp.itoa(integer'(i2mon_data[i]));
 				s = {s,temp,","};
 			end
+
 			$display("%s", s.substr(0,s.len-2));
 
 			// In the case of a multi-line transfer, print a horizontal rule to make clear where 
@@ -356,9 +379,10 @@ module top();
 	task check_and_scoreboard();
 		int pass, fail,pauser;
 		int failed_cases[$];
-		$display("");
+		$display("\n\n");
 		display_hstars();
-		$display("\t TRANSFERS COMPLETE; VALIDATING STORED TRANSFERS");
+		display_hstars();
+		$display("\n\t TRANSFERS COMPLETE; VALIDATING STORED TRANSFERS using check_and_scoreboard()");
 		display_hrule();
 		
 		foreach(validation_write_buffer[i]) begin
@@ -382,7 +406,7 @@ module top();
 			$display("\t\tTEST CASES FAILED: %d\n", fail);
 			foreach(failed_cases[i]) $display("FAIL Transaction # %d ",failed_cases[i]);
 		end
-		else $display("ALL test cases PASSED: %d Test cases validated.",pass);
+		else $display("ALL test cases PASSED: %d Test cases validated.\n",pass);
 
 	endtask
 
@@ -393,6 +417,7 @@ module top();
 	task master_print_read_report();
 		static string s;
 		static string temp;
+		display_hstars();
 		display_hstars();
 		$display("");
 		$display("\t\tCOMPACT COMPLETE TRANSFER REPORT \n\t\t\t\t(In-Order)");
