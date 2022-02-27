@@ -44,6 +44,9 @@ console: clean compile
 	
 silent: clean compile_sil
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
+	@echo "********************************************************************************************"
+	@echo "  "
+	diff transcript transcript.bak
 	
 comp_I2C_MB_sil:
 	vcom ../rtl/iicmb_int_pkg.vhd > /dev/null

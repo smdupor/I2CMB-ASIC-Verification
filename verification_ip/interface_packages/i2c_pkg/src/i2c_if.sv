@@ -3,279 +3,272 @@
 interface i2c_if       #(
 	int I2C_ADDR_WIDTH = 10,
 	int I2C_DATA_WIDTH = 8,
-	bit TRANSFER_DEBUG_MODE=0 //,
-	//bit [6:0] SLAVE_ADDRESS = 0                          
+	bit TRANSFER_DEBUG_MODE = 0                          
 )
 (
-	// System sigals
+	// System signals
 	input wire clk_i,
 	input wire rst_i,
 	// Master signals
 	input wire scl_i,
 	input triand sda_i,
-	output wire sda_o,
-	output byte most_recent_xfer
+	output wire sda_o
 );
+	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
-
-	logic sda_drive=1'b1;
-	assign sda_o = sda_drive;
-
-	logic [7:0] next_xfer_oracle;
-	assign most_recent_xfer = next_xfer_oracle;
-
-	enum bit [1:0] {INTR_RST=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} stst;
-
+	enum bit [1:0] {INTR_RST=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} intrs;
+	enum bit {STOP, START} stst;
+	enum bit {ACK, NACK} aknk;
+	
+	// Configured address of this Slave
 	bit [8:0] slave_address;
 
-	bit start;
+	// Internal Signals: Control and Start/Stop/Restart Interrupts
+	bit xfer_in_progress;
 	bit sampler_running;
-	bit monitor_only;
 	bit [1:0] i2c_slv_interrupt;
-	bit [1:0] i2c_mon_interrupt;
+
+	// Internal Driver Signals and Buffers
 	bit [8:0] i2c_slv_io_buffer;
-	bit [8:0] i2c_slv_mon_buffer;
 	bit slv_write_response;
 	bit [7:0] slave_receive_buffer[$];
 	bit [7:0] slave_transmit_buffer[$];
+	
+	// Internal Monitor Signals and Buffers
+	bit monitor_only;
+	bit [1:0] i2c_mon_interrupt;
+	bit [8:0] i2c_slv_mon_buffer;
 
+	// Indices of MSB and LSB of a Byte in a larger buffer
+	parameter int MSB=8;
+	parameter int LSB=1;
+
+	// Register for driving Serial Data Line by Slave BFM
+	logic sda_drive=1'bz;
+	assign sda_o = sda_drive;
+
+	// Reset the Slave BFM and configure it to hold input_addr address.
+	// Reset task automatically starts the sampler for detecting start/stop
 	task reset_and_configure(input bit [8:0] input_addr);
 		slave_address = (input_addr << 2);
-		start = 1'b0;
-		sampler_running=1'b0;
-		monitor_only = 1'b1;
+		xfer_in_progress = STOP;
+		sampler_running = STOP;
+		monitor_only = 1'b1;	// Assume that we only need monitor until driver is called
 		i2c_slv_interrupt = INTR_RST;
 		i2c_mon_interrupt = INTR_RST;
-		detect_connection_negotiation();
+		connection_negotiation_sampler();
 	endtask
-
-	task bypass_push_transmit_buf(input byte slv_xmit_value);
-		slave_transmit_buffer.push_back(slv_xmit_value);
-	endtask
-
-	function byte get_receive_entry(int i);
-		return slave_receive_buffer[i];
-	endfunction
-
+	
+	// Empty the Driver's buffers on a reset
 	task reset_test_buffers();
 		slave_receive_buffer.delete();
 		slave_transmit_buffer.delete();
 	endtask
 
-	task print_read_report();
-		static string s;
-		static string temp;
-		s = "SLAVE I2C-Bus Received Bytes from WRITES:\n ";
-		foreach(slave_receive_buffer[i]) begin
-			temp.itoa(integer'(slave_receive_buffer[i]));
-			s = {s,temp,","};
-		end
-		$display("%s", s.substr(0,s.len-2));
+	// Provide data to be transmitted by the slave BFM upon a requested read op from the Master
+	task provide_read_data(input bit [I2C_DATA_WIDTH-1:0] read_data [], output bit transfer_complete);
+		foreach(read_data[i]) slave_transmit_buffer.push_back(read_data[i]);
+		wait(slave_transmit_buffer.size == 0);
+		transfer_complete = 1'b1;
 	endtask
 
-	task detect_connection_negotiation();
+	task connection_negotiation_sampler();
 		static bit [1:0] control;
-		static logic [3:0] sample;
-		sampler_running = 1'b1;
+		static logic [3:0] samples;
+		sampler_running = START;
 		@(posedge clk_i); // Wait for Serial clock to rise to 
 		forever begin
 			// Continuously sample sda and scl at 100MHz
-			sample[0]=sda_i;
-			sample[1]=scl_i;
-			#10 sample[2]=sda_i;
-			sample[3]=scl_i;
+			samples[0]=sda_i;
+			samples[1]=scl_i;
+			#10 samples[2]=sda_i;
+			samples[3]=scl_i;
 
 			// If we find a valid transition indicating start/stop/restart, Store values in control
-			if(sample[1]==1'b1 && sample[3]==1'b1) begin
-				control[0] = sample[0];
-				control[1] = sample[2];
+			if(samples[1]==1'b1 && samples[3]==1'b1) begin
+				control[0] = samples[0];
+				control[1] = samples[2];
 			end
 
 			// Check control and raise relevant interrupt code to rest of system if conditions met
 			case(control)
-				2'b01: begin // start or Re-start
-					if(start==1'b0) begin
+				2'b01: begin			 	// start or Re-start
+					if(xfer_in_progress== STOP) begin 	// Not Running, Start Detected
 						i2c_slv_interrupt = RAISE_START;
 						i2c_mon_interrupt = RAISE_START;
 					end
-					else begin
+					else begin				// Already running, Restart detected
 						i2c_slv_interrupt = RAISE_RESTART;
 						i2c_mon_interrupt = RAISE_RESTART;
 					end
-					start = 1'b1;end
-				2'b10: begin // end condition
+					xfer_in_progress = START;end
+				2'b10: begin 				// Stop Condition Detected
 					i2c_slv_interrupt = RAISE_STOP;
 					i2c_mon_interrupt = RAISE_STOP;
-					start = 1'b0;
+					xfer_in_progress = STOP;
 				end
 			endcase
-			//if(~sampler_running) return;
 		end
 	endtask
 
-task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data []);
-	//static bit[6:0] addr;
-	static bit we;
-	static bit ack;
-	static bit kill;
-	//static bit [7:0] data[];
-	static int mon_index;
-	static bit [7:0] local_data[$];
-	local_data.delete;
-	kill=0;
-	//$display("INTERFACE MONITORING YEAH");
-	
-	wait(start == 1'b1 && (i2c_mon_interrupt == RAISE_START || i2c_mon_interrupt == RAISE_RESTART));
-	i2c_mon_interrupt = INTR_RST; // Reset the interrupt on detected
-	//$display("Saw Start yeah");
-	//if(monitor_only) i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
-	for(int i=8;i>=0;i--) begin
+	task monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] data []);
+		static bit ack;
+		static bit [7:0] local_data[$];
+		local_data.delete;
+
+		wait(xfer_in_progress == START && (i2c_mon_interrupt == RAISE_START || i2c_mon_interrupt == RAISE_RESTART));
+		i2c_mon_interrupt = INTR_RST; // Reset the interrupt on detected
+
+		// Capture the incoming address, operation, and ack
+		for(int i=MSB;i>=0;i--) begin
 			@(posedge scl_i);
 			i2c_slv_mon_buffer[i] = sda_i;
-			//@(negedge scl_i) if(mon_intr_raised()) return;
 		end
-		addr=i2c_slv_mon_buffer[8:2];
+		addr = i2c_slv_mon_buffer[MSB:2];
 		op = i2c_slv_mon_buffer[1]? I2_READ : I2_WRITE;
-		ack=i2c_slv_mon_buffer[0];
-		i2c_slv_mon_buffer = 9'b0;
-
-		receive_data_mon(local_data, op);
+		ack = i2c_slv_mon_buffer[0];
+				
+		// Record the transferred data
+		monitor_record_data(local_data, op);
+		
+		// Copy transferred data to output array
 		data=local_data;
 	endtask
-	
-	task receive_data_mon(output bit [I2C_DATA_WIDTH-1:0] write_data [$], input i2c_op_t op);
-		static int index;
+
+	task monitor_record_data(output bit [I2C_DATA_WIDTH-1:0] write_data [$], input i2c_op_t op);
 		static bit [8:0] rec_dat_mon_buf;
 		write_data.delete;
-		//write_data = new[64];
-		//$display("Attempt recv");
-		while(1) begin
-			//if(scl_i==1'b1)
-			if(mon_intr_raised()) return;
-			for(int i=8;i>=0;i--) begin
+		forever begin
+			for(int i=MSB;i>=0;i--) begin
 				if(mon_intr_raised()) return;
 				@(posedge scl_i) rec_dat_mon_buf[i] = sda_i;
-				@(negedge scl_i)
-				if(mon_intr_raised()) return;
-				//@(negedge scl_i) if(intr_raised()) return;
+				@(negedge scl_i);
 			end
-			//sda_drive = 1'b0;
-			//@(posedge scl_i);
-			//@(negedge scl_i);//sda_drive =1'bz;
-			//slave_receive_buffer.push_back(i2c_slv_io_buffer[8:1]);
-			write_data.push_back(rec_dat_mon_buf[8:1]);
-			//$display("Read %x",rec_dat_mon_buf[8:1]);
-			++index;
-			if(op==I2_READ && rec_dat_mon_buf[0]==1'b1) return;
-			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[8:1]);
+			write_data.push_back(rec_dat_mon_buf[MSB:LSB]);
+			if(op==I2_READ && rec_dat_mon_buf[0]==NACK) return; // Return on Read op and NACK (End Call)
+			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[MSB:LSB]);
 		end
 	endtask
 
-	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
-		monitor_only <= 1'b0;
-		//$display("REPORT SUCCESSFUL BOOT!");
-		//if(~sampler_running) fork detect_connection_negotiation();
-
-		//	forever begin
-				wait(start == 1'b1 && (i2c_slv_interrupt == RAISE_START || i2c_slv_interrupt == RAISE_RESTART));
-				i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
-				receive_address(op, write_data); // Handle the request
-			//end
-		//join;
+	task wait_for_i2c_transfer(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+		monitor_only <= 1'b0; // Tell The monitor/sampler that there is also a driver in parallel
+		wait(xfer_in_progress == START && (i2c_slv_interrupt == RAISE_START || i2c_slv_interrupt == RAISE_RESTART));
+		i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
+		driver_receive_address(op, write_data); // Handle the request
 	endtask
 
-	task receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+	task driver_receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 		static bit [7:0] write_buf[$];
 		// Read Address and opcode from serial bus
-		//$display("Attempt addr");
-		for(int i=8;i>=1;i--) begin
+		for(int i=MSB;i>=LSB;i--) begin
 			@(posedge scl_i);
 			i2c_slv_io_buffer[i] = sda_i;
 			@(negedge scl_i) if(intr_raised()) return;
 		end
-		if(i2c_slv_io_buffer[8:2]==slave_address[8:2] || i2c_slv_io_buffer[8:2]==7'b000_0000) begin
+		
+		// Determine whether address matches configured slave address OR the All-Call address
+		if(i2c_slv_io_buffer[MSB:2]==slave_address[MSB:2] || i2c_slv_io_buffer[MSB:2]==7'b000_0000) begin
 			// SEND THE ACK Back to master upon a match
-			sda_drive <= 1'b0;
-			@(negedge scl_i) sda_drive <= 1'bz;
-
-			// Select the writeenable to branch from
-			slv_write_response=i2c_slv_io_buffer[1];
-
-			// Branch to handle requested op
-			if(!slv_write_response)begin
-				op=I2_READ;
-				receive_data(write_buf);
-			end
-			else begin
-				op=I2_WRITE;
-				transmit_data();
-			end
+			driver_transmit_ACK();
+			
+			// Determine the operation code
+			op = i2c_slv_io_buffer[1]? I2_READ : I2_WRITE;
+			
+			// Branch to handle requested operation
+			if(op==I2_WRITE)driver_receive_write_data(write_buf);
+			else driver_transmit_read_data();
+			
 		end
+		// Copy queued captured write data into return array.
 		write_data = write_buf;
 	endtask
 
-	task receive_data(output bit [I2C_DATA_WIDTH-1:0] write_data [$]);
-		static int index;
-		//write_data = new[64];
-		//$display("Attempt recv");
-		while(1) begin
-			if(scl_i==1'b1)
+	task driver_receive_write_data(output bit [I2C_DATA_WIDTH-1:0] write_data [$]);
+		forever begin
+			driver_read_single_byte();
+
+			// Check to ensure we have not encountered a stop/restart condition, if so, 
+			// return control to caller for next transfer to begin
 			if(intr_raised()) return;
-			for(int i=8;i>=1;i--) begin
-				if(intr_raised()) return;
-				@(posedge scl_i);
-				while(scl_i ==1'b1 && !intr_raised())
-					#10 i2c_slv_io_buffer[i] = sda_i; 
-				if(intr_raised()) return;
-				//@(negedge scl_i) if(intr_raised()) return;
-			end
-			sda_drive = 1'b0;
-			@(posedge scl_i);
-			@(negedge scl_i) sda_drive =1'bz;
-			slave_receive_buffer.push_back(i2c_slv_io_buffer[8:1]);
-			write_data.push_back(i2c_slv_io_buffer[8:1]);
-			++index;
-			
-			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[8:1]);
+
+			// Reply with the ACK of this byte
+			driver_transmit_ACK();
+
+			// Store byte in Driver's local buffer and returnable buffer
+			slave_receive_buffer.push_back(i2c_slv_io_buffer[MSB:LSB]);
+			write_data.push_back(i2c_slv_io_buffer[MSB:LSB]);
+			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[MSB:LSB]);
 		end
 	endtask
 
-	task transmit_data();
+	task driver_read_single_byte();
+		for(int i=MSB;i>=LSB;i--) begin
+			// Capture the value
+			@(posedge scl_i) i2c_slv_io_buffer[i] = sda_i;
+			// Sample/Watch for a possible restart/stop signal until negedge scl_i
+			while(scl_i ==1'b1)	#10	if(intr_raised()) return;
+		end
+	endtask
+
+	task driver_transmit_ACK();
+		sda_drive = 1'b0;
+		@(posedge scl_i);
+		@(negedge scl_i) sda_drive =1'bz;
+	endtask
+
+	task driver_transmit_read_data();
 		static bit local_ack;
-		static int i, j;
 		local_ack = 0;
-		for(j=0;j<=128;j++)begin // TODO!!!!!! NEED TO READ FOREVER NOT UPTO 128
-		// Get data out of buffer to send
-			i2c_slv_io_buffer[8:1] = slave_transmit_buffer.pop_front();
+		while(slave_transmit_buffer.size > 0) begin
+			// Get data out of transmit buffer to send
+			i2c_slv_io_buffer[MSB:LSB] = slave_transmit_buffer.pop_front();
 
 			//Send a byte on sda while clock is high			
-			for(i=8;i>=1;i--) begin
-				#40 sda_drive <= i2c_slv_io_buffer[i];
-				@(posedge scl_i);
-				@(negedge scl_i);
-			end
+			driver_transmit_single_byte();
 
 			// Check for ack/NACK from master
 			sda_drive <= 1'bz;
 			@(posedge scl_i) local_ack = sda_i;
 
-			// Debug output
-			next_xfer_oracle=i2c_slv_io_buffer[8:1];
-
 			// Check for NACK/DONE or STOP/RESTART CONDTION
-			if(local_ack==1'b1) return;
+			if(local_ack==NACK) return;
 			@(negedge scl_i) if(intr_raised()) return;
 		end
-		//TODO: Does  this Command ever get hit?????? 
-		sda_drive=1'bz;
 	endtask
 
+	task driver_transmit_single_byte();
+		for(int i=MSB;i>=LSB;i--) begin
+			sda_drive <= i2c_slv_io_buffer[i];
+			@(posedge scl_i);
+			@(negedge scl_i);
+		end
+	endtask
+	
 
 	function bit intr_raised();
 		intr_raised = (i2c_slv_interrupt == RAISE_STOP || i2c_slv_interrupt == RAISE_RESTART || i2c_slv_interrupt == RAISE_START);
 	endfunction
-	
-		function bit mon_intr_raised();
+
+	function bit mon_intr_raised();
 		mon_intr_raised = (i2c_mon_interrupt == RAISE_STOP || i2c_mon_interrupt == RAISE_RESTART || i2c_mon_interrupt == RAISE_START);
 	endfunction
+		
+	function byte get_receive_entry(int i);
+		return slave_receive_buffer[i];
+	endfunction
+	
+	function void print_driver_write_report();
+		static string s;
+		static string temp;
+		$display("SLAVE I2C-Bus Received Bytes from WRITES:");
+		s = "\t";
+		foreach(slave_receive_buffer[i]) begin
+			if(s.len % PRINT_LINE_LEN < 4) s = {s,"\n\t"};
+			temp.itoa(integer'(slave_receive_buffer[i]));
+			s = {s,temp,","};
+		end
+		$display("%s", s.substr(0,s.len-2));
+	endfunction
+	
+	
 endinterface
