@@ -65,7 +65,7 @@ interface i2c_if       #(
 	task print_read_report();
 		static string s;
 		static string temp;
-		s = " Slave Received Bytes (0x): ";
+		s = "SLAVE I2C-Bus Received Bytes from WRITES:\n ";
 		foreach(slave_receive_buffer[i]) begin
 			temp.itoa(integer'(slave_receive_buffer[i]));
 			s = {s,temp,","};

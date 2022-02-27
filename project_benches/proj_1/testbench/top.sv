@@ -93,6 +93,9 @@ module top();
 	task check_and_scoreboard();
 		int pass, fail,pauser;
 		int failed_cases[$];
+		display_hstars();
+		$display("\t TRANSFERS COMPLETE; VALIDATING STORED TRANSFERS");
+		display_hrule();
 		foreach(validation_write_buffer[i]) begin
 			//$display ("Val: %d, Got: %d",validation_write_buffer[i],i2c_slave0.get_receive_entry(i));
 			if(validation_write_buffer[i] != i2c_slave0.get_receive_entry(i)) begin
@@ -112,10 +115,11 @@ module top();
 		end
 
 		if(fail>0) begin
-			$display("\n\nTEST CASES FAILED: %d\n", fail);
+			$display("\t\tTEST CASES FAILED: %d\n", fail);
 			foreach(failed_cases[i]) $display("FAIL Transaction # %d ",failed_cases[i]);
 		end
-		else $display("\n\nALL TEST CASES PASSED, QTY %d\n",pass);
+	else $display("ALL test cases PASSED: Total valid bytes transferred: %d",pass);
+		
 	endtask
 
 	task simple_receive_data();
@@ -195,6 +199,7 @@ module top();
 				s = {s,temp,","};
 			end
 			$display("%s", s.substr(0,s.len-2));
+			if(s.len>60) display_hrule;
 		end
 	end
 
@@ -207,7 +212,9 @@ module top();
 		logic [7:0] tf_buffer;
 		tuple tf_tup;
 		localreg = new[32];
-		$display("STARTING TEST FLOW");
+		display_hstars();
+		$display("\t\t\tSTARTING TEST FLOW");
+		display_hstars();
 		@(negedge rst) enable_dut_with_interrupt();
 		select_I2C_bus(SELECTED_I2C_BUS);
 		fork i2c_slave0.wait_for_start(operation,localreg);
@@ -220,7 +227,7 @@ module top();
 				issue_stop_command();
 			end
 		join;
-		$display(" WRITE ALL TASK DONE, Begin READ ALL");
+		//#100 $display(" WRITE 0-31 TASK DONE, Begin READ Task\n\n");
 		
 		//foreach(localreg[i]) $display("Recv: %d", localreg[i]);
 		// Start negotiation and perform read-all task
@@ -243,7 +250,7 @@ module top();
 				issue_stop_command();
 			end
 		join;
-		$display("READ ALL TASK DONE. BEGIN READ/WRITE TASK.");
+		//#100 $display("READ 100-131 TASK DONE. BEGIN READ/WRITE TASK\n\n");
 
 		// Start alternating read/write task
 		for(int i=0;i<QTY_WORDS_TO_WRITE*2;i++) begin
@@ -259,7 +266,6 @@ module top();
 			fork
 				i2c_slave0.wait_for_start(operation,localreg);
 				begin
-
 					transmit_address_req_read(i2c_slave_addr[8:1]);
 					read_data_byte_with_stop(tf_buffer);
 					tf_tup.address = i2c_slave_addr[8:2];
@@ -272,8 +278,9 @@ module top();
 		issue_stop_command();
 		// Print Results of test flow/Reports
 		#1000 check_and_scoreboard();
-		i2c_slave0.print_read_report();
 		master_print_read_report;
+		i2c_slave0.print_read_report();
+		display_hstars();
 
 
 		// Exit the tests
@@ -283,12 +290,16 @@ module top();
 	task master_print_read_report();
 		static string s;
 		static string temp;
-		s = " Master Received Bytes (0x): ";
+		display_hstars();
+		$display("\t\tCOMPACT COMPLETE TRANSFER REPORT (In-Order)");
+		display_hrule();
+		s = "MASTER WB-Bus Received Bytes from READS:\n ";
 		foreach(master_receive_buffer[i]) begin
 			temp.itoa(integer'(master_receive_buffer[i].data));
 			s = {s,temp,","};
 		end
 		$display("%s", s.substr(0,s.len-2));
+		display_hrule();
 	endtask
 
 	task issue_stop_command();
