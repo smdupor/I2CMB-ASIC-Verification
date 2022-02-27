@@ -3,6 +3,8 @@
 
 module top();
 	import i2c_types_pkg::*;
+	import printing_pkg::*;
+	
 	//Physical Parameters
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;

@@ -16,6 +16,7 @@ interface i2c_if       #(
 );
 	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
+	import printing_pkg::*;
 	enum bit [1:0] {INTR_CLEAR=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} intrs;
 	enum bit {STOP, START} stst;
 	enum bit {ACK, NACK} aknk;
