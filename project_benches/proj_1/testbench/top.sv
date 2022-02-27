@@ -13,7 +13,7 @@ module top();
 	parameter int SELECTED_I2C_BUS = 2;
 
 	parameter bit VERBOSE_DEBUG_MODE=0;
-	parameter bit TRANSFER_DEBUG_MODE=1;
+	parameter bit TRANSFER_DEBUG_MODE=0;
 
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 2;
@@ -169,27 +169,28 @@ module top();
 		end
 	endtask
 
-	initial begin : i2c_mon
+	initial begin : monitor_i2c_bus
 		bit[I2C_ADDR_WIDTH-1:0] i2mon_addr;
 		i2c_op_t i2mon_op;
 		bit [I2C_DATA_WIDTH-1:0] i2mon_data [];
 		string s,temp;
 		s = "I2C_BUS WRITE Transfer From Address: ";
-		$display("MONITORING YEAAH");
+		//$display("MONITORING YEAAH");
 		//@(negedge rst);
 		forever begin
 			i2c_slave0.i2c_monitor(i2mon_addr, i2mon_op, i2mon_data);
-			$display("RETURN YEAH");
+			//$display("RETURN YEAH");
 			if(i2mon_op == I2_WRITE) begin
-				s = "I2C_BUS WRITE Transfer From Address: ";
-
+				s = "I2C_BUS WRITE Transfer To   Address: ";
+				
 			end
 			else begin
 				s = "I2C_BUS READ  Transfer From Address: ";
 			end
-
+				temp.itoa(integer'(i2mon_addr));
+				s = {s,temp," Data: "};
 			foreach(i2mon_data[i]) begin
-				$display("FOREACH YEAH");
+				//$display("FOREACH YEAH");
 				temp.itoa(integer'(i2mon_data[i]));
 				s = {s,temp,","};
 			end
@@ -220,7 +221,7 @@ module top();
 			end
 		join;
 		$display(" WRITE ALL TASK DONE, Begin READ ALL");
-		#1000 $finish();
+		
 		//foreach(localreg[i]) $display("Recv: %d", localreg[i]);
 		// Start negotiation and perform read-all task
 		fork
@@ -268,9 +269,9 @@ module top();
 			join;
 		end
 		issue_stop_command();
-
+		issue_stop_command();
 		// Print Results of test flow/Reports
-		check_and_scoreboard();
+		#1000 check_and_scoreboard();
 		i2c_slave0.print_read_report();
 		master_print_read_report;
 

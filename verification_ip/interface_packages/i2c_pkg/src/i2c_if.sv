@@ -123,45 +123,52 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 	static bit [7:0] local_data[$];
 	local_data.delete;
 	kill=0;
-	$display("INTERFACE MONITORING YEAH");
+	//$display("INTERFACE MONITORING YEAH");
 	
 	wait(start == 1'b1 && (i2c_mon_interrupt == RAISE_START || i2c_mon_interrupt == RAISE_RESTART));
 	i2c_mon_interrupt = INTR_RST; // Reset the interrupt on detected
-	$display("Saw Start yeah");
+	//$display("Saw Start yeah");
 	//if(monitor_only) i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
 	for(int i=8;i>=0;i--) begin
 			@(posedge scl_i);
 			i2c_slv_mon_buffer[i] = sda_i;
-			@(negedge scl_i) if(mon_intr_raised()) break;
+			//@(negedge scl_i) if(mon_intr_raised()) return;
 		end
 		addr=i2c_slv_mon_buffer[8:2];
-		op = i2c_slv_mon_buffer[1]? I2_WRITE : I2_READ;
+		op = i2c_slv_mon_buffer[1]? I2_READ : I2_WRITE;
 		ack=i2c_slv_mon_buffer[0];
-		$display("GOT Addr YEAH");
-	
-	while(1) begin
-			if(scl_i==1'b1 && mon_intr_raised()) break;
-			
-			for(int i=8;i>=0;i--) begin
-				if(mon_intr_raised()) begin
-					kill=1;
-					break;
-					end
-				@(posedge scl_i);
-				while(scl_i ==1'b1 && !mon_intr_raised())
-					#10 i2c_slv_mon_buffer[i] = sda_i; 
-			end
-			$display("GOT Byte YEAH");
-			if(kill==0)begin
-					local_data.push_back(i2c_slv_mon_buffer[8:1]);
-			ack=i2c_slv_mon_buffer[0];
-			
-			++mon_index;
-			end
-			if(mon_intr_raised()) break;
-		end
-		$display("GOT Break YEAH");
+		i2c_slv_mon_buffer = 9'b0;
+
+		receive_data_mon(local_data, op);
 		data=local_data;
+	endtask
+	
+	task receive_data_mon(output bit [I2C_DATA_WIDTH-1:0] write_data [$], input i2c_op_t op);
+		static int index;
+		static bit [8:0] rec_dat_mon_buf;
+		write_data.delete;
+		//write_data = new[64];
+		//$display("Attempt recv");
+		while(1) begin
+			//if(scl_i==1'b1)
+			if(mon_intr_raised()) return;
+			for(int i=8;i>=0;i--) begin
+				if(mon_intr_raised()) return;
+				@(posedge scl_i) rec_dat_mon_buf[i] = sda_i;
+				@(negedge scl_i)
+				if(mon_intr_raised()) return;
+				//@(negedge scl_i) if(intr_raised()) return;
+			end
+			//sda_drive = 1'b0;
+			//@(posedge scl_i);
+			//@(negedge scl_i);//sda_drive =1'bz;
+			//slave_receive_buffer.push_back(i2c_slv_io_buffer[8:1]);
+			write_data.push_back(rec_dat_mon_buf[8:1]);
+			//$display("Read %x",rec_dat_mon_buf[8:1]);
+			++index;
+			if(op==I2_READ && rec_dat_mon_buf[0]==1'b1) return;
+			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",i2c_slv_io_buffer[8:1]);
+		end
 	endtask
 
 	task wait_for_start(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
@@ -171,7 +178,7 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 
 		//	forever begin
 				wait(start == 1'b1 && (i2c_slv_interrupt == RAISE_START || i2c_slv_interrupt == RAISE_RESTART));
-				#10 i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
+				i2c_slv_interrupt = INTR_RST; // Reset the interrupt on detected
 				receive_address(op, write_data); // Handle the request
 			//end
 		//join;
@@ -243,7 +250,7 @@ task i2c_monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, output
 
 			//Send a byte on sda while clock is high			
 			for(i=8;i>=1;i--) begin
-				sda_drive <= i2c_slv_io_buffer[i];
+				#40 sda_drive <= i2c_slv_io_buffer[i];
 				@(posedge scl_i);
 				@(negedge scl_i);
 			end

@@ -26,6 +26,7 @@ add wave -noupdate /top/i2c_slave0/i2c_slv_io_buffer
 add wave -noupdate /top/i2c_slave0/slv_write_reponse
 add wave -noupdate /top/i2c_slave0/sda_drive
 add wave -noupdate /top/i2c_slave0/sda_o
+add wave -noupdate -divider {I2C MON Internal Signals}
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ns} 0}
 quietly wave cursor active 0
