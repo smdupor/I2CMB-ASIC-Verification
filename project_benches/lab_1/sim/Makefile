@@ -1,7 +1,6 @@
 export ECE745_PROJECT_HOME ?= $(PWD)/../../..
 
 include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/wb_pkg/Makefile
-include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/i2c_pkg/Makefile
 
 clean: 
 	rm -rf work *.wlf transcript
@@ -24,13 +23,10 @@ comp_I2C_MB:
 comp_bench: comp_wb_pkg
 	vlog ../testbench/top.sv
 
-comp_slave:	comp_i2c_pkg comp_wb_pkg
-	vlog ../testbench/top.sv
-
 optimize:
 	vopt +acc top -o optimized_debug_top_tb
 
-compile: comp_I2C_MB comp_slave optimize
+compile: comp_I2C_MB comp_bench optimize
 
 simulate:
 	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb &
