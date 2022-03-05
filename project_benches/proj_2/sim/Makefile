@@ -1,10 +1,9 @@
 export ECE745_PROJECT_HOME ?= $(PWD)/../../..
 
+include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
 include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/wb_pkg/Makefile
 include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/i2c_pkg/Makefile
 include $(ECE745_PROJECT_HOME)/verification_ip/environment_packages/i2cmb_env_pkg/Makefile
-include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
-
 
 clean: 
 	rm -rf work *.wlf transcript
@@ -66,7 +65,7 @@ comp_I2C_MB_sil:
 	vcom ../rtl/iicmb_m_wb.vhd > /dev/null
 
 
-comp_bench_sil: comp_i2c_pkg_sil comp_wb_pkg_sil comp_ncsu_pkg_sil comp_i2cmb_env_sil
+comp_bench_sil: comp_ncsu_pkg_sil comp_i2c_pkg_sil comp_wb_pkg_sil comp_i2cmb_env_sil
 	vlog ../testbench/top.sv > /dev/null
 
 #comp_slave_sil:	comp_i2c_pkg_sil comp_wb_pkg_sil
