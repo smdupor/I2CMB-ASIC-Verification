@@ -7,12 +7,12 @@ module top();
 	import ncsu_pkg::*;
 	import i2c_pkg::*;
 	import wb_pkg::*;
-	
+
 	//Physical P    arameters 
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
-	parameter int I2C_ADDR_WIDTH = 7;
-	parameter int I2C_DATA_WIDTH = 8;
+	parameter int TOP_I2C_ADDR_WIDTH = 7;
+	parameter int TOP_I2C_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
 	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
 	parameter int SELECTED_I2C_BUS = 2;
@@ -20,7 +20,7 @@ module top();
 
 	// Verbosity Debug Printing Levels
 	parameter bit VERBOSE_DEBUG_MODE = 0;
-	parameter bit TRANSFER_DEBUG_MODE = 0;
+	parameter bit TOP_TRANSFER_DEBUG_MODE = 0;
 	parameter bit ENABLE_WISHBONE_VERBOSE_DEBUG = 0;
 	parameter bit ENABLE_WISHBONE_SIMPLE_DEBUG = 1;
 
@@ -60,11 +60,11 @@ module top();
 	enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx,DISABLE_CORE=8'b0xxxxxxx,
 		SET_I2C_BUS=8'bxxxxx110, I2C_START=8'bxxxxx100, I2C_WRITE=8'bxxxxx001,
 		I2C_STOP=8'bxxxxx101, READ_WITH_NACK=8'bxxxxx011, READ_WITH_ACK=8'bxxxxx010} cmd;
-	
+
 	enum logic[2:0] {M_SET_I2C_BUS=3'b110, M_I2C_START=3'b100, M_I2C_WRITE=3'b001,
 		M_I2C_STOP=3'b101, M_READ_WITH_NACK=3'b011, M_READ_WITH_ACK=3'b010} mon;
-	
-	
+
+
 	enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10} dut_reg;
 
 	bit [8:0] i2c_slave_addr;
@@ -101,130 +101,10 @@ module top();
 		rst <= 1;
 		#133 rst = ~rst;
 	end
-	
-	//_____________________________________________________________________________________\\
-	//                           TOP-LEVEL TEST FLOW                                       \\
-	//_____________________________________________________________________________________\\
 
-	// ****************************************************************************
-	// Define the flow of the simulation
-	// ****************************************************************************
-	initial begin : test_flow
-		bit [I2C_DATA_WIDTH-1:0] localreg[];
-		bit transfer_complete;
-		i2c_op_t operation;
-		logic [7:0] tf_buffer;
-		recv_tuple_t tf_tup;
 
-		// Indicate test flow is starting to user
-		display_header_banner();
 
-		// Enable the DUT and select the correct bus
-		@(negedge rst) enable_dut_with_interrupt();
-		select_I2C_bus(SELECTED_I2C_BUS);
 
-		/////////////////////////////////////////////////////////////////
-		// Write 32 values in a single complete transaction 
-		/////////////////////////////////////////////////////////////////
-		fork i2c_bus.wait_for_i2c_transfer(operation,localreg);
-			begin
-				issue_start_command();
-				transmit_address_req_write(i2c_slave_addr[8:1]);
-
-				// Write contents of "output Buffer" to selected I2C Slave in a single stream
-				for(int i=0;i<QTY_WORDS_TO_WRITE;i++) 
-					write_data_byte(master_transmit_buffer.pop_front());
-				issue_stop_command();
-			end
-		join
-
-		/////////////////////////////////////////////////////////////////
-		// Read 32 values in a single complete transaction 
-		/////////////////////////////////////////////////////////////////
-		fork
-			// Thread 0: Slave BFM Connection Handler
-			i2c_bus.wait_for_i2c_transfer(operation,localreg);
-			
-			// Thread 1: Provide data to slave via BYPASS data feeder to BFM 
-			i2c_bus.provide_read_data(slave_read_transmit_buffer[0], transfer_complete);
-
-			// Thread 2: Execute Wishbone-end commands of Read-32 flow.
-			begin
-				issue_start_command();
-				transmit_address_req_read(i2c_slave_addr[8:1]);
-				for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
-					read_data_byte_with_continue(tf_buffer); // Read all but the last byte
-					tf_tup.address = i2c_slave_addr[8:2];
-					tf_tup.data = tf_buffer;
-					master_receive_buffer.push_back(tf_tup); // Store in Driver test Queue
-				end
-				read_data_byte_with_stop(tf_buffer); // Read the last byte
-				tf_tup.address = i2c_slave_addr[8:2];
-				tf_tup.data = tf_buffer;
-				master_receive_buffer.push_back(tf_tup);// Store in Driver test Queue
-				
-				// Send a stop at conclusion of transaction
-				issue_stop_command();
-			end
-		join
-
-		/////////////////////////////////////////////////////////////////
-		// Alternating Write/Read Transactions for 64 values of each type
-		/////////////////////////////////////////////////////////////////
-		// Thread 0: Provide data to slave via BYPASS data feeder to BF
-		fork i2c_bus.provide_read_data(slave_read_transmit_buffer[1], transfer_complete); join_none
-			
-		for(int i=0;i<QTY_WORDS_TO_WRITE*2;i++) begin
-			// Write a single byte
-			fork
-				// Thread 1: Slave BFM Connection Handler
-				i2c_bus.wait_for_i2c_transfer(operation,localreg);
-				
-				// Thread 2:  Execute Wishbone-end command of Write-64[one byte] flow.
-				begin
-					issue_start_command();
-					transmit_address_req_write(i2c_slave_addr[8:1]);
-					write_data_byte(master_transmit_buffer[i]);
-					issue_start_command();
-				end
-			join
-			
-			// Restart and Read a single Byte
-			fork 
-				// Thread 1: Slave BFM Connection Handler
-				i2c_bus.wait_for_i2c_transfer(operation,localreg);
-				
-				// Thread 2:  Execute Wishbone-end command of Read-64[one byte] flow.
-				begin
-					transmit_address_req_read(i2c_slave_addr[8:1]);
-					read_data_byte_with_stop(tf_buffer);
-					
-					// Store received data in driver 
-					tf_tup.address = i2c_slave_addr[8:2];
-					tf_tup.data = tf_buffer;
-					master_receive_buffer.push_back(tf_tup);
-				end
-			join
-		end
-
-		// Send STOP at end of Read-Write-64 transaction
-		issue_stop_command();
-
-		// Validate all transferred bytes against validation buffers
-		check_and_scoreboard();
-		
-		// Print Compact complete reports for both ends of system
-		master_print_read_report;
-		i2c_bus.print_driver_write_report();
-		
-		// Display authorship Banner
-		display_footer_banner();
-
-		// Exit the tests
-		$finish;
-	end
-	
-	
 	//_____________________________________________________________________________________\\
 	//                           CMD/SIGNAL MONITORING                                     \\
 	//_____________________________________________________________________________________\\
@@ -244,48 +124,48 @@ module top();
 			if(adr_mon == 0) begin
 				// Monitor for DUT Enable/Disable
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CSR(%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-			end 
-			else if(adr_mon == 1) begin // Monitor for commands passed to DUT
-					if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
-				last_dpr = dat_mon;
-				if(print_next_read) begin // Swallow interrupt reads and print transfers only
-					print_next_read = 1'b0;
-					$display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
-				end
 			end
-			//	Verbose mode: Show all register reads
+			else if(adr_mon == 1) begin // Monitor for commands passed to DUT
+				if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
+					last_dpr = dat_mon;
+					if(print_next_read) begin // Swallow interrupt reads and print transfers only
+						print_next_read = 1'b0;
+						$display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
+					end
+				end
+				//	Verbose mode: Show all register reads
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] DPR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-			end 
+			end
 			else if(adr_mon == 2) begin
 				if(ENABLE_WISHBONE_SIMPLE_DEBUG) begin
 					// Detect start condition and prepare start && address report
-				if(dat_mon[2:0] == M_I2C_START && we_mon) begin
-					s = "\t\t\t\t\t\t\t\tWB_BUS: Sent START";
-					transfer_in_progress = 1'b1;
-					address_state = 1'b1;
-				end
+					if(dat_mon[2:0] == M_I2C_START && we_mon) begin
+						s = "\t\t\t\t\t\t\t\tWB_BUS: Sent START";
+						transfer_in_progress = 1'b1;
+						address_state = 1'b1;
+					end
 					// Detect stop condition and immediately report 
-				if(dat_mon[2:0] == M_I2C_STOP && we_mon) begin
-					$display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
-					transfer_in_progress = 1'b0;
-				end
+					if(dat_mon[2:0] == M_I2C_STOP && we_mon) begin
+						$display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
+						transfer_in_progress = 1'b0;
+					end
 					// Determine whether write action is requesting an address transmit,  a write, or a read
-				if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !address_state) begin $display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);end
-				else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
+					if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !address_state) begin $display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);end
+					else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
 						t.itoa(integer'(last_dpr[8:1]));
 						if(last_dpr[0]==1'b0) s = {s," && Address ", t," : req. WRITE"};
 						else s = {s," && Address ", t, " : req. READ"};
 						$display("%s",s);
-					address_state = 1'b0;
-				end
+						address_state = 1'b0;
+					end
 					// Detect that we are swallowing an interrupt read for a COMMAND READ and notify statemachine
-				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
-				end 
-					// If verbose debugging, display all command register actions
-				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);			
+					if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
+				end
+				// If verbose debugging, display all command register actions
+				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end
 			else begin
-					// if verbose debugging, display all non-specific commands outside of prior decision tree
+				// if verbose debugging, display all non-specific commands outside of prior decision tree
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end
 		end
@@ -296,9 +176,9 @@ module top();
 	// and captured DATA for each transfer. Messages are grouped by complete transfer.
 	// ****************************************************************************
 	initial begin : monitor_i2c_bus
-		bit[I2C_ADDR_WIDTH-1:0] i2mon_addr;
+		bit[TOP_I2C_ADDR_WIDTH-1:0] i2mon_addr;
 		i2c_op_t i2mon_op;
-		bit [I2C_DATA_WIDTH-1:0] i2mon_data [];
+		bit [TOP_I2C_DATA_WIDTH-1:0] i2mon_data [];
 		string s,temp;
 		s = "";
 
@@ -333,11 +213,11 @@ module top();
 			if(s.len>60) display_hrule;
 		end
 	end
-	
+
 	//_____________________________________________________________________________________\\
 	//                                 VALUE GENERATION                                    \\
 	//_____________________________________________________________________________________\\
-	
+
 	// ****************************************************************************
 	// Generate all required values for all tests, and store in
 	// 		driver buffers (which will be destroyed) and validation buffers
@@ -389,7 +269,7 @@ module top();
 		display_hstars();
 		$display("\n\t TRANSFERS COMPLETE; VALIDATING STORED TRANSFERS using check_and_scoreboard()");
 		display_hrule();
-		
+
 		foreach(validation_write_buffer[i]) begin
 			if(validation_write_buffer[i] != i2c_bus.get_receive_entry(i)) begin
 				++fail;
@@ -437,7 +317,7 @@ module top();
 		$display("%s", s.substr(0,s.len-2));
 		display_hrule();
 	endtask
-	
+
 	//_____________________________________________________________________________________\\
 	//                           WISHBONE DRIVER ABSTRACTIONS                              \\
 	//_____________________________________________________________________________________\\
@@ -451,7 +331,7 @@ module top();
 	task enable_dut_with_interrupt();
 		wb_bus.master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT
 	endtask
-	
+
 	// ****************************************************************************
 	// Select desired I2C bus of DUT to use for transfers.
 	// ****************************************************************************
@@ -533,7 +413,7 @@ module top();
 	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
 	// ****************************************************************************
 	task write_data_byte(input bit [7:0] data);
-		if(TRANSFER_DEBUG_MODE) $write("\t%d -->>> [WB]  {DUT}",data);
+		if(TOP_TRANSFER_DEBUG_MODE) $write("\t%d -->>> [WB]  {DUT}",data);
 		wb_bus.master_write(DPR, data);
 		wb_bus.master_write(CMDR, I2C_WRITE);
 		wait_interrupt_with_NACK();
@@ -548,7 +428,7 @@ module top();
 		wb_bus.master_write(CMDR, READ_WITH_ACK);
 		wait_interrupt_with_NACK();
 		wb_bus.master_read(DPR, iobuf);
-		if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
+		if(TOP_TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
 	endtask
 
 	// ****************************************************************************
@@ -561,19 +441,19 @@ module top();
 		wb_bus.master_write(CMDR, READ_WITH_NACK);
 		wait_interrupt_with_NACK();
 		wb_bus.master_read(DPR, iobuf);
-		if(TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
+		if(TOP_TRANSFER_DEBUG_MODE) $write("\t%d <<<-- [WB]  {DUT}  [I2C] <<<-- %d\t <READ>\n",iobuf,slv_most_recent_xfer);
 	endtask
 
 	//_____________________________________________________________________________________\\
 	//                           INTERFACE/DUT INSTANTIATIONS                              \\
 	//_____________________________________________________________________________________\\
-	
+
 	// ****************************************************************************
 	// Instantiate the slave I2C Bus Functional Model
 	i2c_if		#(
-	.I2C_ADDR_WIDTH(I2C_ADDR_WIDTH),
-	.I2C_DATA_WIDTH(I2C_DATA_WIDTH),
-	.TRANSFER_DEBUG_MODE(TRANSFER_DEBUG_MODE)
+	.I2C_ADDR_WIDTH(TOP_I2C_ADDR_WIDTH),
+	.I2C_DATA_WIDTH(TOP_I2C_DATA_WIDTH),
+	.TRANSFER_DEBUG_MODE(TOP_TRANSFER_DEBUG_MODE)
 	)
 	i2c_bus (
 		.clk_i(clk),
@@ -657,5 +537,130 @@ module top();
 		// ------------------------------------
 	);
 
+
+	//_____________________________________________________________________________________\\
+	//                           TOP-LEVEL TEST FLOW                                       \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// Define the flow of the simulation
+	// ****************************************************************************
+	initial begin : test_flow
+		bit [TOP_I2C_DATA_WIDTH-1:0] localreg[];
+		bit transfer_complete;
+		i2c_op_t operation;
+		logic [7:0] tf_buffer;
+		recv_tuple_t tf_tup;
+
+		ncsu_config_db#(virtual wb_if #(.ADDR_WIDTH(WB_ADDR_WIDTH),.DATA_WIDTH(WB_DATA_WIDTH)))::set("tst.env.wb_agent", wb_bus);
+		ncsu_config_db#(virtual i2c_if #(.I2C_ADDR_WIDTH(TOP_I2C_ADDR_WIDTH),.I2C_DATA_WIDTH(TOP_I2C_DATA_WIDTH),.TRANSFER_DEBUG_MODE(TOP_TRANSFER_DEBUG_MODE)))::set("tst.env.i2c_agent", i2c_bus);
+
+		// Indicate test flow is starting to user
+		display_header_banner();
+
+		// Enable the DUT and select the correct bus
+		@(negedge rst) enable_dut_with_interrupt();
+		select_I2C_bus(SELECTED_I2C_BUS);
+
+		/////////////////////////////////////////////////////////////////
+		// Write 32 values in a single complete transaction 
+		/////////////////////////////////////////////////////////////////
+		fork i2c_bus.wait_for_i2c_transfer(operation,localreg);
+			begin
+				issue_start_command();
+				transmit_address_req_write(i2c_slave_addr[8:1]);
+
+				// Write contents of "output Buffer" to selected I2C Slave in a single stream
+				for(int i=0;i<QTY_WORDS_TO_WRITE;i++)
+					write_data_byte(master_transmit_buffer.pop_front());
+				issue_stop_command();
+			end
+		join
+
+		/////////////////////////////////////////////////////////////////
+		// Read 32 values in a single complete transaction 
+		/////////////////////////////////////////////////////////////////
+		fork
+			// Thread 0: Slave BFM Connection Handler
+			i2c_bus.wait_for_i2c_transfer(operation,localreg);
+
+			// Thread 1: Provide data to slave via BYPASS data feeder to BFM 
+			i2c_bus.provide_read_data(slave_read_transmit_buffer[0], transfer_complete);
+
+			// Thread 2: Execute Wishbone-end commands of Read-32 flow.
+			begin
+				issue_start_command();
+				transmit_address_req_read(i2c_slave_addr[8:1]);
+				for(int i=0;i<QTY_WORDS_TO_WRITE-1;i++) begin
+					read_data_byte_with_continue(tf_buffer); // Read all but the last byte
+					tf_tup.address = i2c_slave_addr[8:2];
+					tf_tup.data = tf_buffer;
+					master_receive_buffer.push_back(tf_tup); // Store in Driver test Queue
+				end
+				read_data_byte_with_stop(tf_buffer); // Read the last byte
+				tf_tup.address = i2c_slave_addr[8:2];
+				tf_tup.data = tf_buffer;
+				master_receive_buffer.push_back(tf_tup); // Store in Driver test Queue
+
+				// Send a stop at conclusion of transaction
+				issue_stop_command();
+			end
+		join
+
+		/////////////////////////////////////////////////////////////////
+		// Alternating Write/Read Transactions for 64 values of each type
+		/////////////////////////////////////////////////////////////////
+		// Thread 0: Provide data to slave via BYPASS data feeder to BF
+		fork i2c_bus.provide_read_data(slave_read_transmit_buffer[1], transfer_complete); join_none
+
+		for(int i=0;i<QTY_WORDS_TO_WRITE*2;i++) begin
+			// Write a single byte
+			fork
+				// Thread 1: Slave BFM Connection Handler
+				i2c_bus.wait_for_i2c_transfer(operation,localreg);
+
+				// Thread 2:  Execute Wishbone-end command of Write-64[one byte] flow.
+				begin
+					issue_start_command();
+					transmit_address_req_write(i2c_slave_addr[8:1]);
+					write_data_byte(master_transmit_buffer[i]);
+					issue_start_command();
+				end
+			join
+
+			// Restart and Read a single Byte
+			fork
+				// Thread 1: Slave BFM Connection Handler
+				i2c_bus.wait_for_i2c_transfer(operation,localreg);
+
+				// Thread 2:  Execute Wishbone-end command of Read-64[one byte] flow.
+				begin
+					transmit_address_req_read(i2c_slave_addr[8:1]);
+					read_data_byte_with_stop(tf_buffer);
+
+					// Store received data in driver 
+					tf_tup.address = i2c_slave_addr[8:2];
+					tf_tup.data = tf_buffer;
+					master_receive_buffer.push_back(tf_tup);
+				end
+			join
+		end
+
+		// Send STOP at end of Read-Write-64 transaction
+		issue_stop_command();
+
+		// Validate all transferred bytes against validation buffers
+		check_and_scoreboard();
+
+		// Print Compact complete reports for both ends of system
+		master_print_read_report;
+		i2c_bus.print_driver_write_report();
+
+		// Display authorship Banner
+		display_footer_banner();
+
+		// Exit the tests
+		$finish;
+	end
 
 endmodule
