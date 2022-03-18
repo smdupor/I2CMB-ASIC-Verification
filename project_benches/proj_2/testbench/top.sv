@@ -7,6 +7,7 @@ module top();
 	import ncsu_pkg::*;
 	import i2c_pkg::*;
 	import wb_pkg::*;
+	import i2cmb_env_pkg::*;
 
 	//Physical P    arameters 
 	parameter int WB_ADDR_WIDTH = 2;
@@ -27,6 +28,7 @@ module top();
 	// Test Parameters
 	parameter int I2C_SLAVE_PER_BUS = 2;
 	parameter int QTY_WORDS_TO_WRITE=32;
+	i2cmb_test tst;
 
 	// Physical DUT Interface networks
 	bit  clk;
@@ -175,7 +177,7 @@ module top();
 	// Monitor I2C Bus and display all transfers with DIRECTION, associated ADDRESS, 
 	// and captured DATA for each transfer. Messages are grouped by complete transfer.
 	// ****************************************************************************
-	initial begin : monitor_i2c_bus
+	/*initial begin : monitor_i2c_bus
 		bit[TOP_I2C_ADDR_WIDTH-1:0] i2mon_addr;
 		i2c_op_t i2mon_op;
 		bit [TOP_I2C_DATA_WIDTH-1:0] i2mon_data [];
@@ -212,7 +214,7 @@ module top();
 			// this transfer transcript message ends
 			if(s.len>60) display_hrule;
 		end
-	end
+	end*/
 
 	//_____________________________________________________________________________________\\
 	//                                 VALUE GENERATION                                    \\
@@ -452,8 +454,7 @@ module top();
 	// Instantiate the slave I2C Bus Functional Model
 	i2c_if		#(
 	.I2C_ADDR_WIDTH(TOP_I2C_ADDR_WIDTH),
-	.I2C_DATA_WIDTH(TOP_I2C_DATA_WIDTH),
-	.TRANSFER_DEBUG_MODE(TOP_TRANSFER_DEBUG_MODE)
+	.I2C_DATA_WIDTH(TOP_I2C_DATA_WIDTH)
 	)
 	i2c_bus (
 		.clk_i(clk),
@@ -551,9 +552,18 @@ module top();
 		i2c_op_t operation;
 		logic [7:0] tf_buffer;
 		recv_tuple_t tf_tup;
+		//virtual wb_if wbbus2;
 
-		ncsu_config_db#(virtual wb_if #(.ADDR_WIDTH(WB_ADDR_WIDTH),.DATA_WIDTH(WB_DATA_WIDTH)))::set("tst.env.wb_agent", wb_bus);
-		ncsu_config_db#(virtual i2c_if #(.I2C_ADDR_WIDTH(TOP_I2C_ADDR_WIDTH),.I2C_DATA_WIDTH(TOP_I2C_DATA_WIDTH),.TRANSFER_DEBUG_MODE(TOP_TRANSFER_DEBUG_MODE)))::set("tst.env.i2c_agent", i2c_bus);
+
+
+		ncsu_config_db#(virtual wb_if )::set("tst.env.wb_agent", wb_bus);
+		ncsu_config_db#(virtual i2c_if )::set("tst.env.i2c_agent", i2c_bus);
+
+		//wbbus2 = ncsu_config_db#(virtual wb_if )::get(get_full_name(), this.bus)));
+
+		tst = new("tst",null);
+
+		fork tst.run(); join_none;
 
 		// Indicate test flow is starting to user
 		display_header_banner();

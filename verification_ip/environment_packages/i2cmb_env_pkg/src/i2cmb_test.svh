@@ -1,7 +1,7 @@
 class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 
 	i2cmb_env_configuration  cfg;
-	//environment        env;
+	i2cmb_environment        env;
 	generator          gen;
 
 
@@ -9,15 +9,15 @@ class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 		super.new(name,parent);
 		cfg = new("cfg");
 		//cfg.sample_coverage();
-		//env = new("env",this);
-		//env.set_configuration(cfg);
-		//env.build();
+		env = new("env",this);
+		env.set_configuration(cfg);
+		env.build();
 		gen = new("gen",this);
 		//gen.set_agent(env.get_p0_agent());
 	endfunction
 
 	virtual task run();
-		//env.run();
+		env.run();
 		gen.run();
 	endtask
 

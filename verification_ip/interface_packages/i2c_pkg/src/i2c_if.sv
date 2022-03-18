@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
 
 interface i2c_if       #(
-	int I2C_ADDR_WIDTH = 10,
-	int I2C_DATA_WIDTH = 8,
-	bit TRANSFER_DEBUG_MODE = 0
+	int I2C_ADDR_WIDTH = 7,
+	int I2C_DATA_WIDTH = 8
 )
 (
+
 	// System signals
 	input wire clk_i,
 	input wire rst_i,
@@ -44,6 +44,7 @@ interface i2c_if       #(
 	// Indices of MSB and LSB of a Byte in a larger buffer
 	parameter int MSB=8;
 	parameter int LSB=1;
+	parameter bit TRANSFER_DEBUG_MODE =0;
 
 	// Register for driving Serial Data Line by Slave BFM
 	logic sda_drive=1'bz;
@@ -148,8 +149,8 @@ interface i2c_if       #(
 	task wait_for_i2c_transfer(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
 		enable_driver <= MONITOR_AND_DRIVER; // Tell The monitor/sampler that there is also a driver in parallel
 		wait(transfer_in_progress == START &&
-			(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
-			);
+		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
+		);
 		driver_interrupt = INTR_CLEAR; // Reset the interrupt on detected
 		driver_receive_address(op, write_data); // Handle the request
 	endtask
@@ -290,9 +291,9 @@ interface i2c_if       #(
 	// such that the monitor can be run on systems with externally driven signal.
 	// Detects start, captures any address and opcode, and branches to data handler, monitor_record_data()
 	// ****************************************************************************
-	task monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op, 
-				 output bit [I2C_DATA_WIDTH-1:0] data []);
-				 
+	task monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op,
+		output bit [I2C_DATA_WIDTH-1:0] data []);
+
 		static bit ack;
 		static bit [7:0] monitor_data[$];
 		monitor_data.delete;
@@ -340,17 +341,17 @@ interface i2c_if       #(
 
 	// Check if ANY driver-layer interrupt has been raised
 	function bit intr_raised();
-		intr_raised = (driver_interrupt == RAISE_STOP || 
-					   driver_interrupt == RAISE_RESTART ||
-					   driver_interrupt == RAISE_START
+		intr_raised = (driver_interrupt == RAISE_STOP ||
+		driver_interrupt == RAISE_RESTART ||
+		driver_interrupt == RAISE_START
 		);
 	endfunction
 
 	// Check if ANY monitor-layer interrupt has been raised
 	function bit mon_intr_raised();
-		mon_intr_raised = (monitor_interrupt == RAISE_STOP || 
-						   monitor_interrupt == RAISE_RESTART ||
-						   monitor_interrupt == RAISE_START
+		mon_intr_raised = (monitor_interrupt == RAISE_STOP ||
+		monitor_interrupt == RAISE_RESTART ||
+		monitor_interrupt == RAISE_START
 		);
 	endfunction
 

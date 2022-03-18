@@ -1,6 +1,6 @@
-class i2cmb_env_configuration extends ncsu_configuration;
+	class i2cmb_env_configuration extends ncsu_configuration;
 
-	/*bit       loopback;
+		/*bit       loopback;
   bit       invert;
   bit [3:0] port_delay;
 
@@ -16,17 +16,17 @@ class i2cmb_env_configuration extends ncsu_configuration;
   	env_configuration_cg.sample();
   endfunction*/
 
-	wb_configuration p0_agent_config;
-	i2c_configuration p1_agent_config;
+		wb_configuration wb_agent_config;
+		i2c_configuration i2c_agent_config;
 
-	function new(string name="");
-		super.new(name);
-		//env_configuration_cg = new;
-		p0_agent_config = new("p0_agent_config");
-		p1_agent_config = new("p1_agent_config");
-		//p1_agent_config.collect_coverage=0;
-		//p0_agent_config.sample_coverage();
-		//p1_agent_config.sample_coverage();
-	endfunction
+		function new(string name="");
+			super.new(name);
+			//env_configuration_cg = new;
+			wb_agent_config = new("wb_agent_config");
+			i2c_agent_config = new("i2c_agent_config");
+			//i2c_agent_config.collect_coverage=0;
+			//wb_agent_config.sample_coverage();
+			//i2c_agent_config.sample_coverage();
+		endfunction
 
-endclass
+	endclass
