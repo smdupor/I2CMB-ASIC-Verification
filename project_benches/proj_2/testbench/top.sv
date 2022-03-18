@@ -116,7 +116,7 @@ module top();
 	// 			NB: Control of monitoring level is parameterized and BY DEFAULT,
 	// 			Wishbone-transfer monitoring is disabled at this time.
 	// ****************************************************************************
-	initial begin : wishbone_monitor
+	/*initial begin : wishbone_monitor
 		static bit transfer_in_progress, print_next_read, address_state;
 		static bit [7:0] last_dpr;
 		string s,t;
@@ -171,7 +171,7 @@ module top();
 				if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 			end
 		end
-	end
+	end*/
 
 	// ****************************************************************************
 	// Monitor I2C Bus and display all transfers with DIRECTION, associated ADDRESS, 
