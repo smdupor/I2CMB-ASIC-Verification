@@ -25,38 +25,32 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		i2c_op_t i2mon_op;
 		bit [7:0] i2mon_data [];
 		string s,temp;
-		s = "";
+		int counter;
 
+		s = "";
 		forever begin
 			// Request transfer info from i2c BFM
 			bus.monitor(i2mon_addr, i2mon_op, i2mon_data);
 
-			// Format header based on WRITE or READ
-			if(i2mon_op == I2_WRITE) begin
-				s = "I2C_BUS WRITE Transfer To   Address: ";
-			end
-			else begin
-				s = "I2C_BUS READ  Transfer From Address: ";
-			end
+			monitored_trans = new({"i2c_trans:", $sformatf("%d",counter)});
+			monitored_trans.set(i2mon_addr, i2mon_data,i2mon_op);
+			counter +=1;
 
-			// Add ADDRESS associated with transfer to string, followed by "Data: " tag
-			temp.itoa(integer'(i2mon_addr));
-			s = {s,temp," Data: "};
+			print_local_transaction;
 
-			// Concatenate each data byte to string. PRINT_LINE_LEN parameter introduces a
-			// number-of-characters cap, beyond which each  line will be wrapped to the nextline.
-			foreach(i2mon_data[i]) begin
-				if(s.len % PRINT_LINE_LEN < 4) s = {s,"\n\t"};
-				temp.itoa(integer'(i2mon_data[i]));
-				s = {s,temp,","};
-			end
+			// TODO SEND TRANSACTION TO SUBSCRIBERS
 
-			$display("%s", s.substr(0,s.len-2));
 
-			// In the case of a multi-line transfer, print a horizontal rule to make clear where 
-			// this transfer transcript message ends
-			if(s.len>60) display_hrule;
 		end
 	endtask
+
+	function print_local_transaction();
+		$display(monitored_trans.convert2string_legacy());
+
+		// In the case of a multi-line transfer, print a horizontal rule to make clear where 
+		// this transfer transcript message ends
+		if(monitored_trans.convert2string_legacy().len>60) display_hrule;
+
+	endfunction
 
 endclass
