@@ -186,6 +186,7 @@ interface i2c_if       #(
 			else driver_transmit_read_data();
 
 		end
+		driver_interrupt = INTR_CLEAR;
 		// Copy queued captured write data into return array.
 		write_data = write_buf;
 	endtask

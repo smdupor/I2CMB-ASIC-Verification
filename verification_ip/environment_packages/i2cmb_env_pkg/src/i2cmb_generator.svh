@@ -47,6 +47,7 @@ end*/
 					wb_agent_handle.bl_put(wb_trans[i]);
 					i2c_agent_handle.bl_put(i2c_trans[i]);
 				join
+				//$display("Block In Question Exited");
 			end
 			//assert (transaction[i].randomize());
 			//agent.bl_put(transaction[i]);
@@ -80,6 +81,7 @@ end*/
 			wb_trans[trans_index].data=init_data;
 			i2c_trans[trans_index].rw = operation;
 			wb_trans[trans_index].rw = operation;
+			if(operation == I2_READ) wb_trans[trans_index].QTY_WORDS_TO_READ = wb_trans[trans_index].data.size();
 			init_data.delete();
 		endfunction
 

@@ -132,13 +132,13 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// Select desired I2C bus of DUT to use for transfers.
 	// ****************************************************************************
 	task select_I2C_bus(input bit [7:0] selected_bus);
-		$display("Select %d", selected_bus);
+		//$display("Select %d", selected_bus);
 		master_write(DPR, selected_bus);
-		$display("Issue select cmd");
+		//$display("Issue select cmd");
 		master_write(CMDR, SET_I2C_BUS);
-		$display("Stall for interrupt");
+		//$display("Stall for interrupt");
 		wait_interrupt();
-		$display("Returned from interrupt");
+		//$display("Returned from interrupt");
 	endtask
 
 	// ****************************************************************************
@@ -154,7 +154,7 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// Do not check incoming status bits.
 	// ****************************************************************************
 	task wait_interrupt();
-		@(posedge irq_i);
+		wait(irq_i ==1'b1);
 		master_read(CMDR, buf_in);
 	endtask
 
@@ -189,7 +189,7 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// Transmit this formatted address byte on the I2C bus
 	// ****************************************************************************
 	task transmit_address_req_write(input bit [7:0] addr);
-		$display("ATTEMPT WRITE ADDR: %d", addr);
+		//	$display("ATTEMPT WRITE ADDR: %d", addr);
 		addr = addr << 1;
 		addr[0]=1'b0;
 		master_write(DPR, addr);

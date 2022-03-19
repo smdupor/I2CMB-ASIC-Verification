@@ -40,13 +40,14 @@ endcase*/
 			// If DUT is not currently enabled, enable it.
 			if(!dut_enable) begin
 				bus.enable_dut_with_interrupt();
-				$display("Enable DUT");
+				//$display("Enable DUT");
 				dut_enable = 1'b1;
+
+				//$display("Select bus");
+				// Select the bus of the DUT to use for this transaction
+				bus.select_I2C_bus(wb_trans.selected_bus);
 			end
-			$display("Select bus");
-			// Select the bus of the DUT to use for this transaction
-			bus.select_I2C_bus(wb_trans.selected_bus);
-			$display("write all");
+			//$display("write all");
 			// Perform a write of all data within this transaction
 			if(wb_trans.rw == I2_WRITE) begin
 				bus.issue_start_command();
@@ -79,7 +80,7 @@ endcase*/
 			// If this transaction is not part of a restart-sequence, send a stop command on the bus
 			//if(wb_trans.persist == STOP) 
 			bus.issue_stop_command();
-			#1000 $display("Next");
+			//#1000 $display("Next");
 
 		endtask
 
