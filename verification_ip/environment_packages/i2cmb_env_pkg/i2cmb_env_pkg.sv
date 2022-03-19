@@ -1,8 +1,11 @@
 package i2cmb_env_pkg;
 
 	import ncsu_pkg::*;
+	import i2c_types_pkg::*;
+	import wb_types_pkg::*;
 	import i2c_pkg::*;
 	import wb_pkg::*;
+
 
 	`include "src/i2cmb_env_configuration.svh"
 

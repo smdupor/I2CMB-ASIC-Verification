@@ -14,6 +14,7 @@ class wb_transaction extends ncsu_transaction;
 			super.new(name);
 		endfunction
 
+
 		virtual function string convert2string();
 			string s,temp;
 			if(rw == I2_WRITE) begin
