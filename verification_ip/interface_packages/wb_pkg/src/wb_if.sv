@@ -1,8 +1,5 @@
-interface wb_if       #(
-	int ADDR_WIDTH = 2,
-	int DATA_WIDTH = 8
-)
-(
+interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
+
 	// System sigals
 	input wire clk_i,
 	input wire rst_i,
@@ -23,6 +20,9 @@ interface wb_if       #(
 	output reg [DATA_WIDTH-1:0] dat_o,
 	input wire [DATA_WIDTH-1:0] dat_i
 );
+	import wb_types_pkg::*;
+
+	logic [7:0] buf_in;
 
 	initial reset_bus();
 
@@ -112,6 +112,129 @@ interface wb_if       #(
 			data = dat_i;
 		end
 		while (cyc_o) @(posedge clk_i);
+	endtask
+
+	//_____________________________________________________________________________________\\
+	//                           WISHBONE DRIVER ABSTRACTIONS                              \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// Enable the DUT core. Effectively, a soft reset after a disable command
+	// 		NB: Also sets the enable_interrupt bit of the DUT such that we can use
+	// 			raised interrupts to determine DUT-ready rather than polling
+	//			DUT registers for readiness.
+	// ****************************************************************************
+	task enable_dut_with_interrupt();
+		master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT
+	endtask
+
+	// ****************************************************************************
+	// Select desired I2C bus of DUT to use for transfers.
+	// ****************************************************************************
+	task select_I2C_bus(input bit [7:0] selected_bus);
+		master_write(DPR, selected_bus);
+		master_write(CMDR, SET_I2C_BUS);
+		wait_interrupt;
+	endtask
+
+	// ****************************************************************************
+	// Disable the DUT and STALL for 2 system cycles
+	// ****************************************************************************
+	task disable_dut();
+		master_write(CSR, DISABLE_CORE); // Enable DUT
+		repeat(2) begin @(posedge clk_i); $display("Stall"); end
+	endtask
+
+	// ****************************************************************************
+	// Wait for, and clear, interrupt rising from WB-end of DUT. 
+	// Do not check incoming status bits.
+	// ****************************************************************************
+	task wait_interrupt();
+		wait(irq_i == 1'b1);
+		master_read(CMDR, buf_in);
+	endtask
+
+	// ****************************************************************************
+	// Wait for, and clear, interrupt rising from WB-end of DUT. 
+	// Check status register and alert user to problem if a NACK was received.
+	// ****************************************************************************
+	task wait_interrupt_with_NACK();
+		wait(irq_i ==1'b1);
+		master_read(CMDR, buf_in);
+		if(buf_in[6]==1'b1) $display("\t[ WB ] NACK");
+	endtask
+
+	// ****************************************************************************
+	// Send a start command to I2C nets via DUT
+	// ****************************************************************************
+	task issue_start_command();
+		master_write(CMDR, I2C_START);
+		wait_interrupt();
+	endtask
+
+	// ****************************************************************************
+	// Send a stop command to I2C Nets via DUT
+	// ****************************************************************************
+	task issue_stop_command();
+		master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
+		wait_interrupt();
+	endtask
+
+	// ****************************************************************************
+	// Format incoming address byte and set R/W bit to request a WRITE.
+	// Transmit this formatted address byte on the I2C bus
+	// ****************************************************************************
+	task transmit_address_req_write(input bit [7:0] addr);
+		addr = addr << 2;
+		addr[0]=1'b0;
+		master_write(DPR, addr);
+		master_write(CMDR, I2C_WRITE);
+		wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
+	endtask
+
+	// ****************************************************************************
+	// Format incoming address byte and set R/W bit to request a READ.
+	// Transmit this formatted address byte on the I2C bus
+	// ****************************************************************************
+	task transmit_address_req_read(input bit [7:0] addr);
+		addr = addr << 2;
+		addr[0]=1'b1;
+		master_write(DPR, addr);
+		master_write(CMDR, I2C_WRITE);
+		wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack
+	endtask
+
+	// ****************************************************************************
+	// Write a single byte of data to a previously-addressed I2C Slave
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	task write_data_byte(input bit [7:0] data);
+		master_write(DPR, data);
+		master_write(CMDR, I2C_WRITE);
+		wait_interrupt_with_NACK();
+	endtask
+
+	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that we are REQUESTING ANOTHER byte after this byte.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	task read_data_byte_with_continue(output bit [7:0] iobuf);
+		master_write(CMDR, READ_WITH_ACK);
+		wait_interrupt_with_NACK();
+		master_read(DPR, iobuf);
+	endtask
+
+	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that this is the LAST BYTE of this transfer, and the next
+	// 		bus action will be a STOP signal.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	task read_data_byte_with_stop(output bit [7:0] iobuf);
+		master_write(CMDR, READ_WITH_NACK);
+		wait_interrupt_with_NACK();
+		master_read(DPR, iobuf);
 	endtask
 
 endinterface

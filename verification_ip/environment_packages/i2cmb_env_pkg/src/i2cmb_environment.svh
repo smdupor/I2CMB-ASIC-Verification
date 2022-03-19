@@ -1,8 +1,8 @@
 	class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 
 		i2cmb_env_configuration configuration;
-		wb_agent         wb_agent;
-		i2c_agent		i2c_agent;
+		wb_agent         wb_agent_handle;
+		i2c_agent		i2c_agent_handle;
 		i2cmb_predictor         pred;
 		i2cmb_scoreboard        scbd;
 		coverage          coverage;
@@ -16,12 +16,12 @@
 		endfunction
 
 		virtual function void build();
-			wb_agent = new("wb_agent",this);
-			wb_agent.set_configuration(configuration.wb_agent_config);
-			wb_agent.build();
-			i2c_agent = new("i2c_agent",this);
-			i2c_agent.set_configuration(configuration.i2c_agent_config);
-			i2c_agent.build();
+			wb_agent_handle = new("wb_agent",this);
+			wb_agent_handle.set_configuration(configuration.wb_agent_config);
+			wb_agent_handle.build();
+			i2c_agent_handle = new("i2c_agent",this);
+			i2c_agent_handle.set_configuration(configuration.i2c_agent_config);
+			i2c_agent_handle.build();
 			/*pred  = new("pred", this);
 pred.set_configuration(configuration);
 pred.build();
@@ -36,17 +36,17 @@ pred.set_scoreboard(scbd);
 i2c_agent.connect_subscriber(scbd);*/
 		endfunction
 
-		function ncsu_component#(T) get_wb_agent();
-			return wb_agent;
+		function wb_agent get_wb_agent();
+			return wb_agent_handle;
 		endfunction
 
-		function ncsu_component#(T) get_i2c_agent();
-			return i2c_agent;
+		function i2c_agent get_i2c_agent();
+			return i2c_agent_handle;
 		endfunction
 
 		virtual task run();
-			wb_agent.run();
-			i2c_agent.run();
+			wb_agent_handle.run();
+			i2c_agent_handle.run();
 		endtask
 
 	endclass

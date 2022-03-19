@@ -212,7 +212,7 @@ module top();
 
 			// In the case of a multi-line transfer, print a horizontal rule to make clear where 
 			// this transfer transcript message ends
-			if(s.len>60) display_hrule;
+			if(s.len>60) display_hrule;   
 		end
 	end*/
 

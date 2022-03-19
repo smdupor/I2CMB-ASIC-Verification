@@ -1,7 +1,8 @@
 	class generator extends ncsu_component#(.T(i2c_transaction));
 
 		i2c_transaction transaction[10];
-		ncsu_component #(T) agent;
+		wb_agent wb_agent_handle;
+		i2c_agent i2c_agent_handle;
 		string trans_name;
 
 		function new(string name = "", ncsu_component_base  parent = null);
@@ -22,8 +23,12 @@ end*/
 			end
 		endtask
 
-		function void set_agent(ncsu_component #(T) agent);
-			this.agent = agent;
+		function void set_wb_agent(wb_agent agent);
+			this.wb_agent_handle = agent;
+		endfunction
+
+		function void set_i2c_agent(i2c_agent agent);
+			this.i2c_agent_handle = agent;
 		endfunction
 
 	endclass

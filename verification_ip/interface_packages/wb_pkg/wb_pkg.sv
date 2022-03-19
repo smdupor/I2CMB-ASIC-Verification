@@ -2,7 +2,9 @@ package wb_pkg;
 
 	import ncsu_pkg::*;
 	import i2c_types_pkg::*;
+	import wb_types_pkg::*;
 	import printing_pkg::*;
+
 	`include "ncsu_macros.svh"
 
 	`include "src/wb_configuration.svh"

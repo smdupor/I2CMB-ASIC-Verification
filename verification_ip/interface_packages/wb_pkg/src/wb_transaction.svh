@@ -5,6 +5,10 @@ class wb_transaction extends ncsu_transaction;
 		bit [7:0] address;
 		bit [7:0] data [];
 		i2c_op_t rw;
+		close_on_complete_t persist;
+		explicit_bus_cmd_t explicit;
+		bit [3:0] selected_bus;
+		int QTY_WORDS_TO_READ;
 
 		function new(string name="");
 			super.new(name);
