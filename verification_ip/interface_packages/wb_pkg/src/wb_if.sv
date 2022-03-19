@@ -189,7 +189,8 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// Transmit this formatted address byte on the I2C bus
 	// ****************************************************************************
 	task transmit_address_req_write(input bit [7:0] addr);
-		addr = addr << 2;
+		$display("ATTEMPT WRITE ADDR: %d", addr);
+		addr = addr << 1;
 		addr[0]=1'b0;
 		master_write(DPR, addr);
 		master_write(CMDR, I2C_WRITE);
@@ -201,7 +202,7 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// Transmit this formatted address byte on the I2C bus
 	// ****************************************************************************
 	task transmit_address_req_read(input bit [7:0] addr);
-		addr = addr << 2;
+		addr = addr << 1;
 		addr[0]=1'b1;
 		master_write(DPR, addr);
 		master_write(CMDR, I2C_WRITE);
