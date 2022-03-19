@@ -19,33 +19,34 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		//bus.drive(trans.payload); TODO: : DRIVE BUS
 		wb_trans = trans;
 
-		case(wb_trans.explicit)
-			EXPLICIT_ENABLE: begin
-				bus.enable_dut_with_interrupt();
-				dut_enable = 1'b1;
-				return;
-			end
-			EXPLICIT_DISABLE: begin
-				dut_enable = 1'b0;
-				bus.disable_dut();
-				return;
-			end
-			EXPLICIT_STOP: begin
-				bus.issue_stop_command();
-				return;
-			end
-			default: begin end // The majority of calls will not request an explicit forced command; Continue to functionality.
-		endcase
+		/*case(wb_trans.explicit)
+	EXPLICIT_ENABLE: begin
+		bus.enable_dut_with_interrupt();
+		dut_enable = 1'b1;
+		return;
+	end
+	EXPLICIT_DISABLE: begin
+		dut_enable = 1'b0;
+		bus.disable_dut();
+		return;
+	end
+	EXPLICIT_STOP: begin
+		bus.issue_stop_command();
+		return;
+	end
+	default: begin end // The majority of calls will not request an explicit forced command; Continue to functionality.
+endcase*/
 
 		// If DUT is not currently enabled, enable it.
 		if(!dut_enable) begin
 			bus.enable_dut_with_interrupt();
+			$display("Enable DUT");
 			dut_enable = 1'b1;
 		end
-
+		$display("Select bus");
 		// Select the bus of the DUT to use for this transaction
 		bus.select_I2C_bus(wb_trans.selected_bus);
-
+		$display("write all");
 		// Perform a write of all data within this transaction
 		if(wb_trans.rw == I2_WRITE) begin
 			bus.issue_start_command();

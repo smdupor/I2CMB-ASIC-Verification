@@ -474,6 +474,7 @@ module top();
 		// System sigals
 		.clk_i(clk),
 		.rst_i(rst),
+		.irq_i(irq),
 		// Master signals
 		.cyc_o(cyc),
 		.stb_o(stb),
@@ -562,11 +563,11 @@ module top();
 		//wbbus2 = ncsu_config_db#(virtual wb_if )::get(get_full_name(), this.bus)));
 
 		tst = new("tst",null);
-
-		fork tst.run(); join_none;
+		tst.run();
+		//fork tst.run(); join_none;
 
 		// Indicate test flow is starting to user
-		display_header_banner();
+		/*display_header_banner();
 
 		// Enable the DUT and select the correct bus
 		@(negedge rst) enable_dut_with_interrupt();
@@ -664,7 +665,7 @@ module top();
 
 		// Print Compact complete reports for both ends of system
 		master_print_read_report;
-		i2c_bus.print_driver_write_report();
+		i2c_bus.print_driver_write_report();*/
 
 		// Display authorship Banner
 		display_footer_banner();

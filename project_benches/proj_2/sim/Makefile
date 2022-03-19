@@ -45,7 +45,7 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" optimized_debug_top_tb
 	@echo "********************************************************************************************"
 	@echo "  "
 	#diff transcript transcript.bak
