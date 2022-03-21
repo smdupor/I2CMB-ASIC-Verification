@@ -23,7 +23,7 @@ end*/
 				i2c_trans[i].address = 18;
 				$cast(wb_trans[i],ncsu_object_factory::create("wb_transaction"));
 				wb_trans[i].address = 18;
-				wb_trans[i].selected_bus =2;
+				wb_trans[i].selected_bus =1;
 				wb_trans[i].explicit=UNSET;
 				wb_trans[i].persist=STOP;
 			end

@@ -15,7 +15,7 @@ module top();
 	parameter int TOP_I2C_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
 	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
-	parameter int SELECTED_I2C_BUS = 2;
+	parameter int SELECTED_I2C_BUS = 1;
 	parameter int SELECTED_I2C_SLAVE_ADDRESS = 18;
 
 	i2cmb_test tst;
@@ -51,7 +51,7 @@ module top();
 	// ****************************************************************************
 	initial begin : rst_generator
 		//i2c_slave_addr = SELECTED_I2C_SLAVE_ADDRESS;
-		fork i2c_bus.reset_and_configure(SELECTED_I2C_SLAVE_ADDRESS, bit[3:0]'(SELECTED_I2C_BUS)); join_none;
+		fork i2c_bus.reset_and_configure(SELECTED_I2C_SLAVE_ADDRESS, SELECTED_I2C_BUS); join_none;
 		rst <= 1;
 		#133 rst = ~rst;
 	end
@@ -69,9 +69,9 @@ module top();
 	i2c_bus (
 		.clk_i(clk),
 		.rst_i(rst),
-		.scl_i(scl),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_i(sda),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_o(sda),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
+		.scl_i(scl), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_i(sda), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_o(sda) //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
 	);
 
 	// ****************************************************************************

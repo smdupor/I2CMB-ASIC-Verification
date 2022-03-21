@@ -11,9 +11,9 @@ interface i2c_if       #(
 	input wire clk_i,
 	input wire rst_i,
 	// Master signals
-	input wire [NUM_I2C_BUSSES] scl_i_w,
-	input triand [NUM_I2C_BUSSES] sda_i_w,
-	output wire [NUM_I2C_BUSSES] sda_o_w
+	input wire [NUM_I2C_BUSSES-1:0] scl_i,
+	input triand [NUM_I2C_BUSSES-1:0] sda_i,
+	output wire [NUM_I2C_BUSSES-1:0] sda_o
 );
 	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
@@ -48,20 +48,22 @@ interface i2c_if       #(
 	parameter bit TRANSFER_DEBUG_MODE =0;
 	//parameter int NUM_I2C_BUSSES = 16;
 
-	// Register for driving Serial Data Line by Slave BFM
-	logic sda_drive=1'bz;
-	assign sda_o = sda_drive;
-	
 	// Registers and logic to select I2C Wires from Multiline Bus
-	logic [3:0] bus_selector;
-	wire scl_i;
-	triand sda_i;
-	wire sda_o;
-	always @(bus_selector) begin
-		assign scl_i = scl_i_w[NUM_I2C_BUSSES-bus_selector-1];
-		assign sda_i = sda_i_w[NUM_I2C_BUSSES-bus_selector-1];
-		assign sda_o = sda_o_w[NUM_I2C_BUSSES-bus_selector-1];
-	end
+	int bus_selector;
+	//logic [3:0] selected_bus;
+	//reg scl_i[bus_selector];
+	//reg sda_i[bus_selector];
+	//wire sda_o[bus_selector];
+
+	// Register for driving Serial Data Line by Slave BFM
+	logic [NUM_I2C_BUSSES-1:0] sda_drive=16'bz;
+	assign sda_o = sda_drive;
+
+	/*always @(bus_selector, scl_i[bus_selector], sda_i[bus_selector], sda_o[bus_selector]) begin
+		scl_i[bus_selector] = scl_i[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1];
+		sda_i[bus_selector] = sda_i[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1];
+		sda_o[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1] = sda_o[bus_selector];
+	end*/
 
 
 	//_____________________________________________________________________________________\\
@@ -72,8 +74,8 @@ interface i2c_if       #(
 	// Reset the Slave BFM and configure it to hold input_addr address.
 	// Reset task automatically starts the sampler for detecting start/stop
 	// ****************************************************************************
-	task reset_and_configure(input bit [8:0] input_addr, input logic [3:0] selected_bus);
-		bus_selector = selected_bus;
+	task reset_and_configure(input bit [8:0] input_addr, input int sel_bus);
+		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
 		slave_address = (input_addr << 2);
 		transfer_in_progress = STOP;
 		sampler_running = STOP;
@@ -107,7 +109,7 @@ interface i2c_if       #(
 	//_____________________________________________________________________________________\\
 
 	// ****************************************************************************
-	// Continuously sample sda_i at 100MHz monitoring for Start and Stop signals.
+	// Continuously sample sda_i[bus_selector] at 100MHz monitoring for Start and Stop signals.
 	// Since these signals occur in "Normally Illegal" areas, eg, while clk_i
 	// is held high, a sampler is used to raise an interrupt to the rest of the slave BFM. 
 	// The sampler is able to detect conditions at any time, including while the BFM driver
@@ -120,10 +122,10 @@ interface i2c_if       #(
 		@(posedge clk_i); // Wait for Serial clock to rise to 
 		forever begin
 			// Continuously sample sda and scl at 100MHz
-			samples[0]=sda_i;
-			samples[1]=scl_i;
-			#10 samples[2]=sda_i;
-			samples[3]=scl_i;
+			samples[0]=sda_i[bus_selector];
+			samples[1]=scl_i[bus_selector];
+			#10 samples[2]=sda_i[bus_selector];
+			samples[3]=scl_i[bus_selector];
 
 			// If we find a valid transition indicating start/stop/restart, Store values in control
 			if(samples[1]==1'b1 && samples[3]==1'b1) begin
@@ -183,9 +185,9 @@ interface i2c_if       #(
 		static bit [7:0] write_buf[$];
 		// Read Address and opcode from serial bus
 		for(int i=MSB;i>=LSB;i--) begin
-			@(posedge scl_i);
-			driver_buffer[i] = sda_i;
-			@(negedge scl_i) if(intr_raised()) return;
+			@(posedge scl_i[bus_selector]);
+			driver_buffer[i] = sda_i[bus_selector];
+			@(negedge scl_i[bus_selector]) if(intr_raised()) return;
 		end
 
 		// Determine whether address matches configured slave address OR the All-Call address
@@ -238,9 +240,9 @@ interface i2c_if       #(
 	task driver_read_single_byte();
 		for(int i=MSB;i>=LSB;i--) begin
 			// Capture the value
-			@(posedge scl_i) driver_buffer[i] = sda_i;
-			// Sample/Watch for a possible restart/stop signal until negedge scl_i
-			while(scl_i ==1'b1)	#10	if(intr_raised()) return;
+			@(posedge scl_i[bus_selector]) driver_buffer[i] = sda_i[bus_selector];
+			// Sample/Watch for a possible restart/stop signal until negedge scl_i[bus_selector]
+			while(scl_i[bus_selector] ==1'b1)	#10	if(intr_raised()) return;
 		end
 	endtask
 
@@ -249,9 +251,9 @@ interface i2c_if       #(
 	// back to the master during this cycle. Release control and return.
 	// ****************************************************************************
 	task driver_transmit_ACK();
-		sda_drive = 1'b0;
-		@(posedge scl_i);
-		@(negedge scl_i) sda_drive =1'bz;
+		sda_drive[bus_selector] = 1'b0;
+		@(posedge scl_i[bus_selector]);
+		@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
 	endtask
 
 
@@ -273,12 +275,12 @@ interface i2c_if       #(
 			driver_transmit_single_byte();
 
 			// Check for ack/NACK from master
-			sda_drive <= 1'bz;
-			@(posedge scl_i) local_ack = sda_i;
+			sda_drive[bus_selector] <= 1'bz;
+			@(posedge scl_i[bus_selector]) local_ack = sda_i[bus_selector];
 
 			// Check for NACK/DONE or STOP/RESTART CONDTION
 			if(local_ack==NACK) return;
-			@(negedge scl_i) if(intr_raised()) return;
+			@(negedge scl_i[bus_selector]) if(intr_raised()) return;
 		end
 	endtask
 
@@ -290,9 +292,9 @@ interface i2c_if       #(
 	// ****************************************************************************
 	task driver_transmit_single_byte();
 		for(int i=MSB;i>=LSB;i--) begin
-			sda_drive <= driver_buffer[i];
-			@(posedge scl_i);
-			@(negedge scl_i);
+			sda_drive[bus_selector] <= driver_buffer[i];
+			@(posedge scl_i[bus_selector]);
+			@(negedge scl_i[bus_selector]);
 		end
 	endtask
 
@@ -319,8 +321,8 @@ interface i2c_if       #(
 
 		// Capture the incoming address, operation, and ack
 		for(int i=MSB;i>=0;i--) begin
-			@(posedge scl_i);
-			monitor_buffer[i] = sda_i;
+			@(posedge scl_i[bus_selector]);
+			monitor_buffer[i] = sda_i[bus_selector];
 		end
 		addr = monitor_buffer[MSB:2];
 		op = monitor_buffer[1]? I2_READ : I2_WRITE;
@@ -342,8 +344,8 @@ interface i2c_if       #(
 		forever begin
 			for(int i=MSB;i>=0;i--) begin
 				if(mon_intr_raised()) return;
-				@(posedge scl_i) rec_dat_mon_buf[i] = sda_i;
-				@(negedge scl_i);
+				@(posedge scl_i[bus_selector]) rec_dat_mon_buf[i] = sda_i[bus_selector];
+				@(negedge scl_i[bus_selector]);
 			end
 			monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
 			if(op==I2_READ && rec_dat_mon_buf[0]==NACK) return; // Return on Read op and NACK (End Call)
