@@ -20,10 +20,11 @@ end*/
 			// Instantiate Transactions
 			foreach (i2c_trans[i]) begin
 				$cast(i2c_trans[i],ncsu_object_factory::create("i2c_transaction"));
-				i2c_trans[i].address = 18;
+				i2c_trans[i].address = (i % 18)+1;
+				i2c_trans[i].selected_bus=i % 15;
 				$cast(wb_trans[i],ncsu_object_factory::create("wb_transaction"));
-				wb_trans[i].address = 18;
-				wb_trans[i].selected_bus =1;
+				wb_trans[i].address = (i % 18)+1;
+				wb_trans[i].selected_bus = i % 15;
 				wb_trans[i].explicit=UNSET;
 				wb_trans[i].persist=STOP;
 			end

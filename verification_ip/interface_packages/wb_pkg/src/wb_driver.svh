@@ -44,9 +44,11 @@ endcase*/
 				dut_enable = 1'b1;
 
 				//$display("Select bus");
-				// Select the bus of the DUT to use for this transaction
-				bus.select_I2C_bus(wb_trans.selected_bus);
+
 			end
+			// Select the bus of the DUT to use for this transaction
+			bus.select_I2C_bus(wb_trans.selected_bus);
+
 			//$display("write all");
 			// Perform a write of all data within this transaction
 			if(wb_trans.rw == I2_WRITE) begin

@@ -109,8 +109,8 @@ endtask*/
 						$display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);
 					end
 					else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
-						t.itoa(integer'(last_dpr[8:1]));
-						monitored_trans.address=last_dpr[8:1];
+						t.itoa(integer'(last_dpr[7:1]));
+						monitored_trans.address=last_dpr[7:1];
 
 						if(last_dpr[0]==1'b0) begin
 							s = {s," && Address ", t," : req. WRITE"};

@@ -47,7 +47,7 @@ class wb_transaction extends ncsu_transaction;
 (this.trailer == rhs.trailer) );*/ 1;
 		endfunction
 
-		function set(bit [7:0] address,	bit [7:0] data [],	i2c_op_t rw);
+		function void set(bit [7:0] address,	bit [7:0] data [],	i2c_op_t rw);
 			this.address = address;
 			this.data = data;
 			this.rw = rw;

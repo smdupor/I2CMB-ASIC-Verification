@@ -50,20 +50,10 @@ interface i2c_if       #(
 
 	// Registers and logic to select I2C Wires from Multiline Bus
 	int bus_selector;
-	//logic [3:0] selected_bus;
-	//reg scl_i[bus_selector];
-	//reg sda_i[bus_selector];
-	//wire sda_o[bus_selector];
 
 	// Register for driving Serial Data Line by Slave BFM
 	logic [NUM_I2C_BUSSES-1:0] sda_drive=16'bz;
 	assign sda_o = sda_drive;
-
-	/*always @(bus_selector, scl_i[bus_selector], sda_i[bus_selector], sda_o[bus_selector]) begin
-		scl_i[bus_selector] = scl_i[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1];
-		sda_i[bus_selector] = sda_i[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1];
-		sda_o[bus_selector]_w[NUM_I2C_BUSSES-bus_selector-1] = sda_o[bus_selector];
-	end*/
 
 
 	//_____________________________________________________________________________________\\
@@ -83,6 +73,11 @@ interface i2c_if       #(
 		driver_interrupt = INTR_CLEAR;
 		monitor_interrupt = INTR_CLEAR;
 		connection_negotiation_sampler();
+	endtask
+
+	task configure(input bit [8:0] input_addr, input int sel_bus);
+		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
+		slave_address = (input_addr << 2);
 	endtask
 
 	// ****************************************************************************
@@ -310,7 +305,7 @@ interface i2c_if       #(
 	// Detects start, captures any address and opcode, and branches to data handler, monitor_record_data()
 	// ****************************************************************************
 	task monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op,
-		output bit [I2C_DATA_WIDTH-1:0] data []);
+		output bit [I2C_DATA_WIDTH-1:0] data [], output int sel_bus);
 
 		static bit ack;
 		static bit [7:0] monitor_data[$];
@@ -318,6 +313,8 @@ interface i2c_if       #(
 
 		wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART));
 		monitor_interrupt = INTR_CLEAR; // Reset the interrupt on detected
+
+		sel_bus = bus_selector;
 
 		// Capture the incoming address, operation, and ack
 		for(int i=MSB;i>=0;i--) begin

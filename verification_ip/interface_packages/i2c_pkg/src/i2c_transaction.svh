@@ -4,6 +4,7 @@ class i2c_transaction extends ncsu_transaction;
 
 		bit [7:0] address;
 		bit [7:0] data [];
+		int selected_bus;
 		i2c_op_t rw;
 
 		function new(string name="");
@@ -11,10 +12,11 @@ class i2c_transaction extends ncsu_transaction;
 
 		endfunction
 
-		function set(bit [7:0] address,	bit [7:0] data [],i2c_op_t rw);
+		function void set(bit [7:0] address,	bit [7:0] data [],i2c_op_t rw, int selected_bus);
 			this.address = address;
 			this.data=data;
 			this.rw=rw;
+			this.selected_bus=selected_bus;
 		endfunction
 
 		function string convert2string_legacy();

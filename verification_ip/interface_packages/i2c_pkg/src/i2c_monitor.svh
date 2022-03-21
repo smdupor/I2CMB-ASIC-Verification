@@ -24,16 +24,17 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		bit[7:0] i2mon_addr;
 		i2c_op_t i2mon_op;
 		bit [7:0] i2mon_data [];
+		int i2cmon_bus;
 		string s,temp;
 		int counter;
 
 		s = "";
 		forever begin
 			// Request transfer info from i2c BFM
-			bus.monitor(i2mon_addr, i2mon_op, i2mon_data);
+			bus.monitor(i2mon_addr, i2mon_op, i2mon_data, i2cmon_bus);
 
 			monitored_trans = new({"i2c_trans:", $sformatf("%d",counter)});
-			monitored_trans.set(i2mon_addr, i2mon_data,i2mon_op);
+			monitored_trans.set(i2mon_addr, i2mon_data,i2mon_op,i2cmon_bus);
 			counter +=1;
 
 			print_local_transaction;
@@ -44,7 +45,7 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		end
 	endtask
 
-	function print_local_transaction();
+	function void print_local_transaction();
 		$display(monitored_trans.convert2string_legacy());
 
 		// In the case of a multi-line transfer, print a horizontal rule to make clear where 
