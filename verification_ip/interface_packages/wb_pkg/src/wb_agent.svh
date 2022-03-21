@@ -6,7 +6,7 @@
 		wb_driver        driver;
 		wb_monitor       monitor;
 		//wb_coverage      coverage;
-		ncsu_component #(T) subscribers[$];
+		ncsu_component subscribers[$];
 		virtual wb_if  bus;
 
 		function new(string name = "", ncsu_component_base  parent = null);
@@ -48,7 +48,7 @@
 			driver.bl_put(trans);
 		endtask
 
-		virtual function void connect_subscriber(ncsu_component#(T) subscriber);
+		virtual function void connect_subscriber(ncsu_component subscriber);
 			subscribers.push_back(subscriber);
 		endfunction
 

@@ -37,6 +37,8 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 			monitored_trans.set(i2mon_addr, i2mon_data,i2mon_op,i2cmon_bus);
 			counter +=1;
 
+			agent.nb_put(monitored_trans);
+
 			print_local_transaction;
 
 			// TODO SEND TRANSACTION TO SUBSCRIBERS

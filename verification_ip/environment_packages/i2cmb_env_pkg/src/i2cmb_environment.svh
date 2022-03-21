@@ -22,18 +22,18 @@
 			i2c_agent_handle = new("i2c_agent",this);
 			i2c_agent_handle.set_configuration(configuration.i2c_agent_config);
 			i2c_agent_handle.build();
-			/*pred  = new("pred", this);
-pred.set_configuration(configuration);
-pred.build();
-scbd  = new("scbd", this);
-scbd.build();
-coverage = new("coverage", this);
+			pred  = new("pred", this);
+			pred.set_configuration(configuration);
+			pred.build();
+			scbd  = new("scbd", this);
+			scbd.build();
+			/*coverage = new("coverage", this);
 coverage.set_configuration(configuration);
-coverage.build();
-wb_agent.connect_subscriber(coverage);
-wb_agent.connect_subscriber(pred);
-pred.set_scoreboard(scbd);
-i2c_agent.connect_subscriber(scbd);*/
+coverage.build();*/
+			//	wb_agent_handle.connect_subscriber(coverage);
+			wb_agent_handle.connect_subscriber(pred);
+			pred.set_scoreboard(scbd);
+			i2c_agent_handle.connect_subscriber(scbd);
 		endfunction
 
 		function wb_agent get_wb_agent();

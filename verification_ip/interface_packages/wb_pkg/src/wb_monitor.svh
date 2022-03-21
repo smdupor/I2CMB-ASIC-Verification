@@ -100,6 +100,8 @@ endtask*/
 						words_transferred.delete();
 
 						// TODO SEND TRANSACTION TO SUBSCRIBERS
+						agent.nb_put(monitored_trans);
+
 						$display(monitored_trans.convert2string);
 
 					end
