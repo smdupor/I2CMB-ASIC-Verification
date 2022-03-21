@@ -2,7 +2,8 @@
 
 interface i2c_if       #(
 	int I2C_ADDR_WIDTH = 7,
-	int I2C_DATA_WIDTH = 8
+	int I2C_DATA_WIDTH = 8,
+	int NUM_I2C_BUSSES = 16
 )
 (
 
@@ -10,9 +11,9 @@ interface i2c_if       #(
 	input wire clk_i,
 	input wire rst_i,
 	// Master signals
-	input wire scl_i,
-	input triand sda_i,
-	output wire sda_o
+	input wire [NUM_I2C_BUSSES] scl_i_w,
+	input triand [NUM_I2C_BUSSES] sda_i_w,
+	output wire [NUM_I2C_BUSSES] sda_o_w
 );
 	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
@@ -45,10 +46,22 @@ interface i2c_if       #(
 	parameter int MSB=8;
 	parameter int LSB=1;
 	parameter bit TRANSFER_DEBUG_MODE =0;
+	//parameter int NUM_I2C_BUSSES = 16;
 
 	// Register for driving Serial Data Line by Slave BFM
 	logic sda_drive=1'bz;
 	assign sda_o = sda_drive;
+	
+	// Register for bus selection
+	logic [3:0] bus_selector;
+	wire scl_i;
+	triand sda_i;
+	wire sda_o;
+	assign scl_i = scl_i_w[bus_selector];
+	assign sda_i = sda_i_w[bus_selector];
+	assign sda_o = sda_o_w[bus_selector];
+
+
 
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
@@ -58,7 +71,8 @@ interface i2c_if       #(
 	// Reset the Slave BFM and configure it to hold input_addr address.
 	// Reset task automatically starts the sampler for detecting start/stop
 	// ****************************************************************************
-	task reset_and_configure(input bit [8:0] input_addr);
+	task reset_and_configure(input bit [8:0] input_addr, input logic [3:0] selected_bus);
+		bus_selector = selected_bus;
 		slave_address = (input_addr << 2);
 		transfer_in_progress = STOP;
 		sampler_running = STOP;

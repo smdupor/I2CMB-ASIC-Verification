@@ -51,7 +51,7 @@ module top();
 	// ****************************************************************************
 	initial begin : rst_generator
 		//i2c_slave_addr = SELECTED_I2C_SLAVE_ADDRESS;
-		fork i2c_bus.reset_and_configure(SELECTED_I2C_SLAVE_ADDRESS); join_none;
+		fork i2c_bus.reset_and_configure(SELECTED_I2C_SLAVE_ADDRESS, bit[3:0]'(SELECTED_I2C_BUS)); join_none;
 		rst <= 1;
 		#133 rst = ~rst;
 	end
@@ -69,9 +69,9 @@ module top();
 	i2c_bus (
 		.clk_i(clk),
 		.rst_i(rst),
-		.scl_i(scl[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_i(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_o(sda[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
+		.scl_i(scl),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_i(sda),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
+		.sda_o(sda),//[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
 	);
 
 	// ****************************************************************************
