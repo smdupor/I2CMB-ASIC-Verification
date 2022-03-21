@@ -1,11 +1,11 @@
 class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
-
-
 	i2c_configuration  conf;
 	virtual i2c_if bus;
 
 	T monitored_trans;
 	ncsu_component #(T) agent;
+
+	bit enable_transaction_viewing;
 
 	function new(input string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
@@ -48,7 +48,7 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 	endtask
 
 	function void print_local_transaction();
-		$display(monitored_trans.convert2string_legacy());
+		if(enable_transaction_viewing)  $display(monitored_trans.convert2string_legacy());
 
 		// In the case of a multi-line transfer, print a horizontal rule to make clear where 
 		// this transfer transcript message ends

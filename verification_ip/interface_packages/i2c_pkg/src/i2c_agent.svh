@@ -33,7 +33,7 @@
 			monitor = new("monitor",this);
 			monitor.set_configuration(configuration);
 			monitor.set_agent(this);
-			monitor.enable_transaction_viewing = 1;
+			monitor.enable_transaction_viewing = 0;
 			monitor.build();
 			monitor.bus = this.bus;
 		endfunction

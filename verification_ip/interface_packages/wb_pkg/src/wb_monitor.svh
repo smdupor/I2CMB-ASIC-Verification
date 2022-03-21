@@ -6,6 +6,8 @@
 		T monitored_trans;
 		ncsu_component #(T) agent;
 
+		bit enable_transaction_viewing;
+
 		enum logic[2:0] {M_SET_I2C_BUS=3'b110, M_I2C_START=3'b100, M_I2C_WRITE=3'b001,
 			M_I2C_STOP=3'b101, M_READ_WITH_NACK=3'b011, M_READ_WITH_ACK=3'b010} mon;
 
@@ -34,7 +36,7 @@
                 monitored_trans.trailer,
                 monitored_trans.delay
                 );
-    $display("%s wb_monitor::run() header 0x%x payload 0x%p trailer 0x%x delay 0x%x",
+    if(enable_transaction_viewing) $display("%s wb_monitor::run() header 0x%x payload 0x%p trailer 0x%x delay 0x%x",
              get_full_name(),
              monitored_trans.header, 
              monitored_trans.payload, 
@@ -70,7 +72,7 @@ endtask*/
 					if(print_next_read) begin // Swallow interrupt reads and print transfers only
 						print_next_read = 1'b0;
 						words_transferred.push_back(last_dpr);
-						$display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
+						if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
 					end
 				end
 
@@ -82,7 +84,7 @@ endtask*/
 						if(transaction_init) begin
 							monitored_trans.data=words_transferred;
 							words_transferred.delete();
-							$display(monitored_trans.convert2string);
+							if(enable_transaction_viewing) $display(monitored_trans.convert2string);
 						end
 						else begin
 							monitored_trans = new("wb_trans");
@@ -93,7 +95,7 @@ endtask*/
 					end
 					// Detect stop condition and immediately report 
 					if(dat_mon[2:0] == M_I2C_STOP && we_mon) begin
-						$display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
+						if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
 						transaction_init = 1'b0;
 						transfer_in_progress = 1'b0;
 						monitored_trans.data=words_transferred;
@@ -102,13 +104,13 @@ endtask*/
 						// TODO SEND TRANSACTION TO SUBSCRIBERS
 						agent.nb_put(monitored_trans);
 
-						$display(monitored_trans.convert2string);
+						if(enable_transaction_viewing) $display(monitored_trans.convert2string);
 
 					end
 					// Determine whether write action is requesting an address transmit,  a write, or a read
 					if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !address_state) begin
 						words_transferred.push_back(last_dpr);
-						$display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);
+						if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);
 					end
 					else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
 						t.itoa(integer'(last_dpr[7:1]));
@@ -122,18 +124,18 @@ endtask*/
 							s = {s," && Address ", t, " : req. READ"};
 							monitored_trans.rw = I2_READ;
 						end
-						$display("%s",s);
+						if(enable_transaction_viewing) $display("%s",s);
 						address_state = 1'b0;
 					end
 					// Detect that we are swallowing an interrupt read for a COMMAND READ and notify statemachine
 					if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
 				end
 				// If verbose debugging, display all command register actions
-				//	if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
+				//	if(ENABLE_WISHBONE_VERBOSE_DEBUG) if(enable_transaction_viewing) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
 
 				else begin
 					// if verbose debugging, display all non-specific commands outside of prior decision tree
-					//if(ENABLE_WISHBONE_VERBOSE_DEBUG) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
+					//if(ENABLE_WISHBONE_VERBOSE_DEBUG) if(enable_transaction_viewing) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 				end
 			end
 
