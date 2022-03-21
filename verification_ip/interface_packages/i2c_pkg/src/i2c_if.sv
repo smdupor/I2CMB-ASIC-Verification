@@ -58,9 +58,9 @@ interface i2c_if       #(
 	triand sda_i;
 	wire sda_o;
 	always @(bus_selector) begin
-		assign scl_i = scl_i_w[bus_selector];
-		assign sda_i = sda_i_w[bus_selector];
-		assign sda_o = sda_o_w[bus_selector];
+		assign scl_i = scl_i_w[NUM_I2C_BUSSES-bus_selector-1];
+		assign sda_i = sda_i_w[NUM_I2C_BUSSES-bus_selector-1];
+		assign sda_o = sda_o_w[NUM_I2C_BUSSES-bus_selector-1];
 	end
 
 
