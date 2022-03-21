@@ -52,15 +52,16 @@ interface i2c_if       #(
 	logic sda_drive=1'bz;
 	assign sda_o = sda_drive;
 	
-	// Register for bus selection
+	// Registers and logic to select I2C Wires from Multiline Bus
 	logic [3:0] bus_selector;
 	wire scl_i;
 	triand sda_i;
 	wire sda_o;
-	assign scl_i = scl_i_w[bus_selector];
-	assign sda_i = sda_i_w[bus_selector];
-	assign sda_o = sda_o_w[bus_selector];
-
+	always @(bus_selector) begin
+		assign scl_i = scl_i_w[bus_selector];
+		assign sda_i = sda_i_w[bus_selector];
+		assign sda_o = sda_o_w[bus_selector];
+	end
 
 
 	//_____________________________________________________________________________________\\
