@@ -31,7 +31,7 @@ class wb_transaction extends ncsu_transaction;
 			// Concatenate each data byte to string. PRINT_LINE_LEN parameter introduces a
 			// number-of-characters cap, beyond which each  line will be wrapped to the nextline.
 			foreach(data[i]) begin
-				if(s.len % PRINT_LINE_LEN < 4) s = {s,"\n\t"};
+				//if(s.len % PRINT_LINE_LEN < 4) s = {s,"\n\t"};
 				temp.itoa(integer'(data[i]));
 				s = {s,temp,","};
 			end
@@ -42,9 +42,7 @@ class wb_transaction extends ncsu_transaction;
 		endfunction
 
 		function bit compare(wb_transaction rhs);
-			return /*((this.header  == rhs.header ) &&
-(this.payload == rhs.payload) &&
-(this.trailer == rhs.trailer) );*/ 1;
+			return 0; // Always fail TODO TODO TODO TODO
 		endfunction
 
 		function void set(bit [7:0] address,	bit [7:0] data [],	i2c_op_t rw);

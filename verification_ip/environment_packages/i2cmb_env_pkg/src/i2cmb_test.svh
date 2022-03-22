@@ -20,6 +20,7 @@ class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 	virtual task run();
 		env.run();
 		gen.run();
+		env.scbd.report_test_stats();
 	endtask
 
 endclass

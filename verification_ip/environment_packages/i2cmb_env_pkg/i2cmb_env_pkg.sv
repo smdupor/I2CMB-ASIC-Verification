@@ -1,6 +1,7 @@
 package i2cmb_env_pkg;
 
 	import ncsu_pkg::*;
+	import printing_pkg::*;
 	import i2c_types_pkg::*;
 	import wb_types_pkg::*;
 	import i2c_pkg::*;

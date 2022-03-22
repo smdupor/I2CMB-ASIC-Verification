@@ -3,6 +3,7 @@ class i2cmb_predictor extends ncsu_component;
 	ncsu_component scoreboard;
 	ncsu_transaction transport_trans;
 	i2cmb_env_configuration configuration;
+	int counter;
 
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
@@ -19,10 +20,11 @@ class i2cmb_predictor extends ncsu_component;
 	virtual function void nb_put(ncsu_transaction trans);
 		wb_transaction itrans;
 		i2c_transaction predicted;
-		predicted = new;
+		predicted = new({"i2c_trans(", itoalpha(counter),")"}); //$sformatf("%0d",counter)});
+		counter +=1;
+
 		$cast(itrans, trans);
 		$display({get_full_name()," ",itrans.convert2string()});
-
 
 		predicted.address =itrans.address;
 		predicted.data =itrans.data;

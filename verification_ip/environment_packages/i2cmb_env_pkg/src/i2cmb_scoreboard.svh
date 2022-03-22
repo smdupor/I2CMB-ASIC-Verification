@@ -1,23 +1,24 @@
-class i2cmb_scoreboard extends ncsu_component;
+class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
 
 	i2c_transaction lhs_trans_in[$], rhs_trans_in[$];
+	i2c_transaction passes[$], fails[$];
 	i2c_transaction trans_in;
-	ncsu_transaction trans_out;
+	T trans_out;
 
-	virtual function void nb_transport(input ncsu_transaction input_trans, output ncsu_transaction output_trans);
-		$display({get_full_name()," nb_transport: expected transaction ",input_trans.convert2string()});
+	virtual function void nb_transport(input T input_trans, output T output_trans);
+
 		$cast(this.trans_in, input_trans);
 		lhs_trans_in.push_back(trans_in);
 		output_trans = trans_out;
 		check();
 	endfunction
 
-	virtual function void nb_put(ncsu_transaction trans);
+	virtual function void nb_put(T trans);
 		i2c_transaction chk;
-		$display({get_full_name()," nb_put: actual transaction ",trans.convert2string()});
+
 		$cast(chk, trans);
 		rhs_trans_in.push_back(chk);
 		check();
@@ -25,10 +26,28 @@ class i2cmb_scoreboard extends ncsu_component;
 
 	function void check();
 		i2c_transaction lhs, rhs;
-		if(lhs_trans_in.size==0 || rhs_trans_in.size==0) return;
+		if(lhs_trans_in.size==0 || rhs_trans_in.size==0) return; // Have arrived at this branch before the other transaction to-be-compared
+
 		lhs=lhs_trans_in.pop_front();
 		rhs=rhs_trans_in.pop_front();
-		if ( lhs.compare(rhs) ) $display({get_full_name()," transaction MATCH!"});
-		else                                $display({get_full_name()," transaction MISMATCH!"});
+		$display({get_full_name()," nb_transport: expected transaction ",lhs.convert2string()});
+		$display({get_full_name()," nb_put:       actual   transaction ",rhs.convert2string()});
+		if ( lhs.compare(rhs) ) begin
+			passes.push_front(lhs);
+			$display({get_full_name()," transaction MATCH!"});
+		end
+		else begin
+			$display({get_full_name()," transaction MISMATCH!"});
+			fails.push_front(lhs);
+		end
+	endfunction
+
+	function void report_test_stats();
+		display_h_lowbar();
+
+		if(fails.size == 0) $display("\t\tALL TESTS PASSED, %0d tests cases checked.", passes.size);
+		else				$display("\t\tTESTS FAILED! %d tests cases failing. TESTS FAILED!", fails.size);
+
+		display_h_lowbar();
 	endfunction
 endclass

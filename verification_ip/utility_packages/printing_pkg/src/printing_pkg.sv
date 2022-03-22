@@ -1,6 +1,7 @@
 package printing_pkg;
-//	Support functions to encapsulate common printing tasks, like Hlines, Hrules, rows of *, and header/footer banners
+	//	Support functions to encapsulate common printing tasks, like Hlines, Hrules, rows of *, and header/footer banners
 
+	const string lookup[27] = {"a",	"b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",""	};
 
 	function void display_hstars();
 		$display("*******************************************************************************");
@@ -28,6 +29,20 @@ package printing_pkg;
 		display_h_lowbar();
 	endfunction
 
+	function string itoalpha(int i);
+		static int j;
+		static int k;
+		k=i;
+		j=0;
+		while(k>=26) begin
+			k -= 26;
+			++j;
+		end
+		//if(j>0) 
+		itoalpha={lookup[j], lookup[k]};
+		//else itoalpha={" ", lookup[k]};
+	endfunction
+
 	parameter int PRINT_LINE_LEN = 76;
-	
+
 endpackage
