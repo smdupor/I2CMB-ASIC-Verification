@@ -2,6 +2,7 @@
 
 		i2cmb_env_configuration     configuration;
 		wb_transaction	 coverage_transaction;
+		bit enable_display;
 		/*header_type_t         header_type;
   bit                   loopback;
   bit                   invert;
@@ -22,12 +23,13 @@
 
 		function new(string name = "", ncsu_component_base  parent = null);
 			super.new(name,parent);
+			enable_display=1'b0;
 			//coverage_cg = new;
 		endfunction
 
 		virtual function void nb_put(T trans);
 			$cast(this.coverage_transaction, trans);
-			$display({get_full_name()," ",coverage_transaction.convert2string()});
+			if(enable_display) $display({get_full_name()," ",coverage_transaction.convert2string()});
 			/*header_type = header_type_t'(trans.header[63:60]);
     loopback    = configuration.loopback;
     invert      = configuration.invert;
