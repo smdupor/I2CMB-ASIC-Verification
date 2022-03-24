@@ -52,7 +52,23 @@
 endtask*/
 
 		virtual task run();
-			static bit transfer_in_progress, print_next_read, address_state, transaction_init;
+			static bit [2:0] adr_mon;
+			static bit [7:0] dat_mon;
+			static bit  we_mon;
+
+			forever begin
+				monitored_trans = new("wb_mon_trans");
+				#10 this.bus.master_monitor(adr_mon, dat_mon, we_mon);
+				monitored_trans.line = adr_mon;
+				monitored_trans.word = dat_mon;
+				monitored_trans.write = we_mon;
+
+				agent.nb_put(monitored_trans);
+			end
+
+
+
+			/*static bit transfer_in_progress, print_next_read, address_state, transaction_init;
 			static bit [7:0] last_dpr;
 			static bit [2:0] adr_mon;
 			static bit [7:0] dat_mon;
@@ -138,7 +154,7 @@ endtask*/
 					//if(ENABLE_WISHBONE_VERBOSE_DEBUG) if(enable_transaction_viewing) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
 				end
 			end
-
+*/
 
 		endtask
 

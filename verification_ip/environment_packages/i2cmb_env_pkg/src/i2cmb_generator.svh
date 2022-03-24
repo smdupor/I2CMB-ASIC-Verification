@@ -54,7 +54,7 @@ end*/
 				end
 
 				// Alternation EVEN
-				if(i>1 && i % 2 == 1) begin // do a write
+				if(i>1 && i % 2 == 0) begin // do a write
 					transmit_address_req_write(i2c_trans[i].address);
 					write_data_byte(byte'(k));
 					--k;
@@ -62,7 +62,7 @@ end*/
 					issue_stop_command();
 				end
 				// Alternation ODD
-				else if (i>1 && i % 2 == 0) begin // do a write
+				else if (i>1 && i % 2 == 1) begin // do a write
 					transmit_address_req_read(i2c_trans[i].address);
 					read_data_byte_with_stop();
 					++j;
@@ -78,6 +78,8 @@ end*/
 
 
 			end
+			//issue_start_command();
+			//issue_stop_command();
 			//	issue_stop_command();
 
 			//set_explicit_range(0, 31, 0, I2_WRITE); // WRITE_ALL task

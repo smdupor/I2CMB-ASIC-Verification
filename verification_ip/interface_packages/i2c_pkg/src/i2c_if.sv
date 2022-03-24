@@ -215,10 +215,11 @@ interface i2c_if       #(
 
 			// Check to ensure we have not encountered a stop/restart condition, if so, 
 			// return control to caller for next transfer to begin
-			if(intr_raised()) return;
+			if(!intr_raised()) driver_transmit_ACK();
+			else return;
 
 			// Reply with the ACK of this byte
-			driver_transmit_ACK();
+
 
 			// Store byte in Driver's local buffer and returnable buffer
 			slave_receive_buffer.push_back(driver_buffer[MSB:LSB]);
@@ -342,7 +343,9 @@ interface i2c_if       #(
 			for(int i=MSB;i>=0;i--) begin
 				if(mon_intr_raised()) return;
 				@(posedge scl_i[bus_selector]) rec_dat_mon_buf[i] = sda_i[bus_selector];
-				@(negedge scl_i[bus_selector]);
+
+				wait(scl_i[bus_selector] == 1'b0 || mon_intr_raised());
+				if(monitor_interrupt == RAISE_STOP) return;
 			end
 			monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
 			if(op==I2_READ && rec_dat_mon_buf[0]==NACK) return; // Return on Read op and NACK (End Call)
