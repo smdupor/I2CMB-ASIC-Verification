@@ -40,10 +40,6 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 			agent.nb_put(monitored_trans);
 
 			print_local_transaction;
-
-			// TODO SEND TRANSACTION TO SUBSCRIBERS
-
-
 		end
 	endtask
 
@@ -53,7 +49,6 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		// In the case of a multi-line transfer, print a horizontal rule to make clear where 
 		// this transfer transcript message ends
 		if(monitored_trans.convert2string_legacy().len>60) display_hrule;
-
 	endfunction
 
 endclass
