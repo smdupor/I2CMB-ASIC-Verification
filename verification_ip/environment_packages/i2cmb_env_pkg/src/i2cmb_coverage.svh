@@ -1,7 +1,7 @@
-	class coverage extends ncsu_component#(.T(i2c_transaction));
+	class coverage extends ncsu_component#(.T(ncsu_transaction));
 
 		i2cmb_env_configuration     configuration;
-		i2c_transaction	 coverage_transaction;
+		wb_transaction	 coverage_transaction;
 		/*header_type_t         header_type;
   bit                   loopback;
   bit                   invert;
@@ -26,7 +26,8 @@
 		endfunction
 
 		virtual function void nb_put(T trans);
-			$display({get_full_name()," ",trans.convert2string()});
+			$cast(this.coverage_transaction, trans);
+			$display({get_full_name()," ",coverage_transaction.convert2string()});
 			/*header_type = header_type_t'(trans.header[63:60]);
     loopback    = configuration.loopback;
     invert      = configuration.invert;
