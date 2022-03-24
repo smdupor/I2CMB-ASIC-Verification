@@ -14,10 +14,36 @@
 			configuration = cfg;
 		endfunction
 
+		/*
+		 * CSR - no word
+		 * DPR - word
+		 * CMDR - w command
+		 * 
+		 * 
+		 */
+
 		virtual task bl_put(T trans);
 			//$display({get_full_name()," ",trans.convert2string()});
 			//bus.drive(trans.payload); TODO: : DRIVE BUS
+			bit [7:0] buffer;
 			wb_trans = trans;
+			bus.wait_for_reset();
+
+			if(wb_trans.write) begin
+				if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
+				if(wb_trans.line == DPR) bus.master_write(wb_trans.line, wb_trans.word);
+				if(wb_trans.wait_int_ack) bus.wait_interrupt();
+				if(wb_trans.wait_int_nack) bus.wait_interrupt_with_NACK();
+				if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);
+			end
+			else begin
+				if(wb_trans.line == CMDR ||  wb_trans.line == CSR) bus.master_read(wb_trans.line, buffer);
+				if(wb_trans.line==DPR) bus.master_read(wb_trans.line, buffer);
+				if(wb_trans.wait_int_ack) bus.wait_interrupt();
+				if(wb_trans.wait_int_nack) bus.wait_interrupt_with_NACK();
+				if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);
+
+			end
 
 			/*case(wb_trans.explicit)
 	EXPLICIT_ENABLE: begin
@@ -38,20 +64,20 @@
 endcase*/
 
 			// If DUT is not currently enabled, enable it.
-			if(!dut_enable) begin
+			/*if(!dut_enable) begin
 				bus.enable_dut_with_interrupt();
 				//$display("Enable DUT");
 				dut_enable = 1'b1;
 
 				//$display("Select bus");
 
-			end
+			end*/
 			// Select the bus of the DUT to use for this transaction
-			bus.select_I2C_bus(wb_trans.selected_bus);
+			//bus.select_I2C_bus(wb_trans.selected_bus);
 
 			//$display("write all");
 			// Perform a write of all data within this transaction
-			if(wb_trans.rw == I2_WRITE) begin
+			/*if(wb_trans.rw == I2_WRITE) begin
 				bus.issue_start_command();
 				bus.transmit_address_req_write(wb_trans.address);
 
@@ -81,7 +107,7 @@ endcase*/
 
 			// If this transaction is not part of a restart-sequence, send a stop command on the bus
 			//if(wb_trans.persist == STOP) 
-			bus.issue_stop_command();
+			bus.issue_stop_command();*/
 			//#1000 $display("Next");
 
 		endtask

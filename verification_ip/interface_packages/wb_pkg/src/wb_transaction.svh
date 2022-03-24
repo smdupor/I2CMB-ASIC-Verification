@@ -10,6 +10,16 @@ class wb_transaction extends ncsu_transaction;
 		bit [3:0] selected_bus;
 		int QTY_WORDS_TO_READ;
 
+		// New Params
+		bit [7:0] word;
+		bit [1:0] line;
+		bit write;
+		wb_cmd_t cmd;
+		bit wait_int_ack;
+		bit wait_int_nack;
+		int stall_cycles;
+		bit block;
+
 		function new(string name="");
 			super.new(name);
 		endfunction
