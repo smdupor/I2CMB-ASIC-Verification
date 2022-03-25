@@ -55,17 +55,17 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 			// Alternation EVEN
 			if(i>1 && i % 2 == 0) begin // do a write
 				transmit_address_req_write(i2c_trans[i].address);
-				write_data_byte(byte'(k));
-				--k;
-				set_explicit_range(k, k, i, I2_WRITE);
+				write_data_byte(byte'(j));
+				set_explicit_range(j, j, i, I2_WRITE);
+				++j;
 				issue_stop_command();
 			end
 			// Alternation ODD
 			else if (i>1 && i % 2 == 1) begin // do a write
 				transmit_address_req_read(i2c_trans[i].address);
 				read_data_byte_with_stop();
-				++j;
-				set_explicit_range(j, j, i, I2_READ);
+				set_explicit_range(k, k, i, I2_READ);
+				--k;
 				issue_stop_command();
 			end
 		end

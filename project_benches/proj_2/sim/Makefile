@@ -47,10 +47,10 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb > /dev/null
-	@echo "********************************************************************************************"
-	@echo "  "
-	diff transcript transcript.bak
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb
+	#@echo "********************************************************************************************"
+	#@echo "  "
+	#diff transcript transcript.bak
 	
 comp_I2C_MB_sil:
 	vcom ../rtl/iicmb_int_pkg.vhd > /dev/null
