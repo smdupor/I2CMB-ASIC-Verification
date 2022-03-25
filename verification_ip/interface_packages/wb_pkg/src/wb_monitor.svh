@@ -8,9 +8,6 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 	bit enable_transaction_viewing;
 
-	enum logic[2:0] {M_SET_I2C_BUS=3'b110, M_I2C_START=3'b100, M_I2C_WRITE=3'b001,
-		M_I2C_STOP=3'b101, M_READ_WITH_NACK=3'b011, M_READ_WITH_ACK=3'b010} mon;
-
 	function new(input string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
