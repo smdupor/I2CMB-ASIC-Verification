@@ -8,17 +8,13 @@ module top();
 	import wb_pkg::*;
 	import i2cmb_env_pkg::*;
 
-	//Physical P    arameters 
+	//Physical Parameters 
 	parameter int WB_ADDR_WIDTH = 2;
 	parameter int WB_DATA_WIDTH = 8;
 	parameter int TOP_I2C_ADDR_WIDTH = 7;
 	parameter int TOP_I2C_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
 	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
-	parameter int SELECTED_I2C_BUS = 1;
-	parameter int SELECTED_I2C_SLAVE_ADDRESS = 18;
-
-	i2cmb_test tst;
 
 	// Physical DUT Interface networks
 	bit  clk;
@@ -33,6 +29,9 @@ module top();
 	wire irq;
 	tri  [NUM_I2C_BUSSES-1:0] scl;
 	tri  [NUM_I2C_BUSSES-1:0] sda;
+
+	// Test Objects
+	i2cmb_test tst;
 
 	//_____________________________________________________________________________________\\
 	//                           SYSTEM-LEVEL SIGNAL GENERATORS                            \\
@@ -50,8 +49,7 @@ module top();
 	// Hard Reset: Reset BOTH the DUT and the I2C Slave BFM
 	// ****************************************************************************
 	initial begin : rst_generator
-		//i2c_slave_addr = SELECTED_I2C_SLAVE_ADDRESS;
-		fork i2c_bus.reset_and_configure(SELECTED_I2C_SLAVE_ADDRESS, SELECTED_I2C_BUS); join_none;
+		fork i2c_bus.reset(); join_none;
 		rst <= 1;
 		#133 rst = ~rst;
 	end

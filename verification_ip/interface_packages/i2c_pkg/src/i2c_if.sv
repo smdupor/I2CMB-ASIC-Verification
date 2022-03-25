@@ -75,6 +75,17 @@ interface i2c_if       #(
 		connection_negotiation_sampler();
 	endtask
 
+	task reset();
+		bus_selector = 0;
+		slave_address = 0;
+		transfer_in_progress = STOP;
+		sampler_running = STOP;
+		enable_driver = MONITOR_ONLY; // Assume that we only need monitor until driver is called
+		driver_interrupt = INTR_CLEAR;
+		monitor_interrupt = INTR_CLEAR;
+		connection_negotiation_sampler();
+	endtask
+
 	task configure(input bit [8:0] input_addr, input int sel_bus);
 		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
 		slave_address = (input_addr << 2);
