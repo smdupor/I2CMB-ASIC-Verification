@@ -120,7 +120,6 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// ****************************************************************************
 	task wait_interrupt();
 		wait(irq_i ==1'b1);
-		master_read(CMDR, buf_in);
 	endtask
 
 	// ****************************************************************************
@@ -129,8 +128,6 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// ****************************************************************************
 	task wait_interrupt_with_NACK();
 		wait(irq_i ==1'b1);
-		master_read(CMDR, buf_in);
-
 	endtask
 
 

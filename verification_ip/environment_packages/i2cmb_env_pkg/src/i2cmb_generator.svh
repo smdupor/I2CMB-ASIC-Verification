@@ -116,7 +116,17 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 	//                           WISHBONE DRIVER ABSTRACTIONS                              \\
 	//_____________________________________________________________________________________\\
 
-
+	function void clear_interrupt();
+		wb_transaction t = new("clear_interrupt");
+		t.write = 1'b0;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		wb_trans.push_back(t);
+	endfunction
 
 	// ****************************************************************************
 	// Enable the DUT core. Effectively, a soft reset after a disable command
@@ -164,6 +174,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_ack=1'b1;
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
+
+		clear_interrupt();
 		//master_write(CMDR, SET_I2C_BUS);
 		//wait_interrupt();
 	endfunction
@@ -201,6 +213,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.label("SEND START");
 		wb_trans.push_back(t);
 
+		clear_interrupt();
+
 		//master_write(CMDR, I2C_START);
 		//wait_interrupt();
 	endfunction
@@ -219,6 +233,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.stall_cycles=0;
 		t.label("SEND STOP");
 		wb_trans.push_back(t);
+
+		clear_interrupt();
 		//master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
 		//wait_interrupt();
 	endfunction
@@ -252,6 +268,9 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
+
+		clear_interrupt();
+
 		//master_write(CMDR, I2C_WRITE);
 		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
 	endfunction
@@ -285,6 +304,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
+
+		clear_interrupt();
 		//master_write(CMDR, I2C_WRITE);
 		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack
 	endfunction
@@ -315,6 +336,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
+
+		clear_interrupt();
 		//master_write(CMDR, I2C_WRITE);
 		//wait_interrupt_with_NACK();
 	endfunction
@@ -338,6 +361,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		//master_write(CMDR, READ_WITH_ACK);
 		//wait_interrupt_with_NACK();
 
+		clear_interrupt();
+
 		t = new("retrieve_data_post_read");
 		t.write = 1'b0;
 		t.line = DPR;
@@ -347,6 +372,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
+
+
 
 		//master_read(DPR, iobuf);
 	endfunction
@@ -371,6 +398,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		//master_write(CMDR, READ_WITH_NACK);
 		//wait_interrupt_with_NACK();
 
+		clear_interrupt();
+
 		t = new("retrieve_data_post_read");
 		t.write = 1'b0;
 		t.line = DPR;
@@ -381,6 +410,8 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 		t.stall_cycles=0;
 		wb_trans.push_back(t);
 		//master_read(DPR, iobuf);
+
+
 	endfunction
 
 endclass
