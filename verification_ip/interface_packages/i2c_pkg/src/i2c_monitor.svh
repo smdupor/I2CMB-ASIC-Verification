@@ -7,6 +7,9 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 
 	bit enable_transaction_viewing;
 
+	// ****************************************************************************
+	// Construction, setters and getters
+	// ****************************************************************************
 	function new(input string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
@@ -17,9 +20,12 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 
 	function void set_agent(input ncsu_component#(T) agent);
 		this.agent = agent;
-
 	endfunction
 
+	// ****************************************************************************
+	// Continuously monitor the I2C Bus, capturing transactions and passing to the 
+	// 		agent when a complete transaction is detected
+	// ****************************************************************************
 	virtual task run ();
 		bit[7:0] i2mon_addr;
 		i2c_op_t i2mon_op;
@@ -43,6 +49,9 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		end
 	endtask
 
+	// ****************************************************************************
+	// Print contents of detected transaction for debug purposes
+	// ****************************************************************************
 	function void print_local_transaction();
 		if(enable_transaction_viewing)  $display(monitored_trans.convert2string_legacy());
 

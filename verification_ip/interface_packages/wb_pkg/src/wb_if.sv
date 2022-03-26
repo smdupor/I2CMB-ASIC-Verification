@@ -22,8 +22,6 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 );
 	import wb_types_pkg::*;
 
-	logic [7:0] buf_in;
-
 	initial reset_bus();
 
 	// ****************************************************************************              

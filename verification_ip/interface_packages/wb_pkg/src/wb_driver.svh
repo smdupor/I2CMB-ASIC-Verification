@@ -10,10 +10,17 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	bit dut_enable;
 	logic [7:0] tf_buffer;
 
+	// ****************************************************************************
+	//  Construction, Setters and Getters
+	// ****************************************************************************
 	function void set_configuration(wb_configuration cfg);
 		configuration = cfg;
 	endfunction
 
+
+	// ****************************************************************************
+	// Issue a received transaction to the DUT 
+	// ****************************************************************************
 	virtual task bl_put(T trans);
 		bit [7:0] buffer;
 		wb_trans = trans;

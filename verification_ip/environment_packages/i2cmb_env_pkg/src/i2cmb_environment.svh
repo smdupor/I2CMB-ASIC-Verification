@@ -7,6 +7,9 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	i2cmb_scoreboard        scbd;
 	coverage          coverage;
 
+	// ****************************************************************************
+	// Construction, setters and getters
+	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
@@ -14,7 +17,10 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	function void set_configuration(i2cmb_env_configuration cfg);
 		configuration = cfg;
 	endfunction
-
+	
+ 	// ****************************************************************************
+	// Build the environment and connect all subscribers 
+	// ****************************************************************************
 	virtual function void build();
 		wb_agent_handle = new("wb_agent",this);
 		wb_agent_handle.set_configuration(configuration.wb_agent_config);
@@ -44,6 +50,9 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 		return i2c_agent_handle;
 	endfunction
 
+ 	// ****************************************************************************
+	// Start both environment agent run tasks when environment is run()
+	// ****************************************************************************
 	virtual task run();
 		wb_agent_handle.run();
 		i2c_agent_handle.run();

@@ -8,6 +8,9 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 	ncsu_component subscribers[$];
 	virtual wb_if  bus;
 
+	// ****************************************************************************
+	// Construction, Setters, and getters
+	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 		if ( !(ncsu_config_db#(virtual wb_if)::get("tst.env.wb_agent", this.bus))) begin;
@@ -33,18 +36,30 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 		monitor.bus = this.bus;
 	endfunction
 
+	// ****************************************************************************
+	// Handle transactions coming from the monitor and pass to all subscriber
+	// ****************************************************************************
 	virtual function void nb_put(T trans);
 		foreach (subscribers[i]) subscribers[i].nb_put(trans);
 	endfunction
 
+	// ****************************************************************************
+	// Handle transactions from generator and pass to driver
+	// ****************************************************************************
 	virtual task bl_put(T trans);
 		driver.bl_put(trans);
 	endtask
 
+	// ****************************************************************************
+	// Observer subscriber management
+	// ****************************************************************************
 	virtual function void connect_subscriber(ncsu_component subscriber);
 		subscribers.push_back(subscriber);
 	endfunction
 
+	// ****************************************************************************
+	// Fork off the monitor task to monitor bus
+	// ****************************************************************************
 	virtual task run();
 		fork monitor.run(); join_none
 	endtask

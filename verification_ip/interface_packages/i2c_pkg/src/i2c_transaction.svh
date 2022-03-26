@@ -7,6 +7,9 @@ class i2c_transaction extends ncsu_transaction;
 	int selected_bus;
 	i2c_op_t rw;
 
+	// ****************************************************************************
+	// Construction, setters and getters
+	// ****************************************************************************
 	function new(string name="");
 		super.new(name);
 
@@ -19,6 +22,9 @@ class i2c_transaction extends ncsu_transaction;
 		this.selected_bus=selected_bus;
 	endfunction
 
+	// ****************************************************************************
+	// to_string LEGACY implementation, without calls to superclass
+	// ****************************************************************************
 	function string convert2string_legacy();
 		string s,temp;
 		if(rw == I2_WRITE) begin
@@ -43,10 +49,16 @@ class i2c_transaction extends ncsu_transaction;
 
 	endfunction
 
+	// ****************************************************************************
+	// Complete to_string functionality
+	// ****************************************************************************
 	virtual function string convert2string();
 		return {super.convert2string(),convert2string_legacy()};
 	endfunction
 
+	// ****************************************************************************
+	// Check match between two I2C Transactions
+	// ****************************************************************************
 	function bit compare(i2c_transaction other);
 		if(this.address != other.address) return 0;
 		if(this.rw != other.rw) return 0;

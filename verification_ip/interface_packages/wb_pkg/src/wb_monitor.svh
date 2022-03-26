@@ -8,6 +8,9 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 	bit enable_transaction_viewing;
 
+	// ****************************************************************************
+	// Construction, setters, and getters
+	// ****************************************************************************
 	function new(input string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
@@ -21,6 +24,10 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 	endfunction
 
+	// ****************************************************************************
+	// Continuously monitor wishbone bus and pass captured transactions up to the 
+	// agent
+	// ****************************************************************************
 	virtual task run();
 		static bit [2:0] adr_mon;
 		static bit [7:0] dat_mon;

@@ -3,8 +3,20 @@ class i2cmb_predictor extends ncsu_component;
 	ncsu_component scoreboard;
 	ncsu_transaction transport_trans;
 	i2cmb_env_configuration configuration;
-	int counter;
 
+	// Internal persistent Storage Buffers
+	i2c_transaction monitored_trans;
+	bit capture_next_read, expect_i2c_address, transaction_in_progress;
+	bit [7:0] last_dpr;
+	bit [2:0] adr_mon;
+	bit [7:0] dat_mon;
+	bit  we_mon;
+	bit [7:0] words_transferred[$];
+	int counter;
+	
+	// ****************************************************************************
+	// Construction, setters, and getters 
+	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
 	endfunction
@@ -17,100 +29,95 @@ class i2cmb_predictor extends ncsu_component;
 		this.scoreboard = scoreboard;
 	endfunction
 
+ 	// ****************************************************************************
+	// Called from wb_agent, process all incoming monitored wb transactions.
+	// ****************************************************************************
 	virtual function void nb_put(ncsu_transaction trans);
 		wb_transaction itrans;
-		static i2c_transaction monitored_trans;
-		static bit transfer_in_progress, print_next_read, address_state, transaction_init;
-		static bit [7:0] last_dpr;
-		static bit [2:0] adr_mon;
-		static bit [7:0] dat_mon;
-		static bit  we_mon;
-		static bit [7:0] words_transferred[$];
-		string s,t;
+		$cast(itrans, trans); // Grab incoming transaction process
 
-		$cast(itrans, trans);
+		// Copy incoming transaction data into persistent data structure
+		adr_mon = itrans.line;
+		dat_mon = itrans.word;
+		we_mon = itrans.write;
 
-		adr_mon=itrans.line;
-		dat_mon=itrans.word;
-		we_mon=itrans.write;
+		//Based on REGISTER Address of received transaction, process transaction data accordingly
+		case(adr_mon)
+			CSR: process_csr_transaction(); 												// Caught a CSR (Control Status Register) Transaction
+			DPR: process_dpr_transaction(); 												// Caught a DPR (Data / Parameter Register) Transaction
+			CMDR: begin 																	// Caught a CMDR (Command Register) Transaction
+				if(dat_mon[2:0] == M_I2C_START && we_mon) process_start_transaction();		// 		Which indicated START
+				if(dat_mon[2:0] == M_I2C_STOP && we_mon) process_stop_transaction();		//		Which indicated STOP
+				if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !expect_i2c_address) words_transferred.push_back(last_dpr); // Which Contains data write action, capture the data
+				else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) process_address_transaction(); 							// Which Contains an address transmit action
+				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) capture_next_read = 1'b1; 		// Which is intrupt clear for a I2C_READ expected on next task call 
+			end
+			default: process_state_register_transaction(); // Caught a state debug register transaction
+		endcase
 
-		if(adr_mon == 0) begin
-			// Monitor for DUT Enable/Disable
-			// SWALLOW THE DUT Enable/Disable Write
+	endfunction
+
+ 	// ****************************************************************************
+	// Handle any actions passed to the (Control Status Register), eg DUT Enable/Disables 
+	// ****************************************************************************
+	function void process_csr_transaction();
+				// For Now, simply SWALLOW CSR Transactions 
+				//(Only used for DUT Enable/Disable at this time)
+	endfunction
+
+	// ****************************************************************************
+	// Handle any actions on the (Data / Parameter Register), in particular, 
+	// 		capturing data received from an I2C_READ.
+	// ****************************************************************************
+	function void process_dpr_transaction();
+		last_dpr = dat_mon;
+		if(capture_next_read) begin 								// The Predictor is expecting data from a READ transaction; 
+			capture_next_read = 1'b0;								// Let Predictor know that the next transaction will be a command of some form.
+			words_transferred.push_back(last_dpr);					// Capture the data
 		end
-		else if(adr_mon == 1) begin // Catch all commands passed to DUT
-			last_dpr = dat_mon;
-			if(print_next_read) begin // Swallow interrupt reads and print transfers only
-				print_next_read = 1'b0;
-				words_transferred.push_back(last_dpr);
-				if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS Transfer  READ Data: %d", last_dpr);
-			end
+	endfunction
+
+	// ****************************************************************************
+	// Handle a START or a RE-START action 
+	// ****************************************************************************
+	function void process_start_transaction();
+		if(transaction_in_progress) begin							// Detect a re-start condition,
+			monitored_trans.data=words_transferred;					// conclude last transaction 
+			words_transferred.delete();								// and pass data from it to scoreboard
+			scoreboard.nb_transport(monitored_trans,transport_trans);
 		end
+																	// Then, Create a new Transaction
+		monitored_trans = new({"i2c_trans(", itoalpha(counter++),")"});
+		transaction_in_progress = 1'b1; 							// Advise state machine that a transaction is now in progress
+		expect_i2c_address = 1'b1; 									// Advise state machine that the next transaction should contain an I2C address
+	endfunction
 
-		else if(adr_mon == 2) begin
+	// ****************************************************************************
+	// Handle a STOP action 
+	// ****************************************************************************
+	function void process_stop_transaction();
+		transaction_in_progress = 1'b0; 							// Advise state machine that transactions are concluded.
+		monitored_trans.data=words_transferred; 					// Copy complete dataset into monitored transaction
+		words_transferred.delete(); 								// Clear predictor buffer
+		scoreboard.nb_transport(monitored_trans,transport_trans);	// Send completed transaction to scoreboard
+	endfunction
 
-			// Detect start condition and prepare start && address report
-			if(dat_mon[2:0] == M_I2C_START && we_mon) begin
-				s = "\t\t\t\t\t\t\t\tWB_BUS: Sent START";
-				if(transaction_init) begin
-					monitored_trans.data=words_transferred;
-					words_transferred.delete();
-					if(enable_transaction_viewing) $display(monitored_trans.convert2string);
-				end
-				else begin
-					monitored_trans = new({"i2c_trans(", itoalpha(counter),")"}); //$sformatf("%0d",counter)});
-					counter +=1;
-					//monitored_trans = new("wb_trans");
-					transaction_init = 1'b1;
-				end
-				transfer_in_progress = 1'b1;
-				address_state = 1'b1;
-			end
-			// Detect stop condition and immediately report 
-			if(dat_mon[2:0] == M_I2C_STOP && we_mon) begin
-				if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS: Sent STOP");
-				transaction_init = 1'b0;
-				transfer_in_progress = 1'b0;
-				monitored_trans.data=words_transferred;
-				words_transferred.delete();
+ 	// ****************************************************************************
+	// Handle an action dealing with an I2C Address and the expected operation 
+	// (I2C_READ or I2C_WRITE)
+	// ****************************************************************************
+	function void process_address_transaction();
+		monitored_trans.address=last_dpr[7:1];						// Extract the Address
+		if(last_dpr[0]==1'b0) monitored_trans.rw = I2_WRITE; 		// Address Transmit was requesting a write
+		else monitored_trans.rw = I2_READ; 							// Address Transmit was requesting a read
+		expect_i2c_address = 1'b0;									// Indicate that the address has been captured and next transaction will carry data
+	endfunction
 
-				// TODO SEND TRANSACTION TO SUBSCRIBERS
-				scoreboard.nb_transport(monitored_trans,transport_trans);
-
-				if(enable_transaction_viewing) $display(monitored_trans.convert2string);
-
-			end
-			// Determine whether write action is requesting an address transmit,  a write, or a read
-			if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !address_state) begin
-				words_transferred.push_back(last_dpr);
-				if(enable_transaction_viewing) $display("\t\t\t\t\t\t\t\tWB_BUS: Transfer WRITE Data : %d", last_dpr);
-			end
-			else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) begin
-				t.itoa(integer'(last_dpr[7:1]));
-				monitored_trans.address=last_dpr[7:1];
-
-				if(last_dpr[0]==1'b0) begin
-					s = {s," && Address ", t," : req. WRITE"};
-					monitored_trans.rw = I2_WRITE;
-				end
-				else begin
-					s = {s," && Address ", t, " : req. READ"};
-					monitored_trans.rw = I2_READ;
-				end
-				if(enable_transaction_viewing) $display("%s",s);
-				address_state = 1'b0;
-			end
-			// Detect that we are swallowing an interrupt read for a COMMAND READ and notify statemachine
-			if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) print_next_read = 1'b1;
-		end
-		// If verbose debugging, display all command register actions
-		//	if(ENABLE_WISHBONE_VERBOSE_DEBUG) if(enable_transaction_viewing) $display("[WB] CMDR (%h) Data: %b we: %h", adr_mon, dat_mon, we_mon);
-
-		else begin
-			// if verbose debugging, display all non-specific commands outside of prior decision tree
-			//if(ENABLE_WISHBONE_VERBOSE_DEBUG) if(enable_transaction_viewing) $display("Address: %h Data: %b we: %h", adr_mon, dat_mon, we_mon);
-		end
-
+ 	// ****************************************************************************
+	// Handle any actions on the State Register
+	// ****************************************************************************
+	function void process_state_register_transaction();
+		// SWALLOW reads of the debug state register
 	endfunction
 
 endclass

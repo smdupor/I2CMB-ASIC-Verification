@@ -172,9 +172,10 @@ module top();
 		$finish;
 	end
 
-	//_____________________________________________________________________________________\\
-	//              HANDLING OF DEBUG MSG VERBOSITY ARGUMENT                               \\
-	//_____________________________________________________________________________________\\
+	// ****************************************************************************
+	// Handling of VERBOSITY LEVEL plusarg to turn on/off levels of global
+	// 		verbosity based on sim argument.
+	// ****************************************************************************
 	function void handle_verbosity_plusarg();
 		string s;
 		if(tst == null) begin

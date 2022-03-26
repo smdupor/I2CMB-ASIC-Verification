@@ -39,6 +39,10 @@ package printing_pkg;
 		$display("%s",s);
 	endfunction
 
+ 	// ****************************************************************************
+	// Create an alphanumeric code to represent this integer (used to ID large-
+	// 		granularity transactions differently than numbers)
+	// ****************************************************************************
 	function string itoalpha(int i);
 		static int j;
 		static int k;
