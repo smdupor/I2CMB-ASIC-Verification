@@ -26,9 +26,11 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 		static bit [7:0] dat_mon;
 		static bit  we_mon;
 
+		bus.wait_for_reset();
+
 		forever begin
 			monitored_trans = new("wb_mon_trans");
-			#10 this.bus.master_monitor(adr_mon, dat_mon, we_mon);
+			this.bus.master_monitor(adr_mon, dat_mon, we_mon);
 			monitored_trans.line = adr_mon;
 			monitored_trans.word = dat_mon;
 			monitored_trans.write = we_mon;

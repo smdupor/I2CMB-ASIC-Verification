@@ -30,14 +30,15 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 
 		lhs=lhs_trans_in.pop_front();
 		rhs=rhs_trans_in.pop_front();
-		$display({get_full_name()," nb_transport: expected transaction ",lhs.convert2string()});
-		$display({get_full_name()," nb_put:       actual   transaction ",rhs.convert2string()});
+		ncsu_info("",{get_full_name()," nb_transport: expected transaction ",lhs.convert2string()},NCSU_LOW);
+		ncsu_info("",{get_full_name()," nb_put:       actual   transaction ",rhs.convert2string()},NCSU_LOW);
 		if ( lhs.compare(rhs) ) begin
 			passes.push_front(lhs);
-			$display({get_full_name()," transaction MATCH!"});
+			ncsu_info("",{get_full_name()," transaction MATCH!"},NCSU_LOW);
 		end
 		else begin
-			$display({get_full_name()," transaction MISMATCH!"});
+			ncsu_warning("",{get_full_name()," transaction MISMATCH!","\n nb_transport: expected transaction ",lhs.convert2string(),
+				"\n nb_put:       actual   transaction ",rhs.convert2string()});
 			fails.push_front(lhs);
 		end
 	endfunction

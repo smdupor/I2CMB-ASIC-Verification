@@ -45,8 +45,6 @@ interface i2c_if       #(
 	// Indices of MSB and LSB of a Byte in a larger buffer
 	parameter int MSB=8;
 	parameter int LSB=1;
-	parameter bit TRANSFER_DEBUG_MODE =0;
-	//parameter int NUM_I2C_BUSSES = 16;
 
 	// Registers and logic to select I2C Wires from Multiline Bus
 	int bus_selector;
@@ -235,7 +233,7 @@ interface i2c_if       #(
 			// Store byte in Driver's local buffer and returnable buffer
 			slave_receive_buffer.push_back(driver_buffer[MSB:LSB]);
 			write_data.push_back(driver_buffer[MSB:LSB]);
-			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",driver_buffer[MSB:LSB]);
+
 		end
 	endtask
 
@@ -360,7 +358,7 @@ interface i2c_if       #(
 			end
 			monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
 			if(op==I2_READ && rec_dat_mon_buf[0]==NACK) return; // Return on Read op and NACK (End Call)
-			if(TRANSFER_DEBUG_MODE) $write("  [I2C] -->>> %d\t <WRITE>\n",driver_buffer[MSB:LSB]);
+
 		end
 	endtask
 
@@ -393,20 +391,4 @@ interface i2c_if       #(
 		return slave_receive_buffer[i];
 	endfunction
 
-	// ****************************************************************************
-	// Compact reporting: Print a compact, complete test report of all data received by the 
-	// driver since the last BFM reset.
-	// ****************************************************************************
-	function void print_driver_write_report();
-		static string s;
-		static string temp;
-		$display("SLAVE I2C-Bus Received Bytes from WRITES:");
-		s = "\t";
-		foreach(slave_receive_buffer[i]) begin
-			if(s.len % PRINT_LINE_LEN < 4) s = {s,"\n\t"};
-			temp.itoa(integer'(slave_receive_buffer[i]));
-			s = {s,temp,","};
-		end
-		$display("%s", s.substr(0,s.len-2));
-	endfunction
 endinterface

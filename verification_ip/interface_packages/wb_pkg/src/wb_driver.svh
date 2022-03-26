@@ -15,11 +15,11 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	endfunction
 
 	virtual task bl_put(T trans);
-		//$display({get_full_name()," ",trans.convert2string()});
-
 		bit [7:0] buffer;
 		wb_trans = trans;
 		bus.wait_for_reset();
+
+		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
 
 		if(wb_trans.write) begin
 			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);

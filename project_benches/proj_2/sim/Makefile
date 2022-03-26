@@ -37,7 +37,7 @@ optimize:
 compile: comp_bench comp_I2C_MB optimize
 
 simulate:
-	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb &
+	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 
 debug: clean compile simulate
 
@@ -47,7 +47,19 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
+	@echo "********************************************************************************************"
+	@echo "  "
+	diff transcript transcript.bak
+
+silent_super: clean compile_sil
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
+	@echo "********************************************************************************************"
+	@echo "  "
+	diff transcript transcript.bak
+	
+silent_max_verb: clean compile_sil
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=DEBUG optimized_debug_top_tb
 	#@echo "********************************************************************************************"
 	#@echo "  "
 	#diff transcript transcript.bak

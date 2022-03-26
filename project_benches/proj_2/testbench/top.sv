@@ -147,21 +147,55 @@ module top();
 		// ------------------------------------
 	);
 
+
 	//_____________________________________________________________________________________\\
 	//                           TOP-LEVEL TEST FLOW                                       \\
 	//_____________________________________________________________________________________\\
 	initial begin : test_flow
+		// Create the interfaces and register with the db
 		ncsu_config_db#(virtual wb_if )::set("tst.env.wb_agent", wb_bus);
 		ncsu_config_db#(virtual i2c_if )::set("tst.env.i2c_agent", i2c_bus);
 
+		// Create test object
 		tst = new("tst",null);
+
+		// Handle argument-passable verbosity
+		handle_verbosity_plusarg();
+
+		// Initiate the test
 		tst.run();
 
 		// Display authorship Banner
 		display_footer_banner();
 
-		// Exit the tests
+		// Exit the sim
 		$finish;
 	end
+
+	//_____________________________________________________________________________________\\
+	//              HANDLING OF DEBUG MSG VERBOSITY ARGUMENT                               \\
+	//_____________________________________________________________________________________\\
+	function void handle_verbosity_plusarg();
+		string s;
+		if(tst == null) begin
+			$display("Verbosity configuration called before test object instantiation; Exiting");
+			$fatal;
+		end
+
+		if ( !$value$plusargs("VERBOSITY_LEVEL=%s", s)) begin
+			// No argument passed, default to ncsu-medium verbosity
+			tst.set_global_verbosity(NCSU_MEDIUM);
+		end
+		else begin
+			case(s)
+				"NONE":tst.set_global_verbosity(NCSU_NONE);
+				"LOW":tst.set_global_verbosity(NCSU_LOW);
+				"MEDIUM":tst.set_global_verbosity(NCSU_MEDIUM);
+				"HIGH":tst.set_global_verbosity(NCSU_HIGH);
+				"DEBUG":tst.set_global_verbosity(NCSU_DEBUG);
+				default: tst.set_global_verbosity(NCSU_MEDIUM);
+			endcase
+		end
+	endfunction
 
 endmodule

@@ -2,14 +2,6 @@ class wb_transaction extends ncsu_transaction;
 
 `ncsu_register_object(wb_transaction)
 
-	bit [7:0] address;
-	bit [7:0] data [];
-	i2c_op_t rw;
-	close_on_complete_t persist;
-	explicit_bus_cmd_t explicit;
-	bit [3:0] selected_bus;
-	int QTY_WORDS_TO_READ;
-
 	// New Params
 	bit [7:0] word;
 	bit [1:0] line;
@@ -55,21 +47,17 @@ class wb_transaction extends ncsu_transaction;
 
 	virtual function string to_s_prettyprint();
 		string s;
-		s=""; //pretty_print_id;
+		s={" ",super.convert2string()};
 		if(line == DPR && (name == "emplace_address_req_write" || name == "emplace_address_req_read")) s = {s, $sformatf("Value: %0d", word>>1)};
 		else if(line==DPR) s = {s, $sformatf("Value: %0d", word)};
-		return {" ",super.convert2string(),s};
+		return s;
 	endfunction
-
 
 	function bit compare(wb_transaction rhs);
-		return 0; // Always fail TODO TODO TODO TODO
-	endfunction
-
-	function void set(bit [7:0] address,	bit [7:0] data [],	i2c_op_t rw);
-		this.address = address;
-		this.data = data;
-		this.rw = rw;
+		return (this.word==rhs.word &&
+		this.line==rhs.line &&
+		this.write==rhs.write &&
+		this.cmd == rhs.cmd);
 	endfunction
 
 endclass

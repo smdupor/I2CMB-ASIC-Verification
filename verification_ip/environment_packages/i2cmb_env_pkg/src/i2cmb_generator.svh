@@ -75,7 +75,7 @@ class generator extends ncsu_component#(.T(i2c_transaction));
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 			foreach(wb_trans[i]) begin
 				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) $display({get_full_name(),wb_trans[i].to_s_prettyprint});
+				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_MEDIUM);
 			end
 		join
 	endtask
