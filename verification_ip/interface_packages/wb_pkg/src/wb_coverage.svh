@@ -43,6 +43,34 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	{
 		bins data = {8'h00:8'hff};
 	}
+  endgroup
+
+  function new(string name = "", ncsu_component #(T) parent = null); 
+    super.new(name,parent);
+    abc_transaction_cg = new;
+  endfunction
+
+  function void set_configuration(abc_configuration cfg);
+    configuration = cfg;
+  endfunction
+
+  virtual function void nb_put(T trans);
+	reg_type = trans.line;
+	if(trans.cmd == I2C_WRITE || trans.cmd == READ_WITH_ACK ||
+		 trans.cmd == READ_WITH_NACK) begin 
+			 data_type = trans.word;
+			 cmd_type = NONE;
+		 end
+	else begin 
+		cmd_type = trans.word;
+		data_type = NONE;
+	end
+	we = trans.we;
+
+    wb_transaction_cg.sample();
+  endfunction
+
+endclass
 
   	/*header_type:     coverpoint header_type
   	{
@@ -84,31 +112,3 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   	  }
 
   	  header_x_trailer: cross header_type, trailer_type;*/
-  endgroup
-
-  function new(string name = "", ncsu_component #(T) parent = null); 
-    super.new(name,parent);
-    abc_transaction_cg = new;
-  endfunction
-
-  function void set_configuration(abc_configuration cfg);
-    configuration = cfg;
-  endfunction
-
-  virtual function void nb_put(T trans);
-	reg_type = trans.line;
-	if(trans.cmd == I2C_WRITE || trans.cmd == READ_WITH_ACK ||
-		 trans.cmd == READ_WITH_NACK) begin 
-			 data_type = trans.word;
-			 cmd_type = NONE;
-		 end
-	else begin 
-		cmd_type = trans.word;
-		data_type = NONE;
-	end
-	we = trans.we;
-
-    wb_transaction_cg.sample();
-  endfunction
-
-endclass
