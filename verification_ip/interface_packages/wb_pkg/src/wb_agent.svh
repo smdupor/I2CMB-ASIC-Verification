@@ -3,6 +3,7 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 	parameter int WB_DATA_WIDTH = 8;
 
 	wb_configuration configuration;
+	wb_coverage		 coverage;
 	wb_driver        driver;
 	wb_monitor       monitor;
 	ncsu_component subscribers[$];
@@ -34,6 +35,8 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 		monitor.enable_transaction_viewing = 0;
 		monitor.build();
 		monitor.bus = this.bus;
+		coverage=new();
+		connect_subscriber(coverage);
 	endfunction
 
 	// ****************************************************************************
