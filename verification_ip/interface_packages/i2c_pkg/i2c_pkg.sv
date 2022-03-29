@@ -6,7 +6,7 @@ package i2c_pkg;
 
 	`include "src/i2c_configuration.svh"
 	`include "src/i2c_transaction.svh"
-
+	`include "src/i2c_coverage.svh"
 
 	`include "src/i2c_driver.svh"
 	`include "src/i2c_monitor.svh"

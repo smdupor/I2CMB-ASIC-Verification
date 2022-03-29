@@ -1,43 +1,13 @@
-class wb_coverage extends ncsu_component#(.T(wb_transaction));
+class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 
-    wb_configuration configuration;
+    i2c_configuration configuration;
   		
-	// Wb coverage
-	wb_cmd_t cmd_type;
-	wb_reg_t reg_type;
-	bit we;
-	wb_mon_t mon_type;
+	// i2c coverage
 	logic [7:0] data;
 
-  covergroup wb_transaction_cg;
+  covergroup i2c_transaction_cg;
   	option.per_instance = 1;
     option.name = get_full_name();
-
-	cmd_type:	coverpoint cmd_type
-	{
-		bins ENABLE_CORE_INTERRUPT = {ENABLE_CORE_INTERRUPT};
-		bins ENABLE_CORE_POLLING = {ENABLE_CORE_POLLING};
-		bins DISABLE_CORE = {DISABLE_CORE};
-		bins SET_I2C_BUS = {SET_I2C_BUS};
-		bins I2C_START = {I2C_START};
-		bins I2C_STOP = {I2C_STOP};
-		bins I2C_WRITE = {I2C_WRITE};
-		bins READ_WITH_ACK = {READ_WITH_ACK};
-		bins READ_WITH_NACK = {READ_WITH_NACK};
-	}
-
-	reg_type:	coverpoint reg_type
-	{
-		bins CSR = {CSR};
-		bins DPR = {DPR};
-		bins CMDR = {CMDR};
-		bins STATE = {STATE;
-	}
-
-	we:		coverpoint we
-	{
-		bins we;
-	}
 
 	data: 	coverpoint data
 	{
@@ -47,7 +17,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
   function new(string name = "", ncsu_component #(T) parent = null); 
     super.new(name,parent);
-    wb_transaction_cg = new;
+    i2c_transaction_cg = new;
   endfunction
 
   function void set_configuration(abc_configuration cfg);
@@ -55,19 +25,9 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   endfunction
 
   virtual function void nb_put(T trans);
-	reg_type = trans.line;
-	if(trans.cmd == I2C_WRITE || trans.cmd == READ_WITH_ACK ||
-		 trans.cmd == READ_WITH_NACK) begin 
-			 data_type = trans.word;
-			 cmd_type = NONE;
-		 end
-	else begin 
-		cmd_type = trans.word;
-		data_type = NONE;
-	end
-	we = trans.we;
-
-    wb_transaction_cg.sample();
+	data = trans.data.pop_front();
+	
+    i2c_transaction_cg.sample();
   endfunction
 
 endclass
