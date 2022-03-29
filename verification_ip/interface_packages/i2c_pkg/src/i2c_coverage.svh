@@ -4,6 +4,8 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
   		
 	// i2c coverage
 	logic [7:0] data;
+	logic [7:0] address;
+	i2c_op_t 	operation;
 
   covergroup i2c_transaction_cg;
   	option.per_instance = 1;
@@ -12,6 +14,15 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	data: 	coverpoint data
 	{
 		bins data = {8'h00:8'hff};
+	}
+	address: coverpoint address
+	{
+		bins address = {8'h00:8'hff};
+	}
+	operation: coverpoint operation
+	{
+		bins I2_WRITE = {I2_WRITE};
+		bins I2_READ = {I2_READ};
 	}
   endgroup
 
@@ -25,9 +36,13 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
   endfunction
 
   virtual function void nb_put(T trans);
-	data = trans.data.pop_front();
-	
-    i2c_transaction_cg.sample();
+	address = trans.address;
+	operation = trans.rw;
+
+	foreach(trans.data[i]) begin
+		data = trans.data[i];
+	    i2c_transaction_cg.sample();
+	end
   endfunction
 
 endclass
