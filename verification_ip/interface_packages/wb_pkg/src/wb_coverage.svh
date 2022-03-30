@@ -43,6 +43,14 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	{
 		bins data = {8'h00:8'hff};
 	}
+
+	we_x_reg: cross we, reg_type
+	{
+		illegal_bins writes_to_state_illegal = 
+  	           binsof(we.I2_WRITE) && 
+  	           binsof(reg_type.STATE);
+		
+	}
   endgroup
 
   function new(string name = "", ncsu_component #(T) parent = null); 

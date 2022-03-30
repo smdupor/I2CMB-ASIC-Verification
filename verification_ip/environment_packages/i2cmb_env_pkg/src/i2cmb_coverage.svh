@@ -4,6 +4,13 @@ class coverage extends ncsu_component#(.T(ncsu_transaction));
 	wb_transaction	 coverage_transaction;
 	bit enable_display;
 
+	covergroup coverage_cg;
+  		option.per_instance = 1;
+    	option.name = get_full_name();
+    
+
+  	endgroup
+
 	// ****************************************************************************
 	// Construction, setters and getters
 	// ****************************************************************************
@@ -22,6 +29,7 @@ class coverage extends ncsu_component#(.T(ncsu_transaction));
 	virtual function void nb_put(T trans);
 		$cast(this.coverage_transaction, trans);
 		if(enable_display) $display({get_full_name()," ",coverage_transaction.convert2string()});
+
 	endfunction
 
 endclass
