@@ -1,0 +1,131 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title pull-left">Regression Suites</h3>
+         <i id="home-helpBtn" class="fa fa-lg fa-question pull-right" style="margin-top:10px;;cursor:pointer;"></i>
+        <div class="clearfix"></div>
+      </div>
+      <div id="home-helpDlg" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Getting Started</h4>
+            </div>
+            <div class="modal-body"></div><!-- dynamic -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- <iframe src="/newRegression.htm" seamless></iframe> -->
+      <div class="panel-body">
+        <table class="table" id="home-suiteTable">
+          <thead>
+            <tr>
+              <th class="col-md-4">Suite Name</th>
+              <th class="col-md-6">Template</th>
+              <th class="col-md-1" />
+              <th class="col-md-1" />
+            </tr>
+          </thead>
+          <tbody>
+            {{py: suites = data.suites()}}
+            {{for suite in suites}}
+            <tr><td class="suite-select">
+              <a  class="suite-name" data-target="#home-panel" href="/pages/suite.htm?suitename={{suite['name']}}" onclick="navigatePanel(this)">{{suite['name']}}</a>
+            </td><td>{{suite['template']}}</td><td>
+              <a class="btn btn-success" href="/generate/{{suite['name']}}.tar"><i class="fa fa-fw fa-refresh"></i> Generate</a>
+            </td><td class="suite-delete">
+	      <i class="fa fa-lg fa-trash-o" style="vertical-align:middle;cursor:pointer;"></i>
+            </td></tr>
+            {{endfor}}
+          </tbody>
+        </table>
+{{py:
+import tempita, newregression
+newregressionbutton = newregression.get_newregression_button("home", "Create")
+}}
+        <include>{{newregressionbutton}}</include>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    $.ajaxSetup({cache: true})
+    //
+    // Activate any tooltips
+    //
+    $('[data-toggle="tooltip"]').tooltip();
+    //
+    // Activate the HELP button(s)
+    //
+    $("#home-helpBtn").on('click', function(){
+        $("#home-helpDlg .modal-body").load('/pages/homeHelp.htm', function() {
+            $("#home-helpDlg").modal();
+        });
+    });
+    function ConfirmDelete(text, data, callback) {
+
+        if (!$('#modalConfirmDelete').length) {
+            $('body').append(
+                '<div id="modalConfirmDelete" class="modal fade" role="dialog" aria-hidden="true">' +
+                '  <div class="modal-dialog">' +
+                '    <div class="modal-content">' +
+                '      <div class="modal-header">' +
+                '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+                '        <h4 class="modal-title">Are you sure?</h4>' +
+                '      </div>' +
+                '      <div class="modal-body"></div>' +
+                '      <div class="modal-footer">' +
+                '        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>' +
+                '        <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Delete</button>' +
+                '      </div>' +
+                '    </div>' +
+                '  </div>' +
+                '</div>');
+        } 
+
+        $('#modalConfirmDelete .modal-body').text(text);
+        $('#modalConfirmDelete button[type="submit"]').one('click', data, callback);
+        $('#modalConfirmDelete').modal();
+    }
+    $('#home-suiteTable').on('click', 'td.suite-delete', function(e) {
+  
+        // (1) Confirm the deletion with the user
+	var deletedsuite = $(this).parent('tr').find('a.suite-name').text();
+        ConfirmDelete('Deleting "'+ deletedsuite + '" regression suite. Deletion of a regression suite cannot be undone.', this, function(e) {
+            var row = $(e.data).parent('tr');
+            // (2) Grab the name of the regression suite to delete
+
+            var jsonData = {
+                name: $(row).find('a.suite-name').text()
+            };
+	    var link = '"/pages/suite.htm?suitename=' + jsonData["name"]+ '"';
+	    var siderow = $('a[href=' + link + ']').parent('li'); 
+            // (3) Delegate the deletion to the server
+
+            $.ajax({
+                type: "POST",
+                url: "/delete",
+                data: JSON.stringify(jsonData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function(data) {
+
+                    // (4) Indicate successful deletion by removing the row from the table
+
+                    $(row).addClass('danger'); $(row).fadeOut(1000, function() {$(row).remove();});
+                    $(siderow).addClass('danger'); $(siderow).fadeOut(1000, function() {$(siderow).remove();});
+                },
+                failure: function(msg) {
+                    alert('Error: ' + msg);
+                }
+            });
+        });
+        return false;
+    });
+    $('#home-suiteTable').on('click', 'td.suite-select a', function(e) {
+        selectSuite($(this).attr('href')); return false; 
+    });
+</script>

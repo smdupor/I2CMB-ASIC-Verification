@@ -1,0 +1,122 @@
+<div class="affix-top">
+    <div class="row ">
+        <div class="col-lg-12">
+            <h2 id="page-title-text" class="page-header"> </h2>
+        </div>
+    </div>
+     <div class="row sticky">
+        <div class="col-lg-12" style="padding-right: 20%;" dir="rtl">
+              <a id="genBtn" type="button" class="btn btn-success" href="#" onclick="clickGenerate()"><i class="fa fa-fw fa-refresh"></i>Generate</a>
+              <button id="saveBtn" type="button" class="btn btn-success"><i class="fa fa-fw fa-check"></i>Save</button>
+              <button id="cancelBtn" type="button" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+</div>
+<div class="float-bottom">
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <ul id="notebook" class="nav nav-tabs">
+            </ul>
+            <div id="notebook-contents" class="tab-content" style="padding: 5px; border-style: none solid solid; border-color: LightGrey; border-width: 0px 1px 1px 1px; background-color: White">
+            </div>
+         </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+<script>
+   $.ajaxSetup({cache: true})
+   var suitePanels = [];
+   var suitePanelsLoaded = [0,0,0,0];
+   function EnableButtons(value) {
+       if (value){
+               suiteEditted = 1;
+               $('#saveBtn').removeAttr('data-toggle');
+               $('#saveBtn').removeAttr('title');      
+       }
+       else{
+               suiteEditted = 0;
+               $('#saveBtn').prop('data-toggle', 'tooltip');
+               $('#saveBtn').prop('title', 'There are no changes to save');    
+       }
+       $('#saveBtn').prop('disabled', !value);
+       $('#cancelBtn').prop('disabled', !value);
+   }
+   function selectSuite(suite) {
+            $.getJSON(suite + "/index.json", function(data) {
+                var firstTab = "";
+		 $('#notebook').empty();
+                data.forEach(function(p) {
+                    var panel = p['name'] + '-panel'
+                    var href  = '/pages/' + suite + '/' + p['href']
+                    suitePanels.push(panel);
+
+                    $('#notebook').append(
+                        '<li id=link-' + panel +'>' +
+                        '  <a id=alink-' + panel +' onclick="return openTab(this, \'' + panel + '\', \'' + href + '\')" data-toggle="tab" data-target="#' + panel + '"> <i class="fa '+p['icon']+' fa-fw"></i>&nbsp;' + p['title'] + '</a>' +
+                        '</li>');
+                    $('#notebook-contents').append(
+                    '<div id="id-' + panel + '" class="tab-pane fade in active">'+
+                    '<div id="' + panel + '" class="content" style="padding-top: 5px;">' + 
+                    '</div>'+
+                    '</div>');
+                    
+                    if (firstTab == "") {
+                        firstTab = 'alink-' + panel;
+                    }
+
+                });
+                if (firstTab != "") {
+                    document.getElementById(firstTab).click();
+                }
+            });
+        }
+  
+    function openTab(linkItem, panel, hrefdata) {
+	var pane;
+      	for (i = 0; i < suitePanels.length; i++) {
+            if(suitePanels[i] == panel) { 
+		pane = i;
+	    }
+	}
+        var targ = $(linkItem).attr('data-target');
+	if (suitePanelsLoaded[pane] != 1)
+	        $(targ).load(hrefdata);
+        $(targ).show();
+
+        document.getElementById('link-'+panel).setAttribute("class", "active");
+        document.getElementById(panel).style.display = "block";
+        for (i = 0; i < suitePanels.length; i++) {
+            if(suitePanels[i] != panel) {
+                document.getElementById('link-'+suitePanels[i]).setAttribute("class", "");
+                document.getElementById(suitePanels[i]).style.display = "none";
+            }
+        }
+	suitePanelsLoaded[pane] = 1;
+        return false;
+    }
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+       for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+       }
+    };
+
+    var regressionSuite = document.getElementById("suitename").value;
+    if (! regressionSuite)
+	regressionSuite = getUrlParameter('suitename');
+    document.getElementById("page-title-text").innerHTML = regressionSuite
+    selectSuite(regressionSuite);
+
+    function clickGenerate() {
+        document.getElementById("genBtn").setAttribute("href","/generate/" + regressionSuite + ".tar");
+    }
+</script>

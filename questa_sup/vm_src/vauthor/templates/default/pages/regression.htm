@@ -1,0 +1,545 @@
+<div class="page-wrapper" id="regress">
+    <div class="row">
+        <div class="col-lg-12">
+        </div>
+    </div>
+    <!-- begin paramters -->
+{{py:
+import tempita, params_table, help
+parameters = get('regression.parameters')
+regprameters = get('regression.parameters')
+speparameters = get('specialparams')
+specialMessages = gethelp('specialparamshelp')
+params_table = params_table.get_params_table('regparam', 'regression', parameters, regprameters, speparameters, specialMessages)
+}}
+ <include>{{params_table}}</include>
+    <!-- end paramters -->
+{{py:
+regressionhelp = gethelp('regressionhelp')
+filemanagementhelp = help.get_help_message("filemanagementhelp", regressionhelp['filemanagementhelp']['title'], regressionhelp['filemanagementhelp']['message'])
+
+mergefilehelp = help.get_help_message("mergefilehelp", regressionhelp['mergehelp']['mergefilehelp']['title'], regressionhelp['mergehelp']['mergefilehelp']['message'])
+covtypehelp = help.get_help_message("covtypehelp", regressionhelp['mergehelp']['covtypehelp']['title'], regressionhelp['mergehelp']['covtypehelp']['message'])
+covstorelochelp = help.get_help_message("covstorelochelp", regressionhelp['mergehelp']['covstorelochelp']['title'], regressionhelp['mergehelp']['covstorelochelp']['message'])
+mergetypehelp = help.get_help_message("mergetypehelp", regressionhelp['mergehelp']['mergetypehelp']['title'], regressionhelp['mergehelp']['mergetypehelp']['message'])
+mergetestshelp = help.get_help_message("mergetestshelp", regressionhelp['mergehelp']['mergetestshelp']['title'], regressionhelp['mergehelp']['mergetestshelp']['message'])
+mergeoptshelp = help.get_help_message("mergeoptshelp", regressionhelp['mergehelp']['mergeoptshelp']['title'], regressionhelp['mergehelp']['mergeoptshelp']['message'])
+testplanhelp = help.get_help_message("testplanhelp", regressionhelp['mergehelp']['testplanhelp']['title'], regressionhelp['mergehelp']['testplanhelp']['message'])
+testplanfilehelp = help.get_help_message("testplanfilehelp", regressionhelp['mergehelp']['testplanfilehelp']['title'], regressionhelp['mergehelp']['testplanfilehelp']['message'])
+testplanoptshelp = help.get_help_message("testplanoptshelp", regressionhelp['mergehelp']['testplanoptshelp']['title'], regressionhelp['mergehelp']['testplanoptshelp']['message'])
+
+trendfilehelp = help.get_help_message("trendfilehelp", regressionhelp['trendhelp']['trendfilehelp']['title'], regressionhelp['trendhelp']['trendfilehelp']['message'])
+trendoptshelp = help.get_help_message("trendoptshelp", regressionhelp['trendhelp']['trendoptshelp']['title'], regressionhelp['trendhelp']['trendoptshelp']['message'])
+
+traigefilehelp = help.get_help_message("traigefilehelp", regressionhelp['triagehelp']['traigefilehelp']['title'], regressionhelp['triagehelp']['traigefilehelp']['message'])
+messagesevhelp = help.get_help_message("messagesevhelp", regressionhelp['triagehelp']['messagesevhelp']['title'], regressionhelp['triagehelp']['messagesevhelp']['message'])
+teststatushelp = help.get_help_message("teststatushelp", regressionhelp['triagehelp']['teststatushelp']['title'], regressionhelp['triagehelp']['teststatushelp']['message'])
+transformfilehelp = help.get_help_message("transformfilehelp", regressionhelp['triagehelp']['transformfilehelp']['title'], regressionhelp['triagehelp']['transformfilehelp']['message'])
+triageoptshelp = help.get_help_message("triageoptshelp", regressionhelp['triagehelp']['triageoptshelp']['title'], regressionhelp['triagehelp']['triageoptshelp']['message'])
+
+}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">General</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" role="form" id="regfile-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">File Management<br/><include>{{filemanagementhelp}}</include></label>
+                            <div class="col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="autoclean" value="checked" {{get('regression.autoclean')}}> Delete previous regression results before running.</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"  name="autodelete" value="checked" data-toggle="collapse" data-target="#nodelete-text" {{get('regression.autodelete')}}> Delete files for passing simulations.</label>
+                                </div>
+                                <div style="margin-top: 10px;" id="nodelete-text" class="collapse {{if get('regression.autodelete') == 'checked'}}in{{endif}}">
+                                 <label class="col-sm-2 control-label" style="font-weight: normal;">Files to Save:</label>
+                                   <div class="col-sm-9 ui-widget">
+                                    <input name="nodelete" class="form-control paramRef" placeholder="Type files/patterns here" style="margin-top: 10px;" type="text" value="{{get('specialparams.nodelete')}}">
+                                    <span class="help-block"><small>Files which will not be eligible for auto-deletion</small></span>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{{py:
+    
+def btnyes(on):
+    if on:
+        return "btn-primary active"
+    else:
+        return "btn-default" 
+
+def btnno(on):
+    if on:
+        return "btn-default" 
+    else:
+        return "btn-primary active"
+
+def radioyes(on):
+    if on:
+        return "checked"
+    else:
+        return ""
+
+def radiono(on):
+    if on:
+        return "" 
+    else:
+        return "checked"
+
+def vis(on):
+    if on:
+        return ""
+    else:
+        return "none" 
+
+def collapsed(on):
+    if on:
+        return "in" 
+    else:
+        return ""
+
+def show(on):
+    if on:
+        return ""
+    else:
+        return "disabled"
+
+def trendPanel(on):
+    if on:
+	return "panel-info"
+    else:
+	return "panel-grey"
+
+}}
+{{py:
+specialparams = get('specialparams')
+}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-info">
+                <!--begin .panel-heading-->
+		{{py: automerge = get('regression.automerge')}}
+                <div class="panel-heading ">
+                    <form role="form" id="regautomerge" method="post">
+                        <h3 class="panel-title"><input id="automergecheck" value="on" data-toggle="collapse" name="automerge"  type="checkbox" data-target="#automerge-panel"  {{radioyes(automerge['enabled'])}}> Auto-Merge</h3>
+                    </form>
+                </div>
+                <!--end .panel-heading-->
+                <div class="panel-body collapse {{collapsed(automerge['enabled'])}}" id="automerge-panel"> 
+                    <form class="form-horizontal " method="post" role="form" id="regmerge-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Merge File<br/><include>{{mergefilehelp}}</include></label>
+                            <div class="col-sm-10 ui-widget">
+                                <input class="form-control paramRef" name="mergefile" value="{{get('specialparams.mergefile')}}" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Coverage Type<br/><include>{{covtypehelp}}</include></label>
+                            <div class="col-sm-10 btn-group "  style="margin-top: 10px;" data-toggle="buttons">
+                                <label class="btn {{btnyes(automerge['coverstore'])}}" data-target="#coverstorefile" >
+                                    <input name="coverstore-radio" value="on" id="trend-bar" type="radio" {{radioyes(automerge['coverstore'])}}>Coverstore
+                                </label>
+                                <label class="btn {{btnno(automerge['coverstore'])}}" data-target="#coverstorefile" >
+                                    <input name="coverstore-radio" id="trend-line" value="" type="radio" {{radiono(automerge['coverstore'])}}>UCDB
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group " id="coverstorefile" style="display:{{vis(automerge['coverstore'])}};">
+                            <label class="control-label col-sm-2">Coverstore Directory<br/><include>{{covstorelochelp}}</include></label>
+                            <div class="col-sm-10 ui-widget">
+                                <input class="form-control paramRef"  name="coverstoreparam" value="{{get('specialparams.coverstore')}}" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Merge Type<br/><include>{{mergetypehelp}}</include></label>
+                            <div class="col-sm-10 btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                                <label class="btn {{btnyes(automerge['totals'])}}" id="trend-bar-lbl">
+                                    <input name="totals-radio" value="on" id="trend-bar" type="radio" {{radioyes(automerge['totals'])}}>Totals
+                                </label>
+                                <label class="btn {{btnno(automerge['totals'])}}" id="trend-line-lbl">
+                                    <input name="totals-radio" value="" id="trend-line" type="radio" {{radiono(automerge['totals'])}}>Test-Associated
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Tests to Merge<br/><include>{{mergetestshelp}}</include></label>
+                            <div class="col-sm-10 btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                                <label class="btn {{btnno(automerge['all'])}}" id="trend-bar-lbl" data-target="#zerooutcov">
+                                    <input name="all-radio" id="trend-bar" type="radio" value="" {{radiono(automerge['all'])}}>Only Passing Tests
+                                </label>
+                                <label class="btn {{btnyes(automerge['all'])}}" id="trend-line-lbl" data-target="#zerooutcov">
+                                    <input name="all-radio" id="trend-line" type="radio" value="on" {{radioyes(automerge['all'])}}>All Tests (Passing and Failing)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group "  style="display:none;">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <div class="checkbox" style="margin-left: 15px;">
+                                    <label>
+                                        <input  name="zerooutfail-radio" value="on" type="checkbox" {{radioyes(automerge['zerooutfail'])}}> Zero Out Coverage of Failing Tests</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Additional Merge Options<br/><include>{{mergeoptshelp}}</include></label>
+                            <div class="col-sm-10">
+                                <input name="mergeoptions"  value="{{get('specialparams.mergeoptions')}}" class="form-control paramRef" placeholder="Type any additional merge options here" style="margin-top: 10px;">
+                                <span class="help-block"><small>i.e. -instance /top/dut</small></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Import Testplan<br/><include>{{testplanhelp}}</include></label>
+                            <div class="col-sm-10 btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                                <label class="btn {{btnyes(automerge['tplan'])}}" id="trend-bar-lbl"  data-target="#tplaninfo">
+                                    <input name="tplan-radio" id="trend-bar" value="on" type="radio" {{radioyes(automerge['tplan'])}}>Yes
+                                </label>
+                                <label class="btn {{btnno(automerge['tplan'])}}" id="trend-line-lbl" data-target="#tplaninfo">
+                                    <input name="tplan-radio" value="" id="trend-line" type="radio" {{radiono(automerge['tplan'])}}>No
+                                </label>
+                            </div>
+                        </div>
+                        <div id="tplaninfo" style="display:{{vis(automerge['tplan'])}};">
+                            <div class="form-group" > 
+                                <label class="col-sm-2 control-label"><span class="text-danger">*</span> Testplan File<br/><include>{{testplanfilehelp}}</include></label>
+                                <div class="col-sm-10">
+					<input class="form-control paramRef" id="regmerge_testplan" name="tplanfile" value="{{get('specialparams.tplanfile')}}" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Additional Import Options<br/><include>{{testplanoptshelp}}</include></label>
+                                <div class="col-sm-10">
+                                    <input  name="tplanoptions"  value="{{get('specialparams.tplanoptions')}}" class="form-control paramRef" placeholder="Type any additional testplan import options here" style="margin-top: 10px;">
+                                    <span class="help-block"><small>i.e. -datafields "Section, Title, Link, Type"</small></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+{{py: autotrend = get('regression.autotrend')}}
+<div class="row">
+        <div class="col-lg-12">
+            <div id="autotrendpanel" class="panel panel-default {{trendPanel(automerge['enabled'])}}">
+                <div class="panel-heading">
+                    <form role="form" id="regautotrend" method="post" >
+                        <h3 class="panel-title"><input id="autotrendcheck" value="checked" data-toggle="collapse" name="autotrend"  type="checkbox" data-target="#autotrend-panel" {{radioyes(autotrend['enable'])}} {{show(automerge['enabled'])}} > Auto-Trend</h3>
+                    </form></div>
+                <div class="panel-body collapse {{collapsed(autotrend['enable'])}}" id="autotrend-panel">
+                    <form class="form-horizontal" role="form" method="post" id="regtrend-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Trend File<br/><include>{{trendfilehelp}}</include></label>
+                            <div class="col-sm-10">
+                                <input name="trendfile" class="form-control paramRef" value="{{get('specialparams.trendfile')}}" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Additional Trend Options<br/><include>{{trendoptshelp}}</include></label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <input name="trendoptions"class="form-control paramRef" placeholder="Type any additional trend options here" value="{{get('specialparams.trendoptions')}}" style="margin-top: 10px;">
+                                    <span class="help-block"><small>i.e. -instance /top/dut</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{py: autotriage = get('regression.autotriage')}}
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default panel-info">
+                <div class="panel-heading">
+                    <form role="form" id="regautotriage" method="post">
+                        <h3 class="panel-title"><input  name="autotriage"  data-toggle="collapse" data-target="#autotriage-panel" type="checkbox" value="on" {{radioyes(autotriage['enable'])}} > Auto-Triage</h3>
+                    </form>
+                </div>
+                <div class="panel-body collapse {{collapsed(autotriage['enable'])}}" id="autotriage-panel">
+                    <form class="form-horizontal" method="post" role="form" id="regtriage-form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Triage File<br/><include>{{traigefilehelp}}</include></label>
+                            <div class="col-sm-10">
+                                <input class="form-control paramRef" name="triagefile" value="{{get('specialparams.triagefile')}}" style="margin-top: 10px;"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Message Severity<br/><include>{{messagesevhelp}}</include></label>
+                            <div class="col-sm-10">
+                                <div id="severity-dev" class="checkbox" style="margin-top: 0px;">
+                                    <label id="all-sev">
+                                        <input name="all-checkbox" value="on" type="checkbox" {{radioyes(autotriage['allsev'])}}> All Severities
+                                    </label>
+                                    <div id="sevs" class="indent">
+                                        <div class="checkbox" style="margin-top: 0px;">
+                                            <label class="sev-label">
+                                                <input class="sev-check-box" name="note-checkbox" value="on" type="checkbox" {{radioyes(autotriage['notesev'] or autotriage['allsev'])}}> Note
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="sev-label">
+                                                <input class="sev-check-box" name="warn-checkbox" value="on" type="checkbox" {{radioyes(autotriage['warnsev'] or autotriage['allsev'])}}> Warning
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="sev-label">
+                                                <input class="sev-check-box" name="err-checkbox" value="on" type="checkbox" {{radioyes(autotriage['errsev'] or autotriage['allsev'])}}> Error/Fatal
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Teststatus<br/><include>{{teststatushelp}}</include></label>
+                            <div class="col-sm-10">
+                                <div class="checkbox" style="margin-top: 0px;">
+                                    <label id="all-tes">
+                                        <input name="all-test-checkbox" value="on" type="checkbox" {{radioyes(autotriage['alltest'])}}> All Teststatus
+                                    </label>
+                                    <div id="tess" class="indent">
+                                        <div class="checkbox">
+                                            <label class="test-label">
+                                                <input class="test-check-box" name="pass-checkbox" value="on" type="checkbox" {{radioyes(autotriage['passtest'] or autotriage['alltest'])}}> Passing (Ok/Warning)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="test-label">
+                                                <input class="test-check-box" name="fail-checkbox" value="on" type="checkbox" {{radioyes(autotriage['failtest'] or autotriage['alltest'])}}> Failing (Error/Fatal)
+
+                                            </label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Transform File<br/><include>{{transformfilehelp}}</include></label>
+                            <div class="col-sm-10">
+				<input class="form-control paramRef" id="regtriage_transform" name="transfile" value="{{get('regression.autotriage.transfile')}}" type="text">
+			    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Additional Triage Options<br/><include>{{triageoptshelp}}</include></label>
+                            <div class="col-sm-10">
+                                <div>
+                                    <input class="form-control paramRef" name="triageoptions" placeholder="Type any additional triage options here" value="{{get('specialparams.triageoptions')}}" style="margin-top: 10px;">
+                                    <span class="help-block"><small>i.e. -buflines 20</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+    $('#regress form[role="form"]').on('keyup', 'input', function () {
+        EnableButtons(true); // enable save/reset if any text is changed
+    });
+
+    $('#regress form[role="form"]').change(function () {
+        EnableButtons(true); // enable save/reset if any text is changed
+    });
+    $('#cancelBtn').on("click", function (e) {
+        if (suiteEditted)
+                return ConfirmMove('pages/home.htm');
+        else {
+                suiteEditted = 0;
+                window.location.replace("");
+                return false;
+        }
+    });
+    $('#saveBtn').on("click", function (e) {
+        var result= {}
+
+        // save parameters
+        result['regression.parameters'] = getParamsregparam();
+        // General tab 
+
+        result['regression.autoclean']= $('#regfile-form input[name="autoclean"]:checked').val() || '';
+        result['regression.autodelete'] = $('#regfile-form input[name="autodelete"]:checked').val() || '';
+        result['specialparams.nodelete']= $('#regfile-form input[name="nodelete"]').val() || '';
+
+        // Auto-Merge
+ 
+	{{for key in automerge}}
+	    result['regression.automerge.{{key}}'] = $('#regmerge-form input[name="{{key}}-radio"]:checked').val() || '';
+	{{endfor}}
+	result['regression.automerge.enabled'] = $('#regautomerge input[name="automerge"]:checked').val() || '';
+	result['specialparams.mergefile'] =  $('#regmerge-form input[name="mergefile"]').val() || '';  
+	result['specialparams.mergeoptions'] =  $('#regmerge-form input[name="mergeoptions"]').val() || '';  
+        result['specialparams.coverstore']= $('#regmerge-form input[name="coverstoreparam"]').val() || '';
+	result['specialparams.tplanfile'] =  $('#regmerge-form input[name="tplanfile"]').val() || '';  
+	result['specialparams.tplanoptions'] =  $('#regmerge-form input[name="tplanoptions"]').val() || '';
+ 
+        // Triage
+        result['regression.autotriage.enable'] = $('#regautotriage input[name="autotriage"]:checked').val() || ''; 
+        result['specialparams.triagefile']=$('#regtriage-form input[name="triagefile"]').val() || '';
+        result['specialparams.triageoptions']=$('#regtriage-form input[name="triageoptions"]').val() || '';
+        result['regression.autotriage.allsev']=$('#regtriage-form input[name="all-checkbox"]:checked').val() || '';
+        result['regression.autotriage.warnsev']=$('#regtriage-form input[name="warn-checkbox"]:checked').val() || '';
+        result['regression.autotriage.notesev']=$('#regtriage-form input[name="note-checkbox"]:checked').val() || '';
+        result['regression.autotriage.errsev']=$('#regtriage-form input[name="err-checkbox"]:checked').val() || '';
+        result['regression.autotriage.alltest']=$('#regtriage-form input[name="all-test-checkbox"]:checked').val() || '';
+        result['regression.autotriage.passtest']=$('#regtriage-form input[name="pass-checkbox"]:checked').val() || '';
+        result['regression.autotriage.failtest']=$('#regtriage-form input[name="fail-checkbox"]:checked').val() || '';
+        result['regression.autotriage.transfile']=$('#regtriage-form input[name="transfile"]').val() || '';
+
+        // Merge 
+        result['regression.autotrend.enable']= $('#regautotrend  input[name="autotrend"]:checked').val() || '';
+        result['specialparams.trendfile']=$('#regtrend-form input[name="trendfile"]').val() || '';
+        result['specialparams.trendoptions']=$('#regtrend-form input[name="trendoptions"]').val() || '';
+
+        $.ajax({
+            type: "POST",
+            url: "/pages/{{suite}}/regression.htm",
+            data: JSON.stringify(result),
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (data) {
+                EnableButtons(false); // disable further save/reset
+            },
+            failure: function (msg) {
+                alert('Error: ' + msg);
+            }
+        });
+
+        return false;
+    });
+
+    $('#all-sev').on('keyup change', 'input', function () {
+       if ($('#regtriage-form input[name="all-checkbox"]:checked').val()) {
+           $('#regtriage-form input.sev-check-box').prop('checked', true);
+        } else {
+           $('#regtriage-form input.sev-check-box').prop('checked', false);
+	}
+        EnableButtons(true);
+    });
+    $('#sevs').on('keyup change', 'input', function () {
+       if ($('#regtriage-form input[name="note-checkbox"]:checked').val() && $('#regtriage-form input[name="warn-checkbox"]:checked').val() && $('#regtriage-form input[name="err-checkbox"]:checked').val()) {
+           $('#regtriage-form input[name="all-checkbox"]').prop('checked', true);
+        } else {
+           $('#regtriage-form input[name="all-checkbox"]').prop('checked', false);
+	}
+        EnableButtons(true);
+    });
+    $('#all-tes').on('keyup change', 'input', function () {
+       if ($('#regtriage-form input[name="all-test-checkbox"]:checked').val()) {
+           $('#regtriage-form input.test-check-box').prop('checked', true);
+        } else {
+           $('#regtriage-form input.test-check-box').prop('checked', false);
+	}
+        EnableButtons(true);
+    });
+    $('#tess').on('keyup change', 'input', function () {
+       if ($('#regtriage-form input[name="pass-checkbox"]:checked').val() && $('#regtriage-form input[name="fail-checkbox"]:checked').val()) {
+           $('#regtriage-form input[name="all-test-checkbox"]').prop('checked', true);
+        } else {
+           $('#regtriage-form input[name="all-test-checkbox"]').prop('checked', false);
+	}
+        EnableButtons(true);
+    });
+    function trendPanel(on){
+	if (on == "on"){
+                $('#autotrendpanel').removeAttr('data-toggle');
+                $('#autotrendpanel').removeAttr('title');      
+		return "panel-info";
+       }
+
+	else {
+        	$("#autotrendcheck").attr('checked', false);
+		$("#autotrend-panel").removeClass('in');
+                $('#autotrendpanel').prop('data-toggle', 'tooltip');
+                $('#autotrendpanel').prop('title', 'Auto trending is only applicable with merged regressions. Please enable auto merge form Regression Settings Page');    
+		return "panel-grey"
+	}
+    }
+    function trendReport(on){
+	if (on == "checked"){
+                $('#trendreportingpanel').removeAttr('data-toggle');
+                $('#trendreportingpanel').removeAttr('title');      
+                return "panel-info";
+        }
+        else {
+                $("#trendreporting").attr('checked', false);
+                $("#trend-panel").removeClass('in');
+                $('#trendreportingpanel').prop('data-toggle', 'tooltip');
+                $('#trendreportingpanel').prop('title', 'Trend Report is only applicable when auto trend is enabled. Please enable auto trend form Regression Settings Page');
+                return "panel-grey"
+        }
+
+    }
+
+    $("#regautomerge").on('change', function() {
+	var panclass = "panel panel-default " + trendPanel($('#regautomerge input[name="automerge"]:checked').val());
+	$("#autotrendpanel").attr('class', panclass);
+        $("#autotrendcheck").attr('disabled', $('#regautomerge input[name="automerge"]:checked').val() != 'on');
+	changeTrend();
+	changeHTML();
+        EnableButtons(true);
+    });
+    $("#regautotriage").on('change', function() {
+        EnableButtons(true);
+    });
+    $("#regautotrend").on('change', function() {
+	changeTrend();
+    });
+    function changeHTML(){
+	var checked = $('#regautomerge input[name="automerge"]:checked').val();
+	if($('#cov-radio-yes').is(':checked')){
+		$('#cov-opts').toggle();
+	        $('#add-cov-opts').toggle();
+	}
+	if (checked != 'on'){
+		$("#cov-label-yes").removeClass("btn-primary");
+		$("#cov-label-yes").addClass("btn-default");
+		$("#cov-label-no").addClass("btn-primary");
+		$("#cov-label-no").removeClass("btn-default");
+                $('#cov-label-yes').prop('data-toggle', 'tooltip');
+                $('#cov-label-yes').prop('title', 'HTML Coverage Report is Only applicable when automerge is enabled. Please enable auto merge in Regression Setting tab to include coverage reports');
+	} else {
+		$('#cov-label-yes').removeAttr('data-toggle');
+                $('#cov-label-yes').removeAttr('title');      
+        }
+	$("#cov-label-yes").attr('disabled', checked != 'on');
+	$("#cov-radio-yes").attr('disabled', checked != 'on');
+
+	$("#cov-radio-yes").attr('checked', checked == 'on');
+	$("#cov-radio-no").attr('checked', checked != 'on');
+    }
+    function changeTrend() {
+	var panclass = "panel panel-default " + trendReport($('#regautotrend input[name="autotrend"]:checked').val());
+	$("#trendreportingpanel").attr('class', panclass);
+	$("#trendreporting").attr('disabled', $('#regautotrend input[name="autotrend"]:checked').val() != 'checked');
+        EnableButtons(true);
+    }
+    $('#regmerge-form input[type="radio"]').change(function () {
+        var target = $($(this).parent()).data("target");
+        $(target).toggle();
+        $('#regmerge-form input[name="' + this.name + '"]').each(function (index) {
+            $(this).parent().toggleClass("btn-primary");
+            $(this).parent().toggleClass("btn-default");
+        });
+        EnableButtons(true); // enable save/reset if any text is changed
+    });
+   if (suiteEditted == 0)
+   	EnableButtons(false);
+	trendPanel($('#regautomerge input[name="automerge"]:checked').val());
+</script>

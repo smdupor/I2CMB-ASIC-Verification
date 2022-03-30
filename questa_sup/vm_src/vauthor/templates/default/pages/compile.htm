@@ -1,0 +1,240 @@
+  <div class="page-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+      </div>
+    </div>
+{{py:
+
+def btnyes(on):
+    if on:
+        return "btn-primary active"
+    else:
+        return "btn-default"
+
+def btnno(on):
+    if on:
+        return "btn-default"
+    else:
+        return "btn-primary active"
+
+def radioyes(on):
+    if on:
+        return "checked"
+    else:
+        return ""
+
+def radiono(on):
+    if on:
+        return ""
+    else:
+        return "checked"
+
+def collapsed(on):
+    if on:
+        return "in"
+    else:
+        return ""
+
+def vis(on):
+    if on:
+        return ""
+    else:
+        return "none"
+
+def compare(str1,str2):
+    return (str1 == str2)
+
+def hide(on):
+    if on:
+        return "hidden"
+    else:
+        return ""
+
+}}
+
+<!-- begin paramters -->
+{{py:
+import tempita, params_table, help
+parameters = get('compile.parameters')
+regparameters = get('regression.parameters')
+speparameters = get('specialparams')
+specialMessages = gethelp('specialparamshelp')
+params_table = params_table.get_params_table('cparam', 'compile', parameters, regparameters, speparameters, specialMessages)
+}}
+ <include>{{params_table}}</include>
+    <!-- end paramters -->
+{{py:
+compilehelp = gethelp('compilehelp')
+gridhelp = help.get_help_message("compilegrid", compilehelp['gridhelp']['title'], compilehelp['gridhelp']['message'])
+timeouthelp = help.get_help_message("compiletimeouthelp", compilehelp['timeouthelp']['title'],  compilehelp['timeouthelp']['message'])
+sourcehelp = help.get_help_message("compilesourcehelp", compilehelp['sourcehelp']['title'],  compilehelp['sourcehelp']['message'])
+commandshelp = help.get_help_message("compilecommandshelp", compilehelp['commandshelp']['title'],  compilehelp['commandshelp']['message'])
+}}
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Compile Setup</h3>
+            </div>
+            <div class="panel-body">
+              <form id="compile-form" class="form-horizontal">
+{{py: comgrid = get('compile.grid')}}
+                <div class="form-group">
+	    <label class="control-label col-sm-2">Where to Execute<br/><include>{{gridhelp}}</include></label>
+                    <div id="comgrid-radio-div" class="col-sm-10 btn-group "  style="margin-top: 10px;" data-toggle="buttons">
+                        <label class="btn {{btnno(comgrid)}}" data-target="#comsel-queue">
+                            <input type="radio" name="comgrid-radio" value="on" {{radiono(comgrid)}}>Locally
+                        </label>
+                        <label class="btn {{btnyes(comgrid)}}" data-target="#comsel-queue">
+                            <input type="radio" name="comgrid-radio" value="" {{radioyes(comgrid)}}>Grid
+                        </label>
+                    </div>
+                </div>
+{{py: comqueues = get('grid.queues')}}
+{{py: selcomqueue = get('compile.queue')}}
+                <div id="comsel-queue" class="form-group" style="margin-top: -10px; display:{{vis(comgrid)}};">
+                    <label class="col-sm-2 control-label" style="font-weight: normal;">Select Queue</label>
+                    <div class="col-sm-3">
+                        <div class="checkbox">
+                            <select name="com-available-queues" class="form-control">
+                                <option {{if selcomqueue == "" }} selected {{endif}}>No Queue Selected</option>
+                                {{for comqueue in comqueues}}
+                                <option {{if selcomqueue == comqueue }} selected {{endif}}>{{comqueue}}</option>
+                                {{endfor}}
+                            </select>
+                        </div>
+                    </div>
+			<a id="compile-global" style="line-height: 3.5em;" data-target="#home-panel" href="pages/global.htm" onclick="if (suiteEditted)return ConfirmMove('pages/global.htm'); else return navigatePanel(this)">Grid Settings</a>
+                </div>
+		<div class="form-group">
+                  <label class="col-sm-2 control-label">Execution Timeout<br/><include>{{timeouthelp}}</include></label>
+                  <div class="col-sm-10">
+                    <div>
+{{py: to = get('compile.timeout')}}
+                      <input name="comptimeo" class="form-control paramRef" style="margin-top: 10px;" value="{{to}}">
+                      <span class="help-block"><small>Maximum amount of time VRM will allow a compile job to run before killing it</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">What would you like to do<br/><include>{{sourcehelp}}</include></label>
+                  <div class="col-sm-10">
+                    <div class="radio">
+                      <label><input type="radio" name="source" value="path" {{radioyes(compare(get('compile.source'),'path'))}}>Use existing compilation script.</label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="source" value="commands" {{radioyes(compare(get('compile.source'),'commands'))}}>Enter compilation commands manually.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top: -10px;">
+                  <label class="col-sm-2 control-label">Compilation Script<br/><include>{{commandshelp}}</include></label>
+                  <div id="compilefile" class="col-sm-10" {{hide(compare(get('compile.source'),'commands'))}}>
+			 <input class="form-control paramRef" name="path" id="compile_exec" value="{{get('compile.path')}}" type="text">
+                     <span class="help-block"><small>Select the script to execute additional compilation commands</small></span>
+                  </div>
+                  <div id="compilecommands" class="col-sm-10 ui-widget " {{hide(compare(get('compile.source'),'path'))}}>
+<textarea name="commands" class="form-control paramRef" rows="8" style="resize:vertical;" placeholder="Enter commands...">
+{{py: commands = get('compile.commands')}}
+{{for command in commands}}
+{{command}}
+{{endfor}}
+</textarea>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    $('#cparam-form').on('keyup change', function() {
+        EnableButtons(true); // enable save/reset if any form values are changed
+    });
+  
+    $('#comgrid-radio-div').on('change', function() {
+        $('#comsel-queue').toggle();
+        $('#compile-form input[name="comgrid-radio"]').each(function (index) {
+            $(this).parent().toggleClass("btn-primary");
+            $(this).parent().toggleClass("btn-default");
+        });
+        EnableButtons(true);
+                return false;
+    });
+  
+    $('#compile-form').on('keyup', function() {
+        EnableButtons(true); // enable save/reset if any form values are changed
+    });
+    $('#compile-form').on('change', function() {
+		var source = $(this).find('input[name="source"]:checked').val();
+
+        if (source == 'path') {
+            $('#compilecommands').hide();
+            $('#compilefile').show();
+        } else {
+            $('#compilefile').hide();
+            $('#compilecommands').show();
+        }
+
+        EnableButtons(true); // enable save/reset if any row is deleted
+
+		return false;
+    });
+    //
+    // Buttons
+    //
+    $('#cancelBtn').on('click', function(e) {
+	if (suiteEditted)
+		return ConfirmMove('pages/home.htm');
+	else {
+		suiteEditted = 0;
+		window.location.replace("");
+		return false;
+	}
+    });
+    $('#saveBtn').on('click', function(e) {
+        var result = [];
+        var commands = $('#compile-form textarea[name="commands"]').val()    || '';
+        var path     = $('#compile-form input[name="path"]').val()           || '';
+        var compt    = $('#compile-form input[name="comptimeo"]').val();
+        var source   = $('#compile-form input[name="source"]:checked').val() || 'commands';
+	var comqueue = $('#compile-form select[name="com-available-queues"] option:selected').val();
+        var comgrid  = $('#compile-form input[name="comgrid-radio"]').index($('#compile-form input[name="comgrid-radio"]:checked'));
+	if (comgrid == 0)
+		comgrid = "";
+	else
+		comgrid = "on";
+	if (comqueue == "No Queue Selected")
+		comqueue = "";
+        // save parameters
+        result = getParamscparam();
+
+        $.ajax({
+            type: 'POST',
+            url: '/pages/{{suite}}/compile.htm',
+            data: JSON.stringify({
+                'compile.parameters': result,
+                'compile.commands': commands.split("\n"),
+                'compile.path':     path,
+		'compile.queue':    comqueue,
+		'compile.grid':	    comgrid,
+		'compile.timeout':   compt,
+                'compile.source':   source}),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'text',
+            success: function(data) {
+                EnableButtons(false); // disable further save/reset
+            },
+            failure: function(msg) {
+                alert('Error: ' + msg);
+            }
+        });
+        return false;
+    });
+   if (suiteEditted == 0)
+   	EnableButtons(false);
+</script>

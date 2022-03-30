@@ -1,0 +1,20 @@
+#---
+# Generic assertion message transforms for WLF or LOG messages
+#
+# Note: These transform rules only work for plain-text log files because
+#       they rely on meta-data emitted on a continuation line which is not
+#       present when the message is stored in a WLF file.
+#---
+
+# ** Error: Assertion error.
+#    Time: <time> ns  Scope: <instance>  File: <filename>  Line: <lineno>
+#
+transform {(?:#\s+\*+\s+)?Error: Assertion error.\n(?:#\s+)?Time:\s+(\d+)\s+(s|ms|us|ns|ps|fs)\s+Scope:\s+(.+)\s+File:\s+(.+)\s+Line:\s+(\d+)} -name assertion_error {
+    field severity Error
+    field time {$1}
+    field wlftimeunit {$2}
+    field instance {$3}
+    field filename {$4}
+    field lineno {$5}
+    field msg {Assertion error}
+}

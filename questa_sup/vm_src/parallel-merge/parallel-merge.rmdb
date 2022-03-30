@@ -1,0 +1,779 @@
+<?xml version="1.0" ?>
+<rmdb version="1.0"
+      loadtcl="getucdbfiles"
+      options="-nolocalrerun -nohistory -nobanner -nosummary -vrmdata PARALLELMERGETEMP -realclean">
+
+  <!-- This rmdb file holds a configuration to allow VRM to carry out a parallel merge of a list         -->
+  <!-- of UCDB files or tests. The examples of its use can be found in the examples/vrm/parallel-merge directory. -->
+  <!-- This rmdb is called from the vcover parallelmerge command which is fully documented in the Questa user     -->
+  <!-- reference guide. The recommended flow for using the parallel merge is to call the vcover command.          -->
+
+  <!-- This is the top level merge runnable that allows the main parameters to be set and the mode of -->
+  <!-- operation selected. -->
+  <runnable name="merge" type="group" sequential="yes">
+    <parameters>
+      <parameter name="MODE"
+                  ask="How do you want to run the parallel merges ?"
+               accept="oneof(rsh,lsf,sge,local)"
+                     >local</parameter>
+      <parameter name="SRCCOVERAGE"
+                  ask="Are you merging UCDB files or tests from CoverStores ?"
+               accept="oneof(UCDB,CoverStore)"
+                     >UCDB</parameter>
+      <parameter name="GENERATELIST"
+                  ask="Would you like a file generated listing the input UCDB files or coverstore tests for the merge ? (Note: A complete list is required with a file/test per line if one is not auto-generated)"
+               accept="oneof(no,yes)"
+                     >yes</parameter>
+      <parameter name="LISTFILENAME"
+                  ask="Enter the filename to use for the list, this is to allow user defination of the list filename. (Note: Leave this set to the default if the list is being auto-generated)"
+                     >parallellist</parameter>
+      <parameter name="LISTPATH"
+                  ask="Enter the full path of the directory that the list can be found, this is to allow user defination of the directory name. (Note: Leave this set to the default if the list is being auto-generated)"
+                     >(%VRUNDIR%)</parameter>
+      <parameter name="LIST">(%LISTPATH%)/(%LISTFILENAME%)</parameter>
+      <parameter name="TESTSTATUS"
+                  ask="Which type of tests do you want to merge ? (NB: This will optimize the list based of the result status of the test)"
+               accept="oneof(all,passed,failed)"
+                     >all</parameter>
+      <parameter name="MERGEFILE"
+                  ask="What is the basename you would like to use for the output merge file?"
+                     >merge</parameter>
+      <parameter name="MERGETYPE"
+                  ask="Which type of merge do you want to do ?"
+               accept="oneof(-totals,-testassociated,-preservetestcounts)"
+                     >-totals</parameter>
+      <parameter name="MERGEOPTIONS"
+                  ask="Are there any extra merge options that need to be passed to vcover ? i.e. -64 -combinemax etc "
+                     ></parameter>
+      <parameter name="QUEUETIMEOUT"
+                  ask="Enter the maximum queue/start-up time for the merges in seconds ? (Note: This is the maximum time that would be expected for the job to be running after it has been started by the parallel merge process)"
+               accept="num(1,)"
+                     >100000</parameter>
+      <parameter name="MERGETIMEOUT"
+                  ask="Enter the maximum merge time expected to use as the time-out setting in seconds ? (Note: If this time is exceeded, the merge process will kill the jobs)"
+               accept="num(1,)"
+                     >100000</parameter>
+      <parameter name="PRINTCOMMAND">yes</parameter>
+      <parameter name="COMMANDLINE">vrun merge -rmdb (%RMDBFILE%) -GMODE=(%MODE%) -GSRCCOVERAGE=(%SRCCOVERAGE%) -GGENERATELIST=(%GENERATELIST%) -GLISTFILENAME=(%LISTFILENAME%) -GLISTPATH=(%LISTPATH%) -GTESTSTATUS=(%TESTSTATUS%) -GMERGETYPE=(%MERGETYPE%) -GMERGEOPTIONS="(%MERGEOPTIONS%)" -GQUEUETIMEOUT=(%QUEUETIMEOUT%) -GMERGETIMEOUT=(%MERGETIMEOUT%)</parameter>
+      <parameter name="PRINTWRAPPER">(%PRINTCOMMAND%)</parameter>
+      <parameter name="WRAPPERCOMMAND" type="tcl">[format "vcover parallelmerge -runmode %s -covmode %s%s -teststatus %s -filelist %s -mergetype %s -mergeopts \"%s\" -qtimeout %s -mtimeout %s" (%MODE%) [string tolower (%SRCCOVERAGE%)] [expr ([string match (%GENERATELIST%) "yes"])?" -genlist":""] (%TESTSTATUS%) {(%LISTPATH%)/(%LISTFILENAME%)} [string range (%MERGETYPE%) 1 end] {(%MERGEOPTIONS%)} (%QUEUETIMEOUT%) (%MERGETIMEOUT%)]</parameter>
+    </parameters>
+    <members>
+      <member>generateUCDBlist</member>
+      <member>generateTESTlist</member>
+      <member>optimize</member>
+      <member>mode</member>
+    </members>
+  </runnable>
+
+  <!-- This runnable runs if the user wants to generate a UCDB file list from a certain directory. -->
+  <!-- It allows the setting of the directory to be used to recursively searched and the search    -->
+  <!-- string. -->
+  <runnable name="generateUCDBlist" type="group" if="[GenerateUCDBList {(%GENERATELIST%)} {(%SRCCOVERAGE%)}]">
+    <parameters>
+      <parameter name="UCDBDIR"
+                  ask="Enter directory to start recursive file search for UCDB files ?"
+                     >(%VRUNDIR%)/</parameter>
+      <parameter name="UCDBFILENAMES"
+                  ask="Enter search ucdb filename with wildcards ?"
+                     >*.ucdb</parameter>
+    </parameters>
+  </runnable>
+
+  <!-- This runnable runs if the user wants to generate a test list from a list of coverstores. -->
+  <runnable name="generateTESTlist" type="group" if="[GenerateTESTList {(%GENERATELIST%)} {(%SRCCOVERAGE%)}]">
+    <parameters>
+      <parameter name="COVERSTORES"
+                  ask="Enter a list of coverstores to extract the tests to create a test list file ?"
+                     >(%VRUNDIR%)/coverstore</parameter>
+    </parameters>
+  </runnable>
+
+  <!-- This runnable runs if the user wants to optimize the list that is generated to be either only -->
+  <!-- all failures or all passes. -->
+  <runnable name="optimize" type="group" if="[OptimizeFilelist {(%TESTSTATUS%)}]">
+  </runnable>
+
+  <!-- This runnable checks the file list and displays the number of UCDBs that will be merged by the -->
+  <!-- process and then executes the correct method controlled by the MODE parameter. -->
+  <runnable name="mode" type="group" >
+    <preScript launch="vsim">
+       <command>if {![file exist {(%OPTIMIZELIST%)}]} {</command>
+       <command>  set message [format "# Supplied File '%s' doesn't exist. #" {(%OPTIMIZELIST%)}]</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  runmgr::rm_message $message</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  error $message</command>
+       <command>}</command>
+       <command>if {[file size {(%OPTIMIZELIST%)}] == 0} {</command>
+       <command>  set message [format "# Supplied File '%s' is empty. #" {(%OPTIMIZELIST%)}]</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  runmgr::rm_message $message</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  error $message</command>
+       <command>} else {</command>
+       <command>  package require fileutil</command>
+       <command>  set Tests [llength [::fileutil::cat (%OPTIMIZELIST%)]]</command>
+       <command>  set message [format "# Total Tests to merge from '%s' = %s #" (%OPTIMIZELIST%) $Tests]</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  runmgr::rm_message $message</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>}</command>
+       <command>if {[string match [string range [vsimPlatform] 0 2] {win}] &amp;&amp; ![string match (%MODE%) {local}]} {</command>
+       <command>  set message [format "# VRM only supports local mode on the Windows Platform #"]</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  runmgr::rm_message $message</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  error $message</command>
+       <command>}</command>
+       <command></command>
+    </preScript>
+    <parameters>
+      <parameter name="OPTIMIZELIST" type="tcl">[switch -- (%TESTSTATUS%) { "all" {list (%LIST%)} default {list (%LIST%).optimized} }]</parameter>
+      <parameter name="mergefile" type="tcl">[switch -- (%SRCCOVERAGE%) { "UCDB" {list {(%VRUNDIR%)/(%MERGEFILE%).ucdb}} default {list {(%VRUNDIR%)/(%MERGEFILE%)}} }]</parameter>
+      <parameter name="mergeoptions">(%MERGETYPE%) (%MERGEOPTIONS%)</parameter>
+      <parameter name="DATABASES" type="tcl">[CountFiles (%OPTIMIZELIST%)]</parameter>
+      <parameter name="GROUPS" type="tcl">[CalculateGroups (%MODE%) (%RSHJOBS:1%) (%JOBS:1%) (%DATABASES%)]</parameter>
+      <parameter name="SWITCHES" type="tcl">[ProcessCommandLine {(%COMMANDLINE%)} {(%WRAPPERCOMMAND%)} (%RUNNABLE%)]</parameter>
+    </parameters>
+    <members>
+      <member>rsh</member>
+      <member>lsf</member>
+      <member>sge</member>
+      <member>local</member>
+    </members>
+    <postScript launch="vsim">
+       <command>set Tests [llength [lindex [vcover testnames (%mergefile%) -tcl] end]]</command>
+       <command>set message [format "# Total Tests Merged = %s #" $Tests]</command>
+       <command>runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>runmgr::rm_message [string repeat "#" [string length $message]]</command>
+    </postScript>
+  </runnable>
+
+  <!-- This runnable runs if the selected mode is remote shell. -->
+  <runnable name="rsh" type="group" if="{(%MODE%)} eq {rsh}">
+    <parameters>
+      <parameter name="HOSTNAMES"
+                  ask="Which hosts do you want to run the process on ?"></parameter>
+      <parameter name="HOST" type="tcl" >[GetNextHost {(%HOSTNAMES%)} {(%SCRIPT%)} {(%INSTANCE%)}]</parameter>
+      <parameter name="RSHJOBS" type="tcl">[llength {(%HOSTNAMES%)}]</parameter>
+    </parameters>
+    <preScript launch="vsim">
+       <command>if {[llength {(%HOSTNAMES%)}] == 0} {</command>
+       <command>  set message [format "# No Hosts defined in HOSTNAMES parameter. #" ]</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  runmgr::rm_message $message</command>
+       <command>  runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>  error $message</command>
+       <command>}</command>
+       <command>foreach host {(%HOSTNAMES%)} {</command>
+       <command>  catch {exec rsh $host hostname} error</command>
+       <command>  if {![string match [lindex $error 0] $host]} {</command>
+       <command>    set message [format "# Can not RSH to host '%s'. #" $host]</command>
+       <command>    runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>    runmgr::rm_message $message</command>
+       <command>    runmgr::rm_message [string repeat "#" [string length $message]]</command>
+       <command>    error $message</command>
+       <command>  }</command>
+       <command>}</command>
+       <command>set maxstring 0</command>
+       <command>set message [format "Merge settings."]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>set message [format "Mode:          %s" (%MODE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Source:        %s" (%SRCCOVERAGE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Generate List: %s" (%GENERATELIST%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "List Name:     %s/%s" (%LISTPATH%) (%LISTFILENAME%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Test Status:   %s" (%TESTSTATUS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Output:  %s" (%mergefile%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Type:    %s" (%MERGETYPE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Options: %s" {(%MERGEOPTIONS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Queue Timeout: %s" (%QUEUETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Timeout: %s" (%MERGETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Hosts:         %s" {(%HOSTNAMES%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>runmgr::rm_message [string repeat "#" $maxstring]</command>
+    </preScript>
+    <method name="homegrid-merge" queue="merge" action="mergeScript" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GROUPS%)">
+       <command>rsh (%HOST%) (%WRAPPER%)</command>
+    </method>
+    <method name="homegrid" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GROUPS%)">
+       <command>rsh (%HOST%) (%WRAPPER%)</command>
+    </method>
+    <members>
+      <member>levelOne</member>
+    </members>
+    <postScript launch="vsim">
+       <command>echo Process switches (%SWITCHES%)</command>
+    </postScript>
+  </runnable>
+
+  <!-- This runnable runs if the selected mode is LSF. -->
+  <runnable name="lsf" type="group" if="{(%MODE%)} eq {lsf}">
+    <preScript launch="vsim">
+       <command>set maxstring 0</command>
+       <command>set message [format "Merge settings."]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>set message [format "Mode:          %s" (%MODE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Source:        %s" (%SRCCOVERAGE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Generate List: %s" (%GENERATELIST%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "List Name:     %s/%s" (%LISTPATH%) (%LISTFILENAME%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Test Status:   %s" (%TESTSTATUS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Output:  %s" (%mergefile%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Type:    %s" (%MERGETYPE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Options: %s" {(%MERGEOPTIONS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Queue Timeout: %s" (%QUEUETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Timeout: %s" (%MERGETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Number Jobs:   %s" (%JOBS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Grid Slots:    %s" (%GRIDSLOTS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Grid Options:  %s" {(%USERGRIDOPTS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>runmgr::rm_message [string repeat "#" $maxstring]</command>
+    </preScript>
+    <parameters>
+      <parameter name="JOBS"
+                  ask="How many jobs do you want to split the merge into ?"
+               accept="num(2,)"
+                     >10</parameter>
+      <parameter name="GRIDSLOTS"
+                  ask="How many grid slots are going to be used ?"
+               accept="num(2,)"
+                     >10</parameter>
+      <parameter name="USERGRIDOPTS"
+                  ask="Are there any extra submission options i.e. queue names, resources etc, you need to add to the grid submission command ?"
+                     ></parameter>
+    </parameters>
+    <method name="grid-merge" gridtype="lsf" queue="merge" action="mergeScript" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GRIDSLOTS%)">
+       <command>bsub (%USERGRIDOPTS%) (%GRIDOPTS%) (%WRAPPER%)</command>
+    </method>
+    <method name="grid" gridtype="lsf" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GRIDSLOTS%)">
+       <command>bsub (%USERGRIDOPTS%) (%GRIDOPTS%) (%WRAPPER%)</command>
+    </method>
+    <members>
+      <member>levelOne</member>
+    </members>
+    <postScript launch="vsim">
+       <command>echo Process switches (%SWITCHES%)</command>
+    </postScript>
+  </runnable>
+
+  <!-- This runnable runs if the selected mode is SGE. -->
+  <runnable name="sge" type="group" if="{(%MODE%)} eq {sge}">
+    <preScript launch="vsim">
+       <command>set maxstring 0</command>
+       <command>set message [format "Merge settings."]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>set message [format "Mode:          %s" (%MODE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Source:        %s" (%SRCCOVERAGE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Generate List: %s" (%GENERATELIST%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "List Name:     %s/%s" (%LISTPATH%) (%LISTFILENAME%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Test Status:   %s" (%TESTSTATUS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Output:  %s" (%mergefile%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Type:    %s" (%MERGETYPE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Options: %s" {(%MERGEOPTIONS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Queue Timeout: %s" (%QUEUETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Timeout: %s" (%MERGETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Number Jobs:   %s" (%JOBS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Grid Slots:    %s" (%GRIDSLOTS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Grid Options:  %s" {(%USERGRIDOPTS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>runmgr::rm_message [string repeat "#" $maxstring]</command>
+    </preScript>
+    <parameters>
+      <parameter name="JOBS"
+                  ask="How many jobs do you want to split the merge into ?"
+               accept="num(2,)"
+                     >10</parameter>
+      <parameter name="GRIDSLOTS"
+                  ask="How many grid slots are going to be used ?"
+               accept="num(2,)"
+                     >10</parameter>
+      <parameter name="USERGRIDOPTS"
+                  ask="Are there any extra submission options i.e. queue names, resources etc, you need to add to the grid submission command ?"
+                     ></parameter>
+    </parameters>
+    <method name="grid-merge" gridtype="sge" queue="merge" action="mergeScript" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GRIDSLOTS%)">
+       <command>qsub (%USERGRIDOPTS%) (%GRIDOPTS%) (%WRAPPER%)</command>
+    </method>
+    <method name="grid" gridtype="sge" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GRIDSLOTS%)">
+       <command>qsub (%USERGRIDOPTS%) (%GRIDOPTS%) (%WRAPPER%)</command>
+    </method>
+    <members>
+      <member>levelOne</member>
+    </members>
+    <postScript launch="vsim">
+       <command>echo Process switches (%SWITCHES%)</command>
+    </postScript>
+  </runnable>
+
+  <!-- This runnable runs if the selected mode is local to make use of multi-core machines. -->
+  <runnable name="local" type="group" if="{(%MODE%)} eq {local}">
+    <preScript launch="vsim">
+       <command>set maxstring 0</command>
+       <command>set message [format "Merge settings."]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>set message [format "Mode:          %s" (%MODE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Source:        %s" (%SRCCOVERAGE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Generate List: %s" (%GENERATELIST%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "List Name:     %s/%s" (%LISTPATH%) (%LISTFILENAME%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Test Status:   %s" (%TESTSTATUS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Output:  %s" (%mergefile%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Type:    %s" (%MERGETYPE%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Options: %s" {(%MERGEOPTIONS%)}]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Queue Timeout: %s" (%QUEUETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Merge Timeout: %s" (%MERGETIMEOUT%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>set message [format "Number Jobs:   %s" (%JOBS%)]</command>
+       <command>runmgr::rm_message $message</command>
+       <command>if {[string length $message] &gt; $maxstring} {set maxstring [string length $message]}</command>
+       <command>runmgr::rm_message [string repeat "#" $maxstring]</command>
+    </preScript>
+    <parameters>
+      <parameter name="JOBS"
+                  ask="How many jobs would you like to split the merge into ?"
+               accept="num(2,)"
+                     >2</parameter>
+    </parameters>
+    <method name="local-merge" queue="merge" action="mergeScript" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GROUPS%)" unless="[string match [string range [vsimPlatform] 0 2] {win}]">
+       <command>(%WRAPPER%)</command>
+    </method>
+    <method name="local" mintimeout="(%QUEUETIMEOUT%)" maxrunning="(%GROUPS%)" unless="[string match [string range [vsimPlatform] 0 2] {win}]">
+       <command>(%WRAPPER%)</command>
+    </method>
+    <members>
+      <member>levelOne</member>
+    </members>
+    <postScript launch="vsim">
+       <command>echo Process switches (%SWITCHES%)</command>
+    </postScript>
+  </runnable>
+
+  <!-- This runnable does the level one merges. -->
+  <runnable name="levelOne" type="task" repeat="(%GROUPS%)">
+    <parameters>
+      <parameter name="ucdbfile" type="tcl">[switch -- (%SRCCOVERAGE%) { "UCDB" {list {(%INSTANCE%)}} default {list {(%INSTANCE%)}} }]</parameter>
+      <parameter name="inputlist" type="tcl">[GetList (%OPTIMIZELIST%) (%DATABASES%) (%GROUPS%) (%INSTANCE%) (%TASKDIR%)]</parameter>
+      <parameter name="outswitch" type="tcl">[switch -- (%SRCCOVERAGE%) { "UCDB" {list "-out"} default {list "-outputstore"} }]</parameter>
+    </parameters>
+    <!--<localfile name="inputlist" expand="yes">
+       <command>(%inputlist%)</command>
+    </localfile>-->
+    <execScript launch="vsim" mintimeout="(%MERGETIMEOUT%)">
+      <command>if {(%inputlist%) != 0} {</command>
+      <command>  vcover merge (%mergeoptions%) (%outswitch%) (%ucdbfile%) -inputs inputlist</command>
+      <command>}</command>
+    </execScript>
+    <mergeScript mintimeout="(%MERGETIMEOUT%)"/>
+  </runnable>
+
+  <usertcl name="getucdbfiles">
+  set fp {}
+  set CommandLine ""
+  # Splits the list and returns the list of ucdb files or tests for each group
+  proc GetList {path databases groups runnable taskdir} {
+    variable fp
+    global UcdbFiles Remainder
+    # If run without -noexec then possible to get here with databases set to zero
+    if {$databases == 0} { return ""}
+    # If this is the first call, open the list of ucdb files...
+    if {[string equal $fp {}]} {
+      set fp [open $path]
+      set Remainder [expr $databases % $groups]
+      logStuff "Splitting test list at [RightNow]"
+    }
+
+    # ...then fetch "count" UCDB files or stop if EOF is reached
+    set retval [list]
+    set fout [open [file join $taskdir inputlist] w]
+    if {![info exists UcdbFiles($runnable)]} {
+      if {$Remainder != 0} {
+        set count [expr ($databases / $groups) + 1 ]
+        incr Remainder -1
+      } else {
+        set count [expr ($databases / $groups) ]
+      }
+      set UcdbFiles($runnable) $count
+      while {($count > 0) &amp;&amp; ![eof $fp]} {
+        set file [gets $fp]
+        if {![string equal $file {}]} {puts $fout $file ; incr count -1}
+      }
+      echo "Action: $runnable Merges $UcdbFiles($runnable) UCDB files/tests"
+      close $fout
+    }
+    return $UcdbFiles($runnable)
+  }
+
+  # Returns the total number of databases from the list
+  proc CountFiles {file} {
+    set count 0
+    if {![file exist $file]} {return 0}
+    set fp [open $file]
+    while {![eof $fp]} {
+       set file [gets $fp]
+       incr count
+    }
+    close $fp
+    return [expr $count - 1]
+  }
+
+  # Calculates the number of groups to be used. Reduces the group
+  # number if the number of databases divided by the group is less
+  # then 1
+  proc CalculateGroups {mode rshjobs gridjobs databases} {
+      if {$databases == 0} {return 0}
+      switch -- $mode { "rsh" {set groups $rshjobs} default {set groups $gridjobs} }
+      if {$groups == 0} {return $groups}
+      if { [expr $databases / $groups ] != 0 } {
+        return $groups
+      } else {
+        while {[expr $databases / $groups ] == 0 } {
+          incr groups -1
+        }
+        return $groups
+      }
+  }
+
+  # Used in RSH mode to return an unloaded host
+  proc GetNextHost {hosts script instance} {
+    global availableHosts NextHost
+    if {[string equal $script "preScript"]} {
+      return [exec hostname]
+    }
+    if {![info exists availableHosts]} {
+      set availableHosts $hosts
+    }
+    if {![info exists NextHost($instance)]} {
+      set currentHost [lindex $availableHosts 0]
+      lremove availableHosts 0
+      set NextHost($instance) $currentHost
+    }
+    return $NextHost($instance)
+  }
+
+  # Modified action complete routine to help manage the available
+  # hosts in RSH mode and modify messages.
+  proc ActionCompleted {userdata} {
+    upvar $userdata data
+    global availableHosts mergePasses logBegin UcdbFiles
+    if {[string equal $data(RUNNABLE) "levelOne"]} {
+      set action $data(ACTION)
+      set host [ExpandRmdbParameters $action "(%HOST:none%)"]
+      lappend availableHosts $host
+    }
+    if {![info exists mergePasses]} {set mergePasses 0}
+    if {[string match $data(passfail) "passed"]} {incr mergePasses 1}
+    if {[isChatty]} {
+      if {[string equal $data(RUNNABLE) "levelOne"]} {
+        set action [format "%s tests merged" $UcdbFiles($data(INSTANCE))]
+        if {[string equal $data(SCRIPT) "mergeScript"]} {
+          set action "triggered auto-merge completed"
+        }
+        if {[string equal $data(SCRIPT) "execScript"] || [string equal $data(SCRIPT) "mergeScript"]} {
+          set logEnd [clock seconds]
+          set RunTimeSec [expr $logEnd - $logBegin($data(INSTANCE),$data(SCRIPT))]
+          set RunTime [format "'%dm:%ds'" [expr $RunTimeSec / 60] [expr $RunTimeSec % 60]]
+          set msg [list "'$data(INSTANCE)' $action in $RunTime at [RightNow]"]
+          eval logDebug $msg
+        }
+      }
+    }
+  }
+
+  <!-- This is called after each action is completed -->
+  proc ActionStarted {userdata} {
+    upvar $userdata data
+    global mergeActions logBegin
+    if {[info exists mergeActions]} { incr mergeActions 1 } else { set mergeActions 1 }
+    if {[isChatty]} {
+      if {[string equal $data(RUNNABLE) "levelOne"]} {
+        set action "merge"
+        if {[string equal $data(SCRIPT) "mergeScript"]} {
+          set action "completion triggers auto-merge of all tests merged to now"
+        }
+        set msg [list "'$data(INSTANCE)' $action at [RightNow]"]
+        set logBegin($data(INSTANCE),$data(SCRIPT)) [clock seconds]
+        eval logDebug $msg
+      }
+    }
+  }
+
+  # Set-up the parameters for the merge process
+  proc GenerateUCDBList {genfilelist srccoverage} {
+    global ucdbfilenames
+    if {[string equal $genfilelist "yes"] &amp;&amp; [string equal $srccoverage "UCDB"]} {
+      set ucdbdir [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%UCDBDIR%)"]
+      set ucdbfilenames [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%UCDBFILENAMES%)"]
+      set list [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%LIST%)"]
+      set vrundir [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%VRUNDIR%)"]
+      set mergefile [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%MERGEFILE%)"]
+      set mergefile [switch -- $srccoverage { "UCDB" {set mergefile [format "%s/%s.ucdb" $vrundir $mergefile]} default {set mergefile ""} }]
+      if {![string match [string range $ucdbdir 0 0] "/"]} {set ucdbdir [format "%s/%s" $vrundir $ucdbdir]}
+      if {[string length $mergefile]} { if {[file exist $mergefile]} { logStuff [format "Removing '%s'" $mergefile] ; file delete -force $mergefile } }
+      logStuff "Generating test list at [RightNow]"
+      package require fileutil
+      proc is_ucdb {name} {global ucdbfilenames; return [string match $ucdbfilenames $name]}
+      set files [::fileutil::find $ucdbdir is_ucdb]
+      set ofile [open $list "w"]
+      foreach file $files {
+         puts $ofile [file join $ucdbdir $file]
+      }
+      close $ofile
+      return 1
+    } else {
+      return 0
+    }
+  }
+
+  # Set-up the parameters for the merge process
+  proc GenerateTESTList {genfilelist srccoverage} {
+    if {[string equal $genfilelist "yes"] &amp;&amp; [string equal $srccoverage "CoverStore"]} {
+      set coverstores [ExpandRmdbParameters merge/generateTESTlist/execScript "(%COVERSTORES%)"]
+      set list [ExpandRmdbParameters merge/generateTESTlist/execScript "(%LIST%)"]
+      set dir [ExpandRmdbParameters merge/generateTESTlist/execScript "(%VRUNDIR%)"]
+      logStuff "Generating test list at [RightNow]"
+      set ofile [open $list "w"]
+      foreach coverstore $coverstores {
+        if {![string match [string range $coverstore 0 0] {/}]} {set coverstore [format "%s/%s" $dir $coverstore]}
+        foreach file [glob [format "%s/*.data" $coverstore]] {
+          puts $ofile [format "%s:%s" $coverstore [file tail [file rootname $file]]]
+        }    
+      }
+      close $ofile
+      return 1
+    } else {
+      return 0
+    }
+  }
+
+  proc ProcessCommandLine {commandline wrappercommand mode} {
+    global mergefile
+    set parameters ""
+    set switches ""
+    set generatelist [ExpandRmdbParameters merge/preScript "(%GENERATELIST%)"]
+    set srccoverage [ExpandRmdbParameters merge/preScript "(%SRCCOVERAGE%)"]
+    set printcommand [ExpandRmdbParameters merge/preScript "(%PRINTCOMMAND%)"]
+    set printwrapper [ExpandRmdbParameters merge/preScript "(%PRINTWRAPPER%)"]
+    set mergefile [ExpandRmdbParameters merge/mode/preScript "(%mergefile%)"]
+    if {[string equal $generatelist "yes"]} {
+      if {[string equal $srccoverage "UCDB"]} {
+        set dir [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%UCDBDIR%)"]
+        set names [ExpandRmdbParameters merge/generateUCDBlist/execScript "(%UCDBFILENAMES%)"]
+        append parameters [format "-GUCDBDIR=%s -GUCDBFILENAMES=\"%s\" " $dir $names]
+        append switches [format "-genlistfrom %s -ucdbname \"%s\" " $dir $names]
+      } else {
+        set coverstore [ExpandRmdbParameters merge/generateTESTlist/execScript "(%COVERSTORES%)"]
+        append parameters [format "-GCOVERSTORES=\"%s\" " $coverstore]
+        append switches [format "-genlistfrom \"%s\" " $coverstore]
+      }
+    }
+    if {[string equal $mode "lsf"] || [string equal $mode "sge"]} {
+      set gridjobs [ExpandRmdbParameters merge/mode/$mode/execScript "(%JOBS%)"]
+      set gridslots [ExpandRmdbParameters merge/mode/$mode/execScript "(%GRIDSLOTS:1%)"]
+      set usergridopts [ExpandRmdbParameters merge/mode/$mode/execScript "(%USERGRIDOPTS:%)"]
+      append parameters [format "-GJOBS=%s -GGRIDSLOTS=%s" $gridjobs $gridslots]
+      append switches [format "-j %s -gridslots %s" $gridjobs $gridslots]
+      if {[string length $usergridopts]} {
+        append parameters [format " -GUSERGRIDOPTS=\"%s\"" $usergridopts]
+        append switches [format " -gridopts \"%s\"" $usergridopts]
+      }
+    }
+    if {[string equal $mode "rsh"]} {
+      set hosts [ExpandRmdbParameters merge/mode/$mode/execScript "(%HOSTNAMES%)"]
+      append parameters [format "-GHOSTNAMES=\"%s\"" $hosts]
+      append switches [format "-hostlist \"%s\"" $hosts]
+    }
+    if {[string equal $mode "local"]} {
+      set jobs [ExpandRmdbParameters merge/mode/$mode/execScript "(%JOBS%)"]
+      append parameters [format "-GJOBS=%s" $jobs]
+      append switches [format "-j %s" $jobs]
+    }
+    if {[string equal $printcommand "yes"] || [string equal $printwrapper "yes"]} {
+      echo "#################################################################"
+      echo "# The following command line will reproduce this configuration. #"
+      echo "#################################################################"
+    }
+    if {[string equal $printcommand "yes"]} {
+      echo [format "%s %s" $commandline $parameters]
+    }
+    if {[string equal $printwrapper "yes"]} {
+      echo [format "%s %s" $wrappercommand $switches]
+    }
+    return 0
+  }
+
+  # Opimize the list
+  proc OptimizeFilelist {optimize} {
+    if {![string equal $optimize "all"]} {
+      echo "###################################################################"
+      echo "# Extract TESTSTATUS from each UCDB and optimize based on result. #"
+      echo "###################################################################"
+      set list [ExpandRmdbParameters merge/preScript "(%LIST%)"]
+      set optimizelist [format "%s.optimized" $list]
+      set ffile [open $list r]
+      set ofile [open $optimizelist w]
+      set passed 0
+      set failed 0
+      while {![eof $ffile]} {
+        gets $ffile line
+        if {$line != "" } {
+          set result [lindex [vcover attribute $line -tcl] 0 1 7 1]
+          if {$result &lt; 2} {
+            if {[string match $optimize "passed"]} {
+              puts $ofile $line
+            }
+            incr passed
+          } else {
+            if {[string match $optimize "failed"]} {
+              puts $ofile $line
+            }
+            incr failed
+          }
+        }
+      }
+      close $ffile
+      close $ofile
+      echo "#####################################"
+      echo "#                                   #"
+      echo [format "# Tests Total   = %7s           #" [expr $passed + $failed]]
+      echo [format "# Tests Passed  = %7s           #" $passed]
+      echo [format "# Tests Failed  = %7s           #" $failed]
+      echo "#                                   #"
+      echo "#####################################"
+      return 1
+    } else {
+      return 0
+    }
+  }
+
+  proc ProclaimUserMessage {userdata} {
+      upvar $userdata data
+      if {![testMode] || [string equal $data(TESTNAME) {}]} {
+          logStuff "$data(message)"
+      } else {
+          logStuff "$data(message)"
+      }
+  }
+
+  proc RegressionStarting {userdata} {
+    global mergefile mergeActions mergePasses
+    upvar $userdata data
+    set mergefile ""
+    set mergeActions 0
+    set mergePasses 0
+    logStuff "Parallel merge process started at [RightNow]"
+  }
+
+  proc RegressionCompleted {userdata} {
+    global mergefile mergeActions mergePasses
+    upvar $userdata data
+    set msg [format "Merge Execution Status:"]
+    logStuff $msg
+    set msg [format " Passed %s" $mergePasses]
+    logStuff $msg
+    set msg [format " Failed %s" [expr $mergeActions - $mergePasses]]
+    logStuff $msg
+    set msg [format " Total  %s" $mergeActions]
+    logStuff $msg
+    if {$mergePasses &amp;&amp; ![expr $mergeActions - $mergePasses]} {
+      set result "completed"
+      set finished [format "\nResults written to '%s'" $mergefile]
+    } else {
+      set result "failed"
+      set finished ""
+    }
+    set msg [format "Parallel merge process %s at %s%s" $result [RightNow] $finished]
+    logStuff $msg
+  }
+
+  </usertcl>
+</rmdb>

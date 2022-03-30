@@ -1,0 +1,149 @@
+{
+    "compile": {
+        "commands": [
+            "file delete -force work",
+            "vlib work",
+            "vlog -sv (%RMDBDIR%)/src/top.sv (%vlogopts%)",
+            "vopt top -o top_opt"
+        ],
+        "launch": "vsim",
+        "parameters": [
+            {
+                "name": "vlogopts",
+                "value": "+cover=bces",
+                "type": "text",
+                "export": "0"
+            }
+        ],
+        "path": "",
+        "source": "commands",
+	"queue": "",
+	"grid": "",
+	"timeout": "300"
+    },
+    "regression": {
+        "parameters": [
+        ],
+        "autoclean": "",
+        "autodelete": "",
+        "autotriage": {
+            "enable":"",
+            "allsev":"",
+            "notesev":"",
+            "errsev":"",
+            "warnsev":"",
+            "alltest":"",
+            "passtest":"",
+            "failtest":"",
+            "transfile":"$QUESTA_INSTALL/vm_src/uvm_generic_1.xform"
+        },
+        "autotrend": {
+            "enable":""
+        },
+        "toprunnable": "regression",
+        "automerge": {
+            "enabled": "",
+            "coverstore" : "",
+            "totals": "on",
+            "all": "on",
+            "zerooutfail": "",
+            "tplan": ""
+        }
+    },
+    "report": {
+        "launch": "vsim",
+        "parameters": [
+        ],
+        "addopt": {
+            "enable": "",
+            "commands": [
+            ],
+            "path": "",
+            "source": "commands"
+        },
+        "html": {
+            "enable": "",
+            "cov": "",
+            "details": "",
+            "source": "",
+            "showexcluded": "",
+            "testhit": "",
+            "testrecord": "",
+            "addopt": "",
+            "htmldir": "vrunhtmlreport"
+        },
+        "trend": {
+            "enable": "",
+            "format": "html",
+            "dir":"(%DATADIR%)/trendreport",
+            "graph": "bar",
+            "date1":"",
+            "date2":"",
+            "addopt": ""
+        },
+        "email": {
+            "enable": "",
+            "add":"",
+            "sub":"",
+            "msg":["WARNING: DEFAULT REGRESSION AUTHOR MESSAGE!", "PLEASE CUSTOMIZE MESSAGE BODY ACCORDING TO REGRESSION OPTIONS", "This is automated builds output", "To view regression results, please navigate to (%DATADIR%)/regression"
+            ],
+            "pfs": "",
+            "cs": "",
+            "es": "",
+            "gs":"",
+            "ucdbs":"",
+            "as":""
+        }
+    },
+    "seed": "123",
+    "simulate": {
+        "commands": [
+            "vsim -c -coverage -lib (%DATADIR%)/regression/Compile/work top_opt (%vsimopts%)",
+            "run -all",
+            "coverage attribute -name TESTNAME -value (%testname%)",
+            "coverage attribute -name LOGNAME  -value [transcript file]",
+            "coverage save (%ucdbfile%)"
+        ],
+        "launch": "vsim",
+	"queue": "",
+        "parameters": [
+            {
+                "name": "ucdbfile",
+                "value": "(%testname%).ucdb",
+                "type": "text",
+                "export": "0"
+            },
+            {
+                "name": "vsimopts",
+                "value": "-msgmode both -sv_seed (%seed%)",
+                "type": "text",
+                "export": "0"
+            }
+        ],
+        "path": "",
+        "source": "commands",
+	"grid": "",
+	"timeout": "360"
+    },
+    "suite": "default",
+    "testlist": {
+        "content": [
+            "fixed_%n - 123 456 789",
+            "random_%n 3"
+        ],
+        "path": "testlist",
+        "source": "content"
+    },
+    "specialparams": {
+        "mergefile": "(%DATADIR%)/merge.ucdb",
+        "mergeoptions": "",
+        "coverstore": "(%DATADIR%)/coverstore",
+        "tplanfile": "",
+        "tplanoptions": "",
+        "triagefile": "(%DATADIR%)/triage.tdb",
+        "triageoptions": "",
+        "trendfile": "(%DATADIR%)/trend.ucdb",
+        "trendoptions": "",
+        "nodelete":""
+    }    
+}

@@ -1,0 +1,24 @@
+<p>
+<i>Parameters</i> are <i>VRM</i> variables. They are either  <i>VRM pre-defined parameters</i> or <i>user-defined</i>. The  <i>parameter</i> value can reference another  <i>parameter</i> name that was defined previously.
+
+<i>User-defined parameters</i> can have the types:
+<ol>
+<li>text: the normal parameter value</li>
+<li>file: the value refer to a file</li>
+<li>TCL: the parameter value is TCL expanded</li>
+</ol>
+
+Exporting a <i>user-defined parameter</i> allows scripts to use it as an <i>Environment Variable</i>
+
+Among the mostly used <i>pre-defined parameters</i> are:
+<ul>
+<li>(%DATADIR%):- Directory path of VRMDATA directory</li>
+<li>(%RMDBDIR%):- Directory path of RMDB file</li>
+<li>(%VRUNDIR%):- Directory path from where VRM is invoked</li>
+<li>(%TASKDIR%):- Working directory in which the current task is being executed</li>
+</ul>
+</p>
+
+<p><i>Parameters-expanded</i> fields are fields that allow referencing <i>parameters</i>. These fields has auto-complete feature that allows you to select from the set of existing <i>parameters</i>.
+In order to reference a <i>parameter</i>, you can use, "(%parametername%)". If the field is  <i>parameter-expanded</i>, once you write "(%" you will get a list of <i>parameters</i>  you can select from.
+Also, in the help links attached with every field, you can find a note stating that the field is  <i>parameter-expanded</i>.</p>
