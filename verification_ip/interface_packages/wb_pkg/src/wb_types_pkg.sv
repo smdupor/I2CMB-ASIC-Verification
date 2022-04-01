@@ -18,7 +18,7 @@ package wb_types_pkg;
 							M_READ_WITH_NACK=3'b011, 
 							M_READ_WITH_ACK=3'b010} wb_cmd_mon_t;
 
-	typedef enum logic [1:0] {EN_INT=2'b11, EN_POLL=2'b10, NONE=2'bxx} csr_control;
+	typedef enum logic [1:0] {EN_INT=2'b11, EN_POLL=2'b10, NONE_TWO=2'bxx} csr_control;
 
 
 

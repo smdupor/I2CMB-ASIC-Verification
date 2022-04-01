@@ -7,11 +7,11 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	logic [7:0] address;
 	i2c_op_t 	operation;
 
-  covergroup i2c_transaction_cg;
+ /* covergroup i2c_transaction_cg;
   	option.per_instance = 1;
     option.name = get_full_name();
 
-	data: 	coverpoint data
+	data: coverpoint data
 	{
 		bins data = {8'h00:8'hff};
 	}
@@ -24,14 +24,14 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 		bins I2_WRITE = {I2_WRITE};
 		bins I2_READ = {I2_READ};
 	}
-  endgroup
+  endgroup*/
 
   function new(string name = "", ncsu_component #(T) parent = null); 
     super.new(name,parent);
-    i2c_transaction_cg = new;
+  //  i2c_transaction_cg = new;
   endfunction
 
-  function void set_configuration(abc_configuration cfg);
+  function void set_configuration(i2c_configuration cfg);
     configuration = cfg;
   endfunction
 
@@ -41,7 +41,7 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 
 	foreach(trans.data[i]) begin
 		data = trans.data[i];
-	    i2c_transaction_cg.sample();
+	   // i2c_transaction_cg.sample();
 	end
   endfunction
 
