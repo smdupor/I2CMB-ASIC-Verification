@@ -56,7 +56,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 	task check_command_assertions();
 		static T temp;
-		if(last_trans[0].adr == CMDR && last_trans[0].dat_mon[2:0] == M_I2C_START && monitored_trans.we == I2_READ) begin
+		if(last_trans[0].adr == CMDR && last_trans[0].word[2:0] == M_I2C_START && monitored_trans.we == I2_READ) begin
 				this.bus.master_read(STATE, temp.word);
 
 				assert_fsm_byte_match_last_cmd: assert (temp.word[2:0]==monitored_trans.dat_mon[2:0])
