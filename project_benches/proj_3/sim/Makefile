@@ -1,6 +1,7 @@
 export ECE745_PROJECT_HOME ?= $(PWD)/../../..
 
 GEN_TRANS_TYPE ?= i2c_transaction
+TEST_SEED ?= 12345
 
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
 include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/wb_pkg/Makefile
@@ -37,8 +38,8 @@ optimize:
 compile: comp_bench comp_I2C_MB optimize
 
 simulate:
-	vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
-
+	#vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	vsim  -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 debug: clean compile simulate
 
 restart: clean compile
@@ -47,7 +48,8 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
+	#vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
+	vsim  -c -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb
 	@echo "********************************************************************************************"
 	@echo "  "
 	diff transcript transcript.bak
@@ -89,3 +91,14 @@ optimize_sil:
 	vopt +acc top -o optimized_debug_top_tb > /dev/null
 
 compile_sil: comp_bench_sil comp_I2C_MB_sil optimize_sil
+
+convert_testplan:
+	xml2ucdb -format Excel ./i2cmb_test_plan.xml ./i2cmb_test_plan.ucdb
+	add testbrowser ./*.ucdb
+	
+merge_coverage:
+	vcover merge -stats=none -strip 0 -totals sim_and_testplan_merged.ucdb ./*.ucdb 
+	coverage open ./sim_and_testplan_merged.ucdb
+
+report_coverage:
+	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
