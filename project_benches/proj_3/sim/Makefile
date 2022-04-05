@@ -9,7 +9,7 @@ include $(ECE745_PROJECT_HOME)/verification_ip/interface_packages/i2c_pkg/Makefi
 include $(ECE745_PROJECT_HOME)/verification_ip/environment_packages/i2cmb_env_pkg/Makefile
 
 list:
-    @grep '^[^#[:space:]].*:' Makefile
+	@grep '^[^#[:space:]].*:' Makefile
 
 clean: 
 	rm -rf work *.wlf transcript
