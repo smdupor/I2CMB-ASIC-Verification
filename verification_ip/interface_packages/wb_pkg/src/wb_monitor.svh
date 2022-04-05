@@ -1,6 +1,6 @@
 class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
-	import wb_types_pkg::*;
+	
 
 	wb_configuration  configuration;
 	virtual wb_if bus;
