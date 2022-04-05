@@ -47,7 +47,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 			monitored_trans.word = dat_mon;
 			monitored_trans.write = we_mon;
 			
-			if(last_trans.adr_mon == CMDR)
+			check_command_assertions();
 				
 			agent.nb_put(monitored_trans);
 		end
