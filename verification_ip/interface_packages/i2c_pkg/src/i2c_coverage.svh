@@ -13,11 +13,11 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 
 	data: coverpoint data
 	{
-		auto bins {8'h00:8'hff};
+		bins {8'h00:8'hff};
 	}
 	address: coverpoint address
 	{
-		auto bins {8'h00:8'hff};
+		bins {8'h00:8'hff};
 	}
 	operation: coverpoint operation
 	{
