@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Multi-level Auto-merge Example" />
+<meta name="abstract" content="The example makes use of the queued auto-merge functionality in vrun. The merge is divided into two levels, the second-level merge being responsible for merging two merge files produced by the first-level merge. This example also illustrates how unit-level and system-level coverage can be merged into a single UCDB using VRM." />
+<meta name="description" content="The example makes use of the queued auto-merge functionality in vrun. The merge is divided into two levels, the second-level merge being responsible for merging two merge files produced by the first-level merge. This example also illustrates how unit-level and system-level coverage can be merged into a single UCDB using VRM." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc750a11f-e643-48d5-ada3-d20791a8982a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Multi-level Auto-merge Example</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Multi-level Auto-merge Example" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc750a11f-e643-48d5-ada3-d20791a8982a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Multi-level Auto-merge
+Example</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">The
+example makes use of the queued auto-merge functionality in vrun.
+The merge is divided into two levels, the second-level merge being responsible
+for merging two merge files produced by the first-level merge. This
+example also illustrates how unit-level and system-level coverage
+can be merged into a single UCDB using VRM. </span>
+</div>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_CompleteMultiLevelAutoMergeExample_id97fb56dd.html#id97fb56dd-652c-435b-a761-dfd37e0fe04d__Concept_CompleteMultiLevelAutoMergeExample_id97fb56dd.xml#id97fb56dd-652c-435b-a761-dfd37e0fe04d" title="This section shows a complete multi-level auto-merge example.">Complete Multi-level Auto-merge Example</a>” for the example used in the
+following sections.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutoMergeExampleDesign_id25edd389.html" title="The block under test is a Hamming parity generator module (mlm_par), purposely written as a series of SystemVerilog if statements in order to achieve partial statement coverage (if it were written with continuous assign statements, every statement would be covered by every test). This block is tested under two testbenches. One (mlm_uni) simply instantiates the block once, drives some sample values, and prints both the input value and the resulting Hamming parity code. The other testbench (mlm_sys) instantiates two parity blocks as part of an encoder/decoder module pair that test the ability of the Hamming code to repair single-bit failures. The second testbench also has a self-checking mechanism built-in. ">Auto-merge Example Design</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutoMergeExampleRmdbDatabase_id45662a1a.html" title="The Verification Run Manager DataBase (RMDB) file is the VRM database.">Auto-merge Example RMDB Database</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_FirstLevelMergeInDetail_id9031af52.html" title="The two first-level merges are more or less identical, so the merge under systemtest is used as an example for purposes of this discussion. The systemtest Runnable defines a parameter called group whose value is systemtest. This is only needed because systemtest and unittest share many configuration elements and the group parameter allows these shared elements to be parameterized to match the Group in question.">First-level Merge in Detail</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AvoidingProblemsInheritance_id9ef20991.html" title="Inheritance solves a lot of problems in the general case. It allows a common parameter value to be entered into the RMDB database once and still be visible from large parts of the regression topology. It allows complex parameter values to themselves be parameterized using a simple parameter (such as a testname or a seed) defined in each test. Auto-merging is the one place where this flexible inheritance architecture works against us.">Avoiding Problems with Inheritance</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SecondLevelMergeInDetail_id7eb3570b.html" title="The second-level merge is very similar to the two first-level merges. It is worth noting that the only two execScript Actions under the nightly subtree that are not also under one of the two main Groups (unittest and systemtest) are the execScript Actions under unittest_merge and systemtest_merge. This is intentional, since the two first-level merge files generated by those Actions are to be the only input files to the second-level merge. If other Task Runnables were defined at this level, their UCDBs would also participate in the second-level merge (which might also be intentional, under the right circumstances).">Second-level Merge in Detail</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_CompleteMultiLevelAutoMergeExample_id97fb56dd.html" title="This section shows a complete multi-level auto-merge example.">Complete Multi-level Auto-merge Example</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PostExecutionAnalysis_id449d612e.html" title="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case.">Post-execution Analysis</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Multi-level Auto-merge Example"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_MultiLevelAutoMergeExample_idc750a11f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Run (and Rerun) Algorithm" />
+<meta name="abstract" content="This section describes the Run and Rerun algorithms." />
+<meta name="description" content="This section describes the Run and Rerun algorithms." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0af5cd67-7652-473e-960b-031364c340e8" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Run (and Rerun) Algorithm</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Run (and Rerun) Algorithm" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id0af5cd67-7652-473e-960b-031364c340e8">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Run (and
+Rerun) Algorithm</h1>
+<div class="abstract ContainerAbstract"><span class="shortdesc">This
+section describes the Run and Rerun algorithms.</span>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_NotificationRegressionStartCompletion_idafa5d7e0.html" title="A user-definable procedure, RegressionStarting, is called immediately before VRM begins to launch Action scripts. Another user-definable procedure, RegressionCompleted, is called after the “done” message for the last Action to be executed has been received (actually, the RegressionCompleted procedure is called when the vrun application determines, as a result of the processing of the final “done” message, that there are no more Actions eligible to run and none currently running).">Notification of Regression Start and/or Completion</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_FailedTestRerun_id8b08e767.html" title="VRM allows a single rerun to be performed on selected Actions. The -rerun option is given a new set of options, at least one of which must select one or more Runnables for the rerun phase, and used the options supplied to rerun a subset of the Actions launched on the first pass. ">Failed Test Rerun</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_JobProgressMonitoring_idbcdb4418.html" title="The VRM algorithm can be divided into two basic functions. The first, somewhat trivial function is to build a list of Actions that need to be executed. This happens once when VRM is first executed. The second, more complex function is to listen for job completions and kick off subsequent rounds of Actions as they become eligible to run. This second function is mainly triggered in response to a “done” message being received from an existing job (exceptions are made for the initial round of eligible Actions that are triggered by a synthetic “done” message on the pseudo-Action =init= and for timeouts, which are handled as if a “done” message had occurred but in response to the lapse of a preset time interval).">Job Progress Monitoring</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_BasicRegressionExecutionAlgorithm_idcf949f39.html" title="The generic VRM use model is relatively simple. The user defines a regression suite containing an arbitrary number of tests. For convenience, these tests can be collected into groups, where each group can perform some action before and after the group's members are executed. The complete regression suite hierarchy is encoded into a RMDB database. A single call to VRM can then be used to execute all or part of the regression suite under specific conditions. Because VRM is expected to work under various existing regression flows, there are many opportunities for customizing and/or parameterization.">Basic Regression Execution Algorithm</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Run (and Rerun) Algorithm"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_RunRerunAlgorithm_id0af5cd67.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

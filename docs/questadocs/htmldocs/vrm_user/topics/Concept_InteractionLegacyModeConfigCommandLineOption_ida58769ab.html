@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Interaction with the Legacy Mode -config Command-line Option" />
+<meta name="abstract" content="Prior to the Questa Verification Run Manager 10.1 release, the command-line option used to specify the RMDB file was -config as opposed to -rmdb. For back-compatibility purposes, the -config command-line option can still be used to specify the RMDB file but only if the -project command-line option is not present on the command line. In that case, vrun assumes the -config was meant to specify the RMDB file but a deprecation warning will appear in the vrun output. If the -config command-line option is used in conjunction with the -project command-line option, the vrun process assumes the value of the -config option was meant to specify the name of a particular configuration in the specified project file." />
+<meta name="description" content="Prior to the Questa Verification Run Manager 10.1 release, the command-line option used to specify the RMDB file was -config as opposed to -rmdb. For back-compatibility purposes, the -config command-line option can still be used to specify the RMDB file but only if the -project command-line option is not present on the command line. In that case, vrun assumes the -config was meant to specify the RMDB file but a deprecation warning will appear in the vrun output. If the -config command-line option is used in conjunction with the -project command-line option, the vrun process assumes the value of the -config option was meant to specify the name of a particular configuration in the specified project file." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida58769ab-b91d-44bf-bfa7-00c73f77e349" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Interaction with the Legacy Mode -config Command-line Option</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Interaction with the Legacy Mode -config Command-line Option" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ida58769ab-b91d-44bf-bfa7-00c73f77e349">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Interaction with the Legacy Mode -config Command-line Option</h1>
+<div class="abstract ConceptAbstract"><span class="shortdesc">Prior to the
+Questa Verification Run Manager 10.1 release, the command-line option
+used to specify the RMDB file was -config as opposed to -rmdb. For back-compatibility
+purposes, the  -config command-line option can still be used to
+specify the RMDB file but only if the -project command-line option
+is not present on the command line. In that case, vrun assumes the
+ -config was meant to specify the RMDB file but a deprecation warning
+will appear in the vrun output. If the -config command-line option
+is used in conjunction with the -project command-line option, the
+vrun process assumes the value of the -config option was meant to
+specify the name of a particular configuration in the specified project
+file.</span>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_EffectProjectsConfigurationsOnBatchModeVrmRegressions_ide9029a85.html" title="The batch-mode vrun application understands projects and configurations. If the -project command-line option points to a valid VRM Project file and the -config command-line option matches the name of a configuration inside that project file, then the batch-mode regression process uses the Runnable selections and command-line options specified by that project to run the regression. Any additional command-line options listed on the original vrun command line will override command-line options specified in the configuration.">Effect of Projects and Configurations on Batch-mode VRM Regressions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Interaction with the Legacy Mode -config Command-line Option"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_InteractionLegacyModeConfigCommandLineOption_ida58769ab.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

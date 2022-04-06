@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Management Specification" />
+<meta name="abstract" content="The power management architecture for a given design could be defined as part of the design, and ultimately it is a part of the design’s implementation. A better approach, however, is to specify the power management architecture separate from the design." />
+<meta name="description" content="The power management architecture for a given design could be defined as part of the design, and ultimately it is a part of the design’s implementation. A better approach, however, is to specify the power management architecture separate from the design." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id512a44b0-1393-462f-87c2-a50e57fcdab7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Management Specification</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Management Specification" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id512a44b0-1393-462f-87c2-a50e57fcdab7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Management Specification</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The power
+management architecture for a given design could be defined as part
+of the design, and ultimately it is a part of the design’s implementation.
+A better approach, however, is to specify the power management architecture
+separate from the design. </span>
+</div>
+<p class="p">This simplifies exploration of alternative
+power management architectures, reduces the likelihood of unintended
+changes to the golden design functionality, and maintains the reusability
+of the design data. This is the approach supported by IEEE Std 1801™-2009, “Standard
+for Design and Verification of Low Power Integrated Circuits.” </p>
+<p class="p">This standard is also known as the Unified
+Power Format (UPF) version 2.0. Initially developed by Accellera,
+UPF is currently supported by multiple vendors and is in use worldwide
+[<a class="xref fm:NumberOnly" href="Concept_Summary_ide7569744.html#ide7569744-55ef-4907-b194-ba93721d5aaa__id2cc82c6d-b5a3-43cf-9c5f-f6ae78ef3225">5</a>].</p>
+<p class="p">UPF provides the concepts
+and notation required to define the power management architecture for
+a design. A UPF specification can be used to drive the implementation
+of power management for a given design, during synthesis or subsequent
+implementation steps. A UPF specification can also be used to drive
+verification of power management, during RTL simulation, gate-level
+simulation, or even via static verification methods. The ability
+to use UPF in conjunction with RTL simulation enables early verification
+of the power management architecture. The ability to use UPF across
+all of these applications eases implementation and validation by
+enabling reuse of power management specifications throughout the
+flow.</p>
+<p class="p">UPF syntax is defined as an extension of Tcl
+[<a class="xref fm:NumberOnly" href="Concept_Summary_ide7569744.html#ide7569744-55ef-4907-b194-ba93721d5aaa__id0d64f0a1-97b8-4522-9e8f-fb3f06c53248">8</a>], which enables UPF descriptions
+to leverage all of the control features of Tcl. UPF captures the
+power management architecture in a portable form for use in simulation,
+synthesis, and routing, reducing potential omissions during translation
+of that intent from tool to tool. Because it is separate from the
+HDL description and can be read by all of the tools in the flow,
+the UPF side file is as portable and interoperable as the logic
+design’s HDL code.</p>
+<p class="p">The concepts introduced in the following sections
+are illustrated with the UPF commands used to specify them.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerAwareVerificationArmBasedDesigns_id0ccd1779.html" title="This section contains an application note written by Ping Yeung and Erich Marschner of Mentor Graphics Corporation.">Power Aware Verification of ARM-Based Designs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Management Specification"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerManagementSpecification_id512a44b0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

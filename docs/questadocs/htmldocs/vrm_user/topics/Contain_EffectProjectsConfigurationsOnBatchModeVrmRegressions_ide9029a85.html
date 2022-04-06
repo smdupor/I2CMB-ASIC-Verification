@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Effect of Projects and Configurations on Batch-mode VRM Regressions" />
+<meta name="abstract" content="The batch-mode vrun application understands projects and configurations. If the -project command-line option points to a valid VRM Project file and the -config command-line option matches the name of a configuration inside that project file, then the batch-mode regression process uses the Runnable selections and command-line options specified by that project to run the regression. Any additional command-line options listed on the original vrun command line will override command-line options specified in the configuration." />
+<meta name="description" content="The batch-mode vrun application understands projects and configurations. If the -project command-line option points to a valid VRM Project file and the -config command-line option matches the name of a configuration inside that project file, then the batch-mode regression process uses the Runnable selections and command-line options specified by that project to run the regression. Any additional command-line options listed on the original vrun command line will override command-line options specified in the configuration." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide9029a85-1456-460c-8819-7c5785629b41" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Effect of Projects and Configurations on Batch-mode VRM Regressions</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Effect of Projects and Configurations on Batch-mode VRM Regressions" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide9029a85-1456-460c-8819-7c5785629b41">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Effect of Projects and Configurations
+on Batch-mode VRM Regressions</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">The
+batch-mode vrun application understands projects and configurations.
+If the -project command-line option points to a valid VRM Project
+file and the -config command-line option matches the name of a configuration
+inside that project file, then the batch-mode regression process
+uses the Runnable selections and command-line options specified
+by that project to run the regression. Any additional command-line
+options listed on the original vrun command line will override command-line
+options specified in the configuration.</span>
+</div>
+<p class="p">For example, if the <span class="ph filepath">myconfig</span> configuration
+(in the project file <span class="ph filepath">myproject.vrm</span>) specifies
+the following Runnable selections and command-line options:</p>
+<p class="lines ApplCommand">vrun -j 10 -html -mintimeout 100 nightly</p>
+<p class="p">and the batch-mode vrun process is invoked
+with the following command line:</p>
+<p class="lines ApplCommand">vrun -project myproject.vrm -config myconfig -j 3 -noautomerge</p>
+<p class="p">the regression runs as if the original
+command line had been:</p>
+<p class="lines ApplCommand">vrun -j 3 -noautomerge -html -mintimeout 100 nightly</p>
+<p class="p">Note that only command-line options from
+the original command line will override the configuration contents.
+The Runnable selections are always taken from the configuration
+(there are issues that preclude merging the Runnable selections
+from both the configuration and the original vrun command line.</p>
+<p class="p">A useful side effect of this function
+allows one to query a configuration to see which Runnables are selected
+without loading the project into a GUI window. Simply add the -show command-line
+option to the command line used to initiate a configuration-driven
+regression as follows:</p>
+<p class="lines ApplCommand">vrun -project myproject.vrm<br />
+-config myconfig -show</p>
+<p class="p">The -project and -config command-line
+options are only queried in run mode. If any other mode option is
+specified on the vrun command line (such as -gui, -send, -kill,
+and so on), then the -project option is ignored and the -config
+command-line options is ignored unless said option is assumed to
+convey the path to the RMDB file.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_BatchModeRegression_id1655df27.html" title="Under VRM, a batch-mode regression run is launched with the vrun command. This command generally selects one or more Runnables from an RMDB file and causes them to be executed according to a set of command-line arguments provided by the user. For example, the following command: ">Batch-mode Regression</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_InteractionLegacyModeConfigCommandLineOption_ida58769ab.html" title="Prior to the Questa Verification Run Manager 10.1 release, the command-line option used to specify the RMDB file was -config as opposed to -rmdb. For back-compatibility purposes, the  -config command-line option can still be used to specify the RMDB file but only if the -project command-line option is not present on the command line. In that case, vrun assumes the  -config was meant to specify the RMDB file but a deprecation warning will appear in the vrun output. If the -config command-line option is used in conjunction with the -project command-line option, the vrun process assumes the value of the -config option was meant to specify the name of a particular configuration in the specified project file.">Interaction with the Legacy Mode -config Command-line Option</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_GraphicalUserInterfaceGui_idc5635aed.html" title="This chapter describes the VRM graphical user interface.">Graphical User Interface (GUI)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Effect of Projects and Configurations on Batch-mode VRM Regressions"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_EffectProjectsConfigurationsOnBatchModeVrmRegressions_ide9029a85.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

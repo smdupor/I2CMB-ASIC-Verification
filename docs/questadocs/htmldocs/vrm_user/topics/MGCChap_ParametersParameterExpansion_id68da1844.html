@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="MGCChapter" />
+<meta name="DC.Title" content="Parameters and Parameter Expansion" />
+<meta name="abstract" content="Each Runnable definition (that is, each runnable element) can include a list of zero or more parameter element definitions. A parameter is nothing more than a name/value pair that allows multiple Tasks to share the same execution script (or multiple Groups to share the same Task) by providing unique per-Group or per-Task values to be used in the scripts." />
+<meta name="description" content="Each Runnable definition (that is, each runnable element) can include a list of zero or more parameter element definitions. A parameter is nothing more than a name/value pair that allows multiple Tasks to share the same execution script (or multiple Groups to share the same Task) by providing unique per-Group or per-Task values to be used in the scripts." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id68da1844-ab5a-4671-86d0-234a9b5ae99e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Parameters and Parameter Expansion</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Parameters and Parameter Expansion" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id68da1844-ab5a-4671-86d0-234a9b5ae99e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> Parameters and Parameter Expansion</h1>
+<div class="body MGCBody"><div class="abstract MGCAbstract"><span class="shortdesc">Each Runnable
+definition (that is, each <span class="ph FontProperty emphasis">runnable</span> element)
+can include a list of zero or more <span class="ph FontProperty emphasis">parameter</span> element
+definitions. A parameter is nothing more than a name/value pair
+that allows multiple Tasks to share the same execution script (or
+multiple Groups to share the same Task) by providing unique per-Group
+or per-Task values to be used in the scripts. </span>
+</div>
+<p class="p">Parameters can be attached to
+any Runnable. In the case of a Group instance, the Parameters defined
+by the Group are also visible from all child Runnable items invoked
+as part of that Group (recursively, unless overridden by a more
+local Parameter with the same name). This allows the user to define
+name/value pairs that apply globally across the entire regression
+suite (such as compile options or the location of HDL source files)
+or across a specific Group of tasks (such as the name and location
+of the UCDB merge file to be used for a given subset of simulations).
+For details about parameter visibility see “<a class="xref fm:HeadingAndPage" href="Contain_InheritanceOverridesSearchOrder_id01f79c08.html#id01f79c08-5fab-42f9-a986-e7565254673c__Contain_InheritanceOverridesSearchOrder_id01f79c08.xml#id01f79c08-5fab-42f9-a986-e7565254673c" title="When considering the configuration of most regression suites, there is usually some degree of repetition. If, for example, 100 tests all require the same simulation commands with some minor variation, it would be a poor system that forced the user to specify the redundant information 100 times, once per test.">Inheritance, Overrides, and Search Order</a>”.</p>
+<p class="p">Parameter references consist of an identifier
+surrounded by parentheses and percent signs, for example <span class="ph FontProperty emphasis">(%identifier%)</span>.
+The parameter reference syntax was chosen to reduce the possibility
+that legitimate syntax in the user's scripting language is not mistakenly
+interpreted as a parameter reference. The contents of every <span class="ph FontProperty emphasis">command</span> element,
+whether it be a method command or part of an Action script, is parameter-expanded
+prior to use. In addition, if an Action script points to an external
+file, then each line of that file is parameter-expanded before being
+copied to the corresponding Action script in the working directory.
+Each command string can contain zero or more parameter references.</p>
+<p class="p">Some element attributes, such as the <span class="ph FontProperty emphasis">repeat</span> attribute and
+the <span class="ph FontProperty emphasis">ucdbfile</span> attribute
+are also parameter-expanded before use. However, other element attributes
+are not expanded. See “<a class="xref fm:HeadingAndPage" href="Concept_ParameterizedElementAttributes_idfe98efdd.html#idfe98efdd-1cbb-4dbe-af74-df6afb6b1da8__Concept_ParameterizedElementAttributes_idfe98efdd.xml#idfe98efdd-1cbb-4dbe-af74-df6afb6b1da8" title="Most element attributes in the XML database are used verbatim.">Parameterized Element Attributes</a>”” for a list of expanded attributes).</p>
+<p class="p">Parameter “expansion” consists of replacing
+each of the parameter references found in a given string with a
+corresponding string value based on a search of the contents of
+the combined list of defined parameters found in the Runnable itself,
+its hierarchical ancestors, any base Runnables defined by the Runnable
+itself or its ancestors, and the command-line options specified
+by the user when VRM is invoked (not necessarily in that order).</p>
+<p class="p">The parameter expansion engine ignores
+extraneous whitespace within the parameter reference string. For
+example, “(% fred %)” is the same as “(%fred%)”. The non-whitespace content
+of the parameter reference must be a single token, hopefully matching
+the <span class="ph FontProperty emphasis">name</span> attribute
+of a <span class="ph FontProperty emphasis">parameter</span> defined
+within the visible scope of the referring Runnable. Embedded whitespace
+should not be used in the parameter name itself. When a parameter
+definition is found whose name matches the identifier in the parameter
+reference, the parameter value is used to replace the parameter
+reference. This replacement is a simple lexical substitution operation
+that is completely ignorant of command syntax.</p>
+<p class="p">Parameter expansion is recursive. That
+is, parameter values (that supply the strings used to expand the
+parameter references) can, themselves, contain references to other
+parameters. For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;parameter name="ucdbfile"&gt;../test(% seed %).ucdb&lt;/parameter&gt;
+</code></pre><p class="p">or the user can embed parameter references
+within other parameter references in the command itself as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;This is an (% embedded(% parameter %) %)&lt;/command&gt;
+</code></pre><p class="p">Expansion continues recursively from
+the inside out<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a>until all the parameter references embedded in a command
+(or in the parameter values used to replace said references) are
+resolved. Parameter expansion treats each <span class="ph FontProperty emphasis">command</span> element
+in the RMDB database as a separate physical line in the script.
+Newline characters are converted to whitespace and any extraneous
+whitespace characters are removed from each command after parameter
+expansion.</p>
+<p class="p">Parameters in the VRM are unlike parameters
+in Verilog. Verilog parameters are declared and have values assigned.
+VRM parameters are simply defined. They are key/value string pairs
+much like the `define compiler directives in Verilog. VRM parameters
+can be defined in a number of different ways. A <span class="ph FontProperty emphasis">parameter</span> element within
+a <span class="ph FontProperty emphasis">runnable</span> element
+defines a parameter whose name is given by the <span class="ph FontProperty emphasis">name</span> attribute
+of the element. The -g and -G command-line options each <span class="ph FontProperty emphasis">define</span> parameter
+values at one or more places in the database topology. And a specific
+set of predefined parameters are defined directly within the VRM
+algorithm itself. When a parameter is defined, it automatically
+gets a value (even if that value is an empty string, as would occur
+for a parameter element with a name but no contents, or if the -Gfred=
+option were given on the command line). An empty string is considered
+a valid value for a parameter.</p>
+<p class="p">Action script and execution method commands,
+other parameter values, and certain element attributes can contain
+parameter references. When a parameter reference is expanded, a search
+is initiated for a parameter definition whose name matches the keyword
+given in the parameter reference. The parameter reference can also
+carry a value of its own that is used if no other value can be found
+for that parameter. Without this fall back value, the only options
+on finding no definition for the parameter is to fail miserably
+or swap in an empty string and hope for the best. This fall back
+value (that is sometimes called a “reference-specific default”)
+gives the user the opportunity to control what happens in the case
+where the referenced parameter is not defined. In some cases, as
+in the case an optional argument being supplied to a command, an empty
+string is both correct and benign. In other cases, a reference-specific
+default can prevent a missing parameter definition from turning
+an otherwise legal command into gibberish.</p>
+<p class="p">Note that if a reference-specific default
+is supplied, then the absence of a parameter definition matching
+the reference keyword is not an error. The reference-specific default
+is silently used in place of the parameter reference in the parameter-expanded
+result. If no reference-specific default is supplied, then an error
+is reported but the parameter reference is replaced with an empty
+string and processing continues. If an empty string is the correct
+result for a particular parameter reference (as when writing a command
+to test whether a given parameter is or is not defined), then an
+empty string can be supplied as the reference-specific default.</p>
+<p class="p">The reference-specific default value
+is considered to be part of the reference itself. It says: “for
+this expansion of this parameter, and no other, use the following
+value if you are unable to find a matching parameter definition.”
+It does not result in a “definition” for the parameter in question,
+nor does it affect any other place from which the same parameter
+might have been referenced, even from the same Runnable (unlike
+the -g default that has a more global effect).</p>
+<p class="p">For example, suppose you have a <span class="ph FontProperty emphasis">covtypes</span> parameter that
+compiles your source with the various coverage types. Then suppose
+you have several vlog commands, two of which are as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes%) top.sv&lt;/command&gt;</code></pre><pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes%) +define+DUT dut.sv&lt;/command&gt;
+</code></pre><p class="p">In this case, if the <span class="ph FontProperty emphasis">covtypes</span> parameter
+are not defined with one or more appropriate coverage types (such
+as "bces..."), the resulting empty string would cause the following
+two commands to be executed:</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover= top.sv&lt;/command&gt;</code></pre><pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover= +define+DUT dut.sv&lt;/command&gt;
+</code></pre><p class="p">This script would most likely fail. In
+this case, the author of these two commands can prevent a gibberish
+command from being generated by supplying reference-specific defaults with
+the parameter references as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes:bsce%) top.sv&lt;/command&gt;</code></pre><pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes:bsce%) +define+DUT dut.sv&lt;/command&gt;
+</code></pre><p class="p">That is certainly simple enough. But
+suppose you decide that, unless stated otherwise, <span class="ph filepath">top.sv</span> should
+only be compiled with statement coverage but the DUT should be compiled
+with the whole gamut of code coverage (except toggle). You could
+(and probably should) use separate parameters for DUT and/or testcase
+coverage. But defining a separate parameter to hold the coverage
+types for each file can get pretty messy if you have lots of files
+to compile. To establish a default pattern that you can still override
+if necessary, you could add the following reference-specific default
+values to the parameter references:</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes:s%) top.sv&lt;/command&gt;</code></pre><pre class="pre codeblock leveled"><code>&lt;command&gt;vlog +cover=(%covtypes:bscef%) +define+DUT dut.sv&lt;/command&gt;
+</code></pre><p class="p">Given that these commands are not only
+in the same Runnable but are, in fact, in the same Action script
+(this is something you cannot do with the -g=/=-G mechanism). Again,
+one can argue that this is best accomplished by defining separate
+parameters to allow independent control of how each file is compiled,
+but there are doubtless other scenarios where this kind of fall
+back value can be useful. The important thing to remember is that
+this fall back value belongs to the reference and does not constitute
+a definition of the parameter.</p>
+<p class="p">In some cases, it is desirable for a
+parameter reference for which there is no corresponding parameter
+definition to use the default empty string but without declaring
+an error. In this case, an empty reference-specific default can
+be used. For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;command&gt;echo "Compiling with coverage types '(%covtypes:%)'"&lt;/command&gt;
+</code></pre><p class="p">The colon (:) indicates the start of
+a parameter-specific default but no default value is supplied. In
+this case, the parameter is silently replaced with the empty string
+when no other definition for <span class="ph FontProperty emphasis">covtypes</span> is
+found.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_PredefinedParameterUsage_iddf078ecb.html" title="A small number of parameters are predefined with values equal to certain global paths or names relevant to VRM algorithm. ">Predefined Parameter Usage</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_IncludingTclCodeInParameterDefinition_id0fde3fae.html" title="By default, parameter values are used as is, exactly as they appear in the parameter definition (after external entities (like &gt;) are converted back to the characters they represent). It is possible to define a parameter value as a TCL expression that undergoes the usual variable/command substitution within the TCL interpreter each time the parameter is expanded. Note that this is TCL substitution, not evaluation. In order to execute TCL code as part of the parameter expansion, the code needs to be defined as a procedure and command substitution used to execute the procedure.">Including TCL Code in a Parameter Definition</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ReferringSourceFilesViaParameter_id722fa757.html" title="One often needs to refer to source files (external scripts, HDL source, vsim do files, and so on) as part of a complete regression run. One of the best places to store these source files is in the same directory as, or a subdirectory of, the directory from which the RMDB file is read. The reason is that the user can refer to the RMDB file in the -rmdb command-line option from any directory and the relevant source files references are still correct (one can solve the problem by using absolute paths as well, but the use of absolute paths can cause additional problems if the source files are ever moved to some other directory in the file system).">Referring to Source Files Via a Parameter</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_NestedParameterExpansionTclParameters_id0e13469b.html" title="The examples in this section are complete and will run as is under VRM; however, they are too simple to be real “examples” on their own. In any event, use the code herein and add to it when appropriate.">Nested Parameter Expansion and TCL Parameters</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_InheritanceOverridesSearchOrder_id01f79c08.html" title="When considering the configuration of most regression suites, there is usually some degree of repetition. If, for example, 100 tests all require the same simulation commands with some minor variation, it would be a poor system that forced the user to specify the redundant information 100 times, once per test.">Inheritance, Overrides, and Search Order</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ParameterizingRegressionSuiteDebug_id97ec71a1.html" title="One requirement of most regression environments is the ability to run one or more tests in “debug mode” either early in the design process or in response to failures exposed in the nightly run. Assume that enabling debug in your regression suite requires the use of additional options on both the compile command line and the simulation command line. Assume that you can define the compile command options as a parameter called cmpopts and the simulation command options as a parameter called simopts. There are at least two ways in which these options can be applied to the regression suite.">Parameterizing the Regression Suite for Debug</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExportingParametersActionScripts_id2dc7e41b.html" title="In some cases, especially where an existing do file or shell script is used in conjunction with VRM, an Action script can make use of the value of a parameter as an environment variable. The most obvious way to do this is to add commands to the script (or to a wrapper around the script) that explicitly set environment variables based on parameter values.">Exporting Parameters to Action Scripts</a></strong></li>
+</ul>
+</div></div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  “inside out” means that inner (nested)
+parameter references are resolved first. Therefore, if the name
+of the parameter to be used to expand a parameter is, itself, the
+value of some other parameter, then the string  “(% (%<span class="ph FontProperty emphasis">paramname</span>%)
+%)” will first resolve the inner parameter reference using the value
+of the <span class="ph FontProperty emphasis">paramname</span> parameter,
+and then will attempt to resolve the outer parameter reference using
+a parameter of the name determined by the value of the <span class="ph FontProperty emphasis">paramname</span> parameter.
+If VRM detects a loop in the parameter reference chain, then it
+reports an error and the parameter reference resolves to an empty
+string.</div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Parameters and Parameter Expansion"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/MGCChap_ParametersParameterExpansion_id68da1844.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

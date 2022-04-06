@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="String Class Methods for Matching Patterns" />
+<meta name="abstract" content="This group of functions are not a part of the SystemVerilog LRM. However, the Questa SIM simulator supports their use, unless you include the -pedanticerrors argument to vlog, in which case you will receive an error." />
+<meta name="description" content="This group of functions are not a part of the SystemVerilog LRM. However, the Questa SIM simulator supports their use, unless you include the -pedanticerrors argument to vlog, in which case you will receive an error." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2375a84c-1b5c-47bd-af3c-277e3d326813" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>String Class Methods for Matching Patterns</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="String Class Methods for Matching Patterns" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id2375a84c-1b5c-47bd-af3c-277e3d326813">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">String Class Methods for Matching Patterns</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">This group
+of functions are not a part of the SystemVerilog LRM. However, the <span class="ph fmvar:ProductName">Questa SIM</span> simulator supports
+their use, unless you include the -pedanticerrors argument to vlog,
+in which case you will receive an error.</span>
+</div>
+<p class="p">The regular expressions for these
+functions use Perl pattern syntax.</p>
+<ul class="ul"><li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__idf79a7a56-3938-4a17-93c4-31e2c9933ae5"><p class="p">search() — This function searches for
+a pattern in the string and returns the integer index to the beginning
+of the pattern.</p>
+<pre class="pre codeblock leveled"><code>search(string pattern);</code></pre><p class="p">where pattern must be a string. For example:</p>
+<pre class="pre codeblock"><code>integer i;
+string str = "ABCDEFGHIJKLM";
+i = str.search("HIJ");
+printf("%d \n", i);</code></pre><p class="p">results in printing out “8”.</p>
+</li>
+<li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__id4a47f457-d62f-438c-a594-ca2e25645fb5"><p class="p">match () — This function processes a
+regular expression pattern match, returning a 1 if the expression
+is found or a 0 if the expression is not found or if there is an
+error in the regular expression.</p>
+<pre class="pre codeblock leveled"><code>match (string pattern);</code></pre><p class="p">where pattern must be a regular expression.
+For example:</p>
+<div class="fig fignone ExampleTitle" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__id99c65a95-fb41-418b-8585-fb010af1ac0d"><span class="figcap"><span class="fig--title-label">Example 1. </span>match() Example</span></div>
+<pre class="pre codeblock"><code>integer i;
+string str;
+str = "ABCDEFGHIJKLM";
+i = str.match("CDE”);</code></pre><p class="p">results assigning the value 1 to integer <span class="ph FontProperty HeadingLabel">i</span> because
+the pattern CDE exists within string <span class="ph FontProperty HeadingLabel">str</span>.</p>
+</li>
+<li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__idcc72c927-1cd0-4842-9e1c-88a1e5c38c17"><p class="p">prematch() — This function returns the
+string before a match, based on the result of the last match() function
+call.</p>
+<pre class="pre codeblock leveled"><code>prematch();</code></pre><p class="p">Based <a class="xref fm:Example" href="#id2375a84c-1b5c-47bd-af3c-277e3d326813__id99c65a95-fb41-418b-8585-fb010af1ac0d">Example 1</a>, the following:</p>
+<pre class="pre codeblock leveled"><code>str1 = str.prematch();</code></pre><p class="p">would be assigned the string “AB”</p>
+</li>
+<li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__id0948d856-e9a7-4432-a232-02c3b5160995"><p class="p">postmatch() — This function returns the
+string after a match, based on the result of the last match() function
+call.</p>
+<pre class="pre codeblock leveled"><code>postmatch();</code></pre><p class="p">Based on <a class="xref fm:Example" href="#id2375a84c-1b5c-47bd-af3c-277e3d326813__id99c65a95-fb41-418b-8585-fb010af1ac0d">Example 1</a>, the following:</p>
+<pre class="pre codeblock leveled"><code>str2 = str.postmatch();</code></pre><p class="p">would be assigned the string “FGHIJKLM”</p>
+</li>
+<li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__id68096b5f-2052-45fa-9ef5-f093956a013e"><p class="p">thismatch() — This function returns matched
+string, based on the result of the last match() function call.</p>
+<pre class="pre codeblock leveled"><code>thismatch();</code></pre><p class="p">Based on <a class="xref fm:Example" href="#id2375a84c-1b5c-47bd-af3c-277e3d326813__id99c65a95-fb41-418b-8585-fb010af1ac0d">Example 1</a>, the following:</p>
+<pre class="pre codeblock leveled"><code>str3 = str.thismatch();</code></pre><p class="p">would be assigned the string “CDE”</p>
+</li>
+<li class="li" id="id2375a84c-1b5c-47bd-af3c-277e3d326813__idf2279cad-364c-43ac-b109-342bf5e905bd"><p class="p">backref() — This function returns matched
+patterns, based on function call in <a class="xref fm:Example" href="#id2375a84c-1b5c-47bd-af3c-277e3d326813__id99c65a95-fb41-418b-8585-fb010af1ac0d">Example 1</a>.</p>
+<pre class="pre codeblock leveled"><code>backref(integer index);</code></pre><p class="p">where index is the integer number of the
+expression being matched (indexing starts at 0). For example:</p>
+<pre class="pre codeblock"><code>integer i;
+string str, patt, str1, str2;
+str = "12345ABCDE"
+patt = "([0-9]+) ([a-zA-Z .]+)";
+i = str.match(patt);
+str1 = str.backref(0);
+str2 = str.backref(1);</code></pre><p class="p">results in assigning the value “12345” to
+the string str1 because of the match to the expression “[0-9]+”.
+It also results in assigning the value “ABCDE” to the string str2 because
+of the match to the expression “[a-zA-Z .]+”.</p>
+<p class="p">You can specify any number of additional
+Perl expressions in the definition of patt and then call them using
+sequential index numbers.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemverilogSystemTasksFunctions_id7283c7df.html" title="SystemVerilog system tasks and functions are built into the simulator, although some designs depend on user-defined system tasks implemented with the various programming and procedural interfaces.">SystemVerilog System Tasks and Functions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "String Class Methods for Matching Patterns"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_StringClassMethodsMatchingPatterns_id2375a84c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

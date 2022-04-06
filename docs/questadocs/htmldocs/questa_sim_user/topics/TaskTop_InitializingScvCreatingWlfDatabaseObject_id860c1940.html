@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Initializing SCV and Creating WLF Database Object" />
+<meta name="abstract" content="Before transactions can be recorded, the design must initialize the SCV library once, as part of its own initialization." />
+<meta name="description" content="Before transactions can be recorded, the design must initialize the SCV library once, as part of its own initialization." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id860c1940-b344-4a21-a41c-7153fbc1569c" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Initializing SCV and Creating WLF Database Object</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Initializing SCV and Creating WLF Database Object" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id860c1940-b344-4a21-a41c-7153fbc1569c">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Initializing SCV and Creating WLF Database Object</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">Before transactions
+can be recorded, the design must initialize the SCV library once,
+as part of its own initialization. </span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step" id="id860c1940-b344-4a21-a41c-7153fbc1569c__idcacd24c6-3db5-4278-819b-4485838b27bf"><span class="ph cmd">Enter <span class="ph FontProperty HeadingLabel">scv_startup()</span> in
+the design code — This initializes the SCV library.</span></li>
+<li class="li step" id="id860c1940-b344-4a21-a41c-7153fbc1569c__idc13cc650-9a52-4927-a6f4-84504d6b047c"><span class="ph cmd">Enter<span class="ph FontProperty HeadingLabel"> scv_tr_wlf_init()</span> in
+the design code — This creates the database tied to WLF, allowing
+transactions to then be written to specific database objects in
+the code.</span></li>
+<li class="li step" id="id860c1940-b344-4a21-a41c-7153fbc1569c__id864f7ec5-d8af-4678-bb9f-49474b6d4bd4"><span class="ph cmd">Enter database
+object(s) — you can create many objects, or create one and specify
+it as the default object. All database objects are contained the
+same WLF file.</span></li>
+</ol>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">Here is a code example of a one-time initialization routine that
+sets up SCV, ties all databases to WLF, and then creates one database
+as the default.</p>
+<pre class="pre codeblock"><code>static scv_tr_db * init_recording() {
+	scv_tr_db *txdb;</code></pre><pre class="pre codeblock"><code>	/* Initialize SCV: */
+	scv_startup();</code></pre><pre class="pre codeblock"><code>	/* Tie databases to WLF: */	
+	scv_tr_wlf_init();</code></pre><pre class="pre codeblock"><code>	/* Create the new DB and make it the default: */
+	txdb = new scv_tr_db("txdb");</code></pre><pre class="pre codeblock"><code>	if (txdb != NULL)
+		scv_tr_db::set_default_db(txdb); </code></pre><pre class="pre codeblock"><code>	return txdb;
+}</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> ignores
+the following:</p>
+<ul class="ul NoteList"><li class="li NoteListItem">name argument to scv_tr_db() — All databases
+are tied to the WLF file once the user calls scv_tr_wlf_init().</li>
+<li class="li NoteListItem">sc_time_unit argument to scv_tr_db() when the database
+is a WLF database — The time unit of the database is specified by
+the overall simulation time unit.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_TransactionRecordingProcedures_id36a0ba64.html" title="The procedures for recording transactions depend on the language you are using.">Transaction Recording Procedures</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_TransactionGenerators_id4c101a62.html#id4c101a62-d195-4a12-953e-1f647ddefb14__" title="Using Standard C and SystemC types for attributes enable transaction generators without additional preparation with SystemC Verification (SCV).">Transaction Generators</a></div>
+<div><a class="link" href="../topics/TaskTop_WritingScvTransactions_iddd95aa46.html#iddd95aa46-b1dd-496d-b89a-e7faea0b94a6__" title="The steps for recording SystemC Verification (SCV) transactions require you to define a transaction stream, start a transaction, record special attributes, specify transaction start and end times, and end the transaction.">Recording SCV Transactions</a></div>
+<div><a class="link" href="../topics/TaskTop_RecordingTransactionsInSystemc_id7cdc0cbd.html#id7cdc0cbd-5962-4f83-8945-40e5ee2c292d__" title="Use the SystemC Verification (SCV) library’s transaction recording API routines to define transactions, to start them, to end them, to create relationships between them, and to attach additional information (attributes) to them.">Recording Transactions in SystemC</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Initializing SCV and Creating WLF Database Object"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_InitializingScvCreatingWlfDatabaseObject_id860c1940.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

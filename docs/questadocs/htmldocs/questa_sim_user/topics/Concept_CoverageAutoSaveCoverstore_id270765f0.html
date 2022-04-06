@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Coverage Auto-save Coverstore" />
+<meta name="abstract" content="You can use a form of coverage storage called a coverstore to improve merge performance while automatically saving coverage data without specifying the coverage save command. A coverstore is a storage location (directory) that holds both design and coverage results, and which you access in a way similar to the way you access a UCDB file. The coverstore auto-save functionality improves merge performance, when compared with the normal situation flow that uses the coverage save command. When vsim is run with -coverstore, the coverstore directory holds results from multiple tests that share the same design objects and hierarchy; in the normal situation flow, every leaf level UDCB file holds the test record data, the design objects, and the results." />
+<meta name="description" content="You can use a form of coverage storage called a coverstore to improve merge performance while automatically saving coverage data without specifying the coverage save command. A coverstore is a storage location (directory) that holds both design and coverage results, and which you access in a way similar to the way you access a UCDB file. The coverstore auto-save functionality improves merge performance, when compared with the normal situation flow that uses the coverage save command. When vsim is run with -coverstore, the coverstore directory holds results from multiple tests that share the same design objects and hierarchy; in the normal situation flow, every leaf level UDCB file holds the test record data, the design objects, and the results." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id270765f0-0bfc-45d0-a96f-83140e1a4a31" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Coverage Auto-save Coverstore</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Coverage Auto-save Coverstore" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id270765f0-0bfc-45d0-a96f-83140e1a4a31">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Coverage Auto-save Coverstore </h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><p class="shortdesc">You can use
+a form of coverage storage called a coverstore to improve merge
+performance while automatically saving coverage data without specifying
+the coverage save command. A coverstore is a storage location (directory)
+that holds both design and coverage results, and which you access
+in a way similar to the way you access a UCDB file. </p>
+<p class="shortdesc">The coverstore
+auto-save functionality improves merge performance, when compared
+with the normal situation flow that uses the coverage save command.
+When vsim is run with -coverstore, the coverstore directory holds
+results from multiple tests that share the same design objects and
+hierarchy; in the normal situation flow, every leaf level UDCB file
+holds the test record data, the design objects, and the results.</p>
+</div>
+<p class="p">Instead of using the coverage save
+command to save a single UCDB once the simulation has finished,
+you can set up the simulation to write coverage data into the coverstore.
+You can then use this coverstore as input to the merge process,
+to produce a regular merge UCDB or an output coverstore that contains
+a merged result. You can use command line commands such as vcover
+report/attribute/stat/ranktest and vsim -viewcov with coverstores
+and/or the name of a coverstore plus a test index (that is, coverstore:test). </p>
+<div class="section Subsections"><div class="section Subsection" id="id270765f0-0bfc-45d0-a96f-83140e1a4a31__idfd7b51f0-4408-4e13-a5b9-ed8b27342809"><h2 class="title Subheading sectiontitle">Use
+Flow for Automatically Saving Coverage Data</h2><ol class="ol"><li class="li" id="id270765f0-0bfc-45d0-a96f-83140e1a4a31__id2bb63622-666c-4407-9dc0-dca956b0061a"><p class="p">Invoke the simulation (vsim)
+with -coverstore and -testname options, to automatically save the
+coverage data at the end of simulation: </p>
+<p class="lines ApplCommand">vsim -coverstore &lt;directory_path&gt; -testname &lt;name&gt;</p>
+<p class="p">The design hierarchy and
+all directory paths in the -coverstore argument must be the same
+for all of the simulation runs in a regression. </p>
+</li>
+<li class="li" id="id270765f0-0bfc-45d0-a96f-83140e1a4a31__idd2c0c8cb-6b59-47d4-9d95-4b05cb2b31ac"><p class="p">Merge all of the coverage
+data accumulated in the coverstore, using the path to the directory
+as an input to the merge:</p>
+<p class="lines ApplCommand">vcover merge -out &lt;output_ucdb&gt; &lt;coverstore_directory_path&gt;</p>
+<p class="p">The generated output file is a self-contained
+merged UCDB file. </p>
+</li>
+<li class="li" id="id270765f0-0bfc-45d0-a96f-83140e1a4a31__id6a926154-f94f-4b47-b51c-cb1aac59c601"><p class="p">Optionally, instead of
+generating a self-contained merged UCDB file, you can dump the raw
+merged output in a designated coverstore area by specifying the
+output coverstore path with -outputstore:</p>
+<p class="lines ApplCommand">	vcover merge -outputstore &lt;output_directory&gt;  &lt;coverstore_directory_path&gt;</p>
+<p class="p">You can use the raw merged
+output to take advantage of fast merging in a hierarchical merge
+flow where an input to the current merge operation is the output
+of a previous merge. </p>
+<p class="p">Such hierarchical flows are typically used
+to parallelize merging of coverage data generated from a large number
+of tests in a regression. The parallel merge applications take advantage
+of this mechanism when merging coverstores. The output coverstore
+contains the same design shape as the input coverstore, with the
+individual tests replaced by a merged data record index. For example:</p>
+<p class="lines ApplCommand">vcover merge -outputstore merged1_out coverstore1</p>
+<p class="lines ApplCommand">vcover merge -outputstore merged2_out coverstore2</p>
+<p class="lines ApplCommand">...</p>
+<p class="lines ApplCommand">vcover merge -out merged_final.ucdb merged1_out merged2_out ... mergedN_out</p>
+<p class="p">The last vcover merge command merges the
+coverage and design data that was output from lower level merges.
+The performance gain is realized from the merging of that data,
+rather than the self-contained UCDB files.</p>
+</li>
+<li class="li" id="id270765f0-0bfc-45d0-a96f-83140e1a4a31__id276ec0a1-8057-4c03-9a81-f8bf7ae3f426"><p class="p">Optionally, you can choose
+to merge a user selected subset of tests in a coverstore into a
+self-contained merged UCDB. Do this by specifying a comma-separated
+list of test names after the coverstore name, using the ':' as a
+separator. For example:</p>
+<p class="lines ApplCommand">vcover merge -out &lt;output_ucdb&gt; &lt;coverstore_directory_path&gt;[:&lt;testname&gt;[,&lt;testname&gt;]*]</p>
+</li>
+</ol>
+<p class="p">The following are example
+commands valid for merging user selected tests from the coverstore
+area:</p>
+<p class="lines ApplCommand">vcover merge -out out.ucdb mystore:test1,test3,test5</p>
+<p class="lines ApplCommand">vcover merge -out out.ucdb mystore:test*</p>
+<p class="lines ApplCommand">vcover merge -out out.ucdb mystore1:test1 mystore2:test2 mystore3:test*</p>
+<h2 class="title Subheading sectiontitle">Best Practices for Auto-save </h2><p class="p">Use only self-contained
+UCDB files once a regression is complete, and the resulting UCDB
+file has to be saved for future usage (trending, metrics generation,
+and so on). Self-contained UCDB files can handle source-drift (for
+example, mismatching du signatures). For example, union merge, or
+explicit master merge can handle UCDBs generated from different
+versions of source code. The coverstore representation of a UCDB
+does not handle these options, so it is best to use the coverstore
+flow in an individual regression run, based on the same source code.
+Source-drift tends to happen over time, as design and test changes accumulate,
+and different regressions are run based on different versions of
+the TB and DUT.</p>
+<p class="p">With the coverstore approach,
+the merge performs a perfect merge for static coverage items (code
+coverage). A design level signature is used to verify whether the
+static coverage bin counts in a coverstore are in sync or not. If
+so, there is no mismatch between coverage items, and the merge is
+considered “perfect”. If there is a mismatch between any coverage
+items, the merge will not proceed, which lets you know that you
+cannot use the coverstore flow.</p>
+<p class="p">For functional coverage
+items, a union merge algorithm is used, as the functional coverage
+content can vary within a regression run. A coverstore is able to
+cope with these variations within functional coverage shapes or
+models, but code coverage shapes or models must match exactly.</p>
+<h2 class="title Subheading sectiontitle">Single-bit vs. Multi-bit
+Counts</h2><p class="p">The -multicount option is
+available with the vsim command line. By default — in the coverstore
+auto-save mode only — coverage operates in a single-bit count mode
+for code coverage types (statement, branch, condition, expression,
+fsm, toggle), and in a multi‑bit count mode for functional coverage
+types (covergroups, cover directives, assertions). Bin counts are
+stored in the coverstore using 1-bit counters for code coverage
+types. In this default mode, all non-zero bin counts are stored
+as 1. The calculated coverage percentages are not affected by this
+reduction in counter bandwidth. The simulator still stores counts
+in multi-bit counters. The coverstore converts these multi-bit counts
+to single-bit counts.</p>
+<p class="p">If you rely on the integer
+counts for other types of analysis, such as covergroup, toggle,
+and FSM transitions, you can use the -multicount option. For example:</p>
+<p class="lines ApplCommand">vsim -multicount=f-gt -coverstore store1 -testname test1 design1</p>
+<p class="p">In this example, single
+bit counting is in effect for all coverage types except assertions,
+cover directives, fsms, and toggles. See the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command
+-multicount argument for syntax details.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsageFlowCodeCoverageCollection_id2016382f.html" title="To collect coverage data for a design, you must actively select the type of code coverage you want to collect, and then enable the coverage collection mechanism for the simulation run.">Usage Flow for Code Coverage Collection</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim -coverstore and -viewcov arguments [Questa SIM Command Reference Manual]</a></div>
+<div><a class="link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcover merge', 'questa_sim_ref'); return false;">vcover merge and other vcover commands [Questa SIM Command Reference Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Coverage Auto-save Coverstore"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CoverageAutoSaveCoverstore_id270765f0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

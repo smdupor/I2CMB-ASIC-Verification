@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Using Auto-Partitioner With Profile Data" />
+<meta name="abstract" content="Auto-partitioning enables you to use profiler information to create a partition file." />
+<meta name="description" content="Auto-partitioning enables you to use profiler information to create a partition file." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3201e41d-662e-49dc-adf1-173a362afcdf" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using Auto-Partitioner With Profile Data</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using Auto-Partitioner With Profile Data" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id3201e41d-662e-49dc-adf1-173a362afcdf">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using Auto-Partitioner With Profile Data</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">Auto-partitioning
+enables you to use profiler information to create a partition file. </p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">For more information
+on the<span class="ph fmvar:ProductName">  Questa SIM</span> profiler
+and profile data, refer to the <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Performance Profiling', 'questa_sim_user'); return false;">Performance Profiling</a> in
+the <span class="ph FontProperty emphasis">Questa SIM User’s Manual</span>. </p>
+</div>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id87a94e4e-3c3d-4fd8-ae52-156b1bc03a42"><p class="p">Compile
+the design with the vcom or vlog command (<a class="xref fm:HeadingOnly" href="TaskTop_CompilingConventionalSimulation_id9748471f.html#id9748471f-e417-4302-9fce-522bd0a91fae__TaskTop_CompilingConventionalSimulation_id9748471f.xml#id9748471f-e417-4302-9fce-522bd0a91fae" title="To begin multi-core simulation, compile your design with either the vcom or the vlog command. Invoke either command from within the Questa SIM GUI or from the command prompt of your operating system.">Compiling for Conventional Simulation</a>). </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id8686795c-a0a5-4e26-ac07-2d9eb38e2338"><p class="p">You
+must have valid profiler license feature in your <span class="ph fmvar:ProductName"> Questa SIM</span> license file. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id1f64a1b9-58a7-4ca4-98d2-8fd2e57732ee"><p class="p">You
+must have write and read access to the profile database file used
+by the profile save and profile open commands. These commands capture
+profile data during a simulation session and store it for later
+review or passing to others for analysis. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id3201e41d-662e-49dc-adf1-173a362afcdf__ide8b7a551-7985-495e-8edc-112ffe4d1459"><span class="ph cmd">Run the <span class="ph fmvar:ProductName"> Questa SIM</span> profiler from either the command
+line or from the GUI. <a class="xref fm:Table" href="#id3201e41d-662e-49dc-adf1-173a362afcdf__id94a29413-8622-4d44-94fc-001ecd983ffb">Table 1</a> provides a quick summary of both operations. </span><div class="itemgroup info StepInfo"><div class="note note"><span class="notetitle">Note:</span> <p class="p">The name <span class="ph FontProperty emphasis">profile_perf.pdb</span> is
+used as a generic name for the profiler database file. You can use
+any legal filename that has the extension <span class="ph FontProperty emphasis">.pdb</span>. </p>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id94a29413-8622-4d44-94fc-001ecd983ffb" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Running the Profiler from the Command
+Line or from the GUI</span></caption><colgroup><col style="width:1.484in" /><col style="width:5.016in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d11030e216"><p class="p">If you want to...</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d11030e219"><p class="p">GUI Operation</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d11030e216 "><p class="p">Run the profiler from the GUI.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d11030e219 "><ol class="ol"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id4d3e849a-9f49-4281-8753-26bb9ece8a0f"><p class="p">Choose <span class="ph menucascade"><span class="ph uicontrol">Simulate</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Start Simulation </span></span></p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id9d22fcd4-ed7a-4d84-97e2-685179588278"><p class="p">In the Start Simulation dialog box, click
+the <span class="ph uicontrol">Others</span> tab.</p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id47862b99-6a83-4593-8732-c1be8e64584f"><p class="p">Under the Profiler region, select Enable
+memory profiling (if you want memory profiling). This enables memory profiling
+during elaboration. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idd6869873-809e-434a-a868-1acfe673759c"><p class="p">Click the <span class="ph uicontrol">Design</span> tab,
+select your compiled design, and click <span class="ph uicontrol">OK</span>. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id768e57a0-38d3-438b-80ee-01da3abc0c5b"><p class="p">After the design loading is complete, choose
+either or both of the following from the main menu: </p>
+<ul class="ul"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id9d9b6643-0c40-4b8b-85f7-bacd7ce0851f"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">Tools</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Profile</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Performance</span></span></p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id9a489967-43eb-4e88-9ee5-d1939aa7daf9"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">Tools</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Profile</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Memory</span></span> (This
+is already checked if you selected Enable memory profiling in Step <a class="xref fm:NumberOnly" href="#id3201e41d-662e-49dc-adf1-173a362afcdf__id47862b99-6a83-4593-8732-c1be8e64584f">3</a>, above.)</p>
+</li>
+</ul>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id7312712b-d376-4b15-a363-9d733d0cde14"><p class="p">Choose <span class="ph menucascade"><span class="ph uicontrol">Simulate</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Run</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Run 100</span></span> (or
+any other Run option):</p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idf8d07186-81ba-4e69-8a9c-7026dc80f94f"><p class="p">At the prompt (“Are you sure you want to
+finish"), click <span class="ph uicontrol">No</span>. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id7419beac-93e8-444a-88d1-329817b713ef"><p class="p">Save the profile data by entering the following
+in the command window: </p>
+<p class="lines ApplCommand">profile save profile_perf.pdb</p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idbae7964a-7a48-4a43-81fe-a0eabe1339c8"><p class="p">Choose <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Quit</span></span> </p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d11030e216 "><p class="p">Run the profiler from the command line.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d11030e219 "><p class="p">Use the vsim command
+as you normally would, then running the profile commands with the
+-p argument </p>
+<p class="p">For example, enable and save data from performance
+profiler: </p>
+<p class="lines ApplCommand leveled">vsim -c top -do "profile on -p; onfinish stop; run -a; profile save profile_perf.pdb; quit" </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></li>
+<li class="li step stepexpand" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idb2fcce04-039d-4c87-bfc3-4e179ec6d212"><span class="ph cmd">Run the mc2com command with
+the ‑mc2useprofile argument to create a partition file using data
+resulting from either performance or memory profiling (saved in <span class="ph FontProperty emphasis">profile_perf.pdb</span>). </span><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idbbea2384-cf58-4f92-b7c9-22c625b078ab"><p class="p">Performance profiler —</p>
+<p class="lines ApplCommand">mc2com -mc2useprofile=perf profile_perf.pdb -mc2numpart 8 top ‑o part8</p>
+</li>
+</ul>
+</div><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idf7f0c8b7-8ec3-445b-8f26-d7381c97f23e"><p class="p">Memory profiler — </p>
+<p class="lines ApplCommand">mc2com -mc2useprofile=mem profile_mem.pdb -mc2numpart 8 top ‑o part8</p>
+</li>
+</ul>
+</div></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><ul class="ul"><li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__idf89050ef-c774-4af9-9618-f5013c7d39ef"><p class="p">The vsim command with profiling
+enabled, followed by the profile save command, captures profile
+data from the simulation, and writes it to the specified profile
+database file, <span class="ph FontProperty emphasis">profile_perf.pdb</span>. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__id9afbe9bf-03ae-4665-94b9-c93a2539927d"><p class="p">The mc2com -mc2useprofile=perf
+command reads performance profile data from the specified profile
+database file, <span class="ph FontProperty emphasis">profile_perf.pdb</span>,
+and uses it to create a partition file with eight partitions. </p>
+</li>
+<li class="li" id="id3201e41d-662e-49dc-adf1-173a362afcdf__ide7b6f9ee-ddad-42a8-96fb-63b8b228a6d5"><p class="p">The mc2com -mc2useprofile=mem
+command reads memory profile data from the specified profile database
+file, <span class="ph FontProperty emphasis">profile_perf.pdb</span>,
+and uses it to create a partition file with eight partitions. </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MulticoreCompilationPartitionsAnalysisOptimization_idb8936446.html" title="To compile for multi-core simulation, use the mc2com command to partition the design. You can also use arguments for this command to analyze and optimize the partition.">Multi‑core Compilation: Partitions, Analysis, and Optimization</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Using Auto-Partitioner With Profile Data"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_UsingAutoPartitionerProfileData_id3201e41d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

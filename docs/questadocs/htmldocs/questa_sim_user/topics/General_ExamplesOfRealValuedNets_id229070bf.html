@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Examples of Real-Valued Nets" />
+<meta name="abstract" content="Using wreal for SystemVerilog nets can include the use of structural vs. behavioral nets and wire as interconnect and hierarchical references." />
+<meta name="description" content="Using wreal for SystemVerilog nets can include the use of structural vs. behavioral nets and wire as interconnect and hierarchical references." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id229070bf-2d97-4347-bf4a-25ac921a06a9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Examples of Real-Valued Nets</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Examples of Real-Valued Nets" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id229070bf-2d97-4347-bf4a-25ac921a06a9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Examples of Real-Valued Nets</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Using wreal for
+SystemVerilog nets can include the use of structural vs. behavioral
+nets and wire as interconnect and hierarchical references. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__idf4fce2ed-e1eb-435b-8ff8-ead4ac8b7a5c"><h2 class="title Subheading sectiontitle">Declaring
+Nets as wire and as wreal</h2><p class="p">When using a wire declared as wreal with the full extensions
+donated to the Accellera Systems Initiative, the connection is an
+abstract construct. This type of wire can accept logic or real data. </p>
+<p class="p">The following module declares four wires. It reads data from
+one (a), writes data to another (b), and instantiates another (c),
+and ignores another (d). </p>
+<pre class="pre codeblock"><code>module top;
+	wire a, b, c, d; 
+	initial $display (a);
+	assign b=1; 
+	x inst1 (c)
+endmodule</code></pre><p class="p">Using the vopt - rnmautointerconnect command
+means the compiler interprets the wires as SystemVerilog interconnects.
+That is, the compiler converts wire objects used as structural wires
+(per Verilog-AMS) into the typeless interconnect nets (per the SystemVerilog
+semantic). </p>
+<p class="p">You can then define a simulation module for x in either of two
+ways— </p>
+<ul class="ul"><li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__id628b64de-981a-4780-83ed-a596fb83b4dd"><p class="p">The wire
+assumes the characteristics of interconnect nettype supported by
+SystemVerilog</p>
+</li>
+</ul>
+<pre class="pre codeblock"><code>		module x (wire z); </code></pre><ul class="ul"><li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__ida3f835d0-7aff-47d5-8b46-e2bb30f2ede0"><p class="p">The wire
+assumes the characteristics wreal type supported by Verilog-AMS.</p>
+</li>
+</ul>
+<pre class="pre codeblock"><code>		module x (wreal z);</code></pre></div>
+<div class="section Subsection" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__idfc3edccb-cd42-4c1c-bd3c-09b8293d77ac"><h2 class="title Subheading sectiontitle">Hierarchical
+Availability</h2><p class="p">This example demonstrates the following: </p>
+<ul class="ul"><li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__ide3f0caaf-0dbf-4f34-97dd-85118291cf0f"><p class="p">The ‘default_netlister
+pragma specifies that all nets are to be netlisted as wire type,
+unless otherwise specified. </p>
+</li>
+<li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__ida74c848b-5be1-42fd-b008-95348dd6689f"><p class="p">The module
+mid declares two input ports (a, b) and one output port (c). It also
+three child instances that declare these three ports as wires, two
+additional wires that assume the default type (d, e), and an interconnect
+wire (f). </p>
+</li>
+<li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__id8d14d88c-87cc-4618-a95b-179400f780e8"><p class="p">The module
+top defines an instance of the mid and attempts to display an instance
+of the interconnect wire (f) as a hierarchical reference. </p>
+</li>
+<li class="li" id="id229070bf-2d97-4347-bf4a-25ac921a06a9__id9aa698bd-03a8-4429-a2a5-961e98fc5c37"><p class="p">Three instantiations
+of child3 (from mid), each of which shows a different method of
+specifying a resolution function for f. </p>
+</li>
+</ul>
+<pre class="pre codeblock"><code>‘default_netlister; wire 
+module mid (input a, b output c);
+	child1 i1 (a, d, e);
+	child2 i2 (c, e, f);
+	child3 i3 (f); 
+endmodule;
+
+module top;
+	i11 mid(x, a, b);
+	initial $display(i1.f);
+endmodule
+
+// The following modules instantiate child3 from mid, 
+// using different resolution functions:
+module child3 (wire x) 
+module child3 (wreal x)
+module child3 (wrealsum x)</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DigitalMixedSignalForVerilogAndSystemVerilog_id902c93c5.html" title="Questa SIM simulation allows you to model digital mixed-signal (DMS) behavior by supporting the constructs for modeling real numbers provided by both Verilog‑AMS and SystemVerilog.">Digital Mixed-Signal for Verilog and SystemVerilog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Examples of Real-Valued Nets"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_ExamplesOfRealValuedNets_id229070bf.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="List-based Merging" />
+<meta name="abstract" content="The list-based merging flow is similar to the DIY flow in that each simulation produces a UCDB file and the postScript Action of a higher-level Group must manually invoke the vcover merge command. The difference is that the postScript Action does not have to search for the UCDB files with a wildcard, as vrun maintains a list of UCDBs from tests that are eligible for merging." />
+<meta name="description" content="The list-based merging flow is similar to the DIY flow in that each simulation produces a UCDB file and the postScript Action of a higher-level Group must manually invoke the vcover merge command. The difference is that the postScript Action does not have to search for the UCDB files with a wildcard, as vrun maintains a list of UCDBs from tests that are eligible for merging." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id614a9110-7025-4795-9034-b482d8f515d0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>List-based Merging</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="List-based Merging" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id614a9110-7025-4795-9034-b482d8f515d0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">List-based Merging</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The list-based
+merging flow is similar to the DIY flow in that each simulation
+produces a UCDB file and the <span class="ph FontProperty emphasis">postScript</span> Action
+of a higher-level Group must manually invoke the vcover merge command.
+The difference is that the <span class="ph FontProperty emphasis">postScript</span> Action
+does not have to search for the UCDB files with a wildcard, as vrun
+maintains a list of UCDBs from tests that are eligible for merging. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id614a9110-7025-4795-9034-b482d8f515d0__id61f8b870-1426-4d0d-952d-cb1b5ba8f311"><h2 class="title Subheading sectiontitle">Assumptions and Detailed Behavior</h2><p class="p">The assumptions are the same as for DIY merging.
+In addition, the user designates a file (usually within the <span class="ph filepath">VRMDATA</span> directory
+tree) and passes the path to that file to vrun via the <span class="ph filepath">mergelist</span> parameter.
+The assumptions and behavior are summarized by the following:</p>
+<ul class="ul"><li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__idef782bab-a7dd-43bd-9e75-c49a4d5b23b0"><p class="p">Each Task Runnable identifies a <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+(which is usually inherited from a lineal parent).</p>
+<ul class="ul"><li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id9296fd8e-10e2-4f88-a70c-d123a7cbe897"><p class="p">The value of this parameter is a path
+to the UCDB file generated by the regression test represented by
+the Task.</p>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id8939978d-bf4d-4386-942c-5086cce9da5e"><p class="p">If a relative path is given, it is assumed
+to be relative to the working directory for the Task.</p>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__idedb23a8e-1d91-419c-9120-e8d37c895417"><p class="p">If the Task intentionally does not generate
+a UCDB file, the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+must be undefined or empty or the pass/fail checking reports the
+test as failed.</p>
+</li>
+</ul>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__idb12fa6f3-c825-4e4c-851b-16523ce1ea25"><p class="p">Each Task Runnable (or an ancestor Group)
+defines a <span class="ph FontProperty emphasis">mergelist</span> parameter
+that points to a plain test file.</p>
+<ul class="ul"><li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id9dc92ff5-36fa-4ba8-8473-a7f9d3ce0e72"><p class="p">This file is cleared upon the start
+of each regression run. </p>
+</li>
+</ul>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id1816bff3-f9e7-4294-a554-d06fa9ba2031"><p class="p">Merge algorithm</p>
+<ul class="ul"><li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id202e240a-fe4f-4fb3-8a58-acf8a4ba17fc"><p class="p">Each <span class="ph FontProperty emphasis">execScript</span> dumps
+a UCDB file to the location specified by the <span class="ph FontProperty emphasis">ucdbfile</span> parameter,
+and (optionally) calls vcover merge to merge the <span class="ph FontProperty emphasis">ucdbfile</span> to
+a user-defined merge file (the location of which may or may not
+be parameterized). The individual UCDB files generated in a given
+Group of Tasks can also be merged in a single operation as part
+of the <span class="ph FontProperty emphasis">postScript</span> for
+the Group.</p>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id7baf98a0-526a-4dbf-9a8e-53c98f841a20"><p class="p">If the <span class="ph filepath">OkToMerge</span> user-definable
+procedure returns a true value, the <span class="ph filepath">MergeOneUcdb</span> procedure
+is called which saves the full path of the UCDB file in question
+to the text file specified by the <span class="ph FontProperty emphasis">mergelist</span> parameter.</p>
+</li>
+<li class="li" id="id614a9110-7025-4795-9034-b482d8f515d0__id9c365965-853a-460e-97ed-9f1c715aff76"><p class="p">A Group <span class="ph FontProperty emphasis">postScript</span> Action
+can optionally merge intermediate merge files into higher-level
+merge files, as dictated by the hierarchy of the regression suite.
+The contents of the text file pointed to by the <span class="ph FontProperty emphasis">mergelist</span> parameter
+can be used as a list of input files to the vcover merge command.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">Note that if the <span class="ph FontProperty emphasis">mergefile</span> parameter
+is defined for any given <span class="ph FontProperty emphasis">execScript</span> Action
+(thereby triggering the auto merge algorithm), the <span class="ph FontProperty emphasis">mergelist</span> parameter
+is ignored.</p>
+<h2 class="title Subheading sectiontitle">List-based Merge Example</h2><p class="p">List-based manual merging is most commonly
+used when the coverage merge is handled by a single <span class="ph FontProperty emphasis">postScript</span> Action
+at the end of the simulation run as shown.</p>
+<div class="fig fignone" id="id614a9110-7025-4795-9034-b482d8f515d0__id2bd116df-eb6d-4761-8685-4d7d655c1e63"><span class="figcap"><span class="fig--title-label">Figure 1. </span>List-based Merge postScript
+Action at end of Simulation</span><pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;runnable name="nightly" type="group"&gt;
+		&lt;parameters&gt;
+			...
+			&lt;parameter name="mergelist"&gt;(%DATADIR%)/nightly/mergelist 
+					&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		...
+		&lt;execScript launch="vsim"&gt;
+			&lt;command&gt;vsim -c top -lib (%DATADIR%)/nightly/work -sv_seed 
+				 (%seed%)&lt;/command&gt;
+			&lt;command&gt;run -all&lt;/command&gt;
+			&lt;command&gt;coverage attribute -name TESTNAME -value 
+				 (%testname%)&lt;/command&gt;
+			&lt;command&gt;coverage save (%ucdbfile%)&lt;/command&gt;
+		&lt;/execScript&gt;
+		&lt;postScript launch="vsim"&gt;
+			&lt;command&gt;vcover merge -out (%DATADIR%)/nightly/merge.ucdb 
+				-inputs (%mergelist%)&lt;/command&gt;
+		&lt;/execScript&gt;
+	&lt;/runnable&gt;
+	 ...
+&lt;/rmdb&gt;</code></pre></div>
+<p class="p">Since vrun automatically clears the text file
+pointed to by the <span class="ph FontProperty emphasis">mergelist</span> parameter,
+there is no reason for the <span class="ph FontProperty emphasis">preScript</span> Action
+to delete the file. Any tests that pass the <span class="ph FontProperty emphasis">OkToMerge</span> test
+(by default, any test with a valid UCDB containing a test data record
+with a passing status) will cause the path to the UCDB file to be written
+to the “mergelist” file under the working directory for the “nightly”
+Runnable. At the end of the regression run, the <span class="ph FontProperty emphasis">postScript</span> of
+the “nightly” Runnable uses this file as the input list to a vcover
+merge command, thus merging all passing tests into a single file.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageMergingUseModels_id78b6395c.html" title="By default, VRM supports three levels of automation for coverage merging, as described in the following sections.">Coverage Merging Use Models</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "List-based Merging"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ListBasedMerging_id614a9110.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

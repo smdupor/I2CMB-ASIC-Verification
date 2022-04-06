@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="wlf2vcd" />
+<meta name="abstract" content="Translates a Questa SIM WLF file to a standard VCD file. Complex data types that are unsupported in the VCD standard (records, memories, and so on) are not converted." />
+<meta name="description" content="Translates a Questa SIM WLF file to a standard VCD file. Complex data types that are unsupported in the VCD standard (records, memories, and so on) are not converted." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf5551b75-25d4-4a95-b511-b4be507bce45" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>wlf2vcd</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="wlf2vcd" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idf5551b75-25d4-4a95-b511-b4be507bce45">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">wlf2vcd</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Translates a <span class="ph fmvar:ProductName">Questa SIM</span> WLF
+file to a standard VCD file. Complex data types that are unsupported
+in the VCD standard (records, memories, and so on) are not converted. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Invoke this command only after you
+have stopped the simulation using <a class="xref fm:HeadingOnly" href="Command_Quit_idfe2a3323.html#idfe2a3323-4d3f-4bb3-b290-368811e71eec__Command_Quit_idfe2a3323.xml#idfe2a3323-4d3f-4bb3-b290-368811e71eec" title="Exits the simulator.">quit</a> -sim
+or <a class="xref fm:HeadingOnly" href="Command_DatasetClose_id39285369.html#id39285369-7e83-4d5f-81b5-4cb26fb19bae__Command_DatasetClose_id39285369.xml#id39285369-7e83-4d5f-81b5-4cb26fb19bae" title="Closes an active dataset.">dataset close</a> sim.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">wlf2vcd <a class="xref fm:HeadingOnly" href="#idf5551b75-25d4-4a95-b511-b4be507bce45__id2c7c9de1-8541-41db-8940-c95ceddaa481">&lt;wlffile&gt;</a> [<a class="xref fm:HeadingOnly" href="#idf5551b75-25d4-4a95-b511-b4be507bce45__idc6c6d634-0af7-4a7f-9052-3c9b7012e8e8">-help</a>] [<a class="xref fm:HeadingOnly" href="#idf5551b75-25d4-4a95-b511-b4be507bce45__idd66f2841-c534-4766-8b96-53829d7442e0">-o &lt;outfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idf5551b75-25d4-4a95-b511-b4be507bce45__id8b2c20fe-63f6-4251-b7d8-43bde677a719">-quiet</a>] </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idf5551b75-25d4-4a95-b511-b4be507bce45__idce9e295e-a1c2-4eec-9faa-9d64b664f556"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idf5551b75-25d4-4a95-b511-b4be507bce45__id2c7c9de1-8541-41db-8940-c95ceddaa481">&lt;wlffile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) Specifies the <span class="ph fmvar:ProductName">Questa SIM</span> WLF file to convert.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf5551b75-25d4-4a95-b511-b4be507bce45__idc6c6d634-0af7-4a7f-9052-3c9b7012e8e8">-help</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Displays a list of command options,
+with a brief description for each.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf5551b75-25d4-4a95-b511-b4be507bce45__idd66f2841-c534-4766-8b96-53829d7442e0">-o &lt;outfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies a filename for the output,
+where the default destination for the VCD output is stdout. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idf5551b75-25d4-4a95-b511-b4be507bce45__id1ca6440b-ad43-438a-9431-985ea4f2d261"><p class="p Opt">&lt;outfile&gt;
+— A user specified filename.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf5551b75-25d4-4a95-b511-b4be507bce45__id8b2c20fe-63f6-4251-b7d8-43bde677a719">-quiet</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Disables warning messages that are produced when an unsupported
+type (for example, records) is encountered in the WLF file.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "wlf2vcd"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Wlf2vcd_idf5551b75.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

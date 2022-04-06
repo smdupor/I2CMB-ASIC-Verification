@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="SystemC Import Functions" />
+<meta name="abstract" content="In order to make a SystemC import function callable from SystemVerilog, it needs to be registered from the SystemC code before it can be called from SystemVerilog. This can be thought of as exporting the function outside SystemC, thus making it callable from other languages. The registration must be done by passing a pointer to the function using an API. The registration can be done anywhere in the design but it must be done before the call happens in SystemVerilog, otherwise the call fails with undefined behavior." />
+<meta name="description" content="In order to make a SystemC import function callable from SystemVerilog, it needs to be registered from the SystemC code before it can be called from SystemVerilog. This can be thought of as exporting the function outside SystemC, thus making it callable from other languages. The registration must be done by passing a pointer to the function using an API. The registration can be done anywhere in the design but it must be done before the call happens in SystemVerilog, otherwise the call fails with undefined behavior." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>SystemC Import Functions</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="SystemC Import Functions" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">SystemC Import
+Functions</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">In order
+to make a SystemC import function callable from SystemVerilog, it
+needs to be registered from the SystemC code before it can be called
+from SystemVerilog. This can be thought of as exporting the function
+outside SystemC, thus making it callable from other languages. The
+registration must be done by passing a pointer to the function using
+an API. The registration can be done anywhere in the design but
+it must be done before the call happens in SystemVerilog, otherwise
+the call fails with undefined behavior. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id187f5eec-f12b-4909-8914-b54c9b7a3fe3"><h2 class="title Subheading sectiontitle">Global Functions</h2><p class="p">A global function can be registered using the
+API below: </p>
+<pre class="pre codeblock leveled"><code>int sc_dpi_register_cpp_function(const char* function_name, PTFN func_ptr);</code></pre><p class="p">This function takes two arguments: </p>
+<ul class="ul"><li class="li" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id20ee0b92-11ec-43de-8e53-b90ed850823e"><p class="p">the
+name of the function, which can be different than the actual function
+name. This name must match the SystemVerilog import declaration.
+No two functions registered using this API can have the same name:
+it creates an error if they do. </p>
+</li>
+<li class="li" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id801b6550-d465-4229-9291-84ca5400c310"><p class="p">a
+function pointer to the registered function. On successful registration,
+this function will return a 0. A non-zero return status means an
+error. </p>
+<div class="fig fignone ExampleTitle" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id9fd51448-d7cb-4c23-b344-6437a40cab45"><span class="figcap"><span class="fig--title-label">Example 1. </span>Global
+Import Function Registration</span><pre class="pre codeblock"><code>int scGlobalImport(sc_logic a, sc_lv&lt;9&gt;* b);
+sc_dpi_register_cpp_function(“scGlobalImport”, scGlobalImport);</code></pre></div>
+</li>
+</ul>
+<p class="p">A macro like the one shown below is provided
+to make the registration even more simple. In this case the ASCII
+name of the function will be identical to the name of the function
+in the source code. </p>
+<pre class="pre codeblock leveled"><code>SC_DPI_REGISTER_CPP_FUNCTION(scGlobalImport);</code></pre><p class="p">In the SystemVerilog code, the import function
+needs to be defined with a special marker (“DPI-SC”) that tells
+the SystemVerilog compiler that this is an import function defined
+in the SystemC shared library. The syntax for calling the import
+function remains the same as described in the SystemVerilog LRM. </p>
+<div class="fig fignone ExampleTitle" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__idaba17ba4-67d6-4a29-bf95-1383df709012"><span class="figcap"><span class="fig--title-label">Example 2. </span>SystemVerilog
+Global Import Declaration</span></div>
+<p class="p">For the SystemC import function shown in <a class="xref fm:Example" href="#id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id9fd51448-d7cb-4c23-b344-6437a40cab45">Example 1</a>, the SystemVerilog import declaration
+is as follows: </p>
+<pre class="pre codeblock"><code>import mti_scdpi::*;
+import "DPI-SC" context function int scGlobalImport(
+                        input sc_logic a, output sc_lv[8:0] b);</code></pre><p class="p"><a class="xref fm:Example" href="#id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__idcaec4cc1-1d31-41a4-9e6b-84d9ddd8413f">Example 3</a> shows how to register a global function
+by introducing a dummy module specifically for the purpose of the
+registration.This lets you do the registration in the procedural
+context anytime before the import function is used.</p>
+<div class="fig fignone ExampleTitle" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__idcaec4cc1-1d31-41a4-9e6b-84d9ddd8413f"><span class="figcap"><span class="fig--title-label">Example 3. </span>Registering
+a Global Function</span><pre class="pre codeblock"><code>/*Thistop-levelSystemCmoduledoesnothingbutregisterDPI-SCimports
+*/
+SC_MODULE(dpi_sc_import)
+{
+    SC_CTOR(dpi_sc_import)
+    {
+        SC_DPI_REGISTER_CPP_FUNCTION(scGlobalImport);
+        .............
+    }
+    ~dpi_sc_import() {};
+};
+SC_MODULE_EXPORT(dpi_sc_import)</code></pre></div>
+<p class="p">Please refer to <a class="xref fm:HeadingOnly" href="#id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id28ae511e-ff82-40b5-b2ab-33848300033f">Module Member Functions</a> and <a class="xref fm:HeadingOnly" href="General_CallingSystemverilogExportTasksFunctionsFromSystemc_idd4cee146.html#idd4cee146-88e7-4ff6-889c-5ea97ffc4a8f__General_CallingSystemverilogExportTasksFunctionsFromSystemc_idd4cee146.xml#idd4cee146-88e7-4ff6-889c-5ea97ffc4a8f" title="Unless an export call is made from an import function, you must set the scope of the export function explicitly to provide the SystemVerilog context information to the simulator. You do this by calling svSetScope() before each export function or task call.">Calling SystemVerilog Export Tasks / Functions from SystemC</a> for more details on the SystemC
+import and export task or function declaration syntax. </p>
+</div>
+<div class="section Subsection" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id28ae511e-ff82-40b5-b2ab-33848300033f"><h2 class="title Subheading sectiontitle">Module Member Functions</h2><h2 class="title Subheading sectiontitle">Registering Functions </h2><p class="p">Module member functions can be registered anytime
+before they are called from the SystemVerilog code. The following
+macro can be used to register a non-static member function if the
+registration is done from a module constructor or a module member
+function. For a static member function, the registration is accomplished
+using the interface SC_DPI_REGISTER_CPP_FUNCTION, as described in <a class="xref fm:HeadingOnly" href="#id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9" title="In order to make a SystemC import function callable from SystemVerilog, it needs to be registered from the SystemC code before it can be called from SystemVerilog. This can be thought of as exporting the function outside SystemC, thus making it callable from other languages. The registration must be done by passing a pointer to the function using an API. The registration can be done anywhere in the design but it must be done before the call happens in SystemVerilog, otherwise the call fails with undefined behavior.">SystemC Import Functions</a>.</p>
+<pre class="pre codeblock leveled"><code>SC_DPI_REGISTER_CPP_MEMBER_FUNCTION(&lt;function_name&gt;, &lt;func_ptr&gt;);</code></pre><pre class="pre codeblock leveled"><code>Example:</code></pre><pre class="pre codeblock leveled"><code>SC_MODULE(top) {</code></pre><pre class="pre codeblock"><code>    void sc_func() {
+    }</code></pre><pre class="pre codeblock"><code>    SC_CTOR(top) {
+        SC_DPI_REGISTER_CPP_MEMBER_FUNCTION(“sc_func”, &amp;top::sc_func);
+    }
+};</code></pre><p class="p">Note that in the above case, since the registration
+is done from the module constructor, the module pointer argument
+might be redundant. However, the module pointer argument will be
+required if the macro is used outside a constructor. </p>
+<p class="p">To register a member function from a function
+that is not a member of the module, the following registration function
+must be used: </p>
+<pre class="pre codeblock leveled"><code>int sc_dpi_register_cpp_member_function(&lt;function_name&gt;, &lt;module_ptr&gt;, &lt;func_ptr&gt;);</code></pre><p class="p">This function takes three arguments:</p>
+<ul class="ul"><li class="li" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id0dbae58a-c857-4679-bea6-5969941debbc"><p class="p">The
+first argument is the name of the function, which can be different
+than the actual function name. </p>
+<p class="p">This is the name that must be used in the
+SystemVerilog import declaration.</p>
+</li>
+<li class="li" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__idc53bd8ee-0851-4177-aa4e-0178845c4b0b"><p class="p">The
+second argument is a reference to the module instance where the function
+is defined.</p>
+<p class="p">It is illegal to pass a reference to a class
+other than a class derived from sc_module and will lead to undefined
+behavior. </p>
+</li>
+<li class="li" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__ide4e6df00-7e6f-41d5-b41e-61a897a25f34"><p class="p">The
+third argument is a function pointer to the member function being registered.</p>
+<p class="p">On successful registration, this function
+will return a 0. A non-zero return status means an error. </p>
+</li>
+</ul>
+<p class="p">For example, the member function run() of the
+module “top” in the example above can be registered as follows: </p>
+<pre class="pre codeblock"><code>sc_module* pTop = new top("top");
+sc_dpi_register_cpp_member_function("run", pTop, &amp;top::run);</code></pre></div>
+<div class="section Subsection" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id7fd510dc-b522-4f85-bec6-a9619d45e7c6"><h2 class="title Subheading sectiontitle">Setting Stack Size for
+Import Tasks</h2><p class="p">The tool implicitly creates a SystemC thread
+to execute the C++ functions declared as SystemVerilog import tasks.
+The default stack size is 1MByte. If this is not big enough for
+your C++ functions you can change the default stack size with the <span class="ph FontProperty HeadingLabel">sc_dpi_set_stack_size()</span> interface.
+You must use this interface right after the registration routine,
+for example:</p>
+<pre class="pre codeblock leveled"><code>SC_MODULE(top) {</code></pre><pre class="pre codeblock leveled"><code>	void sc_task() {</code></pre><pre class="pre codeblock leveled"><code>	}</code></pre><pre class="pre codeblock"><code>	SC_CTOR(top) {
+		SC_DPI_REGISTER_CPP_MEMBER_FUNCTION("sc_task", &amp;top::sc_task);
+		sc_dpi_set_stack_size(10000000);  // set stack size to 10Mbytes.
+	}
+}</code></pre><p class="p">For the C++ functions declared as SystemVerilog
+import functions, you do not need to set the stack size.</p>
+</div>
+<div class="section Subsection" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__idc7362b62-ab2e-478a-98b5-d53cba561191"><h2 class="title Subheading sectiontitle">Declaring and Calling
+Member Import Functions in SystemVerilog</h2><p class="p">The declaration
+for a member import function in SystemVerilog is similar to the
+following:</p>
+<pre class="pre codeblock"><code>import "DPI-SC" context function int scMemberImport(
+                        input sc_logic a, output sc_lv[8:0] b);</code></pre><p class="p">Registration of static member functions is
+identical to the registration of global functions using the API
+sc_dpi_register_cpp_function().</p>
+<p class="p">Only one copy of the overloaded member functions
+is supported as a DPI import, as DPI can only identify the import
+function by its name, not by the function parameters.</p>
+<p class="p">To enable the registration of member functions,
+the SystemC source file must be compiled with the -DMTI_BIND_SC_MEMBER_FUNCTION
+macro.</p>
+</div>
+<div class="section Subsection" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id353de1f5-9567-484a-a6b1-30888fec4f0a"><h2 class="title Subheading sectiontitle">Calling Member Import
+Functions in a Specific SystemC Scope</h2><p class="p">A member import
+function can be registered for multiple module instances, as in
+the case when registration routine SC_DPI_REGISTER_CPP_MEMBER_FUNCTION()
+is called from inside a SystemC module constructor. At runtime,
+you must specify the proper scope when the member import function call
+is initiated from SystemVerilog side. You can use the following
+two routines to manipulate the SystemC scope before making the member
+import function call:</p>
+<pre class="pre codeblock leveled"><code>  function string scSetScopeByName(input string sc_scope_name);</code></pre><p class="p">and</p>
+<pre class="pre codeblock leveled"><code>  function string scGetScopeName();</code></pre><p class="p"><span class="ph FontProperty HeadingLabel">scSetScopeByName()</span> expects
+the full hierarchical name of a valid SystemC scope as the input.
+The hierarchical name must use the Verilog-style path separator.
+The previous scope hierarchical name before setting the new scope
+will be returned.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">scGetScopeName()</span> returns
+the current SystemC scope for next member import function call.</p>
+<p class="p">Since both routines are predefined in <span class="ph fmvar:ProductName">Questa SIM</span> built-in package <span class="ph FontProperty HeadingLabel">mti_scdpi</span>,
+you need to import this package into the proper scope where the
+two routines are used, using the following statement:</p>
+<pre class="pre codeblock leveled"><code>  import mti_scdpi::*; </code></pre><div class="fig fignone ExampleTitle" id="id50dc0bf4-0cc2-4277-bd13-4eff2fdb5df9__id8bd2dcda-855a-4e62-8368-96f79a7874ce"><span class="figcap"><span class="fig--title-label">Example 4. </span>Usage
+of scSetScopeByName and scGetScopeName</span><pre class="pre codeblock leveled"><code>//test.cpp:</code></pre><pre class="pre codeblock"><code>SC_MODULE(scmod)
+{
+     void cppImportFn();</code></pre><pre class="pre codeblock"><code>      SC_CTOR(scmod)
+      {
+          ........
+          SC_DPI_REGISTER_CPP_MEMBER_FUNCTION("cppImportFn", 
+                                       &amp;scmod::cppImportFn);
+          ......
+     }
+};</code></pre><pre class="pre codeblock leveled"><code>//test.sv:</code></pre><pre class="pre codeblock leveled"><code>module top();</code></pre><pre class="pre codeblock"><code>  import mti_scdpi::*;    // where scSetScopeByName() and scGetScopeName() are defined.</code></pre><pre class="pre codeblock"><code>  string prev_sc_scope;
+  string curr_sc_scope;</code></pre><pre class="pre codeblock"><code>  scmod inst1();    //scope name "top.inst1"
+  scmod inst2();    //scope name "top.inst2"</code></pre><pre class="pre codeblock leveled"><code>  import "DPI-SC" function void cppImportFn();</code></pre><pre class="pre codeblock"><code>  // call DPI-SC import function under scope "top.inst1"
+  prev_sc_scope = scSetScopeByName("top.inst1");
+  curr_sc_scope = scGetScopeName();
+  cppImportFn();</code></pre><pre class="pre codeblock"><code>  // call DPI-SC import function under scope "top.inst2" 
+  prev_sc_scope = scSetScopeByName("top.inst2");
+  curr_sc_scope = scGetScopeName();
+  cppImportFn();</code></pre><pre class="pre codeblock leveled"><code>endmodule</code></pre></div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemcProceduralInterfaceSystemverilog_idb622845a.html" title="SystemC designs can communicate with SystemVerilog through a procedural interface, the SystemVerilog Direct Programming Interface (DPI). In contrast to a hierarchical interface, where communication is advanced through signals and ports, DPI communications consists of task and function calls passing data as arguments. This type of interface can be useful in transaction level modeling, in which bus functional models are widely used.">SystemC Procedural Interface to SystemVerilog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "SystemC Import Functions"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_SystemcImportFunctions_id50dc0bf4.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="uvm mapmode" />
+<meta name="abstract" content="Sets the UVM path mapping mode for UVM commands." />
+<meta name="description" content="Sets the UVM path mapping mode for UVM commands." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id721ace0a-5d06-4bd9-8244-42f5c8dc4177" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>uvm mapmode</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="uvm mapmode" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id721ace0a-5d06-4bd9-8244-42f5c8dc4177">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">uvm mapmode</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><p class="p ContextMGC">Prerequisites:</p>
+<p class="p ContextMGC">Before using this command, do the following: </p>
+<ul class="ul"><li class="li" id="id84fd2728-c66f-4554-b0d7-c5c1972a10c9"><p class="p">Simulate
+with <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__Command_Vsim_id382a4cc6.xml#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6" title="Invokes the VSIM simulator. Invoking this command with the ‑view argument enables you to view the results of a previous simulation run.">vsim</a> -uvmcontrol=all
+-classdebug.</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id3fa24ee4-72e0-4904-bf69-c1ca7a947261"><p class="p">Elaborate
+the UVM testbench by executing the following command:</p>
+</li>
+</ul>
+<p class="p ContextMGC"><p class="lines ApplCommand">   run 0</p>
+</p>
+<p class="shortdesc">Sets the
+UVM path mapping mode for UVM commands.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">This
+command is one of a group of Tcl commands useful for debugging UVM-based
+designs. You can find additional information about the group of
+commands by entering uvm on the command line. For help with a particular subcommand,
+enter uvm help &lt;subcommand&gt;. Refer to the Related Topics or links
+to the other subcommands.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">uvm mapmode [<a class="xref fm:HeadingOnly" href="#id721ace0a-5d06-4bd9-8244-42f5c8dc4177__id1371b5cb-683c-42dc-afa1-4f72e2ce8944">0</a> | <a class="xref fm:HeadingOnly" href="#id721ace0a-5d06-4bd9-8244-42f5c8dc4177__idf7963e5f-d61e-4d4d-a2b6-dc5251bc82cc">1</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can set the simulator to accept either UVM "get_full_name"
+style paths or simulation "/uvm_root" style paths. If no argument
+is given, the command displays the current mapping setting. </p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id721ace0a-5d06-4bd9-8244-42f5c8dc4177__id466b56af-e162-44f8-87c8-68e88c321f82"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id721ace0a-5d06-4bd9-8244-42f5c8dc4177__id1371b5cb-683c-42dc-afa1-4f72e2ce8944">0 </dt>
+<dd class="dd ArgumentDescription"><p class="p">Simulator
+"/uvm_root" style paths are used. For example, sim:/uvm_root/uvm_test_top/middle/bottom0/my_obj.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id721ace0a-5d06-4bd9-8244-42f5c8dc4177__idf7963e5f-d61e-4d4d-a2b6-dc5251bc82cc">1 </dt>
+<dd class="dd ArgumentDescription"><p class="p">(default)
+UVM-style paths are used. For example, uvm_test_top.middle.bottom0.my_obj. </p>
+<p class="p">You can abbreviate
+the command syntax to the minimum number of characters required
+to make the command unique. Refer to “<a class="xref fm:HeadingAndPage" href="Concept_CommandShortcuts_idde6d06ec.html#idde6d06ec-c23d-46c6-b057-96b7c7312bc0__Concept_CommandShortcuts_idde6d06ec.xml#idde6d06ec-c23d-46c6-b057-96b7c7312bc0" title="The following shortcut techniques are available on the command line.">Command Shortcuts</a>” for more
+information. You can also use the command shortcut uvm mm. </p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_UvmCall_id651f1a7c.html#id651f1a7c-88bf-4060-bced-13c490719519__" title="Calls a SystemVerilog UVM function, either from the uvm_pkg or in a user’s UVM test bench code.">uvm call</a></div>
+<div><a class="link" href="../topics/Command_UvmConfigtracing_idf8cc4a96.html#idf8cc4a96-2b3f-4d8e-85c8-50a4c41997cf__" title="Enables or disables printing of configuration database reads and writes to the transcript as they occur.">uvm configtracing</a></div>
+<div><a class="link" href="../topics/Command_UvmDisplayobjections_id096892c1.html#id096892c1-392c-4136-9165-096a50463889__" title="Returns the current objections to the transcript. If no argument is supplied, display objections for uvm_top.">uvm displayobjections</a></div>
+<div><a class="link" href="../topics/Command_UvmFindregisters_ida538fad6.html#ida538fad6-dcff-4569-abb0-4df91f73c4b5__" title="Lists the set of HDL registers attached to the UVM register models in a design.">uvm findregisters</a></div>
+<div><a class="link" href="../topics/Command_UvmFindsequences_id065131da.html#id065131da-13bd-42c9-8191-0ce653bc626c__" title="Returns the active sequences under a specified sequencer. Returns all active sequences when specified without arguments.">uvm findsequences</a></div>
+<div><a class="link" href="../topics/Command_UvmHandle_id9a57a065.html#id9a57a065-b8fb-49c1-b8cc-f9d47ee86329__" title="Returns the simulation handle (class instance identifier or CIID) of the specified UVM object to the transcript.">uvm handle</a></div>
+<div><a class="link" href="../topics/Command_UvmPrintconfig_idbb5e9963.html#idbb5e9963-a087-4f53-b193-fa2ae9a447c0__" title="Returns configuration information matching a specified component and/or access information for a specified configuration object variable to the transcript.">uvm printconfig</a></div>
+<div><a class="link" href="../topics/Command_UvmPrintfactory_idacd198a9.html#idacd198a9-8287-4236-9481-2df9d204fc91__" title="Returns UVM global factory information to the transcript. Does not take any arguments.">uvm printfactory</a></div>
+<div><a class="link" href="../topics/Command_UvmPrintstreams_id2f79d4ab.html#id2f79d4ab-070f-43d3-a2d6-72d32d2c8331__" title="Returns a list of streams (transaction objects) to the transcript.">uvm printstreams</a></div>
+<div><a class="link" href="../topics/Command_UvmPrinttopology_id5a8ef843.html#id5a8ef843-1ca8-4349-9237-62c998b48541__" title="Returns the UVM global testbench topology to the transcript. Does not take any arguments.">uvm printtopology</a></div>
+<div><a class="link" href="../topics/Command_UvmSetverbosity_id9a9b2d9a.html#id9a9b2d9a-7689-464b-92ff-add5ff7ff827__" title="Sets the global reporting verbosity.">uvm setverbosity</a></div>
+<div><a class="link" href="../topics/Command_UvmSimpath_id77e69924.html#id77e69924-87b1-4482-a7d3-f47ab3e3ad86__" title="Maps the path of a UVM hierarchical component to a simulator &#34;/uvm_root&#34; context hierarchy string.">uvm simpath</a></div>
+<div><a class="link" href="../topics/Command_UvmTraceobjections_id803871af.html#id803871af-ed16-41a1-b095-941e365a7c77__" title="Enables or disables objections tracing for a specified UVM component instance.">uvm traceobjections</a></div>
+<div><a class="link" href="../topics/Command_UvmUvmpath_id9a5f1f16.html#id9a5f1f16-7eb7-4bfc-939c-5321c898a849__" title="Maps the path of a UVM component represented in the simulator &#34;/uvm_root&#34; hierarchy or in handle form back into a UVM full path name, similar to that returned from a UVM &#34;get_full_name&#34; function.">uvm uvmpath</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "uvm mapmode"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_UvmMapmode_id721ace0a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

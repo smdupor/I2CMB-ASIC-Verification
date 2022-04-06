@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Launch Multiple Regression Runs in a Single VRM Data Directory" />
+<meta name="abstract" content="The VRM GUI does not enforce a one-regression-run-per-configuration rule, nor does it enforce a one-to-one correspondence between configurations and VRM Data directories. Instead, each batch-mode regression establishes an advisory lock on the VRM Data directory prior to launching any Actions (this occurs for regression runs launched from the GUI and for regression runs launched manually from outside any GUI session). In the case where a batch-mode regression detects an active lock on the VRMData directory, a message is emitted to the output of the vrun process and the process waits 30 seconds before launching any Actions to give the user time to abort the process if the overlap was unintentional." />
+<meta name="description" content="The VRM GUI does not enforce a one-regression-run-per-configuration rule, nor does it enforce a one-to-one correspondence between configurations and VRM Data directories. Instead, each batch-mode regression establishes an advisory lock on the VRM Data directory prior to launching any Actions (this occurs for regression runs launched from the GUI and for regression runs launched manually from outside any GUI session). In the case where a batch-mode regression detects an active lock on the VRMData directory, a message is emitted to the output of the vrun process and the process waits 30 seconds before launching any Actions to give the user time to abort the process if the overlap was unintentional." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0827c57e-a5cb-4848-a3f5-41401fff4399" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Launch Multiple Regression Runs in a Single VRM Data Directory</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Launch Multiple Regression Runs in a Single VRM Data Directory" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id0827c57e-a5cb-4848-a3f5-41401fff4399">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Launch Multiple Regression Runs in a Single
+VRM Data Directory</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The VRM GUI
+does not enforce a one-regression-run-per-configuration rule, nor
+does it enforce a one-to-one correspondence between configurations
+and <span class="ph filepath">VRM Data</span> directories. Instead, each batch-mode
+regression establishes an advisory lock on the <span class="ph filepath">VRM Data</span> directory
+prior to launching any Actions (this occurs for regression runs
+launched from the GUI and for regression runs launched manually
+from outside any GUI session). In the case where a batch-mode regression
+detects an active lock on the <span class="ph filepath">VRMData</span> directory,
+a message is emitted to the output of the vrun process and the process
+waits 30 seconds before launching any Actions to give the user time
+to abort the process if the overlap was unintentional.</span>
+</div>
+<p class="p">In the case where a regression
+run launched from within a GUI session detects an active lock on
+the <span class="ph filepath">VRM Data</span> directory, a dialog is displayed that
+lists all the active locks on the directory. In either case, an
+“active” lock is defined as a lock generated by a batch-mode vrun
+process that is known to be running (the lock file contains the <span class="ph filepath">port@host</span> of
+the status port for the vrun process and a “ping” is issued to verify
+whether the associated regression is still running; lock files for
+which no running vrun process can be located are silently deleted). </p>
+<p class="p">The user has three choices of how to handle
+the situation as follows: </p>
+<ul class="ul"><li class="li" id="id0827c57e-a5cb-4848-a3f5-41401fff4399__id46b5815f-1a31-405a-93a7-8b527196306f"><p class="p">Elect to ignore the lock files and start
+the new regression run anyway. This is used when two or more configurations
+point to the same <span class="ph filepath">VRM Data</span> directory but also
+contain non-overlapping Runnable selections so concurrent execution
+cannot result in file collisions.</p>
+</li>
+<li class="li" id="id0827c57e-a5cb-4848-a3f5-41401fff4399__idb3270ed2-0b7d-43de-ae57-6e574ee78ab8"><p class="p">Elect to delete selected lock files (and
+terminate the regression runs associated with those files) and start
+the new regression run. This is used when a previous regression
+run had not finished but the user wants to start a new regression
+run to replace the currently running regression (this could be accomplished
+by manually terminating the prior regression run but, in some cases,
+there may not be a <span class="ph uicontrol">VRM Results</span> window open
+for the currently running regression in this GUI session so using
+the lock file to terminate the currently running regression may
+end up being a more direct solution).</p>
+</li>
+<li class="li" id="id0827c57e-a5cb-4848-a3f5-41401fff4399__idf818ddc1-2cd7-4531-9b42-57402129b2cf"><p class="p">Elect to abandon the new regression run
+and let the currently running regression(s) continue to completion. </p>
+</li>
+</ul>
+<p class="p">The warning dialog lists the contents of all
+active lock files, including the <span class="ph filepath">port@host</span> of
+the vrun process’ status socket, the user ID of the user who initiated
+the run, the pid of the vrun process, and the date and time at which
+the regression run was started. By default, all the active lock
+files are selected. However, if the user elects to terminate one
+or more of the currently running regressions, the lock file selection
+may be changed. In this case, locks that remain selected will be
+deleted and the associated regression run terminated while locks
+that the user deselects before dismissing the dialog are ignored
+and the associated regression runs are allowed to continue unmolested.
+This gives the user the flexibility to deal with unusual corner
+cases while still providing a simple 3-way selection for the common
+case.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_StartNewRegressionRunViewResultsPreviousRegressionRun_id9c4288f1.html" title="This section explains how to start new or view previous regression runs.">Start a New Regression Run and/or View Results of Previous Regression Run</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Launch Multiple Regression Runs in a Single VRM Data Directory"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_LaunchMultipleRegressionRunsInSingleVrmDataDirectory_id0827c57e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

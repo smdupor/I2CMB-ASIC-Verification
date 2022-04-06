@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="User-Defined Buttons and Menus" />
+<meta name="abstract" content="You can create Tcl processes (procs) that add user-defined buttons and menus to the main window of the Questa SIM GUI." />
+<meta name="description" content="You can create Tcl processes (procs) that add user-defined buttons and menus to the main window of the Questa SIM GUI." />
+<meta name="prodname" content="Questa SIM GUI Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_gui_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM GUI Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id9a58c947-adca-4af7-b329-964102ada4fc" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>User-Defined Buttons and Menus</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="User-Defined Buttons and Menus" />
+<meta name="attributes" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id9a58c947-adca-4af7-b329-964102ada4fc">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">User-Defined Buttons
+and Menus </h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can
+create Tcl processes (procs) that add user-defined buttons and menus
+to the main window of the <span class="ph fmvar:ProductName">Questa SIM</span> GUI. </span>
+</div>
+<p class="p">The Tcl
+procs are loaded after initialization by assigning them to the PrefMain(user_hook)
+preference variable. The procs must be saved in a <span class="ph filepath">modelsim.tcl</span> file
+located in the install directory for Windows platforms or in the
+directory from which you invoke the <span class="ph fmvar:ProductName">Questa SIM</span> simulator for other platforms (refer to <a class="xref fm:HeadingOnly" href="Concept_SavingGuiPreferencesInAlternateLocation_idf5e5b4b7.html#idf5e5b4b7-4b0e-4581-8290-cf8c10027332__id6e808213-65e0-49c5-9eb1-fe85028c72bc">The modelsim.tcl File</a> for more information). Buttons
+are added to the Standard toolbar and menus are added to the main
+menu bar in the GUI </p>
+<p class="p">The
+following Tcl example demonstrates two procs that create a menu
+and two buttons and the syntax for setting the procs with the PrefMain(user_hook)
+preference variable. Refer to (<a class="xref fm:Figure" href="#id9a58c947-adca-4af7-b329-964102ada4fc__id1d561282-ff71-4aad-a5aa-3faa9a28a0fc">Figure 1</a>).</p>
+<div class="fig fignone" id="id9a58c947-adca-4af7-b329-964102ada4fc__id1d561282-ff71-4aad-a5aa-3faa9a28a0fc"><span class="figcap"><span class="fig--title-label">Figure 1. </span>User-Defined Buttons and Menus</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/button_menu_user.gif" /></div><br /><pre class="pre codeblock leveled"><code><span class="ph FontProperty P9">proc AddMyMenus {wname} {</span> 
+:<span class="ph FontProperty P9">    global myglobalvar</span> 
+:<span class="ph FontProperty P9">    set cmd1 "echo my_own_thing $wname"</span> 
+:<span class="ph FontProperty P9">    set cmd2 "echo my_to_upper $wname"</span> 
+:<span class="ph FontProperty P9">    set cmd3 "echo my_to_lower $wname"</span> 
+: 
+:<span class="ph FontProperty P9">#              WinName    Menu                MenuItem label     Command
+#              -------    ------------------  -----------------  ----------------
+add_menu       $wname     usrMenu
+add_menuitem   $wname     usrMenu             "Do My Own Thing"  $cmd1
+add_separator  $wname     usrMenu             ;#---------------  ----------------
+add_submenu    $wname     usrMenu              changeCase
+add_menuitem   $wname     usrMenu.changeCase  "To Upper"         $cmd2
+add_menuitem   $wname     usrMenu.changeCase  "To Lower"         $cmd3
+add_submenu    $wname     usrMenu              vars
+add_menucb     $wname     usrMenu.vars        "Feature One"      -variable     \
+																			 myglobalvar    \
+																			 -onvalue 1     \
+																			 -offvalue 0    \
+																			 -indicatoron 1 \
+}</span> 
+: 
+:<span class="ph FontProperty P9">proc my_buttons {args} {</span> 
+: 
+:<span class="ph FontProperty P9">   add button "Run Long" "run 2 us"</span> 
+:<span class="ph FontProperty P9">   </span> 
+<span class="ph FontProperty P9">   add button "Run Short" "run 2 ns"</span> 
+ 
+<span class="ph FontProperty P9">   }</span> 
+ 
+<span class="ph FontProperty P9">lappend PrefMain(user_hook) AddMyMenus my_buttons</span> 
+ 
+ 
+ </code></pre></div>
+<p class="p">The code above is available
+in the following <span class="ph filepath">modelsim.tcl</span> file:</p>
+<p class="p"><span class="ph filepath">&lt;install_dir&gt;/examples/gui/addmenu/modelsim.tcl</span> </p>
+<ul class="ul"><li class="li" id="id9a58c947-adca-4af7-b329-964102ada4fc__id4c5e7c79-4a98-46f4-8b88-5e40431eb81a"><p class="p">Menu proc </p>
+<p class="p">Adds
+a menu to the Main menu bar containing a top-level item labeled
+"Do My Own Thing...", which prints "my_own_thing.signals." It adds
+a cascading submenu labeled "changeCase" with two entries, "To Upper"
+and "To Lower", which echo "my_to_upper" and "my_to_lower" respectively.
+The menu selection <span class="ph menucascade"><span class="ph uicontrol">UserMenu</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Vars</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Feature
+One</span></span> sets a checkbox that controls the
+value of myglobalvar (.signals:one).</p>
+</li>
+<li class="li" id="id9a58c947-adca-4af7-b329-964102ada4fc__id5a9c98d7-c4f7-49e7-863b-f364f32015c1"><p class="p">Button proc</p>
+<p class="p">Adds two buttons to the
+Standard tool bar. "Run Long," runs the simulation for 2 us, "Run
+Short," runs the simulation for 2 ns.</p>
+</li>
+<li class="li" id="id9a58c947-adca-4af7-b329-964102ada4fc__id8cb8b475-3cb6-417a-b80d-14afaa78fc37"><p class="p">The line:</p>
+<pre class="pre codeblock leveled"><code>
+          <span class="ph FontProperty P9">lappend PrefMain(user_hook) AddMyMenus my_buttons</span>
+</code></pre><p class="p">appends
+the two procs, AddMyMenus and my_buttons, to the user_hook variable when <span class="ph fmvar:ProductName">Questa SIM</span> is finished
+initializing. Multiple procs are specified as a space separated
+list.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_GuiCustomization_idfa25693e.html" title="The Questa SIM GUI is programmed using Tcl/Tk. The GUI is highly customizable—you can control a wide variety of display characteristics such as window size, position, color, the text of window prompts, and default output filenames.">GUI Customization</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_gui_ref"
+                DocTitle = "Questa® SIM GUI Reference Manual"
+                PageTitle = "User-Defined Buttons and Menus"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UserDefinedButtonsMenus_id9a58c947.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM GUI Reference Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

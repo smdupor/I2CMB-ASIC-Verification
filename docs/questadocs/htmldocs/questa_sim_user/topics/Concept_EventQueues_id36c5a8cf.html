@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Event Queues" />
+<meta name="abstract" content="Section 11 of IEEE Std 1364-2005 defines several event queues that determine how events are evaluated." />
+<meta name="description" content="Section 11 of IEEE Std 1364-2005 defines several event queues that determine how events are evaluated." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Event Queues</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Event Queues" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Event Queues</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Section 11
+of IEEE Std 1364-2005 defines several event queues that determine
+how events are evaluated. </span>
+</div>
+<p class="p">At the current simulation time,
+the simulator has the following pending events:</p>
+<ul class="ul"><li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id44dc9ca5-bdf7-4128-8d1d-7654d378df01"><p class="p">active events</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__ide9c0b409-832f-4880-9279-e0ceafa51a50"><p class="p">inactive events</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id8d7a4d4e-c1e7-44fa-9c3d-1efccd411a2a"><p class="p">non-blocking assignment update events</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__ideae54122-0eeb-406b-9b0d-8a3cd7f1f0f7"><p class="p">monitor events</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id59907b9d-6bd5-4298-b406-54c293520ae1"><p class="p">future events</p>
+<ul class="ul"><li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__idc194c941-fd02-46b1-907a-f918e2463571"><p class="p">inactive events</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id6ba190d3-c723-4b69-a2b0-0a8a9fd796c1"><p class="p">non-blocking assignment update events</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">The Standard (LRM) dictates that events are
+processed as follows: </p>
+<ol class="ol"><li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id18f96787-22fb-4479-af09-de53b5a4e9f9"><p class="p">All active events are processed.</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id772cefbc-0310-4ace-ad11-482835cb6720"><p class="p">Inactive events are moved to the active event
+queue and then processed.</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__idcbd825d6-5c6f-495d-b46d-148512c64648"><p class="p">Non‑blocking events are moved to the active
+event queue and then processed.</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id504f5472-0561-4a6a-9cad-93980243902b"><p class="p">Monitor events are moved to the active queue
+and then processed.</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id266ee31e-efdd-484c-90cf-f604c657605e"><p class="p">Simulation advances to the next time where
+there is an inactive event or a non-blocking assignment update event.</p>
+</li>
+</ol>
+<p class="p">You cannot control event order in the active
+event queue. Active events are processed in any order, and new active
+events are added in any order. The example below illustrates potential ramifications
+of this situation.</p>
+<p class="p">Assume that these four statements are in the
+event queue:</p>
+<ul class="ul"><li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id5b12e0c2-4395-4f97-9b3c-c6247d000ba9"><p class="p">always@(q) p = q;</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id6defd4df-16d6-4a61-abb6-578b23a7ae1b"><p class="p">always @(q) p2 = not q;</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id989dd3ad-5640-4829-bff9-cb3237d1bfe5"><p class="p">always @(p or p2) clk = p and p2;</p>
+</li>
+<li class="li" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id04b5ff87-be26-4a4c-b324-b7ac1422a878"><p class="p">always @(posedge clk)</p>
+</li>
+</ul>
+<p class="p">with current variable values: q = 0, p = 0,
+p2=1</p>
+<p class="p"><a class="xref fm:Table" href="#id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id96013a94-43d1-4554-8244-e77cc150efd8">Table 1</a> and <a class="xref fm:Table" href="#id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__idce461e83-d782-4e4a-b62d-0a0d5ad71805">Table 2</a> show two of the many
+valid evaluations of these statements. Evaluation events are denoted
+by a number where the number is the statement to be evaluated. Update
+events are denoted <span class="ph FontProperty emphasis">&lt;name&gt;(old-&gt;new)</span> where <span class="keyword ParameterName OptionalReplaceable">&lt;name&gt;</span> indicates
+the reg being updated and <span class="keyword ParameterName OptionalReplaceable">new</span> is
+the updated value.\</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__id96013a94-43d1-4554-8244-e77cc150efd8" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Evaluation 1 of always Statements</span></caption><colgroup><col style="width:2.438in" /><col style="width:2.438in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d16922e237"><p class="p">Event being processed</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d16922e240"><p class="p">Active event queue</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">q(0 -&gt; 1)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">q(0 -&gt; 1)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">1, 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">p(0 -&gt; 1), 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">p(0 -&gt; 1)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">3, 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">3</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">clk(0 -&gt; 1), 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">clk(0 -&gt; 1)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">4, 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">4</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">2</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">p2(1 -&gt; 0)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">p2(1 -&gt; 0)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">3</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">3</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">clk(1 -&gt; 0)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e237 "><p class="p">clk(1 -&gt; 0)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e240 "><p class="p">&lt;empty&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id36c5a8cf-cc8c-4f4c-b8b2-29f2bc45735e__idce461e83-d782-4e4a-b62d-0a0d5ad71805" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Evaluation 2 of always Statement</span></caption><colgroup><col style="width:2.438in" /><col style="width:2.438in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d16922e327"><p class="p">Event being processed</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d16922e330"><p class="p">Active event queue</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">q(0 -&gt; 1)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">q(0 -&gt; 1)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">1, 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">p(0 -&gt; 1), 2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">2</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">p2(1 -&gt; 0), p(0 -&gt; 1)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">p(0 -&gt; 1)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">3, p2(1 -&gt; 0)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">p2(1 -&gt; 0)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">3</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e327 "><p class="p">3</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d16922e330 "><p class="p">&lt;empty&gt; (clk does
+not change)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">Again, both evaluations are valid. However,
+in Evaluation 1, <span class="ph FontProperty emphasis">clk</span> has
+a glitch on it; in Evaluation 2, <span class="ph FontProperty emphasis">clk</span> does
+not. This indicates that the design has a zero-delay race condition
+on <span class="ph FontProperty emphasis">clk</span>.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_EventOrderingInVerilogDesigns_id6f9542d0.html" title="Event-based simulators such as Questa SIM can process multiple events at a given simulation time. The Verilog language definition does not provide you control of the processing order of simultaneous events. Some designs rely on a particular event order, and these designs may behave differently than you expect.">Event Ordering in Verilog Designs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Event Queues"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_EventQueues_id36c5a8cf.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

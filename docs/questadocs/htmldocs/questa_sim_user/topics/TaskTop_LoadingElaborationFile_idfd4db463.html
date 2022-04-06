@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Loading an Elaboration File" />
+<meta name="abstract" content="By default the elaboration file will load in command-line mode or interactive mode depending on the argument (-c or -i) used during elaboration file creation. If no argument was used during creation, the -load_elab argument will default to the interactive mode." />
+<meta name="description" content="By default the elaboration file will load in command-line mode or interactive mode depending on the argument (-c or -i) used during elaboration file creation. If no argument was used during creation, the -load_elab argument will default to the interactive mode." />
+<meta name="DC.subject" content="elaboration file, loading, elaboration file, modifying stimulus, stimulus, modifying for elaboration file" />
+<meta name="keywords" content="elaboration file, loading, elaboration file, modifying stimulus, stimulus, modifying for elaboration file" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idfd4db463-2019-4519-9831-4de6693404b0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Loading an Elaboration File</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Loading an Elaboration File" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idfd4db463-2019-4519-9831-4de6693404b0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Loading an Elaboration File</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">By default the
+elaboration file will load in command-line mode or interactive mode
+depending on the argument (-c or -i) used during elaboration file
+creation. If no argument was used during creation, the <span class="keyword ParameterName Required">-load_elab</span> argument
+will default to the interactive mode.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p" id="idfd4db463-2019-4519-9831-4de6693404b0__id30930476-4b31-4237-b8c9-90c9d4fc852d"><span class="ph cmd">To load an elaboration file,
+use the following command: </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -load_elab &lt;filename&gt; </p>
+</div></div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">The <span class="keyword ParameterName Required">vsim</span> arguments
+listed below can be used with <span class="keyword ParameterName Required">-load_elab</span> to
+affect the simulation.</p>
+<pre class="pre codeblock"><code>+&lt;plus_args&gt;
+-32 
+-64
+-autoprofile
+-c, -i, -batch, or -gui
+-coverstore
+-do &lt;do_file&gt;
+-f
+-filemap_elab &lt;HDLfilename&gt;=&lt;NEWfilename&gt;
+-l &lt;log_file&gt;
+-quiet
+-stats
+-suppress
+-sv_lib &lt;shared_obj&gt;
+-sv_seed &lt;integer&gt; | random
+-testname
+-trace_foreign &lt;level&gt;
++UVM_TESTNAME
+-ucdbteststatusmsgfilter
+-vcdread &lt;filename&gt;
+-vcdstim &lt;filename&gt;
+-wlf &lt;filename&gt;</code></pre><p class="p">Modification of an argument that
+was specified at elaboration file creation, in most cases, causes
+the previous value to be replaced with the new value. Usage of the <span class="keyword ParameterName Required">-quiet</span> argument
+at elaboration load causes the mode to be toggled from its elaboration
+creation setting.</p>
+<p class="p">The -sv_lib &lt;shared_obj&gt; argument can be used
+with -load_elab to include DPI shared import libraries.</p>
+<p class="p">All other <span class="ph FontProperty shellcommand">vsim</span> arguments
+must be specified when you create the elaboration file, and they cannot
+be used when you load the elaboration file.</p>
+<p class="p">If you attempt to use <span class="ph FontProperty shellcommand">vsim</span> SDF
+arguments (<span class="ph FontProperty shellcommand">-sdfannotatepercentage</span>, <span class="ph FontProperty shellcommand">+sdf_verbose</span>,
+or <span class="ph FontProperty shellcommand">-sdfreport</span>)
+when generating an elaboration file, they will not be considered
+when the file is loaded, and no warnings will be generated. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The elaboration
+file must be loaded under the same environment in which it was created.
+The same environment means the same hardware platform, the same
+OS and patch version, the same version of any PLI/FLI code loaded
+in the simulation, and the same release of <span class="ph fmvar:ProductName">Questa SIM</span>.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SimulatingElaborationFile_idc5bdbcce.html" title="The Questa SIM compiler generates a library format that is compatible across platforms. This means the simulator can load your design on any supported platform without having to recompile first. Though this architecture offers a benefit, it also comes with a possible disadvantage: the simulator has to generate platform-specific code every time you load your design. This affects the speed with which the design is loaded.">Simulating with an Elaboration File</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Loading an Elaboration File"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_LoadingElaborationFile_idfd4db463.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

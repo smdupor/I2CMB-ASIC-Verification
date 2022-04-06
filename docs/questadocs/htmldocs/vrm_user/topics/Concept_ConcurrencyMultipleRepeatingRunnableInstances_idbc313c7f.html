@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Concurrency and Multiple Repeating Runnable Instances" />
+<meta name="abstract" content="The primary purpose is to provide a way to run one or more Actions until some arbitrary limit is reached when that limit may not be known until run-time (for example, running tests until a given level of coverage is reached)." />
+<meta name="description" content="The primary purpose is to provide a way to run one or more Actions until some arbitrary limit is reached when that limit may not be known until run-time (for example, running tests until a given level of coverage is reached)." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idbc313c7f-204a-4e14-b85d-1407da80cddb" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Concurrency and Multiple Repeating Runnable Instances</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Concurrency and Multiple Repeating Runnable Instances" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idbc313c7f-204a-4e14-b85d-1407da80cddb">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Concurrency and Multiple Repeating Runnable Instances</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The primary
+purpose is to provide a way to run one or more Actions until some
+arbitrary limit is reached when that limit may not be known until
+run-time (for example, running tests until a given level of coverage
+is reached). </span>
+</div>
+<p class="p">For this reason, dynamically repeating
+Runnables always run sequentially (see “<a class="xref fm:HeadingAndPage" href="Contain_DynamicallyRepeatingRunnables_idaddb4263.html#idaddb4263-00a2-4c6d-a803-0dea69c8a2a6__Contain_DynamicallyRepeatingRunnables_idaddb4263.xml#idaddb4263-00a2-4c6d-a803-0dea69c8a2a6" title="VRM supports repeating an Action (that is, test, and so on) or a group of Actions multiple times from a single runnable definition. There are two mechanisms to accomplish this as follows:">Dynamically Repeating Runnables</a>”). That is, a new copy of the
+* repeating instance will not be launched until the previous copy
+has finished. If the parent group of the * instance has other non-*
+members or if the * token is mixed in with other non-* tokens in
+the <span class="ph FontProperty emphasis">foreach</span> attribute
+of a given <span class="ph FontProperty emphasis">runnable</span> element,
+the * enabled Actions is launched either sequentially or concurrently
+with respect to the non-* instances, depending on whether the parent
+group is marked as sequential or non-sequential. However, the Runnable
+instances generated by a single * repeating instance will always
+run sequentially with respect to each other.</p>
+<p class="p">If the intention of a given dynamically repeating
+Runnable is, for instance, the execution of a simulation with some
+arbitrary number of dynamically generated seeds, and if the environment
+would support (for example) three simultaneously running instances
+of this particular simulation, the <span class="ph FontProperty emphasis">foreach</span> attribute
+on the runnable element associated with that simulation may contain
+three * tokens. When the execution graph is first expanded, three
+separate nodes (or sub-graphs, in the case of a group Runnable)
+will be created for these three * instances. Each of these nodes,
+when eligible, will cause the first of a sequence of dynamically
+generated nodes (or sub-graphs) to be created and launched (each running
+sequentially with respect to each other but all three working in
+parallel with respect to the regression as a whole). The same <span class="ph FontProperty emphasis">GetNextInstance</span> procedure
+is called by all three repeating Runnables to generate the sequence
+of seeds but as long as the <span class="ph FontProperty emphasis">GetNextInstance</span> procedure
+continues to return valid seeds, there should always be three concurrent
+instances of the dynamically repeating Runnable running at any given
+time.</p>
+<p class="p">If multiple * tokens are used in the <span class="ph FontProperty emphasis">foreach</span> attribute and
+multiple dynamic tokens are returned from the <span class="ph FontProperty emphasis">GetNextIteration</span>,
+then the result is N times M (that is, the product of the two multiples)
+repeating Runnables.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UseModel_id80ccbce3.html" title="For runtime-controlled repeat loops, the iteration values are referred to as seeds, since seeds is the most common use for this functionality. However, nothing related to this functionality is tied to seed management, specifically; the same functionality can be used to dynamically iterate configurations, run-time options, test names, or any other user-configurable setting that can be reduced to a list of tokens passed to the foreach attribute of the runnable element with which they are associated.">Use Model</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Concurrency and Multiple Repeating Runnable Instances"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ConcurrencyMultipleRepeatingRunnableInstances_idbc313c7f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

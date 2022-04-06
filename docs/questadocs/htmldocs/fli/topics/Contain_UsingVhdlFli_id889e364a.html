@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Using the VHDL FLI" />
+<meta name="abstract" content="FLI routines are C programming language functions that provide procedural access to information within the HDL simulator, executed via the vsim command. A user-written application can use these functions to traverse the hierarchy of an HDL design, get information about and set the values of VHDL objects in the design, get information about a simulation, and control (to some extent) a simulation run. The header file mti.h externs all of the FLI functions and types that can be used by an FLI application." />
+<meta name="description" content="FLI routines are C programming language functions that provide procedural access to information within the HDL simulator, executed via the vsim command. A user-written application can use these functions to traverse the hierarchy of an HDL design, get information about and set the values of VHDL objects in the design, get information about a simulation, and control (to some extent) a simulation run. The header file mti.h externs all of the FLI functions and types that can be used by an FLI application." />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id889e364a-3f1c-42f2-8b7d-aef44f24b600" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using the VHDL FLI</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using the VHDL FLI" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id889e364a-3f1c-42f2-8b7d-aef44f24b600">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using the VHDL FLI</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">FLI
+routines are C programming language functions that provide procedural
+access to information within the HDL simulator, executed via the
+vsim command. A user-written application can use these functions
+to traverse the hierarchy of an HDL design, get information about
+and set the values of VHDL objects in the design, get information
+about a simulation, and control (to some extent) a simulation run.
+The header file <span class="ph filepath">mti.h</span> externs all of the FLI
+functions and types that can be used by an FLI application.</span>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The
+Tcl C interface is included in the FLI; you can find the <span class="ph filepath">tcl.h</span> file
+in the <span class="ph filepath">&lt;install_dir&gt;/include</span> directory. Tk
+and Tix are not included in the FLI because the FLI is in the kernel,
+not the user interface. </p>
+</div>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ImportantConcepts_idccdf6667.html" title="Before creating an FLI application, you should have a good understanding of the following concepts of simulation and foreign language operation. ">Important Concepts</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingVhdlFliForeignArchitectures_id2083efb7.html" title="To use the foreign language interface with C models, you first create and compile an architecture with the FOREIGN attribute. The string value of the attribute is used to specify the name of a C initialization function and the name of an object file to load. ">Using the VHDL FLI with Foreign Architectures</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingVhdlFliForeignSubprograms_id1a9b6bae.html" title="This section provides information on how you work with foreign subprograms.">Using the VHDL FLI with Foreign Subprograms</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_MappingVhdlDataTypes_ida1d992e4.html" title="Many FLI functions have parameters and return values that represent VHDL object values. There are specific methods for mapping the object values to the various VHDL data types.">Mapping to VHDL Data Types</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_UsingCheckpointrestoreFli_id8c44b68c.html" title="In order to use checkpoint/restore with the FLI, any data structures that have been allocated in foreign models and certain IDs passed back from FLI function calls must be explicitly saved and restored. ">Using Checkpoint/Restore with the FLI</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_EffectRestartOnFliApplicationCode_id2f598d9a.html" title="When issue a restart command to the simulator, it, by default, reloads shared libraries.">The Effect of Restart on FLI Application Code</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SupportVerilogInstances_id80fc5c72.html" title="The FLI functions are designed to work with VHDL designs and VHDL objects. However, the functions for traversing the design hierarchy also recognize Verilog instances.">Support for Verilog Instances</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SupportSystemc_id954cd460.html" title="Many FLI functions can operate on SystemC objects. ">Support for SystemC</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SupportWindowsPlatforms_id3218e40f.html" title="For the Windows operating system, sockets are separate objects from files and pipes, which require the use of different system calls. ">Support for Windows Platforms</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_VhdlFliExamples_id8334e776.html" title="Included in the ModelSim/Questa installation is a header file that must be included with foreign C code and several examples that illustrate how to use the foreign language interface.">VHDL FLI Examples</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Introduction_idf28816f2.html" title="This chapter provides background for using the ModelSim/Questa FLI (Foreign Language Interface) for VHDL.">Introduction</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Using the VHDL FLI"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_UsingVhdlFli_id889e364a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="add watch" />
+<meta name="abstract" content="Adds signals and variables to the Watch window in the Main window. SystemC objects and user‑defined buses may also be added. Refer to “Wildcard Characters” for wildcard usage as it pertains to the add commands." />
+<meta name="description" content="Adds signals and variables to the Watch window in the Main window. SystemC objects and user‑defined buses may also be added. Refer to “Wildcard Characters” for wildcard usage as it pertains to the add commands." />
+<meta name="DC.subject" content="watch window, add watch command, add watch command, watching signal values" />
+<meta name="keywords" content="watch window, add watch command, add watch command, watching signal values" />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc399918a-c441-4a52-9051-80e92d52d68a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>add watch</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="add watch" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idc399918a-c441-4a52-9051-80e92d52d68a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">add watch</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Adds signals
+and variables to the Watch window in the Main window.</p>
+<p class="shortdesc">SystemC
+objects and user‑defined buses may also be added. </p>
+<p class="shortdesc">Refer
+to “Wildcard Characters” for wildcard usage as it pertains to the
+add commands.</p>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">add watch <a class="xref fm:HeadingOnly" href="#idc399918a-c441-4a52-9051-80e92d52d68a__id4847e588-ce21-49f4-ad11-f8f4a2150363">&lt;object_name&gt; ...</a> [<a class="xref fm:HeadingOnly" href="#idc399918a-c441-4a52-9051-80e92d52d68a__idf9498b09-c1a7-418e-a3b4-dc542720397e">-radix &lt;type&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idc399918a-c441-4a52-9051-80e92d52d68a__idaa0dacad-4b96-4dff-820e-c1e008b2ea97">-radixenumnumeric</a> | <a class="xref fm:HeadingOnly" href="#idc399918a-c441-4a52-9051-80e92d52d68a__ide537c87e-7139-4ee1-b31e-53c8b8cbdb9b">-radixenumsymbolic</a>]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idc399918a-c441-4a52-9051-80e92d52d68a__id69d94de9-653c-4d57-9361-a5a29a6131a9"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc399918a-c441-4a52-9051-80e92d52d68a__id4847e588-ce21-49f4-ad11-f8f4a2150363">&lt;object_name&gt; ... </dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the name of the object to be added. Multiple objects are
+entered as a space-separated list. Must be the first argument to
+the add watch command.</p>
+<p class="p">Wildcard
+characters are allowed. (Note that the WildcardFilter Tcl preference variable
+identifies the types to ignore when matching objects with wildcard
+patterns.) Wildcard expansion is limited to 150 items. If you exceed
+this limit, a dialog box will ask you to accept the limit or cancel
+the operation.</p>
+<p class="p">Variables
+must be preceded by the process name. For example,</p>
+<pre class="pre codeblock leveled"><code>add watch myproc/int1</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc399918a-c441-4a52-9051-80e92d52d68a__idf9498b09-c1a7-418e-a3b4-dc542720397e">-radix &lt;type&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies a user-defined radix.
+If you do not specify this switch, the command uses the global default
+radix. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc399918a-c441-4a52-9051-80e92d52d68a__id816d8a33-464a-4e59-ad4c-5a54b289e6a5"><p class="p Opt">&lt;type&gt;
+— binary, ascii, unsigned, decimal, octal, hex, sfixed, symbolic,
+time, ufixed, and default. </p>
+</li>
+</ul>
+<p class="p">Refer to
+the <a class="xref fm:HeadingOnly" href="Command_Radix_idf779d22e.html#idf779d22e-04a4-4bc9-b580-69987ee96f09__Command_Radix_idf779d22e.xml#idf779d22e-04a4-4bc9-b580-69987ee96f09" title="Specifies the default radix to use for the current simulation.">radix</a> command
+for information about sfixed and ufixed radix types. </p>
+<p class="p">You can
+change the default radix for the current simulation with the <a class="xref fm:HeadingOnly" href="Command_Radix_idf779d22e.html#idf779d22e-04a4-4bc9-b580-69987ee96f09__Command_Radix_idf779d22e.xml#idf779d22e-04a4-4bc9-b580-69987ee96f09" title="Specifies the default radix to use for the current simulation.">radix</a> command.
+You can change the default radix permanently by editing the DefaultRadix
+variable in the <span class="ph filepath italic">modelsim.ini</span> file.
+(Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultRadix', 'questa_sim_user'); return false;">DefaultRadix</a> in the User’s Manual.) </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc399918a-c441-4a52-9051-80e92d52d68a__idaa0dacad-4b96-4dff-820e-c1e008b2ea97">-radixenumnumeric</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Causes Verilog <span class="ph">and SystemC</span> enums to be displayed as numbers
+(formatted by the current radix). This overrides the default behavior
+of always showing enums symbolically.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc399918a-c441-4a52-9051-80e92d52d68a__ide537c87e-7139-4ee1-b31e-53c8b8cbdb9b">-radixenumsymbolic</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restores the default behavior of displaying Verilog <span class="ph">and SystemC</span> enums
+as symbols by reversing the action of the -radixenumnumeric option.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_gui_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Watch Window', 'questa_sim_gui_ref'); return false;">Watch window [Questa SIM GUI Reference Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultRadix', 'questa_sim_user'); return false;">DefaultRadix [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "add watch"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_AddWatch_idc399918a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

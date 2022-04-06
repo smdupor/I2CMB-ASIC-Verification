@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Enabling/Disabling Assertion Failure and Pass Logging" />
+<meta name="abstract" content="You enable or disable assertion failure and pass logging with commands, by editing the appropriate modelsim.ini variables, or by using the GUI." />
+<meta name="description" content="You enable or disable assertion failure and pass logging with commands, by editing the appropriate modelsim.ini variables, or by using the GUI." />
+<meta name="DC.subject" content="assertions, enable pass/fail logging, PSL, configuring assertions, enable pass/fail logging" />
+<meta name="keywords" content="assertions, enable pass/fail logging, PSL, configuring assertions, enable pass/fail logging" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id25a8a7b4-460d-4325-bdba-d7afa4a9171d" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Enabling/Disabling Assertion Failure and Pass Logging</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Enabling/Disabling Assertion Failure and Pass Logging" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Enabling/Disabling Assertion Failure and Pass Logging</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">You enable or
+disable assertion failure and pass logging with commands, by editing
+the appropriate modelsim.ini variables, or by using the GUI.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p" id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d__id7ade5d92-9a81-43f2-a31b-85e07c38f0f2"><span class="ph cmd">Do any one of the following
+to enable or disable assertion failure and pass logging.</span><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d__idb74ad346-8161-454c-b0df-302c3471de5d"><p class="p">You can enable or disable
+failure and pass logging using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'assertion fail', 'questa_sim_ref'); return false;">assertion fail</a> or the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'assertion pass', 'questa_sim_ref'); return false;">assertion pass</a> commands, respectively.</p>
+</li>
+<li class="li" id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d__id336e2081-6018-4f85-91f3-bd7875296d75"><p class="p">You can change the permanent
+defaults by setting the <a class="xref fm:HeadingOnly" href="Command_Assertionfaillog_idc3d99b27.html#idc3d99b27-eba5-4a98-8b05-6926eba788a2__Command_Assertionfaillog_idc3d99b27.xml#idc3d99b27-eba5-4a98-8b05-6926eba788a2" title="This variable enables transcript logging for PSL assertion failure events.">AssertionFailLog</a> and <a class="xref fm:HeadingOnly" href="Command_Assertionpasslog_ida8518759.html#ida8518759-0f29-46d0-aefe-f5204ca53c0b__Command_Assertionpasslog_ida8518759.xml#ida8518759-0f29-46d0-aefe-f5204ca53c0b" title="This variable enables logging of SystemVerilog and PSL assertion pass events.">AssertionPassLog</a> variables in the <span class="ph filepath">modelsim.ini </span>file.</p>
+</li>
+<li class="li" id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d__id649235d7-eda4-4686-99d7-521c3605226b"><p class="p">To enable or disable an
+assertion’s failure or pass logging from the GUI, right-click an
+assertion in the Assertions window and select <span class="ph uicontrol">Failure
+Log </span>or <span class="ph uicontrol">Pass Log</span> from the popup
+menu (<a class="xref fm:Figure" href="TaskTop_EnablingAssertions_id2781d412.html#id2781d412-2277-4ad6-a4da-a0a1e70da502__id825144cb-4e1b-46cc-9211-5d630c09b72f">Figure 1</a>). The selection acts as a toggle. </p>
+<p class="p">You can
+also select <span class="ph menucascade"><span class="ph uicontrol">Assertions</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Configure</span></span> from the menu bar
+(or, right-click an assertion and select <span class="ph uicontrol">Configure</span>).
+This opens the <span class="ph uicontrol">Configure assertions</span> dialog,
+where you can enable/disable failure or pass logging.</p>
+<div class="fig fignone" id="id25a8a7b4-460d-4325-bdba-d7afa4a9171d__id133cc201-176f-401f-ab99-d8436b281ffd"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Enabling/Disabling
+Failure or Pass Logging</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/assertions_change_logging.gif" /></div><br /></div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Assertion
+pass logging can be enabled only if the <a class="xref fm:HeadingOnly" href="Command_Assertiondebug_idd1b34448.html#idd1b34448-b2c5-4a7c-a6e0-22356d8efa9e__Command_Assertiondebug_idd1b34448.xml#idd1b34448-b2c5-4a7c-a6e0-22356d8efa9e" title="This variable specifies that assertion passes are reported and enables debug options such as assertion thread viewing (ATV), HDL failed expression analysis, extended count information, and causality traceback.">AssertionDebug</a> variable in the modelsim.ini file
+is on (set to 1), or if the <span class="ph FontProperty HeadingLabel">-assertdebug</span> argument
+is used with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command.</p>
+</div>
+</li>
+</ul>
+</div></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ConfiguringAssertions_ida3b6a761.html" title="The various tasks required to configure assertions may be invoked via the command line or the GUI.">Configuring Assertions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Enabling/Disabling Assertion Failure and Pass Logging"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_EnablingdisablingAssertionFailurePassLogging_id25a8a7b4.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

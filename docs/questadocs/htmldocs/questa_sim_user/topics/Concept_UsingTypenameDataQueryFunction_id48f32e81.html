@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Using the $typename Data Query Function" />
+<meta name="abstract" content="The type name string returned by $typename() does not include class, struct and enum members, nor any class extensions." />
+<meta name="description" content="The type name string returned by $typename() does not include class, struct and enum members, nor any class extensions." />
+<meta name="DC.subject" content="Data query, $typename function, $typename, SystemVerilog tasks&amp;functions, $typename data query" />
+<meta name="keywords" content="Data query, $typename function, $typename, SystemVerilog tasks&amp;functions, $typename data query" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id48f32e81-3a19-4eb6-a411-c04351626e60" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using the $typename Data Query Function</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using the $typename Data Query Function" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id48f32e81-3a19-4eb6-a411-c04351626e60">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using the $typename Data Query Function</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The type
+name string returned by $typename() does not include class, struct
+and enum members, nor any class extensions. </span>
+</div>
+<p class="p">You can override
+this default behavior using any of the following predefined macros
+as the optional second argument to $typename(): </p>
+<ul class="ul"><li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__id7a575368-3c0a-4e4c-8b21-c9eea1340398"><p class="p">`mtiTypenameExpandSuper — Extensions
+are included in type name.</p>
+</li>
+<li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__id370ce6d6-53d1-4fc6-bbc0-f26f768ccda8"><p class="p">`mtiTypenameExpandMembers — Class, struct
+and enum members are included.</p>
+</li>
+<li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__id7ca1225a-50a2-494e-adf9-4fb80cb6d2b5"><p class="p">`mtiTypenameExpandAll — Members and extensions
+are both included.</p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="id48f32e81-3a19-4eb6-a411-c04351626e60__ide197e65e-d56e-4b1a-a5a6-de5959ca0774"><h2 class="title Subheading sectiontitle">Example
+Usage</h2><pre class="pre codeblock"><code>$typename(a, `mtiTypenameExpandAll);</code></pre><p class="p">The various forms of $typename()
+output for a parametrized class: vector, which extends another parametrized
+class: vector_base, both of which are defined in the module scope: typename_parameterized_class,
+are shown in the following:</p>
+<ul class="ul"><li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__idefed792e-9478-4e63-af86-7472ffd9ac3c"><p class="p">$typename(a) will return:</p>
+<pre class="pre codeblock"><code>class typename_parameterized_class/vector #(10, reg, 0)</code></pre></li>
+<li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__id5a5b7567-eecb-4fd2-bbb2-97710a4b3df7"><p class="p">$typename(a, `mtiTypenameExpandSuper)
+will return:</p>
+<pre class="pre codeblock"><code>class typename_parameterized_class/vector #(10, reg, 0) extends class typename_parameterized_class/vector_base #(reg)</code></pre></li>
+<li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__idd4fa6d5a-b95f-4e6b-a7a3-be150aabbaa9"><p class="p">$typename(a, `mtiTypenameExpandMembers)
+will return:</p>
+<pre class="pre codeblock"><code>class typename_parameterized_class/vector #(10, reg, 0){reg b; reg$[9:0] a;}</code></pre></li>
+<li class="li" id="id48f32e81-3a19-4eb6-a411-c04351626e60__idb92ba268-b1cd-43d2-8992-b7a35d364746"><p class="p">$typename(a, `mtiTypenameExpandAll) will
+return:</p>
+<pre class="pre codeblock"><code>class typename_parameterized_class/vector #(10, reg, 0){reg b; reg$[9:0] a;} extends class typename_parameterized_class/vector_base #(reg){reg b;}</code></pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemverilogSystemTasksFunctions_id7283c7df.html" title="SystemVerilog system tasks and functions are built into the simulator, although some designs depend on user-defined system tasks implemented with the various programming and procedural interfaces.">SystemVerilog System Tasks and Functions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Using the $typename Data Query Function"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UsingTypenameDataQueryFunction_id48f32e81.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

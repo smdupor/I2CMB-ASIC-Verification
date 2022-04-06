@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_SignalIsResolved()" />
+<meta name="abstract" content="Indicates whether or not the specified signal is resolved." />
+<meta name="description" content="Indicates whether or not the specified signal is resolved." />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id496b1982-ae2a-4c41-8c55-66371899605b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_SignalIsResolved()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_SignalIsResolved()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id496b1982-ae2a-4c41-8c55-66371899605b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_SignalIsResolved()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Indicates
+whether or not the specified signal is resolved.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">resolved = mti_SignalIsResolved( signal )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e157"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e160"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e163"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e157 "><p class="p">mtiSignalIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e160 "><p class="p">signal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e163 "><p class="p">A handle to a VHDL signal</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id496b1982-ae2a-4c41-8c55-66371899605b__id2d25164a-fe83-4622-8a58-9cb3df685c76" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e186"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e189"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d44859e192"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e186 "><p class="p">resolved</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e189 "><p class="p">int</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d44859e192 "><p class="p">1 if the signal is resolved; 0
+otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_SignalIsResolved returns a
+1, meaning a signal is considered to be resolved, if the signal
+meets one of the following criteria:</p>
+<ul class="ul"><li class="li" id="id496b1982-ae2a-4c41-8c55-66371899605b__id7f48d626-248c-4048-bc01-63575c72f98f"><p class="p">The signal is
+of a resolved type (for example, std_logic).</p>
+</li>
+<li class="li" id="id496b1982-ae2a-4c41-8c55-66371899605b__idf506d5e3-7776-47fd-a8d7-bf1052771dc4"><p class="p">The declaration
+of the signal includes a resolution function specification.</p>
+</li>
+<li class="li" id="id496b1982-ae2a-4c41-8c55-66371899605b__idb0727e80-3153-4964-b78f-9e149f2353cc"><p class="p">The signal is
+a composite of an unresolved type but all of its subelements are
+resolved (for example, std_logic_vector).</p>
+</li>
+<li class="li" id="id496b1982-ae2a-4c41-8c55-66371899605b__idd0b3df61-fe5a-41c0-98ae-a11408d532c5"><p class="p">The signal is
+of an unresolved type but it is a subelement of a composite that
+is either of a resolved type or whose declaration contains a resolution
+function specification.</p>
+</li>
+</ul>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id496b1982-ae2a-4c41-8c55-66371899605b__idcbfe8b2e-dd7f-4939-96b3-56bb73ce610e"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;stdio.h&gt;
+#include &lt;mti.h&gt;
+
+static void printSignalInfo( char * name )
+{
+    char *       signame;
+    int          resolved;
+    mtiSignalIdT sigid;
+
+    sigid = mti_FindSignal( name );
+    if ( sigid ) {
+        signame = mti_GetSignalNameIndirect( sigid, 0, 0 );
+        resolved = mti_SignalIsResolved( sigid );
+        mti_PrintFormatted( "Signal %s is %sresolved.\n",
+                           signame, resolved ? "" : "not " );
+        mti_VsimFree( signame );
+    } else {
+        mti_PrintFormatted( "Signal '%s' not found.\n" );
+    }
+}
+
+static void loadDoneCB( void * param )
+{
+    /* Unresolved scalars */
+    printSignalInfo( "/top/bitsig1" );
+    printSignalInfo( "/top/intsig1" );
+    printSignalInfo( "/top/realsig1" );
+    printSignalInfo( "/top/timesig1" );
+    printSignalInfo( "/top/physsig1" );
+    printSignalInfo( "/top/stdulogicsig1" );
+
+    /* Scalars with resolved types */
+    printSignalInfo( "/top/resbitsig1" );
+    printSignalInfo( "/top/resintsig1" );
+    printSignalInfo( "/top/resrealsig1" );
+    printSignalInfo( "/top/restimesig1" );
+    printSignalInfo( "/top/resphyssig1" );
+    printSignalInfo( "/top/stdlogicsig1" );
+
+    /* Resolved scalars with unresolved types */
+    printSignalInfo( "/top/bitsigr" );
+    printSignalInfo( "/top/intsigr" );
+    printSignalInfo( "/top/realsigr" );
+    printSignalInfo( "/top/timesigr" );
+    printSignalInfo( "/top/physsigr" );
+    printSignalInfo( "/top/stdulogicsigr" );
+
+    /* Unresolved 1D arrays */
+    printSignalInfo( "/top/bitarr1" );
+    printSignalInfo( "/top/intarr1" );
+    printSignalInfo( "/top/realarr1" );
+    printSignalInfo( "/top/timearr1" );
+    printSignalInfo( "/top/physarr1" );
+    printSignalInfo( "/top/stdulogicarr1" );
+
+    /* Elements of unresolved 1D arrays */
+    printSignalInfo( "/top/bitarr1(3)" );
+    printSignalInfo( "/top/intarr1(2)" );
+    printSignalInfo( "/top/realarr1(-3)" );
+    printSignalInfo( "/top/timearr1(0)" );
+    printSignalInfo( "/top/physarr1(1)" );
+
+    /* 1D Arrays of resolved subelements */
+    printSignalInfo( "/top/rbitarr1" );
+    printSignalInfo( "/top/rintarr1" );
+    printSignalInfo( "/top/rrealarr1" );
+    printSignalInfo( "/top/rtimearr1" );
+    printSignalInfo( "/top/rphysarr1" );
+    printSignalInfo( "/top/stdlogicarr1" );
+
+    /* Elements of arrays of resolved subelements */
+    printSignalInfo( "/top/rbitarr1(6)" );
+    printSignalInfo( "/top/rintarr1(4)" );
+    printSignalInfo( "/top/rrealarr1(-1)" );
+    printSignalInfo( "/top/rtimearr1(1)" );
+    printSignalInfo( "/top/rphysarr1(3)" );
+    printSignalInfo( "/top/stdlogicarr1(1)" );
+
+    /* Unresolved records */
+    printSignalInfo( "/top/rec1" );
+    printSignalInfo( "/top/rec1.a" );
+    printSignalInfo( "/top/rec1.b" );
+    printSignalInfo( "/top/rec1.c" );
+    printSignalInfo( "/top/rec1.d" );
+    printSignalInfo( "/top/rec1.e" );
+    printSignalInfo( "/top/rec1.f" );
+    printSignalInfo( "/top/rec1.g" );
+
+    /* Records of resolved elements */
+    printSignalInfo( "/top/rec2" );
+    printSignalInfo( "/top/rec2.b" );
+    printSignalInfo( "/top/rec2.i" );
+    printSignalInfo( "/top/rec2.r" );
+    printSignalInfo( "/top/rec2.t" );
+    printSignalInfo( "/top/rec2.s" );
+    printSignalInfo( "/top/rec2.p" );
+
+    /* Records of mixed resolution */
+    printSignalInfo( "/top/rec3" );
+    printSignalInfo( "/top/rec3.f1" );
+    printSignalInfo( "/top/rec3.f2" );
+    printSignalInfo( "/top/rec3.f2.a" );
+    printSignalInfo( "/top/rec3.f2.b" );
+    printSignalInfo( "/top/rec3.f2.c" );
+    printSignalInfo( "/top/rec3.f2.d" );
+    printSignalInfo( "/top/rec3.f2.e" );
+    printSignalInfo( "/top/rec3.f2.f" );
+    printSignalInfo( "/top/rec3.f2.g" );
+    printSignalInfo( "/top/rec3.f3" );
+    printSignalInfo( "/top/rec3.f4" );
+    printSignalInfo( "/top/rec3.f4.b" );
+    printSignalInfo( "/top/rec3.f4.i" );
+    printSignalInfo( "/top/rec3.f4.r" );
+    printSignalInfo( "/top/rec3.f4.t" );
+    printSignalInfo( "/top/rec3.f4.s" );
+    printSignalInfo( "/top/rec3.f4.p" );
+}
+
+void initForeign(
+  mtiRegionIdT       region,    /* The ID of the region in which this       */
+                                /* foreign architecture is instantiated.    */
+  char              *param,     /* The last part of the string in the       */
+                                /* foreign attribute.                       */
+  mtiInterfaceListT *generics,  /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports      /* A list of ports for the foreign model.   */
+)
+{
+    mti_AddLoadDoneCB( loadDoneCB, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="id496b1982-ae2a-4c41-8c55-66371899605b__id04bdce0d-2cf4-47a1-9db1-2ff20542ffbd"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>library ieee;
+use ieee.std_logic_1164.all;
+
+package typepkg is
+
+  type bigtime is range 0 to integer'high
+    units
+      hour;
+      day   = 24 hour;
+      week  = 7 day;
+      month = 4 week;
+      year  = 12 month;
+    end units;
+
+  type int_vector  is array (natural range &lt;&gt;) of integer;
+  type real_vector is array (natural range &lt;&gt;) of real;
+  type time_vector is array (natural range &lt;&gt;) of time;
+  type phys_vector is array (natural range &lt;&gt;) of bigtime;
+
+  FUNCTION resolve_bit  ( s : bit_vector )  RETURN bit;
+  FUNCTION resolve_int  ( s : int_vector )  RETURN integer;
+  FUNCTION resolve_real ( s : real_vector ) RETURN real;
+  FUNCTION resolve_time ( s : time_vector ) RETURN time;
+  FUNCTION resolve_phys ( s : phys_vector ) RETURN bigtime;
+
+  type bitarray is array( 3 downto 0 ) of bit;
+  type intarray is array( 1 to 3 ) of integer;
+  type realarray is array( -3 to -1 ) of real;
+  type timearray is array( 0 to 2 ) of time;
+  type hourarray is array( 1 to 2 ) of bigtime;
+
+  subtype resbit  is resolve_bit  bit;
+  subtype resint  is resolve_int  integer;
+  subtype resreal is resolve_real real;
+  subtype restime is resolve_time time;
+  subtype resphys is resolve_phys bigtime;
+
+  type rectype1 is record
+    a : bit;
+    b : integer;
+    c : real;
+    d : time;
+    e : std_logic;
+    f : bigtime;
+    g : std_ulogic;
+  end record;
+
+  type rectype2 is record
+    b : resbit;
+    i : resint;
+    r : resreal;
+    t : restime;
+    s : std_logic;
+    p : resphys;
+  end record;
+
+  type rectype3 is record
+    f1 : resbit;
+    f2 : rectype1;
+    f3 : integer;
+    f4 : rectype2;
+  end record;
+
+  type rbitarray is array( 7 downto 0 ) of resbit;
+  type rintarray is array( 2 to 4 ) of resint;
+  type rrealarray is array( 0 downto -2 ) of resreal;
+  type rtimearray is array( 1 to 3 ) of restime;
+  type rhourarray is array( 1 to 3 ) of resphys;
+
+end package typepkg;
+
+package body typepkg is
+
+  FUNCTION resolve_bit ( s : bit_vector ) RETURN bit IS
+    VARIABLE result : bit := '0';
+  BEGIN
+    IF (s'LENGTH = 1) THEN
+      RETURN s(s'LOW);
+    ELSE
+      FOR i IN s'RANGE LOOP
+        if ( s(i) = '1' ) then
+          result := '1';
+        end if;
+      END LOOP;
+    END IF;
+    RETURN result;
+  END resolve_bit;
+
+  FUNCTION resolve_int ( s : int_vector ) RETURN integer IS
+    VARIABLE result : integer := 0;
+  BEGIN
+    IF (s'LENGTH = 1) THEN
+      RETURN s(s'LOW);
+    ELSE
+      FOR i IN s'RANGE LOOP
+        result := result + s(i);
+      END LOOP;
+    END IF;
+    RETURN result;
+  END resolve_int;
+
+  FUNCTION resolve_real ( s : real_vector ) RETURN real IS
+    VARIABLE result : real := 0.0;
+  BEGIN
+    IF (s'LENGTH = 1) THEN
+      RETURN s(s'LOW);
+    ELSE
+      FOR i IN s'RANGE LOOP
+        result := result + s(i);
+      END LOOP;
+    END IF;
+    RETURN result;
+  END resolve_real;
+
+  FUNCTION resolve_time ( s : time_vector ) RETURN time IS
+    VARIABLE result : time := 0 ns;
+  BEGIN
+    IF (s'LENGTH = 1) THEN
+      RETURN s(s'LOW);
+    ELSE
+      FOR i IN s'RANGE LOOP
+        result := result + s(i);
+      END LOOP;
+    END IF;
+    RETURN result;
+  END resolve_time;
+
+  FUNCTION resolve_phys ( s : phys_vector ) RETURN bigtime IS
+    VARIABLE result : bigtime := 0 hour;
+  BEGIN
+    IF (s'LENGTH = 1) THEN
+      RETURN s(s'LOW);
+    ELSE
+      FOR i IN s'RANGE LOOP
+        result := result + s(i);
+      END LOOP;
+    END IF;
+    RETURN result;
+  END resolve_phys;
+
+end package body typepkg;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+use work.typepkg.all;
+
+entity top is
+end top;
+
+architecture a of top is
+
+-- Unresolved scalars
+  signal bitsig1       : bit        := '1';
+  signal intsig1       : integer    := 21;
+  signal realsig1      : real       := 21.21;
+  signal timesig1      : time       := 21 ns;
+  signal physsig1      : bigtime    := 21 hour;
+  signal stdulogicsig1 : std_ulogic := 'L';
+
+-- Scalars with resolved types
+  signal resbitsig1    : resbit    := '0';
+  signal resintsig1    : resint    := 42;
+  signal resrealsig1   : resreal   := 11.9;
+  signal restimesig1   : restime   := 64 ns;
+  signal resphyssig1   : resphys   := 1 day;
+  signal stdlogicsig1  : std_logic := 'H';
+
+-- Resolved scalars with unresolved types
+  signal bitsigr       : resolve_bit  bit        := '1';
+  signal intsigr       : resolve_int  integer    := 17;
+  signal realsigr      : resolve_real real       := 6.25;
+  signal timesigr      : resolve_time time       := 2 ns;
+  signal physsigr      : resolve_phys bigtime    := 2 week;
+  signal stdulogicsigr : resolved     std_ulogic := '1';
+
+-- Unresolved 1D arrays
+  signal bitarr1       : bitarray := "0110";
+  signal intarr1       : intarray := ( 10, 11, 12 );
+  signal realarr1      : realarray := ( 7.7, 3.2, -8.1 );
+  signal timearr1      : timearray := ( 4 ns, 5 ns, 6 ns );
+  signal physarr1      : hourarray := ( 40 hour, 50 hour );
+  signal stdulogicarr1 : std_ulogic_vector( 3 downto 0 ) := "HL01";
+
+-- 1D Arrays of resolved subelements
+  signal rbitarr1     : rbitarray := "10110110";
+  signal rintarr1     : rintarray := ( 30, 41, 52 );
+  signal rrealarr1    : rrealarray := ( 17.6, -43.8, 9.1 );
+  signal rtimearr1    : rtimearray := ( 1 ns, 3 ns, 5 ns );
+  signal rphysarr1    : rhourarray := ( 1 day, 10 hour, 2 week );
+  signal stdlogicarr1 : std_logic_vector( 1 to 4 ) := "-X0U";
+
+-- Unresolved records
+  signal rec1         : rectype1 := ( '0', 1, 1.1, 1 ns, 'X', 1 hour, 'L' );
+
+-- Records of resolved elements
+  signal rec2         : rectype2 := ( '1', 5, 2.01, 3 ns, 'H', 2 hour );
+
+-- Records of mixed resolution
+  signal rec3         : rectype3 := ( '1',
+                                      ( '1', 4, 8.5, 19 ns, 'L', 1 day, 'Z' ),
+                                      168,
+                                      ( '0', 81, 6.25, 7 ns, '1', 4 hour )
+                                    );
+
+begin
+
+  bitsig1 &lt;= not bitsig1 after 5  ns;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="id496b1982-ae2a-4c41-8c55-66371899605b__idf737986e-155e-44b8-ad86-17fd018db8a3"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top -foreign "initForeign for_model.sl"
+Reading .../modeltech/tcl/vsim/pref.tcl
+
+# 5.7c
+
+# vsim -foreign {initForeign for_model.sl} -c top
+# Loading .../modeltech/sunos5/../std.standard
+# Loading .../modeltech/sunos5/../ieee.std_logic_1164(body)
+# Loading work.typepkg(body)
+# Loading work.top(a)
+# Loading ./for_model.sl
+# Signal bitsig1 is not resolved.
+# Signal intsig1 is not resolved.
+# Signal realsig1 is not resolved.
+# Signal timesig1 is not resolved.
+# Signal physsig1 is not resolved.
+# Signal stdulogicsig1 is not resolved.
+# Signal resbitsig1 is resolved.
+# Signal resintsig1 is resolved.
+# Signal resrealsig1 is resolved.
+# Signal restimesig1 is resolved.
+# Signal resphyssig1 is resolved.
+# Signal stdlogicsig1 is resolved.
+# Signal bitsigr is resolved.
+# Signal intsigr is resolved.
+# Signal realsigr is resolved.
+# Signal timesigr is resolved.
+# Signal physsigr is resolved.
+# Signal stdulogicsigr is resolved.
+# Signal bitarr1 is not resolved.
+# Signal intarr1 is not resolved.
+# Signal realarr1 is not resolved.
+# Signal timearr1 is not resolved.
+# Signal physarr1 is not resolved.
+# Signal stdulogicarr1 is not resolved.
+# Signal bitarr1(3) is not resolved.
+# Signal intarr1(2) is not resolved.
+# Signal realarr1(-3) is not resolved.
+# Signal timearr1(0) is not resolved.
+# Signal physarr1(1) is not resolved.
+# Signal rbitarr1 is resolved.
+# Signal rintarr1 is resolved.
+# Signal rrealarr1 is resolved.
+# Signal rtimearr1 is resolved.
+# Signal rphysarr1 is resolved.
+# Signal stdlogicarr1 is resolved.
+# Signal rbitarr1(6) is resolved.
+# Signal rintarr1(4) is resolved.
+# Signal rrealarr1(-1) is resolved.
+# Signal rtimearr1(1) is resolved.
+# Signal rphysarr1(3) is resolved.
+# Signal stdlogicarr1(1) is resolved.
+# Signal rec1 is not resolved.
+# Signal rec1.a is not resolved.
+# Signal rec1.b is not resolved.
+# Signal rec1.c is not resolved.
+# Signal rec1.d is not resolved.
+# Signal rec1.e is resolved.
+# Signal rec1.f is not resolved.
+# Signal rec1.g is not resolved.
+# Signal rec2 is resolved.
+# Signal rec2.b is resolved.
+# Signal rec2.i is resolved.
+# Signal rec2.r is resolved.
+# Signal rec2.t is resolved.
+# Signal rec2.s is resolved.
+# Signal rec2.p is resolved.
+# Signal rec3 is not resolved.
+# Signal rec3.f1 is resolved.
+# Signal rec3.f2 is not resolved.
+# Signal rec3.f2.a is not resolved.
+# Signal rec3.f2.b is not resolved.
+# Signal rec3.f2.c is not resolved.
+# Signal rec3.f2.d is not resolved.
+# Signal rec3.f2.e is resolved.
+# Signal rec3.f2.f is not resolved.
+# Signal rec3.f2.g is not resolved.
+# Signal rec3.f3 is not resolved.
+# Signal rec3.f4 is resolved.
+# Signal rec3.f4.b is resolved.
+# Signal rec3.f4.i is resolved.
+# Signal rec3.f4.r is resolved.
+# Signal rec3.f4.t is resolved.
+# Signal rec3.f4.s is resolved.
+# Signal rec3.f4.p is resolved.
+VSIM 1&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_SignalIsResolved()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiSignalisresolved_id496b1982.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

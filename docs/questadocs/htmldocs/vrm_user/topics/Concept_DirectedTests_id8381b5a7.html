@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Directed Tests" />
+<meta name="abstract" content="Since the single design source file contains the stimulus for all three directed tests, enabled by a conditional compile directive, the directed tests can also share a common execScript element. However, because of the conditional compile directive, each test must compile its own version of the source in a separate work library. The preScript element is left undefined (these undefined actions are skipped by VRM) and the compile steps are moved to the execScript element as follows:" />
+<meta name="description" content="Since the single design source file contains the stimulus for all three directed tests, enabled by a conditional compile directive, the directed tests can also share a common execScript element. However, because of the conditional compile directive, each test must compile its own version of the source in a separate work library. The preScript element is left undefined (these undefined actions are skipped by VRM) and the compile steps are moved to the execScript element as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id8381b5a7-8771-4708-823d-7887889f67c6" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Directed Tests</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Directed Tests" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id8381b5a7-8771-4708-823d-7887889f67c6">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Directed Tests</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Since the single
+design source file contains the stimulus for all three directed
+tests, enabled by a conditional compile directive, the directed
+tests can also share a common <span class="ph FontProperty emphasis">execScript</span> element.
+However, because of the conditional compile directive, each test
+must compile its own version of the source in a separate work library.
+The <span class="ph FontProperty emphasis">preScript</span> element
+is left undefined (these undefined actions are skipped by VRM) and
+the compile steps are moved to the <span class="ph FontProperty emphasis">execScript</span> element
+as follows:</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;!-- See <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a> --&gt;
+16    &lt;runnable name="directed" type="group"&gt; 
+17      &lt;parameters&gt;
+18        &lt;parameter name="ucdbfile"&gt;../(%INSTANCE%).ucdb&lt;/parameter&gt;
+19      &lt;/parameters&gt;
+20      &lt;members&gt;
+21        &lt;member&gt;dirtest1&lt;/member&gt;
+22        &lt;member&gt;dirtest2&lt;/member&gt;
+23        &lt;member&gt;dirtest3&lt;/member&gt;
+24      &lt;/members&gt;
+25      &lt;execScript&gt;
+26        &lt;command&gt;vlib work&lt;/command&gt;
+27        &lt;command&gt;vlog -sv +define+dirtest='(%INSTANCE%)' \
+			(%RMDBDIR%)/src/top.sv&lt;/command&gt;
+28        &lt;command&gt;vsim -c top&lt;/command&gt;
+29        &lt;command&gt;run -all&lt;/command&gt;
+30        &lt;command&gt;coverage attribute -name TESTNAME -value \
+			(%INSTANCE%)&lt;/command&gt;
+31        &lt;command&gt;coverage save (%ucdbfile%)&lt;/command&gt;
+32      &lt;/execScript&gt;
+33      &lt;postScript&gt;
+34 &lt;!-- a wildcard is acceptable here if merge order is not an issue --&gt;
+35        &lt;command&gt;vcover merge ../directed.ucdb dirtest1.ucdb \
+			 dirtest2.ucdb dirtest3.ucdb&lt;/command&gt;
+36      &lt;/postScript&gt;
+37    &lt;/runnable&gt; 
+&lt;!-- As line 34 states, a wildcard can be used, so Line 35 can become:
+&lt;command&gt;vcover merge ../directed.ucdb dirtest*.ucdb&lt;/command&gt; --&gt;</code></pre><p class="p">Note that on the compile command, the <span class="ph FontProperty emphasis">INSTANCE</span> parameter
+is used. This is another predefined parameter whose value is the
+name of the group or task currently executing. In this case, it
+is either <span class="ph FontProperty emphasis">dirtest1</span>, <span class="ph FontProperty emphasis">dirtest2</span>,
+or <span class="ph FontProperty emphasis">dirtest3</span>.
+The <span class="ph FontProperty emphasis">INSTANCE</span> parameter
+is also used to give the test a unique name in the UCDB. The <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+is used here in the same way as in the random tests. Finally, a <span class="ph FontProperty emphasis">postScript</span> element
+defines the command that merges the coverage from these three tests
+into a <span class="ph filepath">directed.ucdb</span> file in the <span class="ph filepath">VRMDATA/nightly</span> directory.</p>
+<p class="p">Since the leaf-level tasks do not, by themselves,
+provide any additional information besides their name, the <span class="ph FontProperty emphasis">runnable</span> elements
+corresponding to those tasks have no contents. For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;!-- See <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a> --&gt;
+38    &lt;runnable name="dirtest1" type="task"/&gt;
+39    &lt;runnable name="dirtest2" type="task"/&gt;
+40    &lt;runnable name="dirtest3" type="task"/&gt;</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CreatingBasicStructureRmdb_id4e8d20a4.html" title="The Verification Run Manager DataBase (RMDB) file is the VRM database. The RMDB file contains data for one or more regression test suites arranged in a hierarchical tree topology, which allows the user to group tests and other tasks in various ways.">Creating the Basic Structure for an RMDB</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Directed Tests"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_DirectedTests_id8381b5a7.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

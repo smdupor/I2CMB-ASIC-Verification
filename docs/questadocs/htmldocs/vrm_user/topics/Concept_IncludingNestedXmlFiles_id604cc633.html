@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Including Nested XML Files" />
+<meta name="abstract" content="The LibXML2 parser used in the RMDB API includes support for XInclude, a standard for defining and importing nested XML files. In the RMDB API, the XInclude expansion is only performed if the current XInclude namespace is defined in the document (rmdb) element. For example," />
+<meta name="description" content="The LibXML2 parser used in the RMDB API includes support for XInclude, a standard for defining and importing nested XML files. In the RMDB API, the XInclude expansion is only performed if the current XInclude namespace is defined in the document (rmdb) element. For example," />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id604cc633-bd7f-4863-9e4f-c21015ab1015" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Including Nested XML Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Including Nested XML Files" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id604cc633-bd7f-4863-9e4f-c21015ab1015">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Including Nested
+XML Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The LibXML2
+parser used in the RMDB API includes support for XInclude, a standard
+for defining and importing nested XML files. In the RMDB API, the
+XInclude expansion is only performed if the current XInclude namespace
+is defined in the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. For example,</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;rmdb version="1.1" ... xmlns:xi="http://www.w3.org/2003/XInclude"&gt;
+	...
+&lt;/rmdb&gt;</code></pre><p class="p">Note the <span class="ph FontProperty emphasis">xi</span> part
+of the namespace declaration is user-defined. The convention is
+to use the string <span class="ph FontProperty emphasis">xi</span> but
+any legal identifier can be used. The URI to which the namespace
+is assigned is the key to whether XInclude is enabled. However,
+if a string other than <span class="ph FontProperty emphasis">xi</span> is used,
+the namespace for the <span class="ph FontProperty emphasis">include</span> element
+described below must also be changed to match the identifier used
+to define the XInclude namespace.</p>
+<p class="p">If the proper XInclude namespace is defined,
+the entire document can be expanded via the expand command. Wherever
+the contents of a nested RMDB file fragment are to be included,
+the <span class="ph FontProperty emphasis">include</span> element
+under the XInclude namespace should be inserted into the parent
+RMDB file as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb version="1.1" ... xmlns:xi="http://www.w3.org/2003/XInclude"&gt;
+	&lt;xi:include xi:href="child.rmdb"/&gt;
+	&lt;runnable name="nightly" type="group" base="rootbase"&gt;
+		...
+	&lt;/runnable&gt;
+	...
+&lt;/rmdb&gt;</code></pre><p class="p">The child XML file would then contain only
+those elements that were to be inserted into the parent file as
+follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable name="rootbase" type="base"&gt;
+	...
+&lt;/runnable&gt;</code></pre><p class="p">Note that the child XML file is not a complete
+RMDB file, as it does not contain an <span class="ph FontProperty emphasis">rmdb</span> document
+element. However, the child XML file must be otherwise match the
+DTD.</p>
+<p class="p">Both the <span class="ph FontProperty emphasis">include</span> element
+and the <span class="ph FontProperty emphasis">href</span> attribute
+must be under the defined XInclude namespace (see above). The <span class="ph FontProperty emphasis">href</span> attribute
+can be a relative file name (relative to the current working directory),
+an absolute file name, or a URI that resolves to a file (<span class="ph filepath">file:/home/fred/myrunnables.rmdb</span>).</p>
+<p class="p">The expand command must be executed on an open
+RMDB database. If the XInclude namespace is not defined in the parent
+RMDB file, then the expand command is ignored.</p>
+<p class="p">In the API implementation, the XInclude namespace
+definition is recognized if defined on any element. Per XML rules,
+it is only necessary to define the namespace on or above any element
+on which it is used. However, the XInclude namespaces should always
+be defined on the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element only (to guarantee future RMDB API compatibility).</p>
+<p class="p">Refer to “<a class="xref fm:HeadingAndPage" href="Concept_SplitRmdbDatabaseAmongSeveralFiles_id7a2029b9.html#id7a2029b9-81fe-46d9-9b53-f73c01b6e86e__Concept_SplitRmdbDatabaseAmongSeveralFiles_id7a2029b9.xml#id7a2029b9-81fe-46d9-9b53-f73c01b6e86e" title="The VRM database supports XInclude (mechanism for merging XML documents), allowing the database contents to be divided among multiple files. The “parent” file will still contain the document (rmdb) element and also specify one or more xi:include elements in the XInclude namespace. In that case, the file referred to by the xinclude element is read into the VRM database in place of the xinclude element.">Split RMDB Database Among Several Files</a>” for additional information.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_VrmDatabaseRmdbApi_id33f7dd97.html" title="VRM RMDB database is implemented as an XML file. The VRM application uses the API defined in this document to access the data in the database. The API is designed to support the semantics of the database, and not necessarily its implementation. It should be possible to implement an equivalent database using, for example, an SQL-compatible library and use the same API to access the data.">VRM Database (RMDB) API</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Including Nested XML Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_IncludingNestedXmlFiles_id604cc633.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

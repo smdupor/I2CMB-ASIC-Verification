@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="RMDB Database Requirements" />
+<meta name="abstract" content="The RMDB database design is based on the following requirements:" />
+<meta name="description" content="The RMDB database design is based on the following requirements:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>RMDB Database Requirements</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="RMDB Database Requirements" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">RMDB Database
+Requirements</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The RMDB database
+design is based on the following requirements:</span>
+</div>
+<ul class="ul"><li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__id0232a904-f399-4a4d-b112-d7aa2e20c7b7"><p class="p">It must be able to support both individual
+Tasks and Groups of tasks.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__id86809b4a-d862-419d-82f1-4608adc1fa97"><p class="p">It must support nested Group hierarchy
+to a theoretically infinite depth.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__idcc016576-97cd-47a7-8958-a4e388d10435"><p class="p">It must be able to parameterize a single
+shared Task description.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__idc588e1da-535a-4785-84f0-3bb3ea21e66a"><p class="p">It must be able to accommodate existing
+user scripts easily.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__id5c320ff2-7edb-472a-82a2-9b9c8a840667"><p class="p">It must be able to accommodate scripts
+in various scripting languages (that is, Perl, Ruby, TCL, and so
+on).</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__ide25b7403-a04f-491b-8af9-e34d77b7a17f"><p class="p">It must support prerequisite Actions
+(for example, design compilation) that must be run prior to other
+Actions.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__id586f96ef-a498-4b7b-9431-564ab0a505fc"><p class="p">The storage format should be human-readable
+so that users can easily generate, maintain, and debug their regression
+setup or convert to/from other formats.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__id540fd0c0-736a-4dd5-b95a-4fd9ead91e41"><p class="p">The syntax should not depend on the position
+or sequence of the data elements, so as to maintain back-compatibility
+as the data structure changes.</p>
+</li>
+<li class="li" id="idb1d8f3cb-06c4-4f81-8889-6a663fa1d013__idf5e033f7-c906-4e99-9052-2c57dcb3fd14"><p class="p">This database is relatively static (few
+writes) with a relatively low volume of information. </p>
+</li>
+</ul>
+<p class="p">The term “database” is used in a loose sense
+here. The current implementation uses a single XML file known as
+a Run Manager DataBase (RMDB) file. A C-API (callable from TCL)
+encapsulates the database and provides semantic access functions
+independent of the physical format used to store the data.</p>
+<p class="p">There are multiple ways to create a RMDB database
+file. The obvious way is with a text editor, editing the XML format
+directly. The second is via an experimental context-menu option on
+the UCDB Browser. The <span class="ph uicontrol">GenerateRMDB File</span> context
+menu option generates a rudimentary RMDB file from one or more UCDB
+files loaded into the <span class="ph uicontrol">UCDB Browser</span> (of course,
+some information such as source code location and compile options
+are not available from the UCDB files so some manual editing of the
+resulting database file is to be expected). A prototype Edit GUI
+is also available as part of the Questa GUI.</p>
+<p class="p">Details on the VRM RMDB file contents and the
+API used to access the data can be found in the Appendix titled “<a class="xref fm:HeadingAndPage" href="MGCAppe_VrmDatabaseRmdbApi_id33f7dd97.html#id33f7dd97-24f5-4e83-9700-24200ffd8ccf__MGCAppe_VrmDatabaseRmdbApi_id33f7dd97.xml#id33f7dd97-24f5-4e83-9700-24200ffd8ccf" title="VRM RMDB database is implemented as an XML file. The VRM application uses the API defined in this document to access the data in the database. The API is designed to support the semantics of the database, and not necessarily its implementation. It should be possible to implement an equivalent database using, for example, an SQL-compatible library and use the same API to access the data.">VRM Database (RMDB) API</a>”.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_RmdbDatabaseTopology_id46a4dcaa.html" title="The RMDB database contains the information required to expand one or more selected Tasks or Groups of tasks, invoked by name on the command line, into one or more individual Actions that are to be executed.">RMDB Database Topology</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "RMDB Database Requirements"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RmdbDatabaseRequirements_idb1d8f3cb.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

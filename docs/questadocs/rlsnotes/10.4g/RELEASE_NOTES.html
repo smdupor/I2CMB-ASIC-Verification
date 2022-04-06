@@ -1,0 +1,295 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.4g Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.4g" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.4g</h1></center>
+<center><b>Aug 09 2017</b> <br />
+ <br />
+ Copyright 1991-2017 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 10.4g</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.4g</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.4g</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.4g</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.4g</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.4g</a></li>
+ <li><a href="#assertiondefects">SVA/PSL Defects Repaired in 10.4g</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 10.4g</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.4g</a></li>
+ <li><a href="#powerawaredefects">Power Aware Defects Repaired in 10.4g</a></li>
+ <li><a href="#uienhancements">User Interface Enhancements in 10.4g</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.4g</a></li>
+ <li><a href="#vmenhancement">Verification Management Enhancements in 10.4g</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>The 10.4g Update Release will be the last release in the 10.4 series </li>
+ <li>dvt95794 - Added modelsim.ini variable "AllowCheckpointCpp", a companion variable for existing vsim -allowcheckpointcpp switch
+
+<pre>
+   -allowcheckpointcpp 1|0 Turn on/off the support for checkpointing foreign C++ libraries.
+                           Must be used in the vsim session where a checkpoint is created.
+
+; Enable the support for checkpointing foreign C++ libraries.
+; The valid arguments are: 1 and 0. 
+;     1 : turn on the support
+;     0 : turn off the support (default)
+; This option is not supported on the Windows platforms.
+;
+; AllowCheckpointCpp = 1
+
+</pre> </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.4g</b></font>
+<ul><li><br>
+[10.4] Support for Windows XP and Windows Vista has been discontinued.<br>
+[10.4] Licensing Information
+<p>There is no licensing change between release 10.3 and 10.4.
+
+<p>However if you are migrating to 10.4 from a release like 10.2 and older,
+please note the following:
+
+<ul><li>Starting 10.3, it uses FLEXnet v11.11.1.1. The 
+vendor daemons and lmgrd that are shipped with this release will 
+be FLEXnet version 11.11.1.1.
+<li>For floating licenses it will be necessary to verify that the vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.11.1.1. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.11.1.1 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+<li>If you use node locked licenses you don't need to do anything.
+</ul><br>
+[10.3b] OVL is upgraded to v2.8.1.<br>
+[10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology) library, sources and documentation have been updated to version 2014.01. Dependency checks in vopt and vsim will force recompilation of designs that use the osvvm library. If optimization is performed using vopt, the optimizer will automatically generate new optimized design units. Without the optimization step, vsim will detect dependency errors.<br>
+[10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been discontinued.<br>
+[10.2] Support for Solaris SPARC and Solaris x86 has been discontinued. All Solaris OS platforms are not supported.<br>
+[10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell SUSE Linux Enterprise (SLES) 9 has been discontinued.<br>
+[10.1] Support for GCC versions gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.<br>
+[10.0] Support for Solaris 8 and Solaris 9 has been discontinued.<br>
+<br>
+</li>
+ <li>Due to enhanced security restrictions with web browser PDF plug-ins, some links do not function. Links in HTML documentation are fully functional.<br><br>
+Clicking a link within a PDF viewed in a web browser may result in no action, or it may load the title page of the current PDF manual (instead of the intended target in the PDF manual). The unresolved link behavior occurs in all web browsers on Windows and Linux platforms. Because of this behavior, the navigational experience of PDF manuals is compromised. PDF is ideal for printing because of its page-oriented layout.<br><br>
+Use the HTML manuals to search for topics, navigate between topics, and click links to examples, videos, reference material, and other related technical content.<br><br>
+For information about Adobe's discontinued support of Adobe Reader on Linux platforms and your available options, refer to Knowledge Article MG596568 on SupportNet.<br><br>
+Linux is a registered trademark of Linus Torvalds in the U.S. and other countries.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.4g</b></font>
+<ul><li><br>
+[Supported Platforms]<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux RHEL 7 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc9<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.11.1.1<br>
+	MSL 	v2013_3<br>
+	MGLS 	v9.10_7.2<br>
+	PCLS 	v9.10.7.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.4g</b></font>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt87563 - (results) In some cases the constraint solver would select different solutions when -classdebug was specified.</li>
+ <li>dvt89393 - (results) A concatenation of nets connected to an out or inout unpacked net array port was connected in reverse order.</li>
+ <li>dvt73613 - (results) At 'restore' time, the message counts are set to be the values that they had at 'checkpoint' time. After 
+the 'restore', a call to the 'msgZeroMessageCounts' TCL command may be made from the GUI/vish to reset the message counts to 0.</li>
+ <li>dvt89061 - (results) Enhanced the xprop assertions to make them glitch free under a vopt option -xprop_enable=glitchfreeassert.</li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>dvt93451 - (results) Vsim crashed when bit slices wider than 256, of VHDL signals, were read through built-in UVM backdoor functions.</li>
+ <li>dvt98225 - (results) In certain conditions involving a VHDL package, vopt issued an incorrect "(vopt-3369) Top-level design unit specified more than once." error. This has been fixed.</li>
+</ul>
+<p /><dd><font size="3"><b>Mixed Language  Compatibility</b></font></dd>
+<ul><li>dvt96160 - (results) Now built-in version of uvm_hdl_read, correctly reads the values from arbitrary slices of VHDL array signals with non-zero LSB/MSB indices.
+</li>
+</ul>
+<p /><dd><font size="3"><b>Power Aware  Compatibility</b></font></dd>
+<ul><li>dvt83154 - (results) Questa PASim by default corrupts signals being driven by constants 
+E.g. For RTL assign out = 1'b1;
+Questa PASim corrupts the 'out' signal. Added a switch -pa_enable=constasfeedthru to avoid the corruption of signals being driven by constants.
+</li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt31204 - (results) Deleting a test from a merge file is not supported.
+Such an action would break the integrity of the bin counts in the database.
+An error message is issued when an attempt is made to delete a test while using
+'coverage edit -delete -test < test name >'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.4g</b></font>
+<ul><li>dvt90005 - Using "Exclude Selection" from the popup menu in the Code Coverage Analysis window
+using FSM type and in "by file" mode did not work.  It resulted in the warning message:
+# ** Warning: (vish-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+
+this has been fixed so that the selected item will correctly be exclude with no warning.
+</li>
+ <li>dvt69668 - The UI can freeze unpredictably when the Coverage Analysis window is opened when invoking vsim.  This issue has been resolved.</li>
+ <li>dvt90759 - Using "Exclude Selection" from the popup menu in the Code Coverage Analysis window using FSM type did not work. It resulted in the 4014 warning message: "no matching object found".  This has been fixed so that the selected item will correctly be exclude with no warning. </li>
+ <li>dvt90591 - In the Code Coverage Analysis window for Statement, Branch, and Expression coverage panes, if filtereing (any combination of hit, miss, and excluded) was applied and some items of a multi-item line were not being displayed, the item numbers for the remaining displayed items could be incorrect.   In addition, if the "Exclude Selection" from the popup menu was then applied to the incorrecly numbered displaye item, the exclude would be applied to the incorrect item.  This has been fixed.
+</li>
+ <li>dvt88300 - In the Code Coverage Analysis window for Condition (and other) coverage panes, if filtereing (any combination of hit, miss, and excluded) was applied, some items would be displayed when they should be hidden by the filtering and vice versa.  This has been fixed.
+</li>
+ <li>dvt101418 - The internal "ls" command in the vsim gui behaves incorrectly when no arguments are given.  This command is only used on Windows, when there is no external "ls" command found.  This issue has been resolved.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.4g</b></font>
+<ul><li>dvt87563 - (results) In some cases the constraint solver would select different solutions when -classdebug was specified.</li>
+ <li>dvt91297 - A vector with bits connected to different instances of an instance array instantiation was connected improperly in some unusual cases.</li>
+ <li>dvt87810 - Vopt would give errors like this:<br><code>
+** Error: test.sv(17): (vopt-2132) Instance 'dut' has a non-optimizable form of recursive instantiation.</code><br>
+with recursively instantiated modules within generate loops and conditions.</li>
+ <li>dvt89393 - (results) A concatenation of nets connected to an out or inout unpacked net array port was connected in reverse order.</li>
+ <li>dvt92487 - Fix vsim elaboration crash related to concatenations connected to ports of inlined module instances.</li>
+ <li>dvt73613 - (results) At 'restore' time, the message counts are set to be the values that they had at 'checkpoint' time. After 
+the 'restore', a call to the 'msgZeroMessageCounts' TCL command may be made from the GUI/vish to reset the message counts to 0.</li>
+ <li>dvt93510 - Fixed a vlog crash when virtual interface specialization is used with empty parameter.
+Example:- virtual intf #(.param())</li>
+ <li>[nodvtid]  - vlog's -E output might incorrectly emit "`pragmaprotect" rather than "`pragma" whitespace "protect".</li>
+ <li>dvt100404 - In some rare cases, a constraint involving an array.sum() constraint having a 'with' clause would trigger an internal error during randomize() for multi-dimensional dynamic arrays/queues. This issue has been fixed.</li>
+ <li>dvt100885 - In some rare cases, randomize() will generate a spurious (vsim-7020) error "Illegal attempt to resize random dynamic array" when randomizing a dynamic array with -solvefaildebug enabled. This issue has been fixed.</li>
+ <li>dvt100802 - Fixed compiler (vopt/vlog) crashes when DPI function calls are used in SystemVerilog constraints.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.4g</b></font>
+<ul><li>dvt90896 - Vcom could crash when trying to report an invalid field of a record if the prefix of the selected name was an index on an array access type.</li>
+ <li>dvt91137 - A generic of a record type might receive an incorrect actual value when the actual was a function call and there existed another different function call actual for a different formal.</li>
+ <li>dvt91501 - For some specific cases of signal assignment statement, signal was not getting updated properly. This has been fixed.</li>
+ <li>dvt92589 - Definition of a very large constant array within a package could cause elaboration of the package to exhaust all available stack space, causing the simulator to crash. Recompiling the package with -O0 or -O1 is a temporary measure to prevent the crash.</li>
+ <li>dvt92840 - Access to a shared variable through an interface package could cause the elaboration phase of the simulator to crash.</li>
+ <li>dvt93089 - A call to a shared variable's method from within a subprogram of an uninstantiated package could cause the simulator to crash.</li>
+ <li>dvt93451 - (results) Vsim crashed when bit slices wider than 256, of VHDL signals, were read through built-in UVM backdoor functions.</li>
+ <li>dvt81635 - For certain specific cases, vsim issues a fatal error while trying to optimize functions with assertion statements.This has been fixed.</li>
+ <li>dvt94049 - The compiler incorrectly reported the following error when encountering an alias of an operator function instance:
+<pre>
+** Error: Alias with operator symbol designator must denote a function.
+</pre>
+The compiler also incorrectly generated code for newly-defined operator functions with generic-typed parameters.</li>
+ <li>dvt98225 - (results) In certain conditions involving a VHDL package, vopt issued an incorrect "(vopt-3369) Top-level design unit specified more than once." error. This has been fixed.</li>
+ <li>dvt97593 - Direct instantiation of an entity with a package instantiation in one of the generic map associations could cause incorrect code to be generated by the compiler, possibly leading to a loading failure message from the simulator.</li>
+ <li>dvt101580 - Certain styles of continuous selected signal assignment statements with zero delay would not execute properly when optimized, either in an optimized design or a design compiled with the PE version of the product.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="assertiondefects"></a><font size="4"><b>SVA/PSL Defects Repaired in 10.4g</b></font>
+<ul><li>dvt90588 - vsim's memory usage keeps on increasing after a multi-clock assertion gets disabled.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 10.4g</b></font>
+<ul><li>dvt96160 - (results) Now built-in version of uvm_hdl_read, correctly reads the values from arbitrary slices of VHDL array signals with non-zero LSB/MSB indices.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.4g</b></font>
+<ul><li>[nodvtid]  - Minor fixes to VRM automatic email function: (a) the EMAIL_RECIPIENTS, EMAIL_SECTIONS, and EMAIL_SERVERS parameters may now contain space/comma-separated lists of strings, and (b) the EMAIL_SERVERS parameter is properly processed when multiple server names are provided.</li>
+ <li>dvt94450 - Fixed crash in VRM GUI when expanding Runnable tree with at least one repeat override specified.</li>
+ <li>dvt94326 - In the VRM GUI, the "Suspend/Terminate Selected Jobs" menu item is disabled if none of the selected jobs is running. Likewise, the "Resume Selected Jobs" menu item is disabled if none of the selected jobs is suspended.</li>
+ <li>dvt94708 - The Timeout spinners on the Runtime tab of the VRM Congifuration Edit dialog were too narrow to display timeout values consisting of four or more digits.</li>
+ <li>dvt93999 - Fixed problem where known-path parameters whose values were not absolute paths were not being expanded by the C/SQL API. Fixed error in TCL API path expansion when TCL-special characters were included in the path. Fixed TCL error in two path-expansion error messages.</li>
+ <li>dvt95137 - Fixed problem with the way non-standard normalizetime values (generally from transform rules) are displayed in the Results Analysis window.</li>
+ <li>dvt31204 - (results) Deleting a test from a merge file is not supported.
+Such an action would break the integrity of the bin counts in the database.
+An error message is issued when an attempt is made to delete a test while using
+'coverage edit -delete -test < test name >'.</li>
+ <li>dvt96255 - Fixed TCL error when using "vrun -kill" option to kill a regression test in testname mode.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="powerawaredefects"></a><font size="4"><b>Power Aware Defects Repaired in 10.4g</b></font>
+<ul><li>dvt83154 - (results) Questa PASim by default corrupts signals being driven by constants 
+E.g. For RTL assign out = 1'b1;
+Questa PASim corrupts the 'out' signal. Added a switch -pa_enable=constasfeedthru to avoid the corruption of signals being driven by constants.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uienhancements"></a><font size="4"><b>User Interface Enhancements in 10.4g</b></font>
+<ul><li>dvt90505 - The Files View collapses the tree whenever there is an update to the current context or run state.  The view will now remain expanded and the selection and filters will remain in place during any updates.</li>
+ <li>dvt91003 - The Coverage Report dialog box now has an option for the user to select how the report is displayed.  The options are "notepad", "source viewer", "none", or "user-defined editor".  The user-defined editor choice uses the EDITOR environment variable, or the PrefMain(Editor) preference variable to determine which editor to invoke.  Once a choice is made, it will be persistent across sessions. </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.4g</b></font>
+<ul><li>dvt89061 - (results) Enhanced the xprop assertions to make them glitch free under a vopt option -xprop_enable=glitchfreeassert.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmenhancement"></a><font size="4"><b>Verification Management Enhancements in 10.4g</b></font>
+<ul><li>dvt89824 - Two routines have been added to the UCDB API.
+<pre>
+/*
+ * ucdb_GetTestIndex()
+ *
+ * Return the index value for test record.
+ * Return -1 if an error occurs.
+ */
+int
+ucdb_GetTestIndex(ucdbT db, ucdbTestT test);
+
+/*
+ * ucdb_GetIthTest()
+ *
+ * Return the test record having the indicated index value.
+ * Return NULL if an error occurs.
+ */
+ucdbTestT
+ucdb_GetIthTest(ucdbT db, int index);
+</pre></li>
+ <li>[nodvtid]  - Tests listed in a VRM testlist file now support the "%n" and "%s" tokens in parameter overrides.</li>
+ <li>[nodvtid]  - The "-debug" option on the vrun command may now optionally take the form "-debug=<flags>" where "flags" is a comma-separated list of debug flags. The only debug flag supported currently is "usertcl" which will cause a message to be emitted before and after any usertcl procedure is executed. The legacy "-debug" option behaves as before.</li>
+ <li>[nodvtid]  - VRM now supports modifying the mimetype and encoding of emails sent from within vrun by modifying certain pre-defined parameters in the RMDB.</li>
+</ul>
+
+</body>
+</html>

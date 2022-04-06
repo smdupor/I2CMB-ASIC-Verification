@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Debugging Standalone Partitions with VCD Flow" />
+<meta name="abstract" content="You can debug and run a standalone partition without communicating with (or being dependent on) other partitions. You can do this by recording Value Change Dump (VCD) values for a given partition." />
+<meta name="description" content="You can debug and run a standalone partition without communicating with (or being dependent on) other partitions. You can do this by recording Value Change Dump (VCD) values for a given partition." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id54e88565-efe2-40ed-a4d7-e03180371b32" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Debugging Standalone Partitions with VCD Flow</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Debugging Standalone Partitions with VCD Flow" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id54e88565-efe2-40ed-a4d7-e03180371b32">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Debugging Standalone Partitions with VCD Flow</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">You can debug
+and run a standalone partition without communicating with (or being
+dependent on) other partitions. You can do this by recording Value
+Change Dump (VCD) values for a given partition.</p>
+<p class="p">VCD debugging consists of a fully automated
+two-step flow: </p>
+<ul class="ul"><li class="li" id="id96be902e-d60f-414a-9b14-1791753f1a81"><p class="p">Run full multi‑core simulation and record
+VCD values. (VCD Recording).</p>
+</li>
+<li class="li" id="id63efbdb5-33f2-4532-8bf4-34b30606432d"><p class="p">Select the partition you want to run
+and re-simulate it using earlier VCD recorded values. (VCD Resimulate) </p>
+</li>
+</ul>
+</div>
+<div class="section Restrictions"><h2 class="title Subheading sectiontitle">Restrictions and Limitations</h2><p class="p">The VCD debugging system has the
+following limitations: </p>
+<ul class="ul"><li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id5d04eee7-f195-4996-8e94-468b8a198743"><p class="p">Reg type
+ports at a boundary are not supported.</p>
+</li>
+<li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id5f0993f3-7f29-4dd8-b21d-c2cac709485c"><p class="p">Bit-select
+and part-select ports at a boundary are not supported.</p>
+</li>
+<li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__idc4d7f169-682f-4bb9-84f2-063d0ec8202e"><p class="p">Complex SystemVerilog and
+VHDL types (except std_logic) are not supported.</p>
+</li>
+<li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id9a495478-4708-4f4a-aa48-202755365967"><p class="p">Objects (hrefs) crossing
+a partition boundary is not supported. </p>
+</li>
+<li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__idb62ccf5c-220b-4aa8-98ab-1cc00114643b"><p class="p">Designs with user-defined
+events are not supported. </p>
+</li>
+</ul>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id352990a3-039b-4e3e-b862-0fff4e04a637"><p class="p">To
+be able to run a standalone partition, the simulator needs to identify
+which values are arriving at a boundary from other partitions and
+at what time. Once the simulator has this information, simulation
+can be run on a standalone partition without needing to run other
+partitions at the same time. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id54e88565-efe2-40ed-a4d7-e03180371b32__ida6c01ba5-a836-439a-9249-9a88ab1438ba"><span class="ph cmd">VCD Record — While running
+full multi‑core simulation, run the vsim command with the -mc2vcddump
+argument to automatically append required VCD commands in each partition
+to dump correct VCD values: </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -mc2vcddump</p>
+</div><div class="itemgroup stepresult">After the simulation is finished, various
+VCD files are generated for each boundary instance.</div></li>
+<li class="li step stepexpand" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id507c0b82-2e14-48f6-888c-8937e7058243"><span class="ph cmd">VCD Resimulate — After recording
+VCD values from multi‑core simulation, you run single partition
+in standalone mode. You need to pick a partition and run vsim, using
+the -mc2sal argument. The -mc2sal argument automatically turns off compilation
+and full flow multi‑core simulation and runs the simulation for
+only the given partition. The ‑mc2sal argument also automatically
+appends required VCD commands to the vsim command, and changes the
+default values for ‑l and ‑wlf options (notice the suffix _sal). </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -mc2sal </p>
+</div></li>
+</ol>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">The following examples show how to
+use vsim command options for VCD debugging. </p>
+<ul class="ul"><li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__idae40c807-531b-476e-a4c4-2e69dfec9be6"><p class="p">Run multi‑core simulation in
+standalone mode for partition p1: </p>
+<p class="lines ApplCommand leveled">vsim ‑mc2 &lt;vsim args&gt; -mc2vcddump</p>
+<p class="lines ApplCommand leveled">vsim ‑mc2 &lt;vsim args&gt; -mc2sal p1</p>
+</li>
+<li class="li" id="id54e88565-efe2-40ed-a4d7-e03180371b32__id922e88a2-f006-4864-8152-51cbe1ae9c77"><p class="p">Apply checkpoint-restore with
+VCD standalone flow:</p>
+<p class="lines ApplCommand leveled">vsim ‑mc2 &lt;vsim args&gt; -mc2sal p2 -mc2vsimargs=p2 "-do ’run 100; checkpoint p2.chkpt; run -a; quit -f ’" </p>
+<p class="lines ApplCommand leveled">vsim ‑mc2 &lt;vsim args&gt; -mc2sal p2 -mc2vsimargs=p2 "-l  results/p2_sal1.log -restore p2.chkpt"  </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UsingQuestaSimMultipleCores_ida8da5c04.html" title="Use the Questa SIM simulator with multi-core functionality to compile and simulate a design on multiple processors (cores). You can do this on a single computer that uses multiple CPUs or on a ring of single-CPU computers.">Using Questa SIM With Multiple Cores</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Debugging Standalone Partitions with VCD Flow"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_DebuggingStandalonePartitionsVcdFlow_id54e88565.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="force" />
+<meta name="abstract" content="Enables you to apply stimulus interactively to VHDL signals, Verilog nets and registers, and SystemC boundary types." />
+<meta name="description" content="Enables you to apply stimulus interactively to VHDL signals, Verilog nets and registers, and SystemC boundary types." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>force</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="force" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">force</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Enables
+you to apply stimulus interactively to VHDL signals, Verilog nets
+and registers, and SystemC boundary types. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Forcing
+values, driver type, repetition time or stop time on an object</h2><p class="lines UsageLine">force {<a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id9c427322-6a98-4a62-83d4-1a47c78c470d">&lt;object_name&gt;</a> <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idd5765971-ee24-4bc3-a346-fcb09187a278">&lt;value&gt;</a> [<a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</a>][, <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idd5765971-ee24-4bc3-a346-fcb09187a278">&lt;value&gt;</a> <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</a>]... <br />
+[<a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id48956157-9f27-4387-9368-0d72f79de82b">-deposit</a> | <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0746076f-4500-488f-af2c-3c3070ff03b8">-drive</a> | <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0fab178c-6923-4cd2-9291-027f69e20537">-freeze</a>] [<a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id57d477c0-4803-4e9f-b41e-f987cf03025a">-cancel [@]&lt;time_info&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id27e496d2-2974-42fe-a51e-8e36911724c8">-repeat [@]&lt;time_info&gt;</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Reporting
+all force commands</h2><p class="lines UsageLine">Specifying this command without arguments returns a list of the most recently applied force commands, and a list of forces coming from the Signal Spy signal_force() and $signal_force() calls from within VHDL, Verilog, and SystemC source code.</p>
+<p class="lines UsageLine">For example, if you enter:</p>
+<pre class="pre codeblock leveled"><code>force -freeze /top/p/addr 0 100, 1 150 -r 200 -cancel 2000</code></pre><p class="lines UsageLine">with the specified times being relative to the current simulation time of 2820 ns,</p>
+<p class="lines UsageLine">Entering:</p>
+<pre class="pre codeblock leveled"><code>	force </code></pre><p class="lines UsageLine">Returns: </p>
+<pre class="pre codeblock leveled"><code>	# force -freeze /top/p/addr 0 {@2920 ns} , 1 {@2970 ns} 
+		-repeat {@3020 ns} -cancel {@4820 ns}</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">When you
+run the force command, the simulator translates the relative time
+you specify into absolute time. </p>
+</div>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can create a complex sequence of stimuli when
+using the force command in a DO file.</p>
+<p class="p">The
+constraints on what you can and cannot force include: </p>
+<p class="p">You can force: </p>
+<ul class="ul"><li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id3ffc7fe0-cc20-403d-8f0f-afff71087d88"><p class="p">VHDL signals or parts
+of signals.</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id7247f7e5-07b5-43ee-abcc-e17e1d1235d7"><p class="p">Verilog nets and
+registers, bit-selects, part-selects, and field-selects. Refer to
+“<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Force and Release Statements in Verilog', 'questa_sim_user'); return false;">Force and Release Statements in Verilog</a>”
+in the User’s Manual for more information.</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idf14c7c8f-3c0a-4344-a990-9113440c134a"><p class="p">Virtual Signals if
+the number of bits corresponds to the signal value. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Virtual Signals', 'questa_sim_user'); return false;">Virtual Signals</a>” in the User’s Manual.</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0a61e45d-e4ab-4398-bee0-dc617376c1bb"><p class="p">An alias of a VHDL
+signal.</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idb093f726-45ed-453c-a738-d8dabf96b0a8"><p class="p">Signals within
+SystemC modules, with the following limitations:</p>
+<p class="p">Only mixed language
+boundary types are supported in mixed language simulations. </p>
+<p class="p">The -drive option to
+force is not supported. </p>
+<p class="p">Individual bits and
+slices may not be forced or unforced. </p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idb737f8c3-9dae-4dd5-840f-3c02efd8f300"><p class="p">An input port that
+is mapped at a higher level in VHDL and mixed models. </p>
+</li>
+</ul>
+<p class="p">You cannot
+force: </p>
+<ul class="ul"><li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idc7a83bdc-aa87-4607-a0e6-f6afeb875399"><p class="p">Virtual functions. </p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idffa7eb42-ef8b-4c6a-b9b5-748918dcbbc1"><p class="p">VHDL variables. Refer
+to the <a class="xref fm:HeadingOnly" href="Command_Change_idbf5e1b16.html#idbf5e1b16-2e61-42f8-adce-0c23ea8fe4f3__Command_Change_idbf5e1b16.xml#idbf5e1b16-2e61-42f8-adce-0c23ea8fe4f3" title="This command modifies the value of a: VHDL constant, generic, or variable; Verilog register or variable; or C variable if running C Debug.">change</a> command
+for information on working with VHDL variables. </p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id3194f1ad-5563-4685-ba35-daee211204f1"><p class="p">An input port that
+has a conversion function on the input or on the path up the network
+mapped from the input. </p>
+</li>
+</ul>
+<p class="p">You can use
+the -help switch to find additional information on this command.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id7ac9f4bb-803d-4b32-b6a1-9bad968ccd46"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id9c427322-6a98-4a62-83d4-1a47c78c470d">&lt;object_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+when forcing a value change) Specifies the name of the HDL object
+to be forced. A wildcard is permitted only if it matches one object.
+Refer to <a class="xref fm:HeadingOnly" href="Contain_DesignObjectNames_id4c80d2b1.html#id4c80d2b1-26dd-4e5e-96d4-2fbe3db764a4__Contain_DesignObjectNames_id4c80d2b1.xml#id4c80d2b1-26dd-4e5e-96d4-2fbe3db764a4" title="Design objects are organized hierarchically, where various objects creates a new level in the hierarchy.">Design Object Names</a> and <a class="xref fm:HeadingOnly" href="Concept_TclSyntaxSpecificationArrayBitsSlices_id700e4788.html#id700e4788-32a5-46c8-aa4c-140dd151667e__Concept_TclSyntaxSpecificationArrayBitsSlices_id700e4788.xml#id700e4788-32a5-46c8-aa4c-140dd151667e" title="Because Questa SIM is based on the Tcl scripting language, you must surround objects and signals with braces ( {} ) when specifying array bits or slices with parentheses ( () ), spaces, or square brackets ( [] ).">Tcl Syntax and Specification of Array Bits and Slices</a> for the
+full syntax of an object name. The object name must specify a scalar
+type or a one-dimensional array of character enumeration. You can
+also specify a record sub-element, an indexed array, or a sliced
+array, as long as the type is one of the above. Must be the first
+argument to the force command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idd5765971-ee24-4bc3-a346-fcb09187a278">&lt;value&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+when forcing a value change) Specifies the value to force the object
+to. The specified value must be appropriate for the type. Must be
+the second argument to the force command.</p>
+<p class="p">A one-dimensional
+array of character enumeration can be forced as a sequence of character
+literals or as a based number with a radix of 2, 8, 10 or 16. For
+example, the following values are equivalent for a signal of type
+bit_vector (0 to 3):</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idaa804372-8ad4-4289-95ad-847007e5f2d7" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.611in" /><col style="width:0.982in" /><col style="width:0.982in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Description</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">VHDL Value</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Verilog Value</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">character literal sequence</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">F</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">F</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">binary radix</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">2#1111</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">'b1111</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">octal radix</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">8#17</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">'o17</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">decimal radix</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">10#15</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">'d15</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">hexadecimal radix</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">16#F</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">'hF</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">To force a negative value, ensure that the negative sign ‘-’
+precedes the base designation. For example, to force a -2 value
+in base 10 in VHDL, write:</p>
+<pre class="pre codeblock"><code>force <var class="keyword varname">object_name</var> -10#2</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">For based
+numbers in VHDL, <span class="ph fmvar:ProductName">Questa SIM</span> translates
+each 1 or 0 to the appropriate value for the number’s enumerated
+type. The translation table in the <span class="ph filepath italic">pref.tcl</span> file
+controls the translation. If <span class="ph fmvar:ProductName">Questa SIM</span> cannot
+find a translation for 0 or 1, it uses the left bound of the signal
+type (type’left) for that value.</p>
+</div>
+<p class="p">You can
+create a sequence of forced values on an object by specifying &lt;value&gt; <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</a> in a comma/space
+separated list. </p>
+<p class="p">For example:</p>
+<pre class="pre codeblock leveled"><code>force /top/p/addr 1 100ns, 0 200ns, 1 250ns </code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id57d477c0-4803-4e9f-b41e-f987cf03025a">-cancel [@]&lt;time_info&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Cancels the force command at the time specified by &lt;time_info&gt;. </p>
+<p class="p">where: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__iddfc8359d-f955-487f-8426-d56cdff6f255"><p class="p Opt">&lt;time_info&gt;
+is [@]&lt;time_value&gt;[&lt;time_unit&gt;] </p>
+</li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idad23209c-3225-47c7-92bb-612b1b38071f"><p class="p Opt">Refer to <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</a> for more information about specifying
+time values.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0746076f-4500-488f-af2c-3c3070ff03b8">-drive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Attaches a driver to the object and drives the specified &lt;value&gt;
+until the object is forced again or until it is unforced with the
+noforce command.</p>
+<p class="p">This option
+is illegal for unresolved signals or SystemC signals.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id48956157-9f27-4387-9368-0d72f79de82b">-deposit</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Sets the object to the specified &lt;value&gt;. The &lt;value&gt; remains
+until the object is forced again, there is a subsequent driver transaction,
+or it is unforced with a noforce command. When used for registers,
+it behaves like the <a class="xref fm:HeadingOnly" href="Command_Change_idbf5e1b16.html#idbf5e1b16-2e61-42f8-adce-0c23ea8fe4f3__Command_Change_idbf5e1b16.xml#idbf5e1b16-2e61-42f8-adce-0c23ea8fe4f3" title="This command modifies the value of a: VHDL constant, generic, or variable; Verilog register or variable; or C variable if running C Debug.">change</a> command.
+Supports multi-dimensional indexing on the force target.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If the
+-freeze, -drive, or -deposit options are not used, then -freeze
+is the default for unresolved objects, and -drive is the default
+for resolved objects. If you prefer -freeze as the default for resolved
+and unresolved VHDL signals, change the DefaultForceKind variable
+in the <span class="ph filepath italic">modelsim.ini</span> file.
+(Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultForceKind', 'questa_sim_user'); return false;">DefaultForceKind</a> in the User’s Manual.)</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0fab178c-6923-4cd2-9291-027f69e20537">-freeze</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Freezes the object at the specified &lt;value&gt; until it is forced
+again or until it is unforced with the <a class="xref fm:HeadingOnly" href="Command_Noforce_id871d157a.html#id871d157a-d256-4fba-b1b6-d8797f74e61e__Command_Noforce_id871d157a.xml#id871d157a-d256-4fba-b1b6-d8797f74e61e" title="Removes the effect of any active force commands on the selected HDL objects, and also causes the object’s value to be re-evaluated.">noforce</a> command.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If you
+prefer -freeze as the default for resolved and unresolved VHDL signals,
+change the DefaultForceKind variable in the <span class="ph filepath italic">modelsim.ini</span> file.
+(Refer to <a class="xref" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultForceKind', 'questa_sim_user'); return false;">DefaultForceKind</a> in the
+User’s Manual.)</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id27e496d2-2974-42fe-a51e-8e36911724c8">-repeat [@]&lt;time_info&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Repeats a series of forced values and times at the time specified. </p>
+<p class="p">where: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id3615ae15-8b18-4a26-9281-5c100ee80ffc"><p class="p Opt">&lt;time_info&gt;
+is [@]&lt;time_value&gt;[&lt;time_unit&gt;] </p>
+</li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id9cb47426-486a-425b-b545-aa511c611821"><p class="p Opt">Refer to <a class="xref fm:HeadingOnly" href="#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</a> for more information about specifying
+time values.</p>
+</li>
+</ul>
+<p class="p">You must
+specify at least two &lt;value&gt; &lt;time_info&gt; pairs on the forced
+object before specifying -repeat, for example:</p>
+<pre class="pre codeblock leveled"><code>	force top/dut/p 1 0, 0 100 -repeat 200 -cancel 1000</code></pre><p class="p">A repeating
+force command will force a value before other non-repeating force commands
+that occur in the same time step.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id6aa9e5c9-415e-4c14-b6ef-eaddef3a1f83">[@]&lt;time_info&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the relative or absolute simulation time at which the
+&lt;value&gt; is to be applied. </p>
+<p class="p">where: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idc565c8ef-55ea-4dda-ae74-94a676e7e99a"><p class="p Opt">&lt;time_info&gt;
+is [@]&lt;time_value&gt;[&lt;time_unit&gt;] </p>
+</li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id623038a7-2eff-4479-9d34-096a35b40098"><p class="p Opt">@ — A prefix
+applied to &lt;time_value&gt; to specify an absolute time. By default,
+the specified time units are assumed to be relative to the current time,
+unless the value is preceded by the character "at" ( @ ). Omit the
+"at" (@) character to specify relative time. For example:</p>
+<pre class="pre codeblock leveled"><code>-cancel {520 ns}      \\ Relative Time</code></pre><pre class="pre codeblock leveled"><code>-cancel {@ 520 ns}    \\ Absolute Time</code></pre></li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id563dfc9c-4b47-42d1-a3b2-be32bbd18301"><p class="p Opt">&lt;time_value&gt;
+— The time (either relative or absolute) to apply to &lt;value&gt;.
+Any non-negative integer. A value of zero cancels the force at the
+end of the current time period. </p>
+</li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idc484ce83-d19e-4671-985e-98aef03e75bd"><p class="p Opt">&lt;time_unit&gt;
+— An optional suffix specifying a time unit where the default is
+to use the current simulator time by omitting &lt;time_unit&gt;. Valid
+time units are: fs. ps, ns, us, ms, sec, min, and hr. </p>
+</li>
+<li class="li ArgOption" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id05a9cf34-8804-4d68-ad73-176347291e74"><p class="p Opt">&lt;time_value&gt;
+and &lt;time_unit&gt; can be formatted in any of the following ways:</p>
+<pre class="pre codeblock leveled"><code>10ns
+10 ns
+{10 ns}
+“10 ns”</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">If you
+specify a sequence of forces and use braces ({}) surrounding a &lt;time_value&gt;
+and &lt;time_unit&gt; pair, you must place a space in front of the
+comma (,) separating the two value/time pairs. For example:</p>
+<pre class="pre codeblock"><code>force foo 1 {10 ns} , 0 {20 ns}</code></pre></div>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__ida4b91686-9565-4db9-b7b0-0aceeec7da95"><p class="p">Reporting
+all recently applied force commands</p>
+</li>
+</ul>
+<p class="p">If
+you specify this command with no arguments, it returns a list of
+all forced objects and the changes applied. For example, after executing:</p>
+<p class="lines ApplCommand">   force -freeze /top/p/addr 0 100, 1 150 -r 200 -cancel 2000</p>
+<p class="p">where
+the times specified are relative to the current simulation time,
+in this case 2820 ns.</p>
+<p class="p">Entering:</p>
+<p class="lines ApplCommand">   force </p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># force -freeze /top/p/addr 0 {@2920 ns} , 1 {@2970 ns} 
+	-repeat {@3020 ns} -cancel {@4820 ns}</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">Executing
+the force command translates the relative time you specified into absolute
+time. </p>
+</div>
+<ul class="ul"><li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id02931c2d-bbfe-4dcc-871a-4c68603498ff"><p class="p">Force input1
+to 0 at the current simulator time. </p>
+<p class="lines ApplCommand">   force input1 0</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id31118db1-7468-4c64-828d-d7e421600a25"><p class="p">Force the
+fourth element of the array bus1 to 1 at the current simulator time.</p>
+<p class="lines ApplCommand">   force bus1(4) 1</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id235fe7ce-f204-4175-8936-0472b55780b9"><p class="p">Force bus1
+to 01XZ at 100 nanoseconds after the current simulator time.</p>
+<p class="lines ApplCommand">   force bus1 2#01XZ 100 ns</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id24e0bde8-4b2d-449a-8fce-0369af7ffe83"><p class="p">Force bus1
+to 16#F at the absolute time 200 measured in the resolution units
+selected at simulation start-up.</p>
+<p class="lines ApplCommand">   force bus1 16#f @200</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id0581f121-96ab-4e84-89bf-5cb052642107"><p class="p">Force input1
+to 1 at 10 time units after the current simulation time and to 0 at
+20 time units after the current simulation time. Repeat this cycle
+every 100 time units after the current simulation time, If the current
+simulation time is 100 ns, the next transition is to 1 at 110 ns
+and 0 at 120 ns, this pattern to start repeating at 200 ns.</p>
+<p class="lines ApplCommand">   force input1 1 10, 0 20 -r 100</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idf8ad1f54-ff1b-4dc9-a4dd-6dc1ba632854"><p class="p">Similar
+to the previous example, but also specifies the time units. </p>
+<p class="lines ApplCommand">   force input1 1 10 ns, 0 20 ns -r 100 ns</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id40191037-bcbd-445b-8383-5e156515ae44"><p class="p">Force signal
+s to alternate between values 1 and 0 every 100 time units until 1000
+time units have occurred, starting from time Now. Cancellation occurs
+at the last simulation delta cycle of a time unit. </p>
+<p class="lines ApplCommand">   force s 1 0, 0 100 -repeat 200 -cancel 1000</p>
+<p class="p">So,</p>
+<p class="lines ApplCommand">   force s 1 0 -cancel 0</p>
+<p class="p">will force signal
+s to 1 for the duration of the current time period.</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id98850d70-ad08-4f7b-a308-e093922b00c9"><p class="p">Force siga
+to decimal value 85 whenever the value on the signal is 1.</p>
+<p class="lines ApplCommand">   when {/mydut/siga = 10#1} {<br />
+     force -deposit /mydut/siga 10#85<br />
+   }</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__id50489f10-e7f4-4956-abfe-a1ca108c982a"><p class="p">Force one
+bit of a record containing an array.</p>
+<p class="lines ApplCommand">   force struct1.bus1(4) 1</p>
+</li>
+<li class="li" id="idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__idc475f906-90c7-426c-8830-17eb6d6fa18d"><p class="p">Force a
+slice of an array.</p>
+<p class="lines ApplCommand">   force {bus1[2:5]} 'hF </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultForceKind', 'questa_sim_user'); return false;">DefaultForceKind [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Force and Release Statements in Verilog', 'questa_sim_user'); return false;">Force and Release Statements in Verilog [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Force Command Defaults', 'questa_sim_user'); return false;">Force Command Defaults [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_Noforce_id871d157a.html#id871d157a-d256-4fba-b1b6-d8797f74e61e__" title="Removes the effect of any active force commands on the selected HDL objects, and also causes the object’s value to be re-evaluated.">noforce</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Virtual Signals', 'questa_sim_user'); return false;">Virtual Signals [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "force"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Force_idc73e0ed3.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Running Multi-computer Simulation" />
+<meta name="abstract" content="By default, multi‑core simulation is run on multiple cores of a single machine. However, you can run simulation on multiple machines connected over a network by using the ‑mc2network argument of vsim to specify a file containing a list of the hosts on which to run the simulation." />
+<meta name="description" content="By default, multi‑core simulation is run on multiple cores of a single machine. However, you can run simulation on multiple machines connected over a network by using the ‑mc2network argument of vsim to specify a file containing a list of the hosts on which to run the simulation." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc50411ed-bb02-47c9-ae3a-a402da5ad48c" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Running Multi-computer Simulation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Running Multi-computer Simulation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Running Multi-computer Simulation</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">By default, multi‑core
+simulation is run on multiple cores of a single machine. However,
+you can run simulation on multiple machines connected over a network
+by using the ‑mc2network argument of vsim to specify a file containing
+a list of the hosts on which to run the simulation. </p>
+<p class="p">Notes on the vsim command for multi-computer
+simulation:</p>
+<ul class="ul"><li class="li" id="id7d4d1850-b1d4-42bb-ae8f-bff1460b3369"><p class="p">The host file contains the list of hosts
+on which to run the executable, and optionally specifies how many
+processes can run on each host. The maximum number of processes
+should not exceed the number of available cores on that machine
+— you may want to specify fewer processes than the available cores
+to achieve a particular load balance between the different hosts. </p>
+</li>
+<li class="li" id="id388eb1ed-7ee3-4100-b369-ea38457ba0c4"><p class="p">Also, you should consider the memory
+capacity of each host, and the expected memory requirements of each
+multi‑core simulation partition. If you do not specify a number
+of processes for each host, multi‑core simulation determines a maximum
+according to how many cores are present on each host. </p>
+</li>
+</ul>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__id8704cf71-893e-4eeb-b580-b11bda4784e8"><p class="p">Compile
+the design with the vcom or vlog command (<a class="xref fm:HeadingOnly" href="TaskTop_CompilingConventionalSimulation_id9748471f.html#id9748471f-e417-4302-9fce-522bd0a91fae__TaskTop_CompilingConventionalSimulation_id9748471f.xml#id9748471f-e417-4302-9fce-522bd0a91fae" title="To begin multi-core simulation, compile your design with either the vcom or the vlog command. Invoke either command from within the Questa SIM GUI or from the command prompt of your operating system.">Compiling for Conventional Simulation</a>). </p>
+</li>
+<li class="li" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__idf92bf84d-5be1-46a5-8a66-d7013058219b"><p class="p">Compile
+the design with the mc2com command (<a class="xref fm:HeadingOnly" href="Contain_MulticoreCompilationPartitionsAnalysisOptimization_idb8936446.html#idb8936446-4f61-4a40-8303-b71f4e27a54d__Contain_MulticoreCompilationPartitionsAnalysisOptimization_idb8936446.xml#idb8936446-4f61-4a40-8303-b71f4e27a54d" title="To compile for multi-core simulation, use the mc2com command to partition the design. You can also use arguments for this command to analyze and optimize the partition.">Multi‑core Compilation: Partitions, Analysis, and Optimization</a>) or you have access to a partition
+file for the design. </p>
+</li>
+<li class="li" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__ided6464e6-39a6-4cc2-848c-46e769f2d111"><p class="p">A
+host file containing a list of hosts on which to run the simulation,
+along with the number of processes that can run on each host. </p>
+</li>
+<li class="li" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__idcc0b3612-897f-4cea-91e0-f25afd6a33c2"><p class="p">Network
+access and valid licensing for the hosts listed in the host file. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__idaba019fe-9e6e-4793-9274-4eca41dd0046"><span class="ph cmd">Run the vsim command using
+the -mc2network argument and any additional arguments you want to
+apply for simulation. </span></div>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p"><span class="ph fmvar:ProductName">Questa
+SIM</span> runs a multi-core simulation on the computers specified
+in the hostlist_mc.txt host file. </p>
+</div>
+<div class="section Examples" id="idc50411ed-bb02-47c9-ae3a-a402da5ad48c__idf0d4b386-b2fd-4a0e-bba8-f88991f7849a"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">A vsim command
+with the -mc2network argument: </p>
+<p class="lines ApplCommand">vsim -mc2 top_opt -do run.do ‑mc2network hostlist_mc.txt</p>
+<p class="p">Contents
+of the <span class="ph FontProperty emphasis">hostlist_mc.txt</span> host
+file: </p>
+<pre class="pre codeblock leveled"><code>host1:1 # Run 1 process on host1 
+host2:4 # Run 4 processes on host2 
+host3:2 # Run 2 processes on host3 
+host4:1 # Run 1 process on host4 </code></pre></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HowPerformMultiCoreSimulation_idc049f316.html" title="Running Questa SIM multi‑core simulation consists of using three Questa SIM commands, plus an optional fourth command that you can use to analyze simulation results. Arguments for each command enable you to make modifications to the simulation procedure.">How to Perform Multi-Core Simulation</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/TaskTop_RunningMultiCoreSimulationOnGateLevelDesign_id99eb1216.html#id99eb1216-a50d-4576-8b69-b5939680a9e8__" title="Multi-core simulation supports running GLS designs with SDF annotation for Verilog/SystemVerilog designs. Delay annotations that lie within a single partition are fully supported.">Running Multi-core Simulation on a Gate-level Design</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Running Multi-computer Simulation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_RunningMultiComputerSimulation_idc50411ed.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

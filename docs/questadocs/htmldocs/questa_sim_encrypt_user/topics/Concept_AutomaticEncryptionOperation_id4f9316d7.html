@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Automatic Encryption Operation" />
+<meta name="abstract" content="Automatic encryption allows you to encrypt Verilog/SystemVerilog files without the use of pragmas and other directives. In addition, Autoprotect Mode supports PLI access into protected modules." />
+<meta name="description" content="Automatic encryption allows you to encrypt Verilog/SystemVerilog files without the use of pragmas and other directives. In addition, Autoprotect Mode supports PLI access into protected modules." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4f9316d7-ccac-4167-80c2-28e3880dd0a4" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Automatic Encryption Operation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Automatic Encryption Operation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Automatic Encryption Operation</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><p class="shortdesc">Automatic
+encryption allows you to encrypt Verilog/SystemVerilog files without
+the use of pragmas and other directives. In addition, Autoprotect Mode
+supports PLI access into protected modules.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Mentor Graphics recommends
+using automatic encryption mode only for internal uses such as black
+box testing. </p>
+</div>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id4f43b5cf-5714-4777-a456-c199684d575e"><h2 class="title Subheading sectiontitle">Autoprotect Mode Process and Limitations</h2><ul class="ul"><li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id8dfead98-d7be-4308-b065-c936e582c1e9"><p class="p">The <span class="ph FontProperty shellcommand">vencrypt </span>command
+protects the text between "module &lt;name&gt;" and "endmodule" statements.
+There is one option to encrypt an entire file regardless of module
+boundaries. </p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__iddea8c334-0d3e-4879-8ab5-da3b90cb3521"><p class="p">For most arguments, the <span class="ph FontProperty shellcommand">vencrypt </span>command
+does not encrypt text outside a module.</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id90220996-ed91-49ea-8494-24b64c9f6b1b"><p class="p">Automatic encryption does not require any embedded
+protect directives or the specification of any encryption key.</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id6ae7522b-0bcc-4270-894a-4b50ffde5805"><p class="p">The<span class="ph FontProperty shellcommand"> vencrypt </span>command
+encloses all encrypted text with the `protected and `endprotected
+directives.</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id3245acf2-1a56-42ba-baf1-e1dceae86445"><p class="p">The <span class="ph FontProperty shellcommand">vencrypt </span>command
+in Autoprotect Mode ignores any embedded protect directives. The
+command replaces directives with spaces in the encrypted output
+file. </p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id03c4cf18-8cc5-4fba-806f-39f37efb879e"><p class="p">Various arguments allow you to control what is
+visible within a module. Refer to <a class="xref fm:Table" href="#id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id2e10adac-31e0-4f7c-a41d-b72464e8f87a">Table 1</a> for a
+list of the arguments.</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__idd2413aa4-da1a-4e49-bdac-89f29d7da30a"><p class="p">There is an argument which provides PLI users
+access to encrypted modules.</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__idfe339775-d4b0-488c-9831-6f296636c9a9"><p class="p">Autoprotect Mode produces an encrypted file with
+a <span class="ph filepath">*.vp </span>extension.</p>
+</li>
+</ul>
+<p class="p">You can use only one of the Autoprotect Mode arguments
+for any particular file. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id2e10adac-31e0-4f7c-a41d-b72464e8f87a" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Autoprotect Mode Arguments</span></caption><colgroup><col style="width:1.166in" /><col style="width:1.152in" /><col style="width:1.116in" /><col style="width:1.116in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d6470e169"><p class="p">Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d6470e172"><p class="p">Module Name</p>
+<p class="p">Visibility</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d6470e177"><p class="p">Port List Visibility</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d6470e180"><p class="p">Parameter List Visibility</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e169 "><p class="p">autoprotect</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e172 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e177 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e180 "><p class="p">No</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e169 "><p class="p">autoprotect_all</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e172 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e177 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e180 "><p class="p">No</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e169 "><p class="p">auto2protect</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e172 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e177 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e180 "><p class="p">No</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e169 "><p class="p">auto3protect</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e172 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e177 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e180 "><p class="p">Yes</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e169 "><p class="p">auto5protect *</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e172 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e177 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d6470e180 "><p class="p">Yes</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" colspan="4" style="vertical-align:top;" headers="d6470e169 d6470e172 d6470e177 d6470e180 "><p class="p">* Encrypts
+everything in between `ifdef/‘endif.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">You cannot use Autoprotect Mode with the following <span class="ph FontProperty shellcommand">vencrypt </span>arguments:</p>
+<ul class="ul"><li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id7f891cd9-7f35-4314-b8fc-eec1aac50e8b"><p class="p">allow_voloce</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id6458ac4e-3607-4f8c-bec4-3dc7b8aaf1a8"><p class="p">wholefile</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__ida89e9828-caf9-45d4-a81f-a709e77a16e1"><p class="p">data_method</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id2100b340-1bde-4df8-a50a-9d2fb0654bca"><p class="p">common </p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id11bcd5e2-41e6-436a-8b46-4ac0cfc8f441"><p class="p">toolblock</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__idb72eab66-4a22-4740-a8f2-f953dc334792"><p class="p">keyring</p>
+</li>
+<li class="li" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id43ebcd9e-25b8-4239-8e88-bfa4e56b6ed8"><p class="p">header</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id4f9316d7-ccac-4167-80c2-28e3880dd0a4__id714527a8-8353-402c-83dd-7d95020a04df"><h2 class="title Subheading sectiontitle">PLI Support</h2><p class="p">To support PLI access, the <span class="ph FontProperty Strikethrough">vencrypt </span>command
+has a -pli_protected argument. You can use this argument in conjunction
+with any one of the Autoprotect Mode arguments. Only modules encrypted
+with the -pli_unprotected argument allow access.</p>
+<p class="lines ApplCommand">vencrypt -pli_unprotected -autoprotect my_file.v</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_AutoprotectMode_id302ca070.html" title="The vencrypt command supports pragma-less encryption that only supports IEEE 1735 version 0. This feature is called Autoprotect Mode. It only supports the encryption of Verilog source files. Autoprotect Mode is meant for in-house obfuscation methodologies for such tasks as black box testing. It is not recommended that you use this feature for encrypting IP for external use.">Autoprotect Mode</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "Automatic Encryption Operation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AutomaticEncryptionOperation_id4f9316d7.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

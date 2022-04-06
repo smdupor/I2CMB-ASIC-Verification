@@ -1,0 +1,239 @@
+Mentor Graphics Technical Note
+Copyright 1991-2020 Mentor Graphics Corporation
+All Rights Reserved.
+
+This document contains information that is proprietary to Mentor Graphics
+Corporation. The original recipient of this document may duplicate this
+document in whole or in part for internal business purposes only, provided
+that this entire notice appears in all copies. In duplicating any part of
+this document, the recipient agrees to make every reasonable effort to
+prevent the unauthorized use and distribution of the proprietary information.
+
+Trademarks that appear in Mentor Graphics product publications that are not
+owned by Mentor Graphics are trademarks of their respective owners.
+
+Introduction
+============
+
+This document describes issues that you may encounter when you try to compile 
+your design with the 2008 language version and ways to resolve them.
+Most users will have a body of existing vhdl code.  It should still compile 
+and simulate properly without change because we have not changed the default 
+language version. But a fairly common "big stick" testing approach for 2008 
+features is to compile it all with -2008 turned on.  What issues might you 
+run into?  
+
+There are some inherent conflicts that may occur that only the code author can 
+resolve today.  We would like to hear about them.  We will consider possible 
+enhancements to ease migration.  
+
+Transition to VHDL-2008
+=======================
+
+Modelsim has always provided support for all previous versions of the IEEE 1076 
+language standard. You can compile code with -87, -93, -2002, and -2008 into 
+the same or different libraries and freely mix that code to compose your 
+design. This document also deals with issues concerning mixing design units 
+compiled under VHDL-2008 with design units compiled using previous language 
+versions. Many of the problems involve the fact that in VHDL-2008 
+std_logic_vector is a subtype of std_ulogic_vector, while in pre-2008 versions, 
+std_logic_vector and std_ulogic_vector are distinct types.
+
+Duplicate subprograms involving std_logic_vectors and std_ulogic_vectors
+=========================================================================
+
+A good example of this problem occurs in familiar code. Package std_logic_textio 
+(a commonly used, now-obsolete, non-standard package) has two procedure 
+declarations:
+
+procedure READ(L: inout LINE; VALUE: out STD_ULOGIC_VECTOR);
+
+and
+
+procedure READ(L: inout LINE; VALUE: out STD_LOGIC_VECTOR);
+
+If you try to compile this using -2008 you will get messages like:
+
+** Error: std_logic_textio.vhd(35): (vcom-1295) Procedure "READ" has already 
+been defined in this region.
+** Prior declaration of "READ" is at std_logic_textio.vhd(27).
+
+Since subprogram profiles are based on types, not subtypes, and since 
+std_logic_vector is a subtype of std_ulogic_vector in VHDL-2008, the two 
+declarations have the same profile. It is illegal to declare them both in the 
+same region.
+
+You may experience a similar situation in your code. There are several ways 
+to deal with this.
+
+    * If the two subprograms are functionally equivalent then remove one 
+      of them.
+    * If the two subprograms are not functionally equivalent, then you should 
+      rename one of them so that they no longer conflict.
+    * If you can't do either of these, then you can continue to compile that 
+      portion of the design using -87,-93 or -2002. 
+
+Mixing language versions
+========================
+
+You may have part of your design compiled under VHDL-2008 and another part 
+compiled pre-2008. For example, some versions of the VITAL packages must be 
+compiled pre-2008. We support very flexible interoperability between mixed 
+language versions. We will use the notation sulv_new to describe a VHDL-2008 
+std_ulogic_vector, sulv_old to describe a std_ulogic_vector compiled with a 
+language version before 2008 and slv_old to describe a std_logic_vector compiled 
+pre-2008. Note that there is also an slv_new to describe a VHDL-2008 
+std_logic_vector, but this is a subtype, not a type, so it plays no direct role 
+in subprogram resolution. The general idea is to support matching sulv_new with 
+either sulv_old or slv_old (since something with base type sulv_new could 
+represent either a resolved or an unresolved object, but to never allow 
+sulv_old to match slv_old (since this would break backward compatibility). When 
+deciding which subprogram to select the compiler looks at the profile of the 
+subprogram and, in the case of functions, the return type it is trying to match. 
+It gives preference in the following order:
+
+    * an exact match between the return type of the function and the type 
+      it is trying to match.
+    * type sulv_new is preferred over types sulv_old and slv_old.
+    * type sulv_old is preferred over type slv_old 
+
+For example, one version of VITAL has several procedures named VitalTimingCheck. 
+Two of them have the same profile, except that the first parameter , TestPort, 
+is of type std_logic_vector in one, and is of type std_ulogic_vector in the 
+second. Because of these two declarations, the package must be compiled with 
+a pre-2008 language version. If you call this function with a VHDL-2008 
+std_ulogic_vector the above rules show that the subprogram declared with the 
+(VHDL-87) std_ulogic_vector will be chosen.
+
+Keyword conflicts
+=================
+
+There are new keywords in VHDL 2008.  They were legal identifiers in pre-2008 
+language versions.  As components of the language syntax, if they encountered 
+in an unexpected place, they will cause a simple syntax error.  If it happens 
+in older VHDL code that is first being compiled, it will likely be confusing.  
+The primary strategy is to either not compile it -2008 or choose a new 
+identifier.
+
+There are similar problems with new package declarations.  In fact, finally 
+adding defacto standard declarations into the formal standard caused some of 
+these conflicts, if only for the short term.  
+
+The following are notable examples with other ways to work around them.
+
+real_vector (and other new types declared in package STANDARD)
+===========
+If you have a type real_vector declared in a package and you compile using 
+-2008 then there will be a conflict between the declaration of real_vector 
+in the package and a competing declaration in package STANDARD. As a result, 
+both declarations will not be usable. The best solution is to remove the 
+declaration from your package. If you can't remove it and you still want 
+to compile under -2008 then you can tell the compiler to ignore the 
+declaration in package STANDARD by the vcom command line switch 
+-ignoreStandardRealVector or by using the modelsim.ini [vcom] setting 
+ignoreStandardRealVector=1.
+
+Another good solution to this problem is to replace your declaration
+of real_vector with an alias. So, for example, if you have a package
+named "mypackage" with the following declaration:
+
+    type real_vector is array (natural range <>) of real;
+
+You could replace that declaration with:
+
+    alias real_vector is std.STANDARD.real_vector;
+
+The major advantage of this approach is that it requires that only one
+line be changed. If your design references your real_vector type by
+means of selected names such as <libary>.mypackage.real_vector these
+references will still work and you don't have to rewrite any
+additional code.
+
+default in fli applications
+===========================
+Package mti_util contains an enumeration literal named "default" which is 
+used in fli applications. This package is compiled using VHDL-2002 to keep 
+backward compatibility, but it includes a declaration "mti_default " which 
+is an alias to " default" . The net effect is that you can compile your fli 
+application using pre VHDL-2008 and continue to use "default" or you can 
+compile using VHDL-2008 and use "mti_default".
+
+Visibility conflicts
+====================
+
+There are new subprograms in packages whose visibility may be surprising. Here 
+is an example of a relatively subtle one.
+
+Write function
+==============
+A designer wrote a function write[line,std_ulogic] in an architecture. This 
+compiled with no errors under -93 but when compiled under VHDL-2008 it 
+produced a message:
+
+ -- Compiling architecture test_bench of top
+** Error: bug18744.vhd(135): Subprogram "write" is ambiguous. A suitable 
+          definition also exists in package "std_logic_1164".
+
+This error occurs because the std_logic_1164 package now contains a procedure 
+write[line,std_ulogic,side,width]. Because it has a different profile, it is 
+not hidden. However, the last two parameters have default values, so the 
+compiler can't tell which function is intended. There are two solutions 
+compatible with VHDL-2008. 
+   1. change the procedure in the architecture to include the last two 
+      parameters, along with default values. Then the procedure in the 
+      architecture will take precedence over the procedure in the package. 
+   2. Change the name of the procedure from write to something else, 
+      such as local_write.
+
+Differences in error messages
+=============================
+
+There are some error messages that change from an attempt to improve them, 
+but here is case where the language change causes a minor change. Regressions 
+that produce diffs may exhibit this kind of change and here is the logic 
+behind it.
+
+std_ulogic instead of std_logic
+===============================
+
+Suppose that you have the following declaration:
+
+  constant c1 : std_logic_vector(1 to 3) := "0.0";
+
+The compiler produces the following error message when compiled with an 
+earlier language version:
+
+** Error: String literal has a character '.' not in the enumeration type 
+   ieee.std_logic_1164.STD_LOGIC.
+
+When compiled with VHDL-2008 it produces:
+
+** Error: String literal has a character '.' not in the enumeration type 
+   ieee.std_logic_1164.STD_ULOGIC.
+
+In this declaration there is an (illegal) attempt to associate a '.' with an 
+element of a std_logic_vector. The slight differences in the error messages 
+happen because in pre2008 code std_logic_vector has an element subtype of 
+STD_LOGIC. However, in 2008, std_logic_vector is a subtype of std_ulogic_vector, 
+which has an element subtype of STD_ULOGIC. So differences like this are 
+to be expected. 
+
+
+Unsupported Language Features
+=============================
+
+See the vhdl2008.note section on limitations for related details.
+
+Feature Creep
+=============
+
+This is defined as a vhdl 2008 language feature that is allowed to work in earlier
+language versions.  That is a bad thing, in general. We have made a very small 
+number of items that affect design flow possible. Any other feature creep is 
+more likely an undiscovered bug that we will fix.
+
+* we allow the 2008 encryption features and the env package to be used 
+with code compiled for any language version.
+
+* we allow the new flush procedure to be used with code compiled for any 
+language version

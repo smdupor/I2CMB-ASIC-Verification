@@ -1,0 +1,492 @@
+                     Release Notes For Questa Sim 10.7d
+
+                                 Feb 15 2019
+               Copyright 1991-2019 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.7d
+     * [4]Base Product Specifications in 10.7d
+     * [5]Compatibility Issues with Release 10.7d
+     * [6]General Defects Repaired in 10.7d
+     * [7]User Interface Defects Repaired in 10.7d
+     * [8]SystemVerilog Defects Repaired in 10.7d
+     * [9]VHDL Defects Repaired in 10.7d
+     * [10]SystemC Defects Repaired in 10.7d
+     * [11]Mixed Language Defects Repaired in 10.7d
+     * [12]Verification Management Defects Repaired in 10.7d
+     * [13]Power Aware Defects Repaired in 10.7d
+     * [14]SystemVerilog Enhancements in 10.7d
+     * [15]VHDL Enhancements in 10.7d
+     * [16]Mixed Language Enhancements in 10.7d
+     * [17]Verification Management Enhancements in 10.7d
+     * [18]Power Aware Enhancements in 10.7d
+     * [19]Document Revision History in 10.7d
+   _______________________________________________________________________
+
+   Key Information
+     * (results) -novopt flow has been deprecated and commands will flag
+       below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 10.7 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+     * This release uses new licensing version which needs to have license
+       servers upgraded to FLEXnet v11.14.1.3.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.14.1.3. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.14.1.3 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2017_1_patch2 with MGLS
+       v9.17_10.2.4 and PCLS v9.17.10.2.0
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.14.1.3
+          + MSL v2017_1_patch2
+          + MGLS v9.17_10.2.4
+          + PCLS v9.17.10.2.0
+          + QSIM-140 - (results) The compiler +protect flow is in process
+            of deprecation. This affects the vlog and vcom compilers. The
+            recommended flow is to use vencrypt (Verilog/SV) or vhencrypt
+            (VHDL) followed by vlog or vcom compilation. The deprecation
+            process starts with a warning if this option is used, which
+            will become an error in later releases. The reason for this
+            change is to remove the source ambiguities referenced by the
+            compilation libraries. An encrypted compilation is a
+            compilation of the post-encryption sources and must not retain
+            any association with pre-encryption sources. This principle is
+            reinforced by maintaining a two-step flow.
+       ___________________________________________________________________
+
+       Release Announcements in 10.7d
+
+     * Due to enhanced security restrictions with web browser PDF
+       plug-ins, some links do not function. Links in HTML documentation
+       are fully functional.
+       Clicking a link within a PDF viewed in a web browser may result in
+       no action, or it may load the title page of the current PDF manual
+       (instead of the intended target in the PDF manual). The unresolved
+       link behavior occurs in all web browsers on Windows and Linux
+       platforms. Because of this behavior, the navigational experience of
+       PDF manuals is compromised. PDF is ideal for printing because of
+       its page-oriented layout.
+       Use the HTML manuals to search for topics, navigate between topics,
+       and click links to examples, videos, reference material, and other
+       related technical content.
+       For information about Adobe's discontinued support of Adobe Reader
+       on Linux platforms and your available options, refer to Knowledge
+       Article MG596568 on SupportNet.
+       Linux is a registered trademark of Linus Torvalds in the U.S. and
+       other countries.
+     * We regularly review our OS/Platform support for Questa/ModelSim and
+       related functional verification products to add new platforms and
+       discontinue old ones.
+       That process normally takes a number of years from decision to
+       action. Customer notifications are typically only one year in an
+       advance through our Release Notes and Install Guide.
+       We plan to make a change in our Windows support, 1 year from now.
+       We began notifications of this change back in January 2017 with the
+       10.5d and 10.6a releases
+       As our existing Windows machines breakdown or are discontinued,
+       replacement hardware can only support Windows 10. So say Microsoft
+       and our hardware vendors, HP & Lenovo. That will limit our capacity
+       and ability to support Windows 7 & 8.1 in the future.
+       Therefore, starting with 10.8 (FCS Dec 2018) we plan to discontinue
+       supporting Windows 7 & 8.1 Thus the only Windows version for 10.8
+       will be for Windows 10. However we will continue to support Windows
+       7 & 8.1 with our 10.6 and 10.7 release series until their planned
+       EOL (10.6 EOL - mid 2019, 10.7 EOL - mid 2020) to coincide with
+       Microsoft's EOL for Windows 7.
+   _______________________________________________________________________
+
+   Base Product Specifications in 10.7d
+     *
+       [Supported Platforms]
+       Linux RHEL 6 x86/x86-64
+       Linux RHEL 7 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Linux SLES 12 x86/x86-64
+       Windows 7 x86/x64
+       Windows 8.1 x86/x64
+       Windows 10 x86/x64
+       [Supported GCC Compilers (for SystemC)]
+       gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64
+       gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.2.1-mingw32vc12
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.07
+       [Licensing]
+       FLEXnet v11.14.1.3
+       MSL v2017_1_patch2
+       MGLS v9.17_10.2.4
+       PCLS v9.17.10.2.0
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 10.7d
+
+   Key Information Compatibility
+     * [nodvtid] - (results) -novopt flow has been deprecated and commands
+       will flag below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 10.7 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+     * QSIM-140 - (results) The compiler +protect flow is in process of
+       deprecation. This affects the vlog and vcom compilers. The
+       recommended flow is to use vencrypt (Verilog/SV) or vhencrypt
+       (VHDL) followed by vlog or vcom compilation. The deprecation
+       process starts with a warning if this option is used, which will
+       become an error in later releases. The reason for this change is to
+       remove the source ambiguities referenced by the compilation
+       libraries. An encrypted compilation is a compilation of the
+       post-encryption sources and must not retain any association with
+       pre-encryption sources. This principle is reinforced by maintaining
+       a two-step flow.
+
+   User Interface Compatibility
+     * QSIM-18738 - (results) Fixes corner cases that were causing the
+       Colorize system in the Transcript window to malfunction for some
+       customers. Using a color of 0 (Normal) now works as a Start Tag.
+       Also, having an End Tag on another line from its matching Start Tag
+       now correctly cleans up the color escape sequence.
+
+   VHDL Compatibility
+     * QSIM-50634 - (results) In certain cases, optimization of clocked
+       processes with reset was leading to incorrect results. This bug has
+       been fixed.
+
+   Mixed Language Compatibility
+     * QSIM-53075 - (results) When passing a Verilog unpacked array to a
+       VHDL array generic, values were mapped from the, Verilog value at
+       the low index was mapped to the VHDL position with the left index.
+       parameter int val[3:0] when passed to generic g1 :
+       integer_array(3:0) would map val[0] => g1(3), val[1] => g1(2),
+       val[2] => g1(1), val[3]=>g1(0). Now the values are passed like
+       val[0] => g1[0], val[1] => g1(1), val[2] => g1(2), and val[3] =>
+       g1(3).
+
+   General Compatibility
+     * QSIM-54154 - (results) Messages printed from VPI or PLI containing
+       the strings "error" or "warning" were counted as tool error and
+       warning and reported in stats output.
+
+   SystemVerilog Compatibility
+     * QSIM-36896 - (results) Removed read of NoAutoSDFCompile from .ini
+       files and deprecated warning message.
+
+   Power Aware Compatibility
+     * QSIM-197 - (source, results) The following changes were made in the
+       HDL package functions to align them with UPF LRM 3.1:
+         1. Added support for singleton class object upfDesignT.
+         2. Added field current_simstate on native UPF object upfPdSsObjT
+            to fetch current simstate of power domains or supply sets.
+         3. Type definition of upfHandleT has been changed from chandle to
+            SV int.
+       Now we strictly follow the LRM guideline, which says that the
+       handles to properties and iterators may be reused and are not valid
+       for comparison.
+       10.7: In order to use HDL package functions in 10.7, User needs to
+       make changes in the modelsim.ini file to point the mtiUPF to
+       $MODEL_TECH/../upf_lib-3.1
+     * QSIM-840 - (source, results) Instantaneously corrupting the value
+       of LHS in delayed continuos assignment on power down.
+     * [nodvtid] - (results) The assertion control option
+       "-pa_enable=forceasrtoffpwrdown" has been improved to honor user's
+       assertion control system task(e.g asserton, assertoff, assertkill)
+       once the assertion is out of power down period.
+       The assertions will remain disabled during power off period
+       irrespective of any user assertion control system task.
+     * [nodvtid] - (results) A new option
+       "-pa_enable=donttouchassertinbind" has been introduced to keep the
+       assertions unaffected due to power down/power up in bind
+       hierarchies.
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.7d
+     * QSIM-24925 - Input-to-Input SDF INTERCONNECT delays are not
+       annotated in optimized vsim run when there is not any driver on the
+       high connection net.
+     * QSIM-52009 - Fixed an issue where tool was crashing while printing
+       capstats report with -du option. The issue was related to variable
+       declarations inside fork..join.
+     * QSIM-54154 - (results) Messages printed from VPI or PLI containing
+       the strings "error" or "warning" were counted as tool error and
+       warning and reported in stats output.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.7d
+     * QSIM-53662 - For certain signal widths the column width was being
+       miscalculated which resulted in '*' being displayed in place of an
+       actual value. The correct width is now being calculated.
+     * QSIM-18738 - (results) Fixes corner cases that were causing the
+       Colorize system in the Transcript window to malfunction for some
+       customers. Using a color of 0 (Normal) now works as a Start Tag.
+       Also, having an End Tag on another line from its matching Start Tag
+       now correctly cleans up the color escape sequence.
+     * QSIM-53899 - The font size in the Source window is incorrect under
+       some newer X server configurations. This problem has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.7d
+     * QSIM-51616 - Intertial delay was not working properly for
+       tranif/rtranif primitives with delay when the control/enable input
+       had multiple transitions within the delay period.
+     * QSIM-52696 - In some cases, randomize() would crash when evaluating
+       an array.size() constraint for a random dynamic array of real type.
+       This issue has been fixed.
+     * [nodvtid] - In some cases, vsim did not generate an error during
+       elaboration when a non-existent class field was the first name in a
+       dotted name.
+     * QSIM-54192 - A "force -deposit" or $deposit on a net connected to
+       tran primitives failed to take on the forced value.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.7d
+     * QSIM-53077 - In a protected type body, if there was a data member
+       whose subtype involved another data member's value, then bad code,
+       which would crash the simulator, would result.
+     * QSIM-54334 - References within an uninstantiated package to a
+       locally-defined package instantiation could result in incorrect
+       simulator error messages due to incorrect code generation.
+     * QSIM-54962 - An object declaration with an initial value (or
+       default value, for signal) that was the parenthesized OPEN reserved
+       word was accepted and resulted in bad code that would crash the
+       simulator. This is a syntax error that is now detected.
+     * QSIM-54941 - The presence of a package instantiation declaration
+       within the declarative region of a design unit could cause the
+       compiler to incorrectly identify the instantiation as a standalone
+       design unit when compiling a source file with a -just command-line
+       switch. As a consequence, it is possible the extracted generic map
+       clause of the instantiation will refer to objects that are not in
+       scope, or the containing design unit will be broken into two parts
+       that cannot be compiled without syntax errors.
+     * QSIM-50634 - (results) In certain cases, optimization of clocked
+       processes with reset was leading to incorrect results. This bug has
+       been fixed.
+   _______________________________________________________________________
+
+   SystemC Defects Repaired in 10.7d
+     * QSIM-1380 - vopt crashes caused due to linking in
+       libsystemc_gccXX.a into the intermediate shared library during the
+       'sccom -linkshared' step has been fixed.
+     * QSIM-51654 - scparse compilation failures with the nlohmann JSON
+       c++ code has been fixed
+     * QSIM-39643 - Fixed an incorrect flag setting for the pointer types
+       that would cause an sccom (sccom-6165) merge error.
+   _______________________________________________________________________
+
+   Mixed Language Defects Repaired in 10.7d
+     * QSIM-53075 - (results) When passing a Verilog unpacked array to a
+       VHDL array generic, values were mapped from the, Verilog value at
+       the low index was mapped to the VHDL position with the left index.
+       parameter int val[3:0] when passed to generic g1 :
+       integer_array(3:0) would map val[0] => g1(3), val[1] => g1(2),
+       val[2] => g1(1), val[3]=>g1(0). Now the values are passed like
+       val[0] => g1[0], val[1] => g1(1), val[2] => g1(2), and val[3] =>
+       g1(3).
+     * QSIM-53578 - When a write-protected library contained a Verilog DU
+       made visible (as its equivalent ENTITY) by VHDL "use lib.all" in a
+       VHDL design unit, if the VHDL design unit then contained an
+       identifier that was the same as the name of this Verilog module, an
+       error would occur as the equivalent ENTITY was being made. This
+       error happened on Windows platforms only.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.7d
+     * VM-8513 - Fixed bug where "-exitcode" command-line option was not
+       producing a non-zero exit code if the regression run had tests
+       which timed out. The fix also includes producing a non-zero exit
+       code in the event a test is killed (by the user) or dropped
+       (possibly due to a VRM bug).
+     * VM-10665 - Fixed bug where a runnable whose base attribute
+       contained multiple runnable names separated by commas would result
+       in an error when run through the RMDB sanity checker ("-checkrmdb"
+       command-line option).
+     * [nodvtid] - Fixed various issues in coverage extractor (vcover
+       extract):
+          + Escape backslashes in data (ie: escaped identifiers) when
+            copying to JSON output
+          + Non-trendable class scopes are no longer extracted
+          + Missing (null) coverage values are not included in output
+          + Testplan coverage is emitted only for testplan section scopes
+     * VM-10936 - Fixed a bug in VRM where newline characters in a "tcl"
+       parameter could cause errors with the "vrun -status" command and/or
+       the VRM GUI.
+   _______________________________________________________________________
+
+   Power Aware Defects Repaired in 10.7d
+     * QSIM-9086 - Earlier if an interface port in RTL is specified in upf
+       connect_supply_net command to connect interface port with upf
+       supply net then vopt was giving error because it was not supported.
+       After this fix interface port in upf connect_supply_net is
+       supported.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.7d
+     * QSIM-36896 - (results) Removed read of NoAutoSDFCompile from .ini
+       files and deprecated warning message.
+     * QSIM-53134 - Added a SystemVerilog Constraint Solver extension.
+       This extension is to enable the seeding of different module
+       instances differently based on their hierarchical path names. The
+       extension is off by default and can be enabled with vsim
+       -svrandext=pathseed.
+   _______________________________________________________________________
+
+   VHDL Enhancements in 10.7d
+     * QSIM-43418 - Designs that have a very large number of signals that
+       are either multidimensional arrays or arrays whose elements are
+       arrays or records will now load faster at simulation time.
+   _______________________________________________________________________
+
+   Mixed Language Enhancements in 10.7d
+     * QSIM-53671 - VHDL can now instantiate a Verilog module that has a
+       multi-dimensional packed array-of-array-of-reg array port, when the
+       actual connected to that port is a VHDL array port (as long as the
+       number of scalar subelements matches).
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.7d
+     * VM-7029 - VRM testlist improvements:
+          + If the first token on a non-comment testlist line is "include"
+            and is followed by a second non-integer token, the second
+            token is treated as a path name (absolute or relative to the
+            directory where the parent file is located) and the referenced
+            file is opened and recursively parsed as a nested testlist.
+          + If the first (test name) token on two or more lines in a
+            testlist are identical, the tests generated by those lines are
+            combined into a single repeat list under that test name.
+   _______________________________________________________________________
+
+   Power Aware Enhancements in 10.7d
+     * QSIM-197 - (source, results) The following changes were made in the
+       HDL package functions to align them with UPF LRM 3.1:
+         1. Added support for singleton class object upfDesignT.
+         2. Added field current_simstate on native UPF object upfPdSsObjT
+            to fetch current simstate of power domains or supply sets.
+         3. Type definition of upfHandleT has been changed from chandle to
+            SV int.
+       Now we strictly follow the LRM guideline, which says that the
+       handles to properties and iterators may be reused and are not valid
+       for comparison.
+       10.7: In order to use HDL package functions in 10.7, User needs to
+       make changes in the modelsim.ini file to point the mtiUPF to
+       $MODEL_TECH/../upf_lib-3.1
+     * QSIM-26929 - Under vopt option -pa_enable=resolvedsubnet, when
+       there are multiple drivers and resolved nets in a connected network
+       tool will collect all drivers of that network and drive all the
+       resolved nets with common resolution function.
+     * [nodvtid] - (results) The assertion control option
+       "-pa_enable=forceasrtoffpwrdown" has been improved to honor user's
+       assertion control system task(e.g asserton, assertoff, assertkill)
+       once the assertion is out of power down period.
+       The assertions will remain disabled during power off period
+       irrespective of any user assertion control system task.
+     * [nodvtid] - (results) A new option
+       "-pa_enable=donttouchassertinbind" has been introduced to keep the
+       assertions unaffected due to power down/power up in bind
+       hierarchies.
+     * QSIM-840 - (source, results) Instantaneously corrupting the value
+       of LHS in delayed continuos assignment on power down.
+   _______________________________________________________________________
+
+   Document Revision History in 10.7d
+     * Revision - Changes - Status/Date
+          + 3.11 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/February 2019
+          + 3.10 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/February 2019
+          + 3.9 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/December 2018
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.7d,product.id.P11633"
+

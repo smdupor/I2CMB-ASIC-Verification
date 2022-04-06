@@ -1,0 +1,318 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.6e Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.6e" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.6e</h1></center>
+<center><b>Jun 22 2018</b> <br />
+ <br />
+ Copyright 1991-2018 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 10.6e</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.6e</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.6e</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 10.6e</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.6e</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.6e</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.6e</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.6e</a></li>
+ <li><a href="#powerawaredefects">Power Aware Defects Repaired in 10.6e</a></li>
+ <li><a href="#qwavelogdefects">Qwave logging Defects Repaired in 10.6e</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 10.6e</a></li>
+ <li><a href="#uienhancements">User Interface Enhancements in 10.6e</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.6e</a></li>
+ <li><a href="#docrevhistory">Document Revision History in 10.6e</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>The vlog -wireasinterconnect option is deprecated due to performance issues, and a warning message is issued to that effect when used. The vopt -rnmautointeconnect option is preferred because it takes advantage of the vopt analysis to more selectively convert wires to interconnect. Only wires connected upwards from real/wreal/nettype/interconnect ports are converted.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.6e</b></font>
+<ul><li><p>
+There is no licensing change between 10.5 and 10.6. However, if you are migrating to 10.6 from a release like 10.4 and older, please note that release 10.6 uses FLEXnet v11.13.1.2 server, v11.13.0.2 client.
+
+<p>
+For floating licenses, it will be necessary to verify that the vendor  daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.13.0.2. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.13.0.2 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+
+<p>
+If you use node locked licenses you don't need to do anything. This 
+release will update licensing to MSL v2015_1_patch2 with MGLS v9.13_5.4 
+and PCLS v9.13.5.2
+
+<p>
+In summary, this release uses the following license versions:
+<ul>
+<li>FLEXnet v11.13.1.2 server, v11.13.0.2 client
+<li>MSL v2015_1_patch2
+<li>MGLS v9.13_5.4
+<li>PCLS v9.13.5.2</li>
+ <li>Beginning with 10.6 release, support for Linux RHEL 5 x86/x86-64 and SLES 10 x86/x86_64 have discontinued.</li>
+ <li>Beginning with 10.6 release, gcc-4.3.3-linux/gcc4.3.3-linux_x86_64 GCC Compilers for SystemC have been discontinued.</li>
+ <li>Beginning with 10.6 release, support for Windows 8 series is limited to 8.1. Windows 8.0 has discontinued.</li>
+ <li>Due to enhanced security restrictions with web browser PDF plug-ins, some links do not function. Links in HTML documentation are fully functional.<br><br>
+Clicking a link within a PDF viewed in a web browser may result in no action, or it may load the title page of the current PDF manual (instead of the intended target in the PDF manual). The unresolved link behavior occurs in all web browsers on Windows and Linux platforms. Because of this behavior, the navigational experience of PDF manuals is compromised. PDF is ideal for printing because of its page-oriented layout.<br><br>
+Use the HTML manuals to search for topics, navigate between topics, and click links to examples, videos, reference material, and other related technical content.<br><br>
+For information about Adobe's discontinued support of Adobe Reader on Linux platforms and your available options, refer to Knowledge Article MG596568 on SupportNet.<br><br>
+Linux is a registered trademark of Linus Torvalds in the U.S. and other countries.</li>
+ <li>(source, results) The -novopt command line switch will be deprecated in the next major 
+release 10.7 following normal deprecation process:
+<p>
+<ul>
+<li>The -novopt switch will be accepted in 10.7 with a deprecation
+suppressible error message.
+<li>In 10.8 or a subsequent release, the -novopt switch will not be 
+accepted by the tool and cause tool to exit with error message.
+<li>Customer scripts using this switch will have to be changed. 
+This legacy switch forces incremental mode (pre-6.0 behavior) which 
+is sub-optimal, and it is no longer maintained.</li>
+ <li>We regularly review our OS/Platform support for Questa/ModelSim and related functional verification products to add new platforms and discontinue old ones.
+<p>
+That process normally takes a number of years from decision to action.  Customer notifications are typically only one year in an advance through our Release Notes and Install Guide.
+<p>
+We plan to make a change in our Windows support, 1 year from now.  We began notifications of this change back in January 2017 with the 10.5d and 10.6a releases
+<p>
+As our existing Windows machines breakdown or are discontinued, replacement hardware can only support Windows 10.
+So say Microsoft and our hardware vendors, HP & Lenovo.  That will limit our capacity and ability to support Windows 7 & 8.1 in the future.
+<p>
+Therefore, starting with 10.8 (FCS Dec 2018) we plan to discontinue supporting Windows 7 & 8.1
+Thus the only Windows version for 10.8 will be for Windows 10.
+However we will continue to support Windows 7 & 8.1 with our 10.6 and 10.7 release series until their planned EOL (10.6 EOL - mid 2019, 10.7 EOL - mid 2020) to coincide with Microsoft's EOL for Windows 7.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.6e</b></font>
+<ul><li><br>
+[Supported Platforms]<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux RHEL 7 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Linux SLES 12 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8.1 x86/x64<br>
+        Windows 10 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+        gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc12<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.13.1.2 server, v11.13.0.2 client<br>
+	MSL 	v2015_1_patch2<br>
+	MGLS 	v9.13_5.4<br>
+	PCLS 	v9.13.5.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.6e</b></font>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source) An issue with incorrect precedence in the &&& and "matches" operations in SV has been fixed. This may cause SV HDL code to be compiled differently than with previous versions. Any differences will be flagged by the compiler with an error.</li>
+ <li>dvt110034 - (source, results) Added a SV extension vlog/vopt -svext=[+-]ifslvbefr to allow solve/before constraint within an IfElse constraint with constant condition. 
+<br>
+By default, this extension is on and no compile-time check is triggered.
+<br>
+vlog/vopt -pedanticerrors or -svext=-ifslvbefr will revert back to the legacy behavior. A compile error (vlog-2919) will be thrown if solve/before constraint is under an IfElse constraint.
+<br>
+When the condition expression of IfElse constraint is NOT constant, a new runtime error (vsim-16056) will be thrown, i.e.
+
+<pre>
+Error: (vsim-16056) ../src/iter1b.sv(11): Illegal use of solve/before
+constraint in conditional/implication constraint context.
+</pre>
+</li>
+ <li>dvt103663 - (results) Improved support for $clog2 system function calls within the context of random constraints. In the past, a $clog2 function call in a constraint would be handled as a constant (non-random) value. The new behavior is for $clog2 to behave as a fully bidirectional constraint expression -- the operand and result of $clog2 will be solved simultaneously by the constraint solver during a randomize call.</li>
+ <li>dvt109786 - (results) In some rare cases, two calls to randomize() for the same class type and randstate would generate different results. This issue has been fixed.
+</li>
+ <li>dvt107051 - (results) The array manipulation method array.shuffle was modified to use the RNG of the active thread. Previously all shuffle operations shared a separate internal RNG (RandomNumberGenerator). The change in RNG can change the results of a call to the shuffle method.
+In 10.7x and 10.6x the RNG selection is controlled by the -svext=[+-]thrdrngshfl option.
+  +thrdrngshfl : the thread RNG is used by the shuffle method
+  -thrdrngshfl : the separate internal RNG is used by the shuffle method
+The -svext option applies to both vlog and vsim.
+For backward compatibility, by default the option is disabled (-thrdrngshfl)
+</li>
+ <li>dvt110375 - (results) In some cases simulation result differ between optimized and unoptimized cells with optimize cells selecting the wrong path delay when negative timing checks are present.</li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>dvt108867 - (results) For some specific cases of clocked processes, forcing the signal used to give incorrect simulation results. This has been fixed now.</li>
+</ul>
+<p /><dd><font size="3"><b>Power Aware  Compatibility</b></font></dd>
+<ul><li>dvt109460 - (results) By-default QuestaSim will ignore corruption of behavioral sequential blocks. Behavioral Sequential are those always blocks which has edge sensitivity but they are non-synthesizable. To enable corruption for such always blocks use the vopt option -pa_enable=behaveseqcrpt.</li>
+ <li>dvt110260 - (results) Liberty parsing is updated -  
+1- parse the liberty files in the same order in which the files are provided to option -pa_libertyfiles
+2- When option -pa_libertyupdate is provided, and there are same libraries in different liberty files, then the library will be overridden by the last parsed liberty file</li>
+</ul>
+<p /><dd><font size="3"><b>General  Compatibility</b></font></dd>
+<ul><li>dvt94468 - (results) When using vsim -batch mode, the transcript (stdout) output could contain NUL and CR characters that are otherwise filtered out when using other vsim modes.  The transcript output in -batch mode now matches the output when using -c or -i modes in this regard.
+</li>
+</ul>
+<p /><dd><font size="3"><b>Release Announcements Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source, results) The -novopt command line switch will be deprecated in the next major 
+release 10.7 following normal deprecation process:
+<p>
+<ul>
+<li>The -novopt switch will be accepted in 10.7 with a deprecation
+suppressible error message.
+<li>In 10.8 or a subsequent release, the -novopt switch will not be 
+accepted by the tool and cause tool to exit with error message.
+<li>Customer scripts using this switch will have to be changed. 
+This legacy switch forces incremental mode (pre-6.0 behavior) which 
+is sub-optimal, and it is no longer maintained.</li>
+</ul>
+<p /><dd><font size="3"><b>Qwave logging  Compatibility</b></font></dd>
+<ul><li>dvt109564 - (results) Some VHDL boolean signals were not logged in the Qwave wavefile.  Now they are.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 10.6e</b></font>
+<ul><li>dvt84893 - The simulation timescale is incorrect in some circumstances when running in -batch mode.</li>
+ <li>dvt94468 - (results) When using vsim -batch mode, the transcript (stdout) output could contain NUL and CR characters that are otherwise filtered out when using other vsim modes.  The transcript output in -batch mode now matches the output when using -c or -i modes in this regard.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.6e</b></font>
+<ul><li>dvt108473 - From the Message Viewer, when opening the source file referenced in a message, if the file cannot be found, a dialog box will pop up, requesting the user to select the location of the file.</li>
+ <li>dvt106889 - "vmap" fails silently when there is a leftover lock file.  Now it will report a warning 5 times, 5 seconds apart, before giving up and returning an error status.</li>
+ <li>dvt109082 - Repaired GUI crash when associative arrays are present in automatic functions.</li>
+ <li>dvt109387 - The Coverage HTML Report dialog box sometimes fails with an "# ** Error: (vsim-4003) Invalid option '-code '." message.  This issue has been repaired.</li>
+ <li>dvt109672 - The vsim GUI crashes when displaying certain comments in VHDL source code.  This issue has been resolved.</li>
+ <li>[nodvtid]  - Enabled class instance window in view mode</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.6e</b></font>
+<ul><li>dvt103663 - (results) Improved support for $clog2 system function calls within the context of random constraints. In the past, a $clog2 function call in a constraint would be handled as a constant (non-random) value. The new behavior is for $clog2 to behave as a fully bidirectional constraint expression -- the operand and result of $clog2 will be solved simultaneously by the constraint solver during a randomize call.</li>
+ <li>dvt109061 - In some rare cases, randomize() would fail with the following spurious error message: "Invalid random variable in index expression for constraint" -- even in cases where an index expression only referred to constant (non-random) variables. This issue has been fixed.</li>
+ <li>dvt109786 - (results) In some rare cases, two calls to randomize() for the same class type and randstate would generate different results. This issue has been fixed.
+</li>
+ <li>dvt110832 - In some rare cases, randomize() would trigger an internal error related to an interaction between random dynamic arrays and pre_randomize. This issue has been fixed.</li>
+ <li>dvt107051 - (results) The array manipulation method array.shuffle was modified to use the RNG of the active thread. Previously all shuffle operations shared a separate internal RNG (RandomNumberGenerator). The change in RNG can change the results of a call to the shuffle method.
+In 10.7x and 10.6x the RNG selection is controlled by the -svext=[+-]thrdrngshfl option.
+  +thrdrngshfl : the thread RNG is used by the shuffle method
+  -thrdrngshfl : the separate internal RNG is used by the shuffle method
+The -svext option applies to both vlog and vsim.
+For backward compatibility, by default the option is disabled (-thrdrngshfl)
+</li>
+ <li>dvt110375 - (results) In some cases simulation result differ between optimized and unoptimized cells with optimize cells selecting the wrong path delay when negative timing checks are present.</li>
+ <li>[nodvtid]  - (source) An issue with incorrect precedence in the &&& and "matches" operations in SV has been fixed. This may cause SV HDL code to be compiled differently than with previous versions. Any differences will be flagged by the compiler with an error.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.6e</b></font>
+<ul><li>dvt107650 - Reference to a package constant defined within a package instance that is itself defined within a simple package could cause the compiler to produce an internal error.</li>
+ <li>dvt108324 - The compiler could crash when encountering a composite assignment, where the left-hand side contains a variable whose type is an interface type.</li>
+ <li>dvt109476 - The vcom compiler "-just" and "-skip" options now allow the specification 'x', which means VHDL 2008 "context" declarations.</li>
+ <li>dvt108867 - (results) For some specific cases of clocked processes, forcing the signal used to give incorrect simulation results. This has been fixed now.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.6e</b></font>
+<ul><li>[nodvtid]  - Fixed bug in VRM where FetchEventUcdbs build-in utility procedure could return incorrect paths.</li>
+ <li>[nodvtid]  - Fixed bug where "-inputsfile" option to "triage passfail" command wasn't being recognized.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="powerawaredefects"></a><font size="4"><b>Power Aware Defects Repaired in 10.6e</b></font>
+<ul><li>dvt109460 - (results) By-default QuestaSim will ignore corruption of behavioral sequential blocks. Behavioral Sequential are those always blocks which has edge sensitivity but they are non-synthesizable. To enable corruption for such always blocks use the vopt option -pa_enable=behaveseqcrpt.</li>
+ <li>dvt110260 - (results) Liberty parsing is updated -  
+1- parse the liberty files in the same order in which the files are provided to option -pa_libertyfiles
+2- When option -pa_libertyupdate is provided, and there are same libraries in different liberty files, then the library will be overridden by the last parsed liberty file</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="qwavelogdefects"></a><font size="4"><b>Qwave logging Defects Repaired in 10.6e</b></font>
+<ul><li>dvt109564 - (results) Some VHDL boolean signals were not logged in the Qwave wavefile.  Now they are.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 10.6e</b></font>
+<ul><li>[nodvtid]  - -stats=perf+verbose will now print additional section about the machine and OS environment, where executable is run. This is available in all executables, which support -stats option.
+
+<pre>
+ Machine Details
+     Host: mach1.mentorg.com (SGE grid)
+       OS: CentOS Linux release 7.3.1611 (Core)
+</pre></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uienhancements"></a><font size="4"><b>User Interface Enhancements in 10.6e</b></font>
+<ul><li>dvt109197 - Added PrefWave(LineWidth) preference define the width of waveform lines.  The default is '1'.  Defining larger widths are useful for high density monitors where a single pixel wide line is too narrow to see clearly.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.6e</b></font>
+<ul><li>dvt110034 - (source, results) Added a SV extension vlog/vopt -svext=[+-]ifslvbefr to allow solve/before constraint within an IfElse constraint with constant condition. 
+<br>
+By default, this extension is on and no compile-time check is triggered.
+<br>
+vlog/vopt -pedanticerrors or -svext=-ifslvbefr will revert back to the legacy behavior. A compile error (vlog-2919) will be thrown if solve/before constraint is under an IfElse constraint.
+<br>
+When the condition expression of IfElse constraint is NOT constant, a new runtime error (vsim-16056) will be thrown, i.e.
+
+<pre>
+Error: (vsim-16056) ../src/iter1b.sv(11): Illegal use of solve/before
+constraint in conditional/implication constraint context.
+</pre>
+</li>
+ <li>dvt110190 - Added a new SystemVerilog constrained-random language extension to enable "strict" random stability in the solver. "Strict" random stability guarantees that two instances of the same class, having the same randstate, will generate the same randomize() results -- regardless of the order in which the randomize() calls are made and independent of any randomize() calls that are made before them. Enable "strict" random stability with the vsim command line option "-svrandext=+strictstab". Enabling "strict" random stability can negatively impact randomize() performance for some scenarios. This extension is disabled by default.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="docrevhistory"></a><font size="4"><b>Document Revision History in 10.6e</b></font>
+<ul><li><b>Revision</b> - <b>Changes</b> - <b>Status/Date</b>
+<ul>
+<li>
+2.9 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/June 2018</li>
+<li>
+2.8 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/April 2018</li>
+<li>
+2.7 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/February 2018</li>
+</ul>
+</li>
+ <li><b>Author:</b> In-house procedures and working practices require multiple authors for documents.  All associated authors for each topic within this document are tracked within the document source. 
+
+</li>
+ <li><b>Revision History:</b> Released documents maintain a revision history of up to four revisions. For earlier revision history, refer to earlier releases of documentation which are available on Support Center (http://support.mentor.com).
+</li>
+</ul>
+
+</body>
+</html>

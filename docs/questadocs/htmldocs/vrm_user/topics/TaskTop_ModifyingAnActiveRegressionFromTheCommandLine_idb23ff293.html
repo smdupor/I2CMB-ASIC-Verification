@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Modifying an Active Regression from the Command Line" />
+<meta name="abstract" content="Use the vrun -modify command line to modify an active regression run." />
+<meta name="description" content="Use the vrun -modify command line to modify an active regression run." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb23ff293-7953-44b0-b555-fd4e45e4dbe3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Modifying an Active Regression from the Command Line</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Modifying an Active Regression from the Command Line" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Modifying an Active Regression from the Command Line</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">Use the vrun
+-modify command line to modify an active regression run.</span>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id69041cda-2b86-4140-bfd2-5b4c9b235465"><p class="p">Have an active regression run.</p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id2bd99bd2-52c5-4448-9f53-26aeab0c50d8"><span class="ph cmd">Determine which parameters or attributes you
+need to modify and craft the necessary &lt;keyword&gt;=&lt;value&gt; pair.</span></li>
+<li class="li step stepexpand" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id4adf278f-1068-4cde-b8a7-7fc7c7c59065"><span class="ph cmd">Determine whether you need to modify the default
+arguments to the vrun -modify command line.</span><ol type="a" class="ol substeps"><li class="li substep" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id18b50180-f812-4cfc-bb43-9188cc952952"><span class="ph cmd">(optional) Determine which VRMDATA directory
+you want to modify, if different from the default.</span></li>
+<li class="li substep" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id6136849f-4472-461a-bc27-b2d9fdbd1664"><span class="ph cmd">(optional) Determine which status event log
+you want to analyze, if you are running multiple regression runs
+from the same VRMDATA directory.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id7ab374b9-68b8-479f-b568-74283f0141a7"><span class="ph cmd">Invoke a new vrun command with the -modify argument
+and any supporting arguments.</span><div class="itemgroup info StepInfo"><p class="p">If there is a problem
+with your command line, vrun issues an error response in the log
+output</p>
+</div></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><ul class="ul"><li class="li" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id1f0e602b-c997-450f-84f1-5f530d12b175"><p class="p">vrun regenerates any Actions that are impacted
+by the modification and are queued for launch.</p>
+</li>
+<li class="li" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id83dbca83-d11a-4ef3-b5c2-7c42b49f4098"><p class="p">Actions
+already launched are not affected by the command.</p>
+</li>
+<li class="li" id="idb23ff293-7953-44b0-b555-fd4e45e4dbe3__id696d19e2-bda6-4181-bddf-dc1762330b6a"><p class="p">Original regression run continues with newly modified Actions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RegressionRunModification_id8aeead8b.html" title="Use the vrun -modify command line to modify select parameters and attributes of a regression run after the regression has started.">Regression Run Modification</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Modifying an Active Regression from the Command Line"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_ModifyingAnActiveRegressionFromTheCommandLine_idb23ff293.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

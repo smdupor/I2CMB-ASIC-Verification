@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Preparing Your Simulation for OVM-Aware Debug" />
+<meta name="abstract" content="This section describes the steps you must take to enable the OVM-aware debugging features in your OVM environment." />
+<meta name="description" content="This section describes the steps you must take to enable the OVM-aware debugging features in your OVM environment." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id23b71da3-11e1-41d4-9878-7f60efaf27a9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Preparing Your Simulation for OVM-Aware Debug</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Preparing Your Simulation for OVM-Aware Debug" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id23b71da3-11e1-41d4-9878-7f60efaf27a9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Preparing Your Simulation for OVM-Aware Debug</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">This section
+describes the steps you must take to enable the OVM-aware debugging
+features in your OVM environment.</span>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id42dbb7c1-2e92-4264-8658-fec99ba66075"><p class="p">Design
+Source — SystemVerilog testbench based on the Open Verification
+Methodology (OVM) v2.0 or greater. Refer to </p>
+<pre class="pre codeblock leveled"><code><span class="ph filepath">http://verificationacademy.com/verification-methodology</span> </code></pre><p class="p">for more details. </p>
+</li>
+<li class="li" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__idcf9f0cd5-52cf-41d0-8315-b6126d745fd8"><p class="p">Precompiled
+OVM Library — You must use the precompiled OVM library (mtiOvm)
+provided in the installation. This library contains the necessary
+infrastructure used to enable the OVM-aware debugging capabilities. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id60e88702-9349-4bef-88bd-14e6084e8882"><span class="ph cmd">Compile — You must use the
+OVM source included in your installation directory to take advantage
+of the built in debugging features. Here are three compilation scenarios
+that may apply to your environment.</span><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id4faf0f8d-ac38-4079-bcad-b4e027626c2a"><p class="p">If your OVM design does
+not require macros, you can use a command similar to:</p>
+<pre class="pre codeblock leveled"><code>vlog top.sv</code></pre><p class="p">and the compiler will use the
+precompiled OVM library (mtiOvm). </p>
+</li>
+<li class="li" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id8de1384a-9ce2-4ff5-9d34-4eb5de6d55e4"><p class="p">If your OVM requires macros,
+you must also include the ovm-2.0, or greater, source files. For
+example:</p>
+<pre class="pre codeblock"><code>vlog top.sv \
++incdir+&lt;install_dir&gt;/verilog_src/ovm-&lt;version&gt;/src/</code></pre></li>
+<li class="li" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id03b20110-a46b-4afe-aa51-e43874a4b831"><p class="p">If you cannot use the
+precompiled OVM and need to compile the OVM source directly, you
+must specify a +define of OVM_DEBUGGER as follows:</p>
+<p class="lines ApplCommand leveled">vlog top.sv \<br />
++incdir+&lt;install_dir&gt;/verilog_src/ovm-&lt;version&gt;/src/ \<br />
++define+OVM_DEBUGGER \<br />
+&lt;install_dir&gt;/verilog_src/ovm-&lt;version&gt;/src/ovm_pkg.sv</p>
+</li>
+</ul>
+</div></li>
+<li class="li step stepexpand" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id98ac38b7-ece8-460a-8017-aa3d1131a5c9"><span class="ph cmd">Optimize — You can explicitly
+or implicitly run vopt. There are no special settings to enable
+OVM-Aware debugging.</span></li>
+<li class="li step stepexpand" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id35e0d6c3-258f-48d5-8fb3-b317ecc0024c"><span class="ph cmd">Elaborate — You must specify
+the -OVMdebug switch on the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command
+line. Note that the switch is case-sensitive. This instructs the
+simulator to collect debugging information about your OVM environment.</span></li>
+<li class="li step stepexpand" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__idf5b4543f-be75-408e-968a-8846f7601cfa"><span class="ph cmd">Prepare for Debug — Display
+the OVM-aware debugging windows, <a class="xref fm:HeadingOnly" href="General_OvmGlobalsWindow_id6e2db620.html#id6e2db620-6981-4dbe-ad4f-7dadb7e34306__General_OvmGlobalsWindow_id6e2db620.xml#id6e2db620-6981-4dbe-ad4f-7dadb7e34306" title="The OVM Globals window contains information that is not specific to an OVM component. Specifically it contains information about phases, barriers and blockers.">OVM Globals Window</a> and <a class="xref fm:HeadingOnly" href="General_OvmHierarchyWindow_id6ad6e74f.html#id6ad6e74f-90cb-4181-a588-98c06229763d__General_OvmHierarchyWindow_id6ad6e74f.xml#id6ad6e74f-90cb-4181-a588-98c06229763d" title="The OVM Hierarchy window contains hierarchical information about your OVM environment.">OVM Hierarchy Window</a>, by executing the command:</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">view ovm</p>
+<p class="p">You can also display these
+windows from the <span class="ph menucascade"><span class="ph uicontrol">View</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">OVM</span></span> menu
+item.</p>
+</div></li>
+<li class="li step stepexpand" id="id23b71da3-11e1-41d4-9878-7f60efaf27a9__id967c7317-16ce-44ca-bfda-dbe4947e7c64"><span class="ph cmd">Simulate — The OVM Hierarchy
+window will be empty until the testbench creates the first OVM environment
+components. As soon as the simulation enters the OVM build phase,
+the OVM structure is built up and the OVM Hierarchy window is populated.
+You can enter the OVM build phase by running the simulation to a particular
+time or by setting a breakpoint in your design.</span></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_OvmAwareDebug_idc04ba890.html" title="OVM-aware debugging provides you, the verification or design engineer, with information, at the OVM abstraction level, that connects you to the OVM base-class library.">OVM-Aware Debug</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Preparing Your Simulation for OVM-Aware Debug"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_PreparingYourSimulationOvmAwareDebug_id23b71da3.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

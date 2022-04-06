@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Delay Modes and the Verilog Standard" />
+<meta name="abstract" content="The Verilog standard (LRM, IEEE Std 1364‑2005) states that if a module contains both path delays and distributed delays, then the larger of the two delays for each path shall be used (Section 14.4). This is the default behavior of the Questa SIM simulator." />
+<meta name="description" content="The Verilog standard (LRM, IEEE Std 1364‑2005) states that if a module contains both path delays and distributed delays, then the larger of the two delays for each path shall be used (Section 14.4). This is the default behavior of the Questa SIM simulator." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide5158713-3d0f-4920-b05a-3fbcf22b37a5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Delay Modes and the Verilog Standard</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Delay Modes and the Verilog Standard" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Delay Modes and the Verilog Standard</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The Verilog
+standard (LRM, IEEE Std 1364‑2005) states that if a module contains
+both path delays and distributed delays, then the larger of the
+two delays for each path shall be used (Section 14.4). This is the
+default behavior of the <span class="ph fmvar:ProductName">Questa SIM</span> simulator.</span>
+</div>
+<p class="p">However, you can specify alternate
+delay modes using compiler directives and arguments to the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vlog', 'questa_sim_ref'); return false;">vlog</a> command: </p>
+<ul class="ul"><li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__id2b729c2c-f4bc-4a80-8ed5-7e4711740225"><p class="p"><a class="xref fm:HeadingOnly" href="Concept_DistributedDelayMode_idf77a21c1.html#idf77a21c1-9238-4e8e-be89-c9e42d15384d__Concept_DistributedDelayMode_idf77a21c1.xml#idf77a21c1-9238-4e8e-be89-c9e42d15384d" title="In distributed delay mode, the specify path delays are ignored in favor of the distributed delays. You can specify this delay mode with the +delay_mode_distributed compiler argument or the `delay_mode_distributed compiler directive.">Distributed Delay Mode</a> </p>
+</li>
+<li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__idb8fbfdc4-900a-4024-973b-c085467c5187"><p class="p"><a class="xref fm:HeadingOnly" href="Concept_PathDelayMode_id7cbbc6e8.html#id7cbbc6e8-4c36-472b-bb65-d4b5c16b71e3__Concept_PathDelayMode_id7cbbc6e8.xml#id7cbbc6e8-4c36-472b-bb65-d4b5c16b71e3" title="In path delay mode, the distributed delays are set to zero in any module that contains a path delay. You can specify this delay mode with the +delay_mode_path compiler argument or the `delay_mode_path compiler directive.">Path Delay Mode</a> </p>
+</li>
+<li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__id680226fe-134e-4271-8725-16beed6030b0"><p class="p"><a class="xref fm:HeadingOnly" href="Concept_UnitDelayMode_id7d634919.html#id7d634919-ed00-4793-986b-1973660de433__Concept_UnitDelayMode_id7d634919.xml#id7d634919-ed00-4793-986b-1973660de433" title="In unit delay mode, the nonzero distributed delays are set to one unit of simulation resolution (determined by the minimum time_precision argument in all ‘timescale directives in your design or the value specified with the -t argument to vsim), and the specify path delays and timing constraints are ignored. You can specify this delay mode with the +delay_mode_unit compiler argument or the `delay_mode_unit compiler directive.">Unit Delay Mode</a> </p>
+</li>
+<li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__idcfcf79be-385b-48ea-9f80-2a7a4ff0c3d3"><p class="p"><a class="xref fm:HeadingOnly" href="Concept_ZeroDelayMode_ida99334eb.html#ida99334eb-c05f-42cb-b714-922758e1bd1e__Concept_ZeroDelayMode_ida99334eb.xml#ida99334eb-c05f-42cb-b714-922758e1bd1e" title="In zero delay mode, the distributed delays are set to zero, and the specify path delays and timing constraints are ignored. You can specify this delay mode with the +delay_mode_zero compiler argument or the `delay_mode_zero compiler directive.">Zero Delay Mode</a> </p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">Delay mode arguments
+to the vlog command take precedence over delay mode directives in
+the source code. </p>
+</div>
+</li>
+</ul>
+<p class="p">Note that these directives and arguments are
+compatible with Verilog-XL. However, using these modes results in
+behavior that is not clearly defined by the Verilog standard—the delays
+that are set to zero can vary from one simulator to another (some
+simulators zero out only some delays). </p>
+<p class="p"><a class="xref fm:Example" href="#ide5158713-3d0f-4920-b05a-3fbcf22b37a5__iddfcc1140-9ad1-48e1-b0a0-c526f36579f7">Example 1</a> shows the 2-input AND gate cell using
+a different compiler directive to apply each delay mode. In particular, <span class="ph fmvar:ProductName">Questa SIM</span> does the following: </p>
+<ul class="ul"><li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__idaedb2c61-05c8-46b7-8fe0-87760853034c"><p class="p">The <span class="ph FontProperty HeadingLabel">`delay_mode_zero</span> directive sets
+both the continuous assignment delay (assign #2 c = b) and the primitive
+delay (and #3 (y, a,c) ) to zero. </p>
+</li>
+<li class="li" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__id8602eeac-f03d-439a-b3d8-7d3a5a1487c9"><p class="p">The<span class="ph FontProperty HeadingLabel"> `delay_mode_unit </span>directive converts
+both of these nonzero delays (continuous assignment and primitive)
+to 1. </p>
+<div class="fig fignone ExampleTitle" id="ide5158713-3d0f-4920-b05a-3fbcf22b37a5__iddfcc1140-9ad1-48e1-b0a0-c526f36579f7"><span class="figcap"><span class="fig--title-label">Example 1. </span>Delay Mode Directives in a Verilog Cell</span></div>
+</li>
+</ul>
+<p class="p">The following instances of a 2-input AND gate
+cell (and2_1, and2_2, and2_3, and2_4) use compiler directives to
+apply each delay mode. </p>
+<pre class="pre codeblock"><code>`delay_mode_zero 
+module and2_1(y, a, b);
+  input a, b;
+  output y;
+  wire c;
+  assign #2 c = b;
+
+  and #3(y, a, c);
+  specify
+    (a =&gt; y) = 5;
+    (b =&gt; y) = 5;
+  endspecify
+endmodule
+
+`delay_mode_unit 
+module and2_2(y, a, b);
+  input a, b;
+  output y;
+  wire c;
+  assign #2 c = b;
+
+  and #3(y, a, c);
+  specify
+    (a =&gt; y) = 5;
+    (b =&gt; y) = 5;
+  endspecify
+endmodule
+
+`delay_mode_distributed 
+module and2_3(y, a, b);
+  input a, b;
+  output y;
+  wire c;
+  assign #2 c = b;
+
+  and #3(y, a, c);
+  specify
+    (a =&gt; y) = 5;
+    (b =&gt; y) = 5;
+  endspecify
+endmodule
+
+`delay_mode_path
+module and2_4(y, a, b);
+  input a, b;
+  output y;
+  wire c;
+  assign #2 c = b;
+
+  and #3(y, a, c);
+  specify
+    (a =&gt; y) = 5;
+    (b =&gt; y) = 5;
+  endspecify
+endmodule</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DelayModes_id804d008d.html" title="Verilog models can contain both distributed delays and path delays. Distributed delays appear on primitives, UDPs, and continuous assignments; path delays are the port-to-port delays specified in specify blocks. These delays interact to determine the actual delay observed. Most Verilog cells use path delays exclusively, with no distributed delays specified.">Delay Modes</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Delay Modes and the Verilog Standard"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_DelayModesVerilogStandard_ide5158713.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

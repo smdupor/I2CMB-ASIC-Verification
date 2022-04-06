@@ -1,0 +1,178 @@
+Mentor Graphics Technical Note
+Copyright 1991-2020 Mentor Graphics Corporation
+All Rights Reserved.
+
+This document contains information that is proprietary to Mentor Graphics
+Corporation. The original recipient of this document may duplicate this
+document in whole or in part for internal business purposes only, provided
+that this entire notice appears in all copies. In duplicating any part of
+this document, the recipient agrees to make every reasonable effort to
+prevent the unauthorized use and distribution of the proprietary information.
+
+Trademarks that appear in Mentor Graphics product publications that are not
+owned by Mentor Graphics are trademarks of their respective owners.
+
+
+Questa is not compliant or has incomplete support for the following
+IEEE 1800-2012 SystemVerilog LRM sections:
+==============================================================================
+
+
+Section 4: Scheduling semantics
+------------------------------------------------------------------------------
+4.10      The PLI callback control points
+              * Not supported
+
+Section 5: Lexical conventions
+------------------------------------------------------------------------------
+5.12      Attributes
+			 * Default attribute type not supported.
+
+Section 8: Classes
+------------------------------------------------------------------------------
+8.3       Syntax
+              * No nesting of parameterized class declarations
+8.23      Out-of-block declarations
+              * Lifetime of method cannot be changed with external definition
+                from default lifetime of the class
+
+Section 9: Processes
+------------------------------------------------------------------------------
+9.4.2.4   Sequence events
+		      * Hierarchical references to sequences supported with the
+                following restrictions
+                    - Clock and disable iff expressions cannot have a formal
+                    - Method 'matched' not supported on a hier-ref'd sequence
+9.4.4     Level-sensitive sequence controls
+              * Hierarchical references to sequences supported with the
+                following restrictions
+                    - Clock and disable iff expressions cannot have a formal
+                    - Method 'matched' not supported on a hier-ref'd sequence
+
+Section 10: Procedural statements and control flow
+------------------------------------------------------------------------------
+10.6.1    Procedural assign and deassign statement
+              * Not removed. 
+
+Section 11: Operators and Expressions
+------------------------------------------------------------------------------
+11.4.13   Set membership operator
+              * Wild card semantic of inside operator in a constraint not
+                supported
+11.9      Tagged union expressions & member access
+              * Void members are not supported
+11.11     Operator overloading
+              * Not supported
+
+Section 15: Interprocess synchronization and communication
+------------------------------------------------------------------------------
+15.5.4    Event sequencing: wait_order()
+              * Not supported
+
+Section 16: Assertions
+------------------------------------------------------------------------------
+16.6      Boolean expressions
+              * No checking for side effects of function calls
+16.7      Sequences
+              * Hierarchical references to sequences supported with the
+                following restrictions
+                    - Clock and disable iff expressions cannot have a formal
+                    - Method 'matched' not supported on a hier-ref'd sequence
+              * Hierarchical references having virtual interface in path
+                is not supported.
+16.9.4    Global clocking past and future sampled value functions
+              * Global clocking future sampled value functions are not supported
+16.12     Declaring properties
+              * Hierarchical references to properties supported with the
+                following restrictions
+                    - Clock and disable iff expressions cannot have a formal
+              * Hierarchical references having virtual interface in path
+                is not supported.
+16.12.22  Nondegeneracy
+              * Not supported
+16.13.6   Sequence methods
+              * formal_argument_sequence.sequence_method not supported.
+          Clock inferencing for sequence on which a method is applied.
+              * We do not infer the clock from the context where it is used.
+16.14.4   Restrict statement
+              * Not supported
+16.14.8   Nonvacuous evaluations
+              * Not supported
+
+Section 19: Functional coverage
+------------------------------------------------------------------------------
+19.3      Defining the coverage model: covergroup
+              * No support for bins in the wave window.
+
+Section 20: Utility system tasks and system functions
+------------------------------------------------------------------------------
+20.14     Coverage system functions
+              * Only $set_coverage_db_name, $load_coverage_db, and $get_coverage functions are supported.
+
+Section 21: I/0 system tasks and system functions
+-----------------------------------------------------------------------------
+          * Enhancements to system tasks not supported
+
+Section 23: Modules and Hierarchy
+------------------------------------------------------------------------------
+23.2      Port declarations
+              * Complex named Port declarations not supported, for example:
+                    module m (input .in(w_in),output .out(r_out));
+                        wire w_in;
+                        reg r_out;
+                    endmodule
+                    module m (input .P1(input int a));
+                        logic [7:0] r;
+                    endmodule
+                    module m (input .P1(r[5:3]),.P2(r[1]),output .c(r[2:0]));
+                        logic [7:0] r = 8'b00000000;
+                    endmodule
+                    module m (input .P1(r),.P2(r[1]),output int a);
+                        logic [7:0] r;
+                    endmodule
+
+Section 24: Programs
+------------------------------------------------------------------------------
+24.5      Blocking tasks in cycle/event mode
+              * Not supported
+
+24.7      Program control tasks
+              * Not supported
+
+Section 27 - 30: API's
+------------------------------------------------------------------------------
+27        SystemVerilog VPI object model
+              * Partially supported, see VPI technote
+28        SystemVerilog assertion API
+              * Not supported
+29        SystemVerilog code coverage control and API
+              * Not supported
+30        SystemVerilog data read API
+              * Not supported
+
+Section 33: Configuring the contents of a design
+------------------------------------------------------------------------------
+33.3      Libraries
+              * Configurations do not support interfaces
+33.4.3    Setting parameters in configurations
+              * Not supported
+
+Annex A - K
+------------------------------------------------------------------------------
+F.12      SV3.1a-compatible access to packed data (deprecated functionality)
+              * Not supported
+F.12.1    Determining the compatibility level of an implementation
+              * Not supported
+F.12.2    svdpi.h definitions for SV3.1a-style packed data processing
+              * Not supported
+F.12.3    Source-level compatibility include file svdpi_src.h
+              * Not supported
+F.12.4    Example 9 - Deprecated SV3.1a binary compatible application
+              * Not supported
+F.12.5    Example 10 - Deprecated SV3.1a source compatible application
+              * Not supported
+F.12.6    Example 11 - Deprecated SV3.1a binary compatible calls of export
+          functions
+              * Not supported
+I         sv_vpi_user.h
+              * Not supported

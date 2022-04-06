@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Third Party PLI Applications" />
+<meta name="abstract" content="Many third party PLI applications come with instructions on using them with Questa SIM Verilog. Even without the instructions, it is still likely that you can get it to work with Questa SIM Verilog as long as the application uses standard PLI routines. The following guidelines are for preparing a Verilog-XL PLI application to work with Questa SIM Verilog." />
+<meta name="description" content="Many third party PLI applications come with instructions on using them with Questa SIM Verilog. Even without the instructions, it is still likely that you can get it to work with Questa SIM Verilog as long as the application uses standard PLI routines. The following guidelines are for preparing a Verilog-XL PLI application to work with Questa SIM Verilog." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id48433fd1-b7b4-48ba-a002-158bf5b080f1" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Third Party PLI Applications</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Third Party PLI Applications" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id48433fd1-b7b4-48ba-a002-158bf5b080f1">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Third Party PLI Applications</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Many third
+party PLI applications come with instructions on using them with <span class="ph fmvar:ProductName">Questa SIM</span> Verilog. Even without
+the instructions, it is still likely that you can get it to work
+with <span class="ph fmvar:ProductName">Questa SIM</span> Verilog
+as long as the application uses standard PLI routines. The following
+guidelines are for preparing a Verilog-XL PLI application to work
+with <span class="ph fmvar:ProductName">Questa SIM</span> Verilog.</span>
+</div>
+<p class="p">Generally, a Verilog-XL PLI application
+comes with a collection of object files and a veriuser.c file. The
+veriuser.c file contains the registration information as described
+above in <a class="xref fm:HeadingOnly" href="Concept_RegisteringPliApplications_ida6f15c09.html#ida6f15c09-2ab1-4e8c-b83b-8d608f3c7d5c__Concept_RegisteringPliApplications_ida6f15c09.xml#ida6f15c09-2ab1-4e8c-b83b-8d608f3c7d5c" title="Each PLI application must register its system tasks and functions with the simulator, providing the name of each system task and function and the associated callback routines.">Registering PLI Applications</a>. To prepare the application for <span class="ph fmvar:ProductName">Questa SIM</span> Verilog, you must
+compile the veriuser.c file and link it to the object files to create
+a dynamically loadable object (see <a class="xref fm:HeadingOnly" href="Contain_CompilingLinkingCApplicationsInterfaces_idd933c82e.html#idd933c82e-20aa-48f6-a089-ac69cad3d28d__Contain_CompilingLinkingCApplicationsInterfaces_idd933c82e.xml#idd933c82e-20aa-48f6-a089-ac69cad3d28d" title="The following platform-specific instructions show you how to compile and link your HDL interface C applications so that they can be loaded by Questa SIM. Various native C/C++ compilers are supported on different platforms. The gcc compiler is supported on all platforms.">Compiling and Linking C Applications for Interfaces</a>). For example, if you have a <span class="ph filepath">veriuser.c</span> file
+and a library archive <span class="ph filepath">libapp.a</span> file that contains
+the application's object files, then the following commands should
+be used to create a dynamically loadable object for the Linux operating
+system:</p>
+<pre class="pre codeblock"><code>% gcc -c -I&lt;install_dir&gt;/<span class="ph fmvar:InstallDir">questasim</span>/include veriuser.c
+% gcc -shared -Bsymbolic -o app.so veriuser.o libapp.a</code></pre><p class="p">The PLI
+application is now ready to be run with <span class="ph fmvar:ProductName">Questa SIM</span> Verilog.
+All that is left is to specify the resulting object file to the
+simulator for loading using the <span class="keyword ParameterName Required">Veriuser</span> entry
+in the <span class="ph filepath">modesim.ini</span> file, the <span class="keyword ParameterName Required">-pli</span> simulator
+argument, or the PLIOBJS environment variable (see “<a class="xref fm:HeadingOnly" href="Concept_RegisteringPliApplications_ida6f15c09.html#ida6f15c09-2ab1-4e8c-b83b-8d608f3c7d5c__Concept_RegisteringPliApplications_ida6f15c09.xml#ida6f15c09-2ab1-4e8c-b83b-8d608f3c7d5c" title="Each PLI application must register its system tasks and functions with the simulator, providing the name of each system task and function and the associated callback routines.">Registering PLI Applications</a>”).</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_VerilogInterfacesC_idca840682.html" title="This appendix describes the Questa SIM implementation of the Verilog interfaces:">Verilog Interfaces to C</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Third Party PLI Applications"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ThirdPartyPliApplications_id48433fd1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

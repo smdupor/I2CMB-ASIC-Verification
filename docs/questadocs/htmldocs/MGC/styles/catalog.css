@@ -1,0 +1,2633 @@
+/*
+===============================================
+Copyright 2010-2013 Mentor Graphics Corporation
+
+   All Rights Reserved.
+
+THIS WORK CONTAINS TRADE SECRET
+AND PROPRIETARY INFORMATION WHICH IS THE
+PROPERTY OF MENTOR GRAPHICS
+CORPORATION OR ITS LICENSORS AND IS
+SUBJECT TO LICENSE TERMS.
+===============================================
+*/
+
+.Blank {
+  font-size: 6px;
+  margin-bottom: 0pt;
+  margin-left: 0px;
+  margin-top: 0pt;
+}
+/* Default style to be inherited for all tags and page background */
+zbbody {
+  background-color: #FFFFFF;
+  color: Black;
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+  font-size: 15px;
+  font-variant: normal;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.LL1BodyChkTight {
+  border-width: 0px;
+  border-color: #0000ff;
+  border-style: solid;
+  padding-right: 60px;
+  margin-right: 25px;
+  margin-bottom: 13px;
+  margin-left: 40px;
+  font-size: 1.0em;
+}
+.LL2BodyChkTight {
+  border-width: 0px;
+  border-color: #0000ff;
+  border-style: solid;
+  padding-right: 60px;
+  margin-right: 30px;
+  margin-left: 61px;
+  font-size: 1.0em;
+}
+.LLzArgDesc {
+  border-width: 0px;
+  border-color: #0000ff;
+  border-style: solid;
+  padding-right: 60px;
+  margin-right: 25px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  margin-left: 35px;
+  font-size: 1.0em;
+}
+.LLzArgVal {
+  border-width: 0px;
+  border-color: #0000ff;
+  border-style: solid;
+  padding-right: 60px;
+  margin-right: 25px;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  margin-left: 54px;
+  font-size: 1.0em;
+}
+.LLzArgValDef {
+  border-width: 0px;
+  border-color: #0000ff;
+  border-style: solid;
+  padding-right: 60px;
+  margin-right: 25px;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  margin-left: 54px;
+  text-indent: -18px;
+  font-size: 1.0em;
+}
+.TableLists{
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+ul {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+ol {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.ulSmSpace {
+  margin-bottom: 0pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/* Style for lists within command reference pages */
+/* Style for lists within normal body pages */
+/* Style for lists within TABLES */
+blockquote.pQuotation {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 2.5em;
+  margin-top: 6pt;
+}
+div.ProgressiveDisclosure {
+  border-width: 1px;
+  background: #EEEEE0;
+  margin-bottom: 12pt;
+  display: none;
+  width:auto;
+  float:left;
+  padding: 6px;
+  clear: both;
+}
+div.pBulletList {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pBulletListBegin {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pCellBody {
+  font-size: 1.0em;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+div.pCellHeading {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 0em;
+  margin-top: 0em;
+  text-align: center;
+}
+p.pEquation {
+  font-size: 1.0em;
+  margin-left:0.875in;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+  text-align: left;
+}
+td.EquationNumL {
+  vertical-align:top;
+  width:85%;
+}
+td.EquationNumR {
+  vertical-align:top;
+  width:15%;
+  text-align:right;
+}
+p.pEquationNum {
+  font-size: 1.0em;
+  margin-left:0.875in;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+  vertical-align:top;
+  text-align: left;
+}
+td.EquationNumR p.pEquationNum {
+  margin-left: 0;
+  text-align: right;
+}
+p.pEquationCenter {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+p.pEquationCentre {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+div.pField_Name {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pFieldBody {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pFieldBodyhanglist {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pFigureFrame {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pFlow {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pFlowVersion {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pGlossaryAML {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pGraphicCode {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pPopup {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pPopupAppend {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pPopupOnly {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pPopupOnlyAppend {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pPreformatted {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+div.pPreformattedRelative {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0em;
+  margin-top: 0em;
+}
+div.pRelatedTopic {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pRelatedTopicOnly {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pRelease {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pSeeAlso {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+div.pVersion {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+
+/* Set font sizes for heading level regardless of class */
+.FontLevel1  {
+  font-size: 1.8em !important;
+  margin-bottom: 1.0em !important;
+  margin-top: 0.5em !important;
+  border: 1px solid transparent;
+}
+
+.FontLevel2  {
+  font-size: 1.6em !important;
+  margin-bottom: 1.0em !important;
+  margin-top: 0.5em !important;
+  border: 1px solid transparent;
+}
+.FontLevel3  {
+  font-size: 1.4em !important;
+  margin-bottom: 1.0em !important;
+  margin-top: 0.5em !important;
+  border: 1px solid transparent;
+}
+.FontLevel4  {
+  font-size: 1.2em !important;
+  margin-bottom: 1.0em !important;
+  margin-top: 0.5em !important;
+  border: 1px solid transparent;
+}
+.FontLevel5  {
+  font-size: 1.0em !important;
+  margin-bottom: 1.0em !important;
+  margin-top: 0.5em !important;
+  border: 1px solid transparent;
+}
+
+.pHeading1, .pH1Apndx,.pH1ATM, .pH1RevHist, .pH1EndUser, .pH1Examples, .pH1Figures, .pH1Gloss, .pH1Index, .pH1Tables, .pH1Trademark  {
+  clear: left;
+  color: #5E82A3;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-left: -10px;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+}
+
+.pHeading2, .pGroupTitlesGloss, .pGroupTitlesIX, .pHeading2NoSplit, .pHeadingLevel2 {
+  clear: left;
+  color: #5E82A3;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+  margin-left: -10px;
+}
+
+.pH1Hidden {
+  clear: left;
+  font-size: 0.5em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.pHeading3, .pHeading3, .pHeading3NoSplit, .pHExercise {
+  color: #5E82A3;
+  clear: left;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-left: -10px;
+  margin-top: 0.5em;
+}
+
+.pHeading4, .pHeading4Split {
+  clear: left;
+  color: #5E82A3;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+.pHeading5, .pHeading5Check, .pHeading5CheckWaRn {
+  color: #5E82A3;
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+
+h6 {
+  font-size: 1.1em;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+div.MGCFooter {
+  clear: both;
+  color: #666;
+  border-top: 1px solid #999;
+  margin: 3em 1em 0 0;
+  padding: 4px;
+}
+
+p.MGCFooter {
+  font-size: 0.8em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+  clear: both;
+}
+
+h6.MGCFooter {
+  font-size: 0.8em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+  clear: both;
+}
+
+iframe.nojavascript {
+  background-color: #FFA500;
+  margin-top: 0.25em;
+  margin-left:0px;
+  margin-bottom: 0.25em;
+  height:2.5em;
+  border: 0px;
+}
+
+.MGCBreadcrumbs {
+  font-size: 0.85em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+  clear: both;
+}
+
+li {
+  font-size: 1.0em;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+  padding-right: 60px;
+}
+li.LL1BulSolid {
+  font-size: 1.0em;
+  list-style:disc;
+}
+li.GraphicLL1BulSolid {
+  font-size: 1.0em;
+  margin-left: -26px;
+  list-style:disc;
+}
+li.GraphicLL1Seq {
+  font-size: 1.0em;
+  margin-left: -26px;
+  list-style:decimal;
+}
+li.LL1AgreeBulSolid {
+  font-size: 0.9em;
+  margin-left: -21px;
+}
+li.LL1AgreeSeq {
+  font-size: 0.9em;
+  margin-left: -21px;
+  list-style:decimal;
+}
+
+
+li.LL1Seq {
+  font-size: 1.0em;
+  list-style:decimal;
+}
+li.LL1NoBullet {
+  font-size: 1.0em;
+  list-style:none;
+}
+
+li.LL1SeqChkTight {
+  font-size: 1.0em;
+  list-style:decimal;
+  margin-left: 0px;
+  text-indent: 0px;
+}
+li.LL1TableBulSolid {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: -10px;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+li.LL1TableSeq {
+  font-size: 1.0em;
+  list-style:decimal;
+  padding-right: 60px;
+  margin-left: -10px;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+li.LL2AgreeOSSSeq {
+  font-size: 1.0em;
+  margin-left: -1px;
+  list-style:decimal;
+}
+li.LL2BulHollow {
+  font-size: 1.0em;
+  list-style:circle;
+  margin-left: 21px;
+}
+li.LL2BulSolid {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: 21px;
+}
+li.LL2Seq {
+  font-size: 1.0em;
+  list-style:lower-alpha;
+  margin-left: 21px;
+}
+li.LL2SeqChkTight {
+  font-size: 1.0em;
+  list-style:lower-alpha;
+  margin-left: 21px;
+  text-indent: 0px;
+}
+li.LL2TableBulSolid {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: 9px;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+li.LL2TableSeq {
+  font-size: 1.0em;
+  list-style:lower-alpha;
+  margin-left: 9px;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+li.LL3BulHollow {
+  font-size: 1.0em;
+  list-style:circle;
+  margin-left: 39px;
+}
+li.LL3BulSolid {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: 39px;
+  font-size: 1.0em;
+  padding-right: 60px;
+}
+li.LL3Seq {
+  font-size: 1.0em;
+  list-style:lower-roman;
+  margin-left: 39px;
+}
+li.LL4Seq {
+  font-size: 1.0em;
+  list-style:lower-alpha;
+  margin-left: 61px;
+}
+li.LLzArgOpt {
+  font-size: 1.0em;
+  list-style:disc;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: -15px;
+}
+li.LLzArgReq {
+  font-size: 1.0em;
+  list-style:disc;
+  font-weight: bold;
+  margin-left: -15px;
+}
+li.LLzptArg {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: -15px;
+  margin-bottom: 3.0px;
+  margin-top: 3.0px;
+}
+p.pAgreeBody {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+p.pAgreeBodyTight {
+  font-size: 0.8em;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+}
+p.pAgreeDate {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: right;
+}
+p.pAgreeL1Body {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 20px;
+}
+p.pAgreeL2Body {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 38px;
+}
+p.pAgreeTableCell {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+p.pAgreeTitle {
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  text-align: center;
+}
+p.pAgreeURL {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}
+p.pAnchor {
+  font-size: 2pt;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pApplCmd {
+  font-size: 0.95em;
+  font-weight: bold;
+  margin-left: 0.375in;
+  margin-bottom: 8.0pt;
+  margin-top: 0;
+}
+p.pApplCmdIndent {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-left: 0.5in;
+  margin-top: 7pt;
+}
+p.pBaseStyle {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+p.pBeta {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-right: 30pt;
+  margin-top: 24pt;
+}
+p.pBlank_Line {
+  font-size: 0.6em;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-top: 0pt;
+}
+p.pBlankLine {
+  font-size: 0.6em;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-top: 0pt;
+}
+p.pBlankLineTight {
+  font-size: 0.6em;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-top: 0pt;
+}
+p.pBody {
+  font-size: 1.0em;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+}
+p.pBodyRelative{
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  clear: both;
+}
+p.pBodyTight {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pCautionIcon {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pcommandoption {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+}
+p.pDef {
+  font-size: 1.0em;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+p.pDef2 {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0.25in;
+  margin-top: 6pt;
+}
+p.pDefL2 {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0.25in;
+  margin-top: 6pt;
+}
+p.pdescription {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pDraft {
+  font-size: 1.8em;
+  margin-bottom: 20pt;
+  margin-top: 20pt;
+  text-align: center;
+}
+p.pDRBody {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 25px;
+  margin-top: 6pt;
+  padding-left: 0px;
+}
+ul.DRItem {
+}
+li.DRItem {
+  font-size: 1.0em;
+  list-style:disc;
+  margin-left: -15px !important;
+  padding-left: 0px;
+}
+p.pDropDownOpen {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+p.perror {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+  text-indent: -0.25in;
+}
+p.pExampleTitle {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 14pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 14pt;
+  text-align: center;
+}
+p.pExampleTitleLOP {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+p.pFigureAnchor {
+  font-size: 2pt;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pFigureAnchorSpecial {
+  font-size: 2pt;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pFigureTitle {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 14pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 14pt;
+  text-align: center;
+}
+p.pFigureTitleGloss {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 14pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 14pt;
+  text-align: center;
+}
+p.pFigureTitleLOF {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+p.pFootnote {
+  font-size: 0.85em;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-align: justify;
+}
+p.pFootnoteList {
+  font-size: 0.85em;
+  margin-left: 0.5in;
+  margin-right: 0.25in;
+}
+p.pGraphicBody {
+  margin-left: -7px;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 10pt;
+}
+p.pGraphicCallout {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 10pt;
+}
+p.pGraphicCenter {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 10pt;
+  text-align: center;
+}
+p.pGraphicL1Body {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.15in;
+  margin-top: 10pt;
+}
+p.pHangIndent1 {
+  margin-left:100px;
+  text-indent:-80px;
+}
+span.HangIndent1H {
+  margin-right: 38px;
+  display: none;
+}
+p.pHangIndent2 {
+  margin-left:200px;
+  text-indent:-180px;
+}
+span.HangIndent2H {
+  margin-right: 38px;
+  display: none;
+}
+p.pHangIndent3 {
+  font-size: 1.0em;
+}
+span.HangIndent3H {
+  left:240px;
+  position:absolute;
+  border: 1px solid blue;
+}
+p.pHangIndentLeft {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 14pt;
+  margin-top: 2pt;
+}
+p.pHeader_Left {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-align: justify;
+}
+p.pHeader_Right {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-align: right;
+}
+p.pHistoryCell {
+  font-size: 11px;
+  margin-bottom: 0pt;
+  margin-left: 0px;
+  margin-top: 3pt;
+}
+p.pHTerm {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0.75em;
+  color: #5E82A3;
+  font-weight: bold;
+}
+
+p.pIndented1 {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 2.5em;
+  margin-top: 6pt;
+}
+p.pIndented2 {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 5em;
+  margin-top: 6pt;
+}
+p.pIndented3 {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 7.5em;
+  margin-top: 6pt;
+}
+p.pIndented4 {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 10em;
+  margin-top: 6pt;
+}
+p.pIndented5 {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 12.5em;
+  margin-top: 6pt;
+}
+p.pIndentedRelative {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 2.5em;
+  margin-top: 6pt;
+}
+p.pInfoIcon {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pL1Body {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 40px;
+  margin-top: 6pt;
+}
+p.pL1BodyLeader {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 0.5in;
+  margin-top: 6pt;
+}
+p.pL1TOC {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pL2Body {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 61px;
+  margin-top: 6pt;
+}
+p.pL2TOC {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.25in;
+  margin-top: 0pt;
+}
+p.pL3Body {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 79px;
+  margin-top: 6pt;
+}
+p.pL3TOC {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.5in;
+  margin-top: 0pt;
+}
+p.pL4Body {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-left: 101px;
+  margin-top: 6pt;
+}
+.pLegal {
+  font-size: 0.9em;
+  margin-bottom: 0.75em;
+  margin-right: 30pt;
+  margin-top: 0.75em;
+}
+.pLegalCentered {
+  font-size: 0.9em;
+  margin-bottom: 0.75em;
+  margin-right: 30pt;
+  margin-top: 0.75em;
+  text-align: center;
+}
+.pLegalJustified {
+  font-size: 0.9em;
+  margin-bottom: 0.75em;
+  margin-right: 30pt;
+  margin-top: 0.75em;
+  text-align: justify;
+}
+.pLegalLeft {
+  font-size: 0.9em;
+  margin-bottom: 0.75em;
+  margin-right: 30pt;
+  margin-top: 0.75em;
+}
+.pLinUNIXNote {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pLINUXnote {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pListCounter {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+  text-align: right;
+}
+p.pLL2AgreeSeqContent {
+  font-size: 1.0em;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+p.pLL2AgreeSeqNumber {
+  font-size: 1.0em;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  margin-left: 18px;
+  margin-right: 4px;
+  text-align: right;
+}
+
+p.pMGCBreadcrumbs {
+  font-size: 0.85em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pMGCFooter {
+  font-size: 0.8em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+  clear: both;
+}
+p.pMGCIndex {
+  font-size: 0.8em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pMGCNavPtag {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pMGCNavTitlePtag {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pMGCtoc1 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-top: 3pt;
+}
+p.pMGCtoc2 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 0.25in;
+  margin-top: 3pt;
+}
+p.pMGCtoc3 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 0.5in;
+  margin-top: 3pt;
+}
+p.pMGCtoc4 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 0.75in;
+  margin-top: 3pt;
+}
+p.pMGCtoc5 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 1.0in;
+  margin-top: 3pt;
+}
+
+p.pMGCtoc6 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 1.25in;
+  margin-top: 3pt;
+}
+
+p.pMGCtoc7 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 1.5in;
+  margin-top: 3pt;
+}
+
+p.pMGCtoc8 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 1.75in;
+  margin-top: 3pt;
+}
+
+p.pMGCtoc9 {
+  font-size: 0.75em;
+  margin-bottom: 3pt;
+  margin-left: 2.0in;
+  margin-top: 3pt;
+}
+
+p.pnote {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteAnimation {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteMovie {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteElecCaution {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteElecWarning {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteHazCaution {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteHazWarning {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pNoteIcon {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteInfo {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteLinux {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteNote {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteSWCaution {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteUNIX {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pnoteWindows {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pNTnote {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pODD {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pPartNumber {
+  font-size: 1.8em;
+  margin-bottom: 0pt;
+  margin-top: 20pt;
+  text-align: center;
+}
+p.pPubDate {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pRevHist {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pRevHistSM {
+  font-size: 0.8em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pSH2TOC {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+p.pSH3TOC {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+p.pSimpleBody {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pSquare {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pSubTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-right: 30pt;
+  padding-top: 1.0em;
+  margin-top: 0pt;
+}
+p.pTable_Cell {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.ptablebody {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+p.pTableBulSolid {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+p.pTableCell {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 8px;
+}
+p.pTableCellCentre {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+p.pTableCellCmd {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 0.38in;
+}
+p.pTableCellHelvcenter {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+p.pTableCellNum {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+p.pTableCellTabs {
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+p.pTableFootnote {
+  font-size: 0.85em;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  text-align: justify;
+}
+p.pTableHeading {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 3pt;
+  margin-top: 3pt;
+  text-align: left;
+}
+p.pTableHeadingCentre {
+  font-size: 1.0em;
+  font-weight: bold;
+  text-align: center;
+}
+p.pTableL1Body {
+  font-size: 1.0em;
+  margin-left: 0.3in;
+}
+p.pTableL1Bullet {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.3in;
+  margin-right: 0;
+  margin-top: 0pt;
+  text-indent: -0.13in;
+}
+p.pTableL1Seq {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+}
+p.pTableL2Body {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.51in;
+  margin-top: 0pt;
+}
+p.pTableL2Body {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 49px;
+  margin-top: 2pt;
+}
+p.pTableL2Bullet {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.7in;
+  margin-right: 0;
+  margin-top: 0pt;
+  text-indent: -0.18in;
+}
+p.pTableL2Seq {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 0pt;
+}
+p.pTableParams {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-align: center;
+}
+p.pTableText {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-align: center;
+}
+p.pTableTitle {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 5pt;
+  margin-bottom: 6pt;
+  text-align: center;
+}
+p.pTableTitleGloss {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 5pt;
+  margin-bottom: 6pt;
+  text-align: center;
+}
+p.pTableTitleLOT {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+p.pThinLine {
+  font-size: 3pt;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+p.pThirdParty {
+  font-size: 0.9em;
+  margin-bottom: 0pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 3pt;
+}
+p.pTitle {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-right: 30pt;
+  padding-top: 0;
+  margin-top: 0.5em;
+}
+p.pTrademark {
+  font-family: Times New Roman, Georgia, serif;
+  font-size: 0.9em;
+  margin-bottom: 0pt;
+  margin-top: 3pt;
+}
+p.pTranscript {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pTranscriptIndent {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0.25in;
+  margin-right: 0.25in;
+  margin-top: 6pt;
+}
+p.pUNIXNote {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pURL {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  margin-top: 0pt;
+}
+p.pVer_Rel_OS {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 24pt;
+}
+p.pWarningIcon {
+  color: Red;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 14pt;
+}
+p.pxChTOCH2 {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+p.pxChTOCH3 {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.5in;
+  margin-top: 2pt;
+}
+p.pxChTOCH4 {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.75in;
+  margin-top: 2pt;
+}
+p.pzBody {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 0pt;
+}
+p.pzBodyRelated {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0.25in;
+  margin-top: 6pt;
+}
+.pzCmdFunc {
+  margin-left: -10px;
+  clear: left;
+  color: #5E82A3;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+}
+
+.pzCmdFunc2 {
+  margin-left: -10px;
+  clear: left;
+  color: #5E82A3;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1.0em;
+  margin-top: 0;
+}
+p.pZCmdFuncAPL {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pzCmdFuncTOC {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+p.pzCmdUsage {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.125in;
+  margin-top: 2pt;
+  text-indent: 0.125in;
+}
+p.pzGetCmdFunc {
+  color: #5E82A3;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: -10px;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-indent: 0.25in;
+}
+p.pzHangIndent2BulSolid {
+  font-size: 1.0em;
+  margin-bottom: 12pt;
+  margin-top: 6pt;
+}
+/* Hanging Indents */
+table.HangingIndent {
+  border: 0px solid red;
+  border-collapse: collapse;
+  padding:0px;
+  width: 98%;
+}
+tr.HangingIndent {
+  border: 0px solid green;
+}
+td.HangingIndentLeft1 {
+  border: 0px solid green;
+  width:1.375in;
+  vertical-align:top;
+  text-align: left;
+  text-indent: 0.375in;
+  margin-right: 0px;
+}
+td.HangingIndentLeft2 {
+  border: 0px solid green;
+  width:2.375in;
+  vertical-align:top;
+  text-align: left;
+  text-indent: 0.375in;
+  margin-right: 0px;
+}
+td.HangingIndentLeft3 {
+  border: 0px solid green;
+  width:3.375in;
+  vertical-align:top;
+  text-align: left;
+  text-indent: 0.375in;
+  margin-right: 0px;
+}
+td.HangingIndentRight {
+  border: 0px solid blue;
+}
+
+p.pzHeading {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+p.pzHeadingNoKeepWith {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+p.pzHeading2 {
+  color: #666666;
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -10px;
+}
+p.pzHCmdRefDescCustom {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+p.pRelatedTopics {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+.pHTaskSubhead {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+.pHConceptBodyCustom {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+.pHGenRefBodyCustom {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+p.pzHTopic {
+  color: #5E82A3;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-top: 8pt;
+}
+p.pzHTopicCont {
+  color: #5E82A3;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0pt;
+  margin-top: 8pt;
+}
+p.pzMenuPath {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+  text-indent: -0.25in;
+}
+p.pzMiscInfo {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+p.pzMiscInfoPrereq {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+  text-indent: -0.25in;
+}
+p.pzMiscInfoScope {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+  text-indent: -0.25in;
+}
+p.pzptArg {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+}
+p.pzptArg1 {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 0.81in;
+  margin-top: 5pt;
+  text-indent: -0.18in;
+}
+p.pzptArg1Body {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 0.86in;
+  margin-top: 5pt;
+}
+p.pzptArg1Indent {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 0.73in;
+  margin-top: 5pt;
+  text-indent: -0.1in;
+}
+p.pzptArg2 {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 1.05in;
+  margin-top: 5pt;
+  text-indent: -15pt;
+}
+p.pzptArg2Body {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 60pt;
+  margin-top: 5pt;
+}
+p.pzQHDesc {
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 7pt;
+}
+p.pzShortDesc {
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 7pt;
+}
+p.pzUsage {
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+  margin-left: 0.375in; 
+  text-indent: -0.375in;
+}
+pre.pASCII_report {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.5in;
+  margin-top: 0pt;
+}
+pre.pCode {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 0pt;
+  text-indent: 0;
+}
+pre.pCodeField_B {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 3pt;
+  margin-left: 0.38in;
+  margin-top: 0pt;
+}
+pre.pCodeFlush {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-left: 0;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+pre.pCodeIndent {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.875in;
+  margin-top: 0pt;
+}
+pre.pCodeIndentTight {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.88in;
+  margin-top: 0pt;
+}
+pre.pCodeIndentTightRight {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.88in;
+  margin-top: 0pt;
+}
+pre.pCodeList {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0;
+  margin-top: 0pt;
+}
+pre.pCodeListIndent {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 1.0in;
+  margin-top: 0pt;
+}
+pre.pCodenoindent {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+pre.pCodeNoIndent {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+}
+pre.pCodeTest {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0;
+  margin-top: 0pt;
+  text-indent: 0;
+}
+pre.pCodeTight {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 0pt;
+}
+pre.pCodeWide {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 0pt;
+  margin-left: 0.38in;
+  margin-top: 0pt;
+}
+pre.pShellCmd {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-left: 0.375in;
+  margin-bottom: 8pt;
+  margin-top: 0pt;
+}
+pre.pShellCmdCheck {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-left: 0.375in;
+  margin-bottom: 3pt;
+  margin-top: 7pt;
+}
+pre.pshellcommand {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 3pt;
+  margin-left: 0.38in;
+  margin-top: 7pt;
+}
+span.cP14 {
+  font-size: 1.2em;
+}
+span.cP13 {
+  font-size: 1.1em;
+}
+span.cP12 {
+  font-size: 1.0em;
+}
+span.cP11 {
+  font-size: 0.95em;
+}
+span.cP10 {
+  font-size: 0.90em;
+}
+span.cP9 {
+  font-size: 0.85em;
+}
+span.cP8 {
+  font-size: 0.80em;
+}
+span.cOverline {
+  text-decoration: overline;
+}
+span.cUnderline {
+  text-decoration: underline;
+}
+span.cUnderOver {
+  text-decoration: underline overline;
+}
+span.cCourier {
+  font-family: "Courier New", monospace;
+}
+span.cHelvetica {
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+}
+span.cNormal {
+  font-weight: normal;
+}
+span.cNoBold {
+  font-weight: normal;
+}
+span.cNoItalic {
+  font-weight: normal;
+}
+
+/* Colors */
+span.Cmgc_green_370 {
+color: #578F15;
+}
+span.Cmgc_green_376 {
+color: #7FBB00;
+}
+span.Cmgc_forest_green {
+color: #0D990D;
+}
+span.Cmgc_green_378 {
+color: #576314;
+}
+span.Cmgc_green_570 {
+color: #7FC8B3;
+}
+span.Cmgc_green_3165 {
+color: #00575C;
+}
+span.Cmgc_blue_321 {
+color: #008689;
+}
+span.Cmgc_light_blue {
+color: #A6D9E6;
+}
+span.Cmgc_blue_646 {
+color: #5E82A3;
+}
+span.Cmgc_blue_661 {
+color: #2F348E;
+}
+span.Cmgc_blue_2748 {
+color: #1E1D78;
+}
+span.Cmgc_purple_2726 {
+color: #675BD0;
+}
+span.Cmgc_iris_mist {
+color: #EDC2F5;
+}
+span.Cmgc_purple_258 {
+color: #9C4E96;
+}
+span.Cmgc_purple_266 {
+color: #51286E;
+}
+span.Cmgc_purple_511 {
+color: #5A294D;
+}
+span.Cmgc_maroon {
+color: #A7001D;
+}
+span.Cmgc_maroon_201 {
+color: #A7001D;
+}
+span.Cmgc_orange_718 {
+color: #D46D00;
+}
+span.Cmgc_orange_716 {
+color: #F28411;
+}
+span.Cmgc_coral {
+color: #FF8000;
+}
+span.Cmgc_orange_138 {
+color: #DA8B02;
+}
+span.Cmgc_orange_136 {
+color: #FDBE49;
+}
+span.Cmgc_yellow_129 {
+color: #F3D03E;
+}
+span.Cmgc_yellow_121 {
+color: #FBE070;
+}
+span.Cmgc_wheat {
+color: #D6D4B5;
+}
+span.Cmgc_light_grey {
+color: #BFBFC4;
+}
+span.Cmgc_wmgrey_5 {
+color: #B5A899;
+}
+span.Cmgc_dimmed_font {
+color: #948580;
+}
+span.Cmgc_dim_grey {
+color: #4D4D4D;
+}
+span.CBlack {
+color: #000000;
+}
+span.CWhite {
+color: #FFFFFF;
+}
+span.CRed {
+color: #FF0000;
+}
+span.CGreen {
+color: #00FF00;
+}
+span.CBlue {
+color: Blue;
+}
+span.CCyan {
+color: #00FFFF;
+}
+span.CMagenta {
+color: #FF00FF;
+}
+span.CYellow {
+color: #FFFF00;
+}
+span.cxcodeRed {
+color: #FF0000;
+font-weight: bold;
+}
+span.cxcodeMagenta {
+color: #FF00FF;
+font-weight: bold;
+}
+span.cxcodeOrange {
+color: #D46D00;
+font-weight: bold;
+}
+span.cxcodePurple {
+color: #51286E;
+font-weight: bold;
+}
+span.cxcodeGreen {
+color: #0D990D;
+font-weight: bold;
+}
+span.cCode_red {
+color: #FF0000;
+font-weight: bold;
+}
+span.cCode_magenta {
+color: #FF00FF;
+font-weight: bold;
+}
+span.cCode_mgc_orange_718 {
+color: #D46D00;
+font-weight: bold;
+}
+span.cCode_mgc_purple_266 {
+color: #51286E;
+font-weight: bold;
+}
+span.cCode_mgc_forest_green {
+color: #0D990D;
+font-weight: bold;
+}
+span.cTradmkBody {
+  font-size: 1.0em;
+  font-variant: small-caps;
+  position: relative;
+  top: -5px;
+}
+span.cTradmkSubtitle {
+  font-size: 0.85em;
+  font-variant: small-caps;
+  vertical-align: super;
+}
+span.cTradmkTitle {
+  font-size: 0.85em;
+  font-variant: small-caps;
+  vertical-align: super;
+}
+span.cxgCour10 {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+}
+span.cxgCour10b {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  font-weight: bold
+}
+span.cxgCour10i {
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  font-style: italic;
+}
+span.cxgHelv10 {
+  font-size: 0.9em;
+}
+span.cxgHelv10b {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+span.cxgHelv10i {
+  font-size: 0.9em;
+  font-style: italic;
+}
+span.cxgHelv12 {
+  font-size: 1.0em;
+}
+span.cxgHelv12b {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+span.cxgHelv12i {
+  font-size: 1.0em;
+  font-style: italic;
+}
+span.czBulletHollow {
+  font-size: 1.0em;
+  font-family: "Courier New", monospace;
+}
+span.czBulletSolid {
+  font-size: 1.2em;
+  font-family: Symbol;
+}
+sub.cSubscript {
+  font-size: 0.8em;
+  vertical-align: sub;
+}
+.cSubscript {
+  font-size: 0.8em;
+  vertical-align: sub;
+}
+.cSuperscriptBaseline {
+  vertical-align: baseline;
+}
+sup.cSuperscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+.cSuperscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+.cTrademark {
+  font-size: 8pt;
+  vertical-align: super;
+  font-weight: bold;
+}
+sup.cxgTradmk {
+  font-size: 0.9em;
+  font-variant: small-caps;
+  vertical-align: super;
+}
+th {
+  padding: 0px 3px 0px 3px;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  text-align: left;
+}
+p.Options {
+  font-size: 1.0em;
+  margin-left: 10px;
+  margin-bottom: 3pt;
+  margin-top: 3pt;
+}
+td.ActiveOptionsTab {
+  background: #CCCC00;
+  color: blue;
+}
+td.InActiveOptionsTab {
+  background: #EEEEE0;
+  color: black;
+}
+td.HeaderOptionsTab {
+  color: #3300CC;
+  background: #3300CC;
+  border: 0px
+}
+span.HeaderOptionsTab {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+td.ContentOptionsTab {
+  background: #EEEEE0;
+  color: black;
+}
+img.OptionsDB {
+  border: 0;
+  text-align: right;
+  vertical-align: middle;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+img.OptionsDBTabs {
+  border: 0;
+  text-align: right;
+  vertical-align: middle;
+  margin-bottom: 0px;
+  margin-top: 3px;
+}
+img.Alignleft {
+  vertical-align:text-top;
+  text-align:left;
+  display:block;
+  margin-left:0px;
+}
+img.Alignright {
+  vertical-align:top;
+  text-align:right;
+  display:block;
+  margin-left:auto;
+  margin-right:0px;
+}
+img.Aligncenter {
+  vertical-align:top;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+img.NoteIcons {
+  width: 0.262in;
+}
+div.HideBody {
+  display: none;
+}
+div.BodyContent {
+  background-color: Transparent;
+  display: block;
+  color: black;
+  padding: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  z-index:5;
+}
+div.BodyPopup {
+  background-color: #FCF6CF !important;
+  font-size: 1.00em;
+  margin-left: 10px;
+  font-style: normal;
+  float: left;
+  border: 0;
+  display: none;
+  visibility: hidden;
+  color: black;
+  padding: 0px;
+  clear: both;
+}
+div.Options {
+  background-color: #FCF6CF;
+  margin-bottom: 12pt;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  vertical-align: middle;
+  display: none;
+  visibility: hidden;
+  color: black;
+  width:auto;
+  float:left;
+  padding: 0px;
+  clear: both;
+  z-index:20;
+}
+div.OptionsBorder {
+  border: solid 1px;
+  background-color: #FCF6CF;
+  color: #000000;
+  z-index:20;
+}
+div.OptionsInside {
+  border: solid 0px;
+  background-color: #FCF6CF;
+  color: #000000;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  z-index:20;
+}
+div.Booklist {
+  background-color:#EBECE4;
+  overflow:auto;
+  width:250px;
+  height:186px;
+  margin:0px 0px 0px 0px;
+  padding:0px;
+  border-left:4px solid #2F4F4F;
+  border-top:4px solid #2F4F4F;
+  border-bottom:4px solid grey;
+  border-right:4px solid grey;
+} 
+div.ScrollList {
+  background-color:#EBECE4;
+  overflow:auto;
+  height:300px;
+  margin:0px 0px 0px 0px;
+  padding:0px;
+  border-left:4px solid #2F4F4F;
+  border-top:4px solid #2F4F4F;
+  border-bottom:4px solid grey;
+  border-right:4px solid grey;
+} 
+div.Breadcrumb {
+  left: 10px;
+  top: 0px;
+  right: 10px;
+  visibility: hidden;
+  display:block;
+  position: fixed;
+  padding:5px;
+  background-color: #FFFFFF;
+  border: 0px solid blue;
+}
+div.BlankFooter {
+  display: none;
+  height: 40px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+input.indented {
+  font-size: 1.0em;
+  display: block;
+  float: left;
+  clear: left;
+  height: 1.0em;
+  padding: 0;
+  margin: 0;
+}
+div.HRBarTop {
+  clear: both;
+  width: 98%;
+  height: 3px;
+  border: 0px solid #416E98;
+  background-color: #416E98;
+}
+div.BlankBottom {
+  clear: both;
+  width: 98%;
+  height: 3.0em;
+  border: 0px solid #416E98;
+  background-color: #FFFFFF;
+}
+
+/* ---- tables for notes ---- */
+table.notes {
+  margin-left: 20px;
+  width: 95%;
+  border: 0px solid black;
+  padding: 0px;
+  border-spacing: 0px;
+  clear: left;
+}
+tr.NotesNote {
+  vertical-align: top;
+}
+tr.NotesUpperRuleRed {
+  vertical-align: baseline;
+  background: url('../images/note_rule_upper_Red.png') left repeat;
+}
+tr.NotesBottomRuleRed {
+  vertical-align: baseline;
+  background: url('../images/note_rule_bottom_Red.png') left repeat;
+}
+tr.NotesUpperRuleBlack {
+  vertical-align: baseline;
+  background: url('../images/note_rule_upper_Black.png') left repeat;
+}
+tr.NotesBottomRuleBlack {
+  vertical-align: baseline;
+  background: url('../images/note_rule_bottom_Black.png') left repeat;
+}
+td.NotesUpperRuleLeft {
+  border: 0px solid black;
+  width: 50px;
+  vertical-align: top;
+  text-align: left;
+}
+td.NotesUpperRule {
+  border: 0px solid black;
+  vertical-align: top;
+  text-align: left;
+}
+td.NotesUpperRuleRight {
+  border: 0px solid black;
+  vertical-align: top;
+  text-align: left;
+}
+td.NotesBottomRule {
+  border: 0px solid black;
+  vertical-align: top;
+  text-align: left;
+}
+td.NoteElectrical {
+  width: 50px;
+  height: 25px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: top;
+  background: url('../images/nicon_electrical.jpg') no-repeat;
+}
+td.NoteCaution {
+  width: 50px;
+  height: 25px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: top;
+  background: url('../images/nicon_hazard.jpg') no-repeat;
+}
+td.NoteAnimation {
+  width: 50px;
+  height: 25px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: top;
+  background: url('../images/nicon_video.png') no-repeat;
+}
+td.NoteNote {
+  width: 50px;
+  height: 25px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: top;
+  background: url('../images/nicon_note.jpg') no-repeat;
+}
+td.NoteTip {
+  width: 50px;
+  height: 25px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: top;
+  background: url('../images/nicon_info.gif') no-repeat;
+}
+div.ListImg {
+  padding-top: 1.0em;
+}
+.MGCLogo {
+  border: 0 solid black;
+  float: right !important;
+  height: 22px;
+  margin-left: 1px;
+  margin-right: 12px;
+  margin-top: 5px;
+  width: 64px;
+}
+#noscriptchromewarning {
+  font-family: Arial, Tahoma, sans-serif;
+  font-weight: normal;
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding: 4px;
+  width: 97%;
+  background: none repeat scroll 0 0 #FFF6BF;
+  border: 2px solid red;
+  color: #817134;
+  text-align: left;
+  display: block;
+  visibility: visible;
+  margin: 2px 13px;
+  border-radius: 5px 5px;
+}
+#chromebooktitle{
+  color: white;
+  font-size: 1em;
+  padding-left: 13%;
+  font-weight: bold;
+  padding-top: 4px;
+}
+.noscriptchromeheader {
+  background-image: url("../images/splash_screen_thin.gif");
+  border: 0 solid black;
+  display: block;
+  height: 34px;
+  margin: 0;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  margin-left: 0px;
+  margin-right: -5px;
+}
+.noscriptchromeindent {
+  margin-left: 2%;
+}
+.noscripttocButton {
+  background: url("../images/doc_button_left.png") no-repeat scroll 0 0 transparent !important;
+  color:#013D75 !important;
+  cursor:pointer;
+  font-weight:bold;
+  padding-left: 5px;
+  padding-right: 6px;
+  height: 22px;
+  overflow: hidden !important;
+  font-size: 12px !important;
+  float:left;
+  padding-top: 0px;
+  margin-top: 5px;
+}
+.noscripttocButton span {
+  background: url("../images/doc_button.png") no-repeat scroll 100% 0 transparent !important;
+  padding: 2px 9px 5px 0 !important;
+  line-height: 19px;
+  display:block !important;
+  float: left;
+}
+.noscripttocButton:hover {
+  background-position: 0 -22px !important;
+}
+.noscripttocButton:hover span {
+  color:#000000 !important;
+  background-position: 100% -22px !important;
+  text-decoration:none !important;
+}
+.BookTopicHighlight {
+  background-color: #E8EEF2;
+  border: 1px solid #C8CED2;
+  border-radius: 4px;
+}
+div.L1BodyLeader {
+  border-bottom: 2px dotted black;
+  height: 0.8em;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+td.L1BodyLeaderLeft {
+  width: 2.75in;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align:top;
+}
+td.L1BodyLeaderLeftText {
+  border: 0px solid blue;
+  width: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align:top;
+}
+p.L1BodyLeaderLeftText2 {
+  font-size: 1.0em;
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+td.L1BodyLeaderRight {
+  border-bottom: 0px solid yellow;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+td.L1BodyLeaderRight2 {
+  border: 0px solid green;
+  vertical-align:top;
+  text-align: left;
+  margin-right: 0px;
+}
+table.L1BodyLeader {
+  padding: 0px;
+  border: 0px dotted black;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 7.0in;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align:top;
+}
+table.L1BodyLeaderLeft {
+  padding: 0px;
+  border: 0px solid green;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align:top;
+}
+
+/* Oss tags: */
+ul.Oss {
+  margin-left: 0;
+} 
+ol.Oss {
+  margin-left: 0;
+} 
+p.pOssBody {
+  font-size: 0.9em;
+  margin-left: 0;
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+}
+p.pOssURL {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  margin-left: 0.25in;
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+}
+li.OssL1BulSolid {
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+  margin-left: -25px;
+  padding-left: 0;
+  font-size: 0.9em;
+}
+p.pOssL1Body {
+  font-size: 0.9em;
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+li.OssL2Seq {
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+  margin-left: -5px;
+  font-size: 0.9em;
+  list-style-type:decimal;
+}
+li.OssL2SeqZero {
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+  margin-left: -5px;
+  font-size: 0.9em;
+  list-style-type:decimal;
+}
+p.pOssL2Body {
+  font-size: 0.9em;
+  margin-left: 35px;
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+}
+li.OssL3Seq {
+  margin-top: 11.0pt;
+  margin-bottom: 0;
+  margin-left: 15.0px;
+  font-size: 0.9em;
+  list-style-type:lower-alpha;
+}
+p.pOssL3Body {
+  font-size: 0.9em;
+  margin-left: 55px;
+  margin-top: 11.0pt;
+}

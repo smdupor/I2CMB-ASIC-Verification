@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="CPU or Core Binding (Affinity)" />
+<meta name="abstract" content="Affinity is the process of binding a process or memory to a CPU or core on a multi-processor system." />
+<meta name="description" content="Affinity is the process of binding a process or memory to a CPU or core on a multi-processor system." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id6a34e27b-2c2f-436c-a95e-fe6451ac09f7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>CPU or Core Binding (Affinity)</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="CPU or Core Binding (Affinity)" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id6a34e27b-2c2f-436c-a95e-fe6451ac09f7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">CPU or Core
+Binding (Affinity)</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Affinity
+is the process of binding a process or memory to a CPU or core on
+a multi-processor system. </span>
+</div>
+<p class="p">Binding a process to a CPU eliminates
+the cost of process relocation between CPUs. Process affinity gives
+the process exclusive use of a CPU, which improves the performance
+of the process. Memory affinity assigns physical memory to a process
+from the CPU/core that the process runs on. This gives the process
+better memory access performance, which can improve process performance.</p>
+<p class="p">Using affinity can improve multi-core
+simulation performance. The degree of performance improvement and
+type of settings required can vary according to the host hardware,
+including CPU type and memory architecture. </p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_CpucoreBindingMethods_id349740f8.html" title="You can control the CPU/core binding for multi-core simulation by using vsim ‑mc2binding. ">CPU/Core Binding Methods</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_BindingMultiCoreSimulationOnMultipleMachines_id67add384.html" title="Use the vsim -mc2network &lt;hostfile&gt; command to run multi-core simulation on multiple machines. The hostfile contains the information about which machines to run simulations on, and how many cores to use on each machine. You can specify different bindings for each of the machines in the same hostfile. You can specify that processes are bound close to each other without sharing a socket (cpu:sockets), or you can specify your own (&#34;user&#34;) core binding. ">Binding for Multi-core Simulation on Multiple Machines</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_MulticoreSimulationGridControl_id29141d35.html" title="Control grid-based multi-core simulation with the vsim -mc2grid argument to specify the grid type. ">Multi‑core Simulation Grid Control</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UsingQuestaSimMultipleCores_ida8da5c04.html" title="Use the Questa SIM simulator with multi-core functionality to compile and simulate a design on multiple processors (cores). You can do this on a single computer that uses multiple CPUs or on a ring of single-CPU computers.">Using Questa SIM With Multiple Cores</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "CPU or Core Binding (Affinity)"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_CpuCoreBindingAffinity_id6a34e27b.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="method" />
+<meta name="abstract" content="The method element provides a way to control the execution of one or more Action scripts." />
+<meta name="description" content="The method element provides a way to control the execution of one or more Action scripts." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id8c8348d1-de7b-4f0b-bae1-7345cde8c264" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>method</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="method" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id8c8348d1-de7b-4f0b-bae1-7345cde8c264">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">method</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">The method
+element provides a way to control the execution of one or more Action
+scripts.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id8c8348d1-de7b-4f0b-bae1-7345cde8c264__id1119c037-942f-4220-8c0c-1713aacfcecf"><p class="p">There may be, at most, one command element
+within a method element. Text content within a method element is
+ignored. Each Action script is controlled by only one method element.
+Multiple method elements can be defined in a runnable element, the
+order of which, together with the method 's conditional attributes,
+determines the method used to control an Action script. Methods
+also follow base and group inheritance.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id8c8348d1-de7b-4f0b-bae1-7345cde8c264__id790f9140-eef8-4983-a25c-547ecb4f322c" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>method Element — Allowed Child Elements</span></caption><colgroup><col style="width:1.725in" /><col style="width:1.725in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e154"><p class="p">Elements </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e157"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e154 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Command_id6f471c41.html#id6f471c41-c30e-48a1-b842-96f5b843b50f__General_Command_id6f471c41.xml#id6f471c41-c30e-48a1-b842-96f5b843b50f" title="The command element specifies one line of an Action script, localfile element, or execution method.">command</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e157 "><p class="p">Defines a single line
+to be written to the script file</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id8c8348d1-de7b-4f0b-bae1-7345cde8c264__iddb555949-afce-4a43-b53f-28b2e5f950a9" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>method Element — Supported Attributes</span></caption><colgroup><col style="width:1.108in" /><col style="width:0.960in" /><col style="width:0.919in" /><col style="width:0.835in" /><col style="width:2.553in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e184"><p class="p">Attributes </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e187"><p class="p">Expanded </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e190"><p class="p">Evaluated </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e193"><p class="p">Default </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d36165e196"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">action </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;action_element_name&gt;}</p>
+<p class="p">If specified, limits application of this method
+to a specific Action script type</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ConditionalExecutionMethods_idc1513718.html#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c__Concept_ConditionalExecutionMethods_idc1513718.xml#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c" title="By itself, the ability to add method elements to Runnables in order to affect subsets of the regression suite is useful but still somewhat inflexible. In many cases, there can be a legitimate reason for wanting to launch some Actions locally, some on specific machines (that is, large capacity machines), and some on server grids of various types. Compiles, for example, may need to be executed on the local machine (or on a specific remote machine) prior to launching any simulations. Simulations may need to run on a grid during overnight regressions but might also be run on the local machine for small interactive test runs during the day. Some simulations may need additional resources or may require a slightly different set of options when the job is queued. All of these things point to the need for a more flexible paradigm for specifying the command by which each Action script is launched.">Conditional Execution Methods</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">base </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;base_method_name&gt; …}</p>
+<p class="p">Space- or comma-separated list of base method
+elements </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_MethodsBaseInheritance_id1ce29695.html#id1ce29695-e458-40c6-800e-e053689ada58__Concept_MethodsBaseInheritance_id1ce29695.xml#id1ce29695-e458-40c6-800e-e053689ada58" title="One or more method elements can appear at the top-level of the RMDB file, as children of the document (rmdb) element and siblings of the runnable elements. These method elements cannot be used to satisfy an execution method search. They exist only as base methods to be referred to by other method elements. Any method elements referred to via the base inheritance chain is searched for by name at the top-level of the database. Since attributes are never inherited, the only use of base execution methods is to provide a common execution method command for multiple method elements defined within the various runnable elements. For example, in order to assign the same execution method to two subsets of the regression suite (but not the entire suite), the following pattern can be used:">Methods and Base Inheritance</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">context </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;context_string&gt;}</p>
+<p class="p">If specified, limits application of this method
+to a specific context </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ConditionalExecutionMethods_idc1513718.html#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c__Concept_ConditionalExecutionMethods_idc1513718.xml#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c" title="By itself, the ability to add method elements to Runnables in order to affect subsets of the regression suite is useful but still somewhat inflexible. In many cases, there can be a legitimate reason for wanting to launch some Actions locally, some on specific machines (that is, large capacity machines), and some on server grids of various types. Compiles, for example, may need to be executed on the local machine (or on a specific remote machine) prior to launching any simulations. Simulations may need to run on a grid during overnight regressions but might also be run on the local machine for small interactive test runs during the day. Some simulations may need additional resources or may require a slightly different set of options when the job is queued. All of these things point to the need for a more flexible paradigm for specifying the command by which each Action script is launched.">Conditional Execution Methods</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">donedelay </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">0 </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">Number of milliseconds delay to insert before
+processing the results of completed scripts.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">gridtype </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{lsf | sge | uge | rtda
+| &lt;user_defined&gt;}</p>
+<p class="p">Type of grid software being used.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ControllingGridSubmissionCommand_id8a77cc32.html#id8a77cc32-cdc3-47b4-bc77-d531a4516b44__Concept_ControllingGridSubmissionCommand_id8a77cc32.xml#id8a77cc32-cdc3-47b4-bc77-d531a4516b44" title="Different Grid Management systems require different command-line formats to submit array jobs. In keeping with the design goal of allowing environment-specific behavior to be overridden to allow for local customization, an execution method may call upon a user-definable procedure to construct part of the execution method command. Built-in procedures to cover LSF, UGE, SGE, and RTDA grids are built into the vrun executable. Other Grid Management systems that support array jobs require an additional procedure to be defined.">Controlling the Grid Submission Command</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">if </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">true </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;expression&gt;}</p>
+<p class="p">Where &lt;expression&gt; is a TCL expression.
+If false, blocks application of this method</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">maxarray </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">If specified, specifies maximum
+number of Action scripts to be clubbed into a single array job. </p>
+<p class="p">When set to zero (0), the maximum is unlimited.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_CreatingGridArrayJobs_id9e767644.html#id9e767644-18d8-47e6-89a9-54edead3576b__Concept_CreatingGridArrayJobs_id9e767644.xml#id9e767644-18d8-47e6-89a9-54edead3576b" title="Some Grid Management system support the concept of “array jobs.” These are multi-Action jobs that are submitted to the grid as a single job but which the Grid Management system divides into single jobs as grid servers become available to run the jobs. Platform Computing Corporation Load Sharing Facility (LSF), Univa Grid Engine (UGE), Oracle Grid Engine, previously known as Sun Grid Engine (SGE), and Realtime Design Automation’s NetworkComputer (RTDA) support array jobs and the knowledge of how to construct grid jobs in both environments is built into VRM. The advantage of an array job over a fixed-list clubbed job is that the Actions combined into an array job can still run concurrently if the grid has the available capacity (as mentioned above, Actions clubbed in fixed-list mode are always executed sequentially).">Creating Grid Array Jobs</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">maxclubbing </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">If specified, specifies maximum
+number of Action scripts to be clubbed into a single script, specifically
+a single job.</p>
+<p class="p">When set to zero (0), the maximum is unlimited.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_MultiActionClubbingFixedListMode_id3f2b5b90.html#id3f2b5b90-6738-46c2-a967-e6f3fd930c44__Concept_MultiActionClubbingFixedListMode_id3f2b5b90.xml#id3f2b5b90-6738-46c2-a967-e6f3fd930c44" title="In fixed-list mode, vrun assembles a list of one or more eligible Actions into a multi-Action wrapper script and launches a single execution method command (that is, a single grid job), which is responsible for running the Actions in the list. Each Action in the list is executed in sequence, one Action at a time, as though the Action scripts had been concatenated into a single script. The list of Actions and the sequence in which they are executed is fixed and cannot be altered once the multi-Action command has been launched (hence the name “fixed-list mode”). Also, from that point forward, the individual Actions can no longer be controlled independently, although each individual Action’s wrapper script is still responsible for sending the requisite “start” and “done” messages to the launching vrun process.">Multi-Action Clubbing Fixed-list Mode</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">maxrunning </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">If specified, specifies maximum
+number of jobs that may be running concurrently.</p>
+<p class="p">If you set maxrunning to a value
+“m” and maxclubbing to a value “n”, then the named queue can run
+a maximum of “m” jobs containing “n” actions.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_NamedExecutionQueues_id44b7e485.html#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758__Concept_NamedExecutionQueues_id44b7e485.xml#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758" title="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files.">Named Execution Queues</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">mintimeout </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">60</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">Minimum queuing timeout for scripts using
+this method</p>
+<p class="p">A value of 0 disables timeout monitoring for the
+Action. This value takes precedence over other global and local
+timeout values.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_MethodsTimeouts_id1839c4f5.html#id1839c4f5-c069-4269-a0a3-f38c30b5c1c0__Concept_MethodsTimeouts_id1839c4f5.xml#id1839c4f5-c069-4269-a0a3-f38c30b5c1c0" title="Execution methods can specify a per-method minimum timeout by adding a mintimeout attribute onto the method element. The mintimeout attribute is read from the method element that actually supplied the command, even if the command is inherited from a base method element. In other words, even though the mintimeout attribute is actually attached to the method element, it is easier to think of it as being attached to the command element itself. For example, consider the following configuration elements:">Methods and Timeouts</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">name </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;string&gt;}</p>
+<p class="p">Name of the method (if present, must be a
+name token)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">queue </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;string&gt;}</p>
+<p class="p">Name of the internal queue to be used (if
+present, must be a name token)</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_NamedExecutionQueues_id44b7e485.html#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758__Concept_NamedExecutionQueues_id44b7e485.xml#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758" title="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files.">Named Execution Queues</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">runnable </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;runnable_name&gt;}</p>
+<p class="p">If specified, limits application of this method
+to Action scripts from a specific runnable element</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ConditionalExecutionMethods_idc1513718.html#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c__Concept_ConditionalExecutionMethods_idc1513718.xml#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c" title="By itself, the ability to add method elements to Runnables in order to affect subsets of the regression suite is useful but still somewhat inflexible. In many cases, there can be a legitimate reason for wanting to launch some Actions locally, some on specific machines (that is, large capacity machines), and some on server grids of various types. Compiles, for example, may need to be executed on the local machine (or on a specific remote machine) prior to launching any simulations. Simulations may need to run on a grid during overnight regressions but might also be run on the local machine for small interactive test runs during the day. Some simulations may need additional resources or may require a slightly different set of options when the job is queued. All of these things point to the need for a more flexible paradigm for specifying the command by which each Action script is launched.">Conditional Execution Methods</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">unless </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">false </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;expression&gt;}</p>
+<p class="p">Where &lt;expression&gt; is a TCL expression.
+If true, blocks application of this method</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e184 "><p class="p">window </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e187 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e190 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e193 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d36165e196 "><p class="p">{&lt;string&gt;}</p>
+<p class="p">Settings for adjustable execution limit window</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_LimitingExecutionTimeGivenNamedQueue_idb76791cd.html#idb76791cd-9003-4253-81b3-5f9e20445478__Concept_LimitingExecutionTimeGivenNamedQueue_idb76791cd.xml#idb76791cd-9003-4253-81b3-5f9e20445478" title="A related but independent function is the ability to limit the “execution window” of a given named queue. If the window attribute is specified for a given execution method, that attribute is used to establish a window of time during which the jobs launched from that queue are allowed to run. The value of the window attribute is parsed into one or more semicolon-separated expressions. Each expression consists of a limit type identifier and a limit value string separated by a colon. The only limit type identifier defined at this time is “wall” that means wall-clock time measured from the time the first job is launched. The limit value string follows the rules outlined in the man page for the TCL clockscan command.">Limiting the Execution Time of a Given Named Queue</a>” for more information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">There are three method-specific conditional
+attributes: action, runnable and context; in addition to the if
+and unless also used for the conditional execution of the runnable
+elements. Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ConditionalExecutionMethods_idc1513718.html#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c__Concept_ConditionalExecutionMethods_idc1513718.xml#idc1513718-ddd5-4eb8-93cd-2b3d22f7050c" title="By itself, the ability to add method elements to Runnables in order to affect subsets of the regression suite is useful but still somewhat inflexible. In many cases, there can be a legitimate reason for wanting to launch some Actions locally, some on specific machines (that is, large capacity machines), and some on server grids of various types. Compiles, for example, may need to be executed on the local machine (or on a specific remote machine) prior to launching any simulations. Simulations may need to run on a grid during overnight regressions but might also be run on the local machine for small interactive test runs during the day. Some simulations may need additional resources or may require a slightly different set of options when the job is queued. All of these things point to the need for a more flexible paradigm for specifying the command by which each Action script is launched.">Conditional Execution Methods</a>” for more information.</p>
+</div>
+<div class="section Subsection" id="id8c8348d1-de7b-4f0b-bae1-7345cde8c264__id616ae5a5-57e9-4378-950a-14afe0cbb0d0"><h2 class="title Subheading sectiontitle">Examples</h2><pre class="pre codeblock leveled"><code>&lt;method name="grid" gridtype="sge" mintimeout="600" 
+			if="{(%MODE:%)} eq {grid}"&gt;
+	&lt;command&gt;qsub -V -cwd -b yes -e /dev/null -o /dev/null 
+			-N (%INSTANCE%) (%WRAPPER%)&lt;/command&gt;
+&lt;/method&gt;</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ElementDefinitions_idca164c90.html" title="These are the elements, shown roughly in top-down order, that may appear in an RMDB file.">Element Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "method"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Method_id8c8348d1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

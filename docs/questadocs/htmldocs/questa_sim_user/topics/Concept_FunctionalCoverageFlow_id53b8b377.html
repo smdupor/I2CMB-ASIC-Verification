@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Functional Coverage Flow" />
+<meta name="abstract" content="The SystemVerilog functional coverage flow in Questa SIM is broken down into three main steps: compilation of design files, simulation, and data analysis." />
+<meta name="description" content="The SystemVerilog functional coverage flow in Questa SIM is broken down into three main steps: compilation of design files, simulation, and data analysis." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id53b8b377-447f-4b31-ac8d-c4bb7476710f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Functional Coverage Flow</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Functional Coverage Flow" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id53b8b377-447f-4b31-ac8d-c4bb7476710f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Functional Coverage
+Flow</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The SystemVerilog
+functional coverage flow in <span class="ph fmvar:ProductName">Questa SIM</span> is
+broken down into three main steps: compilation of design files,
+simulation, and data analysis. </span>
+</div>
+<div class="fig fignone" id="id53b8b377-447f-4b31-ac8d-c4bb7476710f__id69039272-58be-4cce-8ff9-3f65b04a88d5"><span class="figcap"><span class="fig--title-label">Figure 1. </span>SystemVerilog Functional Coverage Flow</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/svlog_func_flow.gif" /></div><br /></div>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> compiles
+SystemVerilog functional coverage constructs along with other SystemVerilog
+code when either the source file ends in <span class="ph filepath">.sv</span> or
+you specify the -sv argument to <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vlog', 'questa_sim_ref'); return false;">vlog</a> command. </p>
+<p class="p">When you invoke <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> on
+the top-level of the design, the simulator automatically handles
+any functional coverage constructs that are present. After running
+a simulation, you may optionally view coverage interactively in
+the GUI with commands such as <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'coverage report', 'questa_sim_ref'); return false;">coverage report</a>. You may also save coverage data to the  (UCDB) with
+the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'coverage save', 'questa_sim_ref'); return false;">coverage save</a> command, which facilitates reporting, merging, and ranking coverage
+data, as well as other types of verification analysis. </p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_VerificationFunctionalCoverage_ida5dd70aa.html" title="Functional coverage is user-defined coverage – in contrast with code coverage, which is automatically inferred from the source. At the most abstract level, functional coverage specifies some values to observe at certain times in a design or test bench, and counts how many times those values occur.">Verification with Functional Coverage</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Functional Coverage Flow"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FunctionalCoverageFlow_id53b8b377.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

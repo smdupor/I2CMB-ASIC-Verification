@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Coverage Support of UPF Objects" />
+<meta name="abstract" content="Power Aware simulation supports coverage of power states and transitions of various UPF objects, such as ports and nets, PSTs, supply sets, power domains, power switches, isolation strategies, retention strategies, control signals, and simstates. The tool also supports cross coverage of power states, which refers to the system-level coverage that is represented using the cross of various power states." />
+<meta name="description" content="Power Aware simulation supports coverage of power states and transitions of various UPF objects, such as ports and nets, PSTs, supply sets, power domains, power switches, isolation strategies, retention strategies, control signals, and simstates. The tool also supports cross coverage of power states, which refers to the system-level coverage that is represented using the cross of various power states." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Coverage Support of UPF Objects</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Coverage Support of UPF Objects" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Coverage Support of UPF Objects</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Power Aware simulation
+supports coverage of power states and transitions of various UPF objects,
+such as ports and nets, PSTs, supply sets, power domains, power
+switches, isolation strategies, retention strategies, control signals,
+and simstates. The tool also supports cross coverage of power states,
+which refers to the system-level coverage that is represented using
+the cross of various power states. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id8cffe9be-05e5-4c4f-811b-c9b1b48e2235">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id8115ee34-953f-4edb-8ead-db2128791cc8" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Coverage
+Support of UPF Objects</span></caption><colgroup><col style="width:1.417in" /><col style="width:1.644in" /><col style="width:3.439in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d40438e146"><p class="p">UPF Object</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d40438e149"><p class="p">-pa_coverage Value</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d40438e152"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Isolation strategy</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">iso</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of the following:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id4261647c-080a-4885-9cff-870cfa551389"><p class="p">Predefined
+states and transitions of the simstates of the isolation supply
+set.</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__idf6201be0-6adf-440f-9c09-d2dcbe11ed10"><p class="p">Predefined
+states and transitions of the isolation enable signal:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id684ad0f8-248b-4b54-8f87-49a81e9bdd44"><p class="p">Predefined
+states — ACTIVE_LEVEL, INACTIVE, ACTIVE_X and ACTIVE_Z</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id4f9b1c50-b6f0-4d83-a343-dc4648ca1092"><p class="p">Predefined
+transitions — HIGH_TO_LOW, and LOW_TO_HIGH</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" rowspan="2" style="vertical-align:top;" headers="d40438e146 "><p class="p">Port and net</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">portpststate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of user-defined states
+and transitions of ports and nets.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">implicitportnet</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of the
+implicitly created state (by the tool) that is used in the ‑supply_expr option
+of the add_power_state command.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" rowspan="2" style="vertical-align:top;" headers="d40438e146 "><p class="p">Power domain</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">powerstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of user-defined states
+and transitions of power domains. See “<a class="xref fm:HeadingOnly" href="#id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__idcfe8c09e-c4b6-45fb-894c-e0a6715589e4">Cross Coverage of Power States</a>”.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">simMode</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of states and transitions
+of simstates of the primary supply set.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Power state group</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">powerstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of user-defined states
+and transitions of power state groups.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Power switch</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">switch</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of the following:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__ide5b8546f-e40d-4816-a56f-b2f8310a31b7"><p class="p">Predefined
+states and transitions of the switch</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id765ae56e-cd30-4090-84a4-d3a81defc7c6"><p class="p">Predefined
+states and transitions of the control port and acknowledge (ack)
+port of the switch:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id94ecdb0e-fa3a-4172-8b08-82e11605d342"><p class="p">Predefined
+states — ACTIVE_LEVEL, INACTIVE, ACTIVE_X and ACTIVE_Z</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id32b993b2-a65d-4027-b953-0432d9fdf9a5"><p class="p">Predefined
+transitions — HIGH_TO_LOW, and LOW_TO_HIGH</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">PST</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">portpststate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of user-defined states
+and transitions of PSTs</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Retention strategy</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">ret</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of the following:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id6490a9e1-3160-4101-aa77-7cfd3b3cbdc5"><p class="p">Predefined
+states and transitions of the simstates of the retention supply
+set</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id6baed821-d6ae-4aba-b0b2-aca2975d6135"><p class="p">Predefined
+states and transitions of the save and restore events:</p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__idebc38d10-b775-4e34-8588-262f404770aa"><p class="p">Predefined
+states — ACTIVE_LEVEL, and INACTIVE</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id4651bcff-a547-4020-86e5-eb18bc9290aa"><p class="p">Predefined
+transitions — HIGH_TO_LOW, and LOW_TO_HIGH</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Supply set</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">powerstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of user-defined and predefined states
+and transitions of supply sets.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e146 "><p class="p">Supply set simstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e149 "><p class="p">powerstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d40438e152 "><p class="p">Enables coverage of predefined states and transitions
+of supply sets simstates.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__idcfe8c09e-c4b6-45fb-894c-e0a6715589e4"><h2 class="title Subheading sectiontitle">Cross
+Coverage of Power States</h2><p class="p">The tool supports system-level coverage as part of the Power
+Aware simulation. The system-level coverage captures the occurrences
+of various interdependent power states, and is referred as cross
+coverage of power states. These power states correspond to various
+power domains of the design. </p>
+<p class="p">Cross coverage is implemented according to the following: </p>
+<ul class="ul"><li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id830763fc-4466-47ce-95ef-8a76d3b6556f"><p class="p">The tool
+considers only power states of power domains for cross coverage.</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__idc2dc0a20-e4b9-467d-92e7-0bf3367f9f9a"><p class="p">The tool enables
+cross coverage when you enable coverage of power states using the vopt
+-pa_coverage (or vopt -pa_coverage=powerstate) and vsim -coverage
+commands. See “Default Cross Coverage Behavior”.</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id5d6d79d1-7408-4288-8b76-e3ebcacd2af1"><p class="p">To enable complete
+cross coverage, add the -pa_coverage=crossdontcare argument to your
+vopt command. See “Complete Cross Coverage Behavior”.</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id914bb668-017a-4dd8-90bb-09488bc63853"><p class="p">To control
+the depth of the dependency tree of the power states, specify the ‑pa_crosscoveragedepth <var class="keyword varname">integer</var> argument
+with your vopt command.</p>
+</li>
+<li class="li" id="id1d15cd79-4ae2-45c3-a1d7-509a9b1afcfc__id099d3674-1395-4da0-b88a-7b5e96abc8c3"><p class="p">To disable
+cross coverage, specify the -pa_coverageoff=crosscov argument with
+your vopt command.</p>
+</li>
+</ul>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">To view the results of cross coverage for
+a specified list of power domains in a design, use the <a class="xref fm:HeadingOnly" href="Command_DescribeStateCrossCoverage_id00ce4bd3.html#id00ce4bd3-ac9c-4551-8435-3c756616aa8b__Command_DescribeStateCrossCoverage_id00ce4bd3.xml#id00ce4bd3-ac9c-4551-8435-3c756616aa8b" title="Provides results of cross coverage for a specified list of power domains in a design.">describe_state_cross_coverage</a> command.</p>
+</div>
+<h2 class="title Subheading sectiontitle">Example</h2><p class="p">Consider the following UPF commands, where power states of a
+top-level power domain PD are dependent on the power states of PD_sub1
+and PD_sub2. PD is separated by a single level from PD_sub1 and
+PD_sub2.</p>
+<pre class="pre codeblock"><code><span class="ph FontProperty P9">add_power_state PD_sub1 -state {PD_sub1_ps1 -supply_expr {(main == {FULL_ON})}}
+add_power_state PD_sub1 -state {PD_sub1_ps2 -supply_expr {(main == {OFF})}}
+add_power_state PD_sub2 -state {PD_sub2_ps1 -supply_expr {(main == {FULL_ON})}}
+add_power_state PD_sub2 -state {PD_sub2_ps2 -supply_expr {(main == {OFF})}}
+add_power_state PD -state {PD_ps1 -logic_expr {PD_sub1 == PD_sub1_ps1 &amp;&amp; PD_sub2 == PD_sub2_ps2}}
+add_power_state PD -state {PD_ps2 -logic_expr {PD_sub2 == PD_sub2_ps1 }}</span></code></pre><h2 class="title Subheading sectiontitle">Default Cross Coverage Behavior</h2><p class="p">For default cross coverage calculations, the tool considers only
+those power state combinations that you explicitly specify with
+an add_power_state command instead of all possible power state combinations.</p>
+<p class="p">For example, the tool uses the following power state combinations
+for default cross coverage calculations:</p>
+<pre class="pre codeblock"><code>PD_ps1, PD_sub1_ps1, PD_sub2_ps2
+PD_ps2, PD_sub2_ps1</code></pre><h2 class="title Subheading sectiontitle">vopt Command</h2><pre class="pre codeblock"><code>vopt tb -o tb_out -pa_upf test.upf -pa_coverage=powerstate</code></pre><h2 class="title Subheading sectiontitle">Complete Cross Coverage Behavior</h2><p class="p">For complete cross coverage, add the -pa_coverage=crossdontcare
+argument to your existing vopt command. This enables coverage of
+the don’t care states. Don’t care states are the states whose dependency
+you do not explicitly specify in the add_power_state command.</p>
+<p class="p">For example, the tool uses the following power state combinations
+for complete cross coverage calculations:</p>
+<pre class="pre codeblock"><code>PD_ps1, PD_sub1_ps1, PD_sub2_ps2
+PD_ps2, PD_sub2_ps1, PD_sub1_ps1   //PD_sub1_ps1 is a don’t care state
+PD_ps2, PD_sub2_ps1, PD_sub1_ps2   //PD_sub1_ps2 is a don’t care state</code></pre><h2 class="title Subheading sectiontitle">vopt Command</h2><pre class="pre codeblock"><code>vopt tb -o tb_out -pa_upf test.upf -pa_coverage=powerstate+crossdontcare</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareCoverage_id29a20a12.html" title="Analyze Power Aware coverage to verify that the regression test suites are adequately testing the Power Aware elements of your design.">Power Aware Coverage</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_PowerAwareCoverageOverview_id46b91b96.html" title="Configure Power Aware simulation or non-Power Aware simulation to analyze your Power Aware and non-Power Aware coverage.">Power Aware Coverage Overview</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Coverage Support of UPF Objects"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_CoverageSupportOfUpfObjects_id1d15cd79.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

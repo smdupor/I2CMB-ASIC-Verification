@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Basic VHDL Usage" />
+<meta name="abstract" content="Using a VHDL design with Questa SIM consists of running the vcom, vopt, and vsim commands to compile, optimize, load, and simulate. Note that you need to be familiar with any setup requirements for running these commands, such as using the vlib command to create a design library." />
+<meta name="description" content="Using a VHDL design with Questa SIM consists of running the vcom, vopt, and vsim commands to compile, optimize, load, and simulate. Note that you need to be familiar with any setup requirements for running these commands, such as using the vlib command to create a design library." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc23a94ce-4f27-42ec-9214-54401cd8d38b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Basic VHDL Usage</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Basic VHDL Usage" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Basic
+VHDL Usage</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Using a VHDL design with <span class="ph fmvar:ProductName">Questa SIM</span> consists of running the
+vcom, vopt, and vsim commands to compile, optimize, load, and simulate.
+Note that you need to be familiar with any setup requirements for
+running these commands, such as using the vlib command to create
+a design library. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b__id942b0692-2651-4aac-899b-35e2da5e4476"><p class="p">The following steps summarize the basic VHDL
+usage process: </p>
+<ol class="ol"><li class="li" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b__idaa6d87a5-3113-48ae-97f4-49a34ccd458a"><p class="p">Compile
+your VHDL code into one or more libraries using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> command.
+Refer to <a class="xref fm:HeadingOnly" href="General_CompilationVhdlDesigntheVcomCommand_idcfaa6305.html#idcfaa6305-4211-42f5-ac45-4437d4c17564__General_CompilationVhdlDesigntheVcomCommand_idcfaa6305.xml#idcfaa6305-4211-42f5-ac45-4437d4c17564" title="Questa SIM compiles one or more VHDL design units with a single invocation of the vcom command, which functions as the VHDL compiler.">Compilation of a VHDL Design—the vcom Command</a> for more information. </p>
+</li>
+<li class="li" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b__id0729d5cc-c3ab-4511-97c8-9f1b4288fd6f"><p class="p">(Optional)
+Elaborate and optimize your design using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command.
+Refer to the chapter <a class="xref fm:HeadingOnly" href="MGCChap_OptimizingDesignsVopt_id37377122.html#id37377122-87b1-403e-b48c-1f2b0dc53155__MGCChap_OptimizingDesignsVopt_id37377122.xml#id37377122-87b1-403e-b48c-1f2b0dc53155" title="Questa SIM, by default, performs built-in optimizations on your design to maximize simulator performance.">Optimizing Designs with vopt</a> for more information.</p>
+</li>
+<li class="li" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b__id0ec527cc-f461-48f7-81a8-4a8154e9c843"><p class="p">Load
+your design with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command.
+Refer to <a class="xref fm:HeadingOnly" href="General_SimulationVhdlDesigntheVsimCommand_idafb74700.html#idafb74700-aa9a-46c8-a1d5-49ebfc1adfe2__General_SimulationVhdlDesigntheVsimCommand_idafb74700.xml#idafb74700-aa9a-46c8-a1d5-49ebfc1adfe2" title="A VHDL design is ready for simulation after you compile it with vcom. You can then use the vsim command to invoke the simulator with the name(s) of the configuration or entity/architecture pair.">Simulation of a VHDL Design—the vsim Command</a>.</p>
+</li>
+<li class="li" id="idc23a94ce-4f27-42ec-9214-54401cd8d38b__id5b3116ce-8392-4e00-9e3b-2ac7751e41fa"><p class="p">Simulate
+the loaded design, then debug as needed. </p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_VhdlSimulation_idad538531.html" title="Questa SIM enables you to compile, optimize, load, and simulate VHDL designs.">VHDL Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Basic VHDL Usage"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_BasicVhdlUsage_idc23a94ce.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

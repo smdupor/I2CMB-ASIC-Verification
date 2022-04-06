@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Setting Assertion Failure Limits" />
+<meta name="abstract" content="The assertion failure limit determines how many times Questa SIM processes an assertion before disabling it for the duration of the simulation. By default, the failure limit is set to “unlimited.” In other words, assertions will not be disabled during the simulation. You can change the permanent default by editing a modelsim.ini variable or by using the assertion fail command. You may also set the assertion failure limit for the current simulation using the GUI." />
+<meta name="description" content="The assertion failure limit determines how many times Questa SIM processes an assertion before disabling it for the duration of the simulation. By default, the failure limit is set to “unlimited.” In other words, assertions will not be disabled during the simulation. You can change the permanent default by editing a modelsim.ini variable or by using the assertion fail command. You may also set the assertion failure limit for the current simulation using the GUI." />
+<meta name="DC.subject" content="assertions, set fail limits, PSL, configuring assertions, SystemVerilog" />
+<meta name="keywords" content="assertions, set fail limits, PSL, configuring assertions, SystemVerilog" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id851aa5ea-fa7c-4f23-8179-66f6885151e2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Setting Assertion Failure Limits</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Setting Assertion Failure Limits" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id851aa5ea-fa7c-4f23-8179-66f6885151e2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Setting Assertion Failure Limits</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">The assertion
+failure limit determines how many times <span class="ph fmvar:ProductName">Questa SIM</span> processes
+an assertion before disabling it for the duration of the simulation.
+By default, the failure limit is set to “unlimited.” In other words,
+assertions will not be disabled during the simulation. You can change
+the permanent default by editing a <span class="ph filepath">modelsim.ini</span> variable
+or by using the assertion fail command. You may also set the assertion
+failure limit for the current simulation using the GUI.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__id76d172e9-22f8-4386-bad2-43d3265e5268"><span class="ph cmd">Change the default assertion
+failure limit with any one of the following:</span><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__id8482d1fb-8b17-42a7-b7e9-d8139093817b"><p class="p">Set the <a class="xref fm:HeadingOnly" href="Command_Assertionlimit_id5511c79a.html#id5511c79a-42e8-4dd0-98f9-38d8dfac4c74__Command_Assertionlimit_id5511c79a.xml#id5511c79a-42e8-4dd0-98f9-38d8dfac4c74" title="This variable sets a limit for the number of times Questa SIM responds to a VHDL/PSL/SVA assertion failure event. Questa SIM disables an assertion after reaching the limit.">AssertionLimit</a> variable in the <span class="ph filepath">modelsim.ini </span>file. </p>
+</li>
+<li class="li" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__id0e45f436-d525-444d-9dc8-65513f9cc218"><p class="p">Use the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'assertion fail', 'questa_sim_ref'); return false;">assertion fail</a> command. </p>
+</li>
+</ul>
+</div></li>
+<li class="li step stepexpand" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__ideb7109bf-606c-445e-ac09-f2b8214f5c93"><span class="ph cmd">To set the assertion failure
+limit of the current simulation with the GUI, do either of the following:</span><div class="itemgroup info StepInfo"><ul class="ul"><li class="li" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__idd253714e-574e-4c02-924b-6e571ab79bb5"><p class="p">Make
+the Assertions window active and select <span class="ph menucascade"><span class="ph uicontrol">Assertions</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Configure</span></span> from
+the menu bar.</p>
+</li>
+<li class="li" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__id0cd65ef9-e55a-4ffc-817b-fa7749d1454c"><p class="p">Right-click an assertion
+in the Assertions window and selecting <span class="ph uicontrol">Configure</span>. </p>
+</li>
+</ul>
+<p class="p">Either of these actions opens
+the <span class="ph uicontrol">Configure assertions</span> dialog box where
+you can change the limit for all assertions or for the selected
+assertion in the Limit section of the dialog box (<a class="xref fm:Figure" href="#id851aa5ea-fa7c-4f23-8179-66f6885151e2__idcb94d4be-1801-4bb0-8b7f-e9138d878ae3">Figure 1</a>).</p>
+<div class="fig fignone" id="id851aa5ea-fa7c-4f23-8179-66f6885151e2__idcb94d4be-1801-4bb0-8b7f-e9138d878ae3"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Setting Assertion
+Failure Limits</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/assertions_change_limit.gif" /></div><br /></div>
+<p class="p">The assertion count is not
+verified until the end of the current time stamp. If multiple threads
+are active for a given property and if all of them fail at the same
+time, then all fail messages are reported. You may see more fail
+messages than the limit you set.</p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> continues
+to respond to assertions if their limit has not been reached. The
+limit applies to the entire simulation session and not to any single
+simulation run command.</p>
+</div></li>
+</ol>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">The following use of the assertion
+fail command</p>
+<p class="lines ApplCommand">assertion fail -r / -limit 4 mydesign</p>
+<p class="p">sets the failure response limit to
+4 for all assertions in <span class="ph filepath">mydesign</span>. Each assertion
+failure will be responded to a maximum of 4 times during the current
+simulation. The “-r /” argument indicates that the assertion command
+should start at the root of <span class="ph FontProperty emphasis">mydesign</span> and
+find all assertions.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ConfiguringAssertions_ida3b6a761.html" title="The various tasks required to configure assertions may be invoked via the command line or the GUI.">Configuring Assertions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Setting Assertion Failure Limits"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_SettingAssertionFailureLimits_id851aa5ea.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

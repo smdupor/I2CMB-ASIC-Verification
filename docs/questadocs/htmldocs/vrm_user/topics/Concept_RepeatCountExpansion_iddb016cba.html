@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Repeat-Count Expansion" />
+<meta name="abstract" content="The repeat-count expansion occurs when the list of selected Runnables is constructed." />
+<meta name="description" content="The repeat-count expansion occurs when the list of selected Runnables is constructed." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="iddb016cba-e3a4-4fcd-ae1c-081c29fdfd38" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Repeat-Count Expansion</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Repeat-Count Expansion" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="iddb016cba-e3a4-4fcd-ae1c-081c29fdfd38">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Repeat-Count Expansion</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The repeat-count expansion occurs when
+the list of selected Runnables is constructed.</span>
+</div>
+<p class="p">Actions resulting from the
+repeating Task or Group are duplicated and added to the graph multiple
+times, according to the integer number specified in the <span class="ph FontProperty emphasis">repeat</span> attribute
+for that Task or Group. The dependencies of each of these Actions
+are the same as if the name of the Runnable from which they are
+derived is listed multiple times in the membership list of the calling
+parent Runnable (or specified multiple times on the command line).</p>
+<p class="p">If the parent is a non-sequential Group,
+then the repeating Runnables can be scheduled to execute in parallel.
+If the parent is a sequential Group, then the repeating Runnables
+is scheduled to execute in sequence, each repetition waiting for
+the previous repetition to complete (without failure) before executing.
+Each instance of the repeating Task or Group is also executed in
+its own working directory, just as if it is listed separately in
+the membership list of its calling parent Runnable.</p>
+<p class="p">The name used for these duplicate graph
+nodes is generated by joining the value of the <span class="ph FontProperty emphasis">name</span> attribute
+of the repeating <span class="ph FontProperty emphasis">runnable</span> element
+with the one-based index of the repeat count (that is, from one
+to the number specified in the repeat attribute). This index is
+separated from the name of the runnable element by a tilde (~) character.
+Although use of the tilde (~) character in the name of a Runnable
+(in the <span class="ph FontProperty emphasis">name</span> attribute
+of a <span class="ph FontProperty emphasis">runnable</span> element)
+is not illegal, it should be avoided in order to avoid confusion
+with repeating Runnables. The (<span class="ph FontProperty emphasis">%INSTANCE%</span>)
+built-in parameter contains the entire expanded name of the Task
+or Group under execution (that is, <span class="ph FontProperty emphasis">test~1</span>)
+and the (<span class="ph FontProperty emphasis">%ITERATION%</span>)
+built-in parameter contains the repeat index of the current repetition
+of the Task or Group (that is, the number after the tilde in the expanded
+name).</p>
+<p class="p">Like all element attributes, the <span class="ph FontProperty emphasis">repeat</span> attribute
+does not inherit. That is to say that if you add a greater-than-one <span class="ph FontProperty emphasis">repeat</span> attribute
+to a <span class="ph FontProperty emphasis">runnable</span> element
+of type “group”, that Group will repeat but, within each instance
+of the repeated Group, the Groups and/or Tasks listed as members
+of that Group will not repeat (unless one or more of the members
+also has a greater-than-one <span class="ph FontProperty emphasis">repeat</span> attribute).</p>
+<p class="p">The <span class="ph FontProperty emphasis">repeat</span> attribute
+can be parameterized. The value of the <span class="ph FontProperty emphasis">repeat</span> attribute
+in any given Runnable can be a parameter reference, as in the following:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable name="test" type="task" repeat="(%numtests%)"&gt;
+	...
+&lt;/runnable&gt;
+</code></pre><p class="p">The parameter reference can be satisfied
+by a parameter in a base Runnable or a group ancestor Runnable.
+An abbreviated set of predefined parameters are also available (see “<a class="xref fm:HeadingAndPage" href="Concept_PredefinedParameterUsage_iddf078ecb.html#iddf078ecb-d843-425d-8487-8e9ad7d874b5__Concept_PredefinedParameterUsage_iddf078ecb.xml#iddf078ecb-d843-425d-8487-8e9ad7d874b5" title="A small number of parameters are predefined with values equal to certain global paths or names relevant to VRM algorithm.">Predefined Parameter Usage</a>” for details) but, as the predefined
+parameters are all non-numeric, they may not be useful for parameterizing
+a numeric value. The parameter(s) referenced by the <span class="ph FontProperty emphasis">repeat</span> attribute can
+also include a default value and can be overridden from the command
+line (using the -g/-G options) like any other parameter.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RepeatingTaskGroup_idae0365f9.html" title="In some cases, such as when constrained random techniques are used to generate stimulus for the device under test (DUT), it can be useful to be able to repeat a single Task (that is, simulation) or Group of Tasks multiple times as part of the same regression run.">Repeating a Task or a Group</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Repeat-Count Expansion"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RepeatCountExpansion_iddb016cba.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

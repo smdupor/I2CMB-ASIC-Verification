@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware HDL Model" />
+<meta name="abstract" content="Hard macros often have multiple supplies that provide power to different portions of the macro. In such cases, implicit connection to the primary supply of the containing domain is not sufficient." />
+<meta name="description" content="Hard macros often have multiple supplies that provide power to different portions of the macro. In such cases, implicit connection to the primary supply of the containing domain is not sufficient." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf48c7404-3a44-49af-9558-8a1db69b6506" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware HDL Model</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware HDL Model" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf48c7404-3a44-49af-9558-8a1db69b6506">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Aware HDL Model</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Hard macros
+often have multiple supplies that provide power to different portions
+of the macro. In such cases, implicit connection to the primary
+supply of the containing domain is not sufficient. </span>
+</div>
+<p class="p">To enable connection of multiple supplies, the HDL
+simulation model for a hard macro may include port declarations
+representing each of the power supplies required by the macro. The existence
+of such port declarations identifies the model as a Power Aware
+HDL simulation model.</p>
+<p class="p">Since a Power Aware HDL model has supply ports,
+you can explicitly connect UPF supply nets to the model. If a supply
+port has the UPF_pg_type attribute associated with it, either by
+an HDL attribute specification or a UPF set_port_attributes command,
+then a connection to that supply port can be made automatically
+based upon its pg_type. In this case, the appropriate value conversion
+table (VCT) is also inserted based on the pg_type of the port. Otherwise,
+a connection to that port can be made explicitly, by referring to
+the name of the port in the connect_supply_net command. In this
+case, any VCT required must be specified explicitly as part of the
+connect_supply_net command.</p>
+<p class="p">A Power Aware HDL model must read the values
+of its supply ports and use those values to determine when its internal
+registers and its outputs should be corrupted to represent the effects of
+power shutoff or low voltage. In particular, it should assign appropriate
+values to those objects to indicate that the relevant power supplies
+are insufficient to support normal operation. If the hard macro
+contains embedded isolation or retention features, it should also
+monitor the relevant control signals and model the isolation and/or
+retention effects that result when those control signals are asserted. </p>
+<p class="p">To use this mode of operation
+for a given hard macro, first ensure that the simulation model for the
+hard macro is a Power Aware model. For each instance of the model,
+specify UPF connect_supply_net or connect_supply_set commands to
+connect the appropriate power supply to each supply port of the
+model, along with the appropriate VCT as required. Simstate-based corruption
+semantics are automatically disabled because of those connections. </p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">To apply Liberty-based corruption to all macro
+cells of a Power Aware HDL model, use the following attribute. See
+“<a class="xref fm:HeadingOnly" href="General_SupportedAttributes_idf2496762.html#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__General_SupportedAttributes_idf2496762.xml#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5" title="Power Aware simulation supports UPF, Liberty and tool-specific attributes that you use to express the power intent in a UPF, RTL, and Liberty file.">Supported Attributes</a>”.</p>
+<pre class="pre codeblock"><code>set_design_attributes –attribute {qpa_override_pbp_corruption TRUE}</code></pre></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HardMacroModelOverview_id67d90e01.html" title="The tool detects certain instances in the design as hard macro instances, and applies connection and corruption semantics.">Hard Macro Model Overview</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware HDL Model"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareHDLModel_idf48c7404.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

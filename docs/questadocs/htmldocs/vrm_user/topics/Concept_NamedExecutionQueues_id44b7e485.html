@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Named Execution Queues" />
+<meta name="abstract" content="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files." />
+<meta name="description" content="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id44b7e485-4cca-45f6-b8ae-15bb6f8f5758" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Named Execution Queues</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Named Execution Queues" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id44b7e485-4cca-45f6-b8ae-15bb6f8f5758">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Named Execution
+Queues</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">As Actions
+become eligible to run, they are added to a single internal queue
+for processing. A background thread then pulls each Action, in turn,
+from this internal queue and generates the necessary script and
+wrapper files. </span>
+</div>
+<p class="p">It is at this time that the execution
+method is determined, as discussed in “<a class="xref fm:HeadingAndPage" href="Contain_ExecutionMethods_id70589e20.html#id70589e20-3345-4225-9505-9b776dc4c0d5__Contain_ExecutionMethods_id70589e20.xml#id70589e20-3345-4225-9505-9b776dc4c0d5" title="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:">Execution Methods</a>”.</p>
+<p class="p">Each Action executed by VRM in the course of
+a regression run is reduced to a single command that the vrun utility
+launches via the TCL exec command. By default, this single command
+consists of an invocation of vish or vsim pointing to a wrapper
+script (generated by vrun) that performs the bookkeeping necessary
+to execute and monitor the script supplied by the user for that
+Action. If an execution method is specified for a given Action,
+then the execution method command itself becomes the single command
+for vrun to launch directly. The execution method command itself
+must point to a wrapper-launch script that contains the original
+launch command, which causes either vish or vsim to be launched,
+either locally or on another host, again pointing to the wrapper
+script for the Action.</p>
+<p class="p">Certain peripheral capabilities accrue via
+the use of execution “method” commands. For example, a “method”
+can define its own timeouts (launch-to-start and start-to-completion)
+that are used in place of the default timeouts. These timeouts can
+be specified on a per-method basis so each execution method can
+carry timeout settings that are pertinent to that particular execution
+method (for example, the launch-to-start time is likely to be much
+larger when the resulting job is queued to a server grid than if
+it is executed locally). The reason this is possible is because,
+internally to vrun, timeouts are associated with the Action itself.
+The per-method timeout settings are really controlling per-Action
+settings that vrun maintains internally.</p>
+<p class="p">Other functional settings, such as “maxrunning”
+(a limit on the number of Action scripts that can be running simultaneously)
+cannot be defined on a per-Action basis since they are not associated
+with one particular Action but with the execution queue itself.
+By default, there is a single execution queue and the “maxrunning”
+setting for that execution queue is controlled on a global basis
+by the -j command-line option. In order to support a per-method
+“maxrunning” setting, each method must be assigned a separate execution
+queue.</p>
+<p class="p">Assigning an execution method to a particular
+named queue is as simple as adding a queue attribute to the method
+element and setting it to a unique name as follows: </p>
+<pre class="pre codeblock leveled"><code>&lt;method queue="myqueue" ...&gt;
+	...
+&lt;/method&gt;</code></pre><p class="p">There is only one predefined named queue and
+that is the named queue whose name is a blank string (sometimes
+known as the “unnamed named queue”). Other than that, named queues are
+created as needed. There is no technical limit to the number of
+named queues that can be created save that each execution method
+defined in the RMDB can be assigned to only one named queue. </p>
+<p class="p">For example, assume the environment dictates
+that system integration tests must be done on a specific remote
+server but unit tests should be queued to a server grid. Assume
+each user is also required to limit the number of concurrent system
+integration tests to no more than two. You cannot simply specify
+the “-j 2” command-line option because that would also affect the unit
+tests which, supposedly, do not have a maximum concurrent execution
+limit. The way to setup the RMDB to support this environment might
+be as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable name="regression" type="group"&gt;
+      &lt;members&gt;
+         &lt;member&gt;integration&lt;/member&gt;
+         &lt;member&gt;unittests&lt;/member&gt;
+      &lt;/members&gt;
+      &lt;method context="integration" queue="remote" maxrunning="2"&gt;
+         &lt;command&gt;rsh bigmachine (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+      &lt;method context="unittests" queue="grid"&gt;
+         &lt;command&gt;gridsub (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+   &lt;/runnable&gt;
+   ...
+&lt;/rmdb&gt;</code></pre><p class="p">Because the value of <span class="ph FontProperty emphasis">maxrunning</span> is
+associated with a given execution queue rather than with the Actions
+themselves, these two execution methods need to be assigned to different
+queues. The first method is conditioned on the Action falling within
+the <span class="ph FontProperty emphasis">integration</span> context,
+in which the system integration tests are presumably defined. The
+value assigned to the <span class="ph FontProperty emphasis">maxrunning</span> attribute
+prevents vrun from launching more than two Actions from this queue
+at any one time. The second execution method is conditioned on the
+Action falling within the <span class="ph FontProperty emphasis">unittests</span> context
+and has no specified limit as to how many Actions can be launched
+concurrently. Any Actions which fall outside of the two specified
+contexts (such as <span class="ph filepath">/regression/postScript</span> at the
+end) will be launched on the local machine, since neither of the
+specified execution methods match.</p>
+<p class="p">The name of the queue via which an Action is
+ultimately launched may be viewed during the run by specifying the
+-verbose option on the vrun command line.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExecutionQueuesJobAggregation_idffbe9cb9.html" title="Tests and other user scripts are specified in the RMDB in terms of Actions. The content of the preScript, execScript, and postScript elements are examples of Actions specified in the RMDB.">Execution Queues and Job Aggregation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Named Execution Queues"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_NamedExecutionQueues_id44b7e485.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

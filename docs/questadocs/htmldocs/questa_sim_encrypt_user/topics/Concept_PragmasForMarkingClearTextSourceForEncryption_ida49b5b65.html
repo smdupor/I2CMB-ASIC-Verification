@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Pragmas for Marking Clear Text Source for Encryption" />
+<meta name="abstract" content="The recommended methodology for creating encrypted source files is to move all encryption recipe information out of the source IP files, and only use the following pragmas to control visibility." />
+<meta name="description" content="The recommended methodology for creating encrypted source files is to move all encryption recipe information out of the source IP files, and only use the following pragmas to control visibility." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Pragmas for Marking Clear Text Source for Encryption</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Pragmas for Marking Clear Text Source for Encryption" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Pragmas
+for Marking Clear Text Source for Encryption</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The recommended methodology
+for creating encrypted source files is to move all encryption recipe
+information out of the source IP files, and only use the following
+pragmas to control visibility.</span>
+</div>
+<ul class="ul"><li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id40691bea-8b5d-4357-9177-725a32d1857f"><p class="p">Verilog</p>
+<ul class="ul"><li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id48851576-64a8-4bbf-8eb0-0b72c28b95bb"><p class="p">`pragma protect begin</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id0d2d941d-ced7-428d-9f9f-ebfc6b1a55d3"><p class="p">`pragma protect end</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id9632ffad-d6c2-40c4-83a0-f70e1c7b79dd"><p class="p">`pragma protect viewport</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__idcb2d200f-2c69-45f4-bf18-b6e4e9162bb7"><p class="p">`pragma interface_viewport</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id67ade9e4-57fc-4078-8721-930632050043"><p class="p">pragma protect</p>
+</li>
+</ul>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id865e27ee-1b10-4a87-8ff0-1eeb81465e78"><p class="p">VHDL</p>
+<ul class="ul"><li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__ide90a9bd3-2399-4376-8f06-b37065849560"><p class="p">`protect begin</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id9d958428-6279-4e8a-98b2-c498ea896441"><p class="p">`protect end</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__idedfc5a65-6a7a-4b3d-a784-fed7043ccd07"><p class="p">`protect viewport</p>
+</li>
+<li class="li" id="ida49b5b65-b7a9-48b1-b82a-d4a779cb5bb4__id58f1b4a2-0478-4ef8-be6a-0b96ad90bb2a"><p class="p">`protect interface_viewport</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">When the encryption commands encounter a contiguous
+block of targeted source code, the tools encrypt the marked text
+into a single decryption envelope. You may annotate the HDL to identify
+one or more such targeted text blocks, and the tools then encrypt
+each block into an equivalent decryption envelope. The encryption
+tools transfer source text verbatim, and in order they appear in
+the encrypted file. </p>
+<p class="p">If the encryption commands do not find begin and
+end protect directives, they will add them to the targeted files,
+and rescan the files for any protection or visibility directives (viewports).</p>
+<p class="p">Viewport pragmas disclose names from within the
+encrypted HDL source code, making them visible to downstream tools
+as if they were not encrypted. Viewports offer more efficient control
+of visibility than multiple envelopes. Visibility control pragmas
+are the only pragmas that are supplied in source text between the
+begin and end pragmas, and are therefore encrypted as part of the
+source text encryption. </p>
+<p class="p">Viewports are optional pragmas inserted at encryption.
+You may choose not to add any viewports.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PragmaUsage_id490512f9.html" title="You can encrypt your IP using a variety of IEEE defined pragmas.">Pragma Usage</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "Pragmas for Marking Clear Text Source for Encryption"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PragmasForMarkingClearTextSourceForEncryption_ida49b5b65.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

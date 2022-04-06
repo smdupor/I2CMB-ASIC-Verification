@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Wildcards and Repeating Runnables" />
+<meta name="abstract" content="Wildcards (either glob-based or regexp-based) can be used to select instance identifiers from a repeating Runnable. A Runnable will repeat when defined with a repeat attribute whose value is larger than one or when defined with a foreach attribute containing more than one comma/space separated value." />
+<meta name="description" content="Wildcards (either glob-based or regexp-based) can be used to select instance identifiers from a repeating Runnable. A Runnable will repeat when defined with a repeat attribute whose value is larger than one or when defined with a foreach attribute containing more than one comma/space separated value." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1952d949-12c0-4064-a7c1-85ce6daad3f7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Wildcards and Repeating Runnables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Wildcards and Repeating Runnables" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1952d949-12c0-4064-a7c1-85ce6daad3f7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Wildcards
+and Repeating Runnables</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Wildcards (either
+glob-based or regexp-based) can be used to select instance identifiers
+from a repeating Runnable. A Runnable will repeat when defined with
+a <span class="ph FontProperty emphasis">repeat</span> attribute
+whose value is larger than one or when defined with a <span class="ph FontProperty emphasis">foreach</span> attribute
+containing more than one comma/space separated value.</span>
+</div>
+<p class="p">For example, if the repeating <span class="ph FontProperty emphasis">blocktest</span> Task
+(discussed in “<a class="xref fm:HeadingAndPage" href="Concept_SelectingInstancesRepeatingRunnables_id570b64ef.html#id570b64ef-92fe-4b0c-9dee-69c0239834d2__Concept_SelectingInstancesRepeatingRunnables_id570b64ef.xml#id570b64ef-92fe-4b0c-9dee-69c0239834d2" title="In the RMDB file, Groups and Tasks can be defined as either conditional or repeating. Conditional Runnables do not have any special notation, as they are either present under the specified conditions or not. However, repeating Runnables are expanded into multiple copies/instances and the Runnable selection notation needs to accommodate the selection of one or more of a set of repeating Runnables.">Selecting Instances of Repeating Runnables</a>”) has a <span class="ph FontProperty emphasis">repeat</span> attribute
+of <span class="ph FontProperty emphasis">4</span>, the
+instance identifiers used for the four <span class="ph FontProperty emphasis">blocktest</span> instances
+are <span class="ph FontProperty emphasis">1</span>, <span class="ph FontProperty emphasis">2</span>, <span class="ph FontProperty emphasis">3</span>,
+and <span class="ph FontProperty emphasis">4</span>. Likewise,
+if the <span class="ph FontProperty emphasis">blocktest</span> Task
+had instead been defined with a <span class="ph FontProperty emphasis">foreach</span> attribute
+containing the values <span class="ph FontProperty emphasis">2, 4, 12, and 14</span>,
+then those values are used as the instance identifiers for four instances
+of the <span class="ph FontProperty emphasis">blocktest</span> Runnable.</p>
+<p class="p">Wildcards can be used to select from among
+the repeating instances. For example, in the case of a <span class="ph FontProperty emphasis">foreach</span> Runnable
+with values <span class="ph FontProperty emphasis">2</span>, <span class="ph FontProperty emphasis">4</span>,<span class="ph FontProperty emphasis"> 12</span>,
+and <span class="ph FontProperty emphasis">14</span>, the
+following command:</p>
+<pre class="pre codeblock leveled"><code>% vrun -show -include 'nightly/randomtests/blocktest~1*'
+nightly/randomtests/blocktest~12
+nightly/randomtests/blocktest~14</code></pre><p class="p">selects only those instance identifiers (that
+is, <span class="ph FontProperty emphasis">foreach</span> values)
+that start with the digit <span class="ph FontProperty emphasis">1</span>.</p>
+<p class="p">Note that since instance identifiers can be
+any string and are not limited to numeric values, the wildcard comparison
+is lexical.</p>
+<p class="p">Using adhoc mode, the user can specify an instance
+identifier for a repeating Runnable other than those defined in
+the RMDB file. In the case where a <span class="ph FontProperty emphasis">repeat</span> count
+is specified, the adhoc mode context chain can specify a count outside
+of the normal range of the repeat attribute. In the case of a <span class="ph FontProperty emphasis">foreach</span> repeating
+Runnable, adhoc mode allows the user to specify any instance identifier,
+irrespective of whether or not that identifier is one of those defined
+in the <span class="ph FontProperty emphasis">foreach </span>attribute
+(see “<a class="xref fm:HeadingAndPage" href="Concept_AdhocMode_idfaa7cf7d.html#idfaa7cf7d-4f65-433f-b8df-5ce5dc981a21__Concept_AdhocMode_idfaa7cf7d.xml#idfaa7cf7d-4f65-433f-b8df-5ce5dc981a21" title="By default, only context chains that represent actual nodes in the topology of the regression suite defined in the RMDB file are considered valid. For example, the following command:">Adhoc Mode</a>”).</p>
+<p class="p">For example, the following adhoc mode command
+selects an instance of the <span class="ph FontProperty emphasis">blocktest</span> Runnable
+with an instance identifier of <span class="ph FontProperty emphasis">9</span>,
+even if <span class="ph FontProperty emphasis">9</span> would
+not have been used as an instance identifier in the expansion:</p>
+<pre class="pre codeblock leveled"><code>% vrun -adhoc -show -include nightly/randomtests/blocktest~9
+nightly/randomtests/blocktest~9</code></pre><p class="p">Even in the case where a given Runnable has
+no <span class="ph FontProperty emphasis">repeat </span>or <span class="ph FontProperty emphasis">foreach </span>attribute
+specified in the RMDB file, an instance attribute can be added.
+For example,</p>
+<pre class="pre codeblock leveled"><code>% vrun -adhoc -show -include nightly~99
+nightly~99/directedtests/...
+nightly~99/randomtests/...
+nightly~99/unittests/...</code></pre><p class="p">Because the instance identifier is part of
+the context chain, adhoc mode allows any given Runnable to be included
+for execution multiple times, even though the Actions resulting
+from the second execution are likely to be an exact duplicates of
+the first. If a Runnable is intended to be used in this manner,
+then one or more conditional parameters based on the value of the instance
+identifier should be used in the Action scripts to distinguish the
+otherwise redundant executions.</p>
+<p class="p">Note that wildcards in the instance identifier
+string are handled separately from any wildcards in the Runnable
+name section of the context chain component. In order to select instance
+identifiers, either explicitly or by wildcard, the instance separator
+character (~) must be specified explicitly in the component. Otherwise,
+the matching Runnable(s) are repeat-expanded as defined in the RMDB
+file.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SpecifySelectedRunnables_id58f553e2.html" title="VRM database (RMDB file) generally contains data for one or more regression test suites arranged in a hierarchical tree topology that allows the user to group tests and other tasks in various ways. Each node in this tree is known as a “Runnable” because it could, in theory, be designated as one of the top-most nodes to be executed in any given regression run. Command-line options are used to designate which part(s) of this hierarchy are to be executed.">Specify Selected Runnables</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Wildcards and Repeating Runnables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_WildcardsRepeatingRunnables_id1952d949.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

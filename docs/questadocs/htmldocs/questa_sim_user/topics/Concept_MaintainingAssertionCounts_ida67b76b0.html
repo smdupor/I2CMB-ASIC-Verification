@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Maintaining Assertion Counts" />
+<meta name="abstract" content="The -assertcounts argument for vsim allows you to generate assertion counts without the performance impact of using ‑assertdebug." />
+<meta name="description" content="The -assertcounts argument for vsim allows you to generate assertion counts without the performance impact of using ‑assertdebug." />
+<meta name="DC.subject" content="assertion, counts" />
+<meta name="keywords" content="assertion, counts" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida67b76b0-f821-4ba5-a72b-c15feb56d91b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Maintaining Assertion Counts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Maintaining Assertion Counts" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Maintaining Assertion Counts</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><p class="shortdesc">The -assertcounts
+argument for vsim allows you to generate assertion counts without
+the performance impact of using ‑assertdebug.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The vsim -assertcounts and -noasssertcounts arguments were
+formerly named -assertcover and -noassertcover. The -assertcover
+and -noassertcover arguments are deprecated and will result in an
+error. </p>
+</div>
+</div>
+<p class="p">The specific actions counted depends
+on whether the simulation is run with the -assertcounts or the -assertdebug
+argument for vsim or without either option. </p>
+<p class="p">For example, consider the following SystemVerilog
+assertion:</p>
+<p class="lines ApplCommand">assert property (@(posedge clk) disable iff (ignore) (b0 |=&gt; b1 ##1 b2 ##1 b3));</p>
+<p class="p">The following sections describe what happens
+to the assertion counts for this assertion when you run the simulation
+with the following vsim argument specifications: </p>
+<ul class="ul"><li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id186c7f68-026b-4e0f-8605-460a9f7d8dee"><p class="p">Without either -assertcounts or -assertdebug </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idebec988e-ee8f-4159-8f6c-96500bf5742e"><p class="p">With
+-assertcounts </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id441fe400-71d3-47b0-9b1f-34c8a8a3b756"><p class="p">With
+-assertdebug </p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id401dfd61-ad7a-453a-bea3-cd0e6368f872"><h2 class="title Subheading sectiontitle">Get Assertion Counts
+without Using ‑assertcounts or -assertdebug</h2><p class="p">When you run the simulation without specifying
+vsim -assertcounts or -assertdebug, the Assertions window will show
+only Failure Count and Pass Count. Note that Pass Count in this case
+only shows pass status (0: never passed; 1: passed any number of
+times).</p>
+<p class="p">The failure count for the assertion given above
+is 4, as shown in <a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id51de40de-838d-4725-9486-1755b898d4ba">Figure 1</a>.</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id51de40de-838d-4725-9486-1755b898d4ba"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Failure Counts in the Assertions Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/assertions_count.gif" /></div><br /></div>
+<p class="p">If the design has been compiled with the +acc=a
+option, you can view the assertion waveform in the Wave window,
+as shown in <a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idd01d1cfb-b819-45bb-abfd-7337b57d6a23">Figure 2</a>. The assertion failures
+are indicated in the Wave window by red triangles.</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idd01d1cfb-b819-45bb-abfd-7337b57d6a23"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Assertion Failures Indicated
+by Red Triangles</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/wave_assertion_count.gif" /></div><br /></div>
+</div>
+<div class="section Subsection" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idd1c66b48-ce7f-4320-9728-084e78fddc8b"><h2 class="title Subheading sectiontitle">Get Assertion Counts
+Using -assertcounts</h2><p class="p">Using <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> -assertcounts
+generates assertion counts <span class="ph">on a fully optimized design without using the +acc=a argument during compile, and</span> without incurring
+the impact on performance that occurs when you specify vsim -assertdebug. </p>
+<p class="p">When the simulation is run with the -assertcounts
+argument on the assertion property above, the assertion in the Assertions
+Window contains a different column for each assertion count, as
+shown in <a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id7bc60377-77ce-484e-a4cb-2fe92cbd5132">Figure 3</a>.</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id7bc60377-77ce-484e-a4cb-2fe92cbd5132"><span class="figcap"><span class="fig--title-label">Figure 3. </span>Assertion Counts in the Assertions Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/assertcover_counts.gif" /></div><br /></div>
+<ul class="ul"><li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id2da0f150-4d84-4a87-8d5e-626eb84be1ae"><p class="p">Attempt Count - 15 — The number of times
+the assertion was attempted, which basically corresponds to the
+number of clock edges for the assertion.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idc97cfff2-fdcc-4cd1-8fe3-dc7412dbcb8d"><p class="p">Failure Count - 4— The number of start
+attempts that resulted in failure. </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id547f3f7e-a1ca-497e-bb92-0be8f1e4b220"><p class="p">Vacuous Count - 3— The number of start
+attempts when the assertion passed vacuously. </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id13475124-ee2b-44d8-a94e-fa9a09455aaf"><p class="p">Pass Count - 1— The number of start attempts
+when the assertion passed. </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id545311af-d673-4c6d-884e-d38eee9f92bf"><p class="p">Disable Count - 4 — The number of start
+attempts that were disabled due to the disable condition being TRUE. </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id9dab623a-7431-405a-8676-ae1885392786"><p class="p">Active Count - 3— The number of start
+attempts that are currently active.</p>
+</li>
+</ul>
+<p class="p">For these counts, note that:</p>
+<p class="p">Attempt = Failure + Vacuous + Pass + Disable
++ Active</p>
+<p class="p">To enable assertion coverage with the GUI:</p>
+<ol class="ol"><li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id1b4e0a20-5ec7-4b0a-a7b6-8340a6aa1003"><p class="p">Select <span class="ph menucascade"><span class="ph uicontrol">Simulate</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Start Simulation</span></span> to
+open the Start Simulation dialog.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id455680e1-daab-4a07-a7c8-d0d86dcc7f28"><p class="p">Open the <span class="ph uicontrol">Others</span> tab.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id5adddaa3-9170-43e7-be31-b4bffd5b3189"><p class="p">In the Assertions section, select <span class="ph uicontrol">Enable
+assertion cover</span> (<a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id630f13de-a9ad-4c35-a7fc-b0c52dfdded2">Figure 4</a>).</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id630f13de-a9ad-4c35-a7fc-b0c52dfdded2"><span class="figcap"><span class="fig--title-label">Figure 4. </span>Enable Assertion Coverage</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/enable_assertion_cover.gif" /></div><br /></div>
+</li>
+</ol>
+<p class="p">These assertion counts can also be enabled
+with the <a class="xref fm:HeadingOnly" href="Command_Assertioncover_id24c5467d.html#id24c5467d-42dc-4255-997d-91e3c56cc564__Command_Assertioncover_id24c5467d.xml#id24c5467d-42dc-4255-997d-91e3c56cc564" title="This variable enables extended count information for assertions.">AssertionCover</a> modelsim.ini variable.</p>
+</div>
+<div class="section Subsection" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id1c9d69ec-f4c3-4846-b3c8-9cdbfa27d4dc"><h2 class="title Subheading sectiontitle">Assertion Counts with
+-assertdebug</h2><p class="p">When simulation is run with -assertdebug, the
+assertion property is displayed in the Wave window as shown in <a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__ide8c5a3f9-114c-4dd1-969a-094531e5c7b4">Figure 5</a>.</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__ide8c5a3f9-114c-4dd1-969a-094531e5c7b4"><span class="figcap"><span class="fig--title-label">Figure 5. </span>Assertion Indicators When -assertdebug
+is Used</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/wave_assertdebug.gif" /></div><br /></div>
+<p class="p">In addition to the red triangles used to denote
+assertion failures, the Wave window includes the following assertion
+indicators when -assertdebug is used:</p>
+<ul class="ul"><li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idbf64d765-98c3-4f9c-8dab-2433cd14fa1c"><p class="p">blue square = start of assertion thread</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idf172e45d-1bd6-48d5-8957-6c913bf3dfc7"><p class="p">green triangle = assertion pass</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__ideb13cf87-1d4e-413d-881a-249449db72a8"><p class="p">yellow triangle = antecedent match</p>
+</li>
+</ul>
+<p class="p">In addition, the Wave window includes the assertion’s
+ActiveCount, which is the number of active assertion threads at
+the current time.</p>
+<p class="p">The Assertions Window contains a different
+column for each assertion count, as shown in (<a class="xref fm:Figure" href="#ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id7bc60377-77ce-484e-a4cb-2fe92cbd5132">Figure 3</a>).</p>
+<div class="fig fignone" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id0863a89a-d430-4067-a6f4-bd1ad8f82cd7"><span class="figcap"><span class="fig--title-label">Figure 6. </span>Counts Columns in Assertions Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/assertions_count_assertdebug.gif" /></div><br /></div>
+<ul class="ul"><li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idf7a53527-88de-4e5b-8234-467c30856e00"><p class="p">Attempt Count - 15 — The number of times
+the assertion was attempted, which basically corresponds to the
+number of clock edges for the assertion.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id939b5b65-26ba-4888-90b2-829c1aface30"><p class="p">Failure Count - 4 — The number of start
+attempts that resulted in failure. In this case, the attempts that
+started at 750, 850, 950 and 1050 ns resulted in failures</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id149667d2-e5a2-48a8-8ef5-d5ed6dce2d91"><p class="p">Vacuous Count - 3 — The number of start
+attempts when the assertion passed vacuously. In this case, the
+start attempts whenever 'b0' was FALSE - at 50, 550, 650 ns. </p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__id64ff66aa-db44-49ec-9d44-d7a9a3e5a013"><p class="p">Pass Count - 1 — The number of start
+attempts when the assertion passed. In this case, for the attempt
+that started at 1150 ns.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idcdda23d2-afae-422b-a49b-3520958e6388"><p class="p">Disable Count - 4 — The number of start
+attempts that were disabled due to the disable condition being TRUE.
+In this case the attempts that started at 150, 250, 350 and 450
+ns.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__iddb9404d5-03b6-439d-8d61-8595372773f6"><p class="p">Active Count - 3 — The number of start
+attempts that are currently active. In this case, the attempts that
+started at 1250, 1350 and 1450 ns have not yet completed.</p>
+</li>
+<li class="li" id="ida67b76b0-f821-4ba5-a72b-c15feb56d91b__idb1f62759-4c92-47b2-a2ee-0ba3b140dcea"><p class="p">Peak Active Count - 4 — This represent
+the maximum number of start attempts active at any time.</p>
+</li>
+</ul>
+<p class="p">For these counts, note that:</p>
+<p class="p">Attempt = Failure + Vacuous + Pass + Disable
++ Active</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p"><span class="ph FontProperty emphasis">Assertion Success</span> is
+a term used to describe coverage statistics for assertions. Assertion
+Successes are those assertions that have never failed and whose
+pass count does not equal (or is greater than) zero.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SimulatingAssertions_id847cf35e.html" title="If any assertions were compiled, the vsim command automatically invokes the assertion engine.">Simulating Assertions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Maintaining Assertion Counts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MaintainingAssertionCounts_ida67b76b0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

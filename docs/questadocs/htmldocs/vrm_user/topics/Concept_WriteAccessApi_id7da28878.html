@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Write Access API" />
+<meta name="abstract" content="The following API commands are used to modify an open VRM database. The write-access API consists of the add, clear, and delete commands and (in the case of runnable elements), the copy command. The add command adds a data item to an existing element (possibly overwriting an existing data item). The clear command removes a specified type of content from an existing element. The delete command deletes the selected element from the database. The copy command clones a runnable element under a new name." />
+<meta name="description" content="The following API commands are used to modify an open VRM database. The write-access API consists of the add, clear, and delete commands and (in the case of runnable elements), the copy command. The add command adds a data item to an existing element (possibly overwriting an existing data item). The clear command removes a specified type of content from an existing element. The delete command deletes the selected element from the database. The copy command clones a runnable element under a new name." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7da28878-d2ce-4082-9a1e-d43c9971cce1" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Write Access API</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Write Access API" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id7da28878-d2ce-4082-9a1e-d43c9971cce1">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Write Access API</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The following
+API commands are used to modify an open VRM database. The write-access
+API consists of the add, clear, and delete commands and (in the
+case of <span class="ph FontProperty emphasis">runnable</span> elements),
+the copy command. The add command adds a data item to an existing
+element (possibly overwriting an existing data item). The clear
+command removes a specified type of content from an existing element.
+The delete command deletes the selected element from the database.
+The copy command clones a <span class="ph FontProperty emphasis">runnable</span> element
+under a new name.</span>
+</div>
+<p class="p">The write access API calls are
+guarded by a read-only flag set at the time the RMDB file is opened.
+If the RMDB file was opened in read-only mode, then an error is thrown
+if any of the write-mode API calls are invoked.</p>
+<div class="section Subsections"><div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id1e0562d8-cd1a-4bf3-98db-d03e16e9996d"><h2 class="title Subheading sectiontitle">Modify the document Element</h2><p class="p">Note that other add commands are listed under
+the specific element the command is intended to add. For example,
+the <span class="keyword ParameterName OptionalReplaceable">_dbHandle_</span> add runnable
+command is listed under the<a class="xref fm:HeadingOnly" href="#id7da28878-d2ce-4082-9a1e-d43c9971cce1__id5f31a06e-1a86-41d2-b0c6-413b45422361">Add and/or Modify Runnables</a>.</p>
+<pre class="pre codeblock leveled"><code>dbHandle add attr attrName attrValue</code></pre><p class="p">Add an attribute to the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. </p>
+<pre class="pre codeblock leveled"><code>dbHandle add comment commentText</code></pre><p class="p">Add a comment to the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. </p>
+<pre class="pre codeblock leveled"><code>dbHandle clear all</code></pre><p class="p">Delete all <span class="ph FontProperty emphasis">method</span>, <span class="ph FontProperty emphasis">runnable</span>,
+and <span class="ph FontProperty emphasis">ucdbtcl</span> elements
+(that is, all top-level elements) in the database.</p>
+<pre class="pre codeblock leveled"><code>dbHandle clear methods</code></pre><p class="p">Delete all top-level <span class="ph FontProperty emphasis">method</span> elements
+in the database (does not affect <span class="ph FontProperty emphasis">method</span> elements
+defined under <span class="ph FontProperty emphasis">runnable</span> elements).</p>
+<pre class="pre codeblock leveled"><code>dbHandle clear runnables</code></pre><p class="p">Delete all <span class="ph FontProperty emphasis">runnable</span> elements
+in the database.</p>
+<pre class="pre codeblock leveled"><code>dbHandle clear usertcl</code></pre><p class="p">Delete all <span class="ph FontProperty emphasis">usertcl</span> elements
+in the database.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id5f31a06e-1a86-41d2-b0c6-413b45422361"><h2 class="title Subheading sectiontitle">Add and/or Modify Runnables</h2><pre class="pre codeblock leveled"><code>dbHandle add runnable runnableName runnableType</code></pre><p class="p">Add a Runnable named <span class="ph FontProperty emphasis">runnableName</span> of
+type <span class="ph FontProperty emphasis">runnableType</span> to
+the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. If a <span class="ph FontProperty emphasis">runnable</span> element
+with the name <span class="ph FontProperty emphasis">runnableName</span> already
+exists, it is deleted. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">runnableName</span> <span class="ph FontProperty emphasis">runnable</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add member memberName</code></pre><p class="p">Add the <span class="ph FontProperty emphasis">memberName</span> Runnable
+to the member list of the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName clear all</code></pre><p class="p">Delete the member list, parameter list, and
+any scripts from the <span class="ph FontProperty emphasis">runnableName</span> Runnable. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName clear members</code></pre><p class="p">Delete the member list and its contents from
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName clear localfiles</code></pre><p class="p">Delete all <span class="ph FontProperty emphasis">localfile</span> elements
+from the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName clear methods</code></pre><p class="p">Delete all <span class="ph FontProperty emphasis">method</span> elements
+from the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName clear params</code></pre><p class="p">Delete the parameter list and its contents
+from the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName copy newRunnableName</code></pre><p class="p">Copy the <span class="ph FontProperty emphasis">runnableName</span> Runnable
+to <span class="ph FontProperty emphasis">newRunnableName</span> (as
+a new Runnable).</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__idf2d837d3-fa94-476a-a276-a25b8b599c66"><h2 class="title Subheading sectiontitle">Add and/or Modify Parameters</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add param paramName paramValue</code></pre><p class="p">Add a parameter named <span class="ph FontProperty emphasis">paramName</span> with
+value <span class="ph FontProperty emphasis">paramValue</span> to
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable.
+If a parameter element with the name <span class="ph FontProperty emphasis">paramName</span> already
+exists, its value is overwritten.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">paramName</span> <span class="ph FontProperty emphasis">parameter</span> element
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">paramName</span> <span class="ph FontProperty emphasis">parameter</span> element
+in the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName clear</code></pre><p class="p">Delete the content (and any child elements)
+from the <span class="ph FontProperty emphasis">paramName</span> <span class="ph FontProperty emphasis">parameter</span> element
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName delete</code></pre><pre class="pre codeblock leveled"><code>   </code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">paramName</span> <span class="ph FontProperty emphasis">parameter</span> from
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id1756c1ea-30da-4fb2-97cc-db65696e8b96"><h2 class="title Subheading sectiontitle">Add and/or Modify Actions</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add action actionName</code></pre><p class="p">Add an empty <span class="ph FontProperty emphasis">actionName</span> Action
+to the <span class="ph FontProperty emphasis">runnableName</span> Runnable.
+If an Action script element with the name <span class="ph FontProperty emphasis">actionName</span> already
+exists, it is deleted.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">actionName</span> Action
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName add command commandString</code></pre><p class="p">Add a command to the <span class="ph FontProperty emphasis">actionName</span> Action
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">actionName</span> Action
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName clear all</code></pre><p class="p">Delete all child elements and/or content
+from the <span class="ph FontProperty emphasis">actionName</span> Action
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName clear commands</code></pre><p class="p">Delete the commands from the <span class="ph FontProperty emphasis">actionName</span> Action
+in the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">actionName</span> Action
+from the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id4c8800e0-de15-401e-8e70-35797adbf53f"><h2 class="title Subheading sectiontitle">Add and/or Modify
+Top-level method Elements</h2><p class="p">Note that the <span class="ph FontProperty emphasis">rmdbmethod</span> command
+supports a special case “runnable/method” syntax for <span class="ph FontProperty emphasis">methodKey</span>.
+See <a class="xref fm:HeadingOnly" href="Concept_CommandShortcuts_id29d6aaa3.html#id29d6aaa3-921c-4708-98a8-6a444b5453a1__id4562a106-f2c2-45c8-86b0-d65f45a9c70c">Special Case for method Access</a> for details.</p>
+<pre class="pre codeblock leveled"><code>dbHandle add method [_methodName_]</code></pre><p class="p">Add a <span class="ph FontProperty emphasis">method</span> element
+(with the optional name <span class="ph FontProperty emphasis">methodName</span>)
+to the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. If <span class="ph FontProperty emphasis">methodName</span> is
+specified and a <span class="ph FontProperty emphasis">method</span> element
+with that name already exists, it is deleted.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey add attr attrName attrValue</code></pre><p class="p">Add/set the <span class="ph FontProperty emphasis">attrName</span> attribute
+on the <span class="ph FontProperty emphasis">methodKey</span> <span class="ph FontProperty emphasis">method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey add command commandString</code></pre><p class="p">Add a command to the <span class="ph FontProperty emphasis">methodKey</span> <span class="ph FontProperty emphasis">method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">methodKey</span> <span class="ph FontProperty emphasis">method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey clear all</code></pre><p class="p">Delete all child elements and/or content
+from the <span class="ph FontProperty emphasis">methodKey method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey clear commands</code></pre><p class="p">Delete any command elements from the <span class="ph FontProperty emphasis">methodKey method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">methodKeymethod</span> element.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__idbe58ade9-a619-4fba-9bc7-9bf229460a08"><h2 class="title Subheading sectiontitle">Add and/or Modify
+localfile Elements within Runnables</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add localfile [_localfileName_]</code></pre><p class="p">Add a <span class="ph FontProperty emphasis">localfile</span> element
+(with the optional name <span class="ph FontProperty emphasis">localfileName</span>)
+to the <span class="ph FontProperty emphasis">runnableName</span> Runnable.
+If <span class="ph FontProperty emphasis">localfileName</span> is
+specified and a <span class="ph FontProperty emphasis">localfile</span> element
+with that name already exists, it is deleted.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">localfileKey</span> <span class="ph FontProperty emphasis">localfile</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey add command commandString</code></pre><p class="p">Add a command to the <span class="ph FontProperty emphasis">localfileKey localfile</span> element under
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">localfileKey localfile</span> element under
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey clear all</code></pre><p class="p">Delete all child elements and/or content
+from the<span class="ph FontProperty emphasis"> localfileKey localfile</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey clear commands</code></pre><p class="p">Delete any command elements from the <span class="ph FontProperty emphasis">localfileKey localfile</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">localfileKeymethod</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id2c6ec21d-7c99-4355-a5ff-9bdb0fb58579"><h2 class="title Subheading sectiontitle">Add and/or Modify
+method Elements within Runnables</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName add method [_methodName_]</code></pre><p class="p">Add a <span class="ph FontProperty emphasis">method</span> element
+(with the optional name <span class="ph FontProperty emphasis">methodName</span>)
+to the <span class="ph FontProperty emphasis">runnableName</span> Runnable.
+If <span class="ph FontProperty emphasis">methodName</span> is
+specified and a <span class="ph FontProperty emphasis">method</span> element
+with that name already exists, it is deleted.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">methodKey method</span> element under
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey add command commandString</code></pre><p class="p">Add a command to the <span class="ph FontProperty emphasis">methodKey method</span> element under
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">methodKey method</span> element under
+the <span class="ph FontProperty emphasis">runnableName</span> Runnable. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey clear all</code></pre><p class="p">Delete all child elements and/or content
+from the <span class="ph FontProperty emphasis">methodKey method</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey clear commands</code></pre><p class="p">Delete any command elements from the <span class="ph FontProperty emphasis">methodKey method</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">methodKeymethod</span> element
+under the <span class="ph FontProperty emphasis">runnableName</span> Runnable.</p>
+</div>
+<div class="section Subsection" id="id7da28878-d2ce-4082-9a1e-d43c9971cce1__id1b8e7eb4-c617-42e4-b0ef-5f7d7e6edfb4"><h2 class="title Subheading sectiontitle">Add and/or Modify
+usertcl Elements</h2><pre class="pre codeblock leveled"><code>dbHandle add usertcl usertclName</code></pre><p class="p">Add a <span class="ph FontProperty emphasis">usertcl</span> element
+named <span class="ph FontProperty emphasis">usertclName</span> to
+the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. If a <span class="ph FontProperty emphasis">usertcl</span> element
+with the name <span class="ph FontProperty emphasis">usertclName</span> already
+exists, it is deleted.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName add attr attrName attrValue</code></pre><p class="p">Add/set an attribute on the <span class="ph FontProperty emphasis">usertclName usertcl</span> element. </p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName add comment commentText</code></pre><p class="p">Add a comment to the <span class="ph FontProperty emphasis">usertclName method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName add content tclCode</code></pre><p class="p">Add a TCL content to the <span class="ph FontProperty emphasis">usertclName method</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName clear all</code></pre><p class="p">Delete all child elements and/or content
+from the <span class="ph FontProperty emphasis">usertclName usertcl</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName delete</code></pre><p class="p">Delete the <span class="ph FontProperty emphasis">usertclNameusertcl</span> element.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_VrmDatabaseRmdbApi_id33f7dd97.html" title="VRM RMDB database is implemented as an XML file. The VRM application uses the API defined in this document to access the data in the database. The API is designed to support the semantics of the database, and not necessarily its implementation. It should be possible to implement an equivalent database using, for example, an SQL-compatible library and use the same API to access the data.">VRM Database (RMDB) API</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Write Access API"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_WriteAccessApi_id7da28878.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

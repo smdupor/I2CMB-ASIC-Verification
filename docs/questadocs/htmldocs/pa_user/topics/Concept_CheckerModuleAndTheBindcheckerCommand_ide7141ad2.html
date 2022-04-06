@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Checker Module and the bind_checker Command" />
+<meta name="abstract" content="The bind_checker UPF command enables you to insert a checker module into a design without modifying the design code or introducing functional changes. You can verify your design by writing custom assertions and implementing coverage for UPF strategy elements." />
+<meta name="description" content="The bind_checker UPF command enables you to insert a checker module into a design without modifying the design code or introducing functional changes. You can verify your design by writing custom assertions and implementing coverage for UPF strategy elements." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide7141ad2-9477-46c3-a318-cbe2540beee5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Checker Module and the bind_checker Command</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Checker Module and the bind_checker Command" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide7141ad2-9477-46c3-a318-cbe2540beee5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Checker Module and
+the bind_checker Command</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The bind_checker
+UPF command enables you to insert a checker module into a design
+without modifying the design code or introducing functional changes.
+You can verify your design by writing custom assertions and implementing
+coverage for UPF strategy elements. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id54405520-e451-4464-9d8d-e0d4497e82bc"><p class="p">However,
+writing a separate checker command for every individual design element
+makes the list of bind_checker commands unreasonably large. The
+tool provides the capability to write bind checkers that are generic
+enough to cover all the elements of a particular strategy.</p>
+<p class="p">For example, the following retention strategy applies retention
+on every sequential logic element within power domain RS1.</p>
+<pre class="pre codeblock"><code>set_retention RS1 -domain  PD1 ...</code></pre><p class="p">If you need to put custom assertions on every such sequential
+logic element, then you would have to write many individual bind_checker
+commands. The following sections describe how to use UPF generics
+and a query command to configure references to elements, which you
+can then specify in a bind_checker command. </p>
+</div>
+<div class="section Subsection" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__idee82b763-de47-4a86-834c-28b0d7d1d741"><h2 class="title Subheading sectiontitle">UPF
+Generics</h2><p class="p">UPF provides support for symbolic references called generics,
+which enables creating a placeholder for a parameter value. You
+can use generics to write a bind_checker command that covers all
+elements of a given power strategy. The bind_checker command provides
+an option named -parameters, which can accept the value defined
+for a generic. </p>
+<p class="p">The tool supports the following generics, which you can use with
+the ‑parameter option of the bind_checker command: </p>
+<ul class="ul"><li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id271fcf80-ea94-45be-95e0-7c764406221a"><p class="p">UPF_ELEMENT_HIER_PATH
+— Captures the name of the signal (such as RET_Q). </p>
+</li>
+<li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id5547b1b2-3b80-44b5-92c5-f87a0f030c6f"><p class="p">UPF_ELEMENT_MSB
+— Captures the most significant bit of the vector signal (defaults
+to 0, if msb not present). </p>
+</li>
+<li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id8298cac8-c4fe-43c9-9b66-ba75910e3225"><p class="p">UPF_ELEMENT_LSB
+— Captures the least significant bit of the vector signal (defaults to
+0, if lsb not present).</p>
+</li>
+<li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id9c797f86-114f-4d8c-8ffb-1a682f74b4c1"><p class="p">UPF_GENERIC_CLOCK
+— Captures the input clock (for example, <span class="ph FontProperty emphasis">clk</span>)
+of the retention flipflop. </p>
+<p class="p">By default, the tool does not consider the edge of the input
+clock. To specify the input clock edge, use following command: </p>
+<pre class="pre codeblock"><code>vopt -pa_enable=generic_clk_edge</code></pre><p class="p">For a posedge triggered retention flipflop, UPF_GENERIC_CLOCK
+refers to <span class="ph FontProperty emphasis">clk</span> while !UPF_GENERIC_CLOCK
+refers to <span class="ph FontProperty emphasis">!clk</span>.
+For a negedge triggered retention flipflop, UPF_GENERIC_CLOCK refers
+to <span class="ph FontProperty emphasis">!clk</span> while
+!UPF_GENERIC_CLOCK refers to <span class="ph FontProperty emphasis">clk</span>.</p>
+</li>
+<li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__iddb276674-28ac-419b-a27a-0ba9e23389ad"><p class="p">UPF_GENERIC_CLOCK_EDGE
+— Captures the edge triggered input clock of the retention flipflop.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Alternatively, use UPF_GENERIC_CLOCK with the vopt ‑pa_enable=generic_clk_edge
+command to enable edge triggering.</p>
+</div>
+</li>
+<li class="li" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__idd81c83fb-aa0b-4ec6-9ecd-4b6d31b58e97"><p class="p">UPF_GENERIC_ASYNC_LOAD
+— Captures the asynchronous controls of the retention signal. </p>
+</li>
+</ul>
+<p class="p">The following example demonstrates how to create a generic <a class="xref fm:HeadingOnly" href="General_BindChecker_idbeb5c8a3.html#idbeb5c8a3-728a-45d0-9e0d-3451fd796adb__General_BindChecker_idbeb5c8a3.xml#idbeb5c8a3-728a-45d0-9e0d-3451fd796adb" title="Inserts checker modules and bind them to instances.">bind_checker</a> command.</p>
+</div>
+<div class="section Subsection" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id700dc40c-9752-4ef2-9ada-ce1a23ad5176"><h2 class="title Subheading sectiontitle">Example
+1: bind_checker Assertion for Retention</h2><p class="p">Consider the following retention strategy, which establishes
+the power domain and associated signals for saving and restoring: </p>
+<pre class="pre codeblock"><code>set_retention RET \
+	–domain PD \
+	–save_signal {SAVE posedge} \
+	–restore_signal {RESTORE  posedge} \
+	–restore_condition {!UPF_GENERIC_CLOCK} </code></pre><p class="p">The following assertion module establishes the coverage for retention
+in the power domain, on which you can perform binding: </p>
+<pre class="pre codeblock"><code>module checker_retention (ret_elem, restore_sig, clock) ;
+	parameter ELEM_NAME; 
+	parameter ELEM_MSB;
+	parameter ELEM_LSB;
+	parameter RET_NAME;
+	input [ELEM_MSB:ELEM_LSB]ret_elem;
+	input restore_sig, clock;
+		always@(posedge restore_sig)  
+			assert (clock != 1) else $error ("Incorrect restore protocol \
+				for %s[%d:%d]", ELEM_NAME,  ELEM_MSB, ELEM_LSB); 
+endmodule</code></pre><p class="p">Now, the following query_retention command assigns generics to
+the parameters of the assertion module: </p>
+<pre class="pre codeblock"><code>array set RET_DETAILS [query_retention RET –domain PD –detailed]
+set RET_NAME							$RET_DETAILS(retention_name)
+set RESTORE							$RET_DETAILS(restore_signal)
+set RET_ELEMENTS							$RET_DETAILS(elements)
+set RET_ELEM_NAME							$RET_DETAILS(upf_element_hier_path)
+set RET_ELEM_MSB							$RET_DETAILS(upf_element_msb)
+set RET_ELEM_LSB							$RET_DETAILS(upf_element_lsb)
+set RET_CLK							$RET_DETAILS(upf_generic_clock)</code></pre><p class="p">Finally, the following bind_checker command performs generic
+binding for all retention elements: </p>
+<pre class="pre codeblock"><code>bind_checker ret_checker_inst  -module checker_retention  \
+	-elements { $RET_ELEMENTS } \
+	-parameters { 					{ELEM_NAME     $RET_ELEM_NAME} \
+						{ELEM_MSB      $RET_ELEM_MSB} \
+						{ELEM_LSB      $RET_ELEM_LSB} \
+						{RET_NAME      $RET_NAME} } \
+	-ports "  {ret_element  $RET_ELEMENTS} \
+				{restore_signal  $RESTORE} \
+				{clock $RET_CLK} "</code></pre><p class="p">As a result, this bind_checker command inserts as many assertion
+modules as there are sequential elements. </p>
+<p class="p">The following instances show what these inserted assertions would
+look like:</p>
+<pre class="pre codeblock"><code>checker_retention  #( .RET_NAME(“RET"),.ELEMENT_NAME("q1"))  chk_ret_q1 (.restore(tb.ret),  .upf_generic_clock(clk),  .element(q1) );
+
+checker_retention  #( .RET_NAME(“RET"),.ELEMENT_NAME("q2"), .ELEMENT_LSB(4), .ELEMENT_MSB(5) ) \chk_ret_q2[5:4]  (.restore(tb.ret),  .upf_generic_clock(clk),  .element(q2[5:4]) );</code></pre></div>
+<div class="section Subsection" id="ide7141ad2-9477-46c3-a318-cbe2540beee5__id91d62a98-9ac3-4a4e-924b-6c957c181986"><h2 class="title Subheading sectiontitle">Example
+2: bind_checker Assertion for Isolation</h2><p class="p">Consider the following isolation strategy, which establishes
+the power domain and associated signals for isolation: </p>
+<pre class="pre codeblock"><code>Isolation strategy
+====================
+
+set_isolation pd_iso \
+	-domain pd \
+	-isolation_supply_set ISO_SS \
+	-clamp_value 0 \
+	-isolation_signal iso \
+	-isolation_sense high \
+	-applies_to outputs</code></pre><p class="p">The following assertion module establishes the check that determines
+if the isolated port is properly clamped. This is the isolation
+checker module which is bound to the design. </p>
+<pre class="pre codeblock"><code>module checker_isolation(iso_out, iso_ctrl, iso_clamp);
+	parameter string ELEMENT_NAME = "";
+	parameter int ELEMENT_LSB = 0;
+	parameter int ELEMENT_MSB = 0;
+
+		input [ELEMENT_MSB : ELEMENT_LSB] iso_out;
+		input iso_ctrl, iso_clamp;
+
+		always @(posedge iso_ctrl)
+		begin
+			assert((iso_out[ELEMENT_LSB] !== iso_clamp) 
+				else $error("Incorrect clamp value for isolated port : %s[%d:%d]\n", ELEMENT_NAME, ELEMENT_MSB, ELEMENT_LSB);
+		end
+
+endmodule</code></pre><p class="p">The following query_isolation command assigns generics to the
+parameters of the assertion module:</p>
+<pre class="pre codeblock"><code>array set ISO_DETAILS [query_isolation ISO -domain PD -detailed]
+set ISO_NAME $ISO_DETAILS(isolation_name)
+set ISO_ELEMENTS $ISO_DETAILS(elements)
+set ISO_ELEM_NAME $ISO_DETAILS(upf_element_hier_path)
+set ISO_ELEM_MSB $ISO_DETAILS(upf_element_msb)
+set ISO_ELEM_LSB $ISO_DETAILS(upf_element_lsb)
+set ISO_OUTPUT $ISO_DETAILS{upf_generic_output}
+set ISO_CTRL $ISO_DETAILS{isolation_signal}
+set ISO_CLAMP $ISO_DETAILS{clamp_value}</code></pre><p class="p">Finally, the following bind_checker command performs generic
+binding for all isolation signals:</p>
+<pre class="pre codeblock"><code>Bind checker stmt :
+=====================
+
+bind_checker iso_checker_inst -module checker_isolation \
+	-elements { $ISO_ELEMENTS } \
+	-parameters { 					{ELEM_NAME $ISO_ELEM_NAME} \
+						{ELEM_MSB $ISO_ELEM_MSB} \
+						{ELEM_LSB $ISO_ELEM_LSB} \
+						{ISO_NAME $ISO_NAME} } \
+	-ports " 			{iso_out $ISO_OUTPUT} \
+				{iso_ctrl $ISO_CTRL} \
+				{iso_clamp $ISO_CLAMP} "</code></pre><p class="p">As a result, this bind_checker command inserts as many assertion
+modules as the number of isolated ports specified in the strategy. </p>
+<p class="p">The following instances show what these inserted assertions would
+look like:</p>
+<pre class="pre codeblock"><code>checker_isolation #( .ISO_NAME(“ISO"),.ELEMENT_NAME("q1")) chk_iso_q1 (.iso_ctrl(tb.iso), .iso_clamp(0), .iso_out(q1) );
+
+checker_isolation #( .ISO_NAME("ISO"),.ELEMENT_NAME("q2"),  .ELEMENT_LSB(4), .ELEMENT_MSB(5) ) \chk_iso_q2[5:4] (.iso_ctrl(tb.iso), .iso_clamp(0), .iso_out(q2[5:4]) );</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Checker Module and the bind_checker Command"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CheckerModuleAndTheBindcheckerCommand_ide7141ad2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

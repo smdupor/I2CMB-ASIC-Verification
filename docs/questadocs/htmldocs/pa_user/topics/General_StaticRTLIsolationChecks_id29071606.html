@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Static RTL Isolation Checks" />
+<meta name="abstract" content="Static RTL isolation checks report any missing or inconsistent isolation cells in your RTL design." />
+<meta name="description" content="Static RTL isolation checks report any missing or inconsistent isolation cells in your RTL design." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id29071606-c179-4299-80d8-2c5683441c33" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Static RTL Isolation Checks</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Static RTL Isolation Checks" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id29071606-c179-4299-80d8-2c5683441c33">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Static RTL
+Isolation Checks</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Static RTL isolation checks report
+any missing or inconsistent isolation cells in your RTL design.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id29071606-c179-4299-80d8-2c5683441c33__id8e41cf04-673d-4d00-b319-05fea696c286"><p class="p">To
+enable static RTL isolation checks, specify a value to the vopt
+-pa_checks command as shown in the following table. All static RTL
+isolation check results are written to the report file, <span class="ph filepath">report.static.txt</span>. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id29071606-c179-4299-80d8-2c5683441c33__id428bec8a-daa4-4215-b75b-0c7a85c374ae" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Static RTL Isolation Checks</span></caption><colgroup><col style="width:1.372in" /><col style="width:2.580in" /><col style="width:2.548in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d25377e156"><p class="p">vopt Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d25377e159"><p class="p">Mnemonic</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d25377e162"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=scrsti </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_CLAMP_DIFF_AS_RESET</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports isolation cells whose isolation
+clamp value is different from the D flip flop reset value driving
+the isolation cell.</p>
+<div class="note restriction" id="id29071606-c179-4299-80d8-2c5683441c33__idf8fbd05d-7ebc-4d37-afe3-22d1280bec61"><span class="restrictiontitle">Restriction:</span> <p class="p">The tool does not support the check in the following conditions:</p>
+<ul class="ul NoteList" id="id29071606-c179-4299-80d8-2c5683441c33__id0c872810-5dad-40fc-8bc8-2e6c82bc2e26"><li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__idb7f9668e-dcd1-4dab-9b8d-11c00a8687dd">Some
+bits of the register are not D flip flops.</li>
+<li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__iddb4b9af0-78ef-45e5-8b58-ede035442832">Different
+bits of the register are driven from different D flip flops.</li>
+<li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__idd1507d81-9a21-4c4b-b2f8-9ac22899679d">The
+reset value is a VHDL enum label.</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=scrsti </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_CLAMP_SAME_AS_RESET</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports isolation cells whose isolation
+clamp value is same as the D flip flop reset value driving the isolation
+cell.</p>
+<div class="note restriction" id="id29071606-c179-4299-80d8-2c5683441c33__id76151286-6a30-4c7e-85f1-d4246cfec4f4"><span class="restrictiontitle">Restriction:</span> <p class="p">The tool does not support the check in the following conditions:</p>
+<ul class="ul NoteList" id="id29071606-c179-4299-80d8-2c5683441c33__ide1e1a104-5e6f-4dce-928c-d78baa30ab23"><li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__idffc2a54d-34d1-4008-87c2-3cafa2e865f6">Some
+bits of the register are not D flip flops.</li>
+<li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__idfb436716-70ec-4f71-90ed-20eeec47afe2">Different
+bits of the register are driven from different D flip flops.</li>
+<li class="li NoteListItem" id="id29071606-c179-4299-80d8-2c5683441c33__idbd755129-a1bf-487c-8a49-e48e1f2e122d">The
+reset value is a VHDL enum label.</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=sii</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_INCORRECT</p>
+<p class="p">ISO_INCORRECT_SUPPLY</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports incorrect isolation
+cell when an isolation cell is required for the power domain crossing,
+but you specify the set_isolation ‑no_isolation command in the UPF file.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=smi</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_MISSING</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports missing isolation
+cell when an isolation cell is required for the power domain crossing,
+but an isolation cell is not present in the design, and the tool
+did not infer one.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=sni</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_NOT_ANALYZED</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports not analyzed
+isolation cell when the power state table (PST) information is not
+sufficient to analyze whether an isolation cell is required or not
+for the power domain crossing.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=sdi</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_NOT_INSERTED</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports not inserted
+isolation cell when you specify the isolation strategy with the
+set_isolation ‑no_isolation command in the UPF file. However, an
+isolation cell may or may not be required for the power domain crossing.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=sri</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_NOT_REQUIRED</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports not required
+isolation cell when an isolation cell is not required for the power
+domain crossing, but either an isolation cell is present in the
+design or the tool infers one.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=svi</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "><p class="p">ISO_VALID</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Reports valid isolation
+cell when an isolation cell is required for the power domain crossing,
+and either an isolation cell is present in the design or the tool
+infers one.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e156 "><p class="p">-pa_checks=si</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e159 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d25377e162 "><p class="p">Performs all static RTL
+isolation checks (scrsti, smi, sri, sii, svi, sni, and sdi).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_StaticRTLChecks_ida18a568e.html" title="Static RTL checks validate your RTL design with the power intent defined in the UPF file. For static RTL checks, the tool analyzes the UPF file for power state tables (PSTs), power states added on power domains (by an add_power_state command), and supply sets. The purpose of this analysis is to detect the power domain relative ON/OFF condition and the relative operating voltages.">Static RTL Checks</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_IsolationChecks_id02e1ece2.html" title="Isolation checks report any missing or inconsistent isolation cells in your design. Isolation is present in the design if the UPF file contains a set_isolation command defining an isolation strategy, or a set_isolation -instance strategy that specifies the need for isolation and points to the instantiated isolation cells.">Isolation Checks</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Static RTL Isolation Checks"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_StaticRTLIsolationChecks_id29071606.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="write timing" />
+<meta name="abstract" content="Displays path delays and timing check limits, unadjusted for delay net delays, for the specified instance." />
+<meta name="description" content="Displays path delays and timing check limits, unadjusted for delay net delays, for the specified instance." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0829f1c5-afd6-4a91-8878-b04908b3d208" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>write timing</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="write timing" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id0829f1c5-afd6-4a91-8878-b04908b3d208">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">write timing</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Displays
+path delays and timing check limits, unadjusted for delay net delays,
+for the specified instance. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">write timing [<a class="xref fm:HeadingOnly" href="#id0829f1c5-afd6-4a91-8878-b04908b3d208__idca6065bf-4961-44b1-ae4b-dac0f5635222">-recursive</a>] [<a class="xref fm:HeadingOnly" href="#id0829f1c5-afd6-4a91-8878-b04908b3d208__iddbee1785-144f-47b6-bd14-49799f5f69a0">-file &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id0829f1c5-afd6-4a91-8878-b04908b3d208__id2257dfc0-58f7-4185-b184-3ff164aed588">&lt;instance_name1&gt;…&lt;instance_nameN&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id0829f1c5-afd6-4a91-8878-b04908b3d208__idd5fbcad1-ef66-4dba-bf98-8d0d97e7f4bf">-simvalues</a>]</p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The
+write timing command reports interconnect delays on a Verilog module
+instance as either MIPDs (Module Input Port Delays) or MITDs (Module
+Transport Port Delays). If you specify either the +multisource_int_delays
+or the +transport_int_delays argument with the vsim command, INTERCONNECT
+delays are reported as MITDs. Otherwise they are reported as MIPDs.</p>
+<p class="p">Following is an example MIPD report:</p>
+<p class="p BlockIndent"># /top/u1: [mymod:src/5/test.v(18)]# MIPD(s):</p>
+<p class="p BlockIndent">#     Port clk_in: (6, 6, 6)</p>
+<p class="p">Following
+is an example MITD report:</p>
+<p class="p BlockIndent"># /top/u1: [mymod:src/5/test.v(18)]</p>
+<p class="p BlockIndent"># MITDs to port clk_in:</p>
+<p class="p BlockIndent"># From port /top/p/y = (6)</p>
+<p class="p">When you specify the <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__id5a299b0d-aa18-43b0-81dc-7b78da784a75">+multisource_int_delays</a> argument without <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__idea4866ff-abbc-46fb-87d2-b079c917e03a">+sdf_verbose</a> on the <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__Command_Vsim_id382a4cc6.xml#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6" title="Invokes the VSIM simulator. Invoking this command with the ‑view argument enables you to view the results of a previous simulation run.">vsim</a> command
+line, “write timing" does not report the individual bits of vector
+source ports of SDF INTERCONNECT delays.</p>
+<p class="p">For example, assume the SDF file contains the following two INTERCONNECT
+statements:</p>
+<p class="p BlockIndent">(INTERCONNECT p/y[0] n/bus_in[0] (3))</p>
+<p class="p BlockIndent">(INTERCONNECT p/y[1] n/bus_in[1] (4))</p>
+<p class="p">The corresponding "write timing" output is:</p>
+<p class="p BlockIndent">#   MITDs to port bus_in[0]:</p>
+<p class="p BlockIndent"># From port /tb12/p/y = (3)</p>
+<p class="p BlockIndent"># MITDs to port bus_in[1]:</p>
+<p class="p BlockIndent">#     From port /tb12/p/y = (4)</p>
+<p class="p">Notice that the report does not include the specific bits of
+the source port.</p>
+<p class="p">If you add "+sdf_verbose" to the vsim command line, the "write
+timing" output becomes:</p>
+<p class="p BlockIndent">#   MITDs to port bus_in[0]:</p>
+<p class="p BlockIndent"># From port /tb12/p/y[0] = (3)</p>
+<p class="p BlockIndent"># MITDs to port bus_in[1]:</p>
+<p class="p BlockIndent">#     From port /tb12/p/y[1] = (4)</p>
+<p class="p">The report now includes the specific bits of the source port.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__iddbee1785-144f-47b6-bd14-49799f5f69a0">-file &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name of the output file where the data is to be written.
+If the -file argument is omitted, timing information is written
+to the Transcript window.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__id6c54d378-58ac-453c-a2ba-6e3a67e185d8"><p class="p Opt">&lt;filename&gt;
+— Any valid filename. May include special characters and numbers. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__id2257dfc0-58f7-4185-b184-3ff164aed588">&lt;instance_name1&gt;…&lt;instance_nameN&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+The name(s) of the instance(s) for which timing information will
+be written. If &lt;instance_name&gt; is omitted, the command returns
+nothing. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__idca6065bf-4961-44b1-ae4b-dac0f5635222">-recursive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates timing information for the specified instance and all
+instances underneath it in the design hierarchy.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__idd5fbcad1-ef66-4dba-bf98-8d0d97e7f4bf">-simvalues</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays optimization-adjusted values for delay net delays.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__ideacd269f-fd56-4b61-9ade-939f6087056a"><p class="p">Write timing
+about /top/u1 and all instances underneath it in the hierarchy to
+the file timing.txt.</p>
+<p class="lines ApplCommand">write timing -r -f timing.txt /top/u1</p>
+</li>
+<li class="li" id="id0829f1c5-afd6-4a91-8878-b04908b3d208__idae7fcdac-108e-4e51-ad11-691587f754ca"><p class="p">Write timing
+information about the designated instances to the Transcript window.</p>
+<p class="lines ApplCommand">write timing /top/u1 /top/u2 /top/u3 /top/u8</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "write timing"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_WriteTiming_id0829f1c5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

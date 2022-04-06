@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Modifying VRM Behavior with User-definable Procedures" />
+<meta name="abstract" content="There are certain aspects of the behavior of VRM that depend on assumptions about the verification environment. For some of these behavioral details, VRM defines an appropriate default that should work for the majority of environments and a mechanism whereby that behavior can be modified by the user at runtime. For each modifiable aspect, the default behavior is implemented in an isolated TCL procedure within VRM. To override this default behavior, the user creates a TCL code fragment that defines a procedure of the same name as the procedure to be overridden. This code fragment is written to conform to the same interface as the original function and is loaded into VRM at runtime. When VRM invokes the procedure, the user's version of that procedure is used instead of the built-in procedure. The procedure as defined by VRM is called a “user-definable” procedure. The procedure supplied by the user to override this procedure is called a “user-defined” procedure." />
+<meta name="description" content="There are certain aspects of the behavior of VRM that depend on assumptions about the verification environment. For some of these behavioral details, VRM defines an appropriate default that should work for the majority of environments and a mechanism whereby that behavior can be modified by the user at runtime. For each modifiable aspect, the default behavior is implemented in an isolated TCL procedure within VRM. To override this default behavior, the user creates a TCL code fragment that defines a procedure of the same name as the procedure to be overridden. This code fragment is written to conform to the same interface as the original function and is loaded into VRM at runtime. When VRM invokes the procedure, the user's version of that procedure is used instead of the built-in procedure. The procedure as defined by VRM is called a “user-definable” procedure. The procedure supplied by the user to override this procedure is called a “user-defined” procedure." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idd5ce6ff7-e299-404a-ae68-9f697371d354" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Modifying VRM Behavior with User-definable Procedures</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Modifying VRM Behavior with User-definable Procedures" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idd5ce6ff7-e299-404a-ae68-9f697371d354">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Modifying VRM Behavior with User-definable
+Procedures</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">There are certain
+aspects of the behavior of VRM that depend on assumptions about
+the verification environment. For some of these behavioral details,
+VRM defines an appropriate default that should work for the majority
+of environments and a mechanism whereby that behavior can be modified
+by the user at runtime. For each modifiable aspect, the default
+behavior is implemented in an isolated TCL procedure within VRM.
+To override this default behavior, the user creates a TCL code fragment
+that defines a procedure of the same name as the procedure to be
+overridden. This code fragment is written to conform to the same
+interface as the original function and is loaded into VRM at runtime.
+When VRM invokes the procedure, the user's version of that procedure
+is used instead of the built-in procedure. The procedure as defined
+by VRM is called a “user-definable” procedure. The procedure supplied
+by the user to override this procedure is called a “user-defined” procedure.</span>
+</div>
+<p class="p">Input arguments are passed to
+each user-definable procedure via a named TCL associative array.
+The procedure receives the name of the array as its only formal argument
+and uses a TCL upvar command to create a local reference to the
+array. An associative array is used so that future additions to
+the list of data values supplied to any given procedure will not
+affect the ability of existing user-defined procedures (written
+before the new data values existed) to function as usual.</p>
+<p class="p">Some (but not all) user-definable procedures
+are expected to return the results of their analysis. In this case,
+the normal TCL return statement can be used. Some also have other
+side-effects (like altering the values in the associative array
+passed in by the caller). These side-effects are noted in detail
+below for each user-definable procedure.</p>
+<p class="p">An example of a user-definable procedure is
+the procedure called to determine whether the cumulative number
+of failures is sufficient to cancel the remaining jobs in the regression run.
+This decision is made in a user-definable procedure called <a class="xref fm:HeadingOnly" href="Concept_Stoprunning_id7535a56e.html#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5__Concept_Stoprunning_id7535a56e.xml#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5" title="In some cases, a fundamental design or testbench failure can cause a large number (if not all) of the Tasks in the regression suite to fail. In this case, early termination of the regression run can prevent processing resources from being wasted on simulations that cannot provide any additional information. By default, VRM always attempts to run every Action defined in the database. The user can override this behavior and provide a heuristic function that will terminate a regression run prematurely in the face of such catastrophic failure.">StopRunning Concept</a> (see <a class="xref fm:PageNumber" href="Concept_Stoprunning_id7535a56e.html#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5__Concept_Stoprunning_id7535a56e.xml#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5" title="In some cases, a fundamental design or testbench failure can cause a large number (if not all) of the Tasks in the regression suite to fail. In this case, early termination of the regression run can prevent processing resources from being wasted on simulations that cannot provide any additional information. By default, VRM always attempts to run every Action defined in the database. The user can override this behavior and provide a heuristic function that will terminate a regression run prematurely in the face of such catastrophic failure.">StopRunning Concept</a>). The associative array passed
+as the input argument to this procedure contains the following information
+(in addition to certain global values passed to all user-defined
+procedures):</p>
+<pre class="pre codeblock leveled"><code>$data(pass) := number of jobs which represent passed simulations
+$data(fail) := number of jobs which represent failed simulations *plus*
+					number of failed executions
+$data(sims) := sum of array(pass) and array(fail), for convenience</code></pre><p class="p">The <span class="ph filepath">StopRunning</span> procedure
+is expected to return a true value (1) if the number of failures
+is sufficient to cancel the remaining jobs or a false value (0)
+if the regression suite should continue running. The default internal
+procedure never cancels the regression. However, the user may wish
+to cancel the regression run if the cumulative number of failures
+ever exceeds the cumulative number of successes by five. In order
+to do this, create the following TCL code fragment and load it into
+VRM:</p>
+<div class="fig fignone" id="idd5ce6ff7-e299-404a-ae68-9f697371d354__idebad8396-ad72-418b-b64c-4d3d9ce01a04"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Cancel Regression Run Code Fragment</span><pre class="pre codeblock leveled"><code>proc StopRunning {userdata} {
+	upvar $userdata data
+	if {$data(fail) &gt; [expr {$data(pass) + 5}]} {
+		return 1
+	}
+	return 0
+}</code></pre></div>
+<p class="p">In another example, define a <span class="ph FontProperty emphasis">usertcl</span> element containing
+a simplistic implementation of a “delete-on-pass” policy (that is,
+the working directory for passing simulations is deleted upon completion
+of the simulation). Note that the text content of the <span class="ph FontProperty emphasis">usertcl</span> element
+follows standard TCL syntax (any XML-specific characters such as
+&lt; and &amp; must be escaped). The format of the XML code to implement
+this override might look like the following:</p>
+<div class="fig fignone" id="idd5ce6ff7-e299-404a-ae68-9f697371d354__iddacafaea-fe44-4f76-b7dc-c4f977e5e5c1"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Delete-on-pass Implementation</span><pre class="pre codeblock leveled"><code>&lt;usertcl name="delete-on-pass"&gt;
+	proc OkToDelete {userdata} {
+		upvar $userdata data
+		lappend data(nodelete) "merge.ucdb" "postScript.log"
+		return [expr {$data(passfail) == "pass"}]
+	}&lt;/usertcl&gt;</code></pre></div>
+<p class="p">The user-definable procedure <span class="ph filepath">OkToDelete</span> analyzes
+the status of the Action in question and determines if the auto-deletion
+mechanism should be invoked. The statement “upvar $userdata <span class="keyword ParameterName OptionalReplaceable">data</span>”
+provides access to the incoming argument array and must be included.
+After that, the data values within the array can be accessed via
+the <span class="ph FontProperty emphasis">data</span> array
+variable, as in $data(passfail). This user-defined override implements
+the “delete-on-pass” policy, returning a true (1) value only if
+the Action for which it was called passed. The resulting behavior
+is to delete all working directories and the files therein except
+for the files <span class="ph filepath">merge.ucdb</span> (the coverage results)
+and <span class="ph filepath">postScript.log</span> (the final report from the
+suite).</p>
+<p class="p">There are also utility procedures built into
+VRM and defined in the same namespace as that used for the user-definable
+procedures. These procedures can be called by the user to perform
+certain complex operations that are better defined as a unit. One
+such procedure is <span class="ph filepath">GetUcdbStatus</span> (see “<a class="xref fm:HeadingAndPage" href="General_Getucdbstatus_id95f2b803.html#id95f2b803-700b-47ee-a0ca-093e452b30f5__General_Getucdbstatus_id95f2b803.xml#id95f2b803-700b-47ee-a0ca-093e452b30f5" title="Fetches the value of the TESTSTATUS attribute from a singleton test data record in the specified UCDB file. Uses GetUcdbTestAttribute to fetch the attribute value.">GetUcdbStatus</a>”) that takes a path to a UCDB
+coverage file, opens that file, and returns the value of the <span class="ph FontProperty emphasis">TESTSTATUS</span> attribute
+of the first Test Data record found therein. This utility procedure
+comes in handy for any user attempting to override the <span class="ph filepath">AnalyzePassFail</span> (see <a class="xref fm:PageNumber" href="Contain_PassfailAnalysis_idf8b00830.html#idf8b00830-6c45-441e-9e55-9fe2b93d3ed3__Contain_PassfailAnalysis_idf8b00830.xml#idf8b00830-6c45-441e-9e55-9fe2b93d3ed3" title="Before vrun can decide how to react to a completed Action, it must determine if the Action in question passed or failed. For purposes of pass/fail analysis, each execScript Action is assumed to run, at most, one simulation. The preScript and postScript Actions are assumed not to run simulations (the preScript and postScript Actions are primarily used for compile, setup, and/or post-processing commands). These assumptions can be overridden in the RMDB database as described below.">Pass/Fail Analysis</a>) user-definable procedure in a
+UCDB-based environment.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UserDefinableProceduresLoadingArbitraryTclCode_idd238f0d1.html" title="VRM is designed to be a versatile scripting solution for a wide variety of regression flows and users. The basic architecture of nested Groups of Tasks following the preScript, execScript, postScript execution model is, itself, already quite extensible. Support for parametrized commands within those scripts further enhances that extensibility. However, the details involved in each step of the execution process are not quite as clear-cut. There are two approaches that must be balanced against one another as follows:">User-definable Procedures and Loading of Arbitrary TCL Code</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Modifying VRM Behavior with User-definable Procedures"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ModifyingVrmBehaviorUserDefinableProcedures_idd5ce6ff7.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

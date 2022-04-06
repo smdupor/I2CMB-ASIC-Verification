@@ -1,0 +1,55 @@
+Mentor Graphics Technical Note
+Copyright 1991-2020 Mentor Graphics Corporation
+All Rights Reserved.
+
+This document contains information that is proprietary to Mentor Graphics
+Corporation. The original recipient of this document may duplicate this
+document in whole or in part for internal business purposes only, provided
+that this entire notice appears in all copies. In duplicating any part of
+this document, the recipient agrees to make every reasonable effort to
+prevent the unauthorized use and distribution of the proprietary information.
+
+Trademarks that appear in Mentor Graphics product publications that are not
+owned by Mentor Graphics are trademarks of their respective owners.
+
+================================================================================
+The VHDL 2008 fixed and float packages are fully supported in the IEEE library
+and accessible in code compiled -2008. 
+
+
+================================================================================
+VHDL fixed and floating point packages compatible with earlier language versions
+================================================================================
+
+Versions of proposed packages for fixed and floating point arithmetic are 
+available in library floatfixlib. The package names are fixed_package and f
+loat_pkg. An additional support package named math_utility_pkg is also in this 
+library. These packages are compatible with VHDL-2002 and earlier language versions.
+
+These packages are superceded by the VHDL 2008 standard fixed and float
+packages, but we will continue to provide the VHDL 2002 versions for convenience.  
+They are unsupported and may be removed in a future release.
+
+Library floatfixlib can be accessed by executing the command:
+vmap floatfixlib \$MODEL_TECH/..floatfixlib
+
+Source code for the three packages can be found the the release tree
+at vhdl_src/floatfixlib.
+
+===========================================================================
+Alternate Source for pre-2008 versions of fixed and floating point packages
+===========================================================================
+
+There are a set of public domain sources for these libraries with 
+documentation by the original author freely available.  This is part
+of a larger body of work that preceeded the VHDL 2008 standard and 
+remains compatible with the 2002 VHDL standard. There is both the vhdl code
+itself and user documentation on the packages.  The fixed and float 
+packages are sophisticated and the author's original descriptions of their
+contents and how to use them are not convered in any other documents, to
+the best of our knowledge.
+
+It can be found at http://www.vhdl.org/fphdl, as of this writing.  
+
+Mentor Graphics makes no representation about its suitability for 
+any particular use.  

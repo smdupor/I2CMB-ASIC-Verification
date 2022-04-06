@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="The vencrypt and vhencrypt Encryption Commands" />
+<meta name="abstract" content="You encrypt Intellectual Property through the shell command line programs vencrypt and vhencrypt. The shell command vencrypt encrypts Verilog and SystemVerilog IP. The shell command vhencrypt encrypts VHDL IP." />
+<meta name="description" content="You encrypt Intellectual Property through the shell command line programs vencrypt and vhencrypt. The shell command vencrypt encrypts Verilog and SystemVerilog IP. The shell command vhencrypt encrypts VHDL IP." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>The vencrypt and vhencrypt Encryption Commands</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="The vencrypt and vhencrypt Encryption Commands" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">The vencrypt and vhencrypt
+Encryption Commands</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You encrypt Intellectual Property through
+the shell command line programs<span class="ph FontProperty shellcommand"> vencrypt </span>and<span class="ph FontProperty shellcommand"> vhencrypt</span>.
+The shell command <span class="ph FontProperty shellcommand">vencrypt </span>encrypts
+Verilog and SystemVerilog IP. The shell command <span class="ph FontProperty shellcommand">vhencrypt </span>encrypts
+VHDL IP.</span>
+</div>
+<p class="p">After processing a clear text
+source file, both commands generate an encrypted file appending
+a “p” to the original file name. For example, the encrypted version
+of <span class="ph filepath">flipflop.v</span> becomes <span class="ph filepath">flipflop.vp</span>.
+The IEEE encryption standards also refer to the contents of the
+encrypted file as a <span class="ph FontProperty emphasis">decryption envelope</span>.
+Targeted tools use decryption envelopes to decrypt and run the encrypted
+files.</p>
+<p class="p">Both commands provide a variety of arguments to control encryption.
+In addition, the <span class="ph filepath">modelsim.ini</span> file has entries
+for controlling encryption similar to the command line arguments.
+Use the <span class="ph filepath">modelsim.ini</span> file to set default encryption
+settings.</p>
+<p class="p">For a complete listing of all command line arguments and <span class="ph filepath">modelsim.ini </span>entries,
+see the Reference Chapter.</p>
+<p class="p"><a class="xref fm:Table" href="#id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75__id1ce27fc2-1447-4e18-bd75-b28d6365cc47">Table 1</a> lists the encryption
+command arguments that support the IEEE 1735 protocol, but are not
+backward compatible with previous versions of these commands.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75__id1ce27fc2-1447-4e18-bd75-b28d6365cc47" class="table" frame="void" border="0" rules="none"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Encryption
+Arguments Supporting IEEE 1735</span></caption><colgroup><col style="width:2.500in" /><col style="width:4.000in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d1073e155"><p class="p">Argument</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d1073e158"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e155 "><p class="p">-common &lt;commonfile&gt;</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e158 "><p class="p">Specifies the file of a common set of pragmas.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e155 "><p class="p">-keyring &lt;directory&gt;</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e158 "><p class="p">Specifies the location of the <span class="ph filepath">keyring </span>directory.
+The default is <span class="ph filepath">&lt;install&gt;/keyring</span></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e155 "><p class="p">-toolblock &lt;keyfile&gt;,[&lt;rightsfile&gt;]</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d1073e158 "><p class="p">Specifies filename with a targeted tool’s
+public encryption key. Optionally, specifies file with rights attributes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The shell commands do not encrypt files into a library, nor do
+they process macros or handle Verilog arguments. The<span class="ph fmvar:ProductName">  Questa SIM</span> <span class="ph FontProperty shellcommand">vhencrypt </span>command
+for VHDL works the same as the <span class="ph FontProperty shellcommand">vencrypt</span> command
+(though VHDL does not have macros). Both commands recognize the <span class="ph fmvar:ProductName"> Questa SIM</span> public encryption
+key. The commands use the<span class="ph fmvar:ProductName">  Questa
+SIM</span> public encryption key if you do not specify any other key.
+You can find the details of the public encryption key in the <span class="ph filepath">./key</span> directory
+in the files MGC-VERIF-SIM-RSA-2 and MGC-VERIF-SIM-RSA-3.</p>
+<p class="p">The <span class="ph FontProperty shellcommand">vhencrypt </span>and
+the <span class="ph FontProperty shellcommand">vencrypt</span> commands
+encrypt marked off source areas using the Advanced Encryption Standard
+(AES) algorithm. The commands generate a random key called a “session
+key.” The Questa Sim encyption commands supports AES128, AES192,
+and AES 256 bit keys. The default is AES128. This session key itself
+is encrypted and encoded using each public key found in the pragmas
+that form the encryption envelope.</p>
+<p class="p">You can specify the algorithm for encrypting the session key
+using the -data_method argument. The session key is generated into
+the <span class="ph FontProperty shellcommand">key block</span>, and
+that <span class="ph FontProperty shellcommand">key block</span> is
+encrypted using the “RSA” method. The default is AES128. The commands
+communicate the session key to the decrypting tool by means of a <span class="ph FontProperty shellcommand">KEY_BLOCK</span> in
+the decryption envelope.</p>
+<p class="p">The only supported asymmetric encryption method
+is RSA. This method is supported only for specifying key information,
+not for encrypting IP source code (that is, only for key methods,
+not for data methods).</p>
+<p class="p">All encryption algorithms produce byte streams
+that contain non-graphic characters. Therefore, there needs to be
+an encoding mechanism to transform the arbitrary byte streams into
+portable sequences of graphic characters. The supported encoding
+methods are:</p>
+<ul class="ul"><li class="li" id="id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75__id282738af-bc6d-43d4-a813-4f9f1e2dbb4c"><p class="p">uuencode</p>
+</li>
+<li class="li" id="id7d5bfc18-6ab5-4089-b3c0-2097dbc1ec75__id54da433e-daa8-4ac4-be17-b72b6f4f12e5"><p class="p">base64</p>
+</li>
+</ul>
+<p class="p">Base 64 encoding is the default method and
+the recommended encoding for all applications.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Introduction_id28598598.html" title="The Questa SIM simulator encryption features allow Intellectual Property (IP) authors to deliver encrypted IP code for a wide range of EDA tools and design flows. This user guide describes the various commands and flows for supporting IP encryption.">Introduction</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "The vencrypt and vhencrypt Encryption Commands"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_TheVencryptAndVhencryptEncryptionCommands_id7d5bfc18.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

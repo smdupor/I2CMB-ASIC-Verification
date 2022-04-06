@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Higher Performance Merge" />
+<meta name="abstract" content="An alternative merge use model is provided which reduces data storage and provides better merge performance. It is called a Coverstore merge." />
+<meta name="description" content="An alternative merge use model is provided which reduces data storage and provides better merge performance. It is called a Coverstore merge." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id28e079ee-a792-445f-bd18-ede77caf6f39" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Higher Performance Merge</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Higher Performance Merge" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id28e079ee-a792-445f-bd18-ede77caf6f39">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Higher Performance Merge</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">An alternative
+merge use model is provided which reduces data storage and provides
+better merge performance. It is called a Coverstore merge. </span>
+</div>
+<p class="p">The use model which is defined
+in <a class="xref fm:HeadingOnly" href="TaskTop_MergingCoverageData_id4e633c57.html#id4e633c57-bb9a-4a73-b1e9-d63f841a0bfb__TaskTop_MergingCoverageData_id4e633c57.xml#id4e633c57-bb9a-4a73-b1e9-d63f841a0bfb" title="When you have multiple sets of coverage data, from multiple tests of the same design, you can combine the results into a single UCDB by merging the UCDB files.">Merging Coverage Data</a> remains unchanged, and acts as
+the default merge.</p>
+<p class="p">This alternative, coverstore flow is comprised
+of the following:</p>
+<ul class="ul"><li class="li" id="id28e079ee-a792-445f-bd18-ede77caf6f39__id485dbfd5-2d6f-4047-a670-4db10a38a236"><p class="p">Invoke vsim with -coverstore
+option to specify a directory path where the simulator will dump
+coverage data at the end of the simulation. The user does not need
+to save the coverage data explicitly. All the simulation runs in
+a regression should use the same coverstore directory path and their
+design hierarchy needs to be the same for this new use model. </p>
+</li>
+<li class="li" id="id28e079ee-a792-445f-bd18-ede77caf6f39__id16c360b6-e63a-4ba2-b677-f7f06c7b1009"><p class="p">Invoke vsim with -testname option along
+with the -coverstore option to specify the name of the running test. </p>
+</li>
+<li class="li" id="id28e079ee-a792-445f-bd18-ede77caf6f39__id4555cce3-7075-43c9-a0be-4fc33eeeb154"><p class="p">After the coverage data is accumulated
+in the coverstore area from all the simulation runs, merge the coverage
+data and create a self-contained UCDB file for further analysis.
+You simply need to specify the coverstore directory path as an input
+to the vcover merge. No other option is required. </p>
+</li>
+<li class="li" id="id28e079ee-a792-445f-bd18-ede77caf6f39__id3d5d8ebc-9295-42e6-9055-75f1954b8c9a"><p class="p">You can also dump the output of a merge
+to a coverstore directory instead of creating the output UCDB file
+by using the -outputstore option to specify the output directory
+path. This is useful when the user merges the outputs of lower level
+merges in a hierarchical merge. </p>
+</li>
+<li class="li" id="id28e079ee-a792-445f-bd18-ede77caf6f39__id4f8221c1-266a-446b-907e-30a3932ab5a8"><p class="p">The coverage data by default is stored
+using single-bit counters for code coverage items (statements, branches,
+conditions, expressions, fsms, toggles), and multi-bit counters
+for functional coverage items (covergroups, cover directives, assertions).
+That means we store 1 for a code coverage bin whose count is greater
+than 0. The user can specify which coverage types to be stored using
+single-bit counters and which coverage types to be stored using
+multi-bit counters. The -multicount[=-a|b|c|-d|e|f|-g|s|t] option
+is added for that. The '-' is preceded to functional coverage types
+whose defaults are multi-bit, so the user can turn those coverage
+types to single-bit by using it. For example, -multicount=f-gt will
+turn the fsm and toggle coverage types to multi-bit and covergroup coverage
+type to single bit, keeping the other coverage types as unchanged. </p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ManageTestDataInUCDBs_id3082cd3f.html" title="Once you have run tests and collected coverage, the real task of analyzing the coverage can begin. Managing the coverage data which has been collected and stored in one or more UCDBs is critical to the task.">Manage Test Data in UCDBs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Higher Performance Merge"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_HigherPerformanceMerge_id28e079ee.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

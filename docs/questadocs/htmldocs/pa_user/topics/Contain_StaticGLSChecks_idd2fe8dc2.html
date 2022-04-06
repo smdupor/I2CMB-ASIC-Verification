@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Static GLS Checks" />
+<meta name="abstract" content="Static GLS checks validate your gate-level design with the power intent defined in the UPF file. For static GLS checks, the tool analyzes the UPF file for power state tables (PSTs), power states added on power domains (by an add_power_state command), and supply sets. The purpose of this analysis is to detect the power domain relative ON/OFF condition and the relative operating voltages." />
+<meta name="description" content="Static GLS checks validate your gate-level design with the power intent defined in the UPF file. For static GLS checks, the tool analyzes the UPF file for power state tables (PSTs), power states added on power domains (by an add_power_state command), and supply sets. The purpose of this analysis is to detect the power domain relative ON/OFF condition and the relative operating voltages." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idd2fe8dc2-d7fa-416b-a34b-95e512b66645" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Static GLS Checks</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Static GLS Checks" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idd2fe8dc2-d7fa-416b-a34b-95e512b66645">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Static GLS Checks</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Static GLS checks validate your gate-level
+design with the power intent defined in the UPF file. For static
+GLS checks, the tool analyzes the UPF file for power state tables
+(PSTs), power states added on power domains (by an add_power_state
+command), and supply sets. The purpose of this analysis is to detect
+the power domain relative ON/OFF condition and the relative operating voltages.</span>
+</div>
+<p class="p">The purpose of
+the Static GLS checks is to detect the power domain relative ON/OFF
+condition, their relative operating voltages, and to ensure that
+the power management cells in the gate level netlist are consistent
+with the power intent defined in UPF. Please refer to “<a class="xref fm:HeadingOnly" href="Concept_PowerManagementCell_id0e8e6f04.html#id0e8e6f04-6938-44b0-8572-a3d6d5266844__Concept_PowerManagementCell_id0e8e6f04.xml#id0e8e6f04-6938-44b0-8572-a3d6d5266844" title="Power Aware simulation identifies power management cells (isolation, level shifter, or retention) in the design, and matches them with a UPF strategy. It inserts power management cells when the cell is defined in the UPF strategy, but is missing in the design; it also applies connection and corruption semantics.">Power Management Cell</a>” section for details on how the tool identifies power management
+cells in gate-level designs.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Your gate-level design can be either gate-level netlists
+out of synthesis, or fully PG netlists out of place-and-route.</p>
+</div>
+<p class="p">To enable all static GLS checks (except static GLS back-to-back
+cell checks), use the following command:</p>
+<pre class="pre codeblock"><code>vopt -pa_glschecks=s</code></pre><p class="p">When you enable all static GLS checks, if state dependencies
+between two connected power domains are not present in the PST/add_power_state,
+then the tool cannot determine power domain relative ON/OFF states
+statically. In this case, static GLS checks report strategies as <span class="ph FontProperty emphasis">Not Analyzed</span>.
+If state dependencies between two connected power domains are present
+in the PST/add_power_state, then the tool performs all static GLS
+checks.</p>
+<p class="p">View the results of the static GLS checks in the following files:</p>
+<dl class="dl"><dt class="dt dlterm">vopt log file</dt>
+<dd class="dd"><p class="p">Summary of the static GLS check results</p>
+</dd>
+<dt class="dt dlterm">Static check report <span class="ph filepath">(report.static.txt)</span></dt>
+<dd class="dd"><p class="p">Details of the static GLS check results</p>
+</dd>
+</dl>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc21e1930-c402-44c8-afe4-c5feeb54802f" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Static
+GLS Checks</span></caption><colgroup><col style="width:1.984in" /><col style="width:4.191in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d49417e190"><p class="p">Check</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d49417e193"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td><a href="../topics/General_StaticGLSIsolationChecks_id90e3db52.html" title="Static GLS isolation checks report any missing or inconsistent isolation cells in your gate-level design. ">Static GLS Isolation Checks</a></td><td>Static GLS isolation checks report any missing or inconsistent isolation cells in your gate-level design. </td></tr><tr class="row"><td><a href="../topics/General_StaticGLSLevelShifterChecks_id8eebe89c.html" title="Static GLS level shifter checks report any missing or inconsistent level shifter cells in your gate-level design.">Static GLS Level Shifter Checks</a></td><td>Static GLS level shifter checks report any missing or inconsistent level shifter cells in your gate-level design.</td></tr><tr class="row"><td><a href="../topics/General_StaticGLSRetentionChecks_id0666e9d5.html" title="Static GLS retention checks report any inconsistent retention condition in your gate-level design.">Static GLS Retention Checks</a></td><td>Static GLS retention checks report any inconsistent retention condition in your gate-level design.</td></tr><tr class="row"><td><a href="../topics/General_StaticGLSBacktoBackChecks_ide43003e2.html" title="Static GLS back-to-back checks report any back-to-back cells in your gate-level design.">Static GLS Back-to-Back Checks</a></td><td>Static GLS back-to-back checks report any back-to-back cells in your gate-level design.</td></tr><tr class="row"><td><a href="../topics/General_StaticGlsElsChecks_id3c679bf3.html" title="Static GLS ELS checks report any issues in the ELS cells present in your gate-level design. ">Static GLS ELS Checks</a></td><td>Static GLS ELS checks report any issues in the ELS cells present in your gate-level design. </td></tr><tr class="row"><td><a href="../topics/General_StaticGLSSwitchChecks_idc5cb9a96.html" title="Static GLS switch checks report any missing or inconsistent switch cells in your gate-level design.">Static GLS Switch Checks</a></td><td>Static GLS switch checks report any missing or inconsistent switch cells in your gate-level design.</td></tr><tr class="row"><td><a href="../topics/General_StaticGLSMiscellaneousChecks_id69bf0ba1.html" title="Static GLS miscellaneous checks report various miscellaneous issues in your gate-level design.">Static GLS Miscellaneous Checks</a></td><td>Static GLS miscellaneous checks report various miscellaneous issues in your gate-level design.</td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Static GLS Checks"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_StaticGLSChecks_idd2fe8dc2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,140 @@
+                     Release Notes For Questa Sim 10.2g
+
+                                 Aug 15 2015
+               Copyright 1991-2015 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.2g
+     * [4]Base Product Specifications in 10.2g
+     * [5]Compatibility Issues with Release 10.2g
+     * [6]General Defects Repaired in 10.2g
+     * [7]User Interface Defects Repaired in 10.2g
+     * [8]SystemVerilog Defects Repaired in 10.2g
+     * [9]VHDL Defects Repaired in 10.2g
+   _______________________________________________________________________
+
+   Key Information
+     * [nodvtid] - The 10.2g Update Release will be the last release in
+       the 10.2 series
+   _______________________________________________________________________
+
+   Release Announcements in 10.2g
+     * [nodvtid] -
+       In 10.3, support for Linux RHEL 4 will be discontinued.
+       In 10.4, support for Windows XP and Windows Vista will be
+       discontinued.
+       [10.2d] OVL is upgraded to v2.8.1.
+       [10.2d] The VHDL OSVVM (Open Source VHDL Verification Methodology)
+       library, sources and documentation have been updated to version
+       2014.01. Dependency checks in vopt and vsim will force
+       recompilation of designs that use the osvvm library. If
+       optimization is performed using vopt, the optimizer will
+       automatically generate new optimized design units. Without the
+       optimization step, vsim will detect dependency errors.
+       [10.2] Support for Solaris SPARC and Solaris x86 has been
+       discontinued. All Solaris OS platforms are not supported.
+       [10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell
+       SUSE Linux Enterprise (SLES) 9 has been discontinued.
+       [10.1] Support for GCC versions
+       gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.
+       [10.0] Support for Solaris 8 and Solaris 9 has been discontinued.
+   _______________________________________________________________________
+
+   Base Product Specifications in 10.2g
+     * [nodvtid] -
+       [Supported Platforms]
+       Linux RHEL 4 x86/x86-64
+       Linux RHEL 5 x86/x86-64
+       Linux RHEL 6 x86/x86-64
+       Linux SLES 10 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Windows 7 x86/x64
+       Windows 8 x86/x64
+       Windows XP
+       Windows Vista
+       [Supported GCC Compilers (for SystemC)]
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+       gcc-4.2.1-mingw32vc9
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.01
+       [Licensing]
+       FLEXnet v11.10
+       MSL v2012_2patch1
+       MGLS v9.7_2.3
+       PCLS v9.7.2.4
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 10.2g
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.2g
+     * dvt78556 - When the path to the tmp directory (e.g. /tmp on linux)
+       is redirected to a path that contains spaces, various errors can
+       occur that are not obviously related to the tmp directory. The tmp
+       directory is more commonly redirected on the Windows platform.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.2g
+     * dvt63651 - A drag-area zoom-in operation in the wave window would
+       sometimes zoom to the wrong location. This issue has been resolved.
+     * dvt68664 - Export Image for the Wave window would hang the user
+       interface and the desktop. This issue has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.2g
+     * [nodvtid] - A net having multiple drivers with varying strengths
+       resolved to an incorrect value in some cases.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.2g
+     * dvt77275 - A Fatal error during elaboration could occur within an
+       optimized vhdl process if signal valued attributes are used within
+       that process. The name reported for the optimized processed will
+       start #MERGED#.
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.2g,product.id.P11633"
+

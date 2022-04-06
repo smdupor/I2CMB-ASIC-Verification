@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="vsim" />
+<meta name="abstract" content="Questa SIM provides arguments for the vsim command that are specific to multi‑core simulation." />
+<meta name="description" content="Questa SIM provides arguments for the vsim command that are specific to multi‑core simulation." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vsim</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vsim" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vsim</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc"><span class="ph fmvar:ProductName">Questa SIM</span> provides arguments for the
+vsim command that are specific to multi‑core simulation.</p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">	For the complete
+reference description of all arguments to the vsim command for unisim,
+refer to vsim in the <span class="ph fmvar:ProductName"> Questa
+SIM</span><span class="ph FontProperty emphasis"> Command Reference Manual</span>. </p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">vsim ‑mc2 [‑mc2network &lt;hostfile&gt;]<br />
+[‑mc2binding &lt;type&gt;] [‑mc2grid {lsf | sge}] [‑mc2sal &lt;partition_name&gt;]<br />
+[‑mc2mergeucdb &lt;filename&gt;] [‑mc2mergewlf &lt;filename&gt;] [‑mc2vcddump]<br />
+[‑mc2commstat] [‑mc2savestat[=filename]] [‑mc2sanitycheck[=warn]]<br />
+[‑mc2nozerochk] [‑mc2noidlesyncopt] [‑mc2nosuspendopt] [‑mc2noactivequeueopt] [‑mc2activequeueopt] [‑mc2synccntl=&lt;sync_cntl&gt;[,&lt;sync_cntl&gt;...]]<br />
+[‑mc2vsimargs="&lt;partition&gt;" "&lt;args&gt;"]<br />
+[-qwavedb=+wavedir=&lt;<span class="ph FontProperty emphasis">dirname</span>&gt;]<br />
+[‑vv] </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idb4ef0157-4c25-4710-87c8-5fbbcbcd378b">‑mc2 </dt>
+<dd class="dd ArgumentDescription"><p class="p">Run simulation in multi‑core
+simulation mode. This argument also implies the vsim argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id65ccdb9a-f8dc-4670-873e-d07c22721819">‑mc2network &lt;hostfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Run simulation in multi‑computer
+mode. See <a class="xref fm:HeadingOnly" href="TaskTop_RunningMultiComputerSimulation_idc50411ed.html#idc50411ed-bb02-47c9-ae3a-a402da5ad48c__TaskTop_RunningMultiComputerSimulation_idc50411ed.xml#idc50411ed-bb02-47c9-ae3a-a402da5ad48c" title="By default, multi‑core simulation is run on multiple cores of a single machine. However, you can run simulation on multiple machines connected over a network by using the ‑mc2network argument of vsim to specify a file containing a list of the hosts on which to run the simulation.">Running Multi-computer Simulation</a> for details on &lt;hostfile&gt; syntax. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id29f5430b-c091-45b3-ae76-99c7237e5605">‑mc2binding &lt;type&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Run simulation with specified
+core binding, where &lt;type&gt; is one of: none, affinity, affinity:user,
+core, socket, rr. Default binding is affinity.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id8e8a9b71-0786-4ba1-8f26-2058241f3f0e">‑mc2grid {lsf | sge}</dt>
+<dd class="dd ArgumentDescription"><p class="p">Run simulation with the specified
+grid type. Supported grid type options are Platform LSF (LSF), or
+Sun Grid Engine (SGE).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id82b54dc1-43bb-47b0-9e75-091c8df5ab7d">‑mc2sal &lt;partition_name&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">Runs simulation on one standalone
+partition, &lt;partition_name&gt;, in VCD mode.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idaf67500a-95b2-4b11-9caa-e54136e51642">‑mc2mergeucdb &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Merge UCDB files from all partitions
+to the specified filename.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idbfb4123d-c3a3-42a5-aad8-488127de60b6">‑mc2mergewlf &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Merge WLF files from all partitions
+to the specified filename.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id9f437e85-71f7-42d5-90a3-067c19b0e3e6">‑mc2vcddump</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generate VCD info and enable
+later standalone mode simulation run on this partition.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id7ec6663f-cd22-4e75-8826-19d9b892b860">‑mc2commstat</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generate multi‑core simulation statistics.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id19135f0f-17cd-4900-a48c-7cf7ce551624">‑mc2savestat[=filename]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Save multi‑core simulation statistics
+to the specified filename.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id62148168-f7b6-436f-948d-bcb5006f9dfa">‑mc2sanitycheck[=warn]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Perform sanity design checks
+for allowable boundary conditions. Optional '=warn' argument converts
+severity of error message to warning.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idfc6eb19f-4d50-4c4c-8cc0-4a9d5efa0694">‑mc2nozerochk</dt>
+<dd class="dd ArgumentDescription"><p class="p">Converts severity of time 0
+unicore value mismatch errors to warnings.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id2ac7252c-a37a-4bc3-83f2-541c796d7b8b">‑mc2noidlesyncopt</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables optimization, which
+suppresses synchronizations when all partitions but one are idle.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id6de73a94-6259-4a3a-84fb-4d4cea85ad53">‑mc2nosuspendopt </dt>
+<dd class="dd ArgumentDescription"><p class="p">Use this argument to disable
+an optimization on partitions without any activity. If time synchronization
+between any partitions is incorrect or resulting in incorrect output,
+then this argument can be used. This argument used together with <a class="xref fm:HeadingOnly" href="#id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id2ac7252c-a37a-4bc3-83f2-541c796d7b8b">‑mc2noidlesyncopt</a> option forces the partitions to
+synchronize at each simulation time step.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id3fb820c0-945e-44ee-957f-40f434efbee9">‑mc2noactivequeueopt </dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables optimization on active
+queue communications. When only VHDL sync control is specified and
+the design either shows incorrect results or is a mixed HDL design
+you can use this argument to see if results improve. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id1dd16133-9cd5-41f9-883a-1db480572c49">‑mc2activequeueopt</dt>
+<dd class="dd ArgumentDescription"><p class="p">Enable optimization for active
+queue communication. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__ida3e49745-ceaa-4b5a-b52a-46c427fbd318">‑mc2synccntl=&lt;sync_cntl&gt;[,&lt;sync_cntl&gt;...] </dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify predefined MC2 sync
+control options for simulation. Sync control options are specified
+in the form: name=value. For example:</p>
+<pre class="pre codeblock leveled"><code>	vsim -mc2 run_mp -mc2synccntl=vhdl,looplimit=10,nba </code></pre><p class="p">The options for sync_control
+are named events that are case-insensitive; no space is allowed
+between multiple options. For more comprehensive information on
+synchronization controls, values, sync control aliases, and sync
+point setting strategy, see <a class="xref fm:HeadingOnly" href="General_SynchronizationControl_idf05b4c6d.html#idf05b4c6d-a26c-48bb-af01-6942f3cff7ac__General_SynchronizationControl_idf05b4c6d.xml#idf05b4c6d-a26c-48bb-af01-6942f3cff7ac" title="The mc2com command creates a default set of sync points based on its analysis of the design. To override these default sync points, you can use the vsim -mc2synccntl command.">Synchronization Control</a>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id17341126-3b28-4462-b879-2036a0f2ccad" class="table" frame="void" border="0" rules="none"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Sync Control Named Events — Quick Reference</span></caption><colgroup><col style="width:2.142in" /><col style="width:4.032in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d7027e304"><p class="p">Named Event </p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d7027e307"><p class="p">Description </p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">active</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync will be performed
+at the end of active queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">events</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Perform communication
+of VHDL signal values when events occur on signals.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">hipri</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of the
+high-priority queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">immed_ca</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync after all continuous
+assignments have been performed, but before their fanouts have taken effect.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">inactive</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of inactive
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">looplimit=<span class="keyword ParameterName RequiredReplaceable">n</span></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">If value = <span class="keyword ParameterName RequiredReplaceable">n</span>,
+the synchronization will be relooped a maximum of n times.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">nba</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of the
+Verilog non-blocking assignment event queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">observed</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of Observed
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">preponed</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of Preponed
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">postponed</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of Postponed
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">reactive</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of Re-active
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">reloop</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Reloop the synchronization
+when needed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">renba</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of Re-NBA
+queue.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">synch</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the point after
+all PLI read/write events are completed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e304 "><p class="p">systemc</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e307 "><p class="p">Sync at the end of the
+SystemC queue.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__ideb262e58-a40e-44f6-a8d8-ea14734bcff9" class="table" frame="void" border="0" rules="none"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>SyncControl Alias Names — Quick Reference</span></caption><colgroup><col style="width:2.142in" /><col style="width:4.032in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d7027e430"><p class="p">Alias</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d7027e433"><p class="p">Description </p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">verilog</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables the synch and
+nba sync controls.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">verilog_conservative</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables the active, synch,
+and nba sync controls.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">verilog_aggressive</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables only the nba
+sync control.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">vhdl</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables the active and
+hipri sync controls.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">vhdl_aggressive</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables the active, hipri,
+and events sync controls.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e430 "><p class="p">sv_conservative</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d7027e433 "><p class="p">Enables the reactive,
+renba, postponed, preponed, and observed sync controls.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idb9d5cac3-97e1-43fe-9190-a8bc3a84e967">‑mc2vsimargs="&lt;partition&gt;" "&lt;args&gt;"</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify additional vsim options,
+&lt;args&gt;, for a particular partition. By default, vsim command
+line options are applied to all partitions. This argument can be
+used to apply specific vsim options to a particular partition. You
+can group multiple space-separated vsim arguments within the quotation
+marks.:</p>
+<pre class="pre codeblock leveled"><code>-mc2vsimargs=p1 "-l users.log -wlf users.wlf"  </code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__id281658c4-257b-4429-9f19-863014f0f855">-qwavedb=+wavedir=&lt;<span class="ph FontProperty emphasis">dirname</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Creates the waveform database
+file, <span class="ph filepath">qwave.db</span>, in the current working directory.
+The waveform database file is required to run Mentor Visualizer
+Debug Environment.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__ide574dd86-fbc8-4c5e-826b-e284fc51a92a"><p class="p Opt">+wavedir
+—Creates a dataset which is read into Visualizer.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__idbd13cff8-3cfd-4c7c-8e99-a9863c31a35e"><p class="p Opt">&lt;<span class="ph FontProperty emphasis">dirname</span>&gt;
+—A user-specified name for the dataset.</p>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__ided0886c4-92df-49e6-939a-04f263756795">‑vv</dt>
+<dd class="dd ArgumentDescription"><p class="p">Print verbose multi‑core simulation
+command line information.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CommandReference_id0f04d0fd.html" title="Questa SIM provides two commands, and several arguments to the vsim command, that are specific to multi-core simulation.">Command Reference</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "vsim"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Vsim_id4cb976b3.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

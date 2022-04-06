@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="onfinish" />
+<meta name="abstract" content="Controls simulator behavior when encountering $finish or sc_stop() in the design code." />
+<meta name="description" content="Controls simulator behavior when encountering $finish or sc_stop() in the design code." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4daef4e1-311f-4a6c-882e-1ce004501413" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>onfinish</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="onfinish" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id4daef4e1-311f-4a6c-882e-1ce004501413">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">onfinish</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><p class="shortdesc">Controls
+simulator behavior when encountering $finish or sc_stop() in the
+design code. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Specifying this command without an argument returns the
+current setting.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">onfinish [<a class="xref fm:HeadingOnly" href="#id4daef4e1-311f-4a6c-882e-1ce004501413__id91765d17-0c38-438e-bc01-ba31f34a6056">ask</a> | <a class="xref fm:HeadingOnly" href="#id4daef4e1-311f-4a6c-882e-1ce004501413__id2f482e63-4a59-4ce7-87ab-72118803fa28">exit</a> | <a class="xref fm:HeadingOnly" href="#id4daef4e1-311f-4a6c-882e-1ce004501413__id314f0a05-22f6-4cca-93cb-9332a8ea6ec0">final</a> | <a class="xref fm:HeadingOnly" href="#id4daef4e1-311f-4a6c-882e-1ce004501413__id28812b61-5287-43cd-9a30-3ba54c56f90a">stop</a> | <a class="xref fm:HeadingOnly" href="#id4daef4e1-311f-4a6c-882e-1ce004501413__idcfca054b-d2e5-4ae6-9d10-d6df6319f594">default</a>]</p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The onfinsh command controls how the simulation
+behaves when encountering a $finish or sc_stop() statement. It can
+either function as a stop command or exit the simulator. Stopping
+can aid post-simulation debug by allowing you to examine the state
+of the design prior to exiting.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id4daef4e1-311f-4a6c-882e-1ce004501413__id932b4255-fe80-42e8-9b41-688f2b5664d6"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id4daef4e1-311f-4a6c-882e-1ce004501413__id91765d17-0c38-438e-bc01-ba31f34a6056">ask </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) In batch mode, the simulation will
+exit; in GUI mode, the user is prompted for action to either stop
+or exit the simulation.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4daef4e1-311f-4a6c-882e-1ce004501413__id2f482e63-4a59-4ce7-87ab-72118803fa28">exit </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) The simulation exits without asking
+for any confirmation.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4daef4e1-311f-4a6c-882e-1ce004501413__id314f0a05-22f6-4cca-93cb-9332a8ea6ec0">final </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) The simulation executes the stop
+command <span class="ph FontProperty emphasis">after</span> executing
+any SystemVerilog final blocks.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4daef4e1-311f-4a6c-882e-1ce004501413__id28812b61-5287-43cd-9a30-3ba54c56f90a">stop </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) The simulation executes the stop
+command <span class="ph FontProperty emphasis">before</span> executing
+any SystemVerilog final blocks. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id4daef4e1-311f-4a6c-882e-1ce004501413__idcfca054b-d2e5-4ae6-9d10-d6df6319f594">default </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Uses the current setting for the OnFinish variable in the <span class="ph filepath italic">modelsim.ini</span> file. </p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'OnFinish', 'questa_sim_user'); return false;">OnFinish [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "onfinish"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Onfinish_id4daef4e1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

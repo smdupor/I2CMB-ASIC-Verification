@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="The Runtime Encryption Model" />
+<meta name="abstract" content="Encypting with the vencypt and vhencypt commands hide all source text, identifiers, and line number information from the end user in the resulting file." />
+<meta name="description" content="Encypting with the vencypt and vhencypt commands hide all source text, identifiers, and line number information from the end user in the resulting file." />
+<meta name="DC.subject" content="Encryption, runtime model, Runtime, encryption" />
+<meta name="keywords" content="Encryption, runtime model, Runtime, encryption" />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc28d6a67-359c-424c-b73f-04885b4e3cf7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>The Runtime Encryption Model</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="The Runtime Encryption Model" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc28d6a67-359c-424c-b73f-04885b4e3cf7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">The Runtime Encryption Model</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Encypting
+with the vencypt and vhencypt commands hide all source text, identifiers,
+and line number information from the end user in the resulting file.</span>
+</div>
+<p class="p">Due to this behavior, <span class="ph fmvar:ProductName">Questa Sim</span> cannot locate or display any
+information of the encrypted regions. Specifically, this means the following:</p>
+<ul class="ul"><li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id4543757c-c030-4b9a-95b6-6543a4f1daa9"><p class="p">The Source window will not display the
+source code of the design units.</p>
+</li>
+<li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id29673c78-0dca-4c48-8fda-0c11bd899f1d"><p class="p">The Structure window will not display
+the internal structure.</p>
+</li>
+<li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id893adb8a-e2f0-459b-a830-7a92e5430716"><p class="p">The Objects window will not display internal
+signals.</p>
+</li>
+<li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id3e922229-952f-4c67-b741-e7684f4aca5b"><p class="p">The Processes window will not display
+internal processes.</p>
+</li>
+<li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id61aa8f15-ef61-4390-9821-3ef721774c21"><p class="p">The Locals window will not display internal
+variables.</p>
+</li>
+<li class="li" id="idc28d6a67-359c-424c-b73f-04885b4e3cf7__id9b6b961c-bce4-451a-b360-6db96d34b1df"><p class="p">You cannot access any of the hidden objects
+through the Dataflow or <span class="ph">Schematic</span> window or with <span class="ph fmvar:ProductName">Questa Sim</span> commands.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_QuestaSimEncryptionMethods_idfc57e8f4.html" title="Various methods exist and options exist to help you specify the encryption results you want.">Questa SIM Encryption Methods</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "The Runtime Encryption Model"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RuntimeEncryptionModel_idc28d6a67.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

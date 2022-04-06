@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Timeouts" />
+<meta name="abstract" content="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed." />
+<meta name="description" content="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Timeouts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Timeouts" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Timeouts</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When an Action
+is launched, VRM records the time by which the Action is expected
+to reach the next phase of execution. A background loop within vrun
+periodically checks for Actions that have not reached their next
+milestone in time. In this case, a “timeout” is declared and the
+Action is considered to have failed.</span>
+</div>
+<p class="p">There are two defined timeout
+periods as follows:</p>
+<ul class="ul"><li class="li" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__id37ea4c5a-0f64-45be-933c-38b7f1e7a4ee"><p class="p">The first period starts when the Action
+(or its execution method script) is first launched and ends when
+a “start” message is received from the wrapper script associated
+with the Action.</p>
+</li>
+<li class="li" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__id038a52dc-f5ca-40c9-a329-f98e676e3569"><p class="p">The second period starts when said “start”
+message is received and ends when the “done” message is received
+from the wrapper script. </p>
+<p class="p">These two timeouts are independent and can
+be given different values.</p>
+</li>
+</ul>
+<p class="p">The first timeout, called “tQ” places a limit
+on the amount of time an Action can remain queued without actually
+starting. It is only relevant when the Action has been queued to
+a grid machine and it guards against possible loss-of-job issues
+in the compute grid. The <span class="ph FontProperty emphasis">mintimeout</span> attribute
+on <span class="ph FontProperty emphasis">method</span> elements
+controls tQ, since the <span class="ph FontProperty emphasis">method</span> element
+also controls whether the Action is queued to a grid at all and,
+if so, which one and at what priority.</p>
+<p class="p">The second timeout, called “tX” places a limit
+on the amount of time an Action can take to execute. Since the “start”
+and “done” messages bracket the user's script for that particular Action,
+it is essentially a timeout on the execution time of the user's
+script as a whole. The <span class="ph FontProperty emphasis">mintimeout</span> attribute
+on Action script elements (<span class="ph FontProperty emphasis">preScript</span>, <span class="ph FontProperty emphasis">execScript</span>,
+and <span class="ph FontProperty emphasis">postScript</span>)
+controls tX, since the Action script element also controls the contents
+of the user script associated with the Action.</p>
+<p class="p">The attributes are called
+“minimum” timeout values because the value actually used is at least
+as long as either the global default value for the timeout in question
+or the per-element value provided by the element associated with
+the timeout in question (which means we must pick the maximum of
+the two values in order to ensure the timeout is at the minimum
+at least as long as either supplied value). </p>
+<p class="p">The default global timeout value for tQ is
+60 seconds and for tX it is 300 seconds. These defaults can be changed
+via an environment variable or a command-line option. The format
+is the same for both so it is covered in the paragraphs to follow.
+If the MTI_VRUN_MIN_TIMEOUT environment variable is defined and
+meets the specified format, the value(s) specified by this variable
+will override one or both of the built-in global timeout values.
+If the -mintimeout command-line option is specified and the value
+passed to that option meets the specified format, the value(s) specified
+by the -mintimeout option will override one or both of the global
+timeout values, whether they came from the built-in defaults or
+the environment variable. All timeout values are expressed in seconds.
+Note that the -mintimeout option supports embedded parameter references.</p>
+<p class="p">The general format of either the environment
+variable or the command-line option is tQ:tX with either value being
+optional. If two numeric values are specified with the intervening colon,
+each is used to modify the corresponding global timeout value. If
+either value is non-numeric, that value is ignored irrespective
+of the other value. That is, the command-line option =-mintimeoutFRED:30
+changes the global value for tX to 30 while tQ remains unchanged (since
+the tQ part of the option argument is not numeric and, thus, does
+not pass the test).</p>
+<p class="p">Note that no error message is emitted if a
+non-numeric timeout value is detected. However, if the -debug option
+is specified, a message verifying that the global default timeout has
+changed is emitted. The debug message refers to <span class="ph FontProperty emphasis">QueTimeout</span> and <span class="ph FontProperty emphasis">ExeTimeout</span>,
+the vrun internal names for the two values.</p>
+<p class="p">If either the environment variable or the command-line
+option contain a single numeric value and no colon, by default these
+values are used to modify tX (the execution timeout). If, however,
+there is also a colon specified, the timeout value affected depends
+on the placement of the colon, for example, :tX will modify tX;
+while tQ: will modify tQ. Using this syntax, it is entirely legal
+for the environment variable to modify only tQ and the command-line
+option to modify only tX (or vice-versa), since the two values are
+completely independent.</p>
+<p class="p">Both the environment variable and the command-line
+option can modify either of the global minimum timeout values either
+up (longer) or down (shorter). A timeout value of zero disables
+the timeout (as would be the case for the built-in default value
+of tQ). These global timeout values are global (as their name implies).
+They apply to every Action launched and cannot be changed once vrun
+begins launching Actions.</p>
+<p class="p">Per-Action minimum timeout values can be specified
+in the RMDB file. An Action script can specify an optional minimum
+value for tX via its <span class="ph FontProperty emphasis">mintimeout</span> attribute.
+A <span class="ph FontProperty emphasis">method</span> element
+can specify an optional minimum value for tQ via its <span class="ph FontProperty emphasis">mintimeout</span> attribute.
+The default value for both <span class="ph FontProperty emphasis">mintimeout</span> attributes
+is zero (which, because the values are computed as minimum timeout
+periods, would basically mean: 'use the global default value here').
+For each Action launched, the execution timeout is determined by
+taking the maximum of the global tX value and the value of the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+on the Action script. If an execution method is found for the Action,
+the queuing timeout is determined by taking the maximum of the global
+tQ value and the value of the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+of the Action script. If no execution method is found for the Action,
+the global default value of tQ is used.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The queuing timeout
+for mergeScript or triageScript Actions launched via an execution
+method is computed by taking the number of UCDBs to be merged or
+triaged, multiplying by the value of <span class="ph FontProperty emphasis">inctimeout</span>,
+and then adding the value of <span class="ph FontProperty emphasis">mintimeout</span>. </p>
+</div>
+<p class="p">If the resulting value for either minimum timeout
+is zero, vrun will not monitor the Action for timeout. Instead it
+will potentially wait forever for the Action to change states, or
+at least until someone sends a “stop” message to the launching vrun
+instance. In addition, if the -notimeout command-line option is
+given, then timeout behavior is disabled globally for the entire
+regression run. This can be useful if VRM is used to launch an interactive
+session that can be open for a very long time.</p>
+<p class="p">Timeouts are measured in wall-clock time elapsed
+since the start of the timeout period in question. When the specified
+time has elapsed, an error message is posted to the vrun log output and
+the Action is reported as “failed” in the event log.</p>
+<div class="section Subsections"><div class="section Subsection" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__id21e0b151-4432-4abd-9484-7dda15988f97"><h2 class="title Subheading sectiontitle">Auto-Timeout Calculation</h2><p class="p">For large testcases with long runtimes, anywhere
+from 10 minutes, 10 hours or longer, the auto timeout feature will
+analyze the elapsed time of passing actions to estimate the appropriate
+timeout value. </p>
+<ul class="ul"><li class="li" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__idd955dc1f-c274-4220-9046-f6544ca8a5ce"><p class="p">Enable the auto-timeout calculation by
+adding the -autotimeout option to the vrun command line.</p>
+</li>
+<li class="li" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__id72328975-cd64-447c-9289-95c555b326c8"><p class="p">Control the sensitivity of the calculation
+with the timeoutmargin attribute of any Action script. where the
+value is a percentage of the maximum execution time added for computation.</p>
+</li>
+<li class="li" id="id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__id93d9883a-d190-45b1-a577-71a8e5b60044"><p class="p">Change the default margin for the calculation
+with the -timeoutmargin option to the vrun command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ScriptExecutionTimeouts_idb739d4ac.html" title="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue.">Script Execution and Timeouts</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Timeouts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_Timeouts_id1afbe0e0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

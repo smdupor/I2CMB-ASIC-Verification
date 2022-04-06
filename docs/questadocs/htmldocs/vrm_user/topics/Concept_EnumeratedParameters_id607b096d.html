@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Enumerated Parameters" />
+<meta name="abstract" content="An enumerated parameter allows the user to be presented with a list of possible selections from a list of tests where all tests are run by default but the user can pass the -ask command-line option to vrun, and be allowed to choose a subset of tests for any given regression run." />
+<meta name="description" content="An enumerated parameter allows the user to be presented with a list of possible selections from a list of tests where all tests are run by default but the user can pass the -ask command-line option to vrun, and be allowed to choose a subset of tests for any given regression run." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id607b096d-b853-4de0-b3c5-931d5e76f51e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Enumerated Parameters</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Enumerated Parameters" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id607b096d-b853-4de0-b3c5-931d5e76f51e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Enumerated Parameters</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">An enumerated
+parameter allows the user to be presented with a list of possible
+selections from a list of tests where all tests are run by default
+but the user can pass the -ask command-line option to vrun, and
+be allowed to choose a subset of tests for any given regression
+run.</span>
+</div>
+<p class="p">In the case of the <span class="ph FontProperty emphasis">oneof</span> construct (see <a class="xref fm:TableAndPage" href="Contain_SelectingValuesEmbeddedOptions_idbf5a10a8.html#idbf5a10a8-992c-4c1d-954c-3f9be3ea5fdc__id36abd4ba-43b1-4c66-a667-0c09468ad33e">Table 1</a>), the set of possible values
+are listed in the <span class="ph FontProperty emphasis">accept</span> attribute
+and exactly one of those values (the default value) should be given
+as the current value of the parameter itself. The prompting process assumes
+the entries made by the user in response to the prompts are single
+values from the list of possible values. As soon as the user's entry
+matches one of the possible values, the prompting process ends and
+the matching value is used for subsequent expansions of the given parameter.</p>
+<p class="p">Note that the list of values given in the <span class="ph FontProperty emphasis">oneof</span> construct is
+optional. But when the <span class="ph FontProperty emphasis">oneof</span> construct
+is used in the <span class="ph FontProperty emphasis">accept</span> attribute,
+the value of the parameter to which it is attached is assumed to
+be a single-value parameter. Therefore, the current value of the parameter
+becomes the only possible selection and it would have already been
+selected.</p>
+<p class="p">The <span class="ph FontProperty emphasis">anyof</span> construct
+is similar except that multiple values can be given as the default
+value in the RMDB file and multiple values can be selected in response
+to the prompt (see <a class="xref fm:ExampleAndPage" href="#id607b096d-b853-4de0-b3c5-931d5e76f51e__id951271c2-f8ee-414b-b1e2-b116d66ce0ce">Figure 1</a>). The list of values given
+in the <span class="ph FontProperty emphasis">anyof</span> construct
+is optional. If no values are given, then the list of values is
+assumed to be the list of comma/space separated tokens in the current
+value of the parameter itself and the default is to select them
+all.</p>
+<p class="p">In the case of <span class="ph FontProperty emphasis">enum</span> or <span class="ph FontProperty emphasis">foreach</span>,
+the values are listed in a numeric list and selecting (or deselecting)
+a given value in the list can be done by index number or by content
+(if the content is numeric, such as a list of seeds, selection/deselection
+must be performed using the index number of the value in question).
+Selected values are indicated by an asterisk (*) (or lack thereof)
+on the left-hand side of each value. Every value item is numbered.
+The user can enter either the number associated with the value to
+select or deselect, or the user can enter the text of the item itself.
+In the case of a <span class="ph FontProperty emphasis">oneof</span> parameter,
+the first match terminates the prompting (as discussed above). In
+the case of an <span class="ph FontProperty emphasis">anyof</span> parameter,
+if an unselected value is entered, then it becomes selected. If
+a selected value is entered, it is unselected. The process continues
+until the user is satisfied with the selected collection of values.
+At that point, the user hits “return” only to enter a null selection.
+That is the signal to the prompting process that the current selections should
+be joined into a single string and used as the semi-final value
+for the parameter in question (subject to TCL expansion and nested
+parameter expansion, if required).</p>
+<p class="p">If the user's response is not in the range
+specified in the <span class="ph FontProperty emphasis">accept</span> attribute,
+then the prompting process is repeated until a valid value is entered
+or a blank string is entered to accept the default selection as
+is. Note that the default is never checked. This prevents an infinite
+loop from occurring if the value actually specified in the parameter
+definition in the RMDB file does not meet the criteria specified
+in the <span class="ph FontProperty emphasis">accept</span> attribute.
+The <span class="ph FontProperty emphasis">accept</span> attribute
+places a restriction only on the end-user, not on the author of
+the RMDB file.</p>
+<p class="p"><a class="xref fm:Example" href="#id607b096d-b853-4de0-b3c5-931d5e76f51e__id951271c2-f8ee-414b-b1e2-b116d66ce0ce">Figure 1</a> illustrate both kinds of enumerated
+parameter prompts.</p>
+<div class="fig fignone" id="id607b096d-b853-4de0-b3c5-931d5e76f51e__id951271c2-f8ee-414b-b1e2-b116d66ce0ce"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Enum and Foreach Examples</span></div>
+<div class="section Subsections"><div class="section Subsection" id="id607b096d-b853-4de0-b3c5-931d5e76f51e__id2e6bc351-d26a-49f8-ab5e-bf2c1609e8e8"><h2 class="title Subheading sectiontitle">Enum Example</h2><p class="p">Assume the parameter definition is as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;parameter name="SIMULATION_MODE" ask="Enter the simulation mode" 
+			  accept="oneof(batch gui)"&gt;batch&lt;/parameter&gt;</code></pre><p class="p">The resulting prompt looks something like the
+following:</p>
+<pre class="pre codeblock leveled"><code>% vrun -ask nightly
+Runnable nightly, parameter SIMULATION MODE:
+	1) batch
+	2) gui
+	Enter the simulation mode [default 'batch']:</code></pre><h2 class="title Subheading sectiontitle">Foreach Example</h2><p class="p">Assume the parameter definition is as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;parameter name="TESTCASE" ask="Enter the testcase(s) you want to run" 
+			  accept="anyof()"&gt;fair_sequence neg_sqr_sequence 
+			  random_sequence&lt;/parameter&gt;</code></pre><p class="p">The prompt looks something like the following:</p>
+<pre class="pre codeblock leveled"><code>% vrun -ask nightly
+Runnable nightly, parameter TESTCASE:
+	* 1) fair_sequence
+	* 2) neg_sqr_sequence
+	* 3) random_sequence
+	Enter the testcase(s) you want to run:</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SelectingValuesEmbeddedOptions_idbf5a10a8.html" title="Parameters in the RMDB file can be used to select from among one or more options, using conditional and repetitive attributes on the Runnables that make up the regression suite.">Selecting Values for Embedded Options</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Enumerated Parameters"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_EnumeratedParameters_id607b096d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

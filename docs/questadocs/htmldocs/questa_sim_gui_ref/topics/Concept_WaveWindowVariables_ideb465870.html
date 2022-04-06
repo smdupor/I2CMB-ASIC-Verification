@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Wave Window Variables" />
+<meta name="abstract" content="The LogicStyleTable combined with the ListTranslateTable define how single bit waveforms are displayed in the Wave window." />
+<meta name="description" content="The LogicStyleTable combined with the ListTranslateTable define how single bit waveforms are displayed in the Wave window." />
+<meta name="prodname" content="Questa SIM GUI Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_gui_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM GUI Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ideb465870-c4b7-4c53-ab16-b49d2eca2d61" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Wave Window Variables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Wave Window Variables" />
+<meta name="attributes" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ideb465870-c4b7-4c53-ab16-b49d2eca2d61">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Wave Window
+Variables</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The LogicStyleTable
+combined with the ListTranslateTable define how single bit waveforms are
+displayed in the Wave window. </span>
+</div>
+<p class="p">The single value is first mapped into one of nine
+(9) possible states: U, 0, 1, X, Z, W, H, L, or '-' (Don't Care).
+Then the entry for the corresponding value in the LogicStyleTable
+is used to determine what is drawn in the Wave window.  The line
+style is either Solid or DoubleDash. The line is drawn in the color
+specified. Lastly, the line is drawn at the top of the row (2),
+the middle of the row (1), or the bottom of the row (0).</p>
+<p class="p">The mapping of bit values
+to the 9 states is specified in the ListTranslateTable. The table
+is searched to find a matching value. When a match is found, the
+corresponding table entry defines the 9 state value used to define
+the style.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ideb465870-c4b7-4c53-ab16-b49d2eca2d61__id72444d94-cfbb-405f-bf70-bcae1752f2c0" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Default ListTranslateTable Values</span></caption><colgroup><col style="width:2.050in" /><col style="width:2.050in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e156"><p class="p">Mapped State</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e159"><p class="p">Bit Value</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_U</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'U' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_X</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'X' 'x' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_0</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'0' FALSE</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'1' TRUE </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_Z</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'Z' 'z' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_W</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'W' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_L</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'L' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_H</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'H' </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e156 "><p class="p">LOGIC_DC</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e159 "><p class="p">'-' </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ideb465870-c4b7-4c53-ab16-b49d2eca2d61__idd9b39cad-712e-481c-a201-cf7a92af38e8" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Default LogicStyleTable Values</span></caption><colgroup><col style="width:1.303in" /><col style="width:1.250in" /><col style="width:1.156in" /><col style="width:1.366in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e236"><p class="p">Mapped State</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e239"><p class="p">Line Style</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e242"><p class="p">Color</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64245e245"><p class="p">Row Position</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_U</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">Solid</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">red</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">1</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_X</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">Solid</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">red</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">1</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_0</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">Solid</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">green</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">0</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">Solid</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">green</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_Z</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">Solid</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">blue</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">1</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_W</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">DoubleDash</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">red</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">1</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_L</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">DoubleDash</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">grey90</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">0</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_H</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">DoubleDash</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">grey90</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">2</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e236 "><p class="p">LOGIC_DC</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e239 "><p class="p">DoubleDash</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e242 "><p class="p">blue</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64245e245 "><p class="p">1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fig fignone" id="ideb465870-c4b7-4c53-ab16-b49d2eca2d61__idc0c524d7-9aab-4b47-909c-c2234b703cc8"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Modifying Signal Display Attributes
+in the Wave Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/WaveLogicStylePref.png" /></div><br /></div>
+<div class="section Subsections"><div class="section Subsection" id="ideb465870-c4b7-4c53-ab16-b49d2eca2d61__id17cb4194-c94c-4032-9cde-5ff6a4ef65d0"><h2 class="title Subheading sectiontitle">Modifying
+Wave Window Variables from the Command Line</h2><p class="p">Both the LogicStyleTable
+and the ListTranslateTable variables can be modified using the Tcl set
+command. Changes are automatically saved in the preference file
+($HOME/.modelsim on UNIX/Linux platforms or the Registry on Windows
+platforms).</p>
+<p class="p">The Tcl set command equivalent
+of the ListTranslateTable is:</p>
+<pre class="pre codeblock leveled"><code>set ListTranslateTable(LOGIC_U)  {'U'}       
+set ListTranslateTable(LOGIC_X)  {'X' 'x'}     
+set ListTranslateTable(LOGIC_0)  {'0' FALSE} 
+set ListTranslateTable(LOGIC_1)  {'1' TRUE}       
+set ListTranslateTable(LOGIC_Z)  {'Z' 'z'}     
+set ListTranslateTable(LOGIC_W)  {'W'}       
+set ListTranslateTable(LOGIC_L)  {'L'}       
+set ListTranslateTable(LOGIC_H)  {'H'}       
+set ListTranslateTable(LOGIC_DC) {'-'}       </code></pre><p class="p">The Tcl set command equivalent
+of the LogicStyleTable is:</p>
+<pre class="pre codeblock leveled"><code>set LogicStyleTable(LOGIC_U)  {Solid      red    1} 
+set LogicStyleTable(LOGIC_X)  {Solid      red    1} 
+set LogicStyleTable(LOGIC_0)  {Solid      green  0} 
+set LogicStyleTable(LOGIC_1)  {Solid      green  2} 
+set LogicStyleTable(LOGIC_Z)  {Solid      blue   1} 
+set LogicStyleTable(LOGIC_W)  {DoubleDash red    1} 
+set LogicStyleTable(LOGIC_L)  {DoubleDash grey90 0} 
+set LogicStyleTable(LOGIC_H)  {DoubleDash grey90 2} 
+set LogicStyleTable(LOGIC_DC) {DoubleDash blue   1} </code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_GuiPreferences_id25eec6ca.html" title="You can control various aspects of the Graphical User Interface through the use of user-controlled preferences.">GUI Preferences</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_gui_ref"
+                DocTitle = "Questa® SIM GUI Reference Manual"
+                PageTitle = "Wave Window Variables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_WaveWindowVariables_ideb465870.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM GUI Reference Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

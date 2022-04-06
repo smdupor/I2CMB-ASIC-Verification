@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="MGCChapter" />
+<meta name="DC.Title" content="Introduction to the UCDB API" />
+<meta name="abstract" content="UCDB API is an application programming interface for the Unified Coverage Database included in the Questa SIM and ModelSim SE products. The UCDB and its API are completely independent of Questa and ModelSim, however UCDBs are easily created with these tools. In this document, the term Questa refers to both the Questa and the ModelSim SE systems." />
+<meta name="description" content="UCDB API is an application programming interface for the Unified Coverage Database included in the Questa SIM and ModelSim SE products. The UCDB and its API are completely independent of Questa and ModelSim, however UCDBs are easily created with these tools. In this document, the term Questa refers to both the Questa and the ModelSim SE systems." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idfc964c6c-a34f-4de3-9061-31d34fa66a7d" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Introduction to the UCDB API</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Introduction to the UCDB API" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> Introduction to the UCDB API</h1>
+<div class="body MGCBody"><div class="abstract MGCAbstract"><span class="shortdesc">UCDB API
+is an application programming interface for the Unified Coverage
+Database included in the Questa<sup>®</sup> SIM and ModelSim<sup>®</sup> SE™ products.
+The UCDB and its API are completely independent of Questa and ModelSim,
+however UCDBs are easily created with these tools. In this document,
+the term <span class="ph FontProperty emphasis">Questa</span> refers
+to both the Questa and the ModelSim SE systems. </span>
+</div>
+<p class="p">Questa software uses the UCDB
+API for saving, reading, reporting on and merging UCDB format databases.
+The Questa GUI features are based on the UCDB API as are the command-line
+interface features in the Coverage View mode:</p>
+<pre class="pre codeblock leveled"><code>shell prompt&gt; vsim -viewcov <span class="ph filepath">ucdb_file</span></code></pre><p class="p">Use the coverage save command to create
+Questa UCDB format databases and use the vcover commands to externally
+process UCDBs. For simple tasks such as generating a coverage report
+or merging coverage data, use the corresponding Questa tool features.
+Use the UCDB API for more complex tasks such as the following.</p>
+<ul class="ul"><li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id615a14cd-2c79-487e-aa11-424d3c10abcf"><p class="p">Importing data into a UCDB or Questa
+database from another source</p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__idb02049e4-7a9e-4339-a157-1a16d0060981"><p class="p">Exporting data to a database that
+has a format not supported by Questa (for example, an SQL database
+or a graphing package) </p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id2baae708-8c4c-4de0-9188-fffcb79d0996"><p class="p">Analyzing coverage data in a way
+not supported by any tool</p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__ideb5f4544-e44e-4f9d-be3c-ea0b8ca18421"><p class="p">Loading coverage data into a UCDB
+from a VPI application linked with Questa (that will be saved by
+Questa)</p>
+</li>
+</ul>
+<p class="p">Use the C-based UCDB API to do the following.</p>
+<ul class="ul"><li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id38e734e0-d79e-4e1f-a5a5-34f9fd6d73da"><p class="p">Read from and write to UCDBs.</p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__idbc4d1f2a-7177-4fc9-8962-68cd8a6d9070"><p class="p">Create a UCDB. </p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id172e0af2-7c43-4870-88b6-74016a632332"><p class="p">Add data to an existing UCDB.</p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__ide2f4b178-d288-4677-89a0-2c738ce5fea5"><p class="p">Traverse and analyze a UCDB, specifically
+with the read API.</p>
+</li>
+</ul>
+<p class="p">The UCDB API library supports both memory
+efficient modes (read- or write-streaming modes) and a fully-populated
+data model (in-memory mode).</p>
+<p class="p">Find the UCDB API library in these locations.</p>
+<ul class="ul"><li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id6dabed75-dc90-4526-a68c-874bd4c72e40"><p class="p"><span class="ph filepath">&lt;install_dir&gt;/questasim/platform/libucdb.a</span>. (UNIX).</p>
+</li>
+<li class="li" id="idfc964c6c-a34f-4de3-9061-31d34fa66a7d__id287291a7-2dfd-4519-8539-b60d5d8f7394"><p class="p"><span class="ph filepath">&lt;install_dir&gt;/questasim/platform/ucdb.lib</span> (Windows).</p>
+</li>
+</ul>
+<p class="p">Find the annotated header file in <span class="ph filepath">&lt;install_dir&gt;/questasim/platform/ucdb.h</span>.</p>
+<p class="p">Find examples illustrating how to compile
+various UCDB API applications in <span class="ph filepath">&lt;install_dir&gt;/questasim/platform/ucdb/</span>.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UcdbDataHierarchy_idc7f56edb.html" title="This section provides information about scopes and coveritems, design unit scopes, and UCDB scope types so that you have a good understanding of the structure of a UCDB file.">UCDB Data Hierarchy</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UcdbDataModels_id65d10df1.html" title="The UCDB API is a general one that creates certain objects – such as scopes, coveritems, and test data records – with certain names, types, and attributes. Use of this API allows for the creation of many different potential data models.">UCDB Data Models</a></strong></li>
+</ul>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Introduction to the UCDB API"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/MGCChap_IntroductionToTheUCDBAPI_idfc964c6c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

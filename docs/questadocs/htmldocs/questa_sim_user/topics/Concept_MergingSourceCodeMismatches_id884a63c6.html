@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Merging and Source Code Mismatches" />
+<meta name="abstract" content="By default, Questa SIM performs checks on source code stability when merging code coverage. Code coverage results are merged based on line numbers, and merged results can be significantly wrong if line numbers have changed between versions of the source." />
+<meta name="description" content="By default, Questa SIM performs checks on source code stability when merging code coverage. Code coverage results are merged based on line numbers, and merged results can be significantly wrong if line numbers have changed between versions of the source." />
+<meta name="DC.subject" content="source code mismatches, bypassing warning, warning #6820" />
+<meta name="keywords" content="source code mismatches, bypassing warning, warning #6820" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id884a63c6-1e32-4d59-b681-958c6885d724" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Merging and Source Code Mismatches</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Merging and Source Code Mismatches" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id884a63c6-1e32-4d59-b681-958c6885d724">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Merging and Source Code Mismatches</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">By default, <span class="ph fmvar:ProductName">Questa SIM</span> performs checks
+on source code stability when merging code coverage. Code coverage
+results are merged based on line numbers, and merged results can
+be significantly wrong if line numbers have changed between versions
+of the source. </span>
+</div>
+<p class="p">For example, when a UCDB is generated
+with one version of file <span class="ph filepath">t.v</span>, and then another
+UCDB is generated with another version of file <span class="ph filepath">t.v</span>,
+it does not make sense to merge the source-based coverage metrics in
+those two UCDBs. The difference between files in this case is substantive
+and legitimate, and it is the checking known as design unit signature
+(dusig) checking which catches this case. When a merge such as this
+is attempted, warning #6820 is issued, stating that the merge of
+the instance in which those lines occur is being skipped. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">While a particular instance or
+du is skipped, note that all other coverage metrics are merged from
+that particular test UCDB.</p>
+</div>
+<div class="section Subsections" id="id884a63c6-1e32-4d59-b681-958c6885d724__ide3d68e33-7568-4c24-b1e5-6d1991d6f1b9"><div class="section Subsection" id="id884a63c6-1e32-4d59-b681-958c6885d724__idd109163e-93ba-47b2-b13c-11dbe79bf95f"><h2 class="title Subheading sectiontitle">Causes of Source Code Differences</h2><p class="p">The dusig check detects substantive, legitimate
+differences between source code files, as well as a few cases of
+non-substantive differences. It is important to understand the cause
+of the differences in order to assess their relevance and importance.</p>
+<p class="p">Causes of legitimate differences between the
+design source in two different UCDBs:</p>
+<ul class="ul"><li class="li" id="id884a63c6-1e32-4d59-b681-958c6885d724__idc42059d1-86d6-4281-88d3-c2d2efcdf18c"><p class="p">Differing versions of UCDB files, as
+mentioned above.</p>
+</li>
+<li class="li" id="id884a63c6-1e32-4d59-b681-958c6885d724__id0a96cb57-667d-4e1f-9db9-40f521b5a296"><p class="p">Any line number changes, even from inserting
+a comment. As an alternative in cases such as these, you might investigate
+the use of a “master” merge UCDB.</p>
+</li>
+<li class="li" id="id884a63c6-1e32-4d59-b681-958c6885d724__idf69136d6-e6e0-4600-ac9a-4f1162e1d05f"><p class="p">The use of `ifdef to conditionally define
+code. </p>
+</li>
+</ul>
+<p class="p">Causes of potentially insignificant differences:</p>
+<ul class="ul"><li class="li" id="id884a63c6-1e32-4d59-b681-958c6885d724__ida5827fb3-883f-43c9-b85f-4781c47e475c"><p class="p">File location — this is an insignificant
+difference and any resulting mismatch can be safely ignored.</p>
+</li>
+<li class="li" id="id884a63c6-1e32-4d59-b681-958c6885d724__id0a56eea7-519f-40a6-a9e9-abbcea0f0da2"><p class="p">A difference in the UCDB release version
+for certain specific VHDL designs — However legitimate the cause,
+these difference may not be substantive. In cases where they are
+not, you might decide to bypass or work around this check. </p>
+</li>
+</ul>
+<p class="p">Potential solutions for the above causes are
+evident, depending on the cause identified. Determine if the differences
+are legitimate: If so, work to bring the code in the individual
+files into alignment. If not legitimate, you can choose to ignore
+or work around the mismatches.</p>
+</div>
+<div class="section Subsection" id="id884a63c6-1e32-4d59-b681-958c6885d724__ida318818f-d627-4449-98b0-d06da9bd4c58"><h2 class="title Subheading sectiontitle">Bypassing
+DU Signature Checking</h2><p class="p">It is sometimes desirable to bypass the <span class="ph fmvar:ProductName">Questa SIM</span> DU signature check.
+Do this only in cases where you are certain the differences are
+insignificant or irrelevant, as very confusing coverage results
+may result if -mergedesigndiffs is applied inappropriately, due
+to changes in line numbering which can occur between versions of
+the source.</p>
+<p class="p">To bypass this check and receive only a warning
+message, use the -mergedesigndiffs argument to the vcover merge
+command, such as: </p>
+<p class="lines ApplCommand">vcover merge ucdb_out ucdb1 ucdb2 -mergedesigndiffs</p>
+<div class="note caution"><span class="cautiontitle">CAUTION:</span> <p class="p">DO NOT use
+-mergedesigndiffs lightly, without validating that the differences in
+source code are ok. See “<a class="xref fm:HeadingOnly" href="#id884a63c6-1e32-4d59-b681-958c6885d724__idd109163e-93ba-47b2-b13c-11dbe79bf95f">Causes of Source Code Differences</a>” for more information.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_WarningsDuringMerge_id1334d71c.html" title="Several types of warnings can occur during a merge operation.">Warnings During Merge</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_MergingUsingMasterUcdb_id5c42d219.html#id5c42d219-6c25-46c5-827f-04f896808d89__" title="As a design changes over a period of time, you may want to merge UCDB files generated earlier with newer UCDBs generated from the same design.">Merging Using a Master UCDB</a></div>
+<div><a class="link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcover merge', 'questa_sim_ref'); return false;">vcover merge [Questa SIM Command Reference Manual]</a></div>
+<div><a class="link" href="../topics/Concept_MergeAlgorithm_idb8a68981.html#idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__" title="Several issues related to the merge algorithm are important to note.">About the Merge Algorithm</a></div>
+<div><a class="link" href="../topics/Concept_MergeUsageScenarios_id4af63354.html#id4af63354-7935-4d1e-9f74-1840621a7d2f__" title="The decision on how to merge a set of UCDB files depends upon where and how the you store the data and databases being merged.">Merge Usage Scenarios</a></div>
+<div><a class="link" href="../topics/Concept_ModifyingUcdbs_id0c5f294f.html#id0c5f294f-0012-40cf-87f1-51457a2dc993__" title="It is possible, and can sometimes be useful to edit the contents of a UCDB.">Modifying UCDBs</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merging Verification Plan with Test Data', 'questa_sim_vm'); return false;">Merging Verification Plan with Test Data [Questa Verification Management User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Merging and Source Code Mismatches"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MergingSourceCodeMismatches_id884a63c6.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

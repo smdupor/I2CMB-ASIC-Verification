@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="triage passfail" />
+<meta name="abstract" content="Extracts messages from logfiles and the wlffile with the aid of the transform rules file." />
+<meta name="description" content="Extracts messages from logfiles and the wlffile with the aid of the transform rules file." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3b450491-17ff-493b-950b-27c079d51220" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>triage passfail</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="triage passfail" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id3b450491-17ff-493b-950b-27c079d51220">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">triage passfail</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Extracts messages
+from logfiles and the wlffile with the aid of the transform rules
+file.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">triage passfail [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id89b733f6-9b5a-4ce9-af21-02d6565fd645">-debug</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id3df3c2cb-b4a8-48d1-bb26-0682ac9ce1a0">-file &lt;file&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id43a61e5f-f9bb-40f7-bd46-53083300338e">-verbose</a>] [&lt;inputoptions&gt;] [&lt;testoptions&gt;] [&lt;msgoptions&gt;] [-help]  </p>
+<p class="lines UsageLine">where:</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;inputoptions&gt;</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id6d1fd2ee-96c8-4544-aebe-ed733fc16eb2">-continue</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__idcd91a2d6-12f5-415e-86b5-015ddf93a162">-inputsfile &lt;file&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id2b43b034-d85a-4eca-9f88-34af6ca898a3">-rulesfile &lt;rulesfilename&gt; [-rulesfile &lt;rulesfilename2&gt;]...</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__idd42efa7a-8f63-4fba-b6f1-c6a82baa1503">-buflines</a>]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;testoptions&gt;</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__iddcd8be43-7d7e-45c1-9f88-129253c97f14">-teststatus {F|E|W|P|M|S}</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id7ffd0c13-27ec-40b3-990d-a4a2de4d1e3f">-teststatusAll</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id5e63647f-6be0-4759-b464-14323d78aca1">-wlfattr &lt;str&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id145f2bc7-f34c-4a7a-be4f-f72af58ad4f7">-logattr &lt;str&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id0699b08a-5da2-48bc-8df6-4ff8d66293c7">-ignorewlf</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id42102499-626c-4b7c-b5fa-913e66597c33">&lt;ucdbfilename&gt; [&lt;ucdbfilename&gt;]</a>]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;msgoptions&gt;</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id0c573e3f-70c9-4abd-ab8e-fb36fe0696c5">&lt;logfilename&gt; [&lt;logfilename&gt;]...</a>] [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__ida605a33f-52d2-466b-a048-875344f71bba">-severity {I|F|E|W|N}</a> | <a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__idabfb1d8f-4009-4d80-bde4-5e7abe2a48dc">-severityAll</a>] <a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__idceb8e8d3-fd66-4fd5-b3a6-8a5bb0fc0215">-testname &lt;testname&gt;</a> [<a class="xref fm:HeadingOnly" href="#id3b450491-17ff-493b-950b-27c079d51220__id38c0b5c2-b70f-4ebf-be27-c7fce85aaf7c">&lt;wlffilename&gt;</a>]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__idd42efa7a-8f63-4fba-b6f1-c6a82baa1503">-buflines</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Default is
+10. This determines how many input LOG (.log) file lines are in
+the buffer at any given time; relevant when using a transformation
+rulesfile. Controls the maximum number of lines a single message can
+occupy and still be detected.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id6d1fd2ee-96c8-4544-aebe-ed733fc16eb2">-continue</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Continues transformation until
+the end of the input files. Useful for debugging.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id89b733f6-9b5a-4ce9-af21-02d6565fd645">-debug</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Prints every message extracted
+from each WLF or plain-text LOG file during transformation (also
+requires -rulesfile). This option has no effect on UCDB files. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id3df3c2cb-b4a8-48d1-bb26-0682ac9ce1a0">-file &lt;file&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Stores extracted messages in
+the designated &lt;file&gt;, with corresponding fields. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id0699b08a-5da2-48bc-8df6-4ff8d66293c7">-ignorewlf</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Forces the
+triage passfail command to import simulation messages from the LOG
+file instead of from the WLF file. The default behavior is for triage
+passfail to give preference to the WLF file if valid message data
+is found, and use the LOG file only if valid message data is missing
+from the WLF file. Effective only when importing a UCDB file. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__idcd91a2d6-12f5-415e-86b5-015ddf93a162">-inputsfile &lt;file&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies
+the path to a file containing a list of .wlf, and/or plain text
+LOG files. The specified file must contain one input file per line,
+each of which can include path variables, such as: $MYPATH/test1.ucdb. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id145f2bc7-f34c-4a7a-be4f-f72af58ad4f7">-logattr &lt;str&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Applies only
+to UCDB files. The test data record attribute in the specified UCDB
+whose value is the corresponding log file name. The default keyword
+is LOGNAME. Once the "-logattr" is set, the value applies to every
+UCDB on the same command line.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id0c573e3f-70c9-4abd-ab8e-fb36fe0696c5">&lt;logfilename&gt; [&lt;logfilename&gt;]... </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies
+the name and/or path to a plain-text LOG file. You can use multiple
+logfiles for the pass/fail determination of a test. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id2b43b034-d85a-4eca-9f88-34af6ca898a3">-rulesfile &lt;rulesfilename&gt; [-rulesfile &lt;rulesfilename2&gt;]... </dt>
+<dd class="dd ArgumentDescription"><p class="p">(required only for transforming
+plain-text LOG files; optional otherwise) Specifies a transformation
+rules file (applies only to .wlf or .log files). If the command
+line includes the -rulesfile argument, the specified file is parsed
+for message transformation constructs. If at least one transform
+construct is found, then all messages destined for insertion into
+the TDB file are compared against the transforms found in the transformation
+rules file. You can include TCL commands and variables in rules
+files. You can include multiple rules files. Each message is checked
+against the transform rules in each rules file in the order they
+appear on the command line. Messages imported from a WLF file which
+do not match any transformation expressions are processed as-is,
+with the severity specified in the WLF file. Messages imported from
+a plain-text LOG file which do not match any transformation expressions
+are dropped. Messages whose transformation fails to assign a valid
+severity to the message are also dropped. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__ida605a33f-52d2-466b-a048-875344f71bba">-severity {I|F|E|W|N} </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Default behavior is "-severity
+IFE" whereby only internal error, fatal and error messages produces
+a failure.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3b450491-17ff-493b-950b-27c079d51220__id2f3894a3-6f35-44e2-b6f5-a61a6e1e7f4f"><p class="p Opt">I
+— internal error</p>
+</li>
+<li class="li ArgOption" id="id3b450491-17ff-493b-950b-27c079d51220__id8d9341d4-ceea-4c61-96c4-e9cf3dc777a3"><p class="p Opt">F
+— fatal, failure</p>
+</li>
+<li class="li ArgOption" id="id3b450491-17ff-493b-950b-27c079d51220__id8ca505ae-f6df-4156-b04f-69c404be85f4"><p class="p Opt">E
+— error</p>
+</li>
+<li class="li ArgOption" id="id3b450491-17ff-493b-950b-27c079d51220__idb2d23740-592d-4281-b291-578761db1822"><p class="p Opt">W
+— warning</p>
+</li>
+<li class="li ArgOption" id="id3b450491-17ff-493b-950b-27c079d51220__id958aa755-812e-4070-ac05-bc4f5781cf5b"><p class="p Opt">N
+— note</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__idabfb1d8f-4009-4d80-bde4-5e7abe2a48dc">-severityAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) The same as
+-severity IFEWN.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__idceb8e8d3-fd66-4fd5-b3a6-8a5bb0fc0215">-testname &lt;testname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Used to override
+other methods of determining the testname for message(s). If the
+-testname argument is not provided, the testname is determined from
+the UCDB.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__iddcd8be43-7d7e-45c1-9f88-129253c97f14">-teststatus {F|E|W|P|M|S}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies
+one or more test status codes to use to control the automatic import
+of a WLF or LOG file associated with each test. Default behavior
+is -teststatus FE. If WLF files are read using "wlfattr"– such as test
+attribute WLFNAME – then the test status is checked first before
+proceeding. Using the default settings of -testatus FE, only tests
+that had a fatal or error status would have corresponding WLF messages
+loaded into the database.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id7ffd0c13-27ec-40b3-990d-a4a2de4d1e3f">-teststatusAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Basically, the same as -teststatus
+FEWP. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id42102499-626c-4b7c-b5fa-913e66597c33">&lt;ucdbfilename&gt; [&lt;ucdbfilename&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required if neither a WLF nor a LOG file
+is specified) Specifies the name and/or path to one or more Unified
+Coverage DataBase (UCDB) filename(s).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id43a61e5f-f9bb-40f7-bd46-53083300338e">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Prints additional information
+to the log output.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id5e63647f-6be0-4759-b464-14323d78aca1">-wlfattr &lt;str&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) This argument applies only to
+UCDB files. The test data record attribute in the UCDB whose value
+is the location of the WLF file associated with each test. The default
+test attribute name is WLFNAME.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3b450491-17ff-493b-950b-27c079d51220__id38c0b5c2-b70f-4ebf-be27-c7fce85aaf7c">&lt;wlffilename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required if neither UCDB nor LOG file is
+specified; optional otherwise) Specifies the name and/or path of
+the WLF file name.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">This command exits with an exit code of 95 if
+any of the extracted messages matches the severity filter. The input
+files are assumed to be related to a single test. You can use the
+-file filename option to optionally store the extracted messages
+in a text file.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "triage passfail"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_TriagePassfail_id3b450491.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

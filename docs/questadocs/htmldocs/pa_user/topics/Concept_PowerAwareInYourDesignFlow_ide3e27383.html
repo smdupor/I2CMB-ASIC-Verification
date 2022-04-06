@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware Simulation in Your Design Flow" />
+<meta name="abstract" content="To apply Power Aware simulation on your design, use your conventional Questa SIM simulation flow, along with some power-specific arguments to the vopt and vsim commands, and with a power intent specification written using the Unified Power Format (UPF) defined in IEEE Std 1801." />
+<meta name="description" content="To apply Power Aware simulation on your design, use your conventional Questa SIM simulation flow, along with some power-specific arguments to the vopt and vsim commands, and with a power intent specification written using the Unified Power Format (UPF) defined in IEEE Std 1801." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide3e27383-6a5f-44c9-8ae8-7c806f92b361" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Simulation in Your Design Flow</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Simulation in Your Design Flow" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Aware Simulation in Your Design Flow</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">To apply
+Power Aware simulation on your design, use your conventional <span class="ph fmvar:ProductName">Questa SIM</span> simulation flow,
+along with some power-specific arguments to the vopt and vsim commands,
+and with a power intent specification written using the Unified
+Power Format (UPF) defined in IEEE Std 1801. </span>
+</div>
+<p class="p"><a class="xref fm:Figure" href="#ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id86d5ef02-5502-4d12-9543-65f996dac32d">Figure 1</a> shows an approximation of a typical
+design sequence and where power-gating might occur in that sequence. </p>
+<p class="p">Before running Power Aware
+simulation, work on the following stages of your design:</p>
+<ul class="ul"><li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id9d745468-a803-417d-99f8-3dee2bdaf539"><p class="p">Create your design </p>
+</li>
+<li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__idede3b62a-f5e5-4a0d-b464-cf9413c57a25"><p class="p">Define your RTL architecture </p>
+</li>
+<li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__idf0b7379b-368d-4d81-add8-b81ff5ea4691"><p class="p">Perform formal verification</p>
+</li>
+<li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id416d6319-13e1-44eb-90eb-65ec2612ec3d"><p class="p">Specify your power
+intent </p>
+</li>
+</ul>
+<p class="p">After running a Power Aware RTL simulation,
+use the results to make appropriate topology or performance changes
+to your power-sensitive design blocks. After a gate-level simulation (GLS),
+make library cell changes based on the performance characteristics. </p>
+<div class="fig fignone" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id86d5ef02-5502-4d12-9543-65f996dac32d"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Power Aware Simulation in Your
+Design Flow</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:96" src="../graphics/PA_design_flow.png" /></div><br /></div>
+<p class="p">The scope of Power Aware simulation as a low-power
+solution spans multiple manifestations of design architecture. </p>
+<ul class="ul"><li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id56225015-0b0b-4395-af9b-dba1faedab19"><p class="p">Power Aware Simulation — Simulation that
+includes active power management elements and their behavior. The
+power management architecture is specified in UPF; the behavior
+of those elements is inferred from the UPF specification.</p>
+</li>
+<li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id7ece7141-4e42-4473-8a47-552f401a6eff"><p class="p">Power Aware Verification
+— Collaborative usage of various products and methods for verifying
+that a design operates correctly under active power management.
+These include Power Aware simulation (for verifying the correct
+operation of the power management architecture), formal verification
+(for verifying the correct operation of power control logic), and
+hardware/software co-verification (for verifying that software power
+control interacts correctly with power control logic). This relates
+to all of the components of the Enterprise Verification Platform
+that can be used for Power Aware Verification, including Questa
+PASim, Questa ADMS, Questa Formal, Questa Codelink, Questa Verification
+Management, Veloce Emulator platform, and Symphony AMS. </p>
+</li>
+<li class="li" id="ide3e27383-6a5f-44c9-8ae8-7c806f92b361__id61d6525c-5ab3-4271-a040-c9ff62ca75b3"><p class="p">Power Efficient Design
+— Design of hardware that involves active power management. This
+includes design decisions involved in allocating power budget, partitioning
+the design into power domains, and defining the power management
+architecture, the power control logic, and the power control software,
+as well as products used for verification and implementation of
+such designs. This relates to the entire range of Mentor products that
+are involved in the design, verification, and implementation of
+low-power IP, chips, and systems, such as PowerPro, and Catapult
+HLS. </p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_IntroductionToPowerAwareSimulation_id03c0f863.html" title="Power Aware simulation enables you to perform functional verification of low-power designs together with the power management structure defined by your power intent. The tool supports Power Aware simulation for VHDL and Verilog designs in both register transfer level (RTL) and gate-level simulation (GLS).">Introduction to Power Aware Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Simulation in Your Design Flow"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareInYourDesignFlow_ide3e27383.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Sending User-defined Messages from an Action Script" />
+<meta name="abstract" content="On occasion a user’s script needs to emit an error, warning, or informational message back to the executing vrun application for inclusion in the log output for that run. There are two ways to do this as follows:" />
+<meta name="description" content="On occasion a user’s script needs to emit an error, warning, or informational message back to the executing vrun application for inclusion in the log output for that run. There are two ways to do this as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4b4a1fca-7e0b-4432-8f9d-8189eb9e7d59" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Sending User-defined Messages from an Action Script</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Sending User-defined Messages from an Action Script" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4b4a1fca-7e0b-4432-8f9d-8189eb9e7d59">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Sending User-defined Messages from an Action Script</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">On occasion
+a user’s script needs to emit an error, warning, or informational
+message back to the executing vrun application for inclusion in
+the log output for that run. There are two ways to do this as follows:</span>
+</div>
+<ul class="ul"><li class="li" id="id4b4a1fca-7e0b-4432-8f9d-8189eb9e7d59__iddabf1d8d-9c8c-4f6e-b8d0-74ed3f06479c"><p class="p">Include a message string with a zero-status
+return value.</p>
+</li>
+<li class="li" id="id4b4a1fca-7e0b-4432-8f9d-8189eb9e7d59__id08e371c3-c0c4-48a0-a76d-1cd95425360d"><p class="p">Send a user-defined message to the socket
+on which the executing vrun application is listening.</p>
+</li>
+</ul>
+<p class="p">When the wrapper script returns the “done”
+message from a non-failing Action script, the status code is set
+to zero and the message string is generally empty. If the message
+string for a zero status “done” message is not empty, then the vrun
+application receiving said message will interpret the message string
+as a warning message. The message is emitted to the vrun log output
+as a warning.</p>
+<p class="p">For a vsim mode Action script, the user script
+should call the runmgr::rm_status procedure passing a zero status
+and the warning string as follows:</p>
+<pre class="pre codeblock leveled"><code>runmgr::rm_status 0 "Compile warnings occured -- check the logs"</code></pre><p class="p">Since a vish mode Action script (that is, a
+script containing commands to be interpreted by a command shell)
+returns only a numeric status, a warning message cannot be returned
+from these scripts. The alternative is to return an error or to
+send a user-defined message.</p>
+<p class="p">A user-defined message is sent by calling vrun
+in message sending mode with the following command-line arguments:</p>
+<pre class="pre codeblock leveled"><code>vrun -send user -dest &lt;port@host&gt; -message "This is my message..." 
+	  &lt;actionName&gt;</code></pre><p class="p">In this case the -code value is not used and,
+therefore, does not have to be supplied. The <span class="ph filepath">port@host</span> value
+is the TCP/IP port and hostname on which the launching vrun application
+has opened a port to listen for event messages from the running Action
+scripts. The message is reported as an informational message on
+the log output of the vrun process that receives the message. The <span class="ph filepath">actionName</span> allows
+vrun to identify which Action has emitted the message.</p>
+<p class="p">For a vsim mode Action script, the user script
+should call the runmgr::rm_message procedure, passing the message
+string and an optional status code as follows:</p>
+<pre class="pre codeblock leveled"><code>runmgr::rm_message "This is my message..."</code></pre><p class="p">Note that while a status code can be passed
+as the second argument to the runmgr::rm_message procedure, the
+status code is not used. </p>
+<p class="p">For a vish mode Action script, an environment
+variable (MTI_VRUN_SEND) is defined with the pertinent options for
+the vrun command. All the user needs to do is “call” the vrun application
+via this environment variable, passing the -message command-line
+option with the message to be transmitted as follows:</p>
+<pre class="pre codeblock leveled"><code>$MTI_VRUN_SEND -message "This is my message..."</code></pre><p class="p">In both cases, the wrapper script for the Action
+takes care of setting the <span class="ph filepath">&lt;port@host&gt;</span> value
+to point to the launching vrun application's event communication
+socket. The message is sent immediately and the listening vrun process
+emits the message to the log output asynchronously at the time it
+is received. Note that since vrun can launch any number of Action
+scripts concurrently, there is no guarantee as to the order in which messages
+emitted from multiple Action scripts will occur in the log output.
+All log output is emitted by vrun as received and the user-defined
+message can well be interspersed with other vrun log messages.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ScriptExecutionTimeouts_idb739d4ac.html" title="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue.">Script Execution and Timeouts</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Sending User-defined Messages from an Action Script"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_SendingUserDefinedMessagesFromActionScript_id4b4a1fca.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

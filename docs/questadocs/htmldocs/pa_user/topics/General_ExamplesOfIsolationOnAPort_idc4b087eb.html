@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Examples of Isolation on a Port" />
+<meta name="abstract" content="Use the set_isolation command to isolate ports." />
+<meta name="description" content="Use the set_isolation command to isolate ports." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Examples of Isolation on a Port</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Examples of Isolation on a Port" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Examples of Isolation on a Port</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Use the set_isolation
+command to isolate ports. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__ide0617cb0-74bf-413f-9dd6-670b2f406a0a"><p class="p"><a class="xref fm:Figure" href="#idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id420cc133-2239-4bc5-ad80-ba47ac59b344">Figure 1</a>shows a
+block diagram of power domains, ports, and paths for use in the
+examples that follow. </p>
+<p class="p">The following list shows
+fragments of UPF commands used to define the diagram of <a class="xref fm:Figure" href="#idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id420cc133-2239-4bc5-ad80-ba47ac59b344">Figure 1</a>: </p>
+<pre class="pre codeblock leveled"><code>create_supply_set PD1_SS ... 
+create_power_domain PD1 ... 
+associate_supply_set PD1_SS -handle PD1.primary 
+create_supply_set PD2_SS ... 
+create_power_domain PD2 ... 
+associate_supply_set PD2_SS -handle PD2.primary 
+create_power_domain PD3 ... </code></pre><div class="fig fignone" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id420cc133-2239-4bc5-ad80-ba47ac59b344"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Supply Paths to Power Domains</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/SourceSinkEx1.gif" /></div><br /></div>
+<h2 class="title Subheading sectiontitle">Source Examples</h2><ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id7ffa68c2-cf87-4516-bad1-d720eb13ec7f"><p class="p">Place isolation cell at Port C and isolate
+Path A-C. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD3 -source PD1_SS -location parent ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__idf76ceb43-c4e3-4719-a863-25eae378270c"><p class="p">Place isolation cell at Port B and isolate
+Path B-D. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso2 -domain PD3 -source PD2_SS -location fanin ...</code></pre></li>
+</ul>
+<h2 class="title Subheading sectiontitle">Sink Examples</h2><ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id9741619a-a1a1-424c-adbf-33df6b5acf12"><p class="p">Place isolation cells at Port G and Port
+H and isolate Path E-G and F-H. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD3 -sink PD4_SS -location fanout ... </code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__idce7ad2cb-f2fc-4c02-bf96-2f2441ab1316"><p class="p">Place isolation cell at Port H and isolate
+Path F-H. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso2 -domain PD3 -elements {F} -sink PD4_ss 
+-location fanout ... </code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__ida8fdb075-35a3-4069-baef-a27d86bbe99e"><p class="p">Place isolation cell at Port F and isolate
+Path F-H. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso3 -domain PD3 -elements {F} -sink PD4_ss 
+-location parent ... </code></pre></li>
+</ul>
+<h2 class="title Subheading sectiontitle">Differential Supply Examples</h2><p class="p">You can prevent the application of isolation
+into a path from driver to receiver for isolation strategy by using
+the -diff_supply_only option to the set_isolation command.</p>
+<p class="p">For these examples, assume
+that PD2, PD3, and PD4 all have same supply sets: </p>
+<pre class="pre codeblock leveled"><code>create_supply_set PD2_SS ... 
+create_power_domain PD2 ... 
+associate_supply_set PD2_SS -handle PD2.primary 
+associate_supply_set PD2_SS -handle PD3.primary 
+associate_supply_set PD2_SS -handle PD4.primary  </code></pre><ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__idaf952e77-b80b-4d5e-a95b-b09b3918e45d"><p class="p">Place isolation cells at Ports C and
+F and isolate Paths A-C and F-I. Do not isolate path F-H. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD3 -applies_to both 
+-diff_supply_only TRUE -location parent ... 
+ </code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id4c27c57d-3d0d-4a17-a783-6e5e465c2893"><p class="p">Place isolation cells at Ports A and
+I and isolate Paths A-C and F-I.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso2 -domain PD3 -applies_to both 
+-diff_supply_only TRUE -location faninout ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id190095eb-9c1b-4311-92c6-1b4b0fb723ab"><p class="p">Place isolation cell at Port A and isolate
+Path A-C.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso3 -domain PD3 -applies_to both -source PD1_SS 
+-diff_supply_only TRUE -location faninout ...</code></pre></li>
+</ul>
+<h2 class="title Subheading sectiontitle">Multiple
+Strategies Example</h2><ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id67ec1424-b79c-4166-ae43-ea1e48aea59e"><p class="p">Isolate the same port F with different
+Sinks. Here, Port H is isolated with iso1 and port I with iso2.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD3 -elements {F} -sink PD4_SS 
+-location fanout -clamp 1 ...
+ 
+set_isolation iso2 -domain PD3 -elements {F} -sink PD5_SS 
+-location fanout -clamp 0 ... </code></pre></li>
+</ul>
+<h2 class="title Subheading sectiontitle">Multiple Isolation Cells Examples</h2><p class="p">Refer to <a class="xref fm:Figure" href="#idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id4f74fa8f-4461-44aa-8edb-1a549d03b6a6">Figure 2</a> for the
+following examples on using multiple isolation cells. </p>
+<ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id9eb9f677-12d1-4656-a430-21d4cd8f9446"><p class="p">Using -source and -location fanout —
+Isolates all output port paths and places isolation cells at Ports
+G, H and I. Places two isolation cells at Port H and I for the same
+port F.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD3 -source PD3_SS -location fanout ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id30073039-c2f4-47b0-a655-e64f894b0dea"><p class="p">Using -source and -location parent —
+Places isolation cells at Ports E and F. Places only one Isolation
+Cell at Port F, which isolates both Paths F-H and F-I.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso2 -domain PD3 -source PD3_SS -location parent ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__idc32c158c-53ae-4315-82f8-7229b3687200"><p class="p">Places isolation at Port G. Relative
+ordering is maintained with iso3 cell in front of iso4 cell, means
+Iso3 -&gt; iso4 -&gt; port G.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso3 -domain PD3 -elements {E} -location fanout 
+-clamp 1 ...
+
+set_isolation iso4 -domain PD4 -elements {G} -location parent 
+-clamp 0 ...</code></pre><div class="fig fignone" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id4f74fa8f-4461-44aa-8edb-1a549d03b6a6"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Multiple Isolation Cells </span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/SourceSinkEx2.gif" /></div><br /></div>
+</li>
+</ul>
+<h2 class="title Subheading sectiontitle">Multiple
+Strategies in a Path Examples</h2><p class="p">Refer to <a class="xref fm:Figure" href="#idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id4f74fa8f-4461-44aa-8edb-1a549d03b6a6">Figure 2</a> for the
+following examples on using multiple strategies in a path. </p>
+<ul class="ul"><li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__idb531ba48-2203-4f2c-a9f4-6849bf2cef49"><p class="p">Places isolation cell at Port H and isolates
+path M-F-H. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso1 -domain PD7 -sink PD4 -location fanout ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id8c4c09de-48f8-41a2-b15b-9d5c2b997fce"><p class="p">Places isolation cell
+at Port M and isolates only path M-F-H. This means the clamp value
+is seen at Port H. All other ports M, F, and I do not have clamp
+value during power-down.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso2 -domain PD7 -sink PD4 -location parent ...</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id16948f0d-6032-4dcd-805f-bcc5d8f6339f"><p class="p">Places three isolation cells at Port
+H with relative ordering: iso3 &gt; iso4 &gt; iso5 &gt; port H.</p>
+<pre class="pre codeblock leveled"><code>set_isolation iso3 -domain PD7 -sink PD4 -location fanout ...
+
+set_isolation iso4 -domain PD3 -elements {F} -sink PD4 
+-location fanout ...
+
+set_isolation iso5 -domain PD4 -elements {H} -location parent ..</code></pre></li>
+<li class="li" id="idc4b087eb-c6a4-4f49-9308-ab40aa4cc625__id80636970-0073-4710-83fe-ae9a084b1530"><p class="p">Places two isolation
+cells at Port F and isolates only port H with relative ordering:
+Port F &gt; iso6 &gt; iso7. This means the clamp value (o/p of iso7) is
+seen at Port H. All other ports (M, F, and I) do not have clamp
+value during power-down. </p>
+<pre class="pre codeblock leveled"><code>set_isolation iso6 -domain PD7 -sink PD4 -location fanout ...
+
+	set_isolation iso7 -domain PD3 -elements {F} -sink PD4 
+		-location parent ...</code></pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Examples of Isolation on a Port"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_ExamplesOfIsolationOnAPort_idc4b087eb.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

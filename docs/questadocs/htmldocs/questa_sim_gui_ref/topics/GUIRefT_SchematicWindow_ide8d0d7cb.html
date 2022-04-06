@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GUIRefTopic" />
+<meta name="DC.Title" content="Schematic Window" />
+<meta name="abstract" content="The Schematic window provides two views of the design — a Full View, which is a structural overview of the design; and an Incremental View, which uses Click-and-Sprout actions to incrementally add to the selected net's fanout. The Incremental view displays the logical gate equivalent of the RTL portion of the design, making it easier to understand the intent of the design." />
+<meta name="description" content="The Schematic window provides two views of the design — a Full View, which is a structural overview of the design; and an Incremental View, which uses Click-and-Sprout actions to incrementally add to the selected net's fanout. The Incremental view displays the logical gate equivalent of the RTL portion of the design, making it easier to understand the intent of the design." />
+<meta name="prodname" content="Questa SIM GUI Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_gui_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM GUI Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Schematic Window</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Schematic Window" />
+<meta name="attributes" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="objects" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Schematic Window</h1>
+<div class="body refbody GUIRefBody"><div class="abstract GUIRefAbstract"><p class="p ContextMGC">To access:</p>
+<ul class="ul"><li class="li" id="id397d0b40-00ad-4266-aa9a-c70f6087e3d0"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">View</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Schematic</span></span>or <span class="ph menucascade"><span class="ph uicontrol">Add</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">To Schematic</span></span></p>
+</li>
+<li class="li" id="id9739f7e4-50d0-496a-a70f-c2419695347f"><p class="p">view
+schematic command or add schematic [-incr | -full] &lt;design_unit_name&gt;</p>
+</li>
+</ul>
+<p class="shortdesc">The Schematic
+window provides two views of the design — a Full View, which is
+a structural overview of the design; and an Incremental View, which
+uses Click-and-Sprout actions to incrementally add to the selected
+net's fanout. The Incremental view displays the logical gate equivalent
+of the RTL portion of the design, making it easier to understand
+the intent of the design. </p>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><div class="note note"><span class="notetitle">Note:</span> <p class="p">The <span class="ph menucascade"><span class="ph uicontrol">Add To</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Schematic</span></span> menu
+options change dynamically based on which debug window is currently
+active.</p>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If -incr or -full
+is not provided with the add schematic command, the design unit will
+be added to the currently active Schematic view mode.</p>
+</div>
+<div class="fig fignone" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idc82a286d-8680-45b7-a72b-3562221789fc"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Schematic Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/schematic.gif" /></div><br /></div>
+<p class="p">To create the
+necessary data to display the schematic you must:</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idd335a141-0a4c-485e-81de-00e39d05d95e"><p class="p">Use the
++acc switch with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command to provide accessibility
+into the design for debugging; and use the -debugdb switch with the
+vopt command to collect combinatorial and sequential logic data
+into the work library</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The +acc
+option supports selective visibility into your design in order to reduce
+the size of the debugging database. For example, if your testbench
+has an instance called “instDut” of the design under test, you can
+use vopt -debugdb +acc+'/instDut' to generate a debug database for
+only that instance.</p>
+</div>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idbd9a4d7f-6b5d-4867-82db-476b525e1538"><p class="p">Use the
+-debugdb switch with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command to create the debug database</p>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idee8e3a4d-c546-43b7-b4cb-b8d70b5986b4"><p class="p"><a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'log', 'questa_sim_ref'); return false;">Log</a> the
+results</p>
+</li>
+</ul>
+<p class="p">For example,
+if you have a Verilog design with a top level module named top.v
+you would do the following:</p>
+<pre class="pre codeblock leveled"><code>vlib work 
+vlog *.v 
+vopt +acc top -o top_opt -debugdb 
+vsim -debugdb top_opt 
+log -r /* </code></pre><p class="p">A “View:” indicator
+is displayed in the top left corner of the window (<a class="xref fm:Figure" href="#ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id109163d9-62f6-40c6-9adc-cfc842e50d03">Figure 2</a>). You can toggle back and forth between
+views by simply clicking this “View:” indicator.</p>
+<div class="fig fignone" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id109163d9-62f6-40c6-9adc-cfc842e50d03"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Schematic View Indicator</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics_composites/win_schematic05.png" /></div><br /></div>
+<p class="p">The Incremental
+View is ideal for design debugging. It allows you to explore design connectivity
+by tracing signal readers/drivers to determine where and why signals
+change values at various times. </p>
+<p class="p">The Full View
+is a more static view that can be dynamically linked to your selections
+in other windows with the “Follow” selection.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Objects</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Schematic
+Window Popup Menu</span></caption><colgroup><col style="width:1.572in" /><col style="width:1.446in" /><col style="width:3.483in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d78072e267"><p class="p">Popup Menu Item</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d78072e270"><p class="p">Selection</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d78072e273"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">View Selection</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Declaration</p>
+<p class="p">Instantiation</p>
+<p class="p">FSM Viewer</p>
+<p class="p">Wave Pane</p>
+<p class="p">This Window</p>
+<p class="p">New Window</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Opens a Source window
+to the line of code where the object is declared. </p>
+<p class="p">Applies only to modules. Opens a Source window
+to the line of code where the module is instantiated.</p>
+<p class="p">Displays the selected item in the FSM Viewer.</p>
+<p class="p">Displays selected signals in embedded Wave
+viewer</p>
+<p class="p">Erase contents of current Incremental view and
+redraw only selected object</p>
+<p class="p">Redraw selected object(s) in Incremental View
+of new Schematic window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Zoom</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Zoom In</p>
+<p class="p">Zoom Out</p>
+<p class="p">Zoom Full</p>
+<p class="p">Zoom Selected</p>
+<p class="p">Zoom Highlight</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Zoom in 2x</p>
+<p class="p">Zoom out 2x</p>
+<p class="p">Zoom so all objects fits into display,</p>
+<p class="p">Zoom into the selected object</p>
+<p class="p">Zoom into the highlighted object.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Fold/Unfold</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Hides or shows the contents
+of selected instance or abstract block. Displays folded instance
+or abstract block as a solid blue box with dashed border.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Expand Net To</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Drivers</p>
+<p class="p">Readers</p>
+<p class="p">Drivers &amp; Readers Fanins</p>
+<p class="p">Fanouts</p>
+<p class="p">Fanins &amp; Fanouts</p>
+<p class="p">Design Inputs</p>
+<p class="p">Hierarchy Inputs</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Displays all drivers,
+readers, fanins, fanouts, design inputs and hierarchy inputs of
+the selected net.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Event Traceback</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Show Driver</p>
+<p class="p">Show Cause</p>
+<p class="p">Show Root Cause</p>
+<p class="p">Show ‘X’ Cause (ChaseX)</p>
+<p class="p">Show All Possible Drivers</p>
+<p class="p">View Path Times</p>
+<p class="p">Trace to Driving Event</p>
+<p class="p">Start Trace from End Time</p>
+<p class="p">Start Trace from Begin Time</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Traces to the immediate
+driving process of the selected signal at the current time</p>
+<p class="p">Traces to the first sequential process that drives
+the selected signal at the current time</p>
+<p class="p">Traces to the root cause of the selected signal
+at the current time</p>
+<p class="p">Traces to the root of an unknown value (X)</p>
+<p class="p">Highlights drivers in the Source window and
+lists possible drivers</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Highlight</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Add</p>
+<p class="p">Remove</p>
+<p class="p">Remove All</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Highlights any selected
+objects with color you select</p>
+<p class="p">Removes highlight color from selected objects</p>
+<p class="p">Removes all highlight colors from display</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Add</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Add All Signals to Wave</p>
+<p class="p">Add to Wave</p>
+<p class="p">Add to Schematic</p>
+<p class="p">Add to Dataflow</p>
+<p class="p">Add to List</p>
+<p class="p">Add to Watch</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Adds all signals in schematic
+to the Wave window</p>
+<p class="p">Adds selected signal to Wave window</p>
+<p class="p">Adds selected signal to Current window or New
+window</p>
+<p class="p">Adds selected signal to Dataflow window</p>
+<p class="p">Adds selected signal to List window</p>
+<p class="p">Adds selected signal to Watch window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Edit</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Global Signal Radix</p>
+<p class="p">Undo</p>
+<p class="p">Redo</p>
+<p class="p">Cut</p>
+<p class="p">Copy</p>
+<p class="p">Paste</p>
+<p class="p">Delete</p>
+<p class="p">Select Highlighted</p>
+<p class="p">Select All</p>
+<p class="p">Unselect All</p>
+<p class="p">Regenerate Layout</p>
+<p class="p">Delete All</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Changes radix for all
+displayed signals in Schematic window</p>
+<p class="p">Undo previous action</p>
+<p class="p">Redo undone action</p>
+<p class="p">Cut selected</p>
+<p class="p">Copy selected</p>
+<p class="p">Paste selected</p>
+<p class="p">Delete selected</p>
+<p class="p">Make highlighted objects the selected objects</p>
+<p class="p">Select all objects in display</p>
+<p class="p">Unselect all objects in display</p>
+<p class="p">Regenerates display to improve layout</p>
+<p class="p">Deletes everything from Schematic window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Find</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Opens the Search Bar
+(at bottom of window) in the Find mode to make searching for objects
+easier, especially with large designs.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Save</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Saves everything in Schematic,
+including sticky notes to a <span class="ph filepath">.sch</span> file</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Restore</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Current Window</p>
+<p class="p">New Window</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Restores saved <span class="ph filepath">.sch</span> file
+to the current window or to a new window. If Current Window is selected,
+the saved <span class="ph filepath">.sch</span> file overwrites existing
+information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Sticky Note</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Add</p>
+<p class="p">Remove</p>
+<p class="p">Hide/Unhide</p>
+<p class="p">Hide/Unhide All</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Adds sticky note (annotation)
+to selected net or component</p>
+<p class="p">Removes sticky note from selected item</p>
+<p class="p">Hides or unhides sticky note for selecte item</p>
+<p class="p">Hides or unhides all sticky notes</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e267 "><p class="p">Show</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e270 "><p class="p">Unconnected Pins</p>
+<p class="p">Instance Names</p>
+<p class="p">Net Names</p>
+<p class="p">Net Rip Index</p>
+<p class="p">Pin Names</p>
+<p class="p">Design Unit Names</p>
+<p class="p">Signal Values</p>
+<p class="p">Show All</p>
+<p class="p">Hide All</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d78072e273 "><p class="p">Shows or hides unconnected
+pins in folded instances</p>
+<p class="p">Display instance names when checked</p>
+<p class="p">Display net names when checked</p>
+<p class="p">Display bus ripper indices when checked</p>
+<p class="p">Display pin names when checked</p>
+<p class="p">Display design unit names when checked</p>
+<p class="p">Display signal values when checked</p>
+<p class="p">Display all of the above</p>
+<p class="p">Hide all of the above</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section UsageNotes"><h2 class="title Subheading sectiontitle">Usage Notes</h2><div class="section Subsection" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idaee1fa6c-b543-4920-95f3-ffb69f081fa1"><h2 class="title Subheading sectiontitle">Adding Objects to the Incremental View</h2><p class="p">You
+can use any of the following methods to add objects to the Incremental
+View of the Schematic window:</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id8689d9c8-135e-429b-9143-a9500ea33f1a"><p class="p">Drag and
+drop objects from other windows. Both nets and instances may be
+dragged and dropped. Dragging an instance will result in the addition
+of all nets connected to that instance. When an object is dragged
+and dropped into the Incremental view, the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'add schematic', 'questa_sim_ref'); return false;">add schematic</a> command will be reflected
+in the Transcript window.</p>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idb8042e94-bbbc-4d12-ae7d-389b3d04d374"><p class="p">Use the <span class="ph menucascade"><span class="ph uicontrol">Add to</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Schematic</span></span> menu options:</p>
+</li>
+</ul>
+<p class="p"><span class="ph uicontrol">Selected Signals </span>— Display selected
+signals</p>
+<p class="p"><span class="ph uicontrol">Signals in Region</span> — Display all signals
+from the current region.</p>
+<p class="p"><span class="ph uicontrol">Signals in Design</span> — Clear the window
+and display all signals from the entire design.</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id2f703870-76db-4009-8f01-1ed38828645e"><p class="p">Select the
+object(s) you want placed in the Schematic Window, then click-and-hold
+the <a class="xref fm:HeadingOnly" href="Concept_StandardToolbar_idf8a39310.html#idf8a39310-7008-415a-ac4a-adb6c563474a__idd3754207-973b-43dd-8c5f-8f5b531ea62f">Add Selected to Window Button</a> in the <a class="xref fm:HeadingOnly" href="Concept_StandardToolbar_idf8a39310.html#idf8a39310-7008-415a-ac4a-adb6c563474a__Concept_StandardToolbar_idf8a39310.xml#idf8a39310-7008-415a-ac4a-adb6c563474a" title="The Standard toolbar contains common buttons that apply to most windows.">Standard Toolbar</a> and select <span class="ph uicontrol">Add
+to Schematic</span>. </p>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id97a7c20b-02a9-4bd5-a1bc-91e8c3a06842"><p class="p">Use the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'add schematic', 'questa_sim_ref'); return false;">add schematic</a> command.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id0ba76aa3-2ab8-4881-8257-6c11a160aa8c"><h2 class="title Subheading sectiontitle">Navigating
+in the Schematic Window</h2><p class="p">You
+can use the mouse to navigate and select items within the Schematic
+window. The following descriptions are based on the Select mouse
+mode (as set by the <span class="ph menucascade"><span class="ph uicontrol">Schematic</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Mouse Mode</span></span> menu).</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id332631bf-3700-43f0-a40e-cd304c17bfa9"><p class="p">Strokes
+with the <span class="ph uicontrol">middle mouse button</span>:</p>
+<p class="p"><span class="ph uicontrol">Up</span> — Move up in the hierarchy (does
+nothing when you are already at the top level)</p>
+<p class="p"><span class="ph uicontrol">Down</span> — Move down in the hierarchy
+to the selected instance or the instance from which you began the
+stroke.</p>
+<p class="p"><span class="ph uicontrol">Up/Left</span> — Zoom full.</p>
+<p class="p"><span class="ph uicontrol">Down/Left</span> — Zoom in on any selected
+items.</p>
+<p class="p"><span class="ph uicontrol">Up/Right </span>— Zoom out. The factor of
+the zoom changes depending on the length of the stroke.</p>
+<p class="p"><span class="ph uicontrol">Down/Right</span> — Zoom area. The box indicates
+your desired zoom view.</p>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id5d938aa1-c9b7-418e-a1dd-e3c98ea2f4af"><p class="p">Zoom in
+and out with the <span class="ph uicontrol">mouse scroll wheel</span>.</p>
+<p class="p">The view will
+zoom and center on your mouse location. </p>
+</li>
+<li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__ide7717f86-bfd3-4c06-bad4-463454eb4a9d"><p class="p">Selecting
+objects with the <span class="ph uicontrol">left mouse button</span>:</p>
+<p class="p">Your selection
+is also reflected in the Structure, Objects, and Wave windows.</p>
+<p class="p"><span class="ph uicontrol">Single click</span> — highlights selected
+objects. </p>
+<p class="p"><span class="ph uicontrol">Double click</span> — opens a Code Preview
+window with the source code of the selected item highlighted.</p>
+<div class="fig fignone" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__idad300b99-3198-43bb-84b7-43c69b9fd8cf"><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/code_preview.gif" /></div><br /></div>
+<p class="p"><span class="ph uicontrol">Click and drag</span> — selects all objects
+within the bounding box.</p>
+<p class="p"><span class="ph uicontrol">Shift-click</span> — highlights multiple
+selected objects.</p>
+</li>
+</ul>
+<p class="p">The alternate
+mouse modes affect the above mouse controls as follows:</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id28c1f804-63a0-45e5-8c8b-f8b8c5837c82"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">Schematic</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Mouse Mode</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Zoom Mode</span></span> </p>
+</li>
+</ul>
+</div>
+<p class="p"><span class="ph uicontrol">Left mouse button</span> — Single click
+selects items, click and drag performs zoom actions.</p>
+<p class="p"><span class="ph uicontrol">Middle mouse button</span> — click and drag
+pans the schematic view.</p>
+<ul class="ul"><li class="li" id="ide8d0d7cb-0c29-4059-bbc5-40f9adbaba7e__id75d9ce2f-effd-41f0-acb3-e691fafef949"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">Schematic</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Mouse Mode</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Pad Mode</span></span> </p>
+</li>
+</ul>
+<p class="p"><span class="ph uicontrol">Left mouse button</span> — Single click
+selects items, click and drag pans the schematic view.</p>
+<p class="p"><span class="ph uicontrol">Middle mouse button</span> — click and drag
+performs zoom actions.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WindowReference_id7763df81.html" title="The following table summarizes all of the available windows.">Window Reference</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_gui_ref"
+                DocTitle = "Questa® SIM GUI Reference Manual"
+                PageTitle = "Schematic Window"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/GUIRefT_SchematicWindow_ide8d0d7cb.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM GUI Reference Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

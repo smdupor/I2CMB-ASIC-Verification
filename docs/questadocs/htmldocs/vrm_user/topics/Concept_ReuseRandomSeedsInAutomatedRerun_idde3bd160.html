@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Reuse of Random Seeds in Automated Rerun" />
+<meta name="abstract" content="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run." />
+<meta name="description" content="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Reuse of Random Seeds in Automated Rerun</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Reuse of Random Seeds in Automated Rerun" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Reuse of Random Seeds in Automated Rerun</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When running
+a random simulation, a random seed can be supplied to vsim via a
+command-line option. The simulator guarantees that the same design
+run twice with the same seed will produce the same results. This
+is known as “random stability” and is essential to allow bugs exhibited
+by purely random simulations to be reproduced and debugged. When
+a series of random simulations are executed for the purpose of locating
+seeds with good coverage (or which turn up corner-case bugs), it
+is common to pass the word “random” to the simulation as a seed,
+as opposed to a fixed numeric seed value. This tells the simulator
+to select a seed at random at the start of the simulation. Of course,
+if a test is run twice with the word “random” as the seed, the results
+of the second run will almost certainly not match the results of
+the original run.</span>
+</div>
+<p class="p">This becomes a problem for the
+failure rerun algorithm. The purpose of the rerun is usually to
+execute the simulation a second time, possibly with additional visibility or
+trace/dump options enabled, in order to give the user a head start
+at debugging any failures. This purpose is thwarted if the second
+run differs significantly from the initial failing run. To solve
+this problem, vrun has a mechanism whereby it can capture the seed
+from the initial (random seed) run and use that to override the
+random seed value for the second run, thus re-establishing random
+stability across the two runs.</p>
+<p class="p">In order to accomplish this, the “done” record
+in the event log records the seed used for each simulation. It reads
+this seed from the test data record of the UCDB file for the test
+in question (if no UCDB file is defined for a given Action, no seed
+is recorded). When the -select option is used to select Runnables
+from a previous event log file for execution, the seeds are also
+read from the event log. This happens regardless of the status of
+tests being selected (that is, if the option is -select all, then
+all tests from the previous run are re-executed, each one with the same
+random seed used in the initial run of that test). By default, any
+time the -select command-line option is used to select tests to
+rerun, the random seeds for each test are reused for those tests
+so selected.</p>
+<p class="p">The default behavior is that the random seed
+is always reused when a test is re-executed in the same VRM regression
+run regardless of whether the local rerun or global rerun mechanism
+triggered the rerun.</p>
+<p class="p">If this default behavior is not desirable for
+some reason, the -noreuseseeds option disables the propagation of
+seed values from the previous run to the current run. The option
+to not reuse the random seeds is global to that run (that is, if
+-noreuseseeds is specified, no seeds from the previous run is propagated
+forward to the current run). Note that the behavior relies on the UCDB
+test data record so a test that does not generate a UCDB file, or
+whose UCDB file has been altered or deleted before vrun has a chance
+to retrieve the seed, will not reuse earlier seeds on subsequent
+runs. In other words, if there is no UCDB, then there is no seed reuse.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_FullyAutomaticOneCommandMode_id5733177e.html" title="VRM supports a single-command automated way to run two passes over a given regression suite, picking up additional command-line options on the second pass. The -rerun option takes a string that contains the additional command-line options for the second pass (which must be an empty argument should you decide to run the regression suite twice with the same arguments both times). The command is as follows:">Fully Automatic (One-command) Mode</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Reuse of Random Seeds in Automated Rerun"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

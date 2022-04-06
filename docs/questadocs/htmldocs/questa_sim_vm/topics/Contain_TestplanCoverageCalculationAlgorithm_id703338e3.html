@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Testplan Coverage Calculation Algorithm" />
+<meta name="abstract" content="The weight of each testplan section is used to compute the coverage of the parent testplan section according to the “weighted average” method — regardless of whether that section’s weight is determined by the default method or autoweighting. The weighted average method is the default setting for testplan coverage calculation, wherein the coverage grading calculation for a testplan as a whole is the weighted average of its children. This allows portions of the plan to be given more weight than others." />
+<meta name="description" content="The weight of each testplan section is used to compute the coverage of the parent testplan section according to the “weighted average” method — regardless of whether that section’s weight is determined by the default method or autoweighting. The weighted average method is the default setting for testplan coverage calculation, wherein the coverage grading calculation for a testplan as a whole is the weighted average of its children. This allows portions of the plan to be given more weight than others." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id703338e3-9a01-413a-a0b3-f3b79226283b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Testplan Coverage Calculation Algorithm</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Testplan Coverage Calculation Algorithm" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id703338e3-9a01-413a-a0b3-f3b79226283b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Testplan Coverage
+Calculation Algorithm</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">The
+weight of each testplan section is used to compute the coverage
+of the parent testplan section according to the “weighted average”
+method — regardless of whether that section’s weight is determined
+by the default method or autoweighting. The weighted average method
+is the default setting for testplan coverage calculation, wherein
+the coverage grading calculation for a testplan as a whole is the
+weighted average of its children. This allows portions of the plan
+to be given more weight than others. </span>
+</div>
+<p class="p">For example, a parent testplan
+section contains two subsections:</p>
+<ul class="ul"><li class="li" id="id703338e3-9a01-413a-a0b3-f3b79226283b__id3ebe79e5-2161-4473-af3e-4e5c71e8d43b"><p class="p">A - contains 99 bins and no bins
+were hit</p>
+</li>
+<li class="li" id="id703338e3-9a01-413a-a0b3-f3b79226283b__idc470aedd-8618-4d96-97c9-1fea2f342c36"><p class="p">B - contains 1 bin and this bin
+was hit</p>
+</li>
+</ul>
+<p class="p">Without autoweighting, using the weighted
+average calculation, the coverage calculation for the parent testplan
+section is 50%.</p>
+<p class="p">In other words, the autoweighting and
+the default method of testplan coverage calculation both use the
+same weighted average method of coverage calculation. However, the
+effective weights in the autoweighting case are determined by the
+number of bins present in the testplan scope's associated coverage
+objects. The difference between the two methods is in the determination
+of the effective weights, not in the coverage calculation formula.</p>
+<p class="p">An additional feature which allows you
+to specify the relative weights of linked items in one testplan
+section is the LinkWeight column. See “<a class="xref fm:HeadingOnly" href="General_ExcludingLinkedCoverageLinkweight_id30b49b5d.html#id30b49b5d-5547-4409-8803-94006364d6c9__General_ExcludingLinkedCoverageLinkweight_id30b49b5d.xml#id30b49b5d-5547-4409-8803-94006364d6c9" title="Several methods exist for excluding individual coverage items, or excluding a subsection of items.">Excluding Linked Coverage with LinkWeight</a>” for more information.</p>
+<p class="p">Also to be considered in coverage calculation
+is the effect of zero weights within the testplan. When a weight
+of zero is applied to a testplan section, then this testplan section
+will not contribute to the coverage value of its parent testplan
+section.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/General_TestplanScopeCoverageCalculation_id857ef1e5.html" title="The coverage of a testplan scope is calculated by taking the weighted average of all child testplan scopes using the effective weight of each item. If a testplan scope contains child testplans with coverage links, then the cumulative coverage of all the linked items is calculated first by taking the weighted average using the effective weights of those linked items. That cumulative coverage is then used with either a weight of 1 (default) or a weight equal to the total number of bins of those linked items (using autoweight), along with the coverage of child testplans to determine the weighted average for calculating the coverage of the parent testplan.">Testplan Scope Coverage Calculation</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_CalculationsEmptyTestplanSections_id2da29499.html" title="Empty testplan sections trigger an additional algorithm for coverage calculation. The following calculations apply: ">Calculations for Empty Testplan Sections</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageCalculationInTestplans_id14a836c9.html" title="Coverage calculations algorithms for testplans and testplan sections, as well as the topics relevant to them are described in this section.">Coverage Calculation in Testplans</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "Testplan Coverage Calculation Algorithm"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_TestplanCoverageCalculationAlgorithm_id703338e3.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

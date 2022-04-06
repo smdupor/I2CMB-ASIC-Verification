@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Using Simulation Configurations" />
+<meta name="abstract" content="A Simulation Configuration associates a design unit(s) and its simulation options. For example, let us say that every time you load tcounter.v you want to set the simulator resolution to picoseconds (ps) and enable event order hazard checking. Ordinarily, you would have to specify those options each time you load the design. With a Simulation Configuration, you specify options for a design and then save a “configuration” that associates the design and its options. The configuration is then listed in the Project window and you can double-click it to load tcounter.v along with its options." />
+<meta name="description" content="A Simulation Configuration associates a design unit(s) and its simulation options. For example, let us say that every time you load tcounter.v you want to set the simulator resolution to picoseconds (ps) and enable event order hazard checking. Ordinarily, you would have to specify those options each time you load the design. With a Simulation Configuration, you specify options for a design and then save a “configuration” that associates the design and its options. The configuration is then listed in the Project window and you can double-click it to load tcounter.v along with its options." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using Simulation Configurations</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using Simulation Configurations" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using Simulation Configurations</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">A Simulation
+Configuration associates a design unit(s) and its simulation options.
+For example, let us say that every time you load <span class="ph filepath">tcounter.v</span> you
+want to set the simulator resolution to picoseconds (ps) and enable
+event order hazard checking. Ordinarily, you would have to specify those
+options each time you load the design. With a Simulation Configuration,
+you specify options for a design and then save a “configuration”
+that associates the design and its options. The configuration is
+then listed in the Project window and you can double-click it to
+load <span class="ph filepath">tcounter.v</span> along with its options.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id74b7ab7a-0cae-4866-b3db-cda10ddf9a0d"><span class="ph cmd">Create
+a new Simulation Configuration.</span><ol type="a" class="ol substeps"><li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__idb8de611c-4b99-4532-9ed8-6aa18b6841b7"><span class="ph cmd">Right-click
+in the Project window and select <span class="ph menucascade"><span class="ph uicontrol">Add to
+Project</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Simulation Configuration</span></span> from
+the popup menu.</span><div class="itemgroup info SubStepInfo"><p class="p">This
+opens the Add Simulation Configuration dialog box (<a class="xref fm:Figure" href="#idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id20ebc2fb-5d2a-441b-93d0-8628fbc4d5aa">Figure 1</a>). The tabs in this dialog box present
+several simulation options. You may want to explore the tabs to
+see what is available. You can consult the <span class="ph fmvar:ProductName">Questa SIM</span> User’s
+Manual to get a description of each option. </p>
+<div class="fig fignone" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id20ebc2fb-5d2a-441b-93d0-8628fbc4d5aa"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Simulation Configuration
+Dialog Box</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/proj_add_simconfig.gif" /></div><br /></div>
+</div></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__idabeee6e0-78d7-4d26-a78a-7adde6af41ac"><span class="ph cmd">Type “counter”
+in the <span class="ph uicontrol">Simulation Configuration Name</span> field.</span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id8b5b96f7-febf-41af-bd5b-0470263232ef"><span class="ph cmd">Select <span class="ph filepath">HDL</span> from
+the <span class="ph uicontrol">Place in Folder</span> drop-down.</span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id89b96504-20bb-4466-9995-4b275dada030"><span class="ph cmd">Click
+the ’<span class="ph uicontrol">+</span>’ icon next to the <span class="ph filepath">work</span> library
+and select <span class="ph filepath">test_counter</span>.</span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id18c50ed3-c4d2-4f4d-a7f4-24df3388f7e1"><span class="ph cmd">Click
+the <span class="ph uicontrol">Resolution</span> drop-down and select <span class="ph uicontrol">ps</span>.</span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__idf3cb7bbd-62d2-4243-b69e-cb9fa6e2780f"><span class="ph cmd">For Verilog,
+click the Verilog tab and check <span class="ph uicontrol">Enable hazard checking
+(-hazards)</span>.</span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id9b94d710-5db6-4a39-add4-96beb7068057"><span class="ph cmd">Click <span class="ph uicontrol">Save</span>.</span><div class="itemgroup info SubStepInfo"><p class="p">The files <span class="ph filepath">tcounter.v</span> and <span class="ph filepath">counter.v</span> show
+question mark icons in the status column because they have changed
+location since they were last compiled and need to be recompiled.</p>
+</div></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id8eb893d1-32d1-40af-850f-8e6fb89b90f4"><span class="ph cmd">Select
+one of the files, <span class="ph filepath">tcounter.v</span> or <span class="ph filepath">counter.v</span>. </span></li>
+<li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__ida72b1bf1-b152-426d-9580-d6f5f25271f4"><span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Compile</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Compile All</span></span>.</span><div class="itemgroup info SubStepInfo"><p class="p">The Project
+window now shows a Simulation Configuration named <span class="ph filepath">counter</span> in
+the HDL folder (<a class="xref fm:Figure" href="#idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__idc0144f99-abdb-401d-86af-db6ce2868f11">Figure 2</a>). </p>
+<div class="fig fignone" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__idc0144f99-abdb-401d-86af-db6ce2868f11"><span class="figcap"><span class="fig--title-label">Figure 2. </span>A Simulation Configuration
+in the Project window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/proj_simconfig.gif" /></div><br /></div>
+</div></li>
+</ol>
+</li>
+<li class="li step" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id180475bb-4ed3-44e4-894d-a8eaaf3fe7e9"><span class="ph cmd">Load the
+Simulation Configuration.</span><ol type="a" class="ol substeps"><li class="li substep" id="idcfb3ed3d-667a-4ddf-bca1-d1e36580a2d0__id80ddda31-dec7-4aba-9c35-e54d9711cd38"><span class="ph cmd">Double-click
+the <span class="ph filepath">counter</span> Simulation Configuration in the
+Project window.</span><div class="itemgroup info SubStepInfo"><p class="p">In the Transcript window of the Main window,
+the vsim invocation shows the -hazards and -t ps arguments. These
+are the command‑line equivalents of the options you specified in
+the Simulate dialog box. </p>
+</div></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Projects_id3c3f0094.html" title="In this lesson you will create a project.">Projects</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Using Simulation Configurations"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_UsingSimulationConfigurations_idcfb3ed3d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

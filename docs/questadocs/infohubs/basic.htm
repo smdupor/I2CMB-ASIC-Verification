@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mentor Graphics InfoHub</title>
+<meta charset="utf-8" />
+<!--
+Copyright 2005-2016 Mentor Graphics Corporation
+
+   All Rights Reserved.
+
+THIS WORK CONTAINS TRADE SECRET
+AND PROPRIETARY INFORMATION WHICH IS THE
+PROPERTY OF MENTOR GRAPHICS
+CORPORATION OR ITS LICENSORS AND IS
+SUBJECT TO LICENSE TERMS.
+-->
+<style type="text/css">
+BODY {
+    font-family: Arial, Helvetica, Sans-serif;
+}
+#list{
+  position: absolute;
+  left: 0;
+  top: 91px;
+  bottom: 31px;
+  right: 0;
+  overflow: auto;
+  height:85%;
+  width: 100%;
+
+  }
+ #list caption {
+     font-size:1.4em;
+     font-weight:bold;
+     margin:10px 0 0 0;
+     padding:0 !important;
+     text-align:left;
+}
+ #list th {
+    border-bottom:2px solid #464646;
+    font-size:11px;
+    font-weight:bold;
+    line-height:1em;
+    padding:5px;
+    text-align:left;
+    text-transform:uppercase;
+    vertical-align:bottom;
+}
+
+table.docs .col1 {
+    width:75%;
+}
+table.docs .col3 {
+    width:25%;
+    text-align: right !important
+}
+#list table {
+  position: absolute;
+  left: 1%;
+  right: 1%;
+  width: 98%;
+  padding-top: 27px;
+  max-width: 900px !important;
+
+}
+#list table tr{
+
+}
+.right{
+   text-align: right !important;
+}
+#list, #list table {
+    border:medium none;
+    margin:0px 0;
+    padding:0;
+    color: black;
+}
+
+#list th a {
+    text-decoration:none;
+}
+#list a {
+    font-weight:bold;
+    text-decoration:none;
+}
+#list a:hover{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+
+a {
+  color:#3769AC;
+  outline-color:-moz-use-text-color;
+  outline-style:none;
+  outline-width:medium;
+}
+
+
+#list tr td {
+    border-color:#FFFFFF #FFFFFF #DDDDDD;
+    border-style:solid;
+    border-width:1px 0;
+}
+#list td {
+    line-height:1.3em;
+    padding:10px 5px;
+    text-align:left;
+    vertical-align:top;
+}
+#list table tbody tr{
+  valign: top;
+}
+table.downloads td, table.sys-req td, table.docs td {
+    padding:5px !important;
+}
+td {
+    font-size:12px;
+}
+/*styles related to the header*/
+#header{
+    background-color: #E9EDF2;
+    height: 75px;
+    position: absolute;
+    _postition: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+}
+
+
+
+#infohub_header_graphic_div{
+   height: 74px;   
+   background: #2658A6;
+   background-image: url('common/graphics/mgc_infohub_header.gif');
+   background-position: 195px 0px;
+   background-repeat: repeat-x;
+   vertical-align: top;
+   width: 100%;
+}
+
+#mentor_logo {
+    text-align: center;
+    float: left;
+    padding: 12px 25px 0px 25px;
+    background: #2658A6;
+    height: 62px;
+    border-right: 1px solid #9bb0cc;
+}
+.mentor_img {
+    background: url('common/graphics/logo-white.svg') 50% 50% no-repeat;
+    background-size: 139px 40px;
+    height: 40px;
+    width: 139px;
+    display: block;
+    margin: auto;
+}
+
+#InfoHub_title{
+  width: auto;
+  float: left;
+  padding-top:11px;
+  padding-left: 21px;
+}
+P.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left
+}
+P.supportLine {
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-left: 4px;
+    margin-right: 4px;
+	margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left
+
+}
+/*footer styles*/
+#footer{
+    background-color: PaleGoldenRod;
+    width:100%;
+    height: 29px;
+    bottom:0;
+    position:absolute;
+    right: 0;
+    left: 0;
+}
+
+.copyrightFooter {
+    font-size:10px;
+    color:#ffffff;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 0px;
+}
+
+.bottomlinks A:link {color: white;}
+.bottomlinks A:visited {color: white;}
+.bottomlinks {color: white;}
+td.bottomlinks{
+    text-align: left;
+    padding-top: 0px;
+    line-height: 9px;
+    padding-left: 7px;
+ }
+
+.productList {
+	font-weight: normal;
+	color: #999999;
+	padding-top: 0px;
+	text-decoration: none;
+}
+.productList a:hover{
+   text-decoration: underline;
+}
+#copyrightTD{
+    width: 16em;  /*firefox only?*/
+}
+
+#copyrightTD DIV{
+   float: left;
+   width:210px;
+}
+
+.notice {
+    -moz-border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #FFF6BF;
+    border: 2px solid red;
+    color: #817134;
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin: 0 13px;
+    padding: 0.4em 0.8em;
+    text-align: left;
+    visibility: visible;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 0;
+    max-width: 912px !important;
+}
+
+div#header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:header-<length>;
+ }
+
+</style>
+</head>
+<body>
+<div id="header">
+   <div id="infohub_header_graphic_div">
+       <div id="mentor_logo">
+           <a href="https://www.mentor.com/" title="www.mentor.com" target="_blank" class="mentor_img"></a>
+       </div>
+	<div id="InfoHub_title">
+	    <p class="title">InfoHub&trade; &ndash; compatibility mode</p>
+	    <p class="supportLine">Support for
+Questa SIM v2020.4
+            </p>
+        </div>
+   </div>
+</div>
+<div  id="list">
+ <div class="notice">
+   You are viewing the InfoHub in "compatibility mode" because Javascript or active content is disabled in your browser, or your browser is unsupported.
+   For more information on supported browsers and browser set up, refer to "<a href="../htmldocs/mgc_html_help/index.htm" target="_blank">Browser Settings</a>" in the <i>Mentor Graphics Documentation System </i>manual.
+      <table class="docs" cellspacing="0" style="margin-top: 37px; margin-bottom:23px;">
+	<thead>
+	    <tr><td colspan="3"><strong>Note:</strong> links open in a new browser window.</td></tr>
+	    <tr class="col-headers">
+	        <th class="col1"><a>Book Name</a></th>
+		<th class="col3"><a>Format</a></th>
+	    </tr>
+	</thead>
+	<tbody>
+<tr><td>Foreign Language Interface Manual</td><td class="right">
+<a href="../htmldocs/fli/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/fli.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Mentor Graphics Standard Licensing Manual</td><td class="right">
+<a href="../pdfdocs/mgc_licen.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Mentor® Documentation System</td><td class="right">
+<a href="../htmldocs/mgc_html_help/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/mgc_html_help.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>OVL Checkers Manager User's Guide</td><td class="right">
+<a href="../htmldocs/vovl_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/vovl_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>OVM Class Reference</td><td class="right">
+<a href="../pdfdocs/ovm_ref.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Power Aware Simulation User's Manual</td><td class="right">
+<a href="../htmldocs/pa_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/pa_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa Quick Guide</td><td class="right">
+<a href="../pdfdocs/q_qk_guide.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Command Reference Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_ref/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_ref.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Encryption User’s Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_encrypt_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_encrypt_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM GUI Reference Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_gui_ref/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_gui_ref.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Installation and Licensing Guide</td><td class="right">
+<a href="../htmldocs/questa_sim_install/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_install.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Multi-Core Simulation User’s Guide</td><td class="right">
+<a href="../htmldocs/questa_sim_multicore/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_multicore.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Qrun User’s Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_qrun_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_qrun_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM Tutorial</td><td class="right">
+<a href="../htmldocs/questa_sim_tut/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_tut.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® SIM User's Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® Verification Management User’s Manual</td><td class="right">
+<a href="../htmldocs/questa_sim_vm/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/questa_sim_vm.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Questa® Verification Run Manager User Guide</td><td class="right">
+<a href="../htmldocs/vrm_user/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/vrm_user.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>Release Notes for Mentor Graphics Standard Licensing Manual</td><td class="right">
+<a href="../pdfdocs/mgc_lic_rn.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>UCDB API Reference</td><td class="right">
+<a href="../htmldocs/ucdbapi_ref/index.htm" class="doctagging" target="_blank">HTM</a>
+<a href="../pdfdocs/ucdbapi_ref.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>flexnet_lic_admin.pdf</td><td class="right">
+<a href="../pdfdocs/flexnet_lic_admin.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>ruvm_manual.pdf</td><td class="right">
+<a href="../pdfdocs/ruvm_manual.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+<tr><td>ruvm_relnotes.pdf</td><td class="right">
+<a href="../pdfdocs/ruvm_relnotes.pdf" class="doctagging" target="_blank">PDF</a>
+</td></tr>
+       </tbody>
+   </table>
+</div>
+</div>
+  <div id="footer">
+   <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" background="common/graphics/mgc_infohub_footer.gif">
+	<tr>
+ 		<td class="bottomlinks productList">
+		   <span class="bottomlinks">
+			 <A class="productList" HREF="../htmldocs/mgc_html_help/index.htm" onclick='OpenHtmlDoc("mgc_html_help&&mgc_help_002"); return false;' target="_blank">InfoHub Help</A>
+                         |
+                         <A class="productList" href="https://supportnet.mentor.com/user/feedback_form.cfm?version=Version:%203.1&doc_title=Infohub;%20Scope:%20Compatibility%20InfoHub" target="_blank">Send Feedback on Documentation</A>
+			 </span>
+		</td>
+		 <td id="copyrightTD">
+		    <div>
+  	                <p class="copyrightFooter">
+			THE EDA TECHNOLOGY LEADER <br />
+			&copy; Mentor Graphics Corp. All rights reserved.
+			</p>
+		 </div>
+     	    </td>
+	</tr>
+   </table>
+</div>
+</body>
+</html>

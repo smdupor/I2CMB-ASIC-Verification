@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Compile and Load the Design" />
+<meta name="abstract" content="Before we can use the Profiler we must compile a design and load it into the simulator." />
+<meta name="description" content="Before we can use the Profiler we must compile a design and load it into the simulator." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idba24eef2-c8f5-4026-b599-9c808fbdd5a8" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Compile and Load the Design</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Compile and Load the Design" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Compile and Load the Design</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">Before
+we can use the Profiler we must compile a design and load it into
+the simulator.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id3c040c38-678b-4d5a-80c8-d7501ba6ab5f"><span class="ph cmd">Create
+a new directory and copy the tutorial files into it.</span><div class="itemgroup info StepInfo"><p class="p">Start
+by creating a new directory for this exercise (in case other users
+will be working with these lessons). Create the directory and copy
+all files from <span class="ph filepath">&lt;install_dir&gt;/examples/tutorials/verilog/profiler</span> to
+the new directory.</p>
+<p class="p">If you
+have a VHDL license, copy the files in <span class="ph filepath">&lt;install_dir&gt;/examples/tutorials/vhdl/profiler_sm_seq</span> instead.</p>
+</div></li>
+<li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id20a54bf6-cf32-4314-8b1b-dc657318ba8b"><span class="ph cmd">Start <span class="ph fmvar:ProductName">Questa SIM</span> and change to the
+exercise directory.</span><div class="itemgroup info StepInfo"><p class="p">If you
+just finished the previous lesson, <span class="ph fmvar:ProductName">Questa SIM</span> should
+already be running. If not, start <span class="ph fmvar:ProductName">Questa SIM</span>.</p>
+</div><ol type="a" class="ol substeps"><li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__idb5789bff-2ea1-49a6-9817-71a8097e2267"><span class="ph cmd">Type
+“vsim” at a UNIX shell prompt or use the <span class="ph fmvar:ProductName">Questa SIM</span> icon
+in Windows.</span><div class="itemgroup info SubStepInfo"><p class="p">If the
+Welcome to <span class="ph fmvar:ProductName">Questa SIM</span> dialog
+box appears, click <span class="ph uicontrol">Close</span>.</p>
+</div></li>
+<li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id122fa15d-0447-429f-9db7-04c36a12be99"><span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Change Directory</span></span> and
+change to the directory you created in step 1. </span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__ida973ef4f-ad0b-4b50-a07d-ebe917150b3b"><span class="ph cmd">Create
+the work library.</span><ol type="a" class="ol substeps"><li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__idcf9aec63-0127-4183-87dc-c7408c3070da"><span class="ph cmd">Type
+“vlib work” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id17f7e5e9-4584-46ab-ac14-cdd3f9261f78"><span class="ph cmd">Compile
+the design files.</span><ol type="a" class="ol substeps"><li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id506f615a-42e9-4faf-b18a-f2ec4b7f6eeb"><span class="ph cmd">Verilog:
+Type “vlog *.v” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt.</span><div class="itemgroup info SubStepInfo"><p class="p">VHDL:
+Type “vcom -93 sm.vhd sm_seq.vhd sm_sram.vhd test_sm.vhd” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt; prompt.</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id179eb747-1754-4965-b1c5-596e5244ce39"><span class="ph cmd">Optimize
+the design.</span><ol type="a" class="ol substeps"><li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__id85d35698-e904-4bed-b3cc-6c923d9ee128"><span class="ph cmd">Enter the
+following command at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt in the Transcript window:</span><div class="itemgroup info SubStepInfo"><p class="lines ApplCommand">vopt +acc test_sm -o test_sm_opt</p>
+<p class="p">The +acc
+switch for the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command provides visibility into
+the design for debugging purposes. </p>
+<p class="p">The -o switch
+allows you designate the name of the optimized design file (test_sm_opt).</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You must
+provide a name for the optimized design file when you use the vopt command.</p>
+</div>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__iddf4ce701-f635-42ef-b675-7ab6c06492cc"><span class="ph cmd">Load the
+optimized design unit.</span><ol type="a" class="ol substeps"><li class="li substep" id="idba24eef2-c8f5-4026-b599-9c808fbdd5a8__ideae15714-3964-43a9-a9bc-05f5facf68fb"><span class="ph cmd">Enter “vsim
+test_sm_opt” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_AnalyzingPerformanceProfiler_id814fc6f4.html" title="The Profiler identifies the percentage of simulation time spent in each section of your code as well as the amount of memory allocated to each function and instance.">Analyzing Performance With The Profiler</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Compile and Load the Design"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_CompileLoadDesign_idba24eef2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

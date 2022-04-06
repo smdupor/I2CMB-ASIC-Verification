@@ -1,0 +1,124 @@
+Mentor Graphics Technical Note
+Copyright 1991-2020 Mentor Graphics Corporation
+All Rights Reserved.
+
+This document contains information that is proprietary to Mentor Graphics
+Corporation. The original recipient of this document may duplicate this
+document in whole or in part for internal business purposes only, provided
+that this entire notice appears in all copies. In duplicating any part of
+this document, the recipient agrees to make every reasonable effort to
+prevent the unauthorized use and distribution of the proprietary information.
+
+Trademarks that appear in Mentor Graphics product publications that are not
+owned by Mentor Graphics are trademarks of their respective owners.
+
+Introduction
+============
+
+Our goal is to deliver VHDL 2008 language features with high quality, provide
+an easy migration path for existing code to use them, and insure all existing 
+VHDL code can be compiled and used sucessfully with previous language versions. 
+With release 10.2, our VHDL 2008 language support is almost complete.  
+
+Access to VHDL-2008
+===================
+
+Our default language version will remain -2002 indefinitely until 2008 works 
+smoothly across the majority of tools in our customer's tool chain. Access to
+VHDL-2008 features is obtained by executing vcom with command line option -2008, 
+or by setting the following variable in the modelsim.ini file:
+
+VHDL93 = 2008  
+
+Version Interoperability and Migration
+======================================
+
+This is an important topic we have addressed separately. Please read the
+vhdl2008migration.note.
+
+VHDL 2008 Language Features
+============================
+
+You should presume that all language features are supported unless otherwise 
+identified in the limitations section below.  What follows is additional useful
+information about a few features.
+
+* external names.  External names can only refer to other VHDL language objects.  
+The pathname can pass through design units of other languages but the object 
+itself must be declared in a VHDL scope.
+
+* protect tool directives.  IP protection is an important topic. See the technote 
+vhdl_encryption.note as well as our documentation.
+
+* we deliver the OSVVM library, which has open source packages supporting a
+constrained random verification methodology for VHDL. For more information, 
+see http://osvvm.org/. Documentation on the OSVVM library CoveragePkg and RandomPkg
+packages can be found in the modeltech/docs/supplemental directory.
+
+
+VHDL 2008 Limitations as of version 10.3
+========================================
+
+* declaration of a generic package in a local scope is not allowed.  All package 
+declarations must be design units.  This is a fairly minor limitation because a 
+generic package instantiations may be made freely in local scopes.
+
+* you must compile an uninstantiated package's body before compilation of an 
+instance of the package.
+
+* generic mapped packages and subprograms are not supported. This expression in the language is a
+definitional aid in the LRM and one would not expect it to ever be used in user
+HDL code.
+
+* embedded PSL is not supported; however, we fully support psl im meta comments 
+for vhdl and have for some time.  There is nothing in embedded PSL beyond what 
+we already support.
+
+* VHPI is not supported.  We do provide FLI, which is a mature, production 
+worthy simulator API. 
+
+* non-static signal expression in port maps within configurations are not
+supported.
+
+VHDL 2008 Language Extensions
+=============================
+
+In version 10.3, we introduced the following language extension. This extension
+has been submitted to the IEEE P1076 Study Group's Issue Screening and Analysis
+Committee.
+
+An enhancement to the language standard has been implemented. Recognizing
+the fact that a generic list forms a declarative region in which subprogram
+names can be overloaded, the language grammar has been modified to permit
+named generic associations to specify particular overloaded interface
+subprograms by specifying signatures within individual associations.
+The new grammar rule for a named generic association is:
+
+    generic_association_element ::= expression [':' signature] '=>' expression
+
+The optional signature will disambiguate between multiple subprograms of
+the same generic list with the same name. When a generic list contains
+no overloaded subprograms, the signature does not need to be specified.
+As an example of usage of the optional signature, consider a generic list
+with the following subprogram specifications:
+
+    generic(function inc(x:integer) return integer;
+	        function inc(x:real) return real);
+
+A possible generic map associating functions with the generics specified
+above could be the following:
+
+    generic map(inc : [real return real] => increal,
+	            inc : [integer return integer] => incint)
+
+Known Issues
+============
+
+* There is an existing signal_spy call which has a legal value of "default" 
+for one of its parameters.  This will not compile with -2008 switch because 
+it is a keyword conflict.  Please read the vhdl2008migration.note to see 
+how to resolve it.
+
+* For other issues, please contact support.
+
+

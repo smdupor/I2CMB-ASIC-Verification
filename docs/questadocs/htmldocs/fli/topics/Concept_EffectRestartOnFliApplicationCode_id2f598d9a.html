@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="The Effect of Restart on FLI Application Code" />
+<meta name="abstract" content="When issue a restart command to the simulator, it, by default, reloads shared libraries." />
+<meta name="description" content="When issue a restart command to the simulator, it, by default, reloads shared libraries." />
+<meta name="DC.subject" content="Restart, effect on FLI application code" />
+<meta name="keywords" content="Restart, effect on FLI application code" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>The Effect of Restart on FLI Application Code</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="The Effect of Restart on FLI Application Code" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">The Effect of Restart on FLI Application Code</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When issue
+a restart command to the simulator, it, by default, reloads shared
+libraries.</span>
+</div>
+<p class="p">This reload is based on the conditions:</p>
+<ul class="ul"><li class="li" id="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74__idfca6d194-dd70-43ef-906c-a23103e4d8e2"><p class="p">Reloading a shared library previously
+loaded due to a foreign attribute on a VHDL architecture.</p>
+</li>
+<li class="li" id="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74__idbc855eb1-f773-4e27-85b4-f065f439057f"><p class="p">Reloading a shared library previously
+loaded through the -foreign option to vsim.</p>
+</li>
+</ul>
+<p class="p">You can override this default behavior in two
+ways. </p>
+<ul class="ul"><li class="li" id="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74__idcb437850-5c08-4388-8bd3-84bca6d339fe"><p class="p">An FLI application can prevent reloading of
+the shared library in which it is contained by calling mti_KeepLoaded(
+) during execution of its foreign architecture initialization function. </p>
+</li>
+<li class="li" id="id2f598d9a-8e67-47b7-bab0-4b81dd03ed74__id2fcf6931-5431-44f0-a869-44b80c771784"><p class="p">Control
+reloading of all shared libraries with the vsim options -keeploaded and
+‑keeploadedrestart, both of which prevent any shared libraries from
+being reloaded during a restart.</p>
+</li>
+</ul>
+<p class="p">When the simulator reloads a shared library,
+the internal state of any FLI application which it contains is automatically
+reset to its initial state. But when a shared library is not reloaded,
+if any FLI application which it contains does not specifically check
+for a restart and reset its internal state to its initial state,
+then the internal state of that FLI application will remain in its
+last simulation state even though time has been reset to zero.</p>
+<p class="p">Because FLI shared libraries might or might
+not be reloaded during a restart, it is wise to always include a
+restart callback function (see <a class="xref fm:HeadingOnly" href="Command_MtiAddrestartcb_id80076177.html#id80076177-043c-45ba-bdbc-33e74bdee7b9__Command_MtiAddrestartcb_id80076177.xml#id80076177-043c-45ba-bdbc-33e74bdee7b9" title="Adds a simulator restart callback.">mti_AddRestartCB()</a>) in your FLI application that
+frees any memory that your code has allocated and resets the internal state
+of your application. It is also a good idea to avoid the use of
+static local variables.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsingVhdlFli_id889e364a.html" title="FLI routines are C programming language functions that provide procedural access to information within the HDL simulator, executed via the vsim command. A user-written application can use these functions to traverse the hierarchy of an HDL design, get information about and set the values of VHDL objects in the design, get information about a simulation, and control (to some extent) a simulation run. The header file mti.h externs all of the FLI functions and types that can be used by an FLI application.">Using the VHDL FLI</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "The Effect of Restart on FLI Application Code"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_EffectRestartOnFliApplicationCode_id2f598d9a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

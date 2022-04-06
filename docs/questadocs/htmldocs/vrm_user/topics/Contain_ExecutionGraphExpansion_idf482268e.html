@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Execution Graph Expansion" />
+<meta name="abstract" content="When VRM is invoked, the user specifies one or more Runnable names on the command line. The RMDB database entry for each of these Runnable names is retrieved from the database and one of the following actions takes place:" />
+<meta name="description" content="When VRM is invoked, the user specifies one or more Runnable names on the command line. The RMDB database entry for each of these Runnable names is retrieved from the database and one of the following actions takes place:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf482268e-d172-415b-9f7f-0dccdb54661d" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Execution Graph Expansion</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Execution Graph Expansion" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf482268e-d172-415b-9f7f-0dccdb54661d">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Execution Graph Expansion</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">When
+VRM is invoked, the user specifies one or more Runnable names on
+the command line. The RMDB database entry for each of these Runnable names
+is retrieved from the database and one of the following actions
+takes place:</span>
+</div>
+<ul class="ul"><li class="li" id="idf482268e-d172-415b-9f7f-0dccdb54661d__idaa0ca832-f3fd-475b-86c2-a1e824dd814c"><p class="p">In the case of a leaf-level Task
+entry, an <span class="ph FontProperty emphasis">execScript</span> Action
+node is placed into the execution graph.</p>
+</li>
+<li class="li" id="idf482268e-d172-415b-9f7f-0dccdb54661d__idba48a7aa-f612-4da0-88cb-ce2ad695a192"><p class="p">In the case of a non-sequential
+Group, a <span class="ph FontProperty emphasis">preScript</span> Action
+node is placed into the execution graph. Then the list of Group
+members is enumerated and each is handled in turn (recursively).
+The lead Action of each member (either <span class="ph FontProperty emphasis">preScript</span> or <span class="ph FontProperty emphasis">execScript</span>)
+is marked as depending on the <span class="ph FontProperty emphasis">preScript</span> of
+the Group under consideration. Finally, a <span class="ph FontProperty emphasis">postScript</span> Action
+node is placed into the graph and marked as depending on the trailing
+Action (similarly, either an <span class="ph FontProperty emphasis">execScript</span> or
+another <span class="ph FontProperty emphasis">postScript</span>)
+of each member of the Group.</p>
+</li>
+<li class="li" id="idf482268e-d172-415b-9f7f-0dccdb54661d__id3365866c-e306-49b8-8148-826c1a74ba05"><p class="p">In the case of a sequential Group,
+a <span class="ph FontProperty emphasis">preScript</span> Action
+node is placed into the execution graph. As the list of Group members
+is enumerated, the lead Action of each is marked as depending on
+the trailing Action of the previous member (the lead Action of the
+first member is marked as being dependent on the sequential Group's <span class="ph FontProperty emphasis">preScript</span> node).
+A <span class="ph FontProperty emphasis">postScript</span> Action
+is then placed into the graph and marked as being dependent on the
+trailing Action of the last member of the Group.</p>
+</li>
+</ul>
+<p class="p">By nesting this handling behavior recursively
+for each member of any Groups that are encountered, the resulting
+graph contains a complete list of Actions to be executed and the vertices
+of the graph are set up to ensure that the <span class="ph filepath">preScript/execScript/postScript</span> dependencies
+of both sequential and non-sequential Groups are honored. The leading
+Action of each Runnable named on the command line is marked as depending
+on a special predefined node called <span class="ph FontProperty emphasis">=init=</span>.</p>
+<p class="p">For example, suppose your regression
+run consisted of a single non-sequential Group called <span class="ph FontProperty emphasis">nightly</span> with
+three Task members, <span class="ph FontProperty emphasis">test1</span>, <span class="ph FontProperty emphasis">test2</span>,
+and <span class="ph FontProperty emphasis">test3</span>.
+A special pseudo-node called <span class="ph FontProperty emphasis">=init=</span> represents
+the beginning of the regression run (see <a class="xref fm:FigureAndPage" href="Concept_ExecutionGraphExample_id7f8ba545.html#id7f8ba545-a31f-4985-a204-ace0d4c8f1fc__id42d8578f-d2a5-445e-a658-cfdd4c742abf">Figure 1</a>). After expansion, a single
+vertex from <span class="ph FontProperty emphasis">=init=</span> would
+lead to the <span class="ph FontProperty emphasis">preScript</span> Action
+for the <span class="ph FontProperty emphasis">nightly</span> Group.
+From there, three vertices would lead to the <span class="ph FontProperty emphasis">execScript</span> Actions
+corresponding to each of the three member Tasks. From each of these <span class="ph FontProperty emphasis">execScript</span> Actions,
+a single vertex each (three in all) would lead to the <span class="ph FontProperty emphasis">postScript</span> of
+the <span class="ph FontProperty emphasis">nightly</span> Group.
+What this implies is that the three <span class="ph FontProperty emphasis">execScript</span> Actions
+can only start after the <span class="ph FontProperty emphasis">nightly</span> Group's <span class="ph FontProperty emphasis">preScript</span> Action
+has completed and that the <span class="ph FontProperty emphasis">nightly</span> Group's <span class="ph FontProperty emphasis">postScript</span> Action
+can only start after all three of the <span class="ph FontProperty emphasis">execScript</span> Actions
+associated with the member Tasks have completed. The three <span class="ph FontProperty emphasis">execScript</span> Actions,
+however, can be run in any sequence and can be concurrently queued
+to a server farm as parallel jobs (since there is no dependency
+relationship among the three <span class="ph FontProperty emphasis">execScript</span> nodes).
+The <span class="ph FontProperty emphasis">preScript</span> will
+most likely contain compile or other preparatory steps necessary
+to prepare the simulations to be run. The <span class="ph FontProperty emphasis">execScript</span> Actions
+will most likely represent three simulations. The final <span class="ph FontProperty emphasis">postScript</span> Action
+will probably perform any wrap-up activities (like coverage merging).
+By further subdividing a regression suite into nested Groups, one
+can emulate any reasonable set of dependency requirements.</p>
+<p class="p">All of this processing depends on the
+repeat, foreach, and conditional membership algorithms. As the execution
+graph is constructed, each Runnable is examined to see if: (a) it can
+repeat, or (b) it can be disabled.</p>
+<p class="p">In the case of a repeating Task or Group
+(<span class="ph FontProperty emphasis">repeat/foreach</span>),
+the handling normally afforded said Task or Group is repeated to satisfy
+the repeat count or the <span class="ph FontProperty emphasis">foreach</span> token
+list, as though the Runnable in question had been included that
+number of times in the membership list if its parent Group (or on
+the command-line, in the case of a top-level Runnable). How to specify repeating
+Runnables is discussed in “<a class="xref fm:HeadingAndPage" href="MGCChap_RmdbDatabaseTopology_id46a4dcaa.html#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88__MGCChap_RmdbDatabaseTopology_id46a4dcaa.xml#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88" title="The RMDB database contains the information required to expand one or more selected Tasks or Groups of tasks, invoked by name on the command line, into one or more individual Actions that are to be executed.">RMDB Database Topology</a>”.</p>
+<p class="p">If a Runnable specifies conditional membership
+(that is, <span class="ph FontProperty emphasis">if/unless</span>),
+the Runnable is either processed as above if the conditional test
+passes, or ignored if the conditional test fails. How to specify
+conditional Runnables is discussed in “<a class="xref fm:HeadingAndPage" href="MGCChap_RmdbDatabaseTopology_id46a4dcaa.html#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88__MGCChap_RmdbDatabaseTopology_id46a4dcaa.xml#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88" title="The RMDB database contains the information required to expand one or more selected Tasks or Groups of tasks, invoked by name on the command line, into one or more individual Actions that are to be executed.">RMDB Database Topology</a>”.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExecutionGraphExample_id7f8ba545.html" title="This section illustrates how individual Tasks and Groups may be grouped together:">Execution Graph Example</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_RestrictionsOnGroupMembership_id211f0791.html" title="In general, VRM assumes that the Runnables listed as members under a given Group are unique (that is, no single Runnable is listed twice in the membership list of any single Group). This restriction is enforced when vrun builds the execution graph. The handling depends on whether the Group in question is sequential or non-sequential.">Restrictions on Group Membership</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_ExecutionGraphAdvancedTopology_idc66c8261.html" title="At the highest level, VRM takes one or more regression suite names given on the command line, expands them (using information in the RMDB database) into a list of Actions that must be executed in some sequence, executes each Action in turn, and then reports the outcome of the entire regression run. The sequence in which the Actions are executed depends on their grouping in the RMDB database. In order to discern the proper execution sequence, the selected Runnables are expanded into Actions using a directed acyclic graph (referred to as the “execution graph”). The nodes of the graph represent Actions (that is, preScript, execScript, and postScript) to be executed. The vertices of the graph encode the dependencies between these Actions (that is, a postScript Action depends on the completion of the various execScript Actions required for the members of the group to which it belongs).">Execution Graph and Advanced Topology</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Execution Graph Expansion"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ExecutionGraphExpansion_idf482268e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

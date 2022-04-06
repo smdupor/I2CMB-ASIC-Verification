@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Repeating Runnable Example" />
+<meta name="abstract" content="This is an example of how this functionality can be used. The assumption is that the design has a number of different configuration and/or mode settings, each of which has several possible settings such that it is not possible to simulate every combination in one overnight regression run. The basic premise of the solution is that the user can simulate some random number of these configurations each evening, as time allows, and that over time a significant number of the possible combinations are covered." />
+<meta name="description" content="This is an example of how this functionality can be used. The assumption is that the design has a number of different configuration and/or mode settings, each of which has several possible settings such that it is not possible to simulate every combination in one overnight regression run. The basic premise of the solution is that the user can simulate some random number of these configurations each evening, as time allows, and that over time a significant number of the possible combinations are covered." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id22b61a21-1186-4772-b24d-852285dc2ebf" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Repeating Runnable Example</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Repeating Runnable Example" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id22b61a21-1186-4772-b24d-852285dc2ebf">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Repeating Runnable
+Example</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">This is an
+example of how this functionality can be used. The assumption is
+that the design has a number of different configuration and/or mode
+settings, each of which has several possible settings such that
+it is not possible to simulate every combination in one overnight
+regression run. The basic premise of the solution is that the user can
+simulate some random number of these configurations each evening,
+as time allows, and that over time a significant number of the possible
+combinations are covered.</span>
+</div>
+<p class="p">The RMDB file below consists of
+three nested Group Runnables representing each of three configurable
+parameters (Opt1, Opt2, and Opt3) with a single Task Runnable at
+the bottom of the stack to represent the test. Each of the dynamic <span class="ph FontProperty emphasis">foreach</span> expansions
+uses a unique token so that the <span class="ph FontProperty emphasis">GetNextIteration</span> procedure
+knows for which level it is being asked to generate an iteration
+token.</p>
+<p class="p">For the three Group Runnables, this example
+has encoded the set of possible configuration values in an array
+in the <span class="ph FontProperty emphasis">User</span> namespace
+(all <span class="ph FontProperty emphasis">usertcl</span> elements
+are evaluated in the <span class="ph FontProperty emphasis">User</span> namespace).
+For demonstration purposes, each Group defines a <span class="ph FontProperty emphasis">repcount</span> parameter
+that limits the number of iterations of each Runnable to a fixed
+maximum. In its current form, this regression could be implemented
+by picking “N-of-M” seeds at start-up time using a TCL-based parameter
+in place of the dynamic <span class="ph FontProperty emphasis">foreach</span> attribute
+value. However, the user may wish to continue running simulations
+until some specific time of day (like just before the developers
+return in the morning) or the user may prefer to terminate the regression
+run if a given coverage goal is reached (in order to conserve grid
+resources). Because the seeds are generated at run-time rather than
+at start-up time, the direction and duration of the regression run
+can be changed while the regression is still running.</p>
+<pre class="pre codeblock leveled"><code>&lt;?xml version="1.0" ?&gt;
+&lt;rmdb version="1.1" loadtcl="mytcl"&gt;
+	&lt;runnable name="nightly" type="group"&gt;
+		&lt;members&gt;
+			&lt;member&gt;level1&lt;/member&gt;
+		&lt;/members&gt;
+		&lt;execScript launch="vsim"&gt;
+			&lt;command&gt;runmgr::rm_message "Options: (%Opt1%) (%Opt2%)
+								 (%Opt3%), seed (%seed%)&lt;/command&gt;
+		&lt;/execScript&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="level1" type="group" sequential="yes" foreach="*1"
+						index="Opt1"&gt;
+		&lt;parameters&gt;
+			&lt;parameter name="repcount"&gt;4&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		&lt;members&gt;
+			&lt;member&gt;level2&lt;/member&gt;
+		&lt;/members&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="level2" type="group" sequential="yes" foreach="*2"
+						index="Opt2"&gt;
+		&lt;parameters&gt;
+			&lt;parameter name="repcount"&gt;2&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		&lt;members&gt;
+			&lt;member&gt;level3&lt;/member&gt;
+		&lt;/members&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="level3" type="group" sequential="yes" foreach="*3"
+						index="Opt3"&gt;
+		&lt;parameters&gt;
+			&lt;parameter name="repcount"&gt;2&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		&lt;members&gt;
+			&lt;member&gt;task4&lt;/member&gt;
+		&lt;/members&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="task4" type="task" foreach="*4" index="seed"&gt;
+		&lt;parameters&gt;
+			&lt;parameter name="repcount"&gt;4&lt;/parameter&gt;
+		&lt;/parameters&gt;
+	&lt;/runnable&gt;
+	&lt;usertcl name="mytcl"&gt;
+
+		# large number of options from which to pick a smaller subset of
+		# combinations
+
+		set optionArray(*1) [list Opt1_A Opt1_B Opt1_C Opt1_D Opt1_E Opt1_F
+									Opt1_G]
+		set optionArray(*2) [list Opt2_A Opt2_B Opt2_C Opt2_D Opt2_E Opt2_F
+									Opt2_G]
+		set optionArray(*3) [list Opt3_A Opt3_B Opt3_C Opt3_D Opt3_E Opt3_F
+									Opt3_G]
+
+		proc GetNextIteration {userdata} {
+			upvar $userdata data
+
+			variable optionArray
+
+			variable iterationCache
+         variable iterationValue
+
+			set action    $data(ACTION)
+			set iteration $data(ITERATION)
+
+		# check the loop count and either bail out if you are done...
+
+		if {$data(ATTEMPT) &amp;gt; [ExpandRmdbParameters $data(ACTION)
+				 (%repcount%)]} {
+			return {} ;# done
+		}
+
+		# ...or, compute the next loop token based on the original "foreach"
+		# token
+
+		switch -exact -- $iteration {
+
+			*1 - *2 - *3 {
+
+			# the 1st time we see this repeating instance, all options are
+			# available...
+
+				if {![info exists iterationCache($action)]} {
+					set iterationCache($action) $optionArray($iteration)
+				}
+
+			# ...and we either pick an option from among the available
+			# choices...
+
+				if {[llength $iterationCache($action)] &amp;gt; 0} {
+					set pick [expr {int(rand() * [llength
+								$iterationCache($action)])}]
+
+				# use the newly chosen token as the next iteration value...
+
+					set iterationValue($action) [lindex
+						 $iterationCache($action) $pick]
+
+					# ...and delete the token from the list so it cannot be
+					# used again
+
+					set iterationCache($action) [lreplace
+						 $iterationCache($action) $pick $pick]
+
+					# ...or, we run out of options (at which point we might as
+					# well quit)
+
+					} else {
+						set iterationValue($action) {}
+					}
+				}
+
+				default {
+
+					# for regression stability, generate sequential "seeds"
+					# between 11 and "N"
+
+					if {![info exists iterationValue($action)]} {
+						set  iterationValue($action) 10 ;# 1st loop token minus
+							  one
+					} else {
+						incr iterationValue($action) ;# sequential seeds --
+						 could be random
+					}
+				}
+			}
+
+			# return the next loop token (option and/or seed)
+
+			return $iterationValue($action)
+		}
+	&lt;/usertcl&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">Following are the important points to notice: </p>
+<ul class="ul"><li class="li" id="id22b61a21-1186-4772-b24d-852285dc2ebf__id869c25ab-f7ab-4b73-a8f1-b86df4754bd4"><p class="p">The star-based <span class="ph FontProperty emphasis">ITERATION</span> string is
+used to determine what kind of token is returned (one of the configuration
+settings or a random seed).</p>
+</li>
+<li class="li" id="id22b61a21-1186-4772-b24d-852285dc2ebf__id0d48016d-dcc3-4039-b7c5-465218cc8282"><p class="p">The <span class="ph FontProperty emphasis">ACTION</span> context
+string is used as an index into the <span class="ph FontProperty emphasis">iterationCache</span> array
+and, in the case of the seed variable, the <span class="ph FontProperty emphasis">iterationValue</span> array.
+This allows the user to track the state of multiple token streams
+at once.</p>
+</li>
+<li class="li" id="id22b61a21-1186-4772-b24d-852285dc2ebf__id0a9925dd-dc4a-4f22-b3e5-c4213d3b2fc0"><p class="p">The option value list for each Action
+is copied and values removed as they are returned. This prevents
+the <span class="ph FontProperty emphasis">GetNextIteration</span> procedure
+from returning the same value more than once for any given Action.</p>
+</li>
+<li class="li" id="id22b61a21-1186-4772-b24d-852285dc2ebf__idb996c6d0-319f-4c9f-80fa-301fef8d26dc"><p class="p">The value of <span class="ph FontProperty emphasis">ATTEMPT</span> is
+used to determine when the token string should be terminated. As
+mentioned before, it is normal to check some other user-defined
+criteria to determine when to terminate each loop.</p>
+</li>
+<li class="li" id="id22b61a21-1186-4772-b24d-852285dc2ebf__id8caa82e7-001b-4bf8-a145-6f4b7415d319"><p class="p">The above notwithstanding, if all the
+available values for any given Action are exhausted, then the repeating
+Runnable’s loop for that Action is terminated (by returning an empty
+string as the next token). </p>
+</li>
+</ul>
+<p class="p">The random seeds returned for the leaf-level
+task are, in this example, sequential integers starting with 11.
+This was done in order to make the output predictable. In reality,
+the user would probably return a random seed from the <span class="ph FontProperty emphasis">GetNextIteration</span> procedure
+or use the -sv_seedrandom option on the simulation command line
+to instruct vsim to generate its own random seed. The index parameter
+used to hold the seed value is called <span class="ph FontProperty emphasis">seed</span> so that
+the value is captured in the Status Event Log and used in subsequent
+reruns of the same test.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DynamicallyRepeatingRunnables_idaddb4263.html" title="VRM supports repeating an Action (that is, test, and so on) or a group of Actions multiple times from a single runnable definition. There are two mechanisms to accomplish this as follows:">Dynamically Repeating Runnables</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Repeating Runnable Example"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_Example_id22b61a21.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

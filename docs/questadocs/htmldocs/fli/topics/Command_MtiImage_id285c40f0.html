@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_Image()" />
+<meta name="abstract" content="Gets the string image of a value of a specific type." />
+<meta name="description" content="Gets the string image of a value of a specific type." />
+<meta name="DC.subject" content="mti_Image()" />
+<meta name="keywords" content="mti_Image()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id285c40f0-1b82-40bb-92ec-c7ffd136dc17" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_Image()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_Image()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id285c40f0-1b82-40bb-92ec-c7ffd136dc17">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_Image()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Gets the
+string image of a value of a specific type.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">strval = mti_Image( value, type_id )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e159"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e166"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e169"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e159 "><p class="p">value</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e166 "><p class="p">void *</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e169 "><p class="p">A pointer to a value
+that is in the correct format for the specified type</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e159 "><p class="p">type_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e166 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e169 "><p class="p">A handle to a VHDL or
+SystemC type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id285c40f0-1b82-40bb-92ec-c7ffd136dc17__idbd6191d2-a9dd-41ed-a055-6b0c2cf7e985" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e202"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e205"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d17929e208"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e202 "><p class="p">strval</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e205 "><p class="p">char *</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d17929e208 "><p class="p">A string image of the specified
+value</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_Image()
+returns a pointer to a buffer containing the string image of the
+specified value. The format is determined by the specified type.
+The image is the same as would be returned by the VHDL attribute
+'IMAGE. The returned string is valid only until the next call to mti_Image().
+You must not free the returned pointer.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id285c40f0-1b82-40bb-92ec-c7ffd136dc17__id19c50fe9-817a-4523-93f1-54eeda616699"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;mti.h&gt;
+
+typedef struct varInfoT_tag {
+  struct varInfoT_tag  * next;
+  char                 * name;
+  mtiTypeIdT             typeid;
+  mtiVariableIdT         varid;
+} varInfoT;
+
+typedef struct {
+  varInfoT      * var_info;     /* List of variables.*/
+  mtiProcessIdT   proc;         /* Test process id. */
+} instanceInfoT;
+
+static void checkValues( void *inst_info )
+{
+  instanceInfoT * inst_data = (instanceInfoT *)inst_info;
+  varInfoT      * varinfo;
+  void          * value;
+
+  mti_PrintFormatted( "Time [%d,%d]:\n", mti_NowUpper(), mti_Now() );
+  for ( varinfo = inst_data-&gt;var_info; varinfo; varinfo = varinfo-&gt;next ) {
+    value = mti_GetVarValueIndirect( varinfo-&gt;varid, 0 );
+    mti_PrintFormatted( "  Variable %s = %s\n",
+                       varinfo-&gt;name,
+                       mti_Image( value, varinfo-&gt;typeid ));
+  }
+  mti_ScheduleWakeup( inst_data-&gt;proc, 5 );
+}
+
+static varInfoT * setupVariable( mtiVariableIdT varid )
+{
+  varInfoT * varinfo;
+
+  varinfo         = (varInfoT *) mti_Malloc( sizeof(varInfoT) );
+  varinfo-&gt;varid  = varid;
+  varinfo-&gt;name   = mti_GetVarName( varid );
+  varinfo-&gt;typeid = mti_GetVarType( varid );
+  varinfo-&gt;next   = 0;
+  return( varinfo );
+}
+
+static void initInstance( void * param )
+{
+  instanceInfoT * inst_data;
+  mtiProcessIdT   procid;
+  mtiRegionIdT    regid;
+  mtiVariableIdT  varid;
+  varInfoT      * curr_info;
+  varInfoT      * varinfo;
+
+  inst_data           = mti_Malloc( sizeof(instanceInfoT) );
+  inst_data-&gt;var_info = 0;
+  regid = mti_GetTopRegion();
+  for ( procid = mti_FirstProcess( regid );
+        procid; procid = mti_NextProcess() ) {
+    for ( varid = mti_FirstVar( procid ); varid; varid = mti_NextVar() ) {
+      varinfo = setupVariable( varid );
+      if ( inst_data-&gt;var_info == 0 ) {
+        inst_data-&gt;var_info = varinfo;
+      }
+      else {
+        curr_info-&gt;next = varinfo;
+      }
+      curr_info = varinfo;
+    }
+  }
+  inst_data-&gt;proc = mti_CreateProcess( "Test Process", checkValues,
+                                      (void *)inst_data );
+  mti_ScheduleWakeup( inst_data-&gt;proc, 4 );
+}
+
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  mti_AddLoadDoneCB( initInstance, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="id285c40f0-1b82-40bb-92ec-c7ffd136dc17__id4cd088d2-118c-4a5b-8265-3415e064e7fe"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl;";
+begin
+end a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity top is
+
+  type bitarray  is array( 3 downto 0 ) of bit;
+  type intarray  is array( 1 to 3 )     of integer;
+  type realarray is array( 1 to 2 )     of real;
+  type timearray is array( -1 to 0 )    of time;
+
+end top;
+
+architecture a of top is
+
+  component for_model
+  end component;
+  for all : for_model use entity work.for_model(a);
+
+begin
+
+  inst1 : for_model;
+
+  p1 : process
+
+    variable bitsig      : bit       := '1';
+    variable intsig      : integer   := 21;
+    variable realsig     : real      := 16.35;
+    variable timesig     : time      := 5 ns;
+    variable stdlogicsig : std_logic := 'H';
+
+    variable bitarr      : bitarray  := "0110";
+    variable stdlogicarr : std_logic_vector( 1 to 4 ) := "01LH";
+    variable intarr      : intarray  := ( 10, 11, 12 );
+    variable realarr     : realarray := ( 11.6, 101.22 );
+    variable timearr     : timearray := ( 15 ns, 6 ns );
+
+  begin
+
+    bitsig      := not bitsig;
+    intsig      := intsig + 1;
+    realsig     := realsig + 1.1;
+    timesig     := timesig + 1 ns;
+    stdlogicsig := not stdlogicsig;
+
+    bitarr      := not bitarr;
+    stdlogicarr := not stdlogicarr;
+
+    intarr(1)   := intarr(1) + 1;
+    intarr(2)   := intarr(2) + 1;
+    intarr(3)   := intarr(3) + 1;
+
+    realarr(1)  := realarr(1) + 1.1;
+    realarr(2)  := realarr(2) + 1.1;
+
+    timearr(-1) := timearr(-1) + 1 ns;
+    timearr(0)  := timearr(0)  + 1 ns;
+
+    wait for 5 ns;
+
+  end process;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="id285c40f0-1b82-40bb-92ec-c7ffd136dc17__idd8100fb5-ba1c-4942-af55-2825c0e2c123"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.7
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading .../modeltech/sunos5/../ieee.std_logic_1164(body)
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+VSIM 1&gt; run 12
+# Time [0,4]:
+#   Variable bitsig = '0'
+#   Variable intsig = 22
+#   Variable realsig = 1.745000e+01
+#   Variable timesig = 6 ns
+#   Variable stdlogicsig = '0'
+#   Variable bitarr = "1001"
+#   Variable stdlogicarr = "1010"
+#   Variable intarr = (11, 12, 13)
+#   Variable realarr = (1.270000e+01, 1.023200e+02)
+#   Variable timearr = (16 ns, 7 ns)
+# Time [0,9]:
+#   Variable bitsig = '1'
+#   Variable intsig = 23
+#   Variable realsig = 1.855000e+01
+#   Variable timesig = 7 ns
+#   Variable stdlogicsig = '1'
+#   Variable bitarr = "0110"
+#   Variable stdlogicarr = "0101"
+#   Variable intarr = (12, 13, 14)
+#   Variable realarr = (1.380000e+01, 1.034200e+02)
+#   Variable timearr = (17 ns, 8 ns)
+VSIM 2&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_Image()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiImage_id285c40f0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

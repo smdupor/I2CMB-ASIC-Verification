@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Launch an Action Onto a Grid System" />
+<meta name="abstract" content="Regardless of the grid system in use, the way to control how Actions are launched is through execution methods. An execution method is basically a script-launching command. When an execution method is involved, the vrun process writes a batch (.bat) file that contains the vsim/vish command needed to launch the Action. It then passes the name of this batch file to the execution method command. If this execution method command happens to be a grid-submission command, then the Action is queued to the associated grid." />
+<meta name="description" content="Regardless of the grid system in use, the way to control how Actions are launched is through execution methods. An execution method is basically a script-launching command. When an execution method is involved, the vrun process writes a batch (.bat) file that contains the vsim/vish command needed to launch the Action. It then passes the name of this batch file to the execution method command. If this execution method command happens to be a grid-submission command, then the Action is queued to the associated grid." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id977e42ad-1995-464d-94e7-f7ad0d45cd1e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Launch an Action Onto a Grid System</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Launch an Action Onto a Grid System" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id977e42ad-1995-464d-94e7-f7ad0d45cd1e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Launch an Action Onto a Grid System</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Regardless
+of the grid system in use, the way to control how Actions are launched
+is through execution methods. An execution method is basically a
+script-launching command. When an execution method is involved,
+the vrun process writes a batch (<span class="ph filepath">.bat</span>) file
+that contains the vsim/vish command needed to launch the Action.
+It then passes the name of this batch file to the execution method
+command. If this execution method command happens to be a grid-submission
+command, then the Action is queued to the associated grid.</span>
+</div>
+<p class="p">Following is one possible execution
+method command for submitting an Action to a UGE grid:</p>
+<p class="lines ApplCommand">qsub -N (%RUNNABLE%) -V -cwd<br />
+-b yes -o (%TASKDIR%) -e (%TASKDIR%)  (%WRAPPER%)</p>
+<p class="p">The (%<span class="ph FontProperty emphasis">WRAPPER</span>%)
+parameter reference is replaced by the name of the VRM-generated
+batch file. The other options control things like the name of the
+grid job and where the output/error results are written. This command
+is then placed in a <span class="ph FontProperty emphasis">method</span> element
+and inserted in the appropriate place in the RMDB file (see “<a class="xref fm:HeadingAndPage" href="Contain_ExecutionMethods_id70589e20.html#id70589e20-3345-4225-9505-9b776dc4c0d5__Contain_ExecutionMethods_id70589e20.xml#id70589e20-3345-4225-9505-9b776dc4c0d5" title="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:">Execution Methods</a>” for details on how execution
+method are selected):</p>
+<pre class="pre codeblock leveled"><code>&lt;method name="ugegrid" action="execScript" mintimeout="300" 
+			 gridtype="uge"&gt;
+	&lt;command&gt;qsub -N (%RUNNABLE%) -V -cwd -b yes -o (%TASKDIR%) -e 
+			(%TASKDIR%) (%WRAPPER%)&lt;/command&gt;
+&lt;/method&gt;</code></pre><p class="p">The <span class="ph FontProperty emphasis">gridtype</span> attribute
+contains a (mostly arbitrary) string that tells vrun how to find
+user-definable procedures associated with the various functions that
+can be called via the grid-management software.</p>
+<p class="p">The way the <span class="ph FontProperty emphasis">gridtype</span> maps
+to a specific set of user-definable procedures is generating procedure
+names on-the-fly according to a convention. For example, each basic
+function one can call via the grid-management is given a name, such
+as <span class="ph FontProperty emphasis">KillJob</span> to
+kill a specific job. The string in the <span class="ph FontProperty emphasis">gridtype</span> attribute
+is title-capitalized and prepended onto the function name. So, in
+the above example, the <span class="ph FontProperty emphasis">uge</span> <span class="ph FontProperty emphasis">gridtype</span> would
+be title-capitalized to <span class="ph FontProperty emphasis">Uge</span> and
+concatenated to the <span class="ph FontProperty emphasis">KillJob</span> function
+name, giving the procedure name <span class="ph FontProperty emphasis">UgeKillJob</span>.</p>
+<p class="p">If there is no procedure defined by this generated
+name, then the function in question is not defined for that <span class="ph FontProperty emphasis">gridtype</span>.
+If there is such a function, it is called with the usual Action-based
+user-data hash. It is up to the user-definable procedure to turn
+this information into one or more grid-management commands with
+the appropriate arguments. Default implementations of these user-definable
+procedures are built-in for both LSF, UGE, SGE and RTDA. However,
+by selecting some other string to use in the <span class="ph FontProperty emphasis">gridtype</span> attribute
+and supplying the proper user-definable procedures, VRM can easily
+be integrated with just about any existing grid-management system.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_IntegrationComputeGridSystems_iddc7164da.html" title="VRM does not provide compute grid management, nor is it tied to any particular compute grid management product. While this allows VRM to be used in a wide variety of end-user environments, the generalized flexibility comes at the price of tight integration.">Integration with Compute Grid Systems</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Launch an Action Onto a Grid System"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_LaunchActionOntoGridSystem_id977e42ad.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

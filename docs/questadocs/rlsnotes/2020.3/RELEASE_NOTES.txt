@@ -1,0 +1,351 @@
+                     Release Notes For Questa Sim 2020.3
+
+                                 Jul 12 2020
+               Copyright 1991-2020 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 2020.3
+     * [4]Base Product Specifications in 2020.3
+     * [5]Compatibility Issues with Release 2020.3
+     * [6]SystemVerilog Defects Repaired in 2020.3
+     * [7]VHDL Defects Repaired in 2020.3
+     * [8]Mixed Language Defects Repaired in 2020.3
+     * [9]Verification Management Defects Repaired in 2020.3
+     * [10]SystemVerilog Enhancements in 2020.3
+     * [11]Mixed Language Enhancements in 2020.3
+     * [12]Document Revision History in 2020.3
+   _______________________________________________________________________
+
+   Key Information
+     * QSIM-555 - Systemc/GCC Changes starting 2020.1:
+       o SystemC/DPI/PLI/VPI/FLI default compiler (GCC) for linux and
+       linux_x86_64 platforms is upgraded to 7.4.0
+       o GCC 4.5.0 is no longer supported and it will no longer be
+       distributed with the release. This affects linux and linux_x86_64
+       platforms only.
+       o Supported compilers on linux and linux_x86_64 platforms:
+       gcc-7.4.0, gcc-5.3.0 and gcc-4.7.4
+       o Support for the IEEE 1666-2005 SystemC-2.2 standard has been
+       deprecated and it is no longer supported.
+     * Starting 2021.1 release, Redhat Enterprise Linux (RHEL) 6 platform
+       will not be supported.
+     *
+       The Register Assistant version included within this release has
+       been upgraded to 2020.3.
+       RUVM/2020.3 is a native 64-bit application.
+   _______________________________________________________________________
+
+   Release Announcements in 2020.3
+     * Due to enhanced security restrictions with web browser PDF
+       plug-ins, some links do not function. Links in HTML documentation
+       are fully functional.
+       Clicking a link within a PDF viewed in a web browser may result in
+       no action, or it may load the title page of the current PDF manual
+       (instead of the intended target in the PDF manual). The unresolved
+       link behavior occurs in all web browsers on Windows and Linux
+       platforms. Because of this behavior, the navigational experience of
+       PDF manuals is compromised. PDF is ideal for printing because of
+       its page-oriented layout.
+       Use the HTML manuals to search for topics, navigate between topics,
+       and click links to examples, videos, reference material, and other
+       related technical content.
+       For information about Adobe's discontinued support of Adobe Reader
+       on Linux platforms and your available options, refer to Knowledge
+       Article MG596568 on SupportNet.
+       Linux is a registered trademark of Linus Torvalds in the U.S. and
+       other countries.
+     * Since 2019.1 release, support for Windows 7 and 8.1 have
+       discontinued. Only Windows 10 is supported. However, we continue to
+       support Windows 7 & 8.1 with our 10.7 release series until their
+       planned End Of Life (10.7 EOL - mid 2020)
+     * Starting 2020.2 release, support for Universal VHDL Verification
+       Methodology has been added to Questa Simulation.
+       The UVVM library is included in this download
+   _______________________________________________________________________
+
+   Base Product Specifications in 2020.3
+     * [Supported Platforms]
+       Linux RHEL 6 x86/x86-64
+       Linux RHEL 7 x86/x86-64
+       Linux RHEL 8 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Linux SLES 12 x86/x86-64
+       Windows 10 x86/x64
+       [Supported GCC Compilers (for SystemC)]
+       gcc-7.4.0-linux/gcc-7.4.0-linux_x86_64
+       gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64
+       gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+       gcc-4.2.1-mingw32vc12
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.07
+       [VHDL UVVM (shipped with product)]
+       UVVM v2019.11.25
+       [Licensing]
+       FLEXnet v11.16.4.0
+       MSL v2019_3
+       MGLS v9.22_3.1.0
+       PCLS v9.22.3.1.0
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 2020.3
+
+   SystemVerilog Compatibility
+     * QSIM-62783 - (source) Vlog and vopt handled cases where a class had
+       the same name as a package incorrectly in some cases. Given this
+       example:<code>
+       package P ;
+       typedef logic type1_t;
+       class P;
+       typedef logic type2_t;
+       endclass
+       endpackage
+       import P::*; // Import in $unit scope makes class named "P"
+       potentially visible
+       module top;
+       P::type1_t i; // This should be an error because "P" should
+       reference the class
+       P::type2_t j; // This should resolve to the type in class "P"
+       endmodule
+       </code>
+       The correct behavior is to report an error for P::type1_t and
+       accept P::type2_t, but previous releases reversed that behavior.
+     * QSIM-62590 - (source) In some cases, a randomize() call with
+       in-line constraints, if the constraint symbol is not declared, it
+       would insert dummy symbol instead, this now flags an error.
+
+   Mixed Language Compatibility
+     * QSIM-57341 - (source, results) The -printforces vsim command line
+       option has been enhanced to print a transcript message, vsim-16110,
+       for QFD flows, with the source, language, object name, time, and
+       value for forces from all source: SystemVerilog, VHDL, SystemC, TCL
+       (do file and VSIM prompt), VPI, FLI, UVM, and Signal Spy.
+     * VISU-18493 - (source, results) With 2020.3 onwards Symphony analog
+       Vector support has been added in visualizer debug support. This
+       will break the forward compatibility ( 2020.3 generated design.bin
+       cannot be loaded from 2020.2 visualizer) whereas backward
+       compatibility will remain intact (2020.2 generated design.bin can
+       be loaded from 2020.3 visualizer)
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 2020.3
+     * QSIM-63742 - In some rare cases, randomize() would cause vsim to
+       crash when evaluating a constraint containing an array.sum()
+       expression involving a non-random dynamic array. This issue has
+       been fixed.
+     * QSIM-63225 - In some rare cases, randomize() would cause vsim to
+       crash when evaluating constraints involving function calls. This
+       issue has been fixed.
+     * QSIM-63080 - In some rare cases, randomize() call would cause vsim
+       to crash when evaluating randsets with the BDD solver engine. This
+       issue has been fixed.
+     * QSIM-63716 - Significantly improved the performance of some complex
+       randomize() calls involving array.sum() constraints. Some
+       randomize() scenarios that would previously timeout are now able to
+       be successfully solved.
+     * QSIM-63802 - In some rare cases, randomize() would cause vsim to
+       crash when evaluating constraints involving a non-random class
+       field of the randomized class. This issue has been fixed.
+     * QSIM-63738 - In some rare cases, randomize() would cause vsim to
+       crash when evaluating complex constraints involving multiplication
+       and cast expressions. This issue has been fixed.
+     * QSIM-63610 - In some rare cases, a randomize() failure due to a
+       constraint contradiction would generate a testcase (when
+       -solvefailtestcase is enabled) that would not reproduce the
+       contradiction. This issue has been fixed.
+     * QSIM-64086 - In some rare cases, randomize() would incorrectly
+       report a no-solution failure (constraint contradiction) when no
+       actual contradiction exists. This issue has been fixed.
+     * QSIM-62783 - (source) Vlog and vopt handled cases where a class had
+       the same name as a package incorrectly in some cases. Given this
+       example:<code>
+       package P ;
+       typedef logic type1_t;
+       class P;
+       typedef logic type2_t;
+       endclass
+       endpackage
+       import P::*; // Import in $unit scope makes class named "P"
+       potentially visible
+       module top;
+       P::type1_t i; // This should be an error because "P" should
+       reference the class
+       P::type2_t j; // This should resolve to the type in class "P"
+       endmodule
+       </code>
+       The correct behavior is to report an error for P::type1_t and
+       accept P::type2_t, but previous releases reversed that behavior.
+     * QSIM-62590 - (source) In some cases, a randomize() call with
+       in-line constraints, if the constraint symbol is not declared, it
+       would insert dummy symbol instead, this now flags an error.
+     * QSIM-64826 - In some rare cases, randomize() would generate a
+       solution violating a constraint involving an element of a virtual
+       interface. This issue has been fixed.
+     * QSIM-64538 - In some rare cases, randomize() would crash when
+       evaluating a randset with the BDD solve engine. This issue has been
+       fixed.
+     * QSIM-64417 - In some rare cases, randomize() would generate a
+       solution violating an in-line constraint involving a local
+       automatic variable. This issue has been fixed.
+     * QSIM-64644 - In some rare cases, randomize() would encounter an
+       internal error when evaluating scenarios involving random variables
+       of packed struct type. This issue has been fixed.
+     * QSIM-64586 - In some rare cases, randomize() would incorrectly
+       interpret a 'unique' constraint within an if/else or 'soft' context
+       as a non-conditional, 'hard' constraint. This issue has been fixed.
+     * QSIM-64319 - In some rare cases, randomize() would generate a
+       solution violating a constraint of the form "!(rand_var inside {
+       const_array })". This issue has been fixed.
+     * QSIM-64316 - In some rare cases, a randomize() call would crash
+       when evaluating a constraint involving a non-random unpacked array.
+       This issue has been fixed.
+     * QSIM-64243 - In some rare cases, randomize() would trigger an
+       internal error when evaluating a 'dist' constraint with values on
+       the RHS that are outside of the domain of the target (LHS) type.
+       This issue has been fixed.
+     * QSIM-64160 - In some rare cases, during compilation, a package
+       containing a randomize() call will trigger a spurious (vlog-2944)
+       "Illegal randomize() function call in random constraint" error.
+       This issue has been fixed.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 2020.3
+     * QSIM-63443 - Fixed the flow which was not causing the update.
+     * QSIM-64261 - Fixed the crash caused in the code.
+     * QSIM-62097 - In certain cases of records used inside procedures the
+       value reflected was incorrect. This has been fixed.
+     * QSIM-62848 - Aggregate association of array elements resulted in an
+       error when choice elements were record members. This has been
+       fixed.
+     * QSIM-62889 - Having protected type variable definition inside
+       subprogram caused an error during optimization. This has been
+       fixed.
+     * QSIM-56034 - In certain situations forcing a VHDL port signal from
+       SystemVerilog resulted in a crash. This has been fixed.
+   _______________________________________________________________________
+
+   Mixed Language Defects Repaired in 2020.3
+     * QSIM-64244 - When Verilog instantiates a VHDL design unit,
+       processing for connectivity analysis under the -rnm vopt switch did
+       not correctly handle ports associated by-name.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 2020.3
+     * QSIM-64409 - Fixed problem in VRM where tests whose UCDBs get
+       merged prior to the merging of the testplan would never report a
+       testplan coverage value to the GUI or to any reports. Also fixed a
+       benign side-effect where the merging of the testplan could, under
+       some circumstances, get postponed to the end of the regression run.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 2020.3
+     * QSIM-63337 - Improved the readability of the -solvefaildebug
+       constraint contradiction report generated by randomize() calls with
+       no solutions. Constraints of the form "my_var inside { random_array
+       }" are now printed as-is, instead of being printed as the expansion
+       of the elements of "random_array".
+     * QSIM-63338 - Improved the readability of the -solvefaildebug
+       constraint contradiction report generated by randomize() calls with
+       no solutions. Constraints involving constant variables now display
+       the name of the constant variable (where possible) instead of an
+       obfuscated name (such as "#var#id") for -solvefaildebug=1
+       (previously, constant variable names were only preserved with
+       -solvefaildebug=2).
+     * QSIM-63339 - Implemented a new SystemVerilog constrained-random
+       language extension "-svrandext=purecheck". When the "purecheck"
+       extension is enabled, calls to class::randomize(null) will not
+       invoke pre_randomize() and post_randomize() functions associated
+       with the class on which randomize() is invoked. This extension is
+       disabled by default.
+     * QSIM-62843 - Implemented a new SystemVerilog constrained-random
+       language extension "-svrandext=prerandfirst". When the
+       "prerandfirst" extension is enabled, the pre_randomize() functions
+       of rand dynamic array/queues of class handles will be executed
+       prior to registering the constraints of the containing (parent)
+       class (normal behavior is from the constraints of the parent class
+       to be registered first). This extension is disabled by default.
+   _______________________________________________________________________
+
+   Mixed Language Enhancements in 2020.3
+     * QSIM-57341 - (source, results) The -printforces vsim command line
+       option has been enhanced to print a transcript message, vsim-16110,
+       for QFD flows, with the source, language, object name, time, and
+       value for forces from all source: SystemVerilog, VHDL, SystemC, TCL
+       (do file and VSIM prompt), VPI, FLI, UVM, and Signal Spy.
+     * VISU-18493 - (source, results) With 2020.3 onwards Symphony analog
+       Vector support has been added in visualizer debug support. This
+       will break the forward compatibility ( 2020.3 generated design.bin
+       cannot be loaded from 2020.2 visualizer) whereas backward
+       compatibility will remain intact (2020.2 generated design.bin can
+       be loaded from 2020.3 visualizer)
+   _______________________________________________________________________
+
+   Document Revision History in 2020.3
+     * Revision - Changes - Status/Date
+          + 5.6 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/July 2020
+          + 5.5 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/June 2020
+          + 5.4 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/May 2020
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.2020.3,product.id.P11633"
+

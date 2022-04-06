@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Incremental Merging" />
+<meta name="abstract" content="The incremental merging flow automates one of the merging schemes mentioned in the previous section. This semi-automated use model serves mostly as a user convenience. Under this flow, parameters are used to point to the UCDB file for each individual regression test and to a target merge file. As before, the execScript Actions that represent regression tests (those which run simulations) each generate a UCDB file at the location designated by the ucdbfile parameter in order to support automated pass/fail checking. VRM then calls vcover merge as each execScript completes in order to merge the coverage of the individual tests into the target merge file." />
+<meta name="description" content="The incremental merging flow automates one of the merging schemes mentioned in the previous section. This semi-automated use model serves mostly as a user convenience. Under this flow, parameters are used to point to the UCDB file for each individual regression test and to a target merge file. As before, the execScript Actions that represent regression tests (those which run simulations) each generate a UCDB file at the location designated by the ucdbfile parameter in order to support automated pass/fail checking. VRM then calls vcover merge as each execScript completes in order to merge the coverage of the individual tests into the target merge file." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idefbdc997-17a8-4812-9c27-aab707fce3ec" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Incremental Merging</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Incremental Merging" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idefbdc997-17a8-4812-9c27-aab707fce3ec">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Incremental Merging</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The incremental
+merging flow automates one of the merging schemes mentioned in the
+previous section. This semi-automated use model serves mostly as
+a user convenience. Under this flow, parameters are used to point
+to the UCDB file for each individual regression test and to a target
+merge file. As before, the <span class="ph FontProperty emphasis">execScript</span> Actions
+that represent regression tests (those which run simulations) each
+generate a UCDB file at the location designated by the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+in order to support automated pass/fail checking. VRM then calls
+vcover merge as each <span class="ph FontProperty emphasis">execScript</span> completes
+in order to merge the coverage of the individual tests into the
+target merge file.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idcaf6686e-19de-48e0-93f2-6f9ede7f2e3b"><h2 class="title Subheading sectiontitle">Assumptions and Detailed Behavior</h2><ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__ide24d31cd-f389-49da-a27c-da5f73e7d9d8"><p class="p">Each Task Runnable identifies a <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+and a <span class="ph FontProperty emphasis">mergefile</span> parameter
+(both parameters are usually inherited from a lineal parent).</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idbbe830ed-c2bf-48b6-b1c4-be98de9c1b90"><p class="p">The <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+points to the UCDB file generated by the regression test represented
+by the Task.</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__id5019dbbf-aa99-4252-a164-f14722acd1d5"><p class="p">If a relative path is specified, it is
+assumed to be relative to the working directory for the Task.</p>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__id516540b3-66f3-4d7b-a4cd-bf7b97c60b01"><p class="p">If the Task intentionally does not generate
+a UCDB file, then the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+must be undefined or empty.</p>
+</li>
+</ul>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idf4bf50e8-73c4-4937-af90-b220cfbcb6f0"><p class="p">The <span class="ph FontProperty emphasis">mergefile</span> parameter
+points to the target of the merge operation.</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idb8d7914d-b9c6-473c-b459-f0517bd8e286"><p class="p">The path specified can be relative to
+the working directory for the Task or, more likely, it is an absolute
+path, possibly based on one of the VRM built-in path parameters
+(such as <span class="ph filepath">VRMDATA)</span>. </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idfb9a5acc-c79d-4fc5-9413-7775f45eef05"><p class="p">Merge algorithm (<span class="ph FontProperty emphasis">execScript</span>)</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idf302bcb8-8084-4654-98f0-082d697b0df0"><p class="p">Each <span class="ph FontProperty emphasis">execScript</span> dumps
+a UCDB file to the location specified by the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+(expanded from the point of view of the Task).</p>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__id434a8297-cc07-4ba9-be46-c3aec8b2539e"><p class="p">The pass/fail status is then checked
+by the <span class="ph filepath">AnalyzePassFail</span> user-definable procedure
+and sent to the <span class="ph filepath">OkToMerge</span> user-definable procedure.</p>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idb5b4a5b4-5906-4cbe-9194-f59b9f67cf5d"><p class="p">If the <span class="ph filepath">OkToMerge</span> procedure
+returns true, then the <span class="ph filepath">MergeOneUcdb</span> user-definable
+procedure is called to merge the test-level UCDB into the target
+merge file.</p>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__id31df7b35-fbb2-49b6-91cb-0fe49d219402"><p class="p">The <span class="ph filepath">MergeOneUcdb</span> procedure
+checks for a non-empty <span class="ph FontProperty emphasis">mergefile</span> parameter.
+If found, the <span class="ph filepath">MergeOneUcdb</span> procedure does the
+following:</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idfa0ca0b9-a6ab-4fdc-b157-39a535969f9e"><p class="p">Constructs and executes a vcover merge
+command to merge the <span class="ph FontProperty emphasis">ucdbfile</span> into
+the <span class="ph FontProperty emphasis">mergefile</span> (also
+expanded from the point of view of the Task).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idc28a96d9-86fb-4538-af1c-d210fc7195f0"><p class="p">Merge algorithm (<span class="ph FontProperty emphasis">postScript</span>)</p>
+<ul class="ul"><li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__id753b6a2d-dae0-495b-94aa-cfa26e041c35"><p class="p">When the <span class="ph filepath">OkToMerge</span> procedure
+is called on a <span class="ph FontProperty emphasis">postScript</span> Action
+(in incremental merging mode), it always returns false; therefore,
+preventing any automated merging at the Group level.</p>
+</li>
+<li class="li" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idea42db1c-7fe8-463d-b033-88f921a6adeb"><p class="p">The user's <span class="ph FontProperty emphasis">postScript</span> optionally merges
+the merge file of the current Group to the merge file of a parent
+Group, if any. </p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">There are other behavioral points common to
+the incremental and queued forms of auto-merging. Refer to “<a class="xref fm:HeadingAndPage" href="Contain_AutoMergeTipsTraps_id4734a6fb.html#id4734a6fb-e5e7-4ead-8717-8505709e6e33__Contain_AutoMergeTipsTraps_id4734a6fb.xml#id4734a6fb-e5e7-4ead-8717-8505709e6e33" title="The following two subsections discuss tips and traps of auto-merging.">Auto-Merge Tips and Traps</a>” for more details.</p>
+<h2 class="title Subheading sectiontitle">Incremental Merge Example</h2><p class="p">In order to use incremental merging mode, all
+that is necessary is to supply a <span class="ph FontProperty emphasis">mergefile</span> name.
+Note that the use of a <span class="ph FontProperty emphasis">mergefile</span> parameter
+is in addition to a <span class="ph FontProperty emphasis">ucdbfile</span> parameter,
+as described earlier in this section.</p>
+<div class="fig fignone" id="idefbdc997-17a8-4812-9c27-aab707fce3ec__idbeb9dd7e-e604-4e09-bb81-f93a84326245"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Incremental Merge with mergefile
+Parameter</span><pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;runnable name="nightly" type="group"&gt;
+		&lt;parameters&gt;
+			...
+			&lt;parameter name="mergefile"&gt;(%DATADIR%)/nightly/merge.ucdb 
+				&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		...
+	&lt;/runnable&gt;
+	 ...
+&lt;/rmdb&gt;</code></pre></div>
+<p class="p">Note in this case that the target merge file
+is located at an absolute path, within the working directory of
+the top-most Group Runnable. Therefore, no intermediate merge commands
+are needed. As each of the three regression tests complete, a vcover
+merge command is issued to merge the test-level UCDB file into the
+target merge file. Assuming the tests complete in order and there
+is no merge file to start with, the commands issued would look something
+like the following:</p>
+<p class="lines ApplCommand">vcover merge -out /path/to/nightly/merge.ucdb<br />
+/path/to/nightly/test1/test123.ucdb</p>
+<p class="lines ApplCommand">vcover merge -out /path/to/nightly/merge.ucdb<br />
+/path/to/nightly/merge.ucdb/path/to/nightly/test1/test456.ucdb</p>
+<p class="lines ApplCommand">vcover merge -out /path/to/nightly/merge.ucdb<br />
+/path/to/nightly/merge.ucdb/path/to/nightly/test1/test789.ucdb</p>
+<p class="p">Note also that the first command does not include
+the merge file as an input since the assumption is that the merge
+file did not yet exist. The end result of these commands meets the goal
+of having a single file, <span class="ph filepath">(%DATADIR%)/nightly/merge.ucdb</span>, containing
+the coverage results of the three regression tests.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageMergingUseModels_id78b6395c.html" title="By default, VRM supports three levels of automation for coverage merging, as described in the following sections.">Coverage Merging Use Models</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Incremental Merging"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_IncrementalMerging_idefbdc997.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

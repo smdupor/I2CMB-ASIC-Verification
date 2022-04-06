@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="FetchEventRecords" />
+<meta name="abstract" content="Scan for and fetch “done” status event messages from the event log for the current regression run. This procedure can be passed one or more options to select how the records are scanned and what information is to be returned. The return value is a list containing one element per matching status event message, the content of which is the returned data string." />
+<meta name="description" content="Scan for and fetch “done” status event messages from the event log for the current regression run. This procedure can be passed one or more options to select how the records are scanned and what information is to be returned. The return value is a list containing one element per matching status event message, the content of which is the returned data string." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>FetchEventRecords</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="FetchEventRecords" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">FetchEventRecords</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Scan for
+and fetch “done” status event messages from the event log for the
+current regression run. This procedure can be passed one or more
+options to select how the records are scanned and what information
+is to be returned. The return value is a list containing one element
+per matching status event message, the content of which is the returned
+data string.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6__id0cf378db-bb90-464b-8618-0e6efe82b832"><h2 class="title Subheading sectiontitle">Input Arguments</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6__id0325863d-c478-4ad3-999a-0d3bbc20340d" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>FetchEventRecords Options</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26377e157"><p class="p">Option</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26377e160"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e157 "><p class="p">-action &lt;regexp&gt;</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e160 "><p class="p">Regular expression to
+filter by Action context chain.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e157 "><p class="p">-status &lt;regexp&gt;</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e160 "><p class="p">Regular expression to
+filter by completion status.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e157 "><p class="p">-script &lt;regexp&gt;</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e160 "><p class="p">Regular expression to
+filter by script name (preScript, execScript, postScript, and so
+on).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e157 "><p class="p">-return &lt;select&gt;</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e160 "><p class="p">Specify which data field
+to extract and return.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">If the -return option is specified, the value
+of said option determines what information is returned as shown
+in <a class="xref fm:Table" href="#idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6__ida9bb3d65-2171-497d-b7a0-590eac58d274">Table 2</a>:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6__ida9bb3d65-2171-497d-b7a0-590eac58d274" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>FetchEventRecords -return Selections</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26377e206"><p class="p">Select</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26377e209"><p class="p">Returns</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e206 "><p class="p">ACTION</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e209 "><p class="p">Context chain for the
+Action (that is, action field).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e206 "><p class="p">RUNNABLE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e209 "><p class="p">Name of the leaf-level
+Group or Task responsible for the Action.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e206 "><p class="p">status</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e209 "><p class="p">Completion status.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e206 "><p class="p">ucdbfile</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26377e209 "><p class="p">Absolute path to the
+UCDB file for the Action.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">If the -return option is not specified, then
+the entire status event message for each matching event is returned.</p>
+</div>
+<div class="section Subsection" id="idc3fa9dd2-b4a4-4241-b21a-248a9172f3d6__id6b5e1d79-f87a-4541-8590-ba62b3c2a029"><h2 class="title Subheading sectiontitle">Returns</h2><p class="p">A list of context chains if -return action
+is specified, a list of completion status strings if -return status
+is specified, a list of UCDB files if -return ucdbfile is specified,
+or a list of status event messages if no -return option is specified.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_EventLogAccessProcedures_ida0e3f3fc.html" title="The following procedures simplify access to the event log file from a user-definable procedure:">Event Log Access Procedures</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "FetchEventRecords"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Fetcheventrecords_idc3fa9dd2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

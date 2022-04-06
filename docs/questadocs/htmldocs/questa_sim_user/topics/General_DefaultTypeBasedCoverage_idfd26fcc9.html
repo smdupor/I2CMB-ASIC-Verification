@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Default Type-Based Coverage" />
+<meta name="abstract" content="Type-based coverage is easy to understand for the case where all instances have the same number of bins, and the same values map to the same bins. However, SystemVerilog covergroups that are parameterized when they are constructed carry additional implications for type-based coverage. Type-based coverage may be calculated for covergroups that have different numbers of bins because they were constructed differently." />
+<meta name="description" content="Type-based coverage is easy to understand for the case where all instances have the same number of bins, and the same values map to the same bins. However, SystemVerilog covergroups that are parameterized when they are constructed carry additional implications for type-based coverage. Type-based coverage may be calculated for covergroups that have different numbers of bins because they were constructed differently." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idfd26fcc9-4357-4e66-823e-b0d832e54937" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Default Type-Based Coverage</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Default Type-Based Coverage" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idfd26fcc9-4357-4e66-823e-b0d832e54937">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Default Type-Based Coverage</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Type-based
+coverage is easy to understand for the case where all instances
+have the same number of bins, and the same values map to the same
+bins. However, SystemVerilog covergroups that are parameterized
+when they are constructed carry additional implications for type-based
+coverage. Type-based coverage may be calculated for covergroups
+that have different numbers of bins because they were constructed
+differently. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__ida50d3891-14d7-4a76-b53a-3ae5df9ff17a"><p class="p">Consider <a class="xref fm:Example" href="#idfd26fcc9-4357-4e66-823e-b0d832e54937__id9688eaf1-dec9-40d0-8b8f-60325a8c2a36">Example 1</a>: </p>
+<div class="fig fignone ExampleTitle" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__id9688eaf1-dec9-40d0-8b8f-60325a8c2a36"><span class="figcap"><span class="fig--title-label">Example 1. </span>Type-based
+Coverage</span><pre class="pre codeblock"><code>module top;
+	int vbl;
+	covergroup cgtype (int lhs, rhs);
+		option.per_instance = 1;
+		type_option.merge_instances = 1;
+		coverpoint vbl {
+			bins b[] = { lhs, rhs };
+		}
+	endgroup
+	cgtype cgvar1_2 = new(1,2);
+	cgtype cgvar1_3 = new(1,3);
+	initial
+	begin
+		vbl = 1;
+		cgvar1_2.sample();
+		vbl = 3;
+		cgvar1_3.sample();
+		$display("cgvar1_2.get_inst_coverage() == %f",
+			cgvar1_2.get_inst_coverage());
+		$display("cgvar1_3.get_inst_coverage() == %f",
+			cgvar1_3.get_inst_coverage());
+		$display("cgvar1_2.get_coverage() == %f", cgvar1_2.get_coverage());
+		$display("cgvar1_3.get_coverage() == %f", cgvar1_3.get_coverage());
+	end
+endmodule</code></pre></div>
+<p class="p">Here is the report that is generated using <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcover report', 'questa_sim_ref'); return false;">vcover report</a> with the -details argument:</p>
+<pre class="pre codeblock"><code># COVERGROUP COVERAGE:
+# -----------------------------------------------------------------------
+# Covergroup                                Metric      Goal/ Status
+#                                                    At Least
+# -----------------------------------------------------------------------
+#  TYPE /top/cgtype                          66.7%        100 Uncovered
+#     Coverpoint cgtype::vbl                 66.7%        100 Uncovered
+#         bin b[1] 																 1          1 Covered
+#         bin b[3]                               1          1 Covered
+#         bin b[2]                               0          1 ZERO
+#  Covergroup instance \/top/cgvar1_2        50.0%        100 Uncovered
+#     Coverpoint vbl                         50.0%        100 Uncovered
+#         bin b[1]                               1          1 Covered
+#         bin b[2]                               0          1 ZERO
+#  Covergroup instance \/top/cgvar1_3        50.0%        100 Uncovered
+#     Coverpoint vbl                         50.0%        100 Uncovered
+#         bin b[1]                               0          1 ZERO
+#         bin b[3]                               1          1 Covered
+#
+# TOTAL COVERGROUP COVERAGE: 66.7%  COVERGROUP TYPES: 1</code></pre><p class="p">The instance coverage is clear – each covergroup
+instance has 50% coverage because each has two bins and only one
+of those is covered. </p>
+<p class="p">Type-based coverage is a little more complicated.
+The type-based coverage is 66.7%, or two out of three bins covered.
+The reason is that the type has three bins. Since type_option.merge_instances
+is in effect, the total number of bins is the union of bins of all instances.</p>
+<ul class="ul"><li class="li" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__id0e471d0d-2afc-4f57-ac2b-92ec947bc4bb"><p class="p">cgvar 1_2
+has the set of bins{ b[1], b[2] }</p>
+</li>
+<li class="li" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__idf9edd398-6cb1-4614-91fc-210e889c41d5"><p class="p">cgvar 1_3 has
+the set of bins { b[1], b[3] }</p>
+</li>
+<li class="li" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__id705e7415-33ce-4f27-a702-cd3ea146715f"><p class="p">The union of
+cgvar 1_2 &amp; 1_3 has the set of bins { b[1], b[2], b[3] }</p>
+</li>
+<li class="li" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__ideb192a61-3c76-4711-ba70-a96944e55267"><p class="p">The set of
+bins actually covered is { b[1], b[3] }</p>
+</li>
+</ul>
+<p class="p">As a result, type-based coverage is 2 / 3 = 66.66%.</p>
+</div>
+<div class="section Subsection" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__id9f0c8831-89c4-442f-a35b-b49c8a819592"><h2 class="title Subheading sectiontitle">Bin Unions by Name</h2><p class="p">In <a class="xref fm:Example" href="#idfd26fcc9-4357-4e66-823e-b0d832e54937__id9688eaf1-dec9-40d0-8b8f-60325a8c2a36">Example 1</a>, we do not count bin b[1] twice because
+it is the same in both covergroup instances. So how are bins determined
+to be the same? </p>
+<p class="p">The <span class="ph fmvar:ProductName">Questa SIM</span>approach
+is to consider bins to be the same if they have the same name. This
+relies on a naming convention that is not completely specified by
+the IEEE Std 1800-2012 LRM. For more details on the naming convention
+used, see “<a class="xref fm:HeadingOnly" href="Concept_CanonicalStringRepresentationCoverpointBinValue_id6d6e79a5.html#id6d6e79a5-b325-4a75-aa39-30e60c4ff3f8__Concept_CanonicalStringRepresentationCoverpointBinValue_id6d6e79a5.xml#id6d6e79a5-b325-4a75-aa39-30e60c4ff3f8" title="Coverpoint bin names are components of the coverage database primary key used to identify covergroup bins. Unambiguous identification of database items is important both for simulation coverage analysis and downstream verification management such as database merging and cross-tool methodologies.">Canonical String Representation for Coverpoint Bin Value</a>”.</p>
+<p class="p">Consider that there are three ways of specifying
+a bin: </p>
+<pre class="pre codeblock leveled"><code><span class="CodeLine">   1   </span>bins a = { 1, 2, 3 }; // bin a
+<span class="CodeLine">   2   </span>bins b[] = { 1, 2, 3 }; // bins b[1], b[2], b[3]
+<span class="CodeLine">   3   </span>bins c[2] = { 1, 2, 3 }; // bins c[0] &lt;- 1; c[1] &lt;- 2,3
+</code></pre><p class="p">The first two examples clearly declare bins
+a, b[1], b[2], and b[3]. But what of the bins specified with identifier
+“c?” <span class="ph fmvar:ProductName">Questa SIM</span> specifies
+bins c[0] and c[1]. This is consistent with the constructs in the
+LRM where bins with an explicit size constant (as is the case for
+identifier "c") are taken very literally in order. For example,
+"bins c[2] = { 1, 1 };" is perfectly legal. In this case, c[0] is
+incremented when the value 1 is sampled, and so is c[1]. </p>
+<p class="p">Now, reconsider <a class="xref fm:Example" href="#idfd26fcc9-4357-4e66-823e-b0d832e54937__id9688eaf1-dec9-40d0-8b8f-60325a8c2a36">Example 1</a> with an explicit size constant in
+the bin declaration, as shown in <a class="xref fm:Example" href="#idfd26fcc9-4357-4e66-823e-b0d832e54937__idc9c26da6-4972-4cf9-ba84-445c083c6ee8">Example 2</a>: </p>
+<div class="fig fignone ExampleTitle" id="idfd26fcc9-4357-4e66-823e-b0d832e54937__idc9c26da6-4972-4cf9-ba84-445c083c6ee8"><span class="figcap"><span class="fig--title-label">Example 2. </span>Bin
+Unions</span><pre class="pre codeblock"><code>module top;
+	int vbl;
+	covergroup cgtype (int lhs, rhs);
+		option.per_instance = 1;
+		type_option.merge_instances = 1;
+		coverpoint vbl {
+			bins b[2] = { lhs, rhs }; // now with explicit size constant!
+		}
+	endgroup
+	cgtype cgvar1_2 = new(1,2);
+	cgtype cgvar1_3 = new(1,3);
+	initial
+	begin
+		vbl = 1;
+		cgvar1_2.sample();
+		vbl = 3;
+		cgvar1_3.sample();
+		$display("cgvar1_2.get_inst_coverage() == %f",
+			cgvar1_2.get_inst_coverage());
+		$display("cgvar1_3.get_inst_coverage() == %f",
+			cgvar1_3.get_inst_coverage());
+		$display("cgvar1_2.get_coverage() == %f", cgvar1_2.get_coverage());
+		$display("cgvar1_3.get_coverage() == %f", cgvar1_3.get_coverage());
+	end
+endmodule</code></pre></div>
+<p class="p">Here is <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcover report', 'questa_sim_ref'); return false;">vcover report</a> output for this example:</p>
+<pre class="pre codeblock"><code># COVERGROUP COVERAGE:
+# -----------------------------------------------------------------------
+# Covergroup                                Metric      Goal/    Status
+#                                                    At Least
+# -----------------------------------------------------------------------
+#  TYPE /top/cgtype                         100.0%        100    Covered
+#     Coverpoint cgtype::vbl                100.0%        100    Covered
+#         bin b[0]                               1          1    Covered
+#         bin b[1]                               1          1    Covered
+#  Covergroup instance \/top/cgvar1_2        50.0%        100    Uncovered
+#     Coverpoint vbl                         50.0%        100    Uncovered
+#         bin b[0] 																 1          1    Covered
+#         bin b[1]                               0          1    ZERO
+#  Covergroup instance \/top/cgvar1_3        50.0%        100    Uncovered
+#     Coverpoint vbl                         50.0%        100    Uncovered
+#         bin b[0] 															 	 0          1    ZERO
+#         bin b[1]                               1          1    Covered
+#
+# TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1</code></pre><p class="p">In this case, the union of the bins in the
+type is { b[0], b[1] }. While it is true that in cgvar1_2, b[1]
+maps from value 2, and in cgvar1_3, b[1] maps from value 3, that
+does not matter for the type coverage. These are the same bin as
+far as the type-based coverage is concerned. </p>
+<p class="p">So in this case, cgvar1_2 covers bin b[0] (mapped
+from <span class="ph FontProperty emphasis">vbl</span>==1)
+and cgvar1_3 covers bin b[1] (mapped from <span class="ph FontProperty emphasis">vbl</span>==3).
+So the instance-based coverage is 50% for each instance, and the
+type-based coverage is 100% because both bins are covered for the
+union of bins in the type.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_TypeBasedCoverageConstructorParameters_id074297a2.html" title="This section describes the default behavior of the Questa SIM tool, with a note at the end about how to achieve this in fully-compliant IEEE Std 1800-2012.">Type-Based Coverage With Constructor Parameters</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Default Type-Based Coverage"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_DefaultTypeBasedCoverage_idfd26fcc9.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

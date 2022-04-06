@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Model Construction Examples" />
+<meta name="abstract" content="You can use these examples as a base for creating your own models." />
+<meta name="description" content="You can use these examples as a base for creating your own models." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf09d3fa0-0135-4dfc-a048-ed5f3d8bcbae" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Model Construction Examples</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Model Construction Examples" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf09d3fa0-0135-4dfc-a048-ed5f3d8bcbae">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Model Construction Examples</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can use
+these examples as a base for creating your own models.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idf09d3fa0-0135-4dfc-a048-ed5f3d8bcbae__id58c2553b-7e65-4c74-adfc-14ff0f6bb8cf"><h2 class="title Subheading sectiontitle">Register Model</h2><p class="p">The following Verilog code represents a behavioral
+model of a Clock Free Retention Flip Flop (CFRFF) modified to use
+many of the listed named events. The RTL verification event generation
+functionality is separated from the “gate-level” cell functionality
+to demonstrate how a single model can be defined for use at both
+RTL and gate levels for Power Aware verification as well as facilitate
+the verification of both functional aspects of the model.</p>
+<pre class="pre codeblock leveled"><code>module CFRFF ( 
+  PWR, RET, CLK, SET, RESET 
+`ifdef PA_GLS_FUNC  // Extra ports would be left unconnected 
+  , D, Q            // It is not necessary to conditionally 
+`endif              //     compile them out for RTL PA 
+) ; 
+ 
+   input  PWR; 
+   input  RET; 
+   input  CLK; 
+   input  SET;     // Not used in this model 
+   input  RESET; 
+`ifdef PA_GLS_FUNC 
+   input  D; 
+   output Q; 
+ 
+   reg 	  Q; 
+ 
+   reg 	  reg_q; 
+   reg 	  reg_q_ret; 
+   reg 	  ret_value; 
+   reg 	  restore_value; 
+   reg 	  posedge_power_w_reset; 
+   reg 	  negedge_ret_w_reset; 
+   reg    reset_active; 
+`endif // PA_GLS_FUNC 
+ 
+   // MG event declarations 
+`ifdef PA_RTL_FUNC            // Would not be needed in GLS 
+   event  pa_store_value; 
+   event  pa_store_x; 
+   event  pa_restore_value; 
+   event  pa_restore_x; 
+   event  pa_corrupt_register; 
+   event  pa_reset_register; 
+`endif // PA_RTL_FUNC 
+    
+`ifdef PA_GLS_FUNC 
+// Functionality in this section is used only in Gate Level 
+// simulations or in the verification of the PA RTL functionality 
+// (triggering of the appropriate events at the appropriate time). 
+ 
+   initial 
+     begin 
+	Q                           = 0; 
+	ret_value                   = 0; 
+	restore_value               = 0; 
+	posedge_power_w_reset       = 0; 
+	negedge_ret_w_reset         = 0; 
+	reset_active                = 0; 
+     end 
+ 
+   always @ (PWR, RESET,  
+             RET, reg_q, ret_value,  
+             posedge_power_w_reset, negedge_ret_w_reset) 
+     begin : output_mux 
+	if(~PWR) 
+	  begin 
+	     Q &lt;= 1'bx; 
+	  end 
+	else if (posedge_power_w_reset) 
+	  Q &lt;= reg_q; 
+	else if (negedge_ret_w_reset) 
+	  Q &lt;= reg_q; 
+	else if (RET) 
+	  begin 
+	     Q &lt;= reg_q_ret; 
+	  end 
+	else 
+	  Q &lt;= reg_q; 
+     end   
+ 
+   always @( RESET) 
+     begin 
+	reset_active = RESET; 
+     end 
+ 
+    
+   always @(posedge CLK or negedge RESET) 
+     begin : ff_process 
+	if (RESET)  
+	  reg_q  &lt;= 1'b0; 
+	else   
+	  reg_q  &lt;= D; 
+     end   
+ 
+   always @(posedge CLK) 
+     begin : ret_ff_process 
+	if (~RET) 
+	  reg_q_ret  &lt;= D; 
+     end 
+ 
+   always @(posedge RET) 
+     begin 
+	ret_value  &lt;= reg_q; 
+     end 
+ 
+   always @(negedge RET) 
+     restore_value &lt;= ret_value; 
+ 
+   always @(negedge PWR) 
+     begin   
+	if (!RET) 
+	  begin 
+             wait (PWR); 
+             if (~RESET) posedge_power_w_reset &lt;= 1; 
+             wait (!CLK); 
+             wait (CLK); 
+             posedge_power_w_reset &lt;= 0; 
+	  end 
+     end 
+ 
+`endif // PA_GLS_FUNC 
+ 
+`ifdef PA_RTL_FUNC 
+// Functionality in this section is used for Power Aware RTL (or higher) 
+// abstraction verification.  It can also be combined with the gate 
+// level functionality for the purpose of verifying both. 
+ 
+   always @(posedge RET) 
+     -&gt; pa_store_value; 
+ 
+   always @(negedge RET) 
+     begin 
+	if ( (RESET) &amp;&amp; PWR) 
+	  -&gt; pa_reset_register; 
+     end 
+ 
+   always @(posedge PWR) 
+     begin 
+	if (RET) 
+	  begin 
+	     -&gt; pa_restore_value; 
+	  end 
+     end 
+       
+   always @(negedge PWR) 
+     -&gt; pa_corrupt_register; 
+ 
+`endif // PA_RTL_FUNC 
+ 
+endmodule </code></pre><h2 class="title Subheading sectiontitle">Corrupt Model</h2><p class="p">The following Verilog code shows how to create
+a simple corruption model that initiates and releases corruption
+on a register: </p>
+<pre class="pre codeblock leveled"><code>module CORRUPT(PWR); 
+   input PWR; 
+   event pa_corrupt_register; 
+   event pa_release_register; 
+ 
+   always @(negedge PWR) 
+     -&gt; pa_corrupt_register; 
+ 
+   always @(posedge PWR) 
+     -&gt; pa_release_register; 
+    
+endmodule // corrupt </code></pre><p class="p">where</p>
+<ul class="ul"><li class="li" id="idf09d3fa0-0135-4dfc-a048-ed5f3d8bcbae__id42678862-e07f-47c0-b1e9-aad89eac5635"><p class="p">The pa_corrupt_register statement causes
+the simulator to corrupt the current value of the signal corresponding
+to the inferred registers or latches. </p>
+</li>
+<li class="li" id="idf09d3fa0-0135-4dfc-a048-ed5f3d8bcbae__id71085af9-09af-4d8a-87bb-5cae201c5a57"><p class="p">The pa_release_register statement causes
+the simulator to release any forced values on a register. If the
+register is combinational, the simulator re-evaluates the register. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_ModelConstructionPowerAwareSimulation_id2c35570a.html" title="Power Aware verification uses Verilog behavioral models of power management cells. These models encapsulate the Power Aware behaviors of various types of design state, such as clock-low retention flip-flops and active-high retention latches.">Model Construction for Power Aware Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Model Construction Examples"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_Examples_idf09d3fa0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

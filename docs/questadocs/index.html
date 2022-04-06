@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!--
+===============================================
+Copyright 2005-2017 Mentor Graphics Corporation
+
+  All Rights Reserved.
+
+THIS WORK CONTAINS TRADE SECRET
+AND PROPRIETARY INFORMATION WHICH IS THE
+PROPERTY OF MENTOR GRAPHICS
+CORPORATION OR ITS LICENSORS AND IS
+SUBJECT TO LICENSE TERMS.
+===============================================
+-->
+<title>Mentor Graphics InfoHub</title>
+<link rel="stylesheet" href="infohubs/common/style/infohub.css" id="main_ss" />
+<noscript><meta http-equiv="Refresh" content="0; url=infohubs/basic.htm" /></noscript>
+<script src="infohubs/common/js/jquery.min.js"></script>
+<script src="infohubs/common/js/jquery-migrate-1.4.1.js"></script>
+<script src="infohubs/common/js/plugins.js"></script>
+<script src="infohubs/common/js/infohub.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="infohub_header_graphic_div">
+      <table>
+        <tr><td>
+          <div id="InfoHub_title">
+            <p class="title">InfoHub&trade;</p>
+          </div>
+        </td><td id="search_box_td">
+          <div class="search" id="search_box_container">
+            <div class="searchtips"><a href="htmldocs/mgchelp.htm#context=mgc_html_help&amp;topic=mgc_help_008" onclick="OpenHtmlDoc('mgc_html_help&amp;&amp;mgc_help_008');return false;" target="_blank">Search Tips</a></div>
+            <table>
+              <tr><td>
+                <div class="search_box">
+                  <div id="text-replacement">Loading search database....</div>
+                  <textarea name="query" id="query" onfocus="SearchBox_Focus();" onblur="SearchBox_Blur();" onkeypress="return SearchBox_KeyPress(event);" tabindex="1"></textarea>
+                  <div id="icon-div">
+                    <div id="icon-replacement"><img id="spinnerimg" src="infohubs/common/graphics/go_search_spin.gif" alt="spinner" /></div>
+                    <input type="image" name="search_btn" src="infohubs/common/graphics/go_search.png" onmouseover="this.src='infohubs/common/graphics/go_search_h.png';" onmouseout="this.src='infohubs/common/graphics/go_search.png';" onclick="DoSearch();" alt="Search" class="search_btn" title="Perform search" /><br />
+                  </div>
+                </div>
+              </td></tr>
+            </table>
+            <div id="search_list">
+              <div id="search_list_container">
+                Choose Search:&nbsp;&nbsp;
+                <input id="search_local" type="radio" name="group1" value="ihub" checked />
+                <label for="search_local"> Local by Scope</label>
+                <input id="search_snet" type="radio" name="group1" value="supportnet" />
+                <label for="search_snet">Support Center</label>
+              </div>
+            </div>
+          </div>
+        </td></tr>
+      </table>
+      </div>
+      <div id="tabs" class="tabs"></div>
+    </div>
+    <div id="sidebar">
+      <div id="dragbar" title="Click and drag to resize"></div>
+    <div class="sidebar_head">
+      <div id="mentor_logo">
+        <a href="https://www.mentor.com/" title="www.mentor.com" target="_blank" class="mentor_img"></a>
+       </div>
+    </div>
+    <div class="sidebar_head2">
+      <p class="scope_label">Choose Scope:</p>
+    </div>
+    <div class="scope" id="scope_links" ></div>
+  </div>
+  <div id="main">
+    <div id="IHTabPane" class="tabPane"></div>
+  </div>
+  <div id="footer">
+    <table>
+      <tr>
+        <td class="bottomlinks">
+          <span class="bottomlinks">
+            <a href="htmldocs/mgchelp.htm#context=mgc_html_help&amp;topic=mgc_help_002" target="_blank">InfoHub Help</a> |
+            <a href="https://support.sw.siemens.com/infohub.cfm?link=ihub_movie_v3" onclick="GotoLink('ihub_movie_v3');return false;">InfoHub Overview (movie)</a> |
+            <a href="htmldocs/mgchelp.htm#context=mgc_html_help&amp;topic=mgc_help_006" target="_blank">Browser Settings</a> |
+            <a href="htmldocs/mgchelp.htm#context=mgc_html_help&amp;topic=mgc_help_011" id="showhidecustomtab" target="_blank">Custom Tab</a> |
+            <a href="htmldocs/mgchelp.htm#context=mgc_html_help&amp;topic=mgc_help_015" target="_blank">About InfoHub</a> |
+            <a href="javascript:void(0);" id="prefsLink">Preferences</a> |
+            <a href="https://support.sw.siemens.com/doc_feedback_form" onclick="SubmitInfoHubFeedback();return false;">Send Feedback on Documentation</a>
+          </span>
+        </td>
+        <td id="copyrightTD">
+          <div>
+            <p class="copyrightFooter">
+              THE EDA TECHNOLOGY LEADER <br />
+              &copy; Mentor Graphics Corp. All rights reserved.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="backgroundPopup"></div>
+  <div id="mydocsPopup" class="popup">
+    <a class="popupClose"></a>
+    <h1>Edit Document List</h1>
+    <table>
+      <tr class="center">
+        <td><h2>All Locally Installed Documents</h2></td>
+        <td></td>
+        <td><h2>My Document List</h2></td></tr>
+      <tr>
+        <td style="width:49%">
+          <select id="alldocsdoclist" class="doclist" size="18" style="width:100%" multiple></select>
+        </td>
+        <td style="width:2%">
+          <div id="movedocscontainer">
+            <div id="mydocmoveright"></div>
+            <div id="mydocmoveleft"></div>
+          </div>
+        </td>
+        <td style="width:49%">
+          <select id="selecteddoclist" class="doclist" size="18" style="width:100%" multiple></select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div style="text-align:center">
+            <div id="save_button" class="textButtonsCentered save_button" title="Save My Document List"><span>Save</span></div>
+            <div id="cancel_button" class="textButtonsCentered cancel_button" title="Discard changes"><span>Cancel</span></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="prefsPopup" class="popup">
+    <a class="popupClose"></a>
+    <h1>InfoHub Preferences</h1>
+    <input id="pref_promptclose" type="checkbox" />
+    <label for="pref_promptclose">Do not ask for confirmation when navigating away from the InfoHub after performing a search</label><br />
+    <div id="prefsButtons">
+      <div id="save_button_prefs" class="textButtonsCentered save_button" title="Save"><span>Save</span></div>
+      <div id="cancel_button_prefs" class="textButtonsCentered cancel_button" title="Cancel"><span>Cancel</span></div>
+    </div>
+  </div>
+  <div id="pdflinkPopup" class="popup">
+    <a class="popupClose"></a>
+    <h1>Note</h1>
+    <p>Viewing PDF files within a web browser causes some links not to function. Use HTML for full navigation.</p>
+    <input id="pdflink_noprompt" type="checkbox" />
+    <label for="pdflink_noprompt">Do not show this dialog again</label><br />
+    <div id="pdflinkButtons">
+      <div id="pdflink_ok_button" class="textButtonsCentered ok_button" title="Open"><span>Open</span></div>
+      <div id="pdflink_cancel_button" class="textButtonsCentered cancel_button" title="Cancel"><span>Cancel</span></div>
+    </div>
+  </div>
+<script src="htmldocs/MGC/js/MGCjavascript.js"></script>
+<script src="htmldocs/MGC/js/MGCSearch.js"></script>
+<script src="infohubs/mgc_ih/js/LibList.js"></script>
+<script src="infohubs/mgc_ih/js/ihublist_installed.js"></script>
+<script>mbUseInstalledIhubs || document.write('<script src="infohubs/mgc_ih/js/ihublist.js"></'+'script>')</script>
+<script src="infohubs/mgc_ih/js/customer.js"></script>
+<script src="infohubs/mgc_ih/js/beta.js"></script>
+</body>
+</html>

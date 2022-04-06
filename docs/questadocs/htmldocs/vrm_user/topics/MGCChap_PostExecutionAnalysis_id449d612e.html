@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="MGCChapter" />
+<meta name="DC.Title" content="Post-execution Analysis" />
+<meta name="abstract" content="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case." />
+<meta name="description" content="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id449d612e-5515-4308-9fa5-16ffa2ef6f58" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Post-execution Analysis</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Post-execution Analysis" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id449d612e-5515-4308-9fa5-16ffa2ef6f58">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> Post-execution Analysis</h1>
+<div class="body MGCBody"><div class="abstract MGCAbstract"><span class="shortdesc">After generating
+the necessary files, vrun launches the Action and waits for the
+“done” message to arrive from the wrapper script for that Action,
+indicating that the user's script has exited and returned control
+to the wrapper. From this point until vrun continues with the next
+Action is called “post-execution analysis.” The behavior of VRM
+as it analyzes and reacts to the results of each completed Action
+is highly customized. Therefore, most of the steps involved in post-execution
+analysis are user-definable, with reasonable default behavior for
+the common case.</span>
+</div>
+<p class="p">The major steps each Action
+encounters in its progression from “eligible to run” to “done” is
+illustrated in <a class="xref fm:FigureAndPage" href="#id449d612e-5515-4308-9fa5-16ffa2ef6f58__idff57f4eb-38b0-48bf-ab38-3e975e1737ec">Figure 1</a>, where the blocks in gray represent
+the behavioral units that the user can override. These overrides
+are in the form of TCL procedures. The vrun process calls each of
+these user-definable procedures at the proper time to determine
+how to handle the recently completed Action. The user-definable
+procedures correspond to the names in the gray blocks as follows:</p>
+<ul class="ul"><li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__id58877143-c9b5-474b-a114-81e3d2f2f2fa"><p class="p">“<a class="xref fm:HeadingAndPage" href="Contain_PassfailAnalysis_idf8b00830.html#idf8b00830-6c45-441e-9e55-9fe2b93d3ed3__Contain_PassfailAnalysis_idf8b00830.xml#idf8b00830-6c45-441e-9e55-9fe2b93d3ed3" title="Before vrun can decide how to react to a completed Action, it must determine if the Action in question passed or failed. For purposes of pass/fail analysis, each execScript Action is assumed to run, at most, one simulation. The preScript and postScript Actions are assumed not to run simulations (the preScript and postScript Actions are primarily used for compile, setup, and/or post-processing commands). These assumptions can be overridden in the RMDB database as described below.">Pass/Fail Analysis</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__idc5aa256b-3db5-496f-a8ff-fa4f85f45472"><p class="p">“<a class="xref fm:HeadingAndPage" href="Concept_Actioncompleted_idfd8b390c.html#idfd8b390c-3cba-4bea-add8-8514c1c41f68__Concept_Actioncompleted_idfd8b390c.xml#idfd8b390c-3cba-4bea-add8-8514c1c41f68" title="The ActionCompleted procedure is called after every Action and provides the user with a means to notify other processes of the completion of the Action, save off collateral files, or perform other housekeeping duties (this notification/cleanup procedure should not be used to run commands that should be, more properly, a part of the test suite itself; the purpose of this procedure is to provide a way for VRM to integrate into pre-existing flows).">ActionCompleted Concept</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__ided94cf6f-d71b-46ff-8def-8d4762499885"><p class="p">“<a class="xref fm:HeadingAndPage" href="Concept_Oktomerge_id1759b8f1.html#id1759b8f1-3239-4a67-9500-ec740b79e740__Concept_Oktomerge_id1759b8f1.xml#id1759b8f1-3239-4a67-9500-ec740b79e740" title="It is assumed that in the majority of cases, VRM is used to launch simulations whose coverage data is accumulated and recorded in UCDB files (if this is not the case, this section may be ignored).">OkToMerge Concept</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__id431d1205-7bf0-4b44-9b99-759b01272586"><p class="p">“<a class="xref fm:HeadingAndPage" href="Concept_Mergeoneucdb_id9b090089.html#id9b090089-f363-453b-b024-9ca907e7b76f__Concept_Mergeoneucdb_id9b090089.xml#id9b090089-f363-453b-b024-9ca907e7b76f" title="The MergeOneUcdb procedure is passed the path to a single UCDB file and the path to a merge file. The procedure then executes the steps necessary to merge the single UCDB into the merged UCDB file. The procedure returns nothing. The default behavior of this procedure (if not overridden by the user) is to merge the UCDB defined by the value of the ucdbfile array member into the UCDB file defined by the value of the mergefile array member. The vcover merge executable is used without any additional options. In addition, the log output of the vcover executable defaults to stdout, and is echoed to any explicitly supplied log file. This flow could be called an incremental merge flow because each UCDB is merged into the common file as it is encountered.">MergeOneUcdb Concept</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__id496e5750-6f71-452a-b462-920a6db5be62"><p class="p">“<a class="xref fm:HeadingAndPage" href="General_Oktodelete_id4d36b9f2.html#id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__General_Oktodelete_id4d36b9f2.xml#id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae" title="This procedure is executed after each Action completes (it is not called for deleteScript pseudo-Actions). The purpose of this procedure is to determine if conditions are such that the working directory for the Action may be scheduled for deletion (for example, to implement a “delete-on-pass” disk-space conservation scheme).">OkToDelete</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__idb578fcd5-e413-4ee5-8a2d-b9714799a53a"><p class="p">“<a class="xref fm:HeadingAndPage" href="Concept_Stoprunning_id7535a56e.html#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5__Concept_Stoprunning_id7535a56e.xml#id7535a56e-0ae3-433f-afa8-7cc8d85a62e5" title="In some cases, a fundamental design or testbench failure can cause a large number (if not all) of the Tasks in the regression suite to fail. In this case, early termination of the regression run can prevent processing resources from being wasted on simulations that cannot provide any additional information. By default, VRM always attempts to run every Action defined in the database. The user can override this behavior and provide a heuristic function that will terminate a regression run prematurely in the face of such catastrophic failure.">StopRunning Concept</a>”</p>
+</li>
+<li class="li" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__id4d626f0c-66d2-4c64-88ff-10d40206ec02"><p class="p">“<a class="xref fm:HeadingAndPage" href="Concept_Stoppropagating_ida43897a2.html#ida43897a2-2cdd-4264-acb2-b478b3894bb5__Concept_Stoppropagating_ida43897a2.xml#ida43897a2-2cdd-4264-acb2-b478b3894bb5" title="A typical regression suite consists of a large number of inter-related Actions. Many of those Actions depend on the successful completion of previous Actions in the suite. For example, one of the uses of the preScript Action is to compile the Design Under Test (DUT) in preparation for running the actual simulations. If the compile step fails for some reason, the simulations will also be unlikely to succeed and, thus, executing them would be a waste of disk space and compute capacity. VRM is capable of pruning the execution graph in response to failed Actions. This it not unlike the behavior of the make utility when faced with a failing build step. Unless otherwise directed, the default behavior of make is to stop the build on the first error encountered.">StopPropagating Concept</a>”</p>
+</li>
+</ul>
+<p class="p">These sections describe how vrun post-processes
+a completed Action, taking each behavioral unit in turn. </p>
+<p class="p">For details on the user-definable procedures,
+see “<a class="xref fm:HeadingAndPage" href="Contain_UserDefinableProceduresLoadingArbitraryTclCode_idd238f0d1.html#idd238f0d1-f258-46ff-9bae-c93a68a3ccc8__Contain_UserDefinableProceduresLoadingArbitraryTclCode_idd238f0d1.xml#idd238f0d1-f258-46ff-9bae-c93a68a3ccc8" title="VRM is designed to be a versatile scripting solution for a wide variety of regression flows and users. The basic architecture of nested Groups of Tasks following the preScript, execScript, postScript execution model is, itself, already quite extensible. Support for parametrized commands within those scripts further enhances that extensibility. However, the details involved in each step of the execution process are not quite as clear-cut. There are two approaches that must be balanced against one another as follows:">User-definable Procedures and Loading of Arbitrary TCL Code</a>”. </p>
+<p class="p">For a complete list of user-definable
+procedures, see “<a class="xref fm:HeadingAndPage" href="MGCChap_CatalogUserDefinableUtilityProcedures_ida2c91dd7.html#ida2c91dd7-aeb0-4a36-9ec8-a452db22433a__MGCChap_CatalogUserDefinableUtilityProcedures_ida2c91dd7.xml#ida2c91dd7-aeb0-4a36-9ec8-a452db22433a" title="This chapter documents each of the user-definable procedures, and the low-level utility procedures available to the user-definable procedures.">Catalog of User-Definable and Utility Procedures</a>”.</p>
+<div class="fig fignone" id="id449d612e-5515-4308-9fa5-16ffa2ef6f58__idff57f4eb-38b0-48bf-ab38-3e975e1737ec"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Post-execution Analysis Flow</span><br /><div class="imagecenter"><img class="image imagecenter" height="604" src="../graphics/post_exec_anal_flow.png" width="183" /></div><br /></div>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_PassfailAnalysis_idf8b00830.html" title="Before vrun can decide how to react to a completed Action, it must determine if the Action in question passed or failed. For purposes of pass/fail analysis, each execScript Action is assumed to run, at most, one simulation. The preScript and postScript Actions are assumed not to run simulations (the preScript and postScript Actions are primarily used for compile, setup, and/or post-processing commands). These assumptions can be overridden in the RMDB database as described below.">Pass/Fail Analysis</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_AutoDeleteFunctionality_ide5d1f4a6.html" title="The auto-delete mechanism in VRM allows the user to configure VRM to selectively delete files from the VRM Data directory as a regression run progresses. This is primarily useful for those situations in which a limited amount of disk space is available and some of the collateral files generated by a given test (or by VRM to support the test execution) are no longer needed once that test finishes. For example, the user can configure a regression such that all files associated with a passing test are deleted once the test is complete and the coverage is merged into the merged UCDB file. Likewise, the user can configure a regression to preserve all UCDB and/or log files from passing tests and to preserve all files from failing tests (to facilitate reproduction of the failure) but to delete everything else.">Auto-Delete Functionality</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_CoverageMergeOptions_id977d1236.html" title="VRM supports several levels of automation of UCDB-based coverage merging. This functionality is a Questa specific value-added feature that must be enabled through the use of predefined parameters in the database. Coverage merging can also be performed manually via Action scripts defined by the user. The various coverage options available for merging coverage information follows.">Coverage Merge Options</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_CoverageMergingUseModels_id78b6395c.html" title="By default, VRM supports three levels of automation for coverage merging, as described in the following sections. ">Coverage Merging Use Models</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_MultiLevelAutoMergeExample_idc750a11f.html" title="The example makes use of the queued auto-merge functionality in vrun. The merge is divided into two levels, the second-level merge being responsible for merging two merge files produced by the first-level merge. This example also illustrates how unit-level and system-level coverage can be merged into a single UCDB using VRM. ">Multi-level Auto-merge Example</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UserDefinableProceduresLoadingArbitraryTclCode_idd238f0d1.html" title="VRM is designed to be a versatile scripting solution for a wide variety of regression flows and users. The basic architecture of nested Groups of Tasks following the preScript, execScript, postScript execution model is, itself, already quite extensible. Support for parametrized commands within those scripts further enhances that extensibility. However, the details involved in each step of the execution process are not quite as clear-cut. There are two approaches that must be balanced against one another as follows:">User-definable Procedures and Loading of Arbitrary TCL Code</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_CollatePassfailUcdbFilesMergeTriage_id2bef435c.html" title="In the course of running a regression suite using VRM features, one ends up generating a large number of UCDB, WLF, and other log files that must be analyzed. Coverage information must be merged and/or ranked in order to get a handle on how well the entire regression suite tests the design. Error messages must be triaged in order to pinpoint the unique error messages resulting from that run. From the point of view of the VRM tool, it all boils down to collecting simulation collateral files, sorting them by test status, and making those file lists available to the user's post-regression analysis script.">Collate Pass/Fail UCDB Files for Merge and/or Triage</a></strong></li>
+</ul>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Post-execution Analysis"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/MGCChap_PostExecutionAnalysis_id449d612e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="find drivers" />
+<meta name="abstract" content="Traces backward in time to find the active driver(s), processes, or first elements of the specified signal or signal event." />
+<meta name="description" content="Traces backward in time to find the active driver(s), processes, or first elements of the specified signal or signal event." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idce5fe357-6db6-4089-95b3-83c9166093b3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>find drivers</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="find drivers" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idce5fe357-6db6-4089-95b3-83c9166093b3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">find drivers</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><p class="p ContextMGC">Prerequisite:</p>
+<p class="p ContextMGC">Before using this command, you need to do either of
+the following:</p>
+<ul class="ul"><li class="li" id="id4cacdc57-aba9-4ae1-810b-806e73f2cc45"><p class="p">Run the vopt command
+with the -debugdb argument. </p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id581c3e3e-1ff9-4856-90f3-04a91c77fb66"><p class="p">If <a class="xref fm:HeadingOnly" href="Command_Vopt_iddd90284e.html#iddd90284e-ab1b-41d9-a09b-9914a6b6b54a__Command_Vopt_iddd90284e.xml#iddd90284e-ab1b-41d9-a09b-9914a6b6b54a" title="Performs global optimizations on designs after they have been compiled with vcom or vlog.">vopt</a> is not
+used, simulate the design with the -debugdb and -voptargs=”+acc”
+arguments to the <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__Command_Vsim_id382a4cc6.xml#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6" title="Invokes the VSIM simulator. Invoking this command with the ‑view argument enables you to view the results of a previous simulation run.">vsim</a> command.</p>
+</li>
+</ul>
+<p class="shortdesc">Traces backward
+in time to find the active driver(s), processes, or first elements of
+the specified signal or signal event.</p>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Show
+driver </h2><p class="lines UsageLine">find drivers [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id02756afd-c217-4680-ba7e-daddbec802cc">-source</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt;</a>]] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idb13acaac-749e-422f-8a21-cc2e90bc9c7a">-time &lt;time&gt; [unit]</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</a>] <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</a></p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Show
+cause </h2><p class="lines UsageLine">find drivers <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id2d019806-d5be-4ed3-ae98-04f42a112fa4">-cause</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id02756afd-c217-4680-ba7e-daddbec802cc">-source</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idb13acaac-749e-422f-8a21-cc2e90bc9c7a">-time &lt;time&gt; [unit]</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</a>] <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</a></p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Show
+root cause </h2><p class="lines UsageLine">find drivers <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id74da0ffb-baef-43be-ac0f-d037e48eb5dd">-rootcause</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id02756afd-c217-4680-ba7e-daddbec802cc">-source</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idb13acaac-749e-422f-8a21-cc2e90bc9c7a">-time &lt;time&gt; [unit]</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</a>] <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</a></p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Show
+root cause of ‘X’</h2><p class="lines UsageLine">find drivers <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__iddf834857-9653-44b6-8bb6-c16f6af7741a">-chasex</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id02756afd-c217-4680-ba7e-daddbec802cc">-source</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idb13acaac-749e-422f-8a21-cc2e90bc9c7a">-time &lt;time&gt; [unit]</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</a>] <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</a></p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Show
+all possible drivers </h2><p class="lines UsageLine">find drivers <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id7cb995c5-7aee-47a3-9363-e97df3ecc625">-possible</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</a> [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</a> | <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</a>] <a class="xref fm:HeadingOnly" href="#idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</a></p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The find drivers command can trace through multiple clock cycles
+and multiple clock domains. Traces are executed either during simulation
+or post-simulation.</p>
+<p class="p">You
+can do the following types of causality traces:</p>
+<ul class="ul"><li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idff7fb45d-dc5d-48be-b719-b0270ef8b00b"><p class="p">Show Cause — Trace
+back to the first sequential element causing the event. Duplicates
+the GUI menu paths: Show Cause &gt; Show Cause or Show Cause &gt; Show
+Cause from Time. (Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Initiating Causality Traceback from the GUI', 'questa_sim_user'); return false;">Initiating Causality Traceback from the GUI</a> in the User’s Manual.)</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idfac3e49f-1c31-4ed3-8a2c-10149adc9a66"><p class="p">Show Driver — Trace
+the specified signal back to the immediate driving process(es).
+The process(es) may be combinatorial or sequential assignments. Duplicates
+the GUI menu paths: Show Cause &gt; Show Driver or Show Cause &gt; Show Driver
+from Time.</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__ide6b1e999-c7fd-4de0-a4d0-d711b7714ff9"><p class="p">Show Root Cause — Trace
+the event back as far as possible. This can cross multiple clock
+cycles and multiple clock domains. Duplicates the GUI menu paths: Show
+Cause &gt; Show Root Cause or Show Cause &gt; Show Root Cause from Time. </p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id87d28286-abd8-45b3-9a6a-2991610aab0c"><p class="p">Show All Possible Drivers
+— Display all possible driving assignments for a signal (does not
+use the simulation results to determine). Duplicates the GUI menu path:
+Show Cause &gt; Show All Possible Drivers. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Traces may find more
+than one active driver for the specified signal and time. To continue
+backtracing, you must start a new search on one of the drivers identified
+in the Multiple Drivers dialog or the transcript. You must also
+specify the time that the signal was found. Refer to the Examples
+section for more information.</p>
+</div>
+</li>
+</ul>
+<p class="p">You can use
+the Escape key to interrupt the various find drivers operations. </p>
+<p class="p">You can enter
+find drivers -help or find drivers -? to access a help menu.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p"> Full
+causality traceback functionality requires optimization of your
+design with vopt or vsim -voptargs. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Using Causality Traceback', 'questa_sim_user'); return false;">Using Causality Traceback </a>in the User’s Manual
+for more information. </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id5314a17f-d2fd-47fc-8c14-08d511d8986f"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id2d019806-d5be-4ed3-ae98-04f42a112fa4">-cause</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Traces the specified &lt;signal&gt; back to the first sequential element
+causing the event.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__iddf834857-9653-44b6-8bb6-c16f6af7741a">-chasex</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Traces to the root cause of an ‘X’ on the specified signal over
+multiple cycles and clock domains.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id87816b2a-4cdd-49d0-8e15-c873bc3419b6">-compact &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a compact format for data output, using a specified text
+string to separate the fields.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id46aa6813-b6d9-4682-8f34-3dcfc8ad50ef"><p class="p Opt">&lt;string&gt;
+— Any combination of characters. Allows special characters, except
+a backslash ( \ ).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__ide96e05b9-34b1-4f79-b70b-3e5cb074e8a0">-schematic</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Places all signals contained in the path found by the trace in a
+dedicated Schematic window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idc5c0c0c6-e6a1-454b-a76e-843582dfed74">-last</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns the results from the last completed trace to the transcript.
+Useful for trying the various format options. Allows you to quickly
+see how each format option (‑compact, -tcl, -width, and -noclip)
+affects the output. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__ide4b5b4f3-1707-436d-8727-fea24d5b14c5">-noclip</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Allows columns to be arbitrarily long when returned to the transcript.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id7cb995c5-7aee-47a3-9363-e97df3ecc625">-possible</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays all of the possible driving assignments for a signal (does
+not use simulation results). The data returned is hyperlinked to
+the driving signal in the source file. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id74da0ffb-baef-43be-ac0f-d037e48eb5dd">-rootcause</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Trace the event back as far as possible. This may cross multiple
+clock cycles and multiple clock domains.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id02756afd-c217-4680-ba7e-daddbec802cc">-source</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Opens the source file containing the line of code found by the trace,
+scrolls to show that line, and highlights the driving signal. If
+the trace type is -possible, this option is not allowed. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id9e3ddb66-8d6d-48cd-a1ab-26ec641427bf">-tcl</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays trace results in a TCL list.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idb13acaac-749e-422f-8a21-cc2e90bc9c7a">-time &lt;time&gt; [unit]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Traces &lt;signal&gt; from a specified time. If not specified, the
+trace begins from the current active time indicated by either the
+end of the simulation, or the Wave window’s active cursor. The -time
+option is not allowed when using the -possible argument.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id8d85db5a-d418-4377-b90b-1c70794e8e67"><p class="p Opt">&lt;time&gt;
+— Specified as an integer or decimal number. Current simulation
+units are the default unless specifying &lt;unit&gt;. </p>
+</li>
+<li class="li ArgOption" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id0beb9a30-6cae-4240-98cf-fc1a2f366a86"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+You must enclose &lt;time&gt; and &lt;unit&gt; within braces ({}). Valid
+VHDL time units are: fs, ps, ns, us, ms, sec, min, and hr. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id90d52e26-c517-4ae5-aba0-7b97efdf8eec">-transcript</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports trace results to the Transcript window in tabular format
+(unless the -compact argument is used). Default behavior if not
+using -schematic, -source, or -wave. Returns the following information:</p>
+<p class="p">“Causality trace
+from the time &lt;time&gt; for the signal &lt;signal&gt;”</p>
+<ul class="ul"><li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idf1c666a9-d8cb-48db-8fc4-09df3433c303"><p class="p">Time — Simulation
+time when the driving signal caused a change in the traced signal.</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idd8850564-b068-427a-af0b-525c47defb12"><p class="p">Type — Register
+containing the traced signal.</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id13b9e272-f58e-4b5f-8f73-7377013ce8df"><p class="p">Scope — Name
+of the signal that caused the change in the signal being traced.</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id4f908932-3372-4f6e-b138-455ba1eb61c8"><p class="p">Source File
+— Location of the signal in the source file. Includes the full path,
+name of the source file, and line number. The text is hyperlinked
+to the location of the driving signal. Double-clicking the entry
+opens the source and highlights the source code.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id5386b446-2999-4508-a985-4ed3eb39f6d0">-wave</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Adds all signals in the path found by the trace to a dedicated Wave
+window, and displays cursors to show the beginning and ending times
+of the trace. Clears the dedicated Wave window of signals before
+displaying the results of a new trace.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idcf699863-db45-4f69-9797-238d90c76e54">-width &lt;n&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the maximum size of each column when data is returned
+to the transcript in tabular form.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id575bdabf-d5d2-4aa4-8f54-3111a3f1abc7"><p class="p Opt">&lt;n&gt; —
+Any positive integer.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idce5fe357-6db6-4089-95b3-83c9166093b3__ida6a8d720-f0fc-4362-ba31-d27314c8cb99">&lt;signal&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+The path name of a signal in the Wave window. Must be the final
+argument to the find drivers command.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__idb8afa36f-2cf6-4acd-ac4c-23c24e10a976"><p class="p">Show the first
+sequential process for the signal test1/jr</p>
+<p class="lines ApplCommand">   find drivers -source -time {698 ns} -cause -transcript sim:/test1/jr</p>
+<p class="p"><img class="image fmdpi:100" src="../graphics/find_driver_transcr.gif" /></p>
+<p class="p">Locate the driving
+signal for the Flip Flop /test1/ff1 in the source file by double clicking
+on the linked text:</p>
+<pre class="pre codeblock leveled"><code>C:\trace/test1.sv:106.</code></pre><p class="p">The driving signal
+is highlighted in the source file.</p>
+</li>
+<li class="li" id="idce5fe357-6db6-4089-95b3-83c9166093b3__id673613ff-b927-4720-996b-e19f8d4e9746"><p class="p">Trace a signal
+that finds Multiple Active Drivers.</p>
+<p class="lines ApplCommand">   find drivers -source -time {867 ns} -cause -transcript sim:/test1/mnf</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># Multiple active drivers exist at time 822 ns for signal sim:/test1/mnf:
+#    PROCESS: #ASSIGN#33  SIGNAL: /test1/ar  FILE: C:\ctraceback/test1.sv:33
+#    PROCESS: #ASSIGN#33  SIGNAL: /test1/br  FILE: C:\ctraceback/test1.sv:33</code></pre><p class="p">To continue the
+trace you must select one of the multiple drivers and execute the find
+drivers command again on that signal. For example:</p>
+<p class="lines ApplCommand">find drivers -source -time {822 ns} -cause -transcript /test1/br</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># Causality trace from time 822 ns for signal "sim:/test1/br":
+# 
+#   Time | Type | Scope  | Signal | Source File
+# ------ | ---- | ------ | ------ | -----------------------------
+# 822 ns | Gate | /test1 |        | C:\ctraceback/test1.sv:66
+</code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Using Causality Traceback', 'questa_sim_user'); return false;">Using Causality Traceback [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "find drivers"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_FindDrivers_idce5fe357.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

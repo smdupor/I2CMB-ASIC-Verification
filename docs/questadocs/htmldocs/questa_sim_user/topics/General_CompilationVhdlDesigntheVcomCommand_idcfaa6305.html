@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Compilation of a VHDL Design—the vcom Command" />
+<meta name="abstract" content="Questa SIM compiles one or more VHDL design units with a single invocation of the vcom command, which functions as the VHDL compiler." />
+<meta name="description" content="Questa SIM compiles one or more VHDL design units with a single invocation of the vcom command, which functions as the VHDL compiler." />
+<meta name="DC.subject" content="Compile, VHDL, compile" />
+<meta name="keywords" content="Compile, VHDL, compile" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcfaa6305-4211-42f5-ac45-4437d4c17564" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Compilation of a VHDL Design—the vcom Command</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Compilation of a VHDL Design—the vcom Command" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idcfaa6305-4211-42f5-ac45-4437d4c17564">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Compilation
+of a VHDL Design—the vcom Command</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc"><span class="ph fmvar:ProductName">Questa SIM</span> compiles one or more VHDL design
+units with a single invocation of the vcom command, which functions
+as the VHDL compiler.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idfd106d8c-c470-4a25-9ef1-9a56d547e422"><p class="p">As
+a default, design units compile in the order they appear on the
+command line. For VHDL, the order of compilation is important—you
+must compile any entities or configurations before an architecture
+that references them.</p>
+<p class="p">You can either manually order the design units yourself on the
+command line, or you can use the -autoorder argument. An -autoorder
+compilation determines the proper order of VHDL design units independent
+of the order that you listed the files on the command line. Compilation proceeds
+in a scan phase followed by a refresh phase. Without the argument,
+you must list VHDL files in their proper compilation order.</p>
+<p class="p">You can simulate a design written with any
+of the following versions of VHDL, but you must compile units from
+each version separately: </p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idd3af1800-d913-40ff-9990-18accde2d4f5"><p class="p">1076‑1987</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idb51527d4-7c6f-4c4f-aa59-88934fc84e76"><p class="p">1076‑1993</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id636e221c-6d1b-4fd0-ada2-8d9d90528e91"><p class="p">1076‑2002</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idb9db9f32-8c4a-4320-895a-61637469944e"><p class="p">1076-2008</p>
+</li>
+</ul>
+<p class="p">The <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> command
+compiles using 1076 ‑2002 rules by default; use the -87, ‑93, or
+-2008 arguments to compile units written with version 1076-1987,
+1076 ‑1993, or 1076-2008 respectively. You can change the default
+by modifying the <a class="xref fm:HeadingOnly" href="Command_Vhdl93_id0e633ccd.html#id0e633ccd-2c28-4071-b853-5467ab63e7a0__Command_Vhdl93_id0e633ccd.xml#id0e633ccd-2c28-4071-b853-5467ab63e7a0" title="This variable enables support for VHDL language version.">VHDL93</a> variable in the <span class="ph filepath">modelsim.ini</span> file
+(see <a class="xref fm:HeadingOnly" href="MGCAppe_ModelsimIniVariables_id074e042a.html#id074e042a-3efa-4437-bacc-37844845a06b__MGCAppe_ModelsimIniVariables_id074e042a.xml#id074e042a-3efa-4437-bacc-37844845a06b" title="The modelsim.ini file is the default initialization file and contains control variables that specify reference library paths, optimization, compiler and simulator settings, and various other functions. This chapter covers the contents and modification of the modelsim.ini file.">modelsim.ini Variables</a> for more information).</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Not
+all VHDL 1076-2008 constructs are currently supported. From the
+main window, select <span class="ph menucascade"><span class="ph uicontrol">Help</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Technotes</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">vhdl2008</span></span> for
+more information.</p>
+</div>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idd8b04b7f-ef27-4d29-bd15-95e351256a5a"><h2 class="title Subheading sectiontitle">Dependency
+Checking</h2><p class="p">You must re-analyze dependent design units
+when you change the design units they depend on in the library.
+The <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> command determines
+whether or not the compilation results have changed. </p>
+<p class="p">For example, if you keep an entity and its
+architectures in the same source file, and you modify only an architecture
+and recompile the source file, the entity compilation results remain unchanged.
+This means you do not have to recompile design units that depend
+on the entity.</p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idddc8e148-b8a1-4ebf-8a47-26ee029cc2fc"><h2 class="title Subheading sectiontitle">VHDL Case Sensitivity</h2><p class="p">VHDL is a case-insensitive language
+for all basic identifiers. For example, clk and CLK are regarded
+as the same name for a given signal or variable.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">This differs from the Verilog and SystemVerilog languages,
+both of which are case-sensitive. </p>
+</div>
+<p class="p">The
+vcom command preserves both uppercase and lowercase letters of all
+user-defined object names in a VHDL source file. </p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id7b056d5b-354c-42cf-b9b9-379e27dbcad0"><h2 class="title Subheading sectiontitle">Usage Notes</h2><ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id8f67007d-8a56-4279-9bdc-8b2afe601356"><p class="p">You
+can use either of the following methods to convert uppercase letters
+to lowercase: </p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idd3f068f9-195f-4e3a-a096-e01467caaa97"><p class="p">Use the -lower argument with the vcom
+command. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id88863572-e522-420f-b1dc-7b2713b00fa2"><p class="p">Set the PreserveCase variable to 0 in
+your modelsim.ini file. </p>
+</li>
+</ul>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idf081475f-f412-454f-9d29-151b9c30d64e"><p class="p">The
+supplied precompiled packages in STD and IEEE have their case preserved.
+This results in slightly different version numbers for these packages.
+As a result, you may receive out-of-date reference messages when
+refreshing to the current release. To resolve this, use vcom ‑force_refresh
+instead of vcom ‑refresh. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id309e6fce-cb29-41ee-b67a-7e94bd2d656f"><p class="p">Mixed
+language interactions are addressed in the following ways:</p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id21ab876d-dec1-4edc-bc6f-faae8c0d8972"><p class="p"><span class="ph FontProperty HeadingLabel">Design unit names</span> — Because
+VHDL and Verilog design units are mixed in the same library, VHDL design
+units are treated as if they are lowercase. Treating VHDL design
+units as lower case provides compatibility with previous releases,
+and provides consistent filenames in the file system for make files
+and scripts. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idffb0e76b-b9ce-4c36-a324-cd67e1d736c0"><p class="p"><span class="ph FontProperty HeadingLabel">Verilog packages compiled with -mixedsvvh</span> —
+These packages are not affected by VHDL uppercase conversion. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idcf721904-a93a-46fb-8c76-9043134ba409"><p class="p"><span class="ph FontProperty HeadingLabel">VHDL packages compiled with -mixedsvvh</span> —
+These packages are not affected by VHDL uppercase conversion; VHDL
+basic identifiers are still converted to lowercase for compatibility
+with previous releases. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__ide6fe7be8-e22d-488d-9603-5fd6ce1ca756"><p class="p"><span class="ph FontProperty HeadingLabel">FLI</span> —
+Functions that return names of an object do not have the original
+case unless you use vcom -lower to compile the source. Port and
+Generic names in the mtiInterfaceListT structure convert to lowercase
+to provide compatibility with programs doing case sensitive comparisons (strcmp)
+on the generic and port names. </p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idda7b0f13-21f7-477f-8b13-6343ad123520"><h2 class="title Subheading sectiontitle">How Case Affects Default
+Binding</h2><p class="p">The following rules describe how <span class="ph fmvar:ProductName">Questa SIM</span> handles uppercase and lowercase
+names in default bindings. </p>
+<ol class="ol"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id03a5eeaa-5e6a-4d3d-815c-0b78761ad716"><p class="p">All
+VHDL names are case-insensitive, so <span class="ph fmvar:ProductName">Questa SIM</span> always
+stores them in the library in lowercase to be consistent and compatible
+with older releases. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__ide7a3c766-145c-4ff0-829f-93db2a669c7e"><p class="p">When
+looking for a design unit in a library, <span class="ph fmvar:ProductName">Questa SIM</span> ignores
+the VHDL case and looks first for the name in lowercase. If the
+lowercase name is present, <span class="ph fmvar:ProductName">Questa SIM</span> uses it.</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id10b21a33-2892-42fe-8300-2bb886f1106e"><p class="p">If no
+lowercase version of the design unit name exists in the library,
+then <span class="ph fmvar:ProductName">Questa SIM</span> checks
+the library, ignoring case. </p>
+<ol class="ol" type="a"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__ideaef493c-ea5a-4c1e-8b59-5213feb5b18b"><p class="p">If ONE match is found this way, <span class="ph fmvar:ProductName">Questa SIM</span> selects that design unit.</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id2363294f-4377-442d-b4b3-88bd90ccf721"><p class="p">If NO matches or TWO or more matches are found, <span class="ph fmvar:ProductName">Questa SIM</span> does not select anything.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p class="p">The following examples demonstrate these rules.
+In these examples, the VHDL compiler needs to find a design unit
+named Test. Because VHDL is case-insensitive, <span class="ph fmvar:ProductName">Questa SIM</span> looks for "test" because previous
+releases always converted identifiers to lowercase.</p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id49ac29eb-fd54-49ae-b594-394d5b4c450b"><h2 class="title Subheading sectiontitle">Example 1</h2><p class="p">Consider the following library: </p>
+<pre class="pre codeblock"><code>work
+     entity test
+      Module TEST</code></pre><p class="p">The VHDL entity test is selected because it
+is stored in the library in lowercase. The original VHDL could have
+contained TEST, Test, or TeSt, but the library always contains the entity
+as "test." </p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id53020cd9-bd65-4c3e-9c4f-aa1605739398"><h2 class="title Subheading sectiontitle">Example 2</h2><p class="p">Consider the following library: </p>
+<pre class="pre codeblock"><code>work
+     Module Test</code></pre><p class="p">No design unit named "test" exists, but "Test"
+matches when case is ignored, so <span class="ph fmvar:ProductName">Questa SIM</span> selects
+it.</p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idea3a2628-83ee-40cd-9916-dbd24a691491"><h2 class="title Subheading sectiontitle">Example 3</h2><p class="p">Consider the following library: </p>
+<pre class="pre codeblock"><code>work
+    Module Test
+    Module TEST</code></pre><p class="p">No design unit named "test" exists, but both
+"Test" and "TEST" match when case is ignored, so <span class="ph fmvar:ProductName">Questa SIM</span> does not select either one. </p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idc6251c6b-74ba-4b7c-9de3-8fb69be2a398"><h2 class="title Subheading sectiontitle">Range and Index Checking</h2><p class="p">A range check verifies that a scalar value
+defined to be of a subtype with a range is always assigned a value
+within its range. An index check verifies that whenever an array
+subscript expression is evaluated, the subscript will be within
+the array's range. </p>
+<p class="p">Range and index checks are performed by default
+when you compile your design. You can disable range checks (potentially
+offering a performance advantage) using arguments to the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> command.
+Or, you can use the <a class="xref fm:HeadingOnly" href="Command_Norangecheck_id79bf546c.html#id79bf546c-d696-4a4a-85d1-680a93760b72__Command_Norangecheck_id79bf546c.xml#id79bf546c-d696-4a4a-85d1-680a93760b72" title="This variable disables run time range checking. In some designs this results in a 2x speed increase.">NoRangeCheck</a> and <a class="xref fm:HeadingOnly" href="Command_Noindexcheck_idad8d9e03.html#idad8d9e03-7b71-41ee-9ef0-4699b2eb14b8__Command_Noindexcheck_idad8d9e03.xml#idad8d9e03-7b71-41ee-9ef0-4699b2eb14b8" title="This variable controls run time index checks.">NoIndexCheck</a> variables in the [vcom] section
+of the <span class="ph filepath">modelsim.ini</span> file to specify not to
+perform checks. Refer to <a class="xref fm:HeadingOnly" href="MGCAppe_ModelsimIniVariables_id074e042a.html#id074e042a-3efa-4437-bacc-37844845a06b__MGCAppe_ModelsimIniVariables_id074e042a.xml#id074e042a-3efa-4437-bacc-37844845a06b" title="The modelsim.ini file is the default initialization file and contains control variables that specify reference library paths, optimization, compiler and simulator settings, and various other functions. This chapter covers the contents and modification of the modelsim.ini file.">modelsim.ini Variables</a> for more information.</p>
+<p class="p">Generally, disable these checks only after
+the design is known to be error-free. If you run a simulation with
+range checking disabled, any scalar values that are out of range
+display the value in the following format: ?(N) where N is the current
+value. For example, the range constraint for STD_ULOGIC is 'U' to
+'-'; if the value is reported as ?(25), the value is out of range
+because the type STD_ULOGIC value internally is between 0 and 8
+(inclusive). Values that are out of range may indicate that an error
+in the design is not being caught because range checking was disabled.</p>
+<p class="p">Range checks in <span class="ph fmvar:ProductName">Questa SIM</span> are
+more restrictive than those specified by the VHDL Language Reference
+Manual (LRM). <span class="ph fmvar:ProductName">Questa SIM</span> requires
+any assignment to a signal to also be in range, whereas the LRM
+requires only that range checks be done whenever a signal is updated.
+The more restrictive requirement allows <span class="ph fmvar:ProductName">Questa SIM</span> to
+generate better error messages.</p>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id3564b224-fafc-4b32-94d4-fc1b635e533e"><h2 class="title Subheading sectiontitle">Subprogram Inlining</h2><p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> attempts to inline subprograms
+at compile time to improve simulation performance. This happens
+automatically and is largely transparent. However, you can disable
+automatic inlining two ways:</p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id2bc6cbf7-af7d-497a-b14e-5dfc5481114c"><p class="p">Invoke <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> with
+the -O0 or -O1 argument</p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id2d0880be-93f5-49c7-a403-4f34e51b133e"><p class="p">Use
+the <span class="ph FontProperty emphasis">mti_inhibit_inline</span> attribute
+as described below</p>
+</li>
+</ul>
+<p class="p">Single-stepping through a simulation varies
+slightly, depending on whether inlining occurred. </p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idf46439a6-09ee-4d2f-9bb1-714ca9a9af1d"><p class="p">When single-stepping
+to a subprogram call that has not been inlined, the simulator stops
+first at the line of the call, and then proceeds to the line of
+the first executable statement in the called subprogram. </p>
+</li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id486647a2-3747-4576-84b4-894de09e7b85"><p class="p">When single-stepping
+to a subprogram call that has been inlined, the simulator does not
+first stop at the subprogram call, but stops immediately at the
+line of the first executable statement.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__id27e6b5f5-af80-45db-b560-a42b7c51f97a"><h2 class="title Subheading sectiontitle">mti_inhibit_inline Attribute</h2><p class="p">You
+can use the <span class="ph FontProperty emphasis">mti_inhibit_inline</span> attribute
+to disable inlining for individual design units (a package, architecture,
+or entity) and subprograms. Follow these rules to use the attribute:</p>
+<ul class="ul"><li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__ide510402b-f0cc-49eb-a95d-8fcb3eeb6e43"><p class="p">Declare
+the attribute within the design unit's scope as follows:</p>
+<pre class="pre codeblock leveled"><code>attribute mti_inhibit_inline : boolean;</code></pre></li>
+<li class="li" id="idcfaa6305-4211-42f5-ac45-4437d4c17564__idd5d5f715-7e87-47e3-b61c-8c77df964663"><p class="p">Assign
+the value true to the attribute for the appropriate scope. For example,
+to inhibit inlining for a particular function (for example, "foo"),
+add the following attribute assignment:</p>
+<pre class="pre codeblock leveled"><code>attribute mti_inhibit_inline of foo : procedure is true;</code></pre><p class="p">To inhibit inlining for a particular package
+(for example, "pack"), add the following attribute assignment:</p>
+<pre class="pre codeblock leveled"><code>attribute mti_inhibit_inline of pack : package is true;</code></pre><p class="p">Use the same method to inhibit inlining for
+entities and architectures.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CompilationSimulationVhdl_id57e479b0.html" title="The basic operations for using VHDL with Questa SIM are establishing a library for compilation results, compilation, and simulation.">Compilation and Simulation of VHDL</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Compilation of a VHDL Design—the vcom Command"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_CompilationVhdlDesigntheVcomCommand_idcfaa6305.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

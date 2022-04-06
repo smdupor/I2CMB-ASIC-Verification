@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Addition of New Data to a UCDB" />
+<meta name="abstract" content="The single complex example “create-ucdb/create_ucdb.c” creates a hardcoded UCDB from scratch. The code that it uses could be adapted, with variations, to add objects to an existing UCDB. Even in the “create_ucdb.c” example, the database exists; it just starts out empty and is added to with each call." />
+<meta name="description" content="The single complex example “create-ucdb/create_ucdb.c” creates a hardcoded UCDB from scratch. The code that it uses could be adapted, with variations, to add objects to an existing UCDB. Even in the “create_ucdb.c” example, the database exists; it just starts out empty and is added to with each call." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id983d5a1e-9f4b-4c5e-b742-c19b655f553e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Addition of New Data to a UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Addition of New Data to a UCDB" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Addition of New Data to a UCDB</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The single
+complex example “create-ucdb/create_ucdb.c” creates a hardcoded
+UCDB from scratch. The code that it uses could be adapted, with variations,
+to add objects to an existing UCDB. Even in the “create_ucdb.c”
+example, the database exists; it just starts out empty and is added
+to with each call.</span>
+</div>
+<p class="p">The
+example is not exhaustive. Statements, an enum toggle, and a covergroup
+are created as an illustration. To create other types of objects,
+refer to “<a class="xref fm:HeadingAndPage" href="Contain_UcdbDataModels_id65d10df1.html#id65d10df1-3f4c-4569-beb7-de999610472a__Contain_UcdbDataModels_id65d10df1.xml#id65d10df1-3f4c-4569-beb7-de999610472a" title="The UCDB API is a general one that creates certain objects – such as scopes, coveritems, and test data records – with certain names, types, and attributes. Use of this API allows for the creation of many different potential data models.">UCDB Data Models</a>”. It
+also may help to reverse-engineer UCDB data created by Questa using
+the ucdbdump example from <span class="ph filepath">examples/ucdb/ucdbdump</span>.</p>
+<div class="section Subsections"><div class="section Subsection" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id76c7bfc9-ee0c-4b93-bc51-3b4d9fcaa238"><h2 class="title Subheading sectiontitle">Add Design Unit to a UCDB</h2><p class="p">You can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/create-ucdb/</span></p>
+<pre class="pre codeblock leveled"><code>ucdbScopeT 
+create_design_unit(ucdbT db, 
+                   const char* duname, 
+                   ucdbFileHandleT file, 
+                   int line) 
+{ 
+    ucdbScopeT duscope; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbAttrValueT attrvalue; 
+    srcinfo.filehandle = file; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                          /* fake token # */ 
+    duscope = ucdb_CreateScope(db, 
+                               NULL,            /* DUs never have a parent */ 
+                               duname, 
+                               &amp;srcinfo, 
+                               1,               /* weight */ 
+                               UCDB_VLOG,       /* source language */ 
+                               UCDB_DU_MODULE,  /* scope type */ 
+                               /* flags: */ 
+                               UCDB_ENABLED_STMT | UCDB_ENABLED_BRANCH | 
+                               UCDB_ENABLED_COND | UCDB_ENABLED_EXPR | 
+                               UCDB_ENABLED_FSM | UCDB_ENABLED_TOGGLE | 
+                               UCDB_INST_ONCE | UCDB_SCOPE_UNDER_DU); 
+    attrvalue.type = UCDB_ATTR_STRING; 
+    attrvalue.u.svalue = "FAKE DU SIGNATURE"; 
+    ucdb_AttrAdd(db,duscope,-1,UCDBKEY_DUSIGNATURE,&amp;attrvalue); 
+    return duscope; 
+} </code></pre><p class="p">Design units must
+be created before their corresponding instances. Design units come
+in five types:</p>
+<dl class="dl"><dt class="dt dlterm">UCDB_DU_MODULE</dt>
+<dd class="dd"><p class="p">Verilog or SystemVerilog module</p>
+</dd>
+<dt class="dt dlterm">UCDB_DU_ARCH</dt>
+<dd class="dd"><p class="p">VHDL architecture</p>
+</dd>
+<dt class="dt dlterm">UCDB_DU_PACKAGE</dt>
+<dd class="dd"><p class="p">Verilog, SystemVerilog or VHDL package</p>
+</dd>
+<dt class="dt dlterm">UCDB_DU_PROGRAM</dt>
+<dd class="dd"><p class="p">SystemVerilog program block</p>
+</dd>
+<dt class="dt dlterm">UCDB_DU_INTERFACE</dt>
+<dd class="dd"><p class="p">SystemVerilog interface</p>
+</dd>
+</dl>
+<p class="p">One crucial fact about all these types, except
+packages, is that differently parameterized versions of the same
+design unit are merged together by Questa when saving a UCDB. This
+is because different parameterizations may be created arbitrarily
+and capriciously by the optimizer. The Structure window in Questa
+shows these parameterizations, but when a UCDB is loaded into the
+Coverage View mode GUI, the Structure window shows only the canonical module,
+architecture, and so forth.</p>
+<p class="p">Questa does not use the UCDB_SV language type
+except for types of objects peculiar to SystemVerilog (such as interfaces.)
+A module will always have the UCDB_VLOG language type.</p>
+<p class="p">The flags for the design unit have the requirement
+that in order for the Questa reports to work correctly the flags
+must be turned on to correspond to the different types of code coverage that
+have been compiled for the design unit. If these flags are not present,
+the report will not recognize the corresponding code coverage type.</p>
+<p class="p">The UCDB_INST_ONCE flag is hardcoded in this
+case, but you are responsible for maintaining it. If you add an
+instance to a design unit that already has a single instance, the
+flag must be cleared. In this example, it is assumed that the design
+unit will only ever have a single instance.</p>
+<p class="p">The flag UCDB_SCOPE_UNDER_DU is required for
+certain coverage CLI commands and summary data to work correctly:
+it supplies the implementation for ucdb_ScopeIsUnderDU() and has
+implications for ucdb_CalcCoverageSummary(). If the flag is not
+set, some design-unit-oriented coverage may be mistaken as being
+per-instance.</p>
+<p class="p">The UCDBKEY_DUSIGNATURE attribute is required
+to detect source code changes for the files associated with the
+design unit. </p>
+<p class="p">The Questa implementation of the signature
+is not available as a public API. If a valid signature is not computed
+by the API user, it has implications for the merge. If UCDBs from
+the same design source are merged together, there will be no problem,
+but the potential problem of merging files from different source
+would not be detected. (Merging from different source is a problem
+for the UCDB because most code coverage objects, with the exception
+of FSMs and toggles, are identified by source code only; that is,
+by some combination of file, line, and token number.)</p>
+<p class="p">The weight of a design unit has relevance to
+the Questa coverage analyze command and the Test Tracking GUI.</p>
+</div>
+<div class="section Subsection" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id870eed57-7027-4d10-b5d8-e33fb5a2de30"><h2 class="title Subheading sectiontitle">Add Module Instance
+to a UCDB</h2><p class="p">You can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/create-ucdb/</span>.</p>
+<pre class="pre codeblock leveled"><code>	ucdb_CreateInstance(db,parent,instname, 
+		NULL,           /* source info: not used in Questa */ 
+		1,              /* weight */ 
+		UCDB_VLOG,      /* source language */ 
+		UCDB_INSTANCE,  /* instance of module/architecture */ 
+		duscope,        /* reference to design unit */ 
+		UCDB_INST_ONCE);/* flags */ 
+ </code></pre><p class="p">Because the UCDB is a hierarchical data
+structure, the parent must be given. Setting the value to NULL creates
+the instance at the top-level; that is, creates it as root. This
+implicitly adds the new instance underneath the parent.</p>
+<p class="p">The instance name (instname) will become part
+of the path to identify the instance in the UCDB hierarchy. If the
+name contains odd characters, it is good practice to turn it into
+an escaped (or extended) identifier to enable path searching in
+Questa to work properly. The escaped identifier syntax will be VHDL
+style for instances under a VHDL parent and Verilog style for instances
+under a Verilog parent.</p>
+<p class="p">Source information may be given.</p>
+<p class="p">The weight may be relevant to the coverage
+analyze command and the Test Tracking GUI.</p>
+<p class="p">The scope type (UCDB_INSTANCE in this case)
+must map correctly to the given design unit type:</p>
+<ul class="ul"><li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id1f818364-f5c7-4171-82e6-1ae409d1646d"><p class="p">UCDB_INSTANCE for design unit type of
+UCDB_DU_MODULE or UCDB_DU_ARCH.</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__idd27238c6-0085-46db-90be-7853aaa53488"><p class="p">UCDB_PACKAGE for design unit type of UCDB_DU_PACKAGE.</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id03372d10-ee14-4aeb-a61e-c41a11d71d4e"><p class="p">UCDB_INTERFACE for design unit type of UCDB_DU_INTERFACE.</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id4126aa9b-8d9d-47b8-80c6-8080cd424bfa"><p class="p">UCDB_PROGRAM for design unit type of UCDB_DU_PROGRAM.</p>
+</li>
+</ul>
+<p class="p">The UCDB_INST_ONCE flag is set only for a single
+instance of a given design unit. If adding an additional instance,
+you must clear the flag explicitly.</p>
+<pre class="pre codeblock leveled"><code>ucdb_SetScopeFlag(db,scope,UCDB_INST_ONCE,0);</code></pre></div>
+<div class="section Subsection" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id6cd21512-b3f4-4fbc-a325-10f57f173c97"><h2 class="title Subheading sectiontitle">Add Statement to a UCDB</h2><p class="p">You
+can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/create-ucdb/</span>.</p>
+<pre class="pre codeblock leveled"><code>void 
+create_statement(ucdbT db, 
+                 ucdbScopeT parent, 
+                 ucdbFileHandleT filehandle, 
+                 int line, 
+                 int count) 
+{ 
+    ucdbCoverDataT coverdata; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbAttrValueT attrvalue; 
+    int coverindex; 
+    coverdata.type = UCDB_STMTBIN; 
+    coverdata.flags = UCDB_IS_32BIT;    /* data type flag */ 
+    coverdata.data.int32 = count;       /* must be set for 32 bit flag */ 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    coverindex = ucdb_CreateNextCover(db,parent, 
+                                      NULL, /* name: statements have none */ 
+                                      &amp;coverdata, 
+                                      &amp;srcinfo); 
+    /* SINDEX attribute is used internally by Questa: */ 
+    attrvalue.type = UCDB_ATTR_INT; 
+    attrvalue.u.ivalue = 1; 
+    ucdb_AttrAdd(db,parent,coverindex,UCDBKEY_STATEMENT_INDEX,&amp;attrvalue); 
+} </code></pre><p class="p">Like any object to be created in the design
+or test bench or testplan hierarchy, this requires a parent. The
+third argument to ucdb_CreateNextCover() is the name of the object. Statements
+do not have a name as created by Questa. (You can provide one, but
+Questa will ignore it.)</p>
+<p class="p">The &amp;coverdata argument is a pointer to
+the ucdbCoverDataT structure. This structure contains all the data
+associated with the bin except for the name and source information.
+The “data” field is a union containing the coverage count: int32
+for 32-bit platforms or int64 for 64-bit platforms. In this example,
+it is hard-coded to 32-bits, which requires setting both the appropriate
+field of the union and the corresponding flag. Other data fields
+are optionally enabled based on the flags field of ucdbCoverDataT.
+Statements require only the data field (the coverage count).</p>
+<p class="p">The SINDEX user-defined attribute is used to
+determine the ordering of the statement on a line. If the statement
+is the only one to appear on the line, SINDEX is always 1. The second statement
+on a line would have value 2, and so on. If this SINDEX attribute
+is not given, the ItemNo column of the Questa statement coverage
+details report (vcover report -code s -byfile -details ucdb) will
+not be correct.</p>
+</div>
+<div class="section Subsection" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__idaff9bd7c-20ca-45d7-8d0c-6793c0853c4b"><h2 class="title Subheading sectiontitle">Add Toggle to a UCDB</h2><p class="p">Toggles have special data characteristics which
+require they be created with a special API call.</p>
+<p class="p">You can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/create-ucdb/</span></p>
+<pre class="pre codeblock leveled"><code>void 
+create_enum_toggle(ucdbT db,ucdbScopeT parent) 
+{ 
+	ucdbCoverDataT coverdata; 
+	ucdbScopeT toggle; 
+	toggle = ucdb_CreateToggle(db,parent, 
+		"t",                    /* toggle name */ 
+		NULL,                   /* canonical name */ 
+		0,                      /* exclusions flags */ 
+		UCDB_TOGGLE_ENUM,       /* toggle type */ 
+		UCDB_TOGGLE_INTERNAL);  /* toggle "direction" */  
+	coverdata.type = UCDB_TOGGLEBIN; 
+	coverdata.flags = UCDB_IS_32BIT;    /* data type flag */ 
+	coverdata.data.int32 = 0;           /* must be set for 32 bit flag */ 
+	ucdb_CreateNextCover(db,toggle, 
+		"a",                             /* enum name */ 
+		&amp;coverdata, 
+		NULL);                           /* source data */ 
+	coverdata.data.int32 = 1;           /* must be set for 32 bit flag */ 
+	ucdb_CreateNextCover(db,toggle, 
+		"b",                             /* enum name */ 
+		&amp;coverdata, 
+		NULL);                           /* source data */ 
+} </code></pre><p class="p">This example corresponds to a source toggle
+declared as follows in SystemVerilog:</p>
+<pre class="pre codeblock leveled"><code>enum { a, b } t;  </code></pre><p class="p">The toggle has only name and no source information
+(so NULL values are passed to ucdb_CreateNextCover()). Source info
+could be added later using ucdb_SetScopeSourceInfo() on toggle scopes.</p>
+<p class="p">The canonical name is used for wire (net) toggles,
+as described in the section “<a class="xref fm:HeadingAndPage" href="Concept_ToggleCoverage_idec6584af.html#idec6584af-1ecf-4426-afcf-5e49867626f3__Concept_ToggleCoverage_idec6584af.xml#idec6584af-1ecf-4426-afcf-5e49867626f3" title="The UCDB data model for toggle coverage represents, the six basic types of toggle coverage: integer, enum, register, net, extended register, and extended net.">Toggle Coverage</a>”. The
+exclusions flags may apply to the toggle, so those can be given,
+too.</p>
+<p class="p">The toggle type and directionality (input,
+output, inout, or internal) are given. Directionality really only
+applies to net toggles, but is set to internal for others.</p>
+<p class="p">Recall that an enum toggle has bins whose names
+correspond to the enum values in the source language. If creating
+bins for other types of toggles, use the appropriate UCDBBIN_TOGGLE_
+#define value as declared in <span class="ph filepath">ucdb.h</span>.</p>
+</div>
+<div class="section Subsection" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id279015d3-cea5-4430-abb0-5663517ed4d2"><h2 class="title Subheading sectiontitle">Add Covergroup to a
+UCDB</h2><p class="p">The covergroup is created in various stages.
+The covergroup for the “create-ucdb” example looks like this:</p>
+<pre class="pre codeblock leveled"><code>	enum { a, b } t; 
+	covergroup cg; 
+		coverpoint t; 
+	endgroup </code></pre><p class="p">This
+requires creating a hierarchy as follows:</p>
+<ol class="ol"><li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id445478e6-9208-41cd-87d8-03429b3bdf16"><p class="p">cg</p>
+<ol class="ol" type="a"><li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id4a2b7665-a96c-4e47-8a11-6b13901742c8"><p class="p">t</p>
+<ol class="ol" type="i"><li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id83b914f7-97e8-40de-aabf-db55a317dd4e"><p class="p">a</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id7fba9db6-e499-457a-bcd6-ff4fcaeec8a3"><p class="p">b</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p class="p">The top level code is shown in the following
+example.</p>
+<p class="p">C Example (“create-ucdb”):</p>
+<pre class="pre codeblock leveled"><code>    cvg = create_covergroup(db,instance,"cg",filehandle,3); 
+    cvp = create_coverpoint(db,cvg,"t",filehandle,4); 
+    create_coverpoint_bin(db,cvp,"auto[a]",filehandle,4,1,0,"a"); 
+    create_coverpoint_bin(db,cvp,"auto[b]",filehandle,4,1,1,"b"); 
+ </code></pre><p class="p">The hierarchy is implied by the use of the
+parent pointers, which is the second argument to each of these functions.
+The parent of “cg” is the instance whose scope handle is “instance”; this
+is loaded into the “cvg” handle. The “cvg” handle is used as the
+parent to create the “cvp” handle for the coverpoint named “t”.
+The “cvp” handle is then used as the parent of the bins.</p>
+<p class="p">The creation of the covergroup is this example:</p>
+<p class="p">C Example (“create-ucdb”):</p>
+<pre class="pre codeblock leveled"><code>ucdbScopeT 
+create_covergroup(ucdbT db, 
+                  ucdbScopeT parent, 
+                  const char* name, 
+                  ucdbFileHandleT filehandle, 
+                  int line) 
+{ 
+    ucdbScopeT cvg; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbAttrValueT attrvalue; 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    cvg = ucdb_CreateScope(db,parent,name, 
+                           &amp;srcinfo, 
+                           1,           /* from type_option.weight */ 
+                           UCDB_VLOG,   /* source language type */ 
+                           UCDB_COVERGROUP, 
+                           0);          /* flags */ 
+    /* Hardcoding attribute values to defaults for type_options: */ 
+    attrvalue.type = UCDB_ATTR_INT; 
+    attrvalue.u.ivalue = 100; 
+    ucdb_AttrAdd(db,cvg,-1,UCDBKEY_GOAL,&amp;attrvalue); 
+    attrvalue.u.ivalue = 0; 
+    ucdb_AttrAdd(db,cvg,-1,UCDBKEY_STROBE,&amp;attrvalue); 
+    attrvalue.type = UCDB_ATTR_STRING; 
+    attrvalue.u.svalue = ""; 
+    ucdb_AttrAdd(db,cvg,-1,UCDBKEY_COMMENT,&amp;attrvalue); 
+    return cvg; 
+} </code></pre><p class="p">The scope type is UCDB_COVERGROUP and the source
+type is UCDB_VLOG. The source type could also be UCDB_SV, but that
+is not how Questa creates it. </p>
+<p class="p">The attributes must have full report capability
+for the covergroup. Because this covergroup has option.per_instance
+the default of 0, the example creates type_option values only. type_option.weight
+is provided directly as an argument to ucdb_CreateScope(). The option.per_instance
+influences the topology of the covergroup tree itself; if there
+are no covergroup objects with option.per_instance==1, then there
+will be no UCDB_COVERINSTANCE scopes in the covergroup subtree.</p>
+<p class="p">Following is the creation of the coverpoint.</p>
+<p class="p">C Example (“create-ucdb”):</p>
+<pre class="pre codeblock leveled"><code>ucdbScopeT 
+create_coverpoint(ucdbT db, 
+                  ucdbScopeT parent, 
+                  const char* name, 
+                  ucdbFileHandleT filehandle, 
+                  int line) 
+{ 
+    ucdbScopeT cvp; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbAttrValueT attrvalue; 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    cvp = ucdb_CreateScope(db,parent,name, 
+                           &amp;srcinfo, 
+                           1,           /* from type_option.weight */ 
+                           UCDB_VLOG,   /* source language type */ 
+                           UCDB_COVERPOINT, 
+                           0);          /* flags */ 
+    /* Hardcoding attribute values to defaults for type_options: */ 
+    attrvalue.type = UCDB_ATTR_INT; 
+    attrvalue.u.ivalue = 100; 
+    ucdb_AttrAdd(db,cvp,-1,UCDBKEY_GOAL,&amp;attrvalue); 
+    attrvalue.u.ivalue = 1; 
+    ucdb_AttrAdd(db,cvp,-1,UCDBKEY_ATLEAST,&amp;attrvalue); 
+    attrvalue.type = UCDB_ATTR_STRING; 
+    attrvalue.u.svalue = ""; 
+    ucdb_AttrAdd(db,cvp,-1,UCDBKEY_COMMENT,&amp;attrvalue); 
+    return cvp; 
+}  </code></pre><p class="p">This is very similar to the covergroup creation,
+except for the scope type, the parent (which is the previously created
+covergroup), and the options (including the weight given to ucdbCreateScope())
+which derive from the default values for the type_option structure
+in the coverpoint scope.</p>
+<p class="p">The bins are created as children of the coverpoint.</p>
+<p class="p">C Example (“create-ucdb”):</p>
+<pre class="pre codeblock leveled"><code>void 
+create_coverpoint_bin(ucdbT db, 
+                      ucdbScopeT parent, 
+                      const char* name, 
+                      ucdbFileHandleT filehandle, 
+                      int line, 
+                      int at_least, 
+                      int count, 
+                      const char* binrhs)   /* right-hand-side value */ 
+{ 
+    ucdbSourceInfoT srcinfo; 
+    ucdbCoverDataT coverdata; 
+    ucdbAttrValueT attrvalue; 
+    int coverindex; 
+    coverdata.type = UCDB_CVGBIN; 
+    coverdata.flags = UCDB_IS_32BIT | UCDB_HAS_GOAL | UCDB_HAS_WEIGHT; 
+    coverdata.goal = at_least; 
+    coverdata.weight = 1; 
+    coverdata.data.int32 = count; 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    coverindex = ucdb_CreateNextCover(db,parent,name, 
+                                      &amp;coverdata,&amp;srcinfo); 
+    attrvalue.type = UCDB_ATTR_STRING; 
+    attrvalue.u.svalue = binrhs; 
+    ucdb_AttrAdd(db,parent,coverindex,UCDBKEY_BINRHSVALUE,&amp;attrvalue); 
+} </code></pre><p class="p">The following data are unique for the create-ucdb
+example:</p>
+<ul class="ul"><li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id4151b99c-66c9-4571-8123-c44983347720"><p class="p">UCDB_HAS_GOAL indicates that the goal
+field of ucdbCoverDataT should be used. This corresponds to the
+at_least value for the coverpoint: the threshold at which the bin
+is considered to be 100% covered.</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__id26c41aed-06f6-48d5-a4bf-173888daabe9"><p class="p">UCDB_HAS_WEIGHT indicates that the weight
+field of the ucdbCoverDataT is valid. This weight is identical to
+the weight for the parent coverpoint, but is also set here in case
+coverage is computed on a bin basis rather than for the coverpoint
+as a whole. The field is useful for coveritems with no explicit
+parent (for example, statement bins.)</p>
+</li>
+<li class="li" id="id983d5a1e-9f4b-4c5e-b742-c19b655f553e__idb5e9e939-bc33-42ef-a977-eb562f45533f"><p class="p">The BINRHSVALUE attribute is one added
+by Questa that depends on knowledge of how the coverpoint is declared.
+This should be reverse-engineered from covergroup bin declarations
+and using ucdbdump. The bin rhs value is the sampled value(s), on
+the right-hand side of the equal sign (=) in the bin declaration,
+that potentially cause(s) a bin to increment. In the LRM these are
+described as associated values or transitions. These values vary
+depending on whether the bin has a single value or multiple and
+whether it is a transition bin or not. The bin can be an enum value,
+it can be another type of integral value, or it transitions among
+those values.</p>
+</li>
+</ul>
+<p class="p">Currently in Questa, the BINRHSVALUE is accessible
+only through the UCDB API. </p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_Scopes_id731a186b.html" title="Scopes functions manage the design hierarchy and coverage scopes. The UCDB database is organized hierarchically in parallel with the design database, which consists of a tree of module instances, each of a given module type.">Scopes</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Addition of New Data to a UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AdditionOfNewDataToAUCDB_id983d5a1e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

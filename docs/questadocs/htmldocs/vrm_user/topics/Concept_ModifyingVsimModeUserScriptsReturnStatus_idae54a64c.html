@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Modifying vsim Mode User Scripts to Return Status" />
+<meta name="abstract" content="A vsim mode script is executed via the do command in vsim, which does not return status. When an error occurs in a vsim TCL script, the interpreter executes the optional onerror handler. In order to trap errors and use them to modify the return status of the Action, the user must make use of the onerror handler. The wrapper script associated with the Action provides a procedure that can be called to set the return status and optional message string. The following example shows a preScript with the onerror handler set:" />
+<meta name="description" content="A vsim mode script is executed via the do command in vsim, which does not return status. When an error occurs in a vsim TCL script, the interpreter executes the optional onerror handler. In order to trap errors and use them to modify the return status of the Action, the user must make use of the onerror handler. The wrapper script associated with the Action provides a procedure that can be called to set the return status and optional message string. The following example shows a preScript with the onerror handler set:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idae54a64c-cfe0-49fa-9b36-5b4dcac43d02" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Modifying vsim Mode User Scripts to Return Status</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Modifying vsim Mode User Scripts to Return Status" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idae54a64c-cfe0-49fa-9b36-5b4dcac43d02">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Modifying vsim Mode User Scripts to Return Status</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A vsim mode
+script is executed via the do command in vsim, which does not return
+status. When an error occurs in a vsim TCL script, the interpreter executes
+the optional <span class="ph FontProperty emphasis">onerror</span> handler.
+In order to trap errors and use them to modify the return status
+of the Action, the user must make use of the <span class="ph FontProperty emphasis">onerror</span> handler.
+The wrapper script associated with the Action provides a procedure
+that can be called to set the return status and optional message string.
+The following example shows a <span class="ph FontProperty emphasis">preScript</span> with
+the <span class="ph FontProperty emphasis">onerror</span> handler
+set:</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;execScript&gt;
+	&lt;command&gt;onerror {runmgr::rm_status 1 "Compile error"}&lt;/command&gt;
+	&lt;command&gt;vlib work&lt;/command&gt;
+	&lt;command&gt;vlog -sv (%RMDBDIR%)/src/top.sv&lt;/command&gt;
+&lt;/execScript&gt;</code></pre><p class="p">In cases where the Action script needs
+to signal a failure when no TCL “error” has occurred (such as a
+non-matching comparison to expected results), the Action script
+can call the runmgr::rm_status procedure manually. Since this procedure
+only records the status and does not force an exit, the Action script
+should invoke the quit command at the appropriate point in the processing
+as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;execScript&gt;
+	&lt;command&gt;...some command...&lt;/command&gt;
+	&lt;command&gt;if {![string equal $results $golden]} {
+					runmgr::rm_status 1 "Simulation results differ"; quit -f
+				}&lt;/command&gt;
+&lt;/execScript&gt;</code></pre><p class="p">The runmgr namespace is used to minimize the
+chances that the VRM wrapper implementation and the user script
+will experience name collisions. The runmgr::rm_status procedure
+takes a mandatory integer status and an optional message string.
+These values are stored until the script returns. Only one return
+value and one message are returned to the invoking VRM per Action.
+It can also be possible to use the TCL catch command to provide
+a unique status value for each possible error in a script. In the
+event of multiple errors, the data provided in the last call to
+runmgr::rm_status is the data sent to the invoking vrun process.
+In order to pass information on the first error instead of the last,
+the <span class="ph FontProperty emphasis">onerror</span> handler
+should abort the Action script immediately after the error by calling
+“quit -f” as shown in the example above.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ScriptReturnValues_id223029b1.html" title="Each Action script has a return value that indicates, at a coarse level, whether the commands contained in the script encountered any errors. This return value is communicated to the launching vrun instance for use in pass/fail analysis. This function can require some cooperation from the (user's) Action script in order to correctly communicate the status of commands contained in the Action script.">Script Return Values</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Modifying vsim Mode User Scripts to Return Status"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ModifyingVsimModeUserScriptsReturnStatus_idae54a64c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

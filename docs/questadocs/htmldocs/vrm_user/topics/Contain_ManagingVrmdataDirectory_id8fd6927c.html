@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Managing the VRMDATA Directory" />
+<meta name="abstract" content="VRM maintains a VRM Data directory tree under which each Action executed is assigned a directory based on its context chain." />
+<meta name="description" content="VRM maintains a VRM Data directory tree under which each Action executed is assigned a directory based on its context chain." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id8fd6927c-1b27-4e16-81a8-86e37400b6e7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Managing the VRMDATA Directory</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Managing the VRMDATA Directory" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id8fd6927c-1b27-4e16-81a8-86e37400b6e7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Managing
+the VRMDATA Directory</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">VRM
+maintains a <span class="ph filepath">VRM Data</span> directory tree under which
+each Action executed is assigned a directory based on its context chain. </span>
+</div>
+<p class="p">By default, the head of this <span class="ph filepath">VRM Data</span> directory tree
+is called <span class="ph filepath">VRMDATA</span> and is located within the
+directory from which the vrun executable is invoked. This location
+can be changed using the -vrmdata command-line option (see <a class="xref fm:FigureAndPage" href="#id8fd6927c-1b27-4e16-81a8-86e37400b6e7__id31d418ca-f70d-42ca-84be-dfad80d98892">Figure 1</a>). </p>
+<p class="p">In the VRM documentation, the head of
+this <span class="ph filepath">VRM Data</span> directory tree is often referred
+to as the <span class="ph filepath">VRMDATA</span> directory, even if some other name
+is actually used as a result of the -vrmdata command-line option.
+The <span class="ph filepath">VRMDATA</span> directory and its contents are
+created by VRM as needed. All Actions launched by VRM are executed
+from within a subdirectory of the <span class="ph filepath">VRMDATA</span> directory.</p>
+<div class="fig fignone" id="id8fd6927c-1b27-4e16-81a8-86e37400b6e7__id31d418ca-f70d-42ca-84be-dfad80d98892"><span class="figcap"><span class="fig--title-label">Figure 1. </span>VRM Data Directory Tree Structure</span><br /><div class="imagecenter"><img class="image imagecenter" height="285" src="../graphics_composites/basic_operations3.png" width="314" /></div><br /></div>
+<p class="p">VRM detects when multiple regressions
+are trying to use the same <span class="ph filepath">VRMDATA</span> directory.
+When a regression is running, a lock file is posted to the <span class="ph filepath">VRMDATA</span> directory.
+If a subsequent regression pointing to the same directory is started
+before the first regression run has completed, a warning is posted
+to stdout and vrun waits 30 seconds before continuing. If the subsequent
+regression is launched from the VRM GUI, a warning dialog is posted
+asking the user to confirm or cancel the subsequent regression.</p>
+<p class="p">Because the <span class="ph filepath">VRMDATA</span> directory
+also houses the log files for each regression run executed therein,
+it is common to run the same regression suite (or select parts thereof)
+in the same <span class="ph filepath">VRMDATA</span> directory without deleting
+the <span class="ph filepath">VRMDATA</span> directory itself.</p>
+<p class="p">However, in some cases it might be prudent
+to start from scratch with a clean <span class="ph filepath">VRMDATA</span> directory.
+In this case, the -clean command-line option directs the vrun process
+to delete the entire <span class="ph filepath">VRMDATA</span> directory, including
+any previous log files, before executing any Actions.</p>
+<p class="p">For more information see “<a class="xref fm:HeadingAndPage" href="MGCChap_WorkingDirectoryScriptExecution_id10825c4b.html#id10825c4b-4904-44a4-85d7-7377d002bb59__MGCChap_WorkingDirectoryScriptExecution_id10825c4b.xml#id10825c4b-4904-44a4-85d7-7377d002bb59" title="In order to prevent multiple Actions (that is, user scripts) from a single vrun invocation from overwriting or otherwise interfering with each other, each Action executed by VRM is launched from within a working directory unique to the Runnable on whose behalf the Action is launched. In order to prevent multiple invocations of VRM (by other users or by the same user) from interfering with each other, the root of the scratch hierarchy within which these per-Runnable directories are created is control by the user.">Working Directory and Script Execution</a>”.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ManageQuestaWorkDirectoryHdlSources_idd428927d.html" title="Even though VRM can be used in any number of regression-like flows, the most common is the Questa compile-simulate flow. In this flow, some number of HDL source files are compiled into a working library and said library is referenced by some number of simulations. In a typical traditional flow, the compilation commands and the simulations commands are commonly run in the same directory.">Manage a Questa work Directory and HDL Sources</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ImplementMacroByCallingVrmRecursively_id6b5b32fa.html" title="VRM can recursively call itself, thus encapsulating key command-line options into the database. VRM can run any legal command as part of an Action script, including the vrun command itself. This property of VRM can be exploited to provide a robust methodology for encapsulating one or more vrun commands into a higher-level macro-like Runnable object.">Implement a Macro by Calling VRM Recursively</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_BasicOperations_idb310e429.html" title="This chapter describes basic operation aspects of the VRM.">Basic Operations</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Managing the VRMDATA Directory"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ManagingVrmdataDirectory_id8fd6927c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

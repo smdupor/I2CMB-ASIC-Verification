@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Recommended Execution Method Configurations" />
+<meta name="abstract" content="Note that there are actually only two recommended execution method configurations. If the user wishes to maintain a single list of method elements that apply to the entire database, relying entirely on the conditional attributes to select the proper method for each Action, the method elements should all be defined in the top-most Group of the regression suite, or in a base Runnable referred to by each top-level Group Runnable. If, however, there is a need to define a different set of execution methods for different parts of the regression suite topology, then the top-most Runnables for each of the major sections of the suite should carry a complete set of method elements pertaining to the section of the regression suite defined by that Runnable." />
+<meta name="description" content="Note that there are actually only two recommended execution method configurations. If the user wishes to maintain a single list of method elements that apply to the entire database, relying entirely on the conditional attributes to select the proper method for each Action, the method elements should all be defined in the top-most Group of the regression suite, or in a base Runnable referred to by each top-level Group Runnable. If, however, there is a need to define a different set of execution methods for different parts of the regression suite topology, then the top-most Runnables for each of the major sections of the suite should carry a complete set of method elements pertaining to the section of the regression suite defined by that Runnable." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idd87b2d3d-ff01-4eb8-8ec9-0eb3955a6548" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Recommended Execution Method Configurations</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Recommended Execution Method Configurations" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idd87b2d3d-ff01-4eb8-8ec9-0eb3955a6548">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Recommended Execution Method Configurations</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Note that there
+are actually only two recommended execution method configurations.
+If the user wishes to maintain a single list of <span class="ph FontProperty emphasis">method</span> elements
+that apply to the entire database, relying entirely on the conditional
+attributes to select the proper method for each Action, the <span class="ph FontProperty emphasis">method</span> elements
+should all be defined in the top-most Group of the regression suite,
+or in a base Runnable referred to by each top-level Group Runnable.
+If, however, there is a need to define a different set of execution
+methods for different parts of the regression suite topology, then
+the top-most Runnables for each of the major sections of the suite
+should carry a complete set of <span class="ph FontProperty emphasis">method</span> elements
+pertaining to the section of the regression suite defined by that
+Runnable.</span>
+</div>
+<p class="p">In the first recommended use model,
+the user defines a global set of methods that apply to the entire
+regression suite. In this case, the <span class="ph FontProperty emphasis">nightly</span> Runnable
+is at the top-level of the regression suite hierarchy and a perfect
+place to define our global methods. This particular configuration results
+in the <span class="ph FontProperty emphasis">preScript</span> Action
+for the <span class="ph FontProperty emphasis">top</span> Runnable
+being launched on a dedicated build machine, all the <span class="ph FontProperty emphasis">execScript</span> Actions
+being queued to a grid, and all other Actions being run on the local
+machine (by default, since no other matching <span class="ph FontProperty emphasis">method</span> elements
+exist). Following is a common use model for simple suites:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable name="nightly" type="group"&gt;
+      &lt;method runnable="top" action="preScript"&gt;
+         &lt;command&gt;rsh buildmachine (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+      &lt;method action="execScript"&gt;
+         &lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+       ...
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">Combined with a global parameter passed in
+from the command line (that is, -Gmethod=grid), this scheme can
+be used to implement a global method as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable name="top" type="group"&gt;
+      &lt;method if="(%method%) eq {remote}"&gt;
+         &lt;command&gt;rsh buildmachine (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+      &lt;method if="(%method%) eq {grid}"&gt;
+         &lt;command&gt;bsub (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+       ...
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">In the second recommended use model, the user
+defines a list of one or more <span class="ph FontProperty emphasis">method</span> elements within
+the top-most Group Runnable for a subset of the suite that requires
+special treatment. In this example, the suite contains a set of
+tests that are large enough that they must be launched on a specific
+high capacity machine. The <span class="ph FontProperty emphasis">method</span> to
+launch the Actions on the more powerful machine is placed within
+the Group Runnable under which all these large tests are defined.
+This execution method only applies to the <span class="ph FontProperty emphasis">execScript</span> Actions
+launched by Runnables under this particular Group (because of the <span class="ph FontProperty emphasis">action</span> conditional
+attribute and the position of the <span class="ph FontProperty emphasis">method</span> element
+itself) and all other Actions defined outside this Group are run
+under the default execution method (assuming no other <span class="ph FontProperty emphasis">method</span> elements
+are defined elsewhere). For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable name="nightly" type="group"&gt;
+      &lt;members&gt;
+         &lt;member&gt;bigtests&lt;/member&gt;
+          ...
+      &lt;/members&gt;
+       ...
+   &lt;/runnable&gt;
+   &lt;runnable name="bigtests" type="group"&gt;
+      &lt;method action="execScript"&gt;
+         &lt;command&gt;rsh bigmachine (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+       ...
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">If the same execution method command is used
+for multiple subsets of the regression suite, the command itself
+can be moved to a top-level <span class="ph FontProperty emphasis">method</span> element
+and referred to from the various Runnables in which is it required
+as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;method name="bigmachine"&gt;
+      &lt;command&gt;rsh bigmachine (%WRAPPER%)&lt;/command&gt;
+   &lt;/method&gt;
+    ...
+   &lt;runnable name="bigdirectedtests" type="group"&gt;
+      &lt;method action="execScript" base="bigmachine"/&gt;
+       ...
+   &lt;/runnable&gt;
+   &lt;runnable name="bigrandomtests" type="group"&gt;
+      &lt;method action="execScript" base="bigmachine"/&gt;
+       ...
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">Since a typical regression suite might define,
+on average, maybe a half-dozen different execution methods (various
+grid configurations, remote shell commands, and so on), defining them
+all at the top-level of the database and then assigning them to
+various parts of the regression suite via anonymous (potentially
+conditional) <span class="ph FontProperty emphasis">method</span> elements
+at the Runnable level, using base inheritance to find the execution
+method command, is better than typing the same execution method
+command over and over every time it is used.</p>
+<p class="p">If the <span class="ph FontProperty emphasis">method</span> element
+corresponding to the selected execution method does not define a command,
+either itself or via a base <span class="ph FontProperty emphasis">method</span> element,
+then the default execution method (launching on the local machine
+as a background task) is used. This is true even if there are other <span class="ph FontProperty emphasis">method</span> elements
+that would have matched had the command-challenged method element not
+matched. This is true because there can be certain conditions under
+which the user wishes to define an execution method that intentionally
+refers to the default VRM execution method. In the following example,
+an unconditional empty method element is used to terminate the search for
+an execution method and force VRM to use the default method:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable name="mygroup" type="group"&gt;
+   &lt;method action="execScript"&gt;
+      &lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+   &lt;/method&gt;
+   &lt;method/&gt;
+&lt;/runnable&gt;</code></pre><p class="p">For the <span class="ph FontProperty emphasis">mygroup</span> Group
+Runnable and all its descendants (barring more locally defined <span class="ph FontProperty emphasis">method</span> elements),
+all <span class="ph FontProperty emphasis">execScript</span> Actions
+are posted to a server grid via the qsub command and all other Actions
+(both <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span>)
+are launched using the default execution method. The reason for
+this is that the second (empty) <span class="ph FontProperty emphasis">method</span> element,
+being unconditional, always matches. This terminates the execution
+method search without ever considering any <span class="ph FontProperty emphasis">method</span> elements defined
+later in the same Runnable or defined in ancestors of this Group.
+However, since the unconditional method defines no command (and
+has no base method), the predefined default execution method is
+used. In the case where a limited subset of the regression suite
+is to be run under its own set of execution methods, this technique
+can be used to effectively isolate that subset of the suite from
+the list of execution methods defined at higher levels.</p>
+<p class="p">Adding an unconditional <span class="ph FontProperty emphasis">method</span> element
+containing an execution method command to the top-most Runnable
+of the regression suite is a reasonable way to globally replace
+the built-in default execution method for Actions executed as part
+of that suite. In fact, multiple top-level Runnables can be defined
+that differ only in the execution method defined in each. For example, in
+the following case, the same suite that is executed as <span class="ph FontProperty emphasis">nightly-local</span> on
+the local machine can also be executed on the grid by selecting <span class="ph FontProperty emphasis">nightly-grid</span> instead.
+The bulk of the contents of the top-most Runnable come from the <span class="ph FontProperty emphasis">top-level</span> base
+Runnable. The only difference is the execution method that is used
+to launch the resulting Actions. For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable type="base" name="top-level"&gt;
+      ...member list, parameters, and so on...
+   &lt;/runnable&gt;
+   &lt;runnable type="group" base="top-level" name="nightly-local"/&gt;
+   &lt;runnable type="group" base="top-level" name="nightly-grid"&gt;
+      &lt;method&gt;
+         &lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">Note that, unlike parameters, <span class="ph FontProperty emphasis">method</span> elements
+defined within a <span class="ph FontProperty emphasis">runnable</span> element
+are never (in fact, cannot be) referred to by name. Therefore, the <span class="ph FontProperty emphasis">name</span> attribute
+is optional on those elements. Likewise, since a <span class="ph FontProperty emphasis">method</span> element
+defined at the top-level of the RMDB file can only be referred to
+as a base, the <span class="ph FontProperty emphasis">name</span> attribute
+is required.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExecutionMethodExamples_id58e28a7f.html" title="The following are VRM execution method examples.">Execution Method Examples</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Recommended Execution Method Configurations"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RecommendedExecutionMethodConfigurations_idd87b2d3d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

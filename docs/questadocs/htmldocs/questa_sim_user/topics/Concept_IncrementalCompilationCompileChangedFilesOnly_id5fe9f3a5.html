@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Incremental Compilation (Compile of Changed Files Only)" />
+<meta name="abstract" content="You can use sccom -incr to enable automatic incremental compilation so that only changed files are compiled. This allows Questa SIM to determine which source files have changed and recompile only those source files." />
+<meta name="description" content="You can use sccom -incr to enable automatic incremental compilation so that only changed files are compiled. This allows Questa SIM to determine which source files have changed and recompile only those source files." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Incremental Compilation (Compile of Changed Files Only)</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Incremental Compilation (Compile of Changed Files Only)" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Incremental Compilation (Compile of Changed Files Only)</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can use
+sccom -incr to enable automatic incremental compilation so that
+only changed files are compiled. This allows <span class="ph fmvar:ProductName">Questa SIM</span> to determine which source files
+have changed and recompile only those source files. </span>
+</div>
+<p class="p">A changed file is re-compiled
+in the following cases: </p>
+<ul class="ul"><li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idb22cd6c8-1999-44ab-867e-0e4dae5b4a9c"><p class="p">Its pre-processor output is different
+from the last time it was successfully compiled (see Note below).
+This includes changes in included header files and to the source
+code itself. </p>
+</li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idbd6618ae-d6a0-4d5c-a1d3-9f554ccc488a"><p class="p">You invoke sccom with a different set
+of command-line options that have an impact on the gcc command line.
+Preserving all settings for the gcc command ensures that <span class="ph fmvar:ProductName">Questa SIM</span> re-compiles source files when
+a different version of gcc is used or when a platform changes. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Pre-processor output is used because it prevents
+compilation on a file with the following types of changes: Access
+or modification time (touch) or changes to comments. Except for
+changes to the source code that affect line numbers (such as adding
+a comment line) will cause all affected files to be recompiled.
+This occurs to keep debug information current so that <span class="ph fmvar:ProductName">Questa SIM</span> can trace back to the correct
+areas of the source code.</p>
+</div>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__ida25a545c-23e9-4d58-9850-488ff04331f9"><h2 class="title Subheading sectiontitle">Example </h2><p class="p">The following example shows how to compile
+a SystemC design with automatic incremental compilation. </p>
+<ol class="ol"><li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idfc9048b7-a892-4500-99af-dc0511af91b0"><p class="p">Run sccom -incr on three files and re-link
+all compiled files in the design. </p>
+<pre class="pre codeblock"><code>% sccom -incr top.cpp and2.cpp or2.cpp
+Model Technology ModelSim SE sccom DEV compiler 2003.05 Mar  2 2008
+Exported modules:
+        top
+% sccom -incr -link
+Model Technology ModelSim SE sccom DEV compiler 2003.05 Mar  2 2008</code></pre></li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idbd0693c0-0b0f-4e6b-8cc6-81b2777ce715"><p class="p">After changing functional content of the top
+module, re-compile and re-link. </p>
+<pre class="pre codeblock"><code>% sccom -incr top.cpp and2.cpp or2.cpp
+Model Technology ModelSim SE sccom DEV compiler 2003.05 Mar  2 2008</code></pre><pre class="pre codeblock"><code>-- Skipping file and2.cpp
+-- Skipping file or2.cpp</code></pre><pre class="pre codeblock"><code>Exported modules:
+        top</code></pre><pre class="pre codeblock"><code>% sccom -incr -link
+Model Technology ModelSim SE sccom DEV compiler 2003.05 Mar  2 2008</code></pre></li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__id4abb1cc2-daef-4bc3-850d-39ad02588413"><p class="p">Link again without actually changing any file. </p>
+<pre class="pre codeblock"><code>% sccom -incr -link
+Model Technology ModelSim SE sccom DEV compiler 2003.05 Mar  2 2008
+-- Skipping linking</code></pre></li>
+</ol>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You must compile
+all included libraries (using -lib) with -incr for automatic incremental
+compilation to work in linking mode. Failing to do so generates
+an error. </p>
+</div>
+<h2 class="title Subheading sectiontitle">Limitations </h2><ul class="ul"><li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idd9d934a9-b1e5-4cb1-ad49-7fa360d25adf"><p class="p">Automatic incremental compile is only
+supported for source files compiled with sccom. <span class="ph fmvar:ProductName">Questa SIM</span> does not track files for changes if
+they are compiled directly using a C++ compiler. </p>
+</li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idc6748094-40cb-4c1f-9707-b3ed5f8c171c"><p class="p">Physically moving the library that holds
+a shared object forces re-creating that shared object next time.
+This applies only to the directories holding the shared object,
+not to the libraries that hold object files. </p>
+</li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__idb696f7ed-203d-4415-9a52-cba4a05d405b"><p class="p">If the SystemC source file includes a
+static library, then any change in that static library will not
+cause <span class="ph fmvar:ProductName">Questa SIM</span> to recompile
+the source file.</p>
+</li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__id3378ecfb-9365-47a2-a704-93237cfd2c95"><p class="p">If a design file consists of more than
+one SystemC module, changing even one module causes <span class="ph fmvar:ProductName">Questa SIM</span> to recompile the entire source
+file (and all the modules contained in it), regardless of whether
+the other modules were changed or not. </p>
+</li>
+<li class="li" id="id5fe9f3a5-69da-4568-8ed5-2e7178c3b547__id32bea75e-f37b-49df-aa52-0d0e86da40db"><p class="p">Automatic incremental archiving is not
+supported (if you use the -archive argument, the -incr argument
+has no effect). </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CompilingSystemcFiles_ide54ebea7.html" title="The process of compiling the SystemC files contained in your design consists of several steps.">Compiling SystemC Files</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Incremental Compilation (Compile of Changed Files Only)"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_IncrementalCompilationCompileChangedFilesOnly_id5fe9f3a5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

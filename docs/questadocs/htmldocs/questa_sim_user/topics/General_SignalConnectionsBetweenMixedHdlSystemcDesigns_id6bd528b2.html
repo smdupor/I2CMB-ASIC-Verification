@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Signal Connections Between Mixed HDL and SystemC Designs" />
+<meta name="abstract" content="You can use the scv_connect() API function to connect a SystemC signal (including sc_signal, sc_buffer, sc_signal_resolved, and sc_signal_rv) to an HDL signal." />
+<meta name="description" content="You can use the scv_connect() API function to connect a SystemC signal (including sc_signal, sc_buffer, sc_signal_resolved, and sc_signal_rv) to an HDL signal." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id6bd528b2-5ac3-4b8b-919c-03bca4a44074" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Signal Connections Between Mixed HDL and SystemC Designs</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Signal Connections Between Mixed HDL and SystemC Designs" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Signal Connections Between
+Mixed HDL and SystemC Designs</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><p class="shortdesc">You can
+use the <span class="ph FontProperty HeadingLabel">scv_connect()</span> API
+function to connect a SystemC signal (including sc_signal, sc_buffer,
+sc_signal_resolved, and sc_signal_rv) to an HDL signal. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The behavior of
+scv_connect() is identical to the behavior of the <a class="xref fm:HeadingOnly" href="General_HierarchicalReferencesInMixedHdlSystemcDesigns_id13df72d0.html#id13df72d0-29d8-4573-88bd-83bf6204df78__id985448bf-5487-4f50-8dfa-c8dfaf5497c8">Control</a> and <a class="xref fm:HeadingOnly" href="General_HierarchicalReferencesInMixedHdlSystemcDesigns_id13df72d0.html#id13df72d0-29d8-4573-88bd-83bf6204df78__idd8e5f5eb-08bd-4ac5-8aef-0e0ef1bbc13f">Observe</a> functions, described above in <a class="xref fm:HeadingOnly" href="General_HierarchicalReferencesInMixedHdlSystemcDesigns_id13df72d0.html#id13df72d0-29d8-4573-88bd-83bf6204df78__General_HierarchicalReferencesInMixedHdlSystemcDesigns_id13df72d0.xml#id13df72d0-29d8-4573-88bd-83bf6204df78" title="A SystemC signal (including sc_signal, sc_buffer, sc_signal_resolved, and sc_signal_rv) can control or observe an HDL signal using two member functions of sc_signal:">Hierarchical References In Mixed HDL and SystemC Designs</a>. </p>
+</div>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__id9f28a007-fa7b-4955-b582-874801074a5b"><p class="p">The scv_connect() API is provided by the SystemC
+Verification Standard and is defined as follows:</p>
+<pre class="pre codeblock"><code>/* Function to connect an sc_signal object to an HDL signal. */
+template &lt; typename T&gt; void scv_connect(
+    sc_signal&lt;T&gt; &amp; signal,
+    const char * hdl_signal,
+    scv_hdl_direction d = SCV_OUTPUT,
+    unsigned hdl_sim_inst = 0
+);</code></pre><pre class="pre codeblock"><code>/* Function to connect an sc_signal_resolved object to an HDL signal. */
+void scv_connect(
+    sc_signal_resolved&amp; signal,
+    const char * hdl_signal,
+    scv_hdl_direction d = SCV_OUTPUT,
+    unsigned hdl_sim_inst = 0
+);</code></pre><pre class="pre codeblock"><code>/* Function connects an sc_signal_rv object to an HDL signal. */
+template &lt; int W&gt; void scv_connect(
+    sc_signal_rv&lt;W&gt;&amp; signal,
+    const char * hdl_signal,
+    scv_hdl_direction d = SCV_OUTPUT,
+    unsigned hdl_sim_inst = 0
+);</code></pre><p class="p">where</p>
+<ul class="ul"><li class="li" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__id888111b4-dc9f-441d-8e39-aed098c8559d"><p class="p"><span class="ph FontProperty HeadingLabel">signal</span> —
+is an sc_signal, sc_signal_resolved or sc_signal_rv object</p>
+</li>
+<li class="li" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__idabd2b7d8-b0c5-4fdb-80a1-989b9e7c209b"><p class="p"><span class="ph FontProperty HeadingLabel">hdl_signal</span> —
+is the full hierarchical path to an HDL signal or port</p>
+</li>
+<li class="li" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__ida3f95ff3-9bfd-4ab1-a544-ba2a4c64798d"><p class="p"><span class="ph FontProperty HeadingLabel">d</span> —
+is the direction of the connection given by enum scv_hdl_direction</p>
+</li>
+<li class="li" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__idf6d0b6fb-6e75-4199-830f-4171658971a3"><p class="p"><span class="ph FontProperty HeadingLabel">hdl_sim_inst</span> —
+is not supported and any value given for this argument will be ignored</p>
+<pre class="pre codeblock"><code>enum scv_hdl_direction {
+    SCV_INPUT = 1, /* HDL is the only driver */
+    SCV_OUTPUT = 2 /* SystemC is the only driver */
+};</code></pre></li>
+</ul>
+</div>
+<div class="section Subsection" id="id6bd528b2-5ac3-4b8b-919c-03bca4a44074__idf4f413fe-3806-44cb-ab9d-4472111e7fa0"><h2 class="title Subheading sectiontitle">Supported Types</h2><p class="p">The scv_connect() function supports all datatypes
+supported at the SystemC-HDL mixed‑language boundaries. Refer to
+the tables for Verilog/SystemVerilog (<a class="xref fm:HeadingOnly" href="General_VerilogSystemverilogSystemcSignalInteractionMappings_id18a5c771.html#id18a5c771-66b8-478a-a60f-8c257ea11fbb__id7eed109b-59d2-4bdb-9878-94a0b44584a6">Data Type Mapping from SystemC to Verilog or SystemVerilog</a>) and VHDL (<a class="xref fm:HeadingOnly" href="General_VhdlSystemcSignalInteractionMapping_ida00b103d.html#ida00b103d-fe54-47f5-a977-4b020698ab2d__id838ead9e-879c-4dbf-9d33-a41524fd43b1">Data Type Mapping Between SystemC and VHDL</a>) to view a list of types supported
+at the mixed language boundary. If it is a supported boundary type,
+it is supported for hierarchical references.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RuntimeModelingSemantics_id6f641cae.html" title="The Questa SIM simulator is compliant with all pertinent Language Reference Manuals for each language of a mixed-language design.">Runtime Modeling Semantics</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Signal Connections Between Mixed HDL and SystemC Designs"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_SignalConnectionsBetweenMixedHdlSystemcDesigns_id6bd528b2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Source Files" />
+<meta name="abstract" content="Every UCDB object can have a source filename stored with it. Different applications have different requirements for how these are stored. Consequently, the UCDB contains an object called a “filehandle,” which provides a way of storing indirect references to filenames." />
+<meta name="description" content="Every UCDB object can have a source filename stored with it. Different applications have different requirements for how these are stored. Consequently, the UCDB contains an object called a “filehandle,” which provides a way of storing indirect references to filenames." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="iddc9925d0-4f9a-4e04-93af-396fb7810bd6" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Source Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Source Files" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Source Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Every UCDB
+object can have a source filename stored with it. Different applications
+have different requirements for how these are stored. Consequently, the
+UCDB contains an object called a “filehandle,” which provides a
+way of storing indirect references to filenames.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id8a3c0247-cad6-493f-9f44-17d642b81e8c"><h2 class="title Subheading sectiontitle">Simple Use Models</h2><p class="p">You can create objects with NULL for the ucdbSourceInfoT argument,
+for example:</p>
+<pre class="pre codeblock leveled"><code>mycover = ucdb_CreateNextCover(db,parent,name,&amp;coverdata,NULL);</code></pre><p class="p">Alternatively,
+you can create a file and store it with the object.</p>
+<pre class="pre codeblock leveled"><code>ucdbSourceInfoT sourceinfo; 
+status = ucdb_CreateSrcFileHandleByName( 
+				db, 
+				&amp;source_info.filehandle, 
+				NULL, 
+				filename, 
+				fileworkdir); 
+source_info.line = myline; 
+source_info.token = mytoken; 
+(void) ucdb_CreateNextCover(db,parent,name,&amp;coverdata,&amp;sourceinfo); </code></pre><p class="p">This method creates a single global look-up
+table for filenames within the UCDB. Filenames are stored efficiently
+for each object within the UCDB, and each unique filename string
+is stored only once. The way you store filenames does not affect
+access; you can always access the filename, for example:</p>
+<pre class="pre codeblock leveled"><code>ucdbSourceInfoT sourceinfo; 
+ucdb_GetCoverData(db,parent,i,&amp;name,&amp;coverdata,&amp;sourceinfo); 
+if (sourceinfo.filehandle != NULL) { 
+	printf("filename is %s\n", 
+		ucdb_GetFileName(db,&amp;sourceinfo.filehandle)); </code></pre>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id2621e6c3-9533-404e-9cc1-0ffefce06fc4" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.261in" /><col style="width:2.717in" /><col style="width:2.522in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope Handle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><pre class="pre codeblock leveled"><code>typedef void* ucdbScopeT;</code></pre></td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope handle</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Object Handle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><pre class="pre codeblock leveled"><code>typedef void* ucdbObjT;</code></pre></td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Either ucdbScopeT or ucdbTestT</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File Handle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><pre class="pre codeblock leveled"><code>typedef void* ucdbFileHandleT;</code></pre></td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Source Information Type</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><pre class="pre codeblock leveled"><code>typedef struct { 
+	ucdbFileHandleT     filehandle; 
+   int                 line; 
+   int                 token; 
+} ucdbSourceInfoT; </code></pre></td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Source information for database objects</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id181e4821-9faf-4354-80fc-0efa35200d45"><h2 class="title Subheading sectiontitle">ucdb_CreateSrcFileHandleByName</h2><pre class="pre codeblock leveled"><code>int ucdb_CreateSrcFileHandleByName(
+					ucdbT               db,
+					ucdbFileHandleT*    filehandle,
+					ucdbScopeT          scope,
+					const char*         filename,
+					const char*         fileworkdir)</code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idb00fdc5b-2fba-4b17-a74b-3faae1965be2" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filename</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Absolute or relative
+filename to look up in the table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">fileworkdir</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Work directory for the
+file when filename is a path relative to fileworkdir. Ignored if
+filename is an absolute path</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a filehandle for the specified file,
+from the file table associated with the given scope. If the filename
+is not found, it is added to the file table for the given scope.
+Returns 0 if successful, or -1 if error and ucdb_IsValidFileHandle(returnvalue)
+== 0 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idddbf64ae-b4d5-438b-8c12-798222cd098e"><h2 class="title Subheading sectiontitle">ucdb_CreateFileHandleByNum</h2><pre class="pre codeblock leveled"><code>int ucdb_CreateFileHandleByNum(
+    					ucdbT               db,
+					ucdbFileHandleT*    filehandle,
+					ucdbScopeT          scope,
+					int                 filenum)</code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id51283293-e748-4679-a2b5-1a9f0a2b030e" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filenum</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Offset of the file in
+the file table</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a filehandle for the specified offset
+into the file table of the specified scope. Returns 0 if successful,
+or -1 if error (for example, if filenum is out of bounds or no file
+table exists for the scope) and ucdb_IsValidFileHandle(returnvalue)
+== 0 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id376429e0-6041-4aac-9006-d6ba70c9977c"><h2 class="title Subheading sectiontitle">ucdb_CloneFileHandle</h2><pre class="pre codeblock leveled"><code>int ucdb_CloneFileHandle(
+					ucdbT               db,
+					ucdbFileHandleT*    filehandle,
+					ucdbFileHandleT*    origfilehandle,
+					int                 filenum);</code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idc0c6201c-2187-4601-b71f-dde60b19df80" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">origfilehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle to clone</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filenum</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Offset to the new file
+in the file table</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a filehandle cloned from the specified
+filehandle, at the specified offset, in the same table as the cloned
+file. The file number (offset) must be in bounds for the file table. Returns
+0 if successful, or -1 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id35f5db3b-c2bb-47fe-81be-4b79581bd6de"><h2 class="title Subheading sectiontitle">ucdb_CreateNullFileHandle</h2><pre class="pre codeblock leveled"><code>int ucdb_CreateNullFileHandle(
+					ucdbFileHandleT*    filehandle);</code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id257c6784-8e93-47b1-8a75-25210566a60d" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Null filehandle returned</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a new filehandle. Returns 0 if successful,
+or -1 if error and ucdb_IsValidFileHandle(filehandle) == 0.</p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id6080f0a8-6325-4c1c-982c-0c56cf0f570b"><h2 class="title Subheading sectiontitle">ucdb_IsValidFileHandle</h2><pre class="pre codeblock leveled"><code>int ucdb_IsValidFileHandle( 
+    ucdbT               db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id9a3dd0b7-7ecc-4f48-b191-3ce04f13d11a" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle to test</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Checks whether or not the specified filehandle
+returned by a UCDB function is valid. Use this function for non-callback-based
+error-checking. Returns 1 if filehandle is valid, or 0 if invalid. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idece26df5-7097-418f-8747-b9e0abdce758"><h2 class="title Subheading sectiontitle">ucdb_GetFileName	</h2><pre class="pre codeblock leveled"><code>const char* ucdb_GetFileName( 
+    ucdbT               db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id4115e67e-498b-4355-9b3a-15b6e38d9e5e" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the filename of the file specified
+by filehandle, or NULL if error. This function tries to reconstruct
+a valid filepath from the filehandle, the directory stored with
+it, and the UCDB. In the following algorithm, <span class="ph filepath">filename</span> and <span class="ph filepath">fileworkdir</span> refer
+to the corresponding arguments of ucdb_CreateSrcFileHandleByName()
+or ucdb_SrcFileTableAppend():</p>
+<pre class="pre codeblock leveled"><code>if (filename is an absolute path) return the path name 
+:else (filename is a relative path) 
+:	if (filename exists at the relative path)  
+:		return filename 
+:	else if (filename exists relative to fileworkdir) 
+:		return workdir/fileworkdir 
+:	 
+:else if (filename exists relative to the the value of the environment 
+:			variable MGC_WD) 
+:		return $MGC_WD/filename 
+:
+:else if (filename exists relative to the directory from which the  
+:			UCDB file was opened –– that is, the directory extracted from the  
+:			file given to ucdb_Open() or equivalent) 
+:		return that dir/filename 
+:	else if (filename exists relative to the directory extracted from the 
+:			ORIGFILENAME attribute of the first test record –– i.e.,  
+:			representing the file into which the UCDB was originally saved) 
+:		return that dir/filename 
+	else return filename. </code></pre><p class="p">If the filename was created as an absolute
+path, it must be correct. Otherwise only the last case indicates
+that the file was not found, and the original filename is returned. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id48688d0e-7ea4-4110-a92f-ce0f383c0567"><h2 class="title Subheading sectiontitle">ucdb_GetFileNum	</h2><pre class="pre codeblock leveled"><code>int ucdb_GetFileNum( 
+    ucdbT               db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id57d1d509-4a6b-41d2-8b85-ccebb427dcd3" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the file number of the file specified
+by filehandle, or -1 if error.</p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idb348efde-b9fd-4242-ae37-2570a8faf021"><h2 class="title Subheading sectiontitle">ucdb_GetFileTableScope	</h2><pre class="pre codeblock leveled"><code>ucdbScopeT ucdb_GetFileTableScope( 
+    ucdbT               db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idded37e91-4eb3-47c6-b9ff-5b52e630f473" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the scope of the table of the file
+specified by filehandle. Returns NULL if the specified filehandle
+is not valid or if the table is the global file table. Also calls
+an error handler (if installed) when the filehandle is not valid.</p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id19a7df19-f529-4527-9e67-6ed079b7690b"><h2 class="title Subheading sectiontitle">ucdb_SrcFileTableAppend</h2><pre class="pre codeblock leveled"><code>int ucdb_SrcFileTableAppend( 
+    ucdbT               db, 
+    ucdbFileHandleT*    filehandle, 
+    ucdbScopeT          scope, 
+    const char*         filename, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idaa298070-338b-47ff-b500-320c9b322747" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filehandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Filehandle returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filename</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Absolute or relative
+filename to look up in the table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">fileworkdir</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">This is the work directory
+for the file when filename is a path relative to fileworkdir. Ignored
+if filename is an absolute path.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a filehandle for the specified file,
+from the file table associated with the given scope. The filename
+is added to the file table for the given scope, so the filename
+is assumed to be unique. To check for duplicate filenames, use ucdb_CreateSrcFileHandleByName.
+Returns 0 if successful, or -1 if error and ucdb_IsValidFileHandle(returnvalue)
+== 0 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id8d3995b3-ea62-4d30-9ae4-da1ef55052ee"><h2 class="title Subheading sectiontitle">ucdb_FileTableSize</h2><pre class="pre codeblock leveled"><code>int ucdb_FileTableSize( 
+    ucdbT               db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id219a0fc9-b8d9-4c25-b5f0-6956f84eb8f4" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the number of files in the file table
+associated with the specified scope, or -1 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__ida7572e53-3bae-46a1-99ff-c4fe66b8ef79"><h2 class="title Subheading sectiontitle">ucdb_FileTableName</h2><pre class="pre codeblock leveled"><code>const char* ucdb_FileTableName( 
+    ucdbT               db, 
+    ucdbScopeT          scope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__ida31f4a06-85d5-4043-aeb8-85b29f52ad60" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">index</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table index of the
+file</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the name of the file with the specified
+index in the file table for the specified scope, or NULL if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id8dbcb9c1-f62b-4e8a-acde-559f7960e372"><h2 class="title Subheading sectiontitle">ucdb_FileTableUpdateName</h2><pre class="pre codeblock leveled"><code>int ucdb_FileTableUpdateName( 
+    ucdbT               db, 
+    ucdbScopeT          scope, 
+    int                 index, 
+	 const char*         newname, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idedb76362-200f-419e-9bc6-78694622a100" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">index</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table index of the
+file</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">newname</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">New filename</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">newworkdir</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">New work directory</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Changes the filename and work directory for
+the specified scope’s file table (or the global file table for a
+NULL scope). Returns 0 if successful, or -1 if error.</p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__ide27b73e1-b973-4a7a-99c1-1eff01d83bf5"><h2 class="title Subheading sectiontitle">ucdb_FileTableRemove</h2><pre class="pre codeblock leveled"><code>int ucdb_FileTableRemove( 
+    ucdbT               db, 
+    ucdbScopeT          scope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id18604b57-bf85-4dfa-86d1-ee971d44fc3f" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File table scope, or
+NULL for the global table</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">filename</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">File to remove from the
+table, or NULL for the whole table</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">No effect in streaming modes. Removes the specified
+file from the file table for the specified scope (or the entire
+table if filename is NULL). Returns 0 if successful, or -1 if error. </p>
+</div>
+<div class="section Subsection" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__idd821a6f5-f3cc-4199-9975-c335c2080256"><h2 class="title Subheading sectiontitle">ucdb_FileInfoToString</h2><pre class="pre codeblock leveled"><code>const char* ucdb_FileInfoToString( 
+    ucdbT             db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="iddc9925d0-4f9a-4e04-93af-396fb7810bd6__id12957c20-503c-4f68-b860-81b95ca2538e" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">file_info</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Source file information
+handle</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns a string representation of the filehandle
+in the specified ucdbSourceInfoT item, or NULL if error. This is
+equivalent to calling:</p>
+<pre class="pre codeblock leveled"><code>ucdb_GetFileName(db, &amp;source_info-&gt;filehandle)</code></pre><p class="p">The returned string only remains valid until
+the next call of this routine. You must copy the returned string
+before the next call to this function.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbApiFunctions_idffb846c1.html" title="This section defines the UCDB API functions by function group.">UCDB API Functions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Source Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_SourceFiles_iddc9925d0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

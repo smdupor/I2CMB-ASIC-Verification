@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Split RMDB Database Among Several Files" />
+<meta name="abstract" content="The VRM database supports XInclude (mechanism for merging XML documents), allowing the database contents to be divided among multiple files. The “parent” file will still contain the document (rmdb) element and also specify one or more xi:include elements in the XInclude namespace. In that case, the file referred to by the xinclude element is read into the VRM database in place of the xinclude element." />
+<meta name="description" content="The VRM database supports XInclude (mechanism for merging XML documents), allowing the database contents to be divided among multiple files. The “parent” file will still contain the document (rmdb) element and also specify one or more xi:include elements in the XInclude namespace. In that case, the file referred to by the xinclude element is read into the VRM database in place of the xinclude element." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7a2029b9-81fe-46d9-9b53-f73c01b6e86e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Split RMDB Database Among Several Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Split RMDB Database Among Several Files" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id7a2029b9-81fe-46d9-9b53-f73c01b6e86e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Split RMDB Database Among Several Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The VRM database
+supports XInclude (mechanism for merging XML documents), allowing
+the database contents to be divided among multiple files. The “parent”
+file will still contain the document (<span class="ph FontProperty emphasis">rmdb</span>) element
+and also specify one or more <span class="ph FontProperty emphasis">xi:include</span> elements
+in the XInclude namespace. In that case, the file referred to by
+the <span class="ph FontProperty emphasis">xinclude</span> element
+is read into the VRM database in place of the <span class="ph FontProperty emphasis">xinclude</span> element.</span>
+</div>
+<div class="fig fignone" id="id7a2029b9-81fe-46d9-9b53-f73c01b6e86e__idff2ef56f-a405-4b21-876d-745c1ef0c561"><span class="figcap"><span class="fig--title-label">Figure 1. </span>XInclude Allows Database Contents Divided
+Among Multiple Files</span></div>
+<p class="p">For example, assume the <span class="ph filepath">parent</span> file
+contains the following:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb xmlns:xi="http://www.w3.org/2003/XInclude"&gt;
+	&lt;runnable name="nightly" type="group"&gt;
+		&lt;members&gt;
+			&lt;member&gt;test1&lt;/member&gt;
+			&lt;member&gt;test2&lt;/member&gt;
+			&lt;member&gt;test3&lt;/member&gt;
+		&lt;/members&gt;
+		...
+		&lt;/runnable&gt;
+	&lt;xi:include href="child.rmdb"/&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">and the included <span class="ph filepath">child.rmdb</span> file
+contains the following:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;runnable name="test1" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable name="test2" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable name="test3" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">These files together provide the same configuration
+as the following monolithic file:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;runnable name="nightly" type="group"&gt;
+		&lt;members&gt;
+			&lt;member&gt;test1&lt;/member&gt;
+			&lt;member&gt;test2&lt;/member&gt;
+			&lt;member&gt;test3&lt;/member&gt;
+		&lt;/members&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable name="test1" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable name="test2" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable name="test3" type="task"&gt;
+		...
+	&lt;/runnable&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">Note the namespace definition (<span class="ph FontProperty emphasis">xmlns:xi</span>)
+on the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. It is necessary to define the XInclude namespace in order
+for the XML parser to recognize the <span class="ph FontProperty emphasis">xi:include</span> element.
+The namespace can be placed on any element containing the <span class="ph FontProperty emphasis">xi:include</span> element,
+including the <span class="ph FontProperty emphasis">xi:include</span> element
+itself. </p>
+<p class="p">Refer to “<a class="xref fm:HeadingAndPage" href="Concept_IncludingNestedXmlFiles_id604cc633.html#id604cc633-bd7f-4863-9e4f-c21015ab1015__Concept_IncludingNestedXmlFiles_id604cc633.xml#id604cc633-bd7f-4863-9e4f-c21015ab1015" title="The LibXML2 parser used in the RMDB API includes support for XInclude, a standard for defining and importing nested XML files. In the RMDB API, the XInclude expansion is only performed if the current XInclude namespace is defined in the document (rmdb) element. For example,">Including Nested XML Files</a>” for additional information.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RmdbDatabaseFile_id0b7d83e2.html" title="The Verification Run Manager DataBase (RMDB) file is the VRM database.">RMDB Database File</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Split RMDB Database Among Several Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_SplitRmdbDatabaseAmongSeveralFiles_id7a2029b9.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

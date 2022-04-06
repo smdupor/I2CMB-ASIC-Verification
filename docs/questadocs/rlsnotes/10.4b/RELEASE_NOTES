@@ -1,0 +1,695 @@
+                     Release Notes For Questa Sim 10.4b
+
+                                 May 26 2015
+               Copyright 1991-2015 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Release Announcements in 10.4b
+     * [3]Base Product Specifications in 10.4b
+     * [4]Compatibility Issues with Release 10.4b
+     * [5]General Defects Repaired in 10.4b
+     * [6]User Interface Defects Repaired in 10.4b
+     * [7]SystemVerilog Defects Repaired in 10.4b
+     * [8]VHDL Defects Repaired in 10.4b
+     * [9]SVA/PSL Defects Repaired in 10.4b
+     * [10]Verification Management Defects Repaired in 10.4b
+     * [11]Power Aware Defects Repaired in 10.4b
+     * [12]General Enhancements in 10.4b
+     * [13]SystemVerilog Enhancements in 10.4b
+     * [14]Coverage Enhancements in 10.4b
+     * [15]Verification Management Enhancements in 10.4b
+     * [16]Power Aware Enhancements in 10.4b
+   _______________________________________________________________________
+
+   Release Announcements in 10.4b
+     * [nodvtid] -
+       [10.4] Support for Windows XP and Windows Vista has been
+       discontinued.
+       [10.4] Licensing Information
+       There is no licensing change between release 10.3 and 10.4.
+       However if you are migrating to 10.4 from a release like 10.2 and
+       older, please note the following:
+          + Starting 10.3, it uses FLEXnet v11.11.1.1. The vendor daemons
+            and lmgrd that are shipped with this release will be FLEXnet
+            version 11.11.1.1.
+          + For floating licenses it will be necessary to verify that the
+            vendor daemon (i.e., mgcld) and the license server (i.e.,
+            lmgrd) have FLEXnet versions equal to or greater than
+            11.11.1.1. If the current FLEXnet version of your vendor
+            daemon and lmgrd are less than 11.11.1.1 then it will be
+            necessary to stop your license server and restart it using the
+            vendor daemon and lmgrd contained in this release.
+          + If you use node locked licenses you don't need to do anything.
+       [10.3b] OVL is upgraded to v2.8.1.
+       [10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology)
+       library, sources and documentation have been updated to version
+       2014.01. Dependency checks in vopt and vsim will force
+       recompilation of designs that use the osvvm library. If
+       optimization is performed using vopt, the optimizer will
+       automatically generate new optimized design units. Without the
+       optimization step, vsim will detect dependency errors.
+       [10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been
+       discontinued.
+       [10.2] Support for Solaris SPARC and Solaris x86 has been
+       discontinued. All Solaris OS platforms are not supported.
+       [10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell
+       SUSE Linux Enterprise (SLES) 9 has been discontinued.
+       [10.1] Support for GCC versions
+       gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.
+       [10.0] Support for Solaris 8 and Solaris 9 has been discontinued.
+     * [nodvtid] - (source) The inFactSv package has changed, so designs
+       that use it must be recompiled in Questa 10.4b.
+   _______________________________________________________________________
+
+   Base Product Specifications in 10.4b
+     * [nodvtid] -
+       [Supported Platforms]
+       Linux RHEL 5 x86/x86-64
+       Linux RHEL 6 x86/x86-64
+       Linux RHEL 7 x86/x86-64
+       Linux SLES 10 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Windows 7 x86/x64
+       Windows 8 x86/x64
+       [Supported GCC Compilers (for SystemC)]
+       gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+       gcc-4.2.1-mingw32vc9
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.07
+       [Licensing]
+       FLEXnet v11.11.1.1
+       MSL v2013_3
+       MGLS v9.10_7.2
+       PCLS v9.10.7.2
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 10.4b
+
+   SystemVerilog Compatibility
+     * [nodvtid] - (source, results) There has been a change in the VPI
+       interface to vpiAssertion class objects. The SystemVerilog 2012 LRM
+       indicates that vpiAssertion objects may be iterated for from
+       vpiInstance class objects only, not from all vpiScopes, however
+       assertion objects may in fact be under other scope class parents.
+       We have previously added these sub-scope descendant assertions to
+       the instance assertion. This change makes the assertion iteration
+       valid on all scope objects to bring it into line with similar
+       vpiVariable iterations. A consequence is that sub-scope iterations
+       are necessary to find all the assertions in an instance.
+     * dvt76428 - (results) Under certain conditions, a wait on a method
+       call, like 'wait(q.size())', would never trigger.
+     * dvt77400 - (results) In some cases a bogus vsim-3391 'Requested
+       memory exceeds physical memory' message can be generated when
+       relatively little virtual memory is actually being used but very
+       large objects are being allocated and freed while processing
+       dynamic arrays and similar objects. In 10.3d and 10.3e it will
+       generate a Failure messages that stops the simulation. It can be
+       resumed with a second run command, or the 'suppress 3391' vsim
+       switch can eliminate it. In 10.4 it is will not stop the
+       simulation. It can be suppressed the same way. If the operating
+       system shows that the process is indeed larger then physical
+       memory, then the message is not bogus, and suggests that poor
+       performance will result due to heavy paging. After the fix the
+       transcript file will no longer contain the bogus message.
+     * dvt75975 - (results) Questa was unable to support a
+       class-specialization prefix as a static cast type. This is now
+       supported. For example :
+class parent #(int x = 10);
+endclass
+class child #(int y=10) extends parent #(y);
+endclass
+module top;
+  parent p;
+  child c1=new, c2;
+
+  initial begin
+    p = c1;
+    c2 = child #(.y(10))'(p);
+  end
+     * dvt62347 - (results) vlog-2292 error incorrectly printed "OVM"
+       related message regardless of whether OVM or UVM loading failed.
+       This has been corrected to reflect the right context.
+     * dvt76928 - (results) This was a bug in the context of a function
+       inside a class. If the function has a default value for an argument
+       and the argument has exactly the same name as the default value ,
+       then this was leading to incorrect results. This has been
+       corrected. A sample example of the bug scenario :
+package p1;
+        int num = 1;
+        class C;
+        function int get_int(int num = num );
+            return 1;
+        endfunction : get_int
+        endclass
+endpackage : p1
+
+module top;
+    import p1::*;
+                C c = new;
+                initial begin
+                c.get_int();
+                end
+endmodule : top
+
+     * dvt77231 - (results) Fixed a bug in usage of tagged unions inside a
+       case statement inside a task.
+     * dvt77144 - (results) Questa was incorrectly allowing some wrong
+       syntax involving the keywords 'this' or 'super' along with
+       class-specialisations to parse in vlog. This was resulting in
+       errors later in vsim. Have fixed this behaviour. Here is a sample
+       scenario.
+package pkg;
+   class c1#();
+       virtual task run();
+       endtask
+   endclass
+   class c2 extends c1;
+   endclass;
+
+   class c3 ;
+      virtual task run();
+      endtask
+      task t();
+        this.c1#()::run();// this gives a syntax error now
+      endtask
+   endclass
+endpackage
+
+     * dvt76429 - (results) Add support for const cast expression in
+       constraints. The constraint expression "const'(expr)" will evaluate
+       "expr" as a constant value. Random variables referenced by "expr"
+       will be evaluated as if non-random. The value of a random variable
+       referenced by "expr" will be sampled prior to randomize() (for
+       class::randomize, the value will be sampled after pre_randomize()).
+     * dvt76126 - (results) vlog error 13028 has been made suppressible.
+       LRM requires the keyword 'inside' to be followed by a left brace.
+       This error was already allowed to be ignored by -permissive
+
+   VHDL Compatibility
+     * dvt77769 - (results) A type conversion from a floating point type
+       to an integer type will now produce an Error message if the
+       floating point value is outside the range of a signed 32-bit
+       integer. Also, a type TIME expression involving a floating point
+       expression will produce an Error message if the result is outside
+       the range of a 64-bit signed integer; in this case, the lower bound
+       is -9223372036854775807, which is the smallest position number
+       allowed for type TIME. Finally, a type conversion will check that
+       the result belongs to the subtype denoted by the type mark of the
+       target type.
+
+   Coverage Compatibility
+     * dvt68442 - (results) SV covergroup coverage was different in merged
+       file depending on the merge order of input UCDB files due to
+       excluded auto cross bins.
+     * dvt74268 - (results) Covered auto cross bin was not getting into
+       the merged UCDB if that bin is uncovered in the master UCDB.
+     * dvt69525 - (results) Some toggle nodes of a VHDL record were
+       missing in viewcov mode
+     * dvt71906 - (results) The vcover merge now reports error 6854 by
+       default for conflicting test names
+     * dvt75218 - (results) Functional coverage items are now reported for
+       each instance and DU in byinstance and bydu text reports
+
+   Power Aware Compatibility
+     * [nodvtid] - (results) Fixed an issue of wrong simulation result due
+       to retention being applied on a signal in bitwise manner.
+
+   General Compatibility
+     * [nodvtid] - (results) A crash has been fixed when +nowarn option is
+       used with no arguments in vsim. For eg. "vsim +nowarn top_module"
+       will result in error now.
+     * [nodvtid] - (results) Error ID 2411 and 2412 have been assigned to
+       permissive error messages 'Enum. range value must be a non-negative
+       integer' and 'Enum. range must be a positive integer' respectively.
+       These messages can be suppressed with '-suppress' now. Verror help
+       has been added to these IDs too.
+
+   Verification Management Compatibility
+     * dvt72260 - (results) The Test Analysis menu in Structure window was
+       generating paths using "::" as a separator which are not valid in
+       viewcov mode.
+     * dvt76258 - (results) The ranktest summary has been augmented to
+       include the number of contributing and non-contributing tests.
+
+   Release Announcements Compatibility
+     * [nodvtid] - (source) The inFactSv package has changed, so designs
+       that use it must be recompiled in Questa 10.4b.
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.4b
+     * dvt76763 - Fixed a bug in pduspec flow which resulted in incomplete
+       visibility requirements during the usage of partial hierarchical
+       paths instead of complete path.
+     * [nodvtid] - (results) A crash has been fixed when +nowarn option is
+       used with no arguments in vsim. For eg. "vsim +nowarn top_module"
+       will result in error now.
+     * [nodvtid] - Binaries of the licensing part and all of its
+       dependencies were in 32-bits even for 64-bits products. This has
+       been fixed so they are now 64-bits binaries for 64-bits products.
+       This applies to Linux & Windows.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.4b
+     * dvt63651 - A drag-area zoom-in operation in the wave window would
+       sometimes zoom to the wrong location. This issue has been resolved.
+     * dvt77471 - Wave window cursor frequency display shows incorrectly
+       scaled values for certain time resolution values. This problem has
+       been corrected.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.4b
+     * dvt76118 - A typedef for a queue in a base class wasn't being
+       properly handled in the child class.
+     * dvt75845 - Variable part select on a class member dynamic array
+       would sometimes give incorrect results. This has been fixed.
+     * dvt76428 - (results) Under certain conditions, a wait on a method
+       call, like 'wait(q.size())', would never trigger.
+     * dvt75528 - Allowed a virtual function to be overridden by a pure
+       virtual function. Below example will work after the fix. Example:-
+       class a; virtual task body(); $display("hi, i am in a"); endtask
+       endclass virtual class b extends a; pure virtual task body();
+       endclass
+     * dvt76387 - The prototypes of DPI functions inside nested interface
+       were not generated in dpiheader generation.
+     * dvt76021 - Fixed the vsim results in novopt mode when out of bound
+       array element is passed in port connection.
+     * dvt76289 - Use of a nonblocking event trigger, ie, "-->event_var",
+       resulted in a memory leak.
+     * dvt76314 - Fixed a bug in $enable_signal_spy/$disable_signal_spy
+       which resulted in error(vsim-3861) in cases where absolute path for
+       the signals is not given with these system calls. For example
+       following usage which used to give error will now work correctly:
+module top_tb;
+...
+$init_signal_spy("top_tb/sig1", "top_tb/sig2", 1, 0);
+$enable_signal_spy("top_tb/sig1", "top_tb/sig2", 1);
+...
+endmodule
+
+     * dvt76400 - Fixed a bug which resulted in false error(vsim-3045)
+       while calling a SV task/function with default values of arguments
+       from verilog. For example following usage which used to give error
+       will now work correctly:
+test1.sv :
+//this file compiled as SV source code
+...
+task setup_gpio(int a = 1);
+...
+endtask
+...
+
+test2.v :
+//This file compiled a verilog source code
+...
+tb.setup_gpio();
+...
+
+     * dvt76285 - Added compile time error which makes sure the name does
+       not already exist in the scope with the same direction. Following
+       usage is now compile time error :
+ clocking clk_blk @(CLK);
+        default input #0;
+        input port1;
+        input port1;
+  endclocking : clk_blk;
+
+     * [nodvtid] - A net having multiple drivers with varying strengths
+       resolved to an incorrect value in some cases.
+     * dvt76661 - The compiler incorrectly issued a "data size overflow"
+       error for large unpacked arrays and structures that overflowed a
+       32-bit integer size even when compiled for 64-bit.
+     * dvt76961 - Fixed an issue when multiple part-select expressions are
+       used in foreach loop.
+     * dvt76247 - Fixed a vsim error when default type parameter (T)
+       passed to a class (A) is of another class type (B) whose parameter
+       is a virtual interface (x). For example class A#(type T =
+       B#(virtual interface x));
+     * dvt77400 - (results) In some cases a bogus vsim-3391 'Requested
+       memory exceeds physical memory' message can be generated when
+       relatively little virtual memory is actually being used but very
+       large objects are being allocated and freed while processing
+       dynamic arrays and similar objects. In 10.3d and 10.3e it will
+       generate a Failure messages that stops the simulation. It can be
+       resumed with a second run command, or the 'suppress 3391' vsim
+       switch can eliminate it. In 10.4 it is will not stop the
+       simulation. It can be suppressed the same way. If the operating
+       system shows that the process is indeed larger then physical
+       memory, then the message is not bogus, and suggests that poor
+       performance will result due to heavy paging. After the fix the
+       transcript file will no longer contain the bogus message.
+     * dvt77310 - Type-casting $cast function with void will not result in
+       error even when casting operation fails. For example following will
+       not result in error when $cast fails :
+void'($cast(d_obj, c_obj));
+     * dvt77198 - Fixed a bug in case within statement which resulted in
+       wrong simulation results while having more than 32 cases.
+     * dvt70538 - Typedef defined in super class would sometimes not
+       visible to derived class. This has been fixed.
+     * dvt77431 - Fixed a vsim error when return type of an external
+       function in parameterized class is the self referential class.
+       Example:- function my_class#(my_class::PARAM1) my_class::get ();
+     * dvt75438 - Fixed a vlog crash when new() is called on a forward
+       typedef class.
+     * dvt75975 - (results) Questa was unable to support a
+       class-specialization prefix as a static cast type. This is now
+       supported. For example :
+class parent #(int x = 10);
+endclass
+class child #(int y=10) extends parent #(y);
+endclass
+module top;
+  parent p;
+  child c1=new, c2;
+
+  initial begin
+    p = c1;
+    c2 = child #(.y(10))'(p);
+  end
+     * dvt62347 - (results) vlog-2292 error incorrectly printed "OVM"
+       related message regardless of whether OVM or UVM loading failed.
+       This has been corrected to reflect the right context.
+     * dvt76928 - (results) This was a bug in the context of a function
+       inside a class. If the function has a default value for an argument
+       and the argument has exactly the same name as the default value ,
+       then this was leading to incorrect results. This has been
+       corrected. A sample example of the bug scenario :
+package p1;
+        int num = 1;
+        class C;
+        function int get_int(int num = num );
+            return 1;
+        endfunction : get_int
+        endclass
+endpackage : p1
+
+module top;
+    import p1::*;
+                C c = new;
+                initial begin
+                c.get_int();
+                end
+endmodule : top
+
+     * dvt77231 - (results) Fixed a bug in usage of tagged unions inside a
+       case statement inside a task.
+     * dvt77144 - (results) Questa was incorrectly allowing some wrong
+       syntax involving the keywords 'this' or 'super' along with
+       class-specialisations to parse in vlog. This was resulting in
+       errors later in vsim. Have fixed this behaviour. Here is a sample
+       scenario.
+package pkg;
+   class c1#();
+       virtual task run();
+       endtask
+   endclass
+   class c2 extends c1;
+   endclass;
+
+   class c3 ;
+      virtual task run();
+      endtask
+      task t();
+        this.c1#()::run();// this gives a syntax error now
+      endtask
+   endclass
+endpackage
+
+     * dvt77608 - cosim libvsim.so exported symbol changed to avoid
+       collision.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.4b
+     * dvt70676 - Some uses of A'RANGE (and A'REVERSE_RANGE) where a value
+       (not a range) is required were not being caught as errors by the
+       compiler.
+     * [nodvtid] - Writing a value to a file of a type whose type mark is
+       a scalar subtype that has a range constraint would not check that
+       the value belonged to the subtype. This has been fixed.
+     * dvt67887 - Associating a signal alias with a port, where the
+       subtype indication of the alias declaration is a partially
+       constrained record, would result in a design that would fail during
+       elaboration.
+     * dvt75934 - unexpected internal error: ../../src/vsim/vinst.c(7889)
+       issue resolved.
+     * dvt69385 - Declaring and using aliases of external signals in a
+       block would crash.
+     * dvt73631 - If a subprogram instantiates a package, and then calls a
+       subprogram of the package, variables of the called subprogram may
+       not be visible or accessible in the graphical interface or through
+       the examine command. In addition, if the design is optimized with
+       vopt using the +cover switch to enable code coverage, during
+       elaboration of the design, the simulator's console terminal may
+       report errors of the form:
+../../src/vsim/rtu.c(xxxx). Please contact Questa support at http://supportnet.m
+entor.com/
+
+     * dvt77077 - A crash could occur when using an output port as the
+       actual to a subprogram formal that is a signal Rising_edge is an
+       example of such a subprogram. Because of optimization, this doesn't
+       no occur for all cases and maybe affected by the use of switches
+       like -no1164 and -O1.
+     * dvt76995 - A variable of a protected type that contains a data
+       member that is of class FILE could not be displayed, examined, or
+       logged properly. Since FILEs themselves cannot be logged, such a
+       protected type variable will have the FILE data member be shown as
+       "Not Loggable", and the WLF file (for post-sim viewing) will not
+       show the variable as having this FILE at all.
+     * dvt77275 - A Fatal error during elaboration could occur within an
+       optimized vhdl process if signal valued attributes are used within
+       that process. The name reported for the optimized processed will
+       start #MERGED#.
+     * [nodvtid] - Bad machine code would be generated in the case of an
+       access type to an generic type and the generic type's actual is a
+       record type. This could result in crashes or incorrect simulation
+     * dvt77420 - Memory corruption could occur if a generic package is
+       instantiated within the scope of a subprogram. Instances of a
+       generic package outside of subprogram is unaffected by this issue.
+       The memory corruption has been fixed.
+     * dvt77769 - (results) A type conversion from a floating point type
+       to an integer type will now produce an Error message if the
+       floating point value is outside the range of a signed 32-bit
+       integer. Also, a type TIME expression involving a floating point
+       expression will produce an Error message if the result is outside
+       the range of a 64-bit signed integer; in this case, the lower bound
+       is -9223372036854775807, which is the smallest position number
+       allowed for type TIME. Finally, a type conversion will check that
+       the result belongs to the subtype denoted by the type mark of the
+       target type.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.4b
+     * dvt77498 - Pass count for deferred assertions were incorrect in
+       full vopt flow.
+     * dvt76997 - Property 'eventually' and 'until' gave incorrect results
+       when expressions used local vars.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.4b
+     * [nodvtid] - In VRM, if a given Action is supposed to produce a
+       UCDB, and does, but the UCDB is unreadable, the Action will be
+       considered to have failed and the UCDB TESTSTATUS will be reported
+       as "Unknown Error" in the VRM log.
+     * dvt72260 - (results) The Test Analysis menu in Structure window was
+       generating paths using "::" as a separator which are not valid in
+       viewcov mode.
+     * [nodvtid] - Under certain circumstances, the instance tree
+       generated from an RMDB file (VRM) was not being expanded correctly.
+     * dvt77329 - On the Runnables tab of the Configuration Edit dialog of
+       the VRM GUI, attempting to un-check any of the selected Runnables
+       after the "Show Latest Status" checkbox was checked would cause a
+       TCL error.
+   _______________________________________________________________________
+
+   Power Aware Defects Repaired in 10.4b
+     * dvt75575 - Extended Power Aware static checks to analyze PST
+       information for both power/ground pairs simultaneously when PST
+       Composition is enabled. This is available with -pa_pstcompflags=pg
+       option.
+     * dvt76982 - With -pa_enable=verbosereporting option, the tool now
+       prints the full hierarchical path of the power domain in
+       report.pa.txt, report.upf.txt & report.mspa.txt.
+     * dvt77535 - Fixed an issue where the design when run in PA mode the
+       tool gives vopt error 12003 and 7033. Whereas in normal mode, these
+       vopt errors did not occur. These errors are not present in PA mode
+       now.
+     * [nodvtid] - (results) Fixed an issue of wrong simulation result due
+       to retention being applied on a signal in bitwise manner.
+     * [nodvtid] - Fixed an issue of high disk usage due to excessive
+       bind_checker commands applied on same scope.
+     * [nodvtid] - In a specific case vopt PA was crashing due to
+       CORRUPT_ON_ACTIVITY simstate. This issue has been fixed now.
+     * [nodvtid] - In a specific case vopt was crashing due to UPF
+       connect_supply_net command on hdl ports.This issue has been fixed
+       now.
+   _______________________________________________________________________
+
+   General Enhancements in 10.4b
+     * dvt25231 - The following license related items are added to
+       'simstats' command report.
+       [simstats verbose]
+       New 'elab' report item is added for checked-out license features
+       names.
+       Example:
+       # elab: license features used qhsimvl
+       [simstats license]
+       New 'License Statistics' section is added for checkout time and
+       checked-out
+       license features names. Example:
+       # License Statistics
+       # license: checkout time 0.05 s
+       # license: features used qhsimvl
+     * [nodvtid] - Vsim memory reported by questa will now be the peak
+       memory attained by the vsim process rather than the memory at the
+       completion of the vsim process.
+     * [nodvtid] - (results) Error ID 2411 and 2412 have been assigned to
+       permissive error messages 'Enum. range value must be a non-negative
+       integer' and 'Enum. range must be a positive integer' respectively.
+       These messages can be suppressed with '-suppress' now. Verror help
+       has been added to these IDs too.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.4b
+     * dvt76429 - (results) Add support for const cast expression in
+       constraints. The constraint expression "const'(expr)" will evaluate
+       "expr" as a constant value. Random variables referenced by "expr"
+       will be evaluated as if non-random. The value of a random variable
+       referenced by "expr" will be sampled prior to randomize() (for
+       class::randomize, the value will be sampled after pre_randomize()).
+     * dvt76165 - Allowed integral to string type assignments without
+       going through a explicit cast under "-permissive" or "-suppress
+       7070" option. Following usage will work with "-permissive" or
+       "-suppress 7070" :
+function void register_c(string name);
+endfunction
+
+reg r;
+register_c(r);
+
+     * [nodvtid] - (source, results) There has been a change in the VPI
+       interface to vpiAssertion class objects. The SystemVerilog 2012 LRM
+       indicates that vpiAssertion objects may be iterated for from
+       vpiInstance class objects only, not from all vpiScopes, however
+       assertion objects may in fact be under other scope class parents.
+       We have previously added these sub-scope descendant assertions to
+       the instance assertion. This change makes the assertion iteration
+       valid on all scope objects to bring it into line with similar
+       vpiVariable iterations. A consequence is that sub-scope iterations
+       are necessary to find all the assertions in an instance.
+     * dvt76126 - (results) vlog error 13028 has been made suppressible.
+       LRM requires the keyword 'inside' to be followed by a left brace.
+       This error was already allowed to be ignored by -permissive
+   _______________________________________________________________________
+
+   Coverage Enhancements in 10.4b
+     * [nodvtid] - vcover parallelmerge command now supports auto-rerun
+       feature for failed parallel processes (due to either job submission
+       or merge failure). Job submission failures are rerun by default.
+       Merge failure rerun can be enabled with -mergererun option. Number
+       of retries for both rerun types can be controlled with -maxrerun
+       option.
+-maxrerun < val >            : Specify maximum number of times job queue, timeou
+ts
+                               or merge failure processes are rerun automaticall
+y. (Default: 10)
+                               Specifying 0 will disable reruns for all failures
+ types
+-mergererun                  : Allow merge failure processes to rerun automatica
+lly
+
+     * [nodvtid] - vcover parallelmerge command allows user to override
+       temporary directory path.
+     -tempdir "< dir_path >"        : Specify temporary directory for intermedia
+te output
+                                      (Default: "$cwd/TEMP_MERGE_DIR")
+
+
+     * dvt75218 - (results) Functional coverage items are now reported for
+       each instance and DU in byinstance and bydu text reports
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.4b
+     * dvt75933 - Various improvements to the pro-active grid status check
+       function.
+          + Added CacheStatus and GetCachedStatus user-definable
+            procedures for managing cached grid status data
+          + Job status is only used if the grid status command is
+            successful
+          + Additional messages emitted when an Action fails because of
+            the pro-active check
+     * [nodvtid] - Added "role" attribute to Action script elements in
+       RMDB. A role allows Action scripts of one type to behave line
+       Action scripts of a different type with respect to named queue
+       selection, timeout computation, and automatic local re-run. Added
+       "-showtimeouts" command-line option to display computed timeouts.
+     * dvt75977 - Merge Actions (mergeScript) in VRM are now re-run as-is
+       upon failure. Added "mergeRerun" utility procedure and
+       "-nomergererun" command-line option to control re-run behavior.
+     * dvt76258 - (results) The ranktest summary has been augmented to
+       include the number of contributing and non-contributing tests.
+     * dvt66540 - There is a new optional command line option to ranktest
+       which may be used to set the maximum number of parallel process: [
+       -j < number_of_parallel_processes > ]
+     * [nodvtid] - Added a new "-noucdb" command-line option to vrun (VRM)
+       to avoid unnecessary UCDB file reading.
+   _______________________________________________________________________
+
+   Power Aware Enhancements in 10.4b
+     * dvt76437 - Support for UPF command "query_cell_instances" has been
+       added.
+     * dvt75000 - UPF package function supply_on/supply_off can now be
+       used from UVM package/functions and classes. The supply search
+       protocol is: 1. Search for supply net/port in the scope of the
+       calling function 2. Search in "-pa_top" scope 3. Search in module
+       provided with -pa_powertop option
+     * dvt77237 - Questa PASim now accepts a list of UPF file in vopt.
+       List of UPF files can be specified with vopt option -pa_upflist .
+       This option is mutually exclusive with -pa_upf option.
+     * dvt76985 - Added the support for -supply and -domain options in
+       add_power_state UPF command
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.4b,product.id.P11633"
+

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="vhencrypt" />
+<meta name="abstract" content="Encrypts VHDL code contained within encryption envelopes." />
+<meta name="description" content="Encrypts VHDL code contained within encryption envelopes." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2f475233-79dd-4135-a491-8d189b0a1239" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vhencrypt</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vhencrypt" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id2f475233-79dd-4135-a491-8d189b0a1239">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vhencrypt</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Encrypts
+VHDL code contained within encryption envelopes.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">vhencrypt <a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id6f808977-535e-44b5-b85d-50b2f8e11efa">&lt;filename&gt; [&lt;filename&gt; . . .]</a> <span class="ph">[<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id46688aa9-eb2b-4ed7-a967-995eedacff9d">-allow_veloce</a>] </span>[<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__ida62cc77a-1049-43f3-9a51-5b24ec4b973b">-common &lt;filename&gt;</a>][<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id54270d55-0b8b-4f22-b0ac-8c9b221cb471">-d &lt;dirname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__ida62cc77a-1049-43f3-9a51-5b24ec4b973b">-common &lt;filename&gt;</a>[<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id4efcd559-12a7-4ac0-9ce7-146e2acff8d5">-data_method=[aes128 | aes192 | aes256]</a> [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__idbb10538c-d869-4d39-a120-9fa6a9483451">-e &lt;extension&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__idc73994ac-6cb5-422b-a61a-302de352886e">-f &lt;cmdfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id0a438f3a-2989-401a-a595-788db220ba75">-hea &lt;headerfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id0e56e075-71a1-4523-975a-8348050bf242">-keyring &lt;directory&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__idbe329f17-eff0-4abb-a2c5-e5df84b7395f">-logfile &lt;logfile&gt; | -l &lt;logfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__ide086ec21-5a42-4493-ab4d-d5009c6a7df7">-o &lt;outputfile&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id8fa21041-672f-4a9c-8a24-3ea63d9b424f">-p &lt;prefix&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id1e86bf2f-a1e4-42ef-95d6-875996d72723">-quiet</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id0526ee37-3d87-48fc-aaa2-d66e2031cc6a">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__id2e9a15de-face-46b7-969f-9100f80932a7">-toolblock &lt;keyfile&gt;[,&lt;rightsfile&gt;]</a>[ [<a class="xref fm:HeadingOnly" href="#id2f475233-79dd-4135-a491-8d189b0a1239__ide2e00646-d2a5-4e13-8579-37dcaa132533">-wholefile</a>]</p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">Upon execution, vhencrypt changes the <span class="ph filepath italic">.vhd</span> filename
+extension to <span class="ph filepath italic">.vhdp</span>,
+and the <span class="ph filepath italic">.vhdl</span> filename extension
+to <span class="ph filepath italic">.vhdlp</span>. </p>
+<p class="p">If you do
+not specify any encryption pragmas or controls, the vhencrypt command
+uses by default information in the keyring directory.</p>
+<p class="p">Since the
+code is not compiled before encryption, dependent packages and design
+units do not have to exist before encryption. You must follow the
+vhencrypt command with a compile command – such as vcom – for the
+design to be compiled.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id2f475233-79dd-4135-a491-8d189b0a1239__id9fcb86f6-a0d1-4f18-b77c-63ff48305e93"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id6f808977-535e-44b5-b85d-50b2f8e11efa">&lt;filename&gt; [&lt;filename&gt; . . .]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the name of the VHDL source code file to encrypt. One
+filename is required. Enter multiple filenames as a space-separated
+list. Allows wildcards. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id46688aa9-eb2b-4ed7-a967-995eedacff9d">-allow_veloce</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Allow Veloce emulator to use
+encrypted outputs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__ida62cc77a-1049-43f3-9a51-5b24ec4b973b">-common &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies a file containing information
+to make common to all the tool blocks. Common information includes
+any directives you intend for the common block. You can also include author,
+author_info, and data_method directives. The file can contain begin_commonblock and
+end_commonblock directives, but these are ignored by the command.
+The file can also contain single-line comments (“//” for Verilog).
+The command searches the specified file for the location of the
+"keyring" directory. You can specify only one -common file. If you specify
+only one file, then you must supply at least one -toolblock argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id54270d55-0b8b-4f22-b0ac-8c9b221cb471">-d &lt;dirname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies where to save encrypted VHDL files. Defaults to the current
+working directory, if you do not specify a directory. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id66589f76-f5e0-4611-b35e-69437a80da0a"><p class="p Opt">&lt;dirname&gt;
+— Specifies the directory to contain the encrypted VHDL files. Preserves the
+original file extension (<span class="ph filepath italic">.vhd</span> or <span class="ph filepath italic">.vhdl</span>).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id4efcd559-12a7-4ac0-9ce7-146e2acff8d5">-data_method=[aes128 | aes192 | aes256]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the symmetric
+encryption method to use with the random session key when encrypting
+text in a data_block. The data_block consists of the chararacters
+that appear between the begin and end directives in the input file.
+If you do not specify a common or ‑toolblock argument, then the
+command creates an IEEE 1735 version 1 compliant encryption envelope
+using the Mentor Graphics public encryption key. This command line setting
+overrides any -data_method directives appearing in the input file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id193417eb-90a7-4355-9132-1bb5dedef21b"><p class="p Opt">aes128
+— AES key size of 128. This is the default.</p>
+</li>
+</ul>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id3c376297-2cb8-40bb-9032-2617e1ffdfcf"><p class="p Opt">ase192
+— AES key size of 192.</p>
+</li>
+</ul>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id9fd9f35c-339e-45a8-8136-9769c5a5d0c8"><p class="p Opt">aes256
+— AES key size of 256. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__idbb10538c-d869-4d39-a120-9fa6a9483451">-e &lt;extension&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a filename extension to apply to the encrypted file. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__ida8900963-1ade-4e3e-8bce-0cc01c27171b"><p class="p Opt">&lt;extension&gt;
+— Any alpha-numeric string. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__idc73994ac-6cb5-422b-a61a-302de352886e">-f &lt;cmdfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a file with more command line arguments. Allows reuse
+of complex arguments without retyping. Allows nesting of -f options. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id291b603c-eaab-4ab9-8296-43d80ba62ed3"><p class="p Opt">&lt;cmdfile&gt;
+— Specifies the name of a file containing command line arguments.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id0a438f3a-2989-401a-a595-788db220ba75">-hea &lt;headerfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Concatenates header information into all design files listed with
+&lt;filename&gt;. Enables you to pass vhencrypt a large number of files
+that do not contain the encryption information in the form of the
+`protect compiler directives. Enables you to avoid having to edit
+hundreds of files to add the same encryption information.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__idc22d4ce1-355b-4200-a1d6-121da66b25e6"><p class="p Opt">&lt;headerfile&gt;
+— Specifies an existing file. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id0e56e075-71a1-4523-975a-8348050bf242">-keyring &lt;directory&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the directory containing the common
+and toolblock files. If you do not specify the directory, the command
+assumes the directory is underneath the top of the installation directory
+&lt;installation&gt;/keyring. This option is useful only if using the
+-toolblock argument and -common.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__idbe329f17-eff0-4abb-a2c5-e5df84b7395f">-logfile &lt;logfile&gt; | -l &lt;logfile&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Redirects log output to the file designated by &lt;logfile&gt;.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id741a0849-aebd-46db-8d34-b6ff0f7d79c1"><p class="p Opt">&lt;logfile&gt;
+— Specifies a file for saving output.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__ide086ec21-5a42-4493-ab4d-d5009c6a7df7">-o &lt;outputfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Combines all encrypted output into a single file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id88e3c55c-bd29-4f80-9444-32ec096e5edc"><p class="p Opt">&lt;outputfile&gt;
+— Specifies a file for saving output.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id8fa21041-672f-4a9c-8a24-3ea63d9b424f">-p &lt;prefix&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prepends encrypted file names with a prefix.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__idc0d1e0c4-296d-4654-ad4d-2e02e5e454c3"><p class="p Opt">&lt;prefix&gt;
+— Any alpha-numeric string.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id1e86bf2f-a1e4-42ef-95d6-875996d72723">-quiet</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Disables encryption messages. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id0526ee37-3d87-48fc-aaa2-d66e2031cc6a">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls display of statistics sent to a logfile, stdout, or the
+transcript. Specifying -stats without options sets the default features
+(cmd and msg). </p>
+<p class="p">Specify
+multiple features and modes for each instance of -stats as a comma-separated
+list. You can specify ‑stats multiple times on the command line,
+but only the final instance takes effect. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__ideaaad1e2-d2b9-4b77-8121-cef5335eac31"><p class="p Opt">[+ | -]
+— Controls activation of the feature or mode, where the plus character
+( + ) enables the feature, and the minus character ( - ) disables
+the feature. You can also enable a feature or mode by specifying
+it without the plus (+) character. Setting this switch adds or subtracts
+features and modes from the default settings "cmd,msg".</p>
+</li>
+<li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id22a598d0-820f-4d71-8c5f-fa9d11c72b8d"><p class="p Opt">Features</p>
+<p class="p">all —
+Display all statistics features (cmd, msg, perf). Mutually exclusive
+with the none option. When specified in a string with other options,
+all is applied first.</p>
+<p class="p">cmd —
+(default) Echo the command line.</p>
+<p class="p">msg —
+(default) Display error and warning summary at the end of command execution.</p>
+<p class="p">none
+— Disable all statistics features. Mutually exclusive with the all
+option. When specified in a string with other options, none is applied
+first.</p>
+<p class="p">perf
+— Display time and memory performance statistics.</p>
+<p class="p">time
+— Has no effect and is ignored. </p>
+</li>
+<li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__idd4583ae1-4ac2-454b-b6a7-657228f61979"><p class="p Opt">Modes</p>
+</li>
+<li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__ide577e8c3-7e6e-4882-a6a6-d26303a1c4af"><p class="p Opt">Modes can
+be set for a specific feature, or set globally for all features.
+To add or subtract a mode for a specific feature, use the plus (+)
+or minus (-) character with the feature, for example, vhencrypt
+-stats=cmd+verbose,perf+list. To add or subtract a mode globally
+for all features, specify the modes in a comma-separated list, for
+example, vhencrypt -stats=time,perf,list,-verbose. You cannot specify
+global and feature specific modes together. </p>
+<p class="p">kb —
+Print performance statistics in kilobyte units with no auto-scaling.</p>
+<p class="p">list
+— Display statistics in a Tcl list format when available.</p>
+<p class="p">verbose
+— Display verbose statistics information when available.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Youc an
+use vhencrypt -quiet to disable all default or user-specified -stats
+features.</p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__id2e9a15de-face-46b7-969f-9100f80932a7">-toolblock &lt;keyfile&gt;[,&lt;rightsfile&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the root name of a file that contains
+directives intended for a tool block.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id2c64d56c-53a1-4040-bf1a-c9f681bee843"><p class="p Opt">keyfile
+— The root name of the file. Generally, it is the name of a key-key (key_keyname)
+contained within the file. This file is in the keyring directory,
+and must include either a ".deprecated" or ".active" suffix to the
+base root name. The command does not use the suffix as part of the
+specified filename.</p>
+</li>
+<li class="li ArgOption" id="id2f475233-79dd-4135-a491-8d189b0a1239__id4215c851-e9e8-4584-9265-8e9497eb7535"><p class="p Opt">rightsfile
+— Optionally, a "rights file" name may appear after the keyfile
+name; This file contains control directives for this particular
+tool block. Control directives are used to define rights. The rights
+file must have a ".rights" suffix.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id2f475233-79dd-4135-a491-8d189b0a1239__ide2e00646-d2a5-4e13-8579-37dcaa132533">-wholefile</dt>
+<dd class="dd ArgumentDescription"><p class="p">This switch ignores any `pragma protect
+directives that appear in the input file. The command encrypts all
+the specified files, referencing the -common and -toolbox arguments to
+determine how to encrypt the files. If you do not specify the -common
+or -toolblock arguments, then the command creates a version 1 (V1)
+encryption envelope, with only one key block: the default key for
+Mentor Graphics Corporation.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id2f475233-79dd-4135-a491-8d189b0a1239__idc1771bac-637c-412c-8861-b8b60a1b927a"><p class="p">Enable the
+display of message count summary. Echoing of the command line is disabled.</p>
+<p class="lines ApplCommand leveled">vhencrypt -stats=msg,-cmd,</p>
+</li>
+<li class="li" id="id2f475233-79dd-4135-a491-8d189b0a1239__id213748b4-3e74-4b94-b5c7-f760e49b7bf5"><p class="p">The first
+-stats option is ignored. The none option disables all default settings
+and then enables the perf option.</p>
+<p class="lines ApplCommand leveled">vhencrypt -stats=msg,cmd -stats=none,perf</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_Vencrypt_id01b6861d.html#id01b6861d-8a4c-4b4f-b38e-e7409dc9f259__" title="Encrypts Verilog and SystemVerilog code.">vencrypt</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "vhencrypt"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Vhencrypt_id2f475233.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

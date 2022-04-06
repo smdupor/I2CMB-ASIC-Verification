@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Dynamic Retention Checks" />
+<meta name="abstract" content="Dynamic retention checks report any inconsistent retention condition in your RTL and gate-level designs." />
+<meta name="description" content="Dynamic retention checks report any inconsistent retention condition in your RTL and gate-level designs." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="iddba72f14-7e0e-4476-9a67-98e6c6704d95" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Dynamic Retention Checks</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Dynamic Retention Checks" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Dynamic Retention Checks</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Dynamic
+retention checks report any inconsistent retention condition in
+your RTL and gate-level designs.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95__ide9209368-177f-461c-ba2c-0e20c5a17c52"><p class="p">To
+enable dynamic retention checks, specify a value to the vopt -pa_checks
+command as shown in the following table. All dynamic retention check
+results are written to the Transcript window.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95__id83df6989-fe26-4511-8ac4-ae9455ee2a8f" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Dynamic Retention Checks</span></caption><colgroup><col style="width:1.367in" /><col style="width:1.475in" /><col style="width:3.658in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3896e153"><p class="p">vopt Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3896e156"><p class="p">Mnemonic</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3896e159"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rcs</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_CLK_STATE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Flags violation if the
+clock or latch enable is not at a certain value when the save and
+restore events take place. If a latch is enabled and can change
+its value, triggering retention can potentially cause race conditions
+in the stored value. This is also a check against such conditions. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rop</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_OFF_PSO</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p"><span class="ph FontProperty HeadingLabel">Master-Slave Configuration</span> —
+Flags violation if the retention condition is not asserted when
+the power is switched off.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Balloon-Latch Configuration</span> —
+Flags violation if the retention condition is not asserted when
+the power is switched off.</p>
+<p class="p">This check is not activated if the asynchronous
+set or reset is <span class="ph FontProperty emphasis">active</span>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rpo </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_PD_OFF</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p"><span class="ph FontProperty HeadingLabel">Master-Slave Configuration</span> —
+Flags violation if there is an error in the sequence of triggering
+of the retention condition and power signal. For retention to succeed,
+the retention condition should be high at power-down and power-up.
+However, this check is triggered when that is not the case. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Balloon-Latch Configuration</span> —
+Flags violation if there is an error in the sequence of triggering
+of the retention condition and power signal. For retention to succeed,
+the power should be high. However, this check is triggered when
+that is not the case. </p>
+<p class="p">This check is not activated if the asynchronous
+set or reset is <span class="ph FontProperty emphasis">active</span>.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rsa</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_SEQ_ACT</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Flags violation if the
+clock toggles during the retention period.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">This check is for balloon-latch configuration only; it
+does not apply to master-slave (slave-alive) retention.</p>
+</div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rtcon</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_ON_RTC</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Flags violation if the
+retention condition is off when the power is enabled. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rtcoff</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_OFF_RTC</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Flags violation if the
+retention condition is off when the power is disabled. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rtctog</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "><p class="p">QPA_RET_RTC_TOGGLE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Flags violation if the
+retention condition toggles during power-down. Toggling of the retention condition
+during power-down corrupts the retained value. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=rtc</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Enables the following
+retention condition checks:</p>
+<ul class="ul"><li class="li" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95__id5da0d8cf-d1fd-4205-84fc-7de40b71bfe9"><p class="p">-pa_checks=rtcon</p>
+</li>
+<li class="li" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95__id995dce55-b9db-4723-9f53-bec62a7d1861"><p class="p">-pa_checks=rtcoff</p>
+</li>
+<li class="li" id="iddba72f14-7e0e-4476-9a67-98e6c6704d95__idc7c0c6ce-0910-4bfd-ba6b-3fb42d9ba7a1"><p class="p">-pa_checks=rtctog</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e153 "><p class="p">-pa_checks=r</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e156 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3896e159 "><p class="p">Enables all dynamic retention
+checks (rcs, rop, rpo, rsa, rtcon, rtcoff, and rtctog).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DynamicChecks_id6ba4618f.html" title="Dynamic checks validate your design with the power intent defined in the UPF file during the Power Aware simulation.">Dynamic Checks</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_RetentionChecks_id7c397d10.html" title="Retention checks report various inconsistent retention conditions in your design. Retention is present in the design if the UPF file contains a set_retention command defining a retention strategy, or a set_retention -instance strategy that specifies the need for retention and points to the instantiated retention cells.">Retention Checks</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Dynamic Retention Checks"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_DynamicRetentionChecks_iddba72f14.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

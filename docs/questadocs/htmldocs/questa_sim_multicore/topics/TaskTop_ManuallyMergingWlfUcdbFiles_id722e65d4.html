@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Manually Merging WLF and UCDB Files" />
+<meta name="abstract" content="As an alternative to using vsim -mc2mergewlf or vsim ‑mc2mergeucdb, you can use other Questa SIM commands to manually merge WLF or UCDB files for all partitions." />
+<meta name="description" content="As an alternative to using vsim -mc2mergewlf or vsim ‑mc2mergeucdb, you can use other Questa SIM commands to manually merge WLF or UCDB files for all partitions." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id722e65d4-0a33-4ef5-942f-0ee1fcf91841" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Manually Merging WLF and UCDB Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Manually Merging WLF and UCDB Files" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id722e65d4-0a33-4ef5-942f-0ee1fcf91841">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Manually Merging
+WLF and UCDB Files</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">As an alternative
+to using vsim -mc2mergewlf or vsim ‑mc2mergeucdb, you can use other <span class="ph fmvar:ProductName">Questa SIM</span> commands
+to manually merge WLF or UCDB files for all partitions. </span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p" id="id722e65d4-0a33-4ef5-942f-0ee1fcf91841__id2a6761cb-905f-4d76-b5be-b3e01b1178dd"><span class="ph cmd">Refer to <a class="xref fm:Table" href="#id722e65d4-0a33-4ef5-942f-0ee1fcf91841__idb855392b-dca3-421e-8331-4a70a1ed1730">Table 1</a> for the commands you can use for merging
+either WLF or UCDB files. </span><div class="itemgroup info StepInfo">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id722e65d4-0a33-4ef5-942f-0ee1fcf91841__idb855392b-dca3-421e-8331-4a70a1ed1730" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Merging WFL or UCDB Files</span></caption><colgroup><col style="width:1.695in" /><col style="width:4.680in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d4439e168"><p class="p">If you want to...</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d4439e171"><p class="p">Do the following:</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d4439e168 "><p class="p">Merge WLF files</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d4439e171 "><p class="p">Use the wlfman merge
+command with the following syntax: </p>
+<p class="lines ApplCommand">wlfman merge -mark -opt -o &lt;filename&gt; \</p>
+<p class="lines ApplCommand">&lt;partition_name1&gt;.wlf \</p>
+<p class="lines ApplCommand">&lt;partition_name2&gt;.wlf \</p>
+<p class="lines ApplCommand">&lt;optional_args&gt;'</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d4439e168 "><p class="p">Merge UCDB files.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d4439e171 "><p class="p">Use the coverage save
+and vcover merge commands as follows: </p>
+<ol class="ol"><li class="li" id="id722e65d4-0a33-4ef5-942f-0ee1fcf91841__id8342d8f0-7a56-4a9c-b383-4bfb57c0c898"><p class="p">Run the coverage save command for each partition
+at the end of simulation: </p>
+<p class="lines ApplCommand">coverage save -onexit &lt;partition_name&gt;.ucdb</p>
+</li>
+<li class="li" id="id722e65d4-0a33-4ef5-942f-0ee1fcf91841__id4b9f260e-0f3d-4dc2-927b-04845d194376"><p class="p">After simulation completes, use the vcover
+merge command to merge the files: </p>
+<p class="lines ApplCommand">vcover merge -combine &lt;filename&gt; \</p>
+<p class="lines ApplCommand">&lt;partition_name1&gt;.ucdb \</p>
+<p class="lines ApplCommand">&lt;partition_name2&gt;.ucdb \</p>
+<p class="lines ApplCommand">&lt;optional_args&gt;</p>
+</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MergingWlfUcdbFilesPartition_id6829cec3.html" title="By default, each partition produces individual files for WLF (&lt;partition_name&gt;.wlf) and UCDB (&lt;partition_name&gt;.ucdb). Each of these files contains data specific to the hierarchy of its partition.">Merging WLF and UCDB Files of a Partition</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Manually Merging WLF and UCDB Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_ManuallyMergingWlfUcdbFiles_id722e65d4.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

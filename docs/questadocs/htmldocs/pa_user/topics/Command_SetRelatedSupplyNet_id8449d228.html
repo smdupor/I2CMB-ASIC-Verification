@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="set_related_supply_net" />
+<meta name="abstract" content="Enables associating an instance signal pin or a hierarchical port with specific supply nets. Thus, you can create a supply net based on supply pins to specify your related supplies of cells." />
+<meta name="description" content="Enables associating an instance signal pin or a hierarchical port with specific supply nets. Thus, you can create a supply net based on supply pins to specify your related supplies of cells." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id8449d228-e4ea-48c2-bb72-1fd975833064" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>set_related_supply_net</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="set_related_supply_net" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id8449d228-e4ea-48c2-bb72-1fd975833064">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">set_related_supply_net</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Enables
+associating an instance signal pin or a hierarchical port with specific
+supply nets. Thus, you can create a supply net based on supply pins
+to specify your related supplies of cells. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">set_related_supply_net <a class="xref fm:HeadingOnly" href="#id8449d228-e4ea-48c2-bb72-1fd975833064__id7f328926-b29c-4c83-85be-e761a9bd19df">-object_list &lt;objects&gt;</a> <a class="xref fm:HeadingOnly" href="#id8449d228-e4ea-48c2-bb72-1fd975833064__idb097366a-8cf9-4d3c-8477-e89fb72fc0f7">-power &lt;power_net_name&gt;</a> <a class="xref fm:HeadingOnly" href="#id8449d228-e4ea-48c2-bb72-1fd975833064__id8c1294b4-2bbf-49b1-8491-ed5eefcdf2a2">-ground &lt;ground_net_name&gt;</a> <a class="xref fm:HeadingOnly" href="#id8449d228-e4ea-48c2-bb72-1fd975833064__id9e6e05b4-93a5-43b3-a82b-1a4ae6909bbc">-reset</a></p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">Specify the set_related_supply_net
+command in either a UPF or Tcl file, and include the file in the
+vopt run using the -pa_upf or -pa_tclfile argument.</p>
+<p class="p">Power Aware simulation internally
+maps this command to the <a class="xref fm:HeadingOnly" href="General_SetPortAttributes_idca43c468.html#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1__General_SetPortAttributes_idca43c468.xml#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1" title="Defines information on ports.">set_port_attributes</a> command
+that you specify in the UPF file, specifically the following options: </p>
+<pre class="pre codeblock leveled"><code>-related_power_port &lt;power_net_name&gt; 
+-related_ground_port &lt;ground_net_name&gt; </code></pre><p class="p">UPF 2.0 interprets the related_power_net
+and related_ground_net attributes as defining the driver supply
+set of an output port or the receiver supply set of an input port.
+The standard also declares that it is an error in the following
+cases: </p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id7e5927a3-f6af-4fe2-a9a0-3825f3af2a85"><p class="p">If the actual driving logic
+is present and its supply is not the same as the driver supply.</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__ida3a44ae6-6aa2-4278-b317-d18086d59049"><p class="p">If the actual receiving logic
+is present and its supply is not the same as the receiver supply. </p>
+</li>
+</ul>
+<p class="p">As a result, use of set_related_supply_net
+for any purpose other than specifying the driver supply set of a
+macro model output or the receiver supply set of a macro model input
+may generate errors. </p>
+<p class="p">Specifically, Power Aware simulation
+gives a vopt error message (vopt-9814). Use the -warning argument
+of vopt to change the severity of this message to a warning so that
+simulation may continue: </p>
+<pre class="pre codeblock leveled"><code>vopt -warning 9814  </code></pre><p class="p">See the “<a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt99-warning', 'questa_sim_ref'); return false;">vopt -warning</a>” command
+in the <span class="ph FontProperty emphasis">Command Reference Manual</span>. </p>
+<div class="section Subsection" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id0b38daf3-5010-46b9-a722-093904a9cf7a"><h2 class="title Subheading sectiontitle">Default Behavior</h2><p class="p">For top-level ports (in the absence
+of boundary information), it is left up to the tool to decide how
+to handle the primary input and output ports.</p>
+<p class="p">You can define the supply related
+to the primary input and output ports, and instruct the tool as to
+what voltage the input ports can be driven and what voltage the
+output ports can drive.</p>
+<p class="p">If you use the –source, -sink,
+or -diff_supply_only options for setting isolation strategies, the related
+supply tells the tool what supply is powering the cell on the other
+side of the domain boundary, which can then be used to determine
+whether or not isolation is necessary based upon your constraints.
+This related supply information is useful for static analysis.</p>
+<p class="p">This command relates the specified
+power and/or ground net to the port or pin specified. </p>
+<p class="p">When you use set_related_supply_net
+on a primary port:</p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id6a250878-0a98-449c-8bf4-900911c2aae9"><p class="p">Input port assumes the supply
+net specified is the driver of the input port.</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id84593744-5ece-4e22-ab12-7d742c6ddb5b"><p class="p">Output port assumes the supply
+net specified is the receiver of the output port.</p>
+</li>
+</ul>
+<p class="p">That is, the
+command specifies the external supplies. A buffer insertion takes
+place at the location parent.</p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id16f5a867-b2d2-42c1-92b9-0ee9fbdd9fdd"><p class="p">For input port — Buffer --&gt;
+Input port</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id20c3d373-de2f-408b-8c2f-f39c38e72ca5"><p class="p">For output port — Output
+Port --&gt; Buffer</p>
+</li>
+</ul>
+<p class="p">Static analysis honors this information
+of related supplies.</p>
+<p class="p">As buffers are now inserted in
+design just like isolation, when supply of buffer goes off, then buffer
+output gets corrupted.</p>
+<p class="p">For this case, when isolation
+is also applied on the port at which srns is defined:</p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__idf4d4de6d-4b25-45e2-8ddd-45f8c18e792a"><p class="p">For input ports — Buffer
+is applied at location parent (followed by isolation cells).</p>
+<p class="p">Buffer -- ISO -- Input port</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id2d4485ee-34fa-4323-a9b6-b2ffd2fe12af"><p class="p">For output ports — Buffer
+is applied at location parent (preceded by isolation cells)</p>
+<p class="p">Output Port -- ISO -- Buffer</p>
+</li>
+</ul>
+<p class="p">When buffer (set_related_supply_net
+supply) goes off:</p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id8ac6aff5-ffe6-4603-8263-a821e644c3bf"><p class="p">Input Port — Corruption is
+seen on the input port.</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id1ea113da-ade1-42d4-ba92-8c4fe040d200"><p class="p">Output Port — Corruption
+is seen on the logic (or port) driven by output port. </p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id023f2b20-e083-4d7b-a4a6-93939c05f09c"><h2 class="title Subheading sectiontitle">Tool Behavior When
+Using set_related_supply_net for Multiple Ports</h2><p class="p">When you specify the set_related_supply_net
+Tcl command for multiple ports of the same feed-through path, the
+tool behaves in the following ways: </p>
+<ul class="ul"><li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id7d401b92-f926-4002-a722-5db7645a9f94"><p class="p">It inserts repeater buffers
+in the path that breaks the feed-through path into multiple segments,
+which changes your results as isolation and level shifter cells
+is inserted for these segments based on the source and sink supplies
+of the segment.</p>
+</li>
+<li class="li" id="id8449d228-e4ea-48c2-bb72-1fd975833064__ida1c3ced9-817b-4903-b09e-518854490bfa"><p class="p">It performs power aware checks
+on the isolation and level shifter requirements for each segment,
+resulting in the power aware static report containing a Supplies
+field corresponding to the supply attributes along with domain information,
+for example: </p>
+<pre class="pre codeblock leveled"><code>Source power domain : { PD_MID1(Supplies(SS1_PWR,SS1_GNET)) } -&gt; Sink power domain: { PD_TOP(Supplies(SS2_PWR,SS2_GNET)) } [ Total count: 1 ] 
+   1. LS( count: 1 ): Candidate Port: /tb/top_inst/mid1/out1_bot, count:1, level shifting strategy : ls1, Domain: PD_MID1, 
+     Source port{Supplies(SS1_PWR,SS1_GNET)}: /tb/top_inst/mid1/bot1/out1_bot, count:1 [ LowConn ] -&gt; Sink port {Supplies(SS2_PWR,SS2_GNET)}: /tb/top_inst/mid1/out1_bot, count:1 [ HighConn ] 
+     Possible reason:'Level shifter of required direction is present from (Supplies(SS1_PWR,SS1_GNET)) =&gt; (Supplies(SS2_PWR,SS2_GNET)) </code></pre></li>
+</ul>
+<p class="p">This behavior also applies when
+using the set_port_attributes UPF command with the ‑repeater_supply
+option.</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id7f328926-b29c-4c83-85be-e761a9bd19df">-object_list &lt;objects&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">List of ports or pins that is to have a
+related power or ground supply defined. Pins or ports are referenced
+relative to the active scope. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id8449d228-e4ea-48c2-bb72-1fd975833064__idb097366a-8cf9-4d3c-8477-e89fb72fc0f7">-power &lt;power_net_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">The related supply power net, referenced
+relative to the active scope. Specify this switch by itself or in
+combination with -ground.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id8c1294b4-2bbf-49b1-8491-ed5eefcdf2a2">-ground &lt;ground_net_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">The related supply ground net, referenced
+relative to the active scope. Specify this switch by itself or in
+combination with -power.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id8449d228-e4ea-48c2-bb72-1fd975833064__id9e6e05b4-93a5-43b3-a82b-1a4ae6909bbc">-reset </dt>
+<dd class="dd ArgumentDescription"><p class="p">Not currently supported. </p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_TclCommands_id15674c65.html" title="Power Aware simulation supports Tcl commands that you specify in either a UPF or Tcl file. Use the vopt -pa_upf or vopt -pa_tclfile argument to include the UPF or Tcl file in the vopt run.">Tcl Commands</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "set_related_supply_net"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_SetRelatedSupplyNet_id8449d228.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Read access API" />
+<meta name="abstract" content="The following commands are used to read information from the VRM database. The “command” used in each case is the handle (dbHandle) returned from the rmdb open command." />
+<meta name="description" content="The following commands are used to read information from the VRM database. The “command” used in each case is the handle (dbHandle) returned from the rmdb open command." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id027adc7e-358a-4598-93da-27e5e3ac41b0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Read access API</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Read access API" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id027adc7e-358a-4598-93da-27e5e3ac41b0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Read access API</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The following
+commands are used to read information from the VRM database. The
+“command” used in each case is the handle (<span class="keyword ParameterName OptionalReplaceable">dbHandle</span>)
+returned from the rmdb open command.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id2519f913-1c87-4c58-b19e-789fa37b7453"><h2 class="title Subheading sectiontitle">Database and/or document
+Element</h2><p class="p">Note that the “plural” commands in this section
+also have a “singular” command to access details about a particular
+element. Therefore, these commands cannot be abbreviated.</p>
+<pre class="pre codeblock leveled"><code>dbHandle attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the document record.</p>
+<pre class="pre codeblock leveled"><code>dbHandle groups</code></pre><p class="p">Returns a list of the names of Groups (that
+is, Runnables of type <span class="ph FontProperty emphasis">group</span>)
+defined in database. If there are no Groups in the database, an
+empty list is returned.</p>
+<pre class="pre codeblock leveled"><code>dbHandle methods</code></pre><p class="p">Returns a list of the names of all <span class="ph FontProperty emphasis">methods</span> elements defined
+at the top-level of the database. Anonymous methods are returned
+as an empty string. If there are no top-level <span class="ph FontProperty emphasis">method</span> elements
+in the database, an empty list is returned.</p>
+<pre class="pre codeblock leveled"><code>dbHandle params</code></pre><p class="p">Returns a list of the <span class="ph FontProperty emphasis">name</span> attributes
+of all <span class="ph FontProperty emphasis">parameter</span> elements
+defined in the database. If there are no parameters in the database,
+then an empty list is returned.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnables</code></pre><p class="p">Returns a list of the names of all Runnables
+(of all types) defined in the database. If there are no Runnables
+in the database, an empty list is returned.</p>
+<pre class="pre codeblock leveled"><code>dbHandle tasks</code></pre><p class="p">Returns a list of the names of all Tasks
+(that is, Runnables of type <span class="ph FontProperty emphasis">task</span>)
+defined in database. If there are no Tasks in the database, an empty
+list is returned.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcls</code></pre><p class="p">Returns a list of the names of all <span class="ph FontProperty emphasis">usertcl</span> elements defined
+in the database. If no <span class="ph FontProperty emphasis">usertcl</span> elements
+are defined, an empty list is returned.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id676e9c23-d1ee-4ad2-a37b-f890dc7153c9"><h2 class="title Subheading sectiontitle">runnable Elements</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName type</code></pre><p class="p">Returns the type of the <span class="ph FontProperty emphasis">runnableName</span> runnable
+(that is, group, task, or base).</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName hasaction actionName</code></pre><p class="p">Returns 1 if the <span class="ph FontProperty emphasis">runnableName</span> runnable
+defines the <span class="ph FontProperty emphasis">actionName</span> action,
+or 0 otherwise. </p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName members</code></pre><p class="p">Returns the list of names of members of the <span class="ph FontProperty emphasis">runnableName</span> Group
+(if the Runnable is a <span class="ph FontProperty emphasis">group</span>).
+Returns an empty list of no members are defined.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName params</code></pre><p class="p">Returns a list of the <span class="ph FontProperty emphasis">name</span> attributes
+of all the <span class="ph FontProperty emphasis">parameter</span> elements
+defined within the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfiles</code></pre><p class="p">Returns a list of the attributes of all <span class="ph FontProperty emphasis">localfile</span> elements defined
+within the <span class="ph FontProperty emphasis">runnableName</span> runnable.
+Each member of the list is itself a list of key/value pairs that
+can be fed to the TCL array set command. All known attributes are
+included.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName methods</code></pre><p class="p">Returns a list of the <span class="ph FontProperty emphasis">name</span> attributes
+of all the <span class="ph FontProperty emphasis">method</span> elements
+defined within the <span class="ph FontProperty emphasis">runnableName</span> runnable.
+If a given <span class="ph FontProperty emphasis">method</span> element
+has no <span class="ph FontProperty emphasis">name</span> attribute,
+then an empty string exists in place of the missing name.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__idcf66c4e2-f106-4818-93f9-8db48cdfeea6"><h2 class="title Subheading sectiontitle">parameter Elements</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">paramName</span> parameter
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName param paramName attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">paramName</span> parameter
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__idb816140a-8057-4668-b70c-d6d93b53e70c"><h2 class="title Subheading sectiontitle">action Script Elements</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">actionName</span> action
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName action actionName commands</code></pre><p class="p">Returns the list of commands defined in the <span class="ph FontProperty emphasis">actionName</span> action
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id4eada10e-17dd-4a71-9717-b6008c986f0b"><h2 class="title Subheading sectiontitle">localfile Elements
+Defined Under runnable Elements</h2><pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">localfileKey</span> method
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName localfile localfileKey commands</code></pre><p class="p">Returns the list of commands defined in the <span class="ph FontProperty emphasis">localfileKey</span> method
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id16940841-85a7-4935-a327-9b45171fad13"><h2 class="title Subheading sectiontitle">method Elements
+Defined under runnable Elements</h2><p class="p">dbHandle runnable runnableName method methodKey
+attr attrName</p>
+<p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">methodKey</span> method
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+<pre class="pre codeblock leveled"><code>dbHandle runnable runnableName method methodKey commands</code></pre><p class="p">Returns the list of commands defined in the <span class="ph FontProperty emphasis">methodKey</span> method
+under the <span class="ph FontProperty emphasis">runnableName</span> runnable.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id035ed0fb-019d-48e6-85bc-767d895235c7"><h2 class="title Subheading sectiontitle">method Elements Defined
+under document (rmdb) Element</h2><pre class="pre codeblock leveled"><code>dbHandle method methodKey attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">methodKey</span> method
+under the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element. </p>
+<pre class="pre codeblock leveled"><code>dbHandle method methodKey commands</code></pre><p class="p">Returns the list of commands defined in the <span class="ph FontProperty emphasis">methodKey</span> method
+of the <span class="ph FontProperty emphasis">methodName</span> method
+under the document (<span class="ph FontProperty emphasis">rmdb</span>)
+element.</p>
+<p class="p">A <span class="ph FontProperty emphasis">method</span> is
+defined as a single command used to wrap an action script, primarily
+for submission to a compute grid. While the internal format of the database
+supports multiple commands, all commands but the first are ignored.</p>
+<p class="p">The <span class="ph FontProperty emphasis">rmdbmethod</span> command
+supports a special case “runnable/method” syntax for <span class="ph FontProperty emphasis">methodKey</span>.
+See <a class="xref fm:HeadingOnly" href="Concept_CommandShortcuts_id29d6aaa3.html#id29d6aaa3-921c-4708-98a8-6a444b5453a1__id4562a106-f2c2-45c8-86b0-d65f45a9c70c">Special Case for method Access</a> for details.</p>
+</div>
+<div class="section Subsection" id="id027adc7e-358a-4598-93da-27e5e3ac41b0__id6fc5b124-060a-49e3-b835-8fbbe477ebc5"><h2 class="title Subheading sectiontitle">usertcl Elements</h2><pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName attr attrName</code></pre><p class="p">Returns the value of the <span class="ph FontProperty emphasis">attrName</span> attribute
+of the <span class="ph FontProperty emphasis">usertclName</span> <span class="ph FontProperty emphasis">usertcl</span> element.</p>
+<pre class="pre codeblock leveled"><code>dbHandle usertcl usertclName content</code></pre><p class="p">Returns the TCL content of the <span class="ph FontProperty emphasis">usertclName</span> <span class="ph FontProperty emphasis">usertcl</span> element.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_VrmDatabaseRmdbApi_id33f7dd97.html" title="VRM RMDB database is implemented as an XML file. The VRM application uses the API defined in this document to access the data in the database. The API is designed to support the semantics of the database, and not necessarily its implementation. It should be possible to implement an equivalent database using, for example, an SQL-compatible library and use the same API to access the data.">VRM Database (RMDB) API</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Read access API"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ReadAccessApi_id027adc7e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

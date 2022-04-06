@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Finding Unlinked Items" />
+<meta name="abstract" content="To verify that the coverage of your verification plan and design items are covered as you expect, it is helpful to know what items in your verification plan are not associated with any item in the design database, and vice versa. Analysis of your test traceability relies on links between some aspect of coverage and sections of a testplan." />
+<meta name="description" content="To verify that the coverage of your verification plan and design items are covered as you expect, it is helpful to know what items in your verification plan are not associated with any item in the design database, and vice versa. Analysis of your test traceability relies on links between some aspect of coverage and sections of a testplan." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Finding Unlinked Items</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Finding Unlinked Items" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Finding Unlinked
+Items</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">To verify
+that the coverage of your verification plan and design items are
+covered as you expect, it is helpful to know what items in your
+verification plan are not associated with any item in the design
+database, and vice versa. Analysis of your test traceability relies
+on links between some aspect of coverage and sections of a testplan. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__ideed62725-062b-48bf-96d7-f7c32b94473b"><p class="p">These links are implemented with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'coverage tag', 'questa_sim_ref'); return false;">coverage tag</a> command: objects which share a tag are linked. </p>
+<p class="p">The following items may be found to be unlinked:</p>
+<ul class="ul"><li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__ide2d9fa6d-a544-4a8c-8684-732e9577267c"><p class="p">unlinked
+testplan item — one that does not share a tag with any non-testplan
+item in the database; this means it cannot possibly be associated
+with any kind of coverage</p>
+</li>
+<li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id92696469-59d5-469f-9a13-be5025917789"><p class="p">unlinked
+functional coverage item — one that does not share a tag with a testplan
+section</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id881da891-5950-4098-9121-65a6faf20167"><h2 class="title Subheading sectiontitle">Procedure</h2><p class="p">To find unlinked testplan or coverage items:</p>
+<ul class="ul"><li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id7147f67e-652d-41b0-8611-36352ad3139f"><p class="p">In
+the GUI: </p>
+<ol class="ol"><li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id7145abe1-83b8-4e69-b144-bc4af54e14d5"><p class="p">Select a single UCDB file from the Tracker. </p>
+</li>
+<li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id0f6b6f80-817b-4f40-9558-799fee282331"><p class="p">From the main menu, choose <span class="ph uicontrol">Verification
+Tracker &gt; Find Unlinked</span>or in the Verification Tracker
+window: right-click and choose <span class="ph uicontrol">&gt; Find Unlinked &gt; Testplan
+Section </span>.</p>
+</li>
+</ol>
+</li>
+<li class="li" id="idf0bcd30e-74ad-4d02-b407-3b8f38b58c0e__id78a48d0c-fbcb-4d0e-8134-e56640fb952c"><p class="p">From the command line,
+enter:</p>
+<p class="lines ApplCommand">coverage unlinked -r -plansection</p>
+<p class="p">This displays all unlinked items. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_LinkingVerificationPlanCoverageItems_id5cb22178.html" title="Linking allows you to verify, via the testplan, that coverage items are being covered.">Linking Verification Plan and Coverage Items</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Contain_LinksBetweenPlanSectionCoverageItem_id5c1df1a9.html" title="Information regarding the links themselves, and the rules governing them are as follows.">Links Between the Plan Section and the Coverage Item</a></div>
+<div><a class="link" href="../topics/General_FindingInformationMissingVerificationPlanLinks_idc6db99c6.html" title="When you discover that you have an unlinked coverage item you want to link to the testplan, use the XML Import Hint to determine the exact path and name, as well as the type of that item. You can then copy this information directly to your verification plan.">Finding Information for Missing Verification Plan Links</a></div>
+<div><a class="link" href="../topics/Contain_ParametersMappingTestplanDataItems_id7c57e38f.html" title="Data items extracted from the XML file can be assigned to specific columns or fields in the testplan. The &#34;column/field&#34; represents a predefined data classification, such as Weight, Goal, Section number, and so forth.">Parameters Mapping Testplan Data Items</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "Finding Unlinked Items"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_FindingUnlinkedItems_idf0bcd30e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

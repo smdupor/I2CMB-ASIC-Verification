@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mem save" />
+<meta name="abstract" content="Saves the contents of a memory instance to a file in any of the supported formats: Verilog binary, Verilog hex, and MTI memory pattern data." />
+<meta name="description" content="Saves the contents of a memory instance to a file in any of the supported formats: Verilog binary, Verilog hex, and MTI memory pattern data." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id27cad00f-c8be-4196-b575-24b4a1d82549" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mem save</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mem save" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id27cad00f-c8be-4196-b575-24b4a1d82549">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mem save</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Saves the
+contents of a memory instance to a file in any of the supported
+formats: Verilog binary, Verilog hex, and MTI memory pattern data. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">mem save <a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id66bc50f9-d744-405b-92ed-27f71846b003">-outfile &lt;filename&gt;</a> [<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id445a50db-79ce-4be7-be2f-497f92ea4a2f">-addressradix {dec | hex}</a>] [<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__idef5daf25-67ac-4e56-89be-f673842cbed4">-dataradix &lt;radix_type&gt;</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id4794ae3d-2ba9-424b-8c01-3616d6766a65">‑format {bin | hex | mti}</a>] [<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__ida433e873-04de-4b00-bec6-67298f8a033c">‑compress</a> | <a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__idc5169217-ac14-4cbe-af38-28ad21887593">-noaddress</a>] [<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id79d30fae-61fa-4feb-aa32-c5367c5166d0">&lt;path&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id84b76807-1219-454c-bc96-2ccf5dea4e7f">‑startaddress &lt;st&gt;</a> <a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__id273ca7be-784d-4a5a-9507-79e2c5c26ddc">-endaddress &lt;end&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id27cad00f-c8be-4196-b575-24b4a1d82549__idaac3336f-23b7-4126-bf1f-ab9b0ed1694b">-wordsperline &lt;Nwords&gt;</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">This command works identically to the mem
+display command, except that it writes output to a file rather than
+a display.</p>
+<p class="p">The -format
+argument specifies the order in which data is written to the file.
+If you choose bin or hex format, the file is populated from low
+to high, to be compatible with $readmem commands. This is in contrast
+to the default mti format, which populates the file according to
+the memory declaration, from left index to right index.</p>
+<p class="p">You can use
+the mem save command to generate relocatable memory data files.
+The ‑noaddress option omits the address information from the memory
+data file. You can later load the generated memory data file using
+the memory load command.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id4d1624d9-0343-49cd-9756-5e86b02e1d8b"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id66bc50f9-d744-405b-92ed-27f71846b003">-outfile &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies to store the memory contents in a file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id082bd1d1-0699-43a8-be83-052f73663bb3"><p class="p Opt">&lt;filename&gt;
+— The name of the file in which to store the specified memory contents.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id445a50db-79ce-4be7-be2f-497f92ea4a2f">-addressradix {dec | hex}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the address radix for the default mti formatted files. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__ida1cb539a-96cc-4ca2-ba20-fbe1014f7c12"><p class="p Opt">dec — Decimal (default).</p>
+</li>
+<li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idc665ba33-4ac0-4260-b504-6cf01ce59292"><p class="p Opt">hex — Hexadecimal. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__ida433e873-04de-4b00-bec6-67298f8a033c">‑compress</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies to print only unique lines, and not identical lines. Mutually
+exclusive with the -noaddress switch.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idef5daf25-67ac-4e56-89be-f673842cbed4">-dataradix &lt;radix_type&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the data radix for the default mti formatted files. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id67ce61e0-e822-4745-8fa8-7120c7de25e0"><p class="p Opt">&lt;radix_type&gt;
+— Valid entries (or any unique abbreviations) are: binary, decimal,
+unsigned, octal, hex, and symbolic.</p>
+</li>
+</ul>
+<p class="p">You can
+use the <a class="xref fm:HeadingOnly" href="Command_Radix_idf779d22e.html#idf779d22e-04a4-4bc9-b580-69987ee96f09__Command_Radix_idf779d22e.xml#idf779d22e-04a4-4bc9-b580-69987ee96f09" title="Specifies the default radix to use for the current simulation.">radix</a> command
+to change the default radix for the current simulation. You can
+edit the DefaultRadix variable in the modelsim.ini file to change
+the default radix permanently . Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DefaultRadix', 'questa_sim_user'); return false;">DefaultRadix</a> in the User’s Manual for
+more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id273ca7be-784d-4a5a-9507-79e2c5c26ddc">-endaddress &lt;end&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the end address for a range of addresses to save. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id557380f2-ee62-4704-be07-8224de68ea67"><p class="p Opt">&lt;end&gt;
+— Any valid address in the memory.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id4794ae3d-2ba9-424b-8c01-3616d6766a65">‑format {bin | hex | mti}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the format of the output file. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idb9693485-10e8-4177-9e95-ecc1feec870f"><p class="p Opt">bin— Binary
+data format.</p>
+</li>
+<li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id1986841a-b43f-4c89-8bee-cbd4cf1075f2"><p class="p Opt">hex— Hexadecimal
+format.</p>
+</li>
+<li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id8df19b56-38e2-4792-9b23-b9a6437e4744"><p class="p Opt">mti — MTI
+format. (default).</p>
+</li>
+</ul>
+<p class="p">The bin
+and hex values are the standard Verilog hex and binary memory pattern
+file formats. You can use these formats with Verilog memories, and
+with VHDL memories composed of std_logic types.</p>
+<p class="p">The MTI
+memory data file format stores internal file address and data radix
+settings within the file itself. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idc5169217-ac14-4cbe-af38-28ad21887593">-noaddress</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents addresses from being printed. Mutually exclusive with the
+-compress switch.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id79d30fae-61fa-4feb-aa32-c5367c5166d0">&lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+The hierarchical path to the location of the memory instance. The
+default is the current context, as shown in the Structure window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id84b76807-1219-454c-bc96-2ccf5dea4e7f">‑startaddress &lt;st&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the start address for a range of addresses to save. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idcb30cc40-d9f1-4f90-9d41-637b426830f0"><p class="p Opt">&lt;st&gt;
+— Any valid address in the memory.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id27cad00f-c8be-4196-b575-24b4a1d82549__idaac3336f-23b7-4126-bf1f-ab9b0ed1694b">-wordsperline &lt;Nwords&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies how many memory values to print on each line. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id6d31902e-75a3-47fa-b4a7-0cae4896a528"><p class="p Opt">&lt;Nwords&gt;
+— Any unsigned integer where the default assumes an 80 character
+display width.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id27cad00f-c8be-4196-b575-24b4a1d82549__id2a6624de-9890-4797-a874-f5c09d6003ba"><p class="p">Save the
+memory contents of the instance /top/m/mem(0:10) to <span class="ph filepath italic">memfile</span>,
+written in the mti radix. </p>
+<p class="lines ApplCommand">   mem save -format mti -outfile memfile -start 0 -end 10 /top/m/mem</p>
+<p class="p">The contents
+of <span class="ph filepath italic">memfile</span> are
+as follows:</p>
+<pre class="pre codeblock leveled"><code>// memory data file (do not edit the following line - required for mem load use)
+// format=mti addressradix=d dataradix=s version = 1.0
+0: 0000000000000000 0000000000000001 0000000000000010 0000000000000011
+4: 0000000000000100 0000000000000101 0000000000000110 0000000000000111
+8: 0000000000001000 0000000000001001 xxxxxxxxxxxxxxxx </code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_MemDisplay_ide172b1b8.html#ide172b1b8-3d46-4b3a-aa6c-45720bca4c23__" title="Prints the memory contents of the specified instance to the Transcript window.">mem display</a></div>
+<div><a class="link" href="../topics/Command_MemLoad_idc295ce4e.html#idc295ce4e-4348-4d93-ac0e-0d5ae9520620__" title="Updates the simulation memory contents of a specified instance.">mem load</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "mem save"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MemSave_id27cad00f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

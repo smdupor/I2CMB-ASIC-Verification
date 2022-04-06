@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Supported Attributes" />
+<meta name="abstract" content="Power Aware simulation supports UPF, Liberty and tool-specific attributes that you use to express the power intent in a UPF, RTL, and Liberty file." />
+<meta name="description" content="Power Aware simulation supports UPF, Liberty and tool-specific attributes that you use to express the power intent in a UPF, RTL, and Liberty file." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Supported Attributes</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Supported Attributes" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Supported Attributes</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Power Aware
+simulation supports UPF, Liberty and tool-specific attributes that
+you use to express the power intent in a UPF, RTL, and Liberty file.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id892628fb-2b29-47b7-96ef-94c3464fcaf3"><p class="p">The
+tool supports the following UPF attributes, which are a part of
+the IEEE Std 1801. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id19f8fa12-8f0d-4944-9b8a-30596531361a" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Supported UPF Attributes</span></caption><colgroup><col style="width:2.565in" /><col style="width:2.635in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_clamp_value</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_related_bias_ports</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_feedthrough</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_related_ground_port</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_is_analog</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_related_power_port</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_is_hard_macro</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_retention</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_is_isolated</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_simstate_behavior </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_is_soft_macro</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_sink_off_clamp_value</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idc11dc765-7ff7-4f8a-b8fa-15032aa1c2a0">UPF_literal_supply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_source_off_clamp_value</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_pg_type</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">UPF_unconnected</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__ida63ad185-03a4-42c0-a6fa-719a371c48dc"><p class="p">The
+tool supports the following Liberty attributes, which are a part
+of the Liberty User Guides and Reference Manual Suite.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id009b13c6-c258-4108-8d07-dca57c027fb4" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Supported
+Liberty Attributes</span></caption><colgroup><col style="width:2.502in" /><col style="width:2.698in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">always_on</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">preset</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">apply_power_down_function</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">related_bias_pin</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">clear</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">related_ground_pin</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">clock</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">related_power_pin</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">is_analog</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">restore_action</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">is_isolated</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">restore_condition</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">is_isolation_cell</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">restore_edge_type</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">is_level_shifter</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">retention_cell</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">is_macro_cell</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">retention_condition</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">isolation_cell_data_pin</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">retention_pin</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">isolation_cell_enable_pin</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">save_condition</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">level_shifter_data_pin</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">std_cell_main_rail</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">level_shifter_enable_pin</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">switch_cell_type</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">level_shifter_type</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">switch_function</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">pg_function</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">switch_pin</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">power_down_function</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">user_pg_type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idb0faae87-03af-4651-a301-e9b906c829ca"><p class="p">The
+tool supports the following attributes, which are not a part of
+any standard and are specific to the tool.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id01fc2d09-88e9-4f05-9209-70895ed23d40" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>Tool-Specific Attributes</span></caption><colgroup><col style="width:2.356in" /><col style="width:1.223in" /><col style="width:2.922in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d10955e342"><p class="p">Attribute</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d10955e345"><p class="p">Value(s)</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d10955e348"><p class="p">Equivalent UPF Commands</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id2d9f96ca-78a9-420a-a26c-374dc07336c1">ignore_upf_over_liberty</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {ignore_upf_over_liberty TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id4722927f-5e56-4491-b515-321b2859b19e">iso_nand</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes –attribute {iso_nand TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id45fb842f-79d0-4e4f-88ff-79c93eb19d25">iso_nor</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes –attribute {iso_nor TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id37c6fc21-ad4e-456c-9f1e-db558175c885">qpa_attr_active_reset_duration</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p"><var class="keyword varname">Twidth</var></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {attr_active_reset_duration Twidth}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id17759780-4d63-4df0-ae25-bf230ff94150">qpa_attr_inactive_reset_duration</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p"><var class="keyword varname">Tmax</var></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {attr_inactive_reset_duration Tmax}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id1fe9b026-2b5f-41f1-a066-a1b86e94fe9e">qpa_dont_replay_init</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {qpa_dont_replay_init TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idc2228a02-0aa8-4556-bf69-f399e2a97177">qpa_override_pbp_corruption</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes ‑attribute {override_pbp_corruption
+TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__ide8665cf8-2867-4efa-becf-7978f694c5a6">qpa_power_switch_on_delay</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p"><var class="keyword varname">delay</var></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {qpa_power_switch_on_delay delay}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id134f9f83-b65d-4166-a524-4977be235671">qpa_replay_init</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes
+-elements &lt;design_top&gt; ‑attribute {qpa_replay_init TRUE}</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idd0a9707c-2cd5-48e9-b59d-460e0ee4135a">upf_dont_touch</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><ul class="ul"><li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idd1e45b9f-cafc-4267-8be5-adbb33a6eebb"><p class="p">set_port_attributes -elements &lt;design_top&gt;
+‑attribute {upf_dont_touch TRUE}</p>
+</li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id5f76daff-f10b-400b-94e4-230c5551f553"><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {upf_dont_touch TRUE}</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e342 "><p class="p"><a class="xref fm:HeadingOnly" href="#idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id09874e15-161f-40d5-855d-75e75bb803de">upper_boundary_only</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e345 "><p class="p">TRUE | FALSE</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d10955e348 "><p class="p">set_design_attributes -elements &lt;design_top&gt;
+‑attribute {upper_boundary_only TRUE}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id2d9f96ca-78a9-420a-a26c-374dc07336c1"><h2 class="title Subheading sectiontitle">ignore_upf_over_liberty</h2><p class="p">Ignores the load_upf command provided there is a Liberty file
+corresponding to the scope. The attribute is not a part of the IEEE
+Std 1801.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; -attribute {ignore_upf_over_liberty TRUE}</code></pre><p class="p">Assume that for a scope S1, there is a Liberty file, and a load_upf
+command:</p>
+<pre class="pre codeblock"><code>load_upf s1.upf -scope /top/S1</code></pre><p class="p">If you set the ignore_upf_over_liberty attribute to TRUE, the
+tool ignores the load_upf command.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the ignore_upf_over_liberty
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id4722927f-5e56-4491-b515-321b2859b19e"><h2 class="title Subheading sectiontitle">iso_nand</h2><p class="p">Specifies that an isolation cell is a nand_style isolation cell.
+The attribute is not a part of the IEEE Std 1801.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {iso_nand TRUE}</code></pre></div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id45fb842f-79d0-4e4f-88ff-79c93eb19d25"><h2 class="title Subheading sectiontitle">iso_nor</h2><p class="p">Specifies that an isolation cell is a nor_style isolation cell.
+The attribute is not a part of the IEEE Std 1801</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {iso_nor TRUE}</code></pre></div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id17759780-4d63-4df0-ae25-bf230ff94150"><h2 class="title Subheading sectiontitle">qpa_attr_inactive_reset_duration</h2><p class="p">Sets the maximum time unit (Tmax) within which the asynchronous
+reset must be asserted after power up. The attribute is not a part
+of the IEEE Std 1801.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_attr_inactive_reset_duration Tmax}</code></pre><p class="p">where Tmax represents integer time units.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_attr_inactive_reset_duration 10}</code></pre><p class="p">Refer to the <span class="ph FontProperty emphasis">QPA_NRET_ASYNCFF</span> check
+in “<a class="xref fm:Table" href="General_DynamicMiscellaneousChecks_idf65e2462.html#idf65e2462-356a-4d35-839b-2b2e1ddda13b__idc16f03a8-cd52-4459-a001-23c251dcafc3">Table 1</a>” for more information.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the qpa_attr_inactive_reset_duration
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id37c6fc21-ad4e-456c-9f1e-db558175c885"><h2 class="title Subheading sectiontitle">qpa_attr_active_reset_duration</h2><p class="p">Sets the minimum time unit (Twidth) for which the asynchronous
+reset must remain asserted. The attribute is not a part of the IEEE
+Std 1801.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The attribute qpa_attr_active_reset_duration is valid only
+when the attribute qpa_attr_inactive_reset_duration is specified
+with a non-zero value.</p>
+</div>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_attr_active_reset_duration Twidth}</code></pre><p class="p">where Twidth represents integer time units.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_attr_active_reset_duration 5}</code></pre><p class="p">Refer to the <span class="ph FontProperty emphasis">QPA_NRET_ASYNCFF</span> check
+in “<a class="xref fm:Table" href="General_DynamicMiscellaneousChecks_idf65e2462.html#idf65e2462-356a-4d35-839b-2b2e1ddda13b__idc16f03a8-cd52-4459-a001-23c251dcafc3">Table 1</a>” for more information.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the qpa_attr_active_reset_duration
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id1fe9b026-2b5f-41f1-a066-a1b86e94fe9e"><h2 class="title Subheading sectiontitle">qpa_dont_replay_init</h2><p class="p">Disables re-triggering of a Verilog initial block at power up.
+The attribute is not a part of the IEEE Std 1801.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The attribute qpa_dont_replay_init is valid only when you
+define the attribute qpa_replay_init.</p>
+</div>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; ‑attribute {qpa_dont_replay_init TRUE}</code></pre><p class="p">Assume you include the following two commands in a UPF file:</p>
+<pre class="pre codeblock leveled"><code>set_design_attributes -elements &lt;design_top&gt; -attribute qpa_replay_init TRUE 
+
+set_design_attributes -attribute {qpa_dont_replay_init TRUE}
+-elements PD_Core</code></pre><p class="p">In this case, the tool re-triggers all initial blocks present
+in the design, except the initial blocks present in the power domain,
+PD_Core.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the qpa_dont_replay_init
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idc2228a02-0aa8-4556-bf69-f399e2a97177"><h2 class="title Subheading sectiontitle">qpa_override_pbp_corruption</h2><p class="p">When the attribute is set to TRUE, the tool applies Liberty-based
+corruption to all macro cells, even when the models are Power Aware.
+The attribute is not a part of the IEEE Std 1801.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes –attribute {qpa_override_pbp_corruption TRUE} </code></pre><p class="p">When the attribute is set to FALSE, the tool does not apply Liberty-based
+corruption to all macro cells, even when the models are non-Power
+Aware.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes –attribute {qpa_override_pbp_corruption FALSE} </code></pre></div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id134f9f83-b65d-4166-a524-4977be235671"><h2 class="title Subheading sectiontitle">qpa_replay_init</h2><p class="p">Enables re-triggering of a Verilog initial block at power up.
+The attribute is not a part of the IEEE Std 1801.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The attribute qpa_replay_init does not re-trigger an initial
+block containing the following statements: forever, fork join, break
+continue, wait, disable, or rand seq.</p>
+</div>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; ‑attribute {qpa_replay_init TRUE}</code></pre><p class="p">Examples:</p>
+<pre class="pre codeblock leveled"><code>set_design_attributes -elements &lt;design_top&gt; -attribute {qpa_replay_init TRUE} -models { t* } 
+ 
+set_design_attributes -elements { top/bot1/sram } -attribute {qpa_replay_init TRUE} -transitive TRUE</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the qpa_replay_init attribute
+with the set_design_attributes command, the tool applies the attribute
+on the entire design. Hence, you must specify the top module in
+the ‑elements option. If you do not specify the top module in the
+-elements option, the tool flags a warning message.</p>
+</div>
+<h2 class="title Subheading sectiontitle">Priority of Commands</h2><p class="p">If a UPF file contains multiple set_design_attributes commands
+with the qpa_replay_init attribute set to TRUE, then the tool resolves
+the priority of these commands based on the precedence of the options
+of the set_design_attributes command.</p>
+<p class="p">The precedence of the options is as follows:</p>
+<ol class="ol"><li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id5db6957a-7926-4365-a438-f20b1e132374"><p class="p">Named initial
+block in a module — A set_design_attributes command with a named initial
+block in a module.</p>
+<p class="p">For example, the set_design_attributes command with a named initial
+block, NamedInitialBlock, in the module, ModuleForRetrigg:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {qpa_replay_init TRUE}
+‑elements NamedInitialBlock –models ModuleForRetrigg</code></pre></li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id21c52c0c-2e49-4e94-bdb4-b610b06f51a5"><p class="p">Design instance
+— A set_design_attributes command with a design instance.</p>
+<p class="p">For example, the set_design_attributes command with a design
+instance, DesignInstance:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {qpa_replay_init TRUE} 
+–elements DesignInstance</code></pre></li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idb5027188-6f18-4709-8bc2-2e3b5f09f924"><p class="p">Design module
+— A set_design_attributes command with a design module.</p>
+<p class="p">For example, the set_design_attributes command with a design
+module, DesignModule:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {qpa_replay_init TRUE} 
+‑models DesignModule</code></pre></li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id31be0772-edd7-4ac3-92f8-9a05a675b1b1"><p class="p">Power domain
+— A set_design_attributes command with a power domain.</p>
+<p class="p">For example, the set_design_attributes command with a power domain,
+PD_Core:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {qpa_replay_init TRUE} 
+‑elements PD_Core </code></pre></li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id32437c53-37b6-4069-b98e-de9071bd950a"><p class="p">Entire design
+— A set_design_attributes command without any module or instance.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>set_design_attributes -attribute {qpa_replay_init TRUE}</code></pre></li>
+</ol>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__ide8665cf8-2867-4efa-becf-7978f694c5a6"><h2 class="title Subheading sectiontitle">qpa_power_switch_on_delay</h2><p class="p">Delays the output supply of a power switch.
+The attribute is not a part of the IEEE Std 1801.</p>
+<p class="p">Usage:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_power_switch_on_delay  &lt;delay&gt;}</code></pre><p class="p">where <var class="keyword varname">delay</var> represents integer time units.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; –attribute {qpa_power_switch_on_delay 5}</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the qpa_power_switch_on_delay
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idd0a9707c-2cd5-48e9-b59d-460e0ee4135a"><h2 class="title Subheading sectiontitle">upf_dont_touch</h2><p class="p">Excludes Power Aware behavior on certain instances,
+modules, or signals. The attribute is not a part of the IEEE Std
+1801.</p>
+<p class="p">The following are some of the reasons to exclude
+Power Aware behavior on certain instance, modules, or signals:</p>
+<ul class="ul"><li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idb0ad189a-4e92-4a64-b0e3-00205eb4f9ef"><p class="p">They are self-instantiated isolation
+or level shifter cells.</p>
+</li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id78c1da5f-9b2f-47d4-8295-7628253dcf04"><p class="p">They have their own power model or behavioral
+model.</p>
+</li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id4ca3ac02-5329-4480-9051-bc3ba2a69058"><p class="p">They are power output or inout pins.</p>
+</li>
+</ul>
+<p class="p">Use the upf_dont_touch attribute with the set_design_attributes
+or set_port_attributes commands. You can specify upf_dont_touch
+attribute on objects such as a module, an architecture, or an entity
+instance or any signal through a UPF or HDL attribute. The attribute disables
+Power Aware instrumentation (for example, corruption, retention,
+isolation, level_shifter, or buffers) on the specified object.</p>
+<p class="p">If an instance or a model is identified with
+a upf_dont_touch attribute, then the functionality is applied recursively
+down the hierarchy. The following limitations exist for this functionality:</p>
+<ul class="ul"><li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idb1abe291-8a4c-4e4e-9305-f29288824782"><p class="p">The upf_dont_touch attribute supports
+only the value “true” (or TRUE).</p>
+</li>
+<li class="li" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__idccf78fec-b840-4f74-951f-5ab18ce4df17"><p class="p">Bitwise signal exclusion is not honored
+for isolation, level shifter, or buffer cell insertion, but it does
+affect corruption and retention.</p>
+</li>
+</ul>
+<p class="p">Examples:</p>
+<pre class="pre codeblock leveled"><code>set_design_attributes -attribute {upf_dont_touch TRUE} -models fpu_*  
+
+set_design_attributes -attribute {upf_dont_touch TRUE} -elements top/inst2 
+
+set_design_attributes -attribute {upf_dont_touch TRUE} 
+-elements inst1/blk/*/s* 
+
+set_design_attributes -attribute {upf_dont_touch TRUE} 
+-elements top/inst2/sig1[2:0] 
+
+set_port_attributes -attribute {upf_dont_touch TRUE} -models mid 
+-ports {p1 p2}  </code></pre><p class="p">The following is an HDL example using the attribute:</p>
+<pre class="pre codeblock leveled"><code>(*upf_dont_touch = "TRUE"*) 
+module mid(); 
+... 
+endmodule </code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the upf_dont_touch attribute
+with the set_design_attributes command, the tool applies the attribute
+on the entire design. Hence, you must specify the top module in
+the ‑elements option. If you do not specify the top module in the
+-elements option, the tool flags a warning message.</p>
+</div>
+</div>
+<div class="section Subsection" id="idf2496762-4dd1-4d2d-9f33-27e86d34c3a5__id09874e15-161f-40d5-855d-75e75bb803de"><h2 class="title Subheading sectiontitle">upper_boundary_only</h2><p class="p">Applies isolation on upper boundary ports only. The attribute
+is not a part of the IEEE Std 1801.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>set_design_attributes -elements &lt;design_top&gt; -attribute {upper_boundary_only TRUE} </code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">When you use the upper_boundary_only
+attribute with the set_design_attributes command, the tool applies
+the attribute on the entire design. Hence, you must specify the
+top module in the ‑elements option. If you do not specify the top
+module in the -elements option, the tool flags a warning message.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UpfCommandsAndReference_id783b2740.html" title="Power Aware simulation supports various UPF commands, options and attributes to express the power management architecture of a design. It also supports various query commands to obtain Power Aware information about the design.">UPF Commands and Reference</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/General_SetPortAttributes_idca43c468.html" title="Defines information on ports.">set_port_attributes</a></div></div>
+</div></div>
+<div class="fn"><sup>1</sup>  By default, the
+tool supports the attribute in UPF 3.0 and above versions only.
+To enable support in all UPF versions, use the vopt -pa_enable=literalsupply
+command. </div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Supported Attributes"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_SupportedAttributes_idf2496762.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

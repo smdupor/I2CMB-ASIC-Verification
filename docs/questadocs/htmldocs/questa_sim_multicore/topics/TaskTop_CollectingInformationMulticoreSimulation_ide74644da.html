@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Collecting Information for Multi‑core Simulation" />
+<meta name="abstract" content="Use performance profiling to collect multi-core information from a simulation run." />
+<meta name="description" content="Use performance profiling to collect multi-core information from a simulation run." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide74644da-fd09-401c-b9c9-172cd548b2b3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Collecting Information for Multi‑core Simulation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Collecting Information for Multi‑core Simulation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide74644da-fd09-401c-b9c9-172cd548b2b3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Collecting Information for Multi‑core Simulation</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">Use
+performance profiling to collect multi-core information from a simulation
+run. </span>
+</div>
+<div class="section Restrictions"><h2 class="title Subheading sectiontitle">Restrictions and Limitations</h2><ul class="ul"><li class="li" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id917d101b-f7ed-4f81-b3cb-5fe9d7bb3329"><p class="p">This procedure is not supported
+for the Pre-optimized Design Unit (PDU) flow. Some modifications
+are necessary to make this work if PDUs are present in the design.</p>
+</li>
+</ul>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id82d8896b-8670-4ab8-9141-b49c0a0b0bd6"><p class="p">You
+already have a good operational flow in place for optimization (vopt)
+and unisim simulation (vsim). </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__idc2f775a8-b6a0-4ba0-9d62-deefe0f962a3"><li class="li step stepexpand" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id36db39a2-2a49-467f-ac8d-af3b6144eb1d"><span class="ph cmd">Collect
+performance profiler data from a regular simulation run with the
+vsim command. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -c top_opt -do "profile option keep_unknown on; profile on -p;  onfinish stop; run -a; profile save profile_perf.pdb;quit" </p>
+</div></li>
+<li class="li step stepexpand" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id98da7524-3160-466f-9b9f-6a726836b21a"><span class="ph cmd">(Optional) To view the profiler
+structural report, run the following command. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -c -do "profile open profile_perf.pdb; profile report -structural"</p>
+<p class="p">For details
+on the arguments supported by profile report command, refer to the <span class="ph fmvar:ProductName">Questa SIM</span> documentation.
+Note that generating the structural report is optional and is not
+a necessary step of the mc2collect flow. </p>
+</div></li>
+<li class="li step stepexpand" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id7cae2458-6830-4709-a0ae-3f70523d1593"><span class="ph cmd">Optimize the design using
+vopt -mc2collectinfo. The following examples show how to use this
+argument: </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vopt top -o top_portlog -mc2collectinfo=profile_perf.pdb [-mc2instlimit N]</p>
+<p class="lines ApplCommand">vopt top -o top_portlog -mc2collectinfo [-mc2instlimit N]</p>
+<p class="p">The -mc2collectinfo
+argument first shortlists instances, then applies +acc=p to preserve
+the ports of these instances, then produces a vsim do file (<span class="ph FontProperty emphasis">mc2collect.do</span>)
+with add wave commands to log these ports in the WLF file. If the
+profile database (obtained in Step <a class="xref fm:NumberOnly" href="#ide74644da-fd09-401c-b9c9-172cd548b2b3__id36db39a2-2a49-467f-ac8d-af3b6144eb1d">1</a>) is provided to vopt,
+then the short list of instances is based on the profile data. In
+the absence of the performance profiler database, the short list
+is generated by walking the Vtree (Breadth First walk) and selecting
+the top level instances. Currently, the shortlist is limited to
+a maximum of the 30 most intensive instances and can be overridden
+using the -mc2instlimit option. The <span class="ph FontProperty emphasis">mc2collect.do</span> file
+and the instance list are located in the <span class="ph FontProperty emphasis">_mc2collect/</span> directory. </p>
+</div></li>
+<li class="li step stepexpand" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__id27f4d796-9ded-4112-93d5-42747e713421"><span class="ph cmd">Run vsim again with optimized
+design from Step <a class="xref fm:NumberOnly" href="#ide74644da-fd09-401c-b9c9-172cd548b2b3__id7cae2458-6830-4709-a0ae-3f70523d1593">3</a> using the <span class="ph FontProperty emphasis">mc2collect.do</span> file</span><div class="itemgroup info StepInfo"><p class="p">The newly
+created <span class="ph FontProperty emphasis">mc2collect.do</span> file
+contains add wave command(s) generated by the ‑mc2collectinfo option.
+Note that you should include <span class="ph FontProperty emphasis">mc2collect.do</span> in
+front of any <span class="ph fmvar:ProductName">Questa SIM</span> commands
+that are needed for the normal simulation of the design. The simulation
+produces the WLF file. </p>
+<p class="lines ApplCommand">vsim -c top_portlog -do _mc2collect/mc2collect.do -wlf mc2inst.wlf</p>
+</div></li>
+</ol>
+<div class="section result" id="ide74644da-fd09-401c-b9c9-172cd548b2b3__idd4231df7-451d-4246-8dbf-32efabcab672"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p">The ‑mc2collectinfo
+argument to the vopt command prepares a short list of instances,
+and internally applies +acc on the ports of the instances to preserve
+them from optimization. It produces a do file (<span class="ph FontProperty emphasis">_mc2collect/mc2collect.do</span>)
+containing the add wave commands on the ports of these instances
+that can be provided to the vsim for WLF logging. The short list
+of instances is determined based on the input performance profile database
+provided as -mc2collectinfo=. If the profile database is not provided
+(-mc2collectinfo with no arguments), then top-level instances are
+short listed. </p>
+<p class="p">The number of instances
+short listed can be controlled with the -mc2instlimit argument. By
+default, ports of 30 instances are chosen for logging. If the profile
+data base is provided, the default number 30 is usually good enough
+in capturing the port activity of the computationally significant
+instances (as the instances with most number of hits are chosen).
+However, if the profile database is not specified then, based on
+design hierarchy, 30 might be insufficient and you may have to specify
+higher number through the -mc2instlimit option. </p>
+<p class="p">Also, note that since you are applying
++acc=p on the ports of the chosen set of instances, some of the
+vopt optimizations will be different from the regular vopt run on
+these instances. </p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MulticoreSimulationStatisticsFromUnisim_idd70953e0.html" title="Collect and use data from regular vsim simulation (unisim) runs for early qualification of a design for multi‑core simulation.">Multi‑core Simulation Statistics from Unisim</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Collecting Information for Multi‑core Simulation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_CollectingInformationMulticoreSimulation_ide74644da.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

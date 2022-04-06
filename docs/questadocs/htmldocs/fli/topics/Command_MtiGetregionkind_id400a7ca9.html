@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_GetRegionKind()" />
+<meta name="abstract" content="Gets the type of a region (VHDL, Verilog, or SystemC)." />
+<meta name="description" content="Gets the type of a region (VHDL, Verilog, or SystemC)." />
+<meta name="DC.subject" content="mti_GetRegionKind()" />
+<meta name="keywords" content="mti_GetRegionKind()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id400a7ca9-7abf-4c0a-9c44-2608b201a415" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_GetRegionKind()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_GetRegionKind()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id400a7ca9-7abf-4c0a-9c44-2608b201a415">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_GetRegionKind()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Gets the
+type of a region (VHDL, Verilog, or SystemC).</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">region_kind = mti_GetRegionKind( region_id )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e159"><p class="p">Name</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e162"><p class="p">Type</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e159 "><p class="p">region_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e162 "><p class="p">mtiRegionIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e165 "><p class="p">A handle to a VHDL, Verilog,
+or SystemC region</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id400a7ca9-7abf-4c0a-9c44-2608b201a415__id71840c75-fa99-475a-bd6d-ad7e4071feb0" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e188"><p class="p">Name</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e191"><p class="p">Type</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d24915e194"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e188 "><p class="p">region_kind</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e191 "><p class="p">int</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d24915e194 "><p class="p">The kind of the region</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_GetRegionKind() returns the
+kind of the specified VHDL, Verilog, or SystemC region. The value
+returned is one of the type (not fulltype) values defined in <span class="ph filepath">acc_user.h</span> or <span class="ph filepath">acc_vhdl.h</span>.
+You can use the PLI routine acc_fetch_fulltype() on the region_id
+to get the fulltype of the region. If the region_id is a handle
+to a Verilog region, then you can use it with PLI functions to obtain
+information about and access objects in the Verilog region.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id400a7ca9-7abf-4c0a-9c44-2608b201a415__ida9d0c0cd-dc36-4208-8318-271ddcc4d539"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;acc_user.h&gt;
+#include &lt;acc_vhdl.h&gt;
+#include &lt;mti.h&gt;
+
+static void printFullType( handle region )
+{
+  int fulltype = acc_fetch_fulltype( region );
+
+  switch ( fulltype ) {
+    case accArchitecture:
+      mti_PrintFormatted( " of fulltype accArchitecture" );
+      break;
+    case accArchVitalLevel0:
+      mti_PrintFormatted( " of fulltype accArchVitalLevel0" );
+      break;
+    case accArchVitalLevel1:
+      mti_PrintFormatted( " of fulltype accArchVitalLevel1" );
+      break;
+    case accEntityVitalLevel0:
+      mti_PrintFormatted( " of fulltype accEntityVitalLevel0" );
+      break;
+    case accForeignArch:
+      mti_PrintFormatted( " of fulltype accForeignArch" );
+      break;
+    case accForeignArchMixed:
+      mti_PrintFormatted( " of fulltype accForeignArchMixed" );
+      break;
+    case accFunction:
+      mti_PrintFormatted( " of fulltype accFunction" );
+      break;
+    case accModuleInstance:
+      mti_PrintFormatted( " of fulltype accModuleInstance" );
+      break;
+    case accPackage:
+      mti_PrintFormatted( " of fulltype accPackage" );
+      break;
+    case accShadow:
+      mti_PrintFormatted( " of fulltype accShadow" );
+      break;
+    case accTask:
+      mti_PrintFormatted( " of fulltype accTask" );
+      break;
+    default:
+      mti_PrintFormatted( " of fulltype %d", fulltype );
+      break;
+  }
+}
+
+void printHierarchy( mtiRegionIdT region, int indent )
+{
+  char *       region_name;
+  mtiRegionIdT regid;
+
+  region_name = mti_GetRegionFullName( region );
+  mti_PrintFormatted( "%*cRegion %s is ", indent, ' ', region_name );
+  switch ( mti_GetRegionKind( region ) ) {
+    case accArchitecture:
+      mti_PrintFormatted( "a VHDL architecture" );
+      printFullType( region );
+      break;
+    case accForeign:
+      mti_PrintFormatted( "an FLI-created region" );
+      printFullType( region );
+      break;
+    case accFunction:
+      mti_PrintFormatted( "a Verilog function" );
+      printFullType( region );
+      break;
+    case accModule:
+      mti_PrintFormatted( "a Verilog module" );
+      printFullType( region );
+      break;
+    case accPackage:
+      mti_PrintFormatted( "a VHDL package" );
+      printFullType( region );
+      break;
+    case accTask:
+      mti_PrintFormatted( "a Verilog task" );
+      printFullType( region );
+      break;
+    default:
+      mti_PrintFormatted( "UNKNOWN" );
+      printFullType( region );
+      break;
+  }
+  mti_PrintFormatted( "\n" );
+  indent += 2;
+  for ( regid = mti_FirstLowerRegion( region );
+        regid; regid = mti_NextRegion( regid ) ) {
+    printHierarchy( regid, indent );
+  }
+  mti_VsimFree( region_name );
+}
+
+void loadDoneCB( void * param )
+{
+  mtiRegionIdT regid;
+
+  mti_PrintMessage( "\nDesign Regions:\n" );
+  for ( regid = mti_GetTopRegion(); regid; regid = mti_NextRegion(regid) ) {
+    printHierarchy( regid, 1 );
+  }
+}
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  (void) mti_CreateRegion( region, "my_region" );
+  mti_AddLoadDoneCB( loadDoneCB, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="id400a7ca9-7abf-4c0a-9c44-2608b201a415__idae506496-a705-4240-a7f2-66bb0b78e0cb"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>cache.v
+module cache(clk, paddr, pdata, prw, pstrb, prdy,
+                  saddr, sdata, srw, sstrb, srdy);
+  input  clk, srdy, paddr, prw, pstrb;
+  output      prdy, saddr, srw, sstrb;
+  inout  sdata, pdata;
+
+  `define addr_size  8
+  `define set_size   5
+  `define word_size  16
+
+  reg verbose;
+
+  reg [`word_size-1:0] sdata_r, pdata_r;
+  reg [`addr_size-1:0] saddr_r;
+  reg                  srw_r, sstrb_r, prdy_r;
+
+  wire [`addr_size-1:0]      paddr;
+  wire [`addr_size-1:0] #(5) saddr = saddr_r;
+  wire [`word_size-1:0] #(5) sdata = sdata_r, pdata = pdata_r;
+  wire                  #(5) srw   = srw_r, sstrb = sstrb_r, prdy = prdy_r;
+
+  reg  [3:0] oen, wen;
+  wire [3:0] hit;
+
+  /**************** Cache sets ****************/
+  cache_set s0(paddr, pdata, hit[0], oen[0], wen[0]);
+  cache_set s1(paddr, pdata, hit[1], oen[1], wen[1]);
+  cache_set s2(paddr, pdata, hit[2], oen[2], wen[2]);
+  cache_set s3(paddr, pdata, hit[3], oen[3], wen[3]);
+
+  initial begin
+    verbose = 1;
+    saddr_r = 0;
+    sdata_r = 'bz; 
+    pdata_r = 'bz;
+    srw_r = 0;
+    sstrb_r = 1;
+    prdy_r = 1;
+    oen = 4'b1111;
+    wen = 4'b1111;
+  end
+
+  /**************** Local MRU memory ****************/
+
+  reg [2:0] mru_mem [0:(1 &lt;&lt; `set_size) - 1];
+
+  integer i;
+  initial for (i = 0; i &lt; (1 &lt;&lt; `set_size); i=i+1) mru_mem[i] = 0;
+
+  function integer hash;
+    input [`addr_size-1:0] a;
+    hash = a[`set_size - 1:0];
+  endfunction
+
+  task update_mru;
+    input [`addr_size-1:0] addr;
+    input [3:0] hit;
+    reg [2:0] mru;
+    begin
+      mru = mru_mem[hash(addr)];
+      mru[2] = ((hit &amp; 4'b1100) != 0);
+      if (mru[2]) mru[1] = hit[3];
+      else        mru[0] = hit[1];
+      mru_mem[hash(addr)] = mru;
+    end
+  endtask
+
+  function [3:0] pick_set;
+    input [`addr_size-1:0] addr;
+    integer setnum;
+    begin
+      casez (mru_mem[hash(addr)])
+        3'b1?1 : setnum = 0;
+        3'b1?0 : setnum = 1;
+        3'b01? : setnum = 2;
+        3'b00? : setnum = 3;
+        default: setnum = 0;
+      endcase
+      if (verbose) begin
+        if (prw == 1)
+          $display("%t: Read miss, picking set %0d", $time, setnum);
+        else
+          $display("%t: Write miss, picking set %0d", $time, setnum);
+      end
+      pick_set = 4'b0001 &lt;&lt; setnum;
+    end
+  endfunction
+
+  /**************** System Bus interface ****************/
+  task sysread;
+    input  [`addr_size-1:0] a;
+    begin
+      saddr_r = a;
+      srw_r = 1;
+      sstrb_r = 0;
+      @(posedge clk) sstrb_r = 1;
+      assign prdy_r = srdy;
+      assign pdata_r = sdata;
+      @(posedge clk) while (srdy != 0) @(posedge clk) ;
+      deassign prdy_r;  prdy_r = 1;
+      deassign pdata_r; pdata_r = 'bz;
+    end
+  endtask
+
+  task syswrite;
+    input  [`addr_size-1:0] a;
+    begin
+      saddr_r = a;
+      srw_r = 0;
+      sstrb_r = 0;
+      @(posedge clk) sstrb_r = 1;
+      assign prdy_r = srdy;
+      assign sdata_r = pdata;
+      @(posedge clk) while (srdy != 0) @(posedge clk) ;
+      deassign prdy_r;  prdy_r = 1;
+      deassign sdata_r; sdata_r = 'bz;
+      sdata_r = 'bz;
+    end
+  endtask
+
+  /**************** Cache control ****************/
+
+  function [3:0] get_hit;
+    input [3:0] hit;
+    integer setnum;
+    begin
+      casez (hit)
+        4'b???1 : setnum = 0;
+        4'b??1? : setnum = 1;
+        4'b?1?? : setnum = 2;
+        4'b1??? : setnum = 3;
+      endcase
+      if (verbose) begin
+        if (prw == 1)
+          $display("%t: Read hit to set %0d", $time, setnum);
+        else
+          $display("%t: Write hit to set %0d", $time, setnum);
+      end
+      get_hit = 4'b0001 &lt;&lt; setnum;
+    end
+  endfunction
+
+  reg [3:0] setsel;
+  always @(posedge clk) if (pstrb == 0) begin
+    if ((prw == 1) &amp;&amp; hit) begin
+      // Read Hit..
+      setsel = get_hit(hit);
+      oen = ~setsel;
+      prdy_r = 0;
+      @(posedge clk) prdy_r = 1;
+      oen = 4'b1111;
+    end else begin
+      // Read Miss or Write Hit..
+      if (hit)
+        setsel = get_hit(hit);
+      else
+        setsel = pick_set(paddr);
+      wen = ~setsel;
+      if (prw == 1)
+        sysread (paddr);
+      else
+        syswrite(paddr);
+      wen = 4'b1111;
+    end
+    update_mru(paddr, setsel);
+  end
+endmodule
+memory.v
+module memory(clk, addr, data, rw, strb, rdy);
+  input  clk, addr, rw, strb;
+  output rdy;
+  inout  data;
+
+  `define addr_size 8
+  `define word_size 16
+
+  reg [`word_size-1:0] data_r;
+  reg                  rdy_r;
+
+  initial begin
+    data_r = 'bz;
+    rdy_r = 1;
+  end
+
+  wire [`addr_size-1:0] addr;
+  wire [`word_size-1:0] #(5) data = data_r;
+  wire                  #(5) rdy = rdy_r;
+
+  reg [`word_size-1:0] mem[0:(1 &lt;&lt; `addr_size) - 1];
+
+  integer i;
+  always @(posedge clk) if (strb == 0) begin
+    i = addr;
+    repeat (2) @(posedge clk) ;
+    if (rw == 1)
+      data_r = mem[i];
+    rdy_r = 0;
+    @(posedge clk)
+    rdy_r = 1;
+    if (rw == 0)
+      mem[i] = data;
+    else
+      data_r = 'bz;
+  end
+endmodule 
+proc.v
+module proc(clk, addr, data, rw, strb, rdy);
+  input  clk, rdy;
+  output addr, rw, strb;
+  inout  data;
+
+  `define addr_size 8
+  `define word_size 16
+
+  reg [`addr_size-1:0] addr_r;
+  reg [`word_size-1:0] data_r;
+  reg                  rw_r, strb_r;
+
+  reg verbose;
+
+  wire [`addr_size-1:0] #(5) addr = addr_r;
+  wire [`word_size-1:0] #(5) data = data_r;
+  wire                  #(5) rw = rw_r, strb = strb_r;
+
+  task read;
+    input  [`addr_size-1:0] a;
+    output [`word_size-1:0] d;
+    begin
+      if (verbose) $display("%t: Reading from addr=%h", $time, a);
+      addr_r = a;
+      rw_r = 1;
+      strb_r = 0;
+      @(posedge clk) strb_r = 1;
+      @(posedge clk) while (rdy != 0) @(posedge clk) ;
+      d = data;
+    end
+  endtask
+
+  task write;
+    input  [`addr_size-1:0] a;
+    input  [`word_size-1:0] d;
+    begin
+      if (verbose)
+       $display("%t: Writing data=%h to addr=%h", $time, d, a);
+      addr_r = a;
+      rw_r = 0;
+      strb_r = 0;
+      @(posedge clk) strb_r = 1;
+      data_r = d;
+      @(posedge clk) while (rdy != 0) @(posedge clk) ;
+      data_r = 'bz;
+    end
+  endtask
+
+  reg [`addr_size-1:0] a;
+  reg [`word_size-1:0] d;
+  initial begin
+    // Set initial state of outputs..
+    addr_r = 0;
+    data_r = 'bz;
+    rw_r = 0;
+    strb_r = 1;
+    verbose = 1;
+
+    forever begin
+      // Wait for first clock, then perform read/write test
+      @(posedge clk)
+      if (verbose) $display("%t: Starting Read/Write test", $time);
+
+      // Write 10 locations
+      for (a = 0; a &lt; 10; a = a + 1)
+        write(a, a);
+
+      // Read back 10 locations
+      for (a = 0; a &lt; 10; a = a + 1) begin
+        read(a, d);
+        if (d !== a)
+          $display("%t: Read/Write mismatch; E: %h, A: %h", $time, a, d);
+      end
+
+      if (verbose) $display("Read/Write test done");
+      $stop(1);
+    end
+  end
+endmodule
+util.vhd
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+package std_logic_util is
+  function CONV_STD_LOGIC_VECTOR(ARG: INTEGER; SIZE: INTEGER) 
+                                              return STD_LOGIC_VECTOR;
+  function CONV_INTEGER(ARG: STD_LOGIC_VECTOR) return INTEGER;
+end std_logic_util;
+
+package body std_logic_util is
+  type tbl_type is array (STD_ULOGIC) of STD_ULOGIC;
+  constant tbl_BINARY : tbl_type :=
+    ('0', '0', '0', '1', '0', '0', '0', '1', '0');
+
+  function CONV_STD_LOGIC_VECTOR(ARG: INTEGER; SIZE: INTEGER) 
+                                              return STD_LOGIC_VECTOR is
+    variable result: STD_LOGIC_VECTOR(SIZE-1 downto 0);
+    variable temp: integer;
+  begin
+    temp := ARG;
+    for i in 0 to SIZE-1 loop
+      if (temp mod 2) = 1 then
+        result(i) := '1';
+      else 
+        result(i) := '0';
+      end if;
+      if temp &gt; 0 then
+        temp := temp / 2;
+      else
+        temp := (temp - 1) / 2; -- simulate ASR
+      end if;
+    end loop;
+    return result;
+  end;
+
+  function CONV_INTEGER(ARG: STD_LOGIC_VECTOR) return INTEGER is
+    variable result: INTEGER;
+  begin
+    assert ARG'length &lt;= 32
+      report "ARG is too large in CONV_INTEGER"
+      severity FAILURE;
+    result := 0;
+    for i in ARG'range loop
+      if i /= ARG'left then
+        result := result * 2;
+        if tbl_BINARY(ARG(i)) = '1' then
+          result := result + 1;
+        end if;
+      end if;
+    end loop;
+    return result;
+  end;
+end std_logic_util;
+set.vhd
+library ieee;
+use ieee.std_logic_1164.all;
+use work.std_logic_util.all;
+
+entity cache_set is
+  generic(
+    addr_size  : integer := 8;
+    set_size   : integer := 5;
+    word_size  : integer := 16
+  );
+  port(
+    addr            : in    std_logic_vector(addr_size-1 downto 0);
+    data            : inout std_logic_vector(word_size-1 downto 0);
+    hit             : out   std_logic;
+    oen             : in    std_logic;
+    wen             : in    std_logic
+  );
+end cache_set;
+
+architecture only of cache_set is
+  constant size : integer := 2**set_size;
+  constant dly : time := 5 ns;
+  subtype word_t is std_logic_vector(word_size-1 downto 0);
+  subtype addr_t is std_logic_vector(addr_size-1 downto 0);
+  type mem_t is array (0 to size-1) of word_t;
+  subtype tag_word_t is std_logic_vector(addr_size-1 downto set_size);
+  type tag_t is array (0 to size-1) of tag_word_t;
+  type valid_t is array (0 to size-1) of boolean;
+  signal data_out : word_t;
+begin
+
+  data &lt;= (others =&gt; 'Z') after dly when (oen = '1') else data_out after dly;
+
+process(wen, addr)
+    ---------- Local tag and data memories -----------
+    variable data_mem : mem_t;
+    variable atag_mem : tag_t;
+    variable valid_mem : valid_t := (others =&gt; false);
+
+    function hash(constant a : addr_t) return integer is
+    begin
+      return conv_integer(a(set_size-1 downto 0));
+    end;
+
+    procedure lookup_cache(constant a : addr_t) is
+      variable i : integer;
+      variable found : boolean;
+    begin
+      i := hash(a);
+      found := valid_mem(i) and (a(tag_word_t'range) = atag_mem(i));
+      if found then
+        hit &lt;= '1' after dly;
+      else
+        hit &lt;= '0' after dly;
+      end if;
+    end;
+
+    procedure update_cache(constant a : addr_t;
+                           constant d : word_t) is
+      variable i : integer;
+    begin
+      i := hash(a);
+      data_mem(i) := d;
+      atag_mem(i) := a(tag_word_t'range);
+      valid_mem(i) := true;
+    end;
+
+  begin
+    if wen'event and (wen = '1') then
+      update_cache(addr, data);
+    end if;
+
+    lookup_cache(addr);
+
+    data_out &lt;= data_mem(hash(addr));
+  end process;
+end;
+top.vhd
+entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl";
+begin
+end a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity top is end;
+
+architecture only of top is
+  component proc
+    port(
+      clk             : in    std_logic;
+      addr            : out   std_logic_vector(7 downto 0);
+      data            : inout std_logic_vector(15 downto 0);
+      rw              : out   std_logic;
+      strb            : out   std_logic;
+      rdy             : in    std_logic
+    );
+  end component;
+
+  component cache
+    port(
+      clk             : in    std_logic;
+      paddr           : in    std_logic_vector(7 downto 0);
+      pdata           : inout std_logic_vector(15 downto 0);
+      prw             : in    std_logic;
+      pstrb           : in    std_logic;
+      prdy            : out   std_logic;
+      saddr           : out   std_logic_vector(7 downto 0);
+      sdata           : inout std_logic_vector(15 downto 0);
+      srw             : out   std_logic;
+      sstrb           : out   std_logic;
+      srdy            : in    std_logic
+    );
+  end component;
+
+  component memory
+    port(
+      clk             : in    std_logic;
+      addr            : in    std_logic_vector(7 downto 0);
+      data            : inout std_logic_vector(15 downto 0);
+      rw              : in    std_logic;
+      strb            : in    std_logic;
+      rdy             : out   std_logic
+    );
+  end component;
+
+  component for_model
+  end component;
+
+  signal clk : std_logic := '0';
+
+  -- Processor bus signals
+  signal prw, pstrb, prdy : std_logic;
+  signal paddr : std_logic_vector(7 downto 0);
+  signal pdata : std_logic_vector(15 downto 0);
+
+  -- System bus signals
+  signal srw, sstrb, srdy : std_logic;
+  signal saddr : std_logic_vector(7 downto 0);
+  signal sdata : std_logic_vector(15 downto 0);
+begin
+  clk &lt;= not clk after 20 ns;
+
+  p: proc   port map(clk, paddr, pdata, prw, pstrb, prdy);
+
+  c: cache  port map(clk, paddr, pdata, prw, pstrb, prdy,
+                                      saddr, sdata, srw, sstrb, srdy);
+
+  m: memory port map(clk, saddr, sdata, srw, sstrb, srdy);
+
+  inst1 : for_model;
+end;</code></pre></div>
+<div class="section Subsection" id="id400a7ca9-7abf-4c0a-9c44-2608b201a415__id218d38b4-dd65-41bd-839e-4e88a7b76273"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vlog cache.v memory.v proc.v
+Model Technology ModelSim SE/EE vlog 5.4b Compiler 2000.06 Jun  9 2000
+-- Compiling module cache
+-- Compiling module memory
+-- Compiling module proc
+
+Top level modules:
+    cache
+    memory
+    proc
+% vcom util.vhd set.vhd
+Model Technology ModelSim SE/EE vcom 5.4b Compiler 2000.06 Jun  9 2000
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling package std_logic_util
+-- Compiling package body std_logic_util
+-- Loading package std_logic_util
+-- Loading package std_logic_util
+-- Compiling entity cache_set
+-- Compiling architecture only of cache_set
+% vcom -93 top.vhd
+Model Technology ModelSim SE/EE vcom 5.4b Compiler 2000.06 Jun  9 2000
+-- Loading package standard
+-- Compiling entity for_model
+-- Compiling architecture a of for_model
+-- Loading package std_logic_1164
+-- Compiling entity top
+-- Compiling architecture only of top
+-- Loading package vl_types
+-- Loading entity proc
+-- Loading entity cache
+-- Loading entity memory
+-- Loading entity for_model
+% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.4b
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading .../modeltech/sunos5/../ieee.std_logic_1164(body)
+# Loading .../modeltech/sunos5/../verilog.vl_types(body)
+# Loading work.top(only)
+# Loading work.proc
+# Loading work.cache
+# Loading work.std_logic_util(body)
+# Loading work.cache_set(only)
+# Loading work.memory
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+# 
+# Design Regions:
+#  Region /top is a VHDL architecture of fulltype accArchitecture
+#    Region /top/p is a Verilog module of fulltype accModuleInstance
+#      Region /top/p/read is a Verilog task of fulltype accTask
+#      Region /top/p/write is a Verilog task of fulltype accTask
+#    Region /top/c is a Verilog module of fulltype accModuleInstance
+#      Region /top/c/hash is a Verilog function of fulltype accFunction
+#      Region /top/c/update_mru is a Verilog task of fulltype accTask
+#      Region /top/c/pick_set is a Verilog function of fulltype accFunction
+#      Region /top/c/sysread is a Verilog task of fulltype accTask
+#      Region /top/c/syswrite is a Verilog task of fulltype accTask
+#      Region /top/c/get_hit is a Verilog function of fulltype accFunction
+#      Region /top/c/s0 is a VHDL architecture of fulltype accArchitecture
+#      Region /top/c/s1 is a VHDL architecture of fulltype accArchitecture
+#      Region /top/c/s2 is a VHDL architecture of fulltype accArchitecture
+#      Region /top/c/s3 is a VHDL architecture of fulltype accArchitecture
+#    Region /top/m is a Verilog module of fulltype accModuleInstance
+#    Region /top/inst1 is a VHDL architecture of fulltype accForeignArch
+#      Region /top/inst1/my_region is an FLI-created region of fulltype accShadow
+#  Region /standard is a VHDL package of fulltype accPackage
+#  Region /std_logic_1164 is a VHDL package of fulltype accPackage
+#  Region /vl_types is a VHDL package of fulltype accPackage
+#  Region /std_logic_util is a VHDL package of fulltype accPackage
+VSIM 1&gt; run -all
+#                   20: Starting Read/Write test
+#                   20: Writing data=0000 to addr=00
+#                   60: Write miss, picking set 3
+#                  220: Writing data=0001 to addr=01
+#                  260: Write miss, picking set 3
+#                  420: Writing data=0002 to addr=02
+#                  460: Write miss, picking set 3
+#                  620: Writing data=0003 to addr=03
+#                  660: Write miss, picking set 3
+#                  820: Writing data=0004 to addr=04
+#                  860: Write miss, picking set 3
+#                 1020: Writing data=0005 to addr=05
+#                 1060: Write miss, picking set 3
+#                 1220: Writing data=0006 to addr=06
+#                 1260: Write miss, picking set 3
+#                 1420: Writing data=0007 to addr=07
+#                 1460: Write miss, picking set 3
+#                 1620: Writing data=0008 to addr=08
+#                 1660: Write miss, picking set 3
+#                 1820: Writing data=0009 to addr=09
+#                 1860: Write miss, picking set 3
+#                 2020: Reading from addr=00
+#                 2060: Read hit to set 3
+#                 2100: Reading from addr=01
+#                 2140: Read hit to set 3
+#                 2180: Reading from addr=02
+#                 2220: Read hit to set 3
+#                 2260: Reading from addr=03
+#                 2300: Read hit to set 3
+#                 2340: Reading from addr=04
+#                 2380: Read hit to set 3
+#                 2420: Reading from addr=05
+#                 2460: Read hit to set 3
+#                 2500: Reading from addr=06
+#                 2540: Read hit to set 3
+#                 2580: Reading from addr=07
+#                 2620: Read hit to set 3
+#                 2660: Reading from addr=08
+#                 2700: Read hit to set 3
+#                 2740: Reading from addr=09
+#                 2780: Read hit to set 3
+# Read/Write test done
+# ** Note: $stop    : proc.v(77)
+#    Time: 2820 ns  Iteration: 0  Instance: /top/p
+# Break at proc.v line 77
+# Stopped at proc.v line 77
+VSIM 2&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_GetRegionKind()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiGetregionkind_id400a7ca9.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_GetTypeKind()" />
+<meta name="abstract" content="Gets the kind of a type." />
+<meta name="description" content="Gets the kind of a type." />
+<meta name="DC.subject" content="mti_GetTypeKind()" />
+<meta name="keywords" content="mti_GetTypeKind()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id39d8ff8c-e992-414c-8481-82a2dad65444" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_GetTypeKind()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_GetTypeKind()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id39d8ff8c-e992-414c-8481-82a2dad65444">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_GetTypeKind()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Gets the
+kind of a type.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">type_kind = mti_GetTypeKind( type_id )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e159"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e162"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e159 "><p class="p">type_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e162 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e165 "><p class="p">A handle to a VHDL or
+SystemC type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id39d8ff8c-e992-414c-8481-82a2dad65444__id2c3d6626-2739-4e48-962f-124816643d32" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e188"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e191"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e194"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e188 "><p class="p">type_kind</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e191 "><p class="p">mtiTypeKindT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e194 "><p class="p">The kind of the specified type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_GetTypeKind() returns the kind
+of the specified VHDL or SystemC type. The returned value is one
+of the following:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id39d8ff8c-e992-414c-8481-82a2dad65444__id6c4b3c2c-44d2-4596-bb19-9a6a33a552e5" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:2.438in" /><col style="width:2.438in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e218"><p class="p">type_kind</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d49329e221"><p class="p">VHDL type</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_SCALAR</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Integer</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_ARRAY</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Array</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_RECORD</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Record</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_ENUM</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Enumeration</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_PHYSICAL</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Physical</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_REAL</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Real</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_ACCESS</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Access</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_FILE</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">File</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e218 "><p class="p">MTI_TYPE_TIME</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d49329e221 "><p class="p">Time</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id39d8ff8c-e992-414c-8481-82a2dad65444__id02760daf-c83e-4bc6-85a3-fda4c155668d"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;mti.h&gt;
+
+static void printSignalInfo( mtiSignalIdT sigid, int indent )
+{
+  char         * signame;
+  int            i;
+  mtiSignalIdT * elem_list;
+  mtiTypeIdT     sigtype;
+
+  sigtype = mti_GetSignalType( sigid );
+  signame = mti_GetSignalNameIndirect( sigid, 0, 0 );
+  mti_PrintFormatted( "%*c%s ", indent, ' ', signame );
+  mti_VsimFree( signame );
+
+
+  switch ( mti_GetTypeKind( sigtype ) ) {
+    case MTI_TYPE_SCALAR:
+      mti_PrintFormatted( "is of type INTEGER\n" );
+      break;
+    case MTI_TYPE_ENUM:
+      mti_PrintFormatted( "is of type ENUMERATION\n" );
+      break;
+    case MTI_TYPE_PHYSICAL:
+      mti_PrintFormatted( "is of type PHYSICAL\n" );
+      break;
+    case MTI_TYPE_REAL:
+      mti_PrintFormatted( "is of type REAL\n" );
+      break;
+    case MTI_TYPE_TIME:
+      mti_PrintFormatted( "is of type TIME\n" );
+      break;
+    case MTI_TYPE_ARRAY:
+      mti_PrintFormatted( "is of type ARRAY\n" );
+      elem_list = mti_GetSignalSubelements( sigid, 0 );
+      for ( i = 0; i &lt; mti_TickLength( sigtype ); i++ ) {
+        printSignalInfo( elem_list[i], indent+2 );
+      }
+      mti_VsimFree( elem_list );
+      break;
+    case MTI_TYPE_RECORD:
+      mti_PrintFormatted( "is of type RECORD\n" );
+      elem_list = mti_GetSignalSubelements( sigid, 0 );
+      for ( i = 0; i &lt; mti_GetNumRecordElements( sigtype ); i++ ) {
+        printSignalInfo( elem_list[i], indent+2 );
+      }
+      mti_VsimFree( elem_list );
+      break;
+    default:
+      mti_PrintFormatted( "is of type UNKNOWN\n" );
+      break;
+  }
+}
+
+void loadDoneCB( void * param )
+{
+  mtiRegionIdT regid;
+  mtiSignalIdT sigid;
+
+  mti_PrintFormatted( "\nSignals:\n" );
+  for ( regid = mti_GetTopRegion(); regid; regid = mti_NextRegion(regid) ) {
+    for ( sigid = mti_FirstSignal( regid ); sigid;
+          sigid = mti_NextSignal()) {
+      printSignalInfo( sigid, 2 );
+    }
+  }
+}
+
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  mti_AddLoadDoneCB( loadDoneCB, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="id39d8ff8c-e992-414c-8481-82a2dad65444__idf9babe2b-0afb-40df-8243-de306fb24ad5"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl";
+begin
+end a;
+
+entity top is
+
+  type rectype is record
+    a : integer;
+    b : bit;
+    c : bit_vector( 3 downto 0 );
+  end record;
+
+  type a1 is array ( 2 downto 0 ) of bit;
+  type a2 is array ( 3 downto 2 ) of a1;
+
+end top;
+
+architecture a of top is
+
+  signal s1 : bit := '0';
+  signal s2 : rectype := ( 42, '1', "1100" );
+  signal s3 : bit_vector( 7 downto 0 ) := "10001111";
+  signal s5 : a2 := ( "101", "011" );
+  signal s6 : integer := 42;
+  signal s7 : real := 17.8;
+  signal s8 : time := 11 ns;
+
+  component for_model is
+  end component;
+
+  for all : for_model use entity work.for_model(a);
+
+begin
+
+  i1 : for_model;
+
+  s1 &lt;= not s1 after 5 ns;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="id39d8ff8c-e992-414c-8481-82a2dad65444__id31cadfa5-a21f-4414-a2df-fed8c15104cf"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.4b
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+# 
+# Signals:
+#   s1 is of type ENUMERATION
+#   s2 is of type RECORD
+#     s2.a is of type INTEGER
+#     s2.b is of type ENUMERATION
+#     s2.c is of type ARRAY
+#       s2.c(3) is of type ENUMERATION
+#       s2.c(2) is of type ENUMERATION
+#       s2.c(1) is of type ENUMERATION
+#       s2.c(0) is of type ENUMERATION
+#   s3 is of type ARRAY
+#     s3(7) is of type ENUMERATION
+#     s3(6) is of type ENUMERATION
+#     s3(5) is of type ENUMERATION
+#     s3(4) is of type ENUMERATION
+#     s3(3) is of type ENUMERATION
+#     s3(2) is of type ENUMERATION
+#     s3(1) is of type ENUMERATION
+#     s3(0) is of type ENUMERATION
+#   s5 is of type ARRAY
+#     s5(3) is of type ARRAY
+#       s5(3)(2) is of type ENUMERATION
+#       s5(3)(1) is of type ENUMERATION
+#       s5(3)(0) is of type ENUMERATION
+#     s5(2) is of type ARRAY
+#       s5(2)(2) is of type ENUMERATION
+#       s5(2)(1) is of type ENUMERATION
+#       s5(2)(0) is of type ENUMERATION
+#   s6 is of type INTEGER
+#   s7 is of type REAL
+#   s8 is of type TIME
+VSIM 1&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_GetTypeKind()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiGettypekind_id39d8ff8c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

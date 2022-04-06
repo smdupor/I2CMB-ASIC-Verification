@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Datafield Rules and Requirements for Links" />
+<meta name="abstract" content="The rules for links between testplan sections and the design vary slightly depending on the design construct involved. Specifically, correct linking relies on your testplan containing the specific datafields relating to the columns in the verification plan. These datafields — defined in the xml2ucdb.ini configuration file — are used during import to correctly map the XML version of your verification plan to a UCDB format." />
+<meta name="description" content="The rules for links between testplan sections and the design vary slightly depending on the design construct involved. Specifically, correct linking relies on your testplan containing the specific datafields relating to the columns in the verification plan. These datafields — defined in the xml2ucdb.ini configuration file — are used during import to correctly map the XML version of your verification plan to a UCDB format." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4e1979ea-ba25-46db-9680-4b9501b6e6b9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Datafield Rules and Requirements for Links</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Datafield Rules and Requirements for Links" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id4e1979ea-ba25-46db-9680-4b9501b6e6b9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Datafield
+Rules and Requirements for Links</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">The rules
+for links between testplan sections and the design vary slightly
+depending on the design construct involved. Specifically, correct
+linking relies on your testplan containing the specific datafields
+relating to the columns in the verification plan. These datafields
+— defined in the <span class="ph filepath">xml2ucdb.ini</span> configuration
+file — are used during import to correctly map the XML version of
+your verification plan to a UCDB format. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id4e1979ea-ba25-46db-9680-4b9501b6e6b9__id230a3625-e4f5-49a3-b62b-1ef00ded661a"><p class="p">See “<a class="xref fm:HeadingAndPage" href="General_ParameterMappingByColumnSequence_id784202bf.html#id784202bf-fa19-4b58-a886-e088404fd403__General_ParameterMappingByColumnSequence_id784202bf.xml#id784202bf-fa19-4b58-a886-e088404fd403" title="The parameter responsible for mapping testplan information to the generated UCDB by column sequence is the datafields parameter. The datafields parameter is used to extract data items which always appear in a known sequence in the input file — columns of a spreadsheet, for example.">Parameter for Mapping by Column Sequence</a>”for further details.</p>
+<p class="p">The following datafields (at minimum) must
+exist in the <span class="ph filepath">xml2ucdb.ini</span> for
+proper linking:</p>
+<ul class="ul"><li class="li" id="id4e1979ea-ba25-46db-9680-4b9501b6e6b9__idd8df7a1c-c7b4-475c-afaa-0c44284eeb78"><p class="p">Link
+— Required. The name of (or path to) the actual design construct
+to which the testplan section is to be linked. If path separator
+(/) is used, everything placed in the entry prior to the final “/”
+is interpreted as the path.</p>
+</li>
+<li class="li" id="id4e1979ea-ba25-46db-9680-4b9501b6e6b9__id454504e7-b944-4e70-9477-0418bd36907a"><p class="p">Type
+— Required. This specifies what kind of design construct is being linked
+(see <a class="xref fm:Table" href="General_LinkableDesignConstructs_id9c515743.html#id9c515743-1198-4fc6-b7a7-ee8a0ef286ab__id79d6d5a6-9b43-4b0d-ac64-86b75ae24f60">Table 1</a>). The rules for linking testplan sections
+to design constructs vary depending on the type of design construct
+involved. See “<a class="xref fm:HeadingOnly" href="Contain_SyntaxLinksCoverageModel_idee40a2ce.html#idee40a2ce-5be7-43ba-93c3-cc696b09bca2__Contain_SyntaxLinksCoverageModel_idee40a2ce.xml#idee40a2ce-5be7-43ba-93c3-cc696b09bca2" title="Any coverage object within the UCDB can be linked to the testplan.">Syntax for Links to the Coverage Model</a>”. </p>
+</li>
+<li class="li" id="id4e1979ea-ba25-46db-9680-4b9501b6e6b9__id7c4a6f69-027a-4c52-9cfc-285e78aa5d64"><p class="p">Path
+— Required, unless specified in the Link. This field allows you
+to specify an optional string to limit any search for design constructs
+to a specific sub-hierarchy in the design. This might be useful
+in cases where there are multiple design constructs of the same
+name in various parts of the design, and you want the testplan section
+to be linked to some but not all of those similarly-named constructs.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_LinksBetweenPlanSectionCoverageItem_id5c1df1a9.html" title="Information regarding the links themselves, and the rules governing them are as follows.">Links Between the Plan Section and the Coverage Item</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "Datafield Rules and Requirements for Links"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_DatafieldRulesRequirementsLinks_id4e1979ea.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

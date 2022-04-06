@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Defining Test Names in the RMDB File" />
+<meta name="abstract" content="This task describes how you define test names in your RMDB file." />
+<meta name="description" content="This task describes how you define test names in your RMDB file." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id5e5dda5d-b001-4061-8629-a8df6437ad9f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Defining Test Names in the RMDB File</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Defining Test Names in the RMDB File" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id5e5dda5d-b001-4061-8629-a8df6437ad9f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Defining
+Test Names in the RMDB File</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">This task describes
+how you define test names in your RMDB file.</span>
+</div>
+<div class="section Restrictions"><h2 class="title Subheading sectiontitle">Restrictions and Limitations</h2><p class="p">Definition of the <span class="ph FontProperty emphasis">testname</span> parameter
+must follow these rules:</p>
+<ul class="ul"><li class="li" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id8ca32194-c15c-4ce3-8857-61d21503215f"><p class="p">It must
+be unique. Duplicate names will be treated as if they were not named.</p>
+</li>
+<li class="li" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id0c3f183a-b086-4af4-8f5d-af81a14ed73a"><p class="p">XML-specific
+characters (“&lt;”, “&gt;”, and “&amp;”) must be escaped. </p>
+</li>
+<li class="li" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id74d0dc89-59a6-4741-8893-48e25e0b36a2"><p class="p">It may contain
+embedded parameter references. For example </p>
+<p class="p">&lt;parameter name="testname"&gt;random_(%SEED%)&lt;/parameter&gt; </p>
+<p class="p">You can define nested parameter references in a group runnable
+so that leaf-level task runnables inherit the expanded task names.</p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id315197b4-6351-49ba-8235-edab52ec2b46"><span class="ph cmd">Determine the test name for
+a task runnable or group runnable, following the restrictions and
+limitations previously defined.</span><div class="itemgroup info StepInfo"><p class="p">Use the following suggestions
+for determining the test name:</p>
+<ul class="ul"><li class="li" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__idcf2da40d-ced3-465d-b0ab-c57e9137ff9d"><p class="p">It is up to the you to
+choose a <span class="ph FontProperty emphasis">testname</span> parameter
+for use in the RMDB and to set the <span class="ph FontProperty emphasis">TESTNAME</span> attribute
+in your UCDB file. It is suggested that you use the <span class="ph FontProperty emphasis">testname</span> parameter when
+setting the <span class="ph FontProperty emphasis">TESTNAME</span> attribute
+since that guarantees the names will be the same. </p>
+</li>
+<li class="li" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id9b67fe46-f963-45f4-af89-22f0c1a17542"><p class="p">Avoid characters that
+may need to be parsed by reporting processes, such as HTML elements
+or newlines.</p>
+</li>
+</ul>
+</div></li>
+<li class="li step stepexpand" id="id5e5dda5d-b001-4061-8629-a8df6437ad9f__id182c15bc-a7b8-4c11-933a-9903cec3550b"><span class="ph cmd">Create the parameter entry
+in the RMDB file by adding the <span class="ph FontProperty emphasis">testname</span> parameter
+to the <span class="ph FontProperty emphasis">parameters</span> section
+of the runnable, </span></li>
+</ol>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">This example executes three tests
+and the names of those tests would expand to <span class="ph FontProperty emphasis">random_123</span>, <span class="ph FontProperty emphasis">random_456</span>,
+and <span class="ph FontProperty emphasis">random_789</span>. </p>
+<pre class="pre codeblock leveled"><code>  &lt;runnable name="randomTests" type="group"&gt;
+     ...
+     &lt;parameters&gt;
+       ...
+       &lt;parameter name="testname"&gt;random_(%SEED%)&lt;/parameter&gt;
+       ...
+     &lt;/parameters&gt;
+     ...
+     &lt;members&gt;
+       ...
+       &lt;member&gt;randomTest&lt;/member&gt;
+       ...
+     &lt;/members&gt;
+     ...
+   &lt;/runnable&gt;
+   &lt;runnable name="randomTest" type="task" foreach="123, 456, 789"&gt;
+     ...
+     &lt;parameters&gt;
+       ...
+       &lt;parameter name="SEED"&gt;(%ITERATION%)&lt;/parameter&gt;
+       ...
+     &lt;/parameters&gt;
+     ...
+   &lt;/runnable&gt;</code></pre></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_TestCentricReportingControl_id6442608b.html" title="This section describes how you can create your regression suite such that you can track actions by test name, rather than action strings.">Test-centric Reporting and Control</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_TestCentricLimitations_id1ce0eda7.html#id1ce0eda7-04f4-4af6-afbb-062b5e080e29__" title="This section describes several restrictions to test-centric regression suites, due to the fact that test-centric control is not native to the VRM workflow.">Test-centric Limitations</a></div>
+<div><a class="link" href="../topics/TaskTop_EnablingTestCentricRegression_id693f616e.html#id693f616e-23cd-48c1-8bcb-ad7215d1ca94__" title="By default, the vrun command analyzes the specified RMDB file and will enable the action-centric functionality. However, you can manually force the command into test-centric mode by following this procedure.">Enabling a Test-centric Regression</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Defining Test Names in the RMDB File"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_DefiningTestNamesInRmdbFile_id5e5dda5d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

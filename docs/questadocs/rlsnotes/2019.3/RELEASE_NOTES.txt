@@ -1,0 +1,281 @@
+                     Release Notes For Questa Sim 2019.3
+
+                                 Jul 24 2019
+               Copyright 1991-2019 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 2019.3
+     * [4]Base Product Specifications in 2019.3
+     * [5]Compatibility Issues with Release 2019.3
+     * [6]SystemVerilog Defects Repaired in 2019.3
+     * [7]VHDL Defects Repaired in 2019.3
+     * [8]SystemC Defects Repaired in 2019.3
+     * [9]Verification Management Defects Repaired in 2019.3
+     * [10]General Enhancements in 2019.3
+     * [11]User Interface Enhancements in 2019.3
+     * [12]Document Revision History in 2019.3
+   _______________________________________________________________________
+
+   Key Information
+     * There is no licensing change between 10.7 and 2019.1 or 2019.2 or
+       2019.3. However, if you are migrating to 2019.3 from a release like
+       10.6 and older, please note that release 2019.3 uses FLEXnet
+       v11.14.1.3.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.14.1.3. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.14.1.3 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2017_1_patch2 with MGLS
+       v9.17_10.2.4 and PCLS v9.17.10.2.0
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.14.1.3
+          + MSL v2017_1_patch2
+          + MGLS v9.17_10.2.4
+          + PCLS v9.17.10.2.0
+     * (results) -novopt flow has been deprecated and commands will flag
+       below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 2019.1 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+     * The Register Assistant version included within this release has
+       been upgraded to RUVM/2019.3.
+       RUVM/2019.3 is a native 64-bit application.
+   _______________________________________________________________________
+
+   Release Announcements in 2019.3
+     * Due to enhanced security restrictions with web browser PDF
+       plug-ins, some links do not function. Links in HTML documentation
+       are fully functional.
+       Clicking a link within a PDF viewed in a web browser may result in
+       no action, or it may load the title page of the current PDF manual
+       (instead of the intended target in the PDF manual). The unresolved
+       link behavior occurs in all web browsers on Windows and Linux
+       platforms. Because of this behavior, the navigational experience of
+       PDF manuals is compromised. PDF is ideal for printing because of
+       its page-oriented layout.
+       Use the HTML manuals to search for topics, navigate between topics,
+       and click links to examples, videos, reference material, and other
+       related technical content.
+       For information about Adobe's discontinued support of Adobe Reader
+       on Linux platforms and your available options, refer to Knowledge
+       Article MG596568 on SupportNet.
+       Linux is a registered trademark of Linus Torvalds in the U.S. and
+       other countries.
+     * Starting 2019.1 release, support for Windows 7 and 8.1 have
+       discontinued. Only Windows 10 is supported. However, we continue to
+       support Windows 7 & 8.1 with our 10.6 and 10.7 release series until
+       their planned End Of Life (10.6 EOL - mid 2019, 10.7 EOL - mid
+       2020) to coincide with Microsoft's EOL for Windows 7.
+   _______________________________________________________________________
+
+   Base Product Specifications in 2019.3
+     *
+       [Supported Platforms]
+       Linux RHEL 6 x86/x86-64
+       Linux RHEL 7 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Linux SLES 12 x86/x86-64
+       Windows 10 x86/x64
+       [Supported GCC Compilers (for SystemC)]
+       gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64
+       gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.2.1-mingw32vc12
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.07
+       [Licensing]
+       FLEXnet v11.14.1.3
+       MSL v2017_1_patch2
+       MGLS v9.17_10.2.4
+       PCLS v9.17.10.2.0
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 2019.3
+
+   Key Information Compatibility
+     * [nodvtid] - (results) -novopt flow has been deprecated and commands
+       will flag below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 2019.1 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+
+   VHDL Compatibility
+     * QSIM-56691 - (source, results) Following execution of
+       uninstantiated procedures with OUT mode parameters not associated
+       with a type generic, and evaluation of generic procedures with OUT
+       mode parameters not associated with a type generic, actual
+       variables associated with the OUT parameters could be left
+       unchanged despite changes within the procedures. The compiler is
+       now generating code to correctly set the value of OUT mode
+       parameters in the above cases.
+     * QSIM-56234 - (results) In certain cases, association of array
+       subelements in ports was leading to incorrect results. This has
+       been fixed.
+     * QSIM-56012 - (results) When attributes 'left, 'right, 'length,
+       'low, 'high and 'range were applied to an unconstrained array, they
+       lead to a crash. This is now an error.
+
+   General Compatibility
+     * [nodvtid] - (source, results) For constrained random stimulus,
+       random results for a given seed are consistent across all platforms
+       and variants of platforms.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 2019.3
+     * QSIM-55187 - Certain lists of expressions, as in a concatenation,
+       could cause a compiler crash if there was a missing element; this
+       is a syntax error now correctly handled.
+     * QSIM-56462 - An index variable in a streaming concat expression
+       like b1 = {>> {b2 with [0 +: len]}} would sometimes generate an
+       error at vsim time because the variable "len" was expected to be a
+       constant expression. The typical error was:<br>
+       ** Error: (vsim-3044) Usage of 'mod.len' inconsistent with
+       'register' object.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 2019.3
+     * QSIM-56691 - (source, results) Following execution of
+       uninstantiated procedures with OUT mode parameters not associated
+       with a type generic, and evaluation of generic procedures with OUT
+       mode parameters not associated with a type generic, actual
+       variables associated with the OUT parameters could be left
+       unchanged despite changes within the procedures. The compiler is
+       now generating code to correctly set the value of OUT mode
+       parameters in the above cases.
+     * QSIM-56234 - (results) In certain cases, association of array
+       subelements in ports was leading to incorrect results. This has
+       been fixed.
+     * QSIM-56012 - (results) When attributes 'left, 'right, 'length,
+       'low, 'high and 'range were applied to an unconstrained array, they
+       lead to a crash. This is now an error.
+   _______________________________________________________________________
+
+   SystemC Defects Repaired in 2019.3
+     * QSIM-55481 - Fix scparse to handle C++11 scoped enums.
+     * QSIM-57389 - Fixed sccom-6000 error caused by a corrupt debug
+       database generated by scparse in cases where member functions had
+       many arguments.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 2019.3
+     * VM-11371 - Fixed performance issue where VRM GUI would appear to
+       stop responding to input for a significant time when opening a VRM
+       Results pane on a regression which contains a large number (ie:
+       1000s) of scripts and/or tests.
+   _______________________________________________________________________
+
+   General Enhancements in 2019.3
+     * [nodvtid] - (source, results) For constrained random stimulus,
+       random results for a given seed are consistent across all platforms
+       and variants of platforms.
+   _______________________________________________________________________
+
+   User Interface Enhancements in 2019.3
+     * [nodvtid] - The vopt -linedebug option is being deprecated. A
+       warning message is issued when this option is used.
+   _______________________________________________________________________
+
+   Document Revision History in 2019.3
+     * Revision - Changes - Status/Date
+          + 4.6 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/August 2019
+          + 4.5 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/June 2019
+          + 4.4 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/May 2019
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.2019.3,product.id.P11633"
+

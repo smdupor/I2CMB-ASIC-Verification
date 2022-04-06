@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_SetDriverOwner()" />
+<meta name="abstract" content="Sets the owning process of a driver." />
+<meta name="description" content="Sets the owning process of a driver." />
+<meta name="DC.subject" content="mti_SetDriverOwner()" />
+<meta name="keywords" content="mti_SetDriverOwner()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb40848e0-cc73-43d9-9580-9c4f326ff87a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_SetDriverOwner()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_SetDriverOwner()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idb40848e0-cc73-43d9-9580-9c4f326ff87a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_SetDriverOwner()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Sets the
+owning process of a driver.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">mti_SetDriverOwner( driver_id, process_id )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d43352e159"><p class="p">Name</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d43352e162"><p class="p">Type</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d43352e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e159 "><p class="p">driver_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e162 "><p class="p">mtiDriverIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e165 "><p class="p">A handle to a VHDL driver</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e159 "><p class="p">process_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e162 "><p class="p">mtiProcessIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d43352e165 "><p class="p">A handle to a VHDL process</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2><p class="p">Nothing</p>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_SetDriverOwner() makes the
+specified process the owner of the specified driver.</p>
+<p class="p">Normally, mti_CreateDriver() makes
+the &lt;MTI_foreign_architecture&gt; process the owner of a new driver.
+When using mti_CreateDriver() it is necessary to follow up with
+a call to mti_SetDriverOwner(); otherwise, the “drivers” command
+and the Dataflow window may give unexpected or incorrect information
+regarding FLI-created drivers.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="idb40848e0-cc73-43d9-9580-9c4f326ff87a__idb46bcb2f-f87f-41ba-a5c0-c81512e6ca67"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;stdlib.h&gt;
+#include &lt;mti.h&gt;
+
+typedef enum {
+  STD_LOGIC_U,
+  STD_LOGIC_X,
+  STD_LOGIC_0,
+  STD_LOGIC_1,
+  STD_LOGIC_Z,
+  STD_LOGIC_W,
+  STD_LOGIC_L,
+  STD_LOGIC_H,
+  STD_LOGIC_D
+} mySigType;
+
+char *std_logic_lits[9] =
+{ "'U'", "'X'", "'0'", "'1'", "'Z'", "'W'", "'L'", "'H'", "'-'" };
+
+typedef struct {
+  mtiSignalIdT sigid1;
+  mtiSignalIdT sigid2;
+  mtiDriverIdT drvid1;
+  mtiDriverIdT drvid2;
+} instanceInfoT;
+
+/* This function inverts mySig1 every 5 ns. */
+void driveSignal1( void * param )
+{
+  char          * region_name;
+  instanceInfoT * inst = (instanceInfoT*)param;
+  mtiInt32T       sigval;
+
+  sigval = mti_GetSignalValue( inst-&gt;sigid1 );
+
+  switch ( sigval ) {
+   case STD_LOGIC_U:
+    mti_ScheduleDriver( inst-&gt;drvid1, STD_LOGIC_0, 0, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_0:
+    mti_ScheduleDriver( inst-&gt;drvid1, STD_LOGIC_1, 5, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_1:
+    mti_ScheduleDriver( inst-&gt;drvid1, STD_LOGIC_0, 5, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_X:
+    region_name = mti_GetRegionFullName(mti_GetSignalRegion(inst-&gt;sigid1));
+    mti_PrintFormatted( "Time [%d,%d] delta %d: Signal %s/%s is UNKNOWN\n",
+                       mti_NowUpper(), mti_Now(), mti_Delta(),
+                       region_name, mti_GetSignalName( inst-&gt;sigid1 ) );
+    mti_VsimFree( region_name );
+    break;
+   default:
+    region_name = mti_GetRegionFullName(mti_GetSignalRegion(inst-&gt;sigid1));
+    mti_PrintFormatted( "Time [%d,%d] delta %d: "
+                       "Unexpected value %d on signal %s/%s\n",
+                       mti_NowUpper(), mti_Now(), mti_Delta(),
+                       sigval, region_name,
+                       mti_GetSignalName( inst-&gt;sigid1 ) );
+    mti_VsimFree( region_name );
+    break;
+  }
+}
+
+/* This function inverts mySig2 every 10 ns. */
+void driveSignal2( void * param )
+{
+  char          * region_name;
+  instanceInfoT * inst = (instanceInfoT*)param;
+  mtiInt32T       sigval;
+
+  sigval = mti_GetSignalValue( inst-&gt;sigid2 );
+
+  switch ( sigval ) {
+   case STD_LOGIC_U:
+    mti_ScheduleDriver( inst-&gt;drvid2, STD_LOGIC_0, 0, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_0:
+    mti_ScheduleDriver( inst-&gt;drvid2, STD_LOGIC_1, 10, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_1:
+    mti_ScheduleDriver( inst-&gt;drvid2, STD_LOGIC_0, 10, MTI_INERTIAL );
+    break;
+   case STD_LOGIC_X:
+    region_name = mti_GetRegionFullName(mti_GetSignalRegion(inst-&gt;sigid2));
+    mti_PrintFormatted( "Time [%d,%d] delta %d: Signal %s/%s is UNKNOWN\n",
+                       mti_NowUpper(), mti_Now(), mti_Delta(),
+                       region_name, mti_GetSignalName( inst-&gt;sigid2 ) );
+    mti_VsimFree( region_name );
+    break;
+   default:
+    region_name = mti_GetRegionFullName(mti_GetSignalRegion(inst-&gt;sigid2));
+    mti_PrintFormatted( "Time [%d,%d] delta %d: "
+                         "Unexpected value %d on signal %s/%s\n",
+                         mti_NowUpper(), mti_Now(), mti_Delta(),
+                         sigval, region_name,
+                         mti_GetSignalName( inst-&gt;sigid2 ) );
+    mti_VsimFree( region_name );
+    break;
+  }
+}
+void cleanupCallback( void * param )
+{
+  mti_PrintMessage( "Cleaning up...\n" );
+  free( param );
+}
+
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  instanceInfoT * inst;
+  mtiProcessIdT   procid;
+  mtiTypeIdT      enum_type;
+
+  inst         = (instanceInfoT *)malloc( sizeof(instanceInfoT) );
+  enum_type    = mti_CreateEnumType( 1, 9, std_logic_lits );
+
+  inst-&gt;sigid1 = mti_CreateSignal( "mySig1", region, enum_type );
+  inst-&gt;drvid1 = mti_CreateDriver( inst-&gt;sigid1 );
+  procid       = mti_CreateProcess( "mySig1Driver", driveSignal1, inst );
+  mti_Sensitize( procid, inst-&gt;sigid1, MTI_EVENT );
+  mti_SetDriverOwner( inst-&gt;drvid1, procid );
+
+  inst-&gt;sigid2 = mti_CreateSignal( "mySig2", region, enum_type );
+  inst-&gt;drvid2 = mti_CreateDriver( inst-&gt;sigid2 );
+  procid       = mti_CreateProcess( "mySig2Driver", driveSignal2, inst );
+  mti_Sensitize( procid, inst-&gt;sigid2, MTI_EVENT );
+  /* Not setting driver owner for driver 2. */
+
+  mti_AddQuitCB( cleanupCallback, inst );
+  mti_AddRestartCB( cleanupCallback, inst );
+}</span></code></pre></div>
+<div class="section Subsection" id="idb40848e0-cc73-43d9-9580-9c4f326ff87a__id931d6126-681e-43c4-b1ec-f917f2829e8b"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl;";
+begin
+end a;
+
+entity top is
+end top;
+
+architecture a of top is
+
+  signal s1 : bit := '0';
+
+  component for_model
+  end component;
+
+begin
+
+  s1 &lt;= not s1 after 5 ns;
+
+  forinst : for_model;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="idb40848e0-cc73-43d9-9580-9c4f326ff87a__id588ce45d-30f3-4344-a732-35ce3c82bb06"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.4b
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+VSIM 1&gt; run 5
+VSIM 2&gt; drivers /top/forinst/mySig1
+# Drivers for /top/forinst/mysig1:
+#  1 : Signal /top/forinst/mysig1
+#    1 : Driver /top/forinst/mySig1Driver
+#        0 at 10 ns
+# 
+VSIM 3&gt; drivers /top/forinst/mySig2
+# Drivers for /top/forinst/mysig2:
+#  0 : Signal /top/forinst/mysig2
+#    0 : Driver /top/forinst/&lt;MTI_foreign_architecture&gt;
+#        1 at 10 ns
+# 
+VSIM 4&gt; quit
+# Cleaning up...</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_SetDriverOwner()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiSetdriverowner_idb40848e0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

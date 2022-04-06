@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="vcover diff" />
+<meta name="abstract" content="Reports the coverage differences between two UCDBs." />
+<meta name="description" content="Reports the coverage differences between two UCDBs." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide7d975db-118c-4e44-b3a6-52b25ab0c334" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vcover diff</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vcover diff" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vcover diff</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Reports
+the coverage differences between two UCDBs. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">vcover diff <a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id9683337e-5c4a-4b18-9677-751c673ff3a7">&lt;UCDB1&gt;</a> <a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id34cdc542-9980-4d0e-bc2a-2e56354d2ead">&lt;UCDB2&gt;</a> &lt;diff options&gt; </p>
+<p class="lines UsageLine">where &lt;diff options&gt; are: <br />
+<span class="ph">[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id0d26da1c-5341-4db9-9858-12173843108f">-32 | -64</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id98c28d9a-d858-44e2-ad8e-e83a29aa689c">-append</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__ida34f8cdb-1fd0-4da2-aa78-f334d1e5ec3d">-debug</a>] </span>[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1ccef317-e8fe-4531-9131-2ab7fd8da5f4">-delimiter</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1fc35a22-77fb-4f3f-93b9-ee0f7ad74dfe">-diffsfile</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id43d12250-27d9-44db-bc11-472fa49e49da">-gui</a>] </span>[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id7587dff6-67db-4efa-b680-0c0c88a38cd2">-flagfield</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1a5e926e-6b09-4cf6-bb45-7850b95a31cf">-logfile &lt;filename&gt; | -l &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__ida3f41e04-17d1-46f7-bc6f-66f3cf69f510">-memblk</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__ide8279d06-e8ff-4411-9ef9-4306ee1634b2">-nocomments</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1164137d-70e8-4f07-98c1-2e52a3ea31e3">-nocounts</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id2a9e323a-f1ae-4a83-8651-a31dc40637b3">-notdb</a>] </span>[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id903415a7-7287-4d32-bc0f-59015f223e24">-[w]prof=&lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__idc808ef76-c0ba-4d66-ba02-3ebbaba2b9ae">-proftick=&lt;integer&gt;</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__idef474e5c-c9d7-46eb-82dd-9a9ca19b0447">-rulesfile &lt;rulesfile&gt;</a>] </span>[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__ide4294508-4920-4b62-a189-fcb55cd5f9a1">-scope &lt;path/scope&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id8a44ac1e-4802-47c2-a6c8-827d4e5baad6">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id830cd297-37a4-4617-bcaa-dfa9a2dcfc8a">-structural</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id89a4a4bf-9590-4a71-ba18-245888ee199d">-tdb &lt;name&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id9bc89c07-8bcb-47d3-ae55-e8c1d6383106">-testname &lt;name&gt;</a>] <a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id9683337e-5c4a-4b18-9677-751c673ff3a7">&lt;UCDB1&gt;</a> <a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__id34cdc542-9980-4d0e-bc2a-2e56354d2ead">&lt;UCDB2&gt;</a> [<a class="xref fm:HeadingOnly" href="#ide7d975db-118c-4e44-b3a6-52b25ab0c334__idaeb6a092-8d01-4804-bdaa-907c157af5a4">-verbose</a>] </span></p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">This command
+can write the results of the coverage differences into a trend database (.tdb)
+and open it for viewing in the Results Analysis window. You can
+filter the output so it doesn’t show all scopes in the design (which
+may be very large).</p>
+<p class="p">If you use
+vcover diff with UCDBs produced by versions prior to 10.1, you may
+receive false positive results. You can determine whether you are
+getting false positives by diffing a file against itself. </p>
+<p class="p">You can use
+the -gui switch to bring up the results in the GUI. For information
+on viewing the results in the GUI, refer to “<a class="xref Link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Viewing vcover diff Results in the Results Analysis Window', 'questa_sim_vm'); return false;">Viewing vcover diff Results in the Results Analysis Window</a>” in the Verification Management User’s Manual. </p>
+<p class="p">For information
+on interpreting textual output of the diff, including the BNF syntax,
+refer to the UCDB API Reference Manual.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idf152709d-765c-4b68-b5f0-32c3ebbfcfb2"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id0d26da1c-5341-4db9-9858-12173843108f">-32 | -64</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies whether vcover diff uses the 32- or 64-bit executable.
+32-bit is the default. These options apply only to the supported
+Linux operating systems.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id98c28d9a-d858-44e2-ad8e-e83a29aa689c">-append</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Appends differences to triage file. Default is to overwrite diff
+results.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__ida34f8cdb-1fd0-4da2-aa78-f334d1e5ec3d">-debug</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Enables rulesfile debugging output, passed directly to the VRM transform
+command. Refer to the Verification Run Manager user manual for further
+information on the transform command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1ccef317-e8fe-4531-9131-2ab7fd8da5f4">-delimiter</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the data delimiter. Default is TCL style string quoting;
+an opening and closing curly brace{}. You can change to any two
+characters, but the default rules file (a rules file is necessary
+for the .tdb creation) expects the curly braces {}. Creation of
+the .tdb file, and therefore GUI viewing, will not be successful
+with an alternate delimiter unless you change the rules file. </p>
+<p class="p">If you
+specify a single character, it is used as both opening and closing
+delimiter. If you specify two characters, the first is used as the
+opening and the second as the closing. </p>
+<p class="p">You can
+specify a double quote string quoting delimiter with an entry such
+as:</p>
+<pre class="pre codeblock leveled"><code>vcover diff -delimiter ‘”’ a.ucdb b.ucdb</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1fc35a22-77fb-4f3f-93b9-ee0f7ad74dfe">-diffsfile</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Text diff report output filename. Default is to send results to
+stdout.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id43d12250-27d9-44db-bc11-472fa49e49da">-gui</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Open the Results Analysis window in the GUI and populate with the
+specified .tdb. The default file read in is QuestaDiffs.tdb.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id7587dff6-67db-4efa-b680-0c0c88a38cd2">-flagfield</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays flag field as single hex number difference. Default is
+to display flag bits individually. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1a5e926e-6b09-4cf6-bb45-7850b95a31cf">-logfile &lt;filename&gt; | -l &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Outputs progress messages to a user-specified log file. By default,
+these messages are output to stdout and are echoed to any explicitly supplied
+log file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idd64476ae-ecdd-4948-ba23-8ceb0410fccd"><p class="p Opt">&lt;filename&gt;
+— A user specified string.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__ida3f41e04-17d1-46f7-bc6f-66f3cf69f510">-memblk</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a limit on the number of MEMBLK bytes printed in details.
+Bytes are printed in hex format, in storage order from beginning
+of block. Does not change comparison, only display of difference. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__ide8279d06-e8ff-4411-9ef9-4306ee1634b2">-nocomments</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Omits comment lines from the output.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id1164137d-70e8-4f07-98c1-2e52a3ea31e3">-nocounts</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Omits count diffs from the output.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id2a9e323a-f1ae-4a83-8651-a31dc40637b3">-notdb</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents the triage database creation. Overrides -tdb, if specified.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id903415a7-7287-4d32-bc0f-59015f223e24">-[w]prof=&lt;filename&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional;
+-wprof and -prof are mutually exclusive) Enables CPU (-prof) or
+WALL (-wprof) time-based profiling and saves the profile data to &lt;filename&gt;.
+Customer Support uses output from these arguments for debugging purposes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idc808ef76-c0ba-4d66-ba02-3ebbaba2b9ae">-proftick=&lt;integer&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Sets the time interval between the profile data collections. Default
+= 10.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idef474e5c-c9d7-46eb-82dd-9a9ca19b0447">-rulesfile &lt;rulesfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the triage rulesfile to use for creation of .tdb. Searches
+for the default rulesfile (<span class="ph filepath italic">ucdbdiff.rules</span>)
+in the current working directory, and then in the <span class="ph filepath italic">$MTI_HOME/vm_src/</span> directory. You
+can write your own rulesfile, and then specify that file with this command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__ide4294508-4920-4b62-a189-fcb55cd5f9a1">-scope &lt;path/scope&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Filters the data to show only the specified design unit, <span class="ph">testplan, or </span>design
+hierarchical scope. You must specify the full hierarchical path
+in &lt;path/scope&gt;. You cannot use wildcards.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id8a44ac1e-4802-47c2-a6c8-827d4e5baad6">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls display of statistics sent to a logfile, stdout, or the
+transcript. Specifying -stats without options sets the default features
+(cmd, msg, and time). </p>
+<p class="p">You can
+specify multiple features and modes for each instance of -stats
+in a comma-separated list. You can specify ‑stats multiple times
+on the command line, but only the final instance takes effect. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id2a7dc2c1-ad74-454d-8a91-52ce146b0bc0"><p class="p Opt">[+ |
+-] — Controls activation of the feature or mode, where the plus
+character ( + ) enables the feature and the minus character ( - )
+disables the feature. You can also enable a feature or mode by specifying
+it without the plus (+) character. Setting this switch adds or subtracts
+features and modes from the default settings "cmd,msg,time".</p>
+</li>
+<li class="li ArgOption" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idcd1a4ffb-327d-4984-8fe3-4562d18ab98c"><p class="p Opt"><var class="keyword varname">feature</var></p>
+<p class="p">all
+— Display all statistics features (cmd, msg, perf, time). Mutually
+exclusive with none option. When specified in a string with other
+options, all is applied first.</p>
+<p class="p">cmd
+— (default) Echo the command line.</p>
+<p class="p">msg
+— (default) Display error and warning summary at the end of command execution.</p>
+<p class="p">none
+— Disable all statistics features. Mutually exclusive with all option. When
+specified in a string with other options, none is applied first.</p>
+<p class="p">perf
+— Display time and memory performance statistics.</p>
+<p class="p">time
+— (default) Display Start, End, and Elapsed times. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Use -stats=perf+verbose to display information about the
+operating system and host machine.</p>
+</div>
+</li>
+<li class="li ArgOption" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idd66fbadc-ef1c-4975-9ffd-5a8eaa8e2040"><p class="p Opt"><var class="keyword varname">mode</var></p>
+</li>
+<li class="li ArgOption" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idec04dcde-36a7-4aea-bf48-67f86a6309f9"><p class="p Opt">Modes
+can be set for a specific feature or globally for all features.
+To add or subtract a mode for a specific feature, specify using
+the plus (+) or minus (-) character with the feature, for example,
+vcover diff -stats=cmd+verbose,perf+list. To add or subtract a mode
+globally for all features, specify the modes in a comma-separated
+list, for example, vcover diff -stats=time,perf,list,-verbose. You
+cannot specify global and feature specific modes together. </p>
+<p class="p">kb
+— Print performance statistics in kilobyte units with no auto-scaling.</p>
+<p class="p">list
+— Display statistics in a Tcl list format when available.</p>
+<p class="p">verbose
+— Display verbose statistics information when available.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id830cd297-37a4-4617-bcaa-dfa9a2dcfc8a">-structural</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports only structural differences.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id89a4a4bf-9590-4a71-ba18-245888ee199d">-tdb &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name for the created triage database. Default base
+name matches the name specified with -diffsfile. Otherwise, it creates
+a file called QuestaDiffs.tdb.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id9bc89c07-8bcb-47d3-ae55-e8c1d6383106">-testname &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name for the testplan column in the GUI. The default
+name is QuestaDiffs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id9683337e-5c4a-4b18-9677-751c673ff3a7">&lt;UCDB1&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Designates input filename (include .ucdb file extension) to compare
+against &lt;UCDB2&gt;. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id34cdc542-9980-4d0e-bc2a-2e56354d2ead">&lt;UCDB2&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Designates input filename (include .ucdb file extension) to compare
+against &lt;UCDB1&gt;. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idaeb6a092-8d01-4804-bdaa-907c157af5a4">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Enables increased verbosity output, useful for rulesfile debugging.
+Passed directly to the VRM transform command. Refer to the Verification
+Run Manager User’s Manual for further information on the transform command.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idec0f497f-056a-452a-9afa-504f8bbc00e2"><p class="p">Report
+coverage differences between covergroups in project1.ucdb and project2.ucdb
+into a text output, which is printed to stdout.</p>
+<p class="lines ApplCommand leveled">vcover diff project1.ucdb project2.ucdb</p>
+</li>
+<li class="li" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id51520aca-bc45-4be1-82ab-45f0bf3349de"><p class="p">Report
+coverage differences between covergroups in project1.ucdb and project2.ucdb
+into the GUI, in the Results Analysis window.</p>
+<p class="lines ApplCommand leveled">vcover diff project1.ucdb project2.ucdb -gui</p>
+</li>
+<li class="li" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__id12f00407-958a-45e3-ae05-5cfd0711e8d8"><p class="p">Enable
+the display of Start, End, and Elapsed time as well as a message count
+summary. Echoing of the command line is disabled</p>
+<p class="lines ApplCommand leveled">vcover diff -stats=time,-cmd,msg</p>
+</li>
+<li class="li" id="ide7d975db-118c-4e44-b3a6-52b25ab0c334__idec4c1647-24dd-4a62-a2e5-828b0c4fbdea"><p class="p">The first
+-stats option is ignored. The none option disables all default settings
+and then enables the perf option.</p>
+<p class="lines ApplCommand leveled">vcover diff -stats=time,cmd,msg -stats=none,perf</p>
+</li>
+</ul>
+<p class="p">For information
+on interpreting textual output of the diff, including the BNF syntax,
+refer to the UCDB API Reference Manual. </p>
+<p class="p">For information
+on viewing the results in the GUI, refer to the Verification Management User’s
+Manual. </p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Code Coverage', 'questa_sim_user'); return false;">Code Coverage [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Viewing vcover diff Results in the Results Analysis Window', 'questa_sim_vm'); return false;">Viewing vcover diff Results in the Results Analysis Window [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_VcoverAttribute_id1e882f67.html#id1e882f67-ccf5-4a43-a13c-4f4009f714ce__" title="Used to set the display of attributes of a specified coverage database file or coverstore during batch mode simulation.">vcover attribute</a></div>
+<div><a class="link" href="../topics/Command_VcoverDump_id1763f236.html#id1763f236-7782-4daa-884e-5a106cf0c52a__" title="Produces and prints to stdout a textual description of the contents of the UCDB file.">vcover dump</a></div>
+<div><a class="link" href="../topics/Command_VcoverMerge_id072c7e0d.html#id072c7e0d-c737-4e89-90d1-d10dae680b88__" title="The vcover merge command merges UCDB files, saved with the coverage save command, or coverstores, created with the -coverstore option to vsim, into a single UCDB output file.">vcover merge</a></div>
+<div><a class="link" href="../topics/Command_VcoverRanktest_id47bb69e4.html#id47bb69e4-7cf8-4d5a-b763-19b7d018b96d__" title="Ranks coverage data contained in specified tests, or test groups, according to their contribution to cumulative coverage.">vcover ranktest</a></div>
+<div><a class="link" href="../topics/Command_VcoverReport_id0bad6f30.html#id0bad6f30-6a5a-47ce-a158-16d9817fa347__" title="Generates a textual or HTML report of coverage statistics or exclusions, extracting the information from a previously saved code coverage run, and writing it to a specified file. Allows you to generate reports recursively by design unit in both text and html.">vcover report</a></div>
+<div><a class="link" href="../topics/Command_VcoverStats_id08039e24.html#id08039e24-1c24-418f-ae67-206dca9d5dc8__" title="Prints summary statistics for previously saved code coverage databases to stdout.">vcover stats</a></div>
+<div><a class="link" href="../topics/Command_VcoverTestnames_id8548ed1e.html#id8548ed1e-cd9f-4e27-b7e7-4f6b1d9e7524__" title="Displays the test names in the specified UCDB file or merged UCDB file.">vcover testnames</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "vcover diff"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_VcoverDiff_ide7d975db.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

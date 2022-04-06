@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Design Object Visibility for Designs with PLI" />
+<meta name="abstract" content="Some of the optimizations performed by vopt affect design object visibility. For example, many objects do not have PLI Access handles, potentially affecting the operation of PLI (program language interface) applications. However, a handle is guaranteed to exist for any object that is an argument to a system task or function." />
+<meta name="description" content="Some of the optimizations performed by vopt affect design object visibility. For example, many objects do not have PLI Access handles, potentially affecting the operation of PLI (program language interface) applications. However, a handle is guaranteed to exist for any object that is an argument to a system task or function." />
+<meta name="DC.subject" content="visibility, design object and +acc, design object visibility, +acc, optimizations, design object visibility, +acc option, design object visibility, +acc option, design object visibility" />
+<meta name="keywords" content="visibility, design object and +acc, design object visibility, +acc, optimizations, design object visibility, +acc option, design object visibility, +acc option, design object visibility" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id70ef769c-4f53-41b1-8f7c-110db863bc76" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Design Object Visibility for Designs with PLI</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Design Object Visibility for Designs with PLI" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id70ef769c-4f53-41b1-8f7c-110db863bc76">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Design Object Visibility for Designs with PLI</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Some of
+the optimizations performed by <span class="ph FontProperty shellcommand">vopt</span> affect
+design object visibility. For example, many objects do not have
+PLI Access handles, potentially affecting the operation of PLI (program language
+interface) applications. However, a handle is guaranteed to exist
+for any object that is an argument to a system task or function.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id70ef769c-4f53-41b1-8f7c-110db863bc76__id7dd3eceb-5a76-45bd-bc60-775bfa0de296"><div class="note note"><span class="notetitle">Note:</span> <p class="p">QIS is the preferred method
+to use when optimizing designs with vopt for debug/visibility purposes.
+Refer to “<a class="xref fm:HeadingAndPage" href="Concept_QuestaDumpingAndVisibility_id71148e4b.html#id71148e4b-8e58-4bc9-b2f3-20f1bab7ec23__Concept_QuestaDumpingAndVisibility_id71148e4b.xml#id71148e4b-8e58-4bc9-b2f3-20f1bab7ec23" title="QIS in the tool enables full vopt simulations while providing debug or visibility capabilities.">Questa Dumping and Visibility</a>” for complete details. </p>
+</div>
+<p class="p">In the early stages of design, you can use
+one or more values to the +acc argument to the <span class="ph FontProperty shellcommand">vopt</span> command
+to enable access to specific design objects. See the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command
+in the Reference Manual for specific syntax of the +acc argument.</p>
+</div>
+<div class="section Subsection" id="id70ef769c-4f53-41b1-8f7c-110db863bc76__idc57ea688-c6d3-4a2d-a35d-6781cbc71113"><h2 class="title Subheading sectiontitle">Automatic +acc for Designs
+with PLI</h2><div class="note note"><span class="notetitle">Note:</span> <p class="p">It is suggested that you disable this automatic behavior,
+which can negatively affect the performance of your simulation,
+with the -no_autoacc argument to <span class="ph FontProperty shellcommand">vsim</span> or
+follow the directions in the section “<a class="xref fm:HeadingOnly" href="#id70ef769c-4f53-41b1-8f7c-110db863bc76__idaeaa4415-424c-43c0-a485-81d0da111811">Manual +acc for Designs with PLI</a>”</p>
+</div>
+<p class="p">By default, if your design contains any PLI,
+and the automatic vopt flow is enabled, <span class="ph FontProperty shellcommand">vsim</span> automatically
+adds a +acc to the sub-invocation of <span class="ph FontProperty shellcommand">vopt</span>,
+which disables most optimizations.</p>
+<p class="p">If you want to override the
+automatic disabling of the optimizations for modules containing
+PLI, specify the -no_autoacc argument with the <span class="ph FontProperty shellcommand">vsim</span> command.</p>
+</div>
+<div class="section Subsection" id="id70ef769c-4f53-41b1-8f7c-110db863bc76__idaeaa4415-424c-43c0-a485-81d0da111811"><h2 class="title Subheading sectiontitle">Manual +acc for Designs
+with PLI</h2><p class="p">If you are manually controlling optimizations,
+and your design uses PLI applications that look for object handles
+in the design hierarchy, then it is likely that you will need to
+use the +acc argument. </p>
+<p class="p">For example, the built-in $dumpvars system
+task is an internal PLI application that requires handles to nets
+and registers so that it can call the PLI routine acc_vcl_add()
+to monitor changes and dump the values to a VCD file. This requires
+that access is enabled for the nets and registers on which it operates. </p>
+<h2 class="title Subheading sectiontitle">Example 1 — Dumping All Nets and Registers for the Entire Design</h2><p class="p">Suppose you want to dump all nets and registers
+in the entire design, and that you have the following $dumpvars
+call in your test bench (no arguments to $dumpvars means to dump everything
+in the entire design):</p>
+<pre class="pre codeblock leveled"><code>initial $dumpvars;</code></pre><p class="p">Then you need to optimize your design as follows
+to enable net and register access for all modules in the design:</p>
+<p class="lines ApplCommand">vopt +acc=rn testbench</p>
+<h2 class="title Subheading sectiontitle">Example 2 — Dumping All Nets and Registers for a Single
+Instance </h2><p class="p">Suppose you need to dump only nets (n) and
+registers (r) of a particular instance in the design (the first
+argument of 1 means to dump just the variables in the instance specified
+by the second argument):</p>
+<pre class="pre codeblock leveled"><code>initial $dumpvars(1, testbench.u1);</code></pre><p class="p">Then you need to optimize your design as follows
+(assuming <span class="ph FontProperty emphasis">testbench.u1</span> is
+an instance of the module <span class="ph FontProperty emphasis">design</span>):</p>
+<p class="lines ApplCommand">vopt +acc=rn+design testbench</p>
+<h2 class="title Subheading sectiontitle">Example 3 — Dumping Child Instances</h2><p class="p">Suppose you need to dump everything in the
+child instances of <span class="ph FontProperty emphasis">testbench.u1</span> (the
+first argument of 0 means to also include all children of the instance):</p>
+<pre class="pre codeblock leveled"><code>initial $dumpvars(0, testbench.u1);</code></pre><p class="p">Then you optimize your design as follows:</p>
+<p class="lines ApplCommand">vopt +acc=rn+design. testbench</p>
+<p class="p">To gain maximum performance, it may be necessary
+to enable the minimum required access within the design.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_OptimizationConsiderationsVerilogDesigns_id479945ee.html" title="The optimization considerations for Verilog designs include design object visibility, standard delay formating, event ordering, timing checks, handling pre-compiled libraries, and reporting for gate-level optimizations.">Optimization Considerations for Verilog Designs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Design Object Visibility for Designs with PLI"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_DesignObjectVisibilityDesignsPli_id70ef769c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

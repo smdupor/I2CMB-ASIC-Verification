@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="call" />
+<meta name="abstract" content="Calls SystemVerilog static functions and class functions (but not tasks) from the vsim command line in live simulation mode. Calls PLI and VPI system tasks and system functions. Returns function return values to the vsim shell as a Tcl string. Returns class references as class instance IDs." />
+<meta name="description" content="Calls SystemVerilog static functions and class functions (but not tasks) from the vsim command line in live simulation mode. Calls PLI and VPI system tasks and system functions. Returns function return values to the vsim shell as a Tcl string. Returns class references as class instance IDs." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>call</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="call" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">call</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Calls SystemVerilog
+static functions and class functions (but not tasks) from the vsim
+command line in live simulation mode. Calls PLI and VPI system tasks
+and system functions. Returns function return values to the vsim
+shell as a Tcl string. Returns class references as class instance
+IDs. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><div class="note note"><span class="notetitle">Note:</span> <p class="p">The grouping of arguments
+can vary depending on how you want the command to perform a search
+on a system task or function name. For example:</p>
+<ul class="ul NoteList"><li class="li NoteListItem">&lt;pathToFunction&gt; &lt;classInstancePath&gt;
+—SystemVerilog static functions and class functions</li>
+<li class="li NoteListItem">-usertf -builtin &lt;systfName&gt; — PLI and VPI system
+tasks and system functions (restricts the search for the task/function
+name to either the user-added PLI/VPI routines or to the built-in
+routines): </li>
+</ul>
+</div>
+<p class="lines UsageLine">call [<a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idcaf93275-5d43-4bfd-b7ce-e283a84e7b14">-env &lt;hierEnvPath&gt;</a>] [{<a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id0b5fd850-7531-4e98-88cd-4cc4794a1d1c">&lt;pathToFunction&gt;</a> [<a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id3514eb88-d72a-4345-8698-3fe0485eec47">&lt;classInstancePath&gt;</a>]}]  [{<a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id7ebb38c2-e070-420c-8f9a-727d0979a10f">-usertf</a> | <a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idbf55f287-9592-4c7c-979f-f933f669a4f0">-builtin</a> <a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id418a08e7-a783-4658-a2d9-b1823b6b3fe6">&lt;systfName&gt;</a>}] [<a class="xref fm:HeadingOnly" href="#idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idcfbad10c-de14-40bc-8160-d49feab1967e">&lt;arg1&gt; [&lt;arg2&gt;] …[&lt;argN&gt;]</a>]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id08e56bb4-3680-4728-9d0e-98f53be11fe6"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idcaf93275-5d43-4bfd-b7ce-e283a84e7b14">-env &lt;hierEnvPath&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Hierarchical environment path to use as the starting scope for the
+object name lookups. If present, must appear before actual function name.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id0b5fd850-7531-4e98-88cd-4cc4794a1d1c">&lt;pathToFunction&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+when calling a System Verilog static or class function) The name
+of a function, which you can specify by:</p>
+<ul class="ul"><li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idd5cf63d9-17b1-4b10-aa99-98d943708b7e"><p class="p">The path to
+the function declaration, through the structural hierarchy, or declaration
+hierarchy. You must specify hierarchical paths must as a full path
+to a function, or a function that exists relative to the current
+context (as shown in the Structure window, or returned by the environment command).</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idc5578f18-0e50-45be-9071-6d8985876e84"><p class="p">A class instance
+hierarchical path. </p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id1a1c131e-8f21-4961-be8b-83cbee5e405a"><p class="p">A class instance
+id string.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id3514eb88-d72a-4345-8698-3fe0485eec47">&lt;classInstancePath&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Must be specified if the function path is a declaration path and
+the function is a non-static class function. Do not specify the
+class instance path name if the given function path is a class instance
+variable reference or a class instance name in the format @&lt;class_type&gt;@nnn,
+because the class instance information can be extracted from the
+pathname itself. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idbf55f287-9592-4c7c-979f-f933f669a4f0">-builtin</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Search only built-in system functions or task names. (The $ is understood
+to be a prefix.)</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id7ebb38c2-e070-420c-8f9a-727d0979a10f">-usertf </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Search only user-defined system functions or task names. (The $
+is understood to be a prefix.)</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id418a08e7-a783-4658-a2d9-b1823b6b3fe6">&lt;systfName&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+when calling a system task or function) The system task or function
+to execute. You can specify the sysfName according to the following
+syntax rules:</p>
+<ul class="ul"><li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idb704b47c-13dc-45fe-8553-0622e704c42f"><p class="p">\$&lt;systfName&gt;
+(for example, \$display or \$mytask)</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id039d57bf-6105-45a0-8bab-cf20ebe1fcdd"><p class="p">With –usertf
+or –builtin flags (as the case may be). (for example, –usertf mytask
+or –builtin display)</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idabdc31d2-3d2b-4dfd-af3c-9e779b5b1b11"><p class="p">&lt;systfName&gt;
+(for example, display or mytask) In this case SystemVerilog static
+functions and class functions are searched first for a match, and then
+the PLI/VPI system tasks/functions.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idcfbad10c-de14-40bc-8160-d49feab1967e">&lt;arg1&gt; [&lt;arg2&gt;] …[&lt;argN&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+All arguments required by the function are specified in a space-separated
+list, in declaration order. If a function has default arguments, the
+arguments can be omitted from the command line, provided that the
+arguments occur at the end of the declaration list. Function input
+arguments can be constant values, including integers, enumerated
+values, and strings. Strings containing spaces or special characters must
+be enclosed in quotation marks (" ") or braces ( { } ), or Tcl will
+try to interpret the string. For example: "my string" or {my string}.
+Arguments can also be design objects. Class references can be arguments,
+specified by either their design instance path or class instance
+id string. If a function has type inout, out, or ref arguments,
+suitable user design objects must be passed in as arguments. Any
+passed in argument will first be tested to determine if it is an
+appropriate constant value. If it is not, then the argument will
+be tested to determine if it is a design object. Consequently, where
+there is ambiguity between a constant string and the name of a design
+object, the constant will be given precedence. If in this case the
+design object is desired, the full hierarchical path to the object
+can be supplied to differentiate it from the constant string.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__iddca4c167-233c-4f52-9b56-24a0fe8e3fb5"><h2 class="title Subheading sectiontitle">Calling
+a System Verilog Static of Class Function</h2><ul class="ul"><li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__ide5dad7d5-0b64-4e08-ad6a-d7d37eaa33fb"><p class="p">Call using
+a static declaration path, where the function sf_voidstring() is
+a static class function that accepts a string:</p>
+<p class="lines ApplCommand">   call sim:/user_pkg::myfcns::sf_voidstring first_string</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idf8dfc8a0-9826-411b-8baa-1bf056a70704"><p class="p">Call using
+a class instance path to specify the function, where the function f_intint()
+of the class type /utop/tmyfcns accepts an integer:</p>
+<p class="lines ApplCommand">   call /utop/tmyfcns.f_intint 37</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id47fcdfbe-a4b9-4f83-94d9-5c1ecea85be9"><p class="p">Call using
+a class instance path to specify the function, and pass in a class instance
+(/utop/tmyfcns is a class handle):</p>
+<p class="lines ApplCommand">   call /utop/tmyfcns.f_voidclasscolor /utop/tmyfcns</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idd9ac2cf6-9f26-46c9-b48e-9762fc33ee85"><p class="p">Call using
+a class instance path, and pass in a class instance as an argument using
+a  class instance id string </p>
+<p class="lines ApplCommand">   call /utop/tmyfcns.f_voidclasscolor @myType@3</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__ida208c146-c6f2-4df0-aaa1-f10f400738b1"><p class="p">Call using
+a class instance id string to specify the function:</p>
+<p class="lines ApplCommand">   call @myType@543.get_full_name</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id77cb20e3-0f80-4a96-968b-77b13f938dd1"><p class="p">Call using
+a declaration path, where the function is non-static so a class instance
+must also be supplied. The member function f_voidstring() accepts
+a string:</p>
+<p class="lines ApplCommand">   call sim:/user_pkg::myfcns::f_voidstring /my/class/instance "some string"</p>
+</li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id35ede820-8661-4795-9cef-2af2e276fb1d"><p class="p">Call using
+a class instance id string to specify the function where the function
+returns a string:</p>
+<p class="lines ApplCommand">   call @uvm_sequencer__3@3.get_full_name</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># test.e2_a.sequencer</code></pre></li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id66dbcdf0-4cec-4b97-a2da-c1a3be02da91"><p class="p">Call using
+a relative class hierarchical name to specify the function where the
+function returns a class handle:</p>
+<p class="lines ApplCommand">   call moduleX.who_am_i</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># @myClassX@4</code></pre></li>
+</ul>
+</div>
+<div class="section Subsection" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__ida104ea88-ef4c-4d59-97fa-9d2b64b7b65c"><h2 class="title Subheading sectiontitle">Calling
+a System Task</h2><ul class="ul"><li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id156a0373-d2b2-4155-8bf0-37b7b9cd50bc"><p class="p">Call $display
+with literal values:</p>
+<p class="lines ApplCommand">   call \$display {"%0s"} {"Hello from TCL!"}</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># Hello from TCL!</code></pre><p class="lines ApplCommand">   call –builtin display {"%0d"} 'd2999</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 2999 </code></pre><p class="lines ApplCommand">   call –usertf display {"%0d"} 'd3999</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># ** Error: Expected user-defined system task $display not found in the context(/top2).</code></pre></li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id18af6da9-453b-494b-ad83-c5614589eb50"><p class="p">Call $display
+with literal values:</p>
+<p class="lines ApplCommand">   call \$display {"top2.i=%0d top2.r=%0b"} top2/i top2/r</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># top2.i=5 top2.r=110</code></pre></li>
+</ul>
+</div>
+<div class="section Subsection" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__idc97191d6-5ef7-404a-a344-150e26ac7ccf"><h2 class="title Subheading sectiontitle">Calling
+a System Function</h2><p class="p">In the following
+examples $pow is a user defined function that raises the 1<span class="ph FontProperty LiteralSuperScript">st</span> argument
+to the power of the 2<span class="ph FontProperty LiteralSuperScript">nd</span> (for
+example, $pow(a, b) =&gt; ab) </p>
+<ul class="ul"><li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id72368768-4887-4ac0-b0d7-0659ee06dc6a"><p class="p">Call $pow
+with literal values:</p>
+<p class="lines ApplCommand">   call \$pow 2 1</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 2</code></pre><p class="lines ApplCommand">   call \$pow 3 2</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 9</code></pre><p class="lines ApplCommand">   call \$pow [call \$pow 2 1] [call \$pow 3 2]</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 512</code></pre></li>
+<li class="li" id="idf3e8b936-0ab0-40c2-a9bc-e9357a9f840a__id2e2bbe96-87d9-4577-920c-fb6d88320baf"><p class="p">Call $pow
+with variable values:</p>
+<p class="lines ApplCommand">   call –env /top/u1 display r1</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 7</code></pre><p class="lines ApplCommand">   call –env /top/u2 display r2</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 2</code></pre><p class="lines ApplCommand">   call pow /top/u1/r1 /top/u2/r2</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># 49</code></pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "call"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Call_idf3e8b936.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,455 @@
+                     Release Notes For Questa Sim 10.5f
+
+                                 Apr 04 2018
+               Copyright 1991-2018 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.5f
+     * [4]Base Product Specifications in 10.5f
+     * [5]Compatibility Issues with Release 10.5f
+     * [6]General Defects Repaired in 10.5f
+     * [7]User Interface Defects Repaired in 10.5f
+     * [8]SystemVerilog Defects Repaired in 10.5f
+     * [9]VHDL Defects Repaired in 10.5f
+     * [10]SVA/PSL Defects Repaired in 10.5f
+     * [11]Verification Management Defects Repaired in 10.5f
+     * [12]WLF and VCD logging Defects Repaired in 10.5f
+     * [13]SystemVerilog Enhancements in 10.5f
+     * [14]Verification Management Enhancements in 10.5f
+     * [15]Document Revision History in 10.5f
+   _______________________________________________________________________
+
+   Key Information
+     * (source) A bug related to Windows DLL symbol export is fixed in
+       10.5 and later. A side effect of the fix is that there may be
+       incompatibility on Windows platforms regarding existing DPI usage.
+       The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+     * The 10.5g Update Release will be the last release in the 10.5
+       series.
+   _______________________________________________________________________
+
+   Release Announcements in 10.5f
+     * Release 10.5 uses FLEXnet v11.13.1.2 server, v11.13.0.2 client.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.13.0.2. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.13.0.2 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2015_1_patch2 with MGLS
+       v9.13_5.4 and PCLS v9.13.5.2
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.13.1.2 server, v11.13.0.2 client
+          + MSL v2015_1_patch2
+          + MGLS v9.13_5.4
+          + PCLS v9.13.5.2
+          + 10.5 release onwards, Questa will be using Microsoft Visual
+            Studio 12 a.k.a Visual Studio 13. This would mean that all the
+            executables shipped with the 10.5 release and onwards would be
+            linked in with "msvcr120.dll". If you have SystemC or
+            PLI/VPI/DPI/FLI libraries compiled with older release with any
+            gcc compiler shipped with the product, those will have to be
+            re-compiled with 10.5. Windows platform compiler details is as
+            follows:
+               o "gcc-4.2.1-mingw32vc9" has been replaced with
+                 "gcc-4.2.1-mingw32vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw64" has been replaced with
+                 "gcc-4.5.0-mingw64vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw32vc9" has been replaced with
+                 "gcc-4.5.0-mingw32vc12" and will be available for
+                 download on a request basis.
+                 Compiler versions have not been changed compared to
+                 previous release. Please refer to User's Manual for more
+                 details.
+               o (source) In the next major release (10.6)
+                    # support for Windows 8.0 will be dropped. No change
+                      for Windows 8.1
+                    # support for gcc-4.3.3-linux and
+                      gcc-4.3.3-linux_x86_64 will be dropped
+               o We regularly review our OS/Platform support for
+                 Questa/ModelSim and related functional verification
+                 products to add new platforms and discontinue old ones.
+                 That process normally takes a number of years from
+                 decision to action. Customer notifications are typically
+                 only one year in an advance through our Release Notes and
+                 Install Guide.
+                 We plan to make a change in our Windows support, 1 year
+                 from now. We began notifications of this change back in
+                 January 2017 with the 10.5d and 10.6a releases
+                 As our existing Windows machines breakdown or are
+                 discontinued, replacement hardware can only support
+                 Windows 10. So say Microsoft and our hardware vendors, HP
+                 & Lenovo. That will limit our capacity and ability to
+                 support Windows 7 & 8.1 in the future.
+                 Therefore, starting with 10.8 (FCS Dec 2018) we plan to
+                 discontinue supporting Windows 7 & 8.1 Thus the only
+                 Windows version for 10.8 will be for Windows 10. However
+                 we will continue to support Windows 7 & 8.1 with our 10.6
+                 and 10.7 release series until their planned EOL (10.6 EOL
+                 - mid 2019, 10.7 EOL - mid 2020) to coincide with
+                 Microsoft's EOL for Windows 7.
+               o Due to enhanced security restrictions with web browser
+                 PDF plug-ins, some links do not function. Links in HTML
+                 documentation are fully functional.
+                 Clicking a link within a PDF viewed in a web browser may
+                 result in no action, or it may load the title page of the
+                 current PDF manual (instead of the intended target in the
+                 PDF manual). The unresolved link behavior occurs in all
+                 web browsers on Windows and Linux platforms. Because of
+                 this behavior, the navigational experience of PDF manuals
+                 is compromised. PDF is ideal for printing because of its
+                 page-oriented layout.
+                 Use the HTML manuals to search for topics, navigate
+                 between topics, and click links to examples, videos,
+                 reference material, and other related technical content.
+                 For information about Adobe's discontinued support of
+                 Adobe Reader on Linux platforms and your available
+                 options, refer to Knowledge Article MG596568 on
+                 SupportNet.
+                 Linux is a registered trademark of Linus Torvalds in the
+                 U.S. and other countries.
+               o In the next major release (10.6), support for Redhat
+                 Enterprise Linux (RHEL) 5 and Suse Linux Enterprise
+                 Server (SLES) 10 will be dropped.
+            ______________________________________________________________
+
+            Base Product Specifications in 10.5f
+          +
+            [Supported Platforms]
+            Linux RHEL 5 x86/x86-64
+            Linux RHEL 6 x86/x86-64
+            Linux RHEL 7 x86/x86-64
+            Linux SLES 10 x86/x86-64
+            Linux SLES 11 x86/x86-64
+            Windows 7 x86/x64
+            Windows 8.1 x86/x64
+            Windows 10 x86/x64
+            [Supported GCC Compilers (for SystemC)]
+            gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+            gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+            gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+            gcc-4.2.1-mingw32vc12
+            [OVL (shipped with product)]
+            v2.8.1
+            [VHDL OSVVM (shipped with product)]
+            v2014.07
+            [Licensing]
+            FLEXnet v11.13.1.2 server, v11.13.0.2 client
+            MSL v2015_1_patch2
+            MGLS v9.13_5.4
+            PCLS v9.13.5.2
+       ___________________________________________________________________
+
+       Compatibility Issues with Release 10.5f
+       Key Information Compatibility
+
+     * [nodvtid] - (source) A bug related to Windows DLL symbol export is
+       fixed in 10.5 and later. A side effect of the fix is that there may
+       be incompatibility on Windows platforms regarding existing DPI
+       usage. The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+   SystemVerilog Compatibility
+     * dvt88864 - (results) Fixs were made to SV extension -svext=iddp.
+       For existing usage of vlog/vopt -svext=iddp, a recompilation from
+       SV files is required due to this change.
+     * dvt103337 - (results) In the past, enabling -solvefaildebug=2 would
+       often cause the solver to generate completely different randomize
+       results from -solvefaildebug=[0|1]. Almost all of these issues have
+       been resolved.
+     * dvt106952 - (results) In some cases involving if-else constraints,
+       -solvefaildebug[=2] would produce a constraint contradiction report
+       that was confusing, making it difficult to analyze the root cause
+       of the conflict. This issue has been fixed.
+     * dvt105375 - (results) In some rare cases, randomize() would
+       incorrectly consider a class instance as non-random if multiple
+       'rand' aliases to the same instance were encountered, and if the
+       rand_mode of some of those aliases were 0 and some were 1. This
+       issue has been fixed.
+     * dvt105372 - (results) In some rare cases, randomize() would not
+       evaluate 'default' constraints correctly, resulting in a spurious
+       constraint contradiction failure. This issue has been fixed.
+
+   VHDL Compatibility
+     * dvt104516 - (results) Predefined attribute S'LAST_VALUE could
+       produce incorrect results if it was evaluated on a changing
+       composite signal as deltas were occurring during the same timestep.
+
+   Verification Management Compatibility
+     * dvt101404 - (results) Normally it is an error to delete test from a
+       test-associated UCDB merge file. This change allows that error to
+       be suppressed.
+How to suppress:
+
+A) Deletion of test from a merge UCDB
+
+    Under a call like:
+        vsim -suppress 6892 -viewcov < accumulation_mergefile >.ucdb
+    deletions WILL be allowed:
+        coverage edit -delete -test < name of test with no coverage >
+
+B) Future accumulations to the merge file will require an additional suppression
+:
+        vcover merge -suppress 6891 -testassociated -out
+            < accumulation_mergefile >.ucdb < accumulation_mergefile >.ucdb x.uc
+db
+
+   Release Announcements Compatibility
+     * [nodvtid] - (source) In the next major release (10.6)
+          + support for Windows 8.0 will be dropped. No change for Windows
+            8.1
+          + support for gcc-4.3.3-linux and gcc-4.3.3-linux_x86_64 will be
+            dropped
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.5f
+     * dvt100975 - Errors occur in -batch mode after queuing for a license
+       and then resuming. This issue has been resolved.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.5f
+     * dvt100811 - occasionally in the Assertion Thread Viewer, the text
+       in the hierarchical expression tree be drawn in a garbled manner.
+       This issue has been resolved.
+     * dvt70665 - Questa & ModelSim fail to run if installed in a path
+       containing spaces. This issue is now resolved.
+     * dvt101418 - The internal "ls" command in the vsim gui behaves
+       incorrectly when no arguments are given. This command is only used
+       on Windows, when there is no external "ls" command found. This
+       issue has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.5f
+     * dvt100885 - In some rare cases, randomize() will generate a
+       spurious (vsim-7020) error "Illegal attempt to resize random
+       dynamic array" when randomizing a dynamic array with
+       -solvefaildebug enabled. This issue has been fixed.
+     * dvt100802 - Fixed compiler (vopt/vlog) crashes when DPI function
+       calls are used in SystemVerilog constraints.
+     * dvt102251 - In some rare cases, randomize() would produce a
+       solution that would violate an equality/inequality constraint
+       between two random variables. This issue has been fixed.
+     * dvt88864 - (results) Fixs were made to SV extension -svext=iddp.
+       For existing usage of vlog/vopt -svext=iddp, a recompilation from
+       SV files is required due to this change.
+     * [nodvtid] - Questa now supports "integral_number"s as a part of an
+       "enum_identifier" within an "enum_name_declaration" production.
+     * [nodvtid] - In fatal errors involving virtual interfaces Questa may
+       have emitted an incorrect file number in the message.
+     * dvt102853 - Fixed a simulator internal error when a DPI open array
+       with an unsized packed dimension is used. The message is similar
+       to: Questa has encountered an unexpected internal error:
+       ../../src/vsim/svdpi_runtime.c(2216).
+     * dvt17863 - Added support for the use of the 'array.size()' builtin
+       function within the context of index expressions for random
+       unpacked dynamic arrays/queues in constraints.
+     * dvt101989 - In some rare cases, randomize() would generate an
+       invalid solution when evaluating constraint expressions of the
+       following form: "arr.sum() with (int'(item == const_val))". This
+       issue has been fixed.
+     * dvt102459 - Iterative (foreach) constraints may now specify an
+       array parameter instead of an array variable on which to iterate.
+     * dvt102717 - In some rare cases, randomize() would ignore the 'with'
+       clause associated with constraint expressions involving a builtin
+       array reduction function (e.g. "foo.bar.sum() with
+       (int'(item.baz))". This issue has been fixed.
+     * dvt103337 - (results) In the past, enabling -solvefaildebug=2 would
+       often cause the solver to generate completely different randomize
+       results from -solvefaildebug=[0|1]. Almost all of these issues have
+       been resolved.
+     * dvt106952 - (results) In some cases involving if-else constraints,
+       -solvefaildebug[=2] would produce a constraint contradiction report
+       that was confusing, making it difficult to analyze the root cause
+       of the conflict. This issue has been fixed.
+     * dvt105375 - (results) In some rare cases, randomize() would
+       incorrectly consider a class instance as non-random if multiple
+       'rand' aliases to the same instance were encountered, and if the
+       rand_mode of some of those aliases were 0 and some were 1. This
+       issue has been fixed.
+     * dvt105372 - (results) In some rare cases, randomize() would not
+       evaluate 'default' constraints correctly, resulting in a spurious
+       constraint contradiction failure. This issue has been fixed.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.5f
+     * dvt101580 - Certain styles of continuous selected signal assignment
+       statements with zero delay would not execute properly when
+       optimized, either in an optimized design or a design compiled with
+       the PE version of the product.
+     * dvt102732 - In some specific cases of mixed design where
+       'last_value was used.Simulation use to give incorrect result under
+       -mlopt option. This has been fixed now.
+     * dvt104516 - (results) Predefined attribute S'LAST_VALUE could
+       produce incorrect results if it was evaluated on a changing
+       composite signal as deltas were occurring during the same timestep.
+     * dvt67231 - Special characters in a comment that was inside an
+       encrypted region could cause a parsing error.
+     * dvt109476 - The vcom compiler "-just" and "-skip" options now allow
+       the specification 'x', which means VHDL 2008 "context"
+       declarations.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.5f
+     * dvt104131 - Assertions using bit streaming operator did not
+       evaluate correctly.
+     * dvt102556 - vsim gave incorrect coverage result for (a ##1 b |-> c)
+       type of properties.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.5f
+     * dvt100091 - An SQL bug and a formatting bug that occurred if the
+       "-hierarchical" command-line option was used to generate the VRM
+       HTML status report have both been fixed. In addition, the
+       non-hierarchical report and the hierarchical report both include
+       the Runnable-type icons for consistency.
+     * dvt101420 - Fixed an issue with the VRM status report algorithm
+       where excessive time was spent maintaining on-the-fly status
+       counters which were not even being used, resulting in slow loading
+       of the status event log for very large regression runs.
+     * dvt104125 - Fixed minor error in VRM in procedure which parses the
+       Job ID from an RTDA log file.
+   _______________________________________________________________________
+
+   WLF and VCD logging Defects Repaired in 10.5f
+     * dvt104923 - Incorrect time advance values in the WLF file caused
+       signal transitions to be incorrect in some rare conditions. This
+       bug generally manifested itself by signals transitions in the wave
+       window showing correctly when zoomed in, but disappearing as one
+       zoomed out, then possibly showing again upon zooming out even
+       further. This has been fixed, but the bug is in the WLF writer and
+       requires WLF files demonstrating this behavior to be regenerated.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.5f
+     * dvt73654 - Added support for random variables in index expressions
+       for both packed and unpacked arrays in constraints. The vsim option
+       "-svrandext=randindex" can be used to enable/disable this
+       extension. This extension is enabled by default. This extension
+       replaces the existing extension for random variable support in
+       index expressions for packed arrays ("-svrandext=packrandidx" is
+       deprecated).
+     * dvt100019 - Added SystemVerilog extension to improve support for
+       function calls in constraints with complex interactions between the
+       function input(s) and function output by allowing functions to be
+       called multiple times. Specify vsim command line option
+       "-svrandext=funcback" to enable this extension.
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.5f
+     * dvt101404 - (results) Normally it is an error to delete test from a
+       test-associated UCDB merge file. This change allows that error to
+       be suppressed.
+How to suppress:
+
+A) Deletion of test from a merge UCDB
+
+    Under a call like:
+        vsim -suppress 6892 -viewcov < accumulation_mergefile >.ucdb
+    deletions WILL be allowed:
+        coverage edit -delete -test < name of test with no coverage >
+
+B) Future accumulations to the merge file will require an additional suppression
+:
+        vcover merge -suppress 6891 -testassociated -out
+            < accumulation_mergefile >.ucdb < accumulation_mergefile >.ucdb x.uc
+db
+   _______________________________________________________________________
+
+   Document Revision History in 10.5f
+     * Revision - Changes - Status/Date
+          + 1.6 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/April 2018
+          + 1.5 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/December 2017
+          + 1.4 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/November 2017
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.5f,product.id.P11633"
+

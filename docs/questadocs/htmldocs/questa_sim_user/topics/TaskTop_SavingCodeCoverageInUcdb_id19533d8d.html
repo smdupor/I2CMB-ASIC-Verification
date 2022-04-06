@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Saving Code Coverage in the UCDB" />
+<meta name="abstract" content="When you run a design with coverage enabled, you can save the code coverage that was collected for later use, either on demand or at the end of simulation." />
+<meta name="description" content="When you run a design with coverage enabled, you can save the code coverage that was collected for later use, either on demand or at the end of simulation." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Saving Code Coverage in the UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Saving Code Coverage in the UCDB" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Saving Code Coverage in the UCDB</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">When you run a
+design with coverage enabled, you can save the code coverage that
+was collected for later use, either on demand or at the end of simulation.</span>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><p class="p">By default, even if coverage is enabled, the
+tool will not save the data unless you explicitly specify that the
+data should be saved, or specify -coverstore to the vsim command (see <a class="xref fm:HeadingOnly" href="Concept_CoverageAutoSaveCoverstore_id270765f0.html#id270765f0-0bfc-45d0-a96f-83140e1a4a31__Concept_CoverageAutoSaveCoverstore_id270765f0.xml#id270765f0-0bfc-45d0-a96f-83140e1a4a31" title="You can use a form of coverage storage called a coverstore to improve merge performance while automatically saving coverage data without specifying the coverage save command. A coverstore is a storage location (directory) that holds both design and coverage results, and which you access in a way similar to the way you access a UCDB file. The coverstore auto-save functionality improves merge performance, when compared with the normal situation flow that uses the coverage save command. When vsim is run with -coverstore, the coverstore directory holds results from multiple tests that share the same design objects and hierarchy; in the normal situation flow, every leaf level UDCB file holds the test record data, the design objects, and the results.">Coverage Auto-save Coverstore</a> for details).</p>
+<p class="p">If you intend to simulate designs multiple
+times, and capture different coverage data from each test for post-process
+viewing and analysis, the naming of the tests becomes important. </p>
+<p class="p">By default, for non-UVM/OVM tests, the name <span class="ph fmvar:ProductName">Questa SIM</span> assigns to a test
+is the same as the UCDB file base name. For UVM/OVM tests, the default
+name assigned to a test is the UVM or OVM testname. In either case,
+if you fail to name the test you run explicitly, you can unintentionally
+overwrite your data. </p>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__idbc4db1c9-46c7-4376-8444-fcf9d42152d9"><span class="ph cmd">To explicitly
+name a test before saving the UCDB, use a command such as:</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand"> coverage save -testname &lt;mytestname&gt;</p>
+<p class="p">or during a save using a command such as:</p>
+<p class="lines ApplCommand">coverage attribute -testname &lt;mytestname&gt;</p>
+<p class="p">The name you enter (&lt;mytestname&gt;), can only
+be comprised of alphanumeric characters and the underscore character
+(_).</p>
+</div></li>
+<li class="li step stepexpand" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__id58b0bb79-3d8a-4cd4-8d04-d9b00a052b7e"><span class="ph cmd">Use any
+of the following options for saving coverage data dynamically (during
+simulation) or in Coverage View mode:</span><ol type="a" class="ol substeps"><li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__idf311ebce-a1aa-4f42-924c-ae5108f85830"><span class="ph cmd">GUI: <span class="ph menucascade"><span class="ph uicontrol">Tools</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Coverage Save</span></span></span><div class="itemgroup stepresult"><p class="p">This brings up the Coverage Save
+dialog box, where you can specify coverage types to save, select
+the hierarchy, and output UCDB filename.</p>
+</div></li>
+<li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__id11f73d69-d138-4359-8f9f-f3c58c8c95e3"><span class="ph cmd">CLI
+command: coverage save</span><div class="itemgroup stepresult"><p class="p">During simulation, the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'coverage save', 'questa_sim_ref'); return false;">coverage save </a>command saves data from the current simulation into
+a UCDB file called <span class="ph filepath">myfile1.ucdb</span>:</p>
+<p class="lines ApplCommand">coverage save myfile1.ucdb</p>
+<p class="p">While
+viewing results in Coverage View mode, you can make changes to the data
+(using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'coverage attribute', 'questa_sim_ref'); return false;">coverage attribute</a> command, for example). You can then save the changed
+data to a new file using the following command:</p>
+<p class="lines ApplCommand">coverage save myfile2.ucdb</p>
+<p class="p">To
+save coverage results only for a specific design unit or instance
+in the design, use a command such as:</p>
+<p class="lines ApplCommand">coverage save -instance &lt;path&gt; ... &lt;dbname&gt;</p>
+<p class="p">The
+resulting UCDB, &lt;dbname&gt;.ucdb, contains only coverage results
+for that instance, and by default, all of its children. </p>
+</div></li>
+<li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__id3993feba-de30-436f-b9ef-cd30e82613ab"><span class="ph cmd">SystemVerilog
+System Tasks and Functions (captures code coverage only):</span><div class="itemgroup stepresult"><pre class="pre codeblock"><code>$coverage_save (not recommended)
+$coverage_save_mti (not recommended)</code></pre><p class="p">The
+non-standard SystemVerilog $coverage_save_mti system function saves code
+coverage data only. It is not recommended for that reason. The $coverage_save system
+function is defined in the IEEE Std 1800; current non-compliant
+behavior is deprecated and therefore also not recommended. For more
+information, see “<a class="xref fm:HeadingOnly" href="Contain_SimulatorSpecificSystemTasksFunctions_id7525aa82.html#id7525aa82-ecc8-47b0-8e3e-0a1a6fdc0bbd__Contain_SimulatorSpecificSystemTasksFunctions_id7525aa82.xml#id7525aa82-ecc8-47b0-8e3e-0a1a6fdc0bbd" title="There are several system tasks and functions that are specific to Questa SIM, which are not included in the IEEE Std 1364, nor are they likely supported in other simulators. Their use may limit the portability of your code.">Simulator-Specific System Tasks and Functions</a>.” </p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__id506c7598-5f3c-4342-982d-e634ba287ede"><span class="ph cmd">By default,
+coverage data is not automatically saved at the end of simulation.
+To enable the auto-save of coverage data, set a legal filename for
+the data using any of the following methods:</span><ol type="a" class="ol substeps"><li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__id93734b88-a768-403e-8a07-6ced7a6cc9d6"><span class="ph cmd">Set
+the <span class="ph filepath">modelsim.ini </span>file variable: UCDBFilename=“<var class="keyword varname">filename</var>”</span><div class="itemgroup stepresult"><p class="p">By default, <var class="keyword varname">filename</var> is an empty string
+("").</p>
+</div></li>
+<li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__ida3060f53-2922-4555-8da1-894bcc2d15da"><span class="ph cmd">Specify
+at the Vsim&gt; prompt: <span class="ph FontProperty HeadingLabel">coverage save -onexit</span> command</span><div class="itemgroup stepresult"><p class="p">The <span class="ph FontProperty HeadingLabel">coverage save</span> command
+preserves instance-specific information. For example:</p>
+<p class="lines ApplCommand">coverage save -onexit myoutput.ucdb </p>
+</div></li>
+<li class="li substep" id="id19533d8d-1bb8-4a9d-85aa-c81d80bbc3e7__idf59dc79d-934a-4772-85d4-d892b3789049"><span class="ph cmd">Execute
+the SystemVerilog command:</span><div class="itemgroup stepresult"><pre class="pre codeblock leveled"><code>$set_coverage_db_name(<var class="keyword varname">filename</var>)</code></pre></div></li>
+</ol>
+</li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p">If you use more than one method for a given
+simulation, the last command encountered takes precedence. For example,
+if you issue the command <span class="ph FontProperty HeadingLabel">coverage save -onexit vsim.ucdb</span>,
+but your SystemVerilog code also contains a <span class="ph FontProperty HeadingLabel">$set_coverage_db_name()</span> task
+with no name specified, coverage data is not saved for the simulation.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsageFlowCodeCoverageCollection_id2016382f.html" title="To collect coverage data for a design, you must actively select the type of code coverage you want to collect, and then enable the coverage collection mechanism for the simulation run.">Usage Flow for Code Coverage Collection</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Saving Code Coverage in the UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_SavingCodeCoverageInUcdb_id19533d8d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

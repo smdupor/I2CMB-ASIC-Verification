@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Compiling for Conventional Simulation" />
+<meta name="abstract" content="To begin multi-core simulation, compile your design with either the vcom or the vlog command. Invoke either command from within the Questa SIM GUI or from the command prompt of your operating system." />
+<meta name="description" content="To begin multi-core simulation, compile your design with either the vcom or the vlog command. Invoke either command from within the Questa SIM GUI or from the command prompt of your operating system." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id9748471f-e417-4302-9fce-522bd0a91fae" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Compiling for Conventional Simulation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Compiling for Conventional Simulation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id9748471f-e417-4302-9fce-522bd0a91fae">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Compiling
+for Conventional Simulation</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">To begin multi-core
+simulation, compile your design with either the vcom or the vlog
+command. Invoke either command from within the Questa SIM GUI or
+from the command prompt of your operating system. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">For simplicity,
+this procedure assumes the use of a command shell.</p>
+</div>
+</div>
+<div class="section Restrictions"><h2 class="title Subheading sectiontitle">Restrictions and Limitations</h2><ul class="ul"><li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__id86ef8414-b94b-42b6-80dd-a75995159cdb"><p class="p">Compiled libraries are major-version
+dependent. When moving between major versions, you have to update
+compiled libraries using the -refresh argument. This does not apply
+to minor versions (letter releases). </p>
+</li>
+<li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__id8266784c-a1ae-43cd-a9f8-b49a6a16c9d1"><p class="p">All arguments to these commands
+are case-sensitive. For example: -WORK and -work are not equivalent. </p>
+</li>
+</ul>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__ide727ea7f-b253-442f-8509-e6b3e371f75a"><p class="p">You
+must have read and write access to the design that you want to simulate. </p>
+</li>
+<li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__id7e804427-0102-4675-a521-e896e47b8408"><p class="p">You
+must have knowledge of which language (VHDL or SystemVerilog/Verilog)
+constitutes the top level of your design. This determines whether
+you use the vcom or vlog command. </p>
+</li>
+<li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__id6bb39e0a-0f72-46d7-804e-53bc120f6869"><p class="p">You
+must have access to the documentation on the arguments to the vlog
+or vcom command. </p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">Refer
+to the entries for the vcom or vlog commands in the <cite class="cite">Questa
+SIM Command ReferenceManual</cite> for complete information on the
+arguments for these commands. </p>
+</div>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step" id="id9748471f-e417-4302-9fce-522bd0a91fae__id67ee4d59-6125-4f91-9398-9349b331734a"><span class="ph cmd">(Optional) From the desktop
+of your operating system, open a command shell. </span></li>
+<li class="li step" id="id9748471f-e417-4302-9fce-522bd0a91fae__id8a6f64d2-2cf7-4086-b7c7-0d28f87b100e"><span class="ph cmd">Run either the vcom or the
+vlog command, using the name of the file containing your top-level
+design as the &lt;filename&gt; argument. You can do this in either your
+command shell or in the Transcript window of <span class="ph fmvar:ProductName">Questa SIM</span>. </span></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p">Your design is compiled into the current
+work library. </p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">The following shows examples of using
+the compilation commands for VHDL and Verilog designs. </p>
+<ul class="ul"><li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__id999c5f6a-7db7-4563-a278-d8ed39f68a13"><p class="p">For VHDL: </p>
+<p class="lines ApplCommand leveled">vcom toplevel.vhd </p>
+</li>
+<li class="li" id="id9748471f-e417-4302-9fce-522bd0a91fae__idcc81de69-3415-430e-a8b6-a5389410375d"><p class="p">For Verilog or SystemVerilog: </p>
+<p class="lines ApplCommand leveled">vlog toplevel.v </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HowPerformMultiCoreSimulation_idc049f316.html" title="Running Questa SIM multi‑core simulation consists of using three Questa SIM commands, plus an optional fourth command that you can use to analyze simulation results. Arguments for each command enable you to make modifications to the simulation procedure.">How to Perform Multi-Core Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Compiling for Conventional Simulation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_CompilingConventionalSimulation_id9748471f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

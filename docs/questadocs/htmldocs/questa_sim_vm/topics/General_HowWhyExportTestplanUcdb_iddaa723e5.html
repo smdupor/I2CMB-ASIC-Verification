@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="How and Why to Export Testplan to UCDB" />
+<meta name="abstract" content="The Save/Export Testplan &gt; to UCDB menu selection not only exports an XML file, but it also generates a script to run the xml2ucdb executable and then runs the xml2ucdb executable to produce a UCDB with the testplan imported." />
+<meta name="description" content="The Save/Export Testplan &gt; to UCDB menu selection not only exports an XML file, but it also generates a script to run the xml2ucdb executable and then runs the xml2ucdb executable to produce a UCDB with the testplan imported." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="iddaa723e5-6e94-4660-9a2e-8bc90228ea77" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>How and Why to Export Testplan to UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="How and Why to Export Testplan to UCDB" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="iddaa723e5-6e94-4660-9a2e-8bc90228ea77">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">How and Why to Export Testplan to UCDB</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">The <span class="ph uicontrol">Save/Export
+Testplan &gt; to UCDB </span>menu selection not only exports an
+XML file, but it also generates a script to run the xml2ucdb executable
+and then runs the xml2ucdb executable to produce a UCDB with the
+testplan imported. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="iddaa723e5-6e94-4660-9a2e-8bc90228ea77__id2bbcfeac-f22d-4975-9b08-0434b5414248"><p class="p">This method of exporting the spreadsheet has
+the advantage of automatically interpreting and adding to the UCDB
+any additional columns found in the spreadsheet above and beyond
+the default columns that the <span class="ph fmvar:ProductName"> Questa
+SIM</span> xml2ucdb tool expects. </p>
+<ul class="ul"><li class="li" id="iddaa723e5-6e94-4660-9a2e-8bc90228ea77__id8f93fae9-c75f-47ef-b797-015f134fd2b0"><p class="p">It
+is very important to correctly set the version of the UCDB file.
+Questa is backward compatible. This means that if you generate a
+10.3 UCDB and try to open it with Questa 10.2, it will not work.
+Take care to ensure you sure to select the correct version of the UCDB
+for Excel to use in the <span class="ph uicontrol">Save as type:</span> pull-down
+menu, within the <span class="ph uicontrol">Save As</span> dialog box. </p>
+<p class="p"><img class="image" height="155" src="../graphics/Excel_UCDBfileversion.gif" width="318" /></p>
+</li>
+<li class="li" id="iddaa723e5-6e94-4660-9a2e-8bc90228ea77__id1ff24680-dc67-48c3-9284-062d7c47b539"><p class="p">Skipping
+Columns in Plan — Any columns not formatted in bold are essentially
+skipped in the created testplan. The UCDB column generation function
+scans the title row of the spreadsheet and builds the datafield
+entry from your spreadsheet, testing all titles and only including
+them for import when its format type is “bold”. For all non-bold
+titles, it adds a “-” into the datafield entry for that column,
+such that the column is skipped by the import process. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The import command
+generated in the script to run the process does not use the -format switch.
+This is done so that it does not need to read an xml2ucdb.ini file,
+as then it would require the datafield entry to be modified. All
+the settings for the xml2ucdb process are done with xml2ucdb command
+line switches and is the reason behind the import log having a warning
+that no -format switch was used. This can be ignored.</p>
+</div>
+</li>
+<li class="li" id="iddaa723e5-6e94-4660-9a2e-8bc90228ea77__id5a65d533-0cd0-4f40-b36c-fcea5c86416d"><p class="p">To
+create unimplemented links, or nest XML testplans, see the “<a class="xref fm:HeadingOnly" href="GUIRefT_SettingsDialog_id32297cfb.html#id32297cfb-44a8-4fd7-bed7-9e0150f47d27__GUIRefT_SettingsDialog_id32297cfb.xml#id32297cfb-44a8-4fd7-bed7-9e0150f47d27" title="The Settings dialog box controls the type of validation and the types of coverage to be imported from the UCDB. Once selected, the settings are remembered by the Add-In.">Settings Dialog</a>”.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SavingExportingXmlUcdb_id654938eb.html" title="You can save and export in both XML and UCDB formats.">Saving and Exporting to XML and UCDB</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "How and Why to Export Testplan to UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_HowWhyExportTestplanUcdb_iddaa723e5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

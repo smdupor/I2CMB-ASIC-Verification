@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Verilog Simulation" />
+<meta name="abstract" content="A Verilog design is ready for simulation after you compile it with vlog and, if desired, you optimize it with vopt. You can then invoke the simulator with the names of the top-level modules (many designs contain only one top-level module) or the name(s) you assigned to the optimized version(s) of the design." />
+<meta name="description" content="A Verilog design is ready for simulation after you compile it with vlog and, if desired, you optimize it with vopt. You can then invoke the simulator with the names of the top-level modules (many designs contain only one top-level module) or the name(s) you assigned to the optimized version(s) of the design." />
+<meta name="DC.subject" content="Verilog, simulating" />
+<meta name="keywords" content="Verilog, simulating" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc8760065-39cf-4738-b39b-24dc4d054d09" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Verilog Simulation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Verilog Simulation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc8760065-39cf-4738-b39b-24dc4d054d09">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Verilog Simulation</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">A Verilog
+design is ready for simulation after you compile it with vlog <span class="ph">and, if desired, you optimize it with vopt</span>.
+You can then invoke the simulator with the names of the top-level
+modules (many designs contain only one top-level module) <span class="ph">or the name(s) you assigned to the optimized version(s) of the design</span>.</span>
+</div>
+<p class="p">For more
+information on Verilog optimizations, see the Chapter, <a class="xref fm:HeadingOnly" href="MGCChap_OptimizingDesignsVopt_id37377122.html#id37377122-87b1-403e-b48c-1f2b0dc53155__MGCChap_OptimizingDesignsVopt_id37377122.xml#id37377122-87b1-403e-b48c-1f2b0dc53155" title="Questa SIM, by default, performs built-in optimizations on your design to maximize simulator performance.">Optimizing Designs with vopt</a> and the section <a class="xref fm:HeadingOnly" href="Contain_OptimizationConsiderationsVerilogDesigns_id479945ee.html#id479945ee-4eec-48bb-81e3-7e5f763af67d__Contain_OptimizationConsiderationsVerilogDesigns_id479945ee.xml#id479945ee-4eec-48bb-81e3-7e5f763af67d" title="The optimization considerations for Verilog designs include design object visibility, standard delay formating, event ordering, timing checks, handling pre-compiled libraries, and reporting for gate-level optimizations.">Optimization Considerations for Verilog Designs</a>. For more information about simulation
+with multiple optimized design modules, refer to <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> &lt;library_name&gt;.&lt;design_unit&gt;. </p>
+<p class="p">For example, if your top-level modules
+are “testbench” and “globals”, then invoke the simulator as follows:</p>
+<p class="lines ApplCommand">vsim testbench globals</p>
+<p class="p">After the simulator
+loads the top-level modules, it iteratively loads the instantiated modules
+and UDPs in the design hierarchy, linking the design together by
+connecting the ports and resolving hierarchical references. By default,
+all modules and UDPs are loaded from the library named work. You
+can specify Modules and UDPs from other libraries with the vsim
+‑L or ‑Lf arguments (refer to <a class="xref fm:HeadingOnly" href="Concept_LibrarySearchRules_idebc0b14c.html#idebc0b14c-de6f-4758-be5d-030342b0c63b__Concept_LibrarySearchRules_idebc0b14c.xml#idebc0b14c-de6f-4758-be5d-030342b0c63b" title="Because instantiation bindings are not determined at compile time, you must instruct the simulator to search your libraries when loading the design.">Library Search Rules</a> for details).</p>
+<p class="p">On successful loading of the design,
+the simulation time is set to zero, and you must enter a run command
+to begin simulation. Commonly, you enter run ‑all to run until there
+are no more simulation events or until $finish is executed in the
+Verilog code. You can also run for specific time periods (for example,
+run 100 ns). Enter the quit command to exit the simulator.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SimulatorResolutionLimitVerilog_id3451075a.html" title="The simulator internally represents time as a 64-bit integer, in units equivalent to the smallest unit of simulation time (also known as the simulator resolution limit). The resolution limit defaults to the smallest time units that you specify among all of the `timescale compiler directives in the design. ">Simulator Resolution Limit (Verilog)</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ModulesWithoutTimescaleDirectives_id1c13b4eb.html" title="Unexpected behavior may occur if your design contains some modules with timescale directives and others without. The simulator issues an elaboration error in this situation. You should make sure that all modules having delays also have timescale directives so that the timing of the design operates as you intend.">Modules Without Timescale Directives</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_MultipleTimescaleDirectives_idfbcecb78.html" title="A design can have multiple timescale directives. Separately compiled modules can also have different timescales. The simulator compares the timescale of all of the modules in a design, and uses the smallest timescale as the simulator resolution. ">Multiple Timescale Directives</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ChoosingResolutionVerilog_id1e02f459.html" title="You should choose the coarsest simulator resolution limit possible that does not result in undesired rounding of your delays. For example, values smaller than the current Time Scale will be truncated to zero (0) and a warning issued. However, setting the time precision unnecessarily small can degrade performance.">Choosing the Resolution for Verilog</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_EventOrderingInVerilogDesigns_id6f9542d0.html" title="Event-based simulators such as Questa SIM can process multiple events at a given simulation time. The Verilog language definition does not provide you control of the processing order of simultaneous events. Some designs rely on a particular event order, and these designs may behave differently than you expect.">Event Ordering in Verilog Designs</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_DebuggingEventOrderIssues_idaf606319.html" title="Since many models have been developed on Verilog-XL, Questa SIM tries to duplicate Verilog-XL event ordering to ease the porting of those models to Questa SIM. However, Questa SIM does not match Verilog-XL event ordering in all cases, and if a model ported to Questa SIM does not behave as expected, there may be event order dependencies.">Debugging Event Order Issues</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SignalSegmentationViolations_idee265c49.html" title="If you attempt to access a SystemVerilog object that has not been constructed with the new operator, you will receive a fatal error called a signal segmentation violation (SIGSEGV). ">Signal Segmentation Violations</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_NegativeTimingChecks_idbe862aab.html" title="Questa SIM automatically detects cells with negative timing checks and causes timing checks to be performed on the delayed versions of input ports (used when there are negative timing check limits). ">Negative Timing Checks</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ConditionalNegativeTimingChecks_id56f01775.html" title="You can specify the way the simulator handles negative timing checks, including conditional negative timing checks, to achieve the best timing results.">Handling Negative Timing Check Limits</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ForceReleaseStatementsInVerilog_ida31bc562.html" title="The Verilog Language Reference Manual IEEE Std 1800-2009. section 10.6.2, states that the left-hand side of a force statement cannot be a bit-select or part-select. Questa deviates from the LRM standard by supporting forcing of bit-selects, part-selects, and field-selects in your source code. The right-hand side of these force statements cannot be a variable. ">Force and Release Statements in Verilog</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_VerilogXlCompatibleSimulatorArguments_id6013f4bd.html" title="The simulator supports several arguments that are equivalent to Verilog-XL arguments make it easier to port a design to the Questa SIM simulator. ">Verilog-XL Compatible Simulator Arguments</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingEscapedIdentifiers_id32493707.html" title="the Questa SIM simulator recognizes and maintains Verilog escaped identifier syntax. ">Using Escaped Identifiers</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_VerilogSystemverilogSimulation_ide0ef3c7a.html" title="Introduction to the process of compiling and simulating Verilog and SystemVerilog designs with Questa SIM.">Verilog and SystemVerilog Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Verilog Simulation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_VerilogSimulation_idc8760065.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

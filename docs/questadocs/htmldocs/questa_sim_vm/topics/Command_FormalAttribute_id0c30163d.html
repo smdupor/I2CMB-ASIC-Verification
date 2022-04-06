@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="FORMAL_ATTRIBUTE" />
+<meta name="abstract" content="This rule is for checking formal attributes, formal proofs and formal assumptions, in specific or numbered tests." />
+<meta name="description" content="This rule is for checking formal attributes, formal proofs and formal assumptions, in specific or numbered tests." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0c30163d-c956-4149-83db-c918075b6586" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>FORMAL_ATTRIBUTE</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="FORMAL_ATTRIBUTE" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id0c30163d-c956-4149-83db-c918075b6586">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">FORMAL_ATTRIBUTE</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">This rule
+is for checking formal attributes, formal proofs and formal assumptions,
+in specific or numbered tests. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">FORMAL_ATTRIBUTE:SPECIFIC_TESTS:TESTNAME:ATTRNAME:&lt;OP&gt;:&lt;value&gt;</p>
+<p class="lines UsageLine">FORMAL_ATTRIBUTE:IN_NUM_TESTS:NUMTESTS:&lt;LT|GT|EQ|LE|GE|NE&gt;:ATTR<br />
+/NAME:&lt;OP&gt;:VALUE:PROPNAME</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id0c30163d-c956-4149-83db-c918075b6586__idd5aae7b2-31bb-4e91-96b4-eade263e5cdb">OP</dt>
+<dd class="dd ArgumentDescription"><p class="p">&lt;AND |
+OR | NOT | LT | GT | EQ | LE | GE | NE | REGEXP | PERCENTOF | ENUMERATE&gt;</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id0c30163d-c956-4149-83db-c918075b6586__id3ac4e817-189f-42d3-b5b9-9b6b6d47baa2">ENUMERATE for formal
+status:</dt>
+<dd class="dd ArgumentDescription"><ul class="ul ArgumentOptions"><li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__idd07dabd5-d7f1-4a9a-b7eb-a215d3909b7c"><p class="p Opt">0
+= NONE,         /* No formal info (default) */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__id64a08d7b-f784-4345-87f2-21e6c81f210b"><p class="p Opt">1
+= FAILURE,      /* Fails */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__ida45d4918-fd63-4553-978e-2b858306f7f6"><p class="p Opt">2
+= PROOF,        /* Proven to never fail */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__id3cc4338e-b453-4bc9-9bb1-1f827d00a1c0"><p class="p Opt">3
+= VACUOUS,      /* Assertion is vacuous as defined by the assertion
+language */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__id828aae14-9f56-437d-a4ba-fb71237ee313"><p class="p Opt">4
+= INCONCLUSIVE, /* Proof failed to complete */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__id1716153c-9133-4197-8f99-4e549bd9c027"><p class="p Opt">5
+= ASSUMPTION,   /* Assertion is an assume */</p>
+</li>
+<li class="li ArgOption" id="id0c30163d-c956-4149-83db-c918075b6586__id7b8ddcf5-bb31-4545-9211-37fc040af6b4"><p class="p Opt">6
+= CONFLICT      /* Data merge conflict */</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet"><h2 class="title Subheading sectiontitle">Alias
+forms of FORMAL_ATTRIBUTE</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id0c30163d-c956-4149-83db-c918075b6586__idf97d48a3-0dff-4048-a816-eaddeb80c7a6">Aliases</dt>
+<dd class="dd ArgumentDescription"><p class="p">The rules FORMAL_PROOF,
+FORMAL_BOUNDED_PROOF, and FORMAL_ASSUMPTION equate to specific usages
+of the FORMAL_ATTRIBUTE.</p>
+<pre class="pre codeblock leveled"><code>FORMAL_PROOF:&lt;property_name&gt;</code></pre><p class="p">is an alias to
+this: FORMAL_ATTRIBUTE:IN_NUM_TESTS:0:GT:#formal_status_attribute#:EQ:2:&lt;property_name&gt; </p>
+<pre class="pre codeblock"><code>FORMAL_BOUNDED_PROOF:&lt;property_name&gt;</code></pre><p class="p">is an alias to this: FORMAL_ATTRIBUTE:IN_NUM_TESTS:0:GT:(#formal_status_attribute#:EQ:2):OR:((#formal_status_attribute#:EQ:4):AND:(#formal_radius_attribute#:GE:radius)):</p>
+<pre class="pre codeblock leveled"><code>FORMAL_ASSUMPTION:&lt;property_name&gt;  </code></pre><p class="p">is an alias to
+this: FORMAL_ATTRIBUTE:IN_NUM_TESTS:0:GT:#formal_status_attribute#:EQ:5:&lt;property_name&gt;</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id0c30163d-c956-4149-83db-c918075b6586__id8e4f35c7-f851-462a-9d4b-d28d113bf2ad"><p class="p">FORMAL_ATTRIBUTE:IN_NUM_TESTS:0:GT:#formal_status_attribute#:EQ:4:&lt;property_name&gt;</p>
+<p class="p">Links to an inconclusive proof with
+a value of 4.</p>
+</li>
+<li class="li" id="id0c30163d-c956-4149-83db-c918075b6586__ide71f2d1f-8bcc-45bb-ad31-a180852fdc3d"><p class="p">FORMAL_ATTRIBUTE:IN_NUM_TESTS:0:GT:#formal_radius_attribute#:GE:10:/wb_arbiter_tb/X1/arb_round_robin</p>
+<p class="p">Links to the value of any other
+formal attribute, if radius is more than 10. </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CurrentlySupportedRules_id7102e7ff.html" title="This section lists the currently supported rules.">Currently Supported Rules</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "FORMAL_ATTRIBUTE"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_FormalAttribute_id0c30163d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

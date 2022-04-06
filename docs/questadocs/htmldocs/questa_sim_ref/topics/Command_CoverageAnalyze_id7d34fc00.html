@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="coverage analyze" />
+<meta name="abstract" content="Displays test information based on a merged UCDB created by a vcover merge operation." />
+<meta name="description" content="Displays test information based on a merged UCDB created by a vcover merge operation." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>coverage analyze</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="coverage analyze" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">coverage analyze</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Displays
+test information based on a merged UCDB created by a vcover merge
+operation. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Some arguments for this command require that you perform
+the merge to create the data with vcover merge -testassociated,
+to provide data that is not available by default.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">coverage analyze &lt;miscellaneous coverage and filter args&gt; &lt;output mode args&gt; </p>
+<p class="lines UsageLine">where &lt;miscellaneous coverage and filter args&gt; are:</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Miscellaneous
+Arguments</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id08b793f7-1ddb-4500-aa3c-04da0d91717e">-precision &lt;int&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id74c18295-90f9-416e-8a16-1d2087460389">-testextract &lt;testspec&gt;+</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__iddd81a45e-1808-434c-bf44-8db61d18e3e9">-file &lt;filename&gt;</a> [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id24d9a64b-3140-4355-a59b-79ae8412185f">-append</a>]] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Arguments
+to specify results by coverage type</h2><p class="lines UsageLine"><a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id898c32b7-3474-4766-8d47-c4f527f9f4f6">-code {b | c | e | f | s | t}...</a>[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idfa092b8c-ea92-432b-a4f4-b6a778524c2b">-codeAll</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id25ea68e2-5c02-4f82-926d-d8271b7e4c66">-assert</a>] </span><span class="ph">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide3894d45-c007-482b-92cf-ebe17accacbf">-cvg</a>] </span><span class="ph">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id054d67a8-acaa-4262-85db-66d2e9f8b06c">-directive</a>] </span>[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id7edae764-8da8-4276-a2fc-094495cab575">-select instance</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Arguments
+to specify coverage by path or context</h2><p class="lines UsageLine">[[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idce9f5232-2468-41de-afd3-3c37f28ae1fb">-du &lt;spec&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1c7a3f3c-0e29-4133-a32e-396c803670c1">-path &lt;obj&gt;</a>]]<span class="ph"> | [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id93eae986-5a21-424f-8264-48cbf34e3146">-plansection &lt;obj&gt;</a> [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id8b2e2a3e-1692-4315-9a0e-bd9d7469d059">-section</a>] | [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1acc72f6-cff3-44f5-844a-59a42ec53f1d">-nosection</a>] | [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idd4249087-44f2-43e4-9d7e-ea53f0d4da4c">-showattribute &lt;attribute_key_string&gt;</a>]] </span>[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5c16887a-cd90-4d7b-a84d-bb50990703e8">-recursive</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Arguments
+to specify by query of results</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5c553a9b-f19a-4fa7-b8fe-ab0460a9f3a9">-select attr &lt;name&gt; {([-lt|-gt|-le|-ge]&lt;int&gt;)|-eq|-ne|-[n]regexp} {&lt;value&gt;}</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id84a482d2-f3d5-4c58-a137-28495b94cef7">-select coverage {-lt|-gt|-le|-ge|-eq|-ne} &lt;float&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id705baa92-a70b-46d1-975e-0963d20e0230">-select dateattribute &lt;name&gt; {-lt|-gt|-le|-ge|-eq|-ne} {&lt;value&gt;}</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id7edae764-8da8-4276-a2fc-094495cab575">-select instance</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id0063e1cb-bbe2-4b23-a859-839a480eb7dd">-select name {-eq|-ne|-[n]regexp} &lt; string &gt;</a>]<br />
+<span class="ph">[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__iddbdede14-5f83-489d-81a9-e84a994a03c1">-select tag {-eq|-ne|-[n]regexp} &lt;string&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id2c328580-410b-4106-a906-a34953249671">-select unlinked</a>] <br />
+</span>[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idce52360a-ff9b-406e-bffd-49e8bde8069b">-select weight {-lt|-gt|-le|-ge|-eq|-ne} &lt;int&gt;</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idfa286f3a-4bb0-4b94-a734-448b6360c539">-anyselected | -allselected</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id0b4810e8-9bee-41e3-a477-263e88ad100b">-aggregate preselected | postselected</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id3e667fb4-09be-4456-b6da-f037cee26549">-hideexcluded</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id497ec63a-2e7d-414d-afd0-e7893f0522cd">-nozeroweights</a>] [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id85bd47e7-9ad7-415b-8ca5-cf57b125817a">-prunechildren | -noprunechildren</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Specifying
+output mode (mutually exclusive)</h2><p class="lines UsageLine"><a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id545d89bd-d541-49b9-84bf-dc373a181767">[-coverage most | least | zero | nonzero]</a> <br />
+| <a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ida3130376-5ef3-4ce6-8bbc-e1ce4944bd0e">[-samples most | least | zero | nonzero]</a> <br />
+| [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id05f98358-b3af-4508-bec8-3892a845722a">-summary [hier | local]</a>] <br />
+| [<a class="xref fm:HeadingOnly" href="#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idb4fa0e1b-479b-4db3-b367-cb0d05be9580">-total</a>] </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idcab2638e-dd2d-4312-966c-a12427b53360"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id0b4810e8-9bee-41e3-a477-263e88ad100b">-aggregate preselected | postselected </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional:
+Only has an effect with the -select options (other than instance),
+can only be used with -plansection.) </p>
+<p class="p">Compute
+coverage for parent nodes before the selection of children, in other
+words based on all children (preselected)-- or after the selection,
+in other words based only on selected children (postselected). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idfa286f3a-4bb0-4b94-a734-448b6360c539">-anyselected | -allselected</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional:
+Has an effect only with multiple -select options (does not work
+with -select instance). These switches are mutually exclusive and
+you can use only one on each command line.) Use any select criteria
+(logical OR) or all select criteria (logical AND) to determine what
+the report displays. Default is -allselected.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id24d9a64b-3140-4355-a59b-79ae8412185f">-append</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Appends to output file, if -file option was given. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id25ea68e2-5c02-4f82-926d-d8271b7e4c66">-assert</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports tests in which assertions contributed to coverage data.
+Assertions contribute to coverage based on "% non-vacuous passes".</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id898c32b7-3474-4766-8d47-c4f527f9f4f6">-code {b | c | e | f | s | t}...</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports tests in which a particular code coverage type (branch,
+condition, expression, statement, toggle, FSM) contributed to coverage. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idfa092b8c-ea92-432b-a4f4-b6a778524c2b">-codeAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports tests in which any coverage type contributed to coverage.
+Equivalent to ‑code bcestf. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id545d89bd-d541-49b9-84bf-dc373a181767">[-coverage most | least | zero | nonzero]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports which test yields most / least / zero / coverage for the
+specified parameters. This argument is on a per test basis. This
+argument requires that a test-associated merge (vcover merge -testassociated)
+has been previously executed.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide3894d45-c007-482b-92cf-ebe17accacbf">-cvg</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the command apply to covergroup data.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id054d67a8-acaa-4262-85db-66d2e9f8b06c">-directive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the command apply to directive data. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idce9f5232-2468-41de-afd3-3c37f28ae1fb">-du &lt;spec&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional,
+though ‑plansection, ‑du or ‑path must be specified.)</p>
+<p class="p">Restricts
+analyze results to specified design units. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__iddd81a45e-1808-434c-bf44-8db61d18e3e9">-file &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Write to output file. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id3e667fb4-09be-4456-b6da-f037cee26549">-hideexcluded</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents any excluded coverage items from appearing in the report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1acc72f6-cff3-44f5-844a-59a42ec53f1d">-nosection</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Excludes section numbers (specified with -plansection) from the
+test information displayed. Allows for more concise output. Mutually exclusive
+with -section.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id497ec63a-2e7d-414d-afd0-e7893f0522cd">-nozeroweights</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents any items with zero weights from appearing in the report,
+including all zero-weighted coverage items<span class="ph"> and testplan sections</span>. </p>
+<p class="p">Has no
+effect on coverage numbers. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1c7a3f3c-0e29-4133-a32e-396c803670c1">-path &lt;obj&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional,
+though <span class="ph">‑plansection, </span>‑du or ‑path must be specified.)</p>
+<p class="p">Restricts
+coverage analysis results to design (non-testplan) paths matching
+the specified object. The &lt;obj&gt; can be used to specify a dataset
+other than the current dataset. (Refer to “<a class="xref fm:HeadingOnly" href="Concept_ObjectNameSyntax_idca58165f.html#idca58165f-4e03-4b27-b90b-3bcc36fc71bf__Concept_ObjectNameSyntax_idca58165f.xml#idca58165f-4e03-4b27-b90b-3bcc36fc71bf" title="To specify object names in Questa SIM, you use the following syntax:">Object Name Syntax</a>” for instructions
+on how to specify a dataset.) If no dataset is specified, the current
+dataset is used. Only one dataset name per command invocation may
+be used or an error will result. This switch can be combined with the
+-du switch to be du-relative. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id93eae986-5a21-424f-8264-48cbf34e3146">-plansection &lt;obj&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the analyze results to the given testplan path. By default,
+the query applies to all testplan scopes in the database. It also
+applies to all linked coverage, instance, or design unit scopes.
+Either -du, -path, or -plansection must be specified.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id08b793f7-1ddb-4500-aa3c-04da0d91717e">-precision &lt;int&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Precision for output. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id85bd47e7-9ad7-415b-8ca5-cf57b125817a">-prunechildren | -noprunechildren</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+The -prunechildren switch prunes children from nodes surviving a
+selection (after -select is applied) from the report. By default
+(-noprunechildren), the children of nodes are included in the coverage
+analyze report: the report includes all children of coverage items
+or testplan sections that survive a -select filter. This is useful
+in cases where you want to subdivide a testplan report by category
+or area of responsibility.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5c16887a-cd90-4d7b-a84d-bb50990703e8">-recursive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the analyze is applied recursively. The default is
+for the query to be restricted to the single object or objects specified
+in the command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ida3130376-5ef3-4ce6-8bbc-e1ce4944bd0e">[-samples most | least | zero | nonzero]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports which test has the optionally computed sample count, meeting
+the specified criteria. The specified criteria are: most samples,
+least samples, no samples, or any samples. This argument is on a
+per test basis. Using this argument implies the use of -cvg, since
+only covergroups and covergroup instances have sample counts. This
+argument is only compatible with a merge (vcover merge) performed with
+-testassociated. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id8b2e2a3e-1692-4315-9a0e-bd9d7469d059">-section</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Includes section numbers (specified with -plansection) in the test
+information displayed. This is the default. Mutually exclusive with
+-nosection.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5c553a9b-f19a-4fa7-b8fe-ab0460a9f3a9">-select attr &lt;name&gt; {([-lt|-gt|-le|-ge]&lt;int&gt;)|-eq|-ne|-[n]regexp} {&lt;value&gt;}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays user attributes in the report. The &lt;name&gt; of the user-defined
+attribute is a string and must be given as the second argument.
+The &lt;value&gt; can be a float, integer or string. The following
+rules apply to name/value pairs:</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id496e6935-f0ea-44fc-a77d-b4dd2b098bc4"><p class="p">-lt|-gt|-le|-ge
+require &lt;int&gt;, an integer numerical argument. </p>
+<p class="p">-lt is "less
+than", -gt is "greater than", -ge is "greater than or equal to",
+-le is "less than or equal to", -eq is "equal to", and -ne is "not
+equal to", -regexp is "regular expression match", -nregexp is "regular
+expression does not match".</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5ba5f445-8de9-4b53-a5ce-ca040ceb3b6a"><p class="p">-regexp
+and -nregexp require a string argument. </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide582412e-c961-4111-a41a-60dd8d1f89dc"><p class="p">The -regexp
+option uses Tcl regular expression matching (as in the memory window);
+this offers alternative and more sophisticated matching. One crucial
+difference is that "match anything starting with 'a'" is expressed
+differently in the two semantics: as "-eq a*" and "-regexp ^a.*".</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ida10f9255-3d8d-4949-b121-a9cb3f45b192"><p class="p">For -eq
+or -ne, the argument is held as a string and will match int or float
+or double attribute values as appropriate (for example, "2" could
+match any type attribute). </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id34544175-eff9-4090-9a09-e9ee5c1c35c3"><p class="p">In cases
+where an attribute is of a type incompatible with the specified value,
+a single warning is issued. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id705baa92-a70b-46d1-975e-0963d20e0230">-select dateattribute &lt;name&gt; {-lt|-gt|-le|-ge|-eq|-ne} {&lt;value&gt;}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Selects results whose dates match the criteria specified. The &lt;name&gt;
+must be a string and must be given as the second argument. The &lt;value&gt;
+must also a string (the date being selected for filtering). </p>
+<p class="p">The following
+rules apply to name/value pairs: -lt|-gt|-le|-ge|-eq|-ne</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id09287e45-49e2-4f2e-be6d-435d10d00393"><p class="p">-lt is
+"less than"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idde013acd-e481-44c8-aefa-17dc7794ee1d"><p class="p">-gt is "greater
+than"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide2d6581a-2ece-4d50-9db8-c8c481aa3f8e"><p class="p">-ge is "greater
+than or equal to"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idb36ef275-5298-49e5-9f1f-c3cbcacb5812"><p class="p">-le is "less
+than or equal to"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5671c541-c3f6-471e-9754-282e78dba04a"><p class="p">-eq is "equal
+to"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idbfcb6f94-f280-4c3f-b900-694aee0ce05e"><p class="p">-ne is "not
+equal to"</p>
+</li>
+</ul>
+<p class="p">The &lt;value&gt;
+is the date you are selecting (or filtering out). The formats accepted
+for &lt;value&gt; are:</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id885d6468-591b-458b-8eea-607210e861af"><p class="p">mm/dd[/yy]</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id499cf802-21c9-44a4-a17d-f1f9cbbba74d"><p class="p">monthname dd[,
+yy]</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id0aae055e-49a6-4110-970b-2f25dc910722"><p class="p">dd monthname
+[yy]</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ida6104d62-60b5-46ae-a7b1-244c87a29976"><p class="p">[yy]yymmdd
+(for example, trend date)</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1208803e-485e-4bbb-8871-13364a445965"><p class="p">[yy]yy-mm-dd</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id811e2c37-e3fc-44e8-893a-1ce9352e9f5e"><p class="p">dd-monthname-[yy]yy</p>
+</li>
+</ul>
+<p class="p">In
+the formats where the year specification is optional, the default
+is the current year. Abbreviations are allowed for months, and upper
+and/or lowercase is accepted.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id84a482d2-f3d5-4c58-a137-28495b94cef7">-select coverage {-lt|-gt|-le|-ge|-eq|-ne} &lt;float&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Includes the coverage of the items in the test information displayed. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id7edae764-8da8-4276-a2fc-094495cab575">-select instance</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Includes design instances only in the report: Verilog module, program,
+and interface instances, VHDL architectures, and package instances.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id0063e1cb-bbe2-4b23-a859-839a480eb7dd">-select name {-eq|-ne|-[n]regexp} &lt; string &gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays all unlinked coverage and/or testplan items, as specified
+with either the ‑plan, -path or -du argument. The -select name filter
+must be used with -eq, -ne, or ‑[n]regexp arguments and a string,
+where &lt;string&gt; can be a pattern with wildcards.</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id9cd1b228-3ac9-40f2-a8fd-de14e6f4c8ed"><p class="p">-eq is
+"equal to"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id4bd18555-1b42-4fd8-b0bc-2d7bc7c85afd"><p class="p">-ne is
+"not equal to"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id3f9aba42-9088-4ba2-a6bf-0ed04e0968dc"><p class="p">-regexp
+is "regular expression match", and -nregexp is "regular expression
+does not match" </p>
+<p class="p">The -regexp
+and -nregexp options use Tcl regular expression matching </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id2c328580-410b-4106-a906-a34953249671">-select unlinked </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports on objects that are "unlinked" for the purposes of test
+traceability. See coverage unlinked command for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__iddbdede14-5f83-489d-81a9-e84a994a03c1">-select tag {-eq|-ne|-[n]regexp} &lt;string&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports the tag used to associate the specified object with the
+testplan, or to associate the object with the other objects. The
+tag is assigned with the <a class="xref fm:HeadingOnly" href="Command_CoverageTag_ida641fa6e.html#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__Command_CoverageTag_ida641fa6e.xml#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a> command. Tags can be used for
+primitive (non-hierarchical) grouping of coverage in the database.
+Tags are used for testplan to coverage linking as well. </p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id734f1d0c-732f-461e-83c9-70ddd9270444"><p class="p">tag can only
+be used with -eq, -ne, or -[n]regexp and a string. &lt;string&gt; can
+be a pattern with wildcards.</p>
+<p class="p">-eq is "equal
+to", and -ne is "not equal to", -regexp is "regular expression match",
+‑nregexp is "regular expression does not match". </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idb9fc2b15-f0ee-4b2d-9b06-3859345a10f0"><p class="p">The -regexp
+option uses Tcl regular expression matching (as in the memory window);
+this offers alternative and more sophisticated matching. One crucial
+difference is that "match anything starting with 'a'" is expressed
+differently in the two semantics: as "-eq a*" and "-regexp ^a.*".</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idce52360a-ff9b-406e-bffd-49e8bde8069b">-select weight {-lt|-gt|-le|-ge|-eq|-ne} &lt;int&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Includes the weights of the coverage objects in the test information
+displayed. You set the weight for coverage objects using the <a class="xref fm:HeadingOnly" href="Command_CoverageWeight_id456317c3.html#id456317c3-1e61-4d31-8b1b-52b0f88e4e7c__Command_CoverageWeight_id456317c3.xml#id456317c3-1e61-4d31-8b1b-52b0f88e4e7c" title="Sets or displays weights for global or individual items in the design.">coverage weight</a> (-du|-path|-plan) command. </p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id1c798cea-3ac9-43c7-9ce2-e79b4dde6659"><p class="p">-lt is
+"less than", -gt is "greater than", -ge is "greater than or equal
+to", -le is "less than or equal to", -eq is "equal to", and -ne
+is "not equal to", -regexp is "regular expression match", -nregexp
+is "regular expression does not match". Optional.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idd4249087-44f2-43e4-9d7e-ea53f0d4da4c">-showattribute &lt;attribute_key_string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports the specified testplan attribute. Can only be used with
+-plansection. Multiple instances are allowed. Only testplan attribute
+keys may be used. All other values of "attribute_key_string" will
+result in a warning message. Wildcards are not supported.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id05f98358-b3af-4508-bec8-3892a845722a">-summary [hier | local]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates a summary (stats) style report for the given path(s).
+The default argument to -summary is "hier". </p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id151a49f0-ea24-4382-9387-e90a756bb96f"><p class="p">"hier"
+generates statistics recursively including sub-instances of the
+design hierarchy, if used with -path. If used with -plansection,
+"hier" is testplan section recursive.</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id827d6562-afae-4e6e-921c-ada8692068d8"><p class="p">"local"
+generates statistics for the local instance only. </p>
+</li>
+</ul>
+<p class="p">This argument
+can not be used with -du. If used with -path, the -select instance argument
+is applied automatically, which restricts the command to design
+instance scopes; the summary report is most useful (for example,
+shows multiple kinds of coverage) if used with design instances.
+For other types of coverage, such as covergroup and FSM coverage hierarchy,
+the -totals report is much more concise.</p>
+<p class="p">The summary
+report generated by this option includes Assertion Passes and/or Successes,
+Failures, and Attempts, depending on whether -assertcounts is present.
+See vsim -assertcounts for details. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id74c18295-90f9-416e-8a16-1d2087460389">-testextract &lt;testspec&gt;+</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+For a vcover merge, this reconstructs a report for the specified
+test or tests. &lt;testspec&gt; is a list of TESTNAME attribute names
+for all tests in the UCDB. Merge must have been performed with the
+-testassociated switch to vcover merge.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idb4fa0e1b-479b-4db3-b367-cb0d05be9580">-total</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates a hierarchical report of coverage totals — as a single
+number — for testplan sections, based on children nodes and linked
+coverage items and instances or design units (those sharing a tag
+with the testplan scope). When used non-recursively, -total supports
+bin paths. Could also be used for HDL design unit or instance scopes.
+It calculates the average of all different types of coverage found,
+for example, an average of results obtained with ‑summary. For instances
+or design units, the total coverage is an average of all types.
+The "coverage" is the total coverage number computed for a coverage
+object:</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id5e2ae692-47e8-4290-afff-56dee4c907f6"><p class="p">Weighted
+average of different kinds of coverage found within a design instance
+or design unit.</p>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id7c35ffe6-6372-4b1a-b392-d0a3f9158bb1"><p class="p">Design
+units only "contain" code coverage, not functional coverage or assertions.</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id598b917c-e10e-4aa5-9f82-0df873b72c75"><p class="p">The global
+per-type weights set with <a class="xref fm:HeadingOnly" href="Command_CoverageWeight_id456317c3.html#id456317c3-1e61-4d31-8b1b-52b0f88e4e7c__Command_CoverageWeight_id456317c3.xml#id456317c3-1e61-4d31-8b1b-52b0f88e4e7c" title="Sets or displays weights for global or individual items in the design.">coverage weight</a> can be used to affect the weighted
+average, but these weights apply globally. </p>
+</li>
+</ul>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idfa61fb11-8dde-4a08-b7ed-f70065e94d93"><p class="p">Coverage
+result is for a particular kind of coverage object: FSM, covergroups,
+cover directive, toggle, branch, and so forth. </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id7e20c5a2-6254-4415-9bf6-3e533dd1eaaa"><p class="p">Non-vacuous
+pass result (100% if any, 0% if none) for an assertion.</p>
+</li>
+</ul>
+<p class="p">Hierarchically
+computed weighted average of children of a testplan section, can
+be computed pre- or post-selection by using -aggregate preselected|postselected.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">This command is available only during post-simulation processing,
+when a UCDB file is opened with vsim -viewcov.</p>
+<p class="p">For all -select arguments, the selection criteria of -eq (equals)
+includes matched items in the results, while -ne (not equal) excludes
+the matched items.</p>
+<p class="p">The coverage statistics displayed in the output of this command
+are calculated in accordance with the coverage aggregation algorithm
+shown in “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Calculation of Total Coverage', 'questa_sim_user'); return false;">Calculation of Total Coverage</a>”.</p>
+<p class="p">Alias nodes have a '+' sign appended to the node name.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id64d6dee0-384e-47e2-948b-ab36ff53da6c"><p class="p">Display
+all coverage items in a specified path:</p>
+<p class="lines ApplCommand leveled">   coverage analyze -path /top/*</p>
+<p class="p">You
+can use variations of this command to find the path for any specific
+coverage object in /top, such as a statement.</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idd62ddec1-6fb7-4705-b410-39969161a9c3"><p class="p">List tests
+that covered a particular statement: </p>
+<p class="lines ApplCommand leveled">   coverage analyze -path /top/#stmt#11#1# -coverage nonzero</p>
+<p class="p">Returns:</p>
+<pre class="pre codeblock"><code># 
+# Tests with Non-Zero Coverage:
+# 
+# /top/#stmt#11#1#         
+#     test1_0                  100.00% 
+# </code></pre></li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idb8cca1dc-2dcb-42e0-ac5a-1bd643f67597"><p class="p">List tests
+that hit a specific coverage point: </p>
+<p class="lines ApplCommand leveled">coverage analyze -path /top/dut/u1/cvg_inst/cp1 -coverage nonzero</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide7c9734e-e7c2-4f32-a877-19bb277d6324"><p class="p">List tests
+that hit a specific coverage bin: </p>
+<p class="lines ApplCommand leveled">coverage analyze -path /top/dut/u1/cvg_inst/cp1/bin1 -coverage nonzero</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idff7c6a66-63da-4b66-9d3b-723b01d73480"><p class="p">List tests
+that did not hit a specific coverage bin: </p>
+<p class="lines ApplCommand leveled">coverage analyze -path /top/dut/u1/cvg_inst/cp3/bin2 -coverage zero</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id42f10263-951b-46fe-9941-d43599921d8b"><p class="p">Generate
+a hierarchical report of all design units: </p>
+<p class="lines ApplCommand leveled">coverage analyze -du *-totals -r </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idf1e20d3a-2e38-42a4-a21a-a5930a6f2a48"><p class="p">Generate a
+hierarchical report of all testplan scopes, including linked scopes: </p>
+<p class="lines ApplCommand">vsim&gt; coverage analyze -plansection / -totals -r </p>
+<pre class="pre codeblock"><code><span class="ph FontProperty P9">Total Coverage Report
+Sec#     Testplan Section / Coverage Link       Coverage    Goal  Weight 
+------------------------------------------------------------------------
+-        /testplan                                56.18% 100.00%      1
+1          Top                                    56.18% 100.00%      1
+1.1          Bits                                 85.24% 100.00%      1
+               /top/child1/cvg_bits_vs_clock      83.33% 100.00%      2
+               /top/child1/cvg_bits_vs_bits       89.06% 100.00%      1
+1.2          Arithmetic                           27.11% 100.00%      1
+               /top/child2/cvg_arith              27.11% 100.00%      1
+</span></code></pre></li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id86ae833b-d4e8-402c-a0e5-caeb1160c98a"><p class="p">Various examples
+of testplan queries: </p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idf687ac57-e5d7-4aa9-baa0-a37bf60abdc3"><p class="p">Look
+for any test that has zero coverage for the named testplan.</p>
+<p class="lines ApplCommand leveled">vsim&gt; coverage analyze -plansection /test1.0/test1.1 -coverage zero</p>
+<pre class="pre codeblock leveled"><code>  test0
+  test4</code></pre></li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id936a697d-4ae0-4daa-9200-e4dd716afe1c"><p class="p">Show
+the test which has least coverage for the named testplan. Show summary.</p>
+<p class="lines ApplCommand leveled">vsim&gt; coverage analyze -plansection /test1.0/test1.2 -coverage least ‑summary</p>
+<pre class="pre codeblock leveled"><code>  test13:
+  Coverage Summary BY INSTANCES ...</code></pre></li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id409b8679-c67e-4016-9422-58cfca991cef"><p class="p">Show
+the test which has most coverage for the named testplan. Show total only.</p>
+<p class="lines ApplCommand leveled">vsim&gt; coverage analyze -plansection /test1.0/test1.3 -coverage most -total test27: 99%</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id153e37fa-8522-45c9-acfb-db9e3f86e49c"><p class="p">Filter
+by cover directives only:</p>
+<p class="lines ApplCommand leveled">vsim&gt; coverage analyze -plansection /test1.0/test1.3 -coverage most -total -dir test27: 90%</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idd5780178-0f8d-4917-a01a-ff4a8cd4e5a5"><p class="p">Ask
+the question based on a particular covergroup:</p>
+<p class="lines ApplCommand leveled">vsim&gt; coverage analyze -path /top/i/cvg1 -coverage most -total test23: 85%</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id4b58a4e8-28c7-4bb9-8a39-199a2f656325"><p class="p">Display
+anything not completely covered in a testplan:</p>
+<p class="lines ApplCommand leveled">coverage analyze -plansection / -r -select cover -lt 100</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idc3ea2b23-0a3c-4a78-a779-0dbe28b29c46"><p class="p">Display
+coverage holes with weight greater than 1:</p>
+<p class="lines ApplCommand leveled">coverage analyze -plansection / -r -select cover -eq 0 -weight -gt 1</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__idba137641-4462-4c56-a4da-cdc63cf6aea3"><p class="p">Display
+a list of items which are less than 100% covered within the top level
+plan section, belonging to a particular engineer:</p>
+<p class="lines ApplCommand leveled">coverage analyze -plansection / -r -select cover -lt 100 -select Engineer -eq mike</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__id8d0f8710-b143-49e1-ac6c-177559069422"><p class="p">Match
+a user-defined attribute "myattr" whose value starts with "a", or
+one which does not start with "a":</p>
+<p class="lines ApplCommand leveled">coverage analyze -plansection / -r -select attr myattr -regexp "^a.*"</p>
+<p class="lines ApplCommand leveled">coverage analyze -plansection / -r -select attr myattr -nre "^a.*"</p>
+</li>
+<li class="li" id="id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__ide4e3186f-0344-4ee2-8fb4-851b06c7911c"><p class="p">Various examples
+of using the -select name option:</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -eq {/top/mach/state_out}</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -eq {/top/mach/state_out} -prunechildren</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -eq /top/*/state — [Here, * means "match any number of any characters"]</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -ne {/top/fib_val}</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -regexp prop</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -regexp branch</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -nregexp mach</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -nregexp mach -prunechildren</p>
+<p class="lines ApplCommand">coverage analyze -r -select name -regexp /top/tog*.e/sbts  </p>
+<p class="p">where the asterisk
+(*) means “match any number of the preceding characters (i.e 'g'
+or 'ggggg')” and the period (.) means “match any single character”]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Code Coverage', 'questa_sim_user'); return false;">Code Coverage [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Calculation of Total Coverage', 'questa_sim_user'); return false;">Calculation of Total Coverage [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Coverage and Verification Management in the UCDB', 'questa_sim_user'); return false;">Coverage and Verification Management in the UCDB [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_gui_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Verification Management Browser', 'questa_sim_gui_ref'); return false;">Verification Management Browser [Questa SIM GUI Reference Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Viewing Test Data in the Tracker Window', 'questa_sim_vm'); return false;">Viewing Test Data in the Tracker Window [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Verification Management Overview', 'questa_sim_vm'); return false;">Verification Management Overview [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_CoverageAttribute_id3e20ed57.html#id3e20ed57-7dd7-489d-a4cf-61c62dcc6451__" title="Used to display, set, or delete object, test, and UCDB attributes in the currently loaded database.">coverage attribute</a></div>
+<div><a class="link" href="../topics/Command_CoverageGoal_id6d6e30a0.html#id6d6e30a0-c4d2-4583-a10c-0736d9f0fb5b__" title="Sets or displays the values for goals that affect bins, coverage items and specific scopes in the design hierarchy.">coverage goal</a></div>
+<div><a class="link" href="../topics/Command_CoverageReport_ida73cec86.html#ida73cec86-3177-4b46-9ecc-ea7bbc31050d__" title="Produces textual or HTML output of coverage statistics or exclusions.">coverage report</a></div>
+<div><a class="link" href="../topics/Command_CoverageSave_id35457f5f.html#id35457f5f-3c6d-4190-b918-b355bf6b1c56__" title="Saves the coverage results of the specified type from a simulation to the unified coverage database (UCDB). If no type is specified, saves all types into the database.">coverage save</a></div>
+<div><a class="link" href="../topics/Command_CoverageTag_ida641fa6e.html#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a></div>
+<div><a class="link" href="../topics/Command_CoverageUnlinked_id31a2f8bd.html#id31a2f8bd-169b-48e1-80fe-1cdc59a6f838__" title="Reports on objects that are “unlinked,” for test traceability purposes.">coverage unlinked</a></div>
+<div><a class="link" href="../topics/Command_CoverageWeight_id456317c3.html#id456317c3-1e61-4d31-8b1b-52b0f88e4e7c__" title="Sets or displays weights for global or individual items in the design.">coverage weight</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "coverage analyze"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CoverageAnalyze_id7d34fc00.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

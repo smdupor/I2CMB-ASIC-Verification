@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="UCDB in the Tool Architecture" />
+<meta name="abstract" content="the UCDB does not exist as a memory image in simulation. Coverage data in simulation is intricately linked into the simulation context tree (hierarchical name-based data structure), and is only extracted on demand and written, using a wrapper around the UCDB API write-streaming mode, to disk." />
+<meta name="description" content="the UCDB does not exist as a memory image in simulation. Coverage data in simulation is intricately linked into the simulation context tree (hierarchical name-based data structure), and is only extracted on demand and written, using a wrapper around the UCDB API write-streaming mode, to disk." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id76c52c91-88a1-427b-b055-4eb136f57fee" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>UCDB in the Tool Architecture</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="UCDB in the Tool Architecture" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id76c52c91-88a1-427b-b055-4eb136f57fee">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">UCDB in the Tool Architecture</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">the UCDB
+does not exist as a memory image in simulation. Coverage data in
+simulation is intricately linked into the simulation context tree
+(hierarchical name-based data structure), and is only extracted
+on demand and written, using a wrapper around the UCDB API write-streaming
+mode, to disk. </span>
+</div>
+<p class="p">The UCDB only exists in memory in “viewcov”
+mode, where there is no current facility for linking in third-party
+C or C++ code. If you want to participate in the UCDB in simulation,
+you must install the FLI callback and write your data in write-streaming
+mode.</p>
+<p class="p"><a class="xref fm:Figure" href="#id76c52c91-88a1-427b-b055-4eb136f57fee__id0e2d52da-9a70-441f-bc50-b23ef462841f">Figure 1</a> illustrates the tool architecture and
+the FLI callback. In the upper left is vsim in simulation mode,
+that is, invoked on a design. When coverage save is invoked, the
+data from the context tree is written to the UCDB using the UCDB
+write-streaming API.</p>
+<p class="p">If a shared object is attached to the simulator,
+the UCDB save
+FLI callback operates in this order:</p>
+<ol class="ol"><li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__idf3d9062d-9621-4204-898c-168f34854b97"><p class="p">The callback (mysavecallback in this case)
+is installed.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__ideee99101-e440-49fc-9c6b-5735b44e2fc4"><p class="p">Vsim code underlying coverage save initiates
+the save of the UCDB.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id1a090c3f-e1e1-42c8-a10a-cf99a74ba701"><p class="p">In contexts for which the
+callback is installed, vsim calls the callback function you specified.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id3c1eee44-3a3b-4ca0-b4cd-c690268b1be1"><p class="p">Your callback makes write-streaming
+API calls to write data into the same UCDB.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__idf3f832d9-7342-4e82-9690-fd007a164dd7"><p class="p">The vsim code underlying coverage save continues
+to save to the UCDB file.</p>
+</li>
+</ol>
+<p class="p">Steps <a class="xref fm:NumberOnlyBlack" href="#id76c52c91-88a1-427b-b055-4eb136f57fee__id1a090c3f-e1e1-42c8-a10a-cf99a74ba701">3</a> through <a class="xref fm:NumberOnlyBlack" href="#id76c52c91-88a1-427b-b055-4eb136f57fee__idf3f832d9-7342-4e82-9690-fd007a164dd7">5</a> may
+be repeated multiple times.</p>
+<div class="fig fignone" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id0e2d52da-9a70-441f-bc50-b23ef462841f"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Questa and the UCDB Save FLI Callback</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics_composites/basics29.png" /></div><br /></div>
+<p class="p">The diagram also illustrates
+the following:</p>
+<ul class="ul"><li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id256a05ff-f4ed-48cc-b446-7e3cf3db2e62"><p class="p">In general, the only
+Questa tool where a UCDB image exists in memory (illustrated here
+at the dashed box around “ucdbT” or a UCDB handle) is when you invoke
+vsim in “viewcov mode” on a UCDB file. The file is opened in memory,
+and the CLI and GUI have full in-memory facilities upon which to
+operate on the data.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id28c5bd94-4bf4-4854-8f9e-c1c85c4fe872"><p class="p">In general, the vcover
+utility processes all its inputs using the read-streaming API. There
+are some exceptions to this, but the most commonly used applications,
+report and merge, are exclusively read-streaming. Merge maintains
+its output in memory, but its inputs are always read-streaming.</p>
+</li>
+<li class="li" id="id76c52c91-88a1-427b-b055-4eb136f57fee__id258e6e35-c05f-47f3-ae97-072926590af9"><p class="p">A third-party application
+may be either read-streaming or in-memory.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbInQuestaAndModelsim_id1d5e9cf0.html" title="If you have a model linked with the simulation kernel through PLI, VPI, or FLI, you can use the Questa coverage save command for a transparent integration of coverage data.">UCDB in Questa and ModelSim</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "UCDB in the Tool Architecture"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UcdbInToolArchitecture_id76c52c91.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>2019.4 Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.2019.4" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 2019.4</h1></center>
+<center><b>Oct 15 2019</b> <br />
+ <br />
+ Copyright 1991-2019 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 2019.4</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 2019.4</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 2019.4</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 2019.4</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 2019.4</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 2019.4</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 2019.4</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 2019.4</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 2019.4</a></li>
+ <li><a href="#docrevhistory">Document Revision History in 2019.4</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>(results) -novopt flow has been deprecated and commands will flag below error now.
+
+<pre>** Error (suppressible): (vlog-12110) All optimizations are disabled because the -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for 
+ Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases. 
+</pre>
+
+Using -novopt with optimized design in vsim will also flag below error.
+
+<pre>** Error (suppressible): (vsim-12110) -novopt option has no effect when used with the optimized design. 
+-novopt option is now deprecated and will be removed in future releases.
+</pre>
+
+In 2019.1 release, user can suppress this error. But, it is recommended to remove any dependency on -novopt flow from user's design environment. Future releases will remove -novopt flow completely.</li>
+ <li><p>
+There is no licensing change between 10.7 and 2019.1 or 2019.2 or 2019.3 or 2019.4. However, if you are migrating to 2019.4 from a release like 10.6 and older, please note that release 2019.4 uses FLEXnet v11.14.1.3.
+
+</p><p>
+For floating licenses, it will be necessary to verify that the vendor  daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.14.1.3. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.14.1.3 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+
+</p><p>
+If you use node locked licenses you don't need to do anything. This release will update licensing to MSL v2017_1_patch2 with MGLS v9.17_10.2.4 and PCLS v9.17.10.2.0
+
+</p><p>
+In summary, this release uses the following license versions:
+</p><ul>
+<li>FLEXnet v11.14.1.3 </li><li>MSL v2017_1_patch2 </li><li>MGLS v9.17_10.2.4 </li><li>PCLS v9.17.10.2.0
+</li></ul></li>
+ <li> The Register Assistant version included within this release has been upgraded to RUVM/2019.4.<br /><br />RUVM/2019.4 is a native 64-bit application. <br /><br /> </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 2019.4</b></font>
+<ul><li>Due to enhanced security restrictions with web browser PDF plug-ins, some links do not function. Links in HTML documentation are fully functional.<br /><br />
+Clicking a link within a PDF viewed in a web browser may result in no action, or it may load the title page of the current PDF manual (instead of the intended target in the PDF manual). The unresolved link behavior occurs in all web browsers on Windows and Linux platforms. Because of this behavior, the navigational experience of PDF manuals is compromised. PDF is ideal for printing because of its page-oriented layout.<br /><br />
+Use the HTML manuals to search for topics, navigate between topics, and click links to examples, videos, reference material, and other related technical content.<br /><br />
+For information about Adobe's discontinued support of Adobe Reader on Linux platforms and your available options, refer to Knowledge Article MG596568 on SupportNet.<br /><br />
+Linux is a registered trademark of Linus Torvalds in the U.S. and other countries.</li>
+ <li>Starting 2019.1 release, support for Windows 7 and 8.1 have discontinued. Only Windows 10 is supported. However, we continue to support Windows 7 &amp; 8.1 with our 10.6 and 10.7 release series until their planned End Of Life (10.6 EOL - mid 2019, 10.7 EOL - mid 2020) to coincide with Microsoft's EOL for Windows 7.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 2019.4</b></font>
+<ul><li><br />
+[Supported Platforms]<br />
+        Linux RHEL 6 x86/x86-64<br />
+        Linux RHEL 7 x86/x86-64<br />
+        Linux SLES 11 x86/x86-64<br />
+        Linux SLES 12 x86/x86-64<br />
+    Windows 10 x86/x64<br />
+<br />
+[Supported GCC Compilers (for SystemC)]<br />
+    gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64<br />
+        gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br />
+        gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br />
+        gcc-4.2.1-mingw32vc12<br />
+<br />
+[OVL (shipped with product)]<br />
+        v2.8.1<br />
+<br />
+[VHDL OSVVM (shipped with product)]<br />
+        v2014.07<br />
+<br />
+[Licensing]<br />
+        FLEXnet v11.14.1.3<br />
+        MSL     v2017_1_patch2<br />
+        MGLS    v9.17_10.2.4<br />
+        PCLS    v9.17.10.2.0<br />
+<br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 2019.4</b></font>
+<p /><dd><font size="3"><b>Key Information Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (results) -novopt flow has been deprecated and commands will flag below error now.
+
+<pre>** Error (suppressible): (vlog-12110) All optimizations are disabled because the -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for 
+ Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases. 
+</pre>
+
+Using -novopt with optimized design in vsim will also flag below error.
+
+<pre>** Error (suppressible): (vsim-12110) -novopt option has no effect when used with the optimized design. 
+-novopt option is now deprecated and will be removed in future releases.
+</pre>
+
+In 2019.1 release, user can suppress this error. But, it is recommended to remove any dependency on -novopt flow from user's design environment. Future releases will remove -novopt flow completely.</li>
+</ul>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>QSIM-55788 - (results) Module instances under for-generate blocks are not initialized with same initialization seed, which can result in non-LRM compliant simulation behavior. A SystemVerilog constrained-random language extension &quot;genmodseedfix&quot; has been implemented to address this issue. To enable LRM-compliant seeding of module instances under for-generate blocks, add &quot;-svrandext=+genmodseedfix&quot; to the vsim command line. This extension is enabled by default.<br /><br /></li>
+ <li>QSIM-59880 - (results)  In some cases, randomize() would incorrectly evaluate a 'soft' constraint containing an indexed expression with a random index. This issue has been fixed.</li>
+ <li>QSIM-59050 - (results) In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would be incorrectly evaluated (sometimes resulting in spurious constraint contradiction failures). This issue has been resolved.</li>
+ <li>QSIM-58384 - (results)  Significantly improved performance and reduced memory usage related to evaluation of randomize() calls involving large numbers of 'inside' constraint expressions.</li>
+ <li>QSIM-56092 - (results) Significant improvements to how randomize() calls involving constraints with 'real' type operands are evaluated have been implemented with regard to correctness/repeatability, precision, solution distribution, and performance. Randomization of 'real' variables or constraints requires a
+SystemVerilog Real Number Modeling (svrnm) license. </li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>QSIM-58539 - (results)  The attributes <b>INSTANCE_NAME</b> and<b> PATH_NAME</b>, were not considered globally static.  If the prefix of the attribute is a signal and this expression appears in a wait statement with an on clause or in a concurrent statement other than a process, a change in signal value would trigger a evaluation of the wait or concurrent statement.  This currently results in extra statement executions. The attributes are now considered globally static, so the wait or concurrent statement is no longer sensitized to that prefix. This change can cause simulation results to be different from previous versions. </li>
+ <li>QSIM-57969 - (results)  Using a function call without arguments in a generic map was showing syntax error incorrectly. This has been fixed. <div><br /></div></li>
+</ul>
+<p /><dd><font size="3"><b>General  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source, results) For constrained random stimulus, random results for a given seed are consistent
+across all platforms and variants of platforms.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 2019.4</b></font>
+<ul><li>[nodvtid]  -  Fixed a crash where forcing a modport item was causing crash in access flow. This results in an error message now.</li>
+ <li>[nodvtid]  -  vmake many now consume less memory.</li>
+ <li>QSIM-55252 - The vdir command can now be given the name of an already-existing directory; it will transform the directory into a Questa library.  The directory must be empty for this to succeed.<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 2019.4</b></font>
+<ul><li>[nodvtid]  -  Vlog would crash when parsing certain syntax constructs.</li>
+ <li>QSIM-58023 - Using a wire type with a struct containing a field of an enum type could generate an error like&lt;br&gt;<br />&lt;code&gt;# ** Fatal: (vsim-3355) Variable 'struct1.enum1' cannot be converted to a net.&lt;/code&gt; </li>
+ <li>[nodvtid]  -  SystemVerilog macros undefining and subsequently redefining a macro of the same name repeatedly during macro expansion would generate incorrect results.</li>
+ <li>QSIM-58670 - Vsim incorrectly reported a vsim-3837 error for multiple continuous assignments to a variable when using a bit-select expression with a complex index expression</li>
+ <li>QSIM-55788 - (results) Module instances under for-generate blocks are not initialized with same initialization seed, which can result in non-LRM compliant simulation behavior. A SystemVerilog constrained-random language extension &quot;genmodseedfix&quot; has been implemented to address this issue. To enable LRM-compliant seeding of module instances under for-generate blocks, add &quot;-svrandext=+genmodseedfix&quot; to the vsim command line. This extension is enabled by default.<br /><br /></li>
+ <li>QSIM-60156 -  In some rare cases, randomize() would return 0 indicating no solutions for constraints involving signed modulo expressions. This issue has been fixed.</li>
+ <li>QSIM-59957 -  In some rare cases, randomize() calls involving an array.sum() constraint with a 'with' clause within the context of an iterative constraint would trigger an internal error. This issue has been fixed.</li>
+ <li>QSIM-59880 - (results)  In some cases, randomize() would incorrectly evaluate a 'soft' constraint containing an indexed expression with a random index. This issue has been fixed.</li>
+ <li>QSIM-59116 -  Significantly improved performance of randomize() calls involving large numbers of 'randc' variables.</li>
+ <li>QSIM-59051 - In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would trigger an internal error. This issue has been resolved.<br /><br /></li>
+ <li>QSIM-59050 - (results) In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would be incorrectly evaluated (sometimes resulting in spurious constraint contradiction failures). This issue has been resolved.</li>
+ <li>QSIM-58871 - In some rare cases, randomize() would cause the simulator to crash when evaluating constraints involving a non-random multi-dimensional packed array. This issue has been fixed.</li>
+ <li>QSIM-58384 - (results)  Significantly improved performance and reduced memory usage related to evaluation of randomize() calls involving large numbers of 'inside' constraint expressions.</li>
+ <li>QSIM-58334 - Attempting to randomize() a protected (encrypted) class containing a static random variable would cause a crash or trigger an error (vsim-7180). This issue has been resolved, and randomize() calls on protected classes w/ static random variables are now supported.</li>
+ <li>QSIM-59820 - In some rare cases, randomize() calls involving constraints having function calls will spuriously fail with the error: &quot;(vsim-7090) Invalid X or Z in a state expression value within a constraint.&quot; This issue has been fixed. </li>
+ <li>QSIM-60117 -  In some rare cases, randomize() calls referring to one or more 'soft dist' constraints would cause a spurious failure (no solutions). This issue has been fixed.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 2019.4</b></font>
+<ul><li>QSIM-57546 -  If a package contains a package instance within a USE clause, static array constraints within the package instance may not be compiled correctly, possible causing a fatal internal error during elaboration of  the design by the simulator.</li>
+ <li>QSIM-57795 - The compiler could report a fatal internal error if it encountered a generic declaration list with an index constraint within a generic vector preceding an interface package.</li>
+ <li>QSIM-58539 - (results)  The attributes <b>INSTANCE_NAME</b> and<b> PATH_NAME</b>, were not considered globally static.  If the prefix of the attribute is a signal and this expression appears in a wait statement with an on clause or in a concurrent statement other than a process, a change in signal value would trigger a evaluation of the wait or concurrent statement.  This currently results in extra statement executions. The attributes are now considered globally static, so the wait or concurrent statement is no longer sensitized to that prefix. This change can cause simulation results to be different from previous versions. </li>
+ <li>QSIM-57830 -  Using unconstrained alias signal as an actual for a port connection was leading to a crash. This has been fixed.<div><br /></div></li>
+ <li>QSIM-57969 - (results)  Using a function call without arguments in a generic map was showing syntax error incorrectly. This has been fixed. <div><br /></div></li>
+ <li>QSIM-60023 - Use of the -mixedsvvh switch could result in the compiler erroneously emitting error vcom-1995, which states that a package cannot be imported into SystemVerilog designs. This can occur when at least two VHDL packages are compiled on a single command-line with the -mixedsvvh switch; and, one package contains a constant declaration initialized by a function defined in the other package, and the name of the first package comes lexically before the name of the second package.</li>
+ <li>QSIM-57712 -  If an entity has a  generic whose type depends on a previously declared generic and that entity is directly instantiated, then vsim could crash when loading the design. The work around was to use a component instantiation. </li>
+ <li>QSIM-60153 -  If a component had a port that is a multi-dimensional array whose bounds depended on the component's generics and the port's actual was an expression, vcom could generate an internal error.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 2019.4</b></font>
+<ul><li>VM-8461 - Fixed bug in VRM testlist expansion where multiple test lines with same test name were not being clubbed into a single block of runnable instances.<br /></li>
+ <li>QSIMQA-3564 - Fixed bug in VRM status command (vrun -status) where merged coverage could be incorrect depending on how tests are grouped for auto-merge<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 2019.4</b></font>
+<ul><li>[nodvtid]  - (source, results) For constrained random stimulus, random results for a given seed are consistent
+across all platforms and variants of platforms.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 2019.4</b></font>
+<ul><li>QSIM-55884 - Constraint expressions involving division of 'real' type operands are now supported during randomize() when the &quot;realrand&quot; SystemVerilog extension is enabled (default). Randomization of 'real' variables or constraints requires a SystemVerilog Real Number Modeling (svrnm) license.</li>
+ <li>QSIM-57834 - Distribution constraints involving 'real' type operands are now supported during randomize() when the &quot;realrand&quot; SystemVerilog extension is enabled (default). Randomization of 'real' variables or constraints requires a SystemVerilog Real Number Modeling (svrnm) license.If the RHS of a 'dist' constraint specifies a 'real' type range (e.g. &quot;[1.4:2.5]&quot;) then an explicit weight must be specified (implicit default weight of &quot;:= 1&quot; is not supported) and only the &quot;:/&quot; weight operator is supported (the &quot;:=&quot; is not supported for ranges); in addition, the probability for selecting a single value from the specified range is undefined. 'real' types are not supported for 'dist' weight expressions.<br /> </li>
+ <li>QSIM-58007 - When -solveverbose or -solveinfo is specified on the vsim command line, the solver will dump information about the constraints which participate in a given randomize() call. In some cases, constraints which contain references to non-random variables would display the names of the variables and not the value of those variables, making it difficult to debug issues related to those constraints. The -solveverbose/-solveinfo output for these kinds of constraints has been improved -- now the value of non-random variables and the names of those variables (as an in-line comment) are displayed.</li>
+ <li>QSIM-58407 - Implemented a new feature &quot;RNG Trace&quot; that produces diagnostic output during simulation to assist in the analysis of random-stability issues between two differing simulations. Enable RNG tracing by adding &quot;-rngtrace&quot; to the vsim command line. For additional details and options, refer to the Questa SIM Command Reference Manual (options &quot;-rngtrace&quot;, &quot;-rngtraceopt&quot;, &quot;-rngtraceclassfilter&quot;, &quot;-rngtraceprocessfilter&quot;) and the &quot;Simulator State Variables&quot; Section of the Questa SIM User's Manual (variables &quot;RNGTrace&quot;, &quot;RNGTraceFile&quot;, &quot;RNGTraceOpt&quot;, &quot;RNGTraceClassFilter&quot;, &quot;RNGTraceProcessFilter&quot;)</li>
+ <li>QSIM-59275 - Given a randomize() scenario with no solutions, when -solvefaildebug is enabled, a constraint contradiction report is generated representing the minimum-set of contradictory constraints. If a timeout occurred during the determination of the minimum-set, the error message &quot;(vsim-7175) randomize() failed due to a non-reproducible constraint conflict.&quot; was displayed. This error message was found to be confusing and has been improved. The new error message that is displayed when a timeout occurs during -solvefaildebug minimum-set generation is: &quot;(vsim-7097) Timeout while testing for -solvefaildebug constraint conflicts (SolveFailDebugTimeout=50).&quot;<br /><br /></li>
+ <li>QSIM-56092 - (results) Significant improvements to how randomize() calls involving constraints with 'real' type operands are evaluated have been implemented with regard to correctness/repeatability, precision, solution distribution, and performance. Randomization of 'real' variables or constraints requires a
+SystemVerilog Real Number Modeling (svrnm) license. </li>
+ <li>QSIM-59852 - Given
+a randomize() scenario with no solutions, when -solvefaildebug is enabled, a
+constraint contradiction report is generated representing the minimum-set of
+contradictory constraints. If a timeout occurred during the determination of
+the minimum-set, an error message was displayed and no constraint contradiction report (or testcase when -solvefailtestcase is specified) would be generated. This behavior has changed -- if a timeout now occurs during -solvefaildebug minimum-set generation, then a partial constraint contradiction report (and partial testcase) will be generated. The partial results may provide enough information to assist in debugging the constraint contradiction.<br /><br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="docrevhistory"></a><font size="4"><b>Document Revision History in 2019.4</b></font>
+<ul><li>Revision - Changes - Status/Date<div><ul><li>4.9 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/October 2019</li><li>4.8 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/September 2019</li><li>4.7 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/September 2019</li></ul></div><div><br /></div></li>
+ <li>Author: In-house procedures and working practices require multiple authors for documents.  All associated authors for each topic within this document are tracked within the document source. <div><br /></div></li>
+ <li>Revision History: Released documents maintain a revision history of up to four revisions. For earlier revision history, refer to earlier releases of documentation which are available on Support Center (http://support.mentor.com).<div><br /></div></li>
+</ul>
+
+</body>
+</html>

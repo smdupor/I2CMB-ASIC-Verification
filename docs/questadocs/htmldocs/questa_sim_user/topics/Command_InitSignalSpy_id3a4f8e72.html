@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="init_signal_spy" />
+<meta name="abstract" content="The init_signal_spy() call mirrors the value of a VHDL signal, SystemVerilog or Verilog register/net, or SystemC signal (called the src_object) onto an existing VHDL signal, Verilog register, or SystemC signal (called the dest_object). This allows you to reference signals, registers, or nets at any level of hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench)." />
+<meta name="description" content="The init_signal_spy() call mirrors the value of a VHDL signal, SystemVerilog or Verilog register/net, or SystemC signal (called the src_object) onto an existing VHDL signal, Verilog register, or SystemC signal (called the dest_object). This allows you to reference signals, registers, or nets at any level of hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench)." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>init_signal_spy</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="init_signal_spy" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">init_signal_spy</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="p ContextMGC">This reference
+section describes the following:</p>
+<ul class="ul"><li class="li" id="id07bc2108-2072-4b55-9e57-3433cc9efa59"><p class="p"><span class="ph FontProperty HeadingLabel">VHDL Procedure</span> — init_signal_spy()</p>
+</li>
+<li class="li" id="idda943d7f-5365-489a-9c14-07216f9a504b"><p class="p"><span class="ph FontProperty HeadingLabel">Verilog Task</span> — $init_signal_spy()</p>
+</li>
+<li class="li" id="id16fabfe7-d812-4a26-80f8-9701acf41c39"><p class="p"><span class="ph FontProperty HeadingLabel">SystemC Function</span> — init_signal_spy()</p>
+</li>
+</ul>
+<p class="shortdesc">The init_signal_spy() call mirrors
+the value of a VHDL signal, SystemVerilog or Verilog register/net,
+or SystemC signal (called the src_object) onto an existing VHDL
+signal, Verilog register, or SystemC signal (called the dest_object).
+This allows you to reference signals, registers, or nets at any
+level of hierarchy from within a VHDL architecture or Verilog or
+SystemC module (for example, a test bench). </p>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">VHDL Syntax</h2><p class="lines UsageLine">init_signal_spy(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;verbose&gt;, &lt;control_state&gt;)</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Verilog Syntax</h2><p class="lines UsageLine">$init_signal_spy(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;verbose&gt;, &lt;control_state&gt;)</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">SystemC Syntax</h2><p class="lines UsageLine">init_signal_spy(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;verbose&gt;, &lt;control_state&gt;)</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id91bbd8c6-6e95-40e8-b5b9-252b4175f860">src_object</dt>
+<dd class="dd ArgumentDescription"><p class="p">Required string. A full hierarchical
+path (or relative downward path with reference to the calling block)
+to a VHDL signal or SystemVerilog or Verilog register/net. Use the
+path separator to which your simulation is set (for example, “/” or
+“.”). A full hierarchical path must begin with a “/” or “.”. The
+path must be contained within double quotes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id41e906cd-74e0-4210-9cfa-5867d2c76db5">dest_object</dt>
+<dd class="dd ArgumentDescription"><p class="p">Required string. A full hierarchical
+path (or relative downward path with reference to the calling block)
+to an existing VHDL signal or Verilog register. Use the path separator
+to which your simulation is set (for example, “/” or “.”). A full
+hierarchical path must begin with a “/” or “.”. The path must be
+contained within double quotes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__idadb8b09c-4fdb-402c-8953-6b5b24a3ba73">verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional integer. Possible values
+are 0 or 1. Specifies whether you want a message reported in the
+Transcript stating that the src_object value is mirrored onto the
+dest_object. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__idc64dda08-fe69-44d3-96cd-ff0f3667e9b0"><p class="p Opt">0
+— Does not report a message. Default.</p>
+</li>
+<li class="li ArgOption" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id1c39b71e-8029-414d-9a3a-86345f831263"><p class="p Opt">1
+— Reports a message.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__idc61fc760-20e1-4127-9103-8276a24c98f9">control_state</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional integer. Possible values
+are -1, 0, or 1. Specifies whether or not you want the ability to
+enable/disable mirroring of values and, if so, specifies the initial
+state. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id65dba34f-54a5-4c1c-a47f-f7dabea2b919"><p class="p Opt">-1
+— no ability to enable/disable and mirroring is enabled. (default)</p>
+</li>
+<li class="li ArgOption" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id3f0dc2c7-50af-443b-8c53-113917b0df7e"><p class="p Opt">0
+— turns on the ability to enable/disable and initially disables mirroring. </p>
+</li>
+<li class="li ArgOption" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__iddb480514-164c-41a2-8c2e-834ba83ceef4"><p class="p Opt">1—
+turns on the ability to enable/disable and initially enables mirroring.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2><p class="p">Nothing</p>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The init_signal_spy call only sets
+the value onto the destination signal and does not drive or force
+the value. Any existing or subsequent drive or force of the destination
+signal, by some other means, will override the value that was set
+by init_signal_spy.</p>
+<p class="p">By default this command uses a forward
+slash (/) as a path separator. You can change this behavior with
+the <a class="xref fm:HeadingOnly" href="Command_Signalspypathseparator_idb52157d3.html#idb52157d3-3406-486d-96c4-4c88516e4c2f__Command_Signalspypathseparator_idb52157d3.xml#idb52157d3-3406-486d-96c4-4c88516e4c2f" title="This variable specifies a unique path separator for the Signal Spy functions. The argument to SignalSpyPathSeparator must not be the same character as the DatasetSeparator variable.">SignalSpyPathSeparator</a> variable in the <span class="ph filepath">modelsim.ini</span> file.</p>
+<div class="section Subsection" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__idc14bd339-082e-43da-a0e3-8114e0e2163b"><h2 class="title Subheading sectiontitle">Call only once</h2><p class="p">The init_signal_spy call creates
+a persistent relationship between the source and destination signals.
+Hence, you need to call init_signal_spy once for a particular pair
+of signals. Once init_signal_spy is called, any change on the source
+signal will mirror on the destination signal until the end of the
+simulation unless the control_state is set.</p>
+<p class="p">However, you can place simultaneous
+read/write calls on the same signal using multiple init_signal_spy
+calls, for example:</p>
+<pre class="pre codeblock leveled"><code>init_signal_spy ("/sc_top/sc_sig", "/top/hdl_INST/hdl_sig");</code></pre><pre class="pre codeblock leveled"><code>init_signal_spy ("/top/hdl_INST/hdl_sig", "/sc_top/sc_sig");</code></pre><p class="p">The control_state determines
+whether the mirroring of values can be enabled/disabled and what
+the initial state is. Subsequent control of whether the mirroring
+of values is enabled/disabled is handled by the enable_signal_spy
+and disable_signal_spy calls.</p>
+<p class="p">For VHDL procedures, you should
+place all init_signal_spy calls in a VHDL process and code this
+VHDL process correctly so that it is executed only once. The VHDL
+process should not be sensitive to any signals and should contain
+only init_signal_spy calls and a simple wait statement. The process
+will execute once and then wait forever, which is the desired behavior. See
+the example below.</p>
+<p class="p">For Verilog tasks, you should
+place all $init_signal_spy tasks in a Verilog initial block. See
+the example below.</p>
+</div>
+<div class="section Subsection" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id74920910-bc54-4a08-b49d-5214c7f68a04"><h2 class="title Subheading sectiontitle">Limitations</h2><ul class="ul"><li class="li" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id42ceb3fa-15d0-4e1f-8a7b-6af0a5cc3a37"><p class="p">When mirroring the value
+of a SystemVerilog or Verilog register/net onto a VHDL signal, the
+VHDL signal must be of type bit, bit_vector, std_logic, or std_logic_vector.</p>
+</li>
+<li class="li" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id15b01635-9a33-498b-9cf6-44e028776b3f"><p class="p">Verilog memories (arrays
+of registers) are not supported.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section Examples" id="id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__id9ec2d71f-e95e-47ee-8d60-8fdf6eb733ed"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">In this example, the value of <span class="ph FontProperty emphasis">/top/uut/inst1/sig1</span> is mirrored
+onto <span class="ph FontProperty emphasis">/top/top_sig1. </span>A
+message is issued to the transcript. The ability to control the
+mirroring of values is turned on and the init_signal_spy is initially
+enabled.</p>
+<p class="p">The mirroring of values will be
+disabled when enable_sig transitions to a ‘0’ and enable when enable_sig
+transitions to a ‘1’.</p>
+<pre class="pre codeblock leveled"><code>library ieee;
+library modelsim_lib;
+use ieee.std_logic_1164.all;
+use modelsim_lib.util.all;
+entity top is
+end;</code></pre><pre class="pre codeblock leveled"><code>architecture only of top is
+  signal top_sig1 : std_logic;</code></pre><pre class="pre codeblock leveled"><code>begin
+  ...</code></pre><pre class="pre codeblock leveled"><code>  spy_process : process
+  begin
+    init_signal_spy("/top/uut/inst1/sig1","/top/top_sig1",1,1);
+    wait;
+  end process spy_process;
+  ...</code></pre><pre class="pre codeblock leveled"><code>  spy_enable_disable : process(enable_sig)
+  begin
+    if (enable_sig = '1') then
+      enable_signal_spy("/top/uut/inst1/sig1","/top/top_sig1",0);
+    elseif (enable_sig = '0')</code></pre><pre class="pre codeblock leveled"><code>      disable_signal_spy("/top/uut/inst1/sig1","/top/top_sig1",0);
+    end if;
+  end process spy_enable_disable;
+  ...
+end;
+</code></pre><p class="p">In this example, the value of <span class="ph FontProperty emphasis">.top.uut.inst1.sig1</span> is mirrored
+onto <span class="ph FontProperty emphasis">.top.top_sig1</span>.
+A message is issued to the transcript. The ability to control the
+mirroring of values is turned on and the init_signal_spy is initially
+enabled.</p>
+<p class="p">The mirroring of values will be disabled
+when enable_reg transitions to a ‘0’ and enabled when enable_reg
+transitions to a ‘1’.</p>
+<pre class="pre codeblock"><code>module top;
+...
+reg top_sig1;
+reg enable_reg;
+...
+initial
+  begin
+  $init_signal_spy(".top.uut.inst1.sig1",".top.top_sig1",1,1);
+  end
+  always @ (posedge enable_reg)
+  begin
+  $enable_signal_spy(".top.uut.inst1.sig1",".top.top_sig1",0);
+  end
+  always @ (negedge enable_reg)
+  begin
+  $disable_signal_spy(".top.uut.inst1.sig1",".top.top_sig1",0);
+  end
+...
+endmodule
+</code></pre></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SignalSpyReference_idc6cd7bde.html" title="The signal spy calls enumerated below include the syntax and arguments for the VHDL procedure, the Verilog task, and the SystemC function for each call.">Signal Spy Reference</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_InitSignalDriver_idc16cf7db.html#idc16cf7db-712f-4907-8763-c5411d635f8e__" title="The init_signal_driver() call drives the value of a VHDL signal, Verilog net, or SystemC (called the src_object) onto an existing VHDL signal or Verilog net (called the dest_object). This allows you to drive signals or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">init_signal_driver</a></div>
+<div><a class="link" href="../topics/Command_SignalForce_id9aef5b06.html#id9aef5b06-89a9-42b7-9965-86d4c81b2074__" title="The signal_force() call forces the value specified onto an existing VHDL signal, Verilog register/register bit/net, or SystemC signal (called the dest_object). This allows you to force signals, registers, bits of registers, or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">signal_force</a></div>
+<div><a class="link" href="../topics/Command_SignalRelease_id1ba5515f.html#id1ba5515f-cd20-46b8-a3c3-f66451c8f459__" title="The signal_release() call releases any force that was applied to an existing VHDL signal, SystemVerilog or Verilog register/register bit/net, or SystemC signal (called the dest_object). This allows you to release signals, registers, bits of registers, or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">signal_release</a></div>
+<div><a class="link" href="../topics/Command_EnableSignalSpy_id68bcce09.html#id68bcce09-89d9-4cdc-85be-6ca8f9fadbeb__" title="The enable_signal_spy() call enables the associated init_signal_spy call. The association between the enable_signal_spy call and the init_signal_spy call is based on specifying the same src_object and dest_object arguments to both. The enable_signal_spy call can only affect init_signal_spy calls that had their control_state argument set to “0” or “1”.">enable_signal_spy</a></div>
+<div><a class="link" href="../topics/Command_DisableSignalSpy_idb06ff818.html#idb06ff818-a39c-478f-b13d-e8df8bc03f46__" title="The disable_signal_spy call disables the associated init_signal_spy. The association between the disable_signal_spy call and the init_signal_spy call is based on specifying the same src_object and dest_object arguments to both. The disable_signal_spy call can only affect init_signal_spy calls that had their control_state argument set to “0” or “1”.">disable_signal_spy</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "init_signal_spy"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_InitSignalSpy_id3a4f8e72.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Creating the Project" />
+<meta name="abstract" content="Now you will create a project that contains tcounter.v, the counter’s test bench." />
+<meta name="description" content="Now you will create a project that contains tcounter.v, the counter’s test bench." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id332c1341-e242-4a38-87a4-8c8d3f934bae" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Creating the Project</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Creating the Project" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id332c1341-e242-4a38-87a4-8c8d3f934bae">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Creating
+the Project</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">Now you
+will create a project that contains <span class="ph FontProperty emphasis">tcounter.v</span>,
+the counter’s test bench.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id942142cb-7d1a-4a8e-93bd-da1fba6d6a22"><span class="ph cmd">Create
+the project.</span><ol type="a" class="ol substeps"><li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__idec6c0ce1-267e-4162-ba33-db56110a3014"><span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">New</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Project</span></span>. </span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id66ed9ab3-5ad1-4a48-b6ad-8a4e021a1694"><span class="ph cmd">Type <span class="ph FontProperty emphasis">counter</span> in
+the Project Name field.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id8f65d576-e2b7-4294-80da-a88bcfeb89d0"><span class="ph cmd">Do not
+change the Project Location field or the Default Library Name field.
+(The default library name is <span class="ph filepath">work</span>.)</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id20041789-14cd-4625-af10-a82940167ca9"><span class="ph cmd">Make sure
+“Copy Library Mappings” is selected. The default <span class="ph filepath">modelsim.ini</span> file
+will be used.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__ide99f267d-7d47-46e9-855c-1863b8fe0a3f"><span class="ph cmd">Click <span class="ph uicontrol">OK</span>.</span></li>
+</ol>
+</li>
+<li class="li step" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id1dfbf073-a1f6-4c87-bd1e-e753995e498b"><span class="ph cmd">Add the
+test bench to the project.</span><ol type="a" class="ol substeps"><li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__idf57fe266-2e12-4290-8064-67bb28844233"><span class="ph cmd">Click <span class="ph uicontrol">Add Existing File</span> in the Add items
+to the Project dialog box.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id70b74eb1-d951-4f14-894e-c216e7973658"><span class="ph cmd">Click
+the <span class="ph uicontrol">Browse</span> button and select <span class="ph filepath">tcounter.v</span> in
+the “Select files to add to project” dialog box.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id473954c1-fa65-459f-81af-f56bec60155b"><span class="ph cmd">Click <span class="ph uicontrol">Open</span>.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id0c7d95b2-7ee7-4f6b-aed8-f71efcf52baf"><span class="ph cmd">Click <span class="ph uicontrol">OK</span>.</span></li>
+<li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__idc66d0ac5-8742-452a-861d-b908f519573f"><span class="ph cmd">Click <span class="ph uicontrol">Close</span> to dismiss the “Add items to
+the Project” dialog box.</span><div class="itemgroup info SubStepInfo"><p class="p">The <span class="ph filepath">tcounter.v</span> file
+is listed in the Project window.</p>
+</div></li>
+</ol>
+</li>
+<li class="li step" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id5d0eba99-e9ff-4f6c-be69-6f88d67a43c1"><span class="ph cmd">Compile
+the test bench.</span><ol type="a" class="ol substeps"><li class="li substep" id="id332c1341-e242-4a38-87a4-8c8d3f934bae__id3e263c8f-6de3-44af-97d8-4234de1418f5"><span class="ph cmd">Right-click <span class="ph filepath">tcounter.v</span> and
+select <span class="ph menucascade"><span class="ph uicontrol">Compile</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Compile Selected</span></span>.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WorkingMultipleLibraries_id8eef5afc.html" title="In this lesson you will practice working with multiple libraries. You might have multiple libraries to organize your design, to access IP from a third-party source, or to share common parts between simulations.">Working With Multiple Libraries</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Creating the Project"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_CreatingProject_id332c1341.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

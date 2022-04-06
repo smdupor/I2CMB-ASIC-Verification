@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Inheritance in Hierarchical Plans" />
+<meta name="abstract" content="You can specify that a nested testplan inherit a parent’s storing state (resulting from start/stop tags or startstoring tag) using the -inherit argument to the xml2ucdb command." />
+<meta name="description" content="You can specify that a nested testplan inherit a parent’s storing state (resulting from start/stop tags or startstoring tag) using the -inherit argument to the xml2ucdb command." />
+<meta name="prodname" content="Questa Verification Management User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_vm" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Management User’s Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idd8ab620f-8b2f-4d21-a160-f199b7f17d11" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Inheritance in Hierarchical Plans</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Inheritance in Hierarchical Plans" />
+<meta name="attributes" content="product.version.2020.4,sort.order.070,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Inheritance in Hierarchical Plans</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">You can
+specify that a nested testplan inherit a parent’s storing state
+(resulting from start/stop tags or startstoring tag) using the -inherit
+argument to the xml2ucdb command. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__id6f89adc4-9e05-453b-b72b-086ca1f39c00"><p class="p">See <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'xml2ucdb', 'questa_sim_ref'); return false;">xml2ucdb</a> for more
+information. The reasons to use the -inherit argument, and the concepts
+behind it, are as follows. </p>
+<p class="p">Sometimes, especially when the parent and child
+are both Excel documents, a parent may have a “startstoring” parameter
+set so that the extraction of testplan information does not start until
+a row with a specific section number (usually “1”). If the child
+testplan has been renumbered to (for instance: sections 4.1, 4.2,
+4.3, and so forth), the “startstoring” section number is never seen
+in the child, since there is no section "1". In this case, nothing
+will be imported.</p>
+<p class="p">One way around this is to re-define “startstoring”
+for the child. However, if the parent “startstoring” section had
+not yet been seen, the child XML file should not be imported.</p>
+<p class="p">The same thing happens with the XML “stoptags”
+and “starttags”. If the parent importing a child appears between
+a stop and start tag, the child section should honor the parent
+section defined by the tags.</p>
+<p class="p">A smoother solution in these cases is to inherit
+the state of the storing flags from the parent to the child importation
+process. Using XML “-inherit” in the Link line of the parent section
+causes the child importation to begin with the parent's storing
+state values. The -inherit option has no effect when used on the
+top-level import command line.</p>
+</div>
+<div class="section Subsection" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__idffeacedf-f016-446a-857f-e4ffa2452fe7"><h2 class="title Subheading sectiontitle">Limitations</h2><p class="p">A few limitations exist for nested testplan
+importation:</p>
+<ul class="ul"><li class="li" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__ide41fb4ed-e6b7-4403-b5e6-b7d41d839e0c"><p class="p">The
+XML-type link must be the only link in the testplan section where
+the “child” testplan is to be imported.</p>
+</li>
+<li class="li" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__id311bb068-9e08-4291-84e8-67d67859464b"><p class="p">Parameter
+inheritance from parent to child may cause the child import to pick
+up undesired extraction parameter values from the parent. If this
+happens, use the relevant extraction parameter to override the unwanted
+parent setting.</p>
+</li>
+<li class="li" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__idc295ba13-6f33-4e78-b303-f96f8a1d9acf"><p class="p">The
+-help, -debug, -verbose, -viewtags, and -viewall arguments to the xml2ucdb
+import command are global. If specified in the link field of an
+XML-type testplan section, the arguments are activated from that
+point to the end of the import process.</p>
+</li>
+<li class="li" id="idd8ab620f-8b2f-4d21-a160-f199b7f17d11__id50dd6eef-4335-400d-bbe2-6f5557db74d8"><p class="p">Arguments
+that specify the parent testplan file or the UCDB output file (that
+is, -dofilename, -ucdbfilename, and so forth) have no effect if
+specified in the link field of an XML-type testplan section.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HierarchicalTestplans_id12bbbc27.html" title="A hierarchical (or nested) testplan is a testplan which is imported within an overall testplan UCDB file. Only one UCDB (containing the nested testplan) is generated per importation. The parent plan may be referred to as a “hierarchical” plan.">About Hierarchical Testplans</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_vm"
+                DocTitle = "Questa® Verification Management User’s Manual"
+                PageTitle = "Inheritance in Hierarchical Plans"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_InheritanceInHierarchicalPlans_idd8ab620f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Management User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power State and Transition Concepts" />
+<meta name="abstract" content="A power state table (PST) defines the allowable combinations of power states of supply ports and nets—those combinations of states that can exist at the same time during simulation of the design. As a result, changing the power state supply port/nets changes the state of PST." />
+<meta name="description" content="A power state table (PST) defines the allowable combinations of power states of supply ports and nets—those combinations of states that can exist at the same time during simulation of the design. As a result, changing the power state supply port/nets changes the state of PST." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1a7f76a0-6f26-42b2-b969-173c64771fe4" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power State and Transition Concepts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power State and Transition Concepts" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1a7f76a0-6f26-42b2-b969-173c64771fe4">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power
+State and Transition Concepts</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A power state
+table (PST) defines the allowable combinations of power states of
+supply ports and nets—those combinations of states that can exist
+at the same time during simulation of the design. As a result, changing
+the power state supply port/nets changes the state of PST. </span>
+</div>
+<p class="p">In UPF, you can add states on
+the following objects and model a Power Aware state machine (PASM)
+corresponding to each: </p>
+<ul class="ul"><li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id4ff055a1-b54a-4432-b279-25db47615f58"><p class="p">PST — resulting from the add_pst_state
+UPF command</p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id164949f1-8378-43a5-ad3b-618be466152a"><p class="p">Supply port — resulting from the add_port_state
+UPF command.</p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id94778491-e93b-4da6-b894-127ddfbcf779"><p class="p">Supply net — resulting when a PST contains
+a supply net entry.</p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id5680de6d-f166-4727-b02d-638d2f9d2f61"><p class="p">Power domain — resulting from the add_power_state
+UPF command</p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id18f64a77-a9e9-44e7-9458-aabb7d2ee4af"><p class="p">Supply sets — resulting from the add_power_state
+UPF command</p>
+</li>
+</ul>
+<p class="p">The UPF command add_power_state adds power
+states on power domains and supply sets. The power states associated
+with supply sets determine the simulation semantics of connected design
+elements (power domain).</p>
+<p class="p">Power domain elements can be in one of the
+following simstates based on which power states of the related supply
+set are true at a given simulation time: NORMAL, CORRUPT, CORRUPT_ON_ACTIVITY,
+CORRUPT_STATE_ON_CHANGE or CORRUPT_STATE_ON_ACTIVITY. </p>
+<p class="p">Typically, power states
+are composed hierarchically while creating power intent, for example the
+power state of a top-level power domain depends upon power states
+of any contributing power domains. These contributing power states
+(leaf level power domains) then depend upon power states of their
+supply sets. </p>
+<p class="p">Power states of a supply set depend upon power
+states of supply nets associated with functions of the supply set.
+Therefore, as design complexity increases, such as with IP-level
+hierarchical power intent, these power states become drivers for
+the whole power aware verification and it becomes important to provide
+debugging facilities for power states.</p>
+<div class="section Subsections"><div class="section Subsection" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__idf5f7f0ed-adcc-44e9-9591-94c33bb19047"><h2 class="title Subheading sectiontitle">Differences Between
+a Conventional RTL FSM and a PASM</h2><p class="p">Some conceptual differences between conventional
+RTL Finite State Machines (FSM) and Power Aware state machines are: </p>
+<ul class="ul"><li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id013fcdb7-627f-4966-b6b7-2d918592ff22"><p class="p">Power Aware State machines are asynchronous
+in nature—there use no concept of clock. </p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id4b7346a6-2921-4018-950d-efd8210e32a2"><p class="p">Power Aware state machines can reach
+multiple states at a time (Nondeterministic Situation). </p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id78f895c4-892c-4899-8be3-6bcbaec36dc3"><p class="p">Power Aware state machines are modeled
+by Power Aware simulation. </p>
+</li>
+<li class="li" id="id1a7f76a0-6f26-42b2-b969-173c64771fe4__id4ab0d0b8-3aa7-4930-b8cc-d74a442b8d3a"><p class="p">There are a few interdependent Power
+Aware state machines. For example, a PST state machine runs in accordance
+to supply port/net Power Aware state machines. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerStateTransitionDisplay_idf445e310.html" title="Because power domains are not limited to two states (ON or OFF) and multi-voltage capability allows designs to assign different voltage levels to different states, tracking combinations of states in different power domains has become increasingly difficult.">Power State and Transition Display</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power State and Transition Concepts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerStateTransitionConcepts_id1a7f76a0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

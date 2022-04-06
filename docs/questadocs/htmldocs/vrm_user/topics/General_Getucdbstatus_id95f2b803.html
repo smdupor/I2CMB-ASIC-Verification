@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="GetUcdbStatus" />
+<meta name="abstract" content="Fetches the value of the TESTSTATUS attribute from a singleton test data record in the specified UCDB file. Uses GetUcdbTestAttribute to fetch the attribute value." />
+<meta name="description" content="Fetches the value of the TESTSTATUS attribute from a singleton test data record in the specified UCDB file. Uses GetUcdbTestAttribute to fetch the attribute value." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id95f2b803-700b-47ee-a0ca-093e452b30f5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>GetUcdbStatus</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="GetUcdbStatus" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id95f2b803-700b-47ee-a0ca-093e452b30f5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">GetUcdbStatus</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Fetches
+the value of the TESTSTATUS attribute from a singleton test data
+record in the specified UCDB file. Uses <span class="ph filepath">GetUcdbTestAttribute</span> to
+fetch the attribute value.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id95f2b803-700b-47ee-a0ca-093e452b30f5__id9551864b-8360-4475-819a-aa374f4d77c6"><h2 class="title Subheading sectiontitle">Input Arguments</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id95f2b803-700b-47ee-a0ca-093e452b30f5__id11180b51-1b18-459e-ae00-6e7d8ca5a6ca" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>GetUcdbStatus Input Arguments</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d29647e157"><p class="p">Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d29647e160"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e157 "><p class="p">ucdbfile</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e160 "><p class="p">Absolute path to the
+UCDB file of interest.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id95f2b803-700b-47ee-a0ca-093e452b30f5__id5be9122c-3504-4ddf-9f3e-506433161de8"><h2 class="title Subheading sectiontitle">Returns</h2><p class="p">One of the following strings, according to
+the value of the TESTSTATUS attribute found in the UCDB file:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id95f2b803-700b-47ee-a0ca-093e452b30f5__id3b57731e-cbda-48a3-92f2-a74ea7bc2785" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Strings Returned for GetUcdbStatus</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d29647e184"><p class="p">String</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d29647e187"><p class="p">Interpretation</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">ok</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Simulation passed without
+warnings or errors.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">warning</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Simulation warnings were
+issued.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">error</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Simulation errors occurred.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">fatal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Fatal errors occurred.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">missing</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Simulation was not run
+(possibly potential test data record).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">merge</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Coverage merge error
+occurred.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">unknown</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Unknown status value
+found in test data record.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e184 "><p class="p">ucdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d29647e187 "><p class="p">Cannot find/open UCDB
+file or cannot find test data record(s).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">These strings represent the names of the status
+counter categories within VRM. The TESTSTATUS attribute stored in
+the UCDB test data record is an integer. This integer is converted
+to a string as its fetched from the UCDB in order to make debugging
+of VRM easier and in order to isolate to a single procedure any
+indexing problems that can arise as a result of the integers used
+for this UCDB attribute changing in any way (the TCL code used by
+VRM has no way to access the enum variable that holds the list of
+possible values, or to verify that the understanding of these values
+is correct).</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UcdbAccessAnalysisProcedures_ide153e4db.html" title="The following procedures simplify access to UCDB files from user-definable procedures:">UCDB Access and Analysis Procedures</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "GetUcdbStatus"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Getucdbstatus_id95f2b803.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Transaction Recording Flow" />
+<meta name="abstract" content="You must record SystemVerilog or SystemC transactions before you can view them in Questa SIM." />
+<meta name="description" content="You must record SystemVerilog or SystemC transactions before you can view them in Questa SIM." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id735f6c4f-0caa-4962-973c-edac8959bad2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Transaction Recording Flow</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Transaction Recording Flow" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id735f6c4f-0caa-4962-973c-edac8959bad2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Transaction Recording Flow</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You must record
+SystemVerilog or SystemC transactions before you can view them in <span class="ph fmvar:ProductName">Questa SIM</span>. </span>
+</div>
+<p class="p">The basic steps for recording
+transactions are summarized in <a class="xref fm:Figure" href="#id735f6c4f-0caa-4962-973c-edac8959bad2__id3025dc4e-143c-49a1-9963-6af2a2222f26">Figure 1</a>. </p>
+<div class="fig fignone" id="id735f6c4f-0caa-4962-973c-edac8959bad2__id3025dc4e-143c-49a1-9963-6af2a2222f26"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Recording Transactions</span><br /><div class="imageleft"><img class="image imageleft fmdpi:100" src="../graphics_composites/a_transactions18a.png" /></div><br /></div>
+<p class="p">The SystemC tasks and Verilog API calls used
+in these steps are listed in <a class="xref fm:Table" href="#id735f6c4f-0caa-4962-973c-edac8959bad2__id4d1b65a0-61a0-45e5-9f74-161b326b90fd">Table 1</a>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id735f6c4f-0caa-4962-973c-edac8959bad2__id4d1b65a0-61a0-45e5-9f74-161b326b90fd" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>System Tasks and API for Recording Transactions</span></caption><colgroup><col style="width:2.974in" /><col style="width:1.878in" /><col style="width:1.974in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d269725e177"><p class="p">Action</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d269725e180"><p class="p">SystemC - </p>
+<p class="p">System Task Used</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d269725e185"><p class="p">Verilog/VHDL - </p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> API Used</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Initializing extensions
+— Required in SystemC only.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_InitializingScvCreatingWlfDatabaseObject_id860c1940.html#id860c1940-b344-4a21-a41c-7153fbc1569c__TaskTop_InitializingScvCreatingWlfDatabaseObject_id860c1940.xml#id860c1940-b344-4a21-a41c-7153fbc1569c" title="Before transactions can be recorded, the design must initialize the SCV library once, as part of its own initialization.">Initializing SCV and Creating WLF Database Object</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">scv_startup()</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p">N/A</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Creating database tied
+to WLF — Required for SystemC only.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_InitializingScvCreatingWlfDatabaseObject_id860c1940.html#id860c1940-b344-4a21-a41c-7153fbc1569c__TaskTop_InitializingScvCreatingWlfDatabaseObject_id860c1940.xml#id860c1940-b344-4a21-a41c-7153fbc1569c" title="Before transactions can be recorded, the design must initialize the SCV library once, as part of its own initialization.">Initializing SCV and Creating WLF Database Object</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">scv_tr_db()</p>
+<p class="p">scv_tr_wlf_init() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p">N/A</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Provide
+extensions — Required for SystemC only.<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a></p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="Concept_TransactionGenerators_id4c101a62.html#id4c101a62-d195-4a12-953e-1f647ddefb14__Concept_TransactionGenerators_id4c101a62.xml#id4c101a62-d195-4a12-953e-1f647ddefb14" title="Using Standard C and SystemC types for attributes enable transaction generators without additional preparation with SystemC Verification (SCV).">Transaction Generators</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">scv_tr_stream() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p">N/A</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Define transaction streams
+— Required.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__id9c0e9f72-06f2-4c38-a50a-961cd2e50fee">1</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">scv_tr_generator()</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_CreateTransactionStream_id7d98418b.html#id7d98418b-bd45-4752-9795-48cd6992769e__Command_CreateTransactionStream_id7d98418b.xml#id7d98418b-bd45-4752-9795-48cd6992769e" title="The create_transaction_stream system task creates a transaction stream that you can use to record transactions.">create_transaction_stream</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Define
+transaction kinds — Required for SystemC only.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_WritingScvTransactions_iddd95aa46.html#iddd95aa46-b1dd-496d-b89a-e7faea0b94a6__id5546150e-7b91-4f0d-ae22-62a59d28fca6">2</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">See SCV documentation</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p">N/A</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Start the transaction
+— Required.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__id6333b9b9-0a9b-46e7-8fe8-733f54ffae32">2</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">::begin_transaction() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_BeginTransaction_idd0b59009.html#idd0b59009-ba74-4477-9e07-72339955996a__Command_BeginTransaction_idd0b59009.xml#idd0b59009-ba74-4477-9e07-72339955996a" title="The begin_transaction system task begins a transaction on the specified stream.">begin_transaction</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Record attributes — Optional.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__idfedd2a72-5c7a-44fd-b0f4-49b72de1ffb6">3</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">::record_atrribute() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_AddAttribute_idefe0f26c.html#idefe0f26c-03d5-4a75-9c1f-f3c62ed96f91__Command_AddAttribute_idefe0f26c.xml#idefe0f26c-03d5-4a75-9c1f-f3c62ed96f91" title="The add_attribute system task adds an attribute to a transaction.">add_attribute</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">End the transaction — Required.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__id70505152-5c27-492d-abd6-881f98e9a99e">4</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">::end_transaction() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_EndTransaction_id30d37298.html#id30d37298-4b1c-4760-962c-470e2969ac25__Command_EndTransaction_id30d37298.xml#id30d37298-4b1c-4760-962c-470e2969ac25" title="The end_transaction system task ends the specified transaction.">end_transaction</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Free the transaction
+handle — Required for Verilog and VHDL.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__id22e0a6c6-e91b-4673-a0fa-48cca89049cf">7</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">Freed automatically when
+transaction goes out of scope</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_FreeTransaction_id33d63cf5.html#id33d63cf5-4c04-4c55-96c5-d6e2344cfb6f__Command_FreeTransaction_id33d63cf5.xml#id33d63cf5-4c04-4c55-96c5-d6e2344cfb6f" title="The free_transaction system task frees a transaction and allows the memory allotted for this transaction to be freed. The handle will no longer be valid. Attributes can no longer be recorded for the transaction. Relations can no longer be made with the transaction.">free_transaction</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Specify relationships
+between transactions — Optional.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__id65c46630-44b1-4da4-828e-bfc836bb4704">5</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">::add_relation() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_AddRelation_id7ba6bbff.html#id7ba6bbff-c525-4bbc-ab49-16b000a6948c__Command_AddRelation_id7ba6bbff.xml#id7ba6bbff-c525-4bbc-ab49-16b000a6948c" title="The add_relation system task adds a relation from the source transaction to the target transaction.">add_relation</a> </p>
+<p class="p">or </p>
+<p class="p"><a class="xref fm:HeadingOnly" href="Command_BeginTransaction_idd0b59009.html#idd0b59009-ba74-4477-9e07-72339955996a__Command_BeginTransaction_idd0b59009.xml#idd0b59009-ba74-4477-9e07-72339955996a" title="The begin_transaction system task begins a transaction on the specified stream.">begin_transaction</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Specify begin and/or
+end times of transactions — Optional.</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__idde7b7d5b-7b6e-4bf0-bc48-04641f04a815">6</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">::begin_transaction()
+and ::end_transaction() </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref fm:HeadingOnly" href="Command_BeginTransaction_idd0b59009.html#idd0b59009-ba74-4477-9e07-72339955996a__Command_BeginTransaction_idd0b59009.xml#idd0b59009-ba74-4477-9e07-72339955996a" title="The begin_transaction system task begins a transaction on the specified stream.">begin_transaction</a></p>
+<p class="p">and</p>
+<p class="p"><a class="xref fm:HeadingOnly" href="Command_EndTransaction_id30d37298.html#id30d37298-4b1c-4760-962c-470e2969ac25__Command_EndTransaction_id30d37298.xml#id30d37298-4b1c-4760-962c-470e2969ac25" title="The end_transaction system task ends the specified transaction.">end_transaction</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Control database logging
+— Optional. </p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="Concept_StreamLogging_id83c8fa1c.html#id83c8fa1c-1179-4148-9de3-a27eca0dc3be__Concept_StreamLogging_id83c8fa1c.xml#id83c8fa1c-1179-4148-9de3-a27eca0dc3be" title="When your design creates a stream, logging is enabled for that stream providing that logging is enabled at the simulation time when the design calls ::begin_transaction(). The effective start time of the transaction (the time passed by the design as a parameter to ::begin transaction()) does not affect the logging of the stream.">Stream Logging</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p"><a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'log', 'questa_sim_ref'); return false;">log</a> / <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'nolog', 'questa_sim_ref'); return false;">nolog</a> and ::set_recording()</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p"><a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'log', 'questa_sim_ref'); return false;">log</a> / <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'nolog', 'questa_sim_ref'); return false;">nolog</a> </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e177 "><p class="p">Simulate the design —
+Required in order to view transactions.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e180 "><p class="p">vsim &lt;top&gt;</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d269725e185 "><p class="p">vsim &lt;top&gt;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_RecordingViewingTransactions_id876639c3.html" title="Transactions provide a powerful means for debugging complex verification environments by giving you a high level view into your design.">Recording and Viewing Transactions</a></div>
+</div>
+</div></div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  Required
+only for SCV user-defined types used as attributes.</div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Transaction Recording Flow"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_TransactionRecordingFlow_id735f6c4f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

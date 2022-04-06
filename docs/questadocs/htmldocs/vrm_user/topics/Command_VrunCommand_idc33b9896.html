@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="vrun Command" />
+<meta name="abstract" content="The vrun command reads and records all command-line options before processing begins. In the case of options with the same semantic (that is, -loadtcl, -G, and so on), the semantic of the option can impose an order-based priority on the individual option values. Between options of different types and/or bareword arguments, there is no inherent order dependency." />
+<meta name="description" content="The vrun command reads and records all command-line options before processing begins. In the case of options with the same semantic (that is, -loadtcl, -G, and so on), the semantic of the option can impose an order-based priority on the individual option values. Between options of different types and/or bareword arguments, there is no inherent order dependency." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc33b9896-40ad-4485-9535-aeeba6f64082" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vrun Command</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vrun Command" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idc33b9896-40ad-4485-9535-aeeba6f64082">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vrun Command</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">The vrun
+command reads and records all command-line options before processing
+begins. In the case of options with the same semantic (that is,
+-loadtcl, -G, and so on), the semantic of the option can impose
+an order-based priority on the individual option values. Between
+options of different types and/or bareword arguments, there is no
+inherent order dependency.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If your regression involves more than 25,000 jobs, you
+should ensure you execute vrun from your 64-bit installation of
+Questa. SIM.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Execute named
+runnables (context chains)</h2><p class="lines UsageLine">vrun [-run] [&lt;run_options&gt;] &lt;runnable&gt; …<br />
+&lt;run_options&gt; <br />
+<br />
+[-adhoc] [-apicmd&lt;command&gt;] [-ask] [-autotimeout] <br />
+[-checkrmdb] [-clean | -realclean] <br />
+[-dump] [-dumpgraph] [-dumgraphviz]<br />
+[-exclude &lt;runnable&gt;] [-exitcodes]<br />
+[-faillog &lt;filename&gt;]<br />
+[-g&lt;name&gt;=&lt;value&gt;] [-G&lt;name&gt;=&lt;value&gt;]<br />
+[-historydb &lt;path&gt;] [-html] [-htmldir &lt;path&gt;]<br />
+[-importelapsed &lt;filename&gt;] [-include &lt;runnable&gt;] [-inctimeout &lt;integer&gt;] [-interactive]<br />
+[-j &lt;integer&gt;]<br />
+[-l &lt;logfile&gt;] [-loadtcl &lt;tclfile&gt;] [-loadtcl @&lt;element&gt;]<br />
+[-maxmerge] [-maxrerun &lt;count&gt;] [-maxtriage] [-mergewait &lt;sec&gt;] [-minmerge &lt;n&gt;]<br />
+   [-mintimeout &lt;[tQ:]tX&gt;] [-mintriage &lt;n&gt;] [-mseed [&lt;n&gt; | random | last]]<br />
+[-noautoclean] [-noautodelete] [-noautomerge] [-noautomergedelete]<br />
+   [-noautotrend] [-noautotriage] [-noautotriageclean]<br />
+   [-nobanner] [-nodtdvalidate] [-noexec] [-nogridmsg] [-nohistory] [-nolocalrerun] <br />
+   [-nolockmsg] [-noreuseseeds] [-normdbopts] [-nostderr] [-nosummary] [-notimeout]<br />
+   [-notplandelete] [-noucdb] [-nousermsg]<br />
+[-parallelmerge &lt;n&gt;] [-pipelaunch] [-project &lt;projfile&gt; [-config &lt;name&gt;]]<br />
+[-R&lt;name&gt;=&lt;integer&gt;] [-regex] [-rerun &lt;args&gt;] [-reuseseeds &lt;status, ...&gt;]<br />
+   [-rmdb &lt;rmdbfile&gt;] [-run] [-runlist &lt;filename&gt; [-clear]] [-runlog]<br />
+[-savestdout] [-select &lt;keyword(s)&gt;] [-show [-actions] [-all] ] <br />
+   [-showcmds] [-showparams]<br />
+[-tail] [-tasklist &lt;filename&gt;] [-testname] [-timeoutmargin &lt;percent&gt;] [-triagewait &lt;sec&gt;]<br />
+[-vrmdata &lt;directory&gt;]<br />
+[-wrapperpath &lt;path&gt;]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Invoke vrun
+in interactive (GUI) mode</h2><p class="lines UsageLine">vrun -gui [&lt;gui_options&gt;]<br />
+&lt;gui_options&gt;<br />
+<br />
+[-do&lt;dofile&gt;] [-project &lt;projfile&gt; | -noproject]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Display cumulative
+status of regressions executed in VRM Data directory</h2><p class="lines UsageLine">vrun -status [&lt;status_options&gt;]<br />
+&lt;status_options&gt; <br />
+<br />
+[-all] [-columns&lt;columnList&gt;] [-covreport] [-covreportopts &lt;argument_list&gt;]<br />
+[-cumulative] [-elapsed &lt;filename&gt;] [-errors] [-eventlog &lt;logfile&gt;]<br />
+[-filter &lt;expression&gt;] [-full] [-hierarchical] [-host] [-html]<br />
+[-htmldir &lt;path&gt;] [-nosummary] [-notruncate]<br />
+[-reason] [-summary] [-tail] [-tcl] [-testname | -notestname] [-times]<br />
+[-vrmdata &lt;directory&gt;] [-warnings]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">View (or tail)
+the log output of a specific action</h2><p class="lines UsageLine">vrun -viewlog [&lt;log_options&gt;] &lt;action&gt; [&lt;action&gt; [...]]<br />
+&lt;log_options&gt;<br />
+<br />
+[-tail] [-vrmdata&lt;directory&gt;]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Control ongoing
+(remote) regression run</h2><p class="lines UsageLine">vrun (-pause | -continue | -suspend | -resume | -kill | -exit)<br />
+ [&lt;action&gt; [&lt;action&gt; [...]]]<br />
+&lt;control_options&gt;<br />
+<br />
+[-continue] [-dest&lt;porthost&gt;] [-exit] [-kill [&lt;actions&gt;]]<br />
+[-pause] [-resume [&lt;actions&gt;]] [-suspend [&lt;actions&gt;]] <br />
+[-testname | -notestname] [-vrmdata &lt;directory&gt;]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Modify an active regression run</h2><p class="lines UsageLine">vrun - modify [-vrmdata &lt;path&gt;] [-dest &lt;porthost&gt;] [-eventlog &lt;name&gt;] [&lt;context&gt;/][&lt;keyword&gt;=&lt;value&gt; …]]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Send predefined
+event (start, user, or done) to a listening vrun process</h2><p class="lines UsageLine">vrun -send &lt;event&gt; [&lt;event_options&gt;] &lt;action&gt; [&lt;action&gt; [...]]<br />
+&lt;event_options&gt;<br />
+<br />
+[-code&lt;integer&gt;] [-dest &lt;porthost&gt;] [-message &lt;string&gt;] [-reply]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Emit the designated
+information and immediately exit</h2><p class="lines UsageLine">vrun [-help | -sample]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Verbosity options
+(common to all modes)</h2><p class="lines UsageLine">vrun [-debug[=&lt;value&gt;]] [-quiet] [-verbose]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb7fbf2c1-a29a-4bbd-bab6-35f7f069d22c"><h2 class="title Subheading sectiontitle">Execution Mode
+Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide6c76955-a6fd-4ba2-a8aa-ec459518fb02">-adhoc </dt>
+<dd class="dd ArgumentDescription"><p class="p">Bypasses member checking in
+context chains. See “<a class="xref fm:HeadingAndPage" href="Concept_AdhocMode_idfaa7cf7d.html#idfaa7cf7d-4f65-433f-b8df-5ce5dc981a21__Concept_AdhocMode_idfaa7cf7d.xml#idfaa7cf7d-4f65-433f-b8df-5ce5dc981a21" title="By default, only context chains that represent actual nodes in the topology of the regression suite defined in the RMDB file are considered valid. For example, the following command:">Adhoc Mode</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5724e050-d3f1-47ce-893e-a6388207b4c8">-apicmd &lt;command&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Access RMDB data (use API commands),
+then exit. This option consumes all remaining options on the command
+line and sends the tokens as a command to the RMDB API, printing
+the result and exiting. See “<a class="xref fm:HeadingAndPage" href="Concept_AccessRmdbApiViaVrunCommandLine_id37b66371.html#id37b66371-4278-4771-a4e4-ec763d54bbe5__Concept_AccessRmdbApiViaVrunCommandLine_id37b66371.xml#id37b66371-4278-4771-a4e4-ec763d54bbe5" title="The -apicmd option can be used to issue a command to the database (RMDB) API. If this option appears on the command line, all options and arguments following it are consumed as part of the API command.">Access RMDB API via the vrun Command Line</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9429ee2b-1645-4cda-9793-af9fbbf6f217">-ask</dt>
+<dd class="dd ArgumentDescription"><p class="p">When you specify this switch,
+you are prompted for values of key parameters, based on attributes
+set in the RMDB database file. See “<a class="xref fm:HeadingAndPage" href="Contain_SelectingValuesEmbeddedOptions_idbf5a10a8.html#idbf5a10a8-992c-4c1d-954c-3f9be3ea5fdc__Contain_SelectingValuesEmbeddedOptions_idbf5a10a8.xml#idbf5a10a8-992c-4c1d-954c-3f9be3ea5fdc" title="Parameters in the RMDB file can be used to select from among one or more options, using conditional and repetitive attributes on the Runnables that make up the regression suite.">Selecting Values for Embedded Options</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__iddfaed61e-ec30-413a-a092-3a5b3024ea1f">-autotimeout</dt>
+<dd class="dd ArgumentDescription"><p class="p">Enables the auto-timeout functionality
+(see “<a class="xref fm:HeadingOnly" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id62ee9c45-f6bc-45d5-8e77-e993f8c0b2a9">-checkrmdb</dt>
+<dd class="dd ArgumentDescription"><p class="p">Perform checks on RMDB file.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd01ffb0f-9688-471c-b0dd-d25904bc1aad">-clean | -realclean </dt>
+<dd class="dd ArgumentDescription"><ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id99aa0e17-9028-448f-b251-d2555842f388"><p class="p Opt">-clean
+— Delete most of the contents of the <span class="ph filepath">VRMDATA</span> directory
+prior to the regression run, only retaining:</p>
+<ul class="ul"><li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2258a9b7-6aea-4a37-918b-d14fe567edb1"><p class="p">logs/ subdirectory and contents</p>
+</li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9ada05c7-64ff-49a1-8f8e-1f995833edd2"><p class="p">the VRMDATA directory itself</p>
+</li>
+</ul>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbbe9ec6e-b855-4dc5-8504-17b0296048ce"><p class="p Opt">-realclean
+— Deletes the complete VRMDATA directory prior to the regression
+run. Note that use of this option will recover any seeds to reuse
+them in the current run; use -noreuseseeds to disable this behavior.</p>
+</li>
+</ul>
+<p class="p">Use the -normdbopts option with
+either -clean or -realclean to prevent execution of a new regression.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id0998fcda-c2e4-490c-9db9-93f184795d1d">-dump</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays Runnables/Actions that
+are executed. It is similar to the -show option but is unformatted.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc9183c2a-707c-4af4-98f8-83296b289c2d">-dumpgraph </dt>
+<dd class="dd ArgumentDescription"><p class="p">Dumps an execution graph after
+analysis, which is human readable. This option blocks execution
+by default. When combined with the -run option, execution continues
+after requested data is displayed. See “<a class="xref fm:HeadingAndPage" href="Concept_MessageVerbosityDebugging_idf9d2039c.html#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846__Concept_MessageVerbosityDebugging_idf9d2039c.xml#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846" title="All messages are produced on the standard output of the VRM process or in the transcript of the invoking vsim session.">Message Verbosity and Debugging</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id656d396c-a766-4845-a832-b0536dcbe522">-dumpgraphviz</dt>
+<dd class="dd ArgumentDescription"><p class="p">Dumps an execution graph after
+analysis, which is in graphviz format. This option blocks execution
+by default. When combined with the -run option, execution continues
+after requested data is displayed. See “<a class="xref fm:HeadingAndPage" href="Concept_MessageVerbosityDebugging_idf9d2039c.html#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846__Concept_MessageVerbosityDebugging_idf9d2039c.xml#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846" title="All messages are produced on the standard output of the VRM process or in the transcript of the invoking vsim session.">Message Verbosity and Debugging</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id28db5d9a-66fe-4e3b-a754-2bf7cc0fe9bc">-exclude &lt;runnable&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Excludes a specified Runnable
+(context chain) from execution. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id71580cf8-20ea-4abc-b0fa-82c0619bcc39"><p class="p Opt">&lt;runnable&gt;
+— the name of the runnable or the complete context chain to be excluded
+(see “<a class="xref fm:HeadingAndPage" href="Concept_ContextChains_idb3ff80bd.html#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46__Concept_ContextChains_idb3ff80bd.xml#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46" title="In many cases, the Actions defined in a given Runnable depend on context from ancestor Runnables (parents or parents-of-parents at any depth). For example, a parameter needed to resolve a command in an Action script can be defined at a higher level in the hierarchy. In such cases, it is possible for the user to supply the necessary parameter value directly on the command line. However, it is more common for the given Runnable to be executed “in context”. This means that when the Runnable is selected, its ancestors are also specified on the command line as follows:">Context Chains</a>”).</p>
+</li>
+</ul>
+<p class="p">See <a class="xref fm:HeadingOnly" href="Concept_ContextChains_idb3ff80bd.html#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46__idca70269b-d51a-4823-8090-d83ba8ef4915">Including and Excluding Context Subtrees</a> for usage details when combining
+overlapping -include and -exclude options.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb2c309a9-9376-40e1-a185-059a9257bc7a">-exitcodes</dt>
+<dd class="dd ArgumentDescription"><p class="p">Instructs vrun to report a bit-wise
+error code reporting on pass/fail status of the actions that are
+part of the regression run. Refer to the section “<a class="xref fm:HeadingAndPage" href="Concept_ExitCodeStatus_id270c2e3e.html#id270c2e3e-7e8b-4eed-862d-56563bb2a4cd__Concept_ExitCodeStatus_id270c2e3e.xml#id270c2e3e-7e8b-4eed-862d-56563bb2a4cd" title="Specifying the “vrun -exitcodes” command and argument enables the reporting on the general status of the action scripts within the regression run.">Exit Code Status</a>” for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc5212db8-8401-4b44-96e3-f0ba4b33d333">-faillog &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Writes failed task names to
+the specified log file. This option may include embedded environment
+variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id029a7ac1-45b2-4b8c-878a-122092e62d32">-g[&lt;context&gt;/]&lt;name&gt;=&lt;value&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Defines a default value for
+a parameter. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id0e4dc9ff-c80a-4b73-a287-093eb727b546"><p class="p Opt">&lt;context&gt;
+— the path of a runnable instance, for example: <span class="ph FontProperty emphasis">nightly/simulate/test1</span>.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5367453e-22cc-420e-8dd5-cfcc10e2b1fe"><p class="p Opt">&lt;name&gt;
+— the name of the parameter to be changed. </p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb3f746cf-3b5a-40c1-8aa8-6e033d4a2215"><p class="p Opt">&lt;value&gt;
+— the value to be assigned to that parameter. Parameters can be
+overridden with values containing an equal sign (=).</p>
+</li>
+</ul>
+<p class="p">For additional information,
+see “<a class="xref fm:HeadingAndPage" href="Contain_OverrideParameterValuesFromCommandLine_id249c2739.html#id249c2739-27ba-4247-97f8-3231fbbfa802__Contain_OverrideParameterValuesFromCommandLine_id249c2739.xml#id249c2739-27ba-4247-97f8-3231fbbfa802" title="VRM supports -g (parameter default) and -G (parameter override) options. These options have the same syntax and similar behavior to options of the same name in Questa vsim. The exact syntax of these options is as follows:">Override Parameter Values from Command Line</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__iddb5d7c4f-344a-4773-81fb-6681035f06c3">-G[&lt;context&gt;/]&lt;name&gt;=&lt;value&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Defines an override value for
+a parameter. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9ae1d611-fa97-4778-8fb4-d08b61863631"><p class="p Opt">&lt;context&gt;
+— the path of a runnable instance, for example: <span class="ph FontProperty emphasis">nightly/simulate/test1</span>.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide4cb6f33-136c-4764-adf7-c13dd42a7c35"><p class="p Opt"><span class="keyword ParameterName OptionalReplaceable">&lt;name&gt;</span> —
+the name of the parameter to be changed. </p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id58423e32-46b7-49b8-a1dd-41b0eb7a698c"><p class="p Opt">&lt;value&gt;
+— the value to be assigned to that parameter. Parameters can be
+overridden with values containing an equal sign (=).</p>
+</li>
+</ul>
+<p class="p">For additional information,
+see “<a class="xref fm:HeadingAndPage" href="Contain_OverrideParameterValuesFromCommandLine_id249c2739.html#id249c2739-27ba-4247-97f8-3231fbbfa802__Contain_OverrideParameterValuesFromCommandLine_id249c2739.xml#id249c2739-27ba-4247-97f8-3231fbbfa802" title="VRM supports -g (parameter default) and -G (parameter override) options. These options have the same syntax and similar behavior to options of the same name in Questa vsim. The exact syntax of these options is as follows:">Override Parameter Values from Command Line</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idac2b50d1-2a2a-4977-9d47-e840b32b400f">-historydb</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies an alternate location for the
+history database, normally saved to VRMDATA/logs/db. When you use
+this argument, the history database is stored in both the new location
+and the default location. You can prevent the creation of the database
+in the default location with the <a class="xref fm:HeadingOnly" href="#idc33b9896-40ad-4485-9535-aeeba6f64082__id2a0a4acf-a74b-4942-a7ab-f0409cec0023">-nohistory</a> argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1277ef4f-5ce2-478c-b1e3-f925cf9cba18">-html</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generate the HTML status report
+on completion. For additional information, see “<a class="xref fm:HeadingAndPage" href="Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.html#id85771d98-9fca-4b0c-8524-991712216b01__Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.xml#id85771d98-9fca-4b0c-8524-991712216b01" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the HTML-based vrun Status Report</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2d88dc49-c5d3-478d-8cbb-95b3087b9771">-htmldir &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Set the HTML report path (HTML
+mode only). This option may include embedded environment variables.
+For additional information, see “<a class="xref fm:HeadingAndPage" href="Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.html#id85771d98-9fca-4b0c-8524-991712216b01__Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.xml#id85771d98-9fca-4b0c-8524-991712216b01" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the HTML-based vrun Status Report</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idf4272daf-4a6b-41a0-add1-c20f6f0c9482">-importelapsed &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Imports data from a file, &lt;filename&gt;,
+generated by the -elapsed argument to a vrun -status run. Refer
+to the section “<a class="xref fm:HeadingOnly" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>” for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id0a608f8d-6bdc-4ca6-9203-2de3043671b0">-include &lt;runnable&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Includes a given runnable (context
+chain) for execution (see “<a class="xref fm:HeadingAndPage" href="Concept_ContextChains_idb3ff80bd.html#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46__Concept_ContextChains_idb3ff80bd.xml#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46" title="In many cases, the Actions defined in a given Runnable depend on context from ancestor Runnables (parents or parents-of-parents at any depth). For example, a parameter needed to resolve a command in an Action script can be defined at a higher level in the hierarchy. In such cases, it is possible for the user to supply the necessary parameter value directly on the command line. However, it is more common for the given Runnable to be executed “in context”. This means that when the Runnable is selected, its ancestors are also specified on the command line as follows:">Context Chains</a>”).</p>
+<p class="p">See <a class="xref fm:HeadingOnly" href="Concept_ContextChains_idb3ff80bd.html#idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46__idca70269b-d51a-4823-8090-d83ba8ef4915">Including and Excluding Context Subtrees</a> for usage details when combining
+overlapping -include and -exclude options.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3d3306d6-6fad-46c5-a461-8a9087b3147e">-inctimeout &lt;integer&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">This option specifies an additional
+timeout value added to the execution timeout for each UCDB in the
+merge/triage queue. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id8fb3dcfe-414b-45b5-b743-91ac6caefe33"><p class="p Opt">&lt;integer&gt;
+— default is 120 seconds.</p>
+</li>
+</ul>
+<p class="p">The timeout used for queued
+auto-merge and auto-triage Actions is dependent on the number of
+UCDBs being merged and/or triaged. The incremental timeout per UCDB
+can be controlled globally by the -inctimeout command-line option
+to vrun or on a per-Action basis by adding an <span class="ph FontProperty emphasis">inctimeout</span> attribute
+to the <span class="ph filepath">mergeScript</span> and/or <span class="ph FontProperty emphasis">triageScript</span> element
+in the RMDB. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id51b88926-459e-4f46-9c02-7c253138111f">-interactive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Runs all Actions in interactive
+mode. Refer to the section ““<a class="xref fm:HeadingAndPage" href="Concept_InteractiveMode_id9c96e70d.html#id9c96e70d-4b69-4cbb-905a-bb486f60ee55__Concept_InteractiveMode_id9c96e70d.xml#id9c96e70d-4b69-4cbb-905a-bb486f60ee55" title="Use this mode to launch interactive simulations from VRM.">Interactive Mode</a>”” for
+more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idebd6f43b-749c-46f0-887e-f168ca3b8e0d">-j &lt;integer&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Limits the number of concurrently
+running Actions. If the limit you specify is less than or equal
+to zero, then no limit is imposed on the number of processes that
+can be running at any one time. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idf7c6b5eb-b767-4ddf-a144-afbacc1a4a35"><p class="p Opt">&lt;integer&gt;
+— default for all platforms is 0 (unlimited)</p>
+</li>
+</ul>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_LimitConcurrentlyRunningProcesses_idd07b643d.html#idd07b643d-4b2b-4859-8b96-6dcbc87fb771__Concept_LimitConcurrentlyRunningProcesses_idd07b643d.xml#idd07b643d-4b2b-4859-8b96-6dcbc87fb771" title="By default, VRM launches Actions as soon as they become eligible (that is, as soon as any dependencies are met). This means that, in many cases, it is possible for VRM to attempt to launch a large number of concurrent processes at one time.">Limit Concurrently Running Processes</a>” for details. Also see “<a class="xref fm:HeadingAndPage" href="Concept_NamedExecutionQueues_id44b7e485.html#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758__Concept_NamedExecutionQueues_id44b7e485.xml#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758" title="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files.">Named Execution Queues</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id818eddcc-7189-4724-a997-3fc4174e9c5b">-loadtcl &lt;tclfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Loads file containing user extensions
+(TCL). Note that the -loadtcl option cannot appear in the -rerun
+option. This option may include embedded environment variables.
+See “<a class="xref fm:HeadingAndPage" href="Concept_LoadingUserSuppliedTclCodeUsingUsertclIntoVrm_id3943ff33.html#id3943ff33-6a4e-45b3-95b3-b4a5fa96ce7b__Concept_LoadingUserSuppliedTclCodeUsingUsertclIntoVrm_id3943ff33.xml#id3943ff33-6a4e-45b3-95b3-b4a5fa96ce7b" title="In some cases, it is necessary to load user-defined TCL code into VRM (technically, into the TCL interpreter that is executing the VRM application). This TCL code can be specified in the RMDB database or in a separate file. Once specified, the code can be loaded via a command-line option or automatically at the start of the VRM run. Any TCL code so loaded becomes a global part of the VRM application. Procedures defined within the loaded code can be called from TCL-type parameter value expressions or from user-definable procedures.">Loading User-supplied TCL Code Using usertcl into VRM</a>” for additional information.
+Also see “<a class="xref fm:HeadingAndPage" href="Concept_EnvironmentVariables_id5e6e80dc.html#id5e6e80dc-ffc1-4224-a4e4-ba44513ff3ef__Concept_EnvironmentVariables_id5e6e80dc.xml#id5e6e80dc-ffc1-4224-a4e4-ba44513ff3ef" title="The following environment variables are recognized and used by VRM:">Environment Variables</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1fa6e0c5-9a68-446f-bb35-0e8c2b867d3b">-loadtcl @&lt;element&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Loads <span class="ph FontProperty emphasis">usertcl</span> element containing
+user extensions (TCL).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id52270f75-21cd-4f1f-b7d7-9b2e427bbe6f">-maxmerge</dt>
+<dd class="dd ArgumentDescription"><p class="p">Maximum number of UCDBs included
+in an auto-merge pass.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id8ab94e5f-36cf-4c22-a4f0-4e508c2d09ca">-maxrerun &lt;count&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Maximum number of immediate
+rerun passes. The default is 10.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idcb922d75-383f-466a-9536-b158a36cd3df">-maxtriage</dt>
+<dd class="dd ArgumentDescription"><p class="p">Maximum number of UCDBs included
+in an auto-triage pass.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5d2a0ec3-957f-454a-a63a-b18201d208b5">-mergewait &lt;sec&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Postpones beginning the merge operation
+until after &lt;sec&gt; seconds, where the default is 30 seconds.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6342d476-f199-4985-ad57-6d5b81fa4c15"><p class="p Opt">&lt;sec&gt;</p>
+<p class="p">An integer defining the number of seconds to wait, where the
+default is 30.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id613c5a64-e23d-471f-a33e-5e381c097475">-minmerge &lt;n&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Postpones beginning the merge operation
+until at least &lt;n&gt; UCDBs have been queued for processing. The
+command will a set amount of time, as defined by the -mergewait
+option.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id01124958-384d-4bfc-85a8-e5e378255c43">-mintimeout [[&lt;<span class="keyword ParameterName OptionalReplaceable">tQ</span>&gt;:]&lt;<span class="keyword ParameterName OptionalReplaceable">tX</span>&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies default minimum timeout(s)
+(in seconds). Default setting for <span class="keyword ParameterName OptionalReplaceable">tQ</span> is
+60 seconds and the default for <span class="keyword ParameterName OptionalReplaceable">tX</span> is
+300 seconds. For additional information, see “<a class="xref fm:HeadingAndPage" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>”. </p>
+<p class="p">If you set <span class="keyword ParameterName OptionalReplaceable">tX </span>to
+0, you will disable timeouts. However, you should instead use the
+‑notimeout option.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idae3878fe-37e5-4ac8-9d33-b7f84c509328">-mintriage &lt;n&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Postpones beginning the triage operation
+until at least &lt;n&gt; UCDBs have been queued for processing. The
+command will a set amount of time, as defined by the -triagewait
+option.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1114ff27-2ec6-4302-bac7-ef070e187182">-mseed [&lt;n&gt; | random | last]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify a global master seed. The value
+will be used to initialize the random number generator in the TCL
+interpreter (the interpreter which executes the user-defined procedures
+will be used for all random number generation) immediately prior
+to expanding an RMDB file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id766069b6-4fdb-4a2a-8468-2e957f011bb4"><p class="p Opt">&lt;n&gt;</p>
+<p class="p">An integer value, where the default is zero (0).</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id61cc4f48-fb53-44c9-81a6-f3a597408c0e"><p class="p Opt">random</p>
+<p class="p">Indicates that a random integer will be used as a global master seed.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3ab7194e-3830-4c44-a985-681b12f7b35b"><p class="p Opt">last</p>
+<p class="p">Indicates that the master seed used in the previous regression
+run is used. If a previous seed cannot be found, the default seed
+will be zero (0).</p>
+</li>
+</ul>
+<p class="p">When you launch a VRM GUI session based on a vrun command with
+this argument, the master seed value will persist for all newly-generated
+VRM configurations. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbe615ef5-7147-4f1e-990b-fbb3120f8c1f">-noautoclean</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disable automatic clean on working directories.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2056d322-df1f-463f-a406-895da13b3925">-noautodelete</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disable auto-delete algorithm.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id53113813-56c3-44d0-af69-59b7004dffb0">-noautomerge</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables auto-merge algorithm.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide8a2cefe-74f9-403b-bd80-62dd9f26e1b3">-noautomergedelete</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not delete old merge file
+before auto-merge (see “<a class="xref fm:HeadingAndPage" href="Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.html#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d__Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.xml#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d" title="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation.">Automatic Deletion of Merge/Triage Files</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id21708a1b-8a86-4ab5-a25e-7f61f0ec5356">-noautotrend</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables auto-trend functionality
+(see “<a class="xref fm:HeadingOnly" href="General_Trendscript_idf74679a1.html#idf74679a1-5771-4647-b086-c7e09605624f__General_Trendscript_idf74679a1.xml#idf74679a1-5771-4647-b086-c7e09605624f" title="The trendScript element overrides the default Action script which is executed by auto-trend in order to perform trending analysis of merged files from the auto-merge functionality.">trendScript</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9226095b-d60a-4b63-b380-0dea68ab7990">-noautotriage</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables auto-triage algorithm
+(see “<a class="xref fm:HeadingAndPage" href="Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.html#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d__Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.xml#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d" title="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation.">Automatic Deletion of Merge/Triage Files</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idaf849cae-ad4f-4278-b139-fc869af1e55e">-noautotriageclean</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not delete the old Triage
+DataBase (TDB) file before auto-delete (see “<a class="xref fm:HeadingAndPage" href="Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.html#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d__Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.xml#id4bb9a859-594c-4ecb-ad46-09b2d1588a7d" title="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation.">Automatic Deletion of Merge/Triage Files</a>”).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd1b38b1d-c10f-49d1-b05d-5aa02680ab92">-nobanner</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suppresses display of the copyright banner.at startup.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb18cc27b-20fc-43aa-80c4-36edbc0428e0">-nodtdvalidate</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not validate RMDB file against
+Document Type Definition (DTD) in the release directory. The default
+is 0 (that is, validate). See “<a class="xref fm:HeadingAndPage" href="Concept_ValidationRmdbDatabase_id947feba8.html#id947feba8-48ef-4d38-91d4-72499f64b6e5__Concept_ValidationRmdbDatabase_id947feba8.xml#id947feba8-48ef-4d38-91d4-72499f64b6e5" title="The VRM database is an XML file. By default, the contents of an XML file are validated against the Document Type Definition (DTD) file located in the Questa release tree at vm_src/rmdb.dtd. The XML file is validated against the DTD provided with the release from which the vrun command is launched. Validation occurs after the XML file has been parsed and loaded. If there are validation errors in the XML file, they are printed by the parser library (to stdout), an error message is emitted from VRM, and the vrun process exits.">Validation of the RMDB Database</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc75aab13-434c-4eca-8235-b85e558fb61f">-noexec</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generates files, but does not
+launch the scripts (see “<a class="xref fm:HeadingAndPage" href="Concept_DryRunRmdbDatabase_id9ddddfe0.html#id9ddddfe0-c624-440d-ab0f-01e3e95af808__Concept_DryRunRmdbDatabase_id9ddddfe0.xml#id9ddddfe0-c624-440d-ab0f-01e3e95af808" title="VRM supports a “dry run” through a given set of selected Runnables where the scripts and other supporting files and directories in the VRMDATA area are generated but the scripts are not launched.">Dry Run of the RMDB Database</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6a8ac765-08d3-4592-a12d-d015cb0f9e54">-nogridcheck</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables pro-active grid checks.
+See the section “<a class="xref fm:HeadingOnly" href="Concept_ProActiveGridStatusChecks_idc57ad5cb.html#idc57ad5cb-215d-414c-8ed7-97db31c2dd31__Concept_ProActiveGridStatusChecks_idc57ad5cb.xml#idc57ad5cb-215d-414c-8ed7-97db31c2dd31" title="A pro-active grid status check, enabled by default, verifies that all Actions submitted to a grid management system, which have not yet completed, are still listed by the grid management system as either pending or running. This allows VRM to detect anomalous behavior in the set of submitted jobs without waiting for a timeout.">Pro-active Grid Status Checks</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbaef2f9c-d37d-494e-8bea-4dece2991721">-nogridmsg</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables messages when missing or failed
+grid jobs are re-queued by the pro-active grid checker.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2a0a4acf-a74b-4942-a7ab-f0409cec0023">-nohistory</dt>
+<dd class="dd ArgumentDescription"><p class="p">Prevents the creation of the history database
+in the default location (VRMDATA/logs/db) when using the <a class="xref fm:HeadingOnly" href="#idc33b9896-40ad-4485-9535-aeeba6f64082__idac2b50d1-2a2a-4977-9d47-e840b32b400f">-historydb</a> argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5209069d-60cf-4145-a1d5-e8d2cdd0bfdd">-nolocalrerun</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables the vrun default of
+automatically re-queuing individual failed Actions.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id8a329119-2e6a-4782-bba2-3a8e8f407fa6">-nolockmsg</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not emit message for <span class="ph filepath">VRMDATA</span> directory
+lock.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1cbecb1c-66b7-4849-bb72-dffda20d72c0">-nomergererun</dt>
+<dd class="dd ArgumentDescription"><p class="p">Disables the automatic rerun
+for Actions where the role attribute is set to mergeScript or triagesScript,
+as defined in the section “<a class="xref fm:HeadingOnly" href="Concept_SpoofingDefaultBehaviorActionScripts_id6d60232e.html#id6d60232e-dc78-4cc3-94e5-9ffc7e2e223f__Concept_SpoofingDefaultBehaviorActionScripts_id6d60232e.xml#id6d60232e-dc78-4cc3-94e5-9ffc7e2e223f" title="Use the role attribute of an Action script to mimic the role of another element type.">Spoofing Default Behavior of Action Scripts</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id28e8ee5c-ad03-4c97-8c73-3dab4453ee46">-noreuseseeds</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not use original seed values
+when rerunning test. See “<a class="xref fm:HeadingAndPage" href="Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.html#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa__Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.xml#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa" title="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run.">Reuse of Random Seeds in Automated Rerun</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6cfd51d5-5032-4086-9a4c-789b0a6de522">-normdbopts</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not parse command-line options
+embedded in the RMDB file.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbf084be8-2b7e-47fd-b56f-49ab5514761a">-nostderr </dt>
+<dd class="dd ArgumentDescription"><p class="p">Ignore non-empty stderr files
+when analyzing the pass/fail status of any Action script. Useful
+for instances where scripts emit messages to stderr even though
+they pass. For fine control of this behavior, add the <span class="ph FontProperty emphasis">usestderr</span> attribute
+to the Action element (<a class="xref fm:HeadingOnly" href="Concept_AttributesPerElementType_id3cca8775.html#id3cca8775-68b1-4b59-a307-7dbbd5d4251c__idc341d941-e559-41ea-addc-21353e1594e6">Table 4</a>).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idf6ef8b46-4feb-471e-8228-ad65a7d3f59e">-nosummary</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suppresses the summary at the
+end of a regression run.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2dce7858-fcc0-4503-95c0-68588c340b09">-notimeout</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not check for Action script
+timeouts. For additional information, see “<a class="xref fm:HeadingAndPage" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id8b50d6b1-89ee-448a-a91e-d877ec4c77f0">-notplandelete</dt>
+<dd class="dd ArgumentDescription"><p class="p">Prevents a testplan from being deleted from
+any merged UCDB files when using the -noautomergedelete argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb33374a5-5c86-4283-a88c-126f656a1013">-noucdb</dt>
+<dd class="dd ArgumentDescription"><p class="p">Instructs the vrun command to not read unnecessary
+UCDB files.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbaacc471-fa5f-4d3c-b6e3-1a7c200fa70f">-nousermsg</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suppresses the reporting of
+user messages, from Action scripts, to the vrun log output.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3b9bba84-a0de-4beb-9871-37e0ba2259ad">-parallelmerge &lt;n&gt;</dt>
+<dd class="dd ArgumentDescription"><ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2f726733-af5c-42e6-bd87-5697e72b95cb"><p class="p Opt">&lt;n&gt;
+— an integer, greater than one, that defines the maximum number
+of concurrent merge operations allowed for a single mergefile. The
+default value is 1,which is equivalent to the default behavior of
+sequential auto-merge.</p>
+</li>
+</ul>
+<p class="p">Initiates parallel auto-merge operations, as needed, during the
+course of the regression run. This results in a single merged UCDB,
+where the name is defined by the mergefile parameter.</p>
+<p class="p">Use this argument along with -maxmerge to define the maximum
+number of UCDB files to be included in a single merge process, where
+the default is to not have an upper limit.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id118133ae-9854-41d1-976a-c27df58ebf14">-pipelaunch</dt>
+<dd class="dd ArgumentDescription"><p class="p">Use pipes instead of background
+processes. Causes child processes to be launched via a pipe for
+better error handling at the expense of consuming one file descriptor
+for each concurrent Action.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ida45d6227-4ca1-4386-ab6b-901015852036">-project &lt;projfile&gt; [-config &lt;name&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Read command-line options from
+a project file. This option may include embedded environment variables.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc8fb219e-3d5e-461c-be1b-f0ea2cdde7c1"><p class="p Opt">-config
+&lt;name&gt; — Configuration name.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc239c27e-fbd3-4e2e-acf6-149013cd6916">-R&lt;name&gt;=&lt;integer&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Overrides repeat count for a
+Task or Group. This option can also be used to override a parameterized
+repeat count, in which case the value passed to the -R option has
+precedence over the parameter-expanded value (even if overridden
+by the -G option). See “<a class="xref fm:HeadingAndPage" href="Concept_OverrideRepeatCountsOnRunnableNodes_id039d0825.html#id039d0825-550e-4f8f-a3c3-7bf2e10f5176__Concept_OverrideRepeatCountsOnRunnableNodes_id039d0825.xml#id039d0825-550e-4f8f-a3c3-7bf2e10f5176" title="The procedure for overriding the repeat count of any given Task or Group depends on how the Runnable is specified.">Override Repeat Counts on Runnable Nodes</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id022dbe42-f1e2-45fa-b944-ee36de9ea2f0">-realclean</dt>
+<dd class="dd ArgumentDescription"><p class="p">Delete all of the contents of
+the <span class="ph filepath">VRMDATA</span> directory prior to the regression
+run</p>
+<p class="p">You can retain some information
+in the <span class="ph filepath">VRMDATA</span> directory with the -clean option.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id09c581be-9b99-4693-b3ec-17021ce70692">-regex</dt>
+<dd class="dd ArgumentDescription"><p class="p">Expands context chains as regular
+expressions. See “<a class="xref fm:HeadingAndPage" href="Concept_UsingRegularExpressionsInContextChains_id43546071.html#id43546071-f7ae-44d8-a458-8a9c29e0563e__Concept_UsingRegularExpressionsInContextChains_id43546071.xml#id43546071-f7ae-44d8-a458-8a9c29e0563e" title="While the globbing characters provide a great deal of flexibility in selecting multiple Runnables with one context chain, even more selection flexibility can be obtained by adding the -regex option to the vrun command line.">Using Regular Expressions in Context Chains</a>” for usage details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ided60beae-53cb-4591-93e2-14ed33b36004">-rerun &lt;args&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Reruns (a second pass) with
+specified arguments. Note that the -rmdb, -vrmdata, and -loadtcl
+options cannot appear in the &lt;<span class="keyword ParameterName OptionalReplaceable">args</span>&gt;
+value of the -rerun option.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Contain_FailureRerunFunctionality_ida240963a.html#ida240963a-0c73-4daf-a633-1c204b745ea4__Contain_FailureRerunFunctionality_ida240963a.xml#ida240963a-0c73-4daf-a633-1c204b745ea4" title="One requirement of a good regression management system is the ability to rerun failed tests, possibly with additional debug output enabled. There are a number of ways in which VRM allows the user to rerun Actions from a previous run according to their status. The most obvious use for this function is to rerun tests that failed, either as is to filter out “noisy” failures or with different command-line options to enable additional debugging output.">Failure Rerun Functionality</a>” for additional information.
+See also, “<a class="xref fm:HeadingAndPage" href="Contain_FullyAutomaticOneCommandMode_id5733177e.html#id5733177e-5ad5-4f49-89e4-f8b397e41977__Contain_FullyAutomaticOneCommandMode_id5733177e.xml#id5733177e-5ad5-4f49-89e4-f8b397e41977" title="VRM supports a single-command automated way to run two passes over a given regression suite, picking up additional command-line options on the second pass. The -rerun option takes a string that contains the additional command-line options for the second pass (which must be an empty argument should you decide to run the regression suite twice with the same arguments both times). The command is as follows:">Fully Automatic (One-command) Mode</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id7df91f0a-0df0-4c37-8c1e-2ff8fb9d6eba">-reuseseeds &lt;status&gt;[,&lt;status&gt; ...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Enables the selective reuse
+of seeds according to job status. This argument will be overridden
+if you specify -noreuseseeds on the same command line.</p>
+<p class="p">This option accepts a comma-separated
+list of status values, which include:</p>
+<pre class="pre codeblock leveled"><code>all (default)
+passed
+failed
+</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide8d96e77-e19e-4faa-89f1-469aece707fe">-rmdb &lt;rmdbfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify path to RMDB database
+file. The default file is ./<span class="ph filepath">default.rmdb</span>. Note
+that the -rmdb option cannot appear in the -rerun option. This option
+may include embedded environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id64976269-00b7-4157-b587-7ff0dc392ccc">-run</dt>
+<dd class="dd ArgumentDescription"><p class="p">Executes selected Runnables.
+This is the default mode of operation for vrun command.</p>
+<p class="p">By default, the Runnables selected
+on the command line are executed. Options that request data output
+(that is, -dump, -dumpgraph, -dumpgraphviz, -runlist, and -show)
+also block the default execution of the selected Runnables. When
+combined with the explicit -run option, execution continues after
+the requested data is displayed.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_ExecutingSelectedRunnables_id3c6fbb9a.html#id3c6fbb9a-6d46-46d3-8218-e03428db1057__Concept_ExecutingSelectedRunnables_id3c6fbb9a.xml#id3c6fbb9a-6d46-46d3-8218-e03428db1057" title="By default, when the user specifies a set of Runnables via the -include, -exclude, and -select options or via bareword arguments, VRM builds an execution graph from the selected Runnables and executes the resulting actions">Executing the Selected Runnables</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2553cf25-fdbd-46a8-b3d5-730e152eb474">-runlist &lt;filename&gt; [-clear]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Reads/writes a runlist of selected
+runnables. The -runlist option blocks execution by default. When
+combined with the -run option, execution continues after requested
+data is displayed. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc545441a-aabc-4f99-8120-c8fa8ec82265"><p class="p Opt">&lt;filename&gt;
+— a file path. This file stores the current include/exclude context
+paths. This file can also be edited and viewed by the user. The
+file can be read and written by the user, but only -include and
+-exclude options, one per line, are supported. Anything else in
+the file is discarded and an error is displayed.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5fc1aeff-c4c8-4afe-8f8c-fe1a9a021d3f"><p class="p Opt">-clear
+— Clear existing runlist contents. Note also that if this option
+is not included on the command line, then any contents already in
+the runlist is also a part of the regression run. See “<a class="xref fm:HeadingAndPage" href="Concept_BuildRunlistRunnablesExecute_id77acceb9.html#id77acceb9-3212-495f-bdaf-0ee1a226994b__Concept_BuildRunlistRunnablesExecute_id77acceb9.xml#id77acceb9-3212-495f-bdaf-0ee1a226994b" title="In some cases, selecting a complex set of Runnables to execute requires more planning and can be easy to construct if spread across several vrun commands. In order to create such a complex selection list, the user can add Runnables to and/or prune Runnables from a cumulative runlist before sending the selected Runnables off for execution.">Build a Runlist of Runnables to Execute</a>” for additional information.</p>
+</li>
+</ul>
+<p class="p">The -runlist option allows you
+to build up a list of files to run via repeated vrun command invocations.
+Use the vrun -runlist &lt;filename&gt;. . . command several times to include
+or exclude subtrees of the regression, each time seeing the list
+of what was selected as a result, until satisfied with the final
+list. Then use the vrun -runlist &lt;filename&gt; -run command to run
+the list.</p>
+<p class="p">This option may include embedded
+environment variables.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_BuildRunlistRunnablesExecute_id77acceb9.html#id77acceb9-3212-495f-bdaf-0ee1a226994b__Concept_BuildRunlistRunnablesExecute_id77acceb9.xml#id77acceb9-3212-495f-bdaf-0ee1a226994b" title="In some cases, selecting a complex set of Runnables to execute requires more planning and can be easy to construct if spread across several vrun commands. In order to create such a complex selection list, the user can add Runnables to and/or prune Runnables from a cumulative runlist before sending the selected Runnables off for execution.">Build a Runlist of Runnables to Execute</a>” for information to show what
+is selected in the current runlist without actually changing the contents
+of the list.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id414f88fc-9e17-45ed-a7c9-7d41915d6dd6">-runlog</dt>
+<dd class="dd ArgumentDescription"><p class="p">Save log output to a file. The
+-runlog option causes vrun to write a copy of the log output (normally
+written to the console) in a file under <span class="ph filepath">VRMDATA/logs</span> whose
+base name matches the Status Event Log for that regression run and
+whose extension is <span class="ph filepath">.log</span>. The log output file is
+only created if/when a regression starts. This file is used by the
+VRM GUI to monitor the output of regression runs that were not started
+by that particular GUI session.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide0e647a0-5afb-41aa-abec-a25ba858cae3">-savestdout</dt>
+<dd class="dd ArgumentDescription"><p class="p">This switch instructs vrun to
+create a .stdout file for Action scripts. The information in this
+file is nearly identical to the information in the .log file. When
+you set an Action’s <span class="ph FontProperty emphasis">gridtype</span> attribute
+to a non-blank value, this switch is enabled by default.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5b80967b-5740-4d91-a890-a174227fb3da">-select &lt;<span class="keyword ParameterName OptionalReplaceable">keyword(s)</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Includes Runnables from previous
+run by status. See “<a class="xref fm:HeadingAndPage" href="Contain_SemiAutomaticTwoCommandMode_id56bd3845.html#id56bd3845-5c38-4487-ab07-3d64398e0070__Contain_SemiAutomaticTwoCommandMode_id56bd3845.xml#id56bd3845-5c38-4487-ab07-3d64398e0070" title="This section describes a way to identify failing Actions from a previous run. The -select command-line option takes one or more status keywords and searches the event log from the immediately previous run for Actions that match the specified keywords. It then converts the Action context path into a Runnable context path and then selects that context path for execution as if it had been included directly on the vrun command line.">Semi-automatic (Two-command) Mode</a>” for additional information.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_SelectingRunnablesBasedOnResultsPreviousRun_idcdcf4e88.html#idcdcf4e88-84a8-417d-bd63-28b50cb0fdc9__Concept_SelectingRunnablesBasedOnResultsPreviousRun_idcdcf4e88.xml#idcdcf4e88-84a8-417d-bd63-28b50cb0fdc9" title="The contents of the event log from the most recent vrun regression run can be used as the basis for Runnable selection. As VRM executes Actions, it records their status in an event log. The user can select, for example, all Actions that passed, all Actions that failed, all Actions that were not run, or any combination of this list. In this case, instead of specifying a list of context paths, the user can use the -select command-line option followed by one or more comma-separated keywords. For example,">Selecting Runnables Based on Results of Previous Run</a>” for further usage details of
+the -select option. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc5ce5671-f16d-44c0-9e88-273e413598f8">-show [-actions] [-all]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays Runnables/Actions that
+will be executed. The -show option blocks execution by default.
+When combined with the -run option, execution continues after requested
+data is displayed.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_ShowingWhichRunnablesAreSelected_idf29ace7c.html#idf29ace7c-2b16-4b65-ba16-2dddee84ef34__Concept_ShowingWhichRunnablesAreSelected_idf29ace7c.xml#idf29ace7c-2b16-4b65-ba16-2dddee84ef34" title="The vrun command supports a -show option that, rather than actually running the selected regression Actions, simply lists what is selected by the other command-line options and, therefore, what would run if the -show option is not used.">Showing which Runnables are Selected</a>” for information on what will
+run if the -show option is not used.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_ViewRmdbContents_id389c7a07.html#id389c7a07-4b2a-4649-ac68-9bddb0712033__Concept_ViewRmdbContents_id389c7a07.xml#id389c7a07-4b2a-4649-ac68-9bddb0712033" title="Viewing the contents of an RMDB file primarily means viewing the Runnable hierarchy. The -show option requests vrun to display some subset of Runnables defined in the RMDB file in a user-friendly format.">View RMDB Contents</a>” for information on the list
+that determines what is displayed when the -show option is given.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idad479390-d348-4bf4-a53a-ccc23d3fe385"><p class="p Opt">-actions
+— Shows Actions instead of Runnables. See <a class="xref fm:HeadingOnly" href="Concept_ViewRmdbContents_id389c7a07.html#id389c7a07-4b2a-4649-ac68-9bddb0712033__id690b78fe-85c1-4732-aa8e-98ba8994997f">Show Actions that will Run</a> for additional information.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id769b1ef6-9520-4f61-bdc4-45c14a4424b5"><p class="p Opt">-all
+— Shows all selected Runnables. See “<a class="xref fm:HeadingAndPage" href="Concept_ViewRmdbContents_id389c7a07.html#id389c7a07-4b2a-4649-ac68-9bddb0712033__Concept_ViewRmdbContents_id389c7a07.xml#id389c7a07-4b2a-4649-ac68-9bddb0712033" title="Viewing the contents of an RMDB file primarily means viewing the Runnable hierarchy. The -show option requests vrun to display some subset of Runnables defined in the RMDB file in a user-friendly format.">View RMDB Contents</a>” for additional information.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3e5367ae-a653-4062-945c-2177f5608571">-showcmds</dt>
+<dd class="dd ArgumentDescription"><p class="p">Same as the -noexec option and
+in addition, the -showcmds option displays the commands that would
+run (see “<a class="xref fm:HeadingAndPage" href="Concept_DryRunRmdbDatabase_id9ddddfe0.html#id9ddddfe0-c624-440d-ab0f-01e3e95af808__Concept_DryRunRmdbDatabase_id9ddddfe0.xml#id9ddddfe0-c624-440d-ab0f-01e3e95af808" title="VRM supports a “dry run” through a given set of selected Runnables where the scripts and other supporting files and directories in the VRMDATA area are generated but the scripts are not launched.">Dry Run of the RMDB Database</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id69f4fa80-fcd4-49d8-aa7c-fc07f2655a83">-showparams</dt>
+<dd class="dd ArgumentDescription"><p class="p">Same as the -showcmds option
+and in addition, the -showparams option displays expanded parameter
+values (see “<a class="xref fm:HeadingAndPage" href="Concept_DryRunRmdbDatabase_id9ddddfe0.html#id9ddddfe0-c624-440d-ab0f-01e3e95af808__Concept_DryRunRmdbDatabase_id9ddddfe0.xml#id9ddddfe0-c624-440d-ab0f-01e3e95af808" title="VRM supports a “dry run” through a given set of selected Runnables where the scripts and other supporting files and directories in the VRMDATA area are generated but the scripts are not launched.">Dry Run of the RMDB Database</a>” for additional information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idab0d243d-f536-4e2c-a577-0b7eed8b0884">-showtimeouts</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays the queue name and
+queuing and execution timeout values for each Action at the time
+the Action is queued, internal to vrun. Useful for analyzing the
+timeout computation. Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>” for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6b6536e5-f98b-467a-a67d-88acfa1991a9">-simsample</dt>
+<dd class="dd ArgumentDescription"><p class="p">Produces a sample RMDB file,
+which includes a simulation</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5bfa750d-e0bc-48ef-94f0-9ec0b1d08b57">-tail</dt>
+<dd class="dd ArgumentDescription"><p class="p">Print log output of each script
+on standard output.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ida2f3b7ab-d555-4f66-9774-39dd092f3b10">-tasklist &lt;<span class="keyword ParameterName OptionalReplaceable">filename</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Reads list of tasks to be executed
+from file. Note that the -tasklist option may include embedded environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idfa21b1d9-2ca4-4238-981d-71ee1046b94e">-testname &lt;<span class="keyword ParameterName OptionalReplaceable">testname</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">This option alters messages
+emitted by vrun to refer to testnames instead of Action context
+strings when you have defined a testname for the Action.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id22185ee4-e943-4f68-b2a4-4670639a5d73">-timeoutmargin &lt;<span class="keyword ParameterName OptionalReplaceable">percent</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the default maximum
+elapsed time margin for the auto-timeout calculation (see “<a class="xref fm:HeadingOnly" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>” for more information).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__iddf7fdf65-b8de-4f1a-8fb3-ade79cc87e89">-vrmdata &lt;<span class="keyword ParameterName OptionalReplaceable">directory</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify root of <span class="ph filepath">VRM Data</span> directory tree.
+Note that the -vrmdata option may include embedded environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ida202ab7e-66a4-4e35-9498-48129834cba7">-wrapperpath &lt;<span class="keyword ParameterName OptionalReplaceable">path</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify location of the vsim/vish
+executables to launch user scripts. Note that the ‑wrapperpath option
+may include embedded environment variables. Controls the value of
+VSIMDIR, one of the <a class="xref fm:HeadingOnly" href="Concept_PredefinedParameters_id44e3f00e.html#id44e3f00e-2d14-4053-9d57-9fa56c67571f__id32210747-9a68-4b03-96c5-21b8ad2a887d">Table 1</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb75023b3-fff2-4fe0-a4b3-4bdfabfa504d"><h2 class="title Subheading sectiontitle">GUI Mode Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idcbeb6d77-a083-4780-9bf6-b16d41c25195">-do &lt;<span class="keyword ParameterName OptionalReplaceable">dofile</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Execute the commands in &lt;<span class="keyword ParameterName OptionalReplaceable">dofile</span>&gt;.
+Note that the -<span class="ph filepath">do</span> option may include embedded
+environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbd198efe-3ad8-4d48-9f21-ea6eaf08ad5b">-project &lt;<span class="keyword ParameterName OptionalReplaceable">projfile</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Load the specified project file.
+Note that the -<span class="keyword ParameterName OptionalReplaceable">project</span> option
+may include embedded environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb3bc1ecf-28e0-45f5-9ef4-dd9a689646dd">-noproject</dt>
+<dd class="dd ArgumentDescription"><p class="p">This option is useful when you
+supply all the necessary information on the command line. It allows
+you to turn the GUI into a single-session tool that forgets any
+information about the session upon exit. Specifically, it suppresses
+the following behaviors:</p>
+<ul class="ul"><li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1283ebe9-7e1d-424c-8703-7a3a58dc5708"><p class="p">Loading of the default project
+file, default.vrm, if any exists.</p>
+</li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id4164dcfd-976b-4333-8d34-4c3b287d1708"><p class="p">Loading of and prompting for
+a project file at the beginning of the session. </p>
+</li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idcd6e5805-ba1b-4e91-be18-1c32594a6723"><p class="p">Prompt to save the project
+data into a file when closing the session. </p>
+</li>
+</ul>
+<p class="p">If you specify -noproject and
+-project on the same command line you will receive a warning and
+-project will be accepted.</p>
+<p class="p">Note that you can manually load
+or save project information through menu selection at any time.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbeea9af1-6e6e-40fc-b918-3e65ac4ebb43"><h2 class="title Subheading sectiontitle">Status Mode Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id5d9f0a0f-e0cd-4b68-8fe8-a331cc47d979">-status</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays the status of the latest
+regression run (even if the process is still underway). The “latest
+regression run” is determined by looking for the event log with
+the latest date. This means that in order to report the status of
+a previously initiated run, the -vrmdata option must point to the
+same directory as for the run whose status is under consideration.
+The status output attempts to report the pass/fail status of each
+Action as follows:</p>
+<ul class="ul"><li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1c56a6b6-0543-4311-8c18-b5b1e74f9768"><p class="p">Actions for which a start
+event exists with no corresponding done event are listed as Running.</p>
+</li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9535e4a9-bca7-4a50-a8cf-8e0a8d433936"><p class="p">Actions that do not list a
+UCDB file in the done event are listed as simply Pass or Fail.</p>
+</li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idec09a39f-a080-49a8-8c9f-d003fd9574a0"><p class="p">Action for which a UCDB is
+defined (and can still be found) are listed according to the status
+in the UCDB test data record.</p>
+</li>
+</ul>
+<p class="p">Actions that are not yet eligible
+for launch, or have become eligible but have not yet been launched,
+are not listed in the status report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id93c8ebd9-24f1-47b3-8029-fc33fbfd2387">-all</dt>
+<dd class="dd ArgumentDescription"><p class="p">Reports the status of all known
+Actions including those that are still pending.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id4746e799-ec11-47c7-9a96-479b7e0a861d">-columns {&lt;<span class="keyword ParameterName OptionalReplaceable">column</span>&gt;[/[+|-]&lt;<span class="keyword ParameterName OptionalReplaceable">width</span>&gt;]}...</dt>
+<dd class="dd ArgumentDescription"><p class="p">Customize status report columns. </p>
+<p class="p">Specifies the order and appearance
+of data columns in the status report, where you can specify multiple
+columns in a space or comma separated list. </p>
+<p class="p">You can control the width and
+alignment with the optional syntax:</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id65cd68fb-0917-484c-bcb1-c329da0a1169"><p class="p Opt">/
+— indicates you are supplying width and alignment information.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide6ac7d62-aca6-4e33-a75a-0667311a878e"><p class="p Opt">[+|-]
+— indicates the alignment, where “+” indicates right-alignment and
+“-” indicates left-alignment. “+” is the default if you specify
+neither. This setting is honored in HTML reports.</p>
+</li>
+<li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3b59cb14-177a-4da8-b01b-79ae510d6398"><p class="p Opt">&lt;width&gt;
+— indicates the width of the column, in characters. This value is
+not honored in HTML reports, as your browser will determine the width.</p>
+</li>
+</ul>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_CreatingTextBasedVrunStatusReport_idfa25d458.html#idfa25d458-09eb-4958-b929-3da121f6f31c__Concept_CreatingTextBasedVrunStatusReport_idfa25d458.xml#idfa25d458-09eb-4958-b929-3da121f6f31c" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the Text-based vrun Status Report</a>” for further information and <a class="xref fm:TableAndPage" href="Concept_RegressionRunStatusReportReference_id49bcc149.html#id49bcc149-71d7-4397-81c4-77a8fa47b5c4__idf39aef23-42f1-4a8c-a2ce-e7be8a756e31">Table 1</a> for the full list of columns.</p>
+<p class="p">Example: </p>
+<pre class="pre codeblock leveled"><code>	vrun -status -columns action/-20,hostname/+18,RMDB:seed/10</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id12210103-4c19-4c4b-827a-913daba57694">-covreport</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generates a merged HTML-format
+coverage report at the same time as a HTML status report. This report
+is based upon the merged UCDB files referenced in the regression
+run, also shown in the Merged Coverage box of the Verification Run
+Manager Status Report. The status report will contain links to this
+report. This option only applies when specified with -status and
+-html.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3c3e1412-d2db-4314-8f5b-07868e095bc1">-covreportopts &lt;argument_list&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Allows you to control details
+of the HTML-format coverage report. Valid arguments are the same
+as those to the vcover report -html option set, as defined in the <cite class="cite">Questa
+SIM Reference Manual</cite>. If you specify more than one argument,
+or any spaces at all, for argument_list, be sure to enclose all
+the arguments in double quotes (" "). This option only applies when
+specified with -status, -html and -covreport. For example:</p>
+<pre class="pre codeblock leveled"><code>vrun -status -html -covreport 
+		-covreportopts "-htmldir mycoverage.report"</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbdbf3332-5956-48ab-b304-3840c87e8423">-cumulative</dt>
+<dd class="dd ArgumentDescription"><p class="p">Include the latest status of
+all runs in the <span class="ph filepath">VRMDATA</span> directory.</p>
+<p class="p">Provides a cumulative report
+on all event logs in the <span class="ph filepath">VRMDATA</span> directory.
+By default, only status of the immediately previous (or current)
+run is shown.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id49c18fa5-2dfb-46ce-8d49-344a22a7aa34">-elapsed &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Writes the elapsed time of passed
+actions to an external file &lt;filename&gt;.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6ddcc798-d599-4c5a-95aa-b7225ac3cb4a">-errors</dt>
+<dd class="dd ArgumentDescription"><p class="p">The -errors option causes the
+status report to show only errors. This option can be used together
+with the -warnings option to show both errors and warnings.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id98119e0f-2d66-436b-95ed-cb9feab40201">-eventlog &lt;<span class="keyword ParameterName OptionalReplaceable">logfile</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Read status from a designated
+Status Event Log. When the -eventlog is used with the existing -status
+option, it reports the status of a particular regression run as
+opposed to the latest regression run in the <span class="ph filepath">VRMDATA</span> directory.
+The &lt;<span class="keyword ParameterName OptionalReplaceable">filename</span>&gt;
+argument can contain the absolute or relative pathname of the log
+file to be opened, or it can contain the log file base name only (in
+which case the name is interpreted as being within the current <span class="ph filepath">VRMDATA</span> directory).
+Note that the -eventlog option may include embedded environment
+variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1e7b966c-5e06-4b94-bd80-9d7e1e5816c2">-filter &lt;<span class="keyword ParameterName OptionalReplaceable">expression</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">The -filter &lt;<span class="keyword ParameterName OptionalReplaceable">expression</span>&gt;
+option allows the user to specify a filter expression (to the report
+output) that is used to select a subset of the Actions executed. See <a class="xref fm:TableAndPage" href="Concept_RegressionRunStatusReportReference_id49bcc149.html#id49bcc149-71d7-4397-81c4-77a8fa47b5c4__idf39aef23-42f1-4a8c-a2ce-e7be8a756e31">Table 1</a> for the full list of fields and
+value types.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc3d89445-79cb-4460-aff0-f34687717f69">-full</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays all available data
+columns for each event. See <a class="xref fm:TableAndPage" href="Concept_RegressionRunStatusReportReference_id49bcc149.html#id49bcc149-71d7-4397-81c4-77a8fa47b5c4__idf39aef23-42f1-4a8c-a2ce-e7be8a756e31">Table 1</a> for the full list of columns.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1f22515f-d56d-468a-b5ae-e9a09d118461">-hierarchical</dt>
+<dd class="dd ArgumentDescription"><p class="p">Display Action hierarchy, based
+on the hierarchy of the RMDB file (HTML mode only).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3d6c21ec-baa1-42c2-ba97-7fbed415212b">-host</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays the following data:
+date, hostname, seed, time, and username.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide042464b-409f-4c7a-8bec-71658cef737a">-html</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generate report in HTML. For
+additional information, see “<a class="xref fm:HeadingAndPage" href="Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.html#id85771d98-9fca-4b0c-8524-991712216b01__Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.xml#id85771d98-9fca-4b0c-8524-991712216b01" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the HTML-based vrun Status Report</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd1af418f-f506-43ef-96ef-39539f140925">-htmldir &lt;<span class="keyword ParameterName OptionalReplaceable">path</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Set HTML report path (HTML mode
+only). Note that the -htmldir option may include embedded environment
+variables. Any intermediate directories that do not exist are created
+as the report is generated. If the specified directory already exists,
+the HTML report files are written to that directory but any files
+already existing in that directory is preserved (unless explicitly
+overwritten by files from the current HTML report). For additional
+information, see “<a class="xref fm:HeadingAndPage" href="Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.html#id85771d98-9fca-4b0c-8524-991712216b01__Concept_CreatingHtmlBasedVrunStatusReport_id85771d98.xml#id85771d98-9fca-4b0c-8524-991712216b01" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the HTML-based vrun Status Report</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9875fbc4-15ed-4b45-ba9e-b9303cb916fd">-nosummary</dt>
+<dd class="dd ArgumentDescription"><p class="p">Omits the summary counts from
+the test-based status report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb82ac90a-b32e-47b0-b6c3-8aa468d31342">-notruncate</dt>
+<dd class="dd ArgumentDescription"><p class="p">Do not truncate long Action
+context string.</p>
+<p class="p">Overrides the default truncation
+of a long Action context string. In this case, the complete value
+is shown in the column and, if the data value exceeds the column
+width, the following column starts in the appropriate place on a
+new line.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id2278d6f2-c63f-4631-a6ca-db03da3456f7">-reason</dt>
+<dd class="dd ArgumentDescription"><p class="p">Adding the -reason option to
+the vrun -status command-line causes the status report to include
+both the offending message and its simulation time. See “<a class="xref fm:HeadingAndPage" href="Concept_CreatingTextBasedVrunStatusReport_idfa25d458.html#idfa25d458-09eb-4958-b929-3da121f6f31c__Concept_CreatingTextBasedVrunStatusReport_idfa25d458.xml#idfa25d458-09eb-4958-b929-3da121f6f31c" title="For detailed information about the arguments mentioned, or an overview other arguments, refer to:">Creating the Text-based vrun Status Report</a>” for information on when a warning,
+error, or fatal message changes the value of the <span class="ph FontProperty emphasis">TESTSTATUS</span> attribute
+in the test data record of the UCDB file.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id49fbd476-1652-4e17-916d-ff4e0ff2aecc">-summary</dt>
+<dd class="dd ArgumentDescription"><p class="p">The -summary option causes the
+Action list to be omitted and only the pass/fail summary information
+is shown. The -summary option is ignored if the -tail option is
+specified, since the -tail option is designed to be used to follow
+a running regression’s status in real-time, in which case the status
+summary is not available until the regression finishes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3021dbeb-eed6-4ee4-85fb-70ae599b85ce">-tail</dt>
+<dd class="dd ArgumentDescription"><p class="p">Follow and report status on
+the ongoing regression run. When following VRM status events with
+the command vrun -status -tail, Crtl-C terminates the status following.</p>
+<p class="p">Reports the status events from
+a running vrun process as they occur. See “<a class="xref fm:HeadingAndPage" href="Concept_AdvancedTasks_ida3173391.html#ida3173391-4421-4bf4-8887-668b3e177422__Concept_AdvancedTasks_ida3173391.xml#ida3173391-4421-4bf4-8887-668b3e177422" title="VRM advanced tasks are described below.">Advanced Tasks</a>” for additional information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide6eb4716-dfcf-473c-bd7e-d77e046840b1">-tcl</dt>
+<dd class="dd ArgumentDescription"><p class="p">Generates the status report
+in TCL format. For example:</p>
+<pre class="pre codeblock leveled"><code>{nightly/preScript Empty 1352414455}
+{nightly/directed/preScript Empty 1352414455} 
+{nightly/directed/dirtest1/execScript Ok 1352414470} 
+{nightly/directed/dirtest1/mergeScript Passed 1352414474} 
+{nightly/directed/dirtest2/execScript Ok 1352414472} 
+{nightly/directed/dirtest3/execScript Ok 1352414472} 
+{nightly/directed/postScript Empty 1352414476} </code></pre><p class="p">Where the format is: (&lt;runnable&gt;/&lt;script&gt;
+&lt;status&gt; &lt;timestamp&gt;</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id86b91a8a-ae12-4d74-b4f5-70c415e77017">[-testname | -notestname]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Forces the status reports to
+be in test-centric or action-centric mode. By default, vrun -status
+determines the mode based on your RMDB.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idbce387e4-10d9-4304-82e5-5d843f2b212d">-times</dt>
+<dd class="dd ArgumentDescription"><p class="p">Displays elapsed CPU times in
+addition to date and time.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id67a8175c-f558-4f84-a89e-c65fac6a951a">-triagewait &lt;sec&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Postpones beginning the triage operation
+until after &lt;sec&gt; seconds, where the default is 30 seconds.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id4ff880e5-bc6a-43aa-8c39-7245c6e18443"><p class="p Opt">&lt;sec&gt;</p>
+<p class="p">An integer defining the number of seconds to wait, where the
+default is 30.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd02ffc3f-1045-452a-9f42-5d25f26435fb">-vrmdata &lt;<span class="keyword ParameterName OptionalReplaceable">directory</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify root of <span class="ph filepath">VRM Data</span> directory. Note
+that the -vrmdata option may include embedded environment variables.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id55e5ffa1-916d-436d-bdaf-5bd255de9f4b">-warnings</dt>
+<dd class="dd ArgumentDescription"><p class="p">The -warnings option causes
+the status report to show only warnings. This option can be used
+together with the -errors option to show both errors and warnings.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id26b66c2a-acc5-4130-b3f8-96e823039658"><h2 class="title Subheading sectiontitle">Viewlog Mode Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id668a08c1-aa71-4249-8cab-1c897125f6fd">-viewlog &lt;<span class="keyword ParameterName OptionalReplaceable">action</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">The vrun -viewlog &lt;<span class="keyword ParameterName OptionalReplaceable">action</span>&gt;
+command can be used to view the log output of any Action after the
+fact.</p>
+<p class="p">The -viewlog command accepts
+absolute paths, paths relative to the current directory, paths relative
+to <span class="ph filepath">VRMDATA</span>, and Action context paths (in that
+order) when specifying which log file to view.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id49b7155a-221a-4a74-9970-81ea33d2a104">-tail</dt>
+<dd class="dd ArgumentDescription"><p class="p">Adding the -tail option to a
+regression run causes the Action log output to be printed to the
+vrun stdout in real time. The -tail is used to follow the log output
+as it is written.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idb8dbb9af-bcdf-4fd2-99ea-0e3855ee07df">[-testname | -notestname]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Forces the viewlog to be in
+test-centric or action-centric mode. By default, vrun -viewlog determines
+the mode based on your RMDB.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idf26d37e8-5817-4294-8047-2df88836d22b">-vrmdata &lt;<span class="keyword ParameterName OptionalReplaceable">directory</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify root of <span class="ph filepath">VRM Data</span> directory tree.
+Note that the -vrmdata option may include embedded environment variables.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9f64d9c9-5977-4f06-b233-451495fb4c1c"><h2 class="title Subheading sectiontitle">Control/Abort
+Mode Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide4f0da8c-6001-4f8e-add4-6eb86cd3313c">-continue</dt>
+<dd class="dd ArgumentDescription"><p class="p">Resume launching of new jobs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd65a1da9-b803-439c-9375-1bc10d70ee4f">-dest &lt;<span class="keyword ParameterName OptionalReplaceable">porthost</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Monitor daemon socket (<span class="ph filepath">port@host</span>).
+Specifies the destination (<span class="ph filepath">port@host</span>) for the
+master VRM instance. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idebe1aaab-4ef6-40b6-8fdf-960378e5176b">-exit</dt>
+<dd class="dd ArgumentDescription"><p class="p">Terminate regression run (not
+running jobs).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id7070efc4-421b-4990-914e-5f84e8dca007">-kill [&lt;<span class="keyword ParameterName OptionalReplaceable">actions</span>&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Terminate regression run and
+running jobs.</p>
+<p class="p">Note that during a VRM regression
+run, Ctrl-C terminates the run.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id6e4ff71b-8ac4-4596-88e2-30624569b4d0">-pause</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suspends launching of new jobs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id3324e9bf-a02d-49dd-91f4-1d8597883aca">-resume [&lt;<span class="keyword ParameterName OptionalReplaceable">actions</span>&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Resume suspended jobs and launch
+new jobs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idd7d99b80-e129-4c66-ae31-74757962f8bb">-suspend [&lt;<span class="keyword ParameterName OptionalReplaceable">actions</span>&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suspend running jobs, releasing
+any licenses, to allow for the launching of new jobs.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id0d238a81-406c-4d44-9363-47b683c413f4">[-testname | -notestname]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Forces the control mode to be
+in test-centric or action-centric mode. By default, the control
+mode executable will determine the mode based on your RMDB.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id9fd37621-0525-4e67-8697-f3538dfac6e2">-vrmdata &lt;<span class="keyword ParameterName OptionalReplaceable">directory</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specify root of <span class="ph filepath">VRM Data</span> directory tree.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet"><h2 class="title Subheading sectiontitle">Modification Options</h2><p class="p">The -modify command-line option group is mutually exclusive with
+the other mode options, such as -status and -send. It is not possible
+to launch a new regression and to control an existing regression
+with the same vrun command. Refer to the section <a class="xref fm:HeadingOnly" href="Contain_RegressionRunModification_id8aeead8b.html#id8aeead8b-26ec-439c-92e1-320a43b7b3b3__Contain_RegressionRunModification_id8aeead8b.xml#id8aeead8b-26ec-439c-92e1-320a43b7b3b3" title="Use the vrun -modify command line to modify select parameters and attributes of a regression run after the regression has started.">Regression Run Modification</a> for more
+information.</p>
+<dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id16a3e64e-8bd2-43e6-b9e7-5563639f07fa">-vrmdata &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the location of the regression
+run to modify. Use this argument if your VRMDATA directory is located
+elsewhere than the default location. The default value is the VRMDATA
+directory of the current run directory.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idec2a7469-e194-4ebf-a99d-401bd499c8fe">-dest &lt;porthost&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the porthost location of the regression
+run you wish to modify. By default, vrun will find this value through
+analysis of the related event log, but you can specify the port
+if you already know the value.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id7b71f6a9-5575-482c-b3b7-573cafee8c47">-eventlog &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the name of the eventlog for the
+regression run you wish to modify. Use this argument for when you
+have multiple regressions running from the same VRMDATA directory. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id334f2452-0a86-44bc-9509-cae725d84ee0">&lt;context&gt;/</dt>
+<dd class="dd ArgumentDescription"><p class="p">For Operational Attributes associated with
+named queues, this argument should be the name of the specific named
+queue, where any following &lt;keyword&gt;=&lt;value&gt; pairs apply only
+to the specific named queue.</p>
+<p class="p">For Parameters, this argument should be the complete or partial
+context chain of one or more Action scripts.</p>
+<p class="p">If you do not specify this argument, the &lt;keyword&gt;=&lt;value&gt;
+pairs are modified globally.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ida32051c2-62c8-46b3-840f-ef48dd06762b">&lt;keyword&gt;=&lt;value&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the attribute or parameter you
+wish to override. Refer to the <a class="xref fm:HeadingOnly" href="Concept_ParameterAndAttributeModification_idd5e90320.html#idd5e90320-79b7-4f5a-af25-89b25701b645__Concept_ParameterAndAttributeModification_idd5e90320.xml#idd5e90320-79b7-4f5a-af25-89b25701b645" title="You can modify select parameters and attributes during an active regression run.">Parameter and Attribute Modification</a> for information about
+what you can override.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idaf62f903-6c7b-4b19-8d8b-b1ba697b72c1"><h2 class="title Subheading sectiontitle">Notification Mode
+Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide6352ed6-1a0f-4484-baf1-d6080458504b">-code &lt;<span class="keyword ParameterName OptionalReplaceable">integer</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Report status code (0 =&gt; OK).
+Specifies a pass/fail return status. Default value is 0. In the
+case of the default, this means that 0 = OK; otherwise, the action
+has failed.</p>
+<p class="p">The -code option allows the
+calling Action to return a status (integer and/or message string)
+to the invoking VRM.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide288a486-31f1-4e67-9251-1d665f94c2e2">-dest &lt;<span class="keyword ParameterName OptionalReplaceable">port@host</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Monitor daemon socket (<span class="ph filepath">port@host</span>).
+Specifies the destination (<span class="ph filepath">port@host</span>) for the
+master VRM instance. </p>
+<p class="p">The -dest option is mandatory
+in the notification mode. The value is normally hard-coded into
+the wrapper script by invoking VRM instance when a given Action
+is launched (the invoking VRM opens a socket for listening on the
+specified port).</p>
+<p class="p">The bareword (non-option) arguments
+specify one or more Actions to which the event applies. Each argument
+must correspond to an Action that was launched by the VRM instance
+to which the event message is directed and which has not yet completed.
+Any number of Actions can be included on one command line (assuming
+they all share the same status); however, only one done event per
+Action is accepted.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ide370f28c-a19a-4776-9c09-e6970326ad2c">-message &lt;<span class="keyword ParameterName OptionalReplaceable">string</span>&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Report message string. Specifies
+a status message (a string) that is printed to the invoking the
+VRM log output.</p>
+<p class="p">The -message option allows the
+calling Action to return a status (integer and/or message string)
+to the invoking VRM.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idcf3bf384-218b-4c8d-a0b2-ca4359258e7a">-reply</dt>
+<dd class="dd ArgumentDescription"><p class="p">Report message reply on stdout.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id149db2ac-a4c9-4584-bfbc-c547fbd7a147">-send {done | start | user}</dt>
+<dd class="dd ArgumentDescription"><p class="p">Notification mode is enabled
+by the -send command-line option. Sends a notification to communicate
+changes in job status to a VRM process. Generally, this command
+is not needed as the command is called from the same wrapper script
+used to launch the job in question.</p>
+<ul class="ul"><li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__iddba75283-ae63-4ff2-bda4-daf4c1984df0"><p class="p">done</p>
+<p class="p">Sent once the user script completes
+and returns to the wrapper.</p>
+<p class="p">For done events, if the -code value
+is zero (0) and the -message value is blank (or not specified),
+then the invoking VRM assumes the Action passed normally.</p>
+<p class="p">If the -code value is zero (0)
+and a -message string has been specified, then the message is emitted
+to the invoking the VRM log output.</p>
+<p class="p">If the -code value is non-zero,
+then the Action is assumed to have failed. An error message is emitted
+to the invoking the VRM log output and the appropriate pass/fail
+handling is invoked.</p>
+<p class="p">In the case of a failure, the optional
+-message string is added to the error message emitted by the invoking
+VRM.</p>
+<p class="p">The following example command transmits
+a done message on behalf of a successful <span class="ph filepath">execScript</span> Action
+in the <span class="ph filepath">nightly/test1</span> Runnable:</p>
+<pre class="pre codeblock leveled"><code>vrun -send done -code 0 nightly/test1/execScript</code></pre></li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id7a261f58-85c7-4bd6-b0af-59d2f678898c"><p class="p">start</p>
+<p class="p">Sent just as the user script begins
+to execute.</p>
+<pre class="pre codeblock leveled"><code>For start events, both the -message and the -code options are ignored.</code></pre></li>
+<li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id7e09c222-0b55-4467-86e5-b7c186201316"><p class="p">user</p>
+<p class="p">Sent upon demand by the user script
+to communicate informational message.</p>
+<p class="p">For user events, the value of the
+-message option is used in an informational message emitted to the
+vrun log output and the -code option is ignored.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet"><h2 class="title Subheading sectiontitle">Help Options</h2><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id1eab07a3-934d-4c08-ab0e-a6853b312e86">-help</dt>
+<dd class="dd ArgumentDescription"><p class="p">Print this help message and
+exit.</p>
+<p class="p">Note that it is required that
+the -help option be the first argument on the command line. If the
+-help option appears anywhere else, then the help text is internal
+to vish (which describes the vsim options) and the vish help is
+displayed instead of the vrun help. For example,</p>
+<pre class="pre codeblock leveled"><code>vrun -help // displays the vrun help</code></pre><pre class="pre codeblock leveled"><code>vrun -noexec -help // displays the vsim help</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idccd4743b-a4bb-4304-94ab-82a7148d3bcb">-sample</dt>
+<dd class="dd ArgumentDescription"><p class="p">Prints a sample RMDB file on stdout.</p>
+</dd>
+</dl>
+</div>
+<div class="section ArgumentSet"><h2 class="title Subheading sectiontitle">Verbose Options</h2><p class="p">Verbose options (common to all modes)</p>
+<p class="p">By default, if no verbose option
+is specified, then VRM runs the requested Actions, reports start
+and done events for each, reports relevant errors and warnings,
+and emits a summary of the run when complete. If some Actions are
+not run due to earlier errors and/or premature termination, then
+that fact is reported but the offending Actions are not listed.</p>
+<p class="p">See “<a class="xref fm:HeadingAndPage" href="Concept_MessageVerbosityDebugging_idf9d2039c.html#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846__Concept_MessageVerbosityDebugging_idf9d2039c.xml#idf9d2039c-7fe2-4c00-8f1c-6782dfb2d846" title="All messages are produced on the standard output of the VRM process or in the transcript of the invoking vsim session.">Message Verbosity and Debugging</a>” for additional information.</p>
+<dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id8f129f03-4a32-4bad-8e3b-3f77b9fa307b">-debug[=&lt;value&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Print low-level information
+as vrun progresses.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id36f38201-6642-4b93-a0f6-c4f0410ce973"><p class="p Opt">&lt;value&gt;</p>
+<p class="p">A comma-separated list of values, defined as follows:</p>
+<ul class="ul"><li class="li" id="idc33b9896-40ad-4485-9535-aeeba6f64082__idc7ff261a-b01f-44f9-824f-cfe96e8eff6f"><p class="p">usertcl
+— emits a message before and after any usertcl procedure is executed.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">If you specify -debug without
+the optional “=&lt;value&gt;” option, then details about the internal
+flow of the VRM are emitted. This mode is mainly for use by developers
+and field support in locating problems with the VRM tool or its
+interpretation of the RMDB database. Debug-level messages are generally
+prefixed with the name of the TCL procedure reporting the message.</p>
+<p class="p">Debug mode, if specified, overrides
+verbose mode.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__ida0043e42-6a00-4569-9d2c-d7ea35c7b832">-quiet</dt>
+<dd class="dd ArgumentDescription"><p class="p">Suppress information messages
+during the run.</p>
+<p class="p">If the -quiet option is specified,
+then the VRM reports relevant error/warning and emits a summary
+of the run when complete. The start and done events are not reported.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc33b9896-40ad-4485-9535-aeeba6f64082__id02991d5a-00fb-4d39-8221-0484867e8f09">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">Print additional information
+as vrun progresses.</p>
+<p class="p">If the -verbose option is specified,
+then additional user-level information, including the actual launch
+commands, about the progress of each Action is emitted. In addition,
+if some Actions are not run due to earlier errors and/or premature
+termination, then the offending Actions are also listed. These messages
+are in addition to those reported in default mode.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can abbreviate VRM command-line
+options as long as enough of the option name is specified to unambiguously
+identify a single option keyword. For example:</p>
+<p class="lines ApplCommand">vrun -run -ad -as nightly</p>
+<p class="p">shows enough of the -adhoc and -ask
+options for vrun to determine your intent.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Reference_id5d841c82.html" title="The vrun command provides command-line access to the Verification Run Manager.">Reference</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "vrun Command"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_VrunCommand_idc33b9896.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

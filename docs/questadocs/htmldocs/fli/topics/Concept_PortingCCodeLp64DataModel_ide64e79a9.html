@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Porting C Code to the LP64 Data Model" />
+<meta name="abstract" content="There are several key points about porting C code to the LP64 data model." />
+<meta name="description" content="There are several key points about porting C code to the LP64 data model." />
+<meta name="DC.subject" content="LP64 data model" />
+<meta name="keywords" content="LP64 data model" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Porting C Code to the LP64 Data Model</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Porting C Code to the LP64 Data Model" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Porting C Code to the LP64 Data Model</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">There are
+several key points about porting C code to the LP64 data model.</span>
+</div>
+<ul class="ul"><li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idfc3a0c0b-786b-4838-ac8d-200044462a9c"><p class="p">C long type grows
+to 64 bits.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id2fdb07db-79b2-4419-9ce3-5a36aeafe449"><p class="p">C pointer types, for
+example char*, grow to 64 bits.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idd97b828d-5fd3-4452-9ad1-2a86e48a2f94"><p class="p">all other data types
+are unchanged from the 32-bit world.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__ide3351441-f7be-4d12-ab0c-1c868a0b1435"><p class="p">C long and pointer
+types do not fit in a C int.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id780db36b-626a-47c1-8dcc-e66cf38cc2e0"><p class="p">functions with no
+visible prototype are assumed to return int.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idf0abfc7d-1bf0-4946-824c-7416c1650bb2"><p class="p">C long and pointer
+values are truncated to 32 bits when:</p>
+<ul class="ul"><li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id840f20a1-9944-4ff7-9f41-a915453a1f10"><p class="p">returned as an int type.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id634bdeec-d266-48fe-99ff-180736aee6b8"><p class="p">assigned to an int type.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id24b623ae-14df-4429-b595-32b1900ccf1f"><p class="p">cast to an int type.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idccc9e78d-89cf-4066-8e8e-17cc19acbd6f"><p class="p">printf %d or %x formats
+are used instead of %ld or %lx.</p>
+</li>
+</ul>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idbaa7d1f0-6810-4221-822f-5ec380ad3f60"><p class="p">ints are zero- or sign-extended to 64
+bits when</p>
+<ul class="ul"><li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__iddc578f89-8ace-48c5-9cfc-53e0ae62aeca"><p class="p">returned as a long or
+pointer type.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__id6a80817e-2a3a-49e4-8461-2a169bb1a2ab"><p class="p">assigned to a long or
+pointer type.</p>
+</li>
+<li class="li" id="ide64e79a9-a25f-493c-a7c7-120c6ba07bd7__idb7837639-86e1-4245-b477-b51719574510"><p class="p">cast to a long or pointer type.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_Using64Bit32BitFliApplications_idefe4a899.html" title="If you have 32-bit FLI applications and wish to use 64-bit ModelSim/Questa, you will need to port your code to 64 bits by moving from the ILP32 data model to the LP64 data model.">Using 64-bit with 32-bit FLI Applications</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Porting C Code to the LP64 Data Model"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PortingCCodeLp64DataModel_ide64e79a9.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

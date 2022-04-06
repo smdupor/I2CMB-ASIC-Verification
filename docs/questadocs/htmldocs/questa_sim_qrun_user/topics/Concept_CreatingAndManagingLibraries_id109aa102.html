@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Creating and Managing Libraries" />
+<meta name="abstract" content="You can create and map work libraries using the -makelib argument. It is an option group argument. By default the work library is created in the ./qrun.out/work library." />
+<meta name="description" content="You can create and map work libraries using the -makelib argument. It is an option group argument. By default the work library is created in the ./qrun.out/work library." />
+<meta name="prodname" content="QuestaSIM" />
+<meta name="version" content="v12.2" />
+<meta name="release" content="2017_02" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-10-01" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_qrun_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="All" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="October 2019" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM  Qrun User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="none" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="Comments" content="none" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id109aa102-13e4-48ee-a8b6-e1d044e00ceb" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Creating and Managing Libraries</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Creating and Managing Libraries" />
+<meta name="attributes" content="none" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Creating and Managing Libraries</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can create and map work libraries
+using the -makelib argument. It is an option group argument. By
+default the work library is created in the ./qrun.out/work library. </span>
+</div>
+<p class="p">The syntax for the creating a library is:</p>
+<p class="lines ApplCommand">qrun -makelib &lt;libpath[:logical]&gt; &lt;files&gt;, [options] -end|-endlib</p>
+<ul class="ul"><li class="li" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__ida3b24fe5-cb61-4816-8782-9a945e563f3c"><p class="p">The libpath
+argument is a Linux/Windows path to where qrun creates the library.
+The logical argument is the logical name of the library mapped to
+the physical library. If you do not specify a logical name, then
+qrun does not perform a logical mapping.</p>
+</li>
+<li class="li" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__id263e6769-41be-4f6a-a597-2038a77cc53c"><p class="p">The files argument
+specifies the source files compiled into the library.</p>
+</li>
+<li class="li" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__id7ccf5d20-9915-486a-9c96-d5277dc5d643"><p class="p">Optional arguments
+allow you to apply various tool arguments to the specified files.</p>
+</li>
+</ul>
+<p class="p">Following is a simple example:</p>
+<p class="lines ApplCommand">% qrun -makelib mylib *.v -end</p>
+<p class="p">The previous command invokes the vlib and vmap tools, as well
+as vlog, vopt, and vsim:</p>
+<p class="lines ApplCommand">vlib -quiet qrun.out/mylib<br />
+vmap -c -quiet mylib qrun.out/mylib</p>
+<p class="p">Only the files and options within the -makelib -end command set
+are compiled by qrun into the library. You can terminated the -makelib
+option set with either the -end, -endlib text. If qrun encounters
+another -makelib argument, it terminates the previous one. You can
+have more than one -makelib -endlib command set on the qrun command
+line. You can use the -makelib in conjunction with other switches
+as in the following.</p>
+<div class="section Subsections"><div class="section Subsection" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__idc8762ef6-44ba-47aa-9699-c28b862a02f8"><h2 class="title Subheading sectiontitle">Using -makelib with Other Arguments</h2><p class="p">Using -makelib with other options gives you the flexibility to
+execute entire sets of source files. In the following example, compile
+file1.vhd and file2.vhd into library "mylib" with options -93. The
+-compile switch forces qrun to only perform the compile step and
+not optimization nor simulation.</p>
+<p class="lines ApplCommand">qrun -compile -93 -makelib mylib file1.vhd file2.vhd -endlib ...  </p>
+<p class="p">Compile files specified in mylib_files.txt into library "mylib"
+with options from -f file and -93.</p>
+<p class="lines ApplCommand">qrun -compile -93 -makelib mylib -f mylib_files.txt -endlib ...    </p>
+<p class="p">The following specifies a custom source file extension .myvhdl
+for the VHDL files specified in the -makelib collection libvhdl.</p>
+<p class="lines ApplCommand">qrun -makelib libvhdl -vhdl_ext +.myvhdl bar.myvhdl -endlib tb_top.vhd   </p>
+<p class="p">This example shows the specification of a physical library.</p>
+<p class="lines ApplCommand">qrun -makelib /usr1/myarea/gates buf.v and2.v -endlib ...    </p>
+<p class="p">When the qrun command line becomes more complicated, you can
+use the -f &lt;filename&gt; and -makelib arguments to ease complexity.
+The following example shows how to construct 4-way Set associative
+phased cache simulation.</p>
+<p class="p"><a class="xref fm:Figure" href="#id109aa102-13e4-48ee-a8b6-e1d044e00ceb__idce783a7b-123c-40c0-9429-b01aacada496">Figure 1</a> shows the structure of
+the phased cache:</p>
+<ul class="ul"><li class="li" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__id5dcc3968-906c-46ba-87cf-9518df96d7f9"><p class="p">The device
+has three libraries: tb_lib, gatelib and rtllib.</p>
+</li>
+<li class="li" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__id8793b100-8981-44c4-9a3d-5bab4dd82e2d"><p class="p">All of the
+associated library source files have been put into their own separate
+*.f files: tb_src.f, mux_src.f, and rtl_scr.f.</p>
+</li>
+</ul>
+<div class="fig fignone" id="id109aa102-13e4-48ee-a8b6-e1d044e00ceb__idce783a7b-123c-40c0-9429-b01aacada496"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Library
+Structure for a Associative Phase Cache</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:96" src="../graphics/phased_cache_libs.gif" /></div><br /></div>
+<p class="p">To explicitly build the libraries separately, use the qrun command
+as follows:</p>
+<p class="lines ApplCommand">qrun -makelib rtllib      -f rtl.scr.f        -endlib<br />
+         -makelib gatelib  -f mux_scr.f   -endlib<br />
+         -makelib tb_lib    -f b_scr.f        -endlib</p>
+<p class="p">You put each one of the --makelib arguments
+into their own *.f file, which is named qrun.f shown as follows:</p>
+<pre class="pre codeblock"><code>Contents of qrun.f
+-makelib rtllib  -f rtl_src.f -endlib
+-makelib gatelib -f mux_src.f -endlib
+-makelib tb_lib  -f tb_src.f  -endlib</code></pre><p class="p">The final qrun command to build the libraries, optimize the files,
+and simulate is:</p>
+<p class="lines ApplCommand">qrun -f qrun.f</p>
+<p class="p">The qrun command takes the device from compilation, optimization,
+to simulation without you specifying any tool argument:</p>
+<pre class="pre codeblock"><code># *** Summary *********************************************
+#     qrun: Errors:   0, Warnings:   0
+#     vlog: Errors:   0, Warnings:   0
+#     vopt: Errors:   0, Warnings:   0
+#     vsim: Errors:   0, Warnings:   0
+#   Totals: Errors:   0, Warnings:   0</code></pre><p class="p">If you list the qrun.out directory, you can see that qrun has
+created directories for the three libraries.</p>
+<pre class="pre codeblock"><code>.  ..  <span class="ph FontProperty emphasis">gatelib</span>  history  history.cnt  <span class="ph FontProperty emphasis">rtllib </span> session  stats_log  <span class="ph FontProperty emphasis">tb_lib</span>  top_dus  version  work</code></pre><p class="p">You can pre-compile files and reference libraries with -the reflib
+argument. Its syntax is:</p>
+<p class="lines ApplCommand">qrun -reflib &lt;library_name&gt;</p>
+<p class="p">A related argument to -makelib is the -filemap argument. It allows
+you to specify how groups of files are to be compiled. Its syntax
+is:</p>
+<p class="lines ApplCommand">qrun -filemap &lt;options&gt; &lt;files&gt; -endfile</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommonQrunCommandArguments_idc08bb81f.html">Common qrun Command Arguments</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_qrun_user"
+                DocTitle = "Questa® SIM  Qrun User’s Manual"
+                PageTitle = "Creating and Managing Libraries"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CreatingAndManagingLibraries_id109aa102.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM  Qrun User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

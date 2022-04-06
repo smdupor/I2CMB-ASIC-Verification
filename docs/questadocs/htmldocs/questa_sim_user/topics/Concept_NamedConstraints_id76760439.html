@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Named Constraints" />
+<meta name="abstract" content="The open SCV API supports the following macros for creating constraint data expression initializers data member fields of a user-defined constraint, based on a derivation of class scv_constraint_base:" />
+<meta name="description" content="The open SCV API supports the following macros for creating constraint data expression initializers data member fields of a user-defined constraint, based on a derivation of class scv_constraint_base:" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id76760439-5b45-41fe-9179-b74c1eb1a336" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Named Constraints</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Named Constraints" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id76760439-5b45-41fe-9179-b74c1eb1a336">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Named Constraints </h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The open SCV
+API supports the following macros for creating constraint data expression
+initializers data member fields of a user-defined constraint, based
+on a derivation of class scv_constraint_base: </span>
+</div>
+<pre class="pre codeblock"><code>#define SCV_CONSTRAINT(expr)
+#define SCV_SOFT_CONSTRAINT(expr)</code></pre><p class="p">The first defines a hard constraint and the
+second defines a soft constraint. </p>
+<p class="p">The following example shows a user-defined
+constraint that uses these macros in the SCV constraint constructor
+macro, SCV_CONSTRAINT_CTOR(). </p>
+<div class="fig fignone ExampleTitle" id="id76760439-5b45-41fe-9179-b74c1eb1a336__id8df2ed03-5f7b-4939-abf9-d3f2d286f852"><span class="figcap"><span class="fig--title-label">Example 1. </span>User-Defined Constraint </span><pre class="pre codeblock"><code>class EtherFrameConstraintT : virtual public scv_constraint_base {
+    public:
+        scv_smart_ptr&lt;unsigned&gt; Type;
+        scv_smart_ptr&lt;unsigned long long&gt; DestAddr;
+        scv_smart_ptr&lt;unsigned long long&gt; SrcAddr;
+        scv_smart_ptr&lt;unsigned&gt; CRC;
+        scv_smart_ptr&lt;EtherFramePayloadT&gt; Payload;</code></pre><pre class="pre codeblock"><code>        SCV_CONSTRAINT_CTOR( EtherFrameConstraintT ){
+            printf( "Start initializing EtherFrameConstraint ...\n" );
+            SCV_CONSTRAINT( Type() == (SDF_BYTE &lt;&lt; 8 | SDF_BYTE) );
+            SCV_CONSTRAINT( DestAddr() != SrcAddr() );
+            SCV_CONSTRAINT( DestAddr() &lt; 0xffLL ); // Limit to 48 bits
+            SCV_CONSTRAINT( SrcAddr() &lt; 0xffLL );  // Limit to 48 bits
+        }
+};</code></pre></div>
+<p class="p">To augment these macros, the following macro
+allows a constraint field to be named: </p>
+<pre class="pre codeblock leveled"><code>#define SCV_NAMED_CONSTRAINT(type, name, expr)</code></pre><p class="p">which uses the following arguments: </p>
+<ul class="ul"><li class="li" id="id76760439-5b45-41fe-9179-b74c1eb1a336__idf03d62cf-1a25-483c-bcd9-9333e80cb677"><p class="p">type — the type of the constraint (HARD/SOFT),
+specified as scv_constraint_expr::scv_constraint_type.</p>
+</li>
+<li class="li" id="id76760439-5b45-41fe-9179-b74c1eb1a336__id835975cd-7a83-4d07-aeec-8badef724641"><p class="p">name — the actual name given to the constraint.</p>
+</li>
+<li class="li" id="id76760439-5b45-41fe-9179-b74c1eb1a336__idb3bba008-dc7a-46f0-b5ae-90278374a917"><p class="p">expr — the expression argument that is
+passed exactly as in the existing macros SCV_CONSTRAINT() and SCV_SOFT_CONSTRAINT().</p>
+</li>
+</ul>
+<p class="p">To support the constraint type (hard or soft),
+the following class is defined with an enum type that you can use
+specify type: </p>
+<pre class="pre codeblock"><code>class scv_constraint_expr {
+      public:
+        typedef enum { HARD, SOFT } scv_constraint_type;
+        scv_constraint_expr(
+            const char* name, scv_constraint_type type, scv_expression e,
+            const char* file = "unknown", int line = 0 );</code></pre><pre class="pre codeblock"><code>        const char *name() const;
+        const char *file() const;
+        int         line() const;</code></pre><pre class="pre codeblock"><code>        void disable();
+        void enable();
+        bool is_disabled() const;
+    };</code></pre><p class="p">When the constraint is created, the file name
+and line # are captured in the class scv_constraint_expr object
+so that it can be provided later to parts of the internal SCV implementation
+for reporting purposes, such as error messages. You can do this
+by referencing the ANSI C FILE and LINE directives at the point
+where the name constraint is constructed. Accessors ::name(), ::file(),
+and ::line() are provided to class scv_constraint_expr as shown above
+to provide this information for messaging, if needed. </p>
+<div class="section Subsections"><div class="section Subsection" id="id76760439-5b45-41fe-9179-b74c1eb1a336__id9c451f83-17f1-4178-925a-849d9950d6ad"><h2 class="title Subheading sectiontitle">Dynamic
+Enabling and Disabling of Named Constraints </h2><p class="p">You can enable and disable constraints that
+have been created with names in accordance with the naming macro
+described in <a class="xref fm:HeadingOnly" href="#id76760439-5b45-41fe-9179-b74c1eb1a336" title="The open SCV API supports the following macros for creating constraint data expression initializers data member fields of a user-defined constraint, based on a derivation of class scv_constraint_base:">Named Constraints</a> (above). To support this feature,
+class scv_constraint_base contains the following methods: </p>
+<pre class="pre codeblock"><code>class scv_constraint_base {
+      ...
+      public:
+        ...
+        bool disable_constraint( const char* name );
+        bool enable_constraint( const char* name );
+        ...
+    };</code></pre><p class="p">You can use these methods to enable or disable
+any named constraint field in a user-defined constraint object derived
+from class scv_constraint_base. The implementation of class scv_constraint_base
+can use names as lookup keys to an internal table of class scv_constraint_expr
+objects. Once looked up, you can call the ::enable() or ::disable()
+method on those objects appropriately. </p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MentorDynamicExtensions_id4091f9b2.html" title="The OSCI-SCV library has been modified to support Mentor Dynamic Extensions, which allow the following:">Mentor Dynamic Extensions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Named Constraints"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_NamedConstraints_id76760439.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

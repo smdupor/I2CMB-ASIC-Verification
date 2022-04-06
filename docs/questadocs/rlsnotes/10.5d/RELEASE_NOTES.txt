@@ -1,0 +1,792 @@
+                     Release Notes For Questa Sim 10.5d
+
+                                 Feb 14 2017
+               Copyright 1991-2017 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.5d
+     * [4]Base Product Specifications in 10.5d
+     * [5]Compatibility Issues with Release 10.5d
+     * [6]General Defects Repaired in 10.5d
+     * [7]User Interface Defects Repaired in 10.5d
+     * [8]SystemVerilog Defects Repaired in 10.5d
+     * [9]VHDL Defects Repaired in 10.5d
+     * [10]SystemC Defects Repaired in 10.5d
+     * [11]SVA/PSL Defects Repaired in 10.5d
+     * [12]Mixed Language Defects Repaired in 10.5d
+     * [13]Verification Management Defects Repaired in 10.5d
+     * [14]Power Aware Defects Repaired in 10.5d
+     * [15]WLF and VCD logging Defects Repaired in 10.5d
+     * [16]General Enhancements in 10.5d
+     * [17]User Interface Enhancements in 10.5d
+     * [18]SystemVerilog Enhancements in 10.5d
+     * [19]Coverage Enhancements in 10.5d
+     * [20]Verification Management Enhancements in 10.5d
+     * [21]Power Aware Enhancements in 10.5d
+     * [22]Document Revision History in 10.5d
+   _______________________________________________________________________
+
+   Key Information
+     * (source) A bug related to Windows DLL symbol export is fixed in
+       10.5 and later. A side effect of the fix is that there may be
+       incompatibility on Windows platforms regarding existing DPI usage.
+       The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+     * dvt95794 - Added modelsim.ini variable "AllowCheckpointCpp", a
+       companion variable for existing vsim -allowcheckpointcpp switch
+   -allowcheckpointcpp 1|0 Turn on/off the support for checkpointing foreign C++
+ libraries.
+                           Must be used in the vsim session where a checkpoint i
+s created.
+
+; Enable the support for checkpointing foreign C++ libraries.
+; The valid arguments are: 1 and 0.
+;     1 : turn on the support
+;     0 : turn off the support (default)
+; This option is not supported on the Windows platforms.
+;
+; AllowCheckpointCpp = 1
+
+   _______________________________________________________________________
+
+   Release Announcements in 10.5d
+     * In the next major release (10.6), support for Redhat Enterprise
+       Linux (RHEL) 5 and Suse Linux Enterprise Server (SLES) 10 will be
+       dropped.
+     * Release 10.5 uses FLEXnet v11.13.1.2 server, v11.13.0.2 client.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.13.0.2. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.13.0.2 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2015_1_patch2 with MGLS
+       v9.13_5.4 and PCLS v9.13.5.2
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.13.1.2 server, v11.13.0.2 client
+          + MSL v2015_1_patch2
+          + MGLS v9.13_5.4
+          + PCLS v9.13.5.2
+          + 10.5 release onwards, Questa will be using Microsoft Visual
+            Studio 12 a.k.a Visual Studio 13. This would mean that all the
+            executables shipped with the 10.5 release and onwards would be
+            linked in with "msvcr120.dll". If you have SystemC or
+            PLI/VPI/DPI/FLI libraries compiled with older release with any
+            gcc compiler shipped with the product, those will have to be
+            re-compiled with 10.5. Windows platform compiler details is as
+            follows:
+               o "gcc-4.2.1-mingw32vc9" has been replaced with
+                 "gcc-4.2.1-mingw32vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw64" has been replaced with
+                 "gcc-4.5.0-mingw64vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw32vc9" has been replaced with
+                 "gcc-4.5.0-mingw32vc12" and will be available for
+                 download on a request basis.
+                 Compiler versions have not been changed compared to
+                 previous release. Please refer to User's Manual for more
+                 details.
+               o (source) In the next major release (10.6)
+                    # support for Windows 8.0 will be dropped. No change
+                      for Windows 8.1
+                    # support for gcc-4.3.3-linux and
+                      gcc-4.3.3-linux_x86_64 will be dropped
+               o Due to enhanced security restrictions in web browser
+                 plug-ins used for viewing PDF files, manual-to-manual
+                 links do not resolve. Clicking a link may result in no
+                 action, or it may load the title page of the current PDF
+                 manual (instead of the target in the intended PDF
+                 manual).
+                 The unresolved link behavior occurs in all web browsers
+                 on Windows and Linux platforms. This behavior does not
+                 affect the links in the table of contents, the index, or
+                 the links to content within the same PDF manual. Because
+                 of this behavior, the navigational experience of PDF
+                 manuals is compromised. However, PDF is still ideal for
+                 printing.
+                 Mentor Graphics continues to monitor the situation and
+                 will adapt to future industry developments. For a
+                 fully-functional navigational experience, use the HTML
+                 manuals.
+               o In 10.8 major release, support for windows 7 and windows
+                 8.1 will be dropped.
+            ______________________________________________________________
+
+            Base Product Specifications in 10.5d
+          +
+            [Supported Platforms]
+            Linux RHEL 5 x86/x86-64
+            Linux RHEL 6 x86/x86-64
+            Linux RHEL 7 x86/x86-64
+            Linux SLES 10 x86/x86-64
+            Linux SLES 11 x86/x86-64
+            Windows 7 x86/x64
+            Windows 8.1 x86/x64
+            Windows 10 x86/x64
+            [Supported GCC Compilers (for SystemC)]
+            gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+            gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+            gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+            gcc-4.2.1-mingw32vc12
+            [OVL (shipped with product)]
+            v2.8.1
+            [VHDL OSVVM (shipped with product)]
+            v2014.07
+            [Licensing]
+            FLEXnet v11.13.1.2 server, v11.13.0.2 client
+            MSL v2015_1_patch2
+            MGLS v9.13_5.4
+            PCLS v9.13.5.2
+       ___________________________________________________________________
+
+       Compatibility Issues with Release 10.5d
+       Key Information Compatibility
+
+     * [nodvtid] - (source) A bug related to Windows DLL symbol export is
+       fixed in 10.5 and later. A side effect of the fix is that there may
+       be incompatibility on Windows platforms regarding existing DPI
+       usage. The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+   SystemVerilog Compatibility
+     * dvt89393 - (results) A concatenation of nets connected to an out or
+       inout unpacked net array port was connected in reverse order.
+     * dvt73613 - (results) At 'restore' time, the message counts are set
+       to be the values that they had at 'checkpoint' time. After the
+       'restore', a call to the 'msgZeroMessageCounts' TCL command may be
+       made from the GUI/vish to reset the message counts to 0.
+     * dvt87976 - (results) A net that is disconnected due to an
+       optimizations could be logged rather than its merged copy.
+     * dvt89061 - (results) Enhanced the xprop assertions to make them
+       glitch free under a vopt option -xprop_enable=glitchfreeassert.
+
+   VHDL Compatibility
+     * dvt93451 - (results) Vsim crashed when bit slices wider than 256,
+       of VHDL signals, were read through built-in UVM backdoor functions.
+
+   Mixed Language Compatibility
+     * dvt95057 - (source) Fixed a bug where a SystemVerilog task was
+       being allowed inside a SystemVerilog function even if it contained
+       a DPI task call. The DPI task call can potentially have delays in
+       it. It is illegal to call a task from a function in SystemVerilog
+       but we do allow it in case task does not contain any delays. Now,
+       the check for the delay in the task also includes the check for DPI
+       task call. This change may result in some of the customer designs
+       failing to compile. It is recommended to fix the designs.
+     * dvt90298 - (results) A VHDL array connected to a Verilog nettype or
+       interconnect array port declared with packed dimensions was
+       connected in reverse order.
+     * dvt96160 - (results) Now built-in version of uvm_hdl_read,
+       correctly reads the values from arbitrary slices of VHDL array
+       signals with non-zero LSB/MSB indices.
+
+   Power Aware Compatibility
+     * dvt90658 - (results) Added support to correctly parse nested
+       comments in liberty files under an option. option
+       -pa_libertyNestedCmnts can be used to enable parsing of nested
+       comments in liberty files.
+     * dvt83154 - (results) Questa PASim by default corrupts signals being
+       driven by constants E.g. For RTL assign out = 1'b1; Questa PASim
+       corrupts the 'out' signal. Added a switch
+       -pa_enable=constasfeedthru to avoid the corruption of signals being
+       driven by constants.
+     * [nodvtid] - (results) Added support of upf defined logic ports in
+       UPF commands - set_isolation, set_level_shifter, set_repeater and
+       set_port_attributes. It has been enabled under vopt option
+       -pa_enable=logicconnectivity.
+     * [nodvtid] - (results) Added support to honor power states defined
+       on repeater_supply_set of set_repeater command. Following simstates
+       are only supported - CORRUPT, NORMAL and CORRUPT_ON_ACTIVITY
+     * [nodvtid] - (results) Added support to honor power states defined
+       on driver_supply/repeater_supply mentioned in set_port_attributes
+       command. Following simstates are only supported - CORRUPT, NORMAL
+       and CORRUPT_ON_ACTIVITY
+     * [nodvtid] - (results) Added support to honor power states defined
+       on input_supply_set/output_supply_set/internal_supply_set of
+       set_level_shifter command. Following simstates are only supported -
+       CORRUPT and NORMAL.
+
+   General Compatibility
+     * dvt95511 - (source) The profile status command reports on the
+       status of a single option, but accepts multiple options. A warning
+       is issued if more than one option is provided.
+
+   Coverage Compatibility
+     * dvt89140 - (results) '-testhitdata' in the coverage html report
+       (vcover/coverage report -html -details) will only report the first
+       10 tests that hit the bin when the hit count hyperlink in clicked.
+       Furthermore, it now accepts an integer value (ex: '-testhitdata= <i
+       >'). When this integer i is specified, it will report up to the ith
+       tests that hit the bin. Furthermore, the new switch
+       '-testhitdataAll' is added. When used, all the tests that hit the
+       bin will be reported.
+     * dvt78649 - (results) The reporting of non-masking conditions for
+       ternary expressions is enhanced by adding the state of select
+       expression for implicant and alternate branches. The FEC report now
+       shows the state of select condition required to cover a term in the
+       implicant or alternate branch alongwith other non-masking
+       conditions.
+
+   Verification Management Compatibility
+     * dvt86458 - (source) VRM testlist functionality now automatically
+       populates the testname parameter using the exact entry in the
+       testlist. In order to append the seed or repeat to the testname, %s
+       and %n should be specified in the testlist directly.
+     * dvt31204 - (results) Deleting a test from a merge file is not
+       supported. Such an action would break the integrity of the bin
+       counts in the database. An error message is issued when an attempt
+       is made to delete a test while using 'coverage edit -delete -test <
+       test name >'.
+     * dvt91555 - (results) The -fixedtotalcov option is added in vcover
+       trend html report to display the actual total coverage values in
+       Coverage Summary graph irrespective of selected coverage types in
+       that graph. If no coverage type is selected then only the total
+       coverage is displayed in that graph.
+
+   Release Announcements Compatibility
+     * [nodvtid] - (source) In the next major release (10.6)
+          + support for Windows 8.0 will be dropped. No change for Windows
+            8.1
+          + support for gcc-4.3.3-linux and gcc-4.3.3-linux_x86_64 will be
+            dropped
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.5d
+     * dvt95319 - "vopt" can crash when using -debugdb and the path name
+       to the "work" library is very long and the top designunit name is
+       also very long. This problem has been resolved.
+     * dvt95511 - (source) The profile status command reports on the
+       status of a single option, but accepts multiple options. A warning
+       is issued if more than one option is provided.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.5d
+     * dvt90005 - Using "Exclude Selection" from the popup menu in the
+       Code Coverage Analysis window using FSM type and in "by file" mode
+       did not work. It resulted in the warning message: # ** Warning:
+       (vish-4036) The 'coverage exclude' command had no effect on
+       some/all objects because # no matching coverage data was found.
+       this has been fixed so that the selected item will correctly be
+       exclude with no warning.
+     * dvt69668 - The UI can freeze unpredictably when the Coverage
+       Analysis window is opened when invoking vsim. This issue has been
+       resolved.
+     * dvt90759 - Using "Exclude Selection" from the popup menu in the
+       Code Coverage Analysis window using FSM type did not work. It
+       resulted in the 4014 warning message: "no matching object found".
+       This has been fixed so that the selected item will correctly be
+       exclude with no warning.
+     * dvt90591 - In the Code Coverage Analysis window for Statement,
+       Branch, and Expression coverage panes, if filtereing (any
+       combination of hit, miss, and excluded) was applied and some items
+       of a multi-item line were not being displayed, the item numbers for
+       the remaining displayed items could be incorrect. In addition, if
+       the "Exclude Selection" from the popup menu was then applied to the
+       incorrecly numbered displaye item, the exclude would be applied to
+       the incorrect item. This has been fixed.
+     * dvt88300 - In the Code Coverage Analysis window for Condition (and
+       other) coverage panes, if filtereing (any combination of hit, miss,
+       and excluded) was applied, some items would be displayed when they
+       should be hidden by the filtering and vice versa. This has been
+       fixed.
+     * dvt91564 - Searching in the Structure window can cause the user
+       interface to freeze under some circumstances. This issue has been
+       resolved.
+     * dvt90075 - When viewing FSM coverage analysis, filtering out
+       covered states and transitions did not work correctly. This issues
+       has been resolved.
+     * dvt90155 - A force operation on a wreal interconnect would resault
+       in a crash. This issue has been resolved.
+     * dvt92169 - Objects window Kind filtering was not being restored
+       correctly after a restart operation.
+     * dvt89554 - Use of "examine -time" inside a "when -fast" command
+       fails to read data values correctly. This issues has been resolved.
+     * dvt94499 - Running vsim from a .BAT file on Windows can fail when
+       some arguments contain a trailing backslash ('\'). This issue has
+       been resolved.
+     * dvt94465 - The Code Coverage Analysis window does not track by-file
+       toggle coverage. This is intended as by-file toggle coverage is not
+       supported. The CCA window will not display a message to this effect
+       when the window is in by-file mode.
+     * dvt95571 - The GUI will crash when trying to perform wildcard
+       expansion in a Primitive scope. This issue has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.5d
+     * dvt89423 - Fixed a bug where non-blocking assignment to a clocking
+       block output was getting ignored in some cases if more than one
+       non-blocking assignments were being happening during same clock
+       cycle and output has an event based skew.
+     * dvt91297 - A vector with bits connected to different instances of
+       an instance array instantiation was connected improperly in some
+       unusual cases.
+     * dvt87810 - Vopt would give errors like this:
+       ** Error: test.sv(17): (vopt-2132) Instance 'dut' has a
+       non-optimizable form of recursive instantiation.
+       with recursively instantiated modules within generate loops and
+       conditions.
+     * dvt89393 - (results) A concatenation of nets connected to an out or
+       inout unpacked net array port was connected in reverse order.
+     * dvt92487 - Fix vsim elaboration crash related to concatenations
+       connected to ports of inlined module instances.
+     * dvt73613 - (results) At 'restore' time, the message counts are set
+       to be the values that they had at 'checkpoint' time. After the
+       'restore', a call to the 'msgZeroMessageCounts' TCL command may be
+       made from the GUI/vish to reset the message counts to 0.
+     * dvt93575 - Fixed a vopt crash when doing concatenation of queues.
+       Example :- queue = '{ queue, queue_ };
+     * dvt93510 - Fixed a vlog crash when virtual interface specialization
+       is used with empty parameter. Example:- virtual intf #(.param())
+     * dvt92312 - Fixed a vsim invalid error when nested unpacked array
+       concatenation is passed to a port and internal concatenation is
+       regular vector concatenation.
+     * dvt87976 - (results) A net that is disconnected due to an
+       optimizations could be logged rather than its merged copy.
+     * [nodvtid] - SDF annotation fails with array port when zero timing
+       delay is specified in SDF. If sdf has non-zero then annotations
+       went fine. Fixed so that annotations proceed even if sdf file has
+       zero delays.
+     * [nodvtid] - vlog's -E output might incorrectly emit
+       "`pragmaprotect" rather than "`pragma" whitespace "protect".
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.5d
+     * dvt90896 - Vcom could crash when trying to report an invalid field
+       of a record if the prefix of the selected name was an index on an
+       array access type.
+     * dvt91137 - A generic of a record type might receive an incorrect
+       actual value when the actual was a function call and there existed
+       another different function call actual for a different formal.
+     * dvt91565 - If an architecture called a subprogram in a package, and
+       if that subprogram contained a call to another subprogram, defined
+       only in the package body and found via a forward declaration also
+       in the package body, then subprogram inlining could produce bad
+       code that would crash the simulator when the design was loaded.
+     * dvt91501 - For some specific cases of signal assignment statement,
+       signal was not getting updated properly. This has been fixed.
+     * dvt92589 - Definition of a very large constant array within a
+       package could cause elaboration of the package to exhaust all
+       available stack space, causing the simulator to crash. Recompiling
+       the package with -O0 or -O1 is a temporary measure to prevent the
+       crash.
+     * dvt92840 - Access to a shared variable through an interface package
+       could cause the elaboration phase of the simulator to crash.
+     * dvt93089 - A call to a shared variable's method from within a
+       subprogram of an uninstantiated package could cause the simulator
+       to crash.
+     * dvt93451 - (results) Vsim crashed when bit slices wider than 256,
+       of VHDL signals, were read through built-in UVM backdoor functions.
+     * dvt90391 - In certail specific cases of generics of record types,
+       vsim use to give the error "Internal error in signal creation".
+       This has been fixed
+     * dvt91615 - In Some specific cases, vsim use to crash while inlining
+       a procedure. This has been fixed
+     * dvt81635 - For certain specific cases, vsim issues a fatal error
+       while trying to optimize functions with assertion statements.This
+       has been fixed.
+     * dvt92555 - For certain specific cases, vsim use to give incorrect
+       outputs due to cetain clocked process optimizations.This has been
+       fixed.
+     * dvt94049 - The compiler incorrectly reported the following error
+       when encountering an alias of an operator function instance:
+** Error: Alias with operator symbol designator must denote a function.
+
+       The compiler also incorrectly generated code for newly-defined
+       operator functions with generic-typed parameters.
+     * dvt89781 - For some specific cases in novopt mode, we used to do
+       port collapsing optimization incorrectly. This has been fixed.
+     * dvt90004 - In some specific cases of procedure inlining, vopt or
+       vcom in novopt flow used to crash. This has been fixed.
+     * dvt93277 - The vmake command would not work when there was a
+       dependency on an encrypted design unit.
+     * dvt95670 - The attributes A'range and A'reverse_range would give
+       incorrect ranges if A's bounds are defined with impure function
+       calls.
+   _______________________________________________________________________
+
+   SystemC Defects Repaired in 10.5d
+     * dvt92791 - Bug in the sccom distributed flow with missing systemc
+       exported modules has been fixed.
+     * dvt95642 - sccom merge error (sccom-6165) with a circular dependent
+       forward declared module instantiation has been fixed.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.5d
+     * dvt89182 - vsim crashes in some cases when an assertion with
+       boolean property had a pass action block.
+     * dvt90293 - $past(v,n) gives incorrect initial values when n is
+       greater than 1.
+     * dvt90240 - Fixed a bug where immediate assertions in functions were
+       consuming high memory if they had return statement in the action
+       block.
+     * dvt90588 - vsim's memory usage keeps on increasing after a
+       multi-clock assertion gets disabled.
+     * dvt95904 - Assertion shows INACTIVE in the waveform even when it is
+       ACTIVE.
+   _______________________________________________________________________
+
+   Mixed Language Defects Repaired in 10.5d
+     * dvt90298 - (results) A VHDL array connected to a Verilog nettype or
+       interconnect array port declared with packed dimensions was
+       connected in reverse order.
+     * dvt95057 - (source) Fixed a bug where a SystemVerilog task was
+       being allowed inside a SystemVerilog function even if it contained
+       a DPI task call. The DPI task call can potentially have delays in
+       it. It is illegal to call a task from a function in SystemVerilog
+       but we do allow it in case task does not contain any delays. Now,
+       the check for the delay in the task also includes the check for DPI
+       task call. This change may result in some of the customer designs
+       failing to compile. It is recommended to fix the designs.
+     * dvt96160 - (results) Now built-in version of uvm_hdl_read,
+       correctly reads the values from arbitrary slices of VHDL array
+       signals with non-zero LSB/MSB indices.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.5d
+     * [nodvtid] - Minor fixes to VRM automatic email function: (a) the
+       EMAIL_RECIPIENTS, EMAIL_SECTIONS, and EMAIL_SERVERS parameters may
+       now contain space/comma-separated lists of strings, and (b) the
+       EMAIL_SERVERS parameter is properly processed when multiple server
+       names are provided.
+     * dvt87578 - The vrun -status report now correctly expands the
+       relative path of the mergefile parameter.
+     * dvt94450 - Fixed crash in VRM GUI when expanding Runnable tree with
+       at least one repeat override specified.
+     * dvt94326 - In the VRM GUI, the "Suspend/Terminate Selected Jobs"
+       menu item is disabled if none of the selected jobs is running.
+       Likewise, the "Resume Selected Jobs" menu item is disabled if none
+       of the selected jobs is suspended.
+     * dvt94708 - The Timeout spinners on the Runtime tab of the VRM
+       Congifuration Edit dialog were too narrow to display timeout values
+       consisting of four or more digits.
+     * dvt93999 - Fixed problem where known-path parameters whose values
+       were not absolute paths were not being expanded by the C/SQL API.
+       Fixed error in TCL API path expansion when TCL-special characters
+       were included in the path. Fixed TCL error in two path-expansion
+       error messages.
+     * dvt95137 - Fixed problem with the way non-standard normalizetime
+       values (generally from transform rules) are displayed in the
+       Results Analysis window.
+     * dvt92310 - Fixed bug where VRM would crash if "-html" status-report
+       option was added to a regular regression-run command line.
+     * dvt31204 - (results) Deleting a test from a merge file is not
+       supported. Such an action would break the integrity of the bin
+       counts in the database. An error message is issued when an attempt
+       is made to delete a test while using 'coverage edit -delete -test <
+       test name >'.
+     * dvt86860 - Fixed problem in VRM on Windows where cmd.exe and other
+       utilities on the PATH could not be located.
+     * dvt96255 - Fixed TCL error when using "vrun -kill" option to kill a
+       regression test in testname mode.
+   _______________________________________________________________________
+
+   Power Aware Defects Repaired in 10.5d
+     * dvt90658 - (results) Added support to correctly parse nested
+       comments in liberty files under an option. option
+       -pa_libertyNestedCmnts can be used to enable parsing of nested
+       comments in liberty files.
+     * dvt83154 - (results) Questa PASim by default corrupts signals being
+       driven by constants E.g. For RTL assign out = 1'b1; Questa PASim
+       corrupts the 'out' signal. Added a switch
+       -pa_enable=constasfeedthru to avoid the corruption of signals being
+       driven by constants.
+   _______________________________________________________________________
+
+   WLF and VCD logging Defects Repaired in 10.5d
+     * dvt93896 - The [wlfman filter] and [wlf2vcd] performance has been
+       dramatically improved for WLF files containing large numbers of
+       single bit Verilog nets.
+   _______________________________________________________________________
+
+   General Enhancements in 10.5d
+     * dvt92311 - Added a new vsim option -capstats and a new commands
+       called capstats to print out capstats report. This report generates
+       complete memory usage of the design. The capstats option is defined
+       as follows:
+-capstats[=&ltargs>]
+where &ltargs> are all,classes,qdas,vmems,solver,assertions,cvg,eor and filename
+=&ltfile_name>. The arguments can be specified separated by comma or '+'.
+
+       If -capstats is specified without any arguments, a summary capstats
+       report is generated at the end of simulation. If -capstats is
+       specified with argument 'eor', a summary capstats report is
+       generated at the end of each run command.
+       A verbose report can be generated if vsim is invoked with -capacity
+       option. The level of verbosity in the report can be controlled by
+       specifying options as follows:
+       If -capstats is specified with argument 'all', a complete verbose
+       report is generated. If -capstats is specified with arguments
+       'classes','qdas','vmems','solver','assertions' or 'cvg', a verbose
+       report is generated for the specified types.
+       The report is printed in the transcript file if no filename is
+       specified.
+       The capstats command has been modified as follows:
+capstats [-all] [-classes] [-qdas] [-vmems] [-solver] [-assertions] [-cvg] [< fi
+lename>]
+
+       A summary capstats report is generated if no arguments are
+       specified.
+       The report can be redirected to a file by specifying the file name
+       otherwise the report is generated in the transcript file.
+       A full verbose report can be generated by specifying option 'all'.
+       A partial verbose report can be generated for specific types by
+       specifying those options. Please note that the verbose report is
+       only generated if vsim is run with -capacity option.
+     * [nodvtid] - The "find signals", "find nets", and "find instances"
+       commands are now supported in -batch mode.
+     * dvt15443 - When vsim crashes with SIGSEGV signal, we were only
+       giving HDL call stack. But, it wasn't complete stack in case of the
+       crash in user's C code (like DPI/PLI etc). Now, vsim will generate
+       stacktrace file and print full stacktrace in transcript as well, in
+       addition to existing HDL call stack.
+     * dvt94809 - Added switch "-pdupath[=&ltlib_path>]" which can be used
+       with vsim to specify library path for PDU when library is moved
+       after top level optimized design unit creation. If optional
+       &ltlib_path> is not specified PDU will be looked into current
+       working directory.
+   _______________________________________________________________________
+
+   User Interface Enhancements in 10.5d
+     * dvt90505 - The Files View collapses the tree whenever there is an
+       update to the current context or run state. The view will now
+       remain expanded and the selection and filters will remain in place
+       during any updates.
+     * dvt91003 - The Coverage Report dialog box now has an option for the
+       user to select how the report is displayed. The options are
+       "notepad", "source viewer", "none", or "user-defined editor". The
+       user-defined editor choice uses the EDITOR environment variable, or
+       the PrefMain(Editor) preference variable to determine which editor
+       to invoke. Once a choice is made, it will be persistent across
+       sessions.
+     * dvt90333 - It is now possible to display a summary rollup of
+       coverage numbers in the Structure window. To enable the summary,
+       select the menu Structure->Code Coverage->View Code Coverage
+       Summary. The summary will appear at the top of the Structure
+       window.
+     * dvt88977 - "Add" -> "To Watch" has been added to the Source window
+       popup menu.
+     * dvt23220 - The "radix" command will now accept HEXADECIMAL to
+       indicate displaying base 16 numeric values using uppercase A-F
+       characters. The of "hexadecimal" in lowercase will continue to
+       display base 16 numeric values using lowercase a-f characters.
+     * dvt95331 - The color of the selected items highlight in the Wave
+       window scrollbar can be changed by setting
+       PrefWave(mapSelectColor).
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.5d
+     * dvt89504 - Supported the connection of array of interface instance
+       passed as a port to instance array. Example:- intf i
+       [p1:0][p2:0](); // interface array bot b[p1:0](i); // This will
+       connect each b[j] to i[j]
+     * dvt89061 - (results) Enhanced the xprop assertions to make them
+       glitch free under a vopt option -xprop_enable=glitchfreeassert.
+     * dvt62609 - Allowed macro substitution inside string literals using
+       the -svext=mewq argument to the vlog command.
+     * dvt93489 - The vlog/vopt -svext=dmsbw option can be used to drive
+       the MSB unconnected bits of the wider hiconn (output) or the wider
+       loconn (input) in an otherwise collapsible port connection. With
+       the option, the unconnected bits are driven with zero, otherwise
+       they float.
+   _______________________________________________________________________
+
+   Coverage Enhancements in 10.5d
+     * dvt89140 - (results) '-testhitdata' in the coverage html report
+       (vcover/coverage report -html -details) will only report the first
+       10 tests that hit the bin when the hit count hyperlink in clicked.
+       Furthermore, it now accepts an integer value (ex: '-testhitdata= <i
+       >'). When this integer i is specified, it will report up to the ith
+       tests that hit the bin. Furthermore, the new switch
+       '-testhitdataAll' is added. When used, all the tests that hit the
+       bin will be reported.
+     * [nodvtid] - The covergoups page in the coverage HTML report has
+       been changed. The new page has many new features, for example
+       sorting and searching. Also its layout has been enhanced to be more
+       clear. The new page works on all major browsers. We recommend using
+       at least IE 11.0, Firefox 42.0 or Google Chrome 47.0
+     * dvt78649 - (results) The reporting of non-masking conditions for
+       ternary expressions is enhanced by adding the state of select
+       expression for implicant and alternate branches. The FEC report now
+       shows the state of select condition required to cover a term in the
+       implicant or alternate branch alongwith other non-masking
+       conditions.
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.5d
+     * dvt90413 - The "vcover merge" '-ignoredusig' argument is
+       deprecated. Instead, use the new '-mergedesigndiffs' argument. The
+       warning messages still appear when the '-mergedesigndiffs' argument
+       is used. Note: Both '-ignoredusig' and '-mergedesigndiffs' are
+       ignored for the coverstore case.
+     * dvt89824 - Two routines have been added to the UCDB API.
+/*
+ * ucdb_GetTestIndex()
+ *
+ * Return the index value for test record.
+ * Return -1 if an error occurs.
+ */
+int
+ucdb_GetTestIndex(ucdbT db, ucdbTestT test);
+
+/*
+ * ucdb_GetIthTest()
+ *
+ * Return the test record having the indicated index value.
+ * Return NULL if an error occurs.
+ */
+ucdbTestT
+ucdb_GetIthTest(ucdbT db, int index);
+
+     * dvt91555 - (results) The -fixedtotalcov option is added in vcover
+       trend html report to display the actual total coverage values in
+       Coverage Summary graph irrespective of selected coverage types in
+       that graph. If no coverage type is selected then only the total
+       coverage is displayed in that graph.
+     * [nodvtid] - Tests listed in a VRM testlist file now support the
+       "%n" and "%s" tokens in parameter overrides.
+     * dvt86458 - (source) VRM testlist functionality now automatically
+       populates the testname parameter using the exact entry in the
+       testlist. In order to append the seed or repeat to the testname, %s
+       and %n should be specified in the testlist directly.
+     * [nodvtid] - The "-debug" option on the vrun command may now
+       optionally take the form "-debug=" where "flags" is a
+       comma-separated list of debug flags. The only debug flag supported
+       currently is "usertcl" which will cause a message to be emitted
+       before and after any usertcl procedure is executed. The legacy
+       "-debug" option behaves as before.
+     * [nodvtid] - The TCL status report from VRM now includes total and
+       testplan coverage data (per mergefile). All status reports now
+       report coverage from VRM status event log instead of re-reading the
+       merged UCDB file.
+   _______________________________________________________________________
+
+   Power Aware Enhancements in 10.5d
+     * [nodvtid] - Added support of -exclude_elements option in UPF
+       commands - set_isolation, set_level_shifter, set_retention and
+       set_repeater.
+     * [nodvtid] - (results) Added support of upf defined logic ports in
+       UPF commands - set_isolation, set_level_shifter, set_repeater and
+       set_port_attributes. It has been enabled under vopt option
+       -pa_enable=logicconnectivity.
+     * [nodvtid] - (results) Added support to honor power states defined
+       on repeater_supply_set of set_repeater command. Following simstates
+       are only supported - CORRUPT, NORMAL and CORRUPT_ON_ACTIVITY
+     * [nodvtid] - (results) Added support to honor power states defined
+       on driver_supply/repeater_supply mentioned in set_port_attributes
+       command. Following simstates are only supported - CORRUPT, NORMAL
+       and CORRUPT_ON_ACTIVITY
+     * [nodvtid] - (results) Added support to honor power states defined
+       on input_supply_set/output_supply_set/internal_supply_set of
+       set_level_shifter command. Following simstates are only supported -
+       CORRUPT and NORMAL.
+     * dvt84885 - Added support for Portable DB which allows dumping the
+       PA information model database in design.bin.padb in CWD by
+       default.However,if user specifies designfile name by +/-designfile
+       designfilename option in vopt, PA database will be dumped in
+       designfilename.padb.Also,user can specify PA database name with
+       -pa_db option in vopt (e.g. -pa_db user/test/qpadb.padb ).-pa_db
+       option takes precedence over +/-designfile option or default.PA DB
+       can be accessed by specifying -pa_db option in vsim and +padb in
+       visualizer.
+     * dvt83747 - Added support for vopt option -pa_upfsanitychecks which
+       will check for UPF syntax errors before loading the design and also
+       list down errors encountered in applying low power intent on the
+       design. In case of no error, tool will continue to work as usual.
+     * [nodvtid] - Added support for Backward Compatibility feature which
+       will enable PA information model database dumped by an older
+       release to be loaded correctly by newer releases. This support is
+       present in release 10.5c onwards.
+     * dvt84882 - The signals which are given with -no_retention option in
+       set_retention command are now reported in report.pa.txt Example
+       snippet from report.pa.txt: Retention Strategy: pd_retention, File:
+       ./src/no_ret_1/test.upf(43). Not Retained Signals: 1. Scope:
+       /tb/top_vl2, File: ./src/no_ret_1/reg_vl.v(1) 1.
+       /tb/top_vl2/q_latvl
+   _______________________________________________________________________
+
+   Document Revision History in 10.5d
+     * Revision - Changes - Status/Date
+          + 1.0 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/February 2017
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.5d,product.id.P11633"
+

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Custom Debugging of SystemC Channels and Variables" />
+<meta name="abstract" content="Questa SIM offers a string-based debug solution for various simulation objects that are considered undebuggable by the SystemC compiler command, sccom." />
+<meta name="description" content="Questa SIM offers a string-based debug solution for various simulation objects that are considered undebuggable by the SystemC compiler command, sccom." />
+<meta name="DC.subject" content="SystemC, debugging of channels and variables, debugging, SystemC channels and variables" />
+<meta name="keywords" content="SystemC, debugging of channels and variables, debugging, SystemC channels and variables" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4c0c32f8-3451-46eb-93a0-412eaa1c3190" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Custom Debugging of SystemC Channels and Variables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Custom Debugging of SystemC Channels and Variables" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Custom Debugging of SystemC Channels and Variables</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc"><span class="ph fmvar:ProductName">Questa SIM</span> offers a string-based debug solution
+for various simulation objects that are considered undebuggable
+by the SystemC compiler command, sccom. </span>
+</div>
+<p class="p">By using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'sccom', 'questa_sim_ref'); return false;">sccom</a> command,
+you can gain easy access for debugging to the following:</p>
+<ul class="ul"><li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id3cbe9a62-0703-40b7-954f-80b1e5c5e675"><p class="p">SystemC variables of a user-defined type</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id48396782-f728-47c5-bee0-632ed2eb307b"><p class="p">Built-in channels of a user defined type</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id30be69dc-1fec-41de-b38b-4cdb0d135baf"><p class="p">Built-in ports of a user defined type</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id1f0d3bf3-58ce-4b0c-b574-5a5f2935873e"><p class="p">User defined channels and ports</p>
+</li>
+</ul>
+<p class="p">This custom interface can be also used to debug
+objects that may be supported for debug natively by the simulator,
+but whose native debug view is too cumbersome.</p>
+<div class="section Subsections"><div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id5aee08c7-882b-4eaa-8a8b-93db8544fccc"><h2 class="title Subheading sectiontitle">Supported SystemC Objects</h2><p class="p">Context: SystemC debugging</p>
+<p class="p">The custom debug interface provides debug support
+for the following SystemC objects (T is a user defined type, or
+a user-defined channel or port): </p>
+<ul class="ul"><li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__ida5f574e7-0936-46ae-9e46-186599e4255d"><p class="p">T </p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__ida114bdcb-82fc-4d04-ab3e-9195e02695e0"><p class="p">sc_signal&lt;T&gt;</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__ida4c5be12-dd37-4bb2-8ddd-2a4ab8531d3f"><p class="p">sc_fifo&lt;T&gt;</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id9988717a-1dc8-4b15-bc3d-e69e51513b5e"><p class="p">tlm_fifo&lt;T&gt;</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__idadf064d2-4678-4244-861e-8d69e0e604da"><p class="p">sc_in&lt;T&gt;</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__idb0915a9e-ed17-4fe5-b693-9f1642f530c5"><p class="p">sc_out&lt;T&gt;</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id19d8e532-8bf8-4b46-b8dc-9ccbe081ca8c"><p class="p">sc_inout&lt;T&gt;</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id75bdc2f5-242f-4823-a35f-593109efa1fb"><h2 class="title Subheading sectiontitle">Debugging
+Instructions</h2><p class="p">To provide custom debug for any object:</p>
+<ol class="ol"><li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id1c6bd372-7f34-4ebb-815e-34579bfa3201"><p class="p">Register a callback function — one for each
+instance of that object — with the simulator. Specify the maximum
+length of the string buffer to be reserved for an object instance.
+See <a class="xref fm:HeadingOnly" href="#id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id2a9bddba-6f8e-43da-a9b7-e6d2c03a2216">Registration and Callback Function Syntax</a>.</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id7e9b50c4-f409-4958-80c6-0d3c9ac91177"><p class="p">The simulator calls the callback function,
+with the appropriate arguments, when it needs the latest value of
+the object. </p>
+<p class="p">The registration function can be called from
+the phase callback function <span class="ph FontProperty HeadingLabel">before_end_of_elaboration()</span>,
+or anytime before this function during the elaboration phase of
+the simulator.</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id2db528c0-7aeb-4618-8dc5-fff378fc8116"><p class="p">The <span class="ph fmvar:ProductName">Questa SIM</span> simulator
+passes the callback function a pre-allocated string of a length
+specified during registration. The callback function must write
+the value of the object in that string, and it must be null terminated
+(\0). </p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__idd36958a2-48cd-4efa-84b4-734f2a2528fc"><p class="p">The <span class="ph fmvar:ProductName">Questa SIM</span> simulator
+takes the string returned by the callback function as-is and displays
+it in the Objects window, Wave window, and CLI commands (such as
+examine). The describe command on custom debug objects simply reports
+that the object is a custom debug object of the specified length. </p>
+</li>
+</ol>
+<p class="p">The macro used to register an object for debugging
+is SC_MTI_REGISTER_CUSTOM_DEBUG. Occasionally, <span class="ph fmvar:ProductName">Questa SIM</span> fails to register an object
+because it determines that the object cannot be debugged. In such cases,
+an error message is issued to that effect. If this occurs, use the SC_MTI_REGISTER_NAMED_CUSTOM_DEBUG
+to both name and register the object for debugging. </p>
+</div>
+<div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id2a9bddba-6f8e-43da-a9b7-e6d2c03a2216"><h2 class="title Subheading sectiontitle">Registration and
+Callback Function Syntax</h2><p class="p">Registration:</p>
+<pre class="pre codeblock leveled"><code>void SC_MTI_REGISTER_CUSTOM_DEBUG
+			(void* <span class="ph FontProperty HeadingLabel">obj</span>, size_t <span class="ph FontProperty HeadingLabel">value_len</span>, 
+			mtiCustomDebugCB <span class="ph FontProperty HeadingLabel">cb_func</span>);
+void SC_MTI_REGISTER_NAMED_CUSTOM_DEBUG
+			(void* obj, size_t value_len, 
+			mtiCustomDebugCB cb_func, const char* <span class="ph FontProperty HeadingLabel">name</span>);</code></pre><p class="p">Callback:</p>
+<pre class="pre codeblock leveled"><code>typedef void (*mtiCustomDebugCB)(void* <span class="ph FontProperty HeadingLabel">obj</span>, char* <span class="ph FontProperty HeadingLabel">value</span>, char <span class="ph FontProperty HeadingLabel">format_char</span>);
+</code></pre><ul class="ul"><li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id83f883ea-3b72-48cb-b301-01cda328c133"><p class="p"><span class="ph FontProperty HeadingLabel">obj</span> —
+The handle to the object being debugged</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id539a1557-86a7-4add-956a-cd6131fa01ed"><p class="p"><span class="ph FontProperty HeadingLabel">value_len</span> —
+The maximum length of the debug string to be reserved for this object</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__idbf941513-aede-4646-a0f7-d50425337d18"><p class="p"><span class="ph FontProperty HeadingLabel">cb_func</span> —
+The callback function to be called by the simulator for the latest
+value of the object being debugged</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id1c53d981-0429-4e83-8be8-3f2b893c1c66"><p class="p"><span class="ph FontProperty HeadingLabel">name</span> —
+The name of the object being debugged</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id437d15b9-26cf-4c08-8a8a-03a2fc5c55a6"><p class="p"><span class="ph FontProperty HeadingLabel">value</span> —
+A pointer to the string value buffer in which the callback must
+write the string value of the object begin debugged</p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id6e8c6c8d-d527-4528-ad2a-74eb8d8fec4c"><p class="p"><span class="ph FontProperty HeadingLabel">format_char</span> —
+The expected format of the value: ascii (‘a’), binary (‘b’), decimal
+(‘d’), hex (‘h’), or octal (‘o’)</p>
+</li>
+</ul>
+<p class="p">The callback function does not return anything. </p>
+<div class="fig fignone ExampleTitle" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id71383fb8-80f0-4d89-b990-7f913949c2c1"><span class="figcap"><span class="fig--title-label">Example 1. </span>Using
+the Custom Interface on Different Objects</span></div>
+<p class="p">Consider an arbitrary user-defined type T as
+follows:</p>
+<pre class="pre codeblock leveled"><code>class myclass {
+
+private:
+
+	int x;
+	int y;
+
+public:
+	void get_string_value(char format_str, char* mti_value);
+	size_t get_value_length();
+
+	...
+};    </code></pre><p class="p">Variable of type T would be:</p>
+<pre class="pre codeblock"><code>void mti_myclass_debug_cb(void* var, char* mti_value, char format_str)
+{
+	myclass* real_var = reinterpret_cast&lt;myclass*&gt;(var);
+	real_var-&gt;get_string_value(format_str, mti_value);
+}
+
+SC_MODULE(test) {
+
+	myclass var1;
+	myclass* var2;
+
+	SC_CTOR(test) {
+		SC_MTI_REGISTER_CUSTOM_DEBUG(
+			&amp;var1, 
+			var1.get_value_length(),
+			mti_myclass_debug_cb);
+
+		SC_MTI_REGISTER_CUSTOM_DEBUG(
+			var2, 
+			var2-&gt;get_value_length(), 
+			mti_myclass_debug_cb);
+	}
+};</code></pre><p class="p">sc_signal, sc_fifo and tlm_fifo of type T and
+Associated Ports would be:</p>
+<pre class="pre codeblock"><code>void mti_myclass_debug_cb(void* var, char* mti_value, char format_str)
+{
+	myclass* real_var = reinterpret_cast&lt;myclass*&gt;(var);
+	real_var-&gt;get_string_value(format_str, mti_value);
+}
+
+SC_MODULE(test) {
+
+	sc_signal&lt;myclass&gt;  sig1;
+	sc_signal&lt;myclass&gt; *sig2;
+	sc_fifo&lt;myclass&gt;    fifo;
+
+	SC_CTOR(test) {
+		myclass temp;
+
+		SC_MTI_REGISTER_CUSTOM_DEBUG(
+			&amp;sig1, 
+			temp.get_value_length(),
+			mti_myclass_debug_cb);
+
+		SC_MTI_REGISTER_CUSTOM_DEBUG(
+			sig2, 
+			temp.get_value_length(), 
+			mti_myclass_debug_cb);
+
+		SC_MTI_REGISTER_CUSTOM_DEBUG(
+			&amp;fifo, 
+			temp.get_value_length(),
+			mti_myclass_debug_cb);
+	}
+};</code></pre><p class="p">As shown in <a class="xref fm:Example" href="#id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id71383fb8-80f0-4d89-b990-7f913949c2c1">Example 1</a>, although the callback function is registered
+on a sc_signal&lt;T&gt; or a sc_fifo&lt;T&gt; object, the callback is
+called on the T object, instead of the channel itself. The reason
+for the callback on T is because sc_signal&lt;T&gt; has two sets of
+values, current and new value and sc_fifo can have more than one
+element in the fifo. The callback is called on each element of the
+fifo that is valid at any given time. For an sc_signal&lt;T&gt; the
+callback is called only on the current value, not the new value.</p>
+<p class="p">By registering the primitive channel sc_signal&lt;T&gt;
+for custom debug, any standard port connected to it (sc_in&lt;T&gt;,
+sc_out&lt;T&gt;, sc_inout&lt;T&gt;, sc_fifo_in&lt;T&gt;, and so forth) automatically is
+available for custom debug. It is illegal to register any built-in
+ports for custom debug separately.</p>
+</div>
+<div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__idd9bfe725-c11c-4f8d-bb06-43fdd82686d7"><h2 class="title Subheading sectiontitle">User-Defined Primitive Channels and
+Ports</h2><p class="p">The callback and registration mechanism for
+a user-defined channel derived from sc_prim_channel are no different
+than a variable of an user-defined type. </p>
+<p class="p">Please see the section on variables of type
+T in <a class="xref fm:Example" href="#id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id71383fb8-80f0-4d89-b990-7f913949c2c1">Example 1</a> for more details on the registration
+and callback mechanism for such objects.</p>
+<p class="p">You have two choices available to you for making
+user defined ports debuggable:</p>
+<ul class="ul"><li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id08516cd8-fdc3-4995-ae69-1edf484b5d4a"><p class="p">Automatic debug of any port connected
+to a primitive channel</p>
+<p class="p">Any port that is connected to a channel derived
+from sc_prim_channel is automatically debuggable only if the connected
+channel is debuggable either natively or using custom debug. To
+enable this automatic debugging capability, use the following macro
+in the channel class: </p>
+<pre class="pre codeblock leveled"><code>MTI_SC_PORT_ENABLE_DEBUG </code></pre><p class="p">In this case, you may not separately register
+the port for custom debug. </p>
+</li>
+<li class="li" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id372d69ea-64a3-4675-8688-cf31c60ff8a1"><p class="p">Specific port registration</p>
+<p class="p">Register the port separately for custom debug.
+To do this, simply register the specific port, without using the
+macro. The callback and registration mechanism is the same as a
+variable of type T.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id4cae403d-185d-44c8-9dc7-50d9075a890d"><h2 class="title Subheading sectiontitle">Hierarchical Channels/Ports Connected
+to Hierarchical Channels</h2><p class="p">Hierarchical channels are basically modules,
+and appear in the structure pane in <span class="ph fmvar:ProductName">Questa SIM</span>.
+Since they are part of the design hierarchy, custom debug cannot
+be supported for hierarchical channels. Ports connected to hierarchical
+channels, however, though not supported for debug natively in <span class="ph fmvar:ProductName">Questa SIM</span>, are supported
+for debug with the custom interface. </p>
+<p class="p">Any port object registered for custom debug
+is treated as a variable of a user defined type. Please see <a class="xref fm:Example" href="#id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id71383fb8-80f0-4d89-b990-7f913949c2c1">Example 1</a>, variables of type T, for more details
+on the registration and callback mechanism for such objects.</p>
+</div>
+<div class="section Subsection" id="id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id74b43f7e-92cd-4961-9dfc-294e7760e499"><h2 class="title Subheading sectiontitle">Any Other Channels and
+Ports Connected to Such Channels</h2><p class="p">It is legal in SystemC to create a channel
+that implements an interface and is not derived either from sc_channel
+or sc_prim_channel. Take the following, for example:</p>
+<pre class="pre codeblock"><code>class mychannel : public myinterface {}
+class myport : public sc_port&lt;myinterface&gt; {}</code></pre><p class="p">Channels and ports of this category are supported
+for debug natively in <span class="ph fmvar:ProductName">Questa SIM</span>. <span class="ph fmvar:ProductName">Questa SIM</span> treats them as
+variables of type T. These channels and ports can be registered
+for custom debug. The registration and callback mechanism is the
+same as for a variable of type T, as shown in <a class="xref fm:Example" href="#id4c0c32f8-3451-46eb-93a0-412eaa1c3190__id71383fb8-80f0-4d89-b990-7f913949c2c1">Example 1</a> above.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemcObjectTypeDisplay_idfe9c3d1a.html" title="This section contains information on how Questa SIM displays certain objects and types, as they may differ from other simulators.">SystemC Object and Type Display</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Custom Debugging of SystemC Channels and Variables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CustomDebuggingSystemcChannelsVariables_id4c0c32f8.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

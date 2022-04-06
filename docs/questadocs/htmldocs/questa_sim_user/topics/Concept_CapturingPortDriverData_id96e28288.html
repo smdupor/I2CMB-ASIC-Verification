@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Capturing Port Driver Data" />
+<meta name="abstract" content="Some ASIC vendors’ toolkits read a VCD file format that provides details on port drivers. This information can be used, for example, to drive a tester. For more information on a specific toolkit, refer to the ASIC vendor’s documentation." />
+<meta name="description" content="Some ASIC vendors’ toolkits read a VCD file format that provides details on port drivers. This information can be used, for example, to drive a tester. For more information on a specific toolkit, refer to the ASIC vendor’s documentation." />
+<meta name="DC.subject" content="Verilog, capturing port driver data with -dumpports, VCD files, capturing port driver data, Port driver data, capturing" />
+<meta name="keywords" content="Verilog, capturing port driver data with -dumpports, VCD files, capturing port driver data, Port driver data, capturing" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id96e28288-9ade-46fe-92d6-8e89a67afa8c" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Capturing Port Driver Data</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Capturing Port Driver Data" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id96e28288-9ade-46fe-92d6-8e89a67afa8c">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Capturing Port Driver Data</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Some ASIC vendors’
+toolkits read a VCD file format that provides details on port drivers.
+This information can be used, for example, to drive a tester. For more
+information on a specific toolkit, refer to the ASIC vendor’s documentation. </span>
+</div>
+<p class="p">In <span class="ph fmvar:ProductName">Questa SIM</span>,
+use the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcd dumpports', 'questa_sim_ref'); return false;">vcd dumpports</a> command to create a VCD file that captures port
+driver data. Each time an external or internal port driver changes
+values, a new value change is recorded in the VCD file with the
+following format:</p>
+<pre class="pre codeblock leveled"><code> p&lt;state&gt; &lt;0 strength&gt; &lt;1 strength&gt; &lt;identifier_code&gt;</code></pre><div class="section Subsections"><div class="section Subsection" id="id96e28288-9ade-46fe-92d6-8e89a67afa8c__id82c77c3c-d8a2-4a38-abe8-0887b3f9289b"><h2 class="title Subheading sectiontitle">Driver States</h2><p class="p"><a class="xref fm:Table" href="#id96e28288-9ade-46fe-92d6-8e89a67afa8c__idf6b98d21-e73f-401a-bebd-66cbc4955eae">Table 1</a> shows the driver states recorded as
+TSSI states if the direction is known. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id96e28288-9ade-46fe-92d6-8e89a67afa8c__idf6b98d21-e73f-401a-bebd-66cbc4955eae" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Driver States</span></caption><colgroup><col style="width:1.647in" /><col style="width:1.602in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d138153e188"><p class="p">Input (testfixture)</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d138153e199"><p class="p">Output (dut)</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">D   low</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">L   low</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">U   high</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">H   high</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">N   unknown</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">X   unknown</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">Z   tri-state</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">T   tri-state</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">d   low (two or more
+drivers active)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">l   low (two or more
+drivers active)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e188 "><p class="p">u   high (two or more
+drivers active)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e199 "><p class="p">h   high (two or more
+drivers active)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">If the direction is unknown, the state will
+be recorded as one of the following:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id96e28288-9ade-46fe-92d6-8e89a67afa8c__id34bf3b41-8e7b-403c-8096-1cb0ca03578e" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>State When Direction is Unknown</span></caption><colgroup><col style="width:3.900in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d138153e254"><p class="p">Unknown direction</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">0   low (both input and
+output are driving low)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">1   high (both input
+and output are driving high)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">?   unknown (both input
+and output are driving unknown)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">F  three-state (input
+and output unconnected)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">A   unknown (input driving
+low and output driving high)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">a   unknown (input driving
+low and output driving unknown)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">B   unknown (input driving
+high and output driving low)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">b   unknown (input driving
+high and output driving unknown)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">C   unknown (input driving
+unknown and output driving low)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">c   unknown (input driving
+unknown and output driving high)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e254 "><p class="p">f  unknown (input and
+output three-stated)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="title Subheading sectiontitle">Driver
+Strength</h2><p class="p">The recorded 0 and 1 strength values are based
+on Verilog strengths:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id96e28288-9ade-46fe-92d6-8e89a67afa8c__id35181ffb-4b12-4826-bcd8-7712903b6110" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>Driver Strength</span></caption><colgroup><col style="width:1.485in" /><col style="width:2.414in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d138153e315"><p class="p">Strength</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d138153e318"><p class="p">VHDL std_logic mappings</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">0   highz</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "><p class="p">’Z’</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">1   small</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">2   medium</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">3   weak</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">4   large</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">5   pull</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "><p class="p">’W’,’H’,’L’</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">6   strong</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "><p class="p">’U’,’X’,’0’,’1’,’-’</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e315 "><p class="p">7   supply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d138153e318 "> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="title Subheading sectiontitle">Identifier
+Code</h2><p class="p">The &lt;identifier_code&gt; is an integer preceded
+by &lt; that starts at zero and is incremented for each port in
+the order the ports are specified. Also, the variable type recorded
+in the VCD header is “port”.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_ValueChangeDumpVcdFiles_id48f604e8.html" title="The Value Change Dump (VCD) file format is supported for use by Questa SIM and is specified in the IEEE 1364-2005 standard. A VCD file is an ASCII file that contains information about value changes on selected variables in the design stored by VCD system tasks. This includes header information, variable definitions, and variable value changes.">Value Change Dump (VCD) Files</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Capturing Port Driver Data"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CapturingPortDriverData_id96e28288.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

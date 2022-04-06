@@ -1,0 +1,300 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.2f Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.2f" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.2f</h1></center>
+<center><b>Apr 15 2015</b> <br />
+ <br />
+ Copyright 1991-2015 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#rlsannouncement">Release Announcements in 10.2f</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.2f</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.2f</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.2f</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.2f</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.2f</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 10.2f</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.2f</a></li>
+ <li><a href="#powerawaredefects">Power Aware Defects Repaired in 10.2f</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 10.2f</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.2f</a></li>
+ <li><a href="#systemcenhancement">SystemC Enhancements in 10.2f</a></li>
+ <li><a href="#mixedlanguageenhancement">Mixed Language Enhancements in 10.2f</a></li>
+ <li><a href="#coverageenhancement">Coverage Enhancements in 10.2f</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.2f</b></font>
+<ul><li>[nodvtid]  - <br>
+<br>
+In 10.3, support for Linux RHEL 4 will be discontinued.
+<br>
+In 10.4, support for Windows XP and Windows Vista will be discontinued.
+<br>
+<br>
+<br>
+[10.2d] OVL is upgraded to v2.8.1.<br>
+[10.2d] The VHDL OSVVM (Open Source VHDL Verification Methodology) library, sources and documentation have been updated to version 2014.01. Dependency checks in vopt and vsim will force recompilation of designs that use the osvvm library. If optimization is performed using vopt, the optimizer will automatically generate new optimized design units. Without the optimization step, vsim will detect dependency errors.<br>
+[10.2] Support for Solaris SPARC and Solaris x86 has been discontinued. All Solaris OS platforms are not supported.<br>
+[10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell SUSE Linux Enterprise (SLES) 9 has been discontinued.<br>
+[10.1] Support for GCC versions gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.<br>
+[10.0] Support for Solaris 8 and Solaris 9 has been discontinued.<br>
+<br>
+</li>
+ <li>[nodvtid]  - The 10.2g Update Release will be the last release in the 10.2 series
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.2f</b></font>
+<ul><li>[nodvtid]  - <br>
+[Supported Platforms]<br>
+	Linux RHEL 4 x86/x86-64<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+	Windows XP<br>
+	Windows Vista<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc9<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.01<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.10<br>
+	MSL 	v2012_2patch1<br>
+	MGLS 	v9.7_2.3<br>
+	PCLS 	v9.7.2.4<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.2f</b></font>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt65714 - (results) When "+vlog_retain_same2same_on" was specified, conditional specify paths with SDF RETAIN delays did not evaluate correctly.</li>
+ <li>dvt68824 - (results) Calling vpi_get_time function with a VPI handle of wrong type (for example to a package) would cause vsim to crash. </li>
+ <li>dvt68543 - (results) Setting acc on an instance wasn't setting it on the ports of the instance.  This could result in ports tied to constants being shared, so that a force on one would cause the others to be forced as well.</li>
+ <li>dvt69309 - (results) Fixed bug in single bit multiplication which resulted in wrong simulation results.
+</li>
+ <li>dvt37478 - (results) Fixed an issue where $display incorrectly shows a zero length string if the input string is assigned the value of a foldable ternary expression containing string literals as implicant and alternate.</li>
+ <li>dvt36062 - (results) Fixed an issue where string method getc incorrectly returns an extra space.</li>
+ <li>dvt35070 - (results) Vsim used to report illegal results when a part select of more than 32 bits size on a hierarchical reference of a net is forced using verilog force. This is now fixed.</li>
+ <li>dvt69036 - (results) vpi_get_value used to report junk values with greater than 32 bits constant values. This is now fixed.</li>
+ <li>dvt35989 - (results) Assignment to an uninitialised dynamic string array using concatenation did not work properly.
+The following case did not work :
+string arr[int] = '{default: ""};
+arr[10] = {arr[10] , " " , "test"};
+
+This has been fixed.</li>
+ <li>dvt73252 - (results) When the default specify path delay values were smaller than the annotated SDF RETAIN delay values, vsim-SDF-8745 warning was incorrectly issued.</li>
+ <li>dvt73170 - (results) When a specify path, with a destination port driven by a Verilog "reg" variable, was annotated SDF RETAIN delays and vsim options +vlog_retain_on, +vlog_retain_same2same_on and -voptargs="+acc" were specified, vsim crashed.</li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>dvt73471 - (source) Symbols defined only in the body of an uninstantiated package were accessible to other design units either through a USE clause or explicit scope identification. Customer designs that previously took advantage of this error, referencing symbols defined only in package bodies, need to be changed to either remove the offending references, or move the declarations of the symbols to their uninstantiated package headers.</li>
+</ul>
+<p /><dd><font size="3"><b>Mixed Language  Compatibility</b></font></dd>
+<ul><li>dvt72760 - (results) In a mixed language design with a verilog switch network the extended VCD output for a VHDL signal was not calculated properly.</li>
+</ul>
+<p /><dd><font size="3"><b>Power Aware  Compatibility</b></font></dd>
+<ul><li>dvt31491 - (results) Now SV Enum types would be corrupted from their base value instead of their `left value.<br>
+     Example : <br>        
+           typedef enum bit unsigned [31:0] { ONE=1, TWO,THREE} enum_t3;<br>
+           The new corruption value for above type would be "0" instead of "ONE(1)". <br></li>
+</ul>
+<p /><dd><font size="3"><b>Coverage  Compatibility</b></font></dd>
+<ul><li>dvt68772 - (results) When a duplicate covergroup instance name is specified in the source code, the simulator by default will issue a warning and then automatically generate a unique name to resolve the conflict. When vsim option -pedanticerrors is used, the duplicate name will trigger a fatal error.
+
+</li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt75521 - (results) Fixed a defect that caused statement coverage to be skipped when statement coverage was explicitly selected along with other coverage types. This effect many of the "coverage ..." command supporting the "-code ..." argument. EXAMPLE ARGUMENT: "-code st".</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.2f</b></font>
+<ul><li>dvt68249 - UVM testbench with scopes containing special characters cause errors and fail to display contents of these scopes.  This issue has been resolved.</li>
+ <li>dvt26963 - Drag and drop a compare object from the compare tab in the Structure window to the List window did not work.  This has been repaired.</li>
+ <li>dvt38385 - In GUI mode, using the restore command outside of vsim caused uninformative error "can't read "vsimPriv(Server)": no such element in array" and would cause eventual GUI crash.</li>
+ <li>dvt69259 - In some rare cases the GUI would hang when right-clicking on a signal in the Source Window.  Depending on the specific hierarchy of the design an infinite loop would occur when checking conditions to enable/disable the items in the RMB menu.
+</li>
+ <li>dvt38562 - The context and locals windows will sometimes stop working correctly when stopping and single stepping in code related to dynamic threads.  This issue has been resolved.</li>
+ <li>dvt63858 - Toggling the "Within Cells" mode of the Memory List window while a search filter is in use can cause the display of an incomplete list of memories.  This issues has been resolved.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.2f</b></font>
+<ul><li>dvt65714 - (results) When "+vlog_retain_same2same_on" was specified, conditional specify paths with SDF RETAIN delays did not evaluate correctly.</li>
+ <li>dvt68271 - Fixed a bug where vopt was crashing due to usage of $past in the port connection. This was happening when the second argument to $past (number of clock ticks) was explicitly specified.</li>
+ <li>dvt68672 - Fixed a bug where internal error vtree_dt2.c(8285) &lttdef && typeof(tdef) == TYPEDEF_DECL && line_numberOf(tdef) == lineno && tok_numberOf(tdef) == tokno&gt. was getting issued in vopt. Now, no internal error is issued.</li>
+ <li>dvt64800 - Vsim would sometimes give an erroneous error 8876 ("Rerun vopt with -novifassumptions...").</li>
+ <li>dvt68824 - (results) Calling vpi_get_time function with a VPI handle of wrong type (for example to a package) would cause vsim to crash. </li>
+ <li>dvt68823 - Fixed an invalid memory access issue, related to pruning of ACT graph, in solver.</li>
+ <li>dvt68543 - (results) Setting acc on an instance wasn't setting it on the ports of the instance.  This could result in ports tied to constants being shared, so that a force on one would cause the others to be forced as well.</li>
+ <li>dvt68059 - Foreach iteration on a queue defined in a parameterized class would sometimes result in incorrect error. This has been fixed now.</li>
+ <li>dvt68292 - A constant declared inside a package when used in a port map would sometime results in a vopt crash. This is now fixed.</li>
+ <li>dvt69038 - Array defined in parameterized class when indexed with an index of type 'byte' would sometime give incorrect results. This has been fixed now. </li>
+ <li>dvt68778 - Vsim would sometimes generate incorrect errors like this for code in SystemVerilog packages:<br>
+# ** Error: (vsim-3043) test.sv(-2): Unresolved reference to 'a'.
+</li>
+ <li>dvt36943 - Fixed an issue where vopt crashes when +acc is specified to an incorrect path starting with a verilog configuration name.</li>
+ <li>dvt64934 - Fixed an issue where we would get unresolved reference errors for hier-refs accessing objects within an generate loop and +floatparameters is used.</li>
+ <li>dvt65907 - Fixed a fatal error in vsim, which occurs sometimes when a module containing a for loop but works when compiled with -sv.</li>
+ <li>dvt68960 - Fixed an issue in SV bind doesn't work, when bind target lies within an generate scope which can't be elaborated during vopt.</li>
+ <li>dvt69309 - (results) Fixed bug in single bit multiplication which resulted in wrong simulation results.
+</li>
+ <li>dvt36672 - Generate case statement without a default clause would sometime results in vopt crash. This has been fixed now.</li>
+ <li>dvt69804 - Fixed bug which resulted in incorrect vlog errors when $signed/$unsigned cast operation is used inside concatenation.</li>
+ <li>dvt69513 - Fixed a bug in for-generates which resulted in wrong vlog errors when enum literals are used in genvar initialization.</li>
+ <li>dvt69393 - Fixed a bug which was giving error when string parameter was used in argument of system call $readmemh</li>
+ <li>dvt67602 - Fixed an issue where unconnected_drive pull1 was not working with vopt.</li>
+ <li>dvt38331 - Fixed a bug where post increment operator on an argument of function of type byte was causing memory corruption.</li>
+ <li>dvt22670 - In some cases with inline randomization constraints, vlog incorrectly reported an error like:<br>
+** Error: pkg.sv(39): Can't use a typedef ('my_enum_t') here.<br>
+with the usage of a valid type name.
+</li>
+ <li>dvt62517 - Recursive static functions would sometimes return incorrect value. This has been fixed now.</li>
+ <li>dvt68198 - Fixed an issue where invoking a static method of a renamed class causes vlog error</li>
+ <li>dvt38148 - Fixed an issue where a parameterized class object in a nested program scope does not get resolved by vopt</li>
+ <li>dvt37478 - (results) Fixed an issue where $display incorrectly shows a zero length string if the input string is assigned the value of a foldable ternary expression containing string literals as implicant and alternate.</li>
+ <li>dvt36062 - (results) Fixed an issue where string method getc incorrectly returns an extra space.</li>
+ <li>dvt64128 - Fixed a bug while assigning interfaces with similar starting name. For example my_itf_chk and my_itf.master.</li>
+ <li>dvt35070 - (results) Vsim used to report illegal results when a part select of more than 32 bits size on a hierarchical reference of a net is forced using verilog force. This is now fixed.</li>
+ <li>dvt69036 - (results) vpi_get_value used to report junk values with greater than 32 bits constant values. This is now fixed.</li>
+ <li>dvt35989 - (results) Assignment to an uninitialised dynamic string array using concatenation did not work properly.
+The following case did not work :
+string arr[int] = '{default: ""};
+arr[10] = {arr[10] , " " , "test"};
+
+This has been fixed.</li>
+ <li>dvt70147 - Fixed an issue where we get "(vsim-3043) Unresolved reference" errors for hier-refs present in the $unit scope and target of the hier-ref is present inside another design top. With +acc flags on the target object the error goes away.</li>
+ <li>dvt70053 - Fixed issue while converting verilog package to vhdl package with mixedsvvh switch.</li>
+ <li>dvt70463 - Vopt would sometimes crash with an internal error when using a class typedef defined in a parameterized class. This has been fixed now.</li>
+ <li>dvt38055 - Vopt would sometimes crash with an internal error when passing the parameter of a parameterized class as a parameter to another parameterized class. This has been fixed now.</li>
+ <li>dvt67652 - Vopt would sometimes crash with an internal error when a function defined in a package is used with array locator method. This has been fixed now.</li>
+ <li>dvt71152 - Bit-selects and part-selects of 2-state variables in module input port connections produced incorrect results in some cases.</li>
+ <li>dvt69512 - A function call in one of the bounds of a part-select produced the following vopt internal error in some cases: "Questa has encountered an unexpected internal error: ../../src/vlog/vgencode.c(114)".</li>
+ <li>dvt71073 - Automatic function defined in package would sometimes gives incorrect return value. This has been fixed now.</li>
+ <li>dvt72524 - Fixed a bug where parameter inside super class was not found while resolving hierref in bind statement.</li>
+ <li>dvt73252 - (results) When the default specify path delay values were smaller than the annotated SDF RETAIN delay values, vsim-SDF-8745 warning was incorrectly issued.</li>
+ <li>dvt73170 - (results) When a specify path, with a destination port driven by a Verilog "reg" variable, was annotated SDF RETAIN delays and vsim options +vlog_retain_on, +vlog_retain_same2same_on and -voptargs="+acc" were specified, vsim crashed.</li>
+ <li>dvt73310 - Traversing individual words of large SV memories using vpi_iterate/vpi_scan functions caused huge memory usage.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.2f</b></font>
+<ul><li>dvt69541 - A compiler optimization was incorrectly generating code for constants initialized with the concatenation operator (&) appearing in subprogram declarations of uninstantiated packages.</li>
+ <li>dvt70898 - Use of the function rising_edge and falling_edge could, in some case, trigger an internal error</li>
+ <li>dvt71805 - In rare cases, simulating with -novopt would give the wrong results for a std_logic_vector unless it was logged.</li>
+ <li>dvt72143 - If an uninstantiated package contains signal declarations, and an instance of the package is associated with an interface package in an entity, package, or subprogram instantiation, accesses to the signals could lead to simulator error messages of the form:
+<pre>
+# ** INTERNAL ERROR: pkgref: export lookup failed for package #8[7]
+</pre>
+</li>
+ <li>dvt73051 - Fixed elaboration crash with subelement association. The formal must be an element or subelement of a multidimensional port and the actually a 2008 signal expression.</li>
+ <li>dvt72382 - Optimized mode was not reporting multiply driven unresolved signals in rare instances of driving package signals.</li>
+ <li>[nodvtid]  - Aggregates of signals in subprograms, either as parameters to other subprogram, or as targets of signal assignments could cause a crash if the aggregate contained both parameters and non-parameter signals.</li>
+ <li>dvt73471 - (source) Symbols defined only in the body of an uninstantiated package were accessible to other design units either through a USE clause or explicit scope identification. Customer designs that previously took advantage of this error, referencing symbols defined only in package bodies, need to be changed to either remove the offending references, or move the declarations of the symbols to their uninstantiated package headers.</li>
+ <li>dvt74124 - Vcom could fail with an internal error when a port map statement is present on a block</li>
+ <li>dvt74313 - If an attribute that returned a range is used as the expression to a return statement, incorrect machine code could be generated. A range is not a valid return value and is now flagged as an error a compile time.</li>
+ <li>dvt63309 - In some cases vopt would generate a unexpected message about null ranges. Like:<br>
+# ** Warning: [3] test.vhd(3): (vopt-1246) Range 1 to 0 is null. <br>
+The number of these messages have been greatly reduced.</li>
+ <li>dvt71451 - Predefined attribute A'ELEMENT could not have as its prefix a function call.  The LRM is not clear on this since A must be either an array type name or appropriate for an array object, and a function call is neither.  But because other attributes like A'RANGE where A is a function call are handled as legal, the A'ELEMENT attribute now also allows this.  Further, as a non-compliant extension of the language O'SUBTYPE may also have O be a function call.</li>
+ <li>dvt74843 - The compiler would hang if it encountered a VHDL error involving a type declaration of an array type whose element subtype is an incomplete type of the same name as the array type itself.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 10.2f</b></font>
+<ul><li>[nodvtid]  - Hierarchical references from Verilog to fields of a VHDL record signal could cause the tool to fail.</li>
+ <li>dvt38882 - When the file permissions on a library of encrypted Verilog cells was closed, the VHDL compiler would error out because it could not get Verilog to generate an interface file to compile against.</li>
+ <li>dvt72760 - (results) In a mixed language design with a verilog switch network the extended VCD output for a VHDL signal was not calculated properly.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.2f</b></font>
+<ul><li>dvt75521 - (results) Fixed a defect that caused statement coverage to be skipped when statement coverage was explicitly selected along with other coverage types. This effect many of the "coverage ..." command supporting the "-code ..." argument. EXAMPLE ARGUMENT: "-code st".</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="powerawaredefects"></a><font size="4"><b>Power Aware Defects Repaired in 10.2f</b></font>
+<ul><li>dvt68936 - Enable level shifter instantiated in the design was associated with a UPF isolation strategy as its -instance cell even when the connection to the level_shifter_enable_pin did not match with the one specified in the UPF isolation strategy. This has been fixed.</li>
+ <li>dvt69442 - There was a liberty processing failure when when index_1 was defined in the define group and was also used in the dc_current group. This is now fixed.</li>
+ <li>dvt70250 - In some cases, vopt used to crash when UPF processing was performed on a signal assignment involving vector write on VHDL records. This has been fixed.</li>
+ <li>dvt31491 - (results) Now SV Enum types would be corrupted from their base value instead of their `left value.<br>
+     Example : <br>        
+           typedef enum bit unsigned [31:0] { ONE=1, TWO,THREE} enum_t3;<br>
+           The new corruption value for above type would be "0" instead of "ONE(1)". <br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 10.2f</b></font>
+<ul><li>dvt71032 - Following design constructs are now supported in QuestaSim bsaif flow with "power add" and "power report" commands
+1. VHDL integers
+2. System Verilog 2D arrays (packed and unpacked)</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.2f</b></font>
+<ul><li>dvt68221 - Added $unpacked_dimensions() array query function support.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcenhancement"></a><font size="4"><b>SystemC Enhancements in 10.2f</b></font>
+<ul><li>dvt67502 - Added -gblso command option to vopt and the companion modelsim.ini variable 'GlobalSharedObjectList'
+<pre>
+-gblso <file>      Load the specified shared library with global symbol visibility.
+</pre>
+
+This option would be required if the SystemC top is elaborated in vopt and is depending on the symbols from a common library being loaded with vsim -gblso switch.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixedlanguageenhancement"></a><font size="4"><b>Mixed Language Enhancements in 10.2f</b></font>
+<ul><li>dvt69212 - Fixed an issue when a module is instantiated inside a VHDL entity and the module's port name matches with a parameter of a module instantiated within the current module.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="coverageenhancement"></a><font size="4"><b>Coverage Enhancements in 10.2f</b></font>
+<ul><li>dvt68772 - (results) When a duplicate covergroup instance name is specified in the source code, the simulator by default will issue a warning and then automatically generate a unique name to resolve the conflict. When vsim option -pedanticerrors is used, the duplicate name will trigger a fatal error.
+
+</li>
+</ul>
+
+</body>
+</html>

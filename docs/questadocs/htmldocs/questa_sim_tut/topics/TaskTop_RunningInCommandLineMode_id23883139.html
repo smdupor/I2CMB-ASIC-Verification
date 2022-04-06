@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Running in Command-Line Mode" />
+<meta name="abstract" content="We use the term “command-line mode” to refer to simulations that are run from a DOS/ UNIX prompt without invoking the GUI. Several Questa SIM commands (for example, vsim, vlib, vlog, and so on) are actually stand-alone executables that can be invoked at the system command prompt. Additionally, you can create a DO file that contains other Questa SIM commands and specify that file when you invoke the simulator." />
+<meta name="description" content="We use the term “command-line mode” to refer to simulations that are run from a DOS/ UNIX prompt without invoking the GUI. Several Questa SIM commands (for example, vsim, vlib, vlog, and so on) are actually stand-alone executables that can be invoked at the system command prompt. Additionally, you can create a DO file that contains other Questa SIM commands and specify that file when you invoke the simulator." />
+<meta name="DC.subject" content="command-line mode" />
+<meta name="keywords" content="command-line mode" />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id23883139-a388-40a3-abf9-dfc1510ea390" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Running in Command-Line Mode</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Running in Command-Line Mode" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id23883139-a388-40a3-abf9-dfc1510ea390">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Running in Command-Line Mode</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">We use
+the term “command-line mode” to refer to simulations that are run
+from a DOS/ UNIX prompt without invoking the GUI. Several <span class="ph fmvar:ProductName">Questa SIM</span> commands (for example, vsim,
+vlib, vlog, and so on) are actually stand-alone executables that
+can be invoked at the system command prompt. Additionally, you can
+create a DO file that contains other <span class="ph fmvar:ProductName">Questa SIM</span> commands
+and specify that file when you invoke the simulator.</span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__id99432cf1-ed51-416a-ac8f-ae5c671f7457"><span class="ph cmd">Create
+a new directory and copy the tutorial files into it.</span><div class="itemgroup info StepInfo"><p class="p">Start by
+creating a new directory for this exercise. Create the directory
+and copy the following files into it:</p>
+<ul class="ul"><li class="li" id="id23883139-a388-40a3-abf9-dfc1510ea390__id33eb08ba-8d1c-4e0c-bf44-64e5f6dc6197"><p class="p"><span class="ph filepath italic">/&lt;install_dir&gt;/examples/tutorials/verilog/automation/counter.v</span></p>
+</li>
+<li class="li" id="id23883139-a388-40a3-abf9-dfc1510ea390__id44618585-b9e6-444c-91fd-7b96f39a56eb"><p class="p"><span class="ph filepath italic">/&lt;install_dir&gt;/examples/tutorials/verilog/automation/stim.do</span></p>
+</li>
+</ul>
+<p class="p">This lesson
+uses the Verilog file <span class="ph filepath italic">counter.v</span>.
+If you have a VHDL license, use <span class="ph filepath italic">the counter.vhd</span> and <span class="ph filepath italic">stim.do </span>files
+in the <span class="ph filepath italic">/&lt;install_dir&gt;/examples/tutorials/vhdl/automation</span> directory
+instead.</p>
+</div></li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__id1470e7fb-3e36-4387-83e2-9b5810f595ef"><span class="ph cmd">Create
+a new design library and compile the source file.</span><div class="itemgroup info StepInfo"><p class="p">Again,
+enter these commands at a DOS/ UNIX prompt in the new directory
+you created in step 1.</p>
+</div><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id7c2f1791-ec77-4a2d-886d-16e0eab6d23b"><span class="ph cmd">Type vlib
+work at the DOS/ UNIX prompt.</span></li>
+<li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__ide6c47369-163e-446b-b835-3d579a03766c"><span class="ph cmd">For Verilog,
+type <span class="ph filepath bold">vlog counter.v</span> at
+the DOS/ UNIX prompt. For VHDL, type <span class="ph filepath bold">vcom counter.vhd</span>.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__ide8747a8a-7183-4dcf-a16a-3cfedb94acd6"><span class="ph cmd">Create
+a DO file.</span><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__idcf652b20-c1ee-4b9b-9028-c33e49e0990b"><span class="ph cmd">Open a
+text editor.</span></li>
+<li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id63641031-7b20-4e9c-a058-d68f3e51f2b8"><span class="ph cmd">Type the
+following lines into a new file:</span><div class="itemgroup info SubStepInfo"><pre class="pre codeblock leveled"><code># list all signals in decimal format
+add list -decimal * 
+
+#change radix to symbolic
+radix -symbolic
+
+# read in stimulus
+do stim.do
+
+# output results
+write list counter.lst
+
+# quit the simulation
+quit -f</code></pre></div></li>
+<li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id064e3847-4791-4b2d-a91d-b2832c41ce7a"><span class="ph cmd">Save the
+file with the name <span class="ph filepath italic">sim.do</span> and place
+it in the current directory.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__id7420cafe-b4df-4d17-a14f-de7841847688"><span class="ph cmd">Optimize
+the counter design unit.</span><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id454d7de1-8220-421a-8420-742708c8637f"><span class="ph cmd">Enter the
+following command at the DOS/UNIX prompt:</span><div class="itemgroup info SubStepInfo"><p class="lines ApplCommand">vopt +acc counter -o counter_opt</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__id2ad8c23b-ae41-4201-842f-3a2727108616"><span class="ph cmd">Run the
+command line mode simulation.</span><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id5fb7d3bb-053f-42b2-bc24-f45510d4b2be"><span class="ph cmd">Enter
+the following command at the DOS/UNIX prompt:</span><div class="itemgroup info SubStepInfo"><p class="lines ApplCommand">vsim -c -do sim.do counter_opt -wlf counter_opt.wlf</p>
+<p class="p">The -c
+argument instructs <span class="ph fmvar:ProductName">Questa SIM</span> not
+to invoke the GUI. The -wlf argument saves the simulation results
+in a WLF file. This allows you to view the simulation results in
+the GUI for debugging purposes.</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__idb6a6b9cd-d0fd-4de8-b9a3-fafe489b0dad"><span class="ph cmd">View the
+list output.</span><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id6a0cf02e-acfd-4100-a2ea-5291a32273fa"><span class="ph cmd">Open <span class="ph filepath italic">counter.lst</span> and view
+the simulation results. Output produced by the Verilog version of
+the design should look like <a class="xref fm:Figure" href="#id23883139-a388-40a3-abf9-dfc1510ea390__idbe633dcc-6c3c-41cc-b594-7d486837f29d">Figure 1</a>:</span><div class="itemgroup info SubStepInfo"><div class="fig fignone" id="id23883139-a388-40a3-abf9-dfc1510ea390__idbe633dcc-6c3c-41cc-b594-7d486837f29d"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Output of the Counter</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/counter_output.gif" /></div><br /></div>
+</div></li>
+</ol>
+<div class="itemgroup info StepInfo"><p class="p">The output
+may appear slightly different if you used the VHDL version.</p>
+</div></li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__idf3abe883-9796-47bc-9a51-c0a5cd0a01df"><span class="ph cmd">View the
+results in the GUI.</span><div class="itemgroup info StepInfo"><p class="p">Since
+you saved the simulation results, you can view them in the GUI by
+invoking VSIM with the -view argument.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Make
+sure your PATH environment variable is set with the current version
+of <span class="ph fmvar:ProductName">Questa SIM</span> at the front
+of the string.</p>
+</div>
+</div><ol type="a" class="ol substeps"><li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id0cf2b403-8ddd-4552-bf9d-1b44f74138d8"><span class="ph cmd">Type vsim
+-view counter_opt.wlf at the prompt.</span><div class="itemgroup info SubStepInfo"><p class="p">The GUI opens and a dataset tab named “counter_opt”
+is displayed as in <a class="xref fm:Figure" href="#id23883139-a388-40a3-abf9-dfc1510ea390__idcf36d00c-ffa2-4f2d-843b-0be25577a7a2">Figure 2</a>. (Select <span class="ph menucascade"><span class="ph uicontrol">View</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Objects</span></span> in the
+main menus if you do not see an Objects window.)</p>
+<div class="fig fignone" id="id23883139-a388-40a3-abf9-dfc1510ea390__idcf36d00c-ffa2-4f2d-843b-0be25577a7a2"><span class="figcap"><span class="fig--title-label">Figure 2. </span>The counter_opt.wlf
+Dataset in the Main Window Workspace</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/main_counter_opt_dataset.gif" /></div><br /></div>
+</div></li>
+<li class="li substep" id="id23883139-a388-40a3-abf9-dfc1510ea390__id4d20e453-be5f-4d40-8d0e-96b0d40032b5"><span class="ph cmd">Right-click
+the <span class="ph uicontrol italic">counter</span> instance and select <span class="ph uicontrol bold">Add Wave</span>.</span><div class="itemgroup info SubStepInfo"><p class="p">The waveforms
+display in the Wave window.</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id23883139-a388-40a3-abf9-dfc1510ea390__id4b02805b-b319-4e6f-bd34-35fce94ef5e5"><span class="ph cmd">When you
+finish viewing the results, select <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Quit</span></span> to close <span class="ph fmvar:ProductName">Questa SIM</span>.</span></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_AutomatingSimulation_id70663787.html" title="Aside from executing a couple of pre-existing DO files, the previous lessons focused on using Questa SIM in interactive mode: executing single commands, one after another, through the GUI menus or Main window command line. In situations where you have repetitive tasks to complete, you can increase your productivity with DO files.">Automating Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Running in Command-Line Mode"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_RunningInCommandLineMode_id23883139.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

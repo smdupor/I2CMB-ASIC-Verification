@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="write cell_report" />
+<meta name="abstract" content="Writes a report to the Transcript window, or to a file, listing Verilog modules which qualified for and received gate-level cell optimizations." />
+<meta name="description" content="Writes a report to the Transcript window, or to a file, listing Verilog modules which qualified for and received gate-level cell optimizations." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id24470a91-978e-4e0b-b339-e064ef5227eb" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>write cell_report</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="write cell_report" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id24470a91-978e-4e0b-b339-e064ef5227eb">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">write cell_report</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Writes
+a report to the Transcript window, or to a file, listing Verilog
+modules which qualified for and received gate-level cell optimizations. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Gate-level cell optimizations
+are applied at the module level, in addition to normal Verilog optimizations,
+to improve performance of gate-level simulations.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">write cell_report [<a class="xref fm:HeadingOnly" href="#id24470a91-978e-4e0b-b339-e064ef5227eb__id085482d4-3557-4531-8f27-d9de5de55188">-filter &lt;number&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id24470a91-978e-4e0b-b339-e064ef5227eb__idab5ba0ac-74da-4a04-8ad6-bb647a17645d">-infile &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id24470a91-978e-4e0b-b339-e064ef5227eb__ide8d082be-185c-4f60-b7ce-fd5936d5b4d0">-nonopt</a>] [<a class="xref fm:HeadingOnly" href="#id24470a91-978e-4e0b-b339-e064ef5227eb__id3335e60b-910c-4d9a-9875-cfabacf14b1b">[-outfile] &lt;filename&gt;</a> </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id24470a91-978e-4e0b-b339-e064ef5227eb__id5967cf6a-f9cb-4296-a266-5f979f2416a2"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id24470a91-978e-4e0b-b339-e064ef5227eb__id085482d4-3557-4531-8f27-d9de5de55188">-filter &lt;number&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Excludes cells with instance counts
+fewer than &lt;number&gt;. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id24470a91-978e-4e0b-b339-e064ef5227eb__id034a76f4-f154-4c72-b124-c77a1d7aaead"><p class="p Opt">&lt;number&gt;
+— Specified as an integer greater than 0. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id24470a91-978e-4e0b-b339-e064ef5227eb__idab5ba0ac-74da-4a04-8ad6-bb647a17645d">-infile &lt;filename&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a previously generated write report file to use as input.
+If you do not specify a filename, the <a class="xref fm:HeadingOnly" href="Command_WriteReport_id64f04ef8.html#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__Command_WriteReport_id64f04ef8.xml#id64f04ef8-771c-4b44-9f5d-78ed24e336ad" title="Prints a summary of the design being simulated, including a list of all design units (VHDL configurations, entities, and packages, and Verilog modules) with the names of their source files. The summary includes a list of all source files used to compile the given design.">write report</a> command is run.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id24470a91-978e-4e0b-b339-e064ef5227eb__idcb547332-f0cb-48c7-b1c5-a13e43538935"><p class="p Opt">&lt;filename&gt;
+— A saved write report.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id24470a91-978e-4e0b-b339-e064ef5227eb__ide8d082be-185c-4f60-b7ce-fd5936d5b4d0">-nonopt</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports only non-optimized instances. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id24470a91-978e-4e0b-b339-e064ef5227eb__id3335e60b-910c-4d9a-9875-cfabacf14b1b">[-outfile] &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Writes the report to a specified output file, rather than the Transcript
+window. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id24470a91-978e-4e0b-b339-e064ef5227eb__id136c5dbf-766a-4c9a-88a9-ae0dc2982531"><p class="p Opt">&lt;filename&gt; — Specifies the name of the
+output file. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Reports for Gate-Level Optimizations', 'questa_sim_user'); return false;">Reports for Gate-Level Optimizations [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "write cell_report"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_WriteCellReport_id24470a91.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

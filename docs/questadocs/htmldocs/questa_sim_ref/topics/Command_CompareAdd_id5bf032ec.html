@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="compare add" />
+<meta name="abstract" content="Creates an object that is a comparison of signals in a reference design to signals in a test design. You can specify whether to compare two signals, all signals in the region, just ports or a subset of ports. Ignores constant signals such as parameters and generics." />
+<meta name="description" content="Creates an object that is a comparison of signals in a reference design to signals in a test design. You can specify whether to compare two signals, all signals in the region, just ports or a subset of ports. Ignores constant signals such as parameters and generics." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id5bf032ec-ee19-4350-84b2-5d25b104d244" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>compare add</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="compare add" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id5bf032ec-ee19-4350-84b2-5d25b104d244">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">compare add</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates
+an object that is a comparison of signals in a reference design
+to signals in a test design. You can specify whether to compare
+two signals, all signals in the region, just ports or a subset of
+ports. Ignores constant signals such as parameters and generics. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">compare add <a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id5ec22b64-9b63-45b3-9e29-b8d4fcb7f97b">-all</a>{[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id4f950b15-d031-414f-addc-7c6af342fc09">-in</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id5bd7dd7c-2197-4032-8023-32caed52c34f">-inout</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id81a33c51-356a-4be2-a957-cb6d159536b9">-out</a>] | [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idbf260a96-044a-4204-9e19-339fe7f29550">-ports</a>]} [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id0dbf38fb-e93a-41db-a32d-f5b4a9f22664">-internal</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id18fcb445-eafe-43fe-98d2-92fb7b9e64f8">-label &lt;label&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idd71e5302-afe9-41a9-9ae9-9d80f7f7dbfd">-list</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id80f2ee81-05c7-4ad1-af17-06eea1288b84">-rebuild</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idb7866c0d-8600-4070-96e6-b719d4d410ad">-recursive</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idb0a9f0ee-1fa2-48b6-ba7b-ca095c68a91b">-separator &lt;string&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id43191897-f4bc-4668-ae93-f2322ed22951">&lt;testPath&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id95d1ef9b-1af9-4773-a49b-0855cee9f323">-tol &lt;time&gt; [&lt;unit&gt;]</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idcef90292-fb74-4f48-833d-aed5e7a42c88">-tolLead &lt;time&gt; [&lt;unit&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idc64a9bac-6926-4cc8-b1c6-b0486c222df7">-tolTrail &lt;time&gt; [&lt;unit&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idf7681421-2f8d-478b-ae05-089cea38a1ab">-verbose</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id77f40c51-2183-48f6-9355-f98163d43303">-vhdlmatches {&lt;ref-logic-value&gt;=&lt;test-logic-value&gt;:…}</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id7b20a3a9-1f51-4483-8aef-22839d7d19c6">-vlogmatches {&lt;ref-logic-value&gt;=&lt;test-logic-value&gt;:…}</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idbbc2c99b-4ab2-4165-9948-e0b337df009f">-wave</a>] </span>[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id56012591-f36d-4b58-85d5-2776f51dda62">-wavepane &lt;n&gt;</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idc47aa4de-1f0b-41a1-b761-7622cedc8054">-when {“&lt;expression&gt;”}</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idf3b27851-2324-48aa-a093-25a761b8e94b">-win &lt;wname&gt;</a>] </span>[<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__idc11bb520-d820-47d0-a8e7-6d73ddd76a26">-nowin</a>] {<a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id20f4ee00-3108-4dc8-b703-3d3842779868">-clock &lt;name&gt;</a>} <a class="xref fm:HeadingOnly" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id8e2930f5-a0a8-4bd3-b7b9-f0b002784260">&lt;referencePath&gt;</a> </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">Refer
+to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Waveform Compare', 'questa_sim_user'); return false;">Waveform Compare”</a> in the User’s
+Manual for a general overview of waveform comparisons.</p>
+<p class="p">The names of the added comparison objects
+take the form:</p>
+<p class="lines ApplCommand">   &lt;path&gt;/\refSignalName&lt;&gt;testSignalName\</p>
+<p class="p">If you
+compare two signals from different regions, the signal names include
+the uncommon part of the path. <a class="xref fm:Table" href="#id5bf032ec-ee19-4350-84b2-5d25b104d244__id2622a020-d4be-4e97-8909-9769ab9951ee">Table 1</a> shows the results of
+comparisons between specified reference objects and test objects.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id2622a020-d4be-4e97-8909-9769ab9951ee" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Comparing Reference Objects to Test Objects</span></caption><colgroup><col style="width:0.917in" /><col style="width:0.589in" /><col style="width:2.394in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d143799e307"><p class="p">Reference object</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d143799e310"><p class="p">Test object</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d143799e313"><p class="p">Result</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e307 "><p class="p">signal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e310 "><p class="p">signal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e313 "><p class="p">compare the two signals</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e307 "><p class="p">signal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e310 "><p class="p">region</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e313 "><p class="p">compare a signal with
+a name matching the reference signal in the specified test region</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e307 "><p class="p">region</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e310 "><p class="p">region</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e313 "><p class="p">compare all matching signals
+in both regions</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e307 "><p class="p">glob expression</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e310 "><p class="p">signal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e313 "><p class="p">legal only if the glob expression
+selects only one signal</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e307 "><p class="p">glob expression</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e310 "><p class="p">region</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d143799e313 "><p class="p">compare all signals matching
+the glob expression that match signals in the test region</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The
+compare add command supports arguments that specify how each signal
+state matches std_logic or Verilog values (for example, see the
+‑vhdlmatches argument). Since you can also set state matching on
+a global basis with the <a class="xref fm:HeadingOnly" href="Command_CompareOptions_id4c274c22.html#id4c274c22-4c06-44ef-aab5-821764afb268__Command_CompareOptions_id4c274c22.xml#id4c274c22-4c06-44ef-aab5-821764afb268" title="Sets defaults for various waveform comparison commands. The defaults are used when other compare commands are invoked during the current session.">compare options</a> command or PrefCompare() Tcl variables, <span class="ph fmvar:ProductName">Questa SIM</span> follows state match settings
+in the following order:</p>
+<ol class="ol"><li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id9bb9599c-52b6-4b9f-b650-184cca5543d6"><p class="p">Use the local matching
+values specified when the comparison was created with compare add,
+or subsequently configured with <a class="xref fm:HeadingOnly" href="Command_CompareConfigure_id74f7663c.html#id74f7663c-cc12-4fa0-841b-b97274d1658c__Command_CompareConfigure_id74f7663c.xml#id74f7663c-cc12-4fa0-841b-b97274d1658c" title="Modifies options for compare signals and regions. Applies the modified options to all objects in the specified compare path.">compare configure</a>.</p>
+</li>
+</ol>
+<ol class="ol"><li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id3e188f89-e220-4e5d-ae36-159637609f98"><p class="p">If no local values
+were set, use global matching values set with the compare options
+command.</p>
+</li>
+</ol>
+<ol class="ol"><li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idf47a0810-c00e-401b-8304-e7df913be6f6"><p class="p">If no compare options
+were set, use default matching values specified by PrefCompare Tcl
+variables.</p>
+</li>
+</ol>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id2bb43497-610c-4b45-9464-bf5ca3e36895"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id5ec22b64-9b63-45b3-9e29-b8d4fcb7f97b">-all</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of all signals.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idce398b3c-71e5-41a8-a0b5-366538c5eed4">-help</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Lists the description and syntax for the compare add command in
+the Transcript window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id4f950b15-d031-414f-addc-7c6af342fc09">-in</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of ports of mode IN. You can specify multiple
+modes in the same command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id5bd7dd7c-2197-4032-8023-32caed52c34f">-inout</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of ports of mode INOUT. You can specify multiple
+modes in the same command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id81a33c51-356a-4be2-a957-cb6d159536b9">-out</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of ports of mode OUT. You can specify multiple
+modes in the same command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idbf260a96-044a-4204-9e19-339fe7f29550">-ports</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of all ports. This switch has the same effect
+as specifying ‑in, -out, and -inout together.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id0dbf38fb-e93a-41db-a32d-f5b4a9f22664">-internal</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies comparison of internal (non-port) signals. You can specify
+multiple modes in the same command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id18fcb445-eafe-43fe-98d2-92fb7b9e64f8">-label &lt;label&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name to display when the comparison is shown in the
+Wave window.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idbb6f8f21-0469-4a90-8803-6368da832587"><p class="p Opt">&lt;label&gt;
+— The name for the comparison.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idd71e5302-afe9-41a9-9ae9-9d80f7f7dbfd">-list</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays specified comparisons in the default List window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id80f2ee81-05c7-4ad1-af17-06eea1288b84">-rebuild</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Rebuilds a fragmented bus in the test design region and compares
+it with the corresponding bus in the reference design region. Ignored
+if a signal is found that has the same name as the reference signal.
+When rebuilding the test signal, the name of the reference signal
+is used as the wildcard prefix.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idb7866c0d-8600-4070-96e6-b719d4d410ad">-recursive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies to also select signals in all nested subregions, recursively.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idb0a9f0ee-1fa2-48b6-ba7b-ca095c68a91b">-separator &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Used with the -rebuild argument. Specifies a separator to insert
+between a base bus name and the bit indication. When a bus has been broken
+into bits (bit blasted) by a synthesis tool, <span class="ph fmvar:ProductName">Questa SIM</span> expects a separator between the
+base bus name and the bit indication. For example, the signal "mybus"
+might be broken down into "mybus_0", "mybus_1", and so forth.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idbb8bd778-7001-4005-8cfe-24b8e0f02c41"><p class="p Opt">&lt;string&gt;
+— Specifies the character(s) to use as a separator between the base
+bus name and the bit indication. The default is an underline “_”.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id43191897-f4bc-4668-ae93-f2322ed22951">&lt;testPath&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies an absolute or relative path to the test signal or region.
+Cannot be a glob expression. If omitted, the test path defaults
+to the same path as &lt;referencePath&gt;, except for the dataset name. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id95d1ef9b-1af9-4773-a49b-0855cee9f323">-tol &lt;time&gt; [&lt;unit&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the maximum amount of time to allow a test signal edge
+to lead or trail a reference edge in an asynchronous comparison.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id8ea43465-6fba-4419-8638-df6a3fb8f699"><p class="p Opt">&lt;time&gt;
+— Any non-negative integer where the default is 0.</p>
+</li>
+<li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idbe125d00-88f5-4716-b8a5-9720935c1e5e"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+Valid time units are: fs, ps, ns, us, ms, sec, min, and hr. If you
+specify &lt;unit&gt;, you must enclose &lt;time&gt; and &lt;unit&gt; within
+curly braces ({}).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idcef90292-fb74-4f48-833d-aed5e7a42c88">-tolLead &lt;time&gt; [&lt;unit&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the maximum amount of time to allow a test signal edge
+to lead a reference edge in an asynchronous comparison.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idd9a32e89-e9a7-4324-8f18-6ea24389810b"><p class="p Opt">&lt;time&gt;
+— Any non-negative integer where the default is 0.</p>
+</li>
+<li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id9f60dee5-d8a8-4edb-9265-57aae443cfdb"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+Valid time units are: fs, ps, ns, us, ms, sec, min, and hr. If you
+specify &lt;unit&gt;, you must enclose &lt;time&gt; and &lt;unit&gt; within
+curly braces ({}).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idc64a9bac-6926-4cc8-b1c6-b0486c222df7">-tolTrail &lt;time&gt; [&lt;unit&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the maximum amount of time to allow a test signal edge
+to trail a reference edge in an asynchronous comparison.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idcdfc84be-3e46-4dc7-a3eb-eeb8007bd281"><p class="p Opt">&lt;time&gt;
+— Any non-negative integer. The default is 0.</p>
+</li>
+<li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__iddeba6fb7-67ae-4ac7-a48b-a08d489f3d2b"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+Valid time units are: fs, ps, ns, us, ms, sec, min, and hr. If you
+specify &lt;unit&gt;, you must enclose &lt;time&gt; and &lt;unit&gt; within
+curly braces ({}).</p>
+</li>
+</ul>
+<div class="fig fignone" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id06dbd952-91d8-401c-8441-c965065be096"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Graphical
+representation of tolLead and tolTrail - compare add</span><br /><div class="imagecenter"><img class="image imagecenter" src="../graphics_composites/a_commands14.png" /></div><br /></div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idf7681421-2f8d-478b-ae05-089cea38a1ab">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prints the signals selected for comparison, and any type conversions
+employed, in the Transcript window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id77f40c51-2183-48f6-9355-f98163d43303">-vhdlmatches {&lt;ref-logic-value&gt;=&lt;test-logic-value&gt;:…}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies how to match VHDL signal states in the reference dataset
+to values in the test dataset. Specify values in a colon-separated
+list of match values. For example:</p>
+<pre class="pre codeblock leveled"><code>	-vhdlmatches {X=XUD:Z=ZD:1=1HD}</code></pre><p class="p">Default
+is:</p>
+<pre class="pre codeblock leveled"><code>{U=UWXD:X=UWXD:0=0LD:1=1HD:Z=ZD:W=UWXD:L=0LD:H=1HD:D=UX01ZWLHD}</code></pre><p class="p">The
+'D' character represents the '-' "don’t care" std_logic value.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id7b20a3a9-1f51-4483-8aef-22839d7d19c6">-vlogmatches {&lt;ref-logic-value&gt;=&lt;test-logic-value&gt;:…}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies how Verilog signal states in the reference dataset should
+match values in the test dataset. Specify values in a colon-separated list
+of match values. For example:</p>
+<pre class="pre codeblock leveled"><code>	-vlogmatches {0=0:1=1:Z=Z}</code></pre><p class="p">Default
+is:</p>
+<pre class="pre codeblock leveled"><code>{0=0:1=1:Z=Z:X=X}.</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idbbc2c99b-4ab2-4165-9948-e0b337df009f">-wave</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies to add compare signals automatically to the default Wave
+window. (default)</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id56012591-f36d-4b58-85d5-2776f51dda62">-wavepane &lt;n&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the pane of the Wave window in which to place the differences.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id8e985290-e14f-425f-acc0-1e1adeef9fa2"><p class="p Opt">&lt;n&gt;
+— A positive integer corresponding to the pane of the Wave window.
+Wave window panes are numbered in sequence starting with 1 for the
+initial wave window.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idc47aa4de-1f0b-41a1-b761-7622cedc8054">-when {“&lt;expression&gt;”}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a conditional expression that must evaluate to "true"
+or "1" for differences to be reported. The expression is evaluated
+at the start of an observed difference. See <a class="xref fm:HeadingOnly" href="Contain_GuiExpressionFormat_id1f1324bb.html#id1f1324bb-ab99-4132-a0df-42dcf8767a31__Contain_GuiExpressionFormat_id1f1324bb.xml#id1f1324bb-ab99-4132-a0df-42dcf8767a31" title="The GUI_expression_format is an option of several simulator commands that operate within the Questa SIM GUI environment. The expressions help you locate and examine objects within the List and Wave windows (expressions may also be used through the Edit &gt; Search menu in both windows). The commands that use the expression format are:">GUI_expression_format</a> for legal
+expression syntax.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idc7aab93b-c3d9-4849-8b96-66c369563254"><p class="p Opt">"&lt;expression&gt;"
+— A conditional expression that results in a true/false value. You
+must enclose the condition expression within quotation marks (“ ”).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idf3b27851-2324-48aa-a093-25a761b8e94b">-win &lt;wname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Adds objects to a specified window. Used to specify a particular
+window when multiple instances of that window type exist.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id6e42af9a-d369-4104-b53f-745ed06cfa1f"><p class="p Opt">&lt;wname&gt;
+— The name of the window to which to add objects.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idc11bb520-d820-47d0-a8e7-6d73ddd76a26">-nowin</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies not to add compare signals to any window. The default
+is to add compare signals to the default Wave window. See -wave.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id20f4ee00-3108-4dc8-b703-3d3842779868">-clock &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+for clocked comparisons; not used for asynchronous comparisons.)
+Specifies the clock definition to use when sampling the specified
+regions. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idaa28883e-be4d-4af9-86f2-62fbf20c2fc2"><p class="p Opt">&lt;name&gt;
+— Specifies the name of the clock definition.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id8e2930f5-a0a8-4bd3-b7b9-f0b002784260">&lt;referencePath&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the path to the reference signal or region. Can be an
+absolute path, a relative path, or a glob expression. Relative paths
+are relative to the current context of the reference dataset. A
+glob expression matches signals only in the containing context.
+Must be the final argument to the compare add command. </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id70122c16-1168-496e-a41b-8f867cc25543"><p class="p">Select
+signals in the reference and test dataset top region according to
+the default mode. This example uses asynchronous comparison with
+the default tolerances, and assumes that the top regions of the
+reference and test datasets have the same name and contain the same
+signals with the same names.</p>
+<p class="lines ApplCommand">   compare add /*</p>
+</li>
+<li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idfbce689f-f200-4207-8dcf-b9383eeaba1a"><p class="p">Select
+port signals of instance .test_ringbuf.ring_inst in both datasets,
+to be compared and sampled on strobe myclock10.</p>
+<p class="lines ApplCommand">   compare add -port -clock myclock10 gold:.test_ringbuf.ring_inst</p>
+</li>
+<li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id718a619b-f19d-4513-a146-0b17219bb292"><p class="p">Select
+all signals in the cpu region, to be compared asynchronously using the
+default tolerances. Requires that the reference and test relative
+hierarchies and signal names within the cpu region be identical,
+but they need not be the same above the cpu region.</p>
+<p class="lines ApplCommand">   compare add -r gold:/top/cpu test:/testbench/cpu</p>
+</li>
+<li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id853ade21-6c56-44d2-8657-20f5b401e044"><p class="p">Specify
+to sample the signal gold:.top.s1 at clock12, and compare it with test:.top.s1,
+also sampled at clock12.</p>
+<p class="lines ApplCommand">   compare add -clock clock12 gold:.top.s1</p>
+</li>
+<li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__idc5fcf2a2-0255-46e9-96a2-cefefb42fcc8"><p class="p">Specify
+to asynchronously compare signal gold:/asynch/abc/s1 to signal sim:/flat/sigabc,
+using a leading tolerance of 3 ns and a trailing tolerance of 5
+ns.</p>
+<p class="lines ApplCommand">   compare add -tolLead {3 ns} -tolTrail {5 ns} gold:/asynch/abc/s1 sim:/flat/sigabc</p>
+</li>
+<li class="li" id="id5bf032ec-ee19-4350-84b2-5d25b104d244__id56b8a58b-2019-4b9e-a738-6eb67ab8e52b"><p class="p">Cause
+signals test:.counter2.cnt_dd to be rebuilt into bus test:.counter2.cnt[…]
+and compared against gold:.counter1.count.</p>
+<p class="lines ApplCommand">   compare add -rebuild gold:.counter1.count test:.counter2.cnt</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_CompareAnnotate_id8ec10da2.html#id8ec10da2-062e-4835-89bb-fe1ecf1f094d__" title="Either flags a comparison difference as ignore, or adds a text string annotation to the difference. The text string appears when viewing the comparison difference in info popups or in the output of a compare info command.">compare annotate</a></div>
+<div><a class="link" href="../topics/Command_CompareClock_id7e6783ed.html#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__" title="Defines a clock to use for clocked-mode comparisons. In clocked‑mode comparisons, signals are sampled and compared at or just after a specified signal edge.">compare clock</a></div>
+<div><a class="link" href="../topics/Command_CompareConfigure_id74f7663c.html#id74f7663c-cc12-4fa0-841b-b97274d1658c__" title="Modifies options for compare signals and regions. Applies the modified options to all objects in the specified compare path.">compare configure</a></div>
+<div><a class="link" href="../topics/Command_CompareContinue_idc8c82327.html#idc8c82327-1ca5-4125-9bfd-f7e5d133d11f__" title="Continues comparison difference computations that were suspended with the compare stop button or Control-C. If the comparison was not suspended, compare continue has no effect.">compare continue</a></div>
+<div><a class="link" href="../topics/Command_CompareDelete_id7b41e635.html#id7b41e635-5657-45c7-92b7-1345d284b823__" title="Deletes a comparison object from the currently open comparison.">compare delete</a></div>
+<div><a class="link" href="../topics/Command_CompareEnd_id6ee5f1e6.html#id6ee5f1e6-5e29-45e3-b540-a9e190869d5b__" title="Closes the active comparison without saving any information.">compare end</a></div>
+<div><a class="link" href="../topics/Command_CompareInfo_id11bef90b.html#id11bef90b-4c21-45bc-ab35-f7e8ec9d4a7e__" title="Lists the results of the comparison in the Main window transcript. Includes a -write argument to save the information to a file.">compare info</a></div>
+<div><a class="link" href="../topics/Command_CompareList_id71882a13.html#id71882a13-f0af-4d17-9b8c-386c433d025a__" title="Displays a list in the Transcript window of all the compare add commands currently in effect.">compare list</a></div>
+<div><a class="link" href="../topics/Command_CompareOptions_id4c274c22.html#id4c274c22-4c06-44ef-aab5-821764afb268__" title="Sets defaults for various waveform comparison commands. The defaults are used when other compare commands are invoked during the current session.">compare options</a></div>
+<div><a class="link" href="../topics/Command_CompareReload_ideb5e1bae.html#ideb5e1bae-e220-403f-b090-22cff24b2f66__" title="Reloads comparison differences for viewing without re-computation.">compare reload</a></div>
+<div><a class="link" href="../topics/Command_CompareReset_id7bd72c82.html#id7bd72c82-949d-467d-b06a-29c0044f4dbc__" title="Clears the current compare differences, allowing execution of another compare run command. Does not modify any of the compare options or any of the signals selected for comparison. This enables you to re-run the comparison with different options or with a modified signal list.">compare reset</a></div>
+<div><a class="link" href="../topics/Command_CompareRun_id29d37e89.html#id29d37e89-7a56-453d-afa1-a483f4eba092__" title="Runs the difference computation on signals you select via a compare add command. Reports in the Transcript window the total number of errors found.">compare run</a></div>
+<div><a class="link" href="../topics/Command_CompareSavediffs_id8faf50fc.html#id8faf50fc-3708-452c-9c27-c82fc28cd6af__" title="Saves the comparison results to a file for later reloading.">compare savediffs</a></div>
+<div><a class="link" href="../topics/Command_CompareSaverules_idce029d10.html#idce029d10-5915-4b27-971c-e8b06a3f2c78__" title="Saves the comparison setup information (or &#34;rules&#34;) to a file you can re-execute later. Saves compare options, clock definitions, and region and signal selections.">compare saverules</a></div>
+<div><a class="link" href="../topics/Command_CompareSee_id5e4dbc9a.html#id5e4dbc9a-2fd6-4930-bf31-0bd11944bd5d__" title="Displays the specified comparison difference in the Wave window, using any necessary horizontal and vertical scrolling. Highlights the signal containing the specified difference, and positions the active cursor at the starting time of the difference.">compare see</a></div>
+<div><a class="link" href="../topics/Command_CompareStart_ida1186d51.html#ida1186d51-1317-42ff-8d78-5353e7d36999__" title="Begins a new dataset comparison. The datasets to compare must already be open.">compare start</a></div>
+<div><a class="link" href="../topics/Command_CompareStop_id78c494c3.html#id78c494c3-0f78-46ca-bf94-31b8ab156d7b__" title="Used internally by the compare stop button to suspend comparison computations in progress.">compare stop</a></div>
+<div><a class="link" href="../topics/Command_CompareUpdate_id8d3d6637.html#id8d3d6637-3864-4cb3-860e-bd6a753ecac3__" title="Primarily used internally to update the comparison differences when comparing a live simulation against a .wlf file.">compare update</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "compare add"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CompareAdd_id5bf032ec.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

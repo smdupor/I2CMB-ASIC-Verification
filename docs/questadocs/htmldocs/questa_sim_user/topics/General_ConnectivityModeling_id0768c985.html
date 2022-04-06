@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Connectivity Modeling" />
+<meta name="abstract" content="Modeling connectivity in an analog mixed-signal design entails several issues to be considered." />
+<meta name="description" content="Modeling connectivity in an analog mixed-signal design entails several issues to be considered." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0768c985-36da-4d0d-a8cb-68a9db67f263" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Connectivity Modeling</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Connectivity Modeling" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id0768c985-36da-4d0d-a8cb-68a9db67f263">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Connectivity Modeling</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Modeling connectivity in an analog
+mixed-signal design entails several issues to be considered. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id3567b1df-4669-443f-baa9-b90217c2d5fe"><h2 class="title Subheading sectiontitle">Variables
+versus connections</h2><p class="p">If a model has a variable declared as type real, you must use
+a real-valued connection to transport its value to other models
+in the design. However, using a real-valued connection depends on
+different characteristics provided by Verilog-AMS and SystemVerilog. </p>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__idd7b7d098-bec3-4aa5-a07d-2ec9d838969d"><h2 class="title Subheading sectiontitle">Structural
+versus Behavioral Wire</h2><p class="p">When a wire object appears only in statements (as a structural
+construct), that object is referred to as a “structural wire.” Any
+other use of a wire object is referred to as a “behavioral wire.”
+This concept of structural vs. behavioral wire (although not the
+specific terminology) appears only in the Verilog-AMS standard;
+it does not appear in the SystemVerilog standard. </p>
+<p class="p">A common case of a behavioral wire is one
+that is accessed (written or read) in the behavioral code of a module,
+but the module includes a wire that is declared (as a port or a
+local object) but is not used at all. </p>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id6831780b-67b9-48d7-acb7-42a997e268d4"><h2 class="title Subheading sectiontitle">Verilog-AMS
+wire object</h2><p class="p"> Verilog-AMS 2.0 introduced a net that can
+carry real values (declared as wreal). In order to allow connectivity
+of models that rely on wreal, the wire object semantic has been
+extended by Verilog-AMS so that a wire, declared either explicitly
+or implicitly, can carry either a 4-state logic value (0, 1, X,
+Z) or a real value, depending on what is connected to that wire.
+A structural wire is an object that carries either a logic or a
+real value—just one value, with the same type during the entire
+simulation. Verilog AMS addresses the problem of converting between
+the logic and real values.</p>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id13116f9d-a2ba-4d55-bf8f-169712d08301"><h2 class="title Subheading sectiontitle">SystemVerilog
+2012 Interconnect </h2><p class="p">The most recent SystemVerilog standard (IEEE Std 1800-2012) established
+two important concepts for modeling connectivity: </p>
+<ul class="ul"><li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id3163e19b-263e-4211-9515-373bfa3d8c94"><p class="p">User-Defined
+Nettype (UDN) — UDN allows a definition of a net type that can carry
+arbitrarily complex data using a built-in type (such as real) or
+a user-defined type (UDT), such as struct. In addition, the UDN
+also allows an accompanying user-defined resolution function (UDR)
+for multiple drivers on the same net. Consequently, a UDN is a significant
+extension of the wreal net type. In order to allow connectivity
+of models that rely on UDNs, a more generic connectivity mechanism
+is needed—the interconnect object. </p>
+</li>
+<li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id772380ab-51ee-4535-bc75-07d2831e93f0"><p class="p">The interconnect
+net — An interconnect object is a typeless net that can be used
+only to express connections; it cannot be used to express behavior. </p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__idc68d6d3f-23ef-488e-95a8-a7082e31b9ef"><h2 class="title Subheading sectiontitle">Verilog-AMS wire versus SystemVerilog interconnect</h2><p class="p">A Verilog-AMS wire and a SystemVerilog interconnect provide different
+ways to implement AMS connectivity. There are two important differences
+between these two approaches:</p>
+<ul class="ul"><li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__idc2d557dd-f2ce-4573-9ba0-a3ad23b41ea3"><p class="p">Verilog-AMS
+wire can carry logic or real values, whereas interconnect can carry
+any type, including built-in types and the types defined in a UDN. Thus,
+a Verilog-AMS structural wire object can be accessed by a hierarchical
+reference in a test bench and its type is known after elaboration.</p>
+</li>
+<li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id19e05139-a169-4136-b7be-1aee8a595f1a"><p class="p">SystemVerilog
+interconnect is an object that cannot take on the type of behavioral
+objects that it is connected to (unlike a Verilog-AMS structural
+wire). Thus, a SystemVerilog interconnect object cannot be used
+in any behavioral read or write access, including using a hierarchical
+reference.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id6c372603-9dbc-4db6-8c68-882e3b9c1f64"><h2 class="title Subheading sectiontitle">Hierarchical
+referencing (test bench versus DUT) </h2><p class="p">Hierarchy is used in descriptions of systems, designs, and components
+to decompose a large problem into smaller, more manageable subproblems.
+When hierarchy is introduced, a single point where components are
+connected in a flat description becomes a collection of such points,
+which often introduces different names at levels of hierarchy. </p>
+<p class="p">Another consequence of the distinction between using wire and
+interconnect is that a test bench that relies on the Verilog-AMS
+rules of a structural wire cannot be compiled nor optimized independently
+of the DUT. This is because a hierarchical reference from the test bench
+could turn up to have, after elaboration, either logic or real type.
+Further, because when using Verilog, it is difficult to identify
+the type of a hierarchical reference from its context, the compiler
+cannot determine the verification engineer’s intention. This is
+even if the user “knows” that the hierarchical reference will “always”
+end up to be the type (such as logic) unequivocally associated with
+a wire net in SystemVerilog. </p>
+<p class="p">The rules of SystemVerilog interconnect enable much more efficiency
+in the independent compilation, optimization, and even partial elaboration
+of the test bench and the DUT than with Verilog. </p>
+<p class="p">If you use the Cadence AMS netlister with
+a design that contains models that use real numbers to represent
+the behavior of an analog component, a practical problem arises.
+The netlister relies on the concept of Verilog-AMS structural wire,
+which, according to the Verilog-AMS standard and the Cadence wreal
+extensions, is capable of carrying signals that are either logic
+(0,1,X,Z) or real numbers (but not both). The netlister generates
+modules from schematics for structure. The netlisted modules use
+only Verilog implicit net declarations, meaning that the ports and
+nets are not declared in the module. Because of the default rules
+of all Verilog languages, such objects are implictly declared as
+wire objects, and when used with a product compliant with Verilog-AMS,
+those wires can connect either logic (behavioral wire) or real (wreal)
+models.</p>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__ide760aaf4-6c19-4c56-bbf6-a8fd17edda34"><h2 class="title Subheading sectiontitle">Pracitcal
+Differences in Porting Between NCSim and Questa SIM</h2><p class="p">As noted under <a class="xref fm:HeadingOnly" href="General_AmsStandardsAndNomenclature_id288a0e4f.html#id288a0e4f-ec8a-45f5-b1c7-a5a80fe45c26__id400e1ac0-976a-42ef-a838-fc367b13d240">Standards</a>, AMS designs
+with real-number models that use wreal indicate an effort to combine
+test benches written in SystemVerilog with a DUT that has modules
+written in a combination of Verilog-AMS and SystemVerilog or its
+Verilog subset. Vendors have developed proprietary extensions to
+accommodate these kinds of combinations. </p>
+<p class="p">The extension that <span class="ph fmvar:ProductName">Questa SIM</span> implements to
+support the use of AMS netlisters with SystemVerilog-based test
+benches and DUTs differs from extensions used by the AMS netlitsters
+of other vendors. This difference in interpretation leads to some
+porting problems.</p>
+<ul class="ul"><li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id017e64a2-fe2d-4ac1-8c0f-a03645941ffe"><p class="p">Other vendors implement extensions for connectivity
+that rely on the older Verilog-AMS standard. This implementation
+allows a hierarchical reference in a test bench to a Verilog-AMS
+structural wire. It is not known how such a reference is interpreted
+when the structural wire becomes either a wire or wreal depending
+on what is connected to it in the DUT. </p>
+</li>
+<li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id6df7721f-a99f-4392-bb73-85a9ad98977a"><p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> implements the extensions using the more modern SystemVerilog
+concept of interconnect. When a structural wire is converted to
+a SystemVerilog interconnect, this implementation (based on SystemVerilog
+rules) does not permit use of a hierarchical reference to such an
+object. </p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id3c3f4de7-ee8f-496b-9425-30579f8043d1"><h2 class="title Subheading sectiontitle">Workarounds</h2><p class="p">There are several possible workarounds to the discrepancies between
+these implementations:</p>
+<ul class="ul"><li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__id911c5e27-aa95-4e4d-9737-f80136b3d9c2"><p class="p">Instead
+of using a hierarchical reference to a structural wire in a connectivity
+module high in the hierarchy, refer instead to the behavioral wire
+in one of the models.</p>
+</li>
+<li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__ide85ac7a6-829e-4e5c-92b0-181276b21163"><p class="p">Instead of
+using a hierarchical reference, use a checker module with an explicit
+port type, and bind it into the connectivity module. </p>
+</li>
+<li class="li" id="id0768c985-36da-4d0d-a8cb-68a9db67f263__idf9dc8b9b-b39d-439d-9d23-3e9b4ffe2a78"><p class="p">Instead of
+using the structural wire in a module, explicitly type the appropriate
+objects as either a wire (and do not convert it to interconnect)
+or a wreal.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DigitalMixedSignalForVerilogAndSystemVerilog_id902c93c5.html" title="Questa SIM simulation allows you to model digital mixed-signal (DMS) behavior by supporting the constructs for modeling real numbers provided by both Verilog‑AMS and SystemVerilog.">Digital Mixed-Signal for Verilog and SystemVerilog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Connectivity Modeling"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_ConnectivityModeling_id0768c985.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

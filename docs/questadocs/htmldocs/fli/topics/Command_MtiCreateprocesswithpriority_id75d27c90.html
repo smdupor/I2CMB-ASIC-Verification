@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_CreateProcessWithPriority()" />
+<meta name="abstract" content="Creates a new VHDL process with a specific priority." />
+<meta name="description" content="Creates a new VHDL process with a specific priority." />
+<meta name="DC.subject" content="mti_CreateProcessWithPriority()" />
+<meta name="keywords" content="mti_CreateProcessWithPriority()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id75d27c90-e95b-4b16-aef6-55ce32a9f358" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_CreateProcessWithPriority()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_CreateProcessWithPriority()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_CreateProcessWithPriority()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates
+a new VHDL process with a specific priority.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">process_id = mti_CreateProcessWithPriority( name, func, param, priority )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e159"><p class="p">Name</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e166"><p class="p">Type</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e169"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e159 "><p class="p">name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e166 "><p class="p">char *</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e169 "><p class="p">The name of the new VHDL process;
+OPTIONAL - can be NULL </p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e159 "><p class="p">func</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e166 "><p class="p">mtiVoidFuncPtrT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e169 "><p class="p">A pointer to the function
+that will be executed as the body of the new process</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e159 "><p class="p">param</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e166 "><p class="p">void *</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e169 "><p class="p">A parameter to be passed
+to the function; OPTIONAL - can be NULL</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e159 "><p class="p">priority</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e166 "><p class="p">mtiProcessPriorityT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e169 "><p class="p">The priority of the new
+process: immediate, normal, synch, NBA, or postponed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358__id7785798a-e54e-4659-be2d-872b311b014f" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e222"><p class="p">Name</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e225"><p class="p">Type</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d21929e228"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e222 "><p class="p">process_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e225 "><p class="p">mtiProcessIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d21929e228 "><p class="p">A handle to the new VHDL
+process or NULL if there is an error</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_CreateProcessWithPriority()
+creates a new VHDL process with the specified name and priority.
+If the name is non-NULL, then it appears in the Process window of
+the simulator; otherwise, it does not. The simulator calls the specified
+function along with its parameter whenever the process executes.
+The process executes either at the time specified in a call to <a class="xref fm:HeadingOnly" href="Command_MtiSchedulewakeup_idff6aa11a.html#idff6aa11a-2e52-4e0d-9a79-2ea839aeb37d__Command_MtiSchedulewakeup_idff6aa11a.xml#idff6aa11a-2e52-4e0d-9a79-2ea839aeb37d" title="Schedules a VHDL process to wake up at a specific time.">mti_ScheduleWakeup()</a> or whenever one of the signals
+to which it is sensitive changes (<a class="xref fm:HeadingOnly" href="Command_MtiSensitize_id9688a67c.html#id9688a67c-25a1-4711-80f5-0833a0fa6115__Command_MtiSensitize_id9688a67c.xml#id9688a67c-25a1-4711-80f5-0833a0fa6115" title="Sensitizes a VHDL process to a VHDL or SystemC signal.">mti_Sensitize()</a>).</p>
+<p class="p">The priority of the process can
+be one of the following:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358__idd3046448-5d07-44fc-ae0c-c9ee1e02a55f" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:2.365in" /><col style="width:2.834in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">MTI_PROC_IMMEDIATE</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">All immediate processes
+run immediately after signal activation (if triggered). If any immediate
+process activates any signals, then the signals are reevaluated
+and all immediate processes (if triggered) are run again in the
+same delta. This cycle continues until no more signals are activated.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">MTI_PROC_NORMAL</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Normal processes run
+(when triggered) after all immediate processes have run and settled.
+They can run once per delta and can schedule events in zero delay.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">MTI_PROC_SYNCH</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Synchronized processes
+(when triggered) run after immediate and normal processes, but before
+NBA processes. They can run once per delta and can schedule events
+in zero delay.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">MTI_PROC_NBA</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Non-Blocking Assignment processes
+(when triggered) run after synchronized processes, but before postponed
+processes. They can run once per delta and can schedule events in zero
+delay.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">MTI_PROC_POSTPONED</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Postponed processes (when triggered)
+run once at the end of the time step for which they are scheduled after
+all immediate, normal, synchronized, and NBA processes. They cannot
+schedule anything in zero delay. (In Verilog, these types of processes
+are also known as read-only synchronization processes or $monitor() processes.)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">If you create the process during
+elaboration from inside of a foreign architecture instance, then
+it automatically executes the process once at time zero. If the
+process is created either after elaboration is complete or from
+any other context (such as from an initialization function that executes
+as a result of the loading of a foreign shared library by the -foreign
+option to vsim), then the simulator does not automatically run the
+process but must be scheduled or sensitized.</p>
+<p class="p">mti_CreateProcessWithPriority()
+allows you to create a process with an illegal HDL name. This is
+useful for integrators who provide shared libraries for use by end
+customers, as this is an easy way to avoid potential name conflicts
+with HDL processes. We recommend the following naming style:</p>
+<pre class="pre codeblock"><code>&lt;PREFIX_name&gt;</code></pre><p class="p">where PREFIX is 3 or 4 characters
+that denote your software (to avoid name conflicts with other integration
+software) and <span class="ph FontProperty emphasis">name</span> is
+the name of the process. Enclosing the entire name in angle brackets
+makes it an illegal HDL name. For example, &lt;MTI_foreign_architecture&gt;.</p>
+<p class="p">We strongly recommend that you
+do not use characters in the name that will cause Tcl parsing problems.
+This includes spaces, the path separator (normally ’/’ or ’.’),
+square brackets ([]), and dollar signs ($). If you must use these
+characters, then create an escaped name by putting a backslash (\)
+at both ends of the name.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358__id52e44cf3-b6ab-4143-bb43-7b4b4f9d8f2f"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;stdlib.h&gt;
+#include &lt;mti.h&gt;
+typedef struct {
+  mtiProcessIdT immed_procid[5];
+  mtiProcessIdT normal_procid[5];
+  mtiProcessIdT synch_procid[5];
+  mtiProcessIdT nba_procid[5];
+  mtiProcessIdT postponed_procid[5];
+  mtiSignalIdT  sig02;
+} instanceInfoT;
+void scheduleProcesses( instanceInfoT * inst,
+int i, mtiDelayT delay )
+{
+  mti_ScheduleWakeup( inst-&gt;immed_procid[i],
+    delay );
+  mti_ScheduleWakeup( inst-&gt;normal_procid[i],
+   delay );
+  mti_ScheduleWakeup( inst-&gt;synch_procid[i],
+    delay );
+  mti_ScheduleWakeup( inst-&gt;nba_procid[i],
+      delay );
+  mti_ScheduleWakeup( inst-&gt;postponed_procid[i],
+delay );
+}
+/* Main test process */
+void testProcess( void * param )
+{
+  instanceInfoT * inst = param;
+  mtiInt32T sigval;
+  mti_PrintFormatted( "\nTime [%d,%d] delta
+%d: testProcess()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+  scheduleProcesses( inst, 0, 0 );
+  /* Test immediate activation of immediate
+process. */
+  sigval = mti_GetSignalValue( inst-&gt;sig02
+);
+  if ( sigval == 0 ) {
+    sigval = 1;
+  } else {
+    sigval = 0;
+  }
+  mti_SetSignalValue( inst-&gt;sig02, (long)sigval
+);
+}
+/* Immediate process sensitive to a signal
+in zero-delay */
+void sigImmedProc( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: sigImmedProc()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+/* Processes scheduled by testProcess() */
+void immedProcess1( void * param )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: immedProcess1()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void normalProcess1( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: normalProcess1():     "
+                     "Scheduling processes
+ending in 2\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+  scheduleProcesses( inst, 1, 0 );
+}
+void synchProcess1( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: synchProcess1():      "
+                     "Scheduling processes
+ending in 3\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+  scheduleProcesses( inst, 2, 0 );
+}
+void nbaProcess1( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: nbaProcess1():            "
+                     "Scheduling processes
+ending in 4\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+  scheduleProcesses( inst, 3, 0 );
+}
+void postponedProcess1( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: postponedProcess1(): "
+                   "Scheduling processes
+ending in 5\n",
+                   mti_NowUpper(), mti_Now(),
+mti_Delta() );
+  scheduleProcesses( inst, 4, 1 );
+}
+/* Processes scheduled by normalProcess1()
+*/
+void immedProcess2( void * param )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: immedProcess2()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void normalProcess2( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: normalProcess2()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void synchProcess2( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: synchProcess2()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void nbaProcess2( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: nbaProcess2()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void postponedProcess2( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: postponedProcess2()\n",
+                       mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+/* Processes scheduled by synchProcess1()
+*/
+void immedProcess3( void * param )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: immedProcess3()\n",
+                      mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void normalProcess3( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: normalProcess3()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void synchProcess3( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: synchProcess3()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void nbaProcess3( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: nbaProcess3()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void postponedProcess3( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: postponedProcess3()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+/* Processes scheduled by nbaProcess1() */
+void immedProcess4( void * param )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: immedProcess4()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void normalProcess4( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: normalProcess4()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void synchProcess4( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: synchProcess4()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void nbaProcess4( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: nbaProcess4()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void postponedProcess4( instanceInfoT * inst
+)
+{ 
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: postponedProcess4()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+/* Processes scheduled by postponedProcess1()
+*/
+void immedProcess5( void * param )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: immedProcess5()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void normalProcess5( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: normalProcess5()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void synchProcess5( instanceInfoT * inst
+)
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: synchProcess5()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void nbaProcess5( instanceInfoT * inst )
+{
+  mti_PrintFormatted( "Time [%d,%d] delta
+%d: nbaProcess5()\n",
+                     mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void postponedProcess5( instanceInfoT * inst
+)
+{
+mti_PrintFormatted( "Time [%d,%d] delta %d:
+postponedProcess5()\n",
+                   mti_NowUpper(), mti_Now(),
+mti_Delta() );
+}
+void cleanupCallback( void * param )
+{
+  mti_PrintMessage( "Cleaning up...\n" );
+  free( param );
+}
+void initForeign(
+  mtiRegionIdT       region,   /* The ID
+of the region in which this     */
+                               /* foreign
+architecture is instantiated.  */
+  char              *param,    /* The last
+part of the string in the     */
+                               /* foreign
+attribute.                     */
+  mtiInterfaceListT *generics, /* A list
+of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list
+of ports for the foreign model.   */
+)
+{
+  char          * immed_name;
+  char          * normal_name;
+  char          * synch_name;
+  char          * nba_name;
+  char          * postponed_name;
+  instanceInfoT * inst;
+  int             i;
+  mtiProcessIdT   procid;
+  mtiSignalIdT    sigid;
+  mtiVoidFuncPtrT immed_func;
+  mtiVoidFuncPtrT normal_func;
+  mtiVoidFuncPtrT synch_func;
+  mtiVoidFuncPtrT nba_func;
+  mtiVoidFuncPtrT postponed_func;
+  inst   = (instanceInfoT *)malloc( sizeof(instanceInfoT)
+);
+  sigid  = mti_FindSignal( "/top/s1" );
+  procid = mti_CreateProcessWithPriority(
+"TestProcess", testProcess,
+                                         inst,
+MTI_PROC_IMMEDIATE );
+  mti_Sensitize( procid, sigid, MTI_EVENT
+);
+  inst-&gt;sig02 = mti_FindSignal( "/top/s2"
+);
+  procid = mti_CreateProcessWithPriority(
+"sigImmedProc", sigImmedProc,
+                                         inst,
+MTI_PROC_IMMEDIATE );
+  mti_Sensitize( procid, inst-&gt;sig02, MTI_EVENT
+);
+  for ( i = 0; i &lt; 5; i++ ) {
+    switch ( i ) {
+      case 0:
+        immed_func     = immedProcess1;
+        normal_func    = normalProcess1;
+        synch_func     = synchProcess1;
+        nba_func       = nbaProcess1;
+        postponed_func = postponedProcess1;
+        immed_name     = "immedProcess1";
+        normal_name    = "normalProcess1";
+        synch_name     = "synchProcess1";
+        nba_name       = "nbaProcess1";
+        postponed_name = "postponedProcess1";
+        break;
+      case 1:
+        immed_func     = immedProcess2;
+        normal_func    = normalProcess2;
+        synch_func     = synchProcess2;
+        nba_func       = nbaProcess2;
+        postponed_func = postponedProcess2;
+        immed_name     = "immedProcess2";
+        normal_name    = "normalProcess2";
+        synch_name     = "synchProcess2";
+        nba_name       = "nbaProcess2";
+        postponed_name = "postponedProcess2";
+        break;
+      case 2:
+        immed_func     = immedProcess3;
+        normal_func    = normalProcess3;
+        synch_func     = synchProcess3;
+        nba_func       = nbaProcess3;
+        postponed_func = postponedProcess3;
+        immed_name     = "immedProcess3";
+        normal_name    = "normalProcess3";
+        synch_name     = "synchProcess3";
+        nba_name       = "nbaProcess3";
+        postponed_name = "postponedProcess3";
+        break;
+      case 3:
+        immed_func     = immedProcess4;
+        normal_func    = normalProcess4;
+        synch_func     = synchProcess4;
+        nba_func       = nbaProcess4;
+        postponed_func = postponedProcess4;
+        immed_name     = "immedProcess4";
+        normal_name    = "normalProcess4";
+        synch_name     = "synchProcess4";
+        nba_name       = "nbaProcess4";
+        postponed_name = "postponedProcess4";
+        break;
+      case 4:
+        immed_func     = immedProcess5;
+        normal_func    = normalProcess5;
+        synch_func     = synchProcess5;
+        nba_func       = nbaProcess5;
+        postponed_func = postponedProcess5;
+        immed_name     = "immedProcess5";
+        normal_name    = "normalProcess5";
+        synch_name     = "synchProcess5";
+        nba_name       = "nbaProcess5";
+        postponed_name = "postponedProcess5";
+        break;
+    }
+    inst-&gt;immed_procid[i]  = mti_CreateProcessWithPriority(
+immed_name,
+                                                      immed_func,
+inst,
+                                                      MTI_PROC_IMMEDIATE
+);
+    inst-&gt;normal_procid[i] = mti_CreateProcessWithPriority(
+normal_name,
+                                                      normal_func,
+inst,
+                                                      MTI_PROC_NORMAL
+);
+    inst-&gt;synch_procid[i]  = mti_CreateProcessWithPriority(
+synch_name,
+                                                      synch_func,
+inst,
+                                                      MTI_PROC_SYNCH
+);
+    inst-&gt;nba_procid[i]    = mti_CreateProcessWithPriority(
+nba_name,
+                                                      nba_func,
+inst,
+                                                      MTI_PROC_NBA
+);
+    inst-&gt;postponed_procid[i] = mti_CreateProcessWithPriority
+    ( postponed_name, postponed_func, inst,
+MTI_PROC_POSTPONED );
+  }
+  mti_AddQuitCB( cleanupCallback, inst );
+  mti_AddRestartCB( cleanupCallback, inst
+);
+}</span> </code></pre></div>
+<div class="section Subsection" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358__id6a406d8f-af64-41f6-bdd1-e22de7e838dc"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl";
+begin
+end a;
+
+entity top is
+end top;
+
+architecture a of top is
+
+  signal s1 : bit := '0';
+  signal s2 : bit := '0';
+
+  component for_model is
+  end component;
+
+  for all : for_model use entity work.for_model(a);
+
+begin
+
+  s1 &lt;= not s1 after 5 ns;
+
+  i1 : for_model;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="id75d27c90-e95b-4b16-aef6-55ce32a9f358__idd10d9cc4-bba4-4362-8749-6d3bea168cb7"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+# 5.4
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+VSIM 1&gt; run 8
+# Time [0,0] delta 0: nbaProcess5()
+# Time [0,0] delta 0: synchProcess5()
+# Time [0,0] delta 0: normalProcess5()
+# Time [0,0] delta 0: immedProcess5()
+# Time [0,0] delta 0: nbaProcess4()
+# Time [0,0] delta 0: synchProcess4()
+# Time [0,0] delta 0: normalProcess4()
+# Time [0,0] delta 0: immedProcess4()
+# Time [0,0] delta 0: nbaProcess3()
+# Time [0,0] delta 0: synchProcess3()
+# Time [0,0] delta 0: normalProcess3()
+# Time [0,0] delta 0: immedProcess3()
+# Time [0,0] delta 0: nbaProcess2()
+# Time [0,0] delta 0: synchProcess2()
+# Time [0,0] delta 0: normalProcess2()
+# Time [0,0] delta 0: immedProcess2()
+# Time [0,0] delta 0: nbaProcess1():       Scheduling
+processes ending in 4
+# Time [0,0] delta 0: synchProcess1():     Scheduling
+processes ending in 3
+# Time [0,0] delta 0: normalProcess1():    Scheduling
+processes ending in 2
+# Time [0,0] delta 0: immedProcess1()
+# Time [0,0] delta 0: sigImmedProc()
+# 
+# Time [0,0] delta 0: testProcess()
+# Time [0,0] delta 0: postponedProcess5()
+# Time [0,0] delta 0: postponedProcess4()
+# Time [0,0] delta 0: postponedProcess3()
+# Time [0,0] delta 0: postponedProcess2()
+# Time [0,0] delta 0: postponedProcess1(): Scheduling
+processes ending in 5
+# Time [0,0] delta 1: sigImmedProc()
+# Time [0,0] delta 1: immedProcess4()
+# Time [0,0] delta 1: immedProcess3()
+# Time [0,0] delta 1: immedProcess2()
+# Time [0,0] delta 1: immedProcess1()
+# Time [0,0] delta 1: normalProcess4()
+# Time [0,0] delta 1: normalProcess3()
+# Time [0,0] delta 1: normalProcess2()
+# Time [0,0] delta 1: normalProcess1():    Scheduling
+processes ending in 2
+# Time [0,0] delta 2: immedProcess2()
+# Time [0,0] delta 2: normalProcess2()
+# Time [0,0] delta 2: synchProcess4()
+# Time [0,0] delta 2: synchProcess3()
+# Time [0,0] delta 2: synchProcess2()
+# Time [0,0] delta 2: synchProcess1():     Scheduling
+processes ending in 3
+# Time [0,0] delta 3: immedProcess3()
+# Time [0,0] delta 3: normalProcess3()
+# Time [0,0] delta 3: synchProcess3()
+# Time [0,0] delta 3: nbaProcess4()
+# Time [0,0] delta 3: nbaProcess3()
+# Time [0,0] delta 3: nbaProcess2()
+# Time [0,0] delta 3: nbaProcess1():       Scheduling
+processes ending in 4
+# Time [0,0] delta 4: immedProcess4()
+# Time [0,0] delta 4: normalProcess4()
+# Time [0,0] delta 4: synchProcess4()
+# Time [0,0] delta 4: nbaProcess4()
+# Time [0,0] delta 4: postponedProcess4()
+# Time [0,0] delta 4: postponedProcess3()
+# Time [0,0] delta 4: postponedProcess2()
+# Time [0,0] delta 4: postponedProcess1(): Scheduling
+processes ending in 5
+# Time [0,1] delta 0: immedProcess5()
+# Time [0,1] delta 0: normalProcess5()
+# Time [0,1] delta 0: synchProcess5()
+# Time [0,1] delta 0: nbaProcess5()
+# Time [0,1] delta 0: postponedProcess5()
+# 
+# Time [0,5] delta 0: testProcess()
+# Time [0,5] delta 0: sigImmedProc()
+# Time [0,5] delta 1: immedProcess1()
+# Time [0,5] delta 1: normalProcess1():    Scheduling
+processes ending in 2
+# Time [0,5] delta 2: immedProcess2()
+# Time [0,5] delta 2: normalProcess2()
+# Time [0,5] delta 2: synchProcess2()
+# Time [0,5] delta 2: synchProcess1():     Scheduling
+processes ending in 3
+# Time [0,5] delta 3: immedProcess3()
+# Time [0,5] delta 3: normalProcess3()
+# Time [0,5] delta 3: synchProcess3()
+# Time [0,5] delta 3: nbaProcess3()
+# Time [0,5] delta 3: nbaProcess2()
+# Time [0,5] delta 3: nbaProcess1():       Scheduling
+processes ending in 4
+# Time [0,5] delta 4: immedProcess4()
+# Time [0,5] delta 4: normalProcess4()
+# Time [0,5] delta 4: synchProcess4()
+# Time [0,5] delta 4: nbaProcess4()
+# Time [0,5] delta 4: postponedProcess4()
+# Time [0,5] delta 4: postponedProcess3()
+# Time [0,5] delta 4: postponedProcess2()
+# Time [0,5] delta 4: postponedProcess1(): Scheduling
+processes ending in 5
+# Time [0,6] delta 0: immedProcess5()
+# Time [0,6] delta 0: normalProcess5()
+# Time [0,6] delta 0: synchProcess5()
+# Time [0,6] delta 0: nbaProcess5()
+# Time [0,6] delta 0: postponedProcess5()
+VSIM 2&gt; quit
+# Cleaning up... 
+</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_MtiFree_id3bc85db6.html#id3bc85db6-2623-4375-9be4-1ca9a1fdf76e__" title="Frees simulator-managed memory.">mti_Free()</a></div>
+<div><a class="link" href="../topics/Command_MtiVsimfree_id7390869b.html#id7390869b-5e7c-410d-bdaa-025b0b0dae95__" title="Frees simulator-allocated memory.">mti_VsimFree()</a></div>
+<div><a class="link" href="../topics/Command_MtiNextregion_id159314df.html#id159314df-f24a-4b34-b684-1baa2dacd364__" title="Gets the next region at the same level as a region.">mti_NextRegion()</a></div>
+<div><a class="link" href="../topics/Command_MtiGetsignalsubelements_id1c9db5a2.html#id1c9db5a2-fff0-497f-b8bf-50ed5a09c6dc__" title="Gets the subelements of a composite signal.">mti_GetSignalSubelements()</a></div>
+<div><a class="link" href="../topics/Command_MtiTicklength_id7a711375.html#id7a711375-2ca8-42eb-b60f-e7af9c58a751__" title="Gets the length of a type.">mti_TickLength()</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_CreateProcessWithPriority()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiCreateprocesswithpriority_id75d27c90.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

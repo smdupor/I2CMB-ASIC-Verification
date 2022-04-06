@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware Level Shifter Support" />
+<meta name="abstract" content="A level shifter cell is required whenever a signal crosses a source power domain operating at a voltage level that is different from the voltage level of the sink power domain." />
+<meta name="description" content="A level shifter cell is required whenever a signal crosses a source power domain operating at a voltage level that is different from the voltage level of the sink power domain." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb85dfb95-309b-484e-91cf-2554348bff3f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Level Shifter Support</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Level Shifter Support" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb85dfb95-309b-484e-91cf-2554348bff3f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power
+Aware Level Shifter Support</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A level shifter
+cell is required whenever a signal crosses a source power domain
+operating at a voltage level that is different from the voltage
+level of the sink power domain.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idb85dfb95-309b-484e-91cf-2554348bff3f__idfca2a35a-645b-4a78-b54a-ef7d45ab5f6a"><p class="p">Defining
+a level shifter cell depends on whether a level shifter cell already
+exists in the design.</p>
+<ul class="ul"><li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id0d2bd1e3-759c-4ee5-a31b-15bbbb3f6f5c"><p class="p">If a design contains an explicit cell instance
+that functions as a level shifter cell, Power Aware simulation does
+not insert an additional level shifter cell or modify the existing level
+shifter cell. It identifies an explicit cell instance as a level
+shifter cell when you specify the following:</p>
+<ul class="ul"><li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id17a22147-13c7-400c-8c2e-d936674a5713"><p class="p">RTL design — The set_level_shifter -instance command
+in the UPF file. Power Aware simulation detects these instances
+and performs level shifter checks.</p>
+</li>
+<li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id5fed5fe2-db69-4a40-980b-119d53dab013"><p class="p">GLS design — For cells that are not specified
+in the UPF file, Power Aware simulation automatically detects the
+correct UPF strategy, such as is_level_shifter_cell:</p>
+<pre class="pre codeblock"><code>cell (LS_LH) {
+	is_level_shifter_cell : true;
+	...</code></pre></li>
+</ul>
+</li>
+<li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id3c756b14-508b-4e59-8b9c-b395ecfbc23b"><p class="p">If a design does not contain a level shifter cell,
+you must add one by specifying the set_level_shifter command (without
+the ‑instance option) to provide a level shifter strategy. The tool
+then implicitly inserts a level shifter cell on any port that satisfies
+all of the following:</p>
+<ul class="ul"><li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id0818f7aa-9684-4370-ba67-845d0468d587"><p class="p">Matches the criteria defined in the
+level shifter strategy.</p>
+</li>
+<li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id8d5f1412-87fe-4e4f-a817-f7397346ee94"><p class="p">Requires level shifter because the power
+state table indicates that the two power domains on either side
+of the port can be ON/OFF or OFF/ON respectively.</p>
+</li>
+<li class="li" id="idb85dfb95-309b-484e-91cf-2554348bff3f__id52eac9d7-f2f4-4d1c-9481-0bd8952e67d5"><p class="p">Does not already have an explicit level
+shifter cell present and identified.</p>
+</li>
+</ul>
+<p class="p">By default, if the tool inserts a level shifter
+cell, the tool uses a built-in behavioral model for level shifting.
+However, you can insert a different model (when required) by using the <a class="xref fm:HeadingOnly" href="General_MapLevelShifterCell_id3606a8e9.html#id3606a8e9-3f2a-4f43-9af0-b0b9a0a58877__General_MapLevelShifterCell_id3606a8e9.xml#id3606a8e9-3f2a-4f43-9af0-b0b9a0a58877" title="Maps a level shifter strategy to a simulation or implementation model.">map_level_shifter_cell</a> UPF command
+to identify the level shifter model to be used. </p>
+</li>
+</ul>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">To prevent a
+redundant level shifter cell inserted on a port, use the set_level_shifter
+‑instance command to identify the instance of the existing level
+shifter cell.</p>
+</div>
+<h2 class="title Subheading sectiontitle">Threshold Control for
+Level Shifters</h2><p class="p">Set a global threshold level when a level shifter
+cell is not required for a particular range of voltage differences
+using the following command: </p>
+<pre class="pre codeblock leveled"><code>vopt -pa_lsthreshold &lt;real&gt; </code></pre><p class="p">where &lt;real&gt; is any numerical value that
+specifies a voltage threshold. </p>
+<p class="p">In this case, Power Aware simulation does not
+insert any level shifter cell if the source-sink voltage difference
+is less than the voltage threshold, and does not flag any missing
+level shifter errors.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Level Shifter Support"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareLevelShifterSupport_idb85dfb95.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

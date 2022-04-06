@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Questa-Specific Value Conversion Tables" />
+<meta name="abstract" content="Power Aware simulation automatically inserts VCT for pins detected as power and ground based on the set_domain_supply_net and supply_set functions." />
+<meta name="description" content="Power Aware simulation automatically inserts VCT for pins detected as power and ground based on the set_domain_supply_net and supply_set functions." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id050b3935-8a69-496f-9dca-7c963b2bc2ab" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Questa-Specific Value Conversion Tables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Questa-Specific Value Conversion Tables" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id050b3935-8a69-496f-9dca-7c963b2bc2ab">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Questa-Specific Value Conversion Tables</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Power Aware
+simulation automatically inserts VCT for pins detected as power
+and ground based on the set_domain_supply_net and supply_set functions.</span>
+</div>
+<p class="p">Power
+Aware simulation applies the power and ground-specific VCT on the
+supply net connection if that net is used as follows:</p>
+<ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id16f7f43a-dad4-4f02-8137-306f0fc34991"><p class="p">Primary ground net</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idc508009f-2433-4736-8e6a-de778c8f33b7"><p class="p">Isolation ground net</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id332103bf-9567-435a-9378-83cc4d30a626"><p class="p">Retention ground net</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idf46ca575-09ce-47a4-b349-0882a86ed007"><p class="p">Related ground supply used in set_related_supply_net</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idfdd83755-975b-4a92-bf37-7a4fe76628b7"><p class="p">Tied to a macro PG pin of type primary ground</p>
+</li>
+</ul>
+<p class="p">Identify which VCT is
+used for a given pin in the Wave window by hovering the mouse pointer over
+the waveform for the port/net: </p>
+<div class="fig fignone" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idf56adf63-b8e6-46a7-a622-8a1de3fc6588"><span class="figcap"><span class="fig--title-label">Figure 1. </span>VCT Information in the
+Wave Window</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/vct_in_wave_window.png" /></div><br /></div>
+<p class="p">You can see reference to
+these VCTs in the Macro Cell Report and the Connection Report.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Power Aware simulation
+provides several predefined VCT definitions (see “<a class="xref fm:HeadingOnly" href="Contain_ValueConversionTables_id2e78db80.html#id2e78db80-28fd-4a0d-9b81-a5cbac3cd108__Contain_ValueConversionTables_id2e78db80.xml#id2e78db80-28fd-4a0d-9b81-a5cbac3cd108" title="A value conversion table (VCT) is a UPF definition (IEEE Std 1801) of how to convert, or map, a value from a supply net state relevant to an HDL variable type (and from an HDL variable type to a supply net state). This mapping enables complex modeling of connections between supply nets and RTL ports.">Value Conversion Tables</a>”) that you use with <a class="xref fm:HeadingOnly" href="General_ConnectSupplyNet_idd1662f52.html#idd1662f52-f900-433e-8d65-e45848d374b0__General_ConnectSupplyNet_idd1662f52.xml#idd1662f52-f900-433e-8d65-e45848d374b0" title="Connects a supply net to the supply ports.">connect_supply_net</a> -vct.
+However, if the VCT specification for a connection is not applicable
+or valid, then Power Aware simulation applies the default 1-bit connection
+semantics. </p>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id0545818d-d37e-45ce-b925-0946a7079e74"><h2 class="title Subheading sectiontitle">Questa-Specific VCTs</h2><ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id6559326c-24b7-4578-8f62-0eaafcf038e9"><p class="p">VCTs used for pg_types: primary_power,
+backup_power, internal_power and nwell</p>
+<ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id6c241f69-454f-4c8e-8212-aac6137911ce"><p class="p">MSPA_CONNECT_UPF_2_HDL_PWR — Converts
+a UPF supply net to an HDL single bit. Specifically, it converts
+a FULL_ON state to 1 and all other supply states to 0. </p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id6bd92c41-b5b0-4fb6-9a42-4a7c99152135"><p class="p">MSPA_CONNECT_HDL_2_UPF_PWR — Converts
+an HDL single bit to a UPF supply net type. Specifically, it converts
+an HDL 1 to a FULL_ON state and everything else to OFF.</p>
+</li>
+</ul>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idcfb42ecd-e7cc-4b81-a4cf-af341bea268f"><p class="p">VCTs used for pg_types: primary_ground,
+backup_ground, internal_ground and pwell</p>
+<ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id15c302a4-44e9-477d-a65a-95b995650e9c"><p class="p">MSPA_CONNECT_UPF_2_HDL_GND — Converts
+a UPF supply net to an HDL single bit. Specifically, it converts
+an OFF state to 0 and all other states to 1.</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idfaec63ce-0306-4f62-94b3-cfb250d14c64"><p class="p">MSPA_CONNECT_HDL_2_UPF_GND — Converts
+an HDL single bit to UPF supply net type. Specifically, it converts
+an HDL 0 to a FULL_ON state and everything else to OFF.</p>
+</li>
+</ul>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id88160727-d999-431f-ae28-72e7ae1df7ef"><p class="p">VCTs used for when either no pg_type
+is specified or the pg_type does not match any of the pg_types specified
+above</p>
+<ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id84eeaa63-478a-471b-9eb2-260ed46a040a"><p class="p">MSPA_CONN_UPF_2_HDL — Converts a UPF
+supply net to an HDL single bit. Specifically, it converts a FULL_ON
+state to 1 and all other supply states to 0.</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id6ae6c573-7ce2-4469-bf7a-848bf38ac129"><p class="p">MSPA_CONN_HDL_2_UPF — Converts an HDL
+single bit to a UPF supply net type. Specifically, it converts an
+HDL 1 to FULL_ON state and everything else to OFF.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__id81c8b950-84f7-4763-a423-3c51ae4ced1e"><h2 class="title Subheading sectiontitle">Limitations</h2><p class="p">Power Aware simulation supports only the following
+HDL data types:</p>
+<ul class="ul"><li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__idbc5f386f-dfb3-4062-bba5-00ca1ca6352c"><p class="p">System Verilog — logic, bit, wire, reg</p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__iddc3ddb0f-5fc1-46a6-ab15-89eb5cafeafa"><p class="p">Verilog — wire, reg </p>
+</li>
+<li class="li" id="id050b3935-8a69-496f-9dca-7c963b2bc2ab__iddbe70757-4918-4893-9718-4441e9617146"><p class="p">VHDL — bit, std_logic, std_ulogic, boolean
+(any subtypes of these are not supported) </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ValueConversionTables_id2e78db80.html" title="A value conversion table (VCT) is a UPF definition (IEEE Std 1801) of how to convert, or map, a value from a supply net state relevant to an HDL variable type (and from an HDL variable type to a supply net state). This mapping enables complex modeling of connections between supply nets and RTL ports.">Value Conversion Tables</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Contain_PowerAwareReports_id23c69144.html" title="During optimization, the tool generates various Power Aware reports (at the pa_reports/ directory in the current working directory) depending upon the values that you provide to the vopt -pa_genrpt argument.">Power Aware Reports</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Questa-Specific Value Conversion Tables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_QuestaSpecificValueConversionTables_id050b3935.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

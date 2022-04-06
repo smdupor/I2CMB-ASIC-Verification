@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Dynamic Level Shifter Checks" />
+<meta name="abstract" content="Dynamic level shifter checks report any missing or inconsistent level shifter cells in your RTL and gate-level designs." />
+<meta name="description" content="Dynamic level shifter checks report any missing or inconsistent level shifter cells in your RTL and gate-level designs." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id422daf51-9ee7-4ecb-bc2d-861734098e3a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Dynamic Level Shifter Checks</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Dynamic Level Shifter Checks" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id422daf51-9ee7-4ecb-bc2d-861734098e3a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Dynamic
+Level Shifter Checks</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Dynamic level
+shifter checks report any missing or inconsistent level shifter
+cells in your RTL and gate-level designs. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id422daf51-9ee7-4ecb-bc2d-861734098e3a__idb4ddfbe4-ea5e-49c3-93fc-423dbf189187"><p class="p">To enable dynamic level shifter checks, specify
+a value to the vopt -pa_checks command as shown in the following
+table. All dynamic level shifter check results are written to the Transcript
+window.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id422daf51-9ee7-4ecb-bc2d-861734098e3a__id834ecad9-80ec-47ab-b171-1cdf462804a9" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Dynamic Level Shifter Checks</span></caption><colgroup><col style="width:1.308in" /><col style="width:1.738in" /><col style="width:3.454in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3455e151"><p class="p">vopt Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3455e154"><p class="p">Mnemonic</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d3455e157"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e151 "><p class="p">-pa_checks=uml</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e154 "><p class="p">QPA_UPF_MISSING_LS_CHK</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e157 "><p class="p">Flags violation if a
+level shifter strategy is not specified in the UPF file when a level
+shifter cell is required for the power domain crossing.</p>
+<p class="p">Also, strategy specified with set_level_shift ‑no_shift
+in the UPF file are checked for any missing level shifter cells. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e151 "><p class="p">-pa_checks=uil</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e154 "><p class="p">QPA_UPF_INCORRECT_LS_CHK</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e157 "><p class="p">Flags violation if the
+direction of level shifter cell specified in the UPF file does not
+match with the direction as per the voltage difference of the power
+domain crossing.</p>
+<p class="p">For example, the tool reports an incorrect
+level shifter cell if the power domain crossing requires a low_to_high
+level shifter cell and you specify the level shifter strategy in
+the UPF file as high_to_low.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e151 "><p class="p">-pa_checks=ul</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e154 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d3455e157 "><p class="p">Enables all dynamic level
+shifter checks. </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">In some cases, the dynamic
+checks report the operating voltage of one of the domains as 0.
+This happens when you have not changed the voltage on the primary
+power and ground pin of the domain and you are operating with default
+unknown voltage levels. It is recommended to change the operating
+voltages of such domains during simulation. Change the operating voltages
+by using the supply_on or supply_off commands defined in the UPF
+SystemVerilog package.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DynamicChecks_id6ba4618f.html" title="Dynamic checks validate your design with the power intent defined in the UPF file during the Power Aware simulation.">Dynamic Checks</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_LevelShifterChecks_idaeda32a4.html" title="Level shifter checks report any missing or inconsistent level shifter cells in your design. Level shifting is present in the design if the UPF file contains a set_level_shifter command defining a level shifting strategy, or a set_level_shifter -instance strategy that specifies the need for level shifting and points to the instantiated level shifting cells.">Level Shifter Checks</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Dynamic Level Shifter Checks"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_DynamicLevelShifterChecks_id422daf51.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

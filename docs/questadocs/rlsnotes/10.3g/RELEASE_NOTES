@@ -1,0 +1,125 @@
+                     Release Notes For Questa Sim 10.3g
+
+                                 Sep 28 2016
+               Copyright 1991-2016 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.3g
+     * [4]Base Product Specifications in 10.3g
+     * [5]Compatibility Issues with Release 10.3g
+   _______________________________________________________________________
+
+   Key Information
+     * [nodvtid] - The 10.3g Update Release will be the last release in
+       the 10.3 series.
+   _______________________________________________________________________
+
+   Release Announcements in 10.3g
+     * [nodvtid] -
+       In the next major release (10.4), support for Windows XP and
+       Windows Vista will be discontinued.
+       [10.3e] Licensing Information
+       There is no licensing change between release 10.3 and 10.3e.
+       However if you are migrating to 10.3e from a release like 10.2 and
+       older, please note the following:
+          + Starting 10.3, it uses FLEXnet v11.11.1.1. The vendor daemons
+            and lmgrd that are shipped with this release will be FLEXnet
+            version 11.11.1.1.
+          + For floating licenses it will be necessary to verify that the
+            vendor daemon (i.e., mgcld) and the license server (i.e.,
+            lmgrd) have FLEXnet versions equal to or greater than
+            11.11.1.1. If the current FLEXnet version of your vendor
+            daemon and lmgrd are less than 11.11.1.1 then it will be
+            necessary to stop your license server and restart it using the
+            vendor daemon and lmgrd contained in this release.
+          + If you use node locked licenses you don't need to do anything.
+       [10.3b] OVL is upgraded to v2.8.1.
+       [10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology)
+       library, sources and documentation have been updated to version
+       2014.01. Dependency checks in vopt and vsim will force
+       recompilation of designs that use the osvvm library. If
+       optimization is performed using vopt, the optimizer will
+       automatically generate new optimized design units. Without the
+       optimization step, vsim will detect dependency errors.
+       [10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been
+       discontinued.
+       [10.2] Support for Solaris SPARC and Solaris x86 has been
+       discontinued. All Solaris OS platforms are not supported.
+       [10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell
+       SUSE Linux Enterprise (SLES) 9 has been discontinued.
+       [10.1] Support for GCC versions
+       gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.
+       [10.0] Support for Solaris 8 and Solaris 9 has been discontinued.
+   _______________________________________________________________________
+
+   Base Product Specifications in 10.3g
+     * [nodvtid] -
+       [Supported Platforms]
+       Linux RHEL 5 x86/x86-64
+       Linux RHEL 6 x86/x86-64
+       Linux SLES 10 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Windows 7 x86/x64
+       Windows 8 x86/x64
+       Windows XP
+       Windows Vista
+       [Supported GCC Compilers (for SystemC)]
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+       gcc-4.2.1-mingw32vc9
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.01
+       [Licensing]
+       FLEXnet v11.11.1.1
+       MSL v2013_3
+       MGLS v9.10_7.2
+       PCLS v9.10.7.2
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 10.3g
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.3g,product.id.P11633"
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Adjust Timeout Values to Account for Time Suspended" />
+<meta name="abstract" content="When an Action script is suspended, any non-zero timeout is temporarily suspended. For example, if an Action script launched with an execution timeout of 90 seconds is suspended after 30 seconds of runtime, in theory that Action still has 60 seconds of runtime remaining. If the suspension lasts longer than that, the Action will not timeout. Instead, when the Action script resumes execution, its timeout is adjusted such that it will not timeout until 60 seconds after the time it resumes execution. In other words, the Action script is always allowed to execute for the time specified in the execution timeout (timeoutQ) without penalty." />
+<meta name="description" content="When an Action script is suspended, any non-zero timeout is temporarily suspended. For example, if an Action script launched with an execution timeout of 90 seconds is suspended after 30 seconds of runtime, in theory that Action still has 60 seconds of runtime remaining. If the suspension lasts longer than that, the Action will not timeout. Instead, when the Action script resumes execution, its timeout is adjusted such that it will not timeout until 60 seconds after the time it resumes execution. In other words, the Action script is always allowed to execute for the time specified in the execution timeout (timeoutQ) without penalty." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2d6bbdbf-c665-40a9-9107-cb6cf816015b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Adjust Timeout Values to Account for Time Suspended</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Adjust Timeout Values to Account for Time Suspended" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id2d6bbdbf-c665-40a9-9107-cb6cf816015b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Adjust Timeout Values to Account for
+Time Suspended</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When an Action
+script is suspended, any non-zero timeout is temporarily suspended.
+For example, if an Action script launched with an execution timeout
+of 90 seconds is suspended after 30 seconds of runtime, in theory
+that Action still has 60 seconds of runtime remaining. If the suspension
+lasts longer than that, the Action will not timeout. Instead, when
+the Action script resumes execution, its timeout is adjusted such
+that it will not timeout until 60 seconds after the time it resumes
+execution. In other words, the Action script is always allowed to
+execute for the time specified in the execution timeout (<span class="keyword ParameterName OptionalReplaceable">timeoutQ</span>)
+without penalty.</span>
+</div>
+<p class="p">If a start message arrives for
+an Action that is in suspended mode, its timeout is set to the execution
+timeout value (<span class="keyword ParameterName OptionalReplaceable">timeoutX</span>),
+but the Action will continue to be marked as suspended pending a
+command to resume the Action. A suspend command has no effect on the
+timeout of an Action that is already marked as suspended. Likewise,
+a resume command has no effect on the timeout of an Action that
+is not marked as suspended.</p>
+<div class="section Subsections"><div class="section Subsection" id="id2d6bbdbf-c665-40a9-9107-cb6cf816015b__idde641d55-2264-4ec6-82d1-a2f6702f2429"><h2 class="title Subheading sectiontitle">Unsupported Environments</h2><p class="p">VRM does not support suspend, resume, or kill
+operations on locally executed Actions under the Windows environment.
+If grid management is being used to queue Actions onto a server
+grid and the appropriate grid management utilities are available
+to be called from within the vrun process on the Windows host, the
+suspend, resume, and kill operations should work as described above.</p>
+<p class="p">The suspend, resume, and kill operations do
+not actually affect running exec-mode Action scripts (those with
+the launch attribute of the Action script element set to anything
+other than vsim) that have been launched on the local machine. The
+reason is that the wrapper in an exec-mode script launches the user's
+script under a shell using the TCL exec command and the resulting
+shell process runs independently of the vish-based wrapper.</p>
+<p class="p">A request to suspend, resume, or kill the job
+associated with an exec-mode Action will result in the suspension,
+resumption, or termination of the vish process that is executing
+the wrapper, but the signal will not propagate to the child process
+(this is by design in POSIX-compliant systems). If the Action is
+launched via a grid management system, as described above, there
+should be no problem controlling the job after it has been launched.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ControllingJobsRemotely_idaa936e01.html" title="Once the vrun application starts launching Action scripts, the only way to communicate with the vrun process is via the TCP/IP socket opened for communication with the wrapper scripts. The port@host on which any given vrun process is listening is published in the log output of that process (usually as the first message, except in -debug mode). Any process can connect to this socket and send one of the following messages to the running vrun process:">Controlling Jobs Remotely</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Adjust Timeout Values to Account for Time Suspended"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AdjustTimeoutValuesAccountTimeSuspended_id2d6bbdbf.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

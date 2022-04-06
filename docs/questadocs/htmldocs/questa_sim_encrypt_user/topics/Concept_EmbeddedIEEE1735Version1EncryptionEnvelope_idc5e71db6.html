@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Embedded IEEE 1735 Version 1 Encryption Envelope" />
+<meta name="abstract" content="Alice can embed Version 1 encryption envelopes into IP source." />
+<meta name="description" content="Alice can embed Version 1 encryption envelopes into IP source." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc5e71db6-a86d-42c9-84b3-5a6487927e99" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Embedded IEEE 1735 Version 1 Encryption Envelope</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Embedded IEEE 1735 Version 1 Encryption Envelope" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc5e71db6-a86d-42c9-84b3-5a6487927e99">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Embedded IEEE
+1735 Version 1 Encryption Envelope</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Alice can embed Version
+1 encryption envelopes into IP source.</span>
+</div>
+<p class="p">The following
+shows the “Hello World” example with an embedded encryption envelope
+following Version 1 methodology.</p>
+<pre class="pre codeblock"><code>// File IP1.v
+// Must tell the encryption tool this is version 1
+<span class="ph CodeHighlight orange">`pragma protect version = 1 </span>
+// General information 
+`pragma protect data_method = "aes256-cbc"
+`pragma protect author = "Questa Documentation"
+`pragma protect author_info = "IEEE 1735 Version 2"
+// Just one target tool in this example
+`pragma protect key_keyowner = "Mentor Graphics Corporation"
+`pragma protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect key_public_key
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtNA6tJ1tV/cXF4K5mL4s
+4KCuTKWSbN/BnJJ6elRTWr2+s5Baaul0ctIX/3KYzpITmG9ph/4uZBs+jV5DAC+9
+WRZQDc11JdIlRi04dEx/bGVbfPs3pdTPFZjA6gfegdW03ZNhjaJChTwEoXL1xIGP
+oodJyhX9r1DoxU2lWB19vpwI5Geygh6pYgkPXb0aQzLh6hyUBhH9yMN6eV+imBbO
+eax8ZCO6Gz2CJq3ebS/JoMYrikgcIEf6kVhIOiB9LluTp6TZlSd8ilwPhQmfXWH2
+w4CaIpN8kADaVHnDWIdqqHlGf3cNQrlWj6FnFpSam6PjmWp5ZD4Jt6UNJxEoKEsn
+gwIDAQAB
+`pragma protect begin
+module IP;
+   initial begin
+      $display("Hello world");
+   end
+endmodule // IP1.v
+`pragma protect end</code></pre><p class="p">Invoke the command:</p>
+<p class="lines ApplCommand">vencrypt VP1.v</p>
+<p class="p">This produces the decryption envelope <span class="ph filepath">IP1.vp.</span></p>
+<pre class="pre codeblock"><code>
+// Must tell the encryption tool this is version 1
+// General information 
+// Just one target tool in this example
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect author = "Questa Documentation" , author_info = "IEEE 1735 Version 2"
+`pragma protect encrypt_agent = "ModelSim" , encrypt_agent_info = "QA Baseline Assertion: 10.8 Beta - 3305709"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+aTlJMq0JNfiOhqPb7jWz0snBAa1jYJ6oHLWdQzKZ+10ww7BlOnVgR5vESY8zsfYk
+xL8NZVCqrbMu5Ewgt3g9ePLGKX7cV4DOy02Dsvkas2pzUD/v5ehFJ0M63cEAWUQS
++EWhVbrem3CZri/ysNScxSU3lpxrtuXBcLjUEEFhNVQlJxt6nlKwAlgEc3HRky6n
+iuZTb/A9JWHO0pc3tM4Sfq7qSx49yqsL/68+YGuypGPj3U/EWmw5Uk2wolfYZJer
+14FMjoVVCsIjB/+R5PL4pvnZp0cZiU4EBu50W0gm1s1aczC3bTu1QOi+2Ktv59UX
+aeTsYfH+3VwRbtAtcwMDXQ==
+`pragma protect data_method = "aes256-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 176 )
+`pragma protect data_block
+EBToeBkQp5sFqHNP/mK9w8gTpm5+wvDnx4MfFX6GZ5X/rfM1TuOC3ssWvYfYzgRm
+0KcCOvYbUUgZriPPRHtqb8EZ77w1ArdGkvRby+te6Y3gY1hVn9CK8LwIElqBfPlh
+/oLiYCkGM6gkOMBDDJE4iyq+eAwGFfiP86r3rFRUcJoGMGMcaGbLecQ3U9nvb5jP
+8pZ52csD0CIn7smarVLIJLizmTmTMwijDhjwPvsH+Bk=`pragma protect end_protected</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_EmbeddedSourcePragmas_id3182a66e.html" title="Alice can use various combination of pragmas to achieve encryption. This section shows some of the options.">Embedded Source Pragmas</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "Embedded IEEE 1735 Version 1 Encryption Envelope"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_EmbeddedIEEE1735Version1EncryptionEnvelope_idc5e71db6.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

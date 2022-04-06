@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Runnables and the Regression Suite Hierarchy" />
+<meta name="abstract" content="VRM views the entire regression suite as a tree whose leaf-level nodes represent individual Tasks to be executed. Non-leaf nodes, known as Groups, can contain zero or more leaf-level Tasks or other Groups as members. The depth to which Groups can be nested is unlimited. This hierarchical relationship is a virtual one, reflected only in the membership lists of the Group nodes. In the database itself, the Group and Task definitions are stored as a flat list of named and typed runnable elements that share a single namespace." />
+<meta name="description" content="VRM views the entire regression suite as a tree whose leaf-level nodes represent individual Tasks to be executed. Non-leaf nodes, known as Groups, can contain zero or more leaf-level Tasks or other Groups as members. The depth to which Groups can be nested is unlimited. This hierarchical relationship is a virtual one, reflected only in the membership lists of the Group nodes. In the database itself, the Group and Task definitions are stored as a flat list of named and typed runnable elements that share a single namespace." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcc5923eb-3fe8-4dcb-898a-98117f69502f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Runnables and the Regression Suite Hierarchy</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Runnables and the Regression Suite Hierarchy" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idcc5923eb-3fe8-4dcb-898a-98117f69502f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Runnables and the Regression Suite Hierarchy</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">VRM views the
+entire regression suite as a tree whose leaf-level nodes represent
+individual Tasks to be executed. Non-leaf nodes, known as Groups,
+can contain zero or more leaf-level Tasks or other Groups as members.
+The depth to which Groups can be nested is unlimited. This hierarchical
+relationship is a virtual one, reflected only in the membership
+lists of the Group nodes. In the database itself, the Group and
+Task definitions are stored as a flat list of named and typed <span class="ph FontProperty emphasis">runnable</span> elements that
+share a single namespace.</span>
+</div>
+<p class="p">Any given Group or Task can be
+a member of any number of Groups at the same time. This can be compared
+to the way hierarchy is implemented in Verilog (or VHDL). Verilog <span class="ph FontProperty emphasis">module</span> constructs
+are stored as a flat list in the HDL source and each one can be
+instanced in one or more other modules. Each instance of a given
+module is unique, even though the definition of what that module
+represents is common to all instances of that module (save for some
+limited parameterization capability).</p>
+<p class="p">Likewise, in the VRM database, each Group “instances”
+one or more Tasks (or other Groups) by name. The definition of each
+Runnable item in the hierarchy is stored as a top-level <span class="ph FontProperty emphasis">runnable</span> element
+in the database. As in the Verilog language, these Runnable items
+are highly configurable. Each time a given Runnable item is instanced,
+it can draw context data from the instancing Group which will, in
+turn, affect the context of any Groups, Tasks, or Action scripts
+instanced by that Runnable. Because of this, it is often important
+to understand the “parentage” of a given Group or Task with reference
+to a given context. As the list of members of each Group is iterated,
+a history is maintained as to how each member Runnable came to be
+invoked (that is, instanced). This “calling chain” is used as a
+search path for Action scripts and parameter values. It is also
+used to report the status of any Action scripts. For example, if
+a Group called <span class="ph FontProperty emphasis">nightly</span> contained
+a member Group called <span class="ph FontProperty emphasis">random</span> which,
+in turn, contained a member Task called <span class="ph FontProperty emphasis">test1</span> that
+contained an <span class="ph FontProperty emphasis">execScript</span> Action,
+that Action is referred to as <span class="ph filepath">nightly/random/test1/execScript</span> in
+any log messages relevant to that Action.</p>
+<p class="p">Groups can be sequential or non-sequential.
+A sequential Group executes its members in order, launching each
+as the previous member completes. A non-sequential Group (the default
+if not otherwise specified) executes its members in parallel whenever
+possible. The difference is that the Actions in sequential groups
+execute in a known order whereas the Actions in non-sequential groups
+can be executed in any order. A Group is considered as “sequential”
+if the <span class="ph FontProperty emphasis">sequential</span> attribute
+of the <span class="ph FontProperty emphasis">runnable</span> element
+corresponding to the Group in question has a “yes” value. Any other
+value, or if such an attribute is not attached to the <span class="ph FontProperty emphasis">runnable</span> element
+at all, results in the Group being treated as a non-sequential Group.</p>
+<p class="p">Runnable (Task and Group) names can consist
+of any number of alphanumeric characters, underscore (_) characters,
+or hyphens (-); except a Runnable name must start with an alphabetic
+character or an underscore (not a digit). All other punctuation
+is specifically disallowed. These names can be used as arguments
+on TCL and shell command lines, in addition to any scripting language
+the user may be using for external scripts (Perl, Ruby, and so on)
+so the lexical repertoire is intentionally constrained.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_DatabaseStructure_id31a9f1e8.html" title="One of the requirements of the XML format is that there be a single “root” XML element that contains the entire contents of the XML file. In the case of an RMDB file, that element is the rmdb element that essentially defines and contains the entire database. This rmdb element is also called the “document element” in XML terminology, since that single element and its contents form the entire definition of the “document” represented by the XML file (the XML format was originally designed to represent document markup, similar to HTML).">Database Structure</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Runnables and the Regression Suite Hierarchy"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RunnablesRegressionSuiteHierarchy_idcc5923eb.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

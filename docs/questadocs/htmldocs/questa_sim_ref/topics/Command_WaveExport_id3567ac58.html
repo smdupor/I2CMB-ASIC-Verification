@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="wave export" />
+<meta name="abstract" content="Creates a stimulus file from waveforms created with the wave create command." />
+<meta name="description" content="Creates a stimulus file from waveforms created with the wave create command." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3567ac58-e622-46a7-8a08-523b5a73be41" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>wave export</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="wave export" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id3567ac58-e622-46a7-8a08-523b5a73be41">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">wave
+export</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates a stimulus file from waveforms created
+with the wave create command. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">wave export <a class="xref fm:HeadingOnly" href="#id3567ac58-e622-46a7-8a08-523b5a73be41__id46b5a66d-f4c0-4d4b-8509-77352c7b0673">-designunit &lt;name&gt;</a> <a class="xref fm:HeadingOnly" href="#id3567ac58-e622-46a7-8a08-523b5a73be41__id6dd286b4-688e-4426-8be3-f727ee0326e4">-starttime {&lt;time&gt;&lt;unit&gt;}</a> <a class="xref fm:HeadingOnly" href="#id3567ac58-e622-46a7-8a08-523b5a73be41__id1bf5902c-72cd-4cf2-a71c-57d0b1a11990">-endtime {&lt;time&gt;&lt;unit&gt;}</a> <a class="xref fm:HeadingOnly" href="#id3567ac58-e622-46a7-8a08-523b5a73be41__id46d7ee23-0e38-47a6-bef4-fa8528ba7ca8">-file &lt;filename&gt;</a> {<a class="xref fm:HeadingOnly" href="#id3567ac58-e622-46a7-8a08-523b5a73be41__id29d42eb6-a625-4c0d-b0ff-e470b059524a">-format force | vcd | vhdl | verilog</a>} </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id8096b626-2f8d-45c1-b8da-4ccd05296662"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id46b5a66d-f4c0-4d4b-8509-77352c7b0673">-designunit &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) Specifies a design unit
+from which to export created waves. If you omit this argument, the
+command exports waves from the active design unit.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id4b992f52-6ab3-447f-97d4-e3825a011b91"><p class="p Opt">&lt;name&gt;
+— Specifies a design unit in the simulation. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id1bf5902c-72cd-4cf2-a71c-57d0b1a11990">-endtime {&lt;time&gt;&lt;unit&gt;}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) The simulation time at which to
+stop exporting.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id6d614709-911e-452c-b431-644c0c424e4c"><p class="p Opt">&lt;time&gt;
+— Specified as an integer or decimal number.</p>
+</li>
+<li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id953de594-2a7a-4962-9cf3-11c54c442424"><p class="p Opt">&lt;unit&gt; — (optional) A suffix specifying
+a unit of time. The default is to specify the current simulation
+resolution by omitting &lt;unit&gt;. Valid time units are: fs, ps,
+ns, us, ms, sec, min, and hr. If you specify &lt;unit&gt;, you must
+enclose &lt;time&gt; and &lt;unit&gt; within curly braces ({}).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id46d7ee23-0e38-47a6-bef4-fa8528ba7ca8">-file &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+The filename for the saved export file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id02ff759c-9654-4429-aa7d-88e1b7b87c43"><p class="p Opt">&lt;name&gt;
+— Any user specified string.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id29d42eb6-a625-4c0d-b0ff-e470b059524a">-format force | vcd | vhdl | verilog</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+The format of the saved stimulus file. The format options include:</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id93d4bbb2-dae9-4d8c-8c20-6c0d9aca53a1"><p class="p Opt">force — A Tcl script that recreates the waveforms.
+The file must be sourced when reloading the simulation.</p>
+</li>
+<li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id17b0d57b-9dd2-4abc-b789-37f19b83aa76"><p class="p Opt">vcd — An
+extended VCD file. Load using the -vcdstim argument to vsim.</p>
+</li>
+<li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id1d107b16-62c7-4dd0-83db-3daeb1be5a77"><p class="p Opt">vhdl —
+A VHDL test bench. Compile and load the file as your top-level design
+unit.</p>
+</li>
+<li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id03468037-f80a-4dd0-bef8-b4f45e503503"><p class="p Opt">verilog
+— A Verilog test bench. Compile and load the file as your top-level
+design unit.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id3567ac58-e622-46a7-8a08-523b5a73be41__id6dd286b4-688e-4426-8be3-f727ee0326e4">-starttime {&lt;time&gt;&lt;unit&gt;}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) The simulation time at which to
+start exporting.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__ide8f537a9-030e-4178-99d1-b5357a642aba"><p class="p Opt">&lt;time&gt;
+— Specified as an integer or decimal number.</p>
+</li>
+<li class="li ArgOption" id="id3567ac58-e622-46a7-8a08-523b5a73be41__iddc2c4512-ae15-46d6-8e88-146d41b72b94"><p class="p Opt">&lt;unit&gt; — (optional) A suffix specifying
+a unit of time. The default is to specify the current simulation
+resolution by omitting &lt;unit&gt;. Valid time units are: fs, ps,
+ns, us, ms, sec, min, and hr. If you specify &lt;unit&gt;, you must
+enclose &lt;time&gt; and &lt;unit&gt; within curly braces ({}).</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_WaveCreate_id364a2d38.html#id364a2d38-84cb-4c94-84a6-d131d24caf69__" title="Generates a waveform known only to the GUI. You can then modify the waveform interactively or with the wave edit command, and use the results to drive simulation.">wave create</a></div>
+<div><a class="link" href="../topics/Command_WaveImport_id78a00864.html#id78a00864-48aa-495f-9210-41e0dd4ef4b8__" title="Imports an extended VCD file that was created with the wave export command. It cannot read extended VCD files created by software other than Questa SIM. Use this command to apply a VCD file as stimulus to the current simulation.">wave import</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Generating Stimulus with Waveform Editor', 'questa_sim_user'); return false;">Generating Stimulus with Waveform Editor [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "wave export"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_WaveExport_id3567ac58.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

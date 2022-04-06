@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Reporting on Grid-job Status" />
+<meta name="abstract" content="The start/done and pass/fail status of Actions launched on a grid system is still communicated to the launching vrun process via the TCP/IP channel opened for that purpose. That means that the machine on which the launching vrun process is running and the machine(s) on which the Action(s) will ultimately run must be connected via a network and that the launching machine must be visible from the grid machines." />
+<meta name="description" content="The start/done and pass/fail status of Actions launched on a grid system is still communicated to the launching vrun process via the TCP/IP channel opened for that purpose. That means that the machine on which the launching vrun process is running and the machine(s) on which the Action(s) will ultimately run must be connected via a network and that the launching machine must be visible from the grid machines." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idbbb92b66-d6b1-45b2-b83d-f271ab755f15" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Reporting on Grid-job Status</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Reporting on Grid-job Status" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idbbb92b66-d6b1-45b2-b83d-f271ab755f15">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Reporting on Grid-job Status</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The start/done
+and pass/fail status of Actions launched on a grid system is still
+communicated to the launching vrun process via the TCP/IP channel
+opened for that purpose. That means that the machine on which the
+launching vrun process is running and the machine(s) on which the
+Action(s) will ultimately run must be connected via a network and
+that the launching machine must be visible from the grid machines.</span>
+</div>
+<p class="p">The stdout file generated in the
+working directory (xxxScript.stdout) contains the output of the
+grid-submission command and is assumed to contain the <span class="ph FontProperty emphasis">JobId</span> of
+the resulting grid job. The only other status needed by vrun that
+is not communicated via the TCP/IP channel is the error output of
+the Action. This is picked up by a user-definable procedure corresponding
+to the function name <span class="ph FontProperty emphasis">GetStderr</span>.
+So, in the case of our UGE example, the user-definable procedure
+called would be <span class="ph FontProperty emphasis">UgeGetStderr</span>.</p>
+<p class="p">By default, this procedure looks for the latest
+error file named <span class="ph filepath">xxxScript.bat.e</span> and returns
+its contents. The vrun process calls this user-definable procedure
+only when the Action is reported to have failed; in which case,
+the error file contents supplied by this user-definable procedure
+are printed to the vrun log output.</p>
+<p class="p">Note that the Load Sharing Facility (LSF) has
+a mode in which the stderr file is written to a temporary location
+while the job is running and then, after the job is complete, the
+temporary file is copied into the user's working directory. Needless
+to say, this creates a race condition between the files appearance
+and when VRM read checks for stderr messages. In order to make LSF
+play well with VRM, it may be necessary to set the LSB_STDOUT_DIRECT
+variable (found in the <span class="ph filepath">/etc/lsf.conf</span> file)
+to “y” or “Y”.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_InteractionJobOnceLaunched_id56d57410.html" title="Once VRM launches the batch file that queues a job to a grid system, the only control and/or visibility is via the log files produced by the job and the utilities provided by the grid system itself. In order to interact with the various log files and utilities flexibly enough to accommodate a wide variety of grid software variants, a number of user-definable procedures are used. These particular user-definable procedures, however, are named for the grid system to which they were intended to interface. In other words, each grid system supported by VRM will have its own set of user-definable procedures. Additional user-definable procedures can be define by the user to support in-house grid systems as well.">Interaction with a Job Once Launched</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Reporting on Grid-job Status"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ReportingOnGridJobStatus_idbbb92b66.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

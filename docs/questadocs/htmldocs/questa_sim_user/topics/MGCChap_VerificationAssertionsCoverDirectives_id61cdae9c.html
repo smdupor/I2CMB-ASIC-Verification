@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="MGCChapter" />
+<meta name="DC.Title" content="Verification with Assertions and Cover Directives" />
+<meta name="abstract" content="This chapter discusses methods for using VHDL, PSL, and SystemVerilog assertions and cover directives for design verification with Questa SIM. It is organized into four sections." />
+<meta name="description" content="This chapter discusses methods for using VHDL, PSL, and SystemVerilog assertions and cover directives for design verification with Questa SIM. It is organized into four sections." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Verification with Assertions and Cover Directives</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Verification with Assertions and Cover Directives" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> Verification with
+Assertions and Cover Directives</h1>
+<div class="body MGCBody"><div class="abstract MGCAbstract"><span class="shortdesc">This chapter
+discusses methods for using VHDL, PSL, and SystemVerilog assertions
+and cover directives for design verification with <span class="ph fmvar:ProductName">Questa SIM</span>. It is organized into four sections.</span>
+</div>
+<ul class="ul"><li class="li" id="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c__id06bbdde6-fe69-4a3c-8210-8e04904eaf08"><p class="p"><a class="xref fm:HeadingOnly" href="Contain_OverviewAssertionsCoverDirectives_id52585b19.html#id52585b19-cb2f-417e-9962-73172199ae8b__Contain_OverviewAssertionsCoverDirectives_id52585b19.xml#id52585b19-cb2f-417e-9962-73172199ae8b" title="The use of assertions and cover directives falls into the category of “white box” testing – they specify and validate the expected behavior of a design. Assertions and cover directives are written directly into the design in order to observe the values of signals and states, possibly over a span of time. This allows the verification tool to observe (and log) when particular events occur or assumptions are violated.">Overview of Assertions and Cover Directives</a></p>
+</li>
+<li class="li" id="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c__id966b263c-ac0d-403a-81e6-65e4f758466a"><p class="p"><a class="xref fm:HeadingOnly" href="Contain_UsingPslAssertionsCoverDirectives_id9a502aa1.html#id9a502aa1-cfbd-4083-9ebe-a0e5d852dd70__Contain_UsingPslAssertionsCoverDirectives_id9a502aa1.xml#id9a502aa1-cfbd-4083-9ebe-a0e5d852dd70" title="The use of PSL assertions differs from the use SystemVerilog assertions because PSL assertions can be embedded in your code or supplied in an external file, while SystemVerilog assertions are always embedded in your code.">Using PSL Assertions and Cover Directives</a></p>
+</li>
+<li class="li" id="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c__idb150fafd-6fca-40de-be2a-20ca73a35d84"><p class="p"><a class="xref fm:HeadingOnly" href="Contain_UsingSvaAssertionsCoverDirectives_id8deb0c78.html#id8deb0c78-56bf-4916-8520-0bd86861e68c__Contain_UsingSvaAssertionsCoverDirectives_id8deb0c78.xml#id8deb0c78-56bf-4916-8520-0bd86861e68c" title="The following concepts are important for understanding how to use SVA assertions and cover directives.">Using SVA Assertions and Cover Directives</a></p>
+</li>
+<li class="li" id="id61cdae9c-2f65-4202-ae81-1e2b6e8d054c__id0854a36d-6652-4769-90cb-1837d8a748ef"><p class="p"><a class="xref fm:HeadingOnly" href="Contain_UsingAssertdebugDebugAssertionsCoverDirectives_id0f5e9875.html#id0f5e9875-a69c-4c63-9e43-1a216b9e6a7d__Contain_UsingAssertdebugDebugAssertionsCoverDirectives_id0f5e9875.xml#id0f5e9875-a69c-4c63-9e43-1a216b9e6a7d" title="Using the optional ‑assertdebug argument with the vsim command instructs Questa SIM to examine all assertions and display assertion details in the Assertions window.">Using -assertdebug to Debug with Assertions and Cover Directives</a></p>
+</li>
+</ul>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> implements
+assertion verification capabilities via assert, cover, and assume
+directives. In the discussions that follow, the term “assertion”
+is used to indicate both assertion properties and verification directives
+unless otherwise noted.</p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> supports
+the simple subset of PSL constructs and semantics as described in
+the IEEE Std 1850-2005, <cite class="cite">IEEE Standard for Property Specific
+Language (PSL)</cite>. Also, the following formal types are supported:
+bit, bitvector, boolean, numeric, string, and hdltype.</p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> supports
+the Questa Verification IP verification components.</p>
+<p class="p">Refer to <span class="ph filepath">&lt;install_dir&gt;/docs/technotes/sysvlog.note</span> for
+a list of supported SystemVerilog features.</p>
+<p class="p">We strongly encourage you to obtain and
+refer to a copy of the IEEE Std 1850-2005 for PSL as well as the
+IEEE Std 1800-2009 for SystemVerilog. </p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_OverviewAssertionsCoverDirectives_id52585b19.html" title="The use of assertions and cover directives falls into the category of “white box” testing – they specify and validate the expected behavior of a design. Assertions and cover directives are written directly into the design in order to observe the values of signals and states, possibly over a span of time. This allows the verification tool to observe (and log) when particular events occur or assumptions are violated.">Overview of Assertions and Cover Directives</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingPslAssertionsCoverDirectives_id9a502aa1.html" title="The use of PSL assertions differs from the use SystemVerilog assertions because PSL assertions can be embedded in your code or supplied in an external file, while SystemVerilog assertions are always embedded in your code. ">Using PSL Assertions and Cover Directives</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingSvaAssertionsCoverDirectives_id8deb0c78.html" title="The following concepts are important for understanding how to use SVA assertions and cover directives.">Using SVA Assertions and Cover Directives</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingAssertdebugDebugAssertionsCoverDirectives_id0f5e9875.html" title="Using the optional ‑assertdebug argument with the vsim command instructs Questa SIM to examine all assertions and display assertion details in the Assertions window. ">Using -assertdebug to Debug with Assertions and Cover Directives</a></strong></li>
+</ul>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Verification with Assertions and Cover Directives"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/MGCChap_VerificationAssertionsCoverDirectives_id61cdae9c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

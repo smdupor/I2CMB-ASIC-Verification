@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Simulator State Variables" />
+<meta name="abstract" content="Unlike other variables that must be explicitly set, simulator state variables return a value relative to the current simulation. Simulator state variables can be useful in commands, especially when used within Questa SIM DO file scripts. The variables are referenced in commands by prefixing the name with a dollar sign ($)." />
+<meta name="description" content="Unlike other variables that must be explicitly set, simulator state variables return a value relative to the current simulation. Simulator state variables can be useful in commands, especially when used within Questa SIM DO file scripts. The variables are referenced in commands by prefixing the name with a dollar sign ($)." />
+<meta name="DC.subject" content="simulator state variables, state variables" />
+<meta name="keywords" content="simulator state variables, state variables" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4861ea8f-0b68-4e9e-966c-7fca979730ac" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Simulator State Variables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Simulator State Variables" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4861ea8f-0b68-4e9e-966c-7fca979730ac">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Simulator
+State Variables</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Unlike
+other variables that must be explicitly set, simulator state variables
+return a value relative to the current simulation. Simulator state
+variables can be useful in commands, especially when used within <span class="ph fmvar:ProductName">Questa SIM</span> DO file scripts.
+The variables are referenced in commands by prefixing the name with
+a dollar sign ($).</span>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4861ea8f-0b68-4e9e-966c-7fca979730ac__id48b18db2-0ce8-4168-9926-2fd3319688b4" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Simulator State Variables</span></caption><colgroup><col style="width:1.625in" /><col style="width:4.875in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13705e166"><p class="p">Variable</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13705e169"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">architecture</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the name of the top-level architecture
+currently being simulated; for an optimized Verilog module, returns
+architecture name; for a configuration or non-optimized Verilog
+module, Returns an empty string.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p" id="id4861ea8f-0b68-4e9e-966c-7fca979730ac__id448aad9a-c5a2-4c03-8f56-c968aba67efb">argc</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the total number of parameters passed
+to the current script.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">argv</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the list of parameters (arguments)
+passed to the vsim command line.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">configuration</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the name of the top-level configuration
+currently being simulated; returns an empty string if no configuration.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">delta</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the number of the current simulator
+iteration.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">entity</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the name of the top-level VHDL entity
+or Verilog module currently being simulated.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">library</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the library name for the current region.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">MacroNestingLevel</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current depth
+of script call nesting.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">n</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Represents a script parameter, where n can
+be an integer in the range 1-9.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">Now</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current simulation time with time
+units (for example, 110,000 ns). Note: the returned value contains
+a comma inserted between thousands. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">now</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current simulation time
+with or without time units—depending on the setting for time resolution,
+as follows: </p>
+<ul class="ul"><li class="li" id="id4861ea8f-0b68-4e9e-966c-7fca979730ac__idc0c811a6-159c-48c4-9d8d-2ab5bed753c0"><p class="p">When time resolution is a unary unit (such
+as 1ns, 1ps, 1fs), Returns the current simulation time without time
+units (for example, 100000). </p>
+</li>
+<li class="li" id="id4861ea8f-0b68-4e9e-966c-7fca979730ac__id66fa4731-eecd-4466-a063-61338f5a0db2"><p class="p">When time resolution is a multiple of
+the unary unit (such as 10ns, 100ps, 10fs), Returns the current
+simulation time with time units (for example, 110000 ns). </p>
+</li>
+</ul>
+<p class="p">Note: the returned value does not contain
+a comma inserted between thousands. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">resolution</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current simulation time resolution.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">RNGTrace</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns 1 if the RNG
+trace feature is enabled, and returns 0 if the feature is disabled.
+The value of the RNGTrace variable is associated with the vsim ‑rngtrace
+argument. For example, the following command yields the RNGTrace
+value “1”:</p>
+<pre class="pre codeblock"><code>vsim -rngtrace</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To enable or disable the
+RNG trace feature, use the following command:</p>
+<pre class="pre codeblock"><code>set RNGTrace &lt;0|1&gt;</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">RNGTraceFile</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the filename
+to which the RNG trace related output is redirected. If the value
+of this variable is “”(empty string), then the RNG trace output
+is redirected to the Transcript window. The value of the RNGTraceFile
+variable is associated with the vsim ‑rngtrace=&lt;filename&gt; argument.
+For example, the following command yields the RNGTraceFile value
+“<span class="ph filepath emphasis">myfile.txt</span>”:</p>
+<pre class="pre codeblock"><code>vsim -rngtrace=myfile.txt</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To change the filename
+to which the RNG trace related output is redirected, use the following
+command:</p>
+<pre class="pre codeblock"><code>set RNGTraceFile "&lt;filename&gt;"</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">RNGTraceOpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the configuration
+option string for the RNG trace generated output. The value of the
+RNGTraceOpt variable is associated with the vsim ‑rngtraceopt argument.
+For example, the following command yields the RNGTraceOpt value
+“showciid”:</p>
+<pre class="pre codeblock"><code>vsim -rngtraceopt=showciid</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To change the configuration
+option string for the RNG trace generated output, use the following
+command:</p>
+<pre class="pre codeblock"><code>set RNGTraceOpt "&lt;option_string&gt;"</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">RNGTraceClassFilter</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the RNG trace
+output class filter string. The value of the RNGTraceClassFilter
+variable is associated with the vsim ‑rngtraceclassfilter argument.
+For example, the following command yields the RNGTraceClassFilter
+value “TFoo”:</p>
+<pre class="pre codeblock"><code>vsim -rngtraceclassfilter=TFoo</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To change the RNG trace
+output class filter string, use the following command:</p>
+<pre class="pre codeblock"><code>set RNGTRaceClassFilter "&lt;class_filter_string&gt;"</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">RNGTraceProcessFilter</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the RNG trace
+output scope filter string. The value of the RNGTraceProcessFilter
+variable is associated with the vsim ‑rngtraceprocessfilter argument.
+For example, the following command yields the RNGTraceProcessFilter
+value “<span class="ph filepath">/top</span>”:</p>
+<pre class="pre codeblock"><code>vsim -rngtraceprocessfilter=/top</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To change the RNG trace
+output scope filter string, use the following command:</p>
+<pre class="pre codeblock"><code>set RNGTraceProcessFilter "&lt;scope_filter_string&gt;"</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">SolveInfo</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current debug output configuration
+string. The value of the SolveInfo variable is associated with the
+vsim -solveinfo argument. For example, the following command yields
+the SolveInfo value, “<span class="ph FontProperty emphasis">1,gentc</span>”.</p>
+<pre class="pre codeblock"><code>vsim -solveinfo=1,gentc</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">To change the debug output configuration
+string, use the following command:</p>
+<pre class="pre codeblock"><code>set SolveInfo &lt;option_string&gt;</code></pre></div>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e166 "><p class="p">SolveInfoClassFilter</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13705e169 "><p class="p">Returns the current debug output class filter
+string. The value of the SolveInfoClassFilter variable is associated
+with the vsim ‑solveinfoclassfilter argument. For example, the following
+command yields the SolveInfoClassFilter value, <span class="ph FontProperty emphasis">“TBar,TBaz”</span>.</p>
+<pre class="pre codeblock"><code>vsim -solveinfo=2,gentc ‑solveinfoclassfilter=TBar,TBaz</code></pre><div class="note tip"><span class="tiptitle">Tip</span> <p class="p">To change the debug output class filter string,
+use the following command:</p>
+<pre class="pre codeblock"><code>set SolveInfoClassFilter &lt;class_filter_string&gt;</code></pre></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ReferencingSimulatorStateVariables_id7b26bd13.html" title="Variable values may be referenced in simulator commands by preceding the variable name with a dollar sign ($). For example, to use the now and resolution variables in an echo command type:">Referencing Simulator State Variables</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SpecialConsiderationsNowVariable_idd6af7788.html" title="For the when command, special processing is performed on comparisons involving the now variable. If you specify “when {$now=100}...”, the simulator will stop at time 100 regardless of the multiplier applied to the time resolution.">Special Considerations for the now Variable</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_ReadingVariableValuesFromIniFile_id2d9a6fa6.html" title="You can read values from the modelsim.ini file with the following function:">Reading Variable Values From the INI File</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/TaskTop_SettingVariableValuesForTheIniFile_id53cc2951.html" title="You can set values for the modelsim.ini file with the WritePrivateProfileString Tcl function.">Setting Variable Values for the INI File</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_TclDoFiles_idabe446a3.html" title="Tcl is a scripting language for controlling and extending Questa SIM. Within Questa SIM you can develop implementations from Tcl scripts without the use of C code. Because Tcl is interpreted, development is rapid; you can generate and execute Tcl scripts “on the fly” without stopping to recompile or restart Questa SIM. In addition, if Questa SIM does not provide a command you need, you can use Tcl to create your own commands.">Tcl and DO Files</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Simulator State Variables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_SimulatorStateVariables_id4861ea8f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

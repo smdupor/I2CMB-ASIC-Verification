@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Examining Solver Failures" />
+<meta name="abstract" content="You may encounter situations in which the solver fails to randomize or solve the specified constraints." />
+<meta name="description" content="You may encounter situations in which the solver fails to randomize or solve the specified constraints." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id00b2a79d-3c9f-486f-bdbd-d3e44227c324" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Examining Solver Failures</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Examining Solver Failures" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Examining
+Solver Failures</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You may encounter
+situations in which the solver fails to randomize or solve the specified constraints. </span>
+</div>
+<p class="p">In general, solver failures fall into the following categories: </p>
+<ul class="ul"><li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id59f945b7-8b90-44ba-bfbb-10592fa1eb32"><p class="p">The set of constraints cannot be solved.
+This is most often due to an error in specifying constraint variables.
+For example: </p>
+<pre class="pre codeblock leveled"><code>a &gt;  b; b &gt;  c; a &lt; c; </code></pre><ul class="ul"><li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id96f8b60f-cbce-4f53-8b5f-cdc6d0087e5b"><p class="p">If you have not specified <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> -solvefaildebug,
+the solver returns a status of 0 and does not modify any random
+variables. </p>
+</li>
+<li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id114a78fe-608d-4bee-b838-8644880750f0"><p class="p">If you have specified vsim -solvefaildebug,
+the solver does the following:</p>
+<ol class="ol"><li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id79a4d91e-86ec-4439-9f3a-6f324ea42ef7"><p class="p">Prints the message </p>
+<pre class="pre codeblock leveled"><code>** Note: tb.sv(19): randomize() failed; </code></pre><p class="p">which indicates the file line number of the
+failing call to randomize().</p>
+</li>
+<li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id31ba3830-f7a8-4993-8f6e-ecd63da8a0ed"><p class="p">Generates a Verilog testcase that includes
+the constraints that cannot be solved, which you can use to further
+investigate the constrain conflict. </p>
+</li>
+<li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__id04d8403c-63df-4767-8c3e-700b61330498"><p class="p">The solver then attempts to find the minimum
+set of constraints that produce the conflict. In this example, all
+three of the constraints are required to cause the conflict.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p class="p">Note that this is a conflict
+in the Verilog code—the set of constraints is not solvable and the
+problem is independent of solver setting. Changing the solver engine
+or using other <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> arguments will
+not correct the problem. You must fix the conflict in constraint specification
+in the Verilog source code (in this example, delete: a &lt; c;). </p>
+</li>
+<li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__idc3d8f52e-d3b6-4a36-a659-396facc53586"><p class="p">The solver encounters an internal limitation.</p>
+<p class="p">The solver will report a message similar
+to the following:</p>
+<pre class="pre codeblock"><code>file.sv(line#): randomize() failed; solution graph size exceeds limit (SolveGraphMaxSize=value)
+
+file.sv(line#): randomize() failed; solution graph evaluations exceeds limit (SolveGraphMaxEval=value)</code></pre><p class="p">This type of error message indicates that
+the solver could not solve the constraints due to some kind of limitation. </p>
+<ul class="ul"><li class="li" id="id00b2a79d-3c9f-486f-bdbd-d3e44227c324__idb38f44f4-556f-4d3b-828e-f0bdf26cbf5d"><p class="p">If the failure is due to the values
+for the GraphMaxSize or GraphMaxEval variables, increasing those
+values in the modelsim.ini file may help. Another correction that
+is more likely to help is to change to an ACT solver engine. </p>
+</li>
+</ul>
+<p class="p">Following the error report,
+if you have specified <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> -solvefailtestcase[=&lt;filename&gt;],
+a simplified testcase to reproduce the failure will be generated.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_BuildingConstrainedRandomTestBenchesOnSystemverilogClasses_id7ed18ddb.html" title="The SystemVerilog class data abstraction is ideally suited for building random stimulus.">Building Constrained Random Test Benches on SystemVerilog Classes</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Examining Solver Failures"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ExaminingSolverFailures_id00b2a79d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

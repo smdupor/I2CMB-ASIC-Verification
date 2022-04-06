@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Bottom-Up Debugging (From the DUT)" />
+<meta name="abstract" content="You can run Power Aware analysis from the DUT hierarchy and debugging on the complete design. Running vopt -pa_top captures the DUT hierarchy for Power Aware analysis" />
+<meta name="description" content="You can run Power Aware analysis from the DUT hierarchy and debugging on the complete design. Running vopt -pa_top captures the DUT hierarchy for Power Aware analysis" />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Bottom-Up Debugging (From the DUT)</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Bottom-Up Debugging (From the DUT)" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Bottom-Up
+Debugging (From the DUT)</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can run
+Power Aware analysis from the DUT hierarchy and debugging on the
+complete design. Running vopt -pa_top captures the DUT hierarchy
+for Power Aware analysis </span>
+</div>
+<ul class="ul"><li class="li" id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52__id0413b8a7-f12b-421d-adfb-fe003d7a3594"><p class="p">No optimized design unit — This flow
+resembles conventional two-step flow, where you use the vopt command
+to specify a Power Aware simulation and debugging without optimization.
+Use the -pa_top argument to capture the DUT hierarchy for Power
+Aware analysis. When you run the vsim command, it performs debugging
+and runs vopt internally to perform optimization (see <a class="xref fm:HeadingOnly" href="TaskTop_UsingTheTwoStepFlow_id864abe7b.html#id864abe7b-fc68-4d56-99ce-96c0c38b3555__TaskTop_UsingTheTwoStepFlow_id864abe7b.xml#id864abe7b-fc68-4d56-99ce-96c0c38b3555" title="In a two-step flow, you compile and simulate your design. The simulator implicitly optimizes the design before simulation. This flow may be useful in certain cases, such as automated scripts that assume only two steps are involved in building and running a simulation. You can pass optimization or UPF processing options to the optimization engine via the simulator.">Using the Two-Step Flow</a>). For example:</p>
+<pre class="pre codeblock leveled"><code>vlog design.v  
+vcom design.vhdl      
+vopt -pa_upf &lt;config_file&gt; tb -debugdb -pa_top /tb/dut          
+vsim tb -pa -debugdb [-vopt] </code></pre></li>
+<li class="li" id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52__ida9f053e8-fd45-4790-ba6d-105e816da18d"><p class="p">Optimized design unit — This flow resembles
+the conventional three-step flow, where you use the vopt command
+to specify a Power Aware simulation, the name of the design unit
+to be optimized, and debugging. Use the -pa_top argument to capture
+the DUT hierarchy for Power Aware analysis. For example:</p>
+<pre class="pre codeblock leveled"><code>vlog design.v 
+vcom design.vhdl 
+vopt -o optdu -pa_upf &lt;config_file&gt; tb -debugdb -pa_top /tb/dut 
+vsim optdu -pa -debugdb </code></pre><p class="p">This DUT-based flow with an optimized design
+unit not only does common analysis for Power Aware and debugging,
+but also provides flexibility to enable Power Aware analysis from
+specific hierarchy and do code generation in one step.</p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52__idd374cf0d-efb7-4744-9ca5-9fdedcdddce8"><h2 class="title Subheading sectiontitle">Usage Notes</h2><ul class="ul"><li class="li" id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52__idc5c52e91-8982-42cf-b28e-b2f74e20119c"><p class="p">The -pa_top argument
+is used to specify hierarchy of UPF root scope. This supports Power
+Aware analysis of UPF from hierarchy other than the vopt TOP hierarchy.
+If vopt is run from test bench and UPF scope is starting from DUT
+(which is instantiated in test bench as dut_inst), then you need
+to specify vopt -pa_top /tb/&lt;dut_inst&gt;. </p>
+</li>
+<li class="li" id="id00e00ffe-7228-4cf1-a22c-ef6d26c28f52__id685215c3-7c0c-4e3b-80bc-bfd5326ef006"><p class="p">If -pa_top is specifying the hierarchy
+other than UPF root scope then an Error message is displayed: </p>
+<pre class="pre codeblock leveled"><code>** Error: ./src/ss_error_1/test.upf(2): UPF: (vopt-9782) PA Top ’/tb/top/dut_inst/top_inst’ is specifying incorrect hierarchy for UPF scope ’DUT’. </code></pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerAwareSchematicDisplay_ide8058768.html" title="You can perform debugging at the same time you run a Power Aware simulation by adding the ‑debugdb argument to both the vopt and vsim commands. The results of both the Power Aware analysis and the debug operation are provided as Power Aware schematic in the Schematic window. You can also view a correlation between the UPF power intent and the design display in the Schematic window.">Power Aware Schematic Display</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Bottom-Up Debugging (From the DUT)"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_BottomUpDebuggingFromTheDUT_id00e00ffe.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

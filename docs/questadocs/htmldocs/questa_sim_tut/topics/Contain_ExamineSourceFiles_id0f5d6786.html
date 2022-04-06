@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Examine the Source Files" />
+<meta name="abstract" content="Before getting started, take a look at the main design source files in order to get acquainted with the simulation flow and some of the basic requirements for DPI." />
+<meta name="description" content="Before getting started, take a look at the main design source files in order to get acquainted with the simulation flow and some of the basic requirements for DPI." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Examine the Source Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Examine the Source Files" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Examine the Source Files</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Before
+getting started, take a look at the main design source files in
+order to get acquainted with the simulation flow and some of the
+basic requirements for DPI.</span>
+</div>
+<p class="p">If you open the code
+for module <span class="ph filepath">test.sv</span> in a text
+editor it should look like the code in <a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id6fc7305c-4b2e-488d-b3eb-0687dfa9bd29">Figure 1</a>.</p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id6fc7305c-4b2e-488d-b3eb-0687dfa9bd29"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Source Code for Module
+test.sv </span></div>
+<pre class="pre codeblock leveled"><code><span class="ph FontProperty P10"> 1	module test ();
+ 2	
+ 3	typedef enum {RED, GREEN, YELLOW} traffic_signal;
+ 4	
+ 5	traffic_signal light;
+ 6
+ 7	function void sv_GreenLight ();
+ 8	begin
+ 9			light = GREEN;
+10	end
+11	endfunction
+12	
+13	function void sv_YellowLight ();
+14	begin
+15			light = YELLOW;
+16	end
+17	endfunction
+18	
+19	function void sv_RedLight ();
+20	begin
+21			light = RED;
+22	end
+23	endfunction
+24
+25	task sv_WaitForRed ();
+26	begin
+27			#10;
+28	end
+29	endtask
+30
+31	export "DPI-C" function sv_YellowLight;
+32	export "DPI-C" function sv_RedLight;
+33	export "DPI-C" task sv_WaitForRed;
+34
+35	import "DPI-C" context task c_CarWaiting ();
+36	
+37	initial
+38	begin
+39			#10 sv_GreenLight;
+40			#10 c_CarWaiting;
+41			#10 sv_GreenLight;
+42	end
+43
+44	endmodule</span> 
+45 </code></pre><p class="p"><span class="ph FontProperty HeadingLabel">Line 1 – </span>We
+have just one top-level module called <span class="ph filepath">test</span> in
+which all the simulation activity will occur.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 3 –</span> We
+declare a new data type called <span class="ph filepath">traffic_signal</span>,
+which will contain the data values RED, GREEN, and YELLOW.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 5 –</span> We
+declare an object of this new traffic_signal type and give it the
+name <span class="ph filepath">light</span>.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 7-11 –</span> We
+define a Verilog function called <span class="ph filepath">sv_GreenLight</span> which
+has no return value. It simply sets the light to a value of GREEN.
+Note also that we give the function name a prefix of <span class="ph filepath">sv_</span> in
+order to distinguish between tasks/functions defined in SystemVerilog
+and functions defined in C.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 13-17 –</span> We
+define another function called <span class="ph filepath">sv_YellowLight</span>,
+which changes the light to YELLOW.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 19-23 –</span> We
+define another function called <span class="ph filepath">sv_RedLight</span>,
+which changes the light to RED.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 25-29 –</span> The
+Verilog task <span class="ph filepath">sv_WaitForRed</span> simply
+delays for 10 time units (ns by default). Why do we define a task
+rather than a function? This will become apparent as we go through
+the actual simulation steps coming up.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 31-33 –</span> These
+lines do not look like typical Verilog code. They start with the
+keyword "export", followed by some additional information. These
+statements are export declarations – the basic mechanism for informing
+the Verilog compiler that something needs to be handled in a special
+way. In the case of DPI, special handling means that the specified
+task or function will be made visible to a foreign language and
+that its name must be placed in a special name space. </p>
+<p class="p">The syntax for these
+declarations is defined in the SystemVerilog LRM. There is a simple
+rule to remember regarding how they work: </p>
+<p class="p">When running a SystemVerilog
+simulation and using DPI in order to utilize foreign (C) code, the
+Verilog code should be thought of as the center of the universe
+(that is, everything revolves around the Verilog code). When you
+wish to make something in Verilog visible to the foreign world,
+you need to export it to that world. Similarly, if there is something
+from that foreign world that you want your Verilog code to see and
+have access to, you need to import it to Verilog. </p>
+<p class="p">So in these lines,
+we export two of the functions and the task that we have just defined
+to the foreign world (<span class="ph filepath">sv_YellowLight</span>, <span class="ph filepath">sv_RedLight</span>,
+and <span class="ph filepath">sv_WaitForRed</span>). But why
+do we not export the <span class="ph filepath">sv_GreenLight</span> function?
+You will see in a moment.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 35 – </span>The
+import declaration is used to import code from the foreign (C) world
+into the Verilog world. The additional information needed with an
+import declaration includes:</p>
+<p class="p">how you want this
+foreign code to be seen by Verilog (that is, should it be considered
+a task or a function), and </p>
+<p class="p">the name of the task
+or function. </p>
+<p class="p">In this case, we
+will import a task named <span class="ph filepath">c_CarWaiting</span> from
+the C world (note the <span class="ph filepath">c_</span> prefix
+so that we can keep track of where these tasks/functions originated).
+This is an important concept to remember. If you try to call a foreign
+task/function but forget to include an import declaration for it,
+you will get an error when you load simulation stating that you
+have an unresolved reference to that task/function.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 37-42 – </span>We
+use a little initial block that executes the simulation and walks
+us through the light changing scenario. The light starts out RED
+by default, since that is the first (left-most) value in the light's
+type definition (that is, the <span class="ph filepath">traffic_signal </span>type).
+When simulation starts, we wait for 10 time units and then change
+the light to GREEN via the <span class="ph filepath">sv_GreenLight</span> function.
+All this occurs in the Verilog world, so there is no need to export
+the <span class="ph filepath">sv_GreenLight</span> function.
+We will not be doing anything with it over in the foreign world. </p>
+<p class="p">Next, we wait for
+10 time units again and then do something called <span class="ph filepath">c_CarWaiting</span>.
+From our previous discussion of the import declaration, we know
+this is a C function that will be imported as a Verilog task. So
+when we call this task, we are actually stepping over into the foreign
+world and should be examining some C code. In fact, now we will
+take a look at the other source file for this lesson to see what
+happens when this line executes during simulation.</p>
+<p class="p">If you open the <span class="ph filepath">foreign.c</span> source
+file in a text editor it should look like the code in <a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id95c01664-7a08-439a-a741-efc2fc536ec6">Figure 2</a>.</p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id95c01664-7a08-439a-a741-efc2fc536ec6"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Source Code for the foreign.c
+File - DPI Lab</span></div>
+<pre class="pre codeblock leveled"><code> 1	int c_CarWaiting()
+ 2	{
+ 3		printf("There’s a car waiting on the other side. \n");
+ 4		printf("Initiate change sequence ...\n");
+ 5			sv_YellowLight();
+ 6			sv_WaitForRed();
+ 7			sv_RedLight();
+ 8			return 0;
+ 9	}
+10
+</code></pre><p class="p"><span class="ph FontProperty HeadingLabel">Line 1 – </span>This
+is the function definition for <span class="ph filepath">c_CarWaiting</span>.
+It is an <span class="ph filepath">int</span> type function and returns a 0.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 3-4 – </span>The
+statement inside the function prints out a message indicating that
+a car is waiting on the other side of the intersection and that
+we should initiate a light change sequence. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 5 – </span>We
+call the SystemVerilog function <span class="ph filepath">sv_YellowLight</span>.
+Even though we are in the foreign (C) world now, executing C functions/statements
+until this function exits and returns control back over to Verilog,
+we can indeed call the Verilog world and execute tasks/functions
+from there. The reason the C code knows that <span class="ph filepath">sv_YellowLight</span> exists
+is because we have exported it back in our Verilog code with the <span class="ph FontProperty HeadingLabel">export</span> declaration. </p>
+<p class="p">To follow along with
+the simulation, look at the <span class="ph filepath">sv_YellowLight</span> function
+in lines 13 through 17 in the <span class="ph filepath">test.sv</span> file
+(<a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id8fade8ba-e3c8-4158-b57a-3ec9339644ac">Figure 3</a>). Here, we change the
+light to a value of YELLOW, then pass control back to <span class="ph filepath">foreign.c </span>and
+go to the line following the <span class="ph filepath">sv_YellowLight</span> function
+call.</p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id8fade8ba-e3c8-4158-b57a-3ec9339644ac"><span class="figcap"><span class="fig--title-label">Figure 3. </span>The sv_YellowLight Function
+in the test.sv File</span></div>
+<pre class="pre codeblock leveled"><code>13	function void sv_YellowLight ();
+14	begin
+15			light = YELLOW;
+16	end
+17	endfunction
+</code></pre><p class="p"><span class="ph FontProperty HeadingLabel">Line 6 – </span>Now
+we call the <span class="ph filepath">sv_WaitForRed</span> SystemVerilog task,
+defined on lines 25-29 of <span class="ph filepath">test.sv </span>(<a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id01a3ce71-f3b6-46da-8aef-b6b642e6055e">Figure 4</a>). </p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id01a3ce71-f3b6-46da-8aef-b6b642e6055e"><span class="figcap"><span class="fig--title-label">Figure 4. </span>The sv_WaitForRed Task
+in the test.sv File</span></div>
+<pre class="pre codeblock leveled"><code>25	task sv_WaitForRed ();
+26	begin
+27			#10;
+28	end
+29	endtask 
+ </code></pre><p class="p">The task designates
+a wait for 10 time units. Since there is time delay associated with
+this procedure, it has to be a task. All the rules associated with
+tasks and functions in basic Verilog will also apply if you call
+them from the foreign world. Since we compile the two source files independently
+(one with a Verilog compiler and one with a C compiler), the rules
+of one language will not be known to the compiler for the other.
+We will not find out about issues like this in many cases until
+we simulate and hook everything together. Be aware of this when deciding
+how to import/export things.</p>
+<p class="p">An important thing
+to note here is that we made this call to the SystemVerilog <span class="ph filepath">sv_WaitForRed()</span> task
+from the foreign (C) world. If we want to consume simulation time,
+C does not know anything about the SystemVerilog design or simulation
+time units. So we would need to make calls back over to Verilog
+in order to perform such operations. Again, just remember which world
+you are in as you move around in simulation.</p>
+<p class="p">Anyway, <span class="ph filepath">sv_WaitForRed</span> just
+burns 10 time units of simulation and then returns control back over
+to C. So we go back over to <span class="ph filepath">foreign.c</span> and proceed
+to the next line. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 7 – </span>Here
+we call the <span class="ph filepath">sv_RedLight</span> SystemVerilog function,
+which changes the light to RED. If you look up that function in <span class="ph filepath">test.sv</span>,
+that is exactly what occurs (<a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id6115e6c6-7e4f-4ddf-b930-9e76332afb05">Figure 5</a>).</p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__id6115e6c6-7e4f-4ddf-b930-9e76332afb05"><span class="figcap"><span class="fig--title-label">Figure 5. </span>The sv_RedLight Function
+in the test.sv File</span></div>
+<pre class="pre codeblock leveled"><code>19	function void sv_RedLight ();
+20	begin
+21			light = RED;
+22	end
+23	endfunction</code></pre><p class="p">This is the last
+statement in the <span class="ph filepath">c_CarWaiting</span> function in <span class="ph filepath">foreign.c</span>.
+So now this function exits and returns control back over to Verilog.</p>
+<p class="p">The simulator returns
+to line 40 in test.sv, which called this C function in the first
+place. There is nothing else to be done on this line. So we drop
+down to the next line of execution in the simulation. We wait for
+10 time units and then call the <span class="ph filepath">sv_GreenLight</span> function
+(<a class="xref fm:Figure" href="#id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__idb1810dab-affd-4058-8bfd-a2a947a21add">Figure 6</a>). If you recall, this
+function just keeps execution in the Verilog world and changes the
+light back to GREEN. Then we are all done with simulation.</p>
+<div class="fig fignone" id="id0f5d6786-8321-4782-a2ef-2fa6cf05f6ed__idb1810dab-affd-4058-8bfd-a2a947a21add"><span class="figcap"><span class="fig--title-label">Figure 6. </span>Function Calls in the test.sv
+File</span></div>
+<pre class="pre codeblock leveled"><code>37	initial
+38	begin
+39			#10 sv_GreenLight;
+40			#10 c_CarWaiting;
+41			#10 sv_GreenLight;
+42	end</code></pre></div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExploringMakefile_id7a95be9e.html" title="A Makefile has been included with this lesson to help UNIX and Linux users compile and simulate the design, or you can run &#34;make all&#34; to kick off the whole thing all at once. There is also a clean target to help you clean up the directory should you want to start over and run again. ">Exploring the Makefile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExploringWindowsBatFile_id027ecaba.html" title="A windows.bat file has been included for Windows users. ">Exploring the windows.bat File</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UsingSystemverilogDpi_id77e7afd3.html" title="This lesson is designed to walk you through the basics of using the SystemVerilog Direct Programming Interface (DPI) with Questa SIM. We will start with a small design that shows how simulation control flows back and forth across the boundary between Verilog simulation and code written in a foreign language. We will use code written in C, which is the foreign language most commonly used to interface with Verilog simulations.">Using the SystemVerilog DPI</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Examine the Source Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ExamineSourceFiles_id0f5d6786.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

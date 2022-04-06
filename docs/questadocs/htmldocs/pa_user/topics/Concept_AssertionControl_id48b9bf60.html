@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Assertion Control" />
+<meta name="abstract" content="Power Aware simulation enables you to control the assertions present in the test bench or design instance during power-down." />
+<meta name="description" content="Power Aware simulation enables you to control the assertions present in the test bench or design instance during power-down." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id48b9bf60-eff1-4670-a46b-158b0b8b7664" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Assertion Control</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Assertion Control" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id48b9bf60-eff1-4670-a46b-158b0b8b7664">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Assertion Control</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Power Aware simulation enables you to
+control the assertions present in the test bench or design instance
+during power-down.</span>
+</div>
+<p class="p">By default, the assertions (including currently
+active assertions are disabled) are disabled during power-down. </p>
+<p class="p">The tool provides the following options to control the assertions:</p>
+<ul class="ul"><li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__id4608a349-ad6b-4214-bc7b-3f5f2ea4d726"><p class="p"><span class="ph FontProperty HeadingLabel">Case 1</span>:
+When your design instance or test bench has user-defined assert
+control tasks (such as $asserton, $assertoff, and $assertkill),
+the tool introduces two levels of commands to control the assertions:</p>
+<ul class="ul"><li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__ida2bf5d92-8600-4bc7-a994-7e07929b13d8"><p class="p"><span class="ph FontProperty HeadingLabel">First Level Commands</span> —
+sim_assertion_control, vopt ‑pa_enable=assertduringpoweroff, and
+vopt ‑pa_enable=forceasrtoffpwrdown </p>
+</li>
+<li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__idf205815b-e04c-430a-aff5-9c5fbf5e18d6"><p class="p"><span class="ph FontProperty HeadingLabel">Second Level Commands</span> —
+User-defined assert control tasks, such as $asserton, $assertoff,
+and $assertkill</p>
+</li>
+</ul>
+<p class="p">If your design has both first level and second level commands,
+the first level commands take precedence and the tool controls the
+assertions based on the precedence of the first level commands.
+For details on the precedence of the first level commands, see “<a class="xref fm:HeadingOnly" href="#id48b9bf60-eff1-4670-a46b-158b0b8b7664__iddff1a261-0371-403c-81e6-92f71017b544">Precedence of Assertion Control Commands</a>”. </p>
+<p class="p">However, in the background, the tool evaluates the second level
+commands. When the first level commands turn inactive, the tool
+controls the assertions based on the latest evaluated second level
+command.</p>
+</li>
+<li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__idba961110-d44e-4596-b332-3ac927cc85ff"><p class="p"><span class="ph FontProperty HeadingLabel">Case 2</span>:
+When your design instance or test bench does not have user-defined
+assert control tasks (such as asserton, assertoff, and assertkill),
+the tool controls the assertion based on the precedence of the assertion
+control commands. See “<a class="xref fm:HeadingOnly" href="#id48b9bf60-eff1-4670-a46b-158b0b8b7664__iddff1a261-0371-403c-81e6-92f71017b544">Precedence of Assertion Control Commands</a>”.</p>
+</li>
+</ul>
+<div class="note restriction"><span class="restrictiontitle">Restriction:</span> <p class="p">The tool does not support usage of
+the assertion enable -force or assertion enable ‑release command
+with the sim_assertion_control command, and it displays an error.</p>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__iddff1a261-0371-403c-81e6-92f71017b544"><h2 class="title Subheading sectiontitle">Precedence of Assertion Control Commands</h2><ol class="ol"><li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__idafc1e2e1-5430-4f53-b0c4-05320ed1dde8"><p class="p">The <a class="xref fm:HeadingOnly" href="General_SimAssertionControl_id41f627cd.html#id41f627cd-57b0-44ba-8d89-dcb839bae7bf__General_SimAssertionControl_id41f627cd.xml#id41f627cd-57b0-44ba-8d89-dcb839bae7bf" title="Controls the behavior of Verilog assertions during Power Aware simulation.">sim_assertion_control</a> command.</p>
+</li>
+<li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__ideaee3b8e-6900-45a6-b456-5fd29b2e80c2"><p class="p">The vopt -pa_enable=assertduringpoweroff
+value.</p>
+<p class="p">It enables assertions present in the test bench or design instance
+during power-down.</p>
+</li>
+<li class="li" id="id48b9bf60-eff1-4670-a46b-158b0b8b7664__id2d281ee1-b03b-49c4-be91-ac128f21e18e"><p class="p">The vopt -pa_enable=forceasrtoffpwrdown
+value.</p>
+<p class="p">It disables assertions present in the test bench or design instance
+during power-down.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Assertion Control"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AssertionControl_id48b9bf60.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

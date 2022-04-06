@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="SystemC Procedural Interface to SystemVerilog" />
+<meta name="abstract" content="SystemC designs can communicate with SystemVerilog through a procedural interface, the SystemVerilog Direct Programming Interface (DPI). In contrast to a hierarchical interface, where communication is advanced through signals and ports, DPI communications consists of task and function calls passing data as arguments. This type of interface can be useful in transaction level modeling, in which bus functional models are widely used." />
+<meta name="description" content="SystemC designs can communicate with SystemVerilog through a procedural interface, the SystemVerilog Direct Programming Interface (DPI). In contrast to a hierarchical interface, where communication is advanced through signals and ports, DPI communications consists of task and function calls passing data as arguments. This type of interface can be useful in transaction level modeling, in which bus functional models are widely used." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb622845a-9fa9-40db-ae14-b416d2c0964e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>SystemC Procedural Interface to SystemVerilog</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="SystemC Procedural Interface to SystemVerilog" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb622845a-9fa9-40db-ae14-b416d2c0964e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">SystemC
+Procedural Interface to SystemVerilog</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">SystemC
+designs can communicate with SystemVerilog through a procedural
+interface, the SystemVerilog Direct Programming Interface (DPI).
+In contrast to a hierarchical interface, where communication is
+advanced through signals and ports, DPI communications consists
+of task and function calls passing data as arguments. This type
+of interface can be useful in transaction level modeling, in which
+bus functional models are widely used.</span>
+</div>
+<p class="p">This section describes the use
+flow for using the SystemVerilog DPI to call SystemVerilog export
+functions from SystemC, and to call SystemC import functions from SystemVerilog. </p>
+<p class="p">The SystemVerilog LRM describes the details
+of a DPI C import and export interface. This document describes
+how to extend the same interface to include SystemC and C++ in general.
+The import and export keywords used in this document are in accordance
+with SystemVerilog as described in the SystemVerilog LRM. An export
+function or task is defined in SystemVerilog, and is called by C
+or SystemC. An import task or function is defined in SystemC or
+C, and is called from SystemVerilog. </p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/General_DefinitionTerms_idec836bce.html" title="The following terms are used in this section. ">Definition of Terms</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SystemcDpiUsageFlow_id45c6bb9e.html" title="The usage flow of SystemC DPI depends on the function modes, whether they are import or export. The import and export calls described here can be mixed with each other in any order. ">SystemC DPI Usage Flow</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SystemcImportFunctions_id50dc0bf4.html" title="In order to make a SystemC import function callable from SystemVerilog, it needs to be registered from the SystemC code before it can be called from SystemVerilog. This can be thought of as exporting the function outside SystemC, thus making it callable from other languages. The registration must be done by passing a pointer to the function using an API. The registration can be done anywhere in the design but it must be done before the call happens in SystemVerilog, otherwise the call fails with undefined behavior. ">SystemC Import Functions</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_CallingSystemverilogExportTasksFunctionsFromSystemc_idd4cee146.html" title="Unless an export call is made from an import function, you must set the scope of the export function explicitly to provide the SystemVerilog context information to the simulator. You do this by calling svSetScope() before each export function or task call. ">Calling SystemVerilog Export Tasks / Functions from SystemC</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SystemcDataTypeSupportInSystemverilogDpi_ida03f0014.html" title="The SystemVerilog package “mti_scdpi” must be imported if a SystemC data type is used in the arguments of import and export functions.">SystemC Data Type Support in SystemVerilog DPI</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SystemcFunctionPrototypeHeaderFileScDpiheaderH_id56065727.html" title="A SystemC function prototype header file is automatically generated for each SystemVerilog compilation. By default, this header file is named sc_dpiheader.h. This header file contains the C function prototype statements consistent with the “DPI-SC” import/export function/task declarations. You can include this file in the SystemC source files where the prototypes are needed for SystemC compiles and use this file as a sanity check for the SystemC function arguments and return type declaration in the SystemC source files.">SystemC Function Prototype Header File (sc_dpiheader.h)</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SupportMultipleSystemverilogLibraries_id2c728ae8.html" title="By default, only the DPI-SC usage in the current work library is processed at the SystemC link time. If you use additional SystemVerilog libraries that import or export SystemC DPI routines, the names of these libraries must be provided to the sccom command at link time using the‑dpilib argument. ">Support for Multiple SystemVerilog Libraries</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_SystemcDpiUsageExample_ide7e1c0e6.html" title="The following example shows how to create a top Verilog module that uses a simple file (hello.v) as input for a direct programming interface (DPI) to SystemC. ">SystemC DPI Usage Example</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_MixedLanguageSimulation_id95143c12.html" title="Questa SIM allows you to simulate designs that are written in VHDL, SystemC, Verilog, and SystemVerilog. While design units must be entirely of one language type, any design unit may instantiate other design units from another language. Any instance in the design hierarchy may be a design unit from another language without restriction.">Mixed-Language Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "SystemC Procedural Interface to SystemVerilog"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_SystemcProceduralInterfaceSystemverilog_idb622845a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

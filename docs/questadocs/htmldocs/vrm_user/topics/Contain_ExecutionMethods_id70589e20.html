@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Execution Methods" />
+<meta name="abstract" content="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:" />
+<meta name="description" content="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id70589e20-3345-4225-9505-9b776dc4c0d5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Execution Methods</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Execution Methods" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id70589e20-3345-4225-9505-9b776dc4c0d5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Execution Methods</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">By
+default, the wrapper associated with each Action launched by VRM
+is executed by either vsim or vish as a child process of the initiating
+VRM process. The exact command used to launch this process depends
+on the value of the <span class="ph FontProperty emphasis">launch</span> attribute
+of the element associated with the Action. For Actions whose <span class="ph FontProperty emphasis">launch</span> attribute
+is set to vsim (or which do not have a launch attribute, since vsim
+is the default launch type), the following command is used:</span>
+</div>
+<p class="lines ApplCommand">echo "do $script.do"<br />
+| $MODEL_TECH/vsim -c -l "" -onfinish stop</p>
+<p class="p">For Actions whose <span class="ph FontProperty emphasis">launch</span> attribute
+is set to <span class="ph FontProperty emphasis">exec</span> (or
+any non-empty value other than vsim), the following command is used:</p>
+<p class="lines ApplCommand">$MODEL_TECH/vish $script.do -c</p>
+<p class="p">Note that the MODEL_TECH environment
+variable is maintained internally and must not be altered by the
+user.</p>
+<p class="p">If the <span class="ph FontProperty emphasis">launch</span> attribute
+is set to anything other than vsim or exec, the value of the <span class="ph FontProperty emphasis">launch</span> attribute
+is assumed to be the name of and/or path to an interpreter shell
+that can execute the commands defined in the Action script. In this
+case, the exec command is used and the appropriate interpreter is
+launched from within the wrapper script using the TCL exec command.</p>
+<p class="p">Any output from this process on stdout
+or stderr is redirected to a pair of files in the working directory
+associated with the Action (the user script output should be written
+to <span class="ph filepath">$script.log</span> due to the redirection specified
+in the wrapper file). By default, the wrapper script is launched
+in background mode to prevent VRM from hanging as the result of
+a hung user script. If the MTI_VRUN_NOAUTOBACKGROUND environment variable
+is set, however, the wrapper scripts is launched in foreground mode
+(in which case, only one Action can be running at any one time).</p>
+<p class="p">The -onfinishstop option to a vsim simulation
+prevents designs that call $finish from exiting prior to sending
+the “done” message to the invoking VRM process. If the user script changes
+this setting to cause vsim to exit immediately, then the simulation
+Action exits without sending the “done” message and appears to timeout
+from the point of view of the VRM. Do not do this.</p>
+<p class="p">Note that the “pipe” construct in the
+vish launched case is necessary to prevent a nested ‑do option error
+while preserving the ability of the wrapper to set <span class="ph FontProperty emphasis">onbreak</span> and <span class="ph FontProperty emphasis">onerror</span> behavior.
+The user has no direct control over this behavior.</p>
+<p class="p">As an alternative, VRM supports user-defined
+execution methods. What an execution method does is allow the user
+to control, via the RMDB database, the actual execution command
+issued for each Action. A user-defined execution method is defined
+by a <span class="ph FontProperty emphasis">method</span> element
+in the RMDB database, which might look something like the following:</p>
+<pre class="pre codeblock leveled"><code>&lt;method name="grid"&gt;
+   &lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+&lt;/method&gt;</code></pre><p class="p">When this method is
+selected (see “<a class="xref fm:HeadingOnly" href="Concept_SelectingExecutionMethod_id33e0aa42.html#id33e0aa42-0702-4bae-99a7-85d4cacf866e__Concept_SelectingExecutionMethod_id33e0aa42.xml#id33e0aa42-0702-4bae-99a7-85d4cacf866e" title="Execution method (method) elements can appear within any Runnable (that is, as a child of a given runnable element). For each Action scheduled for execution, a search for an appropriate execution method is performed. This search follows the same rules as parameter expansion, following both the base and group inheritance chains starting from the Runnable on whose behalf the Action is being run (which, because of inheritance, may not be the same as the Runnable in which the Action script is defined). If no execution method is found for a given Action, then the Action is launched using the built-in default method described above.">Selecting an Execution Method</a>”), the appropriate vsim or vish
+wrapper script command given above is written into a shell script
+file and that file name is substituted into the command as the value
+of the (<span class="ph FontProperty emphasis">%WRAPPER%</span>)
+parameter. The shell script name is the name of the Action being
+launched but with a <span class="ph filepath">.bat</span> extension (for example, <span class="ph filepath">execScript.bat</span> for
+the <span class="ph FontProperty emphasis">execScript</span> Action).
+In the VRM implementation, only the first <span class="ph FontProperty emphasis">command</span> element
+listed in the <span class="ph FontProperty emphasis">method</span> element
+is considered. The command string undergoes the same parameter expansion
+as any other command found in the RMDB database (see “<a class="xref fm:HeadingAndPage" href="MGCChap_ParametersParameterExpansion_id68da1844.html#id68da1844-ab5a-4671-86d0-234a9b5ae99e__MGCChap_ParametersParameterExpansion_id68da1844.xml#id68da1844-ab5a-4671-86d0-234a9b5ae99e" title="Each Runnable definition (that is, each runnable element) can include a list of zero or more parameter element definitions. A parameter is nothing more than a name/value pair that allows multiple Tasks to share the same execution script (or multiple Groups to share the same Task) by providing unique per-Group or per-Task values to be used in the scripts.">Parameters and Parameter Expansion</a>” for details). The resulting
+command is then used in place of the wrapper launch command given
+above. VRM uses the TCL exec command to launch the method command
+so the command must be in a form that is considered executable on
+the platform on which VRM is executing.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SelectingExecutionMethod_id33e0aa42.html" title="Execution method (method) elements can appear within any Runnable (that is, as a child of a given runnable element). For each Action scheduled for execution, a search for an appropriate execution method is performed. This search follows the same rules as parameter expansion, following both the base and group inheritance chains starting from the Runnable on whose behalf the Action is being run (which, because of inheritance, may not be the same as the Runnable in which the Action script is defined). If no execution method is found for a given Action, then the Action is launched using the built-in default method described above.">Selecting an Execution Method</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_MethodsTimeouts_id1839c4f5.html" title="Execution methods can specify a per-method minimum timeout by adding a mintimeout attribute onto the method element. The mintimeout attribute is read from the method element that actually supplied the command, even if the command is inherited from a base method element. In other words, even though the mintimeout attribute is actually attached to the method element, it is easier to think of it as being attached to the command element itself. For example, consider the following configuration elements:">Methods and Timeouts</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ConditionalExecutionMethods_idc1513718.html" title="By itself, the ability to add method elements to Runnables in order to affect subsets of the regression suite is useful but still somewhat inflexible. In many cases, there can be a legitimate reason for wanting to launch some Actions locally, some on specific machines (that is, large capacity machines), and some on server grids of various types. Compiles, for example, may need to be executed on the local machine (or on a specific remote machine) prior to launching any simulations. Simulations may need to run on a grid during overnight regressions but might also be run on the local machine for small interactive test runs during the day. Some simulations may need additional resources or may require a slightly different set of options when the job is queued. All of these things point to the need for a more flexible paradigm for specifying the command by which each Action script is launched.">Conditional Execution Methods</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_MethodsBaseInheritance_id1ce29695.html" title="One or more method elements can appear at the top-level of the RMDB file, as children of the document (rmdb) element and siblings of the runnable elements. These method elements cannot be used to satisfy an execution method search. They exist only as base methods to be referred to by other method elements. Any method elements referred to via the base inheritance chain is searched for by name at the top-level of the database. Since attributes are never inherited, the only use of base execution methods is to provide a common execution method command for multiple method elements defined within the various runnable elements. For example, in order to assign the same execution method to two subsets of the regression suite (but not the entire suite), the following pattern can be used:">Methods and Base Inheritance</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_ExecutionMethodExamples_id58e28a7f.html" title="The following are VRM execution method examples.">Execution Method Examples</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WorkingDirectoryScriptExecution_id10825c4b.html" title="In order to prevent multiple Actions (that is, user scripts) from a single vrun invocation from overwriting or otherwise interfering with each other, each Action executed by VRM is launched from within a working directory unique to the Runnable on whose behalf the Action is launched. In order to prevent multiple invocations of VRM (by other users or by the same user) from interfering with each other, the root of the scratch hierarchy within which these per-Runnable directories are created is control by the user.">Working Directory and Script Execution</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Execution Methods"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ExecutionMethods_id70589e20.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

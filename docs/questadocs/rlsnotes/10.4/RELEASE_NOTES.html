@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.4 Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.4" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.4</h1></center>
+<center><b>Dec 02 2014</b> <br />
+ <br />
+ Copyright 1991-2014 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#rlsannouncement">Release Announcements in 10.4</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.4</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.4</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 10.4</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.4</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.4</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.4</a></li>
+ <li><a href="#systemcdefects">SystemC Defects Repaired in 10.4</a></li>
+ <li><a href="#assertiondefects">SVA/PSL Defects Repaired in 10.4</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 10.4</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.4</a></li>
+ <li><a href="#powerawaredefects">Power Aware Defects Repaired in 10.4</a></li>
+ <li><a href="#wlfvcddefects">WLF and VCD logging Defects Repaired in 10.4</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 10.4</a></li>
+ <li><a href="#uienhancements">User Interface Enhancements in 10.4</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.4</a></li>
+ <li><a href="#vhdlenhancement">VHDL Enhancements in 10.4</a></li>
+ <li><a href="#systemcenhancement">SystemC Enhancements in 10.4</a></li>
+ <li><a href="#svapslenhancement">SVA/PSL Enhancements in 10.4</a></li>
+ <li><a href="#mixedlanguageenhancement">Mixed Language Enhancements in 10.4</a></li>
+ <li><a href="#coverageenhancement">Coverage Enhancements in 10.4</a></li>
+ <li><a href="#vmenhancement">Verification Management Enhancements in 10.4</a></li>
+ <li><a href="#paenhancement">Power Aware Enhancements in 10.4</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.4</b></font>
+<ul><li>[nodvtid]  - <br>
+[10.4] Support for Windows XP and Windows Vista has been discontinued.<br>
+[10.4] Licensing Information
+<p>There is no licensing change between release 10.3 and 10.4.
+
+<p>However if you are migrating to 10.4 from a release like 10.2 and older,
+please note the following:
+
+<ul><li>Starting 10.3, it uses FLEXnet v11.11.1.1. The 
+vendor daemons and lmgrd that are shipped with this release will 
+be FLEXnet version 11.11.1.1.
+<li>For floating licenses it will be necessary to verify that the vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.11.1.1. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.11.1.1 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+<li>If you use node locked licenses you don't need to do anything.
+</ul><br>
+[10.3b] OVL is upgraded to v2.8.1.<br>
+[10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology) library, sources and documentation have been updated to version 2014.01. Dependency checks in vopt and vsim will force recompilation of designs that use the osvvm library. If optimization is performed using vopt, the optimizer will automatically generate new optimized design units. Without the optimization step, vsim will detect dependency errors.<br>
+[10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been discontinued.<br>
+[10.2] Support for Solaris SPARC and Solaris x86 has been discontinued. All Solaris OS platforms are not supported.<br>
+[10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell SUSE Linux Enterprise (SLES) 9 has been discontinued.<br>
+[10.1] Support for GCC versions gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.<br>
+[10.0] Support for Solaris 8 and Solaris 9 has been discontinued.<br>
+<br>
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.4</b></font>
+<ul><li>[nodvtid]  - <br>
+[Supported Platforms]<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc9<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.11.1.1<br>
+	MSL 	v2013_3<br>
+	MGLS 	v9.10_7.2<br>
+	PCLS 	v9.10.7.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.4</b></font>
+<p /><dd><font size="3"><b>User Interface  Compatibility</b></font></dd>
+<ul><li>dvt68326 - (source) Improved error checking for invalid and out-of-range values for the vsim "-sv_seed <seed>" command line option. A valid seed value is a non-negative 32-bit integer. Invalid seed values will trigger a warning message and will be ignored.</li>
+ <li>dvt69696 - (results) One bit Verilog nets displayed in binary radix would incorrectly show the strength prefix (e.g. St1).  This has been fixed and the strength prefix is only displayed when the radix is set to "Symbolic."</li>
+ <li>[nodvtid]  - (results) SystemC integer types (e.g. short, int, long) did not show the radix prefix when the showbase radix qualifier was enabled.</li>
+ <li>dvt71982 - (results) Individual 2-state SV struct field values could be shown incorrectly in the Objects window.  This has been corrected.</li>
+ <li>dvt30276 - (results) When there is no [onbreak] setting in effect, the default [onbreak] behavior is defined by a new variable: $OnBreakDefaultAction.  If $OnBreakDefaultAction is not defined, then the effective default will be [resume].  This is a change in prior behavior where the default action was [pause].
+</li>
+</ul>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt69617 - (source) The default value for an undriven wreal net is 'Z'. A new vsim command line option -wrealdefaultzero has been added and with this options specified, the default value for an undriven wreal net will be '0'.</li>
+ <li>dvt32750 - (source, results) The following builtin methods will produce an error if used with associative arrays with wildcard indices, provided the testcase is run with -pedantic switch<br>
+
+1. first()<br>
+2. last()<br>
+3. prev()<br>
+4. next()<br></li>
+ <li>dvt67278 - (source, results) As per LRM requirement now an error will be given to user if the variables written in always_ff process are written by any other process as well.</li>
+ <li>dvt69488 - (source, results) $printtimescale() call (with empty round brackets) will be treated as $printtimescale (without any brackets).</li>
+ <li>dvt67967 - (source, results) We no longer will infer an 'assignment pattern' when the context is a packed struct or array.  Instead we will treat the concatenation as a regular, packed concatenation.</li>
+ <li>dvt37537 - (source, results) The option -svext=+/-cfce has been added to vsim.  If this option is set using -svext=+cfce, then an error message will be generated if $cast is used as a function and the casting operation fails. The ini variable SvExtensions has also been added to specify this option.</li>
+ <li>dvt69488 - (source, results) $printtimescale with round braces but without any  arguments is now supported and will behave like $printtimescale without  round braces.</li>
+ <li>dvt23464 - (source, results) Added  the LibrarySearchPath ini variable to vsim. This variable can be used to specify library search paths for vsim, which are specified using the -L commandline option.<br>
+Added the following new vsim switches:<br>
+1. -showlibsearchpath:      Show all the libraries which will be searched for precompiled modules<br>
+2. -ignoreinilibs:          Ignore the libraries specified with the 'LibrarySearchPath' variable in the vsim section of the ini file</li>
+ <li>dvt26544 - (source, results) empty() method for queue has been supported. This is a non standard feature. This method with return 1 if the queue is empty and 0 if the queue is not empty. With -pedanticerrors option in vsim, an error is generated if this method is used.</li>
+ <li>dvt35950 - (source, results) nettype construct has been supported for a limited set of real nettypes defined in the inbuilt package: mgc_rnm_pkg.</li>
+ <li>dvt37264 - (results) Vopt failed to find objects in +acc statements with hierarchical pathnames containing unnamed if-else and case scopes (they have names of the format "genblk&ltn&gt", where &ltn&gt is a positive integer).</li>
+ <li>[nodvtid]  - (results) The genvar variables incorrectly reported a vpi type of vpiIntegerVar instead of vpiGenVar. The underlying error caused genvars to be incorrectly displayed in vsim's Object Window and to be included in the .wlf files (in a "log -r /*").</li>
+ <li>dvt64554 - (results) Elements of arrays whose width has been specified with a parameter, can now be forced with the Verilog "force" construct.</li>
+ <li>dvt64603 - (results) Now in vopt, access flags from OCF files (using "-ocf" switch) can be applied to objects under Verilog unnamed generate scopes. Similar objects specified in SignalSpy system tasks are now correctly resolved too.</li>
+ <li>dvt64937 - (results) Under the following condition, X transition delay on an input port with SDF INTERCONNECT delays, was incorrect.
+The SDF file had RETAIN delay values (associated with some IOPATH) that resolved to the same as that of an INTERCONNECT delay and the RETAIN delay was annotated before the INTERCONNECT delay.
+</li>
+ <li>dvt65683 - (results) A pulse generated from an always block using different NBA delays to the same target was suppressed on subsequent clock cycles.</li>
+ <li>dvt65850 - (results) Fixed a bug where incorrect result was given while reading part of mult-dimensional packed array containing structures. eg arr[i].b[1] for 3 dimensional array.</li>
+ <li>dvt66786 - (results) Gate level simulations with forces on input ports and interconnect delays could see force values misapplied.</li>
+ <li>dvt66781 - (results) An associative array element passed as a 'ref' argument to a task/function was being treated as an input, so a warning was printed (and the default value passed) if the element did not exist.  It is now treated as an 'lvalue', so it is created if it does not exist, and is then passed to the routine.</li>
+ <li>dvt65787 - (results) In 2-step flow vopt didn't recognize when SDF source file content has changed. In the incr flow, this caused the out-of-date SDF data that was previously captured in the compiled SDF file (under the automatically created vopted design) to be used.</li>
+ <li>dvt65714 - (results) When "+vlog_retain_same2same_on" was specified, conditional specify paths with SDF RETAIN delays did not evaluate correctly.</li>
+ <li>dvt65765 - (results) An unpacked array concatenation with an empty array would cause the result to have an extra invalid entry.  </li>
+ <li>dvt68217 - (results) Vsim's "-errorfile" switch facilitated redirection of all non-assert messages (errors, warnings & notes). Therefore, the name "-errorfile" was deemed confusing and has been changed to "-msgfile". The old switch is still recognized for backward compatibility.</li>
+ <li>dvt68738 - (results) Printing an interface instance using $display and %p through a virtual interface would cause a fatal error.  Printing an instance directly would either crash or print nothing.  These are both fixed.</li>
+ <li>dvt68824 - (results) Calling vpi_get_time function with a VPI handle of wrong type (for example to a package) would cause vsim to crash. </li>
+ <li>dvt68554 - (results) The following two issues caused by "-warning error" switch have been fixed. In vsim, Note messages got turned into errors. In vlog and vopt, warnings that were not reported without the switch got reported as Errors.</li>
+ <li>dvt68876 - (results) Relative pathnames to bits of VHDL vector signals in $init_signal_spy, are now correctly resolved. Also improved the error handling/reporting of objects that are not found.
+</li>
+ <li>dvt68543 - (results) Setting acc on an instance wasn't setting it on the ports of the instance.  This could result in ports tied to constants being shared, so that a force on one would cause the others to be forced as well.</li>
+ <li>dvt68968 - (results) If two port-actuals in an instance use the same variable, a bit-select and a slice of it, one could see incorrect simulation results with one of the ports being driven with the wrong value.</li>
+ <li>dvt68466 - (results) The -mixedansiports option will now not error out for redeclaration of unpacked arrays declared earlier in the port list. For example, the following testcase used to error out with -mixedansiports earlier <br>
+
+module eu_dhparser ( <br>
+                      output   enc_dec [0:1],<br>
+                      output   num_of_cmd [0:1],<br>
+                      output   [0:1] enc_dec1 [0:1]<br>
+                   );<br>
+
+        wire    enc_dec[0:1];  // generates (vlog-2248) warning<br> 
+        reg  num_of_cmd[0:1]; // generates error: already declared .. with a conflicting variable type.<br>
+        wire [0:1] enc_dec1[0:1] ; // generates error: already declared .. with a conflicting variable type.<br> 
+
+endmodule<br>
+<br>
+Now all 3 redeclarations will generate warnings with -mixedansiports.</li>
+ <li>[nodvtid]  - (results) Fixed replication expression value if replication multiplier is 0.</li>
+ <li>dvt69262 - (results) Increased the default value of the modelsim.ini variable SolveArrayResizeMax. The old default value was 2000. The new default value is 10000.</li>
+ <li>dvt64840 - (results) Fixed bug in case generates which resulted in wrong simulation results.</li>
+ <li>dvt69309 - (results) Fixed bug in single bit multiplication which resulted in wrong simulation results.
+</li>
+ <li>dvt20444 - (results) Undefined system tasks/functions will generate error 12023 during simulation, if they are executed.</li>
+ <li>[nodvtid]  - (results) Added an error if continuous assignments are used on variables accessed through virtual interface.</li>
+ <li>dvt35070 - (results) Vsim used to report illegal results when a part select of more than 32 bits size on a hierarchical reference of a net is forced using verilog force. This is now fixed.</li>
+ <li>dvt69036 - (results) vpi_get_value used to report junk values with greater than 32 bits constant values. This is now fixed.</li>
+ <li>dvt69379 - (results) Fixed issue with target size determination in nested streaming concat.</li>
+ <li>dvt38461 - (results) Fixed vopt issue when  some source files are compiled with -sv05compat and others with -sv09compat.</li>
+ <li>dvt66845 - (results) Fixed issue with calls to system functions inside recursive functions. The return value of a system function inside a recursive function was being overwritten.</li>
+ <li>dvt35989 - (results) Assignment to an uninitialised dynamic string array using concatenation did not work properly.
+The following case did not work :
+string arr[int] = '{default: ""};
+arr[10] = {arr[10] , " " , "test"};
+
+This has been fixed.</li>
+ <li>dvt16615 - (results) An assignment pattern passed as an output port-actual for a 'struct' port was not connected correctly, causing it to not be driven.</li>
+ <li>dvt69536 - (results) In the -novopt flow, if the SDF source file associated with a compiled SDF file was changed but the modification time of the source remained older than that of the compiled SDF, then the simulator didn't automatically recompile the SDF.</li>
+ <li>dvt70293 - (results) SystemVerilog force statement is simulated incorrectly when calling from DPI.</li>
+ <li>dvt71242 - (results) Conditional $recovery and $hold timing checks could report false violations when simultaneous events occur.</li>
+ <li>dvt71429 - (results) Using a streaming concat inside a regular vector concat could result in vsim crashing or getting the wrong value.</li>
+ <li>dvt71985 - (results) Taking a slice of an unpacked net array could produce the wrong value under some circumstances.</li>
+ <li>dvt72057 - (results) For large designs with a common clock driving more than 2 million udp instances, udp sensitivity to the clock may be lost.</li>
+ <li>dvt72134 - (results) Registers feeding into a primitive that drives an output of a full timing optimized cell could provide incorrect results.</li>
+ <li>dvt71528 - (results) Optimized gate-level cells with path delays specified in the HDL with large values, could result in zero delay propagation delays.</li>
+ <li>dvt72442 - (results) Fix vopt assertion fatal error. </li>
+ <li>dvt35213 - (results) The simulator command line option +notifier_ondetect causes timing check notifier toggle generated X output values to be scheduled with zero delay. </li>
+ <li>[nodvtid]  - (results) Added vpi_get_str() support for vpiArrayType.</li>
+ <li>dvt38362 - (results) Preoptimized Design Units(PDUs) that have been re-vopted, but have not changed in their design content, are now used in simulation without requiring re-vopting the top-level.
+
+</li>
+ <li>dvt67662 - (results) Memory usage has been reduced for delay statements within fork/join blocks. In some cases the coalesced statements from these delays result in the simulator printing a different final simulation time. The waveform window may show a different max simulation time than previous releases. The simulation data itself is not affected by this change, only the simulator's final time when it determines there are no more events to process.</li>
+ <li>[nodvtid]  - (results) Added enhancement for module ports with no connection when default value is given. Separate warning is shown for these ports. </li>
+ <li>[nodvtid]  - (results) Relaxed the severity of message for non matching of end label in tasks/functions. Message can be suppressed now.</li>
+ <li>dvt69392 - (results) Added support for capital hex format specifier (%H or %X) which will cause printed hex alpha values to be capitalized. To enable this behavior vsim switch "-svext=fmtcap" has to be used.</li>
+ <li>dvt64505 - (results) If the identifier name in a portlist or a local declaration inside a design unit matches a typename being imported from the global scope, then the global typename is ignored and the identifier name does not conflict with the type name.</li>
+ <li>dvt66691 - (results) Support has been added for port connections between SystemVerilog-2012 interconnect and VHDL records.</li>
+ <li>[nodvtid]  - (results) An enhancement has been added for use of array querying functions $size, $left, $right, $low, $high with packed structs, unions and enums.</li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>dvt64565 - (results) Now instances under VHDL generates can be specified as the SDF back-annotation point with -sdfmin/typ/max switches. For example, "-sdfmax /test/gen_buf1_inst(1)/wrap_buf1_inst=test.sdf", where instance "wrap_buf1_inst" is under the VHDL generate "gen_buf1_inst", now annotates successfully. Now VHDL and Verilog generate scopes (e.g. /test/gen_buf1_inst(1) above) are also accepted.</li>
+ <li>dvt71619 - (results) On 64 bits, array shift and rotate operations whose second operand ( shift/rotate amount) is INTEGER'LEFT
+would generate a stack overflow error. This has been fixed and the result when the shift/rotate amount is
+ INTEGER'LEFT on both 64 and 32 bit has been changed to generate the correct value.</li>
+ <li>dvt141 - (results) VHDL access variables (variables of an access type) and their related access objects (designated objects of such variables) can now be logged and displayed in various GUI windows.  Use the vsim switch -accessobjdebug to enable this feature.  See the manuals for more details.</li>
+</ul>
+<p /><dd><font size="3"><b>Coverage  Compatibility</b></font></dd>
+<ul><li>dvt63878 - (results) Some covergroups were missing in Covergroups window in live simulation mode.</li>
+ <li>dvt64741 - (results) Coverage report was crashing due to a potential test data record linked with a testplan section.</li>
+ <li>dvt38061 - (results) HTML report bydu coverage items under function scopes were incorrect.</li>
+ <li>dvt35026 - (results) Some ignored auto cross bins were showing up in report and postsim GUI when a participating coverpoint is for an enum type variable.</li>
+ <li>dvt35768 - (results) Before this fix:-
+<ul>
+<li> if the design has toggle coverage under an instance such that the DU of this instance has only a single instance,</li>
+<li> Then; When having a testplan section that links to this toggle coverage, the html report for this testplan section will display an incorrect coverage value.</li>
+</ul>
+After this fix:
+<ul>
+ <li> Coverage values for such testplan sections will be correct (similar to those found in the Tracker Window) </li>
+</ul></li>
+ <li>dvt66129 - (results) The HTML report, generated by vcover, did not display coverage information in the testplan for code coverage items under design units.  </li>
+ <li>dvt68772 - (results) When a duplicate covergroup instance name is specified in the source code, the simulator by default will issue a warning and then automatically generate a unique name to resolve the conflict. When vsim option -pedanticerrors is used, the duplicate name will trigger a fatal error.
+
+</li>
+ <li>dvt69511 - (results) Added -verbose switch in coverage save to show the work in progress by printing the number of written bins in regular interval</li>
+ <li>dvt71441 - (results) Alias toggle nodes are now stored in UCDB by default during coverage save from simulation. The -notogglealias option is added in vsim to stop storing the alias toggle nodes in UCDB during the coverage save from simulation</li>
+ <li>dvt69962 - (results) Added covergroup bin summary in vcover stat and coverage totals report output.</li>
+</ul>
+<p /><dd><font size="3"><b>Power Aware  Compatibility</b></font></dd>
+<ul><li>dvt64893 - (results) Added a vopt option to disable inout functionality between connections involving UPF supply net and HDL inout port. In such cases, the connection will be made in a way that all existing HDL drivers of the inout port will be removed and only UPF supply net will drive the HDL inout port. The vopt option is -pa_disable=inoutsupplyconn.</li>
+ <li>dvt38585 - (results) Added support to apply multiple "set_related_supply_net / set_port_attributes -repeater_supply" commands in the same feed-through path.
+After this fix, repeater buffers will be inserted in the path which will break the feed-through path into multiple small segments.
+This will change the results as Isolation/Level shifters will be inserted according to source/sink supplies of each segment.
+Questa PA checks are also enhanced accordingly to check the Isolation/Level Shifter requirement for each segment.
+Now, PA static report will have "Supplies" field corresponding to supply attributes along with Domain information.
+<pre>
+Source power domain : { PD_MID1(Supplies(SS1_PWR,SS1_GNET)) } -> Sink power domain: { PD_TOP(Supplies(SS2_PWR,SS2_GNET)) } [ Total count: 1 ]
+   1. LS( count: 1 ): Candidate Port: /tb/top_inst/mid1/out1_bot, count:1, level shifting strategy : ls1, Domain: PD_MID1,
+     Source port{Supplies(SS1_PWR,SS1_GNET)}: /tb/top_inst/mid1/bot1/out1_bot, count:1 [ LowConn ] -> Sink port {Supplies(SS2_PWR,SS2_GNET)}: /tb/top_inst/mid1/out1_bot, count:1 [ HighConn ]
+     Possible reason:'Level shifter of required direction is present from (Supplies(SS1_PWR,SS1_GNET)) => (Supplies(SS2_PWR,SS2_GNET)) 
+</pre></li>
+ <li>dvt31491 - (results) Now SV Enum types would be corrupted from their base value instead of their `left value.<br>
+     Example : <br>        
+           typedef enum bit unsigned [31:0] { ONE=1, TWO,THREE} enum_t3;<br>
+           The new corruption value for above type would be "0" instead of "ONE(1)". <br></li>
+ <li>dvt64068 - (results) Added support for bit level specification of set_port_attributes for attributes -driver_supply/-repeater_supply/-receiver_supply/-related_power_net/-related_ground_net</li>
+</ul>
+<p /><dd><font size="3"><b>Mixed Language  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (results) A new vsim option, -mlopt, has been added. When this option is specified, mixed language nets that cross Verilog-VHDL language boundaries are optimized better. The maximum impact will be seen when a large number of highly active nets like clocks cross Verilog-VHDL language boundaries multiple times. 
+
+In a few corner case scenerios, there may be differences in simulation results. The differences are mainly about initial values on mixed language nets. The most common difference will be VHDL nets that may have an initial value of 'X' instead of 'U'.
+
+There are limitations to what is currently supported with -mlopt. Specifically:
+- The -mlopt option will be ignored when doing power aware simulation.
+- The -mlopt option will be ignored when doing multi-core (mc2) simulation.
+- SDF annotation of interconnect and port delays onto mixed-language nets is not supported. Attempting to annotate delays when -mlopt is specified will result in errors.
+- This option is only supported for VHDL std_logic and std_ulogic based types (including arrays where the elements are of these types), and Verilog logic types.
+- VHDL type conversions and conversion functions are not allowed on a mixed language net when -mlopt is specified.
+- This option is ignored if the design has analog components.
+</li>
+</ul>
+<p /><dd><font size="3"><b>General  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source) There is a change in the meaning of "recursion level" specified to various vopt options like +acc/+noacc/+cover/+nocover/+initreg/+initmem. Before, this level meant how many levels under the current level, the option is to be applied. So, level 0 meant no recursion. Now, 0 recursion level means full recursion. And this option means how many levels including the current level, the option is to be applied. <br>
+The following change in the recursion level keeps the options behaving the same way as before. <br>
+previous: +acc=r+/top/r now: +acc=r+/top/r (no change) <br>
+previous: +acc+/top. now: +acc+/top. (no change) <br>
+previous: +acc+top+128 now: +acc+top+0 (full recursion) <br>
+previous: +initreg+0+/top/du+0 now: +initreg+0+/top/du+1 (level -> level + 1) <br>
+previous: +cover+lib1.du+2 now: +cover+lib1.du+3 (level -> level + 1)</li>
+ <li>[nodvtid]  - (source) Some of the +acc options are replaced with some other options. As of now, the old options are deprecated, but will continue to work to maintain backward compatibility. <br>
+The following +acc options are not changed: +acc=mnprtv <br>
+These +acc options map to the following new options: <br>
++acc=a -> -assertdebug +noacc=a -> -noassertdebug <br>
++acc=b -> -bitscalars +noacc=b -> -nobitscalars <br>
++acc=c -> -cellaccess +noacc=c -> -nocellaccess <br>
++acc=f -> -fsmdebug +noacc=f -> -nofsmdebug <br>
++floatparameters -> -floatparameters <br>
++acc=l -> -linedebug +noacc=l -> -nolinedebug <br>
++nosparse -> -nosparse <br>
++acc=u -> -primitiveaccess +noacc=u -> -noprimitiveaccess <br>
++acc=x -> -randmetastable +noacc=x -> -norandmetastable <br>
++acc=s -> -systfoverride +noacc=s -> -nosystfoverride <br>
+
+</li>
+ <li>[nodvtid]  - (results) By default, vsim will now print command line with original and unexpanded options, i.e. vsim -f args.f. 
+Previous behavior to print command line with expanded option can be obtained using -stats=cmd+verbose option. 
+</li>
+ <li>dvt70434 - (results) 
+Added support to handle RTL x-pessimism on index variables used as bit-select in xprop resolve mode.<br>
+Example : <br> 
+ always@(arr[idx])<br>
+     q = arr[idx]);<br>
+<br>
+For idx = x and arr = 2'b00<br>
+  q = 0; (xprop resolve mode simulation)<br>
+  q = x; (xprop pass mode simulation)<br>
+  q = x; (normal RTL simulation)<br></li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt38039 - (results) The "test analysis" now displays "-" for the rank of non-contributing tests.</li>
+ <li>dvt36774 - (results) Coverage trend HTML report was not opening pages for internal attributes.</li>
+ <li>[nodvtid]  - (results) Preserving the mergefile from auto-deletion, between the passes of the global rerun functionality. </li>
+ <li>dvt38304 - (results) Duplicate section numbers are now treated as an error in xml2ucdb (instead of warning).
+Duplicate section titles among siblings are now treated as an error in xml2ucdb (instead of warning).</li>
+ <li>dvt10404 - (results) The "coverage analyze -select ..." filter expressions will now support a "dateattribute < attribute name >" argument.
+The attribute name specified must be a string attribute. 
+<pre>
+The acceptable date formats are:
+    mm/dd[/yy]
+    monthname dd[, yy]
+    dd monthname [yy]
+    [yy]yymmdd
+    [yy]yy-mm-dd
+    dd-monthname-[yy]yy
+Supported comparisons are:
+        -eq
+        -ne
+        -ge
+        -gt
+        -le
+        -lt 
+</pre></li>
+ <li>dvt67824 - (results) UCDB tools have improved their accuracy/precision. In particular, tools like coverage/vcover ranktest, analyze and report may display slightly different numbers and behavior than that of previous releases (ex. numbers with higher accuracy).
+<pre>
+NOTE #1: The 'coverage_pct' and 'goal_pct' fields of the 'ucdbCoverageT' data structure in file 'ucdb.h' has changed from float to double. This is a change from previous versions of the UCDB API.
+NOTE #2: The 'coverage_pct' field of the 'ucisCoverageT' data structure in file 'ucis.h' has changed from float to double. This is a deviation from the UCIS standard.
+</pre>
+
+</li>
+ <li>dvt70788 - (results) Source files are suppressed by default in HTML reports. To add them, use the new '-source' option. The old '-nosource' option is now obsolete.</li>
+ <li>dvt70802 - (results) HTML coverage details pages are suppressed by default in HTML reports. To add them, use the new '-details' option. Also, the user can specify which coverage type details he/she is interested in. So, the user can use "-details=sb" to print the details for statement and branch details page. Allowed characters are abcdefgst which refers to assertions, branches, conditions, cover directives, expressions, FSM, covergroups, statements and toggles respectively. The old '-nodetails' option is now obsolete.</li>
+ <li>dvt65321 - (results) Filtering options are added in vcover html trend report generation for selecting trend dates, coverage types, and test status types. The -linegraph option is also added to switch the display of coverage trend charts from bargraphs to linegraphs.</li>
+</ul>
+<p /><dd><font size="3"><b>SystemC  Compatibility</b></font></dd>
+<ul><li>dvt34970 - (source) Questa 10.4 now supports SystemC-2.3 (IEEE 1666-2011 standard) as default SystemC version. Questa 10.4 will also support SystemC-2.2 (IEEE 1666-2005 standard) as optional SystemC version.<br>
+<b>For SystemC-2.3 (IEEE 1666-2011) </b>
+<ul>
+<li> <b>Platforms supported:</b> linux, linux_x86_64 and win32 </li>
+<li> <b>Compilers supported:</b> gcc-4.7.4, gcc-4.5.0 for linux and linux_x86_64, and gcc-4.2.1 for win32. </li>
+<li> <b>Header files location:</b> &lt;path to questa install tree&gt;/include/systemc/sc </li>
+<li> <b>TLM version supported:</b> 2.0.2 </li>
+</ul>
+<b>For SystemC-2.2 (IEEE 1666-2005) </b>
+<ul>
+<li> <b>Platforms supported:</b> linux, linux_x86_64 and win32 </li>
+<li> <b>Compilers supported:</b> gcc-4.5.0, gcc-4.3.3 for linux and linux_x86_64 and gcc-4.2.1 for win32.</li>
+<li> <b>Header files location:</b> &lt;path to questa install tree&gt;/include/systemc/sc22 </li>
+<li> <b>TLM version supported:</b> 2.0.1 </li>
+<li> <b>Tool options:</b> To enable SystemC-2.2 version, use &ldquo;-sc22&rdquo; option with sccom/vopt/vsim, or set &ldquo;Sc22Mode&rdquo; modelsim.ini variable. Please see User&rsquo;s manual for more details. </li>
+</ul>
+<b>Backward compatibility with 10.3x and earlier </b>
+<ul>
+<li> If design is currently setup with 10.3x and earlier releases and user doesn't want to move to SystemC-2.3 version, then use option &ldquo;-sc22&rdquo; with sccom/vopt/vsim or set modelsim.ini variable &ldquo;Sc22Mode&rdquo; with 10.4 release to continue to use the existing design setup. </li>
+</ul></li>
+ <li>[nodvtid]  - (results) The 6202 warning for using a VPI routine in a SystemC constructor is now a suppressible error.</li>
+</ul>
+<p /><dd><font size="3"><b>SVA/PSL  Compatibility</b></font></dd>
+<ul><li>dvt67965 - (source, results) Assertion report will now show pass count as 1 if an assertion passed once or more during simulation in fully optimized mode when vsim is not run with -assertcover.  Previously we did not show any pass information in the assertion report.
+This change will result in differences when compared with any existing assertion report of a fully optimized design.
+This change will also affect the coverage report when we reported an assertion as passed (covered) if it did not have any failures.  Now the coverage report will be consistent with the one that we have when assertion counts are present, i.e. an assertion is considered covered if it did not fail and has a pass count > 0.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 10.4</b></font>
+<ul><li>dvt8015 - An enhancement has been added to detect stack overflow at runtime. The simulator will catch most 
+stack overflow issues by default and report an error message similar to the following:
+<pre>
+# ** Fatal: (vsim-177) A possible stack overflow is detected!! The stack pointer (0xff3fe000) is outside the specified stack limit of 10485760 bytes. The current stack usage is 12587008 bytes starting from stack top at 0xffffd000. The current call stack is the following: 
+# 
+# Function incr1 src/stackoverflow6.sv(9)
+# Function incr3 src/stackoverflow6.sv(31)
+# Function incr2 src/stackoverflow6.sv(21)
+# Function incr1 src/stackoverflow6.sv(11)
+# Function incr3 src/stackoverflow6.sv(31)
+# Function incr2 src/stackoverflow6.sv(21)
+# Function incr1 src/stackoverflow6.sv(11)
+# Function incr3 src/stackoverflow6.sv(31)
+(more stack frames display are omitted)
+# 
+# A total of 100 stack frames are displayed; further frames have been suppressed.
+#    Time: 0 ns  Iteration: 0  Process: /badtop_stackoverflow6/#INITIAL#34 File: src/stackoverflow6.sv
+# Fatal error at src/stackoverflow6.sv line 9
+</pre>
+A new vsim switch "-stackcheck" is also available. This provides a more thorough check of stack issues at the cost of performance.
+<br>
+Root causes of stack overflow issues may include a function/task call with deep
+recursion, or an automatic function/task using large size formal/local variables, or a
+combination of the two. It is recommended that the root cause of the issue in the source
+code be identified and recoded. The error message may already contain the call stack
+information. If not, please check whether a vsim_stacktrace.vstf is generated, and if available,
+send it to support for analysis. A quick workaround is to change your shell's stack size limit
+by setting it to a number bigger than the required size mentioned in the error message.
+Try using shell command 'limit stacksize <bigger-value>' to increase the stack size.
+</li>
+ <li>dvt68348 - Fixed a simulation crash at quit time triggered by vsim-133 error (Unable to remove directory).</li>
+ <li>dvt67939 - Use of "-batch" and "-load_elab" options together would cause vsim to crash.  This has been resolved.</li>
+ <li>dvt70157 - Restored vmake's behavior for VHDL design units to better deal with building incrementally and use of vcom's "-f" switch.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.4</b></font>
+<ul><li>dvt65452 - The QuestaSim profiler sometimes reported the file name and line number of activity as "UNKNOWN:<NNN>".  This has been corrected to show the correct file name.</li>
+ <li>dvt65471 - Two preference variables were added to provide control of source window behavior when a source file is modified external to the source window. PrefSource(CheckModifiedFiles) controls if the source window checks for external file modifications. PrefSource(AutoReloadModifiedFiles) will automatically reload a file into a source window if it is modified outside of the source window.</li>
+ <li>dvt67630 - The "Callers and Callees" function in the profiler windows did not populate the Profile Details window when doing memory profiling.  This has been corrected.</li>
+ <li>dvt68030 - When using vsim -batch, setting the Tcl variable SolveArrayResizeMax had no effect.  This issue has been resolved.</li>
+ <li>dvt68029 - When using vsim -batch, the command line was not printed into the log file as when using -c.  This issue has been resolved.</li>
+ <li>dvt68028 - The qverilog command does not recognize the simulator option -batch.  This issue has been resolved.</li>
+ <li>dvt68326 - (source) Improved error checking for invalid and out-of-range values for the vsim "-sv_seed <seed>" command line option. A valid seed value is a non-negative 32-bit integer. Invalid seed values will trigger a warning message and will be ignored.</li>
+ <li>[nodvtid]  - Under rare conditions, an attempt to bring up the RMB menu in the source window would cause the GUI to hang.  This has been repaired.</li>
+ <li>dvt69696 - (results) One bit Verilog nets displayed in binary radix would incorrectly show the strength prefix (e.g. St1).  This has been fixed and the strength prefix is only displayed when the radix is set to "Symbolic."</li>
+ <li>[nodvtid]  - (results) SystemC integer types (e.g. short, int, long) did not show the radix prefix when the showbase radix qualifier was enabled.</li>
+ <li>dvt26963 - Drag and drop a compare object from the compare tab in the Structure window to the List window did not work.  This has been repaired.</li>
+ <li>dvt69489 - In the Dataflow Window, pressing the right mouse button on the time bar in the wave area would cause a TCL script error.  This has been fixed to correctly bring up the RMB time bar menu.</li>
+ <li>dvt38385 - In GUI mode, using the restore command outside of vsim caused uninformative error "can't read "vsimPriv(Server)": no such element in array" and would cause eventual GUI crash.</li>
+ <li>dvt69296 - The [find signals -ports] command returns incorrect list of signals in regions with no ports, in some cases.  The main issue was SV interfaces without ports would cause the list of signals in the containing region to be returned.  The correct list of ports is now returned, or an empty list if no ports are found.</li>
+ <li>dvt69259 - In some rare cases the GUI would hang when right-clicking on a signal in the Source Window.  Depending on the specific hierarchy of the design an infinite loop would occur when checking conditions to enable/disable the items in the RMB menu.
+</li>
+ <li>dvt70832 - Class object values would display -No Data- and the waveforms would not draw if there were also transactions in the wave window.</li>
+ <li>dvt70981 - Questa would run a specified do-file after loading a WLF file if the -view switch was used (e.g. vsim -do file.do -view vsim.wlf), but run the do-file before loading the WLF file if the -view switch was not used (e.g. vsim -do file.do vsim.wlf).  This has been resolved to run the do-file following the loading of the WLF file in both cases.</li>
+ <li>dvt63858 - Toggling the "Within Cells" mode of the Memory List window while a search filter is in use can cause the display of an incomplete list of memories.  This issues has been resolved.</li>
+ <li>dvt71982 - (results) Individual 2-state SV struct field values could be shown incorrectly in the Objects window.  This has been corrected.</li>
+ <li>dvt64155 - Two new radixes have been implemented, sfixed and ufixed (signed fixed and unsigned fixed, respectively.)  Values may be displayed using these radixes, for example, [examine -radix ufixed var] might produce the value 1.375.  The criteria for displaying an object as sfixed or ufixed is that the type of the object must be an array of std_ulogic elements between 2 and 64 bits long with a descending range.  (The set of supported types may increase in the future.)  The binary point for the value is implicitly located between the 0th and -1st elements of the array.  The index range for the type need not include 0 or -1, for example (-4 downto -8) in which case the value will be extended for conversion, as appropriate.  If the type does not meet these criteria the value will be displayed  as decimal or unsigned, respectively.  The radix command, global radix dialog and wave window radix menus support these radixes.</li>
+ <li>dvt71287 - The "Fixed Point Radix" dialog box was missing the radix "decimal" as a possible base type.  This has been corrected.  Decimal is now the default base selection in the dialog.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.4</b></font>
+<ul><li>dvt37264 - (results) Vopt failed to find objects in +acc statements with hierarchical pathnames containing unnamed if-else and case scopes (they have names of the format "genblk&ltn&gt", where &ltn&gt is a positive integer).</li>
+ <li>dvt36474 - VPI access of bit-selects and part-selects of packed arrays caused a memory leak (that eventually caused 32-bit platforms to run out of memory) and a slow down in vsim. </li>
+ <li>[nodvtid]  - (results) The genvar variables incorrectly reported a vpi type of vpiIntegerVar instead of vpiGenVar. The underlying error caused genvars to be incorrectly displayed in vsim's Object Window and to be included in the .wlf files (in a "log -r /*").</li>
+ <li>dvt37189 - Fixed a bug where let could not be referenced using scope resolution operator (::) without importing the package.</li>
+ <li>dvt64075 - $countones usage in coverpoint expressions might cause a fatal simulation error under certain circumstances.</li>
+ <li>dvt64400 - Vopt would crash with an internal error when encountering a port-actual which was a concat containing packed-struct members.</li>
+ <li>dvt64554 - (results) Elements of arrays whose width has been specified with a parameter, can now be forced with the Verilog "force" construct.</li>
+ <li>dvt64603 - (results) Now in vopt, access flags from OCF files (using "-ocf" switch) can be applied to objects under Verilog unnamed generate scopes. Similar objects specified in SignalSpy system tasks are now correctly resolved too.</li>
+ <li>dvt64937 - (results) Under the following condition, X transition delay on an input port with SDF INTERCONNECT delays, was incorrect.
+The SDF file had RETAIN delay values (associated with some IOPATH) that resolved to the same as that of an INTERCONNECT delay and the RETAIN delay was annotated before the INTERCONNECT delay.
+</li>
+ <li>dvt65126 - An associative-array parameter inside a package would cause a crash during elaboration.</li>
+ <li>dvt63088 - Always_comb sensitivity to elements of multi-dimensional net arrays was not being set properly.</li>
+ <li>dvt65469 - A 'specify' block in a nested module would cause vopt to crash.</li>
+ <li>dvt65683 - (results) A pulse generated from an always block using different NBA delays to the same target was suppressed on subsequent clock cycles.</li>
+ <li>dvt65704 - Multiple $test$plusargs calls in the same expression produced incorrect results in some cases.</li>
+ <li>dvt65217 - A clocked always block had extra or missing evaluations in some unusual cases where the body of the always block reads a variable referenced with a hierarchical reference.</li>
+ <li>dvt65705 - Fixed a bug where sometimes tool was not identifying that a task with delay was getting called in a function. This happened when tasks were virtual.</li>
+ <li>dvt36828 - Fixed a bug where checker could not be instantiated inside a program block. Also fixed a bug where default clocking was not getting referenced from the declaration scope of the checker. </li>
+ <li>dvt65850 - (results) Fixed a bug where incorrect result was given while reading part of mult-dimensional packed array containing structures. eg arr[i].b[1] for 3 dimensional array.</li>
+ <li>dvt66363 - Hierarchical references connected with the System Verilog "alias" construct resulted in an elaboration crash in some cases.</li>
+ <li>dvt65713 - A streaming concat cast to a specific width was incorrectly resulting in an error (8285) reported during elaboration.</li>
+ <li>dvt66786 - (results) Gate level simulations with forces on input ports and interconnect delays could see force values misapplied.</li>
+ <li>dvt66851 - Assigning an empty concat to a queue with -pedanticerrors erroneously resulted in an error in vlog.</li>
+ <li>dvt65212 - When a class extended from a parameterized class contained an array, it was listed as a memory object under scope of function "new". e.g. "child::new/this" In this case, GUI could crash. Now, this array is not listed as a memory object under scope of function "new".</li>
+ <li>dvt66856 - Using the 'delete' method on a wildcard associative array, where the index provided is a concat expressions, could result in a crash.</li>
+ <li>dvt66781 - (results) An associative array element passed as a 'ref' argument to a task/function was being treated as an input, so a warning was printed (and the default value passed) if the element did not exist.  It is now treated as an 'lvalue', so it is created if it does not exist, and is then passed to the routine.</li>
+ <li>dvt66917 - A streaming concat with more than one field expression in its argument list would generate incorrect results.</li>
+ <li>dvt66935 - A signed index expression narrower than 32 bits wide was treated as unsigned in some unusual cases.</li>
+ <li>dvt66769 - A function call having all constant arguments evaluated incorrectly in some case if the function contained assignments to indexed part-selects.</li>
+ <li>dvt66594 - Fixed a bug where implicit drivers created due to clocking blocks were getting considered as real drivers and were causing error 12003 to be generated.</li>
+ <li>dvt67234 - An incorrect out-of-bounds error would be reported on a port, where the port was a packed multidimensional array and the actual was an in-bounds element.</li>
+ <li>dvt38466 - Questa erroneously reported a 'not found' message during elab for '$$' for a call to an automatic function through a virtual interface.</li>
+ <li>dvt24183 - In some cases constant functions returned incorrect results (typically a zero) during elaboration if the function return type contained a parameter.</li>
+ <li>[nodvtid]  - vlog accepts more types of macros which themselves define macros.</li>
+ <li>dvt67739 - Inlining in the presence of a concat passed as an actual to a net port could cause vopt to crash.</li>
+ <li>dvt65787 - (results) In 2-step flow vopt didn't recognize when SDF source file content has changed. In the incr flow, this caused the out-of-date SDF data that was previously captured in the compiled SDF file (under the automatically created vopted design) to be used.</li>
+ <li>dvt67889 - An always_comb or "always @*" having all elements of an unpacked net array in its implicit sensitivity crashed or produced incorrect results during simulation in some cases.</li>
+ <li>dvt67605 - In some cases a reference to a port whose actual is a part or bit-select would result in an erroneous out-of-bounds error, or an internal error.</li>
+ <li>dvt67725 - A constant assignment pattern assigned to a complex type involving an associative array (like an array of associative arrays) could cause a crash in vlog or vopt.</li>
+ <li>dvt68106 - A part-select of an interface array passed as a port actual would cause a crash if the bounds were in the wrong order.  We now print an error.</li>
+ <li>[nodvtid]  - A net delay in a vector net declaration resulted in net updates using the incorrect delay in some cases.</li>
+ <li>dvt66463 - An erroneous fatal error (3976) could occur during elaboration for a continuous assignment to a member of a packed struct, where the struct is externally referenced.</li>
+ <li>dvt65714 - (results) When "+vlog_retain_same2same_on" was specified, conditional specify paths with SDF RETAIN delays did not evaluate correctly.</li>
+ <li>dvt68271 - Fixed a bug where vopt was crashing due to usage of $past in the port connection. This was happening when the second argument to $past (number of clock ticks) was explicitly specified.</li>
+ <li>dvt65765 - (results) An unpacked array concatenation with an empty array would cause the result to have an extra invalid entry.  </li>
+ <li>dvt68672 - Fixed a bug where internal error vtree_dt2.c(8285) &lttdef && typeof(tdef) == TYPEDEF_DECL && line_numberOf(tdef) == lineno && tok_numberOf(tdef) == tokno&gt. was getting issued in vopt. Now, no internal error is issued.</li>
+ <li>dvt68217 - (results) Vsim's "-errorfile" switch facilitated redirection of all non-assert messages (errors, warnings & notes). Therefore, the name "-errorfile" was deemed confusing and has been changed to "-msgfile". The old switch is still recognized for backward compatibility.</li>
+ <li>dvt64800 - Vsim would sometimes give an erroneous error 8876 ("Rerun vopt with -novifassumptions...").</li>
+ <li>dvt68738 - (results) Printing an interface instance using $display and %p through a virtual interface would cause a fatal error.  Printing an instance directly would either crash or print nothing.  These are both fixed.</li>
+ <li>dvt68824 - (results) Calling vpi_get_time function with a VPI handle of wrong type (for example to a package) would cause vsim to crash. </li>
+ <li>dvt68554 - (results) The following two issues caused by "-warning error" switch have been fixed. In vsim, Note messages got turned into errors. In vlog and vopt, warnings that were not reported without the switch got reported as Errors.</li>
+ <li>dvt68876 - (results) Relative pathnames to bits of VHDL vector signals in $init_signal_spy, are now correctly resolved. Also improved the error handling/reporting of objects that are not found.
+</li>
+ <li>dvt68543 - (results) Setting acc on an instance wasn't setting it on the ports of the instance.  This could result in ports tied to constants being shared, so that a force on one would cause the others to be forced as well.</li>
+ <li>dvt68919 - vlog should not produce an error when assigning a parameterized virtual with a type parameter actual declared in a package to an equivalent parameterized virtual with a type parameter actual declared in a module.</li>
+ <li>dvt68968 - (results) If two port-actuals in an instance use the same variable, a bit-select and a slice of it, one could see incorrect simulation results with one of the ports being driven with the wrong value.</li>
+ <li>dvt63879 - Now a suppressible error will result when a variable is used for inout port inside modport.</li>
+ <li>[nodvtid]  - Non-std extension: Allow reduction NAND ~& and reduction NOR ~| as binary operators. 
+These operators now can be used by using "-suppress 13072" or "-permissive" switches.</li>
+ <li>dvt68466 - (results) The -mixedansiports option will now not error out for redeclaration of unpacked arrays declared earlier in the port list. For example, the following testcase used to error out with -mixedansiports earlier <br>
+
+module eu_dhparser ( <br>
+                      output   enc_dec [0:1],<br>
+                      output   num_of_cmd [0:1],<br>
+                      output   [0:1] enc_dec1 [0:1]<br>
+                   );<br>
+
+        wire    enc_dec[0:1];  // generates (vlog-2248) warning<br> 
+        reg  num_of_cmd[0:1]; // generates error: already declared .. with a conflicting variable type.<br>
+        wire [0:1] enc_dec1[0:1] ; // generates error: already declared .. with a conflicting variable type.<br> 
+
+endmodule<br>
+<br>
+Now all 3 redeclarations will generate warnings with -mixedansiports.</li>
+ <li>[nodvtid]  - Fixed issue- Issue with expression longint - 1 and longint +1 when governed with real type inside class. </li>
+ <li>dvt330099 - Fixed issue related to overflow of time values on 32 bit and also a bug in $display  for time literals.</li>
+ <li>[nodvtid]  - (results) Fixed replication expression value if replication multiplier is 0.</li>
+ <li>dvt32750 - (source, results) The following builtin methods will produce an error if used with associative arrays with wildcard indices, provided the testcase is run with -pedantic switch<br>
+
+1. first()<br>
+2. last()<br>
+3. prev()<br>
+4. next()<br></li>
+ <li>dvt64402 - Fixed vsim crash in sequential assignment statement where the target is a muti-dim array of parameterized type.</li>
+ <li>dvt68292 - A constant declared inside a package when used in a port map would sometime results in a vopt crash. This is now fixed.</li>
+ <li>dvt68088 - Stop the explicit port mapping getting overwritten by implicit port mapping (dot star).</li>
+ <li>dvt69262 - (results) Increased the default value of the modelsim.ini variable SolveArrayResizeMax. The old default value was 2000. The new default value is 10000.</li>
+ <li>dvt65373 - Fixed a bug related to declaration of class having parameters as default virtual interface. Now default virtual interface can be given in any order.</li>
+ <li>dvt67524 - Vopt would sometimes crash with very large designs containing SystemVerilog packages.</li>
+ <li>dvt67278 - (source, results) As per LRM requirement now an error will be given to user if the variables written in always_ff process are written by any other process as well.</li>
+ <li>dvt67337 - When one localparam is assigned a value using another localparam, an erroneous error 3371 might be reported.</li>
+ <li>dvt67456 - An external reference in an unpacked array concatenation could result in an erroneous compiler error claiming the number of elements doesn't match the array's.</li>
+ <li>dvt68778 - Vsim would sometimes generate incorrect errors like this for code in SystemVerilog packages:<br>
+# ** Error: (vsim-3043) test.sv(-2): Unresolved reference to 'a'.
+</li>
+ <li>dvt64840 - (results) Fixed bug in case generates which resulted in wrong simulation results.</li>
+ <li>dvt36943 - Fixed an issue where vopt crashes when +acc is specified to an incorrect path starting with a verilog configuration name.</li>
+ <li>dvt64934 - Fixed an issue where we would get unresolved reference errors for hier-refs accessing objects within an generate loop and +floatparameters is used.</li>
+ <li>dvt68960 - Fixed an issue in SV bind doesn't work, when bind target lies within an generate scope which can't be elaborated during vopt.</li>
+ <li>dvt69309 - (results) Fixed bug in single bit multiplication which resulted in wrong simulation results.
+</li>
+ <li>dvt65286 - Internally suppressing warning for macro redefinition for "+define+QUESTA+" in vlog as it is a special define.
+</li>
+ <li>dvt69630 - Fix a bug in DPI interface svPutUserData() where the previous user data can not be overwritten by the new data for the same scope/key input combination.</li>
+ <li>dvt20444 - (results) Undefined system tasks/functions will generate error 12023 during simulation, if they are executed.</li>
+ <li>dvt31751 - Some message used to say "(14)", now it says "(sccom-14)".</li>
+ <li>dvt67972 - Using an increment or decrement operator when assigning to a character in a SystemVerilog 'string' type would increment or decrement the index by 2 instead of 1.</li>
+ <li>dvt69804 - Fixed bug which resulted in incorrect vlog errors when $signed/$unsigned cast operation is used inside concatenation.</li>
+ <li>dvt69513 - Fixed a bug in for-generates which resulted in wrong vlog errors when enum literals are used in genvar initialization.</li>
+ <li>dvt69393 - Fixed a bug which was giving error when string parameter was used in argument of system call $readmemh</li>
+ <li>dvt67602 - Fixed an issue where unconnected_drive pull1 was not working with vopt.</li>
+ <li>dvt38331 - Fixed a bug where post increment operator on an argument of function of type byte was causing memory corruption.</li>
+ <li>dvt22670 - In some cases with inline randomization constraints, vlog incorrectly reported an error like:<br>
+** Error: pkg.sv(39): Can't use a typedef ('my_enum_t') here.<br>
+with the usage of a valid type name.
+</li>
+ <li>dvt64128 - Fixed a bug while assigning interfaces with similar starting name. For example my_itf_chk and my_itf.master.</li>
+ <li>dvt67482 - Introduced an error with -pedanticerrors if defparams or specparams are used inside interfaces.</li>
+ <li>[nodvtid]  - (results) Added an error if continuous assignments are used on variables accessed through virtual interface.</li>
+ <li>dvt69899 - A unique priority case statement having bitwise infix expression as selection choice may sometimes results in a vopt crash. This is now fixed</li>
+ <li>dvt66228 - An associative array with Integer key may not be able to search the elements in some cases, when the key is close to negative limit of integer. This is now fixed.</li>
+ <li>dvt34518 - In some cases, where a parameter is defined as a dynamic array and later used for defining other parameters, may result in an Integer Overflow Error. This is now fixed</li>
+ <li>dvt35070 - (results) Vsim used to report illegal results when a part select of more than 32 bits size on a hierarchical reference of a net is forced using verilog force. This is now fixed.</li>
+ <li>dvt69745 - Replaced error id 7052 with a new suppressible error(error id 7063) for unresolved hierarchical reference during vopt. The same error id 7052 is still present in vsim elaboration and is not suppressible. </li>
+ <li>dvt69036 - (results) vpi_get_value used to report junk values with greater than 32 bits constant values. This is now fixed.</li>
+ <li>dvt69379 - (results) Fixed issue with target size determination in nested streaming concat.</li>
+ <li>dvt69488 - (source, results) $printtimescale() call (with empty round brackets) will be treated as $printtimescale (without any brackets).</li>
+ <li>dvt38461 - (results) Fixed vopt issue when  some source files are compiled with -sv05compat and others with -sv09compat.</li>
+ <li>dvt66845 - (results) Fixed issue with calls to system functions inside recursive functions. The return value of a system function inside a recursive function was being overwritten.</li>
+ <li>dvt35989 - (results) Assignment to an uninitialised dynamic string array using concatenation did not work properly.
+The following case did not work :
+string arr[int] = '{default: ""};
+arr[10] = {arr[10] , " " , "test"};
+
+This has been fixed.</li>
+ <li>dvt70104 - Fixed a bug where vopt crashes when a field of an array of structures, which is itself is a packed structure, is accessed as a part-select in an always comb block.</li>
+ <li>dvt70147 - Fixed an issue where we get "(vsim-3043) Unresolved reference" errors for hier-refs present in the $unit scope and target of the hier-ref is present inside another design top. With +acc flags on the target object the error goes away.</li>
+ <li>dvt70053 - Fixed issue while converting verilog package to vhdl package with mixedsvvh switch.</li>
+ <li>dvt69753 - Passing a hierarchical reference to an interface port (a port that is an interface) to a function could result in a crash during runtime.</li>
+ <li>dvt16615 - (results) An assignment pattern passed as an output port-actual for a 'struct' port was not connected correctly, causing it to not be driven.</li>
+ <li>dvt70463 - Vopt would sometimes crash with an internal error when using a class typedef defined in a parameterized class. This has been fixed now.</li>
+ <li>dvt38055 - Vopt would sometimes crash with an internal error when passing the parameter of a parameterized class as a parameter to another parameterized class. This has been fixed now.</li>
+ <li>dvt69536 - (results) In the -novopt flow, if the SDF source file associated with a compiled SDF file was changed but the modification time of the source remained older than that of the compiled SDF, then the simulator didn't automatically recompile the SDF.</li>
+ <li>dvt70293 - (results) SystemVerilog force statement is simulated incorrectly when calling from DPI.</li>
+ <li>dvt67652 - Vopt would sometimes crash with an internal error when a function defined in a package is used with array locator method. This has been fixed now.</li>
+ <li>dvt71242 - (results) Conditional $recovery and $hold timing checks could report false violations when simultaneous events occur.</li>
+ <li>dvt64841 - Function calls with an unconstructed covergroup object was silently ignored. A suppressible error message will be thrown now to catch these potential coding errors.</li>
+ <li>dvt71152 - Bit-selects and part-selects of 2-state variables in module input port connections produced incorrect results in some cases.</li>
+ <li>dvt69512 - A function call in one of the bounds of a part-select produced the following vopt internal error in some cases: "Questa has encountered an unexpected internal error: ../../src/vlog/vgencode.c(114)".</li>
+ <li>dvt71073 - Automatic function defined in package would sometimes gives incorrect return value. This has been fixed now.</li>
+ <li>dvt70882 - A bit-select of a hierarchical reference connected to a module input port produced incorrect results in some cases if the bit-select index also contained a hierarchical reference.</li>
+ <li>dvt71294 - Fixed a bug where a part select expression involving multi-dimensional array having index of multi-dimensional array of type byte (or bit [7:0]) is used.
+Example :- int_out_data[15:00] = m_item_h.m_mux_in[sel_line][15:0]; where sel_line is of type bit[7:0]</li>
+ <li>dvt71429 - (results) Using a streaming concat inside a regular vector concat could result in vsim crashing or getting the wrong value.</li>
+ <li>dvt71701 - A 'defparam' inside a generate clause in a mixed Verilog/VHDL design could cause an erroneous error 10000.</li>
+ <li>dvt71616 - Fixed a bug when floatparameter is used with bind statement in if/generate.</li>
+ <li>[nodvtid]  - Array manipluation functions like "arr.find_first_index(x) with ...condition..." would incorrectly report the error "No field named 'x'" in some cases.</li>
+ <li>dvt70048 - Fixed a bug where the processes were getting scheduled in re-NBA region after Postponed region. The errors were getting issued in mc2 runs. This was happening when clocking blocks had non-zero output delays but the design was getting run with a resolution which was higher than the output delay. In this case output delays were effectively becoming zero at run time.</li>
+ <li>dvt71985 - (results) Taking a slice of an unpacked net array could produce the wrong value under some circumstances.</li>
+ <li>dvt70751 - Fixed a bug when uvm_config_db::get/set functions are used with parameterized virtual interfaces with different parameters.</li>
+ <li>dvt72057 - (results) For large designs with a common clock driving more than 2 million udp instances, udp sensitivity to the clock may be lost.</li>
+ <li>dvt71763 - Fixed a bug when interface with real parameters are passed into uvm_config_db set/get function or into any other parameterized class.</li>
+ <li>dvt30633 - Allowed packed union as bit stream data type.</li>
+ <li>dvt72134 - (results) Registers feeding into a primitive that drives an output of a full timing optimized cell could provide incorrect results.</li>
+ <li>dvt71528 - (results) Optimized gate-level cells with path delays specified in the HDL with large values, could result in zero delay propagation delays.</li>
+ <li>dvt72442 - (results) Fix vopt assertion fatal error. </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.4</b></font>
+<ul><li>dvt64563 - An attempt to drive an array value onto the element of an array signal whose element type is an interface type could cause simulations to crash.  </li>
+ <li>dvt64721 - A signal external name appearing in a PROCESS statement, and whose subtype indication is not locally static, could result in a simulator crash when the design was loaded.</li>
+ <li>dvt64737 - A configuration declaration that has the same name as the ENTITY that it is configuring cannot be compiled into the same library as that ENTITY.  Previously this was a compiler warning resulting in an unloadable design, but this has been changed into a compiler error.</li>
+ <li>dvt64565 - (results) Now instances under VHDL generates can be specified as the SDF back-annotation point with -sdfmin/typ/max switches. For example, "-sdfmax /test/gen_buf1_inst(1)/wrap_buf1_inst=test.sdf", where instance "wrap_buf1_inst" is under the VHDL generate "gen_buf1_inst", now annotates successfully. Now VHDL and Verilog generate scopes (e.g. /test/gen_buf1_inst(1) above) are also accepted.</li>
+ <li>dvt66430 - A defect in the compiler prevented a resolution function name appearing in a subtype indication from being an operator symbol, even though sometimes this is legal.  Further, a predefined function used as a resolution function would result in a simulator crash.  Both of these bugs have been fixed.</li>
+ <li>dvt66534 - Fixed an issue where assertions with constant conditions were not getting reported by 'assertion report' command if they were declared in the entity. These assertions were also not visible in the assertions window in the GUI.</li>
+ <li>dvt67632 - Individual subelement association would sometimes not do the check that all subelements were associated when the array subtype was locally static but had an index whose value was not known in the compiler.</li>
+ <li>dvt67677 - The optimizer would issue an Internal Error during constant folding if there was a function call involved in evaluation of an expression that affects certain design structure constructs.  This was due to the need to know the language version used when compiling the function being called.  This has been fixed.</li>
+ <li>dvt68122 - If generate evaluation takes an excessive amount of time in the optimizer vopt.</li>
+ <li>dvt68058 - A signal assignment statement in a PROCEDURE that assigns to a class Signal, mode Out or Inout formal of that procedure, when the subtype of the formal is a partially constrained record or array type, could sometimes cause a simulator crash.</li>
+ <li>dvt67530 - Out-of-date messages generated by vcom and vopt have been changed to report dependent design units that need to be recompiled. This also fixes a crash that could occur in vopt if an entity needed for a default binding needed to be recompiled.</li>
+ <li>dvt68478 - For certain specific cases of clocked processes containing variables, optimizations were resulting in incorrect output. This has now been fixed.</li>
+ <li>dvt69541 - A compiler optimization was incorrectly generating code for constants initialized with the concatenation operator (&) appearing in subprogram declarations of uninstantiated packages.</li>
+ <li>dvt70898 - Use of the function rising_edge and falling_edge could, in some case, trigger an internal error</li>
+ <li>dvt68223 - In Some certain cases, function calls having generics as an argument use to give incorrect results. This has been fixed.</li>
+ <li>dvt67672 - An array aggregate with an OTHERS choice in an O'SUBTYPE or A'ELEMENT context was erroneously being flagged as an Error.  This has been fixed.</li>
+ <li>dvt71619 - (results) On 64 bits, array shift and rotate operations whose second operand ( shift/rotate amount) is INTEGER'LEFT
+would generate a stack overflow error. This has been fixed and the result when the shift/rotate amount is
+ INTEGER'LEFT on both 64 and 32 bit has been changed to generate the correct value.</li>
+ <li>dvt71805 - In rare cases, simulating with -novopt would give the wrong results for a std_logic_vector unless it was logged.</li>
+ <li>dvt72143 - If an uninstantiated package contains signal declarations, and an instance of the package is associated with an interface package in an entity, package, or subprogram instantiation, accesses to the signals could lead to simulator error messages of the form:
+<pre>
+# ** INTERNAL ERROR: pkgref: export lookup failed for package #8[7]
+</pre>
+</li>
+ <li>[nodvtid]  - An object of a composite type that has a subelement of some null-range scalar subtype, when declared with no default expression (class SIGNAL object) or initial value expression (class VARIABLE object), would not cause an error as it should.  Such object declarations are illegal because no value (default/initial or otherwise) can be compatible with such a composite (sub)type.</li>
+ <li>[nodvtid]  - The predefined package ENV was introduced in VHDL 2008, to be in library STD.  While this package is available for VHDL versions other than VHDL 2008, using this package will produce a warning message unless the VHDL 2008 language version is in effect.  It is possible to suppress or otherwise change the message severity level.</li>
+ <li>dvt71534 - In Some certain cases, Slice expressions using function calls used to give incorrect result. This has been fixed.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcdefects"></a><font size="4"><b>SystemC Defects Repaired in 10.4</b></font>
+<ul><li>dvt64510 - When SystemC compilation and Vopt optimized design creation is done in same work library, and work library is moved to a different location after optimization, simulation may not be able to load SystemC design. This issue has been fixed. </li>
+ <li>dvt65715 - Fixed issue in Cdebug where in a 'step' command would incorrectly execute auto-lib-step-out feature and causes simulation to continue instead of stepping into the code.</li>
+ <li>dvt65959 - Fixed Cdebug to pick the correct gdb when the CppPath modelsim.ini variable is set.</li>
+ <li>dvt66013 - Fixed sccom-95 error message to print correct name of the gcc compiler download file as per the product variant.</li>
+ <li>dvt65959 - gdb_path and gdb_custom variables will no longer be read from or written into the .modelsim preferences file.</li>
+ <li>dvt9575 - For SystemC designs, 'step' command would not stop before advancing simulation time, and sometimes would also cause design to run like 'run -continue' or 'run -all'. This issue is now fixed.</li>
+ <li>dvt67500 - Fixed sccom compilation failure when a full path to the source file was specified from a read-only directory</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="assertiondefects"></a><font size="4"><b>SVA/PSL Defects Repaired in 10.4</b></font>
+<ul><li>dvt62811 - Fixed a bug where use of a bitwise prefix operator (e.g. ~)inside $fell was causing internal error.</li>
+ <li>dvt63273 - Fixed a bug where assertions specified in procedural code were getting executed after a delay of one clock cycle. This issue was visible when there was a clocking block with inputs in the design.</li>
+ <li>dvt63906 - Fixed a bug where in some rare case compiler was giving internal error when hierarchical references into an interface were getting used in the concurrent System Verilog assertions.</li>
+ <li>dvt63994 - Fixed a bug where -immediate and -concurrent options of 'assertion enable' command were not working for VHDL concurrent assertions.</li>
+ <li>dvt64009 - Fixed a bug where deferred assertions in initial block were causing a crash.</li>
+ <li>dvt64270 - Fixed a bug where compiler was crashing due to use of $inferred_clock in the boolean expression in an assertion. Now an error message is issued as it is an illegal usage of $inferred_clock.</li>
+ <li>dvt64271 - Fixed a bug where usage of $inferred_disable in the boolean expression in an assertion was causing internal error.</li>
+ <li>dvt37454 - Fixed a bug where a local variable which was blocked remains blocked even on getting reassigned again.</li>
+ <li>dvt37567 - Fixed a bug where a local var type of formal was not working correctly if the sequence expression contained repeat operator. Also, fixed another issue where a typed formal was not working correctly if the actual was a constant value and types of actual and formal did not match.</li>
+ <li>dvt63995 - Fixed a bug where the tool was crashing if the disable iff condition had sequence method (.triggered) and it was a simple boolean assertion directive.</li>
+ <li>dvt65357 - Made the change to make command parsing for all the assertion commands consistent. The options specified on the command line will apply to all the paths specified in the command irrespective of the order of the options.</li>
+ <li>dvt67163 - Fixed a bug where $onehot was not working correctly for a multidimentional array.</li>
+ <li>dvt67852 - Fixed an issue where using $past inside severity system tasks (e.g. $error) was causing internal error.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 10.4</b></font>
+<ul><li>[nodvtid]  - Hierarchical references from Verilog to fields of a VHDL record signal could cause the tool to fail.</li>
+ <li>dvt36969 - Fixed a bug which resulted in vopt crash when we instantiate a VHDL entity inside verilog generates.</li>
+ <li>dvt70846 - Fixed a bug which used to result in internal error in mixed designs when VHDL unconstrained array type is used in SV.</li>
+ <li>dvt38882 - When the file permissions on a library of encrypted Verilog cells was closed, the VHDL compiler would error out because it could not get Verilog to generate an interface file to compile against.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.4</b></font>
+<ul><li>dvt63469 - Fixed bug in VRM where terminating a running Action on Windows (either manually or due to a timeout) had no effect.</li>
+ <li>[nodvtid]  - Fixed VRM bug where quoted argument to "-rerun" option, when passed on the command line to the VRM GUI, wasn't being handled correctly.</li>
+ <li>dvt63767 - Message Viewer no longer tries to check out a "qvman" license but, instead, only checks for it's presence in the license file.</li>
+ <li>dvt38039 - (results) The "test analysis" now displays "-" for the rank of non-contributing tests.</li>
+ <li>dvt36774 - (results) Coverage trend HTML report was not opening pages for internal attributes.</li>
+ <li>dvt65201 - Fixed a bug in the VRM GUI where a TCL stacktrace could occur if the project file contains a reference to a log file under a VRMDATA directory that is deleted soon after the GUI starts up.</li>
+ <li>[nodvtid]  - Fixed a bug where merged coverage data was being read from the wrong file.</li>
+ <li>dvt63022 - Questa Toolbar doesn't show after installing OpenOffice Add-On with OpenOffice 4. This is now fixed. For successful  installation with OpenOffice 3/4, follow the installation steps provided in 'vm_src/HowToInstallQuestaVMplugin.txt'.</li>
+ <li>dvt63160 - Questa Excel/OpenOffice Add-In fails when exporting testplans to UCDB if one of the testplan columns contains white spaces. This is now fixed.</li>
+ <li>[nodvtid]  - A bug has been fixed where the coverage/tplancov indicators in the status bar of the VRM Results window would display the coverage of the most-recently-completed test rather than the current merged coverage.</li>
+ <li>dvt66783 - Fixed bug where VRM GUI could not control jobs when attaching to an existing batch-mode regression run.</li>
+ <li>dvt67767 - Fixed problem in VRM GUI and VRM HTML/text status reports where simulation time in excess of a 32-bit integer was not being reported correctly.</li>
+ <li>dvt68209 - Fixed the background color on the "Passed" count in the pass/fail summary of the VRM HTML Status report (was: Red, should be: Green).</li>
+ <li>[nodvtid]  - (results) Preserving the mergefile from auto-deletion, between the passes of the global rerun functionality. </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="powerawaredefects"></a><font size="4"><b>Power Aware Defects Repaired in 10.4</b></font>
+<ul><li>dvt64893 - (results) Added a vopt option to disable inout functionality between connections involving UPF supply net and HDL inout port. In such cases, the connection will be made in a way that all existing HDL drivers of the inout port will be removed and only UPF supply net will drive the HDL inout port. The vopt option is -pa_disable=inoutsupplyconn.</li>
+ <li>dvt66177 - Isolation was not working correctly in some cases for instance ports withing generate. This issue has been fixed now.</li>
+ <li>dvt66446 - An issue in connections of a upf resolved net fixed</li>
+ <li>dvt66550 - Fixed a crash in vopt when -pa_genrpt=b option is used and there is a set_retention command with -instance specified on it.</li>
+ <li>dvt66890 - Always on cell was getting corrupted when instantiated inside generate block. This has been fixed.</li>
+ <li>dvt67314 -  Liberty processing failed when direction was specified on individual bits of bus. This issue has been fixed</li>
+ <li>dvt67240 - There were some issues in power aware processing when vopt error 9670 flagged due multiple drivers was suppressed. This has been fixed. Also, now one of the drivers is honored and others ignored in such cases.</li>
+ <li>dvt67269 - In some cases, vopt used to take large amounts of memory when doing power-aware processing of some modules. This has been fixed.</li>
+ <li>dvt67239 - Liberty attributes specified on a bus were not being honored. This has been fixed</li>
+ <li>dvt68095 - There were liberty processing failures for following cases which have been fixed 
+<ol>
+<li> The edges and shifts group in the generated_clock group had 5  arguments in place of 3. This is fixed under -pa_upfextensions=liberty vopt option
+<li> The vector_id in the sensitization group was floating point instead of integer. This is fixed under -pa_upfextensions=liberty vopt option
+<li> In sensitization group, there were quotes around pin names
+<li> Value in leakage_power group had a space after opening quotes
+<li> There was an error message when always_on attribute was not set on pin with isolation_enable_condition set. This has also been fixed</li>
+ <li>dvt68936 - Enable level shifter instantiated in the design was associated with a UPF isolation strategy as its -instance cell even when the connection to the level_shifter_enable_pin did not match with the one specified in the UPF isolation strategy. This has been fixed.</li>
+ <li>dvt68182 - Bit indices present in the UPF needed to be escaped when they are not present inside curly braces. Added an option -pa_upfextensions=squarebracketasindex to automatically allow the un-escaped square brackets ([]) used as indices in UPF. 
+
+</li>
+ <li>dvt38585 - (results) Added support to apply multiple "set_related_supply_net / set_port_attributes -repeater_supply" commands in the same feed-through path.
+After this fix, repeater buffers will be inserted in the path which will break the feed-through path into multiple small segments.
+This will change the results as Isolation/Level shifters will be inserted according to source/sink supplies of each segment.
+Questa PA checks are also enhanced accordingly to check the Isolation/Level Shifter requirement for each segment.
+Now, PA static report will have "Supplies" field corresponding to supply attributes along with Domain information.
+<pre>
+Source power domain : { PD_MID1(Supplies(SS1_PWR,SS1_GNET)) } -> Sink power domain: { PD_TOP(Supplies(SS2_PWR,SS2_GNET)) } [ Total count: 1 ]
+   1. LS( count: 1 ): Candidate Port: /tb/top_inst/mid1/out1_bot, count:1, level shifting strategy : ls1, Domain: PD_MID1,
+     Source port{Supplies(SS1_PWR,SS1_GNET)}: /tb/top_inst/mid1/bot1/out1_bot, count:1 [ LowConn ] -> Sink port {Supplies(SS2_PWR,SS2_GNET)}: /tb/top_inst/mid1/out1_bot, count:1 [ HighConn ]
+     Possible reason:'Level shifter of required direction is present from (Supplies(SS1_PWR,SS1_GNET)) => (Supplies(SS2_PWR,SS2_GNET)) 
+</pre></li>
+ <li>dvt69442 - There was a liberty processing failure when when index_1 was defined in the define group and was also used in the dc_current group. This is now fixed.</li>
+ <li>dvt69616 - Support for corruption of boundary ports of a retention cell using liberty information added. The inputs ports are now corrupted according to related_power_pin and related_ground_pins as specified in liberty and outputs are corrupted according to power_down_function liberty attribute. The support can be enabled using -pa_enable=libertypamodel+libretcell vopt option.</li>
+ <li>dvt70250 - In some cases, vopt used to crash when UPF processing was performed on a signal assignment involving vector write on VHDL records. This has been fixed.</li>
+ <li>dvt31491 - (results) Now SV Enum types would be corrupted from their base value instead of their `left value.<br>
+     Example : <br>        
+           typedef enum bit unsigned [31:0] { ONE=1, TWO,THREE} enum_t3;<br>
+           The new corruption value for above type would be "0" instead of "ONE(1)". <br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="wlfvcddefects"></a><font size="4"><b>WLF and VCD logging Defects Repaired in 10.4</b></font>
+<ul><li>dvt67909 - Logging arrays of System Verilog named events could result in error messages such as: WLF ERROR: Illegal array element type in log_vlog_mem_elmt_event: 21</li>
+ <li>dvt70390 - WLF files written in a product version prior to 10.3c could sometimes not be read properly in version 10.3c if they contained a VHDL access type object or SystemC pointer type object.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 10.4</b></font>
+<ul><li>[nodvtid]  - -stats option has been enhanced to have the following syntax:
+<pre>
+    -stats[=[+-]< features_and_modes >]
+</pre>
+<br>
+Feature options are:
+<ul>
+<li>    time: Display Start, End, and Elapsed times of the executable
+<li>    cmd:  Echo the command line
+<li>    msg:  Display error/warning summary at end of execution
+<li>    perf: Display performance stats: CPU time, Wall time, and Memory use 
+<li>    all:  All stats features are enabled
+<li>    none: All stats features/modes are disabled
+</ul>
+<br>
+Mode options are:
+<ul>
+<li>    verbose: Display verbose information when available
+<li>    list:    Display the stats in a Tcl list style 
+</ul>
+<br>
+Following commands support this option:
+<ul>
+<li>    vlog, vcom, sccom, mc2com, vopt, vcover, vencrypt, vsim 
+</ul>
+<br>
+'Stats' modelsim.ini variable is equivalent for this option and has the default value of time,cmd,msg:
+<pre>
+    [vlog/vcom/vopt/sccom/vsim]
+    Stats = time,cmd,msg
+</pre>
+<br>
+Few functionality notes:
+<ul>
+<li>    time,cmd,msg features are default ON for all the above commands.
+<li>    -stats without any argument is equivalent to time,cmd,msg.
+<li>    Command line option further add/remove features to/from the default feature settings.
+<li>    Multiple -stats options are allowed in the command line, but only the last specified option will take effect.
+</ul>
+<br>
+Following options are obsolete and replaced by -stats option:
+<ul>
+<li>    -nostats; replaced by -stats=none
+<li>    -printstats; replaced by -stats=perf
+<li>    -printsimstatslist; replaced by -stats=perf,list
+</ul></li>
+ <li>[nodvtid]  - vmake will now produce more meaningful makefiles for flat libraries. Makefile support for flat libraries is necessarily limited, due to the lack of per-target file objects. But the resulting makefile will trigger a build of all design units should any source file for any design unit be newer than the library. Optimized design units in flat libraries are also supported, with somewhat more precise dependency tracking.</li>
+ <li>[nodvtid]  - simstats and simstatslist commands have updated syntax and output format.
+<br>
+Syntax:
+<pre>
+   simstats[list] [voptmemory | vopttime | voptcpu | elabmemory | elabtime | elabcpu | simmemory | simtime | simcpu | logtime | logcpu | tclcmdtime | tclcmdcpu | totaltime | totalcpu] 
+</pre>
+<br>
+Please refer to Command Reference Manual for more details.</li>
+ <li>[nodvtid]  - Feature-specific mode specification has been added to -stats syntax. 
+Users can now specify modes globally for all features using comma-separated specification, like -stats=time,perf,list,verbose, or for a specific feature using +/- specification associated with the feature, like -stats=cmd+verbose,perf+list. 
+
+Both global and feature-specific mode specifications cannot be used together.</li>
+ <li>[nodvtid]  - (results) By default, vsim will now print command line with original and unexpanded options, i.e. vsim -f args.f. 
+Previous behavior to print command line with expanded option can be obtained using -stats=cmd+verbose option. 
+</li>
+ <li>[nodvtid]  - It is now possible to invoke vsim with the -qwavedb and -load_elab switches together.  This allows one to create a qwave.db file (for use in Visualizer) in a -load_elab flow.</li>
+ <li>dvt69558 - Added a new vsim switch to enable the support of checkpoint and restore of a foreign C++ library.
+
+<pre>
+  -allowcheckpointcpp 1|0  Turn on/off the support for checkpointing foreign C++ libraries.
+                           Must be used in the vsim session where a checkpoint is created.
+</pre></li>
+ <li>[nodvtid]  - An enhancement has been added to specify timescale using -timescale and -override_timescale options with '=' operator in vlog/vopt. Eg. Now both "-timescale 1ns/10ns" and "-timescale=1ns/10fs" are valid and equivalent.</li>
+ <li>[nodvtid]  - The string buffering for PLI routines acc_fetch_(i)tfarg_str has been changed to bring it into compliance with IEEE 1364-2001 section 22.9. The recommendation when using these routines in a user application is still to take ownership of the strings that they return by copying into user memory space, if they are needed beyond the immediate call. The PLI standard guarantees 'managed string unsafety' rather than true string safety. Note that there is a potential for this change to affect the safety of strings returned from any string-returning PLI calls, as all ACC string routines share a common buffer.</li>
+ <li>dvt71032 - Following design constructs are now supported in QuestaSim bsaif flow with "power add" and "power report" commands
+1. VHDL integers
+2. System Verilog 2D arrays (packed and unpacked)</li>
+ <li>dvt70434 - (results) 
+Added support to handle RTL x-pessimism on index variables used as bit-select in xprop resolve mode.<br>
+Example : <br> 
+ always@(arr[idx])<br>
+     q = arr[idx]);<br>
+<br>
+For idx = x and arr = 2'b00<br>
+  q = 0; (xprop resolve mode simulation)<br>
+  q = x; (xprop pass mode simulation)<br>
+  q = x; (normal RTL simulation)<br></li>
+ <li>dvt68871 - Added support in vlog, vcom and vopt to automatically create missing work libraries. Vlog/vcom/vopt command-line option '-nocreatelib', or modelsim.ini variable 'CreateLib', may be used to stop automatic creation of missing work libraries and revert back to the old (10.3x and earlier) behavior.</li>
+ <li>dvt30212 - The modelsim.ini file now contains a release version number as a comment.  There is no behavioral change to the simulator or any other tools.</li>
+ <li>[nodvtid]  - Added attribute support to turn off xprop on process/modules.<br>
+Example: (*xprop_off = "TRUE"*)</li>
+ <li>[nodvtid]  - Added support to check out of bound array indices in xprop for READ and WRITE.<br>
+<br>
+WRITE Example: <br>
+out[index] = in      /*index value is out of bound array indices*/<br>
+Message: ** Error: XPROP_OUT_OF_BOUNDS_WRITE_25: 'out[index]' goes out of bounds.<br>
+<br>
+READ Example: <br>
+out = in[index]      /*index value is out of bound array indices*/<br>
+Message: ** Error: XPROP_OUT_OF_BOUNDS_READ_21: 'in[index]' goes out of bounds.</li>
+ <li>[nodvtid]  - (source) There is a change in the meaning of "recursion level" specified to various vopt options like +acc/+noacc/+cover/+nocover/+initreg/+initmem. Before, this level meant how many levels under the current level, the option is to be applied. So, level 0 meant no recursion. Now, 0 recursion level means full recursion. And this option means how many levels including the current level, the option is to be applied. <br>
+The following change in the recursion level keeps the options behaving the same way as before. <br>
+previous: +acc=r+/top/r now: +acc=r+/top/r (no change) <br>
+previous: +acc+/top. now: +acc+/top. (no change) <br>
+previous: +acc+top+128 now: +acc+top+0 (full recursion) <br>
+previous: +initreg+0+/top/du+0 now: +initreg+0+/top/du+1 (level -> level + 1) <br>
+previous: +cover+lib1.du+2 now: +cover+lib1.du+3 (level -> level + 1)</li>
+ <li>[nodvtid]  - (source) Some of the +acc options are replaced with some other options. As of now, the old options are deprecated, but will continue to work to maintain backward compatibility. <br>
+The following +acc options are not changed: +acc=mnprtv <br>
+These +acc options map to the following new options: <br>
++acc=a -> -assertdebug +noacc=a -> -noassertdebug <br>
++acc=b -> -bitscalars +noacc=b -> -nobitscalars <br>
++acc=c -> -cellaccess +noacc=c -> -nocellaccess <br>
++acc=f -> -fsmdebug +noacc=f -> -nofsmdebug <br>
++floatparameters -> -floatparameters <br>
++acc=l -> -linedebug +noacc=l -> -nolinedebug <br>
++nosparse -> -nosparse <br>
++acc=u -> -primitiveaccess +noacc=u -> -noprimitiveaccess <br>
++acc=x -> -randmetastable +noacc=x -> -norandmetastable <br>
++acc=s -> -systfoverride +noacc=s -> -nosystfoverride <br>
+
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uienhancements"></a><font size="4"><b>User Interface Enhancements in 10.4</b></font>
+<ul><li>dvt30276 - (results) When there is no [onbreak] setting in effect, the default [onbreak] behavior is defined by a new variable: $OnBreakDefaultAction.  If $OnBreakDefaultAction is not defined, then the effective default will be [resume].  This is a change in prior behavior where the default action was [pause].
+</li>
+ <li>[nodvtid]  - The vsim -do option has been enhanced to allow for multiple occurances of -do on the command line.  The commands provided will be joined together in the order specified.  For example, the command: 
+
+    vsim -do "force clk 0 0, 1 10 -r 20" top -wlf top.wlf -do "testfile.do" -do "run -all"
+
+will turn into a script:  
+
+    "force clk 0 0, 1 10 -r 20; do testfile.do; run -all"
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.4</b></font>
+<ul><li>[nodvtid]  - The vlog command's switch -svext now supports an option named "udm0" which directs the vlog compiler to expand any undefined macro with the text " 1'b0 ".</li>
+ <li>dvt63875 - $stacktrace([level]) is now taking an optional argument 'level'. When it is not specified or its value is not a positive number, the maximum number of stack frames being displayed is determined by the new modelsim.ini variable, [vsim] StackTraceDepth, which has a default value 100.</li>
+ <li>dvt35213 - (results) The simulator command line option +notifier_ondetect causes timing check notifier toggle generated X output values to be scheduled with zero delay. </li>
+ <li>[nodvtid]  - The -svext option evis supports expansion of environment variables within `include path names.  For example, if MYPATH exists in the environment then it will be expanded in the following:
+`include "$MYPATH/inc.svh" </li>
+ <li>[nodvtid]  - (results) Added vpi_get_str() support for vpiArrayType.</li>
+ <li>dvt62899 - Made the change such that message 3838 is a warning by default. It is an error with -pedanticerrors switch. Additional information is provided with this message if one of the drivers is implicit drivers due to clocking block. The info is also provided about which clocking block is creating the implicit driver. 
+
+Also made 3839 a warning by default and an error with -pedanticerrors switch.</li>
+ <li>dvt38362 - (results) Preoptimized Design Units(PDUs) that have been re-vopted, but have not changed in their design content, are now used in simulation without requiring re-vopting the top-level.
+
+</li>
+ <li>dvt67662 - (results) Memory usage has been reduced for delay statements within fork/join blocks. In some cases the coalesced statements from these delays result in the simulator printing a different final simulation time. The waveform window may show a different max simulation time than previous releases. The simulation data itself is not affected by this change, only the simulator's final time when it determines there are no more events to process.</li>
+ <li>[nodvtid]  - The reserved keywords 'config' and 'instance' may be used outside of unit and configuration scopes when the -permissive vlog switch is used.</li>
+ <li>dvt26136 - Allow concatenations to have unsized constants when vlog is run with the -permissive switch.</li>
+ <li>dvt67967 - (source, results) We no longer will infer an 'assignment pattern' when the context is a packed struct or array.  Instead we will treat the concatenation as a regular, packed concatenation.</li>
+ <li>dvt37537 - (source, results) The option -svext=+/-cfce has been added to vsim.  If this option is set using -svext=+cfce, then an error message will be generated if $cast is used as a function and the casting operation fails. The ini variable SvExtensions has also been added to specify this option.</li>
+ <li>[nodvtid]  - (results) Added enhancement for module ports with no connection when default value is given. Separate warning is shown for these ports. </li>
+ <li>[nodvtid]  - Fixed issue- Non-std extension: Allow delay control in always_ff.
+
+Delays in always_ff will be allowed by using "-suppress 13074" or "-permissive" switch</li>
+ <li>[nodvtid]  - (results) Relaxed the severity of message for non matching of end label in tasks/functions. Message can be suppressed now.</li>
+ <li>dvt68221 - Added $unpacked_dimensions() array query function support.</li>
+ <li>dvt69392 - (results) Added support for capital hex format specifier (%H or %X) which will cause printed hex alpha values to be capitalized. To enable this behavior vsim switch "-svext=fmtcap" has to be used.</li>
+ <li>dvt69488 - (source, results) $printtimescale with round braces but without any  arguments is now supported and will behave like $printtimescale without  round braces.</li>
+ <li>dvt23464 - (source, results) Added  the LibrarySearchPath ini variable to vsim. This variable can be used to specify library search paths for vsim, which are specified using the -L commandline option.<br>
+Added the following new vsim switches:<br>
+1. -showlibsearchpath:      Show all the libraries which will be searched for precompiled modules<br>
+2. -ignoreinilibs:          Ignore the libraries specified with the 'LibrarySearchPath' variable in the vsim section of the ini file</li>
+ <li>dvt26387 - As an LRM extension, we will allow a non-constant multiplier to be used in a replication.  To enable this run vlog/vopt/vsim with -permissive, or suppress error 8303.</li>
+ <li>dvt69617 - (source) The default value for an undriven wreal net is 'Z'. A new vsim command line option -wrealdefaultzero has been added and with this options specified, the default value for an undriven wreal net will be '0'.</li>
+ <li>dvt64505 - (results) If the identifier name in a portlist or a local declaration inside a design unit matches a typename being imported from the global scope, then the global typename is ignored and the identifier name does not conflict with the type name.</li>
+ <li>dvt26544 - (source, results) empty() method for queue has been supported. This is a non standard feature. This method with return 1 if the queue is empty and 0 if the queue is not empty. With -pedanticerrors option in vsim, an error is generated if this method is used.</li>
+ <li>dvt67969 - The errors for unpacked array concatenations and assignment patterns indicating the number of elements doesn't match are now suppressible for the case where a single element is assigned.  In this case, that element's value is cast to the array that is being assigned.</li>
+ <li>dvt66691 - (results) Support has been added for port connections between SystemVerilog-2012 interconnect and VHDL records.</li>
+ <li>dvt14246 - Added support for $fread call on one dimensional dynamic array and queue. If the array memory is not pre allocated then its size will be increased. For multi-dimensional array we will give warning.</li>
+ <li>dvt69994 - Modifier '=macro' has been added to option '-mfcu' which enables the visibility of macro definitions across different files.</li>
+ <li>dvt35950 - (source, results) nettype construct has been supported for a limited set of real nettypes defined in the inbuilt package: mgc_rnm_pkg.</li>
+ <li>dvt64251 - The error for mixing packed/unpacked arrays when connecting ports is now #12027, and it may be suppressed.  The '-permissive' flag will also change this error to a warning.</li>
+ <li>[nodvtid]  - A logical connective expression having side-effect terms and a constant term that short-circuits the evaluation incorrectly skipped evaluation of the side-effect terms that came before the constant term.</li>
+ <li>[nodvtid]  - The vlog command switch -svext supports an option named 'vmctor' to allow virtual method calls in class constructor.  The default is to treat them as non-virtual during construction.</li>
+ <li>[nodvtid]  - The vlog command switch -svext supports an option named 'evdactor' to enable early variable declaration assignments during class construction.  The default behavior is to perform all superclass initialization before initializing any fields in a subclass.</li>
+ <li>dvt67987 - Elaboration system tasks are supported during the simulation. The output of these tasks can be suppressed using the following modelsim.ini variables in [vsim] section: IgnoreSVAInfo: suppresses output of $info tasks, 
+IgnoreSVAWarning: suppresses output of $warning tasks,IgnoreSVAError: suppresses output of $error tasks,
+IgnoreSVAFatal: suppresses output of $fatal tasks
+</li>
+ <li>[nodvtid]  - (results) An enhancement has been added for use of array querying functions $size, $left, $right, $low, $high with packed structs, unions and enums.</li>
+ <li>dvt68252 - Implemented basic solver profiling, which can be enabled with the "vsim -solveprofile" command line option. When the solver profile is enabled, the solver report (vsim command "write report -solver") will include profile data.</li>
+ <li>dvt68142 - Vopt and vsim now accept package names on the command line and treat them as a top-level design unit.</li>
+ <li>dvt37949 - Added an enhancement which will produce a trigger whenever queue's item value gets changed. This is done for the the "with" expression and only for one level of hierarchy. Fox example whenever item.status is changed status_array.sum() will get re-evaluated.
+ wait ((status_array.sum() with ( int'((item.status != RD_CMPLT)&&
+(item.status != WR_CMPLT)) ) )
+
+But this enhancement will not work for statement wait ((status_queue.sum() with ( int'((item.elem.status != RD_CMPLT)&& (item.elem.status != WR_CMPLT)))), as here status is used for second level of hierarchy.</li>
+ <li>[nodvtid]  - The vlog option '-printinfilenames' now can write out to a file specified via '-printinfilenames=<filename>'.  vlog will overwrite existing output from this option.</li>
+ <li>dvt71864 - Added support for $assertcontrol system task.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdlenhancement"></a><font size="4"><b>VHDL Enhancements in 10.4</b></font>
+<ul><li>dvt67518 - An informational warning message has been added for the situation when compiling an array aggregate with language version 2008, when the aggregate appears in a context where an OTHERS choice would not be legal, when the aggregate contains no named element association whose expression is of the aggregate type, and when a range choice has a direction different from the direction of the index subtype of the base array type.  This warning is a reminder that the direction of the aggregate is determined by the direction of the index subtype of the array type, not by the direction of any range choice appearing in a named element association (all of which are of the element type).</li>
+ <li>dvt68124 - If the simulator is invoked with the "-noappendclose" switch, or if the modelsim.ini file sets variable AppendClose to 0, the simulator will not immediately close files opened in APPEND mode. Subsequent calls to file_open in APPEND mode will therefore not require operating system interaction, resulting in faster performance. If customer designs rely on files to be closed and completely written to disk following calls to file_close because they perform operations on the files outside the simulation, this enhancement could adversely impact those operations; consequently,  in these situations, use of the switch or modelsim.ini variable setting is not recommended.</li>
+ <li>dvt141 - (results) VHDL access variables (variables of an access type) and their related access objects (designated objects of such variables) can now be logged and displayed in various GUI windows.  Use the vsim switch -accessobjdebug to enable this feature.  See the manuals for more details.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcenhancement"></a><font size="4"><b>SystemC Enhancements in 10.4</b></font>
+<ul><li>[nodvtid]  - (results) The 6202 warning for using a VPI routine in a SystemC constructor is now a suppressible error.</li>
+ <li>[nodvtid]  - mti_IsVoptMode() is available as public API. It can be used in SystemC constructors to avoid executing simulation -specific code during Vopt elaboration, like PLI/FLI calls.</li>
+ <li>[nodvtid]  - When unsupported g++ compiler is used, sccom generates predefined macro file. sccom option "-predefmacrofile &lt;filename&gt;" can be used to specify this file.</li>
+ <li>dvt67502 - Added -gblso command option to vopt and the companion modelsim.ini variable 'GlobalSharedObjectList'
+<pre>
+-gblso <file>      Load the specified shared library with global symbol visibility.
+</pre>
+
+This option would be required if the SystemC top is elaborated in vopt and is depending on the symbols from a common library being loaded with vsim -gblso switch.
+</li>
+ <li>dvt34970 - (source) Questa 10.4 now supports SystemC-2.3 (IEEE 1666-2011 standard) as default SystemC version. Questa 10.4 will also support SystemC-2.2 (IEEE 1666-2005 standard) as optional SystemC version.<br>
+<b>For SystemC-2.3 (IEEE 1666-2011) </b>
+<ul>
+<li> <b>Platforms supported:</b> linux, linux_x86_64 and win32 </li>
+<li> <b>Compilers supported:</b> gcc-4.7.4, gcc-4.5.0 for linux and linux_x86_64, and gcc-4.2.1 for win32. </li>
+<li> <b>Header files location:</b> &lt;path to questa install tree&gt;/include/systemc/sc </li>
+<li> <b>TLM version supported:</b> 2.0.2 </li>
+</ul>
+<b>For SystemC-2.2 (IEEE 1666-2005) </b>
+<ul>
+<li> <b>Platforms supported:</b> linux, linux_x86_64 and win32 </li>
+<li> <b>Compilers supported:</b> gcc-4.5.0, gcc-4.3.3 for linux and linux_x86_64 and gcc-4.2.1 for win32.</li>
+<li> <b>Header files location:</b> &lt;path to questa install tree&gt;/include/systemc/sc22 </li>
+<li> <b>TLM version supported:</b> 2.0.1 </li>
+<li> <b>Tool options:</b> To enable SystemC-2.2 version, use &ldquo;-sc22&rdquo; option with sccom/vopt/vsim, or set &ldquo;Sc22Mode&rdquo; modelsim.ini variable. Please see User&rsquo;s manual for more details. </li>
+</ul>
+<b>Backward compatibility with 10.3x and earlier </b>
+<ul>
+<li> If design is currently setup with 10.3x and earlier releases and user doesn't want to move to SystemC-2.3 version, then use option &ldquo;-sc22&rdquo; with sccom/vopt/vsim or set modelsim.ini variable &ldquo;Sc22Mode&rdquo; with 10.4 release to continue to use the existing design setup. </li>
+</ul></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="svapslenhancement"></a><font size="4"><b>SVA/PSL Enhancements in 10.4</b></font>
+<ul><li>dvt34262 - Added support to be able to handle hierarchical path specified by calling $psprintf() as arguments to assertion control tasks and assertion action control tasks.</li>
+ <li>dvt67965 - (source, results) Assertion report will now show pass count as 1 if an assertion passed once or more during simulation in fully optimized mode when vsim is not run with -assertcover.  Previously we did not show any pass information in the assertion report.
+This change will result in differences when compared with any existing assertion report of a fully optimized design.
+This change will also affect the coverage report when we reported an assertion as passed (covered) if it did not have any failures.  Now the coverage report will be consistent with the one that we have when assertion counts are present, i.e. an assertion is considered covered if it did not fail and has a pass count > 0.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixedlanguageenhancement"></a><font size="4"><b>Mixed Language Enhancements in 10.4</b></font>
+<ul><li>dvt65198 - Now, a user can specify library name alongwith design unit name while applying options like +acc/+noacc/+cover/+nocover/+initmem/+noinitmem/+initreg/+noinitreg in vopt. The syntax of specifying design unit name with library is "[&lt;library&gt;.]&lt;primary&gt;[.&lt;secondary&gt;]". In case of VHDL, architecture can also be specified with &lt;secondary&gt;. Here, &lt;primary&gt; specifies the design unit name. A user can specify recursion_level using "+&lt;recurse_level&gt;" or full recursion using "." after this design unit specification.</li>
+ <li>[nodvtid]  - (results) A new vsim option, -mlopt, has been added. When this option is specified, mixed language nets that cross Verilog-VHDL language boundaries are optimized better. The maximum impact will be seen when a large number of highly active nets like clocks cross Verilog-VHDL language boundaries multiple times. 
+
+In a few corner case scenerios, there may be differences in simulation results. The differences are mainly about initial values on mixed language nets. The most common difference will be VHDL nets that may have an initial value of 'X' instead of 'U'.
+
+There are limitations to what is currently supported with -mlopt. Specifically:
+- The -mlopt option will be ignored when doing power aware simulation.
+- The -mlopt option will be ignored when doing multi-core (mc2) simulation.
+- SDF annotation of interconnect and port delays onto mixed-language nets is not supported. Attempting to annotate delays when -mlopt is specified will result in errors.
+- This option is only supported for VHDL std_logic and std_ulogic based types (including arrays where the elements are of these types), and Verilog logic types.
+- VHDL type conversions and conversion functions are not allowed on a mixed language net when -mlopt is specified.
+- This option is ignored if the design has analog components.
+</li>
+ <li>dvt69212 - Fixed an issue when a module is instantiated inside a VHDL entity and the module's port name matches with a parameter of a module instantiated within the current module.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="coverageenhancement"></a><font size="4"><b>Coverage Enhancements in 10.4</b></font>
+<ul><li>dvt66235 - Limited additional support for '$coverage_* system functions'.
+See section 40.3 of the SV LRM 1800-2009 for the full description and specification. 
+<PRE>
+Restrictions/Notes
+    A) THE COVERAGE NUMBERS THAT $coverage_get_max(...) and $coverage_get(...) RETURN MAY **NOT** AGREE WITH THOSE RETURNED BY OUR REPORT FUNCTIONS!!!
+        - Our reports merge/roll-up coverage numbers (i.e. 9 instances of the same assertion is reported as 1 assertion). These system functions will count each instance separately (i.e. 9 assertions).
+        - Our reports ignore recursion when the -du argument is used. These system functions allow recursion with filtering on a design unit. 
+    B) The "$coverage_merge(...)" system function will issue an 'unsupported' warning message and otherwise be ignored.
+    C) The "$coverage_save(...)" system function will remain unaltered from its current behavior.
+    D) The "$coverage_control(`SV_COV_RESET,...)", "$coverage_control(`SV_COV_START,...)" and "$coverage_control(`SV_COV_STOP,...)" system functions will issue an 'unsupported' warning message and otherwise be ignored. The coverage control `SV_COV_CHECK will be supported.
+    E) The previously implemented $coverage_save(coverage_type, "name") system function will remain unaltered.
+    F) Initially, only the `SV_COV_ASSERTION coverage type identification will be supported. The `SV_COV_FSM_STATE, `SV_COV_STATEMENT and `SV_COV_TOGGLE coverage type identifications will be supported later.
+</PRE> </li>
+ <li>dvt68772 - (results) When a duplicate covergroup instance name is specified in the source code, the simulator by default will issue a warning and then automatically generate a unique name to resolve the conflict. When vsim option -pedanticerrors is used, the duplicate name will trigger a fatal error.
+
+</li>
+ <li>dvt19109 - The functional coverage excluded items will be shown in text reports, when the -showexcluded option is used. </li>
+ <li>dvt70747 - A new coverage use model is added for reduced data storage and better merge performance. The current use model remains unchanged and acts as default. Here is the list of items added for the new use model.<br>
+<ul>
+<li>The user needs to invoke vsim with -coverstore option to specify a directory path where the simulator will dump coverage data at the end of the simulation. The user doesn't need to save the coverage data explicitly. All the simulation runs in a regression should use the same coverstore directory path and their design hierarchy needs to be the same for this new use model.
+<li>The user needs to invoke vsim with -testname option along with the -coverstore option to specify the name of the running test.
+<li>After the coverage data is accumulated in the coverstore area from all the simulation runs, the user can merge the coverage data and create a self-contained UCDB file for further analysis. The user simply needs to specify the coverstore directory path as an input to the vcover merge. No other option is required.
+<li>The user can also dump the ouput of a merge to a coverstore directory instead of creating the output UCDB file by using the -outputstore option to specify the output directory path. This is useful when the user merges the outputs of lower level merges in a hierarchical merge. 
+<li>The coverage data by default is stored using single-bit counters for code coverage items (statements, branches, conditions, expressions, fsms, toggles), and multi-bit counters for functional coverage items (covergroups, cover directives, assertions). That means we store 1 for a code coverage bin whose count is greater than 0. The user can specify which coverage types to be stored using single-bit counters and which coverage types to be stored using multi-bit counters. The -multicount[=-a|b|c|-d|e|f|-g|s|t] option is added for that. The '-' is preceded to functional coverage types whose defaults are multi-bit, so the user can turn those coverage types to single-bit by using it. For example, -multicount=f-gt will turn the fsm and toggle coverage types to multi-bit and covergroup coverage type to single bit, keeping the other coverage types as unchanged.
+</ul></li>
+ <li>dvt69511 - (results) Added -verbose switch in coverage save to show the work in progress by printing the number of written bins in regular interval</li>
+ <li>dvt71441 - (results) Alias toggle nodes are now stored in UCDB by default during coverage save from simulation. The -notogglealias option is added in vsim to stop storing the alias toggle nodes in UCDB during the coverage save from simulation</li>
+ <li>dvt69962 - (results) Added covergroup bin summary in vcover stat and coverage totals report output.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmenhancement"></a><font size="4"><b>Verification Management Enhancements in 10.4</b></font>
+<ul><li>[nodvtid]  - When importing a UCDB using the "triage dbfile" command, the current directory is no longer checked first when searching for WLF/LOG files. This also fixes a latent bug in VRM where auto-triage would sometimes import the wrong WLF/LOG file for a given test.</li>
+ <li>dvt63574 - In a VRM method element, if the "maxarray" or "maxclubbing" attribute is set to "1", the attribute is treated as if it had not been specified. In particular, if "maxarray" is set to "1", the "maxclubbing" attribute will be considered (which was not the case before).</li>
+ <li>[nodvtid]  - In the VRM text and HTML status reports, the "-all" option now reports the status of all known Actions (or tests), including those which are still pending. The previous function of "-all" (reporting on the cumulative set of regressions run in a given VRMDATA directory) is now enabled by the "-cumulative" command-line option.</li>
+ <li>[nodvtid]  - The VRM command "vrun -status" now supports a "-nosummary" option which omits the summary counts from the text report output.</li>
+ <li>[nodvtid]  - The "-columns" option of the VRM text/HTML report generator ("vrun -status") now supports the inclusion of RMDB parameters as columns in the report. The syntax is "RMDB:<parameter-name>". The parameter value is resolved from the point-of-view of the Action whose status is being reported.
+
+In addition, the "-columns" option now supports per-column width and alignment specifications. The syntax it "<column>/<width>" where the width is a positive integer for right-alignment and a negative integer for left-alignment. The absolute value of the width defines the number of characters allotted to that column in the text report. The HTML report honors the alignment but the column widths are determined by the browser when the report is rendered.</li>
+ <li>dvt38304 - (results) Duplicate section numbers are now treated as an error in xml2ucdb (instead of warning).
+Duplicate section titles among siblings are now treated as an error in xml2ucdb (instead of warning).</li>
+ <li>dvt31257 - Several fixes/enhancements to VRM status reporting:
+<ol>
+<li>A new summary of pass/fail status, irrespective of whether a UCDB is produced, is generated at the end of a regression run and at the end of a text status report.</li>
+<li>A corresponding table of pass/fail status has been added to the HTML report.</li>
+<li>A new utility procedure (GetStatusCounts) may be called from most user-definable procedures in order to obtain status data from a running regression.</li>
+<li>The TESTSTATUS of a UCDB file generated by an Action script is not counted if the reason for the pass/fail decision was not the UCDB TESTSTATUS value.</li></ol></li>
+ <li>dvt8729 - A new switch '-excludesections' is added to xml2ucdb. This switch excludes the sections according to the section numbers following the switch. This switch is limited to numeric section numbers and supports either single or range values or combination of both separated by commas ','. For example, '-excludesections 1.2,1.4-1.7,2.2-4' will exclude section '1.2', '1.4', '1.5', '1.6' ,'1.7', '2.2', '2.3' and '2.4'. When a section is excluded, all its children are excluded too.</li>
+ <li>[nodvtid]  - The number of status counters in the VRM Results window has been expanded:
+<ul><li>The "failed" counter has been split into "failed" and "timeout"</li>
+    <li>The "notrun" counter has been split into "killed", "skipped", and "dropped"</li></ul></li>
+ <li>dvt10404 - (results) The "coverage analyze -select ..." filter expressions will now support a "dateattribute < attribute name >" argument.
+The attribute name specified must be a string attribute. 
+<pre>
+The acceptable date formats are:
+    mm/dd[/yy]
+    monthname dd[, yy]
+    dd monthname [yy]
+    [yy]yymmdd
+    [yy]yy-mm-dd
+    dd-monthname-[yy]yy
+Supported comparisons are:
+        -eq
+        -ne
+        -ge
+        -gt
+        -le
+        -lt 
+</pre></li>
+ <li>dvt67824 - (results) UCDB tools have improved their accuracy/precision. In particular, tools like coverage/vcover ranktest, analyze and report may display slightly different numbers and behavior than that of previous releases (ex. numbers with higher accuracy).
+<pre>
+NOTE #1: The 'coverage_pct' and 'goal_pct' fields of the 'ucdbCoverageT' data structure in file 'ucdb.h' has changed from float to double. This is a change from previous versions of the UCDB API.
+NOTE #2: The 'coverage_pct' field of the 'ucisCoverageT' data structure in file 'ucis.h' has changed from float to double. This is a deviation from the UCIS standard.
+</pre>
+
+</li>
+ <li>[nodvtid]  - Added an "after" attributes to Action script elements (preScript, execScript, etc) in VRM RMDB DTD. Launch command options which must follow the script name may be added using this attribute.</li>
+ <li>dvt66356 - VRM now supports an auto-trend functionality. This functionality enables automated trending of merge files at the end of the regression. </li>
+ <li>dvt38892 - An additional vrun option '-reuseseeds <keyword(s)>' was added, to enable selective reusing of seeds according to the job status. </li>
+ <li>[nodvtid]  - Parallel-merge RMDB has the following changes:
+<ul>
+<li>Path to UCDB files may be relative to current directory.</li>
+<li>Default UCDB pattern is "*.ucdb" rather than "Test*.ucdb".</li>
+<li>Merge Actions use a separate named queue.</li></ul></li>
+ <li>dvt28836 - The VRM GUI is using a new scoreboard infrastructure that results in improved behavior in a number of areas:<ul>
+<li>Issues with incorrect filtering and sorting in the VRM Results window have been fixed.</li>
+<li>The Runnable tab in the Configuration Edit dialog now shows partially-selected Runnables.</li>
+<li>Non-numeric filter operators may now be used to filter numeric fields.</li>
+<li>Filtering on timestamp fields now works with all filter operators.</li>
+<li>The "teststatus" column now properly sorts by severity.</li></ul></li>
+ <li>dvt67847 - Built-in support has been added to VRM for the NetworkComputer(TM) grid management tool from Realtime Design Automation. The "gridtype" attribute on the "method" element should be set to "RTDA".</li>
+ <li>dvt65712 - VRM is now more pro-active in detecting failed grid jobs. If an execution method command with a valid "gridtype" attribute fails with a non-zero exit code, that will be reported as a launch failure. Also, VRM checks the grid status periodically and if a job launched by vrun is reported as having failed or is not included in the status report at all, VRM will flag that as a queuing failure. In both cases the Action will be re-launched if local re-run is enabled.</li>
+ <li>dvt66362 - The VRM auto-testplan import functionality is separated into its own action script: tplanScript. The tplanScript follows the same logging, error reporting and overriding conventions of other action scripts.  </li>
+ <li>dvt21896 - The RMDB localfile element has a new boolean attribute append. If the attribute is set to yes, the contents of the localfile element will be appended to the file having the same target path, if it exists.  </li>
+ <li>dvt63140 - Filters in the VRM Results Window can be exported and imported now. This is done through the Filter Configuration dialogue(VRM Results -> Filter Expressions ->[Configure Filter Expressions...]). There are buttons for the import/export functionality. Multiple filters can be selected simultaneously for exporting.   </li>
+ <li>dvt70788 - (results) Source files are suppressed by default in HTML reports. To add them, use the new '-source' option. The old '-nosource' option is now obsolete.</li>
+ <li>dvt70802 - (results) HTML coverage details pages are suppressed by default in HTML reports. To add them, use the new '-details' option. Also, the user can specify which coverage type details he/she is interested in. So, the user can use "-details=sb" to print the details for statement and branch details page. Allowed characters are abcdefgst which refers to assertions, branches, conditions, cover directives, expressions, FSM, covergroups, statements and toggles respectively. The old '-nodetails' option is now obsolete.</li>
+ <li>dvt65020 - The "REGEXP" operator is added in rule based testplan linking mechanism to evaluate string type attribute values by using regular expression matching.</li>
+ <li>dvt71931 - Our attribute tools (i.e. vcover attribute .. & coverage attribute)
+are now able to handle attributes on history nodes.
+
+<pre>
+Extensions to these tools:
+1) Display ALL attributes on the "< history node name >" history node:
+    coverage attribute -history < history node name >  
+2) Display the < attribute name > attribute on the "< history node name >" history
+node:
+    coverage attribute -history < history node name > -name < attribute name >  
+3) Set the < attribute name > attribute on the "< history node name >" history
+node:
+    coverage attribute -history < history node name > -name < attribute name >
+-value < value >    
+4) Display ALL attributes on the "< history node name >" history node:
+    vcover attribute -history < history node name > < UCDB file >
+5) Display the < attribute name > attribute on the "< history node name >" history
+node:
+    vcover attribute -history < history node name > -name < attribute name > < UCDB
+file >
+</pre></li>
+ <li>dvt62198 - VRM now supports an auto-timeout calculation feature, where the elapsed time of the previous run(s) are used to forecast an appropriate timeout value. </li>
+ <li>dvt71337 - Added support for ADMS sweep tests to VRM. Added IsSweepUcdb utility procedure to detect whether a given UCDB was generated by an ADMS sweep test.</li>
+ <li>[nodvtid]  - Added support for user-specified grid submission options in VRM parallel-merge RMDB file.</li>
+ <li>dvt71909 - Added VRM support for coverstore flow.
+<ul><li>Added ValidateUcdb and IsCoverstore user utilities</li>
+    <li>Added ucdbpath and ucdbtest elements to the userdata array</li>
+    <li>Auto-merge generates coverstore if inputs are coverstores</li></ul>
+</li>
+ <li>dvt72460 - The status summary for the VRM text, TCL, and HTML status reports now includes a summary of pending, running, and suspended tests.</li>
+ <li>dvt65321 - (results) Filtering options are added in vcover html trend report generation for selecting trend dates, coverage types, and test status types. The -linegraph option is also added to switch the display of coverage trend charts from bargraphs to linegraphs.</li>
+ <li>[nodvtid]  - The "ask" attribute in the parameter element in the RMDB file (VRM) now supports "\n" and "\t" meta-characters.</li>
+ <li>dvt71739 - The parallel-merge RMDB (for use with VRM) has been updated to support coverstores, to accept additional grid submission options, and to simplify the messages emitted while running.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="paenhancement"></a><font size="4"><b>Power Aware Enhancements in 10.4</b></font>
+<ul><li>dvt37219 - Added a Tcl command "__LINE__" to get line number from UPF file.</li>
+ <li>dvt64068 - (results) Added support for bit level specification of set_port_attributes for attributes -driver_supply/-repeater_supply/-receiver_supply/-related_power_net/-related_ground_net</li>
+ <li>dvt69604 - Support for UPF Command set_port_attributes -related_bias_ports has been added. </li>
+ <li>dvt69605 - Support for UPF command "find_objects -object_type model" has been added. </li>
+ <li>dvt69714 - Added support for interval function in UPF command add_power_state.</li>
+ <li>dvt68720 - For HDL embedded power switch output, voltage values were getting lost when connected to UPF supplies due to VCTs involved.Now the voltage value is used from the UPF supply as defined in pg_function liberty attribute.</li>
+ <li>[nodvtid]  - Added support of UPF command "set_repeater"</li>
+ <li>dvt68938 - Support for static PA checks enhanced for PG connected netlist. This support can be enabled with -pa_enable=pgconn vopt option.</li>
+ <li>[nodvtid]  - Added support for exclusion from power aware processing using attribute "upf_dont_touch"<br>
+Usage example:<br>
+      set_design_attributes -attribute upf_dont_touch TRUE -elements  { top/mid1 } <br>
+      set_port_attributes -attribute upf_dont_touch TRUE -ports {s1 s2} -models {mid} <br>
+      set_port_attributes -attribute upf_dont_touch TRUE -ports {mem[4:0]} -models {mid}</li>
+ <li>[nodvtid]  - Added support for re-evaluation of verilog initial block using attribute "qpa_replay_init"<br>
+Usage example:<br>    
+   set_design_attributes -attribute qpa_replay_init TRUE -models { t* } <br>
+    set_design_attributes -attribute qpa_replay_init TRUE -elements { top/bot1/sram} <br></li>
+</ul>
+
+</body>
+</html>

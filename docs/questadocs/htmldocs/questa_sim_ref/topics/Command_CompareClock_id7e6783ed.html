@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="compare clock" />
+<meta name="abstract" content="Defines a clock to use for clocked-mode comparisons. In clocked‑mode comparisons, signals are sampled and compared at or just after a specified signal edge." />
+<meta name="description" content="Defines a clock to use for clocked-mode comparisons. In clocked‑mode comparisons, signals are sampled and compared at or just after a specified signal edge." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7e6783ed-242b-4bc3-aaad-2c9de72d731a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>compare clock</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="compare clock" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">compare clock</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Defines a clock to use for clocked-mode comparisons.
+In clocked‑mode comparisons, signals are sampled and compared at
+or just after a specified signal edge. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">compare clock [<a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idbd7ea4ad-435b-4fca-bc5b-acab15a516ff">-delete</a>] [<a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idad433296-34f1-470e-8c7a-85522656829d">-offset &lt;delay&gt;[&lt;unit&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idcf9ff168-b4b7-46fc-8e4d-f04f5bdfba81">-rising</a> | <a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id4e826746-5247-47e7-86ee-c998fcf10c78">-falling</a> | <a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id2d4209fa-0582-488d-91fd-1b27f28b8e52">-both</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id0cde9d5d-c1dc-4cc3-9cff-d13497f24708">-when {“&lt;expression&gt;”}</a>}] {<a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id6b8d7c57-e17e-4c3e-9194-9f184f7e7ad9">&lt;clock_name&gt;</a> <a class="xref fm:HeadingOnly" href="#id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id9335f6fc-2c3c-4c41-96b8-db19daad608e">&lt;signalization&gt;</a>}</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id2d4f83a6-4b2f-42ec-9802-89ace9cd4de8"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idbd7ea4ad-435b-4fca-bc5b-acab15a516ff">-delete</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Deletes an existing compare clock.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idad433296-34f1-470e-8c7a-85522656829d">-offset &lt;delay&gt;[&lt;unit&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies how long to delay the
+sample time beyond the specified signal edge. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__ide4bd110d-2cdd-4157-af6e-ff912b4b5761"><p class="p Opt">&lt;delay&gt;
+— Any non-negative integer where the default is 0.</p>
+</li>
+<li class="li ArgOption" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idecbbcc32-304a-4064-9fb1-2b5e11d00059"><p class="p Opt">&lt;unit&gt; — (optional) A suffix specifying
+a unit of time. If &lt;unit&gt; is specified, you must enclose &lt;delay&gt;
+and &lt;unit&gt; within curly braces ({}). Valid time units are: fs,
+ps, ns, us, ms, sec, min, and hr. The default is to specify the
+current simulation resolution by omitting &lt;unit&gt;. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__idcf9ff168-b4b7-46fc-8e4d-f04f5bdfba81">-rising</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies to use the rising edge
+of the specified signal. (default)</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id4e826746-5247-47e7-86ee-c998fcf10c78">-falling</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies to use the falling edge
+of the specified signal. The default is rising. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id2d4209fa-0582-488d-91fd-1b27f28b8e52">-both</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies to use both the rising
+and the falling edge of the specified signal. The default is rising.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id0cde9d5d-c1dc-4cc3-9cff-d13497f24708">-when {“&lt;expression&gt;”}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a conditional expression that must evaluate to "true"
+or "1" for that clock edge to be used as a strobe. The expression
+is evaluated at the time of the clock edge, rather than after the
+delay has been applied. Refer to “<a class="xref fm:HeadingOnly" href="Contain_GuiExpressionFormat_id1f1324bb.html#id1f1324bb-ab99-4132-a0df-42dcf8767a31__Contain_GuiExpressionFormat_id1f1324bb.xml#id1f1324bb-ab99-4132-a0df-42dcf8767a31" title="The GUI_expression_format is an option of several simulator commands that operate within the Questa SIM GUI environment. The expressions help you locate and examine objects within the List and Wave windows (expressions may also be used through the Edit &gt; Search menu in both windows). The commands that use the expression format are:">GUI_expression_format</a>” for legal
+expression syntax.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id70df5e04-819a-4b4e-bac1-78d955f136a4"><p class="p Opt">"&lt;expression&gt;" — The conditional expression
+to evaluate. You must enclose the condition expression within quotation
+marks (“ ”).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id6b8d7c57-e17e-4c3e-9194-9f184f7e7ad9">&lt;clock_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) A name for this clock definition.
+This name is used with the <a class="xref fm:HeadingOnly" href="Command_CompareAdd_id5bf032ec.html#id5bf032ec-ee19-4350-84b2-5d25b104d244__Command_CompareAdd_id5bf032ec.xml#id5bf032ec-ee19-4350-84b2-5d25b104d244" title="Creates an object that is a comparison of signals in a reference design to signals in a test design. You can specify whether to compare two signals, all signals in the region, just ports or a subset of ports. Ignores constant signals such as parameters and generics.">compare add</a> command when doing a clocked-mode
+comparison. Must precede the &lt;signal_path&gt; argument. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id9335f6fc-2c3c-4c41-96b8-db19daad608e">&lt;signalization&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) A full path to the signal whose
+edges are to be used as the strobe trigger. Must be the final argument
+to the compare clock command. </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id472f7e20-0be6-4e14-9e6c-801bcb926b68"><p class="p">Define
+a clocked compare strobe named “strobe” that samples signals on
+the rising edge of signal gold:.top.clock.</p>
+<p class="lines ApplCommand">   compare clock -rising strobe gold:.top.clock</p>
+</li>
+<li class="li" id="id7e6783ed-242b-4bc3-aaad-2c9de72d731a__id952eb39c-f5c8-4c1c-b823-02bc14262683"><p class="p">Define a clocked compare strobe
+named “clock12” that samples signals 12 ns after the rising edge
+of signal gold:/mydesign/clka.</p>
+<p class="lines ApplCommand">   compare clock -rising -delay {12 ns} clock12 gold:/mydesign/clka</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_CompareAdd_id5bf032ec.html#id5bf032ec-ee19-4350-84b2-5d25b104d244__" title="Creates an object that is a comparison of signals in a reference design to signals in a test design. You can specify whether to compare two signals, all signals in the region, just ports or a subset of ports. Ignores constant signals such as parameters and generics.">compare add</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Waveform Compare', 'questa_sim_user'); return false;">Waveform Compare [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "compare clock"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CompareClock_id7e6783ed.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

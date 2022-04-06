@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_GetArrayElementType()" />
+<meta name="abstract" content="Gets the type of an array type's subelements." />
+<meta name="description" content="Gets the type of an array type's subelements." />
+<meta name="DC.subject" content="mti_GetArrayElementType()" />
+<meta name="keywords" content="mti_GetArrayElementType()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_GetArrayElementType()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_GetArrayElementType()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_GetArrayElementType()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Gets the
+type of an array type's subelements.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">elem_type = mti_GetArrayElementType( array_type )</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e159"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e162"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e159 "><p class="p">array_type</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e162 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e165 "><p class="p">A type ID for a VHDL
+or SystemC array type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6__ide093bea4-3c69-4e2f-8439-ee4e35130356" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e188"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e191"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d12269e194"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e188 "><p class="p">elem_type</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e191 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d12269e194 "><p class="p">The type ID for the subelements
+of the array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_GetArrayElementType() returns
+a handle to the type ID for the subelements of the specified array
+type. If the array_type parameter is not a handle to an array type,
+then NULL is returned.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6__id6396ba65-39ff-462f-9076-63bc13fae4f9"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;mti.h&gt;
+
+static char * getTypeStr( mtiTypeIdT typeid )
+{
+  char * typestr;
+
+  switch ( mti_GetTypeKind( typeid ) ) {
+    case MTI_TYPE_SCALAR:  typestr = "Scalar";  break;
+    case MTI_TYPE_ARRAY:  typestr = "Array";  break;
+    case MTI_TYPE_RECORD:  typestr = "Record";  break;
+    case MTI_TYPE_ENUM:  typestr = "Enum";  break;
+    case MTI_TYPE_PHYSICAL:  typestr = "Physical";  break;
+    case MTI_TYPE_REAL:  typestr = "Real";  break;
+    case MTI_TYPE_ACCESS:  typestr = "Access";  break;
+    case MTI_TYPE_FILE:  typestr = "File";  break;
+    case MTI_TYPE_TIME:  typestr = "Time";  break;
+    default:  typestr = "UNKNOWN";  break;
+  }
+
+  return typestr;
+}
+
+static void printSignalInfo( mtiSignalIdT sigid, int indent )
+{
+  char         * fullname;
+  int            i;
+  mtiInt32T      num_elems;
+  mtiSignalIdT * elem_list;
+  mtiTypeIdT     sig_type;
+  mtiTypeIdT     elem_type;
+
+  fullname = mti_GetSignalNameIndirect( sigid, 0, 0 );
+  sig_type = mti_GetSignalType( sigid );
+
+  mti_PrintFormatted( "\n%*cSignal %s is of type %s.\n", indent, ' ',
+                   fullname, getTypeStr( sig_type ));
+  mti_VsimFree( fullname );
+
+  elem_type = mti_GetArrayElementType( sig_type );
+  if ( elem_type ) {
+    mti_PrintFormatted( "%*cIts subelements are of type %s.\n",
+                       indent, ' ', getTypeStr( elem_type ));
+} else {
+    if ( mti_GetTypeKind( sig_type ) == MTI_TYPE_RECORD ) {
+      mti_PrintFormatted( "%*cThe record subelements are:\n",
+                         indent, ' ' );
+      elem_list = mti_GetSignalSubelements( sigid, 0 );
+      num_elems = mti_GetNumRecordElements( sig_type );
+      for ( i = 0; i &lt; num_elems; i++ ) {
+        printSignalInfo( elem_list[i], indent+2 );
+      }
+      mti_VsimFree( elem_list );
+    } else {
+      mti_PrintFormatted( "%*cThere are no array subelements.\n",
+                         indent, ' ' );
+    }
+  }
+}
+
+static void initInstance( void * param )
+{
+  mtiSignalIdT sigid;
+
+  for ( sigid = mti_FirstSignal( mti_GetTopRegion() );
+        sigid; sigid = mti_NextSignal() ) {
+       printSignalInfo( sigid, 1 );
+  }
+}
+
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  mti_AddLoadDoneCB( initInstance, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6__idbdd19d79-bae3-4371-b7e6-6cff62f9ef10"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>e
+entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl;";
+begin
+end a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity top is
+
+  type bitarray  is array( 3 downto 0 ) of bit;
+  type intarray  is array( 1 to 3 )     of integer;
+
+  type rectype is record
+    a : real;
+    b : std_logic;
+    c : bitarray;
+  end record;
+
+end top;
+
+architecture a of top is
+
+  signal bitsig1      : bit       := '1';
+  signal stdlogicsig1 : std_logic := '1';
+
+  signal bitarr1      : bitarray  := "0110";
+  signal stdlogicarr1 : std_logic_vector( 1 to 4 ) := "01LH";
+  signal intarr1      : intarray  := ( 10, 11, 12 );
+  signal strarr1      : string(1 to 5) := "hello";
+
+  signal rec1         : rectype   := ( 1.2, '0', "1001" );
+
+  component for_model
+  end component;
+
+  for all : for_model use entity work.for_model(a);
+
+begin
+
+  inst1 : for_model;
+
+  bitsig1      &lt;= not bitsig1 after 5 ns;
+  stdlogicsig1 &lt;= not stdlogicsig1 after 5 ns;
+
+  bitarr1      &lt;= not bitarr1 after 5 ns;
+
+  intarr1(1)   &lt;= intarr1(1) + 1 after 5 ns;
+  intarr1(2)   &lt;= intarr1(2) + 1 after 5 ns;
+  intarr1(3)   &lt;= intarr1(3) + 1 after 5 ns;
+
+  stdlogicarr1 &lt;= not stdlogicarr1 after 5 ns;
+
+  strarr1      &lt;= "there" after 10 ns;
+
+  rec1.a &lt;= rec1.a + 1.1 after 5 ns;
+  rec1.b &lt;= not rec1.b after 5 ns;
+  rec1.c &lt;= not rec1.c after 5 ns;
+
+nd a;</code></pre></div>
+<div class="section Subsection" id="idc9bc292e-6c3b-4f5b-89ca-e83d8ab0e9b6__iddadc3459-48a5-49af-8547-150d415592d3"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.4b
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading .../modeltech/sunos5/../ieee.std_logic_1164(body)
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+# 
+#  Signal bitsig1 is of type Enum.
+#  There are no array subelements.
+# 
+#  Signal stdlogicsig1 is of type Enum.
+#  There are no array subelements.
+# 
+#  Signal bitarr1 is of type Array.
+#  Its subelements are of type Enum.
+# 
+#  Signal stdlogicarr1 is of type Array.
+#  Its subelements are of type Enum.
+# 
+#  Signal intarr1 is of type Array.
+#  Its subelements are of type Scalar.
+# 
+#  Signal strarr1 is of type Array.
+#  Its subelements are of type Enum.
+# 
+#  Signal rec1 is of type Record.
+#  The record subelements are:
+# 
+#    Signal rec1.a is of type Real.
+#    There are no array subelements.
+# 
+#    Signal rec1.b is of type Enum.
+#    There are no array subelements.
+# 
+#    Signal rec1.c is of type Array.
+#    Its subelements are of type Enum.
+VSIM 1&gt; run 10
+VSIM 2&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_MtiVsimfree_id7390869b.html#id7390869b-5e7c-410d-bdaa-025b0b0dae95__" title="Frees simulator-allocated memory.">mti_VsimFree()</a></div>
+<div><a class="link" href="../topics/Command_MtiTicklength_id7a711375.html#id7a711375-2ca8-42eb-b60f-e7af9c58a751__" title="Gets the length of a type.">mti_TickLength()</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_GetArrayElementType()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiGetarrayelementtype_idc9bc292e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

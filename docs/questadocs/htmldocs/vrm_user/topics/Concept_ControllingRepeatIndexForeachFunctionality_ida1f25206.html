@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Controlling the Repeat Index (foreach Functionality)" />
+<meta name="abstract" content="Unless otherwise specified, the indices of the repeating Runnables run from one (1) to the number given in the repeat attribute (N). The list of indices can be controlled by the foreach attribute. The foreach attribute contains a list of one or more string tokens, separated by whitespace, commas, or a combination of both. A Runnable containing a properly formatted foreach attribute (one whose value contains at least one token) repeats once for each token in the value of the foreach attribute, irrespective of whether there is a repeat attribute specified. The indices used for each instance of the Runnable are derived from the token strings found in the foreach attribute." />
+<meta name="description" content="Unless otherwise specified, the indices of the repeating Runnables run from one (1) to the number given in the repeat attribute (N). The list of indices can be controlled by the foreach attribute. The foreach attribute contains a list of one or more string tokens, separated by whitespace, commas, or a combination of both. A Runnable containing a properly formatted foreach attribute (one whose value contains at least one token) repeats once for each token in the value of the foreach attribute, irrespective of whether there is a repeat attribute specified. The indices used for each instance of the Runnable are derived from the token strings found in the foreach attribute." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida1f25206-246a-4d19-ad51-38a36fb1a104" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Controlling the Repeat Index (foreach Functionality)</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Controlling the Repeat Index (foreach Functionality)" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ida1f25206-246a-4d19-ad51-38a36fb1a104">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Controlling the Repeat Index (foreach Functionality)</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Unless otherwise
+specified, the indices of the repeating Runnables run from one (1)
+to the number given in the <span class="ph FontProperty emphasis">repeat</span> attribute
+(N). The list of indices can be controlled by the <span class="ph FontProperty emphasis">foreach</span> attribute.
+The <span class="ph FontProperty emphasis">foreach</span> attribute
+contains a list of one or more string tokens, separated by whitespace,
+commas, or a combination of both. A Runnable containing a properly formatted <span class="ph FontProperty emphasis">foreach</span> attribute
+(one whose value contains at least one token) repeats once for each
+token in the value of the <span class="ph FontProperty emphasis">foreach</span> attribute,
+irrespective of whether there is a <span class="ph FontProperty emphasis">repeat</span> attribute
+specified. The indices used for each instance of the Runnable are
+derived from the token strings found in the <span class="ph FontProperty emphasis">foreach</span> attribute.</span>
+</div>
+<p class="p">The <span class="ph FontProperty emphasis">foreach</span> attribute
+of any Runnable can contain a token that begins with an asterisk
+(*). This signals the Runnable to repeat dynamically at run-time
+based on the return value of a user-definable procedure.</p>
+<p class="p">Note that the tokens in the <span class="ph FontProperty emphasis">foreach</span> attribute
+need not be numeric.</p>
+<p class="p">For example, assume you have the following
+Task and Group in the RMDB database:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable name="test" type="task" foreach="93 111 156"&gt;
+   ...
+&lt;/runnable&gt;
+&lt;runnable name="allseeds" type="group"&gt;
+   &lt;members&gt;
+      &lt;member&gt;test&lt;/member&gt;
+   &lt;/members&gt;
+   ...
+&lt;/runnable&gt;</code></pre><p class="p">When the “allseeds” Group executes, it executes
+three Tasks, one for each value in the <span class="ph FontProperty emphasis">foreach</span> attribute
+of the Task. The Task instances are called <span class="ph FontProperty emphasis">test~93</span>, <span class="ph FontProperty emphasis">test~111</span>,
+and <span class="ph FontProperty emphasis">test~156</span>.</p>
+<p class="p">The <span class="ph FontProperty emphasis">foreach</span> attribute
+can be parameterized. The example above could have been modified
+as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable name="allseeds" type="group"&gt;
+   ...
+   &lt;parameters&gt;
+      &lt;parameter name="seeds"&gt;93 111 156&lt;/parameter&gt;
+   &lt;/parameters&gt;
+   &lt;members&gt;
+      &lt;member&gt;test1&lt;/member&gt;
+   &lt;/members&gt;
+   ...
+&lt;/runnable&gt;
+&lt;runnable name="test1" type="task" foreach="(%seeds%)"&gt;
+   ...
+&lt;/runnable&gt;
+</code></pre><p class="p">Parameterization allows the list of tokens
+to be overridden from the command line at runtime (using the -g/-G
+options). As in the case of the <span class="ph FontProperty emphasis">repeat</span> attribute,
+the parameter can contain a default value and can be resolved by
+a parameter definition located anywhere along the base or group
+inheritance chains. The same abbreviated set of predefined parameters
+available for expansion of the <span class="ph FontProperty emphasis">repeat</span> attribute
+are also available for the <span class="ph FontProperty emphasis">foreach</span> expansion
+(see “<a class="xref fm:HeadingAndPage" href="Concept_PredefinedParameterUsage_iddf078ecb.html#iddf078ecb-d843-425d-8487-8e9ad7d874b5__Concept_PredefinedParameterUsage_iddf078ecb.xml#iddf078ecb-d843-425d-8487-8e9ad7d874b5" title="A small number of parameters are predefined with values equal to certain global paths or names relevant to VRM algorithm.">Predefined Parameter Usage</a>” for details).</p>
+<p class="p">The <span class="ph FontProperty emphasis">foreach</span> functionality
+makes no assumption as to what the specified indices represent.
+The (<span class="ph FontProperty emphasis">%ITERATION%</span>) predefined
+parameter is set to the corresponding token string for each instance
+in turn, just as it is for a Runnable with a <span class="ph FontProperty emphasis">repeat </span>attribute.
+However, the primary reason for using <span class="ph FontProperty emphasis">foreach</span> is
+to specify a list of random seeds to be used in executing a constrained
+random test. If this is the case, the index variable can be renamed
+for convenience. For example,</p>
+<pre class="pre codeblock leveled"><code>&lt;parameter name="seed"&gt;(%ITERATION%)&lt;/parameter&gt;</code></pre><p class="p">The value of the (%<span class="ph FontProperty emphasis">ITERATION</span>%)
+predefined parameter for a non-repeating Runnable is always “1”.</p>
+<p class="p">The (%<span class="ph FontProperty emphasis">ITERATION</span>%)
+predefined parameter applies only to the Runnable on whose behalf
+the parameter reference is being expanded. In the case of nested
+repeating Runnables, it is sometimes necessary to reference the
+instance index of a Runnable further up in the chain. To accommodate
+these cases, each repeating Runnable defines an additional predefined
+parameter that is the name of the Runnable with the string <span class="ph filepath">.ITERATION</span> appended
+(for example, <span class="ph filepath">testA.ITERATION</span>). In the example
+above, this additional parameter is referenced as (<span class="ph filepath">%test1.ITERATION%</span>).
+In addition, the user may define a parameter to contain the iteration
+index for a given Runnable by attaching the <span class="ph FontProperty emphasis">index</span> attribute
+to the <span class="ph FontProperty emphasis">runnable</span> element
+for the repeating Runnable in question. The value of the <span class="ph FontProperty emphasis">index</span> attribute
+is used as the name of a parameter whose value is the iteration
+index for that Runnable. Even when an <span class="ph FontProperty emphasis">index</span> attribute
+is specified, the other predefined parameters are still available
+for use.</p>
+<p class="p">Repeating Runnables (that is, those with <span class="ph FontProperty emphasis">repeat</span> or <span class="ph FontProperty emphasis">foreach</span> attributes)
+automatically define a built-in parameter whose value is the current
+repeat index for that runnable, regardless of where said parameter
+is referenced.</p>
+<p class="p">The reason both whitespace and commas are accepted
+is because spaces look more natural in an XML file but they are
+annoying when they appear on a shell command-line. For example,
+one could override, at runtime, the whitespace-separated list of
+seeds in the example above with a list separated by commas as follows:</p>
+<pre class="pre codeblock leveled"><code>vrun ... -Gseeds=2,4,6,8 </code></pre><p class="p">The tokens (strings separated by whitespace
+and/or commas) can contain any characters, except whitespace or
+commas. As always, XML meta-characters must be converted to the appropriate
+external entity. The tokens are used in their specified sequence
+to construct repeating instances of the Runnable to which they are
+attached. If there are no tokens in the list (that is, if the <span class="ph FontProperty emphasis">foreach</span> attribute
+is empty), then the <span class="ph FontProperty emphasis">repeat</span> attribute
+is consulted instead. Note that this implies that a Runnable that
+defines both a non-empty <span class="ph FontProperty emphasis">foreach</span> list and
+a greater-than-one <span class="ph FontProperty emphasis">repeat</span> value
+will always repeat unless both attributes are somehow overridden.</p>
+<p class="p">If either the <span class="ph FontProperty emphasis">foreach</span> or
+the <span class="ph FontProperty emphasis">repeat</span> attribute
+is overridden by the -g/-G option, the same rules apply as given
+in “<a class="xref fm:HeadingAndPage" href="Contain_OverrideParameterValuesFromCommandLine_id249c2739.html#id249c2739-27ba-4247-97f8-3231fbbfa802__Contain_OverrideParameterValuesFromCommandLine_id249c2739.xml#id249c2739-27ba-4247-97f8-3231fbbfa802" title="VRM supports -g (parameter default) and -G (parameter override) options. These options have the same syntax and similar behavior to options of the same name in Questa vsim. The exact syntax of these options is as follows:">Override Parameter Values from Command Line</a>”. However, in order for these
+override options to work with the <span class="ph FontProperty emphasis">foreach</span> attribute,
+the value of the attribute to be overridden must be specified as
+a parameter reference.</p>
+<p class="p">There is no <span class="ph FontProperty emphasis">foreach</span> override
+option equivalent to the ‑R option for repeat (which can force a
+repeat value onto a Runnable even if the Runnable did not originally
+specify a <span class="ph FontProperty emphasis">repeat</span> attribute).
+For any given Runnable, if the -R option is specified, that takes
+precedence. Otherwise, if a <span class="ph FontProperty emphasis">foreach</span> attribute
+is specified and its value contains at least one valid numeric token,
+the tokens found therein are used as the repeat indices. Otherwise,
+the <span class="ph FontProperty emphasis">repeat</span> count
+found in the RMDB database (subject to the standard override/default
+rules) is used. In the absence of any of the foregoing conditions,
+the Runnable will execute exactly once.</p>
+<p class="p">Note that it is also possible to limit execution
+of a repeating Runnables to some subset of the indices defined in
+the RMDB database (or to directly specify repeat indices for non-repeating
+Runnables) by specifying the Runnable with a repeat index on the
+command line. See “<a class="xref fm:HeadingAndPage" href="Contain_SpecifySelectedRunnables_id58f553e2.html#id58f553e2-c3ba-4c6d-b4de-aead3d2b2439__Contain_SpecifySelectedRunnables_id58f553e2.xml#id58f553e2-c3ba-4c6d-b4de-aead3d2b2439" title="VRM database (RMDB file) generally contains data for one or more regression test suites arranged in a hierarchical tree topology that allows the user to group tests and other tasks in various ways. Each node in this tree is known as a “Runnable” because it could, in theory, be designated as one of the top-most nodes to be executed in any given regression run. Command-line options are used to designate which part(s) of this hierarchy are to be executed.">Specify Selected Runnables</a>” for details.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RepeatingTaskGroup_idae0365f9.html" title="In some cases, such as when constrained random techniques are used to generate stimulus for the device under test (DUT), it can be useful to be able to repeat a single Task (that is, simulation) or Group of Tasks multiple times as part of the same regression run.">Repeating a Task or a Group</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Controlling the Repeat Index (foreach Functionality)"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ControllingRepeatIndexForeachFunctionality_ida1f25206.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

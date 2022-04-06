@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="triage dbrefresh" />
+<meta name="abstract" content="Clears the old triage database, and re-creates the database using a saved history of previous &#34;triage dbfile&#34; and “triage dbinsert” commands." />
+<meta name="description" content="Clears the old triage database, and re-creates the database using a saved history of previous &#34;triage dbfile&#34; and “triage dbinsert” commands." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id21951d13-c5a8-4748-a7c5-851eaa80a24b" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>triage dbrefresh</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="triage dbrefresh" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id21951d13-c5a8-4748-a7c5-851eaa80a24b">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">triage dbrefresh</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Clears the
+old triage database, and re-creates the database using a saved history
+of previous "triage dbfile" and “triage dbinsert” commands.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">triage dbrefresh [<a class="xref fm:HeadingOnly" href="#id21951d13-c5a8-4748-a7c5-851eaa80a24b__idee754fd2-bdce-4c53-bf8e-02ee78da0e04">-name &lt;tdb_filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id21951d13-c5a8-4748-a7c5-851eaa80a24b__id1242af45-890c-4f65-8dfb-f270ef6db9a1">-verbose</a>]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id21951d13-c5a8-4748-a7c5-851eaa80a24b__ida44a3105-327f-42f5-be89-8b0937ea4d16"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id21951d13-c5a8-4748-a7c5-851eaa80a24b__idee754fd2-bdce-4c53-bf8e-02ee78da0e04">-name &lt;tdb_filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Specifies a path and file name for the <span class="ph filepath italic">.tdb</span> file
+to refresh. Default filename is <span class="ph filepath italic">questasim.tdb </span>located
+in the current directory.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id21951d13-c5a8-4748-a7c5-851eaa80a24b__id1242af45-890c-4f65-8dfb-f270ef6db9a1">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Prints additional information to the screen.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can run this command from either the command shell or the
+vsim command prompt.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Analyzing Verification Results', 'questa_sim_vm'); return false;">Analyzing Verification Results [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_TriageDbfile_id1180d2fd.html#id1180d2fd-ea15-4805-b541-50c7925002b0__" title="Creates a database (questasim.tdb) of test data and/or simulation messages extracted from a UCDB, a WLF file, or a LOG file.">triage dbfile</a></div>
+<div><a class="link" href="../topics/Command_TriageDbinsert_id2b2b0942.html#id2b2b0942-6558-4940-b9c7-50959c56fce4__" title="Places one or more messages directly into a triage database (TDB) file.">triage dbinsert</a></div>
+<div><a class="link" href="../topics/Command_TriageQuery_idbbde8b93.html#idbbde8b93-8060-4c6b-898b-217d3c3834e2__" title="Provides programmatic access to the contents of the triage database (TDB) for debug and scripting purposes.">triage query</a></div>
+<div><a class="link" href="../topics/Command_TriageView_idee1da1ef.html#idee1da1ef-3756-452e-bf5e-4744b7e900b1__" title="Loads a triage database (.tdb) into the Verification Results Analysis window.">triage view</a></div>
+<div><a class="link" href="../topics/Command_TriageReport_id82531129.html#id82531129-afe5-4103-956f-4850683be6e2__" title="Reads in a triage database (.tdb) and prints out a text report, after applying specified filters.">triage report</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "triage dbrefresh"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_TriageDbrefresh_id21951d13.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

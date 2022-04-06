@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Basic Regression Execution Algorithm" />
+<meta name="abstract" content="The generic VRM use model is relatively simple. The user defines a regression suite containing an arbitrary number of tests. For convenience, these tests can be collected into groups, where each group can perform some action before and after the group's members are executed. The complete regression suite hierarchy is encoded into a RMDB database. A single call to VRM can then be used to execute all or part of the regression suite under specific conditions. Because VRM is expected to work under various existing regression flows, there are many opportunities for customizing and/or parameterization." />
+<meta name="description" content="The generic VRM use model is relatively simple. The user defines a regression suite containing an arbitrary number of tests. For convenience, these tests can be collected into groups, where each group can perform some action before and after the group's members are executed. The complete regression suite hierarchy is encoded into a RMDB database. A single call to VRM can then be used to execute all or part of the regression suite under specific conditions. Because VRM is expected to work under various existing regression flows, there are many opportunities for customizing and/or parameterization." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcf949f39-e19b-4d3e-8861-e0dd30c9b320" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Basic Regression Execution Algorithm</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Basic Regression Execution Algorithm" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Basic Regression
+Execution Algorithm</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">The
+generic VRM use model is relatively simple. The user defines a regression
+suite containing an arbitrary number of tests. For convenience,
+these tests can be collected into groups, where each group can perform
+some action before and after the group's members are executed. The
+complete regression suite hierarchy is encoded into a RMDB database.
+A single call to VRM can then be used to execute all or part of
+the regression suite under specific conditions. Because VRM is expected
+to work under various existing regression flows, there are many
+opportunities for customizing and/or parameterization.</span>
+</div>
+<p class="p">In the overall VRM flow, the
+user can discern four distinct levels of functionality as follows:</p>
+<ul class="ul"><li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__id1ac7486d-1965-4aee-a460-739136c07ef6"><p class="p">At the very top-level, is the vrun
+command-line, with all its options, including a recursive “macro”
+approach that allows a vrun command line of arbitrary complexity
+to be stored inside the RMDB database and invoked via a much shorter
+vrun command. A user shell script that calls the vrun utility falls
+into this top-most level.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__idda85131b-a00b-4a57-9075-1a24c2d06680"><p class="p">The second level of functionality
+is the infrastructure of the VRM application. This includes the
+algorithm which, based on the contents of the vrun command line
+and the RMDB database, decides which Actions should run and when, maintains
+the <span class="ph filepath">VRMDATA</span> directory, generates parameter-expanded
+script files, and launches jobs. This level is the most complex
+and, fortunately, the least likely to vary from one user environment
+to the next.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__id70940e5e-1bc2-4fd7-b840-a5e88dc6515d"><p class="p">At the very lowest level are the
+basic atomic functions. For example, given a UCDB file name, return
+the pass/fail status from the testdata record; or given a parameter
+name and a context stack, determine the defined value of the parameter. These
+things are basic and most users will not benefit from being able
+to alter them.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__id30e5d8e6-fead-4a7d-aa68-809e798608c7"><p class="p">In between the reinforced infrastructure
+and the atomic functions, there exists a whole range of behaviors
+that vary from user to user. Functions like: “tell me whether a
+given test passed or failed” or “should I delete the <span class="ph filepath">VRMDATA</span> directory
+for a given test upon completion.” For these functions, a plug-in
+like architecture is used where the users can write their own code
+to implement these specific behaviors, overriding the default behavior
+built into VRM.</p>
+</li>
+</ul>
+<p class="p">The VRM implementation consists
+of the following major functional elements:</p>
+<ul class="ul"><li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__id880289b7-427e-454f-9b47-c67877391646"><p class="p">RMDB database.</p>
+<p class="p">The RMDB database describes the hierarchical
+tree of tasks and groups of tasks. The grouping can be nested to
+any depth, allowing the user to subdivide the regression suite as
+necessary. The hierarchy of the tree determines the inter-dependence
+of the various tasks and the nodes of the tree define the Action
+scripts that will become the “jobs” executed as part of the regression
+suite. The content of the database is completely parameterizable
+and can be configured to invoke the user's existing run scripts
+in addition to defining run commands from scratch. Refer to “<a class="xref fm:HeadingAndPage" href="MGCChap_RmdbDatabaseTopology_id46a4dcaa.html#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88__MGCChap_RmdbDatabaseTopology_id46a4dcaa.xml#id46a4dcaa-220c-4e20-8015-5d0c86eb8a88" title="The RMDB database contains the information required to expand one or more selected Tasks or Groups of tasks, invoked by name on the command line, into one or more individual Actions that are to be executed.">RMDB Database Topology</a>” for detailed information.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__idf7b21c65-15ef-4e33-bcc6-739413e380f2"><p class="p">Parameter expansion engine.</p>
+<p class="p">The parameter expansion engine supports
+the parameterization of Action scripts and certain attributes in
+the RMDB database. Parameter values can also contain nested references
+to other parameters, making the entire database more flexible. It
+is common for many Tasks (tests) in a typical regression suite to
+share the same basic command set with some modifications unique
+to each Task (such as a plusarg argument, a stimulus file name,
+or a seed value). The parameterization functionality of VRM allows
+the common parts of the commands to be defined once with Task-specific
+parameters defined where needed. Refer to “<a class="xref fm:HeadingAndPage" href="MGCChap_ParametersParameterExpansion_id68da1844.html#id68da1844-ab5a-4671-86d0-234a9b5ae99e__MGCChap_ParametersParameterExpansion_id68da1844.xml#id68da1844-ab5a-4671-86d0-234a9b5ae99e" title="Each Runnable definition (that is, each runnable element) can include a list of zero or more parameter element definitions. A parameter is nothing more than a name/value pair that allows multiple Tasks to share the same execution script (or multiple Groups to share the same Task) by providing unique per-Group or per-Task values to be used in the scripts.">Parameters and Parameter Expansion</a>” for detailed information.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__ida9393b94-7f7e-4b18-9862-3d331ffd13ce"><p class="p">Working store management.</p>
+<p class="p">For any given regression run, each
+Task or Group of Tasks is assigned a unique working directory and
+the working directories for the member Groups and/or Tasks within
+any given Group are created directly under that Group's working
+directory in a manner reflecting the membership hierarchy defined
+by the RMDB database. Refer to “<a class="xref fm:HeadingAndPage" href="MGCChap_WorkingDirectoryScriptExecution_id10825c4b.html#id10825c4b-4904-44a4-85d7-7377d002bb59__MGCChap_WorkingDirectoryScriptExecution_id10825c4b.xml#id10825c4b-4904-44a4-85d7-7377d002bb59" title="In order to prevent multiple Actions (that is, user scripts) from a single vrun invocation from overwriting or otherwise interfering with each other, each Action executed by VRM is launched from within a working directory unique to the Runnable on whose behalf the Action is launched. In order to prevent multiple invocations of VRM (by other users or by the same user) from interfering with each other, the root of the scratch hierarchy within which these per-Runnable directories are created is control by the user.">Working Directory and Script Execution</a>” for detailed information.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__idff4ab6a8-5405-4e23-9519-b2c6935a86e0"><p class="p">Task launch algorithm.</p>
+<p class="p">The task launch algorithm and job progress
+monitoring manage the execution of the Actions defined within the
+regression suite. An execution graph outlining the Actions to be
+executed and their interrelationship is built from the RMDB database.</p>
+</li>
+<li class="li" id="idcf949f39-e19b-4d3e-8861-e0dd30c9b320__id42fc014f-f729-413c-a113-2a4e89cbcaa0"><p class="p">Job progress monitoring.</p>
+<p class="p">The task launch algorithm and job progress
+monitoring manage the execution of the Actions defined within the
+regression suite. Internal queues are maintained for those Actions
+that are eligible to run and those that are currently running. VRM
+tracks and reports the status of the Actions for each run. Refer
+to <a class="xref fm:HeadingOnly" href="Concept_JobProgressMonitoring_idbcdb4418.html#idbcdb4418-97cf-433d-92ec-6283e2565aed__Concept_JobProgressMonitoring_idbcdb4418.xml#idbcdb4418-97cf-433d-92ec-6283e2565aed" title="The VRM algorithm can be divided into two basic functions. The first, somewhat trivial function is to build a list of Actions that need to be executed. This happens once when VRM is first executed. The second, more complex function is to listen for job completions and kick off subsequent rounds of Actions as they become eligible to run. This second function is mainly triggered in response to a “done” message being received from an existing job (exceptions are made for the initial round of eligible Actions that are triggered by a synthetic “done” message on the pseudo-Action =init= and for timeouts, which are handled as if a “done” message had occurred but in response to the lapse of a preset time interval).">Job Progress Monitoring</a> below.</p>
+</li>
+</ul>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_RunRerunAlgorithm_id0af5cd67.html" title="This section describes the Run and Rerun algorithms.">Run (and Rerun) Algorithm</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_RmdbDatabaseTopology_id46a4dcaa.html" title="The RMDB database contains the information required to expand one or more selected Tasks or Groups of tasks, invoked by name on the command line, into one or more individual Actions that are to be executed.">RMDB Database Topology</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Basic Regression Execution Algorithm"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_BasicRegressionExecutionAlgorithm_idcf949f39.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

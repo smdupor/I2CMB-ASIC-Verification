@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="About the Merge Algorithm" />
+<meta name="abstract" content="Several issues related to the merge algorithm are important to note." />
+<meta name="description" content="Several issues related to the merge algorithm are important to note." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>About the Merge Algorithm</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="About the Merge Algorithm" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">About
+the Merge Algorithm</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Several issues
+related to the merge algorithm are important to note.</span>
+</div>
+<p class="p">General UCDB issues include:</p>
+<ul class="ul"><li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__idc512af8c-24d3-4640-b08c-ef257e995c6d"><p class="p">When you perform a merge on multiple
+UCDBs, all test data records with unique testnames are concatenated
+into the merged UCDB file. If you merge two tests that have identical
+names but different data contents, a warning is issued. </p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id7350aee8-9326-4111-b721-d35950df506b"><p class="p">A merged file contains one test data
+record for each of the different tests that were merged into the
+file. For example, if you merged three UCDBs saved from simulation
+(vsim), you get three test attribute records. If you merge that
+file with another one saved from vsim, you get 3 + 1 = 4 test data
+records, and so on. See “<a class="xref fm:HeadingOnly" href="Contain_UnderstandingStoredTestDataInUcdb_idf5bcc265.html#idf5bcc265-f148-4dc5-b331-cb99f95e81fe__Contain_UnderstandingStoredTestDataInUcdb_idf5bcc265.xml#idf5bcc265-f148-4dc5-b331-cb99f95e81fe" title="When you save a set of coverage data into the UCDB, that data is written into individual test data records, one for each test that is run.">Understanding Stored Test Data in the UCDB</a>” for more information
+on the content of test data records.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__idc4ad01cc-78b4-43fe-926b-a6731eea1d28"><p class="p">The merge algorithm that <span class="ph fmvar:ProductName">Questa SIM</span> uses is a union merge. Line
+numbers from the files are merged together, so that if different
+UCDBs have different sets of coverage source lines, the resulting
+merged database contains a union of the set of source lines in the
+inputs. </p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id014396fa-4354-4219-b8e6-f88e669c98e8"><p class="p">The algorithm merges toggles and FSMs,
+which have no source information, as follows:</p>
+<ul class="ul"><li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__idb7c89e8b-36c8-4f67-bda6-26234171eef2"><p class="p">Toggles are merged with a union operation:
+objects with the same name are always merged together, regardless
+of how many exist in each UCDB input file. </p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id3b89a119-d3e4-4ac3-b056-8575898d5910"><p class="p">FSMs are merged together by the order
+in which they appear in a given module instance or design unit.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="p">Assertion and functional coverage objects
+in the UCDB are always merged as a union algorithm: merging objects
+of the same name together, but the result contains the union set
+of differently named objects from all inputs. Covergroup instances
+— those for which option.per_instance = 1 — are merged together
+based on the “option.name” string for each instance. Instances with
+the same name are considered the same, and bins are merged together as
+a union, regardless of parameterization. There are some exceptions
+for other kinds of data (besides coverage counts):</p>
+<ul class="ul"><li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__idf8cb7af5-cf92-4f1e-9133-1565171ea27c"><p class="p">Exclusions flags are configurable: with
+the -and switch to vcover merge, they are ANDed together; otherwise
+they are ORed together.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id545a239b-0298-4c05-8276-4542b2fd7984"><p class="p">Coverage “at_least” values are taken
+as the maximum of all inputs.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id68592df5-14f9-41c8-9e0a-a0c8ad76315c"><p class="p">Covergroup “goal” and “auto_bin_max”
+options are taken as the maximum of all inputs.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id3a10b534-4682-4a88-8fbd-6ddc54f10b25"><p class="p">Other covergroup options are taken as
+“first one wins” — that is, values from the first input file are
+taken.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id2b5a87ef-48ea-42fc-94a0-1d511970c460"><p class="p">User-defined attributes are a union (attributes
+with the same name are “first one wins” — that is, the value in
+the first input file survives).</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__idcb16a4cd-64ea-4e3b-a446-7dc8a366e286"><p class="p">Assertion limits are taken as the maximum
+of all inputs.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id6da0a578-7d03-4910-9efd-4decfeb11ba5"><p class="p">The algorithm takes assertion and cover
+directive limits as the maximum of all inputs.</p>
+</li>
+<li class="li" id="idb8a68981-fad4-4a60-8905-82bb0e5e5c0f__id948f9469-c51b-4262-a0c8-f5a06f4467de"><p class="p">User-defined flag values are ORed together.</p>
+</li>
+</ul>
+<p class="p">(This has implications if class specializations are used; see
+“<a class="xref fm:HeadingOnly" href="Contain_CovergroupNamingConventions_id3a020440.html#id3a020440-9fcf-4010-be85-038e2ebbef34__Contain_CovergroupNamingConventions_id3a020440.xml#id3a020440-9fcf-4010-be85-038e2ebbef34" title="Covergroup instance names are important for identification in Questa SIM reports and coverage windows, as well as for restoring in simulation with $load_coverage_db(). Covergroup instance names are stored in the option.name field of the built-in covergroup structure. You may assign these names in SystemVerilog, in which case names should be unique. This is not an absolute requirement, though it is recommended.">Covergroup Naming Conventions</a>” for more
+information.) </p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ManageTestDataInUCDBs_id3082cd3f.html" title="Once you have run tests and collected coverage, the real task of analyzing the coverage can begin. Managing the coverage data which has been collected and stored in one or more UCDBs is critical to the task.">Manage Test Data in UCDBs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "About the Merge Algorithm"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MergeAlgorithm_idb8a68981.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

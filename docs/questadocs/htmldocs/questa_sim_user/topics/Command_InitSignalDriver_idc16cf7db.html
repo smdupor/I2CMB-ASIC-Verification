@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="init_signal_driver" />
+<meta name="abstract" content="The init_signal_driver() call drives the value of a VHDL signal, Verilog net, or SystemC (called the src_object) onto an existing VHDL signal or Verilog net (called the dest_object). This allows you to drive signals or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench)." />
+<meta name="description" content="The init_signal_driver() call drives the value of a VHDL signal, Verilog net, or SystemC (called the src_object) onto an existing VHDL signal or Verilog net (called the dest_object). This allows you to drive signals or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench)." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc16cf7db-712f-4907-8763-c5411d635f8e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>init_signal_driver</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="init_signal_driver" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idc16cf7db-712f-4907-8763-c5411d635f8e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">init_signal_driver</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="p ContextMGC">This reference
+section describes the following:</p>
+<ul class="ul"><li class="li" id="id9efc6a06-78c4-4eb1-9056-f87887cd0e3d"><p class="p"><span class="ph FontProperty HeadingLabel">VHDL Procedure</span> — init_signal_driver()</p>
+</li>
+<li class="li" id="id789459cf-001a-4020-8cdb-5ed1b63aab4f"><p class="p"><span class="ph FontProperty HeadingLabel">Verilog Task</span> — $init_signal_driver()</p>
+</li>
+<li class="li" id="ide5f9d3b6-8aa2-4fd1-811e-6de0ab8efae1"><p class="p"><span class="ph FontProperty HeadingLabel">SystemC Function</span>— init_signal_driver()</p>
+</li>
+</ul>
+<p class="shortdesc">The init_signal_driver() call
+drives the value of a VHDL signal, Verilog net, or SystemC (called
+the src_object) onto an existing VHDL signal or Verilog net (called
+the dest_object). This allows you to drive signals or nets at any
+level of the design hierarchy from within a VHDL architecture or
+Verilog or SystemC module (for example, a test bench).</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Destination SystemC signals
+are not supported.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">VHDL Syntax</h2><p class="lines UsageLine">init_signal_driver(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;delay&gt;, &lt;delay_type&gt;, &lt;verbose&gt;)</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Verilog Syntax</h2><p class="lines UsageLine">$init_signal_driver(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;delay&gt;, &lt;delay_type&gt;, &lt;verbose&gt;)</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">SystemC Syntax</h2><p class="lines UsageLine">init_signal_driver(&lt;src_object&gt;, &lt;dest_object&gt;, &lt;delay&gt;, &lt;delay_type&gt;, &lt;verbose&gt;)</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id97900b72-d071-416b-9745-7b0d878da49c">src_object</dt>
+<dd class="dd ArgumentDescription"><p class="p">Required string. A full hierarchical
+path (or relative downward path with reference to the calling block)
+to a VHDL signal, Verilog net, or SystemC signal. Use the path separator
+to which your simulation is set (for example, “/” or “.”). A full
+hierarchical path must begin with a “/” or “.”. The path must be
+contained within double quotes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id33381336-fe5d-4c5d-afc0-b31336dd6d41">dest_object</dt>
+<dd class="dd ArgumentDescription"><p class="p">Required string. A full hierarchical
+path (or relative downward path with reference to the calling block)
+to an existing VHDL signal or Verilog net. Use the path separator
+to which your simulation is set (for example, “/” or “.”). A full hierarchical
+path must begin with a “/” or “.”. The path must be contained within
+double quotes.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id81e235c5-ca1c-4300-9408-8d39522c835e">delay</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional time value. Specifies
+a delay relative to the time at which the src_object changes. The
+delay can be an inertial or transport delay. If no delay is specified,
+then a delay of zero is assumed.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc16cf7db-712f-4907-8763-c5411d635f8e__idb6ba5716-0e73-4cce-9e50-79e94d043c84">delay_type</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional del_mode or integer.
+Specifies the type of delay that will be applied. </p>
+<p class="p">For the VHDL init_signal_driver
+Procedure, The value must be either: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id3d1ca382-a557-4858-a4ce-c4b53a94a2c9"><p class="p Opt">mti_inertial (default)</p>
+</li>
+<li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__idd0dd7108-c6ad-447e-9ec2-961b2160c924"><p class="p Opt">mti_transport</p>
+</li>
+</ul>
+<p class="p">For the Verilog $init_signal_driver
+Task, The value must be either: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id33aee8e8-4e4e-420b-bbae-71405b6c00af"><p class="p Opt">0
+— inertial (default)</p>
+</li>
+<li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id93fa8095-9d1d-47b2-a98e-5fb247ce8d6e"><p class="p Opt">1
+— transport </p>
+</li>
+</ul>
+<p class="p">For the SystemC init_signal_driver
+Function, The value must be either: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id0989c7fd-1fca-41cf-9274-d07e4002c8b6"><p class="p Opt">0
+— inertial (default)</p>
+</li>
+<li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id75ef82e2-4149-4e75-9862-3ba45290314a"><p class="p Opt">1
+— transport </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idc16cf7db-712f-4907-8763-c5411d635f8e__idc5fb4b2c-bddd-4143-921a-af423964341d">verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional integer. Possible values
+are 0 or 1. Specifies whether you want a message reported in the
+Transcript stating that the src_object is driving the dest_object. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id98f455c6-5d08-4462-82c3-649338858836"><p class="p Opt">0
+— Does not report a message. Default.</p>
+</li>
+<li class="li ArgOption" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id3adc163b-0093-4fb9-a714-49409f5e7790"><p class="p Opt">1
+— Reports a message.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2><p class="p">Nothing</p>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The init_signal_driver procedure drives the value onto the destination
+signal just as if the signals were directly connected in the HDL
+code. Any existing or subsequent drive or force of the destination
+signal, by some other means, will be considered with the init_signal_driver
+value in the resolution of the signal.By default this command uses
+a forward slash (/) as a path separator. You can change this behavior
+with the <a class="xref fm:HeadingOnly" href="Command_Signalspypathseparator_idb52157d3.html#idb52157d3-3406-486d-96c4-4c88516e4c2f__Command_Signalspypathseparator_idb52157d3.xml#idb52157d3-3406-486d-96c4-4c88516e4c2f" title="This variable specifies a unique path separator for the Signal Spy functions. The argument to SignalSpyPathSeparator must not be the same character as the DatasetSeparator variable.">SignalSpyPathSeparator</a> variable in the <span class="ph filepath">modelsim.ini</span> file.</p>
+<div class="section Subsection" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id250fb932-644c-42aa-a4ed-44b7d33e4baa"><h2 class="title Subheading sectiontitle">Call Only Once</h2><p class="p">The init_signal_driver procedure
+creates a persistent relationship between the source and destination
+signals. Hence, you need to call init_signal_driver only once for
+a particular pair of signals. Once init_signal_driver is called,
+any change on the source signal will be driven on the destination
+signal until the end of the simulation.</p>
+<p class="p">For VHDL, you should place all
+init_signal_driver calls in a VHDL process and code this VHDL process
+correctly so that it is executed only once. The VHDL process should
+not be sensitive to any signals and should contain only init_signal_driver
+calls and a simple wait statement. The process will execute once
+and then wait forever. See the example below.</p>
+<p class="p">For Verilog, you should place
+all $init_signal_driver calls in a Verilog initial block. See the
+example below.</p>
+</div>
+<div class="section Subsection" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id42dab21f-c054-45ce-b761-521a6a5f0915"><h2 class="title Subheading sectiontitle">Limitations</h2><ul class="ul"><li class="li" id="idc16cf7db-712f-4907-8763-c5411d635f8e__idceaf34de-bfd7-4ff0-9d60-417179df46bd"><p class="p">For the VHDL init_signal_driver
+procedure, when driving a Verilog net, the only <span class="ph FontProperty emphasis">delay_type</span> allowed
+is inertial. If you set the delay type to <span class="ph FontProperty emphasis">mti_transport</span>,
+the setting will be ignored and the delay type will be <span class="ph FontProperty emphasis">mti_inertial</span>. </p>
+</li>
+<li class="li" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id04fb1453-beec-407c-ad3b-034d603ec39e"><p class="p">For the Verilog $init_signal_driver
+task, when driving a Verilog net, the only <span class="ph FontProperty emphasis">delay_type</span> allowed
+is inertial. If you set the delay type to 1 (transport), the setting
+will be ignored, and the delay type will be inertial. </p>
+</li>
+<li class="li" id="idc16cf7db-712f-4907-8763-c5411d635f8e__ide62825bc-82e5-4499-bc5f-bfedaa61ac50"><p class="p">For the SystemC init_signal_driver
+function, when driving a Verilog net, the only <span class="ph FontProperty emphasis">delay_type</span> allowed
+is inertial. If you set the delay type to 1 (transport), the setting
+will be ignored, and the delay type will be inertial. </p>
+</li>
+<li class="li" id="idc16cf7db-712f-4907-8763-c5411d635f8e__id29f2765f-e5a4-45f2-ae5d-f11b43d28388"><p class="p">Any delays that are set to
+a value less than the simulator resolution will be rounded to the
+nearest resolution unit; no special warning will be issued. </p>
+</li>
+<li class="li" id="idc16cf7db-712f-4907-8763-c5411d635f8e__idf3b582d4-0337-4e54-a7d1-b6c86076930b"><p class="p">Verilog memories (arrays
+of registers) are not supported.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">This example creates a local clock
+(<span class="ph FontProperty emphasis">clk0</span>) and
+connects it to two clocks within the design hierarchy. The <span class="ph FontProperty emphasis">.../blk1/clk</span> will
+match local <span class="ph FontProperty emphasis">clk0</span> and
+a message will be displayed. The .<span class="ph FontProperty emphasis">../blk2/clk</span> will
+match the local <span class="ph FontProperty emphasis">clk0</span> but
+be delayed by 100 ps. For the second call to work, the <span class="ph FontProperty emphasis">.../blk2/clk</span> must
+be a VHDL based signal, because if it were a Verilog net a 100 ps
+inertial delay would consume the 40 ps clock period. Verilog nets are
+limited to only inertial delays and thus the setting of 1 (transport
+delay) would be ignored.</p>
+<pre class="pre codeblock leveled"><code>`timescale 1 ps / 1 ps
+
+module testbench;
+
+reg clk0;
+
+initial begin
+  clk0 = 1;
+  forever begin
+   #20 clk0 = ~clk0;
+  end
+end
+
+initial begin
+   $init_signal_driver("clk0", "/testbench/uut/blk1/clk", , , 1);
+   $init_signal_driver("clk0", "/testbench/uut/blk2/clk", 100, 1);
+end
+
+  ...
+
+endmodule
+</code></pre><p class="p">This example creates a local clock
+(<span class="ph FontProperty emphasis">clk0</span>) and
+connects it to two clocks within the design hierarchy. The <span class="ph FontProperty emphasis">.../blk1/clk</span> will
+match local <span class="ph FontProperty emphasis">clk0</span> and
+a message will be displayed. The <span class="ph FontProperty emphasis">open</span> entries
+allow the default delay and delay_type while setting the verbose
+parameter to a 1. The <span class="ph FontProperty emphasis">.../blk2/clk</span> will match
+the local <span class="ph FontProperty emphasis">clk0</span> but
+be delayed by 100 ps.</p>
+<pre class="pre codeblock"><code>library IEEE, modelsim_lib;
+use IEEE.std_logic_1164.all;
+use modelsim_lib.util.all;
+entity testbench is
+end;
+
+architecture only of testbench is
+  signal clk0 : std_logic;
+begin
+  gen_clk0 : process
+  begin
+    clk0 &lt;= '1' after 0 ps, '0' after 20 ps;
+    wait for 40 ps;
+  end process gen_clk0;
+
+  drive_sig_process : process
+  begin
+    init_signal_driver("clk0", "/testbench/uut/blk1/clk", open, open, 1);
+    init_signal_driver("clk0", "/testbench/uut/blk2/clk", 100 ps,
+                        mti_transport);
+    wait;
+  end process drive_sig_process;
+  ...
+end;
+</code></pre></div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SignalSpyReference_idc6cd7bde.html" title="The signal spy calls enumerated below include the syntax and arguments for the VHDL procedure, the Verilog task, and the SystemC function for each call.">Signal Spy Reference</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_InitSignalSpy_id3a4f8e72.html#id3a4f8e72-7ed5-48dd-bc95-2fad3e50ada0__" title="The init_signal_spy() call mirrors the value of a VHDL signal, SystemVerilog or Verilog register/net, or SystemC signal (called the src_object) onto an existing VHDL signal, Verilog register, or SystemC signal (called the dest_object). This allows you to reference signals, registers, or nets at any level of hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">init_signal_spy</a></div>
+<div><a class="link" href="../topics/Command_SignalForce_id9aef5b06.html#id9aef5b06-89a9-42b7-9965-86d4c81b2074__" title="The signal_force() call forces the value specified onto an existing VHDL signal, Verilog register/register bit/net, or SystemC signal (called the dest_object). This allows you to force signals, registers, bits of registers, or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">signal_force</a></div>
+<div><a class="link" href="../topics/Command_SignalRelease_id1ba5515f.html#id1ba5515f-cd20-46b8-a3c3-f66451c8f459__" title="The signal_release() call releases any force that was applied to an existing VHDL signal, SystemVerilog or Verilog register/register bit/net, or SystemC signal (called the dest_object). This allows you to release signals, registers, bits of registers, or nets at any level of the design hierarchy from within a VHDL architecture or Verilog or SystemC module (for example, a test bench).">signal_release</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "init_signal_driver"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_InitSignalDriver_idc16cf7db.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

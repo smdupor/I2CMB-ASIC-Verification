@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Precedence Resolution for Power Aware Strategies" />
+<meta name="abstract" content="Power Aware simulation follows the precedence resolution rules defined in the IEEE Std 1801-2018, section 5.7, but there are some differences." />
+<meta name="description" content="Power Aware simulation follows the precedence resolution rules defined in the IEEE Std 1801-2018, section 5.7, but there are some differences." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf04f78f1-1176-46bb-9738-c842304b4831" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Precedence Resolution for Power Aware Strategies</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Precedence Resolution for Power Aware Strategies" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf04f78f1-1176-46bb-9738-c842304b4831">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Precedence Resolution
+for Power Aware Strategies</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Power Aware simulation follows the precedence
+resolution rules defined in the IEEE Std 1801-2018, section 5.7,
+but there are some differences.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idf04f78f1-1176-46bb-9738-c842304b4831__id9e64b7cb-4ee6-4077-b15f-b897708ab09d"><h2 class="title Subheading sectiontitle">Precedence
+Resolution for Isolation, Level Shifter, and Repeater Strategy</h2><p class="p">The tool resolves the precedence of the UPF commands in two stages—the
+first stage is called granularity-based precedence resolution and
+the second stage is called option-based precedence resolution.</p>
+<h2 class="title Subheading sectiontitle">Granularity-Based Precedence Resolution</h2><p class="p">The tool follows the listed granularity-based precedence resolution,
+and in the given order:</p>
+<ol class="ol"><li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idc1a22613-b5f7-4524-b825-5d4420090622"><p class="p">Command
+that has part select or bit select of the port in the ‑elements
+option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id836f62a1-6f14-4c85-809a-5e40bd9399e0"><p class="p">Command that
+has whole port specified in the -elements option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id90f9b27f-0cd7-4259-99d9-2223e16d4607"><p class="p">Command that
+has instance name instead of port name in the ‑elements option</p>
+</li>
+</ol>
+<p class="p">After applying the granularity-based precedence resolution, if
+there are multiple strategies that have the same level of highest
+precedence, then the tool applies option-based precedence resolution.</p>
+<h2 class="title Subheading sectiontitle">Option-Based Precedence Resolution for Isolation Strategy</h2><p class="p">The tool follows the listed option-based precedence resolution,
+and in the given order:</p>
+<ol class="ol"><li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id72f710f1-0d3c-4643-a034-e3dbe3fe05ad"><p class="p">Command
+that has the -no_isolation option specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idf3210df4-b655-4ec7-a9be-19da7a3f2bfa"><p class="p">Command that
+has the -force_isolation option specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idcd1ed86c-ba65-427d-ba51-0ed31868f3ff"><p class="p">Command that
+has the -source, -sink and -diff_supply_only TRUE options specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idf16ebcc2-4307-40ef-93f6-31f79eee8732"><p class="p">Command that
+has the -source and -sink options specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id62a07e9e-b51a-4f43-965c-19bf0651d778"><p class="p">Command that
+has the -diff_supply_only TRUE, and -sink or -source options specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idfcd27b86-9f51-4dae-8706-20f0467b43cd"><p class="p">Command that
+has the -diff_supply_only TRUE, and -source or -sink options specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id645d3806-9968-4996-bf7f-b1a48bf586aa"><p class="p">Command that
+has the -diff_supply_only TRUE option specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id3660c755-9956-42a1-8171-2addcc7994df"><p class="p">Command that
+has the -sink option specified for the output port, or the -source
+option specified for the input port</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id0c3ce2d5-ad44-4331-9d0e-b3d19b394560"><p class="p">Command that
+has the -sink or -source option specified</p>
+</li>
+</ol>
+<p class="p">If you do not specify any of the above options, then the commands
+have the same precedence. However, if the strategies are applicable
+to the same receiver, then the tool gives a suppressible error.
+If you suppress this error, then the tool does not apply any strategy.
+See “<a class="xref fm:HeadingOnly" href="Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.html#id6ef922b9-3c2d-4833-a775-806dd07c8456__Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.xml#id6ef922b9-3c2d-4833-a775-806dd07c8456" title="Power Aware simulation follows new semantics for inserting the isolation, level shifter, and repeater cell. The tool applies isolation, level shifter, or repeater strategies on a per path basis in the design.">Path-Based Semantics for Power Aware Strategies</a>”.</p>
+<h2 class="title Subheading sectiontitle">Option-Based Precedence Resolution for Level Shifter
+Strategy</h2><p class="p">The tool follows the listed option-based precedence resolution,
+and in the given order:</p>
+<ol class="ol"><li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id24de62ac-54d1-4de1-8178-696110768776"><p class="p">Command
+that has the -no_shift option specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__ida5505522-f976-45a2-bb41-12c3f19f1d2e"><p class="p">Command that
+has the -force_shift specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idbe8dc4cf-1476-4ed4-a4e6-709b1304eaab"><p class="p">Command that
+has the -source and -sink specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id83dcb3d8-282d-4a72-8fef-c8c625607e7b"><p class="p">Command that
+has the -sink for the output port or -source for the input port
+specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id41c4f2de-3312-47cc-b5fe-4340524ed430"><p class="p">Command that
+has the -source or -sink specified</p>
+</li>
+</ol>
+<p class="p">If you do not specify any of the above options, then the commands
+have the same precedence. However, if the strategies are applicable
+to the same receiver, then the tool gives a suppressible error.
+If you suppress this error, then the tool does not apply any strategy.
+See “<a class="xref fm:HeadingOnly" href="Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.html#id6ef922b9-3c2d-4833-a775-806dd07c8456__Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.xml#id6ef922b9-3c2d-4833-a775-806dd07c8456" title="Power Aware simulation follows new semantics for inserting the isolation, level shifter, and repeater cell. The tool applies isolation, level shifter, or repeater strategies on a per path basis in the design.">Path-Based Semantics for Power Aware Strategies</a>”.</p>
+<h2 class="title Subheading sectiontitle">Option-Based Precedence Resolution for Repeater Strategy</h2><p class="p">The tool follows the listed option-based precedence resolution,
+and in the given order:</p>
+<ol class="ol"><li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id35b91c92-7075-4ce8-8689-f8c7b701677f"><p class="p">Command
+that has the -source and -sink options specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__iddb588350-4e02-46a1-90de-6c04c17b7802"><p class="p">Command that
+has the -sink or -source option specified</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__idb4c24e92-98a0-43d8-a2d9-e418009dc9ea"><p class="p">Command that
+has the -source or -sink option specified</p>
+</li>
+</ol>
+<p class="p">If you do not specify any of the above options, then the commands
+have the same precedence. However, if the strategies are applicable
+to the same receiver, then the tool gives a suppressible error.
+If you suppress this error, then the tool does not apply any strategy.
+See “<a class="xref fm:HeadingOnly" href="Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.html#id6ef922b9-3c2d-4833-a775-806dd07c8456__Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.xml#id6ef922b9-3c2d-4833-a775-806dd07c8456" title="Power Aware simulation follows new semantics for inserting the isolation, level shifter, and repeater cell. The tool applies isolation, level shifter, or repeater strategies on a per path basis in the design.">Path-Based Semantics for Power Aware Strategies</a>”.</p>
+</div>
+<div class="section Subsection" id="idf04f78f1-1176-46bb-9738-c842304b4831__id358562b0-3362-44db-84a1-0612eeee4922"><h2 class="title Subheading sectiontitle">Precedence
+Resolution for Retention Strategy</h2><p class="p">If multiple set_retention commands apply to the same sequential
+or state element, then the following criteria determines the relative
+precedence of the commands and only the commands with the highest
+precedence actually applies to the sequential or state element:</p>
+<ol class="ol"><li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id3ee7b98a-5cb7-4525-b075-9522a012c674"><p class="p">Command
+that has part select or bit select of a signal in the ‑elements
+option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id374f3cb2-a401-4ea9-a365-810f7291c4cd"><p class="p">Command that
+has whole signal specified in the -elements option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__ida6f92f1e-58a4-4dde-b3f4-97ca77d9eb17"><p class="p">Command that
+has process name specified in the -elements option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id1ce586e6-3e23-443f-8ca8-37a952ede153"><p class="p">Command that
+has generate block name specified in the -elements option</p>
+</li>
+<li class="li" id="idf04f78f1-1176-46bb-9738-c842304b4831__id4007611e-d9ea-404e-8668-c0da3ca6f736"><p class="p">Command that
+is specified on an interface signal</p>
+</li>
+</ol>
+<p class="p">If you do not specify any of the above, then the commands have
+the same precedence, and the tool gives a suppressible error.</p>
+</div>
+<div class="section Subsection" id="idf04f78f1-1176-46bb-9738-c842304b4831__id4828ea73-faeb-4ed0-b956-beb7cf4a658d"><h2 class="title Subheading sectiontitle">Example</h2><p class="p">Consider the following example:</p>
+<br /><div class="imagecenter"><img class="image imagecenter fmdpi:96" src="../graphics/Precedence_resolution.png" /></div><br /><p class="p">ISO1:</p>
+<pre class="pre codeblock"><code>set_isolation -elements A1 -location parent</code></pre><p class="p">ISO2:</p>
+<pre class="pre codeblock"><code>set_isolation -elements A1 -diff_supply_only TRUE -location parent</code></pre><p class="p">According to the precedence rules, ISO2 has
+higher precedence than ISO1. Hence, the tool drops the ISO1 strategy
+and gives a message, and inserts isolation cell as shown in the
+following figure: </p>
+<br /><div class="imagecenter"><img class="image imagecenter fmdpi:96" src="../graphics/Precedence_resolution_output.png" /></div><br /></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Precedence Resolution for Power Aware Strategies"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PrecedenceResolutionForPowerAwareStrategies_idf04f78f1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

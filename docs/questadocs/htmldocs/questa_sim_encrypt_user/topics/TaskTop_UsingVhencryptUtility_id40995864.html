@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Using the vhencrypt Utility" />
+<meta name="abstract" content="The vhencrypt utility enables IP authors to deliver encrypted VHDL IP code to users. The resulting encrypted IP code can then be used in a wide range of EDA tools and design flows." />
+<meta name="description" content="The vhencrypt utility enables IP authors to deliver encrypted VHDL IP code to users. The resulting encrypted IP code can then be used in a wide range of EDA tools and design flows." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id40995864-3ede-4661-b531-899671937ce4" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using the vhencrypt Utility</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using the vhencrypt Utility" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id40995864-3ede-4661-b531-899671937ce4">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using the vhencrypt Utility</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">The vhencrypt
+utility enables IP authors to deliver encrypted VHDL IP code to
+users. The resulting encrypted IP code can then be used in a wide
+range of EDA tools and design flows. </span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__ida6b3f216-a5c6-4d54-b3bc-cc52c78c6fc2"><span class="ph cmd">The IP author creates code.</span></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__id6fee648f-a8ef-4b9a-af65-7dfab68fee91"><span class="ph cmd">The IP author creates encryption
+envelopes (see <a class="xref fm:HeadingOnly" href="Contain_EncryptionEnvelopes_idbede3800.html#idbede3800-3af1-4fb3-92ea-2c1d301b9b7a__Contain_EncryptionEnvelopes_idbede3800.xml#idbede3800-3af1-4fb3-92ea-2c1d301b9b7a" title="Encryption envelopes define a region of textual design data or code to be protected with protection expressions. The protection expressions specify the encryption algorithm, the encryption key owner, the key name, and envelope attributes.">Encryption Envelopes</a>) to protect selected regions of
+code or entire files.</span></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__id466a2158-5abf-40dd-b99d-bd6fca1d9898"><span class="ph cmd">The IP author uses the <span class="ph fmvar:ProductName">Questa SIM</span>vhencrypt utility
+to encrypt code contained within encryption envelopes. </span><div class="itemgroup info StepInfo"><p class="p">The vhencrypt utility produces
+a file with a <span class="ph filepath">.vhdp</span> or a <span class="ph filepath">.vhdlp</span> extension
+to distinguish it from non-encrypted VHDL files. </p>
+</div></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__idc7f76e52-041e-45d4-bb65-66a53507dd93"><span class="ph cmd">(Optional) Change the file
+extension for use with simulators other than <span class="ph fmvar:ProductName">Questa SIM</span>. </span><div class="itemgroup info StepInfo"><p class="p">The original file extension
+is preserved if the -d &lt;dirname&gt; argument is used with vhencrypt.</p>
+</div></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__idbea9822f-ebcd-4337-95d9-1a73457efb69"><span class="ph cmd">(Optional) use the -h &lt;filename&gt;
+argument for vencrypt the IP author may specify a header file that
+can be used to encrypt a large number of files that do not contain
+the <span class="keyword ParameterName Required">`protect</span> information
+about how to encrypt the file. </span><div class="itemgroup info StepInfo"><p class="p">Instead, encryption
+information is provided in the &lt;filename&gt; specified by -h &lt;filename&gt;.
+This argument essentially concatenates the header file onto the
+beginning of each file and saves the user from having to edit hundreds
+of files in order to add in the same <span class="keyword ParameterName Required">`protect </span>to
+every file.</p>
+<p class="p">For example: </p>
+<p class="lines ApplCommand">vhencrypt -h encrypt_head top.vhd cache.vhd gates.vhd memory.vhd</p>
+<p class="p">concatenates
+the information in the <span class="ph filepath">encrypt_head</span> file into
+each VHDL file listed. The <span class="ph filepath">encrypt_head </span>file
+may look like the following:</p>
+<pre class="pre codeblock"><code>`protect data_method = "aes128-cbc"
+`protect author = "IP Provider"
+`protect encoding = (enctype = "base64")
+`protect key_keyowner = "Mentor Graphics Corporation"
+`protect key_method = "rsa"
+`protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`protect KEY_BLOCK
+`protect begin</code></pre><p class="p">Notice that there is no <span class="keyword ParameterName Required">`protect end</span> expression
+in the header file, just the header block that starts the encryption.
+The <span class="keyword ParameterName Required">`protect end</span> expression
+is implied by the end of the file.</p>
+</div></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__id76cc9e1a-7393-4f60-a762-7704f116f543"><span class="ph cmd">The IP author delivers encrypted
+IP.</span></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__id21d3e334-ee80-40a9-b2cc-0e85fee422f7"><span class="ph cmd">The IP user compiles the design
+with vcom. </span></li>
+<li class="li step stepexpand" id="id40995864-3ede-4661-b531-899671937ce4__idbb80f9c5-889b-4b10-9aa6-4ebc74d3aeb6"><span class="ph cmd">The IP user simulates the
+design with <span class="ph fmvar:ProductName">Questa SIM</span> or
+other simulation tools.</span></li>
+</ol>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id40995864-3ede-4661-b531-899671937ce4__idb2655267-45d1-43db-b50b-b7abeda6967d"><h2 class="title Subheading sectiontitle"><span class="ph fmvar:ProductName">Questa SIM</span> Default Encryption for VHDL</h2><p class="p">Suppose an IP author needs to make
+a design entity, called IP1, visible to the user so the user can
+instantiate the design, but the author wants to hide the architecture
+implementation from the user. In addition, suppose that IP1 instantiates
+entity IP2, which the author wants to hide completely from the user.
+The easiest way to accomplish this is to surround the regions to be
+protected with <span class="keyword ParameterName Required">`protect begin</span> and <span class="keyword ParameterName Required">`protect end</span> directives
+and let <span class="ph fmvar:ProductName">Questa SIM</span> choose
+default actions. For this example, all the source code exists in
+a single file, <span class="ph filepath">example1.vhd</span>:</p>
+<pre class="pre codeblock"><code>========== file example1.vhd ==========
+-- The entity "ip1" is not protected
+...
+entity ip1 is
+...
+end ip1;
+-- The architecture "a" is protected
+-- The internals of "a" are hidden from the user
+`protect begin
+architecture a of ip1 is
+...
+end a;
+`protect end
+-- Both the entity "ip2" and its architecture "a" are completely protected
+`protect begin
+entity ip2 is
+...
+end ip2;
+architecture a of ip2 is
+...
+end a;
+`protect end
+========== end of file example1.vhd ==========</code></pre><p class="p">The compiler produces an encrypted
+file, <span class="ph filepath">example1.vhdp</span> which looks like the following:</p>
+<pre class="pre codeblock"><code>========== file example1.vhdp ==========
+-- The entity "ip1" is not protected
+...
+entity ip1 is
+...
+end ip1;
+-- The architecture "a" is protected
+-- The internals of "a" are hidden from the user
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect key_keyowner = "Mentor Graphics Corporation"
+`protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`protect key_method = "rsa"
+`protect encoding = ( enctype = "base64" )
+`protect KEY_BLOCK
+  &lt;encoded encrypted session key&gt;
+`protect data_method="aes128-cbc"
+`protect encoding = ( enctype = "base64" , bytes = 224 )       
+`protect DATA_BLOCK
+   &lt;encoded encrypted IP&gt;
+`protect END_PROTECTED
+-- Both the entity "ip2" and its architecture "a" are completely protected
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect key_keyowner = "Mentor Graphics Corporation"
+`protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`protect key_method = "rsa"
+`protect encoding = ( enctype = "base64" )
+`protect KEY_BLOCK
+   &lt;encoded encrypted session key&gt;
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" , bytes = 224 )       
+`protect DATA_BLOCK
+   &lt;encoded encrypted IP&gt;
+`protect END_PROTECTED
+========== end of file example1.vhdp ==========</code></pre><p class="p">When the IP author surrounds a text
+region using only <span class="keyword ParameterName Required">`protect begin</span> and <span class="keyword ParameterName Required">`protect end</span>, <span class="ph fmvar:ProductName">Questa SIM</span> uses default
+values for both encryption and encoding. The first few lines following
+the <span class="keyword ParameterName Required">`protect BEGIN_PROTECTED</span> region
+in file <span class="ph filepath">example1.vhdp</span> contain the key_keyowner,
+key_keyname, key_method and KEY_BLOCK directives. The session key
+is generated into the key block, and that key block is encrypted
+using the “rsa” method. The data_method indicates that the default
+data encryption method is aes128-cbc, and the “enctype” value shows
+that the default encoding is base64.</p>
+<p class="p">Alternatively, the IP author can
+compile file <span class="ph filepath">example1.vhd</span> with the command:</p>
+<p class="lines ApplCommand">vhencrypt  example1.vhd</p>
+<p class="p">Here, the author does not supply
+the name of the file to contain the protected source. Instead, vhencryp
+creates a protected file, gives it the name of the original source
+file with a 'p' placed at the end of the file extension, and puts
+the new file in the current work library directory. With the command
+described above, vhencrypt creates file <span class="ph filepath">work/example1.vhdp</span>. </p>
+<p class="p">In <span class="ph fmvar:ProductName"> Questa
+SIM</span>, default encryption methods provide an easy way for IP
+authors to encrypt VHDL designs while hiding the architecture implementation
+from the user. The results are usable only by <span class="ph fmvar:ProductName">Questa SIM</span> tools. </p>
+</div>
+<div class="section Subsection" id="id40995864-3ede-4661-b531-899671937ce4__id925cc77e-220f-4d61-9f7c-fdc2553c695d"><h2 class="title Subheading sectiontitle">User-Selected
+Encryption for VHDL</h2><p class="p">Suppose that the IP author wants
+to reproduce the code shown in the <span class="ph filepath">example1.vhd</span> file
+used above, but wants to provide specific values and not use any
+default values. To do this the author adds <span class="keyword ParameterName Required">`protect</span> directives
+for keys, encryption methods, and encoding, and places them before
+each <span class="keyword ParameterName Required">`protect begin</span> directive.
+The input file would look like the following:</p>
+<pre class="pre codeblock"><code>========== file example2.vhd ==========
+-- The entity "ip1" is not protected
+...
+entity ip1 is
+...
+end ip1;
+-- The architecture "a" is protected
+-- The internals of "a" are hidden from the user
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" )
+`protect key_keyowner = "Mentor Graphics Corporation"
+`protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`protect key_method = "rsa"
+`protect KEY_BLOCK
+`protect begin
+architecture a of ip1 is
+...
+end a;
+`protect end
+-- Both the entity "ip2" and its architecture "a" are completely protected
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" )
+`protect key_keyowner = "Mentor Graphics Corporation"
+`protect key_keyname = "MGC-VERIF-SIM-RSA-2"
+`protect key_method = "rsa"
+`protect KEY_BLOCK
+`protect begin
+library ieee;
+use ieee.std_logic_1164.all;
+entity ip2 is
+...  
+end ip2;
+architecture a of ip2 is
+...
+end a;
+`protect end
+========== end of file example2.vhd ==========</code></pre><p class="p">The data_method directive indicates
+that the encryption algorithm “aes128-cbc” should be used to encrypt
+the source code (data). The encoding directive selects the “base64”
+encoding method, and the various key directives specify that the
+Mentor Graphic key named “MGC-VERIF-SIM-RSA-2” and the “RSA” encryption
+method are to be used to produce a key block containing a randomly
+generated session key to be used with the “aes128-cbc” method to encrypt
+the source code. See <a class="xref fm:HeadingOnly" href="Concept_MentorGraphicsPublicEncryptionKeys_idf22b8bef.html#idf22b8bef-02d5-4402-b594-c5b71ea552cc__Concept_MentorGraphicsPublicEncryptionKeys_idf22b8bef.xml#idf22b8bef-02d5-4402-b594-c5b71ea552cc" title="The Questa SIMsimulator provides public encryption keys to support interoperability across products. Mentor Graphics provides these encryption keys in the keyring directory. The files are structured as encryption envelopes providing the directives needed to use the public encryption keys.">Mentor Graphics Public Encryption Keys</a>.</p>
+</div>
+<div class="section Subsection" id="id40995864-3ede-4661-b531-899671937ce4__id85c4f9ca-31a0-4d91-8c79-b3196a96cbca"><h2 class="title Subheading sectiontitle">Raw Encryption for
+VHDL</h2><p class="p">Suppose that the IP author wants
+to use “raw” encryption and encoding to help with debugging the
+following entity:</p>
+<pre class="pre codeblock"><code>entity example3_ent is    port (
+    in1  : in  bit;
+    out1 : out bit);
+end example3_ent;</code></pre><p class="p">Then the architecture the author wants to encrypt might be this:</p>
+<pre class="pre codeblock"><code>========== File example3_arch.vhd
+`protect data_method = "raw"
+`protect encoding = ( enctype = "raw")
+`protect begin
+architecture arch of example3_ent is begin out1 &lt;= in1 after 1 ns;  end arch;
+`protect end
+========== End of file example3_arch.vhd ==========</code></pre><p class="p">If (after compiling the entity) the <span class="ph filepath">example3_arch.vhd</span> file
+were encrypted using the command:</p>
+<p class="lines ApplCommand">vhencrypt example3_arch.vhd</p>
+<p class="p">Then the following file would be
+produced in the work directory</p>
+<pre class="pre codeblock"><code>========== File work/example3_arch.vhdp ==========
+`protect data_method = "raw"
+`protect encoding = ( enctype = "raw")
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect data_method = "raw"
+`protect encoding = ( enctype = "raw", bytes = 81 )
+`protect DATA_BLOCK
+architecture arch of example3_ent is
+begin
+out1 &lt;= in1 after 1 ns;
+end arch;
+`protect END_PROTECTED
+========== End of file work/example3_arch.vhdp</code></pre><p class="p">Notice that the protected file is
+very similar to the original file. The differences are that <span class="keyword ParameterName Required">`protect begin</span> is
+replaced by <span class="keyword ParameterName Required">`protect BEGIN_PROTECTED</span>, <span class="keyword ParameterName Required">`protect end</span> is
+replaced by <span class="keyword ParameterName Required">`protect END_PROTECTED</span>,
+and some additional encryption information is supplied after the <span class="keyword ParameterName Required">BEGIN PROTECTED</span> directive.</p>
+</div>
+<div class="section Subsection" id="id40995864-3ede-4661-b531-899671937ce4__id0f24aacf-03d0-41d2-ba6c-b87cb792f29f"><h2 class="title Subheading sectiontitle">Encryption of Several
+Parts of a VHDL Source File</h2><p class="p">This example shows the use of symmetric
+encryption. It also demonstrates another common use model, in which
+the IP author encrypts several parts of a source file, chooses the encryption
+method for encrypting the source code (the <span class="ph FontProperty shellcommand">data_method</span>),
+and uses a key automatically provided by<span class="ph fmvar:ProductName"> Questa
+SIM</span>. (This is very similar to the proprietary <span class="keyword ParameterName Required">`protect</span> method
+in Verilog - see <a class="xref fm:HeadingOnly" href="Contain_ProprietarySourceCodeEncryptionTools_id634534fb.html#id634534fb-0b47-4e59-a70c-3cbd0f5f1aeb__Contain_ProprietarySourceCodeEncryptionTools_id634534fb.xml#id634534fb-0b47-4e59-a70c-3cbd0f5f1aeb" title="Mentor Graphics provides two proprietary methods for encrypting source code.">Proprietary Source Code Encryption Tools</a>.)</p>
+<pre class="pre codeblock"><code>========== file example4.vhd ==========
+entity ex4_ent is  
+end ex4_ent;
+architecture ex4_arch of ex4_ent is
+  signal s1: bit;
+`protect data_method = "aes128-cbc"
+`protect begin                              
+  signal s2: bit;
+`protect end
+  signal s3: bit;
+begin  -- ex4_arch 
+`protect data_method = "aes128-cbc"
+`protect begin
+s2 &lt;= s1 after 1 ns;
+`protect end
+s3 &lt;= s2 after 1 ns;
+end ex4_arch;
+========== end of file example4.vhd</code></pre><p class="p">If this file were encrypted using
+the command:</p>
+<p class="lines ApplCommand">vhencrypt example4.vhd</p>
+<p class="p">Then the following file would be
+produced in the work directory:</p>
+<pre class="pre codeblock"><code>========== File work/example4.vhdp ==========
+entity ex4_ent is
+end ex4_ent;
+architecture ex4_arch of ex4_ent is
+  signal s1: bit;
+`protect data_method = "aes128-cbc"
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" , bytes = 18 )        
+`protect DATA_BLOCK
+&lt;encoded encrypted declaration of s2&gt;
+`protect END_PROTECTED
+  signal s3: bit;
+begin  -- ex4_arch
+`protect data_method = "aes128-cbc"
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" , bytes = 21 )        
+`protect DATA_BLOCK
+&lt;encoded encrypted signal assignment to s2&gt;
+`protect END_PROTECTED
+s3 &lt;= s2 after 1 ns;
+end ex4_arch;
+========== End of file work/example4.vhdp</code></pre><p class="p">The encrypted <span class="ph filepath">example4.vhdp</span> file
+shows that an IP author can encrypt both declarations and statements.
+Also, note that the signal assignment</p>
+<pre class="pre codeblock leveled"><code>s3 &lt;= s2 after 1 ns;</code></pre><p class="p">is not protected. This assignment
+compiles and simulates even though signal s2 is protected. In general,
+executable VHDL statements and declarations simulate the same whether or
+not they refer to protected objects.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsageModelsProtectingVhdlSourceCode_id87f8136d.html" title="Encryption capabilities for VHDL are supported for a number of usage models.">Usage Models for Protecting VHDL Source Code</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "Using the vhencrypt Utility"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_UsingVhencryptUtility_id40995864.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

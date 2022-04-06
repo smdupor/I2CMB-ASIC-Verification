@@ -1,0 +1,315 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>2020.1 Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.2020.1" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 2020.1</h1></center>
+<center><b>Jan 28 2020</b> <br />
+ <br />
+ Copyright 1991-2020 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 2020.1</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 2020.1</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 2020.1</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 2020.1</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 2020.1</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 2020.1</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 2020.1</a></li>
+ <li><a href="#systemcdefects">SystemC Defects Repaired in 2020.1</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 2020.1</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 2020.1</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 2020.1</a></li>
+ <li><a href="#uienhancements">User Interface Enhancements in 2020.1</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 2020.1</a></li>
+ <li><a href="#vhdlenhancement">VHDL Enhancements in 2020.1</a></li>
+ <li><a href="#systemcenhancement">SystemC Enhancements in 2020.1</a></li>
+ <li><a href="#docrevhistory">Document Revision History in 2020.1</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>QSIM-59485 -  This release uses new licensing version which needs to have license servers upgraded to FLEXnet v11.16.4.0.<div><br /></div><div>For floating licenses, it will be necessary to verify that the vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.16.4.0. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.16.4.0 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.</div><div><br /></div><div>If you use node locked licenses you don't need to do anything. This release will update licensing to MSL v2019_3 with MGLS v9.22_3.1.0 and PCLS v9.22.3.1.0</div><div><br /></div><div>In summary, this release uses the following license versions:</div><div><br /></div><div>FLEXnet v11.16.4.0</div><div>MSL v2019_3</div><div>MGLS v9.22_3.1.0</div><div>PCLS v9.22.3.1.0</div></li>
+ <li>The Register Assistant version included within this release has been upgraded to RUVM/2020.1.<div>  <br />RUVM/2020.1 is a native 64-bit application.</div><div><br /></div></li>
+ <li>QSIM-555 -  <b>Systemc/GCC Changes starting 2020.1:</b><p> o  SystemC/DPI/PLI/VPI/FLI
+default compiler (GCC) for linux and linux_x86_64 platforms is upgraded to
+7.4.0</p>
+
+<p "margin-left:1.0in;text-indent:-.25in;mso-list:="" l0="" level2="" lfo1"=""> o  GCC 4.5.0 is no longer supported and it will no longer be distributed with the release. This affects linux and linux_x86_64 platforms only.<br /> o   Supported compilers on linux and linux_x86_64 platforms: gcc-7.4.0, gcc-5.3.0 and gcc-4.7.4</p><p "margin-left:1.0in;text-indent:-.25in;mso-list:="" l0="" level2="" lfo1"=""> o   Support for the IEEE
+1666-2005 SystemC-2.2 standard has been deprecated and it is no longer
+supported.</p>
+
+<p><br /></p></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 2020.1</b></font>
+<ul><li>Due to enhanced security restrictions with web browser PDF plug-ins, some links do not function. Links in HTML documentation are fully functional.<br /><br />
+Clicking a link within a PDF viewed in a web browser may result in no action, or it may load the title page of the current PDF manual (instead of the intended target in the PDF manual). The unresolved link behavior occurs in all web browsers on Windows and Linux platforms. Because of this behavior, the navigational experience of PDF manuals is compromised. PDF is ideal for printing because of its page-oriented layout.<br /><br />
+Use the HTML manuals to search for topics, navigate between topics, and click links to examples, videos, reference material, and other related technical content.<br /><br />
+For information about Adobe's discontinued support of Adobe Reader on Linux platforms and your available options, refer to Knowledge Article MG596568 on SupportNet.<br /><br />
+Linux is a registered trademark of Linus Torvalds in the U.S. and other countries.</li>
+ <li>Since 2019.1 release, support for Windows 7 and 8.1 have discontinued. Only Windows 10 is supported. However, we continue to support Windows 7 &amp; 8.1 with our 10.7 release series until their planned End Of Life (10.7 EOL - mid 2020)</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 2020.1</b></font>
+<ul><li> <div><br /></div><div>[Supported Platforms]</div><div>Linux RHEL 6 x86/x86-64</div><div>Linux RHEL 7 x86/x86-64</div><div>Linux SLES 11 x86/x86-64</div><div>Linux SLES 12 x86/x86-64</div><div>Windows 10 x86/x64</div><div><br /></div><div>[Supported GCC Compilers (for SystemC)]<br />gcc-7.4.0-linux/gcc-7.4.0-linux_x86_64 </div><div>gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64</div><div>gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64</div><div>gcc-4.2.1-mingw32vc12</div><div><br /></div><div>[OVL (shipped with product)]</div><div>v2.8.1</div><div><br /></div><div>[VHDL OSVVM (shipped with product)]</div><div>v2014.07</div><div><br /></div><div>[Licensing]</div><div>FLEXnet v11.16.4.0</div><div>MSL v2019_3</div><div>MGLS v9.22_3.1.0</div><div>PCLS v9.22.3.1.0</div></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 2020.1</b></font>
+<p /><dd><font size="3"><b>User Interface  Compatibility</b></font></dd>
+<ul><li>QSIM-18738 - (results) Fixes corner cases that were causing the Colorize system in the Transcript window to malfunction for some customers. Using a color of 0 (Normal) now works as a Start Tag. Also, having an End Tag on another line from its matching Start Tag now correctly cleans up the color escape sequence.</li>
+</ul>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>QSIM-57185 - (source)  Added checking for packed array of time. Packed arrays of time are not allowed as per LRM. We were not checking for it in the tool but now we have added the check. So, the packed array of time will result in compiler error. The users need to convert the packed array to unpacked to use arrays of time.</li>
+ <li>QSIM-53731 - (source) Macros and symbols defined (with `define) in source files compiled because of -v and -y will no longer persist after the -v and/or -y context is finished with.  Use -svext=+dvydl to reenable the old buggy behavior of leaking such macros/symbols.<br /></li>
+ <li>[nodvtid]  - (source)  When a macro definition is found after a pre-processor conditional compiler directive and they share the same line in an HDL file emit a suppressible error. This will guide users to create portable code that will behave similarly across different implementations.</li>
+ <li>QSIM-56527 - (source, results) Elaboration files generated with vsim switch -elab are compressed by default. Vsim switch -compress_elab is deprecated now.<br /></li>
+ <li>QSIM-54037 - (results)  In some rare cases, randomize() would produce an invalid solution for constraints involving $clog2(). This issue has been fixed.</li>
+ <li>QSIM-54639 - (results) Significant improvements have been made to the constraint solver for randomize() scenarios involving constraints with random array indices. Inconsistent behavior related to multi-dimensional arrays and associative arrays has been corrected. Solver performance/capacity for these scenarios has also improved.</li>
+ <li>QSIM-55295 - (results) In some rare cases involving &quot;unique&quot; constraints, randomize() would incorrectly return 0 (no solutions) for a scenario that has valid solutions. This issue has been fixed.</li>
+ <li>QSIM-55560 - (results) In some rare cases, randomize() scenarios involving $countones constraints would incorrectly return 0 (no solutions) for a scenario that has valid solutions. This issue has been fixed.</li>
+ <li>QSIM-55627 - (results)  In some rare cases involving equality constraints, randomize() would produce an invalid solution. This issue has been fixed.</li>
+ <li>QSIM-55788 - (results) Module instances under for-generate blocks are not initialized with same initialization seed, which can result in non-LRM compliant simulation behavior. A SystemVerilog constrained-random language extension &quot;genmodseedfix&quot; has been implemented to address this issue. To enable LRM-compliant seeding of module instances under for-generate blocks, add &quot;-svrandext=+genmodseedfix&quot; to the vsim command line. This extension is enabled by default.<br /><br /></li>
+ <li>QSIM-59880 - (results)  In some cases, randomize() would incorrectly evaluate a 'soft' constraint containing an indexed expression with a random index. This issue has been fixed.</li>
+ <li>QSIM-59050 - (results) In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would be incorrectly evaluated (sometimes resulting in spurious constraint contradiction failures). This issue has been resolved.</li>
+ <li>QSIM-58384 - (results)  Significantly improved performance and reduced memory usage related to evaluation of randomize() calls involving large numbers of 'inside' constraint expressions.</li>
+ <li>QSIM-61434 - (results)  In some rare cases, a call to randomize() would fail (return 0) for a scenario that had valid solution(s). This issue has been fixed.</li>
+ <li>QSIM-60784 - (results) In some rare cases, randomize() would fail (return 0) for a scenario with valid solution(s) involving constraints with random index expressions. This issue has been fixed.</li>
+ <li>QSIM-60944 - (results) In some rare cases, randomize() would fail (return 0) for a scenario having valid solution(s) involving 'dist' constraints where the bit-width of the LHS is less than the bit-width of the RHS. This issue has been fixed.</li>
+ <li>QSIM-55458 - (results) Significantly improved the output of the constraint contradiction report when randomize() fails due to no solutions when &quot;-solvefaildebug=2&quot; is specified. The diagnostic output related to if/else constraints will be displayed in a fashion that reflects the original constraints for more scenarios.<br /><br /><br /></li>
+ <li>QSIM-56092 - (results) Significant improvements to how randomize() calls involving constraints with 'real' type operands are evaluated have been implemented with regard to correctness/repeatability, precision, solution distribution, and performance. Randomization of 'real' variables or constraints requires a
+SystemVerilog Real Number Modeling (svrnm) license. </li>
+ <li>QSIM-60546 - (results) RNG Trace (Random Number Generator Trace) feature: Process names now reflect the value of their initial seed -- this method of identifying processes has been found to be more random-stable than the previous method (which displayed process names the same way as the GUI). Use &quot;-rngtraceopt=guiprocessnames&quot; to instruct RNG Trace to generate process names the old way.<br /><br /></li>
+ <li>QSIM-61128 - (results) RNG Trace (Random Number Generator Trace) feature: Implemented automatic filtering of &quot;noisy&quot; RNG trace output preceding set_randstate() operations. <br /><br />Output being written to a RNG trace file is buffered. When a set_randstate operation (on the executing process) is encountered, a backward scan of the buffered operation is made - looking for the first operation where the input (prior) randstate matches the randstate of the set_randstate operation. If such a operation is found, the matching operation along with the reset operation and intervening operations are filtered (removed from the buffer). Only RNG operations executed from the active process are considered. <br /><p>When the RNG trace is being written to the transcript (rather than to a file), the buffering/filtering will not be performed. This is because the filtering would delay the reporting of RNG operation (within the transcript) and make the reporting confusing.</p><p>The length of the buffer can be controlled by the &quot;-rngtracebuffersize &lt;size&gt;&quot; command line option. Setting a size less than 2 disables the filtering. The default is 20.<br /><br /></p></li>
+ <li>QSIM-60157 - (results) Improved the output of the constraint contradiction report generated when randomize() fails and -solvefaildebug is enabled. The output of the &quot;Where&quot; section (which describes variables and expressions that are assigned to a constant value) is now annotated with a comment indicating if a variable is considered &quot;random&quot; or &quot;non-random&quot; at the time randomize() is invoked. This information can be useful when debugging unexpected randomize() failures due to testbench errors related to missing 'rand' keywords on class fields that should be declared random.</li>
+ <li>QSIM-59586 - (results) The SystemVerilog constrained-random language extension &quot;deepcheck&quot; is now enabled by default. This extension allows randomize(null) calls to recursively consider constraints from member class handles. Use &quot;vsim -svrandext=-deepcheck&quot; to disable this extension.<br /><div><br /></div></li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>QSIM-52747 - (source)  Fixed an issue where forward type declarations could allow compilation of illegal redefinitions. It is now illegal to declare multiple forward type declarations for the same symbol (see VHDL-2008 5.4.2).</li>
+ <li>QSIM-56691 - (source, results) Following execution of uninstantiated procedures with OUT mode parameters not associated with a type generic, and evaluation of generic procedures with OUT mode parameters not associated with a type generic, actual variables associated with the OUT parameters could be left unchanged despite changes within the procedures. The compiler is now generating code to correctly set the value of OUT mode parameters in the above cases.</li>
+ <li>QSIM-50634 - (results)  In certain cases, optimization of clocked processes with reset was leading to incorrect results. This bug has been fixed.<div><br /></div></li>
+ <li>QSIM-55137 - (results)  In certain cases, vopt was crashing during optimization of clocked processes. This bug has been fixed. <div><br /></div></li>
+ <li>QSIM-56234 - (results)  In certain cases, association of array subelements in ports was leading to incorrect results. This has been fixed.</li>
+ <li>QSIM-56012 - (results) When attributes 'left, 'right, 'length, 'low, 'high and 'range were applied to an unconstrained array, they lead to a crash. This is now an error.<br /></li>
+ <li>QSIM-58539 - (results)  The attributes <b>INSTANCE_NAME</b> and<b> PATH_NAME</b>, were not considered globally static.  If the prefix of the attribute is a signal and this expression appears in a wait statement with an on clause or in a concurrent statement other than a process, a change in signal value would trigger a evaluation of the wait or concurrent statement.  This currently results in extra statement executions. The attributes are now considered globally static, so the wait or concurrent statement is no longer sensitized to that prefix. This change can cause simulation results to be different from previous versions. </li>
+ <li>QSIM-57969 - (results)  Using a function call without arguments in a generic map was showing syntax error incorrectly. This has been fixed. <div><br /></div></li>
+</ul>
+<p /><dd><font size="3"><b>General  Compatibility</b></font></dd>
+<ul><li>QSIM-55189 - (source, results) Added Library Forward SAIF file Support in Questa. Now, with Vopt command-line user can specify :<br /><ol><li>  Library Forward SAIF file with option &quot;-fsaif  &lt;saif_file_name&gt;&quot; or,</li><li>  File containing list of path to multiple Library Forward SAIF files with option &quot;-fsaiflist &lt;file_name&gt;&quot;</li></ol></li>
+ <li>QSIM-20282 - (source, results) #QSIM-20282 <br />#Fixed with CL:4256347<br /><br />When an interconnect delay in the SDF file uses two nodes that are not connected, QuestaSim does not issue a warning message and Interconnect request is replaced with a port annotation at the destination. <br /> <br />The LRM specifically states that for interconnect delays, a warning message will	be generated if source and destination ports are not on same net.<br /> <br />Added the below warning in this case in <b>vsim</b>:<br /> Warning: (vsim-SDF-16107) &lt;sdffile_path&gt;(&lt;sdffile_lineno&gt;): The interconnect &lt;source port absolute path&gt; is not connected to the destination '&lt;destination port absolute path&gt; '.<br /> The interconnect request will be replaced with a port annotation at the destination.</li>
+</ul>
+<p /><dd><font size="3"><b>SystemC  Compatibility</b></font></dd>
+<ul><li>QSIM-555 - (source) SystemC/DPI/PLI/VPI/FLI default compiler (GCC) for linux and linux_x86_64 platforms is upgraded to 7.4.0<br />Supported compilers: gcc-7.4.0, gcc-5.3.0 and gcc-4.7.4 for linux and linux_x86_64 platforms </li>
+ <li>QSIM-57618 - (source, results) <div>Support for the IEEE 1666-2005 SystemC-2.2 standard has been deprecated and it is no longer supported.</div></li>
+ <li>QSIM-57618 - (source, results)  GCC 4.5.0 is no longer supported and It will no longer be distributed with the release. This affects linux and linux_x86_64 platforms only.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 2020.1</b></font>
+<ul><li>[nodvtid]  -  Fixed a crash where forcing a modport item was causing crash in access flow. This results in an error message now.</li>
+ <li>[nodvtid]  -  vmake many now consume less memory.</li>
+ <li>VM-11516 - Removed enforced addition of &quot;/bin&quot; to PATH in vco wrapper script.<br /></li>
+ <li>QSIM-55252 - The vdir command can now be given the name of an already-existing directory; it will transform the directory into a Questa library.  The directory must be empty for this to succeed.<br /></li>
+ <li>QSIM-55060 - Running vopt to re-generate an existing optimized design after the work library had been moved in the file system would sometimes produce an error message involving the original file pathnames.  The behavior has been fixed, and vopt will now re-generate the optimized design.<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 2020.1</b></font>
+<ul><li>QSIM-18738 - (results) Fixes corner cases that were causing the Colorize system in the Transcript window to malfunction for some customers. Using a color of 0 (Normal) now works as a Start Tag. Also, having an End Tag on another line from its matching Start Tag now correctly cleans up the color escape sequence.</li>
+ <li>QSIM-60864 - Corrected and extended handling of ANSI escape codes in the Questa GUI transcript window.  More colors are supported, but not the full ANSI range. Also Bold is supported.<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 2020.1</b></font>
+<ul><li>QSIM-54192 -  A &quot;force -deposit&quot; or $deposit on a net connected to tran primitives failed to take on the forced value.</li>
+ <li>QSIM-29891 -  In some cases, invoking randomize() via a dotted path containing a function call (e.g. &quot; r.get_field().randomize() with {...}&quot;) would cause an error or crash during compilation. This issue has been fixed.<br /><br /></li>
+ <li>QSIM-53856 -  Use of the 'inside' operator with an array of 'real' type on the RHS (e.g. &quot;myvar inside { array_of_real }&quot;) would trigger an internal error &quot;==? operator invalid for REAL&quot;. This issue has been fixed.</li>
+ <li>QSIM-54037 - (results)  In some rare cases, randomize() would produce an invalid solution for constraints involving $clog2(). This issue has been fixed.</li>
+ <li>QSIM-54298 -  In some rare cases, randomize() would cause simulation to crash when evaluating a scenario with the BDD solve engine. This issue has been fixed.</li>
+ <li>QSIM-54639 - (results) Significant improvements have been made to the constraint solver for randomize() scenarios involving constraints with random array indices. Inconsistent behavior related to multi-dimensional arrays and associative arrays has been corrected. Solver performance/capacity for these scenarios has also improved.</li>
+ <li>QSIM-55295 - (results) In some rare cases involving &quot;unique&quot; constraints, randomize() would incorrectly return 0 (no solutions) for a scenario that has valid solutions. This issue has been fixed.</li>
+ <li>QSIM-55560 - (results) In some rare cases, randomize() scenarios involving $countones constraints would incorrectly return 0 (no solutions) for a scenario that has valid solutions. This issue has been fixed.</li>
+ <li>QSIM-55627 - (results)  In some rare cases involving equality constraints, randomize() would produce an invalid solution. This issue has been fixed.</li>
+ <li>QSIM-56318 -  In some rare cases, an internal error would occur during randomize() indicating an error in slvACTNodeMap. This issue has been fixed.</li>
+ <li>QSIM-56429 - In
+some rare cases, certain kinds of ternary constraint expressions would trigger an internal error during randomize(). This issue has been fixed.</li>
+ <li>QSIM-55187 - Certain lists of expressions, as in a concatenation, could cause a compiler crash if there was a missing element; this is a syntax error now correctly handled.<br /></li>
+ <li>QSIM-56462 - An index variable in a streaming concat expression like b1 = {&gt;&gt; {b2 with [0 +: len]}} would sometimes generate an error at vsim time because the variable &quot;len&quot; was expected to be a constant expression.  The typical error was:&lt;br&gt;<br /> ** Error: (vsim-3044) Usage of 'mod.len' inconsistent with 'register' object.<br /> <br /><br /></li>
+ <li>QSIM-57185 - (source)  Added checking for packed array of time. Packed arrays of time are not allowed as per LRM. We were not checking for it in the tool but now we have added the check. So, the packed array of time will result in compiler error. The users need to convert the packed array to unpacked to use arrays of time.</li>
+ <li>[nodvtid]  -  Vlog would crash when parsing certain syntax constructs.</li>
+ <li>QSIM-58023 - Using a wire type with a struct containing a field of an enum type could generate an error like&lt;br&gt;<br />&lt;code&gt;# ** Fatal: (vsim-3355) Variable 'struct1.enum1' cannot be converted to a net.&lt;/code&gt; </li>
+ <li>[nodvtid]  -  SystemVerilog macros undefining and subsequently redefining a macro of the same name repeatedly during macro expansion would generate incorrect results.</li>
+ <li>QSIM-58670 - Vsim incorrectly reported a vsim-3837 error for multiple continuous assignments to a variable when using a bit-select expression with a complex index expression</li>
+ <li>QSIM-53731 - (source) Macros and symbols defined (with `define) in source files compiled because of -v and -y will no longer persist after the -v and/or -y context is finished with.  Use -svext=+dvydl to reenable the old buggy behavior of leaking such macros/symbols.<br /></li>
+ <li>QSIM-55788 - (results) Module instances under for-generate blocks are not initialized with same initialization seed, which can result in non-LRM compliant simulation behavior. A SystemVerilog constrained-random language extension &quot;genmodseedfix&quot; has been implemented to address this issue. To enable LRM-compliant seeding of module instances under for-generate blocks, add &quot;-svrandext=+genmodseedfix&quot; to the vsim command line. This extension is enabled by default.<br /><br /></li>
+ <li>QSIM-60156 -  In some rare cases, randomize() would return 0 indicating no solutions for constraints involving signed modulo expressions. This issue has been fixed.</li>
+ <li>QSIM-59957 -  In some rare cases, randomize() calls involving an array.sum() constraint with a 'with' clause within the context of an iterative constraint would trigger an internal error. This issue has been fixed.</li>
+ <li>QSIM-59880 - (results)  In some cases, randomize() would incorrectly evaluate a 'soft' constraint containing an indexed expression with a random index. This issue has been fixed.</li>
+ <li>QSIM-59116 -  Significantly improved performance of randomize() calls involving large numbers of 'randc' variables.</li>
+ <li>QSIM-59051 - In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would trigger an internal error. This issue has been resolved.<br /><br /></li>
+ <li>QSIM-59050 - (results) In some rare cases, randomize() calls involving constraints with function calls (having one or more arguments) would be incorrectly evaluated (sometimes resulting in spurious constraint contradiction failures). This issue has been resolved.</li>
+ <li>QSIM-58871 - In some rare cases, randomize() would cause the simulator to crash when evaluating constraints involving a non-random multi-dimensional packed array. This issue has been fixed.</li>
+ <li>QSIM-58384 - (results)  Significantly improved performance and reduced memory usage related to evaluation of randomize() calls involving large numbers of 'inside' constraint expressions.</li>
+ <li>QSIM-58334 - Attempting to randomize() a protected (encrypted) class containing a static random variable would cause a crash or trigger an error (vsim-7180). This issue has been resolved, and randomize() calls on protected classes w/ static random variables are now supported.</li>
+ <li>QSIM-59820 - In some rare cases, randomize() calls involving constraints having function calls will spuriously fail with the error: &quot;(vsim-7090) Invalid X or Z in a state expression value within a constraint.&quot; This issue has been fixed. </li>
+ <li>QSIM-60117 -  In some rare cases, randomize() calls referring to one or more 'soft dist' constraints would cause a spurious failure (no solutions). This issue has been fixed.</li>
+ <li>QSIM-61434 - (results)  In some rare cases, a call to randomize() would fail (return 0) for a scenario that had valid solution(s). This issue has been fixed.</li>
+ <li>QSIM-60947 - In some rare cases, randomize() would trigger an internal error when evaluating a scenario involving constraints with random index expressions. This issue has been fixed.</li>
+ <li>QSIM-61459 - In some rare cases, randomize() would trigger an internal error for scenarios involving constraints with function call expressions. This issue has been fixed.</li>
+ <li>QSIM-57529 - Compiling a constraint involving a non-random real-type expression that is cast to an integral type would trigger spurious warning messages about possibly requiring the 'svrnm' (SystemVerilog Real Number Modeling) license during simulation. This issue has been fixed.<br /><br /></li>
+ <li>QSIM-61486 - Constraints involving array.sum() reduction expressions for multi-dimensional arrays would trigger an internal error during randomize() when &quot;-svext=ared&quot; was enabled. This issue has been fixed.<br /></li>
+ <li>QSIM-61320 - In some rare cases, randomize() would crash when evaluating constraints involving function calls. This issue has been fixed.</li>
+ <li>QSIM-61367 - In some rare cases, randomize() would crash when evaluating inline constraints w/ references to non-random packed struct. This issue has been fixed.</li>
+ <li>QSIM-60784 - (results) In some rare cases, randomize() would fail (return 0) for a scenario with valid solution(s) involving constraints with random index expressions. This issue has been fixed.</li>
+ <li>QSIM-60944 - (results) In some rare cases, randomize() would fail (return 0) for a scenario having valid solution(s) involving 'dist' constraints where the bit-width of the LHS is less than the bit-width of the RHS. This issue has been fixed.</li>
+ <li>QSIM-60424 - Fixed a memory leak in randomize() that significantly impacted simulation memory usage for testcases involving large numbers of randomize() calls.</li>
+ <li>QSIM-60640 - In some cases, randomize() would crash when evaluating a 'dist' constraint that specified a constant array on the RHS. This issue has been fixed.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 2020.1</b></font>
+<ul><li>QSIM-54334 - References within an uninstantiated package to a locally-defined package instantiation could result in incorrect simulator error messages due to incorrect code generation.</li>
+ <li>QSIM-54962 - An object declaration with an initial value (or default value, for signal) that was the parenthesized OPEN reserved word was accepted and resulted in bad code that would crash the simulator.  This is a syntax error that is now detected.<br /></li>
+ <li>QSIM-54941 -  The presence of a package instantiation declaration within the declarative region of a design unit could cause the compiler to incorrectly identify the instantiation as a standalone design unit when compiling a source file with a -just command-line switch. As a consequence, it is possible the extracted generic map clause of the instantiation will refer to objects that are not in scope, or the containing design unit will be broken into two parts that cannot be compiled without syntax errors.</li>
+ <li>QSIM-50634 - (results)  In certain cases, optimization of clocked processes with reset was leading to incorrect results. This bug has been fixed.<div><br /></div></li>
+ <li>QSIM-55460 - A VHDL 2008 IF-GENERATE with ELSIF-GENERATE alternative block(s) could cause a simulator crash if vopt could determine that a condition was FALSE.<br /></li>
+ <li>QSIM-55137 - (results)  In certain cases, vopt was crashing during optimization of clocked processes. This bug has been fixed. <div><br /></div></li>
+ <li>QSIM-55531 -  If a component or an entity contains a generic whose type is dependent on another generic of the component or entity. Code generation in vcom or vopt could fail.</li>
+ <li>QSIM-56373 - A VHDL design unit whose source text is in 2 or more files is not supported.  An error will be issued if such a situation is detected.<br /><br /></li>
+ <li>[nodvtid]  - FLI function mti_FindDriver() would crash in some situations involving composite signals.<br /></li>
+ <li>QSIM-56691 - (source, results) Following execution of uninstantiated procedures with OUT mode parameters not associated with a type generic, and evaluation of generic procedures with OUT mode parameters not associated with a type generic, actual variables associated with the OUT parameters could be left unchanged despite changes within the procedures. The compiler is now generating code to correctly set the value of OUT mode parameters in the above cases.</li>
+ <li>QSIM-56234 - (results)  In certain cases, association of array subelements in ports was leading to incorrect results. This has been fixed.</li>
+ <li>QSIM-56012 - (results) When attributes 'left, 'right, 'length, 'low, 'high and 'range were applied to an unconstrained array, they lead to a crash. This is now an error.<br /></li>
+ <li>QSIM-57546 -  If a package contains a package instance within a USE clause, static array constraints within the package instance may not be compiled correctly, possible causing a fatal internal error during elaboration of  the design by the simulator.</li>
+ <li>QSIM-57795 - The compiler could report a fatal internal error if it encountered a generic declaration list with an index constraint within a generic vector preceding an interface package.</li>
+ <li>QSIM-58539 - (results)  The attributes <b>INSTANCE_NAME</b> and<b> PATH_NAME</b>, were not considered globally static.  If the prefix of the attribute is a signal and this expression appears in a wait statement with an on clause or in a concurrent statement other than a process, a change in signal value would trigger a evaluation of the wait or concurrent statement.  This currently results in extra statement executions. The attributes are now considered globally static, so the wait or concurrent statement is no longer sensitized to that prefix. This change can cause simulation results to be different from previous versions. </li>
+ <li>QSIM-57830 -  Using unconstrained alias signal as an actual for a port connection was leading to a crash. This has been fixed.<div><br /></div></li>
+ <li>QSIM-57969 - (results)  Using a function call without arguments in a generic map was showing syntax error incorrectly. This has been fixed. <div><br /></div></li>
+ <li>QSIM-60023 - Use of the -mixedsvvh switch could result in the compiler erroneously emitting error vcom-1995, which states that a package cannot be imported into SystemVerilog designs. This can occur when at least two VHDL packages are compiled on a single command-line with the -mixedsvvh switch; and, one package contains a constant declaration initialized by a function defined in the other package, and the name of the first package comes lexically before the name of the second package.</li>
+ <li>QSIM-57712 -  If an entity has a  generic whose type depends on a previously declared generic and that entity is directly instantiated, then vsim could crash when loading the design. The work around was to use a component instantiation. </li>
+ <li>QSIM-60153 -  If a component had a port that is a multi-dimensional array whose bounds depended on the component's generics and the port's actual was an expression, vcom could generate an internal error.</li>
+ <li>QSIM-60125 - Simulations can crash, producing a stacktrace, when simulating a VHDL design that calls procedures defined inside an uninstantiated package with signal-valued attribute expressions, using the 'TRANSACTION, 'STABLE, and 'QUIET attributes.</li>
+ <li>QSIM-56236 -  Several related problems are fixed<br /><ol><li>Ports that are of a multi-dimensional array type and the index constraints depend on generics would crash.</li><li>Partially constrained ports that are arrays of arrays would crash</li><li>Generic of type array whose constraints depend on other generics would crash.</li></ol>All these issues have been resolved. </li>
+ <li>QSIM-59785 - The compiler could generate incorrect code for the mapping of a signal to a component port when the port is an array of records containing unconstrained array fields, and the component instantiation is within a generate block. Incorrect code generation could result in invalid error messages emitted from the compiler, the optimizer, or simulator, or could cause the simulator to crash.</li>
+ <li>QSIM-53604 -  VHDL-2008 construct `with &lt;expr&gt; select ?` previously gave error: unimplemented feature. This language construct has now been implemented.</li>
+ <li>QSIM-52747 - (source)  Fixed an issue where forward type declarations could allow compilation of illegal redefinitions. It is now illegal to declare multiple forward type declarations for the same symbol (see VHDL-2008 5.4.2).</li>
+ <li>QSIM-14709 - In certain cases, calling functions with Records as arguments led to a crash. This has been fixed.</li>
+ <li>QSIM-56666 -  In certain cases when connecting a vhdl signal by ('0) at system verilog side, an incorrect error was reported. this has been fixed.</li>
+ <li>QSIM-60929 -  For some specific cases when &quot;-error 1246&quot; option is specified in vcom or vopt options. Vopt used to give null range error incorrectly for standard libraries. This has been fixed.</li>
+ <li>QSIM-59832 -  For some specific cases of vsim restart flow, vsim use to crash. This has been fixed.</li>
+ <li>QSIM-59718 -  For some specific cases of nested vhdl packages compiled with -mixedsvvh, vcom use to crash . This has been fixed.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcdefects"></a><font size="4"><b>SystemC Defects Repaired in 2020.1</b></font>
+<ul><li>QSIM-39643 - Fixed an incorrect flag setting for the pointer types that would cause an sccom (sccom-6165) merge error. </li>
+ <li>QSIM-55481 -  Fix scparse to handle C++11 scoped enums.</li>
+ <li>QSIM-57389 - Fixed sccom-6000 error caused by a corrupt debug database generated by scparse in cases where member functions had many arguments.</li>
+ <li>QSIM-24989 -  Fixed that the user sometimes gets &quot;(vsim-7) Failed to open info file &lt;info_file_path&gt; in read mode&quot;  as a side effect during elaboation phase. Meanwhile _info file physically exisits and this is not the real cause behind the real error which appears next.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 2020.1</b></font>
+<ul><li>QSIM-53578 - When a write-protected library contained a Verilog DU made visible (as its equivalent ENTITY) by VHDL &quot;use lib.all&quot; in a VHDL design unit, if the VHDL design unit then contained an identifier that was the same as the name of this Verilog module, an error would occur as the equivalent ENTITY was being made.  This error happened on Windows platforms only.<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 2020.1</b></font>
+<ul><li>VM-10936 - Fixed a bug in VRM where newline characters in a &quot;tcl&quot; parameter could cause errors with the &quot;vrun -status&quot; command and/or the VRM GUI.<br /></li>
+ <li>VM-10952 - Fixed issue with internal testlist parser where multiple test lines with the same name and a repeat count of one would result in a &quot;duplicate entry&quot; error when the RMDB was expanded.<br /></li>
+ <li>[nodvtid]  - Fixed bogus error message emitted when VRM (vrun) doesn't detect the proper license.<br /></li>
+ <li>VM-11371 - Fixed performance issue where VRM GUI would appear to stop responding to input for a significant time when opening a VRM Results pane on a regression which contains a large number (ie: 1000s) of scripts and/or tests.<br /></li>
+ <li>VM-8461 - Fixed bug in VRM testlist expansion where multiple test lines with same test name were not being clubbed into a single block of runnable instances.<br /></li>
+ <li>QSIMQA-3564 - Fixed bug in VRM status command (vrun -status) where merged coverage could be incorrect depending on how tests are grouped for auto-merge<br /></li>
+ <li>VM-11626 - Fixed bug in VRM where test could hang with no timeout if VRM cannot read the UCDB generated by the test<br /></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 2020.1</b></font>
+<ul><li>QSIM-55189 - (source, results) Added Library Forward SAIF file Support in Questa. Now, with Vopt command-line user can specify :<br /><ol><li>  Library Forward SAIF file with option &quot;-fsaif  &lt;saif_file_name&gt;&quot; or,</li><li>  File containing list of path to multiple Library Forward SAIF files with option &quot;-fsaiflist &lt;file_name&gt;&quot;</li></ol></li>
+ <li>QSIM-20282 - (source, results) #QSIM-20282 <br />#Fixed with CL:4256347<br /><br />When an interconnect delay in the SDF file uses two nodes that are not connected, QuestaSim does not issue a warning message and Interconnect request is replaced with a port annotation at the destination. <br /> <br />The LRM specifically states that for interconnect delays, a warning message will	be generated if source and destination ports are not on same net.<br /> <br />Added the below warning in this case in <b>vsim</b>:<br /> Warning: (vsim-SDF-16107) &lt;sdffile_path&gt;(&lt;sdffile_lineno&gt;): The interconnect &lt;source port absolute path&gt; is not connected to the destination '&lt;destination port absolute path&gt; '.<br /> The interconnect request will be replaced with a port annotation at the destination.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uienhancements"></a><font size="4"><b>User Interface Enhancements in 2020.1</b></font>
+<ul><li>[nodvtid]  -  The vopt -linedebug option is being deprecated. A warning message is issued when this option is used.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 2020.1</b></font>
+<ul><li>QSIM-53134 -  Added a SystemVerilog Constraint Solver extension. This extension is to enable the seeding of different module instances differently based on their hierarchical path names. The extension is off by default and can be enabled with vsim -svrandext=pathseed.<br />   </li>
+ <li>QSIM-55458 - (results) Significantly improved the output of the constraint contradiction report when randomize() fails due to no solutions when &quot;-solvefaildebug=2&quot; is specified. The diagnostic output related to if/else constraints will be displayed in a fashion that reflects the original constraints for more scenarios.<br /><br /><br /></li>
+ <li>QSIM-54662 - Constraint expressions involving multiplication of 'real' type operands are now supported during randomize() when the &quot;realrand&quot; SystemVerilog extension is enabled (default). Randomization of 'real' variables or constraints requires a SystemVerilog Real Number Modeling (svrnm) license.</li>
+ <li>[nodvtid]  - SystemVerilog macro names defined on the command line may contain the minus ('-') character in addition to the set of characters that form valid identifiers. Enable this extension with the &quot;-svext=+mncim&quot; option.</li>
+ <li>[nodvtid]  - (source)  When a macro definition is found after a pre-processor conditional compiler directive and they share the same line in an HDL file emit a suppressible error. This will guide users to create portable code that will behave similarly across different implementations.</li>
+ <li>QSIM-57802 - In the elab/load_elab flow, -sv_lib usage is now supported .  The following example shows -sv_lib use model in vsim -load_elab runs:<br /> <br />vsim top -elab elab_file.dat -sv_lib shared //shared.so is the base library that can be shared by multiple tests, i,e. common interfaces<div>vsim -load_elab elab_file.dat -sv_lib test1 // test1.so is the C library for test1 only</div><div>vsim -load_elab elab_file.dat -sv_lib test2 // test2.so is the C library for test2 only</div><div><br /></div><div>In the normal flow the above two runs from elab image are equivalent to the following runs:</div><div><br /></div><div>vsim top -sv_lib shared -sv_lib test1 // test1 run from work library</div><div>vsim top -sv_lib shared -sv_lib test2 // test2 run from work library<br /><br /> Note in both flows shared.so is given higher priority than both test1.so and test2.so.<br /> </div><div><br /></div><div>Note shared.so is given higher priority than both test1.so and test2.so in both 3-step and 4-step flows</div></li>
+ <li>QSIM-55884 - Constraint expressions involving division of 'real' type operands are now supported during randomize() when the &quot;realrand&quot; SystemVerilog extension is enabled (default). Randomization of 'real' variables or constraints requires a SystemVerilog Real Number Modeling (svrnm) license.</li>
+ <li>QSIM-57834 - Distribution constraints involving 'real' type operands are now supported during randomize() when the &quot;realrand&quot; SystemVerilog extension is enabled (default). Randomization of 'real' variables or constraints requires a SystemVerilog Real Number Modeling (svrnm) license.If the RHS of a 'dist' constraint specifies a 'real' type range (e.g. &quot;[1.4:2.5]&quot;) then an explicit weight must be specified (implicit default weight of &quot;:= 1&quot; is not supported) and only the &quot;:/&quot; weight operator is supported (the &quot;:=&quot; is not supported for ranges); in addition, the probability for selecting a single value from the specified range is undefined. 'real' types are not supported for 'dist' weight expressions.<br /> </li>
+ <li>QSIM-58007 - When -solveverbose or -solveinfo is specified on the vsim command line, the solver will dump information about the constraints which participate in a given randomize() call. In some cases, constraints which contain references to non-random variables would display the names of the variables and not the value of those variables, making it difficult to debug issues related to those constraints. The -solveverbose/-solveinfo output for these kinds of constraints has been improved -- now the value of non-random variables and the names of those variables (as an in-line comment) are displayed.</li>
+ <li>QSIM-58407 - Implemented a new feature &quot;RNG Trace&quot; that produces diagnostic output during simulation to assist in the analysis of random-stability issues between two differing simulations. Enable RNG tracing by adding &quot;-rngtrace&quot; to the vsim command line. For additional details and options, refer to the Questa SIM Command Reference Manual (options &quot;-rngtrace&quot;, &quot;-rngtraceopt&quot;, &quot;-rngtraceclassfilter&quot;, &quot;-rngtraceprocessfilter&quot;) and the &quot;Simulator State Variables&quot; Section of the Questa SIM User's Manual (variables &quot;RNGTrace&quot;, &quot;RNGTraceFile&quot;, &quot;RNGTraceOpt&quot;, &quot;RNGTraceClassFilter&quot;, &quot;RNGTraceProcessFilter&quot;)</li>
+ <li>QSIM-59275 - Given a randomize() scenario with no solutions, when -solvefaildebug is enabled, a constraint contradiction report is generated representing the minimum-set of contradictory constraints. If a timeout occurred during the determination of the minimum-set, the error message &quot;(vsim-7175) randomize() failed due to a non-reproducible constraint conflict.&quot; was displayed. This error message was found to be confusing and has been improved. The new error message that is displayed when a timeout occurs during -solvefaildebug minimum-set generation is: &quot;(vsim-7097) Timeout while testing for -solvefaildebug constraint conflicts (SolveFailDebugTimeout=50).&quot;<br /><br /></li>
+ <li>QSIM-56092 - (results) Significant improvements to how randomize() calls involving constraints with 'real' type operands are evaluated have been implemented with regard to correctness/repeatability, precision, solution distribution, and performance. Randomization of 'real' variables or constraints requires a
+SystemVerilog Real Number Modeling (svrnm) license. </li>
+ <li>QSIM-59852 - Given
+a randomize() scenario with no solutions, when -solvefaildebug is enabled, a
+constraint contradiction report is generated representing the minimum-set of
+contradictory constraints. If a timeout occurred during the determination of
+the minimum-set, an error message was displayed and no constraint contradiction report (or testcase when -solvefailtestcase is specified) would be generated. This behavior has changed -- if a timeout now occurs during -solvefaildebug minimum-set generation, then a partial constraint contradiction report (and partial testcase) will be generated. The partial results may provide enough information to assist in debugging the constraint contradiction.<br /><br /></li>
+ <li>QSIM-56527 - (source, results) Elaboration files generated with vsim switch -elab are compressed by default. Vsim switch -compress_elab is deprecated now.<br /></li>
+ <li>QSIM-58370 - Non-LRM compliant $void system function calls in constraint contexts are now partially supported via the vlog/vopt &quot;voidsystf&quot; SystemVerilog extension.<br /><br />When this extension is enabled, any occurrence of $void(x) within constraint contexts will be evaluated as (x). Occurrences of $void outside of constraint contexts will behave as user-defined system function calls (PLI).<br /><br />This extension is enabled by default. Use vlog/vopt &quot;-svext=-voidsystf&quot; or &quot;-pedanticerrors&quot; to disable this extension. </li>
+ <li>QSIM-56526 - Implemented a new randomize() feature - Solver Record and Replay.<br /> <br /><div>Solver record logs the solved values of random variables evaluated by randomize() calls during simulation to a solver recording file. Use &quot;vsim -solverecord[=&lt;filename&gt;]&quot; to enable solver record (solved values will be output to &lt;filename&gt; if specified, or &quot;solver.dat&quot; by default).<br /><br /> Solver replay reads the contents of a solver recording file and applies the stored values of random variables to randomize() calls during simulation. Use &quot;vsim -solvereplay[=&lt;filename&gt;]&quot; to enable solver replay (solved values will be read from &lt;filename&gt; if specified, or &quot;solver.dat&quot; by default).<br /><br /> See section &quot;Solver Record and Replay&quot; in the QuestaSIM User's Manual for additional details.</div></li>
+ <li>QSIM-60546 - (results) RNG Trace (Random Number Generator Trace) feature: Process names now reflect the value of their initial seed -- this method of identifying processes has been found to be more random-stable than the previous method (which displayed process names the same way as the GUI). Use &quot;-rngtraceopt=guiprocessnames&quot; to instruct RNG Trace to generate process names the old way.<br /><br /></li>
+ <li>QSIM-61128 - (results) RNG Trace (Random Number Generator Trace) feature: Implemented automatic filtering of &quot;noisy&quot; RNG trace output preceding set_randstate() operations. <br /><br />Output being written to a RNG trace file is buffered. When a set_randstate operation (on the executing process) is encountered, a backward scan of the buffered operation is made - looking for the first operation where the input (prior) randstate matches the randstate of the set_randstate operation. If such a operation is found, the matching operation along with the reset operation and intervening operations are filtered (removed from the buffer). Only RNG operations executed from the active process are considered. <br /><p>When the RNG trace is being written to the transcript (rather than to a file), the buffering/filtering will not be performed. This is because the filtering would delay the reporting of RNG operation (within the transcript) and make the reporting confusing.</p><p>The length of the buffer can be controlled by the &quot;-rngtracebuffersize &lt;size&gt;&quot; command line option. Setting a size less than 2 disables the filtering. The default is 20.<br /><br /></p></li>
+ <li>QSIM-60157 - (results) Improved the output of the constraint contradiction report generated when randomize() fails and -solvefaildebug is enabled. The output of the &quot;Where&quot; section (which describes variables and expressions that are assigned to a constant value) is now annotated with a comment indicating if a variable is considered &quot;random&quot; or &quot;non-random&quot; at the time randomize() is invoked. This information can be useful when debugging unexpected randomize() failures due to testbench errors related to missing 'rand' keywords on class fields that should be declared random.</li>
+ <li>QSIM-59586 - (results) The SystemVerilog constrained-random language extension &quot;deepcheck&quot; is now enabled by default. This extension allows randomize(null) calls to recursively consider constraints from member class handles. Use &quot;vsim -svrandext=-deepcheck&quot; to disable this extension.<br /><div><br /></div></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdlenhancement"></a><font size="4"><b>VHDL Enhancements in 2020.1</b></font>
+<ul><li>QSIM-52747 -  Improved compilation performance for designs with long strings of non-identical sub-declarations.</li>
+ <li>QSIM-58870 -  -displaymsgmode vhsupresswrite , will suppress the output of write/writeline vhdl function to the transcript.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcenhancement"></a><font size="4"><b>SystemC Enhancements in 2020.1</b></font>
+<ul><li>QSIM-555 - (source) SystemC/DPI/PLI/VPI/FLI default compiler (GCC) for linux and linux_x86_64 platforms is upgraded to 7.4.0<br />Supported compilers: gcc-7.4.0, gcc-5.3.0 and gcc-4.7.4 for linux and linux_x86_64 platforms </li>
+ <li>QSIM-57618 - (source, results) <div>Support for the IEEE 1666-2005 SystemC-2.2 standard has been deprecated and it is no longer supported.</div></li>
+ <li>QSIM-57618 - (source, results)  GCC 4.5.0 is no longer supported and It will no longer be distributed with the release. This affects linux and linux_x86_64 platforms only.</li>
+ <li>QSIM-57322 -  Removing the leading hierarchical path separator for mixed-language designs that include SystemC is now supported under '-scnolps' switch.<br />To enable the new behavior, '-scnolps' should be added to both vopt and vsim arguments.</li>
+ <li>QSIM-61311 -  Fixed sccom-6142 compilation error when compiling with  -DMTI_BIND_SC_MEMBER_FUNCTION </li>
+ <li>QSIM-57195 - General improvements in the SystemC Debugging flow by enhancing error messages by spotting  out  the real source behind the error and giving the user directions on how to solve it.<br />Improved &quot;sccom-6167&quot; error message as it was found to be confusing and not giving any directions for solving the problem. The new message informs the user that it is necessary to use '-nodebug' options during both compile and link steps.<br />Improved  &quot;sccom-6143&quot; error massage as it was found to be stating unclear reasons for the database creation and not helping the user by any actions. The new message infroms the user than he can bypass database creation by using '-nodebug' option.     </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="docrevhistory"></a><font size="4"><b>Document Revision History in 2020.1</b></font>
+<ul><li><div>Revision - Changes - Status/Date</div><div><ul><li>5.0 - Modifications to improve the readability and comprehension of the content. Approved by Tim Peeke. All technical enhancements, changes, and fixes are listed in this document for all products in this release. Approved by Bryan Ramirez. - Released/January 2020</li></ul></div><div><br /></div></li>
+ <li><div>Author: In-house procedures and working practices require multiple authors for documents.  All associated authors for each topic within this document are tracked within the document source. </div><div><br /></div></li>
+ <li>Revision History: Released documents maintain a revision history of up to four revisions. For earlier revision history, refer to earlier releases of documentation which are available on Support Center (http://support.mentor.com).<div><br /></div></li>
+</ul>
+
+</body>
+</html>

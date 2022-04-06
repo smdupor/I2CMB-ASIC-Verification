@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Important Concepts" />
+<meta name="abstract" content="Before creating an FLI application, you should have a good understanding of the following concepts of simulation and foreign language operation." />
+<meta name="description" content="Before creating an FLI application, you should have a good understanding of the following concepts of simulation and foreign language operation." />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idccdf6667-ac89-4ce3-8da4-b2771aebb887" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Important Concepts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Important Concepts" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idccdf6667-ac89-4ce3-8da4-b2771aebb887">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Important Concepts</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Before creating
+an FLI application, you should have a good understanding of the
+following concepts of simulation and foreign language operation. </span>
+</div>
+<dl class="dl"><dt class="dt dlterm">Elaboration</dt>
+<dd class="dd"><p class="p">When the simulator starts, it first goes through an elaboration
+phase during which it loads and connects the entire design and sets
+initial values. During this phase it loads all foreign shared libraries
+and executes the initialization functions of all foreign architectures.</p>
+</dd>
+<dt class="dt dlterm">Simulation</dt>
+<dd class="dd"><p class="p">The simulation phase of the simulator begins when you execute
+the first run command and continues until you execute a quit or
+restart command. When you execute a restart command, the simulator goes
+through its elaboration phase again.</p>
+</dd>
+<dt class="dt dlterm">Foreign Architecture</dt>
+<dd class="dd"><p class="p">A foreign architecture is a design unit that is instantiated
+in a design but that does not (generally) contain any VHDL code.
+Instead it is a link to a C model that can communicate to the rest
+of the design through the ports of the foreign architecture. Normally,
+a C model creates processes and reads and drives signal values;
+in essence, behaving in the same manner as VHDL code but with the
+advantage of the power of C and the ease of reading and writing
+files and communicating with other system processes.</p>
+</dd>
+<dt class="dt dlterm">Foreign Subprogram</dt>
+<dd class="dd"><p class="p">A foreign subprogram is a VHDL function or procedure that
+is implemented in C as opposed to VHDL. A foreign subprogram reads
+its in and inout parameters, performs some operation(s) which may
+include accessing simulator information through FLI function calls,
+writes its inout and out parameters, and returns a value (in the
+case of a function).</p>
+</dd>
+<dt class="dt dlterm">Callback</dt>
+<dd class="dd"><p class="p">A callback is a C function that is registered with the simulator
+for a specific reason. The simulator calls the registered function
+whenever the reason occurs. Callback functions generally perform
+special processing whenever certain simulation conditions occur.</p>
+</dd>
+<dt class="dt dlterm">Process</dt>
+<dd class="dd"><p class="p">A process is a VHDL process that is created through the FLI.
+It can either be scheduled for a specific time or be made sensitive
+to one or more signals that trigger the process to run. The process
+is associated with a C function and the C function is executed whenever
+the process is run by the simulator.</p>
+</dd>
+</dl>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsingVhdlFli_id889e364a.html" title="FLI routines are C programming language functions that provide procedural access to information within the HDL simulator, executed via the vsim command. A user-written application can use these functions to traverse the hierarchy of an HDL design, get information about and set the values of VHDL objects in the design, get information about a simulation, and control (to some extent) a simulation run. The header file mti.h externs all of the FLI functions and types that can be used by an FLI application.">Using the VHDL FLI</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Important Concepts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ImportantConcepts_idccdf6667.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

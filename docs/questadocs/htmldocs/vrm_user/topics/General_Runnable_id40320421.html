@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="runnable" />
+<meta name="abstract" content="The runnable element describes one node in the regression tree." />
+<meta name="description" content="The runnable element describes one node in the regression tree." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id40320421-b995-4f86-8ac5-bd94fcea11c5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>runnable</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="runnable" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id40320421-b995-4f86-8ac5-bd94fcea11c5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">runnable</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">The runnable
+element describes one node in the regression tree. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__ida2a8320c-2d5e-40d3-a7ae-fc71fc5919ef"><p class="p">A runnable may be a group which includes other
+runnable nodes as members. A group runnable can define the following: </p>
+<ul class="ul"><li class="li" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__id253ce4f8-7585-4a26-a290-fce0c1f01c02"><p class="p">a
+membership list.</p>
+</li>
+<li class="li" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__id0615011f-f8b5-4b1c-ae18-1a5d6cade06e"><p class="p">a <a class="xref fm:HeadingOnly" href="General_Prescript_id757d133f.html#id757d133f-7d62-41db-a996-318655b91124__General_Prescript_id757d133f.xml#id757d133f-7d62-41db-a996-318655b91124" title="The preScript element defines an Action script that is executed prior to executing the member runnable elements defined in a group runnable element.">preScript</a>, which runs prior to any Action
+scripts defined by member runnable nodes.</p>
+</li>
+<li class="li" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__id8ebc1007-6fc2-4210-8aee-956fe1ddfc2b"><p class="p">a <a class="xref fm:HeadingOnly" href="General_Postscript_id541c28e7.html#id541c28e7-9057-4686-a1e4-aa74d1685e01__General_Postscript_id541c28e7.xml#id541c28e7-9057-4686-a1e4-aa74d1685e01" title="The postScript element defines an Action script which is executed after the member runnable elements defined in a group runnable element have completed.">postScript</a>, which runs after all the Action
+scripts defined by member runnable nodes have completed. </p>
+</li>
+</ul>
+<p class="p">A task runnable can define the following:</p>
+<ul class="ul"><li class="li" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__id788c8b99-92bf-4772-ab9e-0c95d97d05f8"><p class="p">an <a class="xref fm:HeadingOnly" href="General_Execscript_idffac351a.html#idffac351a-2e7f-49e5-b79d-fbf06863fc2a__General_Execscript_idffac351a.xml#idffac351a-2e7f-49e5-b79d-fbf06863fc2a" title="The execScript element defines the Action script which is executed in association with a task or group runnable element.">execScript</a>, which defines the main Action
+script to be run but cannot define a membership list; leaf node
+runnable element.</p>
+</li>
+</ul>
+<p class="p">A group runnable may also define an execScript
+which may be inherited by any task runnables under that group, but
+the group runnable itself does not make use of the execScript.</p>
+<p class="p">A runnable can also have a base type, which
+can define parameters, Action scripts, a membership list, or methods
+that are inherited by other runnables through base inheritance. Refer
+to the section “<a class="xref fm:HeadingOnly" href="Contain_InheritanceOverridesSearchOrder_id01f79c08.html#id01f79c08-5fab-42f9-a986-e7565254673c__Contain_InheritanceOverridesSearchOrder_id01f79c08.xml#id01f79c08-5fab-42f9-a986-e7565254673c" title="When considering the configuration of most regression suites, there is usually some degree of repetition. If, for example, 100 tests all require the same simulation commands with some minor variation, it would be a poor system that forced the user to specify the redundant information 100 times, once per test.">Inheritance, Overrides, and Search Order</a>” for more information.</p>
+<p class="p">Group and task runnables participate in the
+execution graph while base runnables do not. The order of elements
+within the runnable element is not significant. Text content within
+the runnable element is ignored. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__idbb6985a9-c313-4e5f-933e-09b36068662c" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>runnable Element — Allowed Child Elements</span></caption><colgroup><col style="width:1.255in" /><col style="width:3.619in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e207"><p class="p">Elements </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e210"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Execscript_idffac351a.html#idffac351a-2e7f-49e5-b79d-fbf06863fc2a__General_Execscript_idffac351a.xml#idffac351a-2e7f-49e5-b79d-fbf06863fc2a" title="The execScript element defines the Action script which is executed in association with a task or group runnable element.">execScript</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to be run</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Localfile_idacff7532.html#idacff7532-5244-40b5-9069-9edc634a0da5__General_Localfile_idacff7532.xml#idacff7532-5244-40b5-9069-9edc634a0da5" title="The localfile element specifies a file that is to be generated, copied, or symbolically linked into the working directory associated with the runnable element in which it is found.">localfile</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines a file to be
+generated, copied, or linked prior to script execution</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_MembersMember_id18e4ccb5.html#id18e4ccb5-c774-48ea-a69a-1d680fac3f99__General_MembersMember_id18e4ccb5.xml#id18e4ccb5-c774-48ea-a69a-1d680fac3f99" title="The members element is a container for zero or more member elements.">members and member</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines a list of member
+runnable elements (group runnable only)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Mergescript_id70f74b58.html#id70f74b58-0864-492b-911e-9b46e3dcdbeb__General_Mergescript_id70f74b58.xml#id70f74b58-0864-492b-911e-9b46e3dcdbeb" title="The mergeScript element overrides the default Action script which is executed by auto-merge in order to merge one or more leaf-level UCDBs into a common merged UCDB file.">mergeScript</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to merge one or more leaf-level UCDB files into a merged UCDB file</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Method_id8c8348d1.html#id8c8348d1-de7b-4f0b-bae1-7345cde8c264__General_Method_id8c8348d1.xml#id8c8348d1-de7b-4f0b-bae1-7345cde8c264" title="The method element provides a way to control the execution of one or more Action scripts.">method</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an execution
+method to apply to all or a sub-set of Action scripts</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_ParametersParameter_id01b172e8.html#id01b172e8-b68d-472e-ac1a-1229ee6d97b5__General_ParametersParameter_id01b172e8.xml#id01b172e8-b68d-472e-ac1a-1229ee6d97b5" title="The parameters element is a container for zero or more parameter elements.">parameters and parameter</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines a list of VRM
+parameters</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Postscript_id541c28e7.html#id541c28e7-9057-4686-a1e4-aa74d1685e01__General_Postscript_id541c28e7.xml#id541c28e7-9057-4686-a1e4-aa74d1685e01" title="The postScript element defines an Action script which is executed after the member runnable elements defined in a group runnable element have completed.">postScript</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to be run after all member runnable scripts have completed (group
+runnable only)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Prescript_id757d133f.html#id757d133f-7d62-41db-a996-318655b91124__General_Prescript_id757d133f.xml#id757d133f-7d62-41db-a996-318655b91124" title="The preScript element defines an Action script that is executed prior to executing the member runnable elements defined in a group runnable element.">preScript</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to be run prior to any member runnable scripts bring launched (group runnable
+only)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Trendscript_idf74679a1.html#idf74679a1-5771-4647-b086-c7e09605624f__General_Trendscript_idf74679a1.xml#idf74679a1-5771-4647-b086-c7e09605624f" title="The trendScript element overrides the default Action script which is executed by auto-trend in order to perform trending analysis of merged files from the auto-merge functionality.">trendScript</a> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to perform trend analysis on a merged UCDB file</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e207 "><p class="p"><a class="xref fm:HeadingOnly" href="General_Triagescript_id65539e25.html#id65539e25-4a86-4cda-a7f2-a00e5955a348__General_Triagescript_id65539e25.xml#id65539e25-4a86-4cda-a7f2-a00e5955a348" title="The triageScript element overrides the default Action script which is executed by auto-triage in order to import the messages associated with the test stored in one or more UCDB files into a Triage Database (TDB) file.">triageScript</a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e210 "><p class="p">Defines an Action script
+to import messages to a Triage Database (TDB) file </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__id4117bd6a-6891-4dbd-91db-e5992961ff85" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>runnable Element — Supported Attributes</span></caption><colgroup><col style="width:1.088in" /><col style="width:0.872in" /><col style="width:0.872in" /><col style="width:0.872in" /><col style="width:2.795in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e353"><p class="p">Attributes </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e356"><p class="p">Expanded </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e359"><p class="p">Evaluated </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e362"><p class="p">Default </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d98817e365"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">base </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;base_runnable_name&gt;
+…}</p>
+<p class="p">Space- or comma-separated list of base runnable
+element names. </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Contain_InheritanceOverridesSearchOrder_id01f79c08.html#id01f79c08-5fab-42f9-a986-e7565254673c__Contain_InheritanceOverridesSearchOrder_id01f79c08.xml#id01f79c08-5fab-42f9-a986-e7565254673c" title="When considering the configuration of most regression suites, there is usually some degree of repetition. If, for example, 100 tests all require the same simulation commands with some minor variation, it would be a poor system that forced the user to specify the redundant information 100 times, once per test.">Inheritance, Overrides, and Search Order</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">foreach </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;string&gt; …}</p>
+<p class="p">Space- or comma-separated list of iteration
+tokens </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ControllingRepeatIndexForeachFunctionality_ida1f25206.html#ida1f25206-246a-4d19-ad51-38a36fb1a104__Concept_ControllingRepeatIndexForeachFunctionality_ida1f25206.xml#ida1f25206-246a-4d19-ad51-38a36fb1a104" title="Unless otherwise specified, the indices of the repeating Runnables run from one (1) to the number given in the repeat attribute (N). The list of indices can be controlled by the foreach attribute. The foreach attribute contains a list of one or more string tokens, separated by whitespace, commas, or a combination of both. A Runnable containing a properly formatted foreach attribute (one whose value contains at least one token) repeats once for each token in the value of the foreach attribute, irrespective of whether there is a repeat attribute specified. The indices used for each instance of the Runnable are derived from the token strings found in the foreach attribute.">Controlling the Repeat Index (foreach Functionality)</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">if </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">true </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;expression&gt;}</p>
+<p class="p">Where &lt;expression&gt; is a TCL expression.
+If the expression is false, runnable membership in parent group
+is ignored </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_SelectiveMembershipInGroup_id33d10131.html#id33d10131-db1a-40a5-9e0d-fbdf77a4e328__Concept_SelectiveMembershipInGroup_id33d10131.xml#id33d10131-db1a-40a5-9e0d-fbdf77a4e328" title="It is possible to prevent the execution of a specified Runnable based on an attribute that can be parameterized. If the if or unless attributes are specified in a runnable element, that Runnable's membership in a Group can be disabled based on the value of either attribute. This might be useful if a particular Group contains some Tasks that are only applicable in certain modes or when run under certain conditions.">Selective Membership in a Group</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">index </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">(empty) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">The name of parameter
+created from iteration index</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">name </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">(required) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;string&gt;}</p>
+<p class="p">Runnable name (must be a name token)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">onerror </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">See note <a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{abandon | continue}</p>
+<p class="p">Policy for continuation after an error<a name="fnsrc_2" href="#fntarg_2"><sup>2</sup></a>.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_FailurePropagation_idd9743706.html#idd9743706-b412-45c7-967e-aaede226dd75__Concept_FailurePropagation_idd9743706.xml#idd9743706-b412-45c7-967e-aaede226dd75" title="A failed Action (one which either fails to launch, returns a non-zero status, or is marked as failed in the UCDB) can also have an effect on subsequent Actions that depend on (that is, follow) the failed Action. This mechanism is called “failure propagation” and is intended to help prevent cases where some critical Action within a regression suite (such as design compilation) fails but the remainder of the regression continues on as if nothing happened.">Failure Propagation</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">repeat </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">1 </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;integer&gt;}</p>
+<p class="p">Repeat count.</p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Contain_RepeatingTaskGroup_idae0365f9.html#idae0365f9-f224-4d74-99e4-08f3103e4a77__Contain_RepeatingTaskGroup_idae0365f9.xml#idae0365f9-f224-4d74-99e4-08f3103e4a77" title="In some cases, such as when constrained random techniques are used to generate stimulus for the device under test (DUT), it can be useful to be able to repeat a single Task (that is, simulation) or Group of Tasks multiple times as part of the same regression run.">Repeating a Task or a Group</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">sequential </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">no </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{yes | no}</p>
+<p class="p">If yes, members run sequentially, if no, members
+run concurrently </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_ExecutionModel_id15e44a6e.html#id15e44a6e-b7ef-4441-8d30-f7a1a8ddc833__Concept_ExecutionModel_id15e44a6e.xml#id15e44a6e-b7ef-4441-8d30-f7a1a8ddc833" title="This section illustrates the VRM execution model as it relates to sequential and non-sequential Group Runnables.">Execution Model</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">testlist</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">&lt;file-path&gt;</p>
+<p class="p">Specifies a path, relative to the directory from
+which the RMDB is read, to a <a class="xref fm:HeadingOnly" href="Concept_TheTestlistAttributeAndFile_id037e8974.html#id037e8974-6cbc-4077-b1a3-a6b64003a38f__ida8583b37-546d-4113-ae06-90a856345bad">Testlist File</a>, which enables the generation of random tests.</p>
+<p class="p">If you use a glob character in the testlist argument and match
+more than one file, the one with the most recent modification time
+will be used. If no glob characters are included, the file matching
+the specified path will be used.</p>
+<p class="p">The testlist attribute overrides both the repeat and the foreach
+attributes on the same runnable element. </p>
+<p class="p">If the file cannot be found, an error will be reported and the
+RMDB expansion will fail.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">type </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">(required) </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{base | group | task}</p>
+<p class="p">Type of runnable.</p>
+<p class="p">Refer to the sections “<a class="xref fm:HeadingOnly" href="Concept_RunnablesRegressionSuiteHierarchy_idcc5923eb.html#idcc5923eb-3fe8-4dcb-898a-98117f69502f__Concept_RunnablesRegressionSuiteHierarchy_idcc5923eb.xml#idcc5923eb-3fe8-4dcb-898a-98117f69502f" title="VRM views the entire regression suite as a tree whose leaf-level nodes represent individual Tasks to be executed. Non-leaf nodes, known as Groups, can contain zero or more leaf-level Tasks or other Groups as members. The depth to which Groups can be nested is unlimited. This hierarchical relationship is a virtual one, reflected only in the membership lists of the Group nodes. In the database itself, the Group and Task definitions are stored as a flat list of named and typed runnable elements that share a single namespace.">Runnables and the Regression Suite Hierarchy</a>” and</p>
+<p class="p">“<a class="xref fm:HeadingOnly" href="Concept_RunnableTypesInheritance_id38a746f4.html#id38a746f4-0cac-4f7c-973c-1e8c9f4dc1e5__Concept_RunnableTypesInheritance_id38a746f4.xml#id38a746f4-0cac-4f7c-973c-1e8c9f4dc1e5" title="From the point of view of base inheritance, all Runnable nodes are equivalent. A Group can refer to a Task as a base Runnable or vice-versa (since base inheritance is concerned only with content, not behavior). Data defined in the base Runnable is treated as if it is defined in the referring Runnable itself. While there is nothing preventing a base Runnable from participating in the execution graph of the regression suite, it is more common for Runnables used as a base for other Runnables to not be involved in the execution graph themselves. In such cases, it can be desirable to enforce this non-involvement so as to prevent inadvertent cycles in the graph. To mark a Runnable as non-participatory, set the value of the type attribute to base instead of task or group. If a base type Runnable is included in the membership list of a Group, then VRM outputs an error and ignore the base type Runnable. Note that this is similar to the “pure virtual base class” concept in C++ (a base that cannot, by itself, be instanced).">Runnable Types and Inheritance</a>” for more information.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e353 "><p class="p">unless </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e356 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e359 "><p class="p">Yes </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e362 "><p class="p">false </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d98817e365 "><p class="p">{&lt;expression&gt;}</p>
+<p class="p">Where &lt;expression&gt; is a TCL expression.
+If the expression is true, runnable membership in parent group is ignored </p>
+<p class="p">Refer to the section “<a class="xref fm:HeadingOnly" href="Concept_SelectiveMembershipInGroup_id33d10131.html#id33d10131-db1a-40a5-9e0d-fbdf77a4e328__Concept_SelectiveMembershipInGroup_id33d10131.xml#id33d10131-db1a-40a5-9e0d-fbdf77a4e328" title="It is possible to prevent the execution of a specified Runnable based on an attribute that can be parameterized. If the if or unless attributes are specified in a runnable element, that Runnable's membership in a Group can be disabled based on the value of either attribute. This might be useful if a particular Group contains some Tasks that are only applicable in certain modes or when run under certain conditions.">Selective Membership in a Group</a>” for more information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id40320421-b995-4f86-8ac5-bd94fcea11c5__idd8ff8871-4766-4a55-800e-732d61bb1e58"><h2 class="title Subheading sectiontitle">Examples</h2><pre class="pre codeblock leveled"><code>&lt;runnable name="compile" type="group" sequential="yes"&gt;
+	…
+&lt;/runnable&gt;
+&lt;runnable name="compile_ovm_pkg" type="task" if="(%DO_COMPILE_OVM%)==1"&gt;
+	…
+&lt;/runnable&gt;
+&lt;runnable name="simulation" type="task" foreach="(%TESTCASE%)"&gt;
+	…
+&lt;/runnable&gt;</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ElementDefinitions_idca164c90.html" title="These are the elements, shown roughly in top-down order, that may appear in an RMDB file.">Element Definitions</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Contain_RepeatingTaskGroup_idae0365f9.html" title="In some cases, such as when constrained random techniques are used to generate stimulus for the device under test (DUT), it can be useful to be able to repeat a single Task (that is, simulation) or Group of Tasks multiple times as part of the same regression run.">Repeating a Task or a Group</a></div>
+<div><a class="link" href="../topics/Concept_TheTestlistAttributeAndFile_id037e8974.html" title="The testlist attribute specifies a path, relative to the directory from which the RMDB is read, to a Testlist File, which enables the generation of random tests.">The Testlist Attribute And File</a></div></div>
+</div></div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  The
+default value is abandon for sequential groups and continue for
+non-sequential groups.</div><div class="fn"><a name="fntarg_2" href="#fnsrc_2"><sup>2</sup></a>  The onerror attribute controls whether the failure
+of an Action affects the running of subsequent Actions. If the attribute
+is set to abandon, subsequent Actions that rely on the failed Action
+will be skipped. If the attribute is set to continue, the error
+will not affect subsequent Actions. </div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "runnable"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Runnable_id40320421.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

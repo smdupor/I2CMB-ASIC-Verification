@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="log" />
+<meta name="abstract" content="Creates a wave log format (WLF) or qwavedb file containing simulation data for all HDL objects whose names match the provided specifications." />
+<meta name="description" content="Creates a wave log format (WLF) or qwavedb file containing simulation data for all HDL objects whose names match the provided specifications." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb91ff318-f079-4e2b-96fd-b25b874900f7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>log</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="log" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idb91ff318-f079-4e2b-96fd-b25b874900f7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">log</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates
+a wave log format (WLF) or qwavedb file containing simulation data
+for all HDL objects whose names match the provided specifications.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Using the log command
+without the vsim -qwavedb or -visualizer argument</h2><p class="lines UsageLine">log <span class="ph">[<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id2c07ed9c-4f17-46b7-a377-f1982e1750b8">-class &lt;classtype&gt;</a>] </span>[<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id153b135f-2154-479d-8dd9-c5d53660ed74">-howmany</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id2d8f1cc4-1d7e-49f9-9ff0-e5ff611d4a65">-filter &lt;f&gt; | -nofilter &lt;f&gt;</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id1bc2f2f8-f303-46e9-9966-9e9b0fe50ca1">-flush</a>] {[<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__iddb1c47e7-3cd2-4154-91ff-00f9390a9346">-in</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__idbe6c0999-32c2-4d88-ae6a-046905d343cc">-inout</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id483f3408-8a06-48eb-948e-32ff11dd461e">-out</a>] | [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id8c0ec960-95be-4da3-8625-584f80b81893">-ports</a>]} [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id2a534442-70ba-4476-81a1-afa947cc18e0">-internal</a>] <span class="ph">[<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__idbe95f3dc-f02c-4003-bba1-504952f4be62">-mvcall</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__idbcfe639a-f789-4c62-a74b-e0b1b823fcad">-mvcovm</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id32e43011-2688-403a-b245-f9cf1130b49c">-mvcreccomplete</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id2dbcec5f-f3f9-4c9d-9c27-e5bdbd705669">‑optcells</a>] </span>[<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id5b8b1405-d583-4653-98ab-fe3c745aea8b">-recursive</a> [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id3de5e6f9-f478-4ac6-bb70-d56c81707555">-depth &lt;level&gt;</a>]] <a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id23f9f426-be17-4c8b-813e-ef004f135769">&lt;object&gt;</a> … </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Using the log command with the vsim -qwavedb
+or -visualizer argument </h2><p class="lines UsageLine">log [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id1bc2f2f8-f303-46e9-9966-9e9b0fe50ca1">-flush</a>] [<a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id153b135f-2154-479d-8dd9-c5d53660ed74">-howmany</a>] <a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7__id23f9f426-be17-4c8b-813e-ef004f135769">&lt;object&gt;</a> </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><div class="note note"><span class="notetitle">Note:</span> <p class="p">The log command
+is also known as the add log command.</p>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">In live-simulation,
+the add wave command (also called as the wave add command) implicitly logs
+the object to the WLF or qwavedb file.</p>
+</div>
+<div class="section Subsection" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idde554642-8f24-4564-a812-ef40d12416d8"><h2 class="title Subheading sectiontitle">Using
+the log command without the vsim -qwavedb or -visualizer argument</h2><p class="p">If you do not specify -qwavedb or -visualizer arguments when
+invoking vsim, then the log command creates WLF file. By default
+the file is named vsim.wlf and stored in the current working directory.
+You can change the default name using the vsim -wlf option of the
+vsim command or by setting the WLFFilename variable in the <span class="ph filepath italic">modelsim.ini</span> file.</p>
+<p class="p">If no port mode is specified, the WLF file contains data for
+all objects in the selected region whose names match the object
+name specification.</p>
+<p class="p">The WLF file
+automatically records all data generated for the list and wave windows
+during a simulation run. Reloading the WLF file restores all objects
+and waveforms and their complete history from the start of the logged
+simulation run. See <a class="xref fm:HeadingOnly" href="Command_DatasetOpen_id8ff15221.html#id8ff15221-9e07-4584-921a-f992e86a7c2e__Command_DatasetOpen_id8ff15221.xml#id8ff15221-9e07-4584-921a-f992e86a7c2e" title="Opens a WLF file (either the currently running vsim.wlf or a saved WLF file) and/or UCDB file (representing coverage data), and assigns it the logical name you specify.">dataset open</a> for more information.</p>
+<p class="p">For all transaction
+streams created through the SCV or Verilog APIs, logging is enabled
+by default. A transaction is logged to the WLF file if logging is
+enabled at the beginning of a simulation run when the design calls
+::begin_transaction() or $begin_transaction. The effective start
+time of the transaction (the time passed by the design as a parameter
+to ::begin_transaction) is irrelevant. For example, a stream could
+have logging disabled between T1 and T2 and still record a transaction
+in that period, through retroactive logging after time T2. A transaction
+is always either entirely logged or entirely ignored. </p>
+<p class="p">Transaction
+streams created from a Questa Verification IP, as well as transaction
+instances, are not logged by default: you must log them explicitly
+through the <a class="xref fm:HeadingOnly" href="#idb91ff318-f079-4e2b-96fd-b25b874900f7" title="Creates a wave log format (WLF) or qwavedb file containing simulation data for all HDL objects whose names match the provided specifications.">log</a>, <a class="xref fm:HeadingOnly" href="Command_AddWave_id3418af0a.html#id3418af0a-f50c-420d-9773-e3bc09bcac47__Command_AddWave_id3418af0a.xml#id3418af0a-f50c-420d-9773-e3bc09bcac47" title="Adds objects to the Wave window.">add wave</a>, or <a class="xref fm:HeadingOnly" href="Command_AddList_id7aa13ca0.html#id7aa13ca0-50bb-4131-843f-8438e9d96a61__Command_AddList_id7aa13ca0.xml#id7aa13ca0-50bb-4131-843f-8438e9d96a61" title="Adds objects and their values to the List window.">add list</a> commands.
+You can log completed transaction instances from Questa Verification
+IP using ‑mvcreccomplete (all except add list), and transaction
+streams using -mvcall or -mvcovm.</p>
+</div>
+<div class="section Subsection" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id3b4fe62f-d368-4f8d-b8c8-db12891d1422"><h2 class="title Subheading sectiontitle">Using
+the log command with the vsim -qwavedb or -visualizer argument </h2><p class="p">If you specify-qwavedb or -visualizer arguments when invoking
+vsim, then the log command creates a qwavedb file, and the tool
+supports the -flush and -howmany options only.</p>
+<p class="p">The tool does not support the following:</p>
+<ul class="ul"><li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id1205f1f8-60f9-4760-88f5-87b26ce5ca0b"><p class="p">The -r
+(recursive) argument of the log command.</p>
+</li>
+<li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id4d7e3c26-70c0-4f11-9aae-d8f6a7216464"><p class="p">Logging all
+signals in the design using the following command:</p>
+<pre class="pre codeblock"><code>log -r /*</code></pre></li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Use the <a class="xref Link" href="../../mentor_vis_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'mentor_vis_ref'); return false;">vsim</a> -qwavedb options
+such as the +signal rather than the log command since vsim ‑qwavedb
+options provide the best performance. The log command should be
+used only when it is not practical to know which signals will be
+of interest prior to the start of simulation.</p>
+</div>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__ida97c82f2-2f8a-45a3-b499-380011e00d33"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id2c07ed9c-4f17-46b7-a377-f1982e1750b8">-class &lt;classtype&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Log all objects of a class specified in &lt;classtype&gt; that are
+generated after the command is invoked. Descends the hierarchy recursively
+to include all properties of &lt;classtype&gt; that are also classes. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id5bc45740-8cb9-45c5-aa87-bd72441ecc1f"><p class="p Opt">&lt;classtype&gt;
+— The type of class to be logged.</p>
+<div class="note caution"><span class="cautiontitle">CAUTION:</span> <p class="p">Use
+of the -class switch can result in a large amount of logged data.</p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id3de5e6f9-f478-4ac6-bb70-d56c81707555">-depth &lt;level&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts a recursive search (specified with the -recursive argument)
+to a certain level of hierarchy. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id462b5a72-e26b-48a2-85c9-bf40ce7aaf9a"><p class="p Opt">&lt;level&gt;
+— Any non-negative integer. For example, if you specify -depth 1,
+the command descends only one level in the hierarchy.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id2d8f1cc4-1d7e-49f9-9ff0-e5ff611d4a65">-filter &lt;f&gt; | -nofilter &lt;f&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Allows a one-time modification of the WildcardFilter in the command invocation.
+The add log command can take as many [-filter &lt;f&gt;] and [-nofilter
+&lt;f&gt;] arguments as you would like to specify. Valid filters, &lt;f&gt;,
+exactly match the set of words that can be applied to the WildcardFilter.
+The command uses the WildcardFilter first, then applies any user
+specified filters. The -filter values are added to the filter, the
+-nofilter values are removed from the filter. Filters are applied
+in the order specified, so any conflicts are resolved with the last
+specified wins.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id1bc2f2f8-f303-46e9-9966-9e9b0fe50ca1">-flush</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Forces all buffered region and event data to be written to the file.
+By default, the region and event data is buffered and periodically
+written to the file, as appropriate. </p>
+<p class="p">You can specify the -flush argument alone or with &lt;object&gt;.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id153b135f-2154-479d-8dd9-c5d53660ed74">-howmany</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns an integer indicating the number of signals found.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__iddb1c47e7-3cd2-4154-91ff-00f9390a9346">-in</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the WLF file is to include data for ports of mode
+IN whose names match the specification.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idbe6c0999-32c2-4d88-ae6a-046905d343cc">-inout</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the WLF file is to include data for ports of mode
+INOUT whose names match the specification.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id2a534442-70ba-4476-81a1-afa947cc18e0">-internal</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the WLF file is to include data for internal (non-port)
+objects whose names match the specification.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idbe95f3dc-f02c-4003-bba1-504952f4be62">-mvcall </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the inclusion of all Questa Verification IP protocol transactions
+when a wildcard is used (such as log -r /*). By default, normal
+wildcard usage sometimes excludes Questa Verification IP transactions
+from logging.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idbcfe639a-f789-4c62-a74b-e0b1b823fcad">-mvcovm</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the inclusion of all UVM and/or OVM sequence transactions
+when a wildcard is used (such as log -r /*). By default, normal
+wildcard usage sometimes excludes UVM/OVM transactions from logging.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id32e43011-2688-403a-b245-f9cf1130b49c">-mvcreccomplete</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Enables the logging of all Questa Verification IP transaction instances
+which have been recognized as completed, whether or not they become
+used as legal protocol. By default, only transactions that become
+used as legal protocol are visible, which can prevent the transaction
+instances of interest from being logged soon enough to observe an
+issue.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id2dbcec5f-f3f9-4c9d-9c27-e5bdbd705669">‑optcells</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Makes Verilog optimized cell ports visible when using wildcards.
+By default, Verilog optimized cell ports are not selected even if
+they match the specified wildcard pattern.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id483f3408-8a06-48eb-948e-32ff11dd461e">-out</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the WLF file is to include data for ports of mode
+OUT whose names match the specification.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id8c0ec960-95be-4da3-8625-584f80b81893">-ports</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the scope of the search is to include all ports,
+IN, INOUT, and OUT.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id5b8b1405-d583-4653-98ab-fe3c745aea8b">-recursive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies that the scope of the search is to descend recursively
+into subregions. Omitting -recursive limits the search to the selected
+region. You can use the -depth argument to specify how far down
+the hierarchy to descend.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id23f9f426-be17-4c8b-813e-ef004f135769">&lt;object&gt;</dt>
+<dd class="dd ArgumentDescription"><div class="note note"><span class="notetitle">Note:</span> <p class="p">If
+you specify the -flush argument, you can omit specifying the &lt;object&gt;
+argument, that is the &lt;object&gt; argument becomes optional.</p>
+</div>
+<p class="p">(required) Specifies the object name to log.
+Must be the final argument to the log command. Specify multiple
+object names as a space-separated list. Allows wildcard characters.
+For the WLF file, the WildcardFilter Tcl preference variable is
+honored while for the qwavedb file, the WildcardFilter Tcl preference
+variable is ignored. </p>
+<p class="p">By default,
+wildcard card logging does not log the internals of cells. Refer
+to the +libcell | +nolibcell argument of the <a class="xref fm:HeadingOnly" href="Command_Vlog_id6ce6948b.html#id6ce6948b-9797-4c41-a3f7-83f74066bca3__Command_Vlog_id6ce6948b.xml#id6ce6948b-9797-4c41-a3f7-83f74066bca3" title="Compiles Verilog source code and SystemVerilog extensions into either a specified working library or to the default work library. Accepts compressed SystemVerilog source files (those compressed with zlib).">vlog</a> command
+for more information. </p>
+<p class="p">When you use the -flush argument with the -qwavedb or -visualizer
+argument, you can provide the wildcard character only in the last
+element of a hierarchical name. For example, the tool supports <span class="ph filepath">/top/cpu/clk*</span> and
+does not support <span class="ph filepath">/top/cpu*/clk</span>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idaf61dfc6-ac5d-4269-8255-274263c79c9b"><h2 class="title Subheading sectiontitle">Using
+the log command without the vsim -qwavedb or -visualizer argument</h2><ul class="ul"><li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__id0e88b28f-1319-4bb4-9cb0-9075f898dbca"><p class="p">Log all
+objects in the design.</p>
+<p class="lines ApplCommand">   log -r /*</p>
+</li>
+<li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idda5f890a-bf21-45ab-bfb2-6399c828de55"><p class="p">Log all
+output ports in the current design unit.</p>
+<p class="lines ApplCommand">   log -out *</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__ida354bf57-3fdf-4ef6-a80a-70a439db0f0b"><h2 class="title Subheading sectiontitle">Using
+the log command with the vsim -qwavedb or -visualizer argument</h2><ul class="ul"><li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idc1d362a9-a2bc-4d7b-8f04-c2a94c30d81d"><p class="p">Log the
+data signal in <span class="ph filepath">/top/cpu</span>.</p>
+<p class="lines ApplCommand">   log /top/cpu/data</p>
+</li>
+<li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idfed11d21-0c3b-4dd9-bc44-8e8fd41314e7"><p class="p">Log all signals
+starting with clk in <span class="ph filepath">/top/cpu</span></p>
+<p class="lines ApplCommand">   log /top/cpu/clk*</p>
+</li>
+<li class="li" id="idb91ff318-f079-4e2b-96fd-b25b874900f7__idcd0effce-f4f4-441a-ab50-73947be87166"><p class="p">Force all buffered
+event data to be written to the qwavedb file</p>
+<p class="lines ApplCommand">   log -force</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_DatasetAlias_id0fb8838e.html#id0fb8838e-2b84-4d03-a0dd-99ae59600802__" title="Maps an alternate name (alias) to an open dataset.">dataset alias</a></div>
+<div><a class="link" href="../topics/Command_DatasetClear_idc7b68099.html#idc7b68099-0d39-4b71-b8cd-a495e6651c9e__" title="Removes all event data from the current simulation WLF file, while retaining all currently logged signals. Subsequent run commands continue to accumulate data in the WLF file.">dataset clear</a></div>
+<div><a class="link" href="../topics/Command_DatasetClose_id39285369.html#id39285369-7e83-4d5f-81b5-4cb26fb19bae__" title="Closes an active dataset.">dataset close</a></div>
+<div><a class="link" href="../topics/Command_DatasetConfig_idf6940214.html#idf6940214-d830-448b-8c16-aae4eb87d8bd__" title="Configures WLF parameters for an open dataset and all aliases mapped to that dataset.">dataset config</a></div>
+<div><a class="link" href="../topics/Command_DatasetInfo_id0b578c30.html#id0b578c30-6ceb-4cc0-946b-74ccf1eb126e__" title="Reports a variety of information about a dataset.">dataset info</a></div>
+<div><a class="link" href="../topics/Command_DatasetList_id0177db99.html#id0177db99-dae2-4130-bbaf-35761b5d1cff__" title="Lists all active datasets.">dataset list</a></div>
+<div><a class="link" href="../topics/Command_DatasetOpen_id8ff15221.html#id8ff15221-9e07-4584-921a-f992e86a7c2e__" title="Opens a WLF file (either the currently running vsim.wlf or a saved WLF file) and/or UCDB file (representing coverage data), and assigns it the logical name you specify.">dataset open</a></div>
+<div><a class="link" href="../topics/Command_DatasetRestart_idb79ee511.html#idb79ee511-9416-4281-8193-26b2890c8ce6__" title="Unloads the specified dataset or currently active dataset and reloads the dataset using the same dataset name.">dataset restart</a></div>
+<div><a class="link" href="../topics/Command_DatasetRename_id9969c9d3.html#id9969c9d3-0a48-4b32-bf0f-4880d19bfbcf__" title="Changes the name of a dataset to the new name you specify.">dataset rename</a></div>
+<div><a class="link" href="../topics/Command_DatasetSave_id9b97a2c2.html#id9b97a2c2-db60-4810-9a8d-698f58aff41a__" title="Writes data from the current simulation to a specified file while the simulation is in progress.">dataset save</a></div>
+<div><a class="link" href="../topics/Command_DatasetSnapshot_ide9e530b6.html#ide9e530b6-17c6-4a7a-b18e-92494df1d644__" title="Saves data from the current WLF file (vsim.wlf by default) at a specified interval. Provides you with sequential or cumulative &#34;snapshots&#34; of your simulation data.">dataset snapshot</a></div>
+<div><a class="link" href="../topics/Command_Nolog_id66f1f9de.html#id66f1f9de-cb6d-4332-a7b9-b16737644d8e__" title="Suspends writing of data to the wave log format (WLF) file for the specified signals.">nolog</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Recording Simulation Results With Datasets', 'questa_sim_user'); return false;">Recording Simulation Results With Datasets [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'WLFFilename', 'questa_sim_user'); return false;">WLFFilename [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "log"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Log_idb91ff318.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

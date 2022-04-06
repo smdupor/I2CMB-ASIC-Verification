@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Creating Runnable Elements" />
+<meta name="abstract" content="Create task runnables for each of the six tests. The runnable for the first random test is as follows:" />
+<meta name="description" content="Create task runnables for each of the six tests. The runnable for the first random test is as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id19c0406f-55a4-424c-8b03-3fa09d0d4a91" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Creating Runnable Elements</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Creating Runnable Elements" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id19c0406f-55a4-424c-8b03-3fa09d0d4a91">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Creating Runnable Elements</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Create task
+runnables for each of the six tests. The <span class="ph FontProperty emphasis">runnable</span> for
+the first random test is as follows:</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;!-- See <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a> --&gt;
+63 &lt;runnable name="randtest1" type="task"&gt; 
+...</code></pre><p class="p">The type is set to <span class="ph FontProperty emphasis">task</span> because
+this is a leaf-level node in the regression suite. It is called
+“task” rather than “test” to emphasize the fact that these <span class="ph FontProperty emphasis">runnable</span> elements
+do not have to relate directly to simulation tests. There can be
+other steps in the regression process for which a leaf-level “task”
+is useful.</p>
+<p class="p">Tasks are grouped using a <span class="ph FontProperty emphasis">runnable</span> element
+of type <span class="ph FontProperty emphasis">group</span>.
+This <span class="ph FontProperty emphasis">simple</span> example
+tutorial contains three groups as follows:</p>
+<ul class="ul"><li class="li" id="id19c0406f-55a4-424c-8b03-3fa09d0d4a91__idb0fa1fcf-5693-4634-82cb-d17276aab243"><p class="p">Directed tests </p>
+</li>
+<li class="li" id="id19c0406f-55a4-424c-8b03-3fa09d0d4a91__id63195703-0a52-4e03-b963-0495e29d2348"><p class="p">Random tests </p>
+</li>
+<li class="li" id="id19c0406f-55a4-424c-8b03-3fa09d0d4a91__id955fa39c-5316-4319-917f-41f26d49e0f2"><p class="p">Top-level group (“nightly”), which runs
+everything </p>
+</li>
+</ul>
+<p class="p">A group generally contains a <span class="ph FontProperty emphasis">members</span> element
+within which are zero or more <span class="ph FontProperty emphasis">member</span> elements
+containing, as their text content, the name of a <span class="ph FontProperty emphasis">runnable</span> member
+of that group. For example, the group containing three random tests
+is as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;!-- See <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a> --&gt;
+42	&lt;runnable name="random" type="group"&gt;
+43		&lt;parameters&gt;
+44			&lt;parameter name="ucdbfile"&gt;../test(%seed%).ucdb&lt;/parameter&gt;
+45		&lt;/parameters&gt;
+46		&lt;members&gt;
+47			&lt;member&gt;randtest1&lt;/member&gt;
+48			&lt;member&gt;randtest2&lt;/member&gt;
+49			&lt;member&gt;randtest3&lt;/member&gt;
+50		&lt;/members&gt;
+	...</code></pre><p class="p">The <span class="ph FontProperty emphasis">task</span> and <span class="ph FontProperty emphasis">group</span> elements
+are all children of the <span class="ph FontProperty emphasis">rmdb</span> document
+element. Their order in the file is insignificant. XML comments
+(&lt;! -- comment --&gt;) can be added to the database if you wish.
+After all the groups and tests are defined, the initial RMDB example
+looks as follows:</p>
+<pre class="pre codeblock leveled"><code>&lt;!-- See <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a> --&gt;1 
+&lt;?xml version="1.0" ?&gt;
+2 &lt;rmdb version="1.1"&gt;	
+&lt;!-- we run this group, containing all tests, every night --&gt;
+3    &lt;runnable name="nightly" type="group"&gt;
+4      &lt;members&gt;
+5        &lt;member&gt;directed&lt;/member&gt;
+6        &lt;member&gt;random&lt;/member&gt;
+7      &lt;/members&gt;
+	...
+	...
+	...
+	&lt;/runnable&gt;
+	&lt;!-- all our directed tests are in this group --&gt;
+16    &lt;runnable name="directed" type="group"&gt;
+17      &lt;parameters&gt;
+18        &lt;parameter name="ucdbfile"&gt;../(%INSTANCE%).ucdb&lt;/parameter&gt;
+19      &lt;/parameters&gt;
+20      &lt;members&gt;
+21        &lt;member&gt;dirtest1&lt;/member&gt;
+22        &lt;member&gt;dirtest2&lt;/member&gt;
+23        &lt;member&gt;dirtest3&lt;/member&gt;
+24      &lt;/members&gt;
+	...
+	...
+	...
+	&lt;/runnable&gt;
+	&lt;!-- all our random tests are in this group --&gt;
+44    &lt;runnable name="random" type="group"&gt;
+45      &lt;parameters&gt;
+46        &lt;parameter name="ucdbfile"&gt;../test(%seed%).ucdb&lt;/parameter&gt;
+47      &lt;/parameters&gt;
+48      &lt;members&gt;
+49        &lt;member&gt;randtest1&lt;/member&gt;
+50        &lt;member&gt;randtest2&lt;/member&gt;
+51        &lt;member&gt;randtest3&lt;/member&gt;
+52      &lt;/members&gt;
+	...
+	...
+	...</code></pre><pre class="pre codeblock leveled"><code>&lt;!-- The following code snippet is not from <a class="xref fm:ExampleAndPage" href="Concept_RmdbExample_id8daa3445.html#id8daa3445-4eb2-4ba1-84cf-c773111d0a6f__idaaa98e2d-42fc-49ec-abd3-e78b45ee7483">Figure 1</a>. --&gt;
+&lt;!-- It is included here for information only. --&gt;
+	&lt;/runnable&gt;
+	&lt;!-- define all unique tests --&gt;
+	&lt;runnable type="task" name="dirtest1"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable type="task" name="dirtest2"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable type="task" name="dirtest3"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable type="task" name="randtest1"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable type="task" name="randtest2"&gt;
+		...
+	&lt;/runnable&gt;
+	&lt;runnable type="task" name="randtest3"&gt;
+		...
+&lt;/runnable&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">It is recommended to define the groups in top-down
+order, and then define the tests.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CreatingBasicStructureRmdb_id4e8d20a4.html" title="The Verification Run Manager DataBase (RMDB) file is the VRM database. The RMDB file contains data for one or more regression test suites arranged in a hierarchical tree topology, which allows the user to group tests and other tasks in various ways.">Creating the Basic Structure for an RMDB</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Creating Runnable Elements"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CreatingRunnableElements_id19c0406f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

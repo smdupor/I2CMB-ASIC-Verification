@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Pass/Fail Analysis" />
+<meta name="abstract" content="Before vrun can decide how to react to a completed Action, it must determine if the Action in question passed or failed. For purposes of pass/fail analysis, each execScript Action is assumed to run, at most, one simulation. The preScript and postScript Actions are assumed not to run simulations (the preScript and postScript Actions are primarily used for compile, setup, and/or post-processing commands). These assumptions can be overridden in the RMDB database as described below." />
+<meta name="description" content="Before vrun can decide how to react to a completed Action, it must determine if the Action in question passed or failed. For purposes of pass/fail analysis, each execScript Action is assumed to run, at most, one simulation. The preScript and postScript Actions are assumed not to run simulations (the preScript and postScript Actions are primarily used for compile, setup, and/or post-processing commands). These assumptions can be overridden in the RMDB database as described below." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf8b00830-6c45-441e-9e55-9fe2b93d3ed3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Pass/Fail Analysis</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Pass/Fail Analysis" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf8b00830-6c45-441e-9e55-9fe2b93d3ed3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Pass/Fail Analysis</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Before
+vrun can decide how to react to a completed Action, it must determine
+if the Action in question passed or failed. For purposes of pass/fail
+analysis, each <span class="ph FontProperty emphasis">execScript</span> Action
+is assumed to run, at most, one simulation. The <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+are assumed not to run simulations (the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+are primarily used for compile, setup, and/or post-processing commands).
+These assumptions can be overridden in the RMDB database as described below.</span>
+</div>
+<p class="p">In order to determine
+the status of a simulation, it is necessary to locate the UCDB file
+associated with that simulation in order to read its test data record.
+For an <span class="ph FontProperty emphasis">execScript</span> Action,
+the easiest way to specify the name and location of the UCDB file
+is to specify a value for the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+either in the Task itself, in a base runnable associated with the
+Task, or in a parent Group (as described in “<a class="xref fm:HeadingAndPage" href="Contain_InheritanceOverridesSearchOrder_id01f79c08.html#id01f79c08-5fab-42f9-a986-e7565254673c__Contain_InheritanceOverridesSearchOrder_id01f79c08.xml#id01f79c08-5fab-42f9-a986-e7565254673c" title="When considering the configuration of most regression suites, there is usually some degree of repetition. If, for example, 100 tests all require the same simulation commands with some minor variation, it would be a poor system that forced the user to specify the redundant information 100 times, once per test.">Inheritance, Overrides, and Search Order</a>”). This parameter can, itself,
+contain nested parameter references (as can all parameters) and
+its value can also be used as the argument for the coverage save
+command in the <span class="ph FontProperty emphasis">execScript</span>.
+For example:</p>
+<pre class="pre codeblock leveled"><code>&lt;runnable type="task" name="test1"&gt;
+	&lt;parameters&gt;
+		&lt;parameter name="top"&gt;top&lt;/parameter&gt;
+		&lt;parameter name="seed"&gt;123&lt;/parameter&gt;
+		&lt;parameter name="ucdbfile"&gt;../test(%seed%).ucdb&lt;/parameter&gt;
+	&lt;/parameters&gt;
+	 ...
+	&lt;execScript&gt;
+		&lt;command&gt;vsim -lib ../work -sv_seed (%seed%) -c (%top%)&lt;/command&gt;
+		&lt;command&gt;coverage attribute -name TESTNAME -value 
+				test(%seed%)&lt;/command&gt;
+		&lt;command&gt;coverage save -onexit (%ucdbfile%)&lt;/command&gt;
+		&lt;command&gt;run -all&lt;/command&gt;
+	&lt;/execScript&gt;
+	 ...
+&lt;/runnable&gt;</code></pre><p class="p">In this case, the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+depends on the value of the <span class="ph FontProperty emphasis">seed</span> parameter.
+The simulation Tasks in this particular group are also designed
+to save their UCDB files in the working directory of their parent
+Group. Therefore, the UCDB filename comes out, in the case of “test1”
+above, to ../<span class="ph filepath">test123.ucdb</span>. This string is substituted
+in place of the (<span class="ph FontProperty emphasis">%ucdbfile%</span>)
+parameter reference in the script (to save the UCDB file), and is
+also used by VRM to determine the status of the simulation. If the <span class="ph filepath">ucdbfile</span> is
+a relative path, it is assumed to be relative to the working directory
+from which the <span class="ph FontProperty emphasis">execScript</span> Action
+was executed.</p>
+<p class="p">In the implementation, if a UCDB
+file is not specified for a given <span class="ph FontProperty emphasis">execScript</span> Action,
+then that Action is not included in the pass/fail analysis. If a
+UCDB file is specified but cannot be found, or if the test data
+record cannot be read, then the Action is counted as having failed
+with the status “UCDB error.”</p>
+<p class="p">The default pass/fail analysis
+process assumes that the Action in question represents a single
+simulation. Therefore, it also assumes that there is only one test
+data record in the UCDB file. If multiple test data records are
+found in the UCDB file, only the first test data record is read
+and the rest are silently ignored. If UCDBs with multiple test data
+records must be examined as part of the pass/fail analysis, then
+a user-defined procedure should be used to override the <span class="ph FontProperty emphasis">AnalyzePassFail</span> behavior.</p>
+<p class="p">The numeric status code returned
+from the Action script is also passed to the <span class="ph FontProperty emphasis">AnalyzePassFail</span> procedure.
+By default, if the status code returned from the Action script is
+non-zero, the Action is automatically considered to have failed
+and the UCDB is not consulted.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_FailurePropagation_idd9743706.html" title="A failed Action (one which either fails to launch, returns a non-zero status, or is marked as failed in the UCDB) can also have an effect on subsequent Actions that depend on (that is, follow) the failed Action. This mechanism is called “failure propagation” and is intended to help prevent cases where some critical Action within a regression suite (such as design compilation) fails but the remainder of the regression continues on as if nothing happened. ">Failure Propagation</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_DeterminingPassfailGivenAction_idf24acbeb.html" title="The AnalyzePassFail procedure uses the information at its disposal to determine whether the completed Action passed or failed. It returns either pass or fail (as a case-sensitive string). ">Determining Pass/Fail for a Given Action</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Actioncompleted_idfd8b390c.html" title="The ActionCompleted procedure is called after every Action and provides the user with a means to notify other processes of the completion of the Action, save off collateral files, or perform other housekeeping duties (this notification/cleanup procedure should not be used to run commands that should be, more properly, a part of the test suite itself; the purpose of this procedure is to provide a way for VRM to integrate into pre-existing flows).">ActionCompleted Concept</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Oktomerge_id1759b8f1.html" title="It is assumed that in the majority of cases, VRM is used to launch simulations whose coverage data is accumulated and recorded in UCDB files (if this is not the case, this section may be ignored). ">OkToMerge Concept</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Mergeoneucdb_id9b090089.html" title="The MergeOneUcdb procedure is passed the path to a single UCDB file and the path to a merge file. The procedure then executes the steps necessary to merge the single UCDB into the merged UCDB file. The procedure returns nothing. The default behavior of this procedure (if not overridden by the user) is to merge the UCDB defined by the value of the ucdbfile array member into the UCDB file defined by the value of the mergefile array member. The vcover merge executable is used without any additional options. In addition, the log output of the vcover executable defaults to stdout, and is echoed to any explicitly supplied log file. This flow could be called an incremental merge flow because each UCDB is merged into the common file as it is encountered.">MergeOneUcdb Concept</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Stoprunning_id7535a56e.html" title="In some cases, a fundamental design or testbench failure can cause a large number (if not all) of the Tasks in the regression suite to fail. In this case, early termination of the regression run can prevent processing resources from being wasted on simulations that cannot provide any additional information. By default, VRM always attempts to run every Action defined in the database. The user can override this behavior and provide a heuristic function that will terminate a regression run prematurely in the face of such catastrophic failure.">StopRunning Concept</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Stoppropagating_ida43897a2.html" title="A typical regression suite consists of a large number of inter-related Actions. Many of those Actions depend on the successful completion of previous Actions in the suite. For example, one of the uses of the preScript Action is to compile the Design Under Test (DUT) in preparation for running the actual simulations. If the compile step fails for some reason, the simulations will also be unlikely to succeed and, thus, executing them would be a waste of disk space and compute capacity. VRM is capable of pruning the execution graph in response to failed Actions. This it not unlike the behavior of the make utility when faced with a failing build step. Unless otherwise directed, the default behavior of make is to stop the build on the first error encountered.">StopPropagating Concept</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PostExecutionAnalysis_id449d612e.html" title="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case.">Post-execution Analysis</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Pass/Fail Analysis"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_PassfailAnalysis_idf8b00830.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="OkToDelete" />
+<meta name="abstract" content="This procedure is executed after each Action completes (it is not called for deleteScript pseudo-Actions). The purpose of this procedure is to determine if conditions are such that the working directory for the Action may be scheduled for deletion (for example, to implement a “delete-on-pass” disk-space conservation scheme)." />
+<meta name="description" content="This procedure is executed after each Action completes (it is not called for deleteScript pseudo-Actions). The purpose of this procedure is to determine if conditions are such that the working directory for the Action may be scheduled for deletion (for example, to implement a “delete-on-pass” disk-space conservation scheme)." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>OkToDelete</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="OkToDelete" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">OkToDelete</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">This procedure
+is executed after each Action completes (it is not called for <span class="ph filepath">deleteScript</span> pseudo-Actions).
+The purpose of this procedure is to determine if conditions are
+such that the working directory for the Action may be scheduled
+for deletion (for example, to implement a “delete-on-pass” disk-space conservation
+scheme). </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id739286ba-f4cc-4826-85a9-b61194a413ab"><p class="p">Individual files that are not to be deleted
+should be registered by calling the <span class="ph filepath">DoNotDelete</span> utility procedure
+(see “<a class="xref fm:HeadingAndPage" href="General_Donotdelete_id24d0b77e.html#id24d0b77e-374e-40c3-a480-217939824fa5__General_Donotdelete_id24d0b77e.xml#id24d0b77e-374e-40c3-a480-217939824fa5" title="Adds one or more files and/or directories to an internal “no delete” list. Wildcards may be included in the file/directory arguments. Relative files and/or directories are first expanded using the most recent base directory, which may also be an absolute or relative path. The base directory starts out blank. If, after the initial expansion, the resulting path is still relative, it is expanded with respect to the top-mode level of the VRM Data directory. Following this, any wildcards in the resulting absolute paths are expanded, and the resulting paths are added to the “no delete” list. Only files that actually exist at the time the DoNotDelete procedure is called are added to the file; this means an entire directory of files may be added to the “no delete” list with a single wildcard argument. In the event the wildcard expansion results in an empty list, the expanded path itself is added to the “no delete” list (just in case the wildcard is a literal file/directory name or the path represents an explicit reference to a file that does not yet exist).">DoNotDelete</a>”) if they have not already been registered
+by one of the other user-definable procedures.</p>
+<p class="p">Unlike some of the other post-processing user-definable
+procedures, <span class="ph filepath">OkToDelete</span> can be called for Actions
+which, for some reason, have not actually executed (including Actions
+for which no script was defined). The reason for this is because
+the working directory may still need to be cleaned up even if the
+Action was skipped, killed, dropped, or otherwise came to an untimely
+end.</p>
+<p class="p">The <span class="ph filepath">OkToDelete</span> procedure
+works on a veto basis. If multiple Actions execute in a single directory
+(for example, <span class="ph filepath">preScript</span> and <span class="ph filepath">postScript</span>;
+or <span class="ph filepath">execScript</span>, <span class="ph filepath">mergeScript</span>,
+and <span class="ph filepath">triageScript</span>), all Actions must return
+a true value in order for a directory to be deleted. If the <span class="ph filepath">OkToDelete</span> procedure
+returns a false value when called for any Action executed in a given
+directory, that directory is not scheduled for deletion.</p>
+</div>
+<div class="section Subsection" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id67ff6e08-64a2-4b0e-a3a6-3d79f6a06e0d"><h2 class="title Subheading sectiontitle">Input Arguments</h2><p class="p">See <a class="xref fm:TableAndPage" href="Concept_CommonArgumentsPassedAllUserDefinableProcedures_id6d5dfc20.html#id6d5dfc20-f0ae-4cb2-be13-b56b99568ccb__idf094d055-d4c6-4358-813c-337667fd878c">Table 1</a> to <a class="xref fm:TableAndPage" href="Concept_CommonArgumentsPassedAllUserDefinableProcedures_id6d5dfc20.html#id6d5dfc20-f0ae-4cb2-be13-b56b99568ccb__idb06439c6-4ec4-464c-9e42-dd0dc5c7f0d8">Table 4</a>.</p>
+<p class="p">The <span class="ph FontProperty emphasis">ucdbfile</span>, <span class="ph FontProperty emphasis">ucdbstat</span>,
+and <span class="ph FontProperty emphasis">randseed</span> elements
+is blank in cases where there is no UCDB file or the Action did
+not execute. The <span class="ph FontProperty emphasis">faillog</span> element
+is blank for Actions other than <span class="ph filepath">execScript</span>,
+Actions that did not execute, or if the -faillog command-line option
+is not specified. The <span class="ph FontProperty emphasis">status</span> element
+is blank for Actions that did not execute (in fact, the <span class="ph FontProperty emphasis">status</span> element
+is probably the best indication of whether <span class="ph filepath">OkToDelete</span> is
+being called as the result of an Action completion event or some
+other reason).</p>
+<p class="p">The <span class="ph FontProperty emphasis">passfail</span> element
+contains one of the keywords listed in <a class="xref fm:Table" href="#id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id286d5cc7-a3b8-404d-9a61-09005bf38fa7">Table 1</a>. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id286d5cc7-a3b8-404d-9a61-09005bf38fa7" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Keywords for passfail Element</span></caption><colgroup><col style="width:2.087in" /><col style="width:4.087in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13412e252"><p class="p">Passfail</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13412e255"><p class="p">Reason</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">dropped</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action was not run (either
+StopRunning returned true or due to a bug in vrun).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">empty</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action was skipped because
+no commands were specified in the RMDB database file.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">failed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action failed to launch
+or executed and failed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">killed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action was killed by
+user intervention.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">noexec</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action was not executed
+due to the -noexec command-line option.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">passed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action executed and passed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">skipped</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action was skipped due
+to earlier errors in dependent Actions.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e252 "><p class="p">timeout</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e255 "><p class="p">Action exceeded timeout
+(for any reason).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">If a UCDB file was generated by the Action
+script, then the <span class="ph FontProperty emphasis">ucdbstat</span> element
+will contain one of the keywords listed in the <a class="xref fm:Table" href="#id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__idcda90b06-e5a9-4577-ad50-9de1901116a9">Table 2</a>:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__idcda90b06-e5a9-4577-ad50-9de1901116a9" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Keywords for ucdbstat Element</span></caption><colgroup><col style="width:2.087in" /><col style="width:4.087in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13412e332"><p class="p">ucdbstat</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d13412e335"><p class="p">Meaning</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">ok</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">Simulation passed</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">warning</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">Simulation passed with
+warnings</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">error</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">Simulation reported at
+least one error</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">fatal</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">Simulation reported a
+fatal error</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">missing</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">Simulation did not run</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">merge</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">An error occurred during
+merging</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e332 "><p class="p">ucdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d13412e335 "><p class="p">The UCDB file could not
+be read</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">Note that unlike the <span class="ph filepath">ActionCompleted</span> user-definable
+procedure, where a precise status is required for those Actions
+that were actually eligible to run, the <span class="ph filepath">OkToDelete</span> user-definable
+procedure is mainly concerned with whether the status warrants keeping
+the working directory around. Therefore, additional “non-eligible” status
+types are represented and timeouts are not differentiated as to
+their cause.</p>
+</div>
+<div class="section Subsection" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id3ee77bab-455a-4f82-82a8-c732b9af9e5f"><h2 class="title Subheading sectiontitle">Returns</h2><p class="p">This procedure returns a TCL “true” value (1,
+true) if the working directory can be deleted. Otherwise, a “false”
+value (0, false) is returned.</p>
+</div>
+<div class="section Subsection" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__idae986fdb-a592-40da-8816-4c0ce4fc0ebe"><h2 class="title Subheading sectiontitle">Default Behavior</h2><p class="p">By default, this procedure always returns a
+“false” (0) value. A message is also written to the log output in
+-debug mode.</p>
+</div>
+<div class="section Subsection" id="id4d36b9f2-8536-4b65-b868-5e5f6a95d8ae__id17dac80b-02ab-4477-9ac4-9520e6b10273"><h2 class="title Subheading sectiontitle">Side Effects</h2><p class="p">If this procedure returns a “true” value, the
+working directory for the current Action, along with its contents,
+may be scheduled for deletion. Certain collateral files can be protected from
+deletion by passing the absolute or relative path of those files
+to the <a class="xref fm:HeadingOnly" href="General_Donotdelete_id24d0b77e.html#id24d0b77e-374e-40c3-a480-217939824fa5__General_Donotdelete_id24d0b77e.xml#id24d0b77e-374e-40c3-a480-217939824fa5" title="Adds one or more files and/or directories to an internal “no delete” list. Wildcards may be included in the file/directory arguments. Relative files and/or directories are first expanded using the most recent base directory, which may also be an absolute or relative path. The base directory starts out blank. If, after the initial expansion, the resulting path is still relative, it is expanded with respect to the top-mode level of the VRM Data directory. Following this, any wildcards in the resulting absolute paths are expanded, and the resulting paths are added to the “no delete” list. Only files that actually exist at the time the DoNotDelete procedure is called are added to the file; this means an entire directory of files may be added to the “no delete” list with a single wildcard argument. In the event the wildcard expansion results in an empty list, the expanded path itself is added to the “no delete” list (just in case the wildcard is a literal file/directory name or the path represents an explicit reference to a file that does not yet exist).">DoNotDelete</a> (see <a class="xref fm:PageNumber" href="General_Donotdelete_id24d0b77e.html#id24d0b77e-374e-40c3-a480-217939824fa5__General_Donotdelete_id24d0b77e.xml#id24d0b77e-374e-40c3-a480-217939824fa5" title="Adds one or more files and/or directories to an internal “no delete” list. Wildcards may be included in the file/directory arguments. Relative files and/or directories are first expanded using the most recent base directory, which may also be an absolute or relative path. The base directory starts out blank. If, after the initial expansion, the resulting path is still relative, it is expanded with respect to the top-mode level of the VRM Data directory. Following this, any wildcards in the resulting absolute paths are expanded, and the resulting paths are added to the “no delete” list. Only files that actually exist at the time the DoNotDelete procedure is called are added to the file; this means an entire directory of files may be added to the “no delete” list with a single wildcard argument. In the event the wildcard expansion results in an empty list, the expanded path itself is added to the “no delete” list (just in case the wildcard is a literal file/directory name or the path represents an explicit reference to a file that does not yet exist).">DoNotDelete</a>) utility procedure. Files and/or
+directories outside of scope of the <span class="ph filepath">VRMDATA</span> directory
+are not deleted. Directories that contain at least one protected
+file or directory will, themselves, be considered as protected (recursively).</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PostExecutionProcessingProcedures_id32b9ed17.html" title="The following procedures are called in a specific sequence upon the completion of any Action:">Post-execution Processing Procedures</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "OkToDelete"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Oktodelete_id4d36b9f2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

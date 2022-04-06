@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Managing Multiple Datasets from the Command Line" />
+<meta name="abstract" content="You can open multiple datasets when the simulator is invoked by specifying more than one vsim -view &lt;filename&gt; option. By default the dataset prefix will be the filename of the WLF file." />
+<meta name="description" content="You can open multiple datasets when the simulator is invoked by specifying more than one vsim -view &lt;filename&gt; option. By default the dataset prefix will be the filename of the WLF file." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Managing Multiple Datasets from the Command Line</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Managing Multiple Datasets from the Command Line" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Managing Multiple Datasets from the Command Line</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">You can open
+multiple datasets when the simulator is invoked by specifying more
+than one <span class="ph FontProperty HeadingLabel">vsim -view &lt;filename&gt;</span> option. By
+default the dataset prefix will be the filename of the WLF file. </span>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__idd693458c-39a2-4d96-b136-c65c352382be"><span class="ph cmd">You can specify a different
+dataset name as an optional qualifier to the vsim ‑view switch on
+the command line using the following syntax:</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">-view &lt;dataset&gt;=&lt;filename&gt; </p>
+<p class="p">For example:</p>
+<p class="lines ApplCommand">vsim -view foo=vsim.wlf</p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> designates
+one of the datasets to be the active dataset, and refers all names
+without dataset prefixes to that dataset. The active dataset is displayed
+in the context path at the bottom of the Main window. When you select
+a design unit in a dataset’s Structure window, that dataset becomes
+active automatically. Alternatively, you can use the Dataset Browser
+or the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'environment', 'questa_sim_ref'); return false;">environment</a> command
+to change the active dataset.</p>
+</div></li>
+<li class="li step stepexpand" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__idf0f5058a-bac8-4381-9443-c072367bf1f2"><span class="ph cmd">Design regions and signal
+names can be fully specified over multiple WLF files by using the
+dataset name as a prefix in the path. For example:</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">sim:/top/alu/out</p>
+<p class="lines ApplCommand">view:/top/alu/out</p>
+<p class="lines ApplCommand">golden:.top.alu.out</p>
+<p class="p">Dataset prefixes are not required
+unless more than one dataset is open, and you want to refer to something
+outside the active dataset. When more than one dataset is open, <span class="ph fmvar:ProductName">Questa SIM</span> will automatically
+prefix names in the Wave and List windows with the dataset name.
+You can change this default by selecting:</p>
+<ul class="ul"><li class="li" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__idbb6afc2d-2e1d-454a-8e09-772a00cc4921"><p class="p"><span class="ph uicontrol">List
+Window</span> active: <span class="ph menucascade"><span class="ph uicontrol">List</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">List Preferences</span></span>; <span class="ph menucascade"><span class="ph uicontrol">Window Properties tab</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Dataset Prefix</span></span> pane </p>
+</li>
+<li class="li" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__ida9198fca-2d38-46c8-a181-916feabaecb2"><p class="p">Wave
+Window active: <span class="ph menucascade"><span class="ph uicontrol">Wave</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Wave Preferences</span></span>; <span class="ph menucascade"><span class="ph uicontrol">Display tab</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Dataset
+Prefix Display</span></span> pane </p>
+</li>
+</ul>
+</div></li>
+<li class="li step stepexpand" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__id193a5e10-c341-4a39-9d20-97f2d90a4ab4"><span class="ph cmd"><span class="ph fmvar:ProductName">Questa SIM</span> also
+remembers a “current context” within each open dataset. You can
+toggle between the current context of each dataset using the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'environment', 'questa_sim_ref'); return false;">environment</a> command,
+specifying the dataset without a path. For example: </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">   env foo:</p>
+<p class="p">sets the active dataset to
+foo and the current context to the context last specified for foo.
+The context is then applied to any unlocked windows.</p>
+<p class="p">The current context of the
+current dataset (usually referred to as just “current context”)
+is used for finding objects specified without a path.</p>
+</div></li>
+<li class="li step stepexpand" id="id3315a326-e75b-4a3e-9b97-5f9a19d60fb3__id51f5420e-598a-432d-91a9-fe8fdd0bc3ad"><span class="ph cmd">You can lock the Objects window
+to a specific context of a dataset. Being locked to a dataset means
+that the pane updates only when the content of that dataset changes.
+If locked to both a dataset and a context (such as test: /top/foo),
+the pane will update only when that specific context changes. You
+specify the dataset to which the pane is locked by selecting File
+&gt; Environment. </span></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ManagingMultipleDatasets_id389e6126.html" title="Questa SIM allows you to manage multiple datasets using menu selections from the graphic interface or from the command line.">Managing Multiple Datasets</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Managing Multiple Datasets from the Command Line"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_ManagingMultipleDatasetsFromCommandLine_id3315a326.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

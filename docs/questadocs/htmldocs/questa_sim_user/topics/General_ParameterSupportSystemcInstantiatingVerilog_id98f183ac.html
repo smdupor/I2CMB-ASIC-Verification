@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Parameter Support for SystemC Instantiating Verilog" />
+<meta name="abstract" content="Because the SystemC language has no concept of parameters, parameterized values must be passed from a SystemC parent to a Verilog child through the SystemC foreign module (sc_foreign_module)." />
+<meta name="description" content="Because the SystemC language has no concept of parameters, parameterized values must be passed from a SystemC parent to a Verilog child through the SystemC foreign module (sc_foreign_module)." />
+<meta name="DC.subject" content="parameter support, SystemC instantiating Verilog, SystemC, parameter support, Verilog instances, parameter support, SC instantiating Verilog" />
+<meta name="keywords" content="parameter support, SystemC instantiating Verilog, SystemC, parameter support, Verilog instances, parameter support, SC instantiating Verilog" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id98f183ac-ecd6-442f-8812-e6eec5612d21" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Parameter Support for SystemC Instantiating Verilog</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Parameter Support for SystemC Instantiating Verilog" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id98f183ac-ecd6-442f-8812-e6eec5612d21">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Parameter Support for SystemC Instantiating Verilog</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Because
+the SystemC language has no concept of parameters, parameterized
+values must be passed from a SystemC parent to a Verilog child through
+the SystemC foreign module (sc_foreign_module). </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__idde6be27d-8bf7-405e-85eb-c3d84c6da833"><p class="p">Refer to <a class="xref fm:HeadingOnly" href="General_SystemcForeignModuleVerilogDeclaration_idf0d92e06.html#idf0d92e06-1031-4b24-bbe0-1b30f4650d70__General_SystemcForeignModuleVerilogDeclaration_idf0d92e06.xml#idf0d92e06-1031-4b24-bbe0-1b30f4650d70" title="In cases where you want to run a mixed simulation with SystemC and Verilog/SystemVerilog, you must generate and declare a foreign module that stands in for each Verilog module instantiated under SystemC.">SystemC Foreign Module (Verilog) Declaration</a> for information regarding the
+creation of sc_foreign_module.</p>
+</div>
+<div class="section Subsection" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__idea4afcd4-4008-4b45-b156-954b4699cb7b"><h2 class="title Subheading sectiontitle">Passing Parameters
+to sc_foreign_module (Verilog)</h2><p class="p">To instantiate
+a Verilog module containing parameterized values into the SystemC
+design, you can use one of two methods, depending on whether the
+parameter is an integer. </p>
+<p class="p">If the parameter is an integer, you have two
+choices: </p>
+<ul class="ul"><li class="li" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__id8a752032-525c-4e61-ba8a-47cc339aa4c8"><p class="p">passing
+as a template argument to the foreign module</p>
+</li>
+<li class="li" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__idd519542d-66f7-435a-9355-e3ae81c0b08b"><p class="p">passing
+as a constructor argument to the foreign module</p>
+</li>
+</ul>
+<p class="p">Non-integer parameters must be passed to the
+foreign module using constructor arguments.</p>
+</div>
+<div class="section Subsection" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__id9d3c377e-42b7-45f7-bbd9-6f6c45b5906b"><h2 class="title Subheading sectiontitle">Passing Integer and Non-Integer
+Parameters as Constructor Arguments</h2><p class="p">Both integer and
+non-integer parameters can be passed by specifying two parameters
+to the sc_foreign_module constructor: the number of parameters (int num_generics),
+and the parameter list (const char* generic_list). The generic_list
+is listed as an array of const char*.</p>
+<p class="p">If you create your foreign module manually
+(see <a class="xref fm:HeadingOnly" href="General_SystemcForeignModuleVerilogDeclaration_idf0d92e06.html#idf0d92e06-1031-4b24-bbe0-1b30f4650d70__id33927f71-db3a-496b-9d67-d2b3c03a3d79">Guidelines for Manual Creation of Foreign Module Declaration</a>), you must also pass the parameter information
+to the sc_foreign_module constructor. If you use <span class="ph FontProperty HeadingLabel">scgenmod</span> to
+create the foreign module declaration, the parameter information
+is detected in the HDL child and is incorporated automatically.</p>
+<div class="fig fignone ExampleTitle" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__id6398d15d-1c9a-4c4f-a92b-b9932e4293c2"><span class="figcap"><span class="fig--title-label">Example 1. </span>Sample
+Foreign Module Declaration, with Constructor Arguments for Parameters</span></div>
+<p class="p">Following <a class="xref fm:Example" href="General_SystemcForeignModuleVerilogDeclaration_idf0d92e06.html#idf0d92e06-1031-4b24-bbe0-1b30f4650d70__ide3e66fc5-3d20-472b-86b9-a852b23cb36d">Example 1</a>, the following parameter information would
+be passed to the SystemC foreign module declaration:</p>
+<pre class="pre codeblock leveled"><code>class counter : public sc_foreign_module {
+	public:
+		sc_in&lt;bool&gt; clk;
+		...</code></pre><pre class="pre codeblock leveled"><code>counter	(sc_module_name nm, char* hdl_name
+		<span class="ph FontProperty HeadingLabel">int num_generics, const char** generic_list)
+</span>	: sc_foreign_module (nm),
+	{elaborate_foreign_module(hdl_name, num_generics, generic_list);}
+};</code></pre><div class="fig fignone ExampleTitle" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__idbff5ae73-dd02-4620-8dff-60571eefc400"><span class="figcap"><span class="fig--title-label">Example 2. </span>Passing
+Parameters as Constructor Arguments - 1</span></div>
+<p class="p">Verilog module:</p>
+<pre class="pre codeblock leveled"><code>	module counter (clk, count)</code></pre><pre class="pre codeblock"><code>		parameter integer_param = 4;
+		parameter real_param = 2.9;
+		parameter str_param = "ERROR";</code></pre><pre class="pre codeblock"><code>		output [7:0] count;
+		input clk;</code></pre><pre class="pre codeblock leveled"><code>		...
+	endmodule</code></pre><p class="p">Foreign module (created by the command: <span class="ph FontProperty HeadingLabel">scgenmod counter</span>):</p>
+<pre class="pre codeblock"><code>class counter : public sc_foreign_module
+{
+public:
+	sc_in&lt;sc_logic&gt; clk;
+	sc_out&lt;sc_lv&lt;8&gt; &gt; count;</code></pre><pre class="pre codeblock"><code>	counter(sc_module_name nm, const char* hdl_name
+		int num_generics, const char** generic_list)
+	 : sc_foreign_module(nm),
+	   clk("clk"),
+	   count("count")
+	{
+		elaborate_foreign_module(hdl_name, num_generics, generic_list);
+	}
+	~counter()
+	{}
+};</code></pre><p class="p">Instantiation of the foreign module in SystemC:</p>
+<pre class="pre codeblock leveled"><code>SC_MODULE(top) {</code></pre><pre class="pre codeblock leveled"><code>	counter* counter_inst_1;  // Instantiate counter with counter_size = 20</code></pre><pre class="pre codeblock"><code>	SC_CTOR(top)
+	{
+		const char* generic_list[3];
+		generic_list[0] = strdup("integer_param=16");
+		generic_list[1] = strdup("real_param=2.6");
+		generic_list[2] = strdup("str_param=\"Hello\"");</code></pre><pre class="pre codeblock"><code>		//Pass all parameter overrides using foreign module constructor args
+		counter_inst_1 = new counter("c_inst", "work.counter", 3, \ generic_list);</code></pre><pre class="pre codeblock"><code>		// Cleanup the memory allocated for the generic list
+		for (int i = 0; i &lt; 3; i++;)
+			free((char*)generic_list[i]);
+	}
+};</code></pre></div>
+<div class="section Subsection" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__idb17bd70c-3188-4c84-8106-079c1df5e4c8"><h2 class="title Subheading sectiontitle">Passing Integer Parameters
+as Template Arguments</h2><p class="p">Integer
+parameters can be passed as template arguments to a foreign module.
+Doing so enables port sizes of Verilog modules to be configured
+using the integer template arguments. Use the ‑createtemplate option
+to <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'scgenmod', 'questa_sim_ref'); return false;">scgenmod</a> to generate
+a class template foreign module.</p>
+<div class="fig fignone ExampleTitle" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__id95eed648-8481-4b2f-8d8f-7d226680d830"><span class="figcap"><span class="fig--title-label">Example 3. </span>SystemC
+Instantiating Verilog, Passing Integer Parameters as Template Arguments</span></div>
+<p class="p">Verilog module:</p>
+<pre class="pre codeblock leveled"><code>module counter (clk, count)</code></pre><pre class="pre codeblock leveled"><code>		parameter counter_size = 4;</code></pre><pre class="pre codeblock leveled"><code>		...</code></pre><pre class="pre codeblock leveled"><code>endmodule</code></pre><p class="p">Foreign module (created by the command: <span class="ph FontProperty HeadingLabel">scgenmod -createtemplate counter</span>):</p>
+<pre class="pre codeblock"><code>template &lt;int counter_size = 4&gt;
+class counter : public sc_foreign_module
+{
+public:
+	sc_in&lt;sc_logic&gt; clk;
+	sc_out&lt;sc_lv&lt;counter_size-1 + 1&gt; &gt; count;</code></pre><pre class="pre codeblock"><code>	counter(sc_module_name nm, const char* hdl_name)
+	 : sc_foreign_module(nm),
+	   clk("clk"),
+	   count("count")
+	{
+		this-&gt;add_parameter("counter_size", counter_size);
+		elaborate_foreign_module(hdl_name);
+	}
+	~counter()
+	{}
+};</code></pre><p class="p">Instantiation of the foreign module in SystemC:</p>
+<pre class="pre codeblock leveled"><code>SC_MODULE(top) {</code></pre><pre class="pre codeblock"><code>	counter&lt;20&gt; counter_inst_1; 
+			// Instantiates counter with counter_size = 20
+	counter     counter_inst_2; 
+			// Instantiates counter with default counter_size = 4</code></pre><pre class="pre codeblock"><code>	SC_CTOR(top)
+		: counter_inst_1(cinst_1, "work.counter"),
+		  counter_inst_2(cinst_2, "work.counter")
+	{}</code></pre><pre class="pre codeblock leveled"><code>};</code></pre><div class="fig fignone ExampleTitle" id="id98f183ac-ecd6-442f-8812-e6eec5612d21__id591c2dc9-4604-4b5e-8fa2-f37d180c4cdd"><span class="figcap"><span class="fig--title-label">Example 4. </span>Passing
+Integer Parameters as Template Arguments and Non-integer Parameters
+as Constructor Arguments</span></div>
+<p class="p">Verilog module:</p>
+<pre class="pre codeblock leveled"><code>module counter (clk, count)</code></pre><pre class="pre codeblock"><code>	parameter counter_size = 4;
+	parameter real_param = 2.9;
+	parameter str_param = "ERROR";</code></pre><pre class="pre codeblock"><code>	output [counter_size - 1 : 0] count;
+	input clk;</code></pre><pre class="pre codeblock leveled"><code>	...</code></pre><pre class="pre codeblock leveled"><code>endmodule</code></pre><p class="p">Foreign module (created by command: <span class="ph FontProperty HeadingLabel">scgenmod -createtemplate counter</span>):</p>
+<pre class="pre codeblock"><code>class counter : public sc_foreign_module
+{
+public:
+	sc_in&lt;sc_logic&gt; clk;
+	sc_out&lt;sc_lv&lt;counter_size-1 + 1&gt; &gt; count;</code></pre><pre class="pre codeblock"><code>	counter(sc_module_name nm, const char* hdl_name
+		int num_generics, const char** generic_list)
+	 : sc_foreign_module(nm),
+	   clk("clk"),
+	   count("count")
+	{
+		this-&gt;add_parameter("counter_size", counter_size);
+		elaborate_foreign_module(hdl_name, num_generics, generic_list);
+	}
+	~counter()
+	{}
+};</code></pre><p class="p">Instantiation of the foreign module in SystemC:</p>
+<pre class="pre codeblock leveled"><code>SC_MODULE(top) {</code></pre><pre class="pre codeblock"><code>	// Instantiate counter with counter_size = 20
+	counter&lt;20&gt;* counter_inst_1; </code></pre><pre class="pre codeblock"><code>	SC_CTOR(top)
+	{
+		const char* generic_list[2];
+		generic_list[0] = strdup("real_param=2.6");
+		generic_list[1] = strdup("str_param=\"Hello\"");
+		
+		//
+		// The integer parameter override is already passed as template 
+		// argument. Pass the overrides for the non-integer parameters 
+		// using the foreign module constructor arguments.
+		//
+		counter_inst_1 = new counter&lt;20&gt;("c_inst", "work.counter", 2, \ generic_list);</code></pre><pre class="pre codeblock"><code>		// Cleanup the memory allocated for the generic list
+		for (int i = 0; i &lt; 2; i++;)
+			free((char*)generic_list[i]);
+	}
+};</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemcInstantiatingVerilogSystemverilog_id4889d79f.html" title="To instantiate Verilog or SystemVerilog modules into a SystemC design, you must first create a SystemC foreign module declaration for each Verilog/SystemVerilog module. Once you have created the foreign module declaration, you can instantiate the foreign module just like any other SystemC module.">SystemC Instantiating Verilog or SystemVerilog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Parameter Support for SystemC Instantiating Verilog"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_ParameterSupportSystemcInstantiatingVerilog_id98f183ac.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

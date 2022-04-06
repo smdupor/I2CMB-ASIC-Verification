@@ -1,0 +1,285 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.4f Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.4f" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.4f</h1></center>
+<center><b>Aug 10 2016</b> <br />
+ <br />
+ Copyright 1991-2016 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 10.4f</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.4f</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.4f</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.4f</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.4f</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.4f</a></li>
+ <li><a href="#systemcdefects">SystemC Defects Repaired in 10.4f</a></li>
+ <li><a href="#assertiondefects">SVA/PSL Defects Repaired in 10.4f</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.4f</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.4f</a></li>
+ <li><a href="#coverageenhancement">Coverage Enhancements in 10.4f</a></li>
+ <li><a href="#vmenhancement">Verification Management Enhancements in 10.4f</a></li>
+ <li><a href="#paenhancement">Power Aware Enhancements in 10.4f</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>[nodvtid]  - The 10.4g Update Release will be the last release in the 10.4 series </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.4f</b></font>
+<ul><li>[nodvtid]  - <br>
+[10.4] Support for Windows XP and Windows Vista has been discontinued.<br>
+[10.4] Licensing Information
+<p>There is no licensing change between release 10.3 and 10.4.
+
+<p>However if you are migrating to 10.4 from a release like 10.2 and older,
+please note the following:
+
+<ul><li>Starting 10.3, it uses FLEXnet v11.11.1.1. The 
+vendor daemons and lmgrd that are shipped with this release will 
+be FLEXnet version 11.11.1.1.
+<li>For floating licenses it will be necessary to verify that the vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.11.1.1. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.11.1.1 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+<li>If you use node locked licenses you don't need to do anything.
+</ul><br>
+[10.3b] OVL is upgraded to v2.8.1.<br>
+[10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology) library, sources and documentation have been updated to version 2014.01. Dependency checks in vopt and vsim will force recompilation of designs that use the osvvm library. If optimization is performed using vopt, the optimizer will automatically generate new optimized design units. Without the optimization step, vsim will detect dependency errors.<br>
+[10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been discontinued.<br>
+[10.2] Support for Solaris SPARC and Solaris x86 has been discontinued. All Solaris OS platforms are not supported.<br>
+[10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell SUSE Linux Enterprise (SLES) 9 has been discontinued.<br>
+[10.1] Support for GCC versions gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.<br>
+[10.0] Support for Solaris 8 and Solaris 9 has been discontinued.<br>
+<br>
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.4f</b></font>
+<ul><li>[nodvtid]  - <br>
+[Supported Platforms]<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux RHEL 7 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc9<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.11.1.1<br>
+	MSL 	v2013_3<br>
+	MGLS 	v9.10_7.2<br>
+	PCLS 	v9.10.7.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.4f</b></font>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt87030 - (results) Force/Release on loconn was not handled properly in case of cell optimization, causing a simulation mismatch when run without +acc=c</li>
+ <li>dvt85937 - (results) Fixed the issues that DPI disable protocol was not followed when a thread is terminated either by "disable fork" or "process:kill"</li>
+ <li>dvt87351 - (results) In some rare cases, randomize() would fail with a spurious constraint contradiction related to an interaction between constraints involving array.size expressions and if-else constraints having a logical-and implicant/alternate constraint. This issue has been fixed.</li>
+ <li>dvt85666 - (results) In some cases, randomize() involving array.sum constraints would generate poor solution distributions on the random elements of array. This issue has been fixed.</li>
+ <li>[nodvtid]  - (results) Fixed a bug in Questa's support of nested classes. Extending a nested class whose parent class is parameterised was not supported. This has been supported now.
+For example , the following example now works :
+
+<pre>
+class base#(int A = 1);
+    class base_inner;
+    endclass
+endclass
+
+class derived#(int A = 1) extends base#(A);
+      class derived_inner extends base_inner;
+      endclass
+endclass
+
+</pre></li>
+ <li>dvt82320 - (results) Fixed a bug in supporting class specializations which are based on associative arrays using a wild card (*)
+For example the following now works correctly.
+<pre>
+class A#(type T = int);
+endclass
+class B;
+typedef bit abc[*];
+A#(abc) a;
+endclass
+</pre>
+</li>
+ <li>dvt87755 - (results) Stop giving warning vsim-SDF-8745 for valid retain Values. 
+Support enhanced to take care of null values. </li>
+ <li>dvt89119 - (results) In GUI mode, the VSIM "restart" command would ignore a specified "-sv_seed <seed>" option if "-f" is not also specified. This issue has been fixed.</li>
+</ul>
+<p /><dd><font size="3"><b>VHDL  Compatibility</b></font></dd>
+<ul><li>dvt88164 - (results) In some specific mixed language cases where both numeric_std and 1164 packages were included vcom used to give an incorrect error saying "Cannot resolve expression type of association element". This has been fixed. </li>
+</ul>
+<p /><dd><font size="3"><b>Coverage  Compatibility</b></font></dd>
+<ul><li>dvt89140 - (results) '-testhitdata' in the coverage html report (vcover/coverage report -html -details) will only report the first 10 tests that hit the bin when the hit count hyperlink in clicked. Furthermore, it now accepts an integer value (ex: '-testhitdata= &lt;i &gt;'). When this integer i is specified, it will report up to the ith tests that hit the bin. Furthermore, the new switch '-testhitdataAll' is added. When used, all the tests that hit the bin will be reported.</li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt87784 - (results) The cover directive coverage number reported within some summary reports has been fixed.
+This number is 'coverage by instance'. In some cases is was being reported as the sum of 'coverage by instance' and 'coverage by DU'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.4f</b></font>
+<ul><li>dvt87174 - Using vsim option -title inside a -f file will result in an error.</li>
+ <li>dvt87144 - An error is produced when attempting to use the fixed point radix types in a post-sim mode.  This issue has been resolved.</li>
+ <li>[nodvtid]  - When a library is mapped using an environment variable, adding signals to the schematic window would fail.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.4f</b></font>
+<ul><li>dvt87030 - (results) Force/Release on loconn was not handled properly in case of cell optimization, causing a simulation mismatch when run without +acc=c</li>
+ <li>dvt85937 - (results) Fixed the issues that DPI disable protocol was not followed when a thread is terminated either by "disable fork" or "process:kill"</li>
+ <li>dvt86203 - Fix a crash in vsim when automatic variables for a class are declared within an if-then-else statement with a fork/join and wait.</li>
+ <li>dvt87256 - Fixed a bug which resulted in vsim time fatal error when with clause is used with streaming concat operator. </li>
+ <li>dvt87351 - (results) In some rare cases, randomize() would fail with a spurious constraint contradiction related to an interaction between constraints involving array.size expressions and if-else constraints having a logical-and implicant/alternate constraint. This issue has been fixed.</li>
+ <li>dvt85666 - (results) In some cases, randomize() involving array.sum constraints would generate poor solution distributions on the random elements of array. This issue has been fixed.</li>
+ <li>[nodvtid]  - (results) Fixed a bug in Questa's support of nested classes. Extending a nested class whose parent class is parameterised was not supported. This has been supported now.
+For example , the following example now works :
+
+<pre>
+class base#(int A = 1);
+    class base_inner;
+    endclass
+endclass
+
+class derived#(int A = 1) extends base#(A);
+      class derived_inner extends base_inner;
+      endclass
+endclass
+
+</pre></li>
+ <li>dvt87658 - The vsim command "write report -solver <outputfile>" will now redirect the output of the solver report to the specified <outputfile>.</li>
+ <li>dvt87420 - Fixed a crash in vsim in a corner scenario. If we have a module say top and some signal is passed to an interface from this module, which is further passed to another interface instantiated in first interface. Then due to some internal optimization we were getting a crash in vsim. This has been fixed now.</li>
+ <li>dvt87382 - Allowed the syntax when modports are declared starting with attribute_instance. Below syntax is now supported.
+Modport_ports_declaration ::=
+    { attribute_instance } modport_simple_ports_declaration
+  | { attribute_instance } modport_tf_ports_declaration
+  | { attribute_instance } modport_clocking_declaration
+ </li>
+ <li>dvt82320 - (results) Fixed a bug in supporting class specializations which are based on associative arrays using a wild card (*)
+For example the following now works correctly.
+<pre>
+class A#(type T = int);
+endclass
+class B;
+typedef bit abc[*];
+A#(abc) a;
+endclass
+</pre>
+</li>
+ <li>dvt87755 - (results) Stop giving warning vsim-SDF-8745 for valid retain Values. 
+Support enhanced to take care of null values. </li>
+ <li>dvt88260 - The sensitivity extracted for @* was incorrect in some cases.</li>
+ <li>dvt88550 - In some rare cases, running vsim with the -solvefaildebug switch enabled would cause an internal error during randomize(). This issue has been fixed.</li>
+ <li>dvt89119 - (results) In GUI mode, the VSIM "restart" command would ignore a specified "-sv_seed <seed>" option if "-f" is not also specified. This issue has been fixed.</li>
+ <li>dvt89597 - Fixed an internal error during randomize().</li>
+ <li>dvt89423 - Fixed a bug where non-blocking assignment to a clocking block output was getting ignored in some cases if more than one non-blocking assignments were being happening during same clock cycle and output has an event based skew. </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.4f</b></font>
+<ul><li>dvt86918 - When an inner nested GENERATE block contained a slice name whose slice range depended in an outer FOR-GENERATE's loop parameter, and when a component instantiation in the inner GENERATE contained a GENERIC MAP association element that had an actual that depended on this slice name, then the compiler would create bad code that could crash the simulator.</li>
+ <li>dvt86935 - Fixed a crash where a VHDL port which is an array of std_logic, the actual of the port is a slice of a static expression
+and the port is connected to a Verilog port.
+</li>
+ <li>dvt86813 - A CASE GENERATE statement that contained an external name in the expression or in a choice in an alternative would sometimes cause a simulator crash.
+</li>
+ <li>dvt88164 - (results) In some specific mixed language cases where both numeric_std and 1164 packages were included vcom used to give an incorrect error saying "Cannot resolve expression type of association element". This has been fixed. </li>
+ <li>dvt35748 - When +cover was specified to vcom, implicit operators were included in the set of subprograms that were added to the Structure window in the GUI, along with user-defined subprograms.  Implicit operators are no longer part of this set.</li>
+ <li>dvt89183 - Concatenation expressions involving a qualified expression whose operand was also a concatenation expression could sometimes cause a vcom internal error.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcdefects"></a><font size="4"><b>SystemC Defects Repaired in 10.4f</b></font>
+<ul><li>[nodvtid]  - Fixed DPI and SystemC link time errors due to different standard library installation paths on some linux distributions. Library paths looked up at link time will be "/usr/lib64", "/usr/lib/x86_64-linux-gnu" for 64-bit and "/usr/lib/i386-linux-gnu", "/usr/lib/i686-linux-gnu", "/usr/lib32" for 32-bit platforms</li>
+ <li>dvt86850 - In certain scenarios, where systemc.so would not unload during shared library cleanup and the design has global SystemC objects, vopt or vsim may crash at exit time trying to print an error message. This issue is now fixed.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="assertiondefects"></a><font size="4"><b>SVA/PSL Defects Repaired in 10.4f</b></font>
+<ul><li>dvt87719 - Fixed a bug where sometimes vsim was crashing after restart if the design had procedural concurrent assertions.</li>
+ <li>dvt89114 - Fixed a bug where filter option in some of the assertion commands was not working for immediate assertions. This prevented users to select only XPROP assertions. An XPROP bug has also been fixed to make this work for the XPROP assertions.</li>
+ <li>dvt89440 - Assertion evaluation was wrong when there were multiple instances of sequence.matched. </li>
+ <li>dvt89182 - vsim crashes in some cases when an assertion with boolean property had a pass action block.</li>
+ <li>dvt90293 - $past(v,n) gives incorrect initial values when n is greater than 1.</li>
+ <li>dvt90240 - Fixed a bug where immediate assertions in functions were consuming high memory if they had return statement in the action block.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.4f</b></font>
+<ul><li>[nodvtid]  - VRM example, sorting coverage information based on status, got fixed. A user can proceed to override mergefile/triagefile parameters from the post execution analysis user definable procedures.  </li>
+ <li>dvt87784 - (results) The cover directive coverage number reported within some summary reports has been fixed.
+This number is 'coverage by instance'. In some cases is was being reported as the sum of 'coverage by instance' and 'coverage by DU'.</li>
+ <li>dvt89419 - Fixed bug where data from deferred UCDB load wasn't updating columns in VRM Results window.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.4f</b></font>
+<ul><li>dvt89504 - Supported the connection of array of interface instance passed as a port to instance array.
+Example:-
+intf i [p1:0][p2:0](); // interface array
+bot b[p1:0](i); // This will connect each b[j] to i[j]</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="coverageenhancement"></a><font size="4"><b>Coverage Enhancements in 10.4f</b></font>
+<ul><li>dvt89140 - (results) '-testhitdata' in the coverage html report (vcover/coverage report -html -details) will only report the first 10 tests that hit the bin when the hit count hyperlink in clicked. Furthermore, it now accepts an integer value (ex: '-testhitdata= &lt;i &gt;'). When this integer i is specified, it will report up to the ith tests that hit the bin. Furthermore, the new switch '-testhitdataAll' is added. When used, all the tests that hit the bin will be reported.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmenhancement"></a><font size="4"><b>Verification Management Enhancements in 10.4f</b></font>
+<ul><li>dvt86459 - VRM testlist format now does not require a repeat count for each entry. A missing repeat count would indicate that there is only one entry for that test. 
+ </li>
+ <li>dvt86458 - A test expanded via VRM testlist format would automatically populate the testname parameter. Making it compatible with VRM test-centric mode. The automatically populated testname parameter will be used when the parameter is not defined elsewhere in the RMDB; as a default value. </li>
+ <li>[nodvtid]  - The vrun -junit command line switch added in version 10.5 is being removed with immediate effect. This switch was added for the initial Jenkins VRM integration but was found to be inefficient. The Questa VRM Jenkins plug-in will shortly be available on-line using the normal Jenkins plug-in delivery method. This supersedes the need for the -junit switch, for more information please contact customer support.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="paenhancement"></a><font size="4"><b>Power Aware Enhancements in 10.4f</b></font>
+<ul><li>[nodvtid]  - Added support for UPF command 'use_interface_cell'. </li>
+</ul>
+
+</body>
+</html>

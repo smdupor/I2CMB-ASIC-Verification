@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Usage Notes" />
+<meta name="abstract" content="In general, a globally shared object is a multi-dimensional HDL object consisting of a register and a size allocation." />
+<meta name="description" content="In general, a globally shared object is a multi-dimensional HDL object consisting of a register and a size allocation." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Usage Notes</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Usage Notes" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Usage Notes</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">In general,
+a globally shared object is a multi-dimensional HDL object consisting
+of a register and a size allocation. </span>
+</div>
+<p class="p">The declaration of a memory object
+is of the form:</p>
+<pre class="pre codeblock"><code>reg[0:31] MEM[0:32767] ;</code></pre><p class="p">which you must access directly
+by using hierarchical references. For example:</p>
+<pre class="pre codeblock"><code>top.MEM</code></pre><p class="p">where the references (read or write) occur
+in multiple partitions. </p>
+<p class="p">To use globally shared objects, make
+sure that they meet the following criteria:</p>
+<ul class="ul"><li class="li" id="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6__id7b308b36-682e-4a29-8fdc-137ad5909f8a"><p class="p">They
+must be contention-free — accessing the shared object is done in
+a contention-free manner in the same time step. </p>
+</li>
+<li class="li" id="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6__idd907af68-40d7-430a-a922-6548d722fb36"><p class="p">They
+must be sequentially neutral — accessing the shared object does
+not depend on the access sequences from other partitions in the
+same time step. </p>
+</li>
+<li class="li" id="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6__id20e50216-7e13-44e4-95e0-b4c2d41178b2"><p class="p">They
+must allow exclusive access — accessing the “word address” of the form:</p>
+<pre class="pre codeblock leveled"><code>MEM[ A ][ 21:40 ] = expr1 ; // partition #1 
+expr2 = MEM[ A ][ 41:60 ] ; // partition #2 </code></pre><p class="p">at the same time step can produce unexpected
+results. Even though the accesses look mutually exclusive, they
+are not word exclusive. This restriction applies only when one or
+more accesses is a memory write.</p>
+</li>
+<li class="li" id="idb79c5c0a-2701-4d48-8cb1-1b60a9e633e6__id68e4950b-ef28-4fd4-8a87-68033d7ddd60"><p class="p">They
+must allow event triggering — the object cannot be used as trigger
+if the writer of the shared memory object resides in a different
+partition, an event trigger of the following form does not work: </p>
+<pre class="pre codeblock leveled"><code>@top.MEM</code></pre></li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_GloballySharedMemoryObjects_id5f3ed700.html" title="You can use shared memory objects in multi‑core simulation. By default, multi‑core simulation allows implementation of memory as globally shared objects, unless you explicitly instruct the mc2com partitioner to disable this capability.">Globally Shared Memory Objects</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Usage Notes"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UsageNotes_idb79c5c0a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="UCDB Access Modes" />
+<meta name="abstract" content="You can open a UCDB file in various modes enabling different methods of analysis." />
+<meta name="description" content="You can open a UCDB file in various modes enabling different methods of analysis." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idad685600-08a7-4fe3-b7b8-aa6634194994" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>UCDB Access Modes</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="UCDB Access Modes" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idad685600-08a7-4fe3-b7b8-aa6634194994">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">UCDB Access Modes</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can open
+a UCDB file in various modes enabling different methods of analysis. </span>
+</div>
+<dl class="dl"><dt class="dt dlterm">In-memory</dt>
+<dd class="dd"><p class="p">Open the UCDB file
+so that the entire UCDB data model lies in memory. This is the most
+general of the use models. All functions related to data access
+and modification should work in this mode.</p>
+</dd>
+<dt class="dt dlterm">Read-streaming</dt>
+<dd class="dd"><p class="p">Given
+a filename, the file is opened and closed within an API function,
+but you specify a callback that is called for each data record in
+the database. Effectively this maintains a narrow “window” of data
+visibility as the database is traversed, so its data access is limited.
+Some types of data are maintained globally, but the goal of this
+mode is to minimize the memory profile of the reading application.</p>
+</dd>
+<dt class="dt dlterm">Write-streaming</dt>
+<dd class="dd"><p class="p">Open
+a database handle that must be used to write data in a highly specific
+manner. This is the most difficult mode to perfect, because to successfully
+write the file, data must be created in requisite order with a precise
+sequence of API calls, but it has the advantage that the data is
+streamed to disk without maintaining substantial UCDB data structures, and
+so minimizes the memory profile of the writing application.</p>
+</dd>
+<dt class="dt dlterm">Summary read</dt>
+<dd class="dd"><p class="p">This
+is a constant-time read of a coverage summary stored within the
+file. This enables overall statistics from the database to be read
+without traversing the entire database. The disadvantage is that
+the summary coverage calculations are fixed and cannot be customized
+in any way.</p>
+</dd>
+</dl>
+<p class="p">Use
+subheadings, if necessary, to distinguish between the different access
+mode sections.</p>
+<p class="p">The database handle type
+of the UCDB is ucdbT, which is a void* pointing to a hidden structure
+type of implementation-specific data associated with the database.
+This handle must be used with nearly all API calls, for example,
+to open a database in-memory:</p>
+<pre class="pre codeblock leveled"><code>ucdbT db = ucdb_Open(filename); 
+ </code></pre><p class="p">If the database handle is
+non-NULL, you can use the open succeeded and the database handle
+to access all data in the database. The database is not tied in
+any way to the file on the file system. The database exists entirely
+in memory, and may be rewritten to the same file or a different
+file after it is changed.</p>
+<p class="p">Writing the database to
+a file is simple if the database has been previously opened in-memory.
+The write call can write subsets of the database, characterized
+by instance subsets or instance tree subsets or by coverage type
+subsets. The following is the basic write call without using subsets:</p>
+<pre class="pre codeblock leveled"><code>ucdb_Write(db,filename,NULL,1,-1); 
+ </code></pre><p class="p">The NULL means write the
+entire database, 1 is a recursive indicator that is irrelevant if NULL
+is given, and -1 indicates that all coverage types should be written
+(it is a coverage scope type mask.)</p>
+<p class="p">The database in memory is
+de-allocated with this call:</p>
+<pre class="pre codeblock leveled"><code>ucdb_Close(db);</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "UCDB Access Modes"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UcdbAccessModes_idad685600.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

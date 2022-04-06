@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Debugging FLI Application Code" />
+<meta name="abstract" content="ModelSim/Questa offers the optional C Debug feature. This tool allows you to interactively debug C/C++ source code with the open-source gdb debugger." />
+<meta name="description" content="ModelSim/Questa offers the optional C Debug feature. This tool allows you to interactively debug C/C++ source code with the open-source gdb debugger." />
+<meta name="DC.subject" content="debugging FLI code" />
+<meta name="keywords" content="debugging FLI code" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id92ebd8c1-fbd3-4c24-a4cc-fe8c98a19b73" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Debugging FLI Application Code</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Debugging FLI Application Code" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id92ebd8c1-fbd3-4c24-a4cc-fe8c98a19b73">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Debugging
+FLI Application Code</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc"><span class="ph fmvar:ProductName">ModelSim/Questa</span> offers the optional C
+Debug feature. This tool allows you to interactively debug C/C++
+source code with the open-source gdb debugger. </span>
+</div>
+<p class="p">Refer to the C Debug chapter in the User’s Manual
+for details. If you do not have access to C Debug, continue reading
+for instructions on how to attach to an external C debugger.</p>
+<p class="p">In order to debug your FLI application code
+in a debugger, your application code must be compiled with debugging
+information (for example, by using the -g option argument). You must
+then load vsim into a debugger. Even though vsim is stripped, most
+debuggers will still execute it. You can invoke the debugger directly
+on vsimk, the simulation kernel where your application code is loaded
+(for example, “ddd `which vsimk`”), or you can attach the debugger to
+an already running vsim process. In the second case, you must attach
+to the PID for vsimk, and you must specify the full path to the
+vsimk executable (for example, “gdb $MTI_HOME/sunos5/vsimk 1234").</p>
+<p class="p">On Linux systems you can use either gdb or
+ddd. </p>
+<p class="p">Since initially the debugger recognizes only
+FLI function symbols from <span class="ph FontProperty shellcommand">vsim</span>,
+when invoking the debugger directly on vsim, you need to place a
+breakpoint in the first FLI function that is called by your application
+code. An easy way to set an entry point is to put a call to <a class="xref fm:HeadingOnly" href="Command_MtiGetproductversion_id5799c9d6.html#id5799c9d6-227f-4aa4-b142-b160ee621b0c__Command_MtiGetproductversion_id5799c9d6.xml#id5799c9d6-227f-4aa4-b142-b160ee621b0c" title="Gets the name and version of the simulator.">mti_GetProductVersion()</a> as the first executable statement
+in your application code. Then, after vsim has been loaded into the
+debugger, set a breakpoint in this function. Once you have set the
+breakpoint, run vsim with the usual arguments (for example, “run
+-c top”). </p>
+<p class="p">When the breakpoint is reached, the shared
+library containing your application code has been loaded. In some
+debuggers you must use the share command to load the FLI application's symbols.</p>
+<p class="p">At this point all of the FLI application's
+symbols should be visible. You can now set breakpoints in and single
+step through your FLI application code.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Introduction_idf28816f2.html" title="This chapter provides background for using the ModelSim/Questa FLI (Foreign Language Interface) for VHDL.">Introduction</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Debugging FLI Application Code"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_DebuggingFliApplicationCode_id92ebd8c1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

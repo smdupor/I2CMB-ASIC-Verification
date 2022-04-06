@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GUIRefTopic" />
+<meta name="DC.Title" content="UVM Details Window" />
+<meta name="abstract" content="The UVM Details Window displays information about UVM objects selected in the Structure window. The data displayed depends on the hierarchy level of the selected object, and the mode of the UVM details window. Multiple instances of this window are allowed, along with the option of following or staying fixed to the current context for each window instance. UVM objects do not exist until elaboration however, the UVM details window is able to remain open for a given UVM component that might go out of existence and then reappear as a user issues a restart to 0 followed by a run command." />
+<meta name="description" content="The UVM Details Window displays information about UVM objects selected in the Structure window. The data displayed depends on the hierarchy level of the selected object, and the mode of the UVM details window. Multiple instances of this window are allowed, along with the option of following or staying fixed to the current context for each window instance. UVM objects do not exist until elaboration however, the UVM details window is able to remain open for a given UVM component that might go out of existence and then reappear as a user issues a restart to 0 followed by a run command." />
+<meta name="prodname" content="Questa SIM GUI Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_gui_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM GUI Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida1c4374f-2951-4bac-89ec-2672d01ee489" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>UVM Details Window</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="UVM Details Window" />
+<meta name="attributes" content="product.version.2020.4,sort.order.035,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="objects" id="ida1c4374f-2951-4bac-89ec-2672d01ee489">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">UVM Details Window</h1>
+<div class="body refbody GUIRefBody"><div class="abstract GUIRefAbstract"><p class="p ContextMGC">To access:</p>
+<ul class="ul"><li class="li" id="idc9934d8e-33f0-46fb-8a07-53356866c256"><p class="p"><span class="ph menucascade"><span class="ph uicontrol">View</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">UVM Details</span></span> </p>
+</li>
+<li class="li" id="id1fb648c9-8faa-4f19-9d94-19fbfbb6e7c7"><p class="p">view uvmdetails command</p>
+</li>
+</ul>
+<p class="shortdesc">The UVM
+Details Window displays information about UVM objects selected in the
+Structure window. The data displayed depends on the hierarchy level
+of the selected object, and the mode of the UVM details window.
+Multiple instances of this window are allowed, along with the option
+of following or staying fixed to the current context for each window
+instance. UVM objects do not exist until elaboration however, the
+UVM details window is able to remain open for a given UVM component
+that might go out of existence and then reappear as a user issues
+a restart to 0 followed by a run command.</p>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">Simulate with
+vsim -uvmcontrol=all -classdebug</p>
+<p class="p">Elaborate the
+UVM testbench by executing the following command:</p>
+<p class="lines ApplCommand">run 0</p>
+<p class="p">You can choose
+between two viewing modes by clicking the mode button in the upper right
+corner of the window. The window header bar displays the current
+mode of the window, Streams or ConfigDBs, and the currently selected
+context. Refer to <a class="xref fm:Figure" href="#ida1c4374f-2951-4bac-89ec-2672d01ee489__id02ae617c-8723-4ad8-9679-559cae22a056">Figure 1</a>.</p>
+<div class="fig fignone" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id02ae617c-8723-4ad8-9679-559cae22a056"><span class="figcap"><span class="fig--title-label">Figure 1. </span>UVM Details Window
+Mode Selection</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/window_uvm_details_configdb.gif" /></div><br /></div>
+<ul class="ul"><li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id25195c86-027c-45fe-8de8-43da3aed8e6c"><p class="p"><span class="ph uicontrol">Stream</span> mode — (default) Displays
+any existing transaction streams that exist at or below the UVM
+component hierarchy selected in the Structure window. You can drag
+UVM stream objects into the Wave window. </p>
+</li>
+<li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id78865587-6c71-4784-bfe4-ebc50560b8ac"><p class="p"><span class="ph uicontrol">Config DB</span> mode — Displays any config
+DB items that are accessible to the selected UVM component. Displays
+whether the configuration item is written to or read as well as
+the value and type. All of the configuration database items are
+listed when the uvm_root component is selected. </p>
+</li>
+<li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__ide1799818-5c8d-4713-9bcc-125ffd35025e"><p class="p"><span class="ph uicontrol">Sequence</span> Mode — Displays a list of
+sequencers and the active sequences running under them for the currently
+selected UVM hierarchy. </p>
+</li>
+</ul>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Objects</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>UVM Details
+Window Columns</span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e206"><p class="p">Column Title</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e209"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Name</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">name of the transaction
+stream or configuration database object </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Regex</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">regular expression used
+to match the configuration object with a UVM component pathname</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Value</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">value of the configuration
+object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Write Count</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">number of times the configuration
+object value has been written to</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Read Count</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">number of times the configuration
+object has been read</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e206 "><p class="p"><span class="ph uicontrol">Read Only</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e209 "><p class="p">reports a value of 1
+if the configuration object is marked as read-only</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>UVM Details
+Window Streams Mode Popup Menu</span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e269"><p class="p">Popup Menu Item</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e272"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Add Wave</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">adds the selected transaction
+stream(s) to the Wave Window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Add
+Wave New</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">adds the selected transaction
+stream(s) to a new instance of the Wave Window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Copy</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">copies the transaction
+stream(s)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Select All</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">selects all transaction
+streams in the window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Unselect All</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">unselects all transaction
+streams in the window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Find</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><p class="p">opens the find toolbar
+in the active window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e269 "><p class="p"><span class="ph uicontrol">Environment</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e272 "><ul class="ul"><li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__idd66b40e0-e82a-435d-b09b-4622911876af"><p class="p">Follow Context Selection</p>
+</li>
+<li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id8d9023ed-949b-4b6a-b604-43c5f93b668a"><p class="p">Fix to Current Context</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>UVM Details
+Window ConfigDB Mode Popup Menu</span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e345"><p class="p">Popup Menu Item</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e348"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e345 "><p class="p"><span class="ph uicontrol">Show Readers
+and Writers</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e348 "><p class="p">prints readers and drivers
+of the selected variable to the transcript window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e345 "><p class="p"><span class="ph uicontrol">Copy</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e348 "><p class="p">copies the selected variable(s)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e345 "><p class="p"><span class="ph uicontrol">Find</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e348 "><p class="p">opens the find toolbar
+in the active window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e345 "><p class="p"><span class="ph uicontrol">Environment</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e348 "><ul class="ul"><li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id0e3dd386-5ea4-4cd0-a6b5-168c6e92b827"><p class="p">Follow Context Selection</p>
+</li>
+<li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__id6181babc-72d8-41d7-8714-47b2805a7572"><p class="p">Fix to Current Context</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 4. </span>UVM Details
+Window Sequence Mode Popup Menu</span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e397"><p class="p">Popup Menu Item</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e400"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">View Declaration</span> </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">opens the source file
+and highlights the line of code where the sequence is declared</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Break
+in Body for this instance</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">sets a source breakpoint
+on the UVM sequence body() method for this specific instance</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Break
+in Body for any instance</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">sets a source breakpoint
+on the UVM sequence body() method for any sequence instance of this
+type</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Show
+Full Path</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">toggles the display of
+the full UVM hierarchical path from the UVM Root on and off</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Show UVM
+Path</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">toggles the display of
+the UVM leaf on and off</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Copy</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">copies the sequence(s)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Select All</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">selects all sequences
+in the window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Unselect All</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">unselects all sequences
+in the window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Find</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><p class="p">opens the find toolbar
+in the active window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e397 "><p class="p"><span class="ph uicontrol">Environment</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e400 "><ul class="ul"><li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__ide9994d0b-ebfc-4c53-938f-a75ed671047d"><p class="p">Follow Context Selection</p>
+</li>
+<li class="li" id="ida1c4374f-2951-4bac-89ec-2672d01ee489__idc8644fde-2e68-4f71-97e4-8407c49889b4"><p class="p">Fix to Current Context</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>UVM Details
+Menu </span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e498"><p class="p">Menu Item</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e501"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e498 "><p class="p"><span class="ph uicontrol">Print Factory</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e501 "><p class="p">prints the global UVM
+factory override information to the transcript window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e498 "><p class="p"><span class="ph uicontrol">Print Topology</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e501 "><p class="p">prints the global UVM
+testbench topology information to the transcript window</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e498 "><p class="p"><span class="ph uicontrol">Display Objections</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e501 "><p class="p">prints the current UVM
+objections associated with the selected UVM component and its' children
+to the transcript window</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 6. </span>UVM Details
+Window Icons</span></caption><colgroup><col style="width:2.250in" /><col style="width:4.250in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e537"><p class="p">Icon</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d39940e540"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e537 "><p class="p"><img class="image fmdpi:100" src="../graphics/icon_transaction.gif" /></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e540 "><p class="p">transaction object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e537 "><p class="p"><img class="image fmdpi:100" src="../graphics/icon_uvm_config.gif" /></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e540 "><p class="p">UVM configuration database
+object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e537 "><p class="p"><img class="image fmdpi:100" src="../graphics/icon_uvm_sequence.gif" /></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d39940e540 "><p class="p">UVM sequencer </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WindowReference_id7763df81.html" title="The following table summarizes all of the available windows.">Window Reference</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_gui_ref"
+                DocTitle = "Questa® SIM GUI Reference Manual"
+                PageTitle = "UVM Details Window"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/GUIRefT_UvmDetailsWindow_ida1c4374f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM GUI Reference Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

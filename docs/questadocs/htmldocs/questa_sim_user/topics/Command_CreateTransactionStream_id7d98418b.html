@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="create_transaction_stream" />
+<meta name="abstract" content="The create_transaction_stream system task creates a transaction stream that you can use to record transactions." />
+<meta name="description" content="The create_transaction_stream system task creates a transaction stream that you can use to record transactions." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id7d98418b-bd45-4752-9795-48cd6992769e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>create_transaction_stream</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="create_transaction_stream" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="usa-arg" id="id7d98418b-bd45-4752-9795-48cd6992769e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">create_transaction_stream</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">The create_transaction_stream
+system task creates a transaction stream that you can use to record
+transactions. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Save the stream handle for use in other transaction API calls.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Usage</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Verilog</h2><p class="lines UsageLine">$create_transaction_stream(stream_name, stream_kind) </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">VHDL</h2><p class="lines UsageLine">create_transaction_stream(stream_name, stream_kind) </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="border" border="1" rules="cols"><colgroup><col style="width:1.354in" /><col style="width:1.135in" /><col style="width:3.885in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d15108e174"><p class="p">Name</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d15108e177"><p class="p">Type</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d15108e180"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e174 "><p class="p">stream_name</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e177 "><p class="p">string</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e180 "><p class="p">Required. The name of
+the stream to be created.</p>
+<p class="p">For OVM designs, the string specified must adhere
+to the following format:</p>
+<p class="p">{"..",get_full_name(),".","&lt;your_name&gt;"}</p>
+<p class="p">The stream name should not match that of any object
+in the parent region for the stream.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e174 "><p class="p">stream_kind</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e177 "><p class="p">string</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d15108e180 "><p class="p">Optional.</p>
+<p class="p">The kind of stream to be created. </p>
+<p class="p">Default is “Stream”. </p>
+<p class="p">The kind can be any string and it is not interpreted.
+It is stored in the WLF file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id7d98418b-bd45-4752-9795-48cd6992769e__id90193b08-7509-4280-ab59-c1091086b6cf" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.836in" /><col style="width:1.493in" /><col style="width:2.847in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Type</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Description</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">stream</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Verilog:integer</p>
+<p class="p">VHDL: TrHandle</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Handle to the created stream.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">A handle returned by $create_transaction_stream() or create_transaction_stream()
+will be non-zero unless there is an error. The error is reported
+to the transcript.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_VerilogVhdlApiSystemTaskReference_idc4ba2b03.html" title="System tasks are necessary for writing transactions for Verilog and VHDL API.">Verilog and VHDL API System Task Reference</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/TaskTop_RecordingTransactionsInVerilogVhdl_id7986f172.html#id7986f172-cd8d-4a12-bc12-9f4faa8faeba__" title="Because there is currently no standard for transaction recording in Verilog or VHDL, Questa SIM includes a set of system tasks to perform transaction recording into a WLF file.">Recording Transactions in Verilog and VHDL</a></div>
+<div><a class="link" href="../topics/Concept_TransactionStreams_ide3ac0d9d.html#ide3ac0d9d-0801-45ae-be66-bb4bb3e2091b__" title="Questa SIM records transactions on streams, much as it records values on wires and signals. Streams are debuggable objects that you can add to GUI windows such as the Objects or Wave windows.">About Transaction Streams</a></div>
+<div><a class="link" href="../topics/Concept_NamesStreamsSubstreams_id8a423fc3.html#id8a423fc3-64e0-4688-9166-06b1fe792cdb__" title="You must provide names for streams so they can be referenced for debug.">Names of Streams and Substreams</a></div>
+<div><a class="link" href="../topics/Concept_StreamLogging_id83c8fa1c.html#id83c8fa1c-1179-4148-9de3-a27eca0dc3be__" title="When your design creates a stream, logging is enabled for that stream providing that logging is enabled at the simulation time when the design calls ::begin_transaction(). The effective start time of the transaction (the time passed by the design as a parameter to ::begin transaction()) does not affect the logging of the stream.">Stream Logging</a></div>
+<div><a class="link" href="../topics/Concept_ValidVerilogHandles_id28ff8c94.html#id28ff8c94-c962-4cf4-ac48-83685472955a__" title="If there is an error on a call to create_transaction_stream() or begin_transaction(), the handle returned will have the value zero.">Valid Verilog Handles</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "create_transaction_stream"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CreateTransactionStream_id7d98418b.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

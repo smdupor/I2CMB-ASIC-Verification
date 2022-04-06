@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Mixed SystemC and HDL Example" />
+<meta name="abstract" content="In this next example, you have a SystemC test bench that instantiates an HDL module. In order for the SystemC test bench to interface properly with the HDL module, you must create a stub module, a foreign module declaration." />
+<meta name="description" content="In this next example, you have a SystemC test bench that instantiates an HDL module. In order for the SystemC test bench to interface properly with the HDL module, you must create a stub module, a foreign module declaration." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2b5fba2f-b830-4fce-9aae-393e0b656b84" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Mixed SystemC and HDL Example</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Mixed SystemC and HDL Example" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id2b5fba2f-b830-4fce-9aae-393e0b656b84">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Mixed SystemC and HDL Example</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">In this next
+example, you have a SystemC test bench that instantiates an HDL
+module. In order for the SystemC test bench to interface properly
+with the HDL module, you must create a stub module, a foreign module
+declaration. </p>
+<p class="p">You will
+use the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'scgenmod', 'questa_sim_ref'); return false;">scgenmod</a> utility to create the foreign
+module declaration. Finally, you will link the created C object
+files using the “sccom -link” command. </p>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idf68cd01d-973e-49a2-97dd-244c0a499dd6"><span class="ph cmd">Create a
+new exercise directory and copy the tutorial files into it.</span><div class="itemgroup info StepInfo"><p class="p">Start by
+creating a new directory for this exercise (in case other users will
+be working with these lessons). Create the directory, then copy
+all files from <span class="ph filepath">&lt;install_dir&gt;/examples/systemc/sc_vlog</span> into
+the new directory.</p>
+<p class="p">If you have
+a VHDL license, copy the files in <span class="ph filepath">&lt;install_dir&gt;/examples/systemc/sc_vhdl</span> instead.</p>
+</div></li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id9a42240b-b67b-436b-b246-4643d28d846e"><span class="ph cmd">Start <span class="ph fmvar:ProductName">Questa SIM</span> and change to the
+exercise directory. </span><div class="itemgroup info StepInfo"><p class="p">If you just
+finished the previous lesson, <span class="ph fmvar:ProductName">Questa SIM</span> should
+already be running. If not, start <span class="ph fmvar:ProductName">Questa SIM</span>.</p>
+</div><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id551f1d74-6bcc-4ac2-b743-1adb7780f494"><span class="ph cmd">Type <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> at a command shell prompt.</span><div class="itemgroup info SubStepInfo"><p class="p">If the Welcome
+to <span class="ph fmvar:ProductName">Questa SIM</span> dialog box
+appears, click <span class="ph uicontrol">Close</span>.</p>
+</div></li>
+<li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id3b843f89-1891-44a3-bc5d-588f45e3a205"><span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Change Directory</span></span> and
+change to the directory you created in step 1. </span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id2d500315-bc28-4180-a830-5cad42dcf53f"><span class="ph cmd">Set the
+working library.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id234f8b36-e652-40ee-a0ee-d901e39e8a34"><span class="ph cmd">Type “vlib
+work” in the <span class="ph fmvar:ProductName">Questa SIM</span> Transcript
+window to create the working library.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id2bf46eda-d9e6-4ac0-a91b-60473bc07404"><span class="ph cmd">Compile
+the design.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__iddd830d2c-d9cd-4495-99cd-adaae88ba751"><span class="ph cmd"><span class="ph FontProperty HeadingLabel">Verilog: </span>Type
+“vlog *.v” in the <span class="ph fmvar:ProductName">Questa SIM</span> Transcript window
+to compile all Verilog source files.</span><div class="itemgroup info SubStepInfo"><p class="p"><span class="ph FontProperty HeadingLabel">VHDL:</span>Type
+“vcom -93 *.vhd” in the <span class="ph fmvar:ProductName">Questa SIM</span> Transcript
+window to compile all VHDL source files.</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id736f3d3b-8821-4c65-82c8-aee957c32ab5"><span class="ph cmd">Create the
+foreign module declaration (SystemC stub) for the Verilog module <span class="ph filepath">ringbuf</span>.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idb8908269-bc4c-4409-8abe-1fe50520b5b6"><span class="ph cmd"><span class="ph FontProperty HeadingLabel">Verilog:</span> Type
+“scgenmod -map "scalar=bool" ringbuf &gt; ringbuf.h” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt; prompt.</span><div class="itemgroup info SubStepInfo"><p class="p">The -map
+"scalar=bool" argument is used to generate boolean scalar port types
+inside the foreign module declaration. Refer to <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'scgenmod', 'questa_sim_ref'); return false;">scgenmod</a> for more information. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">VHDL:</span>Type
+“scgenmod ringbuf &gt; ringbuf.h” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt.</p>
+<p class="p">The output
+is redirected to the file <span class="ph filepath">ringbuf.h</span> (<a class="xref fm:Figure" href="#id2b5fba2f-b830-4fce-9aae-393e0b656b84__idf3bf647c-b5e1-4209-8b11-a4db794dc922">Figure 1</a>). </p>
+<div class="fig fignone" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idf3bf647c-b5e1-4209-8b11-a4db794dc922"><span class="figcap"><span class="fig--title-label">Figure 1. </span>The ringbuf.h File.</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/sysC_ringbuf.gif" /></div><br /></div>
+<p class="p">The <span class="ph filepath">test_ringbuf.h</span> file
+is included in <span class="ph filepath">test_ringbuf.cpp</span>, as shown in <a class="xref fm:Figure" href="#id2b5fba2f-b830-4fce-9aae-393e0b656b84__id25312115-35df-4067-941f-8f0ff1e67f95">Figure 2</a>. </p>
+<div class="fig fignone" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id25312115-35df-4067-941f-8f0ff1e67f95"><span class="figcap"><span class="fig--title-label">Figure 2. </span>The test_ringbuf.cpp File</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/sysC_test_ringbuf.gif" /></div><br /></div>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idbb581f41-5d19-4fda-ba5d-70e37af88e10"><span class="ph cmd">Compile
+and link all SystemC files, including the generated <span class="ph filepath">ringbuf.h</span>.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idbae0c508-0d8b-46a9-a27f-b185ea99b41a"><span class="ph cmd">Type “sccom
+-g test_ringbuf.cpp” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt.</span><div class="itemgroup info SubStepInfo"><p class="p">The <span class="ph filepath">test_ringbuf.cpp</span> file
+contains an include statement for <span class="ph filepath">test_ringbuf.h</span> and
+a required SC_MODULE_EXPORT(top) statement, which informs <span class="ph fmvar:ProductName">Questa SIM</span> that the top-level module is SystemC.</p>
+</div></li>
+<li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__ide98a6a55-3371-40c7-b485-2c3e5acb6537"><span class="ph cmd">Type “sccom
+-link” at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt; prompt
+to perform the final link on the SystemC objects.</span></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id369d36be-05af-4ca7-a0c2-48f335e70cf7"><span class="ph cmd">Optimize
+the design with full debug visibility.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id985e81e3-b129-4c09-adb5-7e47946cc3d4"><span class="ph cmd">Enter the
+following command at the <span class="ph fmvar:ProductName">Questa SIM</span>&gt;
+prompt:</span><div class="itemgroup info SubStepInfo"><p class="lines ApplCommand">vopt +acc test_ringbuf -o test_ringbuf_opt</p>
+<p class="p">The +acc argument for the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command provides full visibility
+into the design for debugging purposes. </p>
+<p class="p">The -o argument designates the name of the
+optimized design (test_ringbuf_opt). </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You must
+provide a name for the optimized design file when you use the vopt
+command. </p>
+</div>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idc6ce79f8-a727-4a8c-ad7e-552ae3028aa9"><span class="ph cmd">Load the
+design.</span><ol type="a" class="ol substeps"><li class="li substep" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idd191ef2d-e766-4ad7-9e93-57564762dbf0"><span class="ph cmd">Load the
+design using the optimized design name.</span><div class="itemgroup info SubStepInfo"><p class="lines ApplCommand">vsim test_ringbuf_opt</p>
+</div></li>
+</ol>
+</li>
+<li class="li step stepexpand" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__idc5917b1a-df2e-44bd-8adb-bd9ef695780a"><span class="ph cmd">Make sure
+the Objects window is open as shown in <a class="xref fm:Figure" href="#id2b5fba2f-b830-4fce-9aae-393e0b656b84__id9238e560-8164-4bab-9409-c15bae500b2f">Figure 3</a>. To open this window, use the <span class="ph menucascade"><span class="ph uicontrol">View</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Objects</span></span> menu
+selection.</span><div class="itemgroup info StepInfo"><div class="fig fignone" id="id2b5fba2f-b830-4fce-9aae-393e0b656b84__id9238e560-8164-4bab-9409-c15bae500b2f"><span class="figcap"><span class="fig--title-label">Figure 3. </span>The test_ringbuf Design</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/main_sim_sysc.gif" /></div><br /></div>
+</div></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_SimulatingSystemcDesigns_id5acb83bf.html" title="Questa SIM treats SystemC as just another design language. With only a few exceptions in the current release, you can simulate and debug your SystemC designs the same way you do HDL designs.">Simulating SystemC Designs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Mixed SystemC and HDL Example"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_MixedSystemcHdlExample_id2b5fba2f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Fully Automatic (One-command) Mode" />
+<meta name="abstract" content="VRM supports a single-command automated way to run two passes over a given regression suite, picking up additional command-line options on the second pass. The -rerun option takes a string that contains the additional command-line options for the second pass (which must be an empty argument should you decide to run the regression suite twice with the same arguments both times). The command is as follows:" />
+<meta name="description" content="VRM supports a single-command automated way to run two passes over a given regression suite, picking up additional command-line options on the second pass. The -rerun option takes a string that contains the additional command-line options for the second pass (which must be an empty argument should you decide to run the regression suite twice with the same arguments both times). The command is as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id5733177e-5ad5-4f49-89e4-f8b397e41977" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Fully Automatic (One-command) Mode</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Fully Automatic (One-command) Mode" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id5733177e-5ad5-4f49-89e4-f8b397e41977">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Fully Automatic (One-command) Mode</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">VRM
+supports a single-command automated way to run two passes over a
+given regression suite, picking up additional command-line options
+on the second pass. The -rerun option takes a string that contains
+the additional command-line options for the second pass (which must
+be an empty argument should you decide to run the regression suite
+twice with the same arguments both times). The command is as follows:</span>
+</div>
+<p class="lines ApplCommand">vrun<br />
+&lt;first-pass-options&gt; -rerun &lt;second-pass-options&gt; &lt;runnable(s)&gt;</p>
+<p class="p">For example:</p>
+<p class="lines ApplCommand">vrun nightly -Gmode=normal -rerun "-select failed,notrun -Gmode=debug"</p>
+<p class="p">In the example above, the regression
+suite rooted in the <span class="ph FontProperty emphasis">nightly</span> Runnable
+executes with the <span class="ph FontProperty emphasis">mode</span> parameter
+set to <span class="ph FontProperty emphasis">normal</span>.
+Once that run is complete, the failed and/or un-executed Actions
+from the previous run (as well as the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+from the intermediate Groups) are re-executed with the <span class="ph FontProperty emphasis">mode</span> parameter
+set to <span class="ph FontProperty emphasis">debug</span>.
+Note that the string passed to the -rerun option is quoted to prevent
+the command shell from mistaking it for multiple command-line options.</p>
+<p class="p">Prior to executing the second
+pass, vrun clears the list of selected Runnables so that only those
+Runnables explicitly listed in the -rerun option string are considered
+for the second pass. In addition, vrun disables any -runlist option
+that may have been passed on the original command line. If no Runnables
+are selected by any of the “second pass” options specified in the -rerun
+option string, vrun will exit its second pass with the usual “Nothing
+to run” error.</p>
+<p class="p">In addition, certain options are
+blocked when the -rerun option embedded “second pass” options are
+being processed. Options such as -rmdb, -vrmdata, and -loadtcl affect
+global state and therefore cannot be changed between the original
+run and the rerun. Also, the -rerun option itself is blocked from
+the “second pass” options.</p>
+<p class="p">The options specified in the value
+string passed to the -rerun option are parsed in a shell-line way
+(honoring embedded single and/or double quotes) and are processed
+in the same way as options on the vrun command line itself. With
+the exceptions noted above, any options specified on the original
+vrun command line remain specified for the second pass unless overridden
+by an option in the -rerun option string. Option errors detected
+at this point will terminate the rerun but will not invalidate the
+results of the original run.</p>
+<p class="p">The original run and the second-pass
+run share a common event log. That means that any GUI or 3rd party
+tools that may be monitoring the progress of the regression run
+will see both the original pass/fail status of each Action and then,
+later, the updated status of any Actions that were re-executed.
+Also, the <span class="ph filepath">RegressionStarting</span> and <span class="ph filepath">RegressionCompleted</span> user-definable
+procedures are called only once each for the combined run. The failure
+log (enabled by -faillog) may not be useful, as it will contain
+the union of all the context paths associated with every test that
+failed in either run. A separate status summary is emitted to the
+vrun log output for each run and a second “begin” event is logged
+to the event log to demarcate the start of the second pass. Validation
+and semantic checking of the RMDB file is performed only once at
+the start of the vrun invocation.</p>
+<p class="p">Refer to “<a class="xref fm:HeadingOnly" href="Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.html#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa__Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.xml#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa" title="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run.">Reuse of Random Seeds in Automated Rerun</a>” below for information on the
+effect of failure rerun on random seeds.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.html" title="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run.">Reuse of Random Seeds in Automated Rerun</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_FailureRerunFunctionality_ida240963a.html" title="One requirement of a good regression management system is the ability to rerun failed tests, possibly with additional debug output enabled. There are a number of ways in which VRM allows the user to rerun Actions from a previous run according to their status. The most obvious use for this function is to rerun tests that failed, either as is to filter out “noisy” failures or with different command-line options to enable additional debugging output.">Failure Rerun Functionality</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Fully Automatic (One-command) Mode"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_FullyAutomaticOneCommandMode_id5733177e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

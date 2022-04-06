@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Branch Coverage" />
+<meta name="abstract" content="Branch coverage is based on the common coding styles of Verilog if-else, VHDL if-elsif-else, and Verilog and VHDL case statements." />
+<meta name="description" content="Branch coverage is based on the common coding styles of Verilog if-else, VHDL if-elsif-else, and Verilog and VHDL case statements." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc80674bc-352a-43e0-86e0-865beea604d1" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Branch Coverage</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Branch Coverage" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc80674bc-352a-43e0-86e0-865beea604d1">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Branch Coverage</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Branch coverage
+is based on the common coding styles of Verilog if-else, VHDL if-elsif-else,
+and Verilog and VHDL case statements.</span>
+</div>
+<ul class="ul"><li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__ided549f88-57d7-4c97-a910-723926ffbe77"><p class="p">Verilog if-else — A single
+UCDB_BRANCH scope has two coveritems, one each for the if and else
+branches.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idd467a2cb-33c8-463e-bc23-1656536abdde"><p class="p">VHDL if-elsif-else — There
+are as many coveritems as the if-cascade has clauses.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id7d9183c4-1a65-4b96-8120-5e92ac7197eb"><p class="p">Verilog and VHDL case statements
+— There is one coveritem per value in the case statement.</p>
+</li>
+</ul>
+<p class="p">Additionally, branch coverage has extra
+information in the scope:</p>
+<ul class="ul"><li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id2f27fd97-4936-4b4a-bd15-b2eb11f131dc"><p class="p">BCOUNT attribute —
+Shows the total number of times the test was executed. This is useful
+if the branch does not have an “else” clause.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id49898de4-853b-49a9-b348-bdc8fd886936"><p class="p">BTYPE attribute —
+Distinguishes between branch and if-else</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idaa7ce84c-2cc3-4749-9295-37b56a443294"><p class="p">BHASELSE attribute
+— Distinguishes between if-else branches having an else and those
+that do not.</p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="idc80674bc-352a-43e0-86e0-865beea604d1__idd152e249-cefd-4225-aded-b9b9dad095d7"><h2 class="title Subheading sectiontitle">Branch Coverage of Verilog
+if-else</h2><p class="p">You can find this SystemVerilog
+example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/data-models/branch-vlog-if/</span>.</p>
+<pre class="pre codeblock leveled"><code>module top; 
+        bit x = 0; 
+        bit y = 0; 
+        always @(x or y) begin 
+                if (x) 																	//line 15
+                        $display("x is true"); 
+                else if (y) 																	//line 17
+                        $display("y is true"); 
+        end 
+        initial begin 
+                #1; x = 1; 
+                #1; x = 0; 
+                #1; y = 1; 
+        end 
+endmodule 
+ </code></pre><div class="fig fignone" id="idc80674bc-352a-43e0-86e0-865beea604d1__idaec2194a-6316-466a-b031-28d1bd861cd2"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Data Model for a Verilog if-else-if</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics_composites/basics05.png" /></div><br /></div>
+<p class="p">In <a class="xref fm:Figure" href="#idc80674bc-352a-43e0-86e0-865beea604d1__idaec2194a-6316-466a-b031-28d1bd861cd2">Figure 1</a>, the design unit is omitted.
+This data model drawing also indicates coverage counts. The data
+model’s basic components are described as follows:</p>
+<ul class="ul"><li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idb3de7c9c-af1f-4aca-af17-e0387ec67346"><p class="p">UCDB_BRANCH scopes have names according
+to the type of coverage and line number. </p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id24cc4c17-0c5f-48fa-9988-9553d7098638"><p class="p">BCOUNT is the sum of if and else counts
+(even if the “else” is lacking, as in the line 7 branch.)</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id62d125bd-7ca7-4bbc-a55f-dae2c552c9a9"><p class="p">BTYPE is 0 for these cases to indicate
+an “if” as opposed to a “case” statement.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idf611a96a-40dc-4b97-b648-605cbe815a0a"><p class="p">BHASELSE is 0 for the line 7 branch to
+indicate that it does not have an else clause.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id29ee02ab-4b6d-4d90-85f7-2cca3f88e395"><p class="p">The coveritem if_branch
+is for the true clause of the branch.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id157c7864-c5d5-405a-9edc-c262c2df60b5"><p class="p">The coveritem else_branch
+is for the false clause of the branch if it has an explicit “else”.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id515502b0-375f-4772-8bc6-e0515e647df4"><p class="p">The coveritem all_false_branch
+is for the missing else.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idc80674bc-352a-43e0-86e0-865beea604d1__idd581ee53-dd29-4a6e-ac2a-5e30f6a83c50"><h2 class="title Subheading sectiontitle">Branch Coverage of VHDL
+if-elsif-else</h2><p class="p">You can find this VHDL example
+in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/data-models/branch-vhdl-if/</span>.</p>
+<pre class="pre codeblock leveled"><code>library IEEE; 
+use IEEE.STD_LOGIC_1164.all; 
+use std.textio.all; 
+entity top is end; 
+architecture arch of top is 
+    signal x : std_logic := '0'; 
+    signal y : std_logic := '0'; 
+    begin 
+    branch: process 
+        variable myoutput : line; 
+    begin 
+        wait until x'event or y'event; 
+        if (x = '1') then 																		// line 24
+            write(myoutput,string'("x is true")); 
+            writeline(output,myoutput); 
+        elsif (y = '1') then 																		// line 27
+            write(myoutput,string'("y is true")); 
+            writeline(output,myoutput); 
+        end if; 
+    end process branch; 
+    drive: process 
+    begin 
+        wait for 10 ns; 
+        x &lt;= '1'; 
+        wait for 10 ns; 
+        x &lt;= '0'; 
+        wait for 10 ns; 
+        y &lt;= '1'; 
+        wait; 
+    end process drive; 
+end architecture; </code></pre><div class="fig fignone" id="idc80674bc-352a-43e0-86e0-865beea604d1__id1cd53825-1646-43f6-a977-e26992f904d1"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Data Model for a VHDL if-elsif</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics_composites/basics06.png" /></div><br /></div>
+<p class="p">This is the VHDL branch to
+correspond to the Verilog version (<a class="xref fm:Figure" href="#idc80674bc-352a-43e0-86e0-865beea604d1__idaec2194a-6316-466a-b031-28d1bd861cd2">Figure 1</a>). In this
+VHDL if-elsif example, the design unit is shown to illustrate the
+difference between VHDL and Verilog design units: the scope type
+is different, and the architecture name follows the entity name
+in parenthesis. These diagrams omit the work library name, which
+varies depending how the module or architecture was compiled. Technically,
+the work library name is part of the design unit name in the UCDB
+too.</p>
+<p class="p">The most obvious difference
+is that there is a single UCDB_BRANCH scope rather than multiple
+ones. This is because VHDL has the “elsif” syntax that enables a
+branch to have multiple paths rather than just two paths. The VHDL
+and Verilog branches share the following common features:</p>
+<ul class="ul"><li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idd40da39f-8fb6-4a6c-930a-c806439ed03c"><p class="p">The first branch coveritem is called
+if_branch.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idb9ce4a20-12e6-4a7d-9093-e291b5751fa8"><p class="p">The last coveritem is called all_false_branch
+if there is no explicit else.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id83288fc5-1a46-473d-b960-5e23c711a6d8"><p class="p">If there were an explicit else, the last
+coveritem would be called else_branch.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id09b62be8-031a-4cb7-831d-2d50e0b83bfb"><p class="p">The attributes with the UCDB_BRANCH scope
+carry the same meanings.</p>
+</li>
+</ul>
+<p class="p">Some differences between
+the VHDL and Verilog branches:</p>
+<ul class="ul"><li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__id98c760ee-fb4c-45ae-b4d5-55cdf9de370e"><p class="p">Coveritems to correspond to elsif branches
+are called true_branch.</p>
+</li>
+<li class="li" id="idc80674bc-352a-43e0-86e0-865beea604d1__idacf3fd8b-b34c-413e-b18c-9779e49de607"><p class="p">The UCDB_BRANCH scope
+may have many coveritem children to correspond to all the “elsif”
+branches in the VHDL if construct.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idc80674bc-352a-43e0-86e0-865beea604d1__idc5987d37-21dc-4939-9d0e-875bbc9b531c"><h2 class="title Subheading sectiontitle">Case Statements</h2><p class="p">You can find this SystemVerilog
+example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/data-models/branch-case/</span>.</p>
+<pre class="pre codeblock leveled"><code>module top; 
+    int x = 0; 
+    always @(x) 
+        case (x) 
+            1:          $display("x is 1");  																				// line 15
+            2:          $display("x is 2");  																				// line 16
+            default:    $display("x is neither 1 nor 2"); 																				// line 17
+        endcase 
+    initial begin 
+        #1; x = 1; 
+        #1; x = 2; 
+        #1; x = 3; 
+    end 
+endmodule 
+ </code></pre><p class="p">This
+is very similar to the if-elsif construct. The key difference is
+that the BTYPE attribute has value 1, and that all the coveritems
+are named true_branch.</p>
+<p class="p">Because of similar naming,
+there is no way in the data model to distinguish between the explicit
+values in the case statement and the default value. However, there
+are differences in the line numbers stored with the coveritems,
+so you could identify the difference from the source files if available.</p>
+<div class="fig fignone" id="idc80674bc-352a-43e0-86e0-865beea604d1__id6ac2ef40-08f2-4638-9a5c-5cf1a08c2eba"><span class="figcap"><span class="fig--title-label">Figure 3. </span>Data Model for a case Statement</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics_composites/basics07.png" /></div><br /></div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UcdbDataModels_id65d10df1.html" title="The UCDB API is a general one that creates certain objects – such as scopes, coveritems, and test data records – with certain names, types, and attributes. Use of this API allows for the creation of many different potential data models.">UCDB Data Models</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Branch Coverage"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_BranchCoverage_idc80674bc.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

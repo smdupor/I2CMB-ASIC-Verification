@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="dataset snapshot" />
+<meta name="abstract" content="Saves data from the current WLF file (vsim.wlf by default) at a specified interval. Provides you with sequential or cumulative &#34;snapshots&#34; of your simulation data." />
+<meta name="description" content="Saves data from the current WLF file (vsim.wlf by default) at a specified interval. Provides you with sequential or cumulative &#34;snapshots&#34; of your simulation data." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide9e530b6-17c6-4a7a-b18e-92494df1d644" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>dataset snapshot</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="dataset snapshot" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">dataset snapshot</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><p class="shortdesc">Saves data
+from the current WLF file (<span class="ph filepath italic">vsim.wlf</span> by
+default) at a specified interval. Provides you with sequential or
+cumulative "snapshots" of your simulation data. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">This command
+does not apply to coverage datasets (UCDB).</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">dataset snapshot [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id5c9fe99f-c51e-4b3f-87fb-45a18204ed3c">-dir &lt;directory&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id836b7027-d5d7-4f8c-aff3-b3a141156bba">-disable</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__ida537daf6-f3bc-4d86-8b8c-8035ad756c3a">‑enable</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6d56fc00-7a70-4c8f-80dd-7d4eb57f76ef">-file &lt;file_name&gt;</a>]<br />
+[<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6f0a9d3b-5324-425e-9cae-ec6aa5a3e9e8">-filemode {overwrite | increment}</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id4b431aa2-ac46-4624-b86d-39e640c105bc">-mode {cumulative | sequential}</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__idfef8a280-42cf-4f2b-8fe6-6fcdf4b912e8">-report</a>] [<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6cc38b4c-8437-4747-b773-88a97db3ec98">-reset</a>] <br />
+{<a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id09507339-4771-4324-8227-6f95e1da56ac">-size &lt;file_size&gt;</a> | <a class="xref fm:HeadingOnly" href="#ide9e530b6-17c6-4a7a-b18e-92494df1d644__id449befcf-b137-42ec-aa21-956185946f24">-time &lt;n&gt; [&lt;unit&gt;]</a>}</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__idd64731d5-81a6-4738-aad0-43daa2ebe875"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id5c9fe99f-c51e-4b3f-87fb-45a18204ed3c">-dir &lt;directory&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies a directory
+into which to save the files. Either absolute or relative paths
+can be used. Default is to save to the current working directory. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id836b7027-d5d7-4f8c-aff3-b3a141156bba">-disable</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Turns snapshotting off. Stores all dataset snapshot settings from
+the current simulation in memory. All other options are ignored
+after you specify ‑disable.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__ida537daf6-f3bc-4d86-8b8c-8035ad756c3a">‑enable</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Turns snapshotting on. Restores dataset snapshot settings from memory
+or from a saved dataset. (default)</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6d56fc00-7a70-4c8f-80dd-7d4eb57f76ef">-file &lt;file_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name of the file to save snapshot data. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__ida914e012-0416-49f8-833e-11c6227bc1a8"><p class="p Opt">&lt;file_name&gt;
+— A specified file name; the default is <span class="ph filepath italic">vsim_snapshot.wlf</span>.
+The suffix .wlf is appended to the specified filename. Some arguments
+may also append an incrementing suffix. </p>
+</li>
+</ul>
+<p class="p">When the
+duration of the simulation run is not a multiple of the interval
+specified by -size or -time, the incomplete portion is saved in
+the file <span class="ph filepath">vsim.wlf.</span></p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6f0a9d3b-5324-425e-9cae-ec6aa5a3e9e8">-filemode {overwrite | increment}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies whether to overwrite the snapshot file each time a snapshot
+occurs. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id906794ed-2cbe-432d-a63d-0e3354fc9ba2"><p class="p Opt">overwrite
+— (default)</p>
+</li>
+<li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id225bc819-2b5b-42fd-8734-5f4441f6b508"><p class="p Opt">increment
+— Creates a new file for each snapshot. Adds an incrementing suffix
+(1 to n) to each new file (for example, <span class="ph filepath italic">vsim_snapshot_1.wlf</span>). </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id4b431aa2-ac46-4624-b86d-39e640c105bc">-mode {cumulative | sequential}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies whether to keep all data from the time signals are first
+logged.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id8305790e-7cf4-43d3-beb9-a9b713acb581"><p class="p Opt">cumulative
+— (default)</p>
+</li>
+<li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__idd6baeb04-aaf1-4182-9a32-0e2a2f910f99"><p class="p Opt">sequential
+— Clears the current WLF file every time a snapshot is taken.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__idfef8a280-42cf-4f2b-8fe6-6fcdf4b912e8">-report</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Lists current snapshot settings in the Transcript window and ignores
+all other options.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id6cc38b4c-8437-4747-b773-88a97db3ec98">-reset</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Resets values back to defaults, then applies the remainder of the
+arguments on the command line. See Examples section, below. If specified without
+any other arguments, -reset disables dataset snapshot and resets
+the values.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id09507339-4771-4324-8227-6f95e1da56ac">-size &lt;file_size&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+if -time is not specified) Specifies that a snapshot occurs based
+on WLF file size. Must be the final argument to the dataset snapshot command.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__idf389ad58-7181-4067-9b7b-8f7ddf5b8610"><p class="p Opt">&lt;file_size&gt;
+— Size of WLF file in MB.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id449befcf-b137-42ec-aa21-956185946f24">-time &lt;n&gt; [&lt;unit&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+if -size is not specified) Specifies that a snapshot occurs based
+on simulation time. Must be the final argument to the dataset snapshot command.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__iddad58409-587d-474c-9047-0f8a12155798"><p class="p Opt">&lt;n&gt;
+— Any positive integer.</p>
+</li>
+<li class="li ArgOption" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__ideb4b9f70-b74e-49b5-ba63-3392ae056f89"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+If you specify &lt;unit&gt;, you must enclose &lt;limit&gt; and &lt;unit&gt;
+within braces ({}). Valid time units are: fs, ps, ns, us, ms, sec,
+min, and hr.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__idd283fd24-3b86-41fa-8263-710bc5cfe61e"><p class="p">Create the
+file <span class="ph filepath italic">vsim_snapshot_&lt;n&gt;.wlf</span>,
+and write to it every time the current WLF file reaches a multiple
+of 10 MB (that is, at 10 MB, 20 MB, 30 MB, and so on.).</p>
+<p class="lines ApplCommand">   dataset snapshot -size 10</p>
+</li>
+<li class="li" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id470094bc-e010-40e4-a64a-401e07657481"><p class="p">Similar
+to the previous example, but in this case, clear the current WLF
+file every time it reaches 10 MB.</p>
+<p class="lines ApplCommand">   dataset snapshot -size 10 -mode sequential</p>
+</li>
+<li class="li" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__id8bb14964-b97b-4415-8df2-5a8591a0ff72"><p class="p">Assuming
+simulator time units are ps, this command saves a file called <span class="ph filepath italic">gold_&lt;n&gt;.wlf</span> every
+1000000 ps. If you run the simulation for 3000000 ps, three files
+are saved: <span class="ph filepath italic">gold_1.wlf</span> with
+data from 0 to 1000000 ps, <span class="ph filepath italic">gold_2.wlf</span> with
+data from 1000000 to 2000000, and <span class="ph filepath italic">gold_3.wlf</span> with
+data from 2000000 to 3000000.</p>
+<p class="lines ApplCommand">   dataset snapshot -time 1000000 -file gold.wlf -mode sequential <br />
+   ‑filemode increment</p>
+<p class="p">Because this
+example sets the time interval to 1000000 ps, if you run the simulation
+for 3500000 ps, a file containing the data from 3000000 to 3500000
+ps is saved as <span class="ph filepath italic">vsim.wlf</span> (default).</p>
+</li>
+<li class="li" id="ide9e530b6-17c6-4a7a-b18e-92494df1d644__ida2982f0f-0cdd-4bc4-9083-5a1a0a3658f7"><p class="p">Enable snapshotting
+with time=10000 and default mode (cumulative) and default filemode
+(overwrite).</p>
+<p class="lines ApplCommand">   dataset snapshot -reset -time 10000</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_DatasetAlias_id0fb8838e.html#id0fb8838e-2b84-4d03-a0dd-99ae59600802__" title="Maps an alternate name (alias) to an open dataset.">dataset alias</a></div>
+<div><a class="link" href="../topics/Command_DatasetClear_idc7b68099.html#idc7b68099-0d39-4b71-b8cd-a495e6651c9e__" title="Removes all event data from the current simulation WLF file, while retaining all currently logged signals. Subsequent run commands continue to accumulate data in the WLF file.">dataset clear</a></div>
+<div><a class="link" href="../topics/Command_DatasetClose_id39285369.html#id39285369-7e83-4d5f-81b5-4cb26fb19bae__" title="Closes an active dataset.">dataset close</a></div>
+<div><a class="link" href="../topics/Command_DatasetConfig_idf6940214.html#idf6940214-d830-448b-8c16-aae4eb87d8bd__" title="Configures WLF parameters for an open dataset and all aliases mapped to that dataset.">dataset config</a></div>
+<div><a class="link" href="../topics/Command_DatasetInfo_id0b578c30.html#id0b578c30-6ceb-4cc0-946b-74ccf1eb126e__" title="Reports a variety of information about a dataset.">dataset info</a></div>
+<div><a class="link" href="../topics/Command_DatasetList_id0177db99.html#id0177db99-dae2-4130-bbaf-35761b5d1cff__" title="Lists all active datasets.">dataset list</a></div>
+<div><a class="link" href="../topics/Command_DatasetOpen_id8ff15221.html#id8ff15221-9e07-4584-921a-f992e86a7c2e__" title="Opens a WLF file (either the currently running vsim.wlf or a saved WLF file) and/or UCDB file (representing coverage data), and assigns it the logical name you specify.">dataset open</a></div>
+<div><a class="link" href="../topics/Command_DatasetRename_id9969c9d3.html#id9969c9d3-0a48-4b32-bf0f-4880d19bfbcf__" title="Changes the name of a dataset to the new name you specify.">dataset rename</a></div>
+<div><a class="link" href="../topics/Command_DatasetRestart_idb79ee511.html#idb79ee511-9416-4281-8193-26b2890c8ce6__" title="Unloads the specified dataset or currently active dataset and reloads the dataset using the same dataset name.">dataset restart</a></div>
+<div><a class="link" href="../topics/Command_DatasetSave_id9b97a2c2.html#id9b97a2c2-db60-4810-9a8d-698f58aff41a__" title="Writes data from the current simulation to a specified file while the simulation is in progress.">dataset save</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "dataset snapshot"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_DatasetSnapshot_ide9e530b6.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

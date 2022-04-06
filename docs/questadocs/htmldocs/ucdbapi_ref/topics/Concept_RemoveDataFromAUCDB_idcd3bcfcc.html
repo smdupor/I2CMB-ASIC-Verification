@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Remove Data From a UCDB" />
+<meta name="abstract" content="The ucdb_RemoveScope() and ucdb_RemoveCover() functions are used to delete objects from the database." />
+<meta name="description" content="The ucdb_RemoveScope() and ucdb_RemoveCover() functions are used to delete objects from the database." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcd3bcfcc-7bf5-495b-bd54-7ac7511a5029" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Remove Data From a UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Remove Data From a UCDB" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idcd3bcfcc-7bf5-495b-bd54-7ac7511a5029">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Remove Data From a UCDB</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The ucdb_RemoveScope()
+and ucdb_RemoveCover() functions are used to delete objects from
+the database. </span>
+</div>
+<p class="p">You can find
+this C example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/remove-data/</span></p>
+<pre class="pre codeblock leveled"><code>ucdbCBReturnT 
+callback( 
+    void*           userdata, 
+    ucdbCBDataT*    cbdata) 
+{ 
+    int rc; 
+    ucdbScopeT scope = (ucdbScopeT)(cbdata-&gt;obj); 
+    ucdbT db = cbdata-&gt;db; 
+    char* name; 
+    switch (cbdata-&gt;reason) { 
+    case UCDB_REASON_SCOPE: 
+        printf("Removing scope %s\n",ucdb_GetScopeHierName(db,scope)); 
+        ucdb_RemoveScope(db,scope); 
+        return UCDB_SCAN_PRUNE; 
+    case UCDB_REASON_CVBIN: 
+        ucdb_GetCoverData(db,scope,cbdata-&gt;coverindex,&amp;name,NULL,NULL); 
+        printf( 
+           Removing cover %s/%s\n",ucdb_GetScopeHierName(db,scope),name); 
+        rc = ucdb_RemoveCover(db,scope,cbdata-&gt;coverindex); 
+        if (rc!=0) { 
+            printf("Unable to remove cover %s/%s\n", 
+                   ucdb_GetScopeHierName(db,scope), name); 
+        } 
+        break; 
+    default: break; 
+    } 
+    return UCDB_SCAN_CONTINUE; 
+} 
+void 
+example_code(const char* ucdbfile, const char* path) 
+{ 
+    ucdbT db = ucdb_Open(ucdbfile); 
+    int matches; 
+    if (db==NULL) 
+        return; 
+    matches = ucdb_PathCallBack( 
+                           db, 
+                           0,    /* do not recurse from found object */ 
+                           path, 
+                           NULL, /* design unit name does not apply */ 
+                           UCDB_NONTESTPLAN_SCOPE,   /* tree root type */ 
+                           -1,   /* match any scope type */ 
+                           -1,   /* match any coveritem type */ 
+                           callback, NULL); 
+    if (matches==0) 
+        printf("No matches for path\n"); 
+    else  
+        ucdb_Write(db,ucdbfile, 
+                   NULL,    /* save entire database */ 
+                   1,       /* recurse: not necessary with NULL */ 
+                   -1);     /* save all scope types */ 
+    ucdb_Close(db); 
+} </code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">This example does not work with wildcards. </p>
+</div>
+<p class="p">There is a limitation on
+ucdb_RemoveCover() in that it cannot delete toggle bins for the most
+common types: the 2-state and 3-state wires and registers. This
+limitation exists because toggle bins are optimized and do not really
+exist in isolation. The toggle scope can be deleted, but not individual
+bins in that case. The error handler in this example does not call
+exit() but allows the code to continue; otherwise there is an internal
+API error generated for trying to remove a toggle scope of these
+types. Also, the return code from ucdb_RemoveCover() is checked
+to provide an error message with a specific path to the object whose
+removal failed.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When a scope is removed,
+all its children are removed, too.</p>
+</div>
+<p class="p">This example also checks the return code from
+ucdb_PathCallBack() to indicate when no objects were matched by
+the given path. Otherwise, the application would remain silent.</p>
+<div class="note caution"><span class="cautiontitle">CAUTION:</span> <p class="p">It is possible
+to delete an FSM transition scope and leave a set of transitions
+that could be inconsistent with the state values for the same FSM.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Remove Data From a UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RemoveDataFromAUCDB_idcd3bcfcc.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

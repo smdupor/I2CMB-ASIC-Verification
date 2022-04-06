@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware Default Settings" />
+<meta name="abstract" content="Use the -pa_enable and -pa_disable arguments of the vopt command to enable or disable the Power Aware features." />
+<meta name="description" content="Use the -pa_enable and -pa_disable arguments of the vopt command to enable or disable the Power Aware features." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id394df88c-67e0-48db-b543-92750f12d6a2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Default Settings</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Default Settings" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id394df88c-67e0-48db-b543-92750f12d6a2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Aware Default Settings</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Use the -pa_enable and -pa_disable arguments
+of the vopt command to enable or disable the Power Aware features.</span>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The default features of the tool are specific
+to a release and may vary from release to release.</p>
+</div>
+<p class="p">The syntax of the -pa_enable and -pa_disable
+arguments to the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command
+is as follows: </p>
+<pre class="pre codeblock"><code>vopt -pa_enable=&lt;value&gt;[+&lt;value&gt;...]</code></pre><pre class="pre codeblock"><code>vopt -pa_disable=&lt;value&gt;[+&lt;value&gt;...]</code></pre><div class="note note"><span class="notetitle">Note:</span> <p class="p">If a value is enabled by default,
+use it with the -pa_disable argument to disable it. Similarly, if
+a value is disabled by default, use it with the -pa_enable argument
+to enable it. </p>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id394df88c-67e0-48db-b543-92750f12d6a2__id909ecb17-297e-4624-bd5a-3fac03998cbb" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Power Aware Default Settings</span></caption><colgroup><col style="width:1.981in" /><col style="width:3.046in" /><col style="width:1.474in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d62540e160"><p class="p">vopt -pa_enable and ‑pa_disable
+Value</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d62540e163"><p class="p">Feature</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d62540e166"><p class="p">Default Status</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ackportbehavior</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Reverts to UPF 1.0 behavior related to the ‑ack_port
+of the power switches without a supply set.</p>
+<p class="p">According to UPF 1.0, the ‑ack_port of a power switch without
+a supply set uses an always-on supply set.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">alwaysonbuf</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Turns on corruption of
+buf primitives.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">aoncellcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables corruption of always-on Liberty cells. </p>
+<p class="p">Corruption semantics of always-on cells are disabled when the
+Liberty model for these cells is not present. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">anonymoustopsupply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Considers the top domain supply instead
+of anonymous supply as the driver and receiver supply for top level
+ports.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">assertduringpoweroff</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables assertions present in the test bench or
+design instance during power-down.</p>
+<p class="p">See “<a class="xref fm:HeadingOnly" href="Concept_AssertionControl_id48b9bf60.html#id48b9bf60-eff1-4670-a46b-158b0b8b7664__Concept_AssertionControl_id48b9bf60.xml#id48b9bf60-eff1-4670-a46b-158b0b8b7664" title="Power Aware simulation enables you to control the assertions present in the test bench or design instance during power-down.">Assertion Control</a>”.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If you specify both assertduringpoweroff and forceasrtoffpwrdown
+values to the ‑pa_enable argument, then the assertduringpoweroff
+value takes priority.</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">autoconnls</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Connects the unconnected pg pins of the ELS
+and level shifter cell to the always-on power supply created by
+the tool.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">autoconnpacell </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Connects all unconnected supply ports of
+a power management cell to the primary supply of the power domain
+of the cell.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">autotestplan</p>
+<div class="note restriction"><span class="restrictiontitle">Restriction:</span> <p class="p">Not available for ModelSim SE (Questa SIM
+only).</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables generation of
+Power Aware test plan for Power Aware verification management. See
+“<a class="xref fm:HeadingOnly" href="TaskTop_AnalyzingCoverageUsingThePowerAwareTestplan_id94340227.html#id94340227-5bc1-4464-ac6b-88df1ac9ae6f__TaskTop_AnalyzingCoverageUsingThePowerAwareTestplan_id94340227.xml#id94340227-5bc1-4464-ac6b-88df1ac9ae6f" title="Use the Power Aware test plan either in an XML file, or in the Verification Management Tracker window of the simulator to analyze Power Aware coverage details. Also, you can add non-Power Aware coverage details in the test plan.">Analyzing Coverage Using the Power Aware Test Plan</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">behaveseqcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables corruption of behavioral sequential blocks.
+Behavioral sequential blocks are those always blocks that are edge
+sensitive and cannot be synthesized. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">biascorruption</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables recognition of bias supplies (such as
+pwell, nwell, deeppwell, and deepnwell) for Power Aware corruption.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">bndrypacell</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables placement of isolation, level shifter,
+and buffer cells on the boundary ports of switch and retention cells.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">bufdebug </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Displays the buffer in the Schematic window
+of the tool, which the following commands insert:</p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__iddf049d60-cbb9-462f-b9ae-4d3db42a1413"><p class="p">set_related_supply_net</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__idab49bc21-7182-401d-a9da-c7ce00813194"><p class="p">set_port_attributes
+-driver_supply/‑receiver_supply/-repeater_supply</p>
+</li>
+</ul>
+<p class="p">If you do not enable bufdebug, you cannot view the buffer in
+the Schematic window, but the buffer information is still available in
+the <span class="ph filepath">report.pa.txt</span> file.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">cellcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables corruption of internal combinational
+signals of a Verilog cell.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">cellonsimdisable </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables placement of cells (such as isolation,
+level shifter, and repeaters) on the simstate disabled instances.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">coadebug</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Displays debug messages for CORRUPT_ON_ACTIVITY-based simstate
+corruption. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">codecoverage</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables code coverage in the Power Aware design.
+By default, only toggle coverage is enabled.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">conninsidemacro</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Connects the unconnected pg pins of the cells
+present inside a macro cell to the always-on power supply created
+by the tool.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">constasfeedthru </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables corruption of signals driven by constants,
+and ports that are tied high or low.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">contassignasfeedthru</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables corruption of signals that are driven by
+constants.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">controlrs</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables receiver supply of control signals according
+to strategy supply. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">crosscoverage</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The value is deprecated in the current release,
+and the tool will not support it in the next release. Use ‑pa_coverageoff=crosscov. </p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables cross coverage for Power Aware simulation.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">crptbinds</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Considers the SystemVerilog bind hierarchies
+in the extent of a power domain and applies Power Aware semantics
+on them.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">csnopt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables optimization of <a class="xref fm:HeadingOnly" href="General_ConnectSupplyNet_idd1662f52.html#idd1662f52-f900-433e-8d65-e45848d374b0__General_ConnectSupplyNet_idd1662f52.xml#idd1662f52-f900-433e-8d65-e45848d374b0" title="Connects a supply net to the supply ports.">connect_supply_net</a> UPF command. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">debug</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Displays UPF objects
+created in the Structure, Object, and Wave windows.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">defaultlssupplies</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables corruption of level shifter with default
+supplies. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">defaultoff</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Changes the default state
+of supply nets and ports to FULL_ON. By default, the tool changes
+the default state of supply nets and ports to OFF.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">detectaon</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the detection of the always-on cells
+present in the design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">detectiso</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the detection of the isolation
+cells present in the design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">detectls</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the detection
+of the level shifter cells present in the design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">detectret</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the detection
+of the retention cells present in the design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">detectsw</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the detection
+of the switches instantiated in the design and their association
+with a UPF <a class="xref fm:HeadingOnly" href="General_CreatePowerSwitch_id532dea83.html#id532dea83-7f36-48f1-b0fc-fa7251bb43bf__General_CreatePowerSwitch_id532dea83.xml#id532dea83-7f36-48f1-b0fc-fa7251bb43bf" title="Defines a power switch.">create_power_switch</a> command.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">donttouchassertinbind </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Prevents the assertduringpoweroff and the forceasrtoffpwrdown
+value from affecting the assertions present in the bind instances and
+modules during power-down.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">feedthroughbuf</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Prevents treating a buf primitive as a source or
+sink, and disables the path analysis.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p" id="id394df88c-67e0-48db-b543-92750f12d6a2__id95e712a7-68d6-4c52-8b01-02a4ce70aa30">forceasrtoffpwrdown </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables assertions present in the test
+bench and design instance during power-down, even if the test bench
+or design instance has assertion control directives, such as asserton,
+assertoff, and assertkill.</p>
+<p class="p">See “assertduringpoweroff”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">fsmbasedcov</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables FSM based Power Aware coverage.
+See “<a class="xref fm:HeadingOnly" href="Contain_PowerStateTransitionDisplay_idf445e310.html#idf445e310-5ddb-4af8-86b3-beb72cf26d89__Contain_PowerStateTransitionDisplay_idf445e310.xml#idf445e310-5ddb-4af8-86b3-beb72cf26d89" title="Because power domains are not limited to two states (ON or OFF) and multi-voltage capability allows designs to assign different voltage levels to different states, tracking combinations of states in different power domains has become increasingly difficult.">Power State and Transition Display</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">generic_clk_edge</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables edge triggering of the UPF_GENERIC_CLOCK.
+See “<a class="xref fm:HeadingOnly" href="Concept_CheckerModuleAndTheBindcheckerCommand_ide7141ad2.html#ide7141ad2-9477-46c3-a318-cbe2540beee5__idee82b763-de47-4a86-834c-28b0d7d1d741">UPF Generics</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">gluelogiciso</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables insertion of path-based isolation strategy
+on the glue logic path of ports and the tool displays a warning
+message. For details on path-based-semantics, see “<a class="xref fm:HeadingOnly" href="Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.html#id6ef922b9-3c2d-4833-a775-806dd07c8456__Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.xml#id6ef922b9-3c2d-4833-a775-806dd07c8456" title="Power Aware simulation follows new semantics for inserting the isolation, level shifter, and repeater cell. The tool applies isolation, level shifter, or repeater strategies on a per path basis in the design.">Path-Based Semantics for Power Aware Strategies</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">highlight</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables highlighting
+in the Wave window.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoreconflictsupply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Ignores the driver supply, set by the <a class="xref fm:HeadingOnly" href="General_SetPortAttributes_idca43c468.html#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1__General_SetPortAttributes_idca43c468.xml#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1" title="Defines information on ports.">set_port_attributes</a> -driver_supply
+or <a class="xref fm:HeadingOnly" href="Command_SetRelatedSupplyNet_id8449d228.html#id8449d228-e4ea-48c2-bb72-1fd975833064__Command_SetRelatedSupplyNet_id8449d228.xml#id8449d228-e4ea-48c2-bb72-1fd975833064" title="Enables associating an instance signal pin or a hierarchical port with specific supply nets. Thus, you can create a supply net based on supply pins to specify your related supplies of cells.">set_related_supply_net</a> command,
+to avoid flagging of an error when this driver supply is different
+from the actual driver supply of the port.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoregroundsupplyconn</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables application of isolation and level shifter
+strategies on the ports connected to the ground supplies, and the
+tool performs static RTL isolation, static RTL level shifter, or
+dynamic checks on the ports.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignorehangingoutput</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Ignores static/dynamic
+analysis and application of isolation/level shifter strategies for
+paths that have hanging output. </p>
+<p class="p">An output is hanging if either of the following
+is true:</p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__ide247bcc5-a1b8-4a19-a96b-46d78047a05a"><p class="p">The actual (highconn) of port is not driving
+any logic.</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id054c11d2-ff9d-4f0b-a8e2-419c9029aa7b"><p class="p">The lowconn side of port is not being driven
+by any logic.</p>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If the driver or receiver supply of a port is known, then
+such port is not treated as a hanging output port. Therefore, this value
+does not ignore the static/dynamic analysis and application of isolation/level shifter
+strategies for such ports.</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignorepdu</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Ignores preoptimized design unit (PDU), and
+if you specify the -pa_upf argument, the PDU is loaded and processed
+in vopt for Power Aware processing.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignorepowersupplyconn</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables application of isolation and level shifter
+strategies on the ports connected to the power supplies, and the
+tool performs static RTL isolation, static RTL level shifter, or
+dynamic checks on the ports.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignorespecialdrivers</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Prevents application
+of level shifter and isolation cell strategies based on the following
+scenarios:</p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id6c8dc1ee-cb02-4c78-adad-20a8a0f60acf"><p class="p">Ports connected to ground supplies</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__idc710e49d-f427-4bb5-978a-ede369ae5090"><p class="p">Ports connected to power supplies</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id9bf2b222-dfbe-4886-9647-2f4eaa507412"><p class="p">Ports tied to 0</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id8bb6af24-3527-4031-a4ba-fa65b4d06f68"><p class="p">Ports tied to 1</p>
+</li>
+</ul>
+<p class="p">It also does not perform any static level shifter, isolation
+checks, or dynamic checks (missing level shifter or missing isolation).</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoresupplyconn </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables static/dynamic analysis and application
+of isolation/level shifter strategies when ports are connected to power/ground
+supplies. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoretielow</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Prevents application of isolation and level shifter
+strategies on the ports tied to 0, and the tool does not perform
+any static RTL isolation, static RTL level shifter, or dynamic checks
+on the ports.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoretiehigh</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Prevents application of isolation and level shifter
+strategies on the ports tied to 1, and the tool does not perform
+any static RTL isolation, static RTL level shifter, or dynamic checks
+on the ports.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">ignoreundriveninput</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Ignores static/dynamic
+analysis and application of isolation/level shifter strategies for
+paths that have undriven input. </p>
+<p class="p">An input is undriven if either of the following
+is true.</p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id40f786be-7271-4b0a-bf50-043673a08ce4"><p class="p">The actual (highconn) of the port is not being
+driven by any logic</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__ide4b63209-6f39-4788-bd5f-d00857a7489e"><p class="p">The lowconn side of port is not driving any
+logic</p>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">If the driver or receiver supply of a port is known, then
+such a port is not treated as an undriven input port. Therefore,
+this value does not ignore the static/dynamic analysis and application
+of isolation/level shifter strategies for such ports.</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">immedcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Corrupts values in continuous delay assign statements
+instantly at power-down.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">inoutsupplyconn</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables the inout functionality
+between connections involving a UPF supply net and an HDL inout
+port.</p>
+<p class="p">Specifically, the connection is made in such a
+way that all existing HDL drivers of the inout port are removed,
+leaving only the UPF supply net to drive the HDL inout port.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable<span class="ph FontProperty equationvariable"></span> </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">insertiso</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables insertion of
+isolation cells. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">insertls</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables insertion of
+level shifter cells. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">insertret</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables insertion of
+retention cells.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">libertycellcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables treating any HDL cell as a hard macro,
+if the Liberty model is present. Honors Liberty-based corruption
+(based on power_down_function and related_supplies). </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">libertyinpcorrupt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables Liberty attribute-based input corruption,
+but does not affect Liberty attribute-based output corruption.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">libertypamodelopt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables corruption of the following, based on
+Liberty corruption semantics: </p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__idd88b80ba-2595-4769-b0c7-3bd68a09d094"><p class="p">Outputs
+of combinational cells </p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__idf12f7689-061b-4791-a178-9653a1ddad9c"><p class="p">Outputs and
+inputs of sequential cells </p>
+</li>
+</ul>
+<p class="p">This provides a more optimized Liberty-based corruption. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">literalsupply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables support of UPF_literal_supply attribute
+in all UPF versions. By default, the tool supports the attribute
+in UPF 3.0 and above versions only.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">limitassertports </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables truncation of the dynamic check messages
+to a threshold value of 16.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">logicconnectivity </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables support of UPF-created logic ports in
+the <a class="xref fm:HeadingOnly" href="General_SetIsolation_id944de107.html#id944de107-f351-436a-aafa-c74ac8ce0c52__General_SetIsolation_id944de107.xml#id944de107-f351-436a-aafa-c74ac8ce0c52" title="Specifies an isolation strategy.">set_isolation</a>, <a class="xref fm:HeadingOnly" href="General_SetLevelShifter_id638426b2.html#id638426b2-32ac-4a77-b7f4-1456bf2eb7fe__General_SetLevelShifter_id638426b2.xml#id638426b2-32ac-4a77-b7f4-1456bf2eb7fe" title="Specifies a level shifter strategy.">set_level_shifter</a>, <a class="xref fm:HeadingOnly" href="General_SetRepeater_id308a983a.html#id308a983a-59a7-4398-96e4-debd26f0c3b9__General_SetRepeater_id308a983a.xml#id308a983a-59a7-4398-96e4-debd26f0c3b9" title="Specifies a repeater (buffer) strategy.">set_repeater</a> and, <a class="xref fm:HeadingOnly" href="General_SetPortAttributes_idca43c468.html#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1__General_SetPortAttributes_idca43c468.xml#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1" title="Defines information on ports.">set_port_attributes</a> UPF commands.
+It also enables static/dynamic analysis.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">logicportiso</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables support of UPF-created
+logic ports in the <a class="xref fm:HeadingOnly" href="General_SetIsolation_id944de107.html#id944de107-f351-436a-aafa-c74ac8ce0c52__General_SetIsolation_id944de107.xml#id944de107-f351-436a-aafa-c74ac8ce0c52" title="Specifies an isolation strategy.">set_isolation</a> UPF command.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">lowerboundary</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables isolation on
+the ports present in lower boundary of power domain. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">lscellcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables Liberty-based corruption of level shifter
+cells. </p>
+<p class="p">If the Liberty model for a level shifter cell is not present,
+then driver-based corruption semantics are applied using input_supply_set,
+output_supply_set, and internal_supply_set of the specified UPF strategy. </p>
+<p class="p">Corruption semantics of a level shifter cell are disabled if
+the Liberty model is not present and all three supplies (input_supply_set,
+output_supply_set, and internal_supply_set) are missing from the UPF
+strategy. </p>
+<p class="p">The tool does not do any default automatic connections for level
+shifter cells. You must make explicit connections for these cells. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">msglimit</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Does not limit logging of messages to a default
+limit of 50 in the vopt log file.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">multibitcell</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables inferring of multibit isolation,
+level shifter, and enable level shifter cells.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">netsplit</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables path-based semantics for Power Aware
+strategies. See “<a class="xref fm:HeadingOnly" href="Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.html#id6ef922b9-3c2d-4833-a775-806dd07c8456__Concept_PathBasedSemanticsForPowerAwareStrategies_id6ef922b9.xml#id6ef922b9-3c2d-4833-a775-806dd07c8456" title="Power Aware simulation follows new semantics for inserting the isolation, level shifter, and repeater cell. The tool applies isolation, level shifter, or repeater strategies on a per path basis in the design.">Path-Based Semantics for Power Aware Strategies</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">orderbysupply</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Orders isolation and level shifter cells
+based on their supplies. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">overridelibrelsupplies</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables the tool to override the related supplies
+information that you specify in the Liberty with the information
+that you specify in the set_port_attributes command. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">pdhiertestplan</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables hierarchical view of the power domains
+in the Power Aware test plan.</p>
+<p class="p">See “<a class="xref fm:HeadingOnly" href="TaskTop_AnalyzingCoverageUsingThePowerAwareTestplan_id94340227.html#id94340227-5bc1-4464-ac6b-88df1ac9ae6f__TaskTop_AnalyzingCoverageUsingThePowerAwareTestplan_id94340227.xml#id94340227-5bc1-4464-ac6b-88df1ac9ae6f" title="Use the Power Aware test plan either in an XML file, or in the Verification Management Tracker window of the simulator to analyze Power Aware coverage details. Also, you can add non-Power Aware coverage details in the test plan.">Analyzing Coverage Using the Power Aware Test Plan</a>”.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">To use the pdhiertestplan argument, enable generation of
+the test plan using the autotestplan argument.</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">pgoutsynccheck</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables the check for synchronization of
+all inputs to a resolved parallel supply net that is connected to
+one or more supply sources that are internal pg pins of direction
+output.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">powerunconnnets</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables treating the unconnected pins for
+a Liberty macromodel (such as backup_power, bias power or ground
+pins) as power-on to prevent these unconnected pins from causing
+undesired corruption semantics. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">powerstatesonports </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables you to specify states on ports/nets via <a class="xref fm:HeadingOnly" href="General_AddPowerState_id38c76fcf.html#id38c76fcf-00d3-41d6-bbea-c619f1642a57__General_AddPowerState_id38c76fcf.xml#id38c76fcf-00d3-41d6-bbea-c619f1642a57" title="Defines power states of an object.">add_power_state</a> command
+in PST.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">powerstatesemantics</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables UPF 3.0 power states semantics.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">pstcomp</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables cross-PST analysis.
+See “<a class="xref fm:HeadingOnly" href="Concept_CrossPSTAnalysis_id1c765de1.html#id1c765de1-de27-45ad-bd85-8bada7151293__Concept_CrossPSTAnalysis_id1c765de1.xml#id1c765de1-de27-45ad-bd85-8bada7151293" title="PSTs provide static information about the relationships between different supplies used in power management. This information is used for the determination of operating voltage for level shifter placements and static checks for isolation and level shifter cells.">Cross-PST Analysis</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">reevalinitial</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Applies initial re-evaluation globally in
+the complete design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">reportcrossings</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Writes the results of the static RTL path analysis
+check to the Static Check Report, <span class="ph filepath">report.static.txt</span></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">restoreatcoa</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Restores the level sensitive retention flip-flop
+when there is a transition from CORRUPT to CORRUPT_ON_ACTIVITY simstate.
+This is applicable only for single control balloon-latch retention configuration.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">rslvnetcheck</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables a check when different states are driven
+by active drivers of a supply net defined with the -resolve parallel
+option. The check may issue warnings based on scenarios defined
+in <a class="xref fm:HeadingOnly" href="General_SetPartialOnTranslation_id3f18ff3a.html#id3f18ff3a-1922-44ee-9a6d-ddc99fcb3880__General_SetPartialOnTranslation_id3f18ff3a.xml#id3f18ff3a-1922-44ee-9a6d-ddc99fcb3880" title="Defines the translation of PARTIAL_ON.">set_partial_on_translation</a>.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">scmrelsconn</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Does not provide precedence to the level shifter
+strategy supply over the primary supply of the domain for the connection
+of 2 PG pin level shifter/ELS/combo cell supply pin that has std_cell_main_rail
+: true attribute.</p>
+<p class="p">By default, the primary supply of the domain takes precedence.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">singleisoaon</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Connects the supply of 1-PG pin isolation cells
+to the always_on supply.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">For isolation cells, if you specify both singleisoaon and
+singlerailconn values with the vopt command, then singleisoaon takes precedence.</p>
+</div>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">singlerailconn</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Connects the supply of 1-PG pin ELS (enable
+level shifter), level shifter, and isolation cells to the primary
+supply of the power domain in which the cell is placed.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">spaprecedence</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables UPF attribute semantics as per UPF 3.1.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">supplyattroncells</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables source sink analysis to consider related
+supplies of Power Aware retention and switch cells that are present
+in the path.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">supplylogicexpr</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables corruption of the power states
+if supply and logic expressions are different. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">supplyequivalence</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables supply equivalence semantics as per
+UPF 3.1. By default, UPF 3.0 supply equivalence semantics are followed.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">swcellcrpt</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables Liberty-based corruption of switch cells. </p>
+<p class="p">If the Liberty model for a switch cell is not present, then driver-based
+corruption semantics are applied using supply_set of the switch
+as specified in the UPF strategy.</p>
+<p class="p">Because the tool does not insert default automatic connections
+for switch cells, you need to make explicit connections for these cells. </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">swoutputportbehavior</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables UPF 3.0 behavior for the output
+of a power switch. </p>
+<p class="p">Alternatively, use ‑pa_upfversion=3.0 argument with the vopt
+command to enable UPF 3.0 behavior.</p>
+<p class="p">If you specify -supply_set for a switch, the tool behavior (as
+per the IEEE Std 1801) is as follows:</p>
+<ul class="ul"><li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id99de45e6-0b29-4e66-ade0-6391faa796fb"><p class="p">UPF 3.0
+Behavior — The state of the output supply port of a switch does
+not depend on the simstate of the associated supply set.</p>
+</li>
+<li class="li" id="id394df88c-67e0-48db-b543-92750f12d6a2__id645d0132-be72-49a4-a62a-5fdb6f678ee5"><p class="p">UPF 2.0 Behavior
+— (default) If the supply set simstate is anything other than NORMAL,
+the state of the output supply port of a switch is UNDETERMINED.</p>
+</li>
+</ul>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">syntaxchecks</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Disables checking the syntax of the UPF file
+that you specify with the vopt –pa_upf argument, before loading
+the design.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">tiehiloportasfeedthru</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables corruption of ports that are tied high
+or low.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">trailingedgerestore</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables the restore event at the leading edge
+of a level sensitive restore event of a balloon-style level sensitive
+retention register when the -restore_condition evaluates to true.</p>
+<p class="p">By default, the restore event occurs at the trailing edge.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">trueinout</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables an inout supply port defined in HDL
+to act as an input as well as output port at different times according
+to the design or test bench.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">udpnoret</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Ignores the retention
+of sequential UDPs in a Gate-Level or mixed RTL/Gate-Level Power
+Aware simulation. This does not impact the default behavior of UDP corruption. </p>
+<p class="p">See “<a class="xref fm:HeadingOnly" href="Concept_SequentialUDP_id6f9e38df.html#id6f9e38df-80ef-45e1-a614-0331498a7f4b__Concept_SequentialUDP_id6f9e38df.xml#id6f9e38df-80ef-45e1-a614-0331498a7f4b" title="Power Aware simulation detects sequential UDPs in the design and applies corruption or retention behavior based on the corresponding UPF strategies.">Sequential UDP</a>”.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">undeterminedstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Reverts to UPF 1.0 behavior
+related to Power Aware switches or supply nets/ports going into
+an UNDETERMINED state. By default, UPF 2.0 behavior is enabled.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Enable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">upf2.1hierarchynavigation</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables updated functionality
+for the <a class="xref fm:HeadingOnly" href="General_SetScope_idb66bbedb.html#idb66bbedb-f21f-40d9-980f-3d44e4c0c775__General_SetScope_idb66bbedb.xml#idb66bbedb-f21f-40d9-980f-3d44e4c0c775" title="Specifies the current scope.">set_scope</a> UPF command
+in UPF 2.1.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">upfsanitychecks</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Checks the syntax of the UPF file that you specify
+with the vopt –pa_upf argument, before loading the design. The tool continues
+to work even if it encounters any syntax errors.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">upfsimstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Adds the <span class="ph FontProperty emphasis">upfsimstate</span> variable
+in all hierarchies. The variable indicates the simstate value of
+the primary supply set of the power domain.</p>
+<p class="p">By default, the upsimstate value is disabled. However, the tool
+enables the upsimstate value when you specify the ‑designfile argument
+to the vopt command.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e160 "><p class="p">vsim_msgs</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e163 "><p class="p">Enables the display of additional vsim messages
+that are related to various Power Aware objects, such as isolation,
+retention, power switch, and PST.</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d62540e166 "><p class="p">Disable </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareSimulationBehavior_idc67ebd3d.html" title="Power Aware simulation exhibits features, which are either enabled by default or you need to enable them using commands and arguments.">Power Aware Simulation Behavior</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Default Settings"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareDefaultSettings_id394df88c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Specifying Power Intent of a Hard Macro" />
+<meta name="abstract" content="A macro model is a block-level model in a design that has been optimized for power, area, or timing and has been silicon-tested. Defining the power intent for a macro model depends on whether you have access to its internal structure (logic and topology). If internal access is not available, you can specify power intent only on its external pins—this is referred to as a “hard macro.”" />
+<meta name="description" content="A macro model is a block-level model in a design that has been optimized for power, area, or timing and has been silicon-tested. Defining the power intent for a macro model depends on whether you have access to its internal structure (logic and topology). If internal access is not available, you can specify power intent only on its external pins—this is referred to as a “hard macro.”" />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Specifying Power Intent of a Hard Macro</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Specifying Power Intent of a Hard Macro" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Specifying Power Intent of a Hard Macro</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A macro model
+is a block-level model in a design that has been optimized for power,
+area, or timing and has been silicon-tested. Defining the power
+intent for a macro model depends on whether you have access to its
+internal structure (logic and topology). If internal access is not available,
+you can specify power intent only on its external pins—this is referred
+to as a “hard macro.” </span>
+</div>
+<p class="p">To specify power intent for a hard macro, you define
+related-supplies attributes on these accessible pins as boundary
+ports. Similarly, you can isolate a hard macro from the rest of
+the design by applying the isolation on its boundary ports. </p>
+<p class="p">Specify the power intent
+for a hard macro by any of the following: </p>
+<ul class="ul"><li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__idd3e6bc3e-a0f0-4bcd-bf6c-2f13cbae9f71"><p class="p"><a class="xref fm:HeadingOnly" href="General_SetPortAttributes_idca43c468.html#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1__General_SetPortAttributes_idca43c468.xml#idca43c468-e0dc-4e53-81c6-f76fae3cd1e1" title="Defines information on ports.">set_port_attributes</a> UPF command</p>
+</li>
+<li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id95708fe7-cad8-4fbf-8cea-4de0a20b62a2"><p class="p"><a class="xref fm:HeadingOnly" href="#id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__ideaf338dc-18aa-470d-a725-a7078e9cdada">RTL Attributes</a></p>
+</li>
+<li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id8100d602-242d-4578-a4c7-a95871c286e7"><p class="p"><a class="xref fm:HeadingOnly" href="#id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__idd7453384-8c3b-4980-bc3c-0d37346adec1">Liberty Attributes</a></p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__ideaf338dc-18aa-470d-a725-a7078e9cdada"><h2 class="title Subheading sectiontitle">RTL
+Attributes</h2><p class="p">Define the following attributes
+in RTL to specify the power intent of hard macros: </p>
+<ul class="ul"><li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__ide5028e08-1a98-4d13-bc84-88faae2627a5"><p class="p">UPF_related_power_pin </p>
+</li>
+<li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__idd3889292-eba6-4b18-85ff-069dbf0dd8d6"><p class="p">UPF_related_ground_pin </p>
+</li>
+</ul>
+<p class="p">System Verilog Example:</p>
+<pre class="pre codeblock leveled"><code>(* UPF_related_power_pin = "my_Vdd" *) output my_Logic_Port;  </code></pre><p class="p">VHDL Example:</p>
+<pre class="pre codeblock leveled"><code>attribute UPF_related_power_pin of my_Logic_Port : signal is "my_Vdd"; 
+(* UPF_related_power_pin = "my_Vdd" *) output my_Logic_Port; </code></pre></div>
+<div class="section Subsection" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__idd7453384-8c3b-4980-bc3c-0d37346adec1"><h2 class="title Subheading sectiontitle">Liberty Attributes</h2><p class="p">Define the following attributes
+at the pins in a Liberty file:</p>
+<ul class="ul"><li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id81cb76eb-cd82-49c7-81b2-044083d02cb4"><p class="p">related_power_pin </p>
+</li>
+<li class="li" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__ida5112241-20dd-4848-b961-12df06279439"><p class="p">related_ground_pin </p>
+</li>
+</ul>
+<p class="p">The related_power_pin and related_ground_pin
+attributes are defined at the pin level for output, input, and inout
+pins. These attributes associate a predefined power and ground pin
+with the corresponding signal pins under which they are defined.
+A default related_power_pin and related_ground_pin always exist
+in any cell. </p>
+</div>
+<div class="section Subsection" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id56257f24-2227-49a5-9edc-4724cbe59231"><h2 class="title Subheading sectiontitle">Example of Power Intent on a Hard Macro</h2><p class="p"><a class="xref fm:Figure" href="#id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id058a88b3-84ed-4689-9835-1a894d3c1001">Figure 1</a> shows an example of a
+block diagram of hard macro power domains, using the following top-level
+UPF definition: </p>
+<pre class="pre codeblock leveled"><code>set_scope top 
+ 
+create_power_domain PD_top -include_scope 
+ 
+create_power_domain PD_HM1 -elements { HM1 } 
+ 
+set_domain_supply_net PD_top -primary_power_net VDD  
+	-primary_ground_net GND 
+ 
+set_domain_supply_net PD_HM1 -primary_power_net VDD_HM_P1  
+	-primary_ground_net GND_HM_P1  </code></pre><div class="fig fignone" id="id0e24cbcb-5a6f-4605-9ffb-9b0e9c5dda41__id058a88b3-84ed-4689-9835-1a894d3c1001"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Design Consisting of Hard Macros</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/HM_DE_MAIN.gif" /></div><br /></div>
+<p class="p">The following sections show how to define the
+hard macro power intent for each method. </p>
+<h2 class="title Subheading sectiontitle">set_port_attributes
+UPF Command</h2><p class="p">The constraints are specified
+on the pins:</p>
+<pre class="pre codeblock leveled"><code>set_port_attributes -ports { HM1/i4 } -related_power_port VDD_HM_P1  
+	-related_ground_port GND_HM_P1 
+ 
+set_port_attributes -ports { HM2/i7 } -	related_power_port VDD_HM_P1  
+	-related_ground_port GND_HM_P1 
+ 
+set_port_attributes -ports { HM2/i8 HM2/o2 HM1/i5 } -related_power_port  
+	VDD_HM_P2 -related_ground_port GND_HM_P2  </code></pre><h2 class="title Subheading sectiontitle">RTL Attributes</h2><p class="p">For HM1</p>
+<pre class="pre codeblock leveled"><code>(* UPF_related_power_pin = "VDD_HM_p1", UPF_related_ground_pin =  
+	"GND_HM_p1" *) input i4; 
+ 
+(* UPF_related_power_pin = "VDD_HM_p2", UPF_related_ground_pin =  
+	"GND_HM_p2" *) input i5; </code></pre><p class="p">For HM2 </p>
+<pre class="pre codeblock leveled"><code>(* UPF_related_power_pin = "VDD_HM_p1", UPF_related_ground_pin =  
+	"GND_HM_p1" *) input i7; 
+ 
+(* UPF_related_power_pin = "VDD_HM_p2", UPF_related_ground_pin =  
+	"GND_HM_p2" *) input i8; 
+ 
+(* UPF_related_power_pin = "VDD_HM_p2", UPF_related_ground_pin =  
+	"GND_HM_p2" *) output o2; </code></pre><h2 class="title Subheading sectiontitle">Liberty Attributes</h2><pre class="pre codeblock leveled"><code>library (PALIB) { 
+cell (HM) { 
+pg_pin (VDD_HM_P1) { 
+pg_type : primary_power; 
+user_pg_type : "abc"; 
+voltage_name : COREVDD1; 
+} 
+ 
+pg_pin (GND_HM_P1) { 
+pg_type : primary_ground; 
+voltage_name : COREGND1; 
+} 
+ 
+pg_pin (VDD_HM_P2) { 
+pg_type : backup_power; 
+user_pg_type : "abc"; 
+voltage_name : COREVDD1; 
+} 
+ 
+pg_pin (GND_HM_P2) { 
+pg_type : backup_ground; 
+voltage_name : COREGND1; 
+} 
+ 
+pin(in1) { 
+direction : input; 
+related_ground_pin : GND_HM_P1; 
+related_power_pin : VDD_HM_P1; 
+} 
+ 
+pin(in2) { 
+direction : input; 
+related_ground_pin : GND_HM_P2; 
+related_power_pin : VDD_HM_P2; 
+} 
+ 
+pin(out1) { 
+direction : input; 
+related_ground_pin : GND_HM_P2; 
+related_power_pin : VDD_HM_P2; 
+} 
+} 
+}</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HardMacroModel_idb4d0bd37.html" title="A macro model is a block-level model in a design that has been optimized for power, area, or timing and has been silicon-tested. Defining the power intent for a macro model depends on whether you have access to its internal structure (logic and topology). If internal access is not available, you can specify power intent only on its external pins—this is referred to as a hard macro. You can process hard macro models in various ways, depending upon whether they are Power Aware or not, and if not, how you want to add Power Aware behavior to the model.">Hard Macro Model</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Specifying Power Intent of a Hard Macro"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_SpecifyingPowerIntentOfAHardMacro_id0e24cbcb.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

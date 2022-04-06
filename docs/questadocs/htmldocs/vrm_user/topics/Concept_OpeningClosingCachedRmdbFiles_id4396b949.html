@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Opening and Closing Cached RMDB Files" />
+<meta name="abstract" content="Creating an instance of the CachedRmdb object opens or creates an RMDB database via the API. In general, the commands that the CachedRmdb object accepts are the same as those listed for the raw API above. The new, open, close, and expand API commands are not supported, as these are handled internal to the class implementation." />
+<meta name="description" content="Creating an instance of the CachedRmdb object opens or creates an RMDB database via the API. In general, the commands that the CachedRmdb object accepts are the same as those listed for the raw API above. The new, open, close, and expand API commands are not supported, as these are handled internal to the class implementation." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4396b949-a42c-4045-a26e-3fca844b2906" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Opening and Closing Cached RMDB Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Opening and Closing Cached RMDB Files" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4396b949-a42c-4045-a26e-3fca844b2906">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Opening and Closing Cached RMDB Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Creating an
+instance of the CachedRmdb object opens or creates an RMDB database
+via the API. In general, the commands that the CachedRmdb object accepts
+are the same as those listed for the raw API above. The new, open,
+close, and expand API commands are not supported, as these are handled
+internal to the class implementation.</span>
+</div>
+<p class="p">In order to open an RMDB database
+from an existing file, create an instance of the CachedRmdb class
+passing the name of the file to the constructor as follows:</p>
+<pre class="pre codeblock leveled"><code>RunManager::CachedRmdb _dbName_ [_options_] _rmdbFileName_</code></pre><p class="p">In order to create a new RMDB database, simply
+omit the name of the file as follows:</p>
+<pre class="pre codeblock leveled"><code>RunManager::CachedRmdb _dbName_ [_options_]</code></pre><p class="p">The <span class="ph FontProperty emphasis">dbName</span> argument
+is the name given to the CachedRmdb object. If the string #auto
+is used instead, the CachedRmdb class will assign a name like cachedRmdb,
+where <span class="keyword ParameterName OptionalReplaceable">n</span> is
+a numeric suffix added to guarantee uniqueness. The options can
+include any of the following:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id4396b949-a42c-4045-a26e-3fca844b2906__idcc7730a9-80ca-4986-9a4d-0a18dcd6700e" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Options for dbName Argument</span></caption><colgroup><col style="width:1.017in" /><col style="width:2.882in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d37594e166"><p class="p">Option </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d37594e169"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d37594e166 "><p class="p">-expand</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d37594e169 "><p class="p">Expand all XInclude references
+in the database.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d37594e166 "><p class="p">-debug</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d37594e169 "><p class="p">Enable debug mode in
+the cache.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The -expand option invokes the expand API command
+when an RMDB file is first opened (it has no effect if a new database
+was created without specifying a file). This option name can be
+abbreviated.</p>
+<p class="p">The -debug option adds some additional debugging
+information. This option name can be abbreviated.</p>
+<p class="p">The class constructor also returns the name
+of the CachedRmdb object that can be used as a handle. The following
+code opens an RMDB file called <span class="ph filepath">my.rmdb</span>, auto-generates
+a handle (that is, name) for the CachedRmdb object, and stores that
+name in the variable <span class="ph filepath">dbHandle</span> for use in passing
+subsequent commands to the object as follows:</p>
+<pre class="pre codeblock leveled"><code>set dbHandle [RunManager::CachedRmdb {#auto} my.rmdb]</code></pre><p class="p">When the CachedRmdb object is destroyed (manually
+or by TCL's garbage collection process), the underlying RMDB file
+is closed. This can result in an error if unsaved changes have been
+made to the in-memory database. In order to manually delete the
+CachedRmdb object, use the following command:</p>
+<pre class="pre codeblock leveled"><code>itcl::delete object _dbHandle_</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CachedAccessApi_ide491b2e4.html" title="Some applications (such as the Edit GUI) require quick access to a list of parents of a given Runnable. Since building such a list requires complete traversal of the entire database, a layer exists to cache the membership topology information (parent-to-child and child-to-parent) as it changes. The cache is refreshed when the RMDB file is first opened or upon command. Write-mode API commands are monitored and the cache is updated as the underlying RMDB is updated. As with the raw API, multiple cached RMDB files can be open at any one time and each has its own cache.">Cached Access API</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Opening and Closing Cached RMDB Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_OpeningClosingCachedRmdbFiles_id4396b949.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

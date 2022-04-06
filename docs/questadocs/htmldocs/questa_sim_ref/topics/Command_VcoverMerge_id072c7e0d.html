@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="vcover merge" />
+<meta name="abstract" content="The vcover merge command merges UCDB files, saved with the coverage save command, or coverstores, created with the -coverstore option to vsim, into a single UCDB output file." />
+<meta name="description" content="The vcover merge command merges UCDB files, saved with the coverage save command, or coverstores, created with the -coverstore option to vsim, into a single UCDB output file." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id072c7e0d-c737-4e89-90d1-d10dae680b88" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vcover merge</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vcover merge" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id072c7e0d-c737-4e89-90d1-d10dae680b88">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vcover merge</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">The vcover
+merge command merges UCDB files, saved with the coverage save command,
+or coverstores, created with the -coverstore option to vsim, into
+a single UCDB output file.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">vcover merge &lt;merge_options&gt; {<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__iddd29a8cd-b577-4ea5-bc34-a0e3fca917a0">[-out] &lt;outfile&gt;</a> <a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idbdda1063-dce9-4dc3-9b6f-a3622309b697">&lt;input1&gt; [&lt;input2&gt; … &lt;inputn&gt;]</a>}</p>
+<p class="lines UsageLine">&lt;merge_options&gt; =<br />
+<span class="ph">[<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id5871ddb6-830a-4d58-8ae1-5dcc273fafd7">-32 | -64</a>] </span>[<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idbbca6587-9d7b-4d3b-b1a8-4f2e0321a5eb">-and</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id448b0d48-ef25-4eac-9310-d9588e70339d">-append</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id1e98cbd6-c354-4780-9a62-7e852c01334c">-backup</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id036b68dd-6ca7-4f1b-8b47-c1e6cbd16eeb">-checkinputs</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id335c9e1b-0479-40b2-a3fd-6ccbf889e355">-date &lt;yyyymmddhhmmss&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id6ed7f8fa-a585-444c-9525-6ae9204b0f1c">-forceall</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id82009e84-05b7-46b4-acd3-7475f91ffe17">-inputs &lt;cmdfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idfa1abeba-c94e-4227-9fa5-5ea9da8a2192">‑install &lt;path&gt;</a>] [[<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id1c4b6101-ac19-4f83-9136-bbfcc03ac984">-instance &lt;path&gt; [-instance &lt;path&gt;] … [-recursive]</a>] | [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idc1c31677-9d36-4cf4-a27d-6036863b9c5f">-du &lt;du_fullname&gt; [-recursive] [-du [-recursive]]...</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__ide3eea422-f78b-4b13-8c50-747728ee4b68">-level &lt;1-3&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id9351a742-4da3-44cb-b90f-0b64a836502a">-lockingfull | -lockingtimeout | -lockingnone</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id0c987912-0b24-4f8d-be57-16d9cffd99f2">-logfile &lt;filename&gt; | -l &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id8444c674-482b-408c-8020-cd16e069d7df">-master &lt;ucdb_filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id6199cf2f-41fc-4489-afe5-f1d415963863">-mergebytokenno</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__ide4246c03-b7d9-420b-96f2-2ecd842781e9">-mergedesigndiffs</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idde155be7-64ea-443f-8a42-4f78d9edc254">-multiuserenv</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idd7d5de27-e992-4482-9b77-7ab49b048a65">-notagging</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idba013199-4821-4368-971a-60f44a3a3c6d">-outputstore &lt;output_coverstore_dir&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idcd90c9bb-bf19-491c-9c38-2300b030fe35">-pathseparator &lt;char&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id1672fa9e-e319-4cd9-be17-1941a27dc775">-preservetestcount</a>] [<a class="xref fm:HeadingOnly" href="Command_VcoverAttribute_id1e882f67.html#id1e882f67-ccf5-4a43-a13c-4f4009f714ce__idf7cf4bc7-0e71-44b2-bd14-ffdb4f7a1c5d">-[w]prof=&lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id643a38b1-089a-44a5-bb32-701347a4e392">-proftick=&lt;integer&gt;</a>][<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id164c2346-cdf9-4833-b8b0-ac14d6718406">-quiet</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id621caaca-7769-40e1-aeac-35923ee1b335">-silent</a>][<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id38b1dcf5-a87a-45d1-82f0-e9bce55f6dd2">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id4e53a2ee-9d9d-4e35-a9b1-05737fa9707e">-strip &lt;n&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id5ead07ff-340d-4bd7-ac7e-13f28da55c81">-ucdbchecks</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__ida1322680-5fa0-478a-9363-5692662a94a0">-verbose</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idec02fcda-9636-4d6a-a99a-99520a423743">-version</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idef9c2de4-f865-4ae5-8b65-4d383eeb4eb4">-combine | -combinemax | -combinemin</a> | <a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id821ffcb6-5114-4d29-a91b-be75d6ed0526">-totals</a> | <a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idf35ff937-11ff-417c-abc4-6d4e2dfe57b8">-testassociated</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idfda4fde7-bc04-4684-bd29-f251f256d45c">-timeout &lt;seconds&gt;</a>]  <span class="ph">[<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idb5a7783e-d05d-4efc-bfe3-9655555769c9">-trend [-output] &lt;trend_ucdb_output&gt; &lt;ucdb_input1&gt; ... &lt;ucdb_inputN&gt;</a>] </span>[<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__idfdb09c4f-c17e-4c50-be7c-5ca110f24300">-error &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id9fa4e3fe-1c45-499d-a0ec-d51ea179fd53">-note &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id95cd176a-59a2-4ecf-996b-cdbaf236cc2c">-suppress &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</a>] [<a class="xref fm:HeadingOnly" href="#id072c7e0d-c737-4e89-90d1-d10dae680b88__id0e13a118-185b-4c74-8a52-0b619b306a8e">-warning &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The vcover merge command
+creates a union of two or more UCDB files, regardless of the hierarchy
+in each file, or coverstores, however they must have the same hierarchy.
+Refer to the section <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Coverage Auto-save Coverstore', 'questa_sim_user'); return false;">Coverage Auto-save Coverstore</a> for
+a detailed discussion on merging coverstores.</p>
+<p class="p">By default,
+vcover merge does not store test-specific coverage information.
+To keep test-specific information (which associates coverage items
+with the test(s) that covered them), use vcover merge -testassociated.
+Test-associated merging is required if you plan to use:</p>
+<ul class="ul"><li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id4c40a178-5a00-451c-bc99-00192cea0fef"><p class="p">the <a class="xref fm:HeadingOnly" href="Command_CoverageAnalyze_id7d34fc00.html#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__Command_CoverageAnalyze_id7d34fc00.xml#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f" title="Displays test information based on a merged UCDB created by a vcover merge operation.">coverage analyze</a> command,
+or any Test Analysis features in the GUI.</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9ab5a0f6-de1e-4f3c-86fe-7e3cb6628980"><p class="p">the <a class="xref fm:HeadingOnly" href="Command_VcoverRanktest_id47bb69e4.html#id47bb69e4-7cf8-4d5a-b763-19b7d018b96d__Command_VcoverRanktest_id47bb69e4.xml#id47bb69e4-7cf8-4d5a-b763-19b7d018b96d" title="Ranks coverage data contained in specified tests, or test groups, according to their contribution to cumulative coverage.">vcover ranktest</a> command, or any Ranking operations
+in the GUI.</p>
+</li>
+</ul>
+<p class="p">If you want
+to preserve individual UCDBs for analysis and ranking, test-associated merging
+is not advised. </p>
+<p class="p">The tool
+issues warning
+message #6846, indicating that the resulting merged file could not
+completely represent the merged information, when:</p>
+<ul class="ul"><li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idcacf28bc-f762-43aa-b9de-04b3f9604b80"><p class="p">"at_least" is greater
+than 1.</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id6ab5eea7-c6c0-4d28-bd5f-e78b1a8a4c66"><p class="p">weights are different
+for the same object in different files.</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id54dd232c-20f3-4b4a-a69e-d92ea2fc757a"><p class="p">there are different
+objects in different files.</p>
+</li>
+</ul>
+<p class="p">For these
+situations, use the -verbose argument with the vcover merge command
+to obtain further details about potential issues with the merge.</p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> generates a warning if a code
+coverage instance in a UCDB is changed. You can disable warnings
+with the -quiet option.</p>
+<p class="p">You can
+invoke vcover merge in the <span class="ph fmvar:ProductName">Questa SIM</span> GUI
+or at the system prompt. Use the -help (or -h) argument to view
+the command syntax.</p>
+<p class="p">For more information,
+refer to the section <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Limitations of Merge for Coverage Analysis', 'questa_sim_user'); return false;">Limitations of Merge for Coverage Analysis</a> in
+the User’s Manual. </p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5e08e19d-49ec-4a7b-bd4b-212935771e6d"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5871ddb6-830a-4d58-8ae1-5dcc273fafd7">-32 | -64</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies whether vcover merge uses the 32- or 64-bit executable.
+32-bit is the default. These options apply only to the supported
+Linux operating systems.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idbbca6587-9d7b-4d3b-b1a8-4f2e0321a5eb">-and</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Excludes statements in the output file only if they are excluded
+in all input files. By default, a statement is excluded in the output
+merge file if the statement is excluded in any of the input files. </p>
+<p class="p">Not a valid
+option when merging functional coverage databases.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id448b0d48-ef25-4eac-9310-d9588e70339d">-append</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies to append progress messages to the current log file. By
+default a new log file is created each time you invoke the command. </p>
+<p class="p">Not a valid
+option when merging functional coverage databases.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id1e98cbd6-c354-4780-9a62-7e852c01334c">-backup</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Creates a backup UCDB output file named “&lt; ucdb filename &gt;._backup”
+during the lock-protected execution of vcover merge.</p>
+<p class="p">This argument does not perform a backup if the
+output file does not exist.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id036b68dd-6ca7-4f1b-8b47-c1e6cbd16eeb">-checkinputs</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Checks for valid merge inputs.
+Ignores invalid input files with a warning message and removes those
+files from the merge list.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idef9c2de4-f865-4ae5-8b65-4d383eeb4eb4">-combine | -combinemax | -combinemin</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Combines two or more coverage slices for a single simulation, resulting
+in a single UCDB holding the combined coverage.</p>
+<p class="p">The differences
+between the three variants of the -combine, -combinemin, and -combinemax
+arguments are slight, and have to do solely with the saved counts
+for nodes with conflicting toggle information. In all cases, warnings
+result from conflicts in nodes with non-toggle data.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0e0da0b5-60e8-4094-b6cd-afd9acd8d509"><p class="p Opt">-combine
+— for nodes with conflicting toggle information, both a minimum
+and maximum count are saved in the UCDB. Only minimum counts are
+saved for conflicting non-toggle data.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id92e867f1-f37a-4a28-a6b9-83dd173a5259"><p class="p Opt">-combinemax
+— only maximum counts are saved for both conflicting toggle and
+non-toggle data.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0572618b-46b4-4756-aa99-8cbfe35db9e1"><p class="p Opt">-combinemin
+— only minimum counts are saved for both conflicting toggle and
+non-toggle data.</p>
+</li>
+</ul>
+<p class="p">Each of
+the arguments is mutually exclusive with -totals and -testassociated. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id335c9e1b-0479-40b2-a3fd-6ccbf889e355">-date &lt;yyyymmddhhmmss&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Overrides the timestamp of the merged file. The &lt;yymmddhhmmss&gt;
+is the timestamp value in the form of year, day, month, hour, minute, and
+second.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idc1c31677-9d36-4cf4-a27d-6036863b9c5f">-du &lt;du_fullname&gt; [-recursive] [-du [-recursive]]...</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Instructs the tool to merge all instances of the specified design
+unit in all of the input UCDB files. If you specify one -du entry,
+one instance of the design unit is created, at the top level, containing
+all of the merged data. If you specify multiple -du arguments, multiple
+top-level instances are created in the output UCDB, one for each
+-du specification. </p>
+<p class="p">Instance
+names in the output file are generated in the following format,
+replacing any '/' with '_' from the library names:</p>
+<p class="p">Where
+&lt;du_fullname&gt; is [&lt;library name&gt;.]&lt;primary&gt;[(&lt;secondary&gt;)]
+and secondary name is required only for VHDL.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9148e3d8-8b90-4bd2-95a0-6fae7f67b9a7"><p class="p Opt">&lt;library
+name&gt;. — (optional) Specifies the library name. If none is specified,
+then “work” is assumed. Must be followed by a period ( . ).</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5b86f30a-9cad-4ecc-8535-96bba8823762"><p class="p Opt">&lt;primary&gt;
+— The name of the design unit.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9507786a-3bf2-4c8a-afca-7c8483deb6f2"><p class="p Opt">&lt;secondary&gt;
+— (optional) The secondary name of the design unit, required for
+VHDL. </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0f963ba8-9f36-48d9-a0ee-0f6a4875bf47"><p class="p Opt">-recursive
+— Instructs the tool to merge the complete design subtree, from
+the designated design unit down. </p>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You cannot use the -du &lt;du_fullname&gt; argument with the
+-instance &lt;path&gt; argument. Use either -du &lt;du_fullname&gt; or
+-instance &lt;path&gt;.</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idfdb09c4f-c17e-4c50-be7c-5ca110f24300">-error &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to “error.”
+Does not function with internal messages (those without numbers). </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id86a8f0f9-7825-4d85-8a28-ceb609d8230c"><p class="p Opt">&lt;msg_number&gt;
+— A number identifying a specific message. Specify multiple message
+numbers as a comma-separated list.</p>
+</li>
+</ul>
+<p class="p">Edit the
+error variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'error', 'questa_sim_user'); return false;">error</a> and “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id6ed7f8fa-a585-444c-9525-6ae9204b0f1c">-forceall</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Forces all toggles and statements
+of an instance to merge.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id82009e84-05b7-46b4-acd3-7475f91ffe17">-inputs &lt;cmdfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a text file containing vcover command arguments and the
+inputs that you want to merge.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idc8368631-a34c-4b84-b9b7-2a2915a33436"><p class="p Opt">&lt;cmdfile&gt;
+— The name of the command text file to merge.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id1c4b6101-ac19-4f83-9136-bbfcc03ac984">-instance &lt;path&gt; [-instance &lt;path&gt;] … [-recursive] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Instructs the tool to merge all occurrences of the specified instances
+in all the input files, resulting in an output file consisting of
+a single instance, containing all the merged data. Allows multiple
+-instance &lt;path&gt; specifications. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idda0c3a0f-0205-4af8-a76b-db7166d260e0"><p class="p Opt">&lt;path&gt;
+— The path for the specified instance(s). You can change the resulting
+path using the -install &lt;path&gt; option.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idecaaac89-7f05-4336-b5ea-28d3ea69cfcd"><p class="p Opt">-recursive
+— Instructs the tool to merge the complete design subtree, from
+the designated instances down. If not specified, merges only the specified
+level. The ‑recursive option applies to all designated instances.
+You cannot use multiple -recursive specifications.</p>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You cannot use the -instance &lt;path&gt; argument with the
+-du &lt;du_fullname&gt; argument. Use either -instance &lt;path&gt; or
+-du &lt;du_fullname&gt;.</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idfa1abeba-c94e-4227-9fa5-5ea9da8a2192">‑install &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Adds additional hierarchy on the front end of instance and object
+names in the data files. This argument enables you to merge coverage results
+from simulations that have different hierarchies. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merge Usage Scenarios', 'questa_sim_user'); return false;">Merge Usage Scenarios</a>” in the
+User’s Manual for more information.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idcc0fe4ea-0d9c-48b4-849c-a7ba7e0b12e4"><p class="p Opt">&lt;path&gt;
+— A user specified path. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__ide3eea422-f78b-4b13-8c50-747728ee4b68">-level &lt;1-3&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies the merge level: totals
+(level 1), testassociated (level 2), or preservetestcount (level
+3) </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9351a742-4da3-44cb-b90f-0b64a836502a">-lockingfull | -lockingtimeout | -lockingnone</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls the locking of the merge file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idc74a9cb3-7621-4263-8242-2b0e1ffadf9a"><p class="p Opt">-lockingfull
+— (default) Supports breaking of locks when the creating PID is
+dead or when a time limit has been passed. Requires “rsh” to the
+machine that created the merge.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idce676dda-ee1b-47f9-b39b-ff3b807b5100"><p class="p Opt">-lockingtimeout
+— Supports breaking of locks when a time limit has been passed.
+Does not require “rsh” to creating machine. Refer to the note below for
+asynchronous clocks.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id854a0438-c9ca-42bb-9a89-6e42c86c0620"><p class="p Opt">-lockingnone
+— No locking and faster performance.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The
+-lockingtimeout version of timeout checking is accurate only when machine
+clocks are synchronized.</p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0c987912-0b24-4f8d-be57-16d9cffd99f2">-logfile &lt;filename&gt; | -l &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Outputs progress messages to a user-specified log file. By default,
+these messages are output to stdout and are echoed to any explicitly supplied
+log file.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id6c7e683a-492c-4018-bd86-e24d460f48a7"><p class="p Opt">&lt;filename&gt;
+— A user specified string.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id8444c674-482b-408c-8020-cd16e069d7df">-master &lt;ucdb_filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Creates the output ucdb by merging a UCDB you identify as a “master”
+UCDB. Only one master can be specified per vcover merge command.
+For further usage details and rules, refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merging Using a Master UCDB', 'questa_sim_user'); return false;">Merging Using a Master UCDB</a>”
+in the User’s Manual.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id7d1b700e-b139-4f58-b719-de835869a110"><p class="p Opt">&lt;ucdb_filename&gt;
+— Specified master file, which should be the file containing the
+data you most care about going forward. This file can be a single
+or a merged UCDB, either containing testplan data or not. No testplan
+data existing outside this master file can be merged using the -master argument.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id6199cf2f-41fc-4489-afe5-f1d415963863">-mergebytokenno</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Forces the merge to use token
+number instead of item number for identification.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__ide4246c03-b7d9-420b-96f2-2ecd842781e9">-mergedesigndiffs</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Instructs the tool to ignore design unit signature checking, and
+continue merging. Issues a warning message. Do not use this argument without
+first validating that the differences in code between the merges
+of two versions of the same input are expected and approved. Refer
+to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merging and Source Code Mismatches', 'questa_sim_user'); return false;">Merging and Source Code Mismatches</a>”
+in the User’s Manual for further details on the use of this argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idde155be7-64ea-443f-8a42-4f78d9edc254">-multiuserenv</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Merges UCDB without
+source code path dependence <span class="ph FontProperty emphasis">IF</span> design
+is first compiled with <a class="xref fm:HeadingOnly" href="Command_Vlog_id6ce6948b.html#id6ce6948b-9797-4c41-a3f7-83f74066bca3__id88cf4411-5b6f-4bde-8bfb-21ffb8eb8f33">-covermultiuserenv</a> in vlog.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idd7d5de27-e992-4482-9b77-7ab49b048a65">-notagging</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents the automatic implicit testplan tagging from being performed.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9fa4e3fe-1c45-499d-a0ec-d51ea179fd53">-note &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to "note."
+Does not function with internal messages (those without numbers). </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id44203119-d279-4069-bcff-147a2d304659"><p class="p Opt">&lt;msg_number&gt;
+— A number identifying a specific message. Specify multiple message
+numbers as a comma-separated list.</p>
+</li>
+</ul>
+<p class="p">Edit the
+note variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'note', 'questa_sim_user'); return false;">note</a> and “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__iddd29a8cd-b577-4ea5-bc34-a0e3fca917a0">[-out] &lt;outfile&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(Specification
+of -out is optional, &lt;outfile&gt; is required). Sends the merged
+output to a file. By default, uses the base name of the first UCDB
+file listed in the command as the output file name. When you specify
+-out, you can include this argument set anywhere on the command
+line. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id91eb509f-2c4d-4c55-8323-1610b6613d88"><p class="p Opt">&lt;outfile&gt;
+— A user specified string for the merged output file name. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idba013199-4821-4368-971a-60f44a3a3c6d">-outputstore &lt;output_coverstore_dir&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies an output directory in which to store the raw, merged
+coverage output, instead of in a self-contained UCDB file. This
+is useful when merging the outputs of lower level merges in a hierarchical
+merge. When you merge other UCDBs with the coverstore, you include
+all the coverage data accumulated in the coverstore (from the vsim
+-coverstore ‑testname command) using the path to the directory as
+an input to the merge. You can use wildcards for the selection of
+tests to merge.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idcd90c9bb-bf19-491c-9c38-2300b030fe35">-pathseparator &lt;char&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the path separator character to use in the resulting output
+UCDB file. &lt;char&gt; must be a non-alphanumeric character, including
+any of the following characters within the quotation marks: “-=~!@%^&amp;+|./:;”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id1672fa9e-e319-4cd9-be17-1941a27dc775">-preservetestcount</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Merges and keeps the individual
+counts of each bin. Also called level 3 merge.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id76dddd14-3218-49e7-8bda-8d1b6e319945">-[w]prof=&lt;filename&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional;
+-wprof and -prof are mutually exclusive) Enables CPU (-prof) or
+WALL (-wprof) time based profiling, and saves the profile data to &lt;filename&gt;. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id643a38b1-089a-44a5-bb32-701347a4e392">-proftick=&lt;integer&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Sets the time interval between the profile data collections. Default
+= 10.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id164c2346-cdf9-4833-b8b0-ac14d6718406">-quiet</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Disables warnings when merging databases and a changed instance
+is encountered.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id621caaca-7769-40e1-aeac-35923ee1b335">-silent</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Disables printing of a banner
+or other messages. Allows printing of error and warning messages only.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id38b1dcf5-a87a-45d1-82f0-e9bce55f6dd2">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls display of statistics sent to a logfile, stdout, or the
+transcript. Specifying -stats without options sets the default features
+(cmd, msg, and time). </p>
+<p class="p">Specify
+multiple features and modes for each instance of -stats as a comma-separated list.
+You can specify ‑stats multiple times on the command line, but only
+the final instance takes effect. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idd9e8c717-7da4-4747-93a4-76a7c7bdcb0d"><p class="p Opt">[+ |
+-] — Controls activation of the feature or mode, where the plus
+character ( + ) enables the feature and the minus character ( - )
+disables the feature. You can also enable a feature or mode by specifying
+it without the plus (+) character. Setting this switch adds or subtracts
+features and modes from the default settings “cmd,msg,time”.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id1baf3b26-2983-424e-896f-288de74eb07b"><p class="p Opt"><var class="keyword varname">feature</var></p>
+<p class="p">all
+— Display all statistics features (cmd, msg, perf, time). Mutually
+exclusive with none option. When specified in a string with other
+options, all is applied first.</p>
+<p class="p">cmd
+— (default) Echo the command line.</p>
+<p class="p">msg
+— (default) Display error and warning summary at the end of command execution.</p>
+<p class="p">none
+— Disable all statistics features. Mutually exclusive with all option. When
+specified in a string with other options, none is applied first.</p>
+<p class="p">perf
+— Display time and memory performance statistics.</p>
+<p class="p">time
+— (default) Display Start, End, and Elapsed times. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Use -stats=perf+verbose to display information about the
+operating system and host machine.</p>
+</div>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idcc294239-e9f5-4ae6-a1d2-348d1af54303"><p class="p Opt"><var class="keyword varname">mode</var></p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5569f319-92e1-4d06-a7c3-a342dcfd83f6"><p class="p Opt">You can
+set modes for a specific feature, or globally for all features.
+To add or subtract a mode for a specific feature, specify using
+the plus (+) or minus (-) character with the feature, for example,
+vcover merge -stats=cmd+verbose,perf+list. To add or subtract a
+mode globally for all features, specify the modes in a comma-separated
+list, for example, vcover merge -stats=time,perf,list,-verbose.
+You cannot specify global and feature specific modes together. </p>
+<p class="p">kb
+— Print performance statistics in kilobyte units with no auto-scaling.</p>
+<p class="p">list
+— Display statistics in a Tcl list format when available.</p>
+<p class="p">verbose
+— Display verbose statistics information when available.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id4e53a2ee-9d9d-4e35-a9b1-05737fa9707e">-strip &lt;n&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Removes &lt;n&gt; levels of hierarchy from instance and object names
+in the data files. Enables you to merge coverage results from simulations that
+have different hierarchies. Refer to "<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merge Usage Scenarios', 'questa_sim_user'); return false;">Merge Usage Scenarios</a>" in the User’s
+Manual for more information.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idc5f40a04-d39b-433f-97a5-68c0e5b9f02c"><p class="p Opt">&lt;n&gt;
+— Any positive integer. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id95cd176a-59a2-4ecf-996b-cdbaf236cc2c">-suppress &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents the specified message(s) from displaying. The &lt;msg_number&gt;
+is the number preceding the message you wish to suppress. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id9a4fe417-b99a-4dbd-94d0-ddd35b66dd04"><p class="p Opt">&lt;msg_number&gt;
+— A number identifying a specific message. Specify multiple message
+numbers as a comma-separated list.</p>
+</li>
+</ul>
+<p class="p">Edit the
+suppress variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'suppress', 'questa_sim_user'); return false;">suppress</a> in the User’s Manual.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idf35ff937-11ff-417c-abc4-6d4e2dfe57b8">-testassociated</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+for ranking or test analysis purposes; optional otherwise) Merges
+the selected databases, including all the basic information (created
+with the default -totals merge) as well as the associated tests
+and bins. This argument is mutually exclusive with -totals and ‑combine.</p>
+<p class="p">When tests
+and bins are associated, each coverage count is marked with the
+test that caused it to be covered. For functional coverage, this
+means the bin count should be greater than or equal to the at_least
+parameter. For code coverage and assertion data, any non-zero count
+for a test causes the bin to be marked with the test. While it cannot
+be known which test incremented a bin by exactly how much, it can
+be known which test caused a bin to be covered.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id821ffcb6-5114-4d29-a91b-be75d6ed0526">-totals</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Merges the databases with a basic level of information, including:
+coverage scopes, design scopes, and testplan scopes. This is the default
+merge. The counts are incremented together. In the case of vector
+bin counts, counts are ORed. The final output database is a union
+of objects from the input files. Information about which test contributed
+what coverage into the merge is lost. Information about tests themselves
+is not lost — test data records are added together from all merge
+inputs. While the list of tests can be known, it cannot be known
+what tests might have incremented particular bins. Mutually exclusive
+with ‑combine and ‑testassociated.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idfda4fde7-bc04-4684-bd29-f251f256d45c">-timeout &lt;seconds&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Sets the timeout period after which the lock can be removed. During
+the timeout period the lock holder is protected. Supports cumulative merges
+and multiple merge commands, issued one after another. Such merge
+commands can be issued simultaneously from various platforms in
+a networking environment. In order to avoid corrupting cumulative
+coverage results, merges of UCDB files are serialized.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id60aca1e3-ce9e-4994-ab70-3ffcd8e5fcba"><p class="p Opt">&lt;seconds&gt;
+— Any non-negative integer. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idb5a7783e-d05d-4efc-bfe3-9655555769c9">-trend [-output] &lt;trend_ucdb_output&gt; &lt;ucdb_input1&gt; ... &lt;ucdb_inputN&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Creates
+a trending database used to look at coverage over time for a particular
+design under test (DUT). The following data is automatically added
+to the trend UCDB, through the addition of global attributes: </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5e8d7ca5-bc93-4d35-a6a6-ba9bac053d64"><p class="p Opt">Total number
+of tests </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id3cd667e5-8bc6-494e-b422-cd1083aad33f"><p class="p Opt">Number
+of passed tests </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id054f4491-aba3-4d88-8e6a-509bf00742d4"><p class="p Opt">Number
+of warning tests </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id30e599ec-d7b7-49c1-99b1-94a26ae0fac9"><p class="p Opt">Number
+of error tests </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__ida49137bc-49c0-4d12-b551-deaccf9fa4e4"><p class="p Opt">Number
+of fatal error tests </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idfde9ffc0-f9e9-4828-a39d-3e3c95deb03d"><p class="p Opt">Total number
+of bins linked with testplan sections </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id382a672e-0616-4399-b120-6a9b5cf27909"><p class="p Opt">Number
+of covered bins linked with testplan sections</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0ce6fb29-829c-49ea-adb6-3fea4646cf19"><p class="p Opt">-output
+— (optional) Names the output file for trend ucdb. Only required
+if output UCDB file is positioned other than first listed UCDB. </p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5931aec4-f39a-418e-b3e9-10e5f29cf40e"><p class="p Opt">&lt;trend_ucdb_output&gt;
+— (required) Name of file created with trend command. Must be placed
+before input UCDBs, unless -output is used.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id623b03ab-ccf1-462a-95af-18f78454cc44"><p class="p Opt">&lt;ucdb_input&gt;
+— (required) Name(s) of input UCDB file(s) to be processed for trend
+analysis. Files need not be merged files, but could be individual
+UCDB files and/or trend UCDB files.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id5ead07ff-340d-4bd7-ac7e-13f28da55c81">-ucdbchecks</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Reports more verbose messages
+on UCDB file.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__ida1322680-5fa0-478a-9363-5692662a94a0">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Enables summary code coverage statistics to be computed and directed
+to the log file each time a file is merged into the database. The statistics
+are instance-based. </p>
+<p class="p">Not a valid
+option when merging functional coverage databases.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idec02fcda-9636-4d6a-a99a-99520a423743">-version</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns the version number of each input UCDB file, and the version
+number of the output UCDB file, which is always created with the
+most recent version of the UCDB creation software. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0e13a118-185b-4c74-8a52-0b619b306a8e">-warning &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to “warning.”
+Does not function with internal messages (those without numbers). </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id651becfa-5db2-4749-b1ae-d91d0b537548"><p class="p Opt">&lt;msg_number&gt;
+— A number identifying a specific message. Specify multiple message
+numbers as a comma-separated list.</p>
+</li>
+</ul>
+<p class="p">Edit the
+warning variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'warning', 'questa_sim_user'); return false;">warning</a> and “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idbdda1063-dce9-4dc3-9b6f-a3622309b697">&lt;input1&gt; [&lt;input2&gt; … &lt;inputn&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the input to be merged. You can use wildcards and specify
+multiple inputs in a space-separated list. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id67014487-eaf9-4b5a-b7b0-f01a68a814d3"><p class="p Opt">&lt;input&gt;</p>
+<p class="p">The input can take either of the following forms</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id0aa44e98-4ec2-4c14-866c-8f855322dcb7"><p class="p Opt">&lt;ucdbfile&gt;</p>
+<p class="p">UCDB created by a coverage save command.</p>
+</li>
+<li class="li ArgOption" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id7a14444f-7c3a-4f2d-92ba-e6b521f1450a"><p class="p Opt">&lt;coverstore&gt;[:&lt;testname&gt;[,&lt;testname&gt;
+…]]</p>
+<p class="p">Coverstore created by the -coverstore argument to the vsim command
+with optional testnames in a comma-separated list.</p>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id84c5e662-bdcd-4939-a014-a6498240a00a"><p class="p">Merge
+coverage statistics for myfile1 and myfile2 and write them to myresult.</p>
+<p class="lines ApplCommand leveled">vcover merge myfile1 myfile2 -out myresult</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id1322782d-dd18-44fa-a5ca-1d7971391eb7"><p class="p">Use wildcards
+to merge all files with a .cov extension in a particular directory.</p>
+<p class="lines ApplCommand leveled">vcover merge myresult2 /dut/*.cov</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id07c8fb2d-60c7-41b8-81ff-1cbe2f86eda0"><p class="p">Create a
+trend database to be used with vcover report for trending analysis, saving
+the file to <span class="ph filepath italic">mytrend.ucdb</span>.</p>
+<p class="lines ApplCommand leveled">vcover merge -trend -output mytrend.ucdb Nov_mg.ucdb Dec_mg.ucdb</p>
+<p class="p">The <span class="ph filepath italic">Nov_mg.ucdb</span> and <span class="ph filepath italic">Dec_mg.ucdb</span> are
+two merged files from simulations of the same DUT.</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id78e2f3df-fe21-4518-b353-dc88a1f012d1"><p class="p">Merge
+two design units within a single input file to create two top level instances
+in the merged output.</p>
+<p class="lines ApplCommand leveled">vcover merge out.ucdb -du counter -du work.mux test.ucdb</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__id369e2ae1-a6f1-49d5-9a9f-f35d1c43c025"><p class="p">Change
+the default time-out for the lock file to 600 seconds.</p>
+<p class="lines ApplCommand leveled">vcover merge -timeout 600 out1.ucdb out2.ucdb in.ucdb</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idaeaff257-bfd8-46ef-9a20-26d7aaa1cd45"><p class="p">Strip
+the top two levels of hierarchy from an instance or objects in <span class="ph filepath italic">myfile.ucdb</span> and
+place into another file <span class="ph filepath italic">myfile_stripped.ucdb</span>.</p>
+<p class="lines ApplCommand leveled">vcover merge -strip 2 myfile_stripped.ucdb myfie.ucdb</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__idcde9dbd2-ac24-48b1-a3ce-82defc8bb16b"><p class="p">Enable
+the display of Start, End, and Elapsed time as well as a message count
+summary. Echoing of the command line is disabled</p>
+<p class="lines ApplCommand leveled">vcover merge -stats=time,-cmd,msg</p>
+</li>
+<li class="li" id="id072c7e0d-c737-4e89-90d1-d10dae680b88__ida0d208ea-9b66-4619-94e9-60f2dfa6d007"><p class="p">The first
+-stats option is ignored. The none option disables all default settings
+and then enables the perf option.</p>
+<p class="lines ApplCommand leveled">vcover merge -stats=time,cmd,msg -stats=none,perf</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Code Coverage', 'questa_sim_user'); return false;">Code Coverage [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merge Usage Scenarios', 'questa_sim_user'); return false;">Merge Usage Scenarios [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Verification Management Overview', 'questa_sim_vm'); return false;">Verification Management Overview [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Merging Verification Plan with Test Data', 'questa_sim_vm'); return false;">"Merging Verification Plan with Test Data" [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Analyzing Trends', 'questa_sim_vm'); return false;">Analyzing Trends [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_VcoverAttribute_id1e882f67.html#id1e882f67-ccf5-4a43-a13c-4f4009f714ce__" title="Used to set the display of attributes of a specified coverage database file or coverstore during batch mode simulation.">vcover attribute</a></div>
+<div><a class="link" href="../topics/Command_VcoverRanktest_id47bb69e4.html#id47bb69e4-7cf8-4d5a-b763-19b7d018b96d__" title="Ranks coverage data contained in specified tests, or test groups, according to their contribution to cumulative coverage.">vcover ranktest</a></div>
+<div><a class="link" href="../topics/Command_VcoverStats_id08039e24.html#id08039e24-1c24-418f-ae67-206dca9d5dc8__" title="Prints summary statistics for previously saved code coverage databases to stdout.">vcover stats</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "vcover merge"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_VcoverMerge_id072c7e0d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

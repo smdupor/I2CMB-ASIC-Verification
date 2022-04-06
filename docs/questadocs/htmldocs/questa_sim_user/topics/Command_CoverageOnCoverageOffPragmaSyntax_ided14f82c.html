@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="coverage on and coverage off Pragma Syntax" />
+<meta name="abstract" content="The coverage on|off pragma has two forms; one for general exclusions of specific coverage types, or for all types if none are specified, and another for fine-grained exclusion, used to exercise very precise control over exclusions in complex code constructs." />
+<meta name="description" content="The coverage on|off pragma has two forms; one for general exclusions of specific coverage types, or for all types if none are specified, and another for fine-grained exclusion, used to exercise very precise control over exclusions in complex code constructs." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>coverage on and coverage off Pragma Syntax</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="coverage on and coverage off Pragma Syntax" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">coverage on and coverage off Pragma Syntax</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">The
+coverage on|off pragma has two forms; one for general exclusions
+of specific coverage types, or for all types if none are specified,
+and another for fine-grained exclusion, used to exercise very precise
+control over exclusions in complex code constructs.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">General exclusions:</p>
+<pre class="pre codeblock leveled"><code>coverage {on | off} [bcesft]</code></pre><p class="lines UsageLine">Syntax for fine-grained exclusions:</p>
+<pre class="pre codeblock"><code>coverage {on | off}
+	[-item {b c e s} {[&lt;int&gt; | &lt;int&gt;-&lt;int&gt;]+]} 
+	[-allfalse]
+	[-feccondrow [&lt;int&gt;|&lt;int&gt;-&lt;int&gt;]+] 
+	[-fecexprrow [&lt;int&gt;|&lt;int&gt;-&lt;int&gt;]+]</code></pre></div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id67d22c22-6123-4a91-8c9b-a7f7d193d327">[bcesft]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Selectively turns on/off branch
+(“b”), condition (“c”), expression (“e”), statement (“s”), FSM state
+variables and associated transitions (“f”), and/or toggle (“t”) coverage.
+If no coverage type is specified, all are affected. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id52e46e45-f530-4b6c-a56e-253a07e07ee6">-allfalse</dt>
+<dd class="dd ArgumentDescription"><p class="p">Affects only
+the “all false” branch from the branch coverage of a specified “if”
+statement. This argument is valid only for use with “coverage {on|off}
+-item b &lt;item#&gt;”. </p>
+<p class="p">The term “AllFalse” is being
+used as a name for an implicit branch at the end of an “if” or “if-else”
+decision tree. The AllFalse branch is considered to be hit when
+none of the conditions in the decision tree are true. An AllFalse
+branch does not exist for any decision tree which ends with a bare
+“else”. For further details on “all false” and how it applies to
+the code, see “<a class="xref fm:HeadingOnly" href="Contain_BranchCoverage_idfd7b6667.html#idfd7b6667-2d9f-44a8-b01b-adec22b82323__Contain_BranchCoverage_idfd7b6667.xml#idfd7b6667-2d9f-44a8-b01b-adec22b82323" title="Branch coverage relates to branching constructs such as “if” and “case” statements. It measures true branch and false branch execution.">Branch Coverage</a>”. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id6eb484c1-165e-476a-baa9-f97f19ccf3ae">-feccondrow </dt>
+<dd class="dd ArgumentDescription"><p class="p">Affects only the specified rows
+from the FEC table of the specified condition. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id4875f92f-1087-4b53-bf2e-bdf85bd52182">-fecexprrow</dt>
+<dd class="dd ArgumentDescription"><p class="p">Affects only the specified rows
+from the FEC table of the specified expression. </p>
+<p class="p">Valid for use with coverage
+on | off “-item e &lt;item#&gt;”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id7fd13e73-827f-426e-bd6b-a38ed991163c">-item </dt>
+<dd class="dd ArgumentDescription"><p class="p">Selectively
+turns on/off branch (“b”), condition (“c”), expression (“e”), and/or
+statement (“s”) coverage(s) for only the line of code immediately
+following the pragma. Requires both a specification for type of
+coverage and an integer specifying the item numbers (&lt;int&gt;) for
+the line immediately following pragma. Coverage items are numbered
+in ascending order, from left to right, beginning with 1. Specify
+item numbers as an integer or a series of integers (item 1 or items
+2-4). Separate multiple items with a white space.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><ul class="ul"><li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idc7feb97b-2cbc-4c81-912e-f5563c49036d"><p class="p">The effect of any “coverage
+on|off” fine-grained pragma exclusion is limited to the next valid
+line of source code after excluding all blank lines and comments.</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id8eb0d6cd-e9ff-40fa-be9d-8e7ed90f6b8e"><p class="p">The -item argument to “coverage
+on/off” selectively turns on/off coverage for statements, branches,
+conditions and/or expressions for the next line of code.</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id9a437bff-082a-46d1-bd54-48764e9ce0a3"><p class="p">You do not need to add a
+matching "coverage off" directive when using fine-grained exclusions
+(that is,any pragma specified with a -item option).</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id225a2c51-f29a-4af3-afa6-c64dc26f6591"><p class="p">You can combine two or more
+coverage items in one coverage pragma if the item numbers are the
+same. For example,</p>
+<pre class="pre codeblock leveled"><code>(// coverage off -item bs 2)</code></pre><p class="p">turns off coverage for statement
+#2 and branch #2 of the next line. </p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id5fb32925-f266-4feb-85fd-4fabbecea7f7"><p class="p">To exclude/include different
+item numbers for different coverage items, use two different pragmas.</p>
+<pre class="pre codeblock leveled"><code>// coverage on -item b 2</code></pre><pre class="pre codeblock leveled"><code>// coverage on -item c 3-5</code></pre><p class="p">turns on coverage for branch
+#2 and condition #3,4,5 of the next line.</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idd221c567-33aa-4fe8-989b-eff53c1aee44"><p class="p">You can use multiple item
+numbers and ranges in one pragma.</p>
+<pre class="pre codeblock leveled"><code>// coverage on -item s 1 3-5 7-9 11 </code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__ide07ce8e1-e5d8-4455-8525-bc2a8cdd8b68"><p class="p">For Branches, enabling/disabling
+coverage for the (case) branch automatically enables/disables coverage
+for all its branches even if they are not on the same line of the
+(case) branch. You can override the coverage of a certain branch
+by an additional pragma that changes coverage of this branch.</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idbb02797d-98e7-4323-af67-d25012ab7d2b"><p class="p">For Conditions, you can selectively
+turn coverage on/off for certain FEC condition rows using the -feccondrow.
+For example,</p>
+<pre class="pre codeblock leveled"><code>// coverage off -item c 1 -feccondrow 1 3-5</code></pre><p class="p">excludes condition rows (1, 3,
+4, 5) of the first condition item from coverage.</p>
+</li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id5347e02d-3188-45d9-bda4-3032db6d4f5a"><p class="p">For Expressions, the same
+functionality can be achieved using -fecexprrow options.</p>
+<pre class="pre codeblock leveled"><code>// coverage off -item e 1 -fecexprrow 1-4 6</code></pre><p class="p">excludes FEC expression rows
+(1, 2, 3, 4, 6) of the first expression item from coverage.</p>
+<p class="p">You can
+use the same fine grained pragma syntax even when an expression
+is split into multiple lines, as follows:</p>
+<pre class="pre codeblock"><code>// coverage off -item e 1 -fecexprrow 4
+dopb_out_col = dopb_out_col
+		&amp; ala2a3a4a5
+		&amp; bignames1
+		&amp; bignames2;</code></pre></li>
+</ul>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idfbd1907f-a53c-4cb9-8899-c269a4c47c0f"><p class="p">Exclude all
+the following conditions, and expressions, statement, branches,
+until a “// coverage on” pragma is reached, or the end of the design
+unit is reached.</p>
+<pre class="pre codeblock leveled"><code>	// coverage off</code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idbcd2d390-d008-4e40-ba11-5d7f1e3d4f6c"><p class="p">Exclude 1st row from the FEC
+table of the first condition on the next line</p>
+<pre class="pre codeblock leveled"><code>	-- coverage off -item c 1 -feccondrow 1</code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idb01487fe-548f-40d6-9e59-ccdea4eac433"><p class="p">Exclude the 2nd branch and 2nd
+statement from the next line</p>
+<pre class="pre codeblock leveled"><code>	-- coverage off -item bs 2</code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__idb4917d9e-92d1-4b34-b366-77c5701a526b"><p class="p">Exclude 3rd, 5th and 6th statements
+from statement coverage</p>
+<pre class="pre codeblock leveled"><code>	// coverage off -item s 3 5-6</code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id81c618f0-9036-4c29-a586-cb13c9d3fcad"><p class="p">Include coverage for 2nd and
+3rd branches, and condition #4 of the next line</p>
+<pre class="pre codeblock leveled"><code>	// coverage on -item b 2-3 </code></pre><pre class="pre codeblock leveled"><code>	// coverage on -item c 4 </code></pre></li>
+<li class="li" id="ided14f82c-e2d0-4dfc-a9b5-cddb41241ddd__id6991129d-1a5b-48f4-ba43-2c30c59a1304"><p class="p">Exclude only the AllFalse branch
+from the 4th branch on the next line</p>
+<pre class="pre codeblock leveled"><code>	-- coverage off -item b 4 -allfalse</code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExcludeIndividualMetricsPragmas_id23a2dacb.html" title="Questa SIM supports the use of source code pragmas to selectively turn coverage off and on for individual code coverage metrics.">Exclude Individual Metrics with Pragmas</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_VerilogVsVhdlPragmas_idf61c9a52.html#idf61c9a52-257b-4ca3-b93d-83986777d9e4__" title="Verilog and VHDL pragmas are enforced at different levels and also have other usage differences.">Verilog vs. VHDL Pragmas</a></div>
+<div><a class="link" href="../topics/Contain_ExcludeIndividualMetricsPragmas_id23a2dacb.html#id23a2dacb-99f0-4436-b92d-f1b7fe75190e__" title="Questa SIM supports the use of source code pragmas to selectively turn coverage off and on for individual code coverage metrics.">Exclude Individual Metrics with Pragmas</a></div>
+<div><a class="link" href="../topics/Concept_PragmaUsageNesting_idc6ccf9ed.html#idc6ccf9ed-d59d-4e39-8e1e-21e03b3efc73__" title="Using coverage pragmas in long source files or included files during development can result in nested pragmas, which can lead to unintended or confusing coverage behavior. Synthesis pragmas can also effect coverage.">Pragma Usage and Nesting</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "coverage on and coverage off Pragma Syntax"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CoverageOnCoverageOffPragmaSyntax_ided14f82c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

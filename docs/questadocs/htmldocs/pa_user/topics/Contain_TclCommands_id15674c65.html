@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Tcl Commands" />
+<meta name="abstract" content="Power Aware simulation supports Tcl commands that you specify in either a UPF or Tcl file. Use the vopt -pa_upf or vopt -pa_tclfile argument to include the UPF or Tcl file in the vopt run." />
+<meta name="description" content="Power Aware simulation supports Tcl commands that you specify in either a UPF or Tcl file. Use the vopt -pa_upf or vopt -pa_tclfile argument to include the UPF or Tcl file in the vopt run." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id15674c65-1337-4b13-9ab0-1853834c6861" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Tcl Commands</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Tcl Commands" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id15674c65-1337-4b13-9ab0-1853834c6861">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Tcl Commands</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Power
+Aware simulation supports Tcl commands that you specify in either
+a UPF or Tcl file. Use the vopt -pa_upf or vopt -pa_tclfile argument
+to include the UPF or Tcl file in the vopt run.</span>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The Tcl commands are tool-specific and are not
+a part of the IEEE Std 1801.</p>
+</div>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id300c6800-6f3e-47a3-bcd7-c8b262c831a0" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Tool-Specific
+Tcl Commands</span></caption><colgroup><col style="width:2.237in" /><col style="width:4.263in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d45817e153"><p class="p">Command</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d45817e156"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td><a href="../topics/Command_DescribeStateCrossCoverage_id00ce4bd3.html" title="Provides results of cross coverage for a specified list of power domains in a design. ">describe_state_cross_coverage</a></td><td>Provides results of cross coverage for a specified list of power domains in a design. </td></tr><tr class="row"><td><a href="../topics/Command_Getenv_idd8cbe0fd.html" title="Returns the value of any environment variable. ">getenv</a></td><td>Returns the value of any environment variable. </td></tr><tr class="row"><td><a href="../topics/Command_PaChecks_id9c855898.html" title="Provides granular control of static RTL and dynamic checks. ">pa_checks</a></td><td>Provides granular control of static RTL and dynamic checks. </td></tr><tr class="row"><td><a href="../topics/Command_SaveChecksConfig_id69c2d1d2.html" title="Saves the configuration of static RTL and dynamic checks performed by the tool, to a specified file.">save_checks_config</a></td><td>Saves the configuration of static RTL and dynamic checks performed by the tool, to a specified file.</td></tr><tr class="row"><td><a href="../topics/Command_SetCorruptionExtent_id8f16e11d.html" title="Changes the corruption extent of the power domains created by the UPF file. ">set_corruption_extent</a></td><td>Changes the corruption extent of the power domains created by the UPF file. </td></tr><tr class="row"><td><a href="../topics/Command_SetFeedthroughObject_id6b49d4b5.html" title="Enables conversion functions to be treated as feedthroughs for UPF-based corruption. The objective is to detect conversion functions in the PA-RTL and treat them as feedthrough paths. ">set_feedthrough_object</a></td><td>Enables conversion functions to be treated as feedthroughs for UPF-based corruption. The objective is to detect conversion functions in the PA-RTL and treat them as feedthrough paths. </td></tr><tr class="row"><td><a href="../topics/Command_SetPgpinVct_id8b9c5353.html" title="Specifies the VCT to be used for pins of any particular pg_type attribute. ">set_pgpin_vct</a></td><td>Specifies the VCT to be used for pins of any particular pg_type attribute. </td></tr><tr class="row"><td><a href="../topics/Command_SetRelatedSupplyNet_id8449d228.html" title="Enables associating an instance signal pin or a hierarchical port with specific supply nets. Thus, you can create a supply net based on supply pins to specify your related supplies of cells. ">set_related_supply_net</a></td><td>Enables associating an instance signal pin or a hierarchical port with specific supply nets. Thus, you can create a supply net based on supply pins to specify your related supplies of cells. </td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Tcl Commands"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_TclCommands_id15674c65.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

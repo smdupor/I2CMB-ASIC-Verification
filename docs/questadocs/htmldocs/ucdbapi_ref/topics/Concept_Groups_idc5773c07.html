@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Groups" />
+<meta name="abstract" content="Groups are used to maintain bus structures in the database. They provide additional support for part-select toggle nodes, particularly with the support for wildcard ranges provided by group scopes." />
+<meta name="description" content="Groups are used to maintain bus structures in the database. They provide additional support for part-select toggle nodes, particularly with the support for wildcard ranges provided by group scopes." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc5773c07-b412-41f3-9505-d99f15043243" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Groups</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Groups" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc5773c07-b412-41f3-9505-d99f15043243">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Groups</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Groups are
+used to maintain bus structures in the database. They provide additional
+support for part-select toggle nodes, particularly with the support
+for wildcard ranges provided by group scopes.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id58f92da1-efbb-4868-974c-4dab7c4d45d2"><h2 class="title Subheading sectiontitle">Group Kind Type</h2><pre class="pre codeblock leveled"><code>#define UCDB_GROUP_MASK_PACKED  0x1000 
+#define UCDB_GROUP_MASK_ORDERED 0x2000 
+typedef enum { 
+	UCDB_GROUP_BASIC           = 0x0001,  
+	UCDB_GROUP_UNPACKED_STRUCT = 0x0002,  
+	UCDB_GROUP_UNPACKED_UNION  = 0x0003,  
+	UCDB_GROUP_UNPACKED_ARRAY  = (0x0004|UCDB_GROUP_MASK_ORDERED),  
+	UCDB_GROUP_ASSOC_ARRAY     = 0x0005, 
+	UCDB_GROUP_PACKED_STRUCT   = 
+		(UCDB_GROUP_UNPACKED_STRUCT|UCDB_GROUP_MASK_PACKED),  
+	UCDB_GROUP_PACKED_UNION    = 
+		(UCDB_GROUP_UNPACKED_UNION|UCDB_GROUP_MASK_PACKED),  
+	UCDB_GROUP_PACKED_ARRAY    = 
+		(UCDB_GROUP_UNPACKED_ARRAY|UCDB_GROUP_MASK_PACKED) 
+} ucdbGroupKind; </code></pre></div>
+<div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id7ddbd745-6619-4fe4-99cf-056011ce27b5"><h2 class="title Subheading sectiontitle">Wildcard Matching</h2><p class="p">General wildcard matching supports the following
+wildcard symbols:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idc5773c07-b412-41f3-9505-d99f15043243__id650049bb-cdf1-45b0-959d-85f0cf664c3c" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:0.686in" /><col style="width:5.813in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">*</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Matches one or more characters.
+Only spans one scope, so * matches [2], but does not match [2][4].</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">?</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Matches a single character.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The following range pattern searches require
+group scopes:</p>
+<ul class="ul"><li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id02997329-8c91-4c00-a736-9b5d40699ad4"><p class="p">(number)</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id06c5a1a1-ec91-4914-9cd3-f4e39760ade0"><p class="p">[number]</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id18f2eef2-aed7-4988-ae3f-059d000e44bf"><p class="p">[number:number]</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id09491ff2-5720-4ac0-b7c4-769d9ede95dc"><p class="p">(number to number)</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id161818d0-fc0a-43b5-8b71-f038e489cded"><p class="p">(number downto number)</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id9e2346a5-7759-4674-8cca-21643157e7b6"><h2 class="title Subheading sectiontitle">ucdb_CreateGroupScope</h2><pre class="pre codeblock leveled"><code>ucdbScopeT ucdb_CreateGroupScope( 
+    ucdbT               db, 
+    ucdbScopeT          parent, 
+    ucdbGroupKind       kind, 
+    char*               name, 
+    ucdbFlagsT          flags, 
+    int                 numberOfRangePairs, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="idc5773c07-b412-41f3-9505-d99f15043243__id5ffb7e92-5931-499d-876d-83e84b822f06" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">parent</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Parent scope</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">kind</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Group kind</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Name to assign to the
+group scope</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">flags</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Flags</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">numberOfRangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Number of range pairs</p>
+<p class="p">Only used for ordered groups.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">rangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Range pairs</p>
+<p class="p">Only used for ordered groups.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates the specified group scope beneath the
+parent scope. Returns the scope handle if successful, or NULL if
+error. In write-streaming mode, name and rangePairs are not copied,
+so they should be kept unchanged until the next ucdb_WriteStream*
+call or the next ucdb_Create* call.</p>
+</div>
+<div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id18dff273-7385-4f9f-81a5-1a1891397063"><h2 class="title Subheading sectiontitle">ucdb_GetGroupInfo</h2><pre class="pre codeblock leveled"><code>int ucdb_GetGroupInfo( 
+    ucdbT               db, 
+    ucdbScopeT          group, 
+    ucdbGroupKind*      kind, 
+    const char**        name, 
+    int*                numberOfRangePairs, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="idc5773c07-b412-41f3-9505-d99f15043243__id0f122dbe-1413-4528-b1eb-3837966d8849" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">group</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Group scope</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">kind</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Group kind</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Name of the group scope</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">numberOfRangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Number of range pairs</p>
+<p class="p">Only used for ordered groups.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">rangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Range pairs</p>
+<p class="p">Only used for ordered groups.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the group-specific information (kind,
+name, numberOfRangePairs, and rangePairs) for the specified group
+scope. Returns 0 if successful, or -1 if error.</p>
+</div>
+<div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id43f1f040-8165-4276-b7f6-db3e7580c67e"><h2 class="title Subheading sectiontitle">ucdb_ExpandOrderedGroupRangeList</h2><pre class="pre codeblock leveled"><code>int ucdb_ExpandOrderedGroupRangeList( 
+    ucdbT               db, 
+    ucdbScopeT          group, 
+    int                 numberOfRangePairs, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="idc5773c07-b412-41f3-9505-d99f15043243__id3790a3a7-b44f-4e85-8f95-dd44f6e00d18" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">group</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Group scope</p>
+<p class="p">Must be UCDB_GROUP_PACKED_ARRAY or UCDB_GROUP_UNPACKED_ARRAY
+type.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">numberOfRangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Number of range pairs</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">rangePairs</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Range pairs</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Expands the range pairs for the specified group
+with the specified list of range pairs according to the following
+rules:</p>
+<ul class="ul"><li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id7eb84497-3d01-48cb-80ad-3d447a5374cc"><p class="p">A range that does not overlap an existing
+range is added to the range list.</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__idcb5aeab1-3a03-4b49-92cd-d33397ffef82"><p class="p">A range that encloses one or more existing
+ranges replaces the enclosed ranges.</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__idf921ec2e-5a1e-4a7d-bc79-abc79ae589b2"><p class="p">A range that (partially) overlaps an
+existing range expands that range.</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__idd120e60a-fe45-493b-9d4b-2df4b2d63f6a"><p class="p">A range completely enclosed in an existing
+range is ignored.</p>
+</li>
+</ul>
+<p class="p">Returns 0 if successful, -1 if error.</p>
+</div>
+<div class="section Subsection" id="idc5773c07-b412-41f3-9505-d99f15043243__id8364da31-37a8-407f-af8d-e7d641a0d12c"><h2 class="title Subheading sectiontitle">ucdb_GetOrderedGroupElementByIndex</h2><pre class="pre codeblock leveled"><code>ucdbScopeT ucdb_GetOrderedGroupElementByIndex( 
+    ucdbT               db, 
+    ucdbScopeT          parent, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="idc5773c07-b412-41f3-9505-d99f15043243__ida1240fb8-ef7f-46ce-95ef-9f042479f309" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">group</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Parent ordered group
+scope</p>
+<p class="p">Must be UCDB_GROUP_PACKED_ARRAY or UCDB_GROUP_UNPACKED_ARRAY
+type.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">index</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Index of the child</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the handle of the child element of
+the specified ordered group scope that has the specified index,
+or NULL if error or if no element corresponds to the index. For
+example, for the ordered group corresponding to bus[3:0]:</p>
+<ul class="ul"><li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__id91f4579f-a19a-43e9-a96a-b0e5fb14bca2"><p class="p">index = 1 returns the rightmost range
+number (0)</p>
+</li>
+<li class="li" id="idc5773c07-b412-41f3-9505-d99f15043243__idece74b24-636c-4348-8d04-16dc97bf59b6"><p class="p">index = 4 returns the leftmost range
+number (3)</p>
+</li>
+</ul>
+<p class="p">Function is used in memory mode only.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbApiFunctions_idffb846c1.html" title="This section defines the UCDB API functions by function group.">UCDB API Functions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Groups"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_Groups_idc5773c07.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="File and Directory Manipulation Procedures" />
+<meta name="abstract" content="These procedures support the creation, modification, and deletion of directories, files, and symbolic links from within a user-definable procedure." />
+<meta name="description" content="These procedures support the creation, modification, and deletion of directories, files, and symbolic links from within a user-definable procedure." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4367e68b-1146-4c60-bcc8-940e765e4a82" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>File and Directory Manipulation Procedures</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="File and Directory Manipulation Procedures" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4367e68b-1146-4c60-bcc8-940e765e4a82">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">File and Directory Manipulation Procedures</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">These
+procedures support the creation, modification, and deletion of directories,
+files, and symbolic links from within a user-definable procedure. </span>
+</div>
+<p class="p">By convention, there are only two directory trees where
+VRM has the authority to create, modify, or delete files:</p>
+<ol class="ol"><li class="li" id="id4367e68b-1146-4c60-bcc8-940e765e4a82__ide8cbe2d5-aa64-4cc8-961b-b5d053c88d62"><p class="p"><span class="ph filepath">VRMDATA</span> directory
+tree.</p>
+</li>
+<li class="li" id="id4367e68b-1146-4c60-bcc8-940e765e4a82__id43afe2db-9417-43cb-a885-0fcd9702d4c3"><p class="p">Directory from which the vrun process
+is launched (that is, the current working directory or $cwd of the
+vrun process). </p>
+</li>
+</ol>
+<p class="p">This restriction is self-imposed and
+exists to prevent the user from accidentally requesting VRM to delete
+or overwrite sensitive source files. However, since user-definable procedures
+are written in pure TCL, there is nothing stopping the user from
+pressing the standard TCL commands into such service, if necessary.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/General_Verifysafetarget_idee122925.html" title="This procedure verifies that the path in question is within the reach of VRM, defined as anywhere under the VRMDATA directory or anywhere under the directory from which the vrun process was originally launched. All other paths are off limits for file generation, modification, or deletion.">VerifySafeTarget</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Makedirectory_idfaf6b076.html" title="Creates a directory, if it does not already exist. Directory creation is recursive so parent directories that do not already exist are also silently created. ">MakeDirectory</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Writetofile_id47d1fde0.html" title="Writes the specified lines to the specified file. Any existing content in the file is deleted. This procedure calls VerifySafeTarget to ensure that the file to be written lies within a part of the directory tree to which VRM has write authority.">WriteToFile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Appendtofile_id7ef5056e.html" title="Appends the specified lines to the specified file, preserving any existing content. This procedure calls VerifySafeTarget to ensure that the file to be written lies within a part of the directory tree to which VRM has write authority.">AppendToFile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Copyfile_id57a1264b.html" title="Copies the contents of one file to a file in another location, creating the target file if necessary and/or overwriting any existing content. If parent directories of the target path do not exist, they are created. This procedure calls VerifySafeTarget to ensure that the target file lies within a part of the directory tree to which VRM has write authority (the source path is not checked and can be any path for which the user has read access).">CopyFile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Linktofile_id6913fb8f.html" title="Creates a symbolic link from an existing path to another location (supported only on platforms that support symbolic links). If parent directories of the target path do not exist, they are created, although the trailing component of the target path will always end up as a symbolic link. This procedure calls VerifySafeTarget to ensure that the directory in which the link is to be created lies within a part of the directory tree to which VRM has write authority (the source path is not checked and can be any path in the directory structure).">LinkToFile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Getfilelines_id3f232f45.html" title="Reads and returns the contents of the specified file, stripped of comments and blank lines, and returned as a list (one element per line).">GetFileLines</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Getfilecontents_idebc86724.html" title="Reads and returns the contents of the specified file as a list (one element per line).">GetFileContents</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_Donotdelete_id24d0b77e.html" title="Adds one or more files and/or directories to an internal “no delete” list. Wildcards may be included in the file/directory arguments. Relative files and/or directories are first expanded using the most recent base directory, which may also be an absolute or relative path. The base directory starts out blank. If, after the initial expansion, the resulting path is still relative, it is expanded with respect to the top-mode level of the VRM Data directory. Following this, any wildcards in the resulting absolute paths are expanded, and the resulting paths are added to the “no delete” list. Only files that actually exist at the time the DoNotDelete procedure is called are added to the file; this means an entire directory of files may be added to the “no delete” list with a single wildcard argument. In the event the wildcard expansion results in an empty list, the expanded path itself is added to the “no delete” list (just in case the wildcard is a literal file/directory name or the path represents an explicit reference to a file that does not yet exist).">DoNotDelete</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UtilityProcedureCatalog_id31ac5551.html" title="The procedures in the linked sections listed below are not user-definable but are defined in the same namespace so that the various user-defined override procedures can make use of the lower-level facilities in the VRM code.">Utility Procedure Catalog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "File and Directory Manipulation Procedures"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_FileDirectoryManipulationProcedures_id4367e68b.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Failure Rerun Functionality" />
+<meta name="abstract" content="One requirement of a good regression management system is the ability to rerun failed tests, possibly with additional debug output enabled. There are a number of ways in which VRM allows the user to rerun Actions from a previous run according to their status. The most obvious use for this function is to rerun tests that failed, either as is to filter out “noisy” failures or with different command-line options to enable additional debugging output." />
+<meta name="description" content="One requirement of a good regression management system is the ability to rerun failed tests, possibly with additional debug output enabled. There are a number of ways in which VRM allows the user to rerun Actions from a previous run according to their status. The most obvious use for this function is to rerun tests that failed, either as is to filter out “noisy” failures or with different command-line options to enable additional debugging output." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida240963a-0c73-4daf-a633-1c204b745ea4" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Failure Rerun Functionality</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Failure Rerun Functionality" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ida240963a-0c73-4daf-a633-1c204b745ea4">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Failure
+Rerun Functionality</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">One
+requirement of a good regression management system is the ability
+to rerun failed tests, possibly with additional debug output enabled.
+There are a number of ways in which VRM allows the user to rerun
+Actions from a previous run according to their status. The most
+obvious use for this function is to rerun tests that failed, either
+as is to filter out “noisy” failures or with different command-line
+options to enable additional debugging output.</span>
+</div>
+<p class="p">The various methods available
+include the following:</p>
+<ul class="ul"><li class="li" id="ida240963a-0c73-4daf-a633-1c204b745ea4__idf43442c5-97ab-47d7-88b8-e6b8e0c5d3a3"><p class="p">A local rerun method, enabled by
+default, whereby failing Actions can be re-executed.</p>
+</li>
+<li class="li" id="ida240963a-0c73-4daf-a633-1c204b745ea4__idcf064cec-dc7a-4cd1-84e2-934c9d0395bf"><p class="p">A global (command-line based) method,
+enabled by a command-line option, where vrun compiles a list of
+tests that failed across the entire regression run.</p>
+</li>
+<li class="li" id="ida240963a-0c73-4daf-a633-1c204b745ea4__id0c9b3ca1-63be-4c39-aa3d-69422087be6c"><p class="p">A global (parameter-based) method,
+enabled by a predefined parameter, where vrun compiles one or more
+lists of failed tests according to parameters embedded in the RMDB
+file.</p>
+</li>
+<li class="li" id="ida240963a-0c73-4daf-a633-1c204b745ea4__idac9ae868-30f9-4431-a3bf-ed60dd730c4c"><p class="p">A semi-automatic mode where vrun
+searches the event log for the immediately previous run looking
+for failed or not run tests.</p>
+</li>
+<li class="li" id="ida240963a-0c73-4daf-a633-1c204b745ea4__idb5528f4b-d45f-4be7-824e-5ed24c469062"><p class="p">An automatic mode where vrun collects
+makes a second pass through a new set of Runnables, possibly with
+different command-line options. </p>
+</li>
+</ul>
+<p class="p">Which method the user chooses depends
+on the complexity of the rerun methodology under consideration.</p>
+<p class="p">Note that the examples in this document
+assume a RMDB file named <span class="ph filepath">default.rmdb</span> is located
+in the current directory, and that VRM defaults for any options
+not listed are adequate to run the regression suite defined therein.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_LocalImmediateRerun_id7ef4f15e.html" title="VRM supports various levels of rerun functionality whereby failing Actions (that is, tests) can be re-executed, either as part of the same regression run or as part of a subsequent regression run. This section describes a level of failure rerun support called “local rerun” or “immediate rerun” (this document uses the local term).">Local (Immediate) Rerun</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_GlobalCommandLineBasedMethod_ide78c0967.html" title="The vrun process can be instructed to dump out a log containing the full context path of the Runnable responsible for any Action that fails. Actions that encountered a timeout after launch are counted as failures, and Actions that did not run due to a failed dependency and/or a manual interrupt are also counted as failures. ">Global (Command-line Based) Method</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_GlobalParameterBasedMethod_idf7244e8d.html" title="The Global method of specifying a failed test log file involves adding a special predefined parameter to each Group for which a failed test log file is to be maintained. This method only works with execScript Actions. If vrun is able to resolve the parameter reference (%faillog:%) to a non-empty string for any given execScript Action, it assumes the parameter value represents the path to a file in which a list of failing Tasks, one-per-line, is to be stored. If the execScript reports a failure, it adds the context path of the Task (without the trailing execScript component) to this file. There can be more than one such file. You might, for example, have two or three top-level Groups, each of which maintains its own failure log. In that case, you would define a unique faillog parameter in each Group and the file path specified in each of those parameters would apply to all the Tasks under that particular Group (at any depth, since inheritance knows no limits).">Global (Parameter-based) Method</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_SemiAutomaticTwoCommandMode_id56bd3845.html" title="This section describes a way to identify failing Actions from a previous run. The -select command-line option takes one or more status keywords and searches the event log from the immediately previous run for Actions that match the specified keywords. It then converts the Action context path into a Runnable context path and then selects that context path for execution as if it had been included directly on the vrun command line.">Semi-automatic (Two-command) Mode</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_FullyAutomaticOneCommandMode_id5733177e.html" title="VRM supports a single-command automated way to run two passes over a given regression suite, picking up additional command-line options on the second pass. The -rerun option takes a string that contains the additional command-line options for the second pass (which must be an empty argument should you decide to run the regression suite twice with the same arguments both times). The command is as follows:">Fully Automatic (One-command) Mode</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WorkingDirectoryScriptExecution_id10825c4b.html" title="In order to prevent multiple Actions (that is, user scripts) from a single vrun invocation from overwriting or otherwise interfering with each other, each Action executed by VRM is launched from within a working directory unique to the Runnable on whose behalf the Action is launched. In order to prevent multiple invocations of VRM (by other users or by the same user) from interfering with each other, the root of the scratch hierarchy within which these per-Runnable directories are created is control by the user.">Working Directory and Script Execution</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Failure Rerun Functionality"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_FailureRerunFunctionality_ida240963a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

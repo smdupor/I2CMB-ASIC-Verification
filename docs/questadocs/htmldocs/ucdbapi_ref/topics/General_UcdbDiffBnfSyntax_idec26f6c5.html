@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="UCDB Diff BNF Syntax" />
+<meta name="abstract" content="UCDB Diff BNF Definition." />
+<meta name="description" content="UCDB Diff BNF Definition." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idec26f6c5-2df6-4b79-9a44-354ba6a8f442" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>UCDB Diff BNF Syntax</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="UCDB Diff BNF Syntax" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idec26f6c5-2df6-4b79-9a44-354ba6a8f442">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">UCDB Diff BNF Syntax</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">UCDB Diff
+BNF Definition.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idec26f6c5-2df6-4b79-9a44-354ba6a8f442__id294360ea-c4ba-40e9-8eb2-4711ad9fe2fd"><p class="p"><span class="ph FontProperty emphasis">any_diff_line</span> :== <span class="ph FontProperty emphasis">diff_line</span> | <span class="ph FontProperty emphasis">diff_comment</span> | <span class="ph FontProperty emphasis">summary_line</span></p>
+<p class="p"><span class="ph FontProperty emphasis">diff_comment</span> :==
+-- <span class="ph FontProperty emphasis">comment_text</span> --</p>
+<p class="p"><span class="ph FontProperty emphasis">summary_line</span> :==
+SS <span class="ph FontProperty emphasis">tbd_format</span></p>
+<p class="p"><span class="ph FontProperty emphasis">diff_line</span> :== <span class="ph FontProperty emphasis">diff_file_location diff_text</span></p>
+<p class="p"><span class="ph FontProperty emphasis">diff_file_location</span> :==
+&lt;&gt; | &lt;&lt; | &gt;&gt;</p>
+<p class="p"><span class="ph FontProperty emphasis">diff_text</span> :== <span class="ph FontProperty emphasis">ucdb_structural_type primary_key diff_aspect</span> [<span class="ph FontProperty emphasis">diff_details</span>]</p>
+<p class="p"><span class="ph FontProperty emphasis">ucdb_structural_type</span> :==
+Scope | Bin | Historynode | UCDBRoot</p>
+<p class="p"><span class="ph FontProperty emphasis">primary_key</span> :== <span class="ph FontProperty emphasis">scope_key</span> | <span class="ph FontProperty emphasis">bin_key</span> | <span class="ph FontProperty emphasis">historynode_key</span></p>
+<p class="p"><span class="ph FontProperty emphasis">scope_key</span> :== <span class="ph FontProperty emphasis">ucdb_scope_type_string</span> "<span class="ph FontProperty emphasis">ucdb_hiername</span>"</p>
+<p class="p"><span class="ph FontProperty emphasis">bin_key</span> :== <span class="ph FontProperty emphasis">ucdb_bin_type_string</span> "<span class="ph FontProperty emphasis">ucdb_hiername</span>" "<span class="ph FontProperty emphasis">coveritemname</span>"</p>
+<p class="p"><span class="ph FontProperty emphasis">ucdb_scope_type_string</span> :==
+Branch | Toggle | Covergroup | ... </p>
+<p class="p"><span class="ph FontProperty emphasis">ucdb_bin_type_string</span> :==
+BranchBin | ToggleBin | StatementBin | ... </p>
+<p class="p"><span class="ph FontProperty emphasis">historynode_key</span> :== "<span class="ph FontProperty emphasis">historynode_logical_name</span>"</p>
+<p class="p"><span class="ph FontProperty emphasis">diff_aspect</span> :==
+Structural | Attribute | Flag | Flagfield | Tag | DU | Source |
+Count | Goal | Weight | Limit | Bitlen | Kind | Sourceinfo | Version</p>
+<p class="p"><span class="ph FontProperty emphasis">diff_value</span> :== <span class="ph FontProperty emphasis">attribute_diff_value</span> | <span class="ph FontProperty emphasis">integer integer</span> | <span class="ph FontProperty emphasis">float float</span> | <span class="ph FontProperty emphasis">first_value second_value</span></p>
+<p class="p"><span class="ph FontProperty emphasis">attribute_diff_value</span> :== "<span class="ph FontProperty emphasis">attribute_name</span>" <span class="ph FontProperty emphasis">attribute_type</span> [<span class="ph FontProperty emphasis">attribute_type</span>] "<span class="ph FontProperty emphasis">attribute_value</span>" ["<span class="ph FontProperty emphasis">attribute_value</span>"]</p>
+<p class="p"><span class="ph FontProperty emphasis">attribute_type</span> :==
+Int | Float | Double | String | Memblk | Long | Handle | Array</p>
+<p class="p"><span class="ph FontProperty emphasis">attribute_value</span> :== <span class="ph FontProperty emphasis">numeric_value</span> | <span class="ph FontProperty emphasis">string</span> | <span class="ph FontProperty emphasis">memblk_representation</span></p>
+<p class="p"><span class="ph FontProperty emphasis">memblk_representation</span> :== <span class="ph FontProperty emphasis">num_bytes</span>bytes:MEMBLK
+| <span class="ph FontProperty emphasis">num_bytes</span>bytes:<span class="ph FontProperty emphasis">hex_byte_list</span></p>
+<p class="p"><span class="ph FontProperty emphasis">historynode_type_string</span> :==
+Test | Merge | Testplan</p>
+<p class="p"><span class="ph FontProperty emphasis">num_bytes</span> :== <span class="ph FontProperty emphasis">integer</span></p>
+<p class="p"><span class="ph FontProperty emphasis">hex_byte_list</span> :== <span class="ph FontProperty emphasis">xx</span>[_<span class="ph FontProperty emphasis">xx</span>]</p>
+<p class="p"><span class="ph FontProperty emphasis">x</span> := <span class="ph FontProperty emphasis">hex_digit</span></p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCAppe_UcdbDiffBnf_idc6154b5d.html" title="This appendix has the BNF definition of the UCDB sytntax.">UCDB Diff BNF</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "UCDB Diff BNF Syntax"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_UcdbDiffBnfSyntax_idec26f6c5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

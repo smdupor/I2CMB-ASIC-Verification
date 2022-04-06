@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware Simulation Overview" />
+<meta name="abstract" content="Verilog and VHDL designs make the fundamental assumption that all logic is powered on at the beginning of simulation and remains powered on throughout simulation." />
+<meta name="description" content="Verilog and VHDL designs make the fundamental assumption that all logic is powered on at the beginning of simulation and remains powered on throughout simulation." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1edfc97a-6e6b-45cc-9813-5ce16de3dd05" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Simulation Overview</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Simulation Overview" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1edfc97a-6e6b-45cc-9813-5ce16de3dd05">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power
+Aware Simulation Overview</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Verilog and
+VHDL designs make the fundamental assumption that all logic is powered
+on at the beginning of simulation and remains powered on throughout
+simulation. </span>
+</div>
+<p class="p">However, this assumption is no longer true for the
+complex systems designed today. In these systems, power is typically
+provided to a given portion of a chip only when that part has to
+function. To do so, additional hardware is included in the design
+to control power, the saving of a state when the power is turned
+off, and the mediation of interactions between portions of the system
+that are powered differently.</p>
+<p class="p">Power Aware simulation makes it possible to
+model these power management aspects of a system in simulation,
+even before the power management features are implemented in the design.
+To do so, additional logic is included in the simulation model.
+The additional logic does the following: </p>
+<ul class="ul"><li class="li" id="id1edfc97a-6e6b-45cc-9813-5ce16de3dd05__id3088ea66-b5db-46f7-a44e-8c70becbc637"><p class="p">Defines the power management architecture
+to be imposed on the design</p>
+</li>
+<li class="li" id="id1edfc97a-6e6b-45cc-9813-5ce16de3dd05__id457b4318-f477-47e5-8958-7e93f322f503"><p class="p">Implements the behavior of power management
+elements</p>
+</li>
+<li class="li" id="id1edfc97a-6e6b-45cc-9813-5ce16de3dd05__id1ed79bc8-c050-4d6a-87b5-5ee1c3bce6a4"><p class="p">Adapts the behavior of the design itself
+to reflect changes in power</p>
+</li>
+</ul>
+<p class="p">To run a Power Aware simulation, the normal
+build process for constructing the simulation model is modified
+to add the additional logic. </p>
+<p class="p">Power Aware simulation applies appropriate
+power intent to the design. For an RTL design with no power management
+content, this may involve inferring power domains, retention cells,
+isolation cells, level shifters, and the power supply network from
+the UPF power intent specification. For a gate-level design, created
+by a synthesis tool, that reads and implements UPF, some of the
+power management content may already be present, and therefore less
+of the power management content may need to be inferred from the
+UPF specification.</p>
+<p class="p">Application of power intent to the design includes
+addition of functionality to model the corruption of signal values
+when insufficient power is provided for normal operation. It also includes
+addition of functionality to model the saving and restoring of system
+state that is performed by state retention elements in the power
+managed system. Addition of this functionality is done automatically
+as part of the preparation for Power Aware simulation.</p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">It
+is also possible for you to construct custom models for these behaviors.
+Refer to “<a class="xref fm:HeadingOnly" href="MGCAppe_ModelConstructionPowerAwareSimulation_id2c35570a.html#id2c35570a-3fc3-4168-8d84-55be1d1f35dc__MGCAppe_ModelConstructionPowerAwareSimulation_id2c35570a.xml#id2c35570a-3fc3-4168-8d84-55be1d1f35dc" title="Power Aware verification uses Verilog behavioral models of power management cells. These models encapsulate the Power Aware behaviors of various types of design state, such as clock-low retention flip-flops and active-high retention latches.">Model Construction for Power Aware Simulation</a>” for more information
+on Power Aware modeling. </p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_IntroductionToPowerAwareSimulation_id03c0f863.html" title="Power Aware simulation enables you to perform functional verification of low-power designs together with the power management structure defined by your power intent. The tool supports Power Aware simulation for VHDL and Verilog designs in both register transfer level (RTL) and gate-level simulation (GLS).">Introduction to Power Aware Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Simulation Overview"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareSimulationOverview_id1edfc97a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

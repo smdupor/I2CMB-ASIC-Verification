@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Relative File Rules" />
+<meta name="abstract" content="There are a number of parameters and element attributes whose values represent files and/or paths. While absolute paths can be specified in any of these places, in general these parameters and attributes are specified as relative file/path names. The following basic rules explains how VRM resolves these relative paths:" />
+<meta name="description" content="There are a number of parameters and element attributes whose values represent files and/or paths. While absolute paths can be specified in any of these places, in general these parameters and attributes are specified as relative file/path names. The following basic rules explains how VRM resolves these relative paths:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Relative File Rules</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Relative File Rules" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Relative File Rules</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">There are a
+number of parameters and element attributes whose values represent
+files and/or paths. While absolute paths can be specified in any
+of these places, in general these parameters and attributes are
+specified as relative file/path names. The following basic rules
+explains how VRM resolves these relative paths:</span>
+</div>
+<ol class="ol"><li class="li" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__id324d4ce5-df29-49a5-bde4-84833843e218"><p class="p">Paths supplied on the command line are always assumed
+to be relative to the directory from which vrun was launched.</p>
+</li>
+<li class="li" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__id0b732017-e082-40d7-864c-19cf2d24b644"><p class="p">Paths within the RMDB file that represent
+source files are always assumed to be relative to the directory
+from which the RMDB was loaded.</p>
+</li>
+<li class="li" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__idfa8047ef-34a2-431f-b15f-ff684f1eb4be"><p class="p">Paths within the RMDB file that represent
+collateral files are always assumes to be relative to the working
+directory for the Action.</p>
+</li>
+<li class="li" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__id4e5b3157-159b-487b-8cde-a388c631a78f"><p class="p">Certain paths (<span class="ph filepath">mergefile/mergelist</span> only)
+have semantics that require that they be treated as relative to
+a specific location.</p>
+</li>
+<li class="li" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__id201db6d9-295b-4780-b459-d28f91c990f2"><p class="p">All paths defined within the RMDB file (parameters
+and/or attributes) are parameter-expanded (but not TCL expanded).</p>
+</li>
+</ol>
+<p class="p"><a class="xref fm:Table" href="#idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__ida102afe4-ccec-414e-81f2-c562f0410c12">Table 1</a> lists the various places where file/path
+names can be specified and how VRM interprets the specified value.
+The Expanded column indicates whether the value will first be parameter-expanded
+before being interpreted.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idb4b04196-51aa-4e8c-98f3-6c7c2da1fb9f__ida102afe4-ccec-414e-81f2-c562f0410c12" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>File/Pathname Specification Options</span></caption><colgroup><col style="width:2.501in" /><col style="width:0.938in" /><col style="width:1.111in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d110537e175"><p class="p">Source</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d110537e178"><p class="p">Expanded</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d110537e181"><p class="p">Relative To</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">command-line option:
+-rmdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">$cwd</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">command-line option:
+-faillog</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">$cwd</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">command-line option:
+-loadtcl</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">$cwd</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">command-line option:
+-vrmdata</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">No</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">$cwd</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">parameter (file type)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">RMDBDIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">parameter: faillog</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">DATADIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">parameter: mergefile</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">DATADIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">parameter: mergelist</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">DATADIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">parameter: ucdbfile</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">TASKDIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">attribute: localfiles:name</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">TASKDIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">attribute: localfiles:src</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">RMDBDIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">attribute: usertcl:file</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">RMDBDIR</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e175 "><p class="p">attribute: xxxScript:file</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e178 "><p class="p">Yes</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d110537e181 "><p class="p">RMDBDIR</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_EnvironmentVariablesBuiltInParameters_id15924fe2.html" title="Reference information about environment variables and built-in parameters for VRM.">Environment Variables and Built-in Parameters</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Relative File Rules"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RelativeFileRules_idb4b04196.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

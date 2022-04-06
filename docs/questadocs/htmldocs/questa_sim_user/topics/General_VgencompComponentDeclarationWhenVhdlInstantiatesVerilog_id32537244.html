@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="vgencomp Component Declaration when VHDL Instantiates Verilog" />
+<meta name="abstract" content="The vgencomp command generates a component declaration according to the following rules." />
+<meta name="description" content="The vgencomp command generates a component declaration according to the following rules." />
+<meta name="DC.subject" content="component declaration, vgencomp for VHDL, generating VHDL from Verilog" />
+<meta name="keywords" content="component declaration, vgencomp for VHDL, generating VHDL from Verilog" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id32537244-66ee-4cf0-8785-31a5e5d24745" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>vgencomp Component Declaration when VHDL Instantiates Verilog</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="vgencomp Component Declaration when VHDL Instantiates Verilog" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id32537244-66ee-4cf0-8785-31a5e5d24745">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">vgencomp Component Declaration
+when VHDL Instantiates Verilog</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">The vgencomp
+command generates a component declaration according to the following
+rules. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id32537244-66ee-4cf0-8785-31a5e5d24745__id0ab50372-5bbb-4137-8f1d-9ca4f98c2a31"><ul class="ul"><li class="li" id="id32537244-66ee-4cf0-8785-31a5e5d24745__id073e4f86-04a7-4a81-8070-a1453f17e2bc"><p class="p">Generic Clause</p>
+<p class="p">The <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vgencomp', 'questa_sim_ref'); return false;">vgencomp</a> command
+generates a generic clause if the module has parameters. A corresponding
+generic is defined for each parameter that has an initial value
+that does not depend on any other parameters.</p>
+<p class="p">The generic type is determined by the parameter's
+initial value as follows:</p>
+</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id32537244-66ee-4cf0-8785-31a5e5d24745__idbf0e3168-495c-4a7b-b70e-db1ea20ff906" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:2.438in" /><col style="width:2.438in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e182"><p class="p">Parameter value </p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e185"><p class="p">Generic type</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e182 "><p class="p">integer </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e185 "><p class="p">integer</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e182 "><p class="p">real </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e185 "><p class="p">real</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e182 "><p class="p">string literal </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e185 "><p class="p">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The default value of the generic is the same
+as the parameter's initial value. For example: </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id32537244-66ee-4cf0-8785-31a5e5d24745__id0d1e1999-a38a-461f-a957-a6e4f2680f67" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:2.421in" /><col style="width:2.453in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e218"><p class="p">Verilog parameter </p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e221"><p class="p">VHDL generic</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e218 "><p class="p">parameter p1 = 1 - 3; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e221 "><p class="p">p1 : integer := -2; </p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e218 "><p class="p">parameter p2 = 3.0; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e221 "><p class="p">p2 : real := 3.000000; </p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e218 "><p class="p">parameter p3 = "Hello"; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e221 "><p class="p">p3 : string := "Hello";</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="ul"><li class="li" id="id32537244-66ee-4cf0-8785-31a5e5d24745__idd52e72f9-12d1-45a4-9695-ef4b1244403e"><p class="p">Port
+Clause</p>
+<p class="p">The <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vgencomp', 'questa_sim_ref'); return false;">vgencomp</a> command
+generates a port clause if the module has ports. A corresponding
+VHDL port is defined for each named Verilog port.</p>
+<p class="p">You can set the VHDL port type to bit, std_logic,
+or vl_logic. If the Verilog port has a range, then the VHDL port
+type is bit_vector, std_logic_vector, or vl_logic_vector. If the
+range does not depend on parameters, then the vector type will be
+constrained accordingly, otherwise it will be unconstrained. For
+example:</p>
+</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id32537244-66ee-4cf0-8785-31a5e5d24745__id23a02fda-06ca-4fa7-838a-fab927a40290" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.859in" /><col style="width:3.016in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e264"><p class="p">Verilog port </p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d226840e267"><p class="p">VHDL port </p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e264 "><p class="p">input p1; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e267 "><p class="p">p1 : in std_logic;</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e264 "><p class="p">output [7:0] p2; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e267 "><p class="p">p2 : out std_logic_vector(7
+downto 0);</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e264 "><p class="p">output [4:7] p3; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e267 "><p class="p">p3 : out std_logic_vector(4
+to 7);</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e264 "><p class="p">inout [W-1:0] p4; </p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d226840e267 "><p class="p">p4 : inout std_logic_vector;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">Configuration declarations are allowed to
+reference Verilog modules in the entity aspects of component configurations.
+However, the configuration declaration cannot extend into a Verilog
+instance to configure the instantiations within the Verilog module.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_VhdlInstantiatingVerilogSystemverilog_id13eb3485.html" title="Once you have generated a component declaration for a Verilog module, you can instantiate the component just like any other VHDL component. You can reference a Verilog module in the entity aspect of a component configuration—all you need to do is specify a module name instead of an entity name. You can also specify an optional secondary name for an optimized sub-module.">VHDL Instantiating Verilog or SystemVerilog</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "vgencomp Component Declaration when VHDL Instantiates Verilog"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_VgencompComponentDeclarationWhenVhdlInstantiatesVerilog_id32537244.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

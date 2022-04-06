@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Avoiding Problems with Inheritance" />
+<meta name="abstract" content="Inheritance solves a lot of problems in the general case. It allows a common parameter value to be entered into the RMDB database once and still be visible from large parts of the regression topology. It allows complex parameter values to themselves be parameterized using a simple parameter (such as a testname or a seed) defined in each test. Auto-merging is the one place where this flexible inheritance architecture works against us." />
+<meta name="description" content="Inheritance solves a lot of problems in the general case. It allows a common parameter value to be entered into the RMDB database once and still be visible from large parts of the regression topology. It allows complex parameter values to themselves be parameterized using a simple parameter (such as a testname or a seed) defined in each test. Auto-merging is the one place where this flexible inheritance architecture works against us." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id9ef20991-54a8-4306-958e-09e1d08f27c7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Avoiding Problems with Inheritance</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Avoiding Problems with Inheritance" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id9ef20991-54a8-4306-958e-09e1d08f27c7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Avoiding Problems with Inheritance</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Inheritance
+solves a lot of problems in the general case. It allows a common
+parameter value to be entered into the RMDB database once and still
+be visible from large parts of the regression topology. It allows
+complex parameter values to themselves be parameterized using a
+simple parameter (such as a testname or a seed) defined in each
+test. Auto-merging is the one place where this flexible inheritance
+architecture works against us.</span>
+</div>
+<p class="p">The auto-merge algorithm requires
+that vrun be able to locate both the UCDB file for any given test
+and the target merge file into which this UCDB is to be merged. This
+is done with the <span class="ph FontProperty emphasis">ucdbfile</span> and <span class="ph FontProperty emphasis">mergefile</span> parameters,
+respectively. For each test, the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+points to the individual UCDB file produced by that test and the <span class="ph FontProperty emphasis">mergefile</span> parameter
+points to the common target merge file.</p>
+<p class="p">The issue comes at the interface of a lower-level
+merge and a higher-level merge. Assume, for example, there are two
+sets of three tests each. <a class="xref fm:Table" href="#id9ef20991-54a8-4306-958e-09e1d08f27c7__id0cdfdcfd-0251-4009-a251-7a2d99f24152">Table 1</a> shows the merges that need to be made
+to support multi-level merging for this example (see<a class="xref fm:HeadingOnly" href="Concept_CompleteMultiLevelAutoMergeExample_id97fb56dd.html#id97fb56dd-652c-435b-a761-dfd37e0fe04d__Concept_CompleteMultiLevelAutoMergeExample_id97fb56dd.xml#id97fb56dd-652c-435b-a761-dfd37e0fe04d" title="This section shows a complete multi-level auto-merge example.">Complete Multi-level Auto-merge Example</a>) (paths are ignored in this example):</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id9ef20991-54a8-4306-958e-09e1d08f27c7__id0cdfdcfd-0251-4009-a251-7a2d99f24152" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Merges for Avoiding Inheritance Problems
+in Example</span></caption><colgroup><col style="width:0.802in" /><col style="width:1.137in" /><col style="width:1.636in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d86311e178"><p class="p">Level</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d86311e181"><p class="p">Merge File</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d86311e184"><p class="p">Input UCDB File</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e178 "><p class="p">1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e181 "><p class="p">group1.ucdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e184 "><p class="p">group1_test1.ucdb group1_test2.ucdb group1_test3.ucdb</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e178 "><p class="p">1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e181 "><p class="p">group2.ucdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e184 "><p class="p">group2_test1.ucdb group2_test2.ucdb group2_test3.ucdb</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e178 "><p class="p">2</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e181 "><p class="p">final.ucdb</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d86311e184 "><p class="p">group1.ucdb</p>
+<p class="p">group2.ucdb</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">Since the target merge file is common to all
+the tests under that Group, it is only natural that the path to
+that merge file is defined in the Group itself and inherited by
+all the tests under that Group. So the <span class="ph FontProperty emphasis">group1</span> Runnable
+would define a <span class="ph FontProperty emphasis">mergefile</span> value
+for the Group. However, the <span class="ph FontProperty emphasis">group1</span> Runnable
+is also a leaf for the second-level merge. So it would like to define
+the <span class="ph FontProperty emphasis">mergefile</span> parameter
+to point to the final target and the <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+to point to the results of the first-level merge for which it was
+responsible. Clearly these are conflicting requirements.</p>
+<p class="p">The solution is to split the <span class="ph FontProperty emphasis">group1</span> Runnable
+into two parts. In the example above, a Group and a Task that are
+siblings in a higher-level Group (which serves only as a container
+to relate the two parts of the problem) are used. The user can also create
+one Group inside another in a nested division. The goal is simply
+to separate the top-most (Group) Runnable of the lower-level merge
+from the leaf Runnable of the higher-level merge.</p>
+<p class="p">In the example, the <span class="ph filepath">systemtest_run</span> Runnable
+represents the top-most Group of the first-level merge associated
+with the <span class="ph FontProperty emphasis">systemtest</span> subtree.
+It is that Runnable which defines the <span class="ph FontProperty emphasis">ucdbfile</span> and <span class="ph FontProperty emphasis">mergefile</span> parameters
+for that subtree. Likewise, the <span class="ph filepath">unittest_run</span> Runnable
+defines the <span class="ph FontProperty emphasis">ucdbfile</span> and <span class="ph FontProperty emphasis">mergefile</span> parameters
+for the other first-level subtree. The <span class="ph FontProperty emphasis">systemtest_merge</span> Task
+(which is not under <span class="ph FontProperty emphasis">systemtest_run</span>)
+inherits its <span class="ph FontProperty emphasis">ucdbfile</span> and <span class="ph FontProperty emphasis">mergefile</span> parameters
+from the <span class="ph FontProperty emphasis">nightly</span> Group
+that serves as the top-most Group for the second-level merge. Since <span class="ph FontProperty emphasis">systemtest_merge</span> (and <span class="ph FontProperty emphasis">unittest_merge</span> for
+the other first-level subtree) are Tasks, they are subject to the
+same post-execution analysis as any other UCDB-producing Task, which includes
+auto-merging. Therefore, the UCDB file “produced” by the <span class="ph FontProperty emphasis">systemtest_merge</span> Task
+is auto-merged into the top-level merge file defined in the <span class="ph FontProperty emphasis">nightly</span> Group
+as soon as the <span class="ph FontProperty emphasis">execScript</span> for <span class="ph FontProperty emphasis">systemtest_merge</span> completes.</p>
+<p class="p">The only piece left is to cause the first-level
+merge files to appear to be UCDB files generated by the <span class="ph FontProperty emphasis">execScript</span> Actions
+in the <span class="ph FontProperty emphasis">unittest_merge</span> and <span class="ph filepath">systemtest_merge</span> Runnables.
+In the case of the <span class="ph filepath">unittest</span> subtree, the first-level
+merge file is to be used as is (without any strip/install options).
+Therefore, it is simply copied over by the <span class="ph FontProperty emphasis">execScript</span> of
+the <span class="ph filepath">unittest_merge</span> Runnable. In the case of
+the <span class="ph filepath">systemtest</span> subtree, the <span class="ph FontProperty emphasis">execScript</span> of
+the <span class="ph filepath">systemtest_merge</span> Runnable performs the
+strip and install transformation, resulting in a new UCDB file with
+the same hierarchy as the unit tests. These two are then merged
+together by the auto-merge algorithm to produce the top-level merge
+file containing results from all five tests.</p>
+<p class="p">This is not the only architecture that will
+result in a properly auto-merged UCDB file. But by understanding
+how this example is constructed, the principle of multi-level auto-merge
+using vrun can be more clearly understood.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MultiLevelAutoMergeExample_idc750a11f.html" title="The example makes use of the queued auto-merge functionality in vrun. The merge is divided into two levels, the second-level merge being responsible for merging two merge files produced by the first-level merge. This example also illustrates how unit-level and system-level coverage can be merged into a single UCDB using VRM.">Multi-level Auto-merge Example</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Avoiding Problems with Inheritance"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AvoidingProblemsInheritance_id9ef20991.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

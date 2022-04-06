@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="write report" />
+<meta name="abstract" content="Prints a summary of the design being simulated, including a list of all design units (VHDL configurations, entities, and packages, and Verilog modules) with the names of their source files. The summary includes a list of all source files used to compile the given design." />
+<meta name="description" content="Prints a summary of the design being simulated, including a list of all design units (VHDL configurations, entities, and packages, and Verilog modules) with the names of their source files. The summary includes a list of all source files used to compile the given design." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id64f04ef8-771c-4b44-9f5d-78ed24e336ad" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>write report</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="write report" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">write report</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Prints a
+summary of the design being simulated, including a list of all design
+units (VHDL configurations, entities, and packages, and Verilog
+modules) with the names of their source files. The summary includes
+a list of all source files used to compile the given design.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">write report [<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id4d7652bb-9e72-411c-9373-65e98936b4c0">‑capacity</a> [<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id73ca0905-16e5-4f55-81e8-dcae214ab60c">-l</a> | <a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id1ab00ede-7d4e-42a7-85a8-8440ccf6bb67">-s</a>] [<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id550b5f45-0a65-4295-96f0-a98b38d488e8">-line</a>] [<span class="ph"><a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idb560547b-82c0-4cb7-8846-6dcb3b9a6a45">-assertions</a> | </span><span class="ph"><a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id80442001-c7c0-4b57-afeb-74e2902da3a8">-classes</a> | <a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__ida1145532-a67b-45bf-a091-b7f65c0d8475">-cvg</a> |</span> <a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id472d137f-628a-4012-89c4-a0ce9994797a">-qdas</a> | <span class="ph"><a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id3eeb6f4f-8ba8-44f3-a483-c795e80557dd">-solver</a> | </span><a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id96ed2dd2-b353-4cfe-850b-afadafbb5ad5">-vmem</a>]] | <br />
+[<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id73ca0905-16e5-4f55-81e8-dcae214ab60c">-l</a> | <a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id1ab00ede-7d4e-42a7-85a8-8440ccf6bb67">-s</a>] | <span class="ph">[<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id3eeb6f4f-8ba8-44f3-a483-c795e80557dd">-solver</a>] | </span>[<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idb4d59f66-3d4b-4317-994d-59b9503c0136">-tcl</a>] | [<a class="xref fm:HeadingOnly" href="#id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id92546f79-0967-4861-9e9d-fe08846fe1db">&lt;filename&gt;</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The
+Simulation Report contains the following information:</p>
+<ul class="ul"><li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id517b9c0d-1df3-40b8-b3f8-2642a522d464"><p class="p">Design Simulated
+— directory path of the design’s top-level module</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id24732fa5-4ffa-4b69-9665-4c7995cf9fcb"><p class="p">Number of signals/nets
+in the design</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id6d7068f8-9ddf-4d78-bf45-a78241569227"><p class="p">Number of processes
+in the design</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id15877bd7-d811-4c6b-b292-6599094b12fc"><p class="p">Simulator Parameters,
+including:</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id5b89c6dc-3d78-47d3-8214-8dc5cd6ddc1b"><p class="p">Current directory</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__ida9c25294-2427-4ff0-8482-d613d557098c"><p class="p">Project file directory</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id2592a07a-0526-4944-86c2-333684ff7a75"><p class="p">Simulation time
+resolution</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id8a269dc2-d2da-4fd2-96af-89709141baaf"><p class="p">List of design units
+used, including:</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id18e2aea3-a78c-4c69-a70b-5d1812525be8"><p class="p">Module name</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id49dfddac-626a-4953-b89c-1dd1a34c9802"><p class="p">Architecture, if
+applicable</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id9101216c-7ba5-4bd9-9317-85c4cf6b541e"><p class="p">Library directory</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id09b484f9-0f3a-4623-86db-cd04a7900a33"><p class="p">Source file</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id3ec6a942-581c-4906-bae2-952f48ce619e"><p class="p">Timescale</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__ida308279d-bf75-480e-93c5-448463caaa14"><p class="p">Occurrences</p>
+</li>
+</ul>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idc0e94d1b-4128-4505-812a-6e71ed54a65f"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id4d7652bb-9e72-411c-9373-65e98936b4c0">‑capacity</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports data on memory usage of various types of SystemVerilog constructs
+in the design. </p>
+<p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> collects memory usage data for
+assertions, classes, covergroups, dynamic objects, and the solver. </p>
+<p class="p">Each of
+these design object types includes a switch that you can specify,
+along with ‑capacity, to display its memory data. </p>
+<p class="p">Must be specified
+first when specifying -assertions, -classes, -cvg, -qdas. </p>
+<p class="p">To display
+memory data for all object types, specify ‑capacity -l. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idb560547b-82c0-4cb7-8846-6dcb3b9a6a45">-assertions </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports memory usage data for SystemVerilog assertions and cover
+directives. You must precede this argument with -capacity.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id80442001-c7c0-4b57-afeb-74e2902da3a8">-classes</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports memory usage data for the current number of objects allocated,
+the current memory allocated for class object, the peak memory allocated
+and peak time. You must precede this argument with -capacity.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__ida1145532-a67b-45bf-a091-b7f65c0d8475">-cvg</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports memory usage data for the number of covergroups, cross,
+bins and memory allocated. You must precede this argument with -capacity.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id92546f79-0967-4861-9e9d-fe08846fe1db">&lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name of the output file to write the data to. If you
+omit &lt;filename&gt;, the report is written to the Transcript window.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id73ca0905-16e5-4f55-81e8-dcae214ab60c">-l</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates detailed information about the design, including a list
+of sparse memories or the memory capacity for all object types.
+You must precede this argument with -capacity when specifying a
+capacity report. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id550b5f45-0a65-4295-96f0-a98b38d488e8">-line</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Generates point of allocation
+(line) based report. If you do not specify -line, the report is
+generated based on declaration. Vsim must be run with -capacity=line
+to print a point-of-allocation (line) based report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id472d137f-628a-4012-89c4-a0ce9994797a">-qdas</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Reports memory usage data for queues, dynamic arrays, associative
+arrays, and strings (each in its own section in the report). You
+must precede this argument with -capacity when specifying a capacity
+report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id1ab00ede-7d4e-42a7-85a8-8440ccf6bb67">-s</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates a short list of design information. You must precede this
+argument with -capacity when specifying a capacity report.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id3eeb6f4f-8ba8-44f3-a483-c795e80557dd">-solver</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specified with capacity, -solver reports memory usage data for calls
+to randomize() and memory usage. </p>
+<p class="p">Specified
+alone, -solver returns information about the memory allocated by
+the constraint solver, and returns statistics for every SystemVerilog
+randomize() call site by filename and line number. </p>
+<p class="p">The simulator excludes information about the protected variables
+and constraints from the constraint solver report, and the report
+contains the <span class="ph FontProperty emphasis">&lt;protected&gt;</span> keyword
+instead. See “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Solver Reports', 'questa_sim_user'); return false;">Solver Reports</a>”.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>Random Variables:
+bit [31:0] blue_wt (priority=1)
+&lt;protected&gt;
+&lt;protected&gt;</code></pre></dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idb4d59f66-3d4b-4317-994d-59b9503c0136">-tcl</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates a Tcl list of design unit information. You cannot use
+this argument when generating an output file with the &lt;filename&gt;
+argument. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id96ed2dd2-b353-4cfe-850b-afadafbb5ad5">-vmem</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) When specified with capacity,
+-vmem reports usage data for Verilog memories. </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id2dd54f75-3d68-4177-8327-d122698a524e"><p class="p">Save information
+about the current design in a file named <span class="ph filepath">alu_rpt.txt</span>.</p>
+<p class="lines ApplCommand">   write report alu_rpt.txt</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id24fd5416-3881-4cea-bae6-e03222847717"><p class="p">Display
+a short list of information regarding the memory capacity for covergroups
+in the design during the simulation so far. </p>
+<p class="lines ApplCommand">   write report -capacity -s cvg</p>
+</li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__id6ab984dd-fec4-4bab-aaaf-d78ebae4076a"><p class="p">Display information
+on all of the calls to randomize() made during simulation so far, along
+with the memory usage of those calls, number of calls, and callsite
+information.</p>
+<p class="lines ApplCommand">   write report -capacity -solver</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock"><code>CAPACITY REPORT Generated on Tue Jan 03 13:57:26 2012
+# 
+# Total Memory Allocated:30.2M
+# Reporting total capacity data for Solver
+#      Calls    CurrMem    PeakMem    PeakTime@ns
+# ---------- ---------- ---------- --------------
+#        156       1.1M       1.3M            50
+</code></pre></li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__idd7268e4b-1803-4ab2-b223-236f69dd1c94"><p class="p">Create a
+Simulation Report for the current simulation</p>
+<p class="lines ApplCommand">   write report -l</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock"><code>## 
+## SIMULATION REPORT          Generated on Mon Aug 10 12:56:15 2009
+## 
+## 
+## Design simulated: &lt;directory&gt;\work.top(fast)
+## Number of signals/nets in design: 89
+## Number of processes in design: 74
+## 
+## Simulator Parameters:
+## 
+##     Current directory: &lt;directory&gt;\
+##     Project file: &lt;directory&gt;\win32/../modelsim.ini
+##     Simulation time resolution: 1ns
+## 
+## List of Design units used:
+## 
+##     Module: top
+##     Architecture: fast
+##     Library: &lt;directory&gt;\work
+##     Source File: top.v
+##     Timescale: 1ns / 1ns
+##     Occurrences: 1
+## 
+##     Module: proc
+##     Architecture: fast
+##     Library: &lt;directory&gt;\work
+##     Source File: proc.v
+##     Timescale: 1ns / 1ns
+##     Occurrences: 1
+
+...</code></pre></li>
+<li class="li" id="id64f04ef8-771c-4b44-9f5d-78ed24e336ad__ide927ffd5-e2ca-4e66-973b-34059df32289"><p class="p">Create a Tcl-based
+report for the current simulation:</p>
+<p class="lines ApplCommand">write report -tcl</p>
+<p class="p">which creates output similar to:</p>
+<pre class="pre codeblock"><code>{1 {Package Body} &lt;path&gt;/ieee std_logic_textio {} {&lt;path&gt;/vhdl_src/synopsys/std_logic_textio.vhd} notAcell}
+{4 Entity &lt;path&gt;/dataflow/work cache_set only {set.vhd util.vhd} notAcell} 
+{4 Module &lt;path&gt;/dataflow_verilog/work cache_set fast {set.v} notAcell}</code></pre><p class="p">where the output is of the format:</p>
+<pre class="pre codeblock"><code>{&lt;occurrences&gt; &lt;type&gt; &lt;library_location&gt; &lt;name&gt; &lt;architecture&gt; {&lt;source_filename&gt; ...} &lt;cell_info&gt;}</code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "write report"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_WriteReport_id64f04ef8.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

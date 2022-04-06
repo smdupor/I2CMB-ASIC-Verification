@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!--
+===============================================
+Copyright 2010-2013 Mentor Graphics Corporation
+
+  All Rights Reserved.
+
+THIS WORK CONTAINS TRADE SECRET
+AND PROPRIETARY INFORMATION WHICH IS THE
+PROPERTY OF MENTOR GRAPHICS
+CORPORATION OR ITS LICENSORS AND IS
+SUBJECT TO LICENSE TERMS.
+===============================================
+-->
+<title>Mentor Graphics Documentation</title>
+<link rel="stylesheet" href="MGC/styles/mgchelp.css" id="main_ss" />
+<link rel="stylesheet" href="MGC/styles/mgcdita-lang.css"/>
+<noscript><meta http-equiv="Refresh" content="0; url=mgc_html_help/index.htm" /></noscript>
+</head>
+<body>
+  <div id="header" class="fw_size">
+    <div id="toolbar">
+      <div id="toolbar-left">
+        <div id="ShowTabs">
+          <div id="showhidetabs" onclick="CollapseSidebar();" class="button-left TABSButton" title="Hide Topics, Index, and Search Tabs"></div>
+        </div>
+        <div id="PrevTopic">
+          <div onclick="PrevTopic()" class="button-left PrevButton" title="Previous Topic"></div>
+        </div>
+        <div id="NextTopic">
+          <div onclick="NextTopic()" class="button-left NextButton" title="Next Topic"></div>
+        </div>
+      </div>
+      <div id="toolbar-right">
+        <div id="MGCLnk">
+          <a href="https://www.mentor.com" class="MGCLogoButton" title="www.mentor.com" target="_blank"></a>
+        </div>
+        <div id="PrintTopic" onclick="PrintTopic();" class="button-right PrintButton" title="Print this topic"></div>
+        <div id="PDFLnk">
+          <div onclick="DisplayPDF();" class="button-right PDFButton" title="Open the PDF for this topic"></div>
+        </div>
+        <div id="IhubLnk" class="button-padding">
+          <div title="Show list of all installed documents" id="manuals_button">
+            <a href="../index.html" onclick="DisplayLibrary();return false;" class="NoUnderline" tabindex="6"><span id="MoreSpan">More Manuals</span></a>
+          </div>
+        </div>
+        <div id="FdbackLnk">
+          <div title="Submit feedback on this document to Mentor Graphics" class="feedback_button" id="feedback_button">
+            <a href="https://support.sw.siemens.com/doc_feedback_form" onclick="SubmitFeedback();return false;" tabindex="5"><span id="FeedbackSpan">Feedback</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="Breadcrumb">
+      <tr>
+        <td class="Breadcrumb">
+          <div id="Breadcrumb"></div>
+        </td>
+        <td id="resize_td_container">
+          <div id="resize_button">
+            <img src="MGC/images/gr-txt-size.gif" alt="Text Size" class="noborder" /><a href="javascript:void(0);" onclick="MGCChangeBaseFontSize(0);" title="Small Text"><img src="MGC/images/gr-txt-size-sm.gif" alt="Small Text" class="resize_buttons" /></a><a href="javascript:void(0);" onclick="MGCChangeBaseFontSize(1);" title="Medium Text"><img src="MGC/images/gr-txt-size-md.gif" alt="Medium Text" class="resize_buttons" /></a><a href="javascript:void(0);" onclick="MGCChangeBaseFontSize(2);" title="Large Text"><img src="MGC/images/gr-txt-size-lg.gif" alt="Large Text" class="resize_buttons" /></a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="sidebar">
+    <div id="sidebarTabs">
+      <div class="TabBoundary">
+        <div id="tabContainerDiv">
+          <ul class="tabs">
+            <li class="fg_tab">
+              <a href="javascript:void(0);" onclick="SwitchTab(0);this.blur();" class="fg_tab" id="tab0" title="Topics" tabindex="1">
+                <div class="center"><span>Topics</span></div>
+              </a>
+            </li>
+            <li class="bg_tab">
+              <a href="javascript:void(0);" onclick="SwitchTab(1);this.blur();" style="display:none" class="bg_tab" id="tab1" title="Index" tabindex="2">
+                <div class="center"><span>Index</span></div>
+              </a>
+            </li>
+            <li class="bg_tab">
+              <a href="javascript:void(0);" onclick="SwitchTab(2);this.blur();" style="display:none" class="bg_tab" id="tab2" title="Search" tabindex="3">
+                <div class="center"><span>Search</span></div>
+              </a>
+            </li>
+          </ul>
+          <div class="TabCloseOuter">
+            <div onclick="CollapseSidebar();" title="Hide Topics, Index, and Search Tabs">
+              <div id="HideShowTOC" class="CloseTabsButton"></div>
+            </div>
+          </div>
+        </div>
+        <div class="TabBottomLine"></div>
+        <div class="DocTitleContainer">
+          <div class="DocTitleTable">
+            <div class="DocTitleRow">
+              <div class="DocTitle">
+                <a href="javascript:void(0);" onclick="Home();">Mentor Graphics Documentation System</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sidebarContent">
+      <div id="sidebarTOC"></div>
+      <div id="sidebarIndex">
+        <div id="IndexLetters">
+          <table>
+            <tbody>
+              <tr>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("a");'>A</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("b");'>B</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("c");'>C</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("d");'>D</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("e");'>E</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("f");'>F</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("g");'>G</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("h");'>H</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("i");'>I</div></td>
+              </tr><tr>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("j");'>J</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("k");'>K</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("l");'>L</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("m");'>M</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("n");'>N</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("o");'>O</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("p");'>P</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("q");'>Q</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("r");'>R</div></td>
+              </tr><tr>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("s");'>S</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("t");'>T</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("u");'>U</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("v");'>V</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("w");'>W</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("x");'>X</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("y");'>Y</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("z");'>Z</div></td>
+                <td><div class="IndexLetterBtn" onclick='ScrollIndex("symbol");' title="Symbol">&amp;</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="lettersections" class="ScrollListLetters">
+          <div id="IndexBottomSpace"></div>
+        </div>
+      </div>
+      <div id="sidebarSearch">
+        <div id="SearchSidebarHeaderWrap" class="HeaderWrapper">
+          <div id="SearchInputDiv" class="SearchInput">
+            <div id="QuickSearchDiv">
+              <form id="QSearchForm" name="QSearchForm" method="get" action="javascript:SearchBook();">
+                <input type="text" id="query" value="Search this document" onfocus="SearchBox_Focus();" onblur="SearchBox_Blur();" tabindex="4" />
+              </form>
+              <div class="SubmitSearch" title="Perform a Keyword Search in the current document." onclick="SearchBook();"></div>
+              <div class="SearchTipsText">
+                <a href="#context=mgc_html_help&amp;topic=mgc_help_008" target="_blank">Search <br />Tips</a>
+              </div>
+            </div>
+            <div id="AdvancedSearch" class="AdvSearch">
+              <div id="SearchScopeSel">
+                <b>Filter search results based on:</b><br />
+                <input type="checkbox" id="Stem" name="Stem" value="stem" class="AdvSearch" />
+                <label for="Stem">Exact match of search word(s)</label><br />
+                <input type="checkbox" id="IncSynonyms" name="IncSynonyms" value="stem" class="AdvSearch" />
+                <label for="IncSynonyms">Do not include synonyms</label><br />
+                <input type="checkbox" id="TitlesOnly" name="TitlesOnly" value="TitlesOnly" class="AdvSearch" />
+                <label for="TitlesOnly">Search within topic headings only</label><br />
+              </div>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="mgcQSiconL">
+                    <div onclick="PrevSearchResult();" class="SearchPrevButton" title="Previous topic containing search word(s)"></div>
+                  </td>
+                  <td class="mgcQSiconR">
+                    <div onclick="NextSearchResult();" class="SearchNextButton" title="Next topic containing search word(s)"></div>
+                  </td>
+                  <td>
+                    <div id="HighlightContent" style="display:none">
+                      <a href="javascript:void(0);" onclick="ToggleHighlight();">
+                        <div id="HighlightButton" title="Turn OFF Highlighting"  class="HighlightButton_s"></div>
+                      </a>
+                    </div>
+                    <div class="leftFloat">
+                      <div id="FilterResults">
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="ResultMessage"></div>
+        </div>
+        <div id="QSearchResults">
+          <div class="NoResults">
+            Search Tips:
+            <ul>
+              <li>Enter keyword(s) to find answers within the <b>current document</b>.</li>
+              <li>Use an asterisk at the beginning of the keyword to search complex words.</li>
+              <li>To broaden your search to include multiple documents, <a href="../index.html" onclick="DisplayInfoHub();return false;">perform the search within InfoHub</a>.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="SearchMore"></div>
+      </div>
+    </div>
+    <div id="dragbar" title="Click and drag to resize"></div>
+    <div id="midarrow" class="sidearrowsmall"></div>
+  </div>
+  <div id="main" class="fw_size">
+    <div id="dragdetector"></div>
+  </div>
+  <div id="footer" class="fw_size">
+    <a href="#context=mgc_html_help&amp;topic=mgc_help_008" target="_blank">Search Tips</a> |
+    <a href="#context=mgc_html_help&amp;topic=mgc_help_003" target="_blank">Quick Help</a> |
+    <a href="#context=mgc_html_help&amp;topic=mgc_help_010" target="_blank">Printing</a> |
+    <a href="#context=mgc_html_help&amp;topic=mgc_help_006" target="_blank">Browser Settings</a> |
+    <a href="https://support.sw.siemens.com/doc_feedback_form" onclick="SubmitFeedback();return false;" target="_blank">Send Feedback on Documentation</a>
+  </div>
+  <div id="backgroundPopup"></div>
+  <div id="LibListLibrary">
+    <div id="LibListLibraryContents">
+      <div id="LibListTitle">
+        <div class="TabCloseOuter" id="LibListClose">
+          <a id="HideDocList" title="Hide document list" href="javascript:void(0);" onclick="HideLibrary();"><div class="CloseTabsButton"></div></a>
+        </div>
+        All Documentation
+      </div>
+      <div id="LibListLibraryLinks"></div>
+      <div id="InfoHubLibListLink">For additional information, including movies and training, open the
+        <a id="InfoHubTerm" href="../index.html" onclick="HideLibrary();DisplayInfoHub();return false;" class="NoUnderline">InfoHub.</a>
+      </div>
+    </div>
+  </div>
+  <div id="pdflinkPopup" class="popup">
+    <a class="popupClose"></a>
+    <h1>Note</h1>
+    <p>Viewing PDF files within a web browser causes some links not to function. Use HTML for full navigation.</p>
+    <p></p>
+    <input id="pdflink_noprompt" type="checkbox" />
+    <label id="pdflink_nopromptlabel" for="pdflink_noprompt">Do not show this dialog again.</label><br />
+    <div id="pdflinkButtons">
+      <button type="button" id="pdflink_open_button" class="textButtonsCentered pdflinkButtons open_button" title="Open">Open</button>
+      <button type="button" id="pdflink_cancel_button" class="textButtonsCentered pdflinkButtons cancel_button" title="Cancel">Cancel</button>
+    </div>
+  </div>
+  <script src="MGC/js/jquery.min.js"></script>
+  <script src="MGC/js/plugins.js"></script>
+  <script src="MGC/js/mgchelp.js"></script>
+  <script src="MGC/js/MGCjavascript.js"></script>
+  <script src="MGC/js/MGCSearch.js"></script>
+  <script src="MGC/lib/LibList.js"></script>
+  <script type="text/javascript">
+
+      // Map the browser language to the directory with translated UI strings.
+      
+      var lang = MapLang(navigator.language);
+      var scriptPath = "MGC/lang/" + lang + "/MGCLangOptions.js";
+
+      GetScript(scriptPath, "MGCLangOptions", 
+        function () {
+            MGCSetLangOptions();
+      });
+
+  </script>
+</body>
+</html>

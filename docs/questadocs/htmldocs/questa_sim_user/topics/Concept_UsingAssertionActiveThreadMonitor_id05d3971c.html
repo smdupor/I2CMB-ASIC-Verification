@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Using the Assertion Active Thread Monitor" />
+<meta name="abstract" content="If you used the -assertdebug argument with the vsim command when you invoked the simulator, the Assertion Active Thread Monitor will display an ActiveCount object in the Wave window for each assertion and cover directive. This object tracks the number of currently active assertion or cover directive threads for the given instance. Expanding it will show individual threads (based on start time) starting and stopping." />
+<meta name="description" content="If you used the -assertdebug argument with the vsim command when you invoked the simulator, the Assertion Active Thread Monitor will display an ActiveCount object in the Wave window for each assertion and cover directive. This object tracks the number of currently active assertion or cover directive threads for the given instance. Expanding it will show individual threads (based on start time) starting and stopping." />
+<meta name="DC.subject" content="assertions, active thread monitor, active thread monitor, threads, cover directives, cover directives, active thread monitor" />
+<meta name="keywords" content="assertions, active thread monitor, active thread monitor, threads, cover directives, cover directives, active thread monitor" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id05d3971c-4ef5-4ea7-9fff-26b7f7dd5c21" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using the Assertion Active Thread Monitor</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using the Assertion Active Thread Monitor" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id05d3971c-4ef5-4ea7-9fff-26b7f7dd5c21">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using the Assertion Active Thread Monitor</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">If you used
+the <span class="ph FontProperty HeadingLabel">-assertdebug</span> argument
+with the vsim command when you invoked the simulator, the Assertion
+Active Thread Monitor will display an ActiveCount object in the
+Wave window for each assertion and cover directive. This object
+tracks the number of currently active assertion or cover directive
+threads for the given instance. Expanding it will show individual threads
+(based on start time) starting and stopping. </span>
+</div>
+<div class="fig fignone" id="id05d3971c-4ef5-4ea7-9fff-26b7f7dd5c21__id6bef074f-e13d-42b1-9f0c-4277afe2d721"><span class="figcap"><span class="fig--title-label">Figure 1. </span>The ActiveCount Object in the
+Wave Window - SystemVerilog</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/activecount_sv.gif" /></div><br /></div>
+<p class="p">The Assertion Active Thread Monitor
+is controlled by the <a class="xref fm:HeadingOnly" href="Command_Breakonassertion_ida0b6c1a5.html#ida0b6c1a5-71c2-41e0-9808-04e368c1f650__Command_Breakonassertion_ida0b6c1a5.xml#ida0b6c1a5-71c2-41e0-9808-04e368c1f650" title="This variable stops the simulator when the severity of a VHDL assertion message or a SystemVerilog severity system task is equal to or higher than the value set for the variable.">BreakOnAssertion</a> <span class="ph filepath">.ini </span>variable,
+whose default value is 1 (enabled). The number of rows the Assertion Active
+Thread Monitor displays is limited, and is controlled by the “<a class="xref fm:HeadingOnly" href="Command_Assertionactivethreadmonitorlimit_idd12c7505.html#idd12c7505-0d61-4a52-b99c-e186058aba05__Command_Assertionactivethreadmonitorlimit_idd12c7505.xml#idd12c7505-0d61-4a52-b99c-e186058aba05" title="This variable limits the number of active assertion threads displayed for a given instance.">AssertionActiveThreadMonitorLimit</a>” <span class="ph filepath">.ini </span>variable. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">A large number of
+active thread rows will result in large .wlf files and increased memory
+usage. The default for <a class="xref fm:HeadingOnly" href="Command_Assertionactivethreadmonitorlimit_idd12c7505.html#idd12c7505-0d61-4a52-b99c-e186058aba05__Command_Assertionactivethreadmonitorlimit_idd12c7505.xml#idd12c7505-0d61-4a52-b99c-e186058aba05" title="This variable limits the number of active assertion threads displayed for a given instance.">AssertionActiveThreadMonitorLimit</a> is 5. </p>
+</div>
+<p class="p">As with the main assertion Wave display, assertion
+start (blue square), pass (green triangle), fail (red triangle),
+and antecedent match (yellow triangle) symbols appear in the active thread
+monitor display. Right-clicking on one of these symbols reveals
+a <span class="ph uicontrol">View ATV</span> menu selection which will show
+assertion evaluation attempt start times. Selecting a start time
+will open an assertion thread view. See <a class="xref fm:HeadingOnly" href="TaskTop_ViewingAssertionThreadsInAtvWindow_id3966f7c1.html#id3966f7c1-148f-45ce-ad2e-81a95ee18e18__TaskTop_ViewingAssertionThreadsInAtvWindow_id3966f7c1.xml#id3966f7c1-148f-45ce-ad2e-81a95ee18e18" title="Assertion thread viewing is enabled for all assertions specified with the atv log command, before the simulation is run. After running a simulation, an ATV window can be opened a number of different ways.">Viewing Assertion Threads in the ATV Window</a>.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsingAssertdebugDebugAssertionsCoverDirectives_id0f5e9875.html" title="Using the optional ‑assertdebug argument with the vsim command instructs Questa SIM to examine all assertions and display assertion details in the Assertions window.">Using -assertdebug to Debug with Assertions and Cover Directives</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Using the Assertion Active Thread Monitor"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UsingAssertionActiveThreadMonitor_id05d3971c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Qrun and Setting Up Regressions" />
+<meta name="abstract" content="Using arguments for controlling qrun’s invocation of the compile, optimize, and simulate steps, you can use qrun to run regression tests." />
+<meta name="description" content="Using arguments for controlling qrun’s invocation of the compile, optimize, and simulate steps, you can use qrun to run regression tests." />
+<meta name="prodname" content="QuestaSIM" />
+<meta name="version" content="v12.2" />
+<meta name="release" content="2017_02" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-10-01" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_qrun_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="All" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="October 2019" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM  Qrun User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="none" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="Comments" content="none" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc8b22adc-24bd-4fa5-aaf3-271dda86b982" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Qrun and Setting Up Regressions</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Qrun and Setting Up Regressions" />
+<meta name="attributes" content="none" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc8b22adc-24bd-4fa5-aaf3-271dda86b982">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Qrun and Setting Up Regressions</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Using arguments for
+controlling qrun’s invocation of the compile, optimize, and simulate
+steps, you can use qrun to run regression tests.</span>
+</div>
+<p class="p">In the following
+examples, all source files and compile, optimization, and simulations
+switches are contained in a <span class="ph filepath">qrun.f</span> file.
+Use the –snapshot argument to name the compile/optimize output. It
+is also used to indicate which snapshot to simulate. </p>
+<p class="p">One method to using qrun to control regression
+tests is as follows:</p>
+<ol class="ol"><li class="li" id="idc8b22adc-24bd-4fa5-aaf3-271dda86b982__idb3b06248-84a1-4d2b-8336-cd072f6fcdcf"><p class="p">Compile and optimize only; and, explicitly name
+the output directory. Use the -optimize argument to force qrun to
+only compile and optimize.</p>
+<pre class="pre codeblock"><code># compile and optimize
+qrun –f qrun.f –optimize –snapshot &lt;snapshot name&gt;  
+# this compiles and optimizes the design and testbench</code></pre></li>
+<li class="li" id="idc8b22adc-24bd-4fa5-aaf3-271dda86b982__id9e157299-1ddd-45ad-a1c3-de9a3742dc41"><p class="p">Simulate with qrun using individualized test arguments.
+Use the -simulate argument to direct qrun to only simulate your
+individual tests.</p>
+<pre class="pre codeblock"><code># run simulations
+qrun –simulate –snapshot &lt;snapshot name&gt; [-sv_seed &lt;seed value&gt;] [+UVM_TESTNAME=&lt;testname&gt;]</code></pre></li>
+</ol>
+<p class="p">An extended example follows:</p>
+<pre class="pre codeblock"><code># Clean up qrun output files
+qrun -clean</code></pre><pre class="pre codeblock"><code># Compile and optimize the design and testbench
+qrun -f qrun.f -optimize -snapshot rtl_sims -nosva +notimingchecks +nospecify</code></pre><pre class="pre codeblock"><code># Run the simulations
+qrun -simulate -snapshot rtl_sims +UVM_TESTNAME=test1
+qrun -simulate -snapshot rtl_sims +UVM_TESTNAME=test2 -sv_seed  500 
+qrun -simulate -snapshot rtl_sims +UVM_TESTNAME=test2 -sv_seed   25 
+qrun -simulate -snapshot rtl_sims +UVM_TESTNAME=test2 -sv_seed 1255</code></pre><p class="p">It is not necessary for you to break the compile/optimize
+and simulate flow into two separate steps. The previous flow uses
+the –simulate argument to skip the check to determine if the source
+code should be compiled and optimized. This ensures that no compilation
+occurs if a source files is accidentally modified while the regressions
+are running. </p>
+<p class="p">Because qrun does incremental compilation, the
+following flow example will also compile and optimize once, then
+simulate without recompiling. In the following example, qrun –clean
+will remove all qrun generated files. There will be some small overhead
+for the incremental compilation check. Note the following:</p>
+<ul class="ul"><li class="li" id="idc8b22adc-24bd-4fa5-aaf3-271dda86b982__id2ba8ec95-50c3-4c5b-8e10-eb5bda03c6be"><p class="p">The first “qrun –f qrun.f …” command compiles,
+optimizes, and simulates test1. </p>
+</li>
+<li class="li" id="idc8b22adc-24bd-4fa5-aaf3-271dda86b982__idbad0359e-3141-4579-9c8e-c4271dfc1f4d"><p class="p">The following “qrun –f qrun.f …” commands only
+run the simulation with the specified UMV testname and SV seed value.</p>
+</li>
+</ul>
+<pre class="pre codeblock"><code># Clean up qrun output files
+qrun -clean# Run the simulations
+qrun -f qrun.f +UVM_TESTNAME=test1                   
+qrun -f qrun.f +UVM_TESTNAME=test2 -sv_seed  500 
+qrun -f qrun.f +UVM_TESTNAME=test2 -sv_seed   25 
+qrun -f qrun.f +UVM_TESTNAME=test2 -sv_seed 1255</code></pre></div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_QrunSupportForSimulationMethodologyFlows_id414b5da6.html">Qrun Support for Simulation Methodology Flows</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_qrun_user"
+                DocTitle = "Questa® SIM  Qrun User’s Manual"
+                PageTitle = "Qrun and Setting Up Regressions"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_QrunAndSettingUpRegressions_idc8b22adc.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM  Qrun User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

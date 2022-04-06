@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Cross-PST Analysis" />
+<meta name="abstract" content="PSTs provide static information about the relationships between different supplies used in power management. This information is used for the determination of operating voltage for level shifter placements and static checks for isolation and level shifter cells." />
+<meta name="description" content="PSTs provide static information about the relationships between different supplies used in power management. This information is used for the determination of operating voltage for level shifter placements and static checks for isolation and level shifter cells." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1c765de1-de27-45ad-bd85-8bada7151293" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Cross-PST Analysis</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Cross-PST Analysis" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1c765de1-de27-45ad-bd85-8bada7151293">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Cross-PST Analysis</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">PSTs provide static
+information about the relationships between different supplies used
+in power management. This information is used for the determination
+of operating voltage for level shifter placements and static checks
+for isolation and level shifter cells.</span>
+</div>
+<p class="p">In most development
+scenarios, designers prefer to split the information into sub-PSTs, typically
+defined for each IP, relying on verification tools to interpret
+and analyze the PSTs. This method controls the number of states
+required, based on the number of supply nets and voltages, which
+makes a global PST unreasonable to design and manage.</p>
+<p class="p">By default, the cross-PST analysis is enabled.
+The results are reported in the PST Analysis Report <span class="ph filepath italic">(report.pst.txt) </span>and
+Static Check Report <span class="ph filepath italic">(report.static.txt)</span> report
+files. You disable the cross-PST analysis with the -pa_disable=pstcomp
+argument to the vopt command. </p>
+<p class="p">Cross-PST analysis is based on actual domain
+crossings involved in the design. Power Aware simulation first identifies
+the power domain crossings or supply set pairs that require analysis and
+secondly performs the analysis. If there are more than one PSTs
+involved in a particular domain crossing then the simulator first
+composes those PSTs to create a Composed PST and then identifies
+the list of port state on the primary supplies of the domains in
+question. </p>
+<p class="p">For scenarios where any
+PSTs contain unrelated information and cannot be composed together using
+common supplies, the simulator picks all possible combinations using
+the port states of the supplies of source and sink. The simulator
+uses only those port states that are referred to in one of the PSTs
+and are not marked as UNREACHABLE. </p>
+<p class="p">For each domain-crossing pair, the simulator
+performs analysis between matching functions of a source supply
+set and a sink supply set. You control the analysis with the -pa_pstcompflags argument
+to the vopt command, which produces a message (vopt-9881) in the
+vopt transcript to indicate the kind of supply functions used in
+PST analysis. The arguments are:</p>
+<ul class="ul"><li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__id20f7fa60-3c90-46a9-b550-d0d531b44175"><p class="p">-pa_pstcompflags=pg — (default) Analyzes,
+simultaneously, one or both of the domain-crossing pairs: SourceSS.power
+and SinkSS.power and/or SourceSS.ground and SinkSS.ground.</p>
+</li>
+<li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__idf692ba09-1209-4d68-a9a6-33c0172352dd"><p class="p">-pa_pstcompflags=p — Analyzes the domain-crossing
+pair: SourceSS.power and SinkSS.power.</p>
+</li>
+<li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__id1d05e1fe-ff37-439c-882e-db4239b5a49d"><p class="p">-pa_pstcompflags=g — Analyzes the domain-crossing
+pair: SourceSS.ground and SinkSS.ground.</p>
+</li>
+</ul>
+<p class="p">Cross-PST analysis is based on two scenarios
+in your environment:</p>
+<ul class="ul"><li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__idfb3161ca-2d81-42aa-9d12-f0311260a9c4"><p class="p">Vertical composition
+— This is when a PST (created by the IP integrator) in a parent scope
+is composed of a PST (created by the IP provider) in a child scope.</p>
+<ul class="ul"><li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__idf064a445-ef96-436b-b858-ecf347992a11"><p class="p">Each power state of the PST in the parent
+scope must enable at least one power state of every PST in a child
+scope, otherwise the Power Aware simulation marks the states as
+UNDETERMINED and ignores them for PST analysis. All potential Errors are
+flagged as Warnings.</p>
+</li>
+<li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__id567ef6b9-9907-4329-94b7-f5c969a8caf8"><p class="p">If the PST in the child scope contains
+power states that are not enabled by any power state of the PST
+in the parent scope, then those states are marked as UNREACHABLE
+states and ignored for PST analysis. A Warning message is flagged
+for the state. </p>
+</li>
+</ul>
+</li>
+<li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__id71023cab-b9e6-4583-84b1-03313ee76c18"><p class="p">Horizontal composition — This is when
+a PST present in a scope is composed with other PSTs present in
+the same scope. </p>
+<ul class="ul"><li class="li" id="id1c765de1-de27-45ad-bd85-8bada7151293__ide04d6993-9565-429a-82a1-bf9910f7fb8c"><p class="p">All PSTs present
+in same scope and referring to same or equivalent supply should use
+the same set of port states for that supply or equivalent supplies.
+If there is a PST state that refers to a port state that is absent
+in another PST in the same scope and with the same or equivalent
+supply, it is marked as UNDETERMINED. A warning is flagged and the
+state is ignored for PST Analysis. </p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerStates_id3b35fd90.html" title="Power Aware simulation uses information from a Power State Table (PST) for Power Aware analysis.">Power States</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Cross-PST Analysis"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CrossPSTAnalysis_id1c765de1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

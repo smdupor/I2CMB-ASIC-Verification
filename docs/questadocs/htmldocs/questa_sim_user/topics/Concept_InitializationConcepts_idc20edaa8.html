@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Initialization Concepts" />
+<meta name="abstract" content="When initializing registers and memories, it is important to understand the concepts of random stability and sequential UDPs." />
+<meta name="description" content="When initializing registers and memories, it is important to understand the concepts of random stability and sequential UDPs." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idc20edaa8-f5cd-48a8-af52-66a311238288" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Initialization Concepts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Initialization Concepts" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idc20edaa8-f5cd-48a8-af52-66a311238288">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Initialization Concepts </h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When initializing
+registers and memories, it is important to understand the concepts
+of random stability and sequential UDPs.</span>
+</div>
+<ul class="ul"><li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id0ed9e9d4-549c-4997-bf35-68ba22499801"><p class="p">For sequential <span class="ph FontProperty HeadingLabel">Random stability</span> —
+From run to run, it is reasonable to expect that simulation results
+will be consistent with the same seed value, even when you recompile
+the design or specify different optimization switches. </p>
+<p class="p">However, if the design changes in any way,
+random stability can not be ensured. Design changes include:</p>
+<ul class="ul"><li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id829886fb-7a0a-4b88-b5b6-8d44f9e51ba4"><p class="p">Changing the source code (except for
+comment editing).</p>
+</li>
+<li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id53a7a081-6d82-48bb-8732-b16db1070c02"><p class="p">Changing parameter values with vopt
+-G or vsim -G. This forces a different topology during design elaboration.</p>
+</li>
+<li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id44ea25a6-45f5-443f-a6ae-173146c842f6"><p class="p">Changing a +define switch such that
+different source code is compiled.</p>
+</li>
+<li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__idc02d7ac2-2765-4368-902c-f6308a17fb0b"><p class="p">Changing design hierarchy of the design
+units due to the random initial value being dependent upon the full
+path name of the instance.</p>
+</li>
+</ul>
+<p class="p">For Sequential UDPs, the simulator produces
+repeatable initial values only if the design is compiled and run
+with the same vlog, vopt, and vsim settings.</p>
+</li>
+<li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id379764de-c5c2-489c-ac55-5f4bfaa16d41"><p class="p"><span class="ph FontProperty HeadingLabel">Sequential UDPs </span>—
+An initial statement in a sequential UDP overrides all +initreg
+functionality.</p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id295034fd-e776-45d2-8fd5-6e76659c8886"><h2 class="title Subheading sectiontitle">Limitations</h2><ul class="ul"><li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id89b4b2ca-bb78-4ac6-a6b9-183bbe15a565"><p class="p">The following are not initialized with
++initmem or +initreg:</p>
+<ul class="ul"><li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id5a1b68d4-e090-44f4-8fe8-e46160b86a73"><p class="p">Variables in dynamic types, dynamic
+arrays, queues, or associative arrays.</p>
+</li>
+<li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__id3ff19479-54b0-48dc-9f2e-2c270f553fbe"><p class="p">Unpacked structs, or unpacked or tagged unions.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idc20edaa8-f5cd-48a8-af52-66a311238288__idb8bce443-8df2-41d0-a8d8-53841b16e560"><h2 class="title Subheading sectiontitle">Requirements</h2><ul class="ul"><li class="li" id="idc20edaa8-f5cd-48a8-af52-66a311238288__idcec6e524-8971-4266-94f4-e5cd57f21e04"><p class="p">Prepare your libraries with vlib and
+vmap as you would normally.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_InitializingRegistersMemories_id288d85aa.html" title="For Verilog designs, you can initialize registers and memories with specific values or randomly generated values.">Initializing Registers and Memories</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Initialization Concepts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_InitializationConcepts_idc20edaa8.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

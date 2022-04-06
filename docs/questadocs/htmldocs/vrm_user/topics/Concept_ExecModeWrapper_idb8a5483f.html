@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="exec Mode Wrapper" />
+<meta name="abstract" content="The command sequence used in the wrapper for non-vsim (shell) commands is shown below." />
+<meta name="description" content="The command sequence used in the wrapper for non-vsim (shell) commands is shown below." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb8a5483f-b678-4900-816f-460bfca36e39" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>exec Mode Wrapper</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="exec Mode Wrapper" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb8a5483f-b678-4900-816f-460bfca36e39">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">exec Mode Wrapper</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The command
+sequence used in the wrapper for non-vsim (shell) commands is shown
+below.</span>
+</div>
+<pre class="pre codeblock leveled"><code>package require RunManager
+namespace eval runmgr {
+	set rm_stat 0
+	proc rm_status {stat} {
+		variable rm_stat
+		set rm_stat $stat
+		return
+	}
+	proc rm_done {} {
+		variable rm_stat
+		RunManager::Main -dest &lt;port@host&gt; -send done -code $rm_stat 
+			 &lt;actionName&gt;
+	}
+}
+rename exit runmgr::rm_exit
+proc exit {args} {
+	cd &lt;vrunDirectory&gt;
+	runmgr::rm_done
+	runmgr::rm_exit $args
+}
+cd &lt;workingDirectory&gt;
+set ::env(MTI_VRUN_SEND) {vrun -dest &lt;port@host&gt; -send user &lt;actionName&gt;}
+if {[catch {&lt;execCommand&gt; &gt;&amp; &lt;script&gt;.log}]} {
+	if {[lindex $errorCode 0] eq {CHILDSTATUS}} {
+		runmgr::rm_status [lindex $errorCode 2]
+	} else {
+		runmgr::rm_status 1
+	}
+}
+exit 0</code></pre><p class="p">In this case, the value of <span class="ph FontProperty emphasis">actionName</span>, <span class="ph FontProperty emphasis">workingDirectory</span>, <span class="ph FontProperty emphasis">scriptName</span>,
+and <span class="ph filepath">port@host</span> are the same as in the vsim case.
+The value of <span class="ph FontProperty emphasis">execCommand</span> is either
+exec &lt;<span class="keyword ParameterName OptionalReplaceable">script</span>&gt;
+or exec &lt;<span class="keyword ParameterName OptionalReplaceable">launch</span>&gt; &lt;<span class="keyword ParameterName OptionalReplaceable">script</span>&gt;
+depending on whether the value of the <span class="ph FontProperty emphasis">launch</span> attribute
+for this Action is <span class="ph FontProperty emphasis">exec</span> or
+some other string (presumably the name of the interpreter to be
+used to interpret the script). The RunManager::Main call is essentially
+the same as calling vrun from within vsim except that this script
+is passed off to vish instead of vsim (to save time and memory)
+and the vrun command is not known to vish. The TCL catch command ensures
+that errors occurring while launching the script do not cause the
+vish wrapper to abort without sending the “done” message.</p>
+<p class="p">Like the vsim based wrapper, this wrapper changes
+directories upon completion to the directory in which VRM itself
+is running in order to allow the working directory to be deleted upon
+completion. Since the script is running in a vish shell, any simulation
+that was run would have been terminated before control returns to
+the wrapper. However, caution should be exercised in not putting
+a simulation into the background while running under VRM. The reason
+is that VRM assumes all activity associated with a given Action
+has ceased by the time the “done” message for that Action is received.</p>
+<p class="p">If any command in the Action script fails with
+a non-zero status or if the Action script itself exits with a non-zero
+status, then the integer status value is passed to the invoking
+VRM with the “done” message. Unfortunately, TCL does not have access
+to the exact error message that caused the non-zero status so the
+message string passed to the invoking VRM is always blank.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ActionWrapperScriptGeneration_id77c7374f.html" title="Each Action (preScript, execScript, or postScript) is defined either in terms of a sequence of one or more commands stored in the RMDB database or as a pointer to an existing script file (said pointer also being stored in the RMDB database).">Action and Wrapper Script Generation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "exec Mode Wrapper"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ExecModeWrapper_idb8a5483f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

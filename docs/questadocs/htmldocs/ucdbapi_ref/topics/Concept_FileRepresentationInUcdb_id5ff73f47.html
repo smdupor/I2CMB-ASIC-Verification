@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="File Representation in the UCDB" />
+<meta name="abstract" content="File representation in the UCDB is designed to be efficient and capable. For efficiency, inside most objects in the database source file information is stored as: file number, line number, and token number. File numbers need to relate to a file table. The UCDB has various ways to create a file table, implicitly or explicitly." />
+<meta name="description" content="File representation in the UCDB is designed to be efficient and capable. For efficiency, inside most objects in the database source file information is stored as: file number, line number, and token number. File numbers need to relate to a file table. The UCDB has various ways to create a file table, implicitly or explicitly." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id5ff73f47-0f20-4c51-973e-a0a7d0cee362" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>File Representation in the UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="File Representation in the UCDB" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">File Representation in the UCDB</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">File representation
+in the UCDB is designed to be efficient and capable. For efficiency,
+inside most objects in the database source file information is stored as:
+file number, line number, and token number. File numbers need to
+relate to a file table. The UCDB has various ways to create a file
+table, implicitly or explicitly. </span>
+</div>
+<p class="p">With
+Questa itself, file tables are stored with design units. The file
+number is then the index into the file table of the design unit
+to which the object belongs. However, in general, filehandles may
+be mixed and matched among different file tables. The example for
+this section (filehandles) uses both the design-unit file table
+created by Questa and a global one created implicitly through the
+API.</p>
+<p class="p">For capability, a file is
+specified as two parts: the directory to which the file belongs
+and the relative path to the file itself. This enables a heuristic
+algorithm to try to find the file even if the UCDB has been moved.
+A “heuristic” is not guaranteed to work. The heuristic includes possible
+use of a Questa-specific environment variable (MGC_WD) that can
+be used explicitly to point to source if the original directory
+no longer exists. Additionally, there is the MGC_LOCATION_MAP feature
+that allows mapping of directory prefixes between different networks
+so that Questa files can be portable between different file systems.
+The UCDB implementation will make use of MGC_LOCATION_MAP features
+if present.</p>
+<div class="section Subsections"><div class="section Subsection" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__idf7d45aac-9cdd-47ec-8dcc-d3f808177e3a"><h2 class="title Subheading sectiontitle">Creating
+a Filehandle From a Filename</h2><p class="p">For this example, Questa
+itself manages the file table. This behavior has the disadvantage that
+each time a filehandle is created by name, there is a string-based
+lookup to ensure that the file table contains only unique names.</p>
+<p class="p">You can find this C example
+in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/filehandles/create_filehandles.c</span>.</p>
+<pre class="pre codeblock leveled"><code>void 
+create_statement_with_filehandle(ucdbT db, 
+                 ucdbScopeT parent, 
+                 ucdbFileHandleT filehandle, 
+                 int line, 
+                 int count) 
+{ 
+    ucdbCoverDataT coverdata; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbAttrValueT attrvalue; 
+    int coverindex; 
+    coverdata.type = UCDB_STMTBIN; 
+    coverdata.flags = UCDB_IS_32BIT;    /* data type flag */ 
+    coverdata.data.int32 = count;       /* must be set for 32 bit flag */ 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    coverindex = ucdb_CreateNextCover(db,parent, 
+                                      NULL, /* name: statements have none */ 
+                                      &amp;coverdata, 
+                                      &amp;srcinfo); 
+... 
+} 
+example_code(const char* ucdbfile) 
+{ 
+... 
+	/* Let UCDB API create a global file table for each unique filename: */ 
+    ucdb_CreateSrcFileHandleByName(db,&amp;filehandle, 
+                                   NULL,    /* let API create file table */ 
+                                   "test.sv", 
+                                   pwd); 
+	create_statement_with_filehandle(db,instance,filehandle,3,1); 
+... </code></pre><p class="p">In this example, the ucdb_CreateSrcFileHandleByName()
+takes these arguments:</p>
+<ul class="ul"><li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id2767dca1-feec-4bad-9e2a-088fdc4c7738"><p class="p">Database</p>
+</li>
+<li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id109f1624-fff3-4f23-a69d-57000e076414"><p class="p">Filehandle to be filled
+in.</p>
+</li>
+<li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id6668efe5-32b8-4dcc-a89b-2bbf9e16fb59"><p class="p">Path to scope in which
+file table is to reside. If NULL, that means a global file table.
+A global file is most efficient, but Questa does not use this because
+it does per-design-unit compilation and much of its source information
+is oriented around the design unit.</p>
+</li>
+<li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id7528b857-2337-4c76-bad8-8b712ae21ec9"><p class="p">Name of file.</p>
+</li>
+<li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id629ce032-2eee-46cd-b2aa-ed9922fba976"><p class="p">Directory in which the file is found.
+This example relies on a “PWD” environment.</p>
+</li>
+</ul>
+<p class="p">The filehandle is assigned
+to the ucdbSourceInfoT structure. The structure contains other information
+for line number and token number. This structure is passed to API
+functions like ucdb_CreateNextCover() and ucdb_CreateScope() and
+ucdb_CreateInstance(), which create new objects in the database.
+For details on the creation of new objects, refer to “<a class="xref fm:HeadingAndPage" href="Concept_AdditionOfNewDataToAUCDB_id983d5a1e.html#id983d5a1e-9f4b-4c5e-b742-c19b655f553e__Concept_AdditionOfNewDataToAUCDB_id983d5a1e.xml#id983d5a1e-9f4b-4c5e-b742-c19b655f553e" title="The single complex example “create-ucdb/create_ucdb.c” creates a hardcoded UCDB from scratch. The code that it uses could be adapted, with variations, to add objects to an existing UCDB. Even in the “create_ucdb.c” example, the database exists; it just starts out empty and is added to with each call.">Addition of New Data to a UCDB</a>”.</p>
+<p class="p">The token number is difficult to use unless
+you have access to a tokenizer (lexical analyzer) for each source
+language of interest.</p>
+</div>
+<div class="section Subsection" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__id16ce51cd-6111-4168-8e87-53fe33220a35"><h2 class="title Subheading sectiontitle">Creating
+a Filehandle From an Existing File Table</h2><p class="p">You can find this example
+in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/filehandles/test.sv</span></p>
+<pre class="pre codeblock leveled"><code>module top; 
+        initial begin 
+                // $display("hello"); 
+                // $display("there"); 
+        `include "test2.sv" 
+        end 
+endmodule 
+ </code></pre><p class="p">You can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/filehandles/test2.sv</span></p>
+<pre class="pre codeblock leveled"><code>        // $display "world"; </code></pre><p class="p">Even though these source files have commented-out
+statements, the compiler did parse the code, and Questa did create
+a file table inside the “work.top” design unit that has two entries.
+The first entry is “test.sv” and the second entry is “test2.sv”.
+Consequently, this code can be used to create statements that use
+filehandles from the existing design unit file table:</p>
+<p class="p">You can find this example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/filehandles/create_filehandles.c</span></p>
+<pre class="pre codeblock leveled"><code>void 
+create_statement_with_filenumber(ucdbT db, 
+                 ucdbScopeT parent, 
+                 ucdbScopeT filetable_scope, 
+                 int filenumber, 
+                 int line, 
+                 int count) 
+{ 
+    ucdbCoverDataT coverdata; 
+    ucdbSourceInfoT srcinfo; 
+    ucdbFileHandleT filehandle; 
+    ucdbAttrValueT attrvalue; 
+    int coverindex; 
+    ucdb_CreateFileHandleByNum(db,&amp;filehandle,filetable_scope,filenumber); 
+    coverdata.type = UCDB_STMTBIN; 
+    coverdata.flags = UCDB_IS_32BIT;    /* data type flag */ 
+    coverdata.data.int32 = count;       /* must be set for 32 bit flag */ 
+    srcinfo.filehandle = filehandle; 
+    srcinfo.line = line; 
+    srcinfo.token = 0;                  /* fake token # */ 
+    coverindex = ucdb_CreateNextCover(db,parent, 
+                                      NULL, /* name: statements have none */ 
+                                      &amp;coverdata, 
+                                      &amp;srcinfo); 
+... 
+    /* Re-use file table from DU: */ 
+    create_statement_with_filenumber(db,instance,du,0,4,1); 
+    create_statement_with_filenumber(db,instance,du,1,1,1); 
+... </code></pre><p class="p">This is the more efficient approach to creating
+a filehandle. It requires a handle to the scope containing the file
+table (or NULL if using a global file table). The function ucdb_CreateFileHandleByNum()
+is used to create a filehandle from the given file table.</p>
+<p class="p">This creates two statements:</p>
+<ul class="ul"><li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__idf6af5f0c-03d8-4308-bea4-67bdd6d36f16"><p class="p">First statement from file 0 (“test.sv”)
+from du's file table, at line 4, with count 1.</p>
+</li>
+<li class="li" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__ida165be2f-fa17-4c8a-b075-06e002a9e63d"><p class="p">Second statement from file 1 (“test2.sv”)
+from du's file table, at line 1, with count 1.</p>
+</li>
+</ul>
+<p class="p">There are other ways to create filehandles,
+as well. For example, the ucdb_CloneFileHandle() function can be
+used if you do not have access to the scope containing the file
+table, but only have access to a valid filehandle. You can clone
+the filehandle, which means to use the same file table, but with
+a different file number, such as a different offset into the table. </p>
+<p class="p">The example did not show
+how to create the file table because that was already completed
+by Questa for the design unit. To create the file table, use ucdb_SrcFileTableAppend()
+for each successive file.</p>
+</div>
+<div class="section Subsection" id="id5ff73f47-0f20-4c51-973e-a0a7d0cee362__idf3dea238-95b4-4c22-9a0a-0078d35a26d5"><h2 class="title Subheading sectiontitle">Dumping File Tables</h2><p class="p">Access a filename from a
+file table using ucdb_GetFileName(). The ucdb_GetFileName() was
+used in the “read-coverage” example as a way to identify a statement bin,
+because statement bins have no names. </p>
+<p class="p">The dump_filehandles example shows how to
+dump file tables throughout a database.</p>
+<p class="p">You can find this example
+in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/filehandles/dump_filehandles.c</span>.</p>
+<pre class="pre codeblock leveled"><code>void 
+dump_filetable(ucdbT db, ucdbScopeT scope) 
+{ 
+	int file; 
+	for ( file=0; file&lt;ucdb_FileTableSize(db,scope); file++ ) { 
+		if (file==0) { 
+			if (scope) 
+				printf("File Table for '%s':\n", 
+					   ucdb_GetScopeHierName(db,scope)); 
+			else	 
+				printf("Global File Table:\n"); 
+		} 
+		printf("\t%s\n", ucdb_FileTableName(db,scope,file)); 
+	} 
+} 
+ 
+ucdbCBReturnT 
+callback( 
+    void*           userdata, 
+    ucdbCBDataT*    cbdata) 
+{ 
+    switch (cbdata-&gt;reason) { 
+    case UCDB_REASON_DU: 
+    case UCDB_REASON_SCOPE: 
+		dump_filetable(cbdata-&gt;db,(ucdbScopeT)(cbdata-&gt;obj)); 
+        break; 
+    default: break; 
+    } 
+    return UCDB_SCAN_CONTINUE; 
+} 
+ 
+void 
+example_code(const char* ucdbfile) 
+{ 
+    ucdbT db = ucdb_Open(ucdbfile); 
+	printf("Dumping file tables for '%s' ...\n", ucdbfile); 
+	dump_filetable(db,NULL); 
+	ucdb_CallBack(db,NULL,callback,NULL); 
+    ucdb_Close(db); 
+} </code></pre><p class="p">The global file table is
+dumped, with scope==NULL. Any scope can have a file table, except
+for toggle scopes, which have limited capability for space efficiency
+(because there are potentially many toggles). There are some limitations
+on where a filehandle may be used for a given file table. Basically,
+the scope with the file table must be an ancestor in the UCDB hierarchy
+relative to the object that refers to it with a filehandle. </p>
+<p class="p">The function ucdb_FileTableName()
+is for dumping the filename directly from the table. The same name
+could be acquired indirectly by using ucdb_CreateFileHandleByNum()
+to get a filehandle from the table, and then ucdb_GetFileName()
+to get a name from the filehandle. The ucdb_FileTableName() function
+dumps the filename in a single step.</p>
+<p class="p">In the example, there are only two file tables:
+the one created by Questa in the design unit, and the global one
+created by “create_filehandles” that partially overlaps the design
+unit table:</p>
+<pre class="pre codeblock leveled"><code>Dumping file tables for 'test.ucdb' ... 
+Global File Table: 
+        test.sv 
+File Table for 'work.top': 
+        test.sv 
+        test2.sv </code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "File Representation in the UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FileRepresentationInUcdb_id5ff73f47.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,306 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.4e Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.4e" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.4e</h1></center>
+<center><b>Apr 08 2016</b> <br />
+ <br />
+ Copyright 1991-2016 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 10.4e</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.4e</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.4e</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 10.4e</a></li>
+ <li><a href="#uidefects">User Interface Defects Repaired in 10.4e</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.4e</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.4e</a></li>
+ <li><a href="#systemcdefects">SystemC Defects Repaired in 10.4e</a></li>
+ <li><a href="#assertiondefects">SVA/PSL Defects Repaired in 10.4e</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 10.4e</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.4e</a></li>
+ <li><a href="#uienhancements">User Interface Enhancements in 10.4e</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.4e</a></li>
+ <li><a href="#systemcenhancement">SystemC Enhancements in 10.4e</a></li>
+ <li><a href="#svapslenhancement">SVA/PSL Enhancements in 10.4e</a></li>
+ <li><a href="#coverageenhancement">Coverage Enhancements in 10.4e</a></li>
+ <li><a href="#vmenhancement">Verification Management Enhancements in 10.4e</a></li>
+ <li><a href="#paenhancement">Power Aware Enhancements in 10.4e</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>[nodvtid]  - (source, results) Periodic encryption key improvements.  The default RSA key for encryption is the new 2048-bit key MGC-VERIF-SIM-RSA-2 key and overall encryption security has been improved. In line with our encryption key rollover policy, the existing default key will be retired in the next release.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.4e</b></font>
+<ul><li>[nodvtid]  - <br>
+[10.4] Support for Windows XP and Windows Vista has been discontinued.<br>
+[10.4] Licensing Information
+<p>There is no licensing change between release 10.3 and 10.4.
+
+<p>However if you are migrating to 10.4 from a release like 10.2 and older,
+please note the following:
+
+<ul><li>Starting 10.3, it uses FLEXnet v11.11.1.1. The 
+vendor daemons and lmgrd that are shipped with this release will 
+be FLEXnet version 11.11.1.1.
+<li>For floating licenses it will be necessary to verify that the vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.11.1.1. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.11.1.1 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+<li>If you use node locked licenses you don't need to do anything.
+</ul><br>
+[10.3b] OVL is upgraded to v2.8.1.<br>
+[10.3b] The VHDL OSVVM (Open Source VHDL Verification Methodology) library, sources and documentation have been updated to version 2014.01. Dependency checks in vopt and vsim will force recompilation of designs that use the osvvm library. If optimization is performed using vopt, the optimizer will automatically generate new optimized design units. Without the optimization step, vsim will detect dependency errors.<br>
+[10.3] Support for RedHat Enterprise Linux (RHEL) 4.0 has been discontinued.<br>
+[10.2] Support for Solaris SPARC and Solaris x86 has been discontinued. All Solaris OS platforms are not supported.<br>
+[10.2] Support for RedHat Enterprise Linux (RHEL) 3.0 and Novell SUSE Linux Enterprise (SLES) 9 has been discontinued.<br>
+[10.1] Support for GCC versions gcc-4.1.2-sunos510/gcc-4.1.2-sunos510x86 has been discontinued.<br>
+[10.0] Support for Solaris 8 and Solaris 9 has been discontinued.<br>
+<br>
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.4e</b></font>
+<ul><li>[nodvtid]  - <br>
+[Supported Platforms]<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux RHEL 7 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc9<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.11.1.1<br>
+	MSL 	v2013_3<br>
+	MGLS 	v9.10_7.2<br>
+	PCLS 	v9.10.7.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.4e</b></font>
+<p /><dd><font size="3"><b>Key Information Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source, results) Periodic encryption key improvements.  The default RSA key for encryption is the new 2048-bit key MGC-VERIF-SIM-RSA-2 key and overall encryption security has been improved. In line with our encryption key rollover policy, the existing default key will be retired in the next release.</li>
+</ul>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt73179 - (results) Fix an improper vopt optimization when DPI import call is involved in an always block.</li>
+ <li>dvt84015 - (results) The non-standard feature of System Verilog "force" and "release" statements that target a select of a variable (as opposed to a net) do not fully support a non-constant rhs. A warning is issued to this effect, and the resulting behavior may not match the expected behavior for force and release semantics involving a non-constant rhs. The behavior has been changed in this release such that the rhs is evaluated just once at the time the force is executed and is applied as though it is constant and does not update forced value subsequently when any of the rhs variables change value. Previously, the forced value would be updated when the rhs variables change value, but any subsequent force or release on the same target would not cancel the force. This old behavior can be selected by specifying the vsim -reevalvarbitforces option.</li>
+ <li>dvt84871 - (results) vsim crashed when annotating SDF to a full specify path ( "*>") with path selects on source and destination terminals. This happened only when the specify block contained more than 64 paths and the width of the source and destination part-selects were different. E.g. (a[17:9] *> y[36:18]) = (0);</li>
+ <li>dvt84969 - (results) Specifying a VHDL instance to $asserton or $assertoff didn't affect the assert statements. It caused error (vsim-8111) to be emitted, indicating no matching object was found.</li>
+ <li>dvt83391 - (results) In some situations, a performance optimization for FSDB dumping caused pli errors:
+# ** Error: (vsim-PLI-3532) acc_vcl_add(): The object_handle parameter is not a 
+handle to a register, net, variable, port, terminal, or event.
+# ** Error: (vsim-PLI-3494) acc_fetch_size(): The object_handle parameter is
+not a handle to a net, register, or port, or a bit-select thereof.
+setting the env variable MTI_OPT_FSDB=0 will also workaround this problem.</li>
+ <li>dvt66421 - (results) When vsim was run with any "-radix" other than "binary", UVM backdoor functions uvm_hdl_deposit and uvm_hdl_force didn't deposit/force the correct value into VHDL data objects.</li>
+ <li>[nodvtid]  - (results) While reading from a file into a memory using fread, when EOF was encountered, the remaining bytes of the memory were filled with newline characters. Now, after fixing this issue, zeros are filled in remaining bytes.</li>
+ <li>dvt83519 - (results) Report vsim arguments with which elaboration or checkpoint was created.</li>
+ <li>dvt69035 - (results) Support of -seq_udp_delay <delay> added. Specify a constant delay for all sequential UDP's in the design and set all other structural delays to zero</li>
+</ul>
+<p /><dd><font size="3"><b>SystemC  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (results) sccom would invoke scparse with the '--c++0x' option by default, which would enable the c++11 standard. The enabling of the c++11 standard by default would lead to scparse compilation errors in certain cases, while the g++ compilation would run fine. sccom has been fixed not to pass '--c++0x' by default. If a design has c++11 constructs, sccom needs to be invoked with the '-std=c++11' option so that both, g++ and scparse will run with the c++11 standard enabled during compilation.</li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt83252 - (results) A problem has been fixed that prevented parameters specified in a parent testplan from being correctly passed down to a child testplan.</li>
+</ul>
+<p /><dd><font size="3"><b>Power Aware  Compatibility</b></font></dd>
+<ul><li>dvt80521 - (results) Isolation/Level-shifter strategies with location parent are now ignored for open output ports.</li>
+ <li>dvt82076 - (results) There is change in behavior in CORRUPT_ON_ACTIVITY/CORRUPT_STATE_ON_ACTIVITY simstates for flops.
+Now, the flop outputs would not corrupt if there is a change in input('D') in COA/CSOA simstate.
+Use the vopt option -pa_enable=coainputcrpt to achieve flop corruption with change in 'D'.</li>
+ <li>[nodvtid]  - (results) There is a change in behavior of vopt option "-pa_upfsyntaxchecks".
+Earlier using this option with vopt would only do syntax checking of the UPF and exit.Now using this option with design top would do syntax checking of the UPF file and if successful will invoke actual PA UPF elaboration. If user doesn't specify any design top with this option then tool will only do syntax checking of UPF and exit(same as old behavior).
+</li>
+ <li>dvt83155 - (results) Added support for liberty based corruption for all liberty cells under pa option 'libertycellcrpt' (-pa_enable=libertycellcrpt)</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 10.4e</b></font>
+<ul><li>dvt84629 - [ModelSim Microsemi] Wrong license feature name 'actelmsimvlog' mentioned in licensing error message for expired licenses. Should have been 'microsemimsim'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uidefects"></a><font size="4"><b>User Interface Defects Repaired in 10.4e</b></font>
+<ul><li>dvt83573 - The Wave window view will jump to the end time when selecting items in the Structure window.  This issue as been fixed.  To work around the problem in existing releases, set PrefWave(ScrollOnRunComplete) 0, however, with this option disabled, the Wave window will not scroll to the end after a run either.</li>
+ <li>dvt74842 - When saving a window image on Windows, the error "expected integer but got "-x"" is reported.  This problem has been fixed.</li>
+ <li>dvt86473 - Objects window will mis-sort items when the Active time is inactive. </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.4e</b></font>
+<ul><li>dvt73179 - (results) Fix an improper vopt optimization when DPI import call is involved in an always block.</li>
+ <li>dvt84015 - (results) The non-standard feature of System Verilog "force" and "release" statements that target a select of a variable (as opposed to a net) do not fully support a non-constant rhs. A warning is issued to this effect, and the resulting behavior may not match the expected behavior for force and release semantics involving a non-constant rhs. The behavior has been changed in this release such that the rhs is evaluated just once at the time the force is executed and is applied as though it is constant and does not update forced value subsequently when any of the rhs variables change value. Previously, the forced value would be updated when the rhs variables change value, but any subsequent force or release on the same target would not cancel the force. This old behavior can be selected by specifying the vsim -reevalvarbitforces option.</li>
+ <li>dvt84358 - Fixed a vopt crash in an optimization of an always block.</li>
+ <li>dvt84871 - (results) vsim crashed when annotating SDF to a full specify path ( "*>") with path selects on source and destination terminals. This happened only when the specify block contained more than 64 paths and the width of the source and destination part-selects were different. E.g. (a[17:9] *> y[36:18]) = (0);</li>
+ <li>[nodvtid]  - Extended Mac OS new-line warning message to cover line comments when the line comments is the first text found within a source file.</li>
+ <li>dvt84969 - (results) Specifying a VHDL instance to $asserton or $assertoff didn't affect the assert statements. It caused error (vsim-8111) to be emitted, indicating no matching object was found.</li>
+ <li>dvt84189 - Inline randomization constraints with type casts would sometimes generate compilation errors like:<pre>
+** Error: test.sv(10): Illegal field 'my_type'</pre></li>
+ <li>dvt83391 - (results) In some situations, a performance optimization for FSDB dumping caused pli errors:
+# ** Error: (vsim-PLI-3532) acc_vcl_add(): The object_handle parameter is not a 
+handle to a register, net, variable, port, terminal, or event.
+# ** Error: (vsim-PLI-3494) acc_fetch_size(): The object_handle parameter is
+not a handle to a net, register, or port, or a bit-select thereof.
+setting the env variable MTI_OPT_FSDB=0 will also workaround this problem.</li>
+ <li>dvt85773 - vsim crashed with "+bitblast" when a module contained a wide port in $setuphold (or $recrem) but not corresponding delayed nets. For example, "$setuphold(posedge CLK, posedge A, 0,0,notify);" where A is a wide port. In comparison, "$setuphold(posedge CLK, posedge A, 0,0,notify,,, dCLK, dA);", which has the delayed nets specified, did not crash.</li>
+ <li>dvt85744 - Fixed a vopt crash when randomize with "with" is called on a class present in different package.</li>
+ <li>dvt85552 - Fixed a vopt crash when a structure parameter is passed to module and is also used to pass its one field to another module instance in a generate loop. </li>
+ <li>dvt85511 - Fixed a vopt crash when interface instance array element is passed as port in a generate loop.</li>
+ <li>dvt85354 - Fixed a vopt crash when interface array is passed as port in a module and size of the interface array is based on the parameter value passed to same module.</li>
+ <li>dvt85355 - Fixed a vopt invalid error when interface array element is passed as port and vopt is not able to evaluate the value of index.</li>
+ <li>dvt85027 - Fixed an invalid vsim error 3371 when a parameter is initialized with constant function and this parameter value is used as index while declaring a typedef.</li>
+ <li>dvt80327 - Fixed a vlog crash when default parameters are used for non parameterized class.</li>
+ <li>dvt84147 - Allowed the comma in the path given to -pli argument.</li>
+ <li>dvt84543 - Fixed a vlog error when a class is passed as argument to new operator.</li>
+ <li>dvt84512 - Corrected the output of $countbits when used on array size larger than 32 bits.</li>
+ <li>dvt84079 - An interface was showing all z's on port connection in a corner scenario when interface is instantiated inside generate and also used as virtual interface. This has been fixed now.</li>
+ <li>dvt80740 - Added an error check when constant variable defined inside interface is changed.</li>
+ <li>dvt83576 - Fixed a vopt crash when following type of expression is used. Expression:- array[index].element |= constant, where index is some external reference to a part-select expression.</li>
+ <li>dvt81993 - Added a warning when array dimension greater than the size of an int is declared.</li>
+ <li>dvt85884 - Fixed a bug which resulted in vsim crash when dynamic rand array is declared as field inside a structure.</li>
+ <li>dvt84049 - Fixed a bug which resulted in vopt assert failure when using interface instance before its instantiation in the same scope.</li>
+ <li>dvt85029 - Fixed a bug which resulted in weak output of a buf (weak1, weak0) primitive to be incorrectly converted to a strong output.</li>
+ <li>dvt78378 - Fixed a bug which resulted in wrong vsim time error while overriding parameters of unpacked structure type.</li>
+ <li>dvt33609 - Fixed a vopt-7063 suppressible error when bind instance is used in left hand side of defparam statement.</li>
+ <li>dvt66421 - (results) When vsim was run with any "-radix" other than "binary", UVM backdoor functions uvm_hdl_deposit and uvm_hdl_force didn't deposit/force the correct value into VHDL data objects.</li>
+ <li>[nodvtid]  - (results) While reading from a file into a memory using fread, when EOF was encountered, the remaining bytes of the memory were filled with newline characters. Now, after fixing this issue, zeros are filled in remaining bytes.</li>
+ <li>dvt86366 - Fixed an invalid vlog-13216 error when class handles are assigned in foreach loop.</li>
+ <li>dvt86359 - Removed addition of force and release target in implicit sensitivity list.</li>
+ <li>dvt86238 - Vopt was hanging when bit select and part-select are used on nets in complex scenario. This has been fixed now.</li>
+ <li>dvt84391 - Fixed a vopt crash after suppressing error 8303. The crash was seen when non-constant multiplier was used in replicate expression in automatic function.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.4e</b></font>
+<ul><li>dvt82810 - A function containing a nested function called to initialize a subtype of an object declared in the outer function could cause the design to crash when loaded.</li>
+ <li>dvt83738 - Incorrect code was generated for constant-index signal assignments when the array elements are generic types. As a result, the simulator could crash.</li>
+ <li>dvt81426 - If an array-valued signal has only constant-index signal assignments in a particular process, and the process contains an expression involving either the 'driving or 'driving_value attribute, incorrect code was generated for the attribute expression. As a result, the simulator could crash during evaluation of the expression.</li>
+ <li>dvt85740 - The compiler (vcom) would issue an Internal error message when an array aggregate expression was associated with a port of a direct instantiation (ENTITY) when that port was of an array-of-unconstrained array type and the port subtype was fully constrained at the inner array and the constraint depended on generics of the ENTITY, different from the ENTITY of the design unit that contains the direct instantiation statement.</li>
+ <li>dvt86029 - The simulator would crash when a port map associated an array subelement of a record type signal with an array type port, when the array subelement was defined as an unconstrained array (i.e, the record type was record-with-unconstrained array subelement).
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcdefects"></a><font size="4"><b>SystemC Defects Repaired in 10.4e</b></font>
+<ul><li>[nodvtid]  - (results) sccom would invoke scparse with the '--c++0x' option by default, which would enable the c++11 standard. The enabling of the c++11 standard by default would lead to scparse compilation errors in certain cases, while the g++ compilation would run fine. sccom has been fixed not to pass '--c++0x' by default. If a design has c++11 constructs, sccom needs to be invoked with the '-std=c++11' option so that both, g++ and scparse will run with the c++11 standard enabled during compilation.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="assertiondefects"></a><font size="4"><b>SVA/PSL Defects Repaired in 10.4e</b></font>
+<ul><li>dvt84105 - vopt exits with code 211 when a VHDL attribute is used in a PSL expression.</li>
+ <li>dvt84891 - Assertion having $past with clock gating fires incorrectly.</li>
+ <li>dvt85213 - Assertion with suffix implication having boolean LHS and RHS fired incorrectly after that assertion was disabled by $assertoff.</li>
+ <li>dvt85418 - Assertion fires incorrectly when using SVA 'not' operator over a sequence.</li>
+ <li>dvt85985 - vsim crashes during 'coverage save' with -assertcover.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 10.4e</b></font>
+<ul><li>dvt84862 -  Fixed a bug which resulted in internal vopt error when nested Verilog module instantiates VHDL entity with generics override.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.4e</b></font>
+<ul><li>dvt83252 - (results) A problem has been fixed that prevented parameters specified in a parent testplan from being correctly passed down to a child testplan.</li>
+ <li>[nodvtid]  - Vrun -suspend now releases Questa licences upon suspension. </li>
+ <li>dvt66418 - VRM local rerun functionality now re-evaluates the parameters of the action that is going to be rerun.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="uienhancements"></a><font size="4"><b>User Interface Enhancements in 10.4e</b></font>
+<ul><li>dvt21036 - The Search bar options such as Exact Match and Case Sensitive, have been made persistent between sessions.  </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.4e</b></font>
+<ul><li>dvt83570 - Added new vsim switch "-solvefailseverity" for specifying error message severity when randomize() failure is detected.
+
+-solvefailseverity=<value>
+    Valid values:
+        0 - no error (default)
+        1 - warning
+        2 - error
+        3 - failure
+        4 - fatal</li>
+ <li>[nodvtid]  - Added a vlog and vopt -svext=tzas option that runs a top-blocking always @* at time zero, same as is done for an always_comb, meaning that the always block will behave as though triggered at time zero even if none of the variables and nets in the implied sensitivity change value at time zero.</li>
+ <li>dvt85541 - Improved performance of switch network simulation where HDL forces are present.</li>
+ <li>dvt83519 - (results) Report vsim arguments with which elaboration or checkpoint was created.</li>
+ <li>dvt84276 - Support the initialization of dynamic array with '{default:expression}.</li>
+ <li>dvt80842 - Allowed the shuffle method on associative arrays with -svext=omaa</li>
+ <li>dvt69035 - (results) Support of -seq_udp_delay <delay> added. Specify a constant delay for all sequential UDP's in the design and set all other structural delays to zero</li>
+ <li>[nodvtid]  - vlog's -E output would not emit `line directives with anything other than '0' for the "level" parameter.  Valid values for the "level" parameter are 0, 1 or 2.</li>
+ <li>[nodvtid]  - Added a new SVPrettyPrintflags option 'R' in modelsim.ini file to specify the radix for printing the data specified with %p format. e.g. SVPrettyPrintFlags=R<specifier> shows the output of specifier %p as per the specifed radix(d|b|o|h). It changes the output in $display and similar systasks. It does not affect formatted output functions ($displayh etc).</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcenhancement"></a><font size="4"><b>SystemC Enhancements in 10.4e</b></font>
+<ul><li>dvt81904 - sccom has a new option '-uvmc' and a modelsim.ini option 'UseUvmc' that would enable automatic linking of the precompiled UVMC libraries shipped with the product. This option is a link time only option and should be specified with 'sccom -link'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="svapslenhancement"></a><font size="4"><b>SVA/PSL Enhancements in 10.4e</b></font>
+<ul><li>dvt81633 - Added support for case..endcase type of property in SVA.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="coverageenhancement"></a><font size="4"><b>Coverage Enhancements in 10.4e</b></font>
+<ul><li>[nodvtid]  - vcover parallelmerge has been enhanced to optimize number of parallel merge jobs such that each merge job will have at least 2 files to merge. 
+For example, if user asks 8 files to merge with 8 parallel jobs, parallelmerge would run 8 parallel merge jobs with 1 file each. With this enhancement, parallelmerge will automatically reduce the number of parallel merge jobs to 4.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmenhancement"></a><font size="4"><b>Verification Management Enhancements in 10.4e</b></font>
+<ul><li>dvt84224 - Added "Class Type" column in Tracker window for showing parameterized class specialization attributes of linked coverage scopes </li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="paenhancement"></a><font size="4"><b>Power Aware Enhancements in 10.4e</b></font>
+<ul><li>dvt80521 - (results) Isolation/Level-shifter strategies with location parent are now ignored for open output ports.</li>
+ <li>dvt82076 - (results) There is change in behavior in CORRUPT_ON_ACTIVITY/CORRUPT_STATE_ON_ACTIVITY simstates for flops.
+Now, the flop outputs would not corrupt if there is a change in input('D') in COA/CSOA simstate.
+Use the vopt option -pa_enable=coainputcrpt to achieve flop corruption with change in 'D'.</li>
+ <li>[nodvtid]  - (results) There is a change in behavior of vopt option "-pa_upfsyntaxchecks".
+Earlier using this option with vopt would only do syntax checking of the UPF and exit.Now using this option with design top would do syntax checking of the UPF file and if successful will invoke actual PA UPF elaboration. If user doesn't specify any design top with this option then tool will only do syntax checking of UPF and exit(same as old behavior).
+</li>
+ <li>dvt83155 - (results) Added support for liberty based corruption for all liberty cells under pa option 'libertycellcrpt' (-pa_enable=libertycellcrpt)</li>
+ <li>dvt84673 - Added support to report the "clamp_value" set on a signal by "set_port_attributes" UPF command. It will be reported under the section of isolation strategy in Questa PASim report files report.upf.txt and report.pa.txt.</li>
+</ul>
+
+</body>
+</html>

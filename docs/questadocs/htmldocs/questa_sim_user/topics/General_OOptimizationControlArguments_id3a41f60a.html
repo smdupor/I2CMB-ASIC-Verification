@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="The ‑O Optimization Control Arguments" />
+<meta name="abstract" content="The vopt Three-Step and Two-Step flows are the primary usage models for Questa SIM optimization performance. These flows provide global visibility of the design, which the compiler takes advantage of to make aggressive optimization decisions. In addition, you can specify any of four -O arguments to control the aggressiveness of optimization decisions." />
+<meta name="description" content="The vopt Three-Step and Two-Step flows are the primary usage models for Questa SIM optimization performance. These flows provide global visibility of the design, which the compiler takes advantage of to make aggressive optimization decisions. In addition, you can specify any of four -O arguments to control the aggressiveness of optimization decisions." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id3a41f60a-ab4b-4690-8fce-f997d41961d9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>The ‑O Optimization Control Arguments</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="The ‑O Optimization Control Arguments" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> The ‑O Optimization Control Arguments</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><p class="shortdesc">The vopt
+Three-Step and Two-Step flows are the primary usage models for <span class="ph fmvar:ProductName">Questa SIM</span> optimization performance.
+These flows provide global visibility of the design, which the compiler
+takes advantage of to make aggressive optimization decisions. In
+addition, you can specify any of four -O arguments to control the
+aggressiveness of optimization decisions. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">These -O arguments are available for the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a>, <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a>,
+and <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vlog', 'questa_sim_ref'); return false;">vlog</a> commands.
+The vopt command applies the specified control level during optimization,
+whereas the vcom and vlog commands apply the control level during
+compilation. </p>
+</div>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__id1d9467ad-0093-4cc5-88a0-622347d7ef28"><h2 class="title Subheading sectiontitle">Levels
+of Optimization Control</h2><p class="p">You can use the numbered -O arguments on the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> or <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vlog', 'questa_sim_ref'); return false;">vlog</a> command
+lines to control optimizations independently from the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vopt', 'questa_sim_ref'); return false;">vopt</a> command.
+These numbered -O arguments provide the following levels of control: </p>
+<ul class="ul"><li class="li" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__id6736ef62-f223-47c0-a915-778180f87873"><p class="p">-O0 — Enables
+the least amount of optimization. Use this to work around bugs,
+increase your debugging visibility on a specific cell, or when you
+want to place breakpoints on source lines that have been optimized
+out.</p>
+</li>
+<li class="li" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__id4ae3c7cf-981c-49d0-9b23-42f1580bc5aa"><p class="p">-O1 — Enables
+a minimal amount of optimization. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The -O0 and -O1 arguments can negatively impact performance—you should
+use them only if you are attempting to analyze the behavior of the
+simulator. </p>
+</div>
+</li>
+<li class="li" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__id0fb7301f-c05e-4160-beef-1d2ccc36664e"><p class="p">-O4 — (default)
+Enables optimization for most simulations. </p>
+</li>
+<li class="li" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__id05b87080-2260-44d2-86c4-b48e806a1e73"><p class="p">-O5 — Enables
+the maximum amount of optimization. This argument results more aggressive
+native-code generation, which can speed up many designs, but it can
+slow down others. </p>
+</li>
+</ul>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">In code coverage flows, you should use the
+vlog, vcom, and vopt -coveropt argument (or the <a class="xref fm:HeadingOnly" href="Command_Coveropt_id191340de.html#id191340de-4a3b-4f68-821c-54011df39470__Command_Coveropt_id191340de.xml#id191340de-4a3b-4f68-821c-54011df39470" title="This variable controls the default level of optimizations for compilations with code coverage.">CoverOpt</a> <span class="ph filepath">modelsim.ini</span> variable)
+to control visibility and other interactions between optimization
+and code coverage collection. </p>
+</div>
+</div>
+<div class="section Subsection" id="id3a41f60a-ab4b-4690-8fce-f997d41961d9__ideb995de1-0d7f-4a36-9f26-678ec4bb2c19"><h2 class="title Subheading sectiontitle">Optimization
+Control versus Visibility </h2><p class="p">Note that the decisions implemented by the different levels of
+-O arguments are not particularly related to the global visibility
+characteristics of running vopt, which you specify using the +acc
+argument. You use vopt +acc to preserve visibility of certain categories
+of objects that might otherwise be optimized away. Objects that
+get optimized away can make your debug and analysis efforts more
+difficult. </p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_OptimizationFlows_ida79d4240.html" title="You can use either a three-step or a two-step flow to control optimizations for your simulation run.">Optimization Flows</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "The ‑O Optimization Control Arguments"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_OOptimizationControlArguments_id3a41f60a.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

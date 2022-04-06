@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Matching VHDL Return Types with C Return Types" />
+<meta name="abstract" content="You must match the C return types in your foreign C subprogram to the VHDL return types in your VHDL code." />
+<meta name="description" content="You must match the C return types in your foreign C subprogram to the VHDL return types in your VHDL code." />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id703ccaf3-e03a-4b0a-a4cc-dbe73a1ea9eb" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Matching VHDL Return Types with C Return Types</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Matching VHDL Return Types with C Return Types" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id703ccaf3-e03a-4b0a-a4cc-dbe73a1ea9eb">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Matching VHDL Return Types with C Return Types</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You must match
+the C return types in your foreign C subprogram to the VHDL return
+types in your VHDL code.</span>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id703ccaf3-e03a-4b0a-a4cc-dbe73a1ea9eb__id6435883c-46db-40ee-9e2f-93bbf34c63bf" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Return Types — VHDL to C Comparison</span></caption><colgroup><col style="width:1.719in" /><col style="width:1.855in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d50224e150"><p class="p">VHDL Return Type</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d50224e153"><p class="p">C Return Type</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Integer</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">int</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Enumeration</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">int</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Real</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">mtiRealT</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Time<a class="xref fm:Footnote" href="#id703ccaf3-e03a-4b0a-a4cc-dbe73a1ea9eb__id8ac86f53-2182-438f-afa3-f38e0cf803b1"><sup>1</sup></a></p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">mtiTime64T</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Array</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">Not supported</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">File</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">Not supported</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Record</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">Not supported</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e150 "><p class="p">Access</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d50224e153 "><p class="p">Not supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">MtiRealT is a special type that you must use
+as the return type of a foreign function that returns a real value.
+Macros are provided in <span class="ph filepath">mti.h</span> for setting values
+in and getting values out of variables of type mtiRealT.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsingVhdlFliForeignSubprograms_id1a9b6bae.html" title="This section provides information on how you work with foreign subprograms.">Using the VHDL FLI with Foreign Subprograms</a></div>
+</div>
+</div></div>
+<div class="fn"><a id="id703ccaf3-e03a-4b0a-a4cc-dbe73a1ea9eb__id8ac86f53-2182-438f-afa3-f38e0cf803b1"><sup>1</sup></a>  On Linux<sup>®</sup>, the compiler switch -freg-struct-return
+must be used when compiling any FLI application code that contains
+foreign functions that return real or time values.</div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Matching VHDL Return Types with C Return Types"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MatchingVhdlReturnTypesCReturnTypes_id703ccaf3.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

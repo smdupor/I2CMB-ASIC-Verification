@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Power Aware Checks Overview" />
+<meta name="abstract" content="Power Aware checks ensure that your design is compliant to the power intent defined in the UPF file. Power Aware checks use the power intent definition to report any missing or inconsistent power-related information, saving your time in simulation and synthesis debugging." />
+<meta name="description" content="Power Aware checks ensure that your design is compliant to the power intent defined in the UPF file. Power Aware checks use the power intent definition to report any missing or inconsistent power-related information, saving your time in simulation and synthesis debugging." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idd3d2552c-7db1-485c-9921-cef690ac6100" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Checks Overview</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Checks Overview" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idd3d2552c-7db1-485c-9921-cef690ac6100">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Aware Checks Overview</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Power Aware checks ensure that your
+design is compliant to the power intent defined in the UPF file.
+Power Aware checks use the power intent definition to report any
+missing or inconsistent power-related information, saving your time
+in simulation and synthesis debugging.</span>
+</div>
+<p class="p">There are two categories of Power
+Aware checks:</p>
+<dl class="dl"><dt class="dt dlterm">Static Check</dt>
+<dd class="dd"><p class="p">Static checks identify architectural issues in the design,
+such as missing isolation or level shifter cells. A static check
+verifies the design for the defined power intent without running
+the actual simulation. Because a simulation run is not required,
+you only need to run vopt to perform static checks. </p>
+<p class="p">Static checks are categorized into static RTL and static GLS
+checks. Use static RTL checks on the RTL designs and static GLS
+checks on the gate-level designs.</p>
+</dd>
+<dt class="dt dlterm">Dynamic Check</dt>
+<dd class="dd"><p class="p">Dynamic checks identify behavioral issues in the design,
+such as incorrect control sequencing for powering up or powering
+down portions of the design. A dynamic check verifies the design
+for the defined power intent during the actual simulation. You need
+to run Power Aware simulation to perform dynamic checks. </p>
+</dd>
+</dl>
+<div class="fig imagemap MGCImagemap" id="idd3d2552c-7db1-485c-9921-cef690ac6100__id2d9c73ff-4fde-459e-9283-07a7f299ad5e"><span class="figcap">Power
+Aware Checks</span><br /><img usemap="#d74017e152" border="0" class="image fmdpi:96" src="../graphics_composites/Classification_of_PA_Checks.png" />
+<map name="d74017e152" id="d74017e152">
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Switch Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,546,433,582" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static RTL Back-to-Back Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="97,407,237,443" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static RTL Path Analysis Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="97,361,237,397" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static RTL Level Shifter Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="97,313,237,349" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static RTL Isolation Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="97,265,237,301" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Miscellaneous Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,501,433,537" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS ELS Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,456,433,492" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Back-to-Back Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,410,433,446" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Retention Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,361,433,397" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Level Shifter Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,313,433,349" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Isolation Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="292,265,433,301" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Dynamic Miscellaneous Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="479,293,619,329" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Dynamic Retention Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="479,245,619,281" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Dynamic Level Shifter Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="479,197,619,233" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Dynamic Isolation Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="479,149,619,185" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static GLS Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="195,207,319,243" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Static RTL Checks', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="1,207,124,243" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Power Aware Checks Overview', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="382,101,506,134" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Power Aware Checks Overview', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="95,99,219,133" />
+<area href="../../pa_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Power Aware Checks Overview', 'pa_user'); return false;" alt="gotolink" title="gotolink" shape="rect" coords="234,1,375,34" />
+</map></div></div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_IsolationChecks_id02e1ece2.html" title="Isolation checks report any missing or inconsistent isolation cells in your design. Isolation is present in the design if the UPF file contains a set_isolation command defining an isolation strategy, or a set_isolation -instance strategy that specifies the need for isolation and points to the instantiated isolation cells.">Isolation Checks</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_LevelShifterChecks_idaeda32a4.html" title="Level shifter checks report any missing or inconsistent level shifter cells in your design. Level shifting is present in the design if the UPF file contains a set_level_shifter command defining a level shifting strategy, or a set_level_shifter -instance strategy that specifies the need for level shifting and points to the instantiated level shifting cells.">Level Shifter Checks</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_PathAnalysisChecks_id568e372e.html" title="Path analysis checks report not analyzed and good paths for isolation and level shifter requirements. By default, the tool does not report path analysis checks, because there are many not analyzed and good paths for a power domain crossing.">Path Analysis Checks</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_RetentionChecks_id7c397d10.html" title="Retention checks report various inconsistent retention conditions in your design. Retention is present in the design if the UPF file contains a set_retention command defining a retention strategy, or a set_retention -instance strategy that specifies the need for retention and points to the instantiated retention cells.">Retention Checks</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_BackToBackChecks_idf74cf9dc.html" title="Back-to-back checks report back-to-back cells in your design. Replace the back-to-back cells with a single cell.">Back-to-Back Checks</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PowerAwareChecks_id0e5745d2.html" title="Power Aware simulation performs a variety of checks on your design that validate the power intent defined in the UPF file. These checks ensure that the power intent protocol violations do not occur because of a power event sequence or the power architecture.">Power Aware Checks</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Checks Overview"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_PowerAwareChecksOverview_idd3d2552c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

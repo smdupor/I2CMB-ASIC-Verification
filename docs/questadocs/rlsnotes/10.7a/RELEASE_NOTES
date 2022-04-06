@@ -1,0 +1,509 @@
+                     Release Notes For Questa Sim 10.7a
+
+                                 Mar 26 2018
+               Copyright 1991-2018 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.7a
+     * [4]Base Product Specifications in 10.7a
+     * [5]Compatibility Issues with Release 10.7a
+     * [6]General Defects Repaired in 10.7a
+     * [7]User Interface Defects Repaired in 10.7a
+     * [8]SystemVerilog Defects Repaired in 10.7a
+     * [9]VHDL Defects Repaired in 10.7a
+     * [10]SVA/PSL Defects Repaired in 10.7a
+     * [11]Verification Management Defects Repaired in 10.7a
+     * [12]WLF and VCD logging Defects Repaired in 10.7a
+     * [13]User Interface Enhancements in 10.7a
+     * [14]SystemVerilog Enhancements in 10.7a
+     * [15]Coverage Enhancements in 10.7a
+     * [16]Verification Management Enhancements in 10.7a
+     * [17]MC2 Enhancements in 10.7a
+     * [18]Document Revision History in 10.7a
+   _______________________________________________________________________
+
+   Key Information
+     * (results) -novopt flow has been deprecated and commands will flag
+       below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 10.7 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+     * This release uses new licensing version which needs to have license
+       servers upgraded to FLEXnet v11.14.1.3.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.14.1.3. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.14.1.3 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2017_1_patch2 with MGLS
+       v9.17_10.2.4 and PCLS v9.17.10.2.0
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.14.1.3
+          + MSL v2017_1_patch2
+          + MGLS v9.17_10.2.4
+          + PCLS v9.17.10.2.0
+       ___________________________________________________________________
+
+       Release Announcements in 10.7a
+
+     * We regularly review our OS/Platform support for Questa/ModelSim and
+       related functional verification products to add new platforms and
+       discontinue old ones.
+       That process normally takes a number of years from decision to
+       action. Customer notifications are typically only one year in an
+       advance through our Release Notes and Install Guide.
+       We plan to make a change in our Windows support, 1 year from now.
+       We began notifications of this change back in January 2017 with the
+       10.5d and 10.6a releases
+       As our existing Windows machines breakdown or are discontinued,
+       replacement hardware can only support Windows 10. So say Microsoft
+       and our hardware vendors, HP & Lenovo. That will limit our capacity
+       and ability to support Windows 7 & 8.1 in the future.
+       Therefore, starting with 10.8 (FCS Dec 2018) we plan to discontinue
+       supporting Windows 7 & 8.1 Thus the only Windows version for 10.8
+       will be for Windows 10. However we will continue to support Windows
+       7 & 8.1 with our 10.6 and 10.7 release series until their planned
+       EOL (10.6 EOL - mid 2019, 10.7 EOL - mid 2020) to coincide with
+       Microsoft's EOL for Windows 7.
+     * Due to enhanced security restrictions with web browser PDF
+       plug-ins, some links do not function. Links in HTML documentation
+       are fully functional.
+       Clicking a link within a PDF viewed in a web browser may result in
+       no action, or it may load the title page of the current PDF manual
+       (instead of the intended target in the PDF manual). The unresolved
+       link behavior occurs in all web browsers on Windows and Linux
+       platforms. Because of this behavior, the navigational experience of
+       PDF manuals is compromised. PDF is ideal for printing because of
+       its page-oriented layout.
+       Use the HTML manuals to search for topics, navigate between topics,
+       and click links to examples, videos, reference material, and other
+       related technical content.
+       For information about Adobe's discontinued support of Adobe Reader
+       on Linux platforms and your available options, refer to Knowledge
+       Article MG596568 on SupportNet.
+       Linux is a registered trademark of Linus Torvalds in the U.S. and
+       other countries.
+   _______________________________________________________________________
+
+   Base Product Specifications in 10.7a
+     *
+       [Supported Platforms]
+       Linux RHEL 6 x86/x86-64
+       Linux RHEL 7 x86/x86-64
+       Linux SLES 11 x86/x86-64
+       Linux SLES 12 x86/x86-64
+       Windows 7 x86/x64
+       Windows 8.1 x86/x64
+       Windows 10 x86/x64
+       [Supported GCC Compilers (for SystemC)]
+       gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64
+       gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+       gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+       gcc-4.2.1-mingw32vc12
+       [OVL (shipped with product)]
+       v2.8.1
+       [VHDL OSVVM (shipped with product)]
+       v2014.07
+       [Licensing]
+       FLEXnet v11.14.1.3
+       MSL v2017_1_patch2
+       MGLS v9.17_10.2.4
+       PCLS v9.17.10.2.0
+   _______________________________________________________________________
+
+   Compatibility Issues with Release 10.7a
+
+   Key Information Compatibility
+     * [nodvtid] - (results) -novopt flow has been deprecated and commands
+       will flag below error now.
+** Error (suppressible): (vlog-12110) All optimizations are disabled because the
+ -novopt option is in effect.
+ This will cause your simulation to run very slowly. If you are using this switc
+h to preserve visibility for
+ Debug or PLI features, please see the User's Manual section on Preserving Objec
+t Visibility with vopt. -novopt
+ option is now deprecated and will be removed in future releases.
+
+       Using -novopt with optimized design in vsim will also flag below
+       error.
+** Error (suppressible): (vsim-12110) -novopt option has no effect when used wit
+h the optimized design.
+-novopt option is now deprecated and will be removed in future releases.
+
+       In 10.7 release, user can suppress this error. But, it is
+       recommended to remove any dependency on -novopt flow from user's
+       design environment. Future releases will remove -novopt flow
+       completely.
+
+   SystemVerilog Compatibility
+     * dvt106952 - (results) In some cases involving if-else constraints,
+       -solvefaildebug[=2] would produce a constraint contradiction report
+       that was confusing, making it difficult to analyze the root cause
+       of the conflict. This issue has been fixed.
+     * dvt105375 - (results) In some rare cases, randomize() would
+       incorrectly consider a class instance as non-random if multiple
+       'rand' aliases to the same instance were encountered, and if the
+       rand_mode of some of those aliases were 0 and some were 1. This
+       issue has been fixed.
+     * dvt105372 - (results) In some rare cases, randomize() would not
+       evaluate 'default' constraints correctly, resulting in a spurious
+       constraint contradiction failure. This issue has been fixed.
+     * dvt103663 - (results) Improved support for $clog2 system function
+       calls within the context of random constraints. In the past, a
+       $clog2 function call in a constraint would be handled as a constant
+       (non-random) value. The new behavior is for $clog2 to behave as a
+       fully bidirectional constraint expression -- the operand and result
+       of $clog2 will be solved simultaneously by the constraint solver
+       during a randomize call.
+     * dvt106517 - (results) Added non-LRM support to allow a packed
+       structure to be used for foreach indexing. So for an object "st" of
+       a packed structure, writing "foreach(st[i])" is no longer an error.
+       The support has been added as default and will be an error with
+       -pedanticerrors.
+
+   General Compatibility
+     * dvt95876 - (results) The size of verilog real datatype was being
+       printed 0 in VCD files. Corrected this to print 64 as the size of
+       real types in VCD.
+
+   Coverage Compatibility
+     * dvt100810 - (results) The Expression Coverage has been enhanced to
+       cover expressions that contain multi-bit sub-expressions but whose
+       resulting output is still single bit.
+       For example, expressions like (in1==in2) and (in1[2:0] &&
+       in2[2:0]), which were not covered earlier, are now identified as
+       single terminal expressions where the entire expression is regarded
+       as a single term for coverage.
+       This feature was earlier enabled by the switch -coverFecSingleTerm.
+       But 10.7 onwards, this feature will be enabled by default (works
+       when FEC coverage is enabled). To disable the feature,
+       -nocoverfecsingleterm switch (in addition to other coverage
+       switches) is needed in vlog/vopt.
+     * [nodvtid] - (results) The UDP Coverage is not a recommended
+       coverage collection metric and has been deprecated in 10.7. The
+       following suppressible error message appears when usage of UDP
+       coverage is detected in 10.7,
+       "** Error (suppressible): (vlog-192) UDP expression coverage has
+       been deprecated and will be removed in future releases."
+       The user can still use UDP coverage feature by suppressing the
+       error, however it will be removed completely in future releases.
+     * dvt103953 - (results) If the bin iff condition is false at the end
+       of a successful transition bin sequence matching then the counter
+       is not incremented as before, but the matched result is no more
+       preserved now to increment the bin later when the iff condition
+       becomes true.
+     * dvt105070 - (results) Assuming that LRM has a typo on missing open
+       square bracket in bin syntax, allowing coverpoint name in binrhs
+       without any with-expression
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.7a
+     * dvt95876 - (results) The size of verilog real datatype was being
+       printed 0 in VCD files. Corrected this to print 64 as the size of
+       real types in VCD.
+     * dvt104690 - An issue related to licensing is fixed. The issue
+       caused a hang if the checked-out license feature is about to expire
+       (default is 15 days before expiration). A workaround was to set the
+       'MGLS_EXP_WARN_DAYS' variable to '1'. Now, the workaround is not
+       needed. This issue was not applicable to Windows platform.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.7a
+     * dvt105987 - The "change" command failed to accept variable names
+       with index or select expressions, only in -batch mode. This issues
+       has bee resolved.
+     * dvt103413 - The GUI crash reading a wlf file containing SV union
+       nets has been resolved.
+     * dvt107688 - In some cases, signals sent from the source window to
+       other windows will not be from the correct scope. This issue has
+       been resolved.
+     * dvt108473 - From the Message Viewer, when opening the source file
+       referenced in a message, if the file cannot be found, a dialog box
+       will pop up, requesting the user to select the location of the
+       file.
+     * dvt106889 - "vmap" fails silently when there is a leftover lock
+       file. Now it will report a warning 5 times, 5 seconds apart, before
+       giving up and returning an error status.
+     * dvt109082 - Repaired GUI crash when associative arrays are present
+       in automatic functions.
+     * dvt109387 - The Coverage HTML Report dialog box sometimes fails
+       with an "# ** Error: (vsim-4003) Invalid option '-code '." message.
+       This issue has been repaired.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.7a
+     * [nodvtid] - In some cases where a fork..join block contained a
+       nested fork..join_any sub-block, disabling the outer block would
+       not immediately disable the inner block.
+     * [nodvtid] - Vopt would sometimes crash in designs with interfaces
+       that imported complex types from packages.
+     * dvt106952 - (results) In some cases involving if-else constraints,
+       -solvefaildebug[=2] would produce a constraint contradiction report
+       that was confusing, making it difficult to analyze the root cause
+       of the conflict. This issue has been fixed.
+     * dvt105375 - (results) In some rare cases, randomize() would
+       incorrectly consider a class instance as non-random if multiple
+       'rand' aliases to the same instance were encountered, and if the
+       rand_mode of some of those aliases were 0 and some were 1. This
+       issue has been fixed.
+     * dvt105372 - (results) In some rare cases, randomize() would not
+       evaluate 'default' constraints correctly, resulting in a spurious
+       constraint contradiction failure. This issue has been fixed.
+     * dvt103663 - (results) Improved support for $clog2 system function
+       calls within the context of random constraints. In the past, a
+       $clog2 function call in a constraint would be handled as a constant
+       (non-random) value. The new behavior is for $clog2 to behave as a
+       fully bidirectional constraint expression -- the operand and result
+       of $clog2 will be solved simultaneously by the constraint solver
+       during a randomize call.
+     * dvt109061 - In some rare cases, randomize() would fail with the
+       following spurious error message: "Invalid random variable in index
+       expression for constraint" -- even in cases where an index
+       expression only referred to constant (non-random) variables. This
+       issue has been fixed.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.7a
+     * dvt106202 - An internal error was report in some cases in vcom or
+       vopt if an array signal is indexed or sliced. The index expression
+       or slice expression contains a locally static expression that has a
+       primary is a record or array. For example:
+constant C : integer_vector(0 to 1) := ( 3, 6);
+signal   S : std_logic_vector(15 downto 0);
+....
+   o <= S(C(0)); -- The use of C(0) can cause an internal error
+
+     * dvt106288 - If a package contains a generic of the same name as a
+       generic of an entity, and the package is instantiated within the
+       entity, the compiler may incorrectly use the static value of the
+       entity's generic rather than the package's generic when producing
+       code for the package instantiation.
+     * dvt104870 - A simulator crash could occur if an object was declared
+       with an initial expression that was the name of another object
+       whose initial value was a function call whose return type mark was
+       the predefined attribute SUBTYPE with a prefix that was one of the
+       function input parameters (when that parameter is of an
+       unconstrained composite type).
+     * dvt107650 - Reference to a package constant defined within a
+       package instance that is itself defined within a simple package
+       could cause the compiler to produce an internal error.
+     * dvt108324 - The compiler could crash when encountering a composite
+       assignment, where the left-hand side contains a variable whose type
+       is an interface type.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.7a
+     * dvt107868 - Fixed a bug where assertion severity system tasks were
+       not getting overridden when -systfoverride switch was specified.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.7a
+     * dvt105414 - Fixed an infinite-loop bug in the VRM HTML report
+       generator's RMDB expansion algorithm which would occur when a
+       usertcl procedure implementing a "foreach" parameter tried to
+       expand another parameter.
+   _______________________________________________________________________
+
+   WLF and VCD logging Defects Repaired in 10.7a
+     * dvt104923 - Incorrect time advance values in the WLF file caused
+       signal transitions to be incorrect in some rare conditions. This
+       bug generally manifested itself by signals transitions in the wave
+       window showing correctly when zoomed in, but disappearing as one
+       zoomed out, then possibly showing again upon zooming out even
+       further. This has been fixed, but the bug is in the WLF writer and
+       requires WLF files demonstrating this behavior to be regenerated.
+   _______________________________________________________________________
+
+   User Interface Enhancements in 10.7a
+     * dvt106543 - Color preference settings have been added for the
+       message indicators at the top of the Wave window. The new
+       preference variables are PrefWave(messageNoteColor),
+       PrefWave(messageWarnColor), and PrefWave(messageFailColor).
+     * dvt109197 - Added PrefWave(LineWidth) preference define the width
+       of waveform lines. The default is '1'. Defining larger widths are
+       useful for high density monitors where a single pixel wide line is
+       too narrow to see clearly.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.7a
+     * dvt99791 - For C/C++ auto compile, modelsim.ini variable
+       "DpiCppInstall" has been added which is the equivalent of the
+       '-dpicppinstall' command line option.
+     * dvt99791 -
+The '-cppinstall' and '-cpppath' options will be honored for C/C++ auto compile
+in the absence of '-dpicppinstall' and '-dpicpppath' options.
+For SystemC compile, the order of precedence in determining the compiler path is
+ the following:
+- -cppinstall
+- -cpppath
+For C/C++ auto compile, the order of precedence in determining the compiler path
+ is the following:
+- -dpicppinstall
+- -dpicpppath
+- -cppinstall
+- -cpppath
+
+     * dvt101556 -
+Warning numbers 7076 and 7077 for vlog and vsim  have been upgraded to suppressi
+ble errors. They will now appear as:
+** Error (suppressible): (<TOOL>-7076) The gcc/g++ path '<path specified>' via -
+dpicppinstall swicth is not qualified and is ignored.
+** Error (suppressible): (<TOOL>-7077) the path '<path specified>' via -dpicpppa
+th switch not a valid gcc/g++ full path and is ignored.
+vlog/vsim -suppress 7076 | 7077 to suppress the error.
+
+     * dvt103053 - Add vlog/vopt -svinputport=compat option to default an
+       input port declared with a type but without the "var" keyword to
+       "wire", as required by the LRM, but only if the type is compatible
+       with a net declaration. The fully LRM compliant option
+       -svinputport=net will default to "wire" even if the type is not
+       compatible with a net declaration ("bit", for example), potentially
+       resulting in compilation errors. The default behavior remains
+       unchanged, which is -svinputport=relaxed, where only a a type that
+       is a 4-state scalar or 4-state single dimension vector type
+       defaults to "wire".
+     * dvt107371 - For implicit vopt (2-step) flow, detailed -stats output
+       can now be obtained by passing required -stats=* option to
+       -voptargs="" along with -vopt_verbose option in vsim.
+     * dvt106517 - (results) Added non-LRM support to allow a packed
+       structure to be used for foreach indexing. So for an object "st" of
+       a packed structure, writing "foreach(st[i])" is no longer an error.
+       The support has been added as default and will be an error with
+       -pedanticerrors.
+   _______________________________________________________________________
+
+   Coverage Enhancements in 10.7a
+     * dvt100810 - (results) The Expression Coverage has been enhanced to
+       cover expressions that contain multi-bit sub-expressions but whose
+       resulting output is still single bit.
+       For example, expressions like (in1==in2) and (in1[2:0] &&
+       in2[2:0]), which were not covered earlier, are now identified as
+       single terminal expressions where the entire expression is regarded
+       as a single term for coverage.
+       This feature was earlier enabled by the switch -coverFecSingleTerm.
+       But 10.7 onwards, this feature will be enabled by default (works
+       when FEC coverage is enabled). To disable the feature,
+       -nocoverfecsingleterm switch (in addition to other coverage
+       switches) is needed in vlog/vopt.
+     * [nodvtid] - (results) The UDP Coverage is not a recommended
+       coverage collection metric and has been deprecated in 10.7. The
+       following suppressible error message appears when usage of UDP
+       coverage is detected in 10.7,
+       "** Error (suppressible): (vlog-192) UDP expression coverage has
+       been deprecated and will be removed in future releases."
+       The user can still use UDP coverage feature by suppressing the
+       error, however it will be removed completely in future releases.
+     * dvt103953 - (results) If the bin iff condition is false at the end
+       of a successful transition bin sequence matching then the counter
+       is not incremented as before, but the matched result is no more
+       preserved now to increment the bin later when the iff condition
+       becomes true.
+     * dvt105070 - (results) Assuming that LRM has a typo on missing open
+       square bracket in bin syntax, allowing coverpoint name in binrhs
+       without any with-expression
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.7a
+     * dvt101783 - Added "-minmerge", "-mintriage", "-mergewait", and
+       "-triagewait" command-line options to vrun for fine-grained control
+       of queued auto-merge function.
+   _______________________________________________________________________
+
+   MC2 Enhancements in 10.7a
+     * dvt108544 - Introducing wavedir command in vsim and visualizer for
+       MC2 flow. The command creates a qwave dataset to be read in
+       visualizer. The command syntax is vsim ... -qwavedb=+wavedir=
+        ... vis ..... -wavedir
+            ______________________________________________________________
+
+            Document Revision History in 10.7a
+               o Revision - Changes - Status/Date
+                    # 3.2 - Modifications to improve the readability and
+                      comprehension of the content. Approved by Tim Peeke.
+                      All technical enhancements, changes, and fixes are
+                      listed in this document for all products in this
+                      release. Approved by Bryan Ramirez. - Released/March
+                      2018
+                    # 3.1 - Modifications to improve the readability and
+                      comprehension of the content. Approved by Tim Peeke.
+                      All technical enhancements, changes, and fixes are
+                      listed in this document for all products in this
+                      release. Approved by Bryan Ramirez. -
+                      Released/January 2018
+                    # 3.0 - Modifications to improve the readability and
+                      comprehension of the content. Approved by Tim Peeke.
+                      All technical enhancements, changes, and fixes are
+                      listed in this document for all products in this
+                      release. Approved by Bryan Ramirez. -
+                      Released/December 2017
+               o Author: In-house procedures and working practices require
+                 multiple authors for documents. All associated authors
+                 for each topic within this document are tracked within
+                 the document source.
+               o Revision History: Released documents maintain a revision
+                 history of up to four revisions. For earlier revision
+                 history, refer to earlier releases of documentation which
+                 are available on Support Center
+                 (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.7a,product.id.P11633"
+

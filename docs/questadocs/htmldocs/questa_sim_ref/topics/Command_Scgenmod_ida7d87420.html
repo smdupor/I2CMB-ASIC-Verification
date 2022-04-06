@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="scgenmod" />
+<meta name="abstract" content="Takes a Verilog or VHDL module that has been compiled into a library, and writes its equivalent SystemC foreign module declaration to standard output." />
+<meta name="description" content="Takes a Verilog or VHDL module that has been compiled into a library, and writes its equivalent SystemC foreign module declaration to standard output." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida7d87420-6de7-471e-bad1-720233123d3e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>scgenmod</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="scgenmod" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ida7d87420-6de7-471e-bad1-720233123d3e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">scgenmod</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Takes a Verilog or VHDL module that has been
+compiled into a library, and writes its equivalent SystemC foreign
+module declaration to standard output.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p"> An optional -map argument
+allows you to appropriately generate sc_bit, sc_bv, or resolved
+port types; sc_logic and sc_lv port types are generated by default.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">scgenmod [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__id3a616a5b-91be-4b3e-8708-3c06d554daac">-help</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__idff1bf8bb-b169-4963-9392-fc41764487fa">-lib &lt;library_name&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__id91e8f2ef-d0fc-4c17-8b19-ed7a17aaaa23">-map "&lt;hdl_type&gt;=&lt;sc_type&gt;"</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__idf8bd117b-98bc-496d-86a6-87e8f8b60561">-mapvectoint</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__idb0a71e8c-91c1-4609-9bde-4eaa86a0e17a">-modelsimini &lt;ini_filepath&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__idf82c16f6-b089-444a-b239-4cd1aae8b7cc">-createtemplate</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__id86f8aded-9370-40d7-80a2-f034d9dca00e">-preservevhdlcase</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__id59a91a8e-81d2-4571-a6f7-5a9b0891b679">&lt;scalar_type&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__id3720c6df-28e2-43de-9363-c427458848d5">&lt;vector_type&gt;</a>] <a class="xref fm:HeadingOnly" href="#ida7d87420-6de7-471e-bad1-720233123d3e__idbac2b9a1-7300-4e24-933d-5ec9e8f87a25">&lt;module_name&gt;</a> </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="ida7d87420-6de7-471e-bad1-720233123d3e__idb29192bb-4595-4046-bd99-6596f4bcf39b"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__idf82c16f6-b089-444a-b239-4cd1aae8b7cc">-createtemplate</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Creates a class template declaration
+of a foreign module, with integer template arguments corresponding
+to the integer parameter/generic defined in the VHDL or Verilog
+module. Enables ports in VHDL and Verilog modules instantiated from
+SystemC to have their range specified in terms of integer parameters/generics.
+Such port ranges are specified in terms of the template arguments
+of the foreign module.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__id3a616a5b-91be-4b3e-8708-3c06d554daac">-help</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays the command’s options and arguments.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__idff1bf8bb-b169-4963-9392-fc41764487fa">-lib &lt;library_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Specifies the pathname of the
+working library. If not specified, the default library work is used.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__idf8bd117b-98bc-496d-86a6-87e8f8b60561">-mapvectoint</dt>
+<dd class="dd ArgumentDescription"><p class="p">Maps HDL vectors of appropriate sizes to
+C++ integer types.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__id91e8f2ef-d0fc-4c17-8b19-ed7a17aaaa23">-map "&lt;hdl_type&gt;=&lt;sc_type&gt;"</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the user-defined type mappings between either SystemVerilog
+or VHDL and SystemC types. &lt;hdl_type&gt; is the supported SystemVerilog
+or VHDL types. &lt;sc_type&gt; is the supported SystemC types. No spaces
+are allowed. </p>
+<ul class="ul"><li class="li" id="ida7d87420-6de7-471e-bad1-720233123d3e__id9ee501da-b6b5-41c3-bd85-f0476fe53dd5"><p class="p">SystemVerilog
+supported types:</p>
+<p class="p">scalar
+(Verilog scalar), vector (Verilog vector), bit, logic, reg, bitvector
+(signed/unsigned, packed/unpacked bit vector), logicvector (signed/unsigned,
+packed/unpacked logic vector), regvector (signed/unsigned, packed/unpacked
+logic vector), integer, integer unsigned, int, int unsigned, shortint,
+shortint unsigned, longint, longint unsigned, byte, byte unsigned,
+struct (including fields with multi-dimensional arrays)</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You
+can map Verilog vectors to the following native C++ integer types:
+short, int, long long. </p>
+</div>
+</li>
+<li class="li" id="ida7d87420-6de7-471e-bad1-720233123d3e__iddba80fcf-7ffc-4b44-9531-71a4db9348c4"><p class="p">VHDL
+supported types:</p>
+<p class="p">bit,
+bit_vector, enum, record (including nested records and fields with
+multi-dimensional arrays), std_logic, std_logic_vector, vl_logic,
+vl_logic_vector</p>
+</li>
+<li class="li" id="ida7d87420-6de7-471e-bad1-720233123d3e__idc1861aae-52d6-491a-b22a-f45fbded295e"><p class="p">SystemC
+supported types:</p>
+<p class="p">bool,
+sc_bit, sc_logic, sc_bv, sc_lv, short, unsigned short, int, unsigned
+int, long, unsigned long, long long, unsigned long long, sc_int,
+sc_signed, sc_unsigned, sc_bigint, sc_biguint, char, unsigned char</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">VHDL/SystemVerilog
+ports of type multi-dimensional array get converted to SystemC signal
+arrays in the generated foreign module declaration. </p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__idb0a71e8c-91c1-4609-9bde-4eaa86a0e17a">-modelsimini &lt;ini_filepath&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Loads an alternate initialization
+file that replaces the current initialization file. Overrides the
+file path specified in the MODELSIM environment variable. Specifies
+either an absolute or relative path to the initialization file,
+including the filename. On Windows systems the path separator should
+be a forward slash (/). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__id86f8aded-9370-40d7-80a2-f034d9dca00e">-preservevhdlcase</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Preserves the case for VHDL identifiers. By default, the scgenmod
+command converts all VHDL identifiers to lower case.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__id59a91a8e-81d2-4571-a6f7-5a9b0891b679">&lt;scalar_type&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the type of scalar port to be
+generated.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__idbd40ac58-1c91-4567-9206-ed6eb4a54f99"><p class="p Opt">-sc_logic</p>
+<p class="p">Generate sc_logic scalar port types</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__idea8ef5f0-e4be-4f01-9352-3c294659a74e"><p class="p Opt">-sc_bit</p>
+<p class="p">Generate sc_bit scalar port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id5536f739-ed5f-40c8-9550-3f4426907b7e"><p class="p Opt">-bool</p>
+<p class="p">Generate bool scalar port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id3a9f7eba-605a-490b-bc56-edc3f00faec5"><p class="p Opt">-sc_resolved</p>
+<p class="p">Generate resolved scalar port types.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__id3720c6df-28e2-43de-9363-c427458848d5">&lt;vector_type&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies the type of vector port to be
+generated.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id42ec5bf6-b581-4b27-b595-d4bc2498e320"><p class="p Opt">-sc_lv</p>
+<p class="p">Generate sc_lv&lt;N&gt; vector port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id2a0b12ea-e1b7-46d6-9cc7-16027b382d97"><p class="p Opt">-sc_bv</p>
+<p class="p">Generate sc_bv&lt;N&gt; vector port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id3aabbaf1-0354-4046-a50b-76dd4520880b"><p class="p Opt">-sc_rv</p>
+<p class="p">Generate resolved vector port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__idae596843-4a90-4c96-90cb-cd2e075ccec6"><p class="p Opt">-sc_int</p>
+<p class="p">Generate sc_int&lt;N&gt; vector port types.</p>
+</li>
+<li class="li ArgOption" id="ida7d87420-6de7-471e-bad1-720233123d3e__id926303c0-e085-4532-ad6c-9dd55868e939"><p class="p Opt">-sc_uint</p>
+<p class="p">Generate sc_uint&lt;N&gt; vector port types.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida7d87420-6de7-471e-bad1-720233123d3e__idbac2b9a1-7300-4e24-933d-5ec9e8f87a25">&lt;module_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the name of the Verilog/VHDL module to access.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ida7d87420-6de7-471e-bad1-720233123d3e__idb5e568ea-5482-45fe-a02d-7a59091d730c"><p class="p">This example
+uses a Verilog module that is compiled into the work library. The
+module begins as Verilog source code:</p>
+<pre class="pre codeblock leveled"><code>module vcounter (clock, topcount, count);
+	input clock;
+	input topcount;
+	output count;
+	reg count;
+	...
+endmodule</code></pre></li>
+<li class="li" id="ida7d87420-6de7-471e-bad1-720233123d3e__idb795d197-fbe9-4f43-b303-05f51440b755"><p class="p">After
+compiling using vlog, you invoke scgenmod on the compiled module
+with the following command:</p>
+<p class="lines ApplCommand leveled">scgenmod vcounter</p>
+<p class="p">The SystemC
+foreign module declaration for the above Verilog module is:</p>
+<pre class="pre codeblock leveled"><code>class vcounter : public sc_foreign_module
+{
+	public:
+	sc_in&lt;sc_logic&gt; clock;
+	sc_in&lt;sc_logic&gt; topcount;
+	sc_out&lt;sc_logic&gt; count;
+	vcounter(sc_module_name nm),
+	: sc_foreign_module(nm, hdl_name),
+		clock("clock"),
+		topcount("topcount"),
+		count("count")
+		{elaborate_foreign_module(hdl_hame);}
+	~vcounter()
+	{}
+};
+</code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'SystemC Simulation', 'questa_sim_user'); return false;">SystemC Simulation [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_Sccom_id16c2860f.html#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__" title="Provides two different functions: sccom uses an external C/C++ compiler to compile SystemC source code into the work library, while sccom -link takes compiled source code and links the design.">sccom</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "scgenmod"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Scgenmod_ida7d87420.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

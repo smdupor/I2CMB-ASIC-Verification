@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="qverilog" />
+<meta name="abstract" content="Compiles (vlog), optimizes (vopt), and simulates (vsim), Verilog, and SystemVerilog designs in a single step." />
+<meta name="description" content="Compiles (vlog), optimizes (vopt), and simulates (vsim), Verilog, and SystemVerilog designs in a single step." />
+<meta name="DC.subject" content="qverilog command, commands, qverilog, simulating, one step, ncsim style, ncsim, one step simulation" />
+<meta name="keywords" content="qverilog command, commands, qverilog, simulating, one step, ncsim style, ncsim, one step simulation" />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id172ff7dc-f21d-4632-8469-8b07c1c68d63" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>qverilog</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="qverilog" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">qverilog</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Compiles (vlog),
+optimizes (vopt), and simulates (vsim), Verilog, and SystemVerilog
+designs in a single step.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">qverilog <a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id4c7208a1-7ae4-41b9-8fbc-8c4248cdaea1">[&lt;vlog_and_vopt_options&gt;]</a> [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id217d4f40-53fc-4acd-8549-bf8d7d90da8f">-ccflags "opts"</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__idd912d7dc-23b5-421f-9836-0e3d497fe111">-do &lt;dofile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__idaf98d810-9ef6-4143-84a7-d6068b929f4e">-gui</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__idd14aa26d-a530-4f84-8bf7-cabddfb7f9e4">-i</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id698cc553-9568-4e55-8dab-e9baa9eb4bfd">-l &lt;logfile&gt;</a>] <a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id4a912bbe-e2c4-40d1-90ea-30cfd543b590">&lt;filename&gt;</a> [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id785ab546-6ac9-4f53-87b0-7adbd660cade">-ldflags "opts"</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id6f6d6852-d60d-43f2-91ef-e7e3223e57fc">-R &lt;vsim_options&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id40cff43b-f7c6-4141-9027-c5fe64e3b321">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id172ff7dc-f21d-4632-8469-8b07c1c68d63__id9e595a43-d0e4-463e-aa80-f0cc8bd33127">-work &lt;library_name&gt;</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The qverilog
+command invokes vlog, vopt, and then vsim. It supports all standard
+vlog (and vopt) arguments, and applies them directly to the qverilog
+command line. It supports all vsim options and applies them through
+the qverilog -R argument.</p>
+<p class="p">All compiled
+but unreferenced modules become top level instances. Unreferenced modules
+compiled in files included by vlog -y also become top level modules,
+unless you specify -svext=-uslt with the qverilog command.</p>
+<p class="p">You can directly
+enter either C or C++ files onto the qverilog command line. <span class="ph fmvar:ProductName">Questa SIM</span> automatically processes
+them using the SystemVerilog Direct Programming Interface (DPI).
+Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'DPI and the vlog Command', 'questa_sim_user'); return false;">DPI and the vlog Command</a>” in the User’s
+Manual for details. If your design contains DPI export tasks or
+functions, it is recommended that you use the vlog/vsim flow.</p>
+<p class="p">By default,
+qverilog runs the simulation, then invokes an implicit "run ‑all;
+quit -f" to quit automatically. However, if you invoke qverilog
+with -do, -gui, or -i, the simulator stays open until you explicitly
+quit <span class="ph fmvar:ProductName">Questa SIM</span>.</p>
+<p class="p">If one does
+not already exist, the qverilog command creates a work library named
+work in the current directory.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id6de949d3-e036-4841-83f6-84bcd242bba5"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id4c7208a1-7ae4-41b9-8fbc-8c4248cdaea1">[&lt;vlog_and_vopt_options&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">Supports all
+vlog and vopt options. For example, to run qverilog on a SystemVerilog
+design, add the -sv argument to the command line. See the vlog and
+vopt pages for descriptions of their options.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id217d4f40-53fc-4acd-8549-bf8d7d90da8f">-ccflags "opts"</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies all C/C++ compiler options. Place options in quotes.</p>
+<p class="p">For -ccflags
+and -ldflags, qverilog does not check the validity of the option(s)
+you specify. The options are passed directly to the compiler and
+linker, and if they are not valid, the compiler/linker generates
+an error message.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id730f6e83-e8d1-4f19-b0b1-98d40e860f81">-ccwarn [on | off | verbose | strict]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Echoes warnings generated during C/C++ source file compilation to
+stdout.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__iddb9e9b04-4033-4772-b377-67fcd98e7852"><p class="p Opt">on — (default)
+compiles with the -Wreturn-type, -Wimplicit, -Wuninitialized, and
+‑Wmissing-declarations gcc options. </p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id75b9db1c-6368-4c33-84ad-4725624b8d53"><p class="p Opt">off — compiles
+without any warning options.</p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id1425d7fd-543e-4842-bf4e-4af8f181b06b"><p class="p Opt">verbose —
+compiles with the -Wall gcc option.</p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__idb5bdb322-8081-4b3c-8c5e-89b2fa5e2785"><p class="p Opt">strict —
+compiles with the -Werror gcc option.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__idd912d7dc-23b5-421f-9836-0e3d497fe111">-do &lt;dofile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Simulates the design using the specified dofile.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__idaf98d810-9ef6-4143-84a7-d6068b929f4e">-gui</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Simulates the design using the ModelSim GUI.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__idd14aa26d-a530-4f84-8bf7-cabddfb7f9e4">-i</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies to run the simulator b in interactive mode. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id698cc553-9568-4e55-8dab-e9baa9eb4bfd">-l &lt;logfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Creates a logfile/transcript compatible with vlog -l logfile. If
+omitted, a default transcript named <span class="ph filepath italic">qverilog.log</span> is created
+that collects the output from vlog, vopt, and vsim. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id4a912bbe-e2c4-40d1-90ea-30cfd543b590">&lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies
+the name of the Verilog or C/C++ source code file to compile. Requires
+at least one filename, and you can enter multiple filenames in a
+space-separated list. Allows wildcards. In the case of C files,
+they are automatically processed as DPI code. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id785ab546-6ac9-4f53-87b0-7adbd660cade">-ldflags "opts"</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies all linker options in quotes.</p>
+<p class="p">For -ccflags
+and -ldflags, qverilog does not check the validity of the option(s)
+you specify. The options are passed directly to the compiler and
+linker, and if they are not valid, the compiler/linker generates
+an error message.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id6f6d6852-d60d-43f2-91ef-e7e3223e57fc">-R &lt;vsim_options&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies valid vsim arguments to apply to the simulation. You must
+enter all vlog and vopt arguments before -R, as all arguments specified
+after -R are interpreted as vsim arguments.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id40cff43b-f7c6-4141-9027-c5fe64e3b321">-stats [=[+ | -]&lt;feature&gt;[,[+ | -]&lt;mode&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls display of statistics sent to a logfile, stdout, or the
+transcript. Specifying -stats without options sets the default features
+(cmd, msg, and time). </p>
+<p class="p">You can specify
+multiple features and modes for each instance of -stats, as a comma-separated
+list. You can specify ‑stats multiple times on the command line,
+but only the last instance will take effect. </p>
+<p class="p">qverilog -stats
+options are passed to each sub-process (vcom, vlog, vopt, vsim),
+and add or subtract features and modes from the settings in the
+Stats <span class="ph filepath italic">modelsim.ini</span> variable
+for each sub-process. The -stats argument is ignored if specified
+after -R. Statistics are collated from all sub-commands of qverilog
+and printed once for each execution of qverilog. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id868e7496-26a9-4c8a-8a3e-37c0c491f71d"><p class="p Opt">[+ | -] —
+Controls activation of the feature or mode. The plus character (
++ ) enables the feature, and the minus character ( - ) disables
+the feature. You can also specify a feature or mode without the
+plus (+) character to enable it. Setting this switch adds or subtracts
+features and modes from the default settings "cmd,msg,time".</p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id0427020a-655a-4e7f-bceb-4b237d282e03"><p class="p Opt">Features</p>
+<p class="p">all — Display
+all statistics features (cmd, msg, perf, time). Applied first, when specified
+in a string with other options. Mutually exclusive with the none option.</p>
+<p class="p">cmd — (default)
+Echo the command line.</p>
+<p class="p">msg — (default)
+Display error and warning summary at the end of command execution.</p>
+<p class="p">none —
+Disable all statistics features. Applied first, when specified in
+a string with other options. Mutually exclusive with the all option.</p>
+<p class="p">perf —
+Display time and memory performance statistics.</p>
+<p class="p">time —
+(default) Display Start, End, and Elapsed times. </p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id30ee4c69-d472-4977-9893-4a5d966b8bcf"><p class="p Opt">Modes</p>
+</li>
+<li class="li ArgOption" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id7cbacf68-ccb0-4c93-96f0-73c94532fbc1"><p class="p Opt">Modes can
+be set for a specific feature, or set globally for all features.
+Use the plus (+) or minus (-) character to add or subtract a mode
+for a specific feature; for example, vcover dump -stats=cmd+verbose,perf+list.
+Use a comma-separated list to add or subtract a mode globally for
+all features; for example, vcover dump -stats=time,perf,list,-verbose.
+You cannot specify global and feature specific modes together. </p>
+<p class="p">kb — Print
+statistics in Kb units with no auto-scaling.</p>
+<p class="p">list —
+Display statistics in a Tcl list format when available.</p>
+<p class="p">verbose
+— Display verbose statistics information when available.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You can
+use -stats=perf+verbose to display information about the operating
+system and host machine on which the executable is run. You can
+use qverilog -quiet to disable all default or user-specified -stats features.</p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id9e595a43-d0e4-463e-aa80-f0cc8bd33127">-work &lt;library_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the logical name or pathname of a library to map to the
+logical library work. By default, compiled design units are added
+to the work library. The specified pathname overrides the pathname
+specified for work in the project file.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id6b5af8b8-edb0-4cef-a110-e34ee2ed40d7"><p class="p">Compile, optimize,
+and simulate the specified files. The C/C++ code contained in the <span class="ph filepath italic">d.c </span>file
+is processed as DPI code, creating a shared object and loading it
+into vsim at runtime. Creates a logfile named "logfile" and opens
+the <span class="ph fmvar:ProductName">Questa SIM</span> GUI with
+the simulation loaded and ready to run.</p>
+<p class="lines ApplCommand leveled">qverilog -l logfile a.v b.v c.v d.c -R -gui</p>
+</li>
+<li class="li" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__idd6c0543c-621f-4e39-b199-2d3d3653dade"><p class="p">Enable the
+time, msg, and perf features, and disable the cmd feature for vlog
+and vsim; ignore ‑stats=none,cmd to vsim (specified after -R).</p>
+<p class="lines ApplCommand leveled">qverilog -stats=time,-cmd,msg,perf file.v -R \<br />
+-stats=none,cmd -do "run 1; quit -f"</p>
+</li>
+<li class="li" id="id172ff7dc-f21d-4632-8469-8b07c1c68d63__id8c4cdfc3-2163-44ee-b269-116eab55bc78"><p class="p">Ignore the
+first -stats option, disable all <span class="ph filepath italic">modelsim.ini</span> settings
+with the none option, and then enable the perf option.</p>
+<p class="lines ApplCommand leveled">qverilog -stats=time,cmd,msg -stats=none,perf</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "qverilog"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Qverilog_id172ff7dc.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="MGCChapter" />
+<meta name="DC.Title" content="SystemC Simulation" />
+<meta name="abstract" content="This chapter describes how to compile and simulate SystemC designs with the Questa SIM simulator. The simulator implements the SystemC language based on the Open SystemC Initiative (OSCI) proof-of-concept SystemC simulator. The default supported version of SystemC is the IEEE 1666-2011 standard, SystemC-2.3.2. Release 2.3.2 of SystemC includes Release 2.0.3 of Transaction Level Modeling (TLM) code. It is recommended that you obtain the OSCI functional specification or the latest version of the IEEE Std 1666-2011, IEEE Standard SystemC Language Reference Manual." />
+<meta name="description" content="This chapter describes how to compile and simulate SystemC designs with the Questa SIM simulator. The simulator implements the SystemC language based on the Open SystemC Initiative (OSCI) proof-of-concept SystemC simulator. The default supported version of SystemC is the IEEE 1666-2011 standard, SystemC-2.3.2. Release 2.3.2 of SystemC includes Release 2.0.3 of Transaction Level Modeling (TLM) code. It is recommended that you obtain the OSCI functional specification or the latest version of the IEEE Std 1666-2011, IEEE Standard SystemC Language Reference Manual." />
+<meta name="DC.subject" content="simulating, SystemC" />
+<meta name="keywords" content="simulating, SystemC" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id0a80723e-9b6a-4e31-87ca-ec246c32ffa8" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>SystemC Simulation</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="SystemC Simulation" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id0a80723e-9b6a-4e31-87ca-ec246c32ffa8">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1"> SystemC Simulation</h1>
+<div class="body MGCBody"><div class="abstract MGCAbstract"><span class="shortdesc">This chapter
+describes how to compile and simulate SystemC designs with the <span class="ph fmvar:ProductName">Questa SIM</span> simulator. The
+simulator implements the SystemC language based on the Open SystemC
+Initiative (OSCI) proof-of-concept SystemC simulator. The default
+supported version of SystemC is the IEEE 1666-2011 standard, SystemC-2.3.2.
+Release 2.3.2 of SystemC includes Release 2.0.3 of Transaction Level Modeling
+(TLM) code. It is recommended that you obtain the OSCI functional
+specification or the latest version of the IEEE Std 1666-2011, <cite class="cite">IEEE
+Standard SystemC Language Reference Manual</cite>.</span>
+</div>
+<p class="p">In addition to the functionality described
+in the OSCI specification, <span class="ph fmvar:ProductName">Questa SIM</span> for
+SystemC includes the following features:</p>
+<ul class="ul"><li class="li" id="id0a80723e-9b6a-4e31-87ca-ec246c32ffa8__id1c9ac21f-f8b9-4c8c-9f99-e68565aaa114"><p class="p">Single common Graphic Interface
+for SystemC and HDL languages.</p>
+</li>
+<li class="li" id="id0a80723e-9b6a-4e31-87ca-ec246c32ffa8__id0c3745d4-1be5-4175-95e8-5774be01f25c"><p class="p">Extensive support for mixing SystemC,
+VHDL, Verilog, and SystemVerilog in the same design (SDF annotation
+for HDL only). For detailed information on mixing SystemC with HDL
+see <a class="xref fm:HeadingOnly" href="MGCChap_MixedLanguageSimulation_id95143c12.html#id95143c12-f1b5-4bb1-a48c-09dae4fb4bb4__MGCChap_MixedLanguageSimulation_id95143c12.xml#id95143c12-f1b5-4bb1-a48c-09dae4fb4bb4" title="Questa SIM allows you to simulate designs that are written in VHDL, SystemC, Verilog, and SystemVerilog. While design units must be entirely of one language type, any design unit may instantiate other design units from another language. Any instance in the design hierarchy may be a design unit from another language without restriction.">Mixed-Language Simulation</a>.</p>
+</li>
+<li class="li" id="id0a80723e-9b6a-4e31-87ca-ec246c32ffa8__idc304d820-cf2e-4a53-9b58-13c546233c33"><p class="p">Support for
+the Accellera SystemC Verification Library (SCV-2.0.0) for both
+SystemC-2.3.2.</p>
+</li>
+</ul>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_SupportedPlatformsCompilerVersions_id4e75add6.html" title="SystemC runs on a subset of Questa SIM supported platforms. ">Supported Platforms and Compiler Versions</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsageFlowSystemcOnlyDesigns_id775912ba.html" title="Questa SIM allows users to simulate SystemC, either alone or in combination with other VHDL/Verilog modules. ">Usage Flow for SystemC-Only Designs</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/TaskTop_CreatingSharedObjectFilesSystemcCode_iddee1fae5.html" title="The simulator has the ability to create intermediate shared object files for SystemC. These intermediate shared object files can then be linked together to create the final shared object file for simulation use.">Creating Shared Object Files for SystemC Code</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_BindingVerilogSystemverilogDesigns_id18772905.html" title="The SystemVerilog bind construct allows you to bind a Verilog or SystemVerilog design unit to a SystemC module.">Binding to Verilog or SystemVerilog Designs</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_DistributingSystemcIp_idaa886e46.html" title="This section describes several methods you can use to distribute your SystemC IP for others to use in a Questa SIM environment.">Distributing SystemC IP</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_CompilingSystemcFiles_ide54ebea7.html" title="The process of compiling the SystemC files contained in your design consists of several steps. ">Compiling SystemC Files</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_LinkingCompiledSource_idd56b7eb5.html" title="Once the design has been compiled, you must link it using the sccom command with the -link argument.">Linking the Compiled Source</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SimulationSystemcDesigns_idd197cebc.html" title="After compiling the SystemC source code, you can use the vsim command to simulate your design.">Simulation of SystemC Designs</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_DebuggingDesign_id09aaf3d3.html" title="You can debug SystemC designs using all the debugging features of Questa SIM, with the exception of the Dataflow and Schematic windows. You must have compiled the design using the sccom -g argument in order to debug the SystemC objects in your design. ">Debugging the Design</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_SystemcObjectTypeDisplay_idfe9c3d1a.html" title="This section contains information on how Questa SIM displays certain objects and types, as they may differ from other simulators.">SystemC Object and Type Display</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_ModifyingSystemcSourceCode_id59dd5e92.html" title="If your design does not have sc_main() at the top level, you must apply several modifications to your original SystemC source code. ">Modifying SystemC Source Code</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/General_CodeModificationExamples_id91710665.html" title="You can modify sc_main in a number of ways, which are demonstrated in the examples in this section.">Code Modification Examples</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_DifferencesBetweenSimulatorOsci_id789bca99.html" title="Questa SIM is based upon the OSCI proof-of-concept SystemC simulator. However, there are some minor but key differences to be aware of.">Differences Between the Simulator and OSCI</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_OSCI232FeatureImplementationDetails_idef451621.html" title="The implementation details related to OSCI SystemC 2.3.2 release are provided in this section. ">OSCI 2.3.2 Feature Implementation Details</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_Osci22FeatureImplementationDetails_id6b7c1c61.html" title="The implementation details related to OSCI SystemC 2.2 release are provided in this section. ">OSCI 2.2 Feature Implementation Details</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_TroubleshootingSystemcErrors_id72ff1161.html" title="In the process of modifying your SystemC design to run on Questa SIM, you may encounter several common errors. This section highlights some actions you can take to correct such errors.">Troubleshooting SystemC Errors</a></strong></li>
+</ul>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "SystemC Simulation"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/MGCChap_SystemcSimulation_id0a80723e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

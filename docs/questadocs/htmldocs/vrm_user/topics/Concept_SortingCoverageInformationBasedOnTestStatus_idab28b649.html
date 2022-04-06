@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Sorting Coverage Information Based on Test Status" />
+<meta name="abstract" content="The OkToMerge user-defined procedure can be overridden to control whether or not a given UCDB is to be merged into the mergefile target (for example, based on whether the test passed or failed). But since MergeOneUcdb shares the same data array parameter as OkToMerge, the OkToMerge procedure can actually be overridden to do the following:" />
+<meta name="description" content="The OkToMerge user-defined procedure can be overridden to control whether or not a given UCDB is to be merged into the mergefile target (for example, based on whether the test passed or failed). But since MergeOneUcdb shares the same data array parameter as OkToMerge, the OkToMerge procedure can actually be overridden to do the following:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idab28b649-ed3b-42d8-aa9b-a0b0d7fc29c0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Sorting Coverage Information Based on Test Status</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Sorting Coverage Information Based on Test Status" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idab28b649-ed3b-42d8-aa9b-a0b0d7fc29c0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Sorting Coverage Information Based on Test Status</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The <span class="ph filepath">OkToMerge</span> user-defined procedure
+can be overridden to control whether or not a given UCDB is to be
+merged into the <span class="ph FontProperty emphasis">mergefile</span> target
+(for example, based on whether the test passed or failed). But since <span class="ph FontProperty emphasis">MergeOneUcdb</span> shares
+the same data array parameter as <span class="ph FontProperty emphasis">OkToMerge</span>,
+the <span class="ph filepath">OkToMerge</span> procedure can actually be overridden
+to do the following:</span>
+</div>
+<ul class="ul"><li class="li" id="idab28b649-ed3b-42d8-aa9b-a0b0d7fc29c0__id640b1a39-59c1-4220-888f-0060e96f9e0c"><p class="p">Provide a yes/no return value indicating
+whether the UCDB in question should be merged at all.</p>
+</li>
+<li class="li" id="idab28b649-ed3b-42d8-aa9b-a0b0d7fc29c0__id6f4d3647-fbc9-4b4d-9092-1114a2a7a0f2"><p class="p">Modify the <span class="ph FontProperty emphasis">mergefile</span> element
+in the data array in order to control the actual path of the target
+merge file into which the UCDB in question should be merged.</p>
+</li>
+</ul>
+<p class="p">Therefore, by overriding the <span class="ph FontProperty emphasis">OkToMerge</span> user-definable
+parameter, it should be possible to create multiple merge files,
+one for passing tests and one for failing tests.</p>
+<p class="p">Since the auto-merge <span class="ph FontProperty emphasis">mergeScript</span> Actions
+must all complete before the Group <span class="ph FontProperty emphasis">postScript</span> will
+run, the <span class="ph FontProperty emphasis">postScript</span> can
+be used to create a single merge file from the two auto-merge targets
+that can be fed into the failure triage tool. Consider, for example,
+the following RMDB database fragments:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb version="1.1" loadtcl="split-merge"&gt;
+	&lt;usertcl name="split-merge"&gt;
+	proc OkToMerge {userdata} {
+		upvar $userdata data
+
+		if {![string equal $data(ucdbfile) {}]} {
+			if {[string equal $data(passfail) pass]} {
+			  set data(mergefile) [file join [file dirname $data(mergefile)]
+					 passed.ucdb]
+			} else {
+			  set data(mergefile) [file join [file dirname $data(mergefile)]
+					 failed.ucdb]
+			}
+			return 1 ;# merge UCDB if it exists
+		}
+		return 0;
+	}
+	&lt;/usertcl&gt;
+	 ...
+	&lt;runnable name="nightly" type="group"&gt;
+		...
+		&lt;parameters&gt;
+			 ...
+			&lt;parameter name="mergefile"&gt;(%DATADIR%)/merge.ucdb&lt;/parameter&gt;
+		&lt;/parameters&gt;
+		 ...
+		&lt;postScript launch="vsim" mintimeout="60"&gt;
+			&lt;command&gt;vcover merge (%mergefile%) (%DATADIR%)/passed.ucdb 
+				 (%DATADIR%)/failed.ucdb&lt;/command&gt;
+			&lt;command&gt;triage dbfile (%DATADIR%)/failed.ucdb&lt;/command&gt;
+			&lt;command&gt;triage report&lt;/command&gt;
+			&lt;command&gt;coverage open (%mergefile%)&lt;/command&gt;
+			&lt;command&gt;coverage attribute -test * -name TESTNAME -name 
+				 TESTSTATUS&lt;/command&gt;
+		&lt;/postScript&gt;
+	&lt;/runnable&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">In this example, the “nightly” Group (which
+you can assume is the top-level Group of the regression suite) defines
+a single target merge file at <span class="ph filepath">/path/to/VRMDATA/merge.uccb</span> via
+the <span class="ph FontProperty emphasis">mergefile</span> parameter.
+A <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+(not shown here) defines the name of each leaf-level UCDB. As each <span class="ph FontProperty emphasis">execScript</span> finishes,
+the <span class="ph FontProperty emphasis">vrun</span> post-execution
+analysis algorithm calls the <span class="ph filepath">OkToMerge</span> user-definable
+procedure that is overridden in the <span class="ph FontProperty emphasis">usertcl</span> element
+above. The modified <span class="ph filepath">OkToMerge</span> procedure checks
+the pass/fail status of the <span class="ph filepath">execScript</span> UCDB
+file (assuming one is defined) and modifies the <span class="ph FontProperty emphasis">mergefile</span> element
+of the data array to point to one of two separate merge files. Since
+the value of the original <span class="ph FontProperty emphasis">mergefile</span> parameter
+(from the RMDB file) is available in the data array passed to <span class="ph filepath">OkToMerge</span>,
+you can use that path to locate the target merge files (<span class="ph filepath">passed.ucdb</span> and <span class="ph filepath">failed.ucdb</span>)
+in that same directory.</p>
+<p class="p">When the default <span class="ph filepath">MergeOneUcdb</span> procedure
+is called, the UCDB files from passed tests are queued to be merged
+into the <span class="ph filepath">passed.ucdb</span> target merge file while,
+at the same time, any UCDB files from failed tests are queued to
+be merged into the <span class="ph filepath">failed.ucdb</span> target merge
+file. Because separate queues are maintained for each target merge
+file, a merge to <span class="ph filepath">failed.ucdb</span> can be running
+concurrently with a merge to <span class="ph filepath">passed.ucdb</span> without interference.</p>
+<p class="p">By the time the <span class="ph FontProperty emphasis">postScript</span> from
+the “nightly” Group is executed, there can be either a <span class="ph filepath">passed.ucdb</span>,
+a <span class="ph filepath">failed.ucdb</span>, or both in the top of the <span class="ph filepath">VRMDATA</span> directory
+tree. The <span class="ph FontProperty emphasis">postScript</span> commands
+shown above make one final merge to join all the tests together
+for browsing in the GUI. But only the UCDB with the failed tests
+is passed to the triage application. By expanding on this basic
+theme, the user can create any combination of UCDB files for whatever
+purpose that may be required.</p>
+<p class="p">Note that the vcover merge command in the <span class="ph FontProperty emphasis">postScript</span> does
+not take into account the case where all the tests pass or all the
+tests fail. This can be handled with TCL <span class="ph FontProperty emphasis">if</span> statements
+or by generating an empty UCDB for both target files in the <span class="ph FontProperty emphasis">preScript</span> of
+the “nightly” Group, whichever is easier.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_AutoMergeTipsTraps_id4734a6fb.html" title="The following two subsections discuss tips and traps of auto-merging.">Auto-Merge Tips and Traps</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Sorting Coverage Information Based on Test Status"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_SortingCoverageInformationBasedOnTestStatus_idab28b649.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

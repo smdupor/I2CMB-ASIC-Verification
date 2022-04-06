@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_CreateTimeType()" />
+<meta name="abstract" content="Creates a time type." />
+<meta name="description" content="Creates a time type." />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_CreateTimeType()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_CreateTimeType()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_CreateTimeType()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates
+a time type.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">type_id = mti_CreateTimeType()</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet"><p class="p">None</p>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7__id7999c17c-28f6-4734-bc88-c95c09546873" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d8181e159"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d8181e162"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d8181e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d8181e159 "><p class="p">type_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d8181e162 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d8181e165 "><p class="p">A handle to the new time type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_CreateTimeType() creates a
+new type ID that describes a VHDL time type.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7__idefe6662d-b313-474e-9d02-3dcbbdacd83a"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;stdlib.h&gt;
+#include &lt;mti.h&gt;
+
+typedef struct {
+    mtiSignalIdT sigid;
+    mtiDriverIdT drvid;
+    mtiTime64T   sigval;
+    mtiTypeIdT   time_type;
+} instanceInfoT;
+
+void driveSignal( void * param )
+{
+    char          * region_name;
+    char          * curr_time_str;
+    instanceInfoT * inst = (instanceInfoT*)param;
+    mtiTime64T      curr_time;
+
+    region_name = mti_GetRegionFullName( mti_GetSignalRegion( inst-&gt;sigid ) );
+
+    curr_time_str = mti_Image( mti_NowIndirect(&amp;curr_time), inst-&gt;time_type );
+    mti_PrintFormatted( "Time %s delta %d: Signal %s/%s is %s\n",
+                       curr_time_str, mti_Delta(),
+                       region_name, mti_GetSignalName( inst-&gt;sigid),
+                       mti_SignalImage(inst-&gt;sigid) );
+
+    MTI_TIME64_ASGN( inst-&gt;sigval, MTI_TIME64_HI32(inst-&gt;sigval),
+                    MTI_TIME64_LO32(inst-&gt;sigval) + 1 );
+    mti_ScheduleDriver( inst-&gt;drvid, (long)&amp;(inst-&gt;sigval), 5, MTI_INERTIAL );
+
+    mti_VsimFree( region_name );
+}
+
+void initForeign(
+    mtiRegionIdT       region,   /* The ID of the region in which this       */
+                                 /* foreign architecture is instantiated.    */
+    char              *param,    /* The last part of the string in the       */
+                                 /* foreign attribute.                       */
+    mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+    mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+    instanceInfoT * inst;
+    mtiProcessIdT   procid;
+
+    inst            = (instanceInfoT *)mti_Malloc( sizeof(instanceInfoT) );
+    inst-&gt;time_type = mti_CreateTimeType();
+    inst-&gt;sigid     = mti_CreateSignal( "mySig", region, inst-&gt;time_type );
+    inst-&gt;drvid     = mti_CreateDriver( inst-&gt;sigid );
+    procid          = mti_CreateProcess( "mySigDriver", driveSignal, inst );
+    mti_SetDriverOwner( inst-&gt;drvid, procid );
+    mti_Sensitize( procid, inst-&gt;sigid, MTI_EVENT );
+    mti_ScheduleWakeup( procid, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7__id960dde1c-24b2-410a-8d58-c9cd7adf0661"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity top is
+end top;
+
+architecture a of top is
+
+  signal s1 : bit := ’0’;
+
+begin
+
+  s1 &lt;= not s1 after 5 ns;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="idb8af3b14-b7e9-4b09-a863-498aadcbb6b7__idd2b28287-1532-4c72-bb6a-c218c36d8672"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top -foreign "initForeign for_model.sl"
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.7
+
+# vsim -foreign {initForeign for_model.sl} -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading work.top(a)
+# Loading ./for_model.sl
+VSIM 1&gt; run 50
+# Time {0 ns} delta 1: Signal /top/mysig is {0 ns}
+# Time {5 ns} delta 0: Signal /top/mysig is {1 ns}
+# Time {10 ns} delta 0: Signal /top/mysig is {2 ns}
+# Time {15 ns} delta 0: Signal /top/mysig is {3 ns}
+# Time {20 ns} delta 0: Signal /top/mysig is {4 ns}
+# Time {25 ns} delta 0: Signal /top/mysig is {5 ns}
+# Time {30 ns} delta 0: Signal /top/mysig is {6 ns}
+# Time {35 ns} delta 0: Signal /top/mysig is {7 ns}
+# Time {40 ns} delta 0: Signal /top/mysig is {8 ns}
+# Time {45 ns} delta 0: Signal /top/mysig is {9 ns}
+# Time {50 ns} delta 0: Signal /top/mysig is {10 ns}
+VSIM 2&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_MtiFree_id3bc85db6.html#id3bc85db6-2623-4375-9be4-1ca9a1fdf76e__" title="Frees simulator-managed memory.">mti_Free()</a></div>
+<div><a class="link" href="../topics/Command_MtiVsimfree_id7390869b.html#id7390869b-5e7c-410d-bdaa-025b0b0dae95__" title="Frees simulator-allocated memory.">mti_VsimFree()</a></div>
+<div><a class="link" href="../topics/Command_MtiNextregion_id159314df.html#id159314df-f24a-4b34-b684-1baa2dacd364__" title="Gets the next region at the same level as a region.">mti_NextRegion()</a></div>
+<div><a class="link" href="../topics/Command_MtiGetsignalsubelements_id1c9db5a2.html#id1c9db5a2-fff0-497f-b8bf-50ed5a09c6dc__" title="Gets the subelements of a composite signal.">mti_GetSignalSubelements()</a></div>
+<div><a class="link" href="../topics/Command_MtiTicklength_id7a711375.html#id7a711375-2ca8-42eb-b60f-e7af9c58a751__" title="Gets the length of a type.">mti_TickLength()</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_CreateTimeType()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiCreatetimetype_idb8af3b14.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Methods and Base Inheritance" />
+<meta name="abstract" content="One or more method elements can appear at the top-level of the RMDB file, as children of the document (rmdb) element and siblings of the runnable elements. These method elements cannot be used to satisfy an execution method search. They exist only as base methods to be referred to by other method elements. Any method elements referred to via the base inheritance chain is searched for by name at the top-level of the database. Since attributes are never inherited, the only use of base execution methods is to provide a common execution method command for multiple method elements defined within the various runnable elements. For example, in order to assign the same execution method to two subsets of the regression suite (but not the entire suite), the following pattern can be used:" />
+<meta name="description" content="One or more method elements can appear at the top-level of the RMDB file, as children of the document (rmdb) element and siblings of the runnable elements. These method elements cannot be used to satisfy an execution method search. They exist only as base methods to be referred to by other method elements. Any method elements referred to via the base inheritance chain is searched for by name at the top-level of the database. Since attributes are never inherited, the only use of base execution methods is to provide a common execution method command for multiple method elements defined within the various runnable elements. For example, in order to assign the same execution method to two subsets of the regression suite (but not the entire suite), the following pattern can be used:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1ce29695-e458-40c6-800e-e053689ada58" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Methods and Base Inheritance</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Methods and Base Inheritance" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1ce29695-e458-40c6-800e-e053689ada58">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Methods
+and Base Inheritance</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">One or more <span class="ph FontProperty emphasis">method</span> elements
+can appear at the top-level of the RMDB file, as children of the
+document (<span class="ph FontProperty emphasis">rmdb</span>)
+element and siblings of the <span class="ph FontProperty emphasis">runnable</span> elements.
+These <span class="ph FontProperty emphasis">method</span> elements
+cannot be used to satisfy an execution method search. They exist
+only as base methods to be referred to by other <span class="ph FontProperty emphasis">method</span> elements.
+Any <span class="ph FontProperty emphasis">method</span> elements
+referred to via the base inheritance chain is searched for by name
+at the top-level of the database. Since attributes are never inherited,
+the only use of base execution methods is to provide a common execution
+method command for multiple <span class="ph FontProperty emphasis">method </span>elements
+defined within the various runnable elements. For example, in order
+to assign the same execution method to two subsets of the regression
+suite (but not the entire suite), the following pattern can be used:</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;method name="grid"&gt;
+		&lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+	&lt;/method&gt;
+	 ...
+	&lt;runnable name="long-tests" type="group"&gt;
+		&lt;method base="grid"/&gt;
+		 ...
+	&lt;/runnable&gt;
+	 ...
+	&lt;runnable name="big-tests" type="group"&gt;
+		&lt;method base="grid"/&gt;
+		 ...
+	&lt;/runnable&gt;
+	 ...
+&lt;/rmdb&gt;</code></pre><p class="p">A base <span class="ph FontProperty emphasis">method</span> element
+referred to by another <span class="ph FontProperty emphasis">method</span> element
+is never consulted during the search for a matching execution method.
+It is only consulted in order to locate the appropriate launch command
+and other component parts of a matching <span class="ph FontProperty emphasis">method</span> element
+once the referring <span class="ph FontProperty emphasis">method</span> element
+has been selected (assuming the selected <span class="ph FontProperty emphasis">method</span> element
+did not define those component parts itself). Conditions on <span class="ph FontProperty emphasis">method</span> elements found
+at the top-level of the RMDB file are ignored, as are anonymous <span class="ph FontProperty emphasis">method</span> elements
+defined at the top-level of the RMDB file.</p>
+<p class="p">Note that the base Runnables of a given
+Runnable are searched for matching <span class="ph FontProperty emphasis">method</span> elements.
+But, unless a given <span class="ph FontProperty emphasis">method</span> element
+matches, any base <span class="ph FontProperty emphasis">method</span> element
+to which it refers is not consulted. And, once the initially matching <span class="ph FontProperty emphasis">method</span> element
+is selected, the condition attributes on any base <span class="ph FontProperty emphasis">method</span> elements
+consulted in the search for a <span class="ph FontProperty emphasis">command</span> element
+to use for the execution method are ignored.</p>
+<p class="p">Following is an example illustrating this
+point:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;method name="build"&gt;
+		&lt;command&gt;rsh bigmachine (%WRAPPER%)&lt;/command&gt;
+	&lt;/method&gt;
+	&lt;method name="grid"&gt;
+		&lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+	&lt;/method&gt;
+	 ...
+	&lt;runnable name="normal-group" type="base"&gt;
+		&lt;method name="comp" action="preScript" base="build"/&gt;
+		&lt;method name="sim" action="execScript" base="grid"/&gt;
+		 ...
+	&lt;/runnable&gt;
+	&lt;runnable name="mygroup" type="group" base="normal-group"&gt;
+		&lt;members&gt;
+			&lt;member&gt;mytask&lt;/member&gt;
+		&lt;/members&gt;
+		&lt;execScript&gt;
+			&lt;command&gt;vsim -coverage top&lt;/command&gt;
+		&lt;/execScript&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="mytask" type="task"&gt;
+		 ...
+	&lt;/runnable&gt;
+		 ...
+&lt;/rmdb&gt;</code></pre><p class="p">When the <span class="ph FontProperty emphasis">execScript</span> Action
+for the Task <span class="ph FontProperty emphasis">mytask</span> is
+executed, a search for a matching execution method is initiated
+at the <span class="ph FontProperty emphasis">runnable</span> element <span class="ph FontProperty emphasis">mytask</span> (even
+though the <span class="ph FontProperty emphasis">execScript</span> element
+itself was actually inherited from another Runnable). Since the <span class="ph FontProperty emphasis">mytask</span> Runnable
+defines no execution methods itself, the <span class="ph FontProperty emphasis">mygroup</span> Runnable
+is consulted as the immediate group ancestor (that is, parent) of
+the <span class="ph FontProperty emphasis">mytask</span> Runnable.
+The <span class="ph FontProperty emphasis">mygroup</span> Runnable,
+via its base Runnable <span class="ph FontProperty emphasis">normal-group</span>,
+defines two <span class="ph FontProperty emphasis">method</span> elements,
+one conditional on the Action type being a <span class="ph FontProperty emphasis">preScript</span> and
+one conditional on it being an <span class="ph FontProperty emphasis">execScript</span>.
+Because the Action in question is an <span class="ph FontProperty emphasis">execScript</span>,
+the <span class="ph FontProperty emphasis">sim</span> <span class="ph FontProperty emphasis">method</span> element
+to launch the Action is selected. However, the <span class="ph FontProperty emphasis">sim</span> <span class="ph FontProperty emphasis">method</span> element defines
+no command. But because it does define a base method (<span class="ph FontProperty emphasis">grid</span>),
+VRM looks for a top-level method element by that name. Within that <span class="ph FontProperty emphasis">method</span> element
+we find the qsub command for launching the Action onto a server
+grid. This becomes the execution method of choice and the <span class="ph filepath">execScript</span> script
+is posted to the grid using the qsub command provided.</p>
+<p class="p">This example illustrates several practices
+recommended in the paragraphs above. First, both the <span class="ph FontProperty emphasis">execScript</span> itself
+and the method used to launch it are “owned” by the Group Runnable
+of which the <span class="ph FontProperty emphasis">mytask</span> Task
+is a member. Presumably, this Group includes other members that
+will also use the same <span class="ph FontProperty emphasis">execScript</span> and
+execution method, possibly differing only in the values of some
+parameters unique to each Task (that is, to each simulation). The
+second thing to note is that the list of conditional methods is
+actually defined in a base Runnable that can be reused elsewhere
+in the regression suite (presumably for another Group that shares
+the same execution method configuration). The last point is that
+the conditional execution methods in the <span class="ph FontProperty emphasis">normal-group</span> base
+Runnable do not themselves define commands but simply “point” to
+base <span class="ph FontProperty emphasis">method</span> elements defined
+at the top-level of the database. So there could be an <span class="ph FontProperty emphasis">abnormal-group</span> base
+Runnable somewhere in the regression suite that defines a slightly different
+set of conditional execution methods but uses the same commands
+(that is, points to the same base <span class="ph FontProperty emphasis">method</span> elements)
+for some or all of the conditional execution methods.</p>
+<p class="p">It is important to remember that the test for
+a matching conditional execution method and the search for a command
+defined by that method are two separate operations. In the following example,
+the <span class="ph FontProperty emphasis">build</span> and <span class="ph FontProperty emphasis">grid</span> methods
+have both been modified to add additional conditions:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;method name="build" action="execScript"&gt;&lt;!-- condition is ignored... 
+			  see below --&gt;
+		&lt;command&gt;rsh bigmachine (%WRAPPER%)&lt;/command&gt;
+	&lt;/method&gt;
+	&lt;method name="grid" runnable="anothergroup"&gt;&lt;!-- condition is 
+			 ignored... see below --&gt;
+		&lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+	&lt;/method&gt;
+	 ...
+	&lt;runnable name="normal-group" type="base"&gt;
+		&lt;method name="comp" action="preScript" base="build"/&gt;
+		&lt;method name="sim" action="execScript" base="grid"/&gt;
+		 ...
+	&lt;/runnable&gt;
+	&lt;runnable name="mygroup" type="group" base="normal-group"&gt;
+		&lt;members&gt;
+			&lt;member&gt;mytask&lt;/member&gt;
+		&lt;/members&gt;
+		&lt;execScript&gt;
+			&lt;command&gt;vsim -coverage top&lt;/command&gt;
+		&lt;/execScript&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="mytask" type="task"&gt;
+	 ...
+	&lt;/runnable&gt;
+	 ...
+&lt;/rmdb&gt;</code></pre><p class="p">Assume you are about to launch the <span class="ph FontProperty emphasis">execScript</span> Action for
+the <span class="ph FontProperty emphasis">mytask</span> Runnable.
+Note carefully what does not happen. Since the <span class="ph FontProperty emphasis">comp</span> method
+element comes before the <span class="ph FontProperty emphasis">sim</span>method
+element in the <span class="ph FontProperty emphasis">normal-group</span> base
+Runnable, the conditions on that method are tested first. Given
+that the <span class="ph FontProperty emphasis">comp</span> method
+element is conditional on the Action type being <span class="ph FontProperty emphasis">preScript</span>,
+it does not match the Action being executed (which, in this example,
+is an <span class="ph FontProperty emphasis">execScript</span>).
+The fact that its base method <span class="ph FontProperty emphasis">build</span> does
+match the conditions of the Action in question is moot since the
+base method element is never consulted (since the <span class="ph FontProperty emphasis">comp</span> method
+element did not match in the first place).</p>
+<p class="p">Second, the condition on the <span class="ph FontProperty emphasis">grid</span> <span class="ph FontProperty emphasis">method</span> element,
+if it were considered, would fail in this case since the Action
+script is not being run from under a Runnable called <span class="ph FontProperty emphasis">anothergroup</span>.
+But since the <span class="ph FontProperty emphasis">sim</span> method
+in the <span class="ph FontProperty emphasis">normal-group</span> base
+Runnable has already matched and has, thus, been selected as the execution
+method to be used, the <span class="ph FontProperty emphasis">grid</span> </p>
+<p class="p">A <span class="ph FontProperty emphasis">method</span> element
+is only queried for its ability to provide an actual execution method
+command to be used. Per the policy on base inheritance, the contents
+of the <span class="ph FontProperty emphasis">grid</span> method
+element are being treated as if they were defined directly in the <span class="ph FontProperty emphasis">sim</span> method
+element whose conditional attributes do match the conditions for
+the Action in question. The condition attributes of the <span class="ph FontProperty emphasis">grid</span> method
+element, however, are not inherited by the <span class="ph FontProperty emphasis">sim</span> method
+element because attributes always apply only to the element on which
+they are specified. Therefore, the launch command defined in the <span class="ph FontProperty emphasis">grid</span> method
+element is used despite its apparent non-match.</p>
+<p class="p">Base method elements can be chained. That is,
+a base method may refer to another method via its own <span class="ph FontProperty emphasis">base</span> attribute.
+The search along the base chain continues until a method containing
+a <span class="ph FontProperty emphasis">command</span> element
+is found, at which point the <span class="ph FontProperty emphasis">method</span> element containing
+the <span class="ph FontProperty emphasis">command</span> element
+becomes the new selected execution method. If no <span class="ph FontProperty emphasis">method</span> element
+containing a <span class="ph FontProperty emphasis">command</span> element
+is found in the search along the base chain, then the original <span class="ph FontProperty emphasis">method</span> element
+(the matching one inside a Runnable) remains the selected execution
+method.</p>
+<p class="p">In the event that an execution method is selected
+but no execution method command can be found, the selected execution
+method is used for its attribute values (possibly changing things
+like the minimum timeout and the queue selection (see “<a class="xref fm:HeadingAndPage" href="Concept_NamedExecutionQueues_id44b7e485.html#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758__Concept_NamedExecutionQueues_id44b7e485.xml#id44b7e485-4cca-45f6-b8ae-15bb6f8f5758" title="As Actions become eligible to run, they are added to a single internal queue for processing. A background thread then pulls each Action, in turn, from this internal queue and generates the necessary script and wrapper files.">Named Execution Queues</a>” for details) but the Action
+itself is launched in the same way it would have been launched had
+there been no matching execution method. </p>
+<p class="p">With the exception of the conditional attributes
+(which, as noted above, only apply to the <span class="ph FontProperty emphasis">method</span> elements
+occurring inside <span class="ph FontProperty emphasis">runnable</span> elements),
+all other attribute values (like <span class="ph FontProperty emphasis">mintimeout</span>)
+are read from the selected execution method (that is, from the <span class="ph FontProperty emphasis">method</span> element
+that supplies the execution method command or, lacking an execution
+method command, the original matching <span class="ph FontProperty emphasis">method</span> element
+from inside the Runnable). For example, consider the following RMDB
+fragment:</p>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+	&lt;method name="b1" mintimeout="20"&gt;
+		&lt;command&gt;...command two...&lt;/command&gt;
+	&lt;method&gt;
+	&lt;method name="b2" mintimeout="35"/&gt;
+	&lt;runnable name="mygroup" type="group"&gt;
+		&lt;method name="m1" runnable="test1" base="b1" mintimeout="10"&gt;
+			&lt;command&gt;...command one...&lt;/command&gt;
+		&lt;/method&gt;
+		&lt;method name="m2" runnable="test2" base="b1" mintimeout="25"/&gt;
+		&lt;method name="m3" runnable="test3" base="b2" mintimeout="30"/&gt;
+		&lt;members&gt;
+			&lt;member&gt;test1&lt;/member&gt;
+			&lt;member&gt;test2&lt;/member&gt;
+			&lt;member&gt;test3&lt;/member&gt;
+		&lt;/members&gt;
+	&lt;/runnable&gt;
+	&lt;runnable name="test1" type="task"&gt;...&lt;/runnable&gt;
+	&lt;runnable name="test2" type="task"&gt;...&lt;/runnable&gt;
+	&lt;runnable name="test3" type="task"&gt;...&lt;/runnable&gt;
+&lt;/rmdb&gt;</code></pre><p class="p">When the <span class="ph FontProperty emphasis">test1</span> Runnable
+executes and a search is made for a matching execution method, <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m1</span> is
+selected. Since <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m1</span> already
+defined an execution method command, no further search is mounted.
+The <span class="ph FontProperty emphasis">base</span> attribute
+in <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m1</span> is
+moot. The minimum queue timeout used for the <span class="ph FontProperty emphasis">execScript</span> Action
+defined in Runnable <span class="ph FontProperty emphasis">test1</span> is
+10 seconds, since that attribute is taken from the selected execution
+method, represented by <span class="ph FontProperty emphasis">m1</span>. </p>
+<p class="p">When the <span class="ph FontProperty emphasis">test2</span> Runnable
+executes, the <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m2</span> is found
+to match. Since this <span class="ph FontProperty emphasis">method</span> element
+contains no <span class="ph FontProperty emphasis">command</span> element,
+the base methods is searched, starting with <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">b1</span>. The <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">b1</span> contains
+a <span class="ph FontProperty emphasis">command</span> element
+so the search terminates there and <span class="ph FontProperty emphasis">b1</span> becomes
+the selected method element. The minimum queue timeout used for
+the <span class="ph FontProperty emphasis">execScript</span> Action
+defined in Runnable <span class="ph FontProperty emphasis">test2</span> is
+therefore 20 seconds.</p>
+<p class="p">When the <span class="ph FontProperty emphasis">test3</span> Runnable
+executed, <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m3</span> matches
+and becomes the selected execution method. However, since <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m3</span> contains
+no <span class="ph FontProperty emphasis">command</span> element,
+the search continues along the base chain, starting with <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">b2</span>.
+In this case, <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">b2</span> contains
+neither a <span class="ph FontProperty emphasis">command</span> element
+or a <span class="ph FontProperty emphasis">base</span> attribute.
+Therefore, the command-less <span class="ph FontProperty emphasis">method</span> element <span class="ph FontProperty emphasis">m3</span>,
+being the matching execution method element from inside a Runnable,
+becomes the selected execution method. As a result, the minimum
+queue timeout used for the <span class="ph FontProperty emphasis">execScript</span> Action
+defined in Runnable <span class="ph FontProperty emphasis">test3</span> is
+30 seconds.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExecutionMethods_id70589e20.html" title="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:">Execution Methods</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Methods and Base Inheritance"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MethodsBaseInheritance_id1ce29695.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

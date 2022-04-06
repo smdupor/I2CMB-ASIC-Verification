@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="RNG Trace Reporting" />
+<meta name="abstract" content="When RNG Trace reporting is enabled, the tool generates output whenever the RNG of a process (initial, always, or fork) changes." />
+<meta name="description" content="When RNG Trace reporting is enabled, the tool generates output whenever the RNG of a process (initial, always, or fork) changes." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>RNG Trace Reporting</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="RNG Trace Reporting" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">RNG Trace Reporting</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">When RNG Trace reporting
+is enabled, the tool generates output whenever the RNG of a process
+(initial, always, or fork) changes.</span>
+</div>
+<p class="p">Each time a RNG
+randstate is modified, the RNG Trace feature writes a line to the
+trace file (or transcript) in the following format</p>
+<pre class="pre codeblock"><code><span class="ph CodeHighlight red">&lt;rng&gt;</span><span class="ph filepath">&lt;type&gt;</span> [<span class="ph filepath">&lt;simtime&gt;</span><span class="ph CodeHighlight red">:</span>] <span class="ph filepath">&lt;process_name&gt;</span><span class="ph CodeHighlight red">:</span>[<span class="ph filepath">&lt;old_rand_state&gt;</span>] <span class="ph CodeHighlight red">-&gt;</span> <span class="ph filepath">&lt;new_rand_state&gt;</span> <span class="ph CodeHighlight red">(</span>[<span class="ph CodeHighlight red">fork::</span>|&lt;ciid&gt;] <span class="ph filepath">&lt;operation&gt;</span>[<span class="ph CodeHighlight red">,seed:</span><span class="ph filepath">&lt;seed_value&gt;</span>] @ <span class="ph filepath">&lt;filename&gt;</span><span class="ph CodeHighlight red">(</span><span class="ph filepath">&lt;linenumber&gt;</span><span class="ph CodeHighlight red">)</span></code></pre><p class="p">Where:</p>
+<p class="p BlockIndent">&lt;type&gt; — the type of RNG operation,
+which can be one of the following:</p>
+<dl class="dl"><dt class="dt dlterm">p=</dt>
+<dd class="dd"><p class="p">assignment to the RNG state of a process
+(either by seeding or a randstate string)</p>
+</dd>
+<dt class="dt dlterm">p+</dt>
+<dd class="dd"><p class="p">update of the RNG state of a process</p>
+</dd>
+<dt class="dt dlterm">c=</dt>
+<dd class="dd"><p class="p">assignment to the RNG state of a class instance</p>
+</dd>
+<dt class="dt dlterm">c+</dt>
+<dd class="dd"><p class="p">update of the RNG state of a class instance</p>
+</dd>
+</dl>
+<p class="p BlockIndent">&lt;simtime&gt; — the simulation time when
+the RNG operation occurred. This is reported if you specify the
+vsim option "-rngtraceopt=+showsimtime".</p>
+<p class="p BlockIndent">&lt;process_name&gt; — the name of the
+executing process.</p>
+<p class="p BlockIndent">&lt;old_rand_state&gt; — a string encoding
+of the randstate prior to the RNG operation. The &lt;old_rand_state&gt;
+is not reported from some initialization operations.</p>
+<p class="p BlockIndent">&lt;new_rand_state&gt; — a string encoding
+of the randstate after the RNG operation.</p>
+<p class="p BlockIndent">&lt;ciid&gt; — the class instance ID (only
+for operations on the RNG of a class instance). By default, the
+&lt;ciid&gt; is not reported. Reporting is enabled with the vsim option “-rngtraceopt=+showciid”.</p>
+<p class="p BlockIndent">&lt;operation&gt; — the name of the RNG
+operation.</p>
+<p class="p BlockIndent">&lt;seed_value&gt; — the value of a seed
+used in initialization of the randstate. This is only reported for
+operations using a seed.</p>
+<p class="p BlockIndent">&lt;filename&gt; — the name of the source
+file containing the RNG operation.</p>
+<p class="p BlockIndent">&lt;linenumber&gt; — the line number of
+the RNG operation.</p>
+<p class="p">For example:</p>
+<pre class="pre codeblock"><code>&lt;rng&gt;p= /top/#INITIAL#767962654#-&gt; MS4752bb5f9e2c20661d2ea9091ed841d, (thread initialze, seed:1767962654)</code></pre><pre class="pre codeblock"><code>&lt;rng&gt;p+ /top/#INITIAL#4132083106#: MS3e5cddcd7e4dd4e7c3797a97180a20c6 -&gt; MS7e4dd4e7c3797a975b291cc791b7a462, (urandom_range) @ ../src/test2.sv(56)</code></pre><pre class="pre codeblock"><code>&lt;rng&gt;p+ <span class="ph CodeHighlight red">10ns</span>: /top/sub_mid/sub_bot/#ALWAYS#1767962654#: MSf30deb91096b8e693192bcdb8022b775 -&gt; MS096b8e693192bcdb6603c3651c2e87aa, (urandom) @ ../src/test04_3.sv(8)</code></pre><p class="p">The tool shows the optional output in bold red when you use the
+-rngtraceopt argument with vsim:</p>
+<pre class="pre codeblock"><code>vsim -rngtraceopt=+showsimtime</code></pre><div class="section Subsections"><div class="section Subsection" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id8f906d03-b335-493c-a0c1-505ffe6af426"><h2 class="title Subheading sectiontitle">Reported RNG Operations</h2><p class="p">The following RNG operations may be reported:</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id82105863-3113-486d-8947-e3d186357874" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>RNG Operations</span></caption><colgroup><col style="width:1.619in" /><col style="width:0.591in" /><col style="width:4.289in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d70289e275"><p class="p">operation</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d70289e278"><p class="p">type</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d70289e281"><p class="p">description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">urandom(seed)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation seeds
+the RNG of the current thread. It is the initial part of call to
+$urandom with an argument (seed value).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">urandom</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation gets a
+random value from the RNG of the current thread - updating the randstate.
+It is for a call to $urandom. </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">urandom_range</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation gets a
+random value from the RNG of the current thread - updating the randstate.
+This RNG operations is performed by calls to $urandom_range. It
+is also performed in evaluating randcase statements and randsequence statements.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">std::randomize</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">A call to the std::randomize
+method gets a random value from the thread RNG - updating the randstate.
+The random value is used to initialize a RNG local to the randomize method.
+The operations against this local RNG are not reported.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">randomize</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">c+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">A call to a class randomize
+method gets a random value from the class RNG - updating the randstate.
+The random value is used to initialize a RNG local to the randomize method.
+The operations against this local RNG are not reported.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">shuffle</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation is reported
+for call to an array.shuffle method. The call may get multiple random
+values. The RNG trace entry reports the randstate prior to the call
+and the randstate after the last update.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">get class seed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation gets a
+random value (seed) from the RNG of the current thread. This is
+the first RNG operation of a call to new().</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">class initialize</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">c=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses a
+seed value to initialize the RNG of a class instance. This is the
+second RNG operation of a call to new().</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">get thread seed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation gets a
+random value (seed) from the RNG of the current thread. The RNG
+operation is part of a fork (see below)</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">thread initialize</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses a
+seed value to initialize the RNG of a thread. It is performed to
+initialize static threads (initial, always). It is also performed
+to initialize dynamic thread as a part of a fork.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">set_randstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">c=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses an
+RNG state string to initialize the RNG of a class instance. It is
+performed by a class set_randstate method.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">process::set_randstate</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses an
+RNG state string to initialize the RNG of the current thread. It
+is performed by the process::set_randset() method.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">srandom</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">c=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses a
+seed value to initialize the RNG of a class instance. It is performed
+by a class srandom() method.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">process::srandom</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p=</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation uses a
+seed value to initialize the RNG of the current thread. It is performed
+by the process::set_randstate() method.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e275 "><p class="p">random value </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e278 "><p class="p">p+</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d70289e281 "><p class="p">This operation gets a
+random value from RNG of the current thread - updating the randstate.
+It is part of an optimization of certain calls std::randomize.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="title Subheading sectiontitle">Constructs That Cause the RNG of a Process
+to Change</h2><p class="p">The following constructs (with the associated description in <span class="ph FontProperty HeadingLabel">bold</span>)
+causes the RNG of a process to change:</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id73c25851-8401-4f98-bdcc-4065c5ffd316"><p class="p">process::new()
+- initial/always/fork</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idbf86104c-a14c-43f0-afae-ff53c1181e59"><p class="p"><span class="ph FontProperty HeadingLabel">init</span></p>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idc39f5fb0-4a7b-450f-bea1-cfc082461166"><p class="p">The tool prints
+only <span class="ph FontProperty emphasis">new_rand_state</span></p>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id766782ed-233e-402e-9cb5-b988c8361025"><p class="p"><span class="ph FontProperty emphasis"> filename(lineno)</span> may
+be absent for some implicit processes</p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idfe9221b1-67e6-4e0d-a050-dd1f646aa24e"><p class="p">$urandom()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id0b724a8a-1b20-4dd2-8424-02efa7bfc4e5"><p class="p"><span class="ph FontProperty HeadingLabel">urandom</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__ida6d4c2d7-3493-4dda-8abd-c97bf38a0791"><p class="p">$urandom_range()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__ide310fb49-26dc-43e9-bc8b-08905f419623"><p class="p"><span class="ph FontProperty HeadingLabel">urandom_range</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__iddee2f6f4-f4d1-443c-9f62-43f3a6835a04"><p class="p">std::randomize()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id41fbc77f-752e-47ad-84dd-744ceb0ae02f"><p class="p"><span class="ph FontProperty HeadingLabel">randomize</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id87d9bb30-c2e9-4fae-975f-1723bb0b1b2f"><p class="p">array::shuffle()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idc7f1e899-3a03-4e8a-9796-223f1ee1e37b"><p class="p"><span class="ph FontProperty HeadingLabel">shuffle</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id9c08c906-8970-4698-ae59-7447a0e5432b"><p class="p">fork</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id9e595140-4520-4645-b684-33b4c3f79a8e"><p class="p"><span class="ph FontProperty HeadingLabel">seed_fork</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id701b8d30-cb34-4dd5-b083-4f513c8e1b38"><p class="p">class::new()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id0076c194-32b7-4d83-8413-1d0ae3c64d2c"><p class="p"><span class="ph FontProperty HeadingLabel">seed_class</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="title Subheading sectiontitle">Constructs That Cause the RNG of a Class
+Instance to Change</h2><p class="p">The following constructs (with the associated description in <span class="ph FontProperty HeadingLabel">bold</span>)
+causes the RNG of a class instance to change:</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idce34424d-41fa-421c-9e04-ca4f9d694c66"><p class="p">class::new()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idb5435988-c59b-4dd0-be81-3238cd4e24de"><p class="p"><span class="ph FontProperty HeadingLabel">new</span></p>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id37df1f98-8b0f-4964-ae08-c5901ff46d53"><p class="p">The tool prints
+only <span class="ph FontProperty emphasis">new_rand_state</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idd661193b-1aab-4843-b0e4-a48c01bef51d"><p class="p">class::srandom()
+— <span class="ph FontProperty HeadingLabel">Reports changes as a process operation rather than a class operation.</span> (The
+preceding statement in bold only applies to process instances—all
+other non-process classes will report class::srandom() as a class
+operation.)</p>
+<ul class="ul" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idcfccebd8-c73d-4c52-8bbd-b2d702b633ff"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id430291c0-777b-49cc-822d-d94967477611"><p class="p"><span class="ph FontProperty HeadingLabel">srandom</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idbdaa246c-8281-489c-804c-b2d420b64cb0"><p class="p">class::set_randstate()
+— <span class="ph FontProperty HeadingLabel">Reports changes as a process operation rather than a class operation.</span> (The
+preceding statement in bold only applies to process instances—all
+other non-process classes will report class::srandom() as a class
+operation.)</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id41d43096-af41-4248-9df0-e8083dfa22db"><p class="p"><span class="ph FontProperty HeadingLabel">set_randstate</span></p>
+</li>
+</ul>
+</li>
+<li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__id3ca73e19-42bf-402d-a2ed-590e6e77dbe3"><p class="p">class::randomize()</p>
+<ul class="ul"><li class="li" id="id81fb8e9c-0a99-4c21-943d-37c0c9ee72ed__idfc55e1a1-5eed-482b-badd-7dd369732aed"><p class="p"><span class="ph FontProperty HeadingLabel">randomize</span></p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RngTrace_idd1673bd5.html" title="The RNG Trace feature provides an intuitive tool for analyzing and debugging simulation differences due to divergences in process or object RNG utilization.">RNG Trace</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "RNG Trace Reporting"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RngTraceReporting_id81fb8e9c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

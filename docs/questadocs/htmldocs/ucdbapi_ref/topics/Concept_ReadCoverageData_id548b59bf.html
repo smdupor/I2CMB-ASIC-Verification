@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Read Coverage Data" />
+<meta name="abstract" content="The read coverage data example illustrates how to read coverage counts for all coveritems in all instances of a database. This is also based upon the ucdb_CallBack() function for traversing the entire database in memory." />
+<meta name="description" content="The read coverage data example illustrates how to read coverage counts for all coveritems in all instances of a database. This is also based upon the ucdb_CallBack() function for traversing the entire database in memory." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id548b59bf-be7b-41be-bf3c-7c32424099d2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Read Coverage Data</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Read Coverage Data" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id548b59bf-be7b-41be-bf3c-7c32424099d2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Read Coverage Data</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The read
+coverage data example illustrates how to read coverage counts for
+all coveritems in all instances of a database. This is also based
+upon the ucdb_CallBack() function for traversing the entire database
+in memory.</span>
+</div>
+<p class="p">You can find this C example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/read-coverage/</span>.</p>
+<pre class="pre codeblock leveled"><code>/* Callback to report coveritem count */ 
+ucdbCBReturnT 
+callback( 
+    void*           userdata, 
+    ucdbCBDataT*    cbdata) 
+{ 
+    ucdbScopeT scope = (ucdbScopeT)(cbdata-&gt;obj); 
+    ucdbT db = cbdata-&gt;db; 
+    char* name; 
+    ucdbCoverDataT coverdata; 
+    ucdbSourceInfoT sourceinfo; 
+ 
+    switch (cbdata-&gt;reason) { 
+    case UCDB_REASON_DU: 
+        /* Do not traverse data under a DU: see read-coverage2 */ 
+        return UCDB_SCAN_PRUNE; 
+    case UCDB_REASON_CVBIN: 
+        scope = (ucdbScopeT)(cbdata-&gt;obj); 
+        /* Get coveritem data from scope and coverindex passed in: */ 
+        ucdb_GetCoverData(db,scope,cbdata-&gt;coverindex, 
+                          &amp;name,&amp;coverdata,&amp;sourceinfo); 
+        if (name!=NULL &amp;&amp; name[0]!='\0') { 
+            /* Coveritem has a name, use it: */ 
+            printf("%s%c%s: ",ucdb_GetScopeHierName(db,scope), 
+                   ucdb_GetPathSeparator(db),name); 
+        } else { 
+            /* Coveritem has no name, use [file:line] instead: */ 
+            printf("%s [%s:%d]: ",ucdb_GetScopeHierName(db,scope), 
+                   ucdb_GetFileName(db,&amp;sourceinfo.filehandle), 
+                   sourceinfo.line); 
+        } 
+        print_coverage_count(&amp;coverdata); 
+        printf("\n"); 
+        break; 
+    default: break; 
+    } 
+    return UCDB_SCAN_CONTINUE; 
+} </code></pre><p class="p">If a design unit scope is
+encountered in the callback, the UCDB_SCAN_PRUNE return value instructs
+the callback generator to skip further callbacks for data structures
+underneath the design unit.</p>
+<p class="p">The callback prints something
+for the UCDB_REASON_CVBIN callback. The UCDB_REASON_CVBIN callback
+is for coveritems in the data model. The cbdata-&gt;obj value is set
+to the parent scope of the coveritem, and cbdata-&gt;coverindex is
+the index that can be used to access the cover item. Data for the
+coveritem is accessed with ucdb_GetCoverData(). This retrieves the
+name, coverage data, and source information for the coveritem. The
+source information is essential sometimes because some coverage
+objects, specifically, statement coveritems, do not have names:
+they can only be identified by the source file, line, and token with
+which they are associated. </p>
+<p class="p">The coverage data itself is printed in this
+function:</p>
+<pre class="pre codeblock leveled"><code>void 
+print_coverage_count(ucdbCoverDataT* coverdata) 
+{ 
+    if (coverdata-&gt;flags &amp; UCDB_IS_32BIT) { 
+        /* 32-bit count: */ 
+        printf("%d", coverdata-&gt;data.int32); 
+    } else if (coverdata-&gt;flags &amp; UCDB_IS_64BIT) { 
+        /* 64-bit count: */ 
+        printf("%lld", coverdata-&gt;data.int64); 
+    } else if (coverdata-&gt;flags &amp; UCDB_IS_VECTOR) { 
+        /* bit vector coveritem: */ 
+        int bytelen = coverdata-&gt;bitlen/8 + (coverdata-&gt;bitlen%8)?1:0; 
+        int i; 
+        for ( i=0; i&lt;bytelen; i++ ) { 
+            if (i) printf(" "); 
+            printf("%02x",coverdata-&gt;data.bytevector[i]); 
+        } 
+    } 
+} </code></pre><p class="p">This function comprehensively
+shows how the coverage count must be printed. There are not currently
+any source inputs or tools that create the UCDB_IS_VECTOR type of
+coverage data, but 32-bit and 64-bit platforms each create counts
+of their respective integer sizes.</p>
+<div class="section Subsections"><div class="section Subsection" id="id548b59bf-be7b-41be-bf3c-7c32424099d2__id90b49905-ebba-4907-9189-f9775f6f9380"><h2 class="title Subheading sectiontitle">read-coverage2 Example</h2><p class="p">The read-coverage2 example
+shows you how to handle traversing the code coverage data underneath
+a design unit.</p>
+<p class="p">The problem is the UCDB_INST_ONCE
+optimization where coverage data for a single-instance design unit
+is stored only in the instance. For a per-design-unit coverage roll-up,
+it is convenient to access data through the UCDB design unit scope.
+The UCDB API enables this data access. However, the problem comes
+when printing the path to those scopes that were accessed underneath
+the design unit. Because the data is actually stored underneath
+the instance, the path prints the same whether it was accessed through
+the design unit or not. Extra code must be written to determine
+how the data was accessed: via the design unit or through the instance tree.</p>
+<p class="p">You can find this C example
+in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/read-coverage2/</span>.</p>
+<pre class="pre codeblock leveled"><code>    struct dustate* du = (struct dustate*)userdata; 
+ 
+    switch (cbdata-&gt;reason) { 
+    /* 
+     *  The DU/SCOPE/ENDSCOPE logic distinguishes those objects which occur 
+     *  underneath a design unit.  Because of the INST_ONCE optimization, it is 
+     *  otherwise impossible to distinguish those objects by name. 
+     */ 
+    case UCDB_REASON_DU: 
+        du-&gt;underneath = 1; du-&gt;subscope_counter = 0; break; 
+    case UCDB_REASON_SCOPE: 
+        if (du-&gt;underneath) { 
+            du-&gt;subscope_counter++; 
+        } 
+        break; 
+    case UCDB_REASON_ENDSCOPE: 
+        if (du-&gt;underneath) { 
+            if (du-&gt;subscope_counter) 
+                du-&gt;subscope_counter--; 
+            else 
+                du-&gt;underneath = 0; 
+        } 
+        break;  </code></pre><p class="p">The “du” user data pointer
+has “underneath,” which is a flag that is 1 while underneath a design
+unit, and a “subscope_counter” for subscopes underneath the design
+unit. (FSM coverage, for example, will create subscopes underneath
+a design unit.) Then if du-&gt;underneath is true, the application
+can print something distinctive to indicate when a coveritem was
+really found through the design unit rather than the instance:</p>
+<pre class="pre codeblock leveled"><code>read_coverage ../../data-models/toggle-enum/test.ucdb 
+/top/t/a: 0 (FROM DU) 
+/top/t/b: 1 (FROM DU) 
+/top/t/c: 1 (FROM DU) 
+/top/t/a: 0 
+/top/t/b: 1 
+/top/t/c: 1 </code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Read Coverage Data"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ReadCoverageData_id548b59bf.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

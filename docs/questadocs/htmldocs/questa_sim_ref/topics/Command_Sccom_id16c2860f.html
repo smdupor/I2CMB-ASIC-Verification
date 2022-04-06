@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="sccom" />
+<meta name="abstract" content="Provides two different functions: sccom uses an external C/C++ compiler to compile SystemC source code into the work library, while sccom -link takes compiled source code and links the design." />
+<meta name="description" content="Provides two different functions: sccom uses an external C/C++ compiler to compile SystemC source code into the work library, while sccom -link takes compiled source code and links the design." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>sccom</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="sccom" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">sccom</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Provides
+two different functions: sccom uses an external C/C++ compiler to
+compile SystemC source code into the work library, while sccom -link
+takes compiled source code and links the design. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Compile
+syntax</h2><p class="lines UsageLine">sccom <span class="ph">[<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id7ba4458b-9a9a-45e8-9b29-d9da13d6cfc0">-32 | -64</a>] </span>[<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id09e13169-9a85-4a59-a4f1-a71c52f34990">-93</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide699b0b9-7e5e-4c6b-89ba-d213a2de6b08">&lt;CPP compiler options&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb15b001f-58ec-4aab-9299-b1a07f5a5d0e">&lt;CPP linker options&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id32f125fb-edda-4ed4-bc56-864724e8e5f1">-cppinstall &lt;[gcc|g++] version&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb200a3ee-d06a-49a0-afca-55bb98f0f6c7">-cpppath &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idec394125-4128-402d-ac07-981328ff733b">-dumpscvext &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id105c257f-bfa3-4b96-809f-59fb179479c9">-dpilib &lt;libname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id4db7450a-d8e6-48fe-9189-c7b6e2cae730">-error &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2e0a44d0-47f3-413a-8cf2-acc169bad44c">(-F | -file | -f) &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide40acce9-fb7e-4593-a9ad-12b7893d7d72">-fatal &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id70a1f9a4-2274-4545-ae7e-7c6f8fede69c">-gnuversion</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ida3e9d8f6-146d-496f-8dc0-a3dd3dc23f17">-help [all | category | &lt;option&gt; | &lt;command-line&gt; | &lt;category_list&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idff0f5e6d-0078-4b64-9837-64e8947f0453">-incr</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2ac99c6e-b554-470d-ad88-d161877ed1b4">-j &lt;value&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id541004fc-ac51-4428-affe-63ca86fb5c4c">‑lib &lt;library_pathname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idfd52a6d3-bf9f-4894-9c1c-df270023c37a">-libshared &lt;library_pathname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id6394b509-cafb-41cf-b558-324024d5d81b">-link</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id45f229ca-f2b2-48a9-94b8-9e31e6dfcfaa">-linkshared</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb464bb5f-88e0-4131-88a9-b5de499abc34">-log &lt;logfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8167d56a-e53c-414d-bbcd-552708b8b9e8">-machines &lt;hosts.txt&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id6b8c6ca1-c305-40fd-8884-907bea1a1a86">-modelsimini &lt;path/modelsim.ini&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0993c983-abe1-4b32-94ba-b0434b0e90e4">-nodbgsym</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id1c6f1446-fe63-4b7f-9c4a-4c25b8677388">-nodebug</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d989387-ae74-4835-8692-f248c3b2f059">-nologo</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id11ab9605-9841-46b8-b915-c70d7102bb47">-note &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8c8f2fb2-a53d-4141-9f77-dde710352ea9">-optionset &lt;optionset_name&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idfc0ec683-cafb-4451-ac05-d8843efb771a">-outf &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id3e5042a4-a849-408a-b861-08ed1ed9d2d3">-predefmacrofile &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id12488420-6ee7-41ba-8d81-850b3f4422ca">-scms</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id346da90e-7d0e-46eb-b390-1c20b38040b5">-sctop &lt;sc_module_name&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8779bbad-7013-487f-82aa-67e7b67d00ab">-scv</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id646391c2-cedd-400e-957f-7710f7928d7c">-scversion</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id9a80c529-a57c-40e2-abe1-e3b7295e5867">-stats [=[+ | -]&lt;arg&gt;[,[+ | -]&lt;arg&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__iddac3bc4d-6bf5-42bf-bcbf-63672a98d974">-suppress {&lt;msgNumber&gt; | &lt;msgGroup&gt;} [,[&lt;msg_number&gt; | &lt;msgGroup&gt;] ,...]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc6d024ef-f460-4329-80ff-2252f4e0df0a">-vv</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id1012dc26-d9c1-426c-8115-44a4163d5f5c">-verbose</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id5aee6fc6-4355-44ea-ad11-e65c65db4679">-version</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide18516f4-4fc8-4107-b306-a3cc95def197">-warning &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d9576e6-a18d-4673-b197-cef32e6676d6">‑work &lt;library_name&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide49824dc-db66-4883-bcfd-4cd75d3b9833">-x c | c++</a>] <a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id61bde1ee-2145-4e46-85ac-8fc71d20f9bc">&lt;filename&gt;</a> </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Link
+syntax</h2><p class="lines UsageLine">sccom -link</p>
+<p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb15b001f-58ec-4aab-9299-b1a07f5a5d0e">&lt;CPP linker options&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id105c257f-bfa3-4b96-809f-59fb179479c9">-dpilib &lt;libname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2e0a44d0-47f3-413a-8cf2-acc169bad44c">(-F | -file | -f) &lt;filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ida3e9d8f6-146d-496f-8dc0-a3dd3dc23f17">-help [all | category | &lt;option&gt; | &lt;command-line&gt; | &lt;category_list&gt;]</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id541004fc-ac51-4428-affe-63ca86fb5c4c">‑lib &lt;library_pathname&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb464bb5f-88e0-4131-88a9-b5de499abc34">-log &lt;logfile&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d989387-ae74-4835-8692-f248c3b2f059">-nologo</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8779bbad-7013-487f-82aa-67e7b67d00ab">-scv</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idafa6e8bd-b0b1-405b-a833-49991c07ab37">-uvmc</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc6d024ef-f460-4329-80ff-2252f4e0df0a">-vv</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id1012dc26-d9c1-426c-8115-44a4163d5f5c">-verbose</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id5aee6fc6-4355-44ea-ad11-e65c65db4679">-version</a>] [<a class="xref fm:HeadingOnly" href="#id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d9576e6-a18d-4673-b197-cef32e6676d6">‑work &lt;library_name&gt;</a>]</p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can distribute the compilation of multiple
+SystemC source files across multiple machines, or use the j argument
+to distribute compilation across multiple cores on a single machine.
+The result is faster compilation.</p>
+<p class="p">You can
+run this command in <span class="ph fmvar:ProductName">Questa SIM</span>,
+or from the operating system command prompt, or during simulation.</p>
+<p class="p">To enable
+source debugging of SystemC code, you must compile for debugging
+by specifying the -g argument of the CPP compiler.</p>
+<p class="p">Compiled
+libraries have the following dependencies: </p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idf4fb8a1e-336c-49c4-97cf-6b40ca11c0a2"><p class="p">Platform
+— If you move between platforms, you must run vdel -allsystemc on
+the working library and then recompile your SystemC source.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id049ba91d-b125-4486-a481-409aac42ab6b"><p class="p">Version
+— If you install a new release, you must re-compile your library
+with the current version of sccom. For example, you cannot use a
+library compiled with v6.5 in a simulation using v6.5a vsim. You
+would have to run sccom in v6.5a to re-compile your library (sccom
+‑version displays the version number of the compiler). </p>
+</li>
+</ul>
+<p class="p">During
+the linking of the design (with sccom -link), the order in which
+you specify archives (.a) and object files is very important. You
+must specify any dependent .a or .o before the .a or .o on which
+it depends. </p>
+<p class="p">The sccom
+command recognizes the file type as either C or C++ by the filename
+extension and uses the appropriate compiler, as follows: </p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id4313e9a7-3c56-4d4a-8980-f0383a46276d"><p class="p">gcc
+compiler on source files with C source extensions: .c, .i </p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id7217c805-90c0-4a80-b00c-9fa3f62daa9c"><p class="p">g++
+compiler on source files with C++ extensions: .CPP , .cpp , .C ,
+.c++ , .cc , .cp , .cxx, .ii </p>
+</li>
+</ul>
+<p class="p">For best
+performance, run sccom in multi-file compilation mode, which requires
+that you write to the current working directory. By default, sccom
+works in multi-file compilation mode, passing all source files to
+the GNU compilers and debug generator in a single step. If the working
+directory has read-only permissions, sccom automatically performs
+single-file compilation, which decreases performance. </p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2ab1089e-9105-46df-ba16-8150097e5948"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id7ba4458b-9a9a-45e8-9b29-d9da13d6cfc0">-32 | -64</dt>
+<dd class="dd ArgumentDescription"><p class="p">Specifies
+whether sccom uses the 32- or 64-bit executable, where -32 is the
+default.</p>
+<p class="p">These options
+apply only to the supported Linux operating systems.</p>
+<p class="p">These options
+override the MTI_VCO_MODE environment variable, which applies only
+to executables used from the <span class="ph filepath italic">&lt;install_dir&gt;/bin/</span> directory.
+Therefore, these options are ignored if you run sccom from an <span class="ph filepath italic">&lt;install_dir&gt;/&lt;platform&gt;/</span> directory.</p>
+<p class="p">You can specify
+these options only on the command line; they are not recognized
+as part of a file used with the -f switch.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id09e13169-9a85-4a59-a4f1-a71c52f34990">-93</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Makes the design unit strictly case-sensitive, enforcing case-sensitivity
+across the SystemC‑HDL mixed language boundary.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide699b0b9-7e5e-4c6b-89ba-d213a2de6b08">&lt;CPP compiler options&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">You can
+use any normal C++ compiler option, with the exception of the -o
+and -c options. You must specify the -g argument to compile for
+debugging. By default, sccom compiles without debugging information.
+You can edit the CppOptions variable in the<span class="ph filepath italic">modelsim.ini</span> file
+to specify arguments for all sccom compiles.</p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id10dfcda1-f6cf-46b6-9966-a689fda2caa1"><p class="p">-DSC_</p>
+<p class="p">(optional)
+Specifies SystemVerilog libraries for SystemC DPI (Direct Programming Interface).
+You can specify only one library for each -dpilib argument. Refer
+to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'SystemC Procedural Interface to SystemVerilog', 'questa_sim_user'); return false;">SystemC Procedural Interface to SystemVerilog</a> in
+the User’s Manual for more information.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2176e7d1-c2c8-4763-985d-6859dc8227f8"><p class="p">-DSC_INCLUDE_MTI_AC </p>
+<p class="p">(optional)
+Enable native debug support of Algorithmic-C datatypes.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id180a58cb-0b9c-481e-a04b-163b8f11c7fb"><p class="p">-DSC_INCLUDE_DYNAMIC_PROCESSES </p>
+<p class="p">(optional)
+Enable dynamic processes.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id21ccc9f1-5a59-4ee6-b98c-c1529277e061"><p class="p">-DSC_INCLUDE_FX </p>
+<p class="p">(optional)
+Enable fixed-point datatypes.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id58620385-5977-427e-aff5-08365e9d8c98"><p class="p">-DSC_USE_STD_STRING </p>
+<p class="p">(optional)
+Replace sc_string with std::string.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide24cc398-d957-4493-9ca1-9f56a142339e"><p class="p">-DSC_USE_STD_STRING_OLD </p>
+<p class="p">(optional)
+Use deprecated sc_string.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id269693dd-5b26-4166-ab1e-91c531b00bbd"><p class="p">-DMTI_BIND_SC_MEMBER_FUNCTION </p>
+<p class="p">(optional)
+Enable registration of module member functions as DPI-SC imports.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide87e113b-fbc6-4eeb-a6c4-804081af1030"><p class="p">-DUSE_MTI_CIN</p>
+<p class="p">(optional)
+Enables support of C++ standard input cin. </p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb15b001f-58ec-4aab-9299-b1a07f5a5d0e">&lt;CPP linker options&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">You can
+use any normal C++ compiler option, with the exception of the -o
+option. You can edit the CppOptions variable in the<span class="ph filepath italic">modelsim.ini</span> file
+to specify arguments for all sccom compiles.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id32f125fb-edda-4ed4-bc56-864724e8e5f1">-cppinstall &lt;[gcc|g++] version&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the version of the desired GNU compiler supported and
+distributed by Mentor Graphics. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8006fd8b-e30b-4d9e-a3ca-efcec65921cc"><p class="p Opt">&lt;[gcc|g++]
+version&gt; — The version number of the GNU compiler to use. For example:</p>
+<pre class="pre codeblock leveled"><code>sccom -cppinstall 5.3.0</code></pre></li>
+</ul>
+<p class="p">When the -cpppath argument is also present, the order
+of precedence in determining the compiler path is the following:</p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id3ef2788d-6bb5-406c-93d5-0a99f5f7a133"><p class="p">The -cppinstall
+argument is used with sccom</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d89e120-b424-455a-8ba6-645d05d527d3"><p class="p">The -cpppath
+argument is used with sccom</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb200a3ee-d06a-49a0-afca-55bb98f0f6c7">-cpppath &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the location of a g++ executable other than the default
+g++ compiler installed with <span class="ph fmvar:ProductName">Questa SIM</span>.
+Overrides the CppPath variable in the<span class="ph filepath italic">modelsim.ini</span> file.</p>
+<p class="p">When the -cppinstall argument is also present, the order
+of precedence in determining the compiler path is the following:</p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idda062696-09fa-4054-83aa-230385a87d9f"><p class="p">The -cppinstall
+argument is used with vopt</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idac9b57c3-7eae-4f2e-ae41-f937c155c190"><p class="p">The -cpppath
+argument is used with vopt</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idec394125-4128-402d-ac07-981328ff733b">-dumpscvext &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Generates SystemC verification (SCV) extensions for any given object
+type. For this argument, &lt;filename&gt; is a C++ (.cpp) file that
+contains global variable definition for each type and includes the
+header file containing definitions for these types. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id105c257f-bfa3-4b96-809f-59fb179479c9">-dpilib &lt;libname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies SystemVerilog libraries for SystemC DPI (Direct Programming Interface).
+You can specify only one library for each -dpilib argument. Refer
+to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'SystemC Procedural Interface to SystemVerilog', 'questa_sim_user'); return false;">SystemC Procedural Interface to SystemVerilog</a> in
+the User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id4db7450a-d8e6-48fe-9189-c7b6e2cae730">-error &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to "error."
+Edit the <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'error', 'questa_sim_user'); return false;">error</a> variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2e0a44d0-47f3-413a-8cf2-acc169bad44c">(-F | -file | -f) &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+-f, -file and -F: each specifies an argument file with more command-line arguments,
+allowing you to reuse complex argument strings without retyping.
+Allows nesting of -F, -f and -file commands.</p>
+<p class="p">With -F
+only: relative file names and paths within the arguments file &lt;filename&gt;
+are prefixed with the path of the arguments file when lookup with
+relative path fails. Refer to <a class="xref fm:HeadingOnly" href="Concept_ArgumentFiles_idd3a2021e.html#idd3a2021e-bd51-4fd7-887d-a6215cc88bbe__Concept_ArgumentFiles_idd3a2021e.xml#idd3a2021e-bd51-4fd7-887d-a6215cc88bbe" title="You can load additional arguments into some commands by using argument files, which are specified with the -f argument.">Argument Files</a> for more
+information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide40acce9-fb7e-4593-a9ad-12b7893d7d72">-fatal &lt;msg_number&gt;[,&lt;msg_number&gt;,…]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to "fatal."
+Edit the <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'fatal', 'questa_sim_user'); return false;">fatal</a> variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id70a1f9a4-2274-4545-ae7e-7c6f8fede69c">-gnuversion</dt>
+<dd class="dd ArgumentDescription"><p class="p">Returns
+the version and path of the GNU compiler used for compilation. You
+can specify this argument by itself on the sccom command line. Refer
+to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Verifying Compiler Information', 'questa_sim_user'); return false;">Verifying Compiler Information</a>”
+in the User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ida3e9d8f6-146d-496f-8dc0-a3dd3dc23f17">-help [all | category | &lt;option&gt; | &lt;command-line&gt; | &lt;category_list&gt;]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Provides online command help.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idbbfca69d-23ef-433c-a579-45e2826449a3"><p class="p Opt">all
+— List all categories and options.</p>
+</li>
+<li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id11ad7a5a-cdea-403b-8cb9-97500a0bb930"><p class="p Opt">category
+— List all command categories.</p>
+</li>
+<li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id438aefbe-d478-4b0e-84c4-f6faa3fad1ed"><p class="p Opt">&lt;option&gt;
+— Show help for the listed command option.</p>
+</li>
+<li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide4010e75-d0eb-406b-81cf-ecf3609f6b02"><p class="p Opt">&lt;command-line&gt;
+— List all options for a particular category. Vcom categories are: </p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2ae2066b-5f36-4ed5-8064-6fdfe8e90e55"><p class="p">General</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id34c9b914-7ac5-461b-a4de-c2b58c9ef5c1"><p class="p">Cpp</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc12a82b4-9c24-4146-8fb9-d8db9803b341"><p class="p">Language</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id35da5bcc-6971-4323-8c37-114eb7c5d181"><p class="p">Library</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide7b3d0c2-b0d3-4100-9cba-1247725b7fed"><p class="p">Messages</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc5fa649e-8ba1-427f-93e5-b7c2dabac5e4"><p class="p">Report</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idcf650b09-a012-443e-821a-3137fdb26d2c"><p class="p">Scparse</p>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idff0f5e6d-0078-4b64-9837-64e8947f0453">-incr</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Enables automatic incremental compilation so that only changed files
+are compiled. A changed file is re-compiled in the following cases: </p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id6322f015-57cb-4a63-ac08-cafe110d9048"><p class="p">Its pre-processor
+output differs from the last time it was successfully compiled.
+This includes changes in included header files and to the source
+code itself. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Pre-processor output is used because it prevents re-compilation
+of a file when the only changes are to access or modification time
+(touch), or to comments (except that changes to source code that
+affect line numbers, such as adding a comment line, do cause recompilation
+of all affected files). This keeps debug information current so that <span class="ph fmvar:ProductName">Questa SIM</span> can trace back
+to the correct areas of the source code.</p>
+</div>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc994ea31-6765-454b-adbd-a8da20f47347"><p class="p">You invoke
+sccom with a different set of command-line options that have an
+impact on the gcc command line. Preserving all settings for the
+gcc command ensures that <span class="ph fmvar:ProductName">Questa SIM</span> re-compiles
+source files when you use a different version of gcc or when a platform
+changes.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id2ac99c6e-b554-470d-ad88-d161877ed1b4">-j &lt;value&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+for distributed compile) Specifies the maximum number of parallel
+compilation processes requested. &lt;value&gt; should be a positive
+integer greater than or equal to zero. If &lt;value&gt; is 0, or -j
+is not specified, sccom runs in the default non-distributed mode.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id541004fc-ac51-4428-affe-63ca86fb5c4c">‑lib &lt;library_pathname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the default working library where the SystemC linker can
+find the object files for compiled SystemC modules. Use only with
+sccom -link.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idfd52a6d3-bf9f-4894-9c1c-df270023c37a">-libshared &lt;library_pathname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(UNIX,
+Linux only; optional) Specifies the library location for the intermediate
+SystemC library generated with sccom -linkshared. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id6394b509-cafb-41cf-b558-324024d5d81b">-link</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required
+before running simulation) Performs the final link of all previously
+compiled SystemC source code. You must specify any dependent .a
+or .o before the .a or .o on which it depends. There are two types
+of dependencies, and placement of the -link argument is based on
+which type of dependency the files have: </p>
+<ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idafbcc529-2f86-4be5-8745-7ab195fdba8a"><p class="p">If your
+archive or object is dependent on the .o files created by sccom
+(that is, your code references symbols in the generated SystemC
+.o files), then you must specify the -link argument after the list
+of files, as follows:</p>
+<pre class="pre codeblock leveled"><code>sccom a.o b.o libtemp.a -link</code></pre><p class="p">Functionally,
+the order of the C++ linker command and argument looks like this:</p>
+<pre class="pre codeblock leveled"><code>ld a.o b.o libtemp.a &lt;internal list of SC .o files&gt; libsystemc.a</code></pre></li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc1cb3621-03f9-4a1f-920c-174c401e018d"><p class="p">However,
+if the .o files created by sccom are dependent on the object or
+archive you provided, then you must place the -link argument before
+the object files or archive:</p>
+<pre class="pre codeblock leveled"><code>sccom -link a.o b.o libtemp.a</code></pre><p class="p">In this
+case, the "functional" command and argument order look like this:</p>
+<pre class="pre codeblock leveled"><code>ld &lt;internal list of SC .o files&gt; libsystemc.a a.o b.o libtemp.a</code></pre></li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id45f229ca-f2b2-48a9-94b8-9e31e6dfcfaa">-linkshared</dt>
+<dd class="dd ArgumentDescription"><p class="p">(UNIX,
+Linux only; optional) Creates an intermediate SystemC shared library,
+which allows you to create multiple SystemC shared libraries (systemc.so).
+The simulator cannot elaborate individual intermediate shared objects.
+All intermediate shared objects generated using sccom -linkshared
+need to be linked into the final systemc.so during the sccom –link step
+using the -libshared &lt;lib&gt; option. You cannot use this argument
+with sccom -link. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb464bb5f-88e0-4131-88a9-b5de499abc34">-log &lt;logfile&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the logfile in which to collect output. Related <span class="ph filepath italic">modelsim.ini </span>variable
+is SccomLogfile.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8167d56a-e53c-414d-bbcd-552708b8b9e8">-machines &lt;hosts.txt&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a file containing a list of host machines to distribute
+parallel compilation processes. Used in conjunction with -j option
+to distribute total number of requested parallel processes evenly
+on given host machines. In the absence of this option, parallel
+compilation processes, as specified by the -j option, are started
+on the same machine. The format of entries in the &lt;hosts.txt&gt;
+file is:</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idf3359b0b-e9dd-4310-8c81-276332dda4a5"><p class="p Opt">&lt;machine_name&gt;[:&lt;int&gt;]...</p>
+</li>
+</ul>
+<p class="p">where
+&lt;machine_name&gt; is the name of an accessible machine to the one
+on which the sccom command is run, and &lt;int&gt; is the maximum number
+of processes on that machine. One entry allowed per line. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id6b8c6ca1-c305-40fd-8884-907bea1a1a86">-modelsimini &lt;path/modelsim.ini&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Loads an alternate initialization file that replaces the current
+initialization file. Overrides the file path specified in the MODELSIM
+environment variable. Specifies either an absolute or relative path
+to the initialization file, including the filename. On Windows systems
+the path separator should be a forward slash (/). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0993c983-abe1-4b32-94ba-b0434b0e90e4">-nodbgsym</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Disables the generation of symbols for the debugging database in
+the library, which allows source annotation. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id1c6f1446-fe63-4b7f-9c4a-4c25b8677388">-nodebug</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Disables the creation of a debug
+database for SystemC modules. Using -nodebug can significantly reduce
+the compile time for a design, which is useful when running designs in
+regression mode. Specify -nodebug at both sccom compile and at link
+time. If any source file contains the SC_MODULE_EXPORT() macro,
+you must use -nodebug in conjunction with the -sctop argument to
+prevent mixed-language designs from compiling incorrectly. Limitation:
+Using -nodebug in a VHDL instantiating SystemC scenario causes vsim
+to return an error. Refer to "<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Custom Debugging of SystemC Channels and Variables', 'questa_sim_user'); return false;">Custom Debugging of SystemC Channels and Variables</a>" for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d989387-ae74-4835-8692-f248c3b2f059">-nologo</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Disables the startup banner. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id11ab9605-9841-46b8-b915-c70d7102bb47">-note &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to "note."
+Edit the <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'note', 'questa_sim_user'); return false;">note</a> variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Message Severity Level', 'questa_sim_user'); return false;">Message Severity Level</a>” in the
+User’s Manual for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8c8f2fb2-a53d-4141-9f77-dde710352ea9">-optionset &lt;optionset_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Calls an optionset as defined in the <span class="ph filepath italic">modelsim.ini file</span>.
+Refer to <a class="xref fm:HeadingOnly" href="Concept_Optionsets_id32287ea1.html#id32287ea1-a28a-4bb3-afe5-9c31c0495fdd__Concept_Optionsets_id32287ea1.xml#id32287ea1-a28a-4bb3-afe5-9c31c0495fdd" title="By defining and calling optionsets, you can easily use and combine common command line options.">Optionsets</a> for more information.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idfc0ec683-cafb-4451-ac05-d8843efb771a">-outf &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a file to save the final list of options to, after recursively
+expanding all -f, -file and -F files.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id3e5042a4-a849-408a-b861-08ed1ed9d2d3">-predefmacrofile &lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies path to the predefined macros file. Generally, if you
+are using an unsupported g++ compiler, sccom generates a "predef_macro_gcc&lt;COMPILER_VERSION&gt;_&lt;PLATFORM&gt;.txt"
+file, which you must then copy over to the location <span class="ph filepath italic">$MTI_HOME/include/systemc</span>.
+Use of -predefmacrofile makes it unnecessary to copy this generated
+predefined macros file. Whether you copy the macros over or use
+-predefmacrofile, you must run sccom again for the predefined macros to
+be picked up. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id12488420-6ee7-41ba-8d81-850b3f4422ca">-scms</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Includes the SystemC master slave library. If you specify this argument
+when compiling your C code with sccom, you must also specify it
+when linking the object files with sccom -link.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id346da90e-7d0e-46eb-b390-1c20b38040b5">-sctop &lt;sc_module_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Use this argument with the -nodebug
+argument to specify the SystemC top level design unit(s). Every
+SystemC module you specify with the SC_EXPORT_MODULE(&lt;sc_module_name&gt;)
+macro, you must also specify on the sccom command line with the
+-sctop &lt;sc_module_name&gt; argument during compilation. For example:
+sccom *.cpp -nodebug -sctop &lt;sc_module_name_1&gt; -sctop &lt;sc_module_name_2&gt;
+... &lt;other sccom options&gt;. Use this argument only in conjunction with
+-nodebug.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id8779bbad-7013-487f-82aa-67e7b67d00ab">-scv</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Includes
+the SystemC verification library. If you specify this argument when compiling
+your C code with sccom, you must also specify it when linking the
+object files with sccom -link. Related <span class="ph filepath italic">modelsim.ini </span>variable
+is UseScv.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id646391c2-cedd-400e-957f-7710f7928d7c">-scversion</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Prints out the version of the SystemC
+verification library used. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id9a80c529-a57c-40e2-abe1-e3b7295e5867">-stats [=[+ | -]&lt;arg&gt;[,[+ | -]&lt;arg&gt;] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Controls display of compiler statistics sent to a logfile, stdout,
+or the transcript. Specifying -stats without any options sets the
+default features (cmd, msg, and time). </p>
+<p class="p">Use a
+comma-separated list to specify multiple features and modes for
+each instance of -stats. You can specify ‑stats multiple times on
+the command line, but only the last instance will take effect. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idb3ff4fe5-4554-4859-a0b7-8f1c04cab26e"><p class="p Opt">[+ |
+-] — Controls activation of the feature or mode. The plus character
+( + ) enables the feature, and the minus character ( - ) disables
+the feature. You can also enable a feature or mode by specifying
+it without the plus (+) character. Setting this switch adds or subtracts
+features and modes from the default settings "cmd,msg,time".</p>
+</li>
+<li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id754ffe7e-6106-4d15-9af0-127491099731"><p class="p Opt">Arguments:</p>
+<p class="p">all
+| none— Display all statistics features (cmd, msg, perf, time).
+Mutually exclusive with none option. When specified in a string
+with other options, all or none is applied first.</p>
+<p class="p">cmd
+— (default) Echo the command line.</p>
+<p class="p">kb
+— Print statistics in Kb units with no auto-scaling.</p>
+<p class="p">list
+— Display statistics in a Tcl list format when available.</p>
+<p class="p">msg
+— (default) Display error and warning summary at the end of command execution.</p>
+<p class="p">perf
+— Display time and memory performance statistics. </p>
+<p class="p">time
+— (default) Display Start, End, and Elapsed times. </p>
+<p class="p">verbose
+— Display verbose statistics information when available.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">Use -stats=perf+verbose to display information about the
+operating system and host machine.</p>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You
+can specify -quiet to disable display of all statistics during compile. </p>
+</div>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__iddac3bc4d-6bf5-42bf-bcbf-63672a98d974">-suppress {&lt;msgNumber&gt; | &lt;msgGroup&gt;} [,[&lt;msg_number&gt; | &lt;msgGroup&gt;] ,...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prevents the specified message(s) from displaying. You cannot suppress
+Fatal or Internal messages. Edit the suppress variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'suppress', 'questa_sim_user'); return false;">suppress</a> in the User’s Manual. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id7fbd5146-518b-4649-a6df-3a98a8e4c670"><p class="p Opt">&lt;msgNumber&gt;</p>
+<p class="p">A specific message number</p>
+</li>
+<li class="li ArgOption" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id81ecd42f-5e0f-4ec2-bd38-6dc9b659639e"><p class="p Opt">&lt;msgGroup&gt;</p>
+<p class="p">A value identifying a pre-defined group of messages, based on
+area of functionality. These groups only suppress notes or warnings.
+The valid arguments are:</p>
+<p class="p">All, GroupNote, GroupWarning, GroupFLI, GroupPLI, GroupSDF, GroupVCD, GroupVital,
+GroupWLF, GroupTCHK, GroupPA, GroupLRM</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idafa6e8bd-b0b1-405b-a833-49991c07ab37">-uvmc</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Enables automatic linking of
+the precompiled UVMC libraries that ship with <span class="ph fmvar:ProductName">Questa SIM</span>. This argument is a link‑time
+only option so you can use it only with sccom -link. You can also
+enable this linking by specifying the UseUvmc variable in the <span class="ph filepath emphasis">modelsim.ini</span> file. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The -uvmc argument for sccom is not supported for Windows.</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc6d024ef-f460-4329-80ff-2252f4e0df0a">-vv</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prints all subprocess invocation information. An example is the
+call to gcc along with the command-line arguments.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id1012dc26-d9c1-426c-8115-44a4163d5f5c">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prints the name of each sc_module encountered during compilation.
+Related <span class="ph filepath italic">modelsim.ini </span>variable
+SccomVerbose.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id5aee6fc6-4355-44ea-ad11-e65c65db4679">-version</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays the version of sccom used to compile the design. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide18516f4-4fc8-4107-b306-a3cc95def197">-warning &lt;msg_number&gt; [,&lt;msg_number&gt;,...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Changes the severity level of the specified message(s) to "warning."
+Edit the warning variable in the <span class="ph filepath italic">modelsim.ini</span> file
+to set a permanent default. Refer to <a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'warning', 'questa_sim_user'); return false;">warning</a> in the User’s Manual. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id0d9576e6-a18d-4673-b197-cef32e6676d6">‑work &lt;library_name&gt; </dt>
+<dd class="dd ArgumentDescription"><p class="p">For the
+compiler — Specifies a logical name or pathname of a library to
+map to the logical library work. Optional; by default, the compiled
+object files (.so) are added to the work library. The specified
+pathname overrides the pathname specified for work in the project file.</p>
+<p class="p">For
+the linker — Specifies a logical name or pathname of a library in
+which to store the final linked object file (.so). Optional; by
+default, the linked object files are added to the work library. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide49824dc-db66-4883-bcfd-4cd75d3b9833">-x c | c++ </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the language (C or C++) of a source file you are compiling,
+when the filename extension does not match that source. For example,
+if myfile.cpp contains C source, you would enter sccom -x c myfile.cpp.
+If you use this argument, you cannot combine C and C++ files with
+the same sccom command. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id61bde1ee-2145-4e46-85ac-8fc71d20f9bc">&lt;filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the name of the file containing the SystemC/C++ source
+to compile. You can enter multiple filenames, separated by spaces.
+You can also use wildcards to specify multiple filenames (such as <span class="ph filepath italic">*.cpp</span>). </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id889b24b8-61de-4703-a91a-2a374669cba0"><p class="p">Compile <span class="ph filepath italic">example.cpp</span> with
+debugging information.</p>
+<p class="lines ApplCommand leveled">sccom -g example.cpp</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id343f391e-af81-40fc-b99b-b083515a4355"><p class="p">Link <span class="ph filepath italic">example.o</span>. </p>
+<p class="lines ApplCommand leveled">sccom -link</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ida233c7cd-2a64-4650-b8f5-af6d465cba10"><p class="p">Use two
+sccom commands - the first to compile <span class="ph filepath italic">a.cpp</span> into
+library <span class="ph filepath italic">LIB_A,</span> and
+the second to compile <span class="ph filepath italic">b.cpp</span> into <span class="ph filepath italic">LIB_B</span>.
+(<span class="ph filepath italic">a.cpp</span> defines
+a module, <span class="ph filepath italic">TOP_A</span>,
+and <span class="ph filepath italic">b.cpp</span> defines
+a module, <span class="ph filepath italic">TOP_B</span>.) </p>
+<p class="lines ApplCommand leveled">vlib /path/to/LIB_A<br />
+vmap LIB_A /path/to/LIB_A<br />
+vlib /path/to/LIB_B<br />
+vmap LIB_B /path/to/LIB_B<br />
+sccom -work LIB_A a.cpp  -&gt; a.o created in /path/to/LIB_A<br />
+sccom -work LIB_B b.cpp  -&gt; b.o created in /path/to/LIB_B</p>
+<p class="p">At this point,
+you have the option to create the SystemC library in <span class="ph filepath italic">LIB_A</span> or <span class="ph filepath italic">LIB_B</span> or
+in a totally new library <span class="ph filepath italic">LIB_C</span>. </p>
+<p class="p">Include all
+objects from <span class="ph filepath italic">LIB_B</span> and <span class="ph filepath italic">LIB_A</span> and
+create a <span class="ph filepath italic">.so</span> (shared
+object) in <span class="ph filepath italic">LIB_A</span>:</p>
+<p class="lines ApplCommand leveled">sccom -link -work LIB_A -lib LIB_B </p>
+<p class="p">Include all
+objects created in <span class="ph filepath italic">LIB_A</span> and <span class="ph filepath italic">LIB_B</span> and <span class="ph filepath italic">LIB_C</span> and
+create a <span class="ph filepath italic">.so</span> in <span class="ph filepath italic">LIB_C</span>.</p>
+<p class="lines ApplCommand leveled">sccom -link -work LIB_C -lib LIB_A -lib LIB_B </p>
+<p class="p">If the shared
+object is not compiled in the same library as the top-level design
+unit, use the -sclib switch with the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vsim', 'questa_sim_ref'); return false;">vsim</a> command to specify the <span class="ph filepath italic">.so</span> library.
+The -lib switch tells the simulator where the top-level module is
+compiled. The command also has a -L switch that allows you to specify
+the library where lower level modules can be found. For example:</p>
+<p class="lines ApplCommand leveled">vsim -sclib LIB_C -lib LIB_A TOP_A</p>
+<p class="p">loads a SystemC
+shared library from <span class="ph filepath italic">LIB_C</span>.
+The top module <span class="ph filepath italic">TOP_A</span>,
+is compiled in <span class="ph filepath italic">LIB_A</span>.</p>
+<p class="lines ApplCommand leveled">vsim -lib LIB_A TOP_A  </p>
+<p class="p">loads the
+SystemC shared library from <span class="ph filepath italic">LIB_A</span> and
+the top module <span class="ph filepath italic">TOP_A</span> from <span class="ph filepath italic">LIB_A</span>.</p>
+<p class="lines ApplCommand leveled">vsim -lib LIB_A -sclib LIB_C -L LIB_B TOP_A</p>
+<p class="p">loads the
+SystemC shared library from <span class="ph filepath italic">LIB_C</span>.
+The top level module, <span class="ph filepath italic">TOP_A</span>,
+was compiled in <span class="ph filepath italic">LIB_A</span>. <span class="ph filepath italic">TOP_B,</span> which
+is instantiated in some hierarchy, can be found in <span class="ph filepath italic">LIB_B</span>.</p>
+<p class="p">The command
+can accept multiple -L switches, but it takes only one -lib switch.
+The -lib switch is for top-level modules and -L is for lower modules.</p>
+<p class="p">The -sclib
+switch specifies where the SystemC shared library was created.</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide1bf2799-496a-48c9-a21c-e0d2a58060f5"><p class="p">Compile
+the SystemC code with an include directory and the compile time
+macro (SC_INCLUDE_FX) to compile the source with support for fixed
+point types. Refer to “<a class="xref Link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Differences Between the Simulator and OSCI', 'questa_sim_user'); return false;">Differences Between the Simulator and OSCI</a>” in the User’s Manual for more information.</p>
+<p class="lines ApplCommand leveled">sccom -I/home/systemc/include -DSC_INCLUDE_FX -g a.cpp b.cpp</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__idc45f5152-1804-40e0-bbd2-f51fccfd4fb5"><p class="p">Compile
+with the g++ -02 optimization argument.</p>
+<p class="lines ApplCommand leveled">sccom -02 a.cpp</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ida84f4e27-4135-400f-8ed0-c2212b5ed0dd"><p class="p">Link in
+the library <span class="ph filepath italic">libmylib.a</span> when
+creating the <span class="ph filepath italic">.so</span> file.
+The -L, a gcc argument, specifies the search path for the libraries.</p>
+<p class="lines ApplCommand leveled">sccom -L home/libs/ -l mylib -link</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__ide8fda3a9-ca47-491c-87ec-297924838e06"><p class="p">Enable
+the display of Start, End, and Elapsed time as well as a message
+count summary. Echoing of the command line is disabled</p>
+<p class="lines ApplCommand leveled">sccom -stats=time,-cmd,msg</p>
+</li>
+<li class="li" id="id16c2860f-cde7-4d9f-acb2-4e2fdffcfba0__id24d5df63-3dd3-4090-a7ce-f57c1d9d8683"><p class="p">The first
+-stats option is ignored. The none option disables all <span class="ph filepath italic">modelsim.ini</span> settings
+and then enables the perf option.</p>
+<p class="lines ApplCommand leveled">sccom -stats=time,cmd,msg -stats=none,perf</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'SystemC Simulation', 'questa_sim_user'); return false;">SystemC Simulation [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_Scgenmod_ida7d87420.html#ida7d87420-6de7-471e-bad1-720233123d3e__" title="Takes a Verilog or VHDL module that has been compiled into a library, and writes its equivalent SystemC foreign module declaration to standard output.">scgenmod</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "sccom"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_Sccom_id16c2860f.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

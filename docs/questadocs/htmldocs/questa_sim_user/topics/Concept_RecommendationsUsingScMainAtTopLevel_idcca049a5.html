@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Recommendations for using sc_main at the Top Level" />
+<meta name="abstract" content="Generally, your design should include sc_main() at the top level in order for Questa SIM to run the SystemC/C++ source code. Questa SIM executes sc_main() as a thread process. This allows you to use test bench code and C++ variables (including SystemC primitive channels, ports, and modules) inside sc_main()." />
+<meta name="description" content="Generally, your design should include sc_main() at the top level in order for Questa SIM to run the SystemC/C++ source code. Questa SIM executes sc_main() as a thread process. This allows you to use test bench code and C++ variables (including SystemC primitive channels, ports, and modules) inside sc_main()." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcca049a5-2f70-4489-99b4-f16d0180de55" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Recommendations for using sc_main at the Top Level</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Recommendations for using sc_main at the Top Level" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idcca049a5-2f70-4489-99b4-f16d0180de55">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Recommendations for using sc_main at the Top Level</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Generally,
+your design should include <span class="ph FontProperty HeadingLabel">sc_main(</span>)
+at the top level in order for <span class="ph fmvar:ProductName">Questa SIM</span> to
+run the SystemC/C++ source code. <span class="ph fmvar:ProductName">Questa SIM</span> executes <span class="ph FontProperty HeadingLabel">sc_main()</span> as
+a thread process. This allows you to use test bench code and C++
+variables (including SystemC primitive channels, ports, and modules)
+inside <span class="ph FontProperty HeadingLabel">sc_main()</span>. </span>
+</div>
+<p class="p">If your design does not have <span class="ph FontProperty HeadingLabel">sc_main(</span>)
+at the top level, you must apply several modifications to your original
+SystemC source code—refer to “<a class="xref fm:HeadingOnly" href="Contain_ModifyingSystemcSourceCode_id59dd5e92.html#id59dd5e92-e8ee-47e0-960f-1e609838d696__Contain_ModifyingSystemcSourceCode_id59dd5e92.xml#id59dd5e92-e8ee-47e0-960f-1e609838d696" title="If your design does not have sc_main() at the top level, you must apply several modifications to your original SystemC source code.">Modifying SystemC Source Code</a>.” </p>
+<div class="fig fignone ExampleTitle" id="idcca049a5-2f70-4489-99b4-f16d0180de55__id3404b661-e4b6-45ab-afc7-66a3d5de218a"><span class="figcap"><span class="fig--title-label">Example 1. </span>A
+Simple SystemC-only sc_main():</span><pre class="pre codeblock"><code>	int
+	sc_main(int, char*[])
+	{
+       design_top t1 = new design_top("t1");
+       sc_start(-1); 
+       delete t1;
+       return 1;
+   }</code></pre></div>
+<div class="section Subsections"><div class="section Subsection" id="idcca049a5-2f70-4489-99b4-f16d0180de55__idd126f5e9-a21e-4261-9852-34e0239792ee"><h2 class="title Subheading sectiontitle">Concepts Related to
+Having sc_main at the Top Level</h2><p class="p">Several concepts should be kept in mind when
+you incorporate sc_main at the top level of your SystemC design.</p>
+<ul class="ul"><li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__id1f106b5a-10a2-461d-9c95-6a7e12c41ff4"><p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> executes
+sc_main() in two parts: </p>
+<ul class="ul"><li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__ide48dceec-82a9-4654-be32-e379262c196a"><p class="p">The code before the first call to sc_start()
+— executed during the construction phase of all other design tops. </p>
+</li>
+<li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__idd378aa50-29ca-4784-bb73-d36a6712bd15"><p class="p">The code after the first sc_start() or
+any other subsequent sc_start()'s — executed based on the sc_start()
+arguments. </p>
+</li>
+</ul>
+<p class="p">The overall simulation is controlled by the <span class="ph fmvar:ProductName">Questa SIM</span> prompt and the
+sc_start() call does not proceed unless an appropriate <span class="ph FontProperty HeadingLabel">run</span> command
+is issued from the <span class="ph fmvar:ProductName">Questa SIM</span> prompt.
+sc_start() always yields to <span class="ph fmvar:ProductName">Questa SIM</span> for
+the time specified in its argument. Example: </p>
+<pre class="pre codeblock"><code>int
+sc_main(int, char*[])
+{
+    top t1("t1");
+    sc_signal&lt;int&gt; reset("reset");
+    t1.reset(reset);
+    t2-&gt;reset(reset);
+    sc_start(100, SC_NS);  &lt;-------- 1st part executed during
+   		                               construction. Yield to the
+ 												 kernel for 100 ns.</code></pre><pre class="pre codeblock"><code>    reset = 1;             &lt;-------- Executed only if
+                                     run 100 ns or more is issued
+                                     from batch or GUI prompt.</code></pre><pre class="pre codeblock"><code>    sc_start(100, SC_NS);  &lt;-------- Yield to the kernel for
+												 another 
+												 100 ns</code></pre><pre class="pre codeblock"><code>    return 1;              &lt;-------- Executed only if
+                                     the simulation in run for
+                                     more than 200 ns.
+}</code></pre><p class="p">sc_start(-1) in the OSCI simulator means
+that the simulation is run until the time it is halted by sc_stop(),
+or because there were no future events scheduled at that time. The sc_start(-1)
+in means that sc_main() is yielding to the <span class="ph fmvar:ProductName">Questa SIM</span> simulator
+until the current simulation session finishes. </p>
+</li>
+<li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__ide073a11f-bc77-4462-8a1b-32d24f90f10e"><p class="p">Avoid sc_main() going out of scope —
+Since sc_main() is run as a thread, it must not go out of scope
+or delete any simulation objects while the current simulation session
+is running. The current simulation session is active unless a quit,
+restart, sc_stop, $finish, or assert is executed, or a new design
+is loaded. To avoid sc_main() from going out of scope or deleting
+any simulation objects, sc_main() must yield control to the <span class="ph fmvar:ProductName">Questa SIM</span> simulation kernel
+before calling any delete and before returning from sc_main. In <span class="ph fmvar:ProductName">Questa SIM</span>, sc_start(-1) gives
+control to the <span class="ph fmvar:ProductName">Questa SIM</span> kernel
+until the current simulation session is exited. Any code after the
+sc_start(-1) is executed when the current simulation ends. </p>
+<pre class="pre codeblock"><code>int
+sc_main(int, char*[])
+{
+    top t1("t1");
+    top* t2 = new top("t2");
+    sc_signal&lt;int&gt; reset("reset");
+    t1.reset(reset);
+    t2-&gt;reset(reset);
+    sc_start(100, SC_NS);  &lt;-------- 1st part executed during
+                                     construction. yield to the
+												 kernel for 100 ns.</code></pre><pre class="pre codeblock"><code>    reset = 1;             &lt;-------- Will be executed only if
+                                         run 100 ns or more is issued
+                                         from batch or GUI prompt.</code></pre><pre class="pre codeblock"><code>    sc_start(100, SC_NS);  &lt;-------- <span class="ph FontProperty P9">Yield to the kernel for another
+												 100 ns</span>        </code></pre><pre class="pre codeblock"><code>	 sc_start(-1);          &lt;-------- Will cause sc_main() to
+                                     suspend until the end of
+                                     the current simulation session
+
+    delete t2;             &lt;-------- Will be executed at the
+                                     end of the current simulation
+                                     session.</code></pre><pre class="pre codeblock"><code>    return 1;}</code></pre><p class="p">If the run command specified at the simulation
+prompt before ending the current simulation session exceeds the
+cumulative sc_start() times inside sc_main(), the simulation continues
+to run on design elements instantiated both by sc_main() and outside
+of sc_main(). For example, in this case, if sc_main() instantiates
+an sc_clock, the clock will continue to tick if the simulation runs
+beyond sc_main(). </p>
+<p class="p">On the other hand, if the current simulation
+ends before the cumulative sc_start() times inside sc_main, the
+remainder of the sc_main will be executed before quitting the current
+simulation session if the <a class="xref fm:HeadingOnly" href="Command_Scmainfinishonquit_idce71beb1.html#idce71beb1-5dee-45d0-b59a-2f7c5cc0896b__Command_Scmainfinishonquit_idce71beb1.xml#idce71beb1-5dee-45d0-b59a-2f7c5cc0896b" title="This variable determines when the sc_main thread exits. This variable is used to turn off the execution of remainder of sc_main upon quitting the current simulation session. Disabling this variable (0) has the following effect: If the cumulative length of sc_main() in simulation time units is less than the length of the current simulation run upon quit or restart, sc_main() is aborted in the middle of execution. This can cause the simulator to crash if the code in sc_main is dependent on a particular simulation state. On the other hand, one drawback of not running sc_main until the end is potential memory leaks for objects created by sc_main. By default, the remainder of sc_main is executed regardless of delays.">ScMainFinishOnQuit</a> variable is set to 1 in the <span class="ph filepath">modelsim.ini</span> file.
+If this variable is set to 0, the remainder of sc_main will not
+executed. The default value for this variable is 1. One drawback
+of not completely running sc_main() is that memory leaks might occur
+for objects created by sc_main. Also, it is possible that simulation
+stimulus and execution of the test bench will not complete, and
+thus the simulation results will not be valid. </p>
+</li>
+<li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__id55d0b175-65b1-4ec6-ab02-b1fdbad354b7"><p class="p">sc_cycle(sc_time) is deprecated in SystemC
+2.2. A suggested alternative to sc_cycle is sc_start(sc_time). In
+case of a cycle accurate design, this will yield the same behavior. <span class="ph fmvar:ProductName">Questa SIM</span> will always convert
+sc_cycle() to sc_start() with a note. </p>
+</li>
+<li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__id051ef825-72d9-4167-a9b6-c9c0e9068479"><p class="p">sc_initialize() is also deprecated in
+SystemC 2.2. The replacement for sc_initialize() is sc_start(SC_ZERO_TIME). <span class="ph fmvar:ProductName">Questa SIM</span> treats sc_initialize()
+as sc_start(SC_ZERO_TIME). </p>
+</li>
+<li class="li" id="idcca049a5-2f70-4489-99b4-f16d0180de55__idee26ce49-8861-48e9-94a4-691436cc2082"><p class="p"><span class="ph fmvar:ProductName">Questa SIM</span> treats
+sc_main() as a top-level module and creates a hierarchy called sc_main
+for it. Any simulation object created by sc_main() will be created
+under the sc_main hierarchy in <span class="ph fmvar:ProductName">Questa SIM</span>.
+For example, for the sc_main() described above, the following hierarchy
+will be created: </p>
+<pre class="pre codeblock"><code>    	  /
+		|
+      |-- sc_main
+          |
+          |-- t1
+          |-- t2
+          |-- reset</code></pre><p class="p">The name() method for all objects created
+under the sc_main hierarchy will contain the sc_main scope name.
+If applied to vsim, the -noscmainscopename argument will strip the
+sc_main scope name from the names returned by the name() method.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_UsageFlowSystemcOnlyDesigns_id775912ba.html" title="Questa SIM allows users to simulate SystemC, either alone or in combination with other VHDL/Verilog modules.">Usage Flow for SystemC-Only Designs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Recommendations for using sc_main at the Top Level"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_RecommendationsUsingScMainAtTopLevel_idcca049a5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

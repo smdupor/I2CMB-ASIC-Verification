@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Scope Nodes" />
+<meta name="abstract" content="Coverage data in the database form a tree of nodes, called scopes, generally corresponding to the design hierarchy. All nodes except the root node have a pointer to their parent. If the design hierarchy is not relevant to coverage, it need not be represented in the UCDB." />
+<meta name="description" content="Coverage data in the database form a tree of nodes, called scopes, generally corresponding to the design hierarchy. All nodes except the root node have a pointer to their parent. If the design hierarchy is not relevant to coverage, it need not be represented in the UCDB." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4bcd23e5-e134-4006-aa48-1705483385e8" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Scope Nodes</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Scope Nodes" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4bcd23e5-e134-4006-aa48-1705483385e8">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Scope Nodes</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Coverage data
+in the database form a tree of nodes, called scopes, generally corresponding
+to the design hierarchy. All nodes except the root node have a pointer
+to their parent. If the design hierarchy is not relevant to coverage,
+it need not be represented in the UCDB.</span>
+</div>
+<p class="p">Nodes can have children: other scope nodes or coverage
+items. Design units (for example, Verilog modules or VHDL architectures) also
+are represented as scopes, because sometimes coverage for a design
+unit is often represented as a union of the coverage of all instances
+of the design unit. Typically, only code coverage is represented
+under the design unit. A design unit with a single instance a higher-level design
+are not stored (only the instance is stored).</p>
+<p class="p">Scope nodes can represent:</p>
+<ul class="ul"><li class="li" id="id4bcd23e5-e134-4006-aa48-1705483385e8__id402bf480-c307-4dc5-afb3-fcbbb909955e"><p class="p">Design hierarchy: instances of modules,
+function scope, packages, and so on.</p>
+</li>
+<li class="li" id="id4bcd23e5-e134-4006-aa48-1705483385e8__idb46b5c50-fa3c-4056-aaa4-49d6cab732c3"><p class="p">Hierarchy for coverage counts. For example:</p>
+<ul class="ul"><li class="li" id="id4bcd23e5-e134-4006-aa48-1705483385e8__id0df4f026-cdab-4b20-a1db-d336ce2e7b0b"><p class="p">Scopes to contain different counts for
+expression rows in expression coverage. </p>
+</li>
+<li class="li" id="id4bcd23e5-e134-4006-aa48-1705483385e8__ide51ef8fe-a017-4b89-af39-73542d5435d6"><p class="p">Scopes to represent SystemVerilog covergroups.</p>
+</li>
+</ul>
+<p class="p">If there is no coverage hierarchy (for example,
+with statement coverage) none is used.</p>
+</li>
+<li class="li" id="id4bcd23e5-e134-4006-aa48-1705483385e8__id9bc289e3-9746-4fec-a4c7-a7e3e418fc6e"><p class="p">testplan items.</p>
+<p class="p">These are optional, but are required for
+some use models of test traceability analysis. In particular, if
+you want the UCDB to represent associations between testplan items
+and coverage items using built-in "tags" (see “<a class="xref fm:HeadingAndPage" href="Concept_Tags_idc3113b22.html#idc3113b22-cd20-453a-b942-07bff23f6b63__Concept_Tags_idc3113b22.xml#idc3113b22-cd20-453a-b942-07bff23f6b63" title="A tag is a group of strings associated with a scope. Scopes can have associated tags for grouping; when items share a tag they are associated together. In particular, when UCDB_TESTPLAN scopes share tags with coverage scopes that contain coveritems, the association can be used to do traceability analysis tests.">Tags</a>”), then a testplan item scope
+should exist in the database.</p>
+</li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageSection_ide321bdd8.html" title="The coverage section of a UC database contains the coverage data, organized in a hierarchy of scopes related to the design, testbench, and testplan.">Coverage Section</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Scope Nodes"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ScopeNodes_id4bcd23e5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

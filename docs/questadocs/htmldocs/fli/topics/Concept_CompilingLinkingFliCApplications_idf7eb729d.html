@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Compiling and Linking FLI C Applications" />
+<meta name="abstract" content="The following platform-specific instructions show you how to compile and link your FLI applications so they can be loaded by ModelSim/Questa. Microsoft Visual C/C++ is supported for creating Windows DLLs while gcc and cc compilers are supported for creating Linux shared libraries." />
+<meta name="description" content="The following platform-specific instructions show you how to compile and link your FLI applications so they can be loaded by ModelSim/Questa. Microsoft Visual C/C++ is supported for creating Windows DLLs while gcc and cc compilers are supported for creating Linux shared libraries." />
+<meta name="DC.subject" content="compiling and linking, Capplications, linking" />
+<meta name="keywords" content="compiling and linking, Capplications, linking" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf7eb729d-c716-4293-a657-cbdf42bba6b9" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Compiling and Linking FLI C Applications</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Compiling and Linking FLI C Applications" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf7eb729d-c716-4293-a657-cbdf42bba6b9">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Compiling and Linking FLI C Applications</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The following
+platform-specific instructions show you how to compile and link
+your FLI applications so they can be loaded by <span class="ph fmvar:ProductName">ModelSim/Questa</span>. Microsoft Visual C/C++
+is supported for creating Windows DLLs while gcc and cc compilers
+are supported for creating Linux shared libraries.</span>
+</div>
+<p class="p">Although compilation and simulation
+switches are platform-specific, references to load shared objects
+are the same for all platforms. For information on loading objects
+see <a class="xref fm:HeadingOnly" href="Contain_UsingVhdlFliForeignArchitectures_id2083efb7.html#id2083efb7-fee2-4789-8086-b616006a0c18__Contain_UsingVhdlFliForeignArchitectures_id2083efb7.xml#id2083efb7-fee2-4789-8086-b616006a0c18" title="To use the foreign language interface with C models, you first create and compile an architecture with the FOREIGN attribute. The string value of the attribute is used to specify the name of a C initialization function and the name of an object file to load.">Using the VHDL FLI with Foreign Architectures</a> and <a class="xref fm:HeadingOnly" href="Concept_DeclaringForeignSubprogramInVhdl_ida693866b.html#ida693866b-7b4d-45b9-8fef-81ed8f069a24__Concept_DeclaringForeignSubprogramInVhdl_ida693866b.xml#ida693866b-7b4d-45b9-8fef-81ed8f069a24" title="To call a foreign C subprogram, you must write a VHDL subprogram declaration that has the equivalent VHDL parameters and return type. Then use the FOREIGN attribute to specify which C function and module to load.">Declaring a Foreign Subprogram in VHDL</a>.</p>
+<div class="section Subsections"><div class="section Subsection" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__ida7995a68-744d-4749-8eaa-8489cfad99ec"><h2 class="title Subheading sectiontitle">Windows Platforms —
+Compiling C</h2><p class="p">Under Windows <span class="ph fmvar:ProductName">ModelSim/Questa</span> loads
+a 32-bit dynamically linked library for each FLI application. </p>
+<ul class="ul"><li class="li" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__idf1693d70-da65-48f3-a954-9d8e2765783a"><p class="p">Microsoft Visual C 4.1 or Later</p>
+<p class="lines ApplCommand">cl -c -I&lt;install_dir&gt;\include<br />
+app.c link -dll -export:&lt;C_init_function&gt;<br />
+app.obj \      &lt;install_dir&gt;\win32\mtipli.lib<br />
+/out:app.dll</p>
+<p class="p">You can specify multiple -export options,
+one for each different FOREIGN attribute function name. The &lt;C_init_function&gt;
+argument is the function name specified in the FOREIGN attribute.</p>
+<p class="p">When executing cl commands in a DO file,
+use the /NOLOGO argument to prevent the Microsoft C compiler from
+writing the logo banner to stderr, which causes Tcl to think an
+error occurred.</p>
+<p class="p">If you need to run the Performance Analyzer
+on a design that contains FLI code, add these two arguments to the
+linking command shown above:</p>
+<p class="lines ApplCommand">/DEBUG /DEBUGTYPE:COFF</p>
+<p class="p">which will add symbols to the <span class="ph filepath">.dll</span> that
+the profiler can use in its report.</p>
+</li>
+<li class="li" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__idfcf3b0bd-2683-4d2d-ac21-58dc508c7ce6"><p class="p">MinGW gcc</p>
+<p class="lines ApplCommand">gcc -c -I&lt;install_dir&gt;\include<br />
+app.c gcc -shared -o app.dll app.o -L&lt;install_dir&gt;\win32<br />
+-lmtipli</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__idb14d79d5-0814-4c63-b889-7fb75ee4d210"><h2 class="title Subheading sectiontitle">32-bit Linux Platform
+— Compiling C</h2><p class="p">If your foreign
+module uses anything from a system library, you will need to specify
+that library when you link your foreign module.</p>
+<ul class="ul"><li class="li" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__id8eba5302-3fc6-4c4b-a885-59609ba4ce29"><p class="p">gcc compiler:</p>
+<p class="lines ApplCommand">gcc -c -I/&lt;install_dir&gt;/include<br />
+-m32 app.c gcc -shared -Wl, -Bsymbolic,--allow-shlib-undefined,--export-dynamic -o app.so app.o -lc</p>
+<p class="p">When using -Bsymbolic, all symbols are first
+resolved within the shared library at link time. This will result
+in a list of undefined symbols. This is only a warning for shared
+libraries and can be ignored. If you are using <span class="ph fmvar:ProductName">ModelSim/Questa</span> on Redhat version 6.0
+through 7.1, you also need to add the ‑noinhibit-exec argument when
+you specify ‑Bsymbolic.</p>
+<p class="p">The compiler switch -freg-struct-return must
+be used when compiling any FLI application code that contains foreign
+functions that return real or time values.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__idf79cf711-8393-4851-8c20-b28a4418d141"><h2 class="title Subheading sectiontitle">64-bit Linux for AMD64
+and EM64T Platforms — Compiling C</h2><p class="p">64-bit Linux is supported on RedHat Enterprise
+Linux or SUSE Linux Enterprise Server. </p>
+<ul class="ul"><li class="li" id="idf7eb729d-c716-4293-a657-cbdf42bba6b9__idd34743c3-54bf-41f0-accf-50740fc7eff1"><p class="p">gcc compiler </p>
+<p class="lines ApplCommand">gcc -c -fPIC -I/&lt;install_dir&gt;/include<br />
+app.c ld -shared -Bsymbolic -E --allow-shlib-undefined<br />
+-o app.so app.o</p>
+<p class="p">To compile for 32-bit operation, specify
+the -m32 argument on the gcc command line.</p>
+<p class="p">If your FLI application requires a user or
+vendor-supplied C library, or an additional system library, you
+will need to specify that library when you link your FLI application.
+For example, to use the system math library libm, specify -lm to
+the ld command:</p>
+<p class="lines ApplCommand">gcc -c -fPIC -I/&lt;install_dir&gt;/include<br />
+math_app.c ld -shared -Bsymbolic -E --allow-shlib-undefined<br />
+\ -o math_app.so math_app.o -lm</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_Introduction_idf28816f2.html" title="This chapter provides background for using the ModelSim/Questa FLI (Foreign Language Interface) for VHDL.">Introduction</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "Compiling and Linking FLI C Applications"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CompilingLinkingFliCApplications_idf7eb729d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

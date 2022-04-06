@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Script Execution and Timeouts" />
+<meta name="abstract" content="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue." />
+<meta name="description" content="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb739d4ac-9481-43c5-926f-7459c31ccc52" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Script Execution and Timeouts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Script Execution and Timeouts" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb739d4ac-9481-43c5-926f-7459c31ccc52">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Script Execution
+and Timeouts</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Once
+the RMDB database has been read and the requested Runnables have
+been expanded to form the execution graph, a completion event is
+posted to the special <span class="ph FontProperty emphasis">=init=</span> Action.
+This causes one or more Actions to become eligible for execution
+(that is, their dependencies having been completed). The Actions directly
+dependent on the <span class="ph FontProperty emphasis">=init=</span> Action
+are generally the <span class="ph FontProperty emphasis">preScript</span> Actions
+of the top-most Group(s) selected via the command line. Actions
+that are eligible for execution are added to a run queue. An inner
+loop periodically removes Actions from this queue and executes them.
+A list of currently executing Actions is also maintained, in which
+the expected completion time (execution time plus the minimum timeout
+value for that Action) is recorded. As each Action reports completion,
+it is removed from the currently executing list and from the graph.
+The vertices of the graph beginning at the completed node are followed
+to determine what Actions, if any, can be eligible to run next.
+If a vertex from the completed Action happens to be the last such
+vertex into the node at the opposite end, that opposite-end node
+also becomes eligible to run and is added to the eligible Action
+run queue.</span>
+</div>
+<p class="p">VRM continues to execute its
+inner loop as long as at least one Action remains in either the
+eligible queue or the currently running list. When all the Actions
+in the eligible queue have been launched, VRM scans the currently
+running list to see if any launched jobs have passed their timeout
+limit. If a job times out, an error is emitted and a completion event
+is posted for the Action associated with the timed-out job. A timeout
+is considered a failure.</p>
+<p class="p">Once there are no further Actions in
+the currently running list and no more eligible Actions in the eligible
+queue, the run is declared complete. If any nodes still exist in
+the run graph, they are squawked to the output with an error message
+(this should only happen if nodes were placed in the graph and not
+properly connected to other nodes or if the graph following algorithm
+is faulty). It is also possible that some nodes would remain in
+the graph and be squawked in the event the regression run is terminated
+prematurely due to errors. In this case, the graph node dump serves
+to notify the user that some Actions were never executed. </p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Contain_ActionWrapperScriptGeneration_id77c7374f.html" title="Each Action (preScript, execScript, or postScript) is defined either in terms of a sequence of one or more commands stored in the RMDB database or as a pointer to an existing script file (said pointer also being stored in the RMDB database). ">Action and Wrapper Script Generation</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_UsingExistingScriptsVrm_id96d7671b.html" title="The Action scripts (preScript, execScript, and postScript) are parsed for parameter expansion and copied to the working directory. This includes scripts defined in the RMDB database and scripts pointed to by the file attribute of the script element. If pre-existing (user-defined) scripts are to be used to drive the behavior of the regression, then there are the following three ways in which the parameterizable information can be passed:">Using Existing Scripts with VRM</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_ScriptReturnValues_id223029b1.html" title="Each Action script has a return value that indicates, at a coarse level, whether the commands contained in the script encountered any errors. This return value is communicated to the launching vrun instance for use in pass/fail analysis. This function can require some cooperation from the (user's) Action script in order to correctly communicate the status of commands contained in the Action script.">Script Return Values</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_PipeBasedCommandLaunching_ide8ae12f0.html" title="By default, VRM launches scripts as background processes. Their only means of communicating errors back to the launching vrun process is the TCP/IP port on which the vrun process is listening. If the process simply fails to launch (for example, if the vsim or vish processes cannot be found), VRM will detect a launch error and treat the corresponding Action as it would any other failed job. If, however, the wrapper command launches as expected but fails to execute the wrapper script (for example, in the case of an error originating in a faulty method command), VRM could miss the error. In this case, the only recourse is a timeoutQ violation (that is, the timeout window between launching the Action and receiving the “start” message from the wrapper). By default, this delay is 31 seconds. It must be made longer in the case of a grid-based method command. After a timeout, the offending error condition will most likely be reported in the (xxx)Script.stderr file that is also echoed to the vrun log output.">Pipe-based Command Launching</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SendingUserDefinedMessagesFromActionScript_id4b4a1fca.html" title="On occasion a user’s script needs to emit an error, warning, or informational message back to the executing vrun application for inclusion in the log output for that run. There are two ways to do this as follows:">Sending User-defined Messages from an Action Script</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_SpoofingDefaultBehaviorActionScripts_id6d60232e.html" title="Use the role attribute of an Action script to mimic the role of another element type.">Spoofing Default Behavior of Action Scripts</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_Timeouts_id1afbe0e0.html" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_WorkingDirectoryScriptExecution_id10825c4b.html" title="In order to prevent multiple Actions (that is, user scripts) from a single vrun invocation from overwriting or otherwise interfering with each other, each Action executed by VRM is launched from within a working directory unique to the Runnable on whose behalf the Action is launched. In order to prevent multiple invocations of VRM (by other users or by the same user) from interfering with each other, the root of the scratch hierarchy within which these per-Runnable directories are created is control by the user.">Working Directory and Script Execution</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Script Execution and Timeouts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ScriptExecutionTimeouts_idb739d4ac.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,495 @@
+                     Release Notes For Questa Sim 10.6a
+
+                                 Mar 16 2017
+               Copyright 1991-2017 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.6a
+     * [4]Base Product Specifications in 10.6a
+     * [5]Compatibility Issues with Release 10.6a
+     * [6]General Defects Repaired in 10.6a
+     * [7]User Interface Defects Repaired in 10.6a
+     * [8]SystemVerilog Defects Repaired in 10.6a
+     * [9]VHDL Defects Repaired in 10.6a
+     * [10]SystemC Defects Repaired in 10.6a
+     * [11]SVA/PSL Defects Repaired in 10.6a
+     * [12]Mixed Language Defects Repaired in 10.6a
+     * [13]Verification Management Defects Repaired in 10.6a
+     * [14]WLF and VCD logging Defects Repaired in 10.6a
+     * [15]General Enhancements in 10.6a
+     * [16]User Interface Enhancements in 10.6a
+     * [17]SystemVerilog Enhancements in 10.6a
+     * [18]Coverage Enhancements in 10.6a
+     * [19]Verification Management Enhancements in 10.6a
+     * [20]Document Revision History in 10.6a
+   _______________________________________________________________________
+
+   Key Information
+     * dvt95794 - Added modelsim.ini variable "AllowCheckpointCpp", a
+       companion variable for existing vsim -allowcheckpointcpp switch
+   -allowcheckpointcpp 1|0 Turn on/off the support for checkpointing foreign C++
+ libraries.
+                           Must be used in the vsim session where a checkpoint i
+s created.
+
+; Enable the support for checkpointing foreign C++ libraries.
+; The valid arguments are: 1 and 0.
+;     1 : turn on the support
+;     0 : turn off the support (default)
+; This option is not supported on the Windows platforms.
+;
+; AllowCheckpointCpp = 1
+
+   _______________________________________________________________________
+
+   Release Announcements in 10.6a
+     * There is no licensing change between 10.5 and 10.6. However, if you
+       are migrating to 10.6 from a release like 10.4 and older, please
+       note that release 10.6 uses FLEXnet v11.13.1.2 server, v11.13.0.2
+       client.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.13.0.2. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.13.0.2 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2015_1_patch2 with MGLS
+       v9.13_5.4 and PCLS v9.13.5.2
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.13.1.2 server, v11.13.0.2 client
+          + MSL v2015_1_patch2
+          + MGLS v9.13_5.4
+          + PCLS v9.13.5.2
+          + Beginning with 10.6 release, support for Linux RHEL 5
+            x86/x86-64 and SLES 10 x86/x86_64 have discontinued.
+          + Beginning with 10.6 release,
+            gcc-4.3.3-linux/gcc4.3.3-linux_x86_64 GCC Compilers for
+            SystemC have been discontinued.
+          + Beginning with 10.6 release, support for Windows 8 series is
+            limited to 8.1. Windows 8.0 has discontinued.
+          + (source, results) The -novopt command line switch will be
+            deprecated in the next major release 10.7 following normal
+            deprecation process:
+               o The -novopt switch will be accepted in 10.7 with a
+                 deprecation warning message.
+               o In 10.8 or a subsequent release, the -novopt switch will
+                 be disabled and cause error messages to be emitted.
+               o Customer scripts using this switch will have to be
+                 changed. This legacy switch forces incremental mode
+                 (pre-6.0 behavior) which is sub-optimal, and it is no
+                 longer maintained.
+               o Due to enhanced security restrictions with web browser
+                 PDF plug-ins, some links do not function. Links in HTML
+                 documentation are fully functional.
+                 Clicking a link within a PDF viewed in a web browser may
+                 result in no action, or it may load the title page of the
+                 current PDF manual (instead of the intended target in the
+                 PDF manual). The unresolved link behavior occurs in all
+                 web browsers on Windows and Linux platforms. Because of
+                 this behavior, the navigational experience of PDF manuals
+                 is compromised. PDF is ideal for printing because of its
+                 page-oriented layout.
+                 Use the HTML manuals to search for topics, navigate
+                 between topics, and click links to examples, videos,
+                 reference material, and other related technical content.
+                 For information about Adobe's discontinued support of
+                 Adobe Reader on Linux platforms and your available
+                 options, refer to Knowledge Article MG596568 on
+                 SupportNet.
+                 Linux is a registered trademark of Linus Torvalds in the
+                 U.S. and other countries.
+               o In 10.8 major release, support for windows 7 and windows
+                 8.1 will be dropped.
+            ______________________________________________________________
+
+            Base Product Specifications in 10.6a
+          +
+            [Supported Platforms]
+            Linux RHEL 6 x86/x86-64
+            Linux RHEL 7 x86/x86-64
+            Linux SLES 11 x86/x86-64
+            Linux SLES 12 x86/x86-64
+            Windows 7 x86/x64
+            Windows 8.1 x86/x64
+            Windows 10 x86/x64
+            [Supported GCC Compilers (for SystemC)]
+            gcc-5.3.0-linux/gcc-5.3.0-linux_x86_64
+            gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+            gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+            gcc-4.2.1-mingw32vc12
+            [OVL (shipped with product)]
+            v2.8.1
+            [VHDL OSVVM (shipped with product)]
+            v2014.07
+            [Licensing]
+            FLEXnet v11.13.1.2 server, v11.13.0.2 client
+            MSL v2015_1_patch2
+            MGLS v9.13_5.4
+            PCLS v9.13.5.2
+       ___________________________________________________________________
+
+       Compatibility Issues with Release 10.6a
+       SystemVerilog Compatibility
+
+     * dvt87976 - (results) A net that is disconnected due to an
+       optimizations could be logged rather than its merged copy.
+     * dvt96999 - (results) Optimized full timing gate-level cells could
+       drive incorrect values where 2 wired bufif0/bufif1/notif0/notif1
+       primitives with shared selects (select having an X or Z value)
+       drive a single output port.
+
+   SystemC Compatibility
+     * dvt81733 - (results) vsim option '-scchkpntrestore' will allow
+       checkpoint/restore feature with SystemC in the design as long as
+       the SystemC hierarchy is dummy wrapper without any active
+       constructs like signals, variables, processes etc. If the design
+       has active SystemC usage, vsim will try to ignore the unsupported
+       constructs and proceed with the simulation, but if there is a usage
+       that cannot be ignored, vsim will throw a fatal run time error.
+       SystemC designs compiled with the 10.6 release will need to be
+       recompiled with the 10.6a release.
+
+   Mixed Language Compatibility
+     * dvt95057 - (source) Fixed a bug where a SystemVerilog task was
+       being allowed inside a SystemVerilog function even if it contained
+       a DPI task call. The DPI task call can potentially have delays in
+       it. It is illegal to call a task from a function in SystemVerilog
+       but we do allow it in case task does not contain any delays. Now,
+       the check for the delay in the task also includes the check for DPI
+       task call. This change may result in some of the customer designs
+       failing to compile. It is recommended to fix the designs.
+     * dvt96160 - (results) Now built-in version of uvm_hdl_read,
+       correctly reads the values from arbitrary slices of VHDL array
+       signals with non-zero LSB/MSB indices.
+
+   General Compatibility
+     * dvt93487 - (source) The profile on command no longer clears
+       previous results. The profile clear command must be used when
+       switching between the performance profiler and memory profiler.
+     * dvt95511 - (source) The profile status command reports on the
+       status of a single option, but accepts multiple options. A warning
+       is issued if more than one option is provided.
+
+   Verification Management Compatibility
+     * dvt31204 - (results) Deleting a test from a merge file is not
+       supported. Such an action would break the integrity of the bin
+       counts in the database. An error message is issued when an attempt
+       is made to delete a test while using 'coverage edit -delete -test <
+       test name >'.
+     * dvt90802 - (results) The 'createcovitem' option is now the default
+       for the xml2ucdb tool. A new 'nocreatecovitem' option is now
+       supported to override this default if desired.
+
+   User Interface Compatibility
+     * dvt97034 - (results) A new radix flag has been added called
+       "wreal". With this radix option enabled, real number NaN values
+       will display as X or Z instead of "nan". If the nan internal value
+       matches `wrealZState, then a 'Z' will be shown, otherwise an 'X'
+       will be shown. This effects all windows and commands that display
+       or return simulation values. The [radix] command or the command
+       "set DefaultRadixFlags wreal" can be used to enable or disable this
+       option. This option is disabled by default.
+
+   Release Announcements Compatibility
+     * [nodvtid] - (source, results) The -novopt command line switch will
+       be deprecated in the next major release 10.7 following normal
+       deprecation process:
+          + The -novopt switch will be accepted in 10.7 with a deprecation
+            warning message.
+          + In 10.8 or a subsequent release, the -novopt switch will be
+            disabled and cause error messages to be emitted.
+          + Customer scripts using this switch will have to be changed.
+            This legacy switch forces incremental mode (pre-6.0 behavior)
+            which is sub-optimal, and it is no longer maintained.
+       ___________________________________________________________________
+
+       General Defects Repaired in 10.6a
+
+     * dvt94966 - The capstat command and options have been redesigned.
+       The capstat option for vsim is as follows:
+   -capstats[=&ltargs>[,]]   Enables capstats report
+                           &ltargs> are du, decl, line, eor and filename=&ltfile
+name>.
+                           Arguments are specified separated by comma.
+                           The argument du has suboptions: summary, details and
+duname=&ltduname>
+                           These suboptions can be specified separated by '+'
+
+       The capstat comamnd is as follows:
+capstats [-du [+summary | +details] [+duname=&ltduname>]] [-decl] [-line] [-file
+name &ltfilename>]
+       If no option is specified, capstats prints summary report under top
+       categories.
+       A design unit based breakup of memory can be seen by specifying -du
+       option. For extra details, summary or details options can be used.
+       Specific design units can be specified using duname suboption. If
+       design units are specified, then design unit based report is
+       generated only for the specified design units.
+       -decl option prints declaration based report for dynamic objects.
+       -line option prints line based report for dynamic objects.
+     * dvt95319 - "vopt" can crash when using -debugdb and the path name
+       to the "work" library is very long and the top designunit name is
+       also very long. This problem has been resolved.
+     * dvt93487 - (source) The profile on command no longer clears
+       previous results. The profile clear command must be used when
+       switching between the performance profiler and memory profiler.
+     * dvt95511 - (source) The profile status command reports on the
+       status of a single option, but accepts multiple options. A warning
+       is issued if more than one option is provided.
+     * dvt96193 - The profile summary command now displays an 'Other'
+       field that displays the number of samples not counted in the listed
+       categories.
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.6a
+     * dvt92169 - Objects window Kind filtering was not being restored
+       correctly after a restart operation.
+     * dvt89554 - Use of "examine -time" inside a "when -fast" command
+       fails to read data values correctly. This issues has been resolved.
+     * dvt94499 - Running vsim from a .BAT file on Windows can fail when
+       some arguments contain a trailing backslash ('\'). This issue has
+       been resolved.
+     * dvt94465 - The Code Coverage Analysis window does not track by-file
+       toggle coverage. This is intended as by-file toggle coverage is not
+       supported. The CCA window will not display a message to this effect
+       when the window is in by-file mode.
+     * dvt95571 - The GUI will crash when trying to perform wildcard
+       expansion in a Primitive scope. This issue has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.6a
+     * dvt87976 - (results) A net that is disconnected due to an
+       optimizations could be logged rather than its merged copy.
+     * [nodvtid] - SDF annotation fails with array port when zero timing
+       delay is specified in SDF. If sdf has non-zero then annotations
+       went fine. Fixed so that annotations proceed even if sdf file has
+       zero delays.
+     * [nodvtid] - vlog's -E output might incorrectly emit
+       "`pragmaprotect" rather than "`pragma" whitespace "protect".
+     * dvt96999 - (results) Optimized full timing gate-level cells could
+       drive incorrect values where 2 wired bufif0/bufif1/notif0/notif1
+       primitives with shared selects (select having an X or Z value)
+       drive a single output port.
+     * dvt96162 - Simulation mismatch with different full optimization
+       when using delayed clocking Blocks.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.6a
+     * dvt94049 - The compiler incorrectly reported the following error
+       when encountering an alias of an operator function instance:
+** Error: Alias with operator symbol designator must denote a function.
+
+       The compiler also incorrectly generated code for newly-defined
+       operator functions with generic-typed parameters.
+     * dvt89781 - For some specific cases in novopt mode, we used to do
+       port collapsing optimization incorrectly. This has been fixed.
+     * dvt90004 - In some specific cases of procedure inlining, vopt or
+       vcom in novopt flow used to crash. This has been fixed.
+     * dvt94831 - Added expected return type to the error message
+       reporting overload resolution of a function call failed.
+     * dvt93277 - The vmake command would not work when there was a
+       dependency on an encrypted design unit.
+     * dvt96070 - An error could occur if elaboration of a VHDL required a
+       function call. To have an error the function would need to have a
+       case statement where one or more of the case statement's choices
+       are ranges.
+     * dvt95670 - The attributes A'range and A'reverse_range would give
+       incorrect ranges if A's bounds are defined with impure function
+       calls.
+   _______________________________________________________________________
+
+   SystemC Defects Repaired in 10.6a
+     * dvt92791 - Bug in the sccom distributed flow with missing systemc
+       exported modules has been fixed.
+     * dvt95642 - sccom merge error (sccom-6165) with a circular dependent
+       forward declared module instantiation has been fixed.
+     * dvt81733 - (results) vsim option '-scchkpntrestore' will allow
+       checkpoint/restore feature with SystemC in the design as long as
+       the SystemC hierarchy is dummy wrapper without any active
+       constructs like signals, variables, processes etc. If the design
+       has active SystemC usage, vsim will try to ignore the unsupported
+       constructs and proceed with the simulation, but if there is a usage
+       that cannot be ignored, vsim will throw a fatal run time error.
+       SystemC designs compiled with the 10.6 release will need to be
+       recompiled with the 10.6a release.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.6a
+     * dvt95904 - Assertion shows INACTIVE in the waveform even when it is
+       ACTIVE.
+   _______________________________________________________________________
+
+   Mixed Language Defects Repaired in 10.6a
+     * dvt95057 - (source) Fixed a bug where a SystemVerilog task was
+       being allowed inside a SystemVerilog function even if it contained
+       a DPI task call. The DPI task call can potentially have delays in
+       it. It is illegal to call a task from a function in SystemVerilog
+       but we do allow it in case task does not contain any delays. Now,
+       the check for the delay in the task also includes the check for DPI
+       task call. This change may result in some of the customer designs
+       failing to compile. It is recommended to fix the designs.
+     * dvt96160 - (results) Now built-in version of uvm_hdl_read,
+       correctly reads the values from arbitrary slices of VHDL array
+       signals with non-zero LSB/MSB indices.
+   _______________________________________________________________________
+
+   Verification Management Defects Repaired in 10.6a
+     * dvt94450 - Fixed crash in VRM GUI when expanding Runnable tree with
+       at least one repeat override specified.
+     * dvt94326 - In the VRM GUI, the "Suspend/Terminate Selected Jobs"
+       menu item is disabled if none of the selected jobs is running.
+       Likewise, the "Resume Selected Jobs" menu item is disabled if none
+       of the selected jobs is suspended.
+     * dvt94708 - The Timeout spinners on the Runtime tab of the VRM
+       Congifuration Edit dialog were too narrow to display timeout values
+       consisting of four or more digits.
+     * dvt93999 - Fixed problem where known-path parameters whose values
+       were not absolute paths were not being expanded by the C/SQL API.
+       Fixed error in TCL API path expansion when TCL-special characters
+       were included in the path. Fixed TCL error in two path-expansion
+       error messages.
+     * dvt95137 - Fixed problem with the way non-standard normalizetime
+       values (generally from transform rules) are displayed in the
+       Results Analysis window.
+     * dvt92310 - Fixed bug where VRM would crash if "-html" status-report
+       option was added to a regular regression-run command line.
+     * dvt31204 - (results) Deleting a test from a merge file is not
+       supported. Such an action would break the integrity of the bin
+       counts in the database. An error message is issued when an attempt
+       is made to delete a test while using 'coverage edit -delete -test <
+       test name >'.
+     * dvt86860 - Fixed problem in VRM on Windows where cmd.exe and other
+       utilities on the PATH could not be located.
+     * dvt96255 - Fixed TCL error when using "vrun -kill" option to kill a
+       regression test in testname mode.
+   _______________________________________________________________________
+
+   WLF and VCD logging Defects Repaired in 10.6a
+     * dvt93896 - The [wlfman filter] and [wlf2vcd] performance has been
+       dramatically improved for WLF files containing large numbers of
+       single bit Verilog nets.
+   _______________________________________________________________________
+
+   General Enhancements in 10.6a
+     * dvt94809 - Added switch "-pdupath[=&ltlib_path>]" which can be used
+       with vsim to specify library path for PDU when library is moved
+       after top level optimized design unit creation. If optional
+       &ltlib_path> is not specified PDU will be looked into current
+       working directory.
+   _______________________________________________________________________
+
+   User Interface Enhancements in 10.6a
+     * dvt88977 - "Add" -> "To Watch" has been added to the Source window
+       popup menu.
+     * dvt23220 - The "radix" command will now accept HEXADECIMAL to
+       indicate displaying base 16 numeric values using uppercase A-F
+       characters. The of "hexadecimal" in lowercase will continue to
+       display base 16 numeric values using lowercase a-f characters.
+     * dvt95331 - The color of the selected items highlight in the Wave
+       window scrollbar can be changed by setting
+       PrefWave(mapSelectColor).
+     * dvt97034 - (results) A new radix flag has been added called
+       "wreal". With this radix option enabled, real number NaN values
+       will display as X or Z instead of "nan". If the nan internal value
+       matches `wrealZState, then a 'Z' will be shown, otherwise an 'X'
+       will be shown. This effects all windows and commands that display
+       or return simulation values. The [radix] command or the command
+       "set DefaultRadixFlags wreal" can be used to enable or disable this
+       option. This option is disabled by default.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.6a
+     * [nodvtid] - Use the vlog switch svext=+mttd to reinterpret ``"
+       (tick-tick-double quote) as `" (tick-double quote) within macro
+       text expansion.
+     * [nodvtid] - Vlog can optionally ignore commas, ",", and right
+       parens, ")", when found within a `" `" string that forms a list of
+       macro argument actuals within another macro expansion. The
+       -svext=+mtdl switch enables this behavior.
+   _______________________________________________________________________
+
+   Coverage Enhancements in 10.6a
+     * [nodvtid] - The UDP Coverage Support will be removed in future
+       releases as it is not a recommended coverage collection metric. The
+       following deprecation warning message will appear when usage of UDP
+       coverage is detected from 10.6a onwards, "UDP Expression Coverage
+       is not a recommended Coverage Collection Metrics. It will be
+       deprecated in Future releases."
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.6a
+     * [nodvtid] - The "-debug" option on the vrun command may now
+       optionally take the form "-debug=" where "flags" is a
+       comma-separated list of debug flags. The only debug flag supported
+       currently is "usertcl" which will cause a message to be emitted
+       before and after any usertcl procedure is executed. The legacy
+       "-debug" option behaves as before.
+     * [nodvtid] - The TCL status report from VRM now includes total and
+       testplan coverage data (per mergefile). All status reports now
+       report coverage from VRM status event log instead of re-reading the
+       merged UCDB file.
+     * dvt90802 - (results) The 'createcovitem' option is now the default
+       for the xml2ucdb tool. A new 'nocreatecovitem' option is now
+       supported to override this default if desired.
+   _______________________________________________________________________
+
+   Document Revision History in 10.6a
+     * Revision - Changes - Status/Date
+          + 2.0 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/March 2017
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.6a,product.id.P11633"
+

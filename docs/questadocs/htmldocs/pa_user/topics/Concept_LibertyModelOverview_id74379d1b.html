@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Liberty Model Overview" />
+<meta name="abstract" content="Liberty models define standard cells and macro cells that can be used in a system, and how power supplies provided to instances of such cells are used to power logic receiving inputs or driving outputs. Liberty models also include information pertaining to power management cells." />
+<meta name="description" content="Liberty models define standard cells and macro cells that can be used in a system, and how power supplies provided to instances of such cells are used to power logic receiving inputs or driving outputs. Liberty models also include information pertaining to power management cells." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id74379d1b-c85d-47f6-8956-98eb85029ed5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Liberty Model Overview</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Liberty Model Overview" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id74379d1b-c85d-47f6-8956-98eb85029ed5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Liberty Model Overview</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Liberty models
+define standard cells and macro cells that can be used in a system,
+and how power supplies provided to instances of such cells are used
+to power logic receiving inputs or driving outputs. Liberty models
+also include information pertaining to power management cells.</span>
+</div>
+<p class="p">The information contained in a Liberty model may
+be of use in RTL, gate-level, and mixed RTL and gate-level simulations.
+For example, Liberty models of hard macros may be of use in applying
+power intent to the RTL portion of a design, and information about
+standard cells in the Liberty model may be of use in applying power
+intent to the gate-level portion of the design.</p>
+<p class="p">Liberty
+model details are present in either of the following:</p>
+<ul class="ul"><li class="li" id="id74379d1b-c85d-47f6-8956-98eb85029ed5__id4a924677-6bd9-4e7f-8e57-93bd02b0b50b"><p class="p">Liberty Source File — File that contains
+one or more cells and typically has the file suffix .<span class="ph filepath italic">lib</span>.</p>
+</li>
+<li class="li" id="id74379d1b-c85d-47f6-8956-98eb85029ed5__id4aee6af2-99a4-4f1d-9fa6-f6c2ba72c5a5"><p class="p">Liberty Attribute Library — File output
+by the vopt command using the ‑pa_dumplibertydb argument that combines
+the information from one or more Liberty source files. Liberty attribute
+library are useful when the same library is used many times.</p>
+<p class="p">Cell names, as defined in
+a Liberty source file, are unique within the attribute library, however
+multiple libraries can define the same cell name. When this occurs,
+the attribute library contains versions of each cell. If your design
+references the cell name with multiple instances, vopt picks one
+at random and issues a warning message about multiple cells of the
+same name.</p>
+</li>
+</ul>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">To learn more about Liberty, read the Liberty User Guides
+and Reference Manual Suite at the following location. You need to
+select <span class="ph uicontrol">Liberty</span>, and then register and accept
+the open source license agreement to access the suite.</p>
+<p class="p Url"><a class="xref Link" href="http://www.opensourceliberty.org" target="_blank">http://www.opensourceliberty.org</a></p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_LibertyModel_id46c60afe.html" title="Power Aware simulation uses the information present in the Liberty model to create a proper connection of the supplies and control signals that are defined in the UPF file. Also, Power Aware simulation uses the Liberty model to assist in automatic recognition of power management cells that are present in the design.">Liberty Model</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Liberty Model Overview"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_LibertyModelOverview_id74379d1b.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

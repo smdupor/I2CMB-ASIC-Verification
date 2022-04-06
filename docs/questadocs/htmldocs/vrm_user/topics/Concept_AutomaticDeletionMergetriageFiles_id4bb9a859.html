@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Automatic Deletion of Merge/Triage Files" />
+<meta name="abstract" content="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation." />
+<meta name="description" content="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id4bb9a859-594c-4ecb-ad46-09b2d1588a7d" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Automatic Deletion of Merge/Triage Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Automatic Deletion of Merge/Triage Files" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id4bb9a859-594c-4ecb-ad46-09b2d1588a7d">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Automatic Deletion of Merge/Triage Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The auto-merge
+and auto-triage algorithms can detect the first merge/triage operation
+directed at a specific <span class="ph filepath">mergefile</span> or <span class="ph filepath">triagefile</span> and
+to detect whether a file already exists at the target location.
+If so, then the existing file is assumed to be from a previous regression
+run and is deleted/cleared prior to the first merge/triage operation.</span>
+</div>
+<p class="p">In the case of auto-merge, the
+merge file is simply deleted. In the case of auto-triage, the following
+command is used to clear the database:</p>
+<p class="lines ApplCommand">triage dbfile -name (%triagefile%)<br />
+-clear</p>
+<p class="p">If the merge and/or triage results of the current
+regression run are to be intentionally combined with the merge and/or
+triage results from the previous run, the deletion/clearing can be
+disabled via options on the vrun command line. The -noautomergedelete
+option causes auto-merge to not delete the existing <span class="ph filepath">mergefile</span>.
+In addition, the verification plan is not automatically imported
+(see <a class="xref fm:HeadingOnly" href="Concept_TestplanAutoImport_id90208d7f.html#id90208d7f-cc7e-4dc3-b4b7-694f60b9e6db__Concept_TestplanAutoImport_id90208d7f.xml#id90208d7f-cc7e-4dc3-b4b7-694f60b9e6db" title="Testplan auto-import is an optional adjunct to the auto-merge functionality in VRM. The testplan is usually represented as a XML file exported from a documentation application, such as Microsoft Excel or Microsoft Word. A Questa utility converts this XML file into UCDB format and the resulting UCDB is merged with the UCDB files generated from the individual tests. While there are any number of ways by which to accomplish the same task via commands in the VRM preScript and postScript Actions, the common case can be automated via parameters in the RMDB file.">Testplan Auto-import</a> below). Likewise, the -noautotriageclear
+option causes auto-triage to not delete the existing messages from
+the target Triage DataBase (TDB) file.</p>
+<p class="p">Note that when the auto-merge algorithm is
+enabled, it assumes that all coverage merging is done automatically.
+In this case, the user should refrain from using any commands that
+will alter the merge file, such as manually merging some UCDB files
+and relying on the auto-merge algorithm to merge others. If there
+is a need to bypass auto-merge for some part of the regression suite,
+auto-merge should be disabled completely and all merging should
+be done via Action script commands. The same recommendation applies
+to auto-triage as well, although auto-triage and auto-merge are
+independent and are not required to both be enabled in any given run.</p>
+<p class="p">The <span class="ph FontProperty emphasis">mergeScript</span> and <span class="ph FontProperty emphasis">triageScript</span> Actions
+go to separate named queues (called <span class="ph filepath">merge</span> and <span class="ph filepath">triage, </span>respectively)
+in order to make sure auto-merge and auto-triage are not blocked
+by other pending Actions.</p>
+<p class="p">The automatic deletion of the <span class="ph filepath">mergefile</span>,
+and/or the automatic clearing of the TDB file, only happens once
+per regression run. If tests are rerun as a result of automatic
+failure rerun, the results from those tests are merged into the <span class="ph FontProperty emphasis">mergefile</span> or
+inserted into the <span class="ph FontProperty emphasis">triagefile</span> as
+though they were a part of the same regression run (automatic failure
+rerun is simply a second pass within the same regression run). Since coverage
+from failing tests is not usually merged into the <span class="ph FontProperty emphasis">mergefile</span>,
+this presents no additional anomalies. However, it may be prudent
+to add the -noautotriage command to the -rerun option argument in
+order to prevent message from the failing test from being loaded
+a second time should the test fail on rerun.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageMergingUseModels_id78b6395c.html" title="By default, VRM supports three levels of automation for coverage merging, as described in the following sections.">Coverage Merging Use Models</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Automatic Deletion of Merge/Triage Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

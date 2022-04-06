@@ -1,0 +1,457 @@
+                     Release Notes For Questa Sim 10.5e
+
+                                 Jun 15 2017
+               Copyright 1991-2017 Mentor Graphics Corporation
+                            All rights reserved.
+      This document contains information that is proprietary to Mentor
+                                  Graphics
+   Corporation. The original recipient of this document may duplicate this
+      document in whole or in part for internal business purposes only,
+                                  provided
+   that this entire notice appears in all copies. In duplicating any part
+                                     of
+    this document the recipient agrees to make every reasonable effort to
+      prevent the unauthorized use and distribution of the proprietary
+                                information.
+     TRADEMARKS: The trademarks, logos and service marks ("Marks") used
+                                   herein
+   are the property of Mentor Graphics Corporation or other third parties.
+      No one is permitted to use these Marks without the prior written
+                                   consent
+   of Mentor Graphics or the respective third-party owner. The use herein
+   of a third-party Mark is not an attempt to indicate Mentor Graphics as
+                                      a
+     source of a product, but is intended to indicate a product from, or
+   associated with, a particular third party. The following are trademarks
+                                     of
+    of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal
+                                    Spy.
+        A current list of Mentor Graphics trademarks may be viewed at
+               www.mentor.com/terms_conditions/trademarks.cfm.
+      End-User License Agreement: You can print a copy of the End-User
+                                   License
+        Agreement from: www.mentor.com/terms_conditions/enduser.cfm.
+   _______________________________________________________________________
+
+     * How to Get Support
+       For information on how to obtain technical support, visit the
+       support page at
+       [1]http://supportnet.mentor.com
+   _______________________________________________________________________
+
+  Index to Release Notes
+
+     * [2]Key Information
+     * [3]Release Announcements in 10.5e
+     * [4]Base Product Specifications in 10.5e
+     * [5]Compatibility Issues with Release 10.5e
+     * [6]General Defects Repaired in 10.5e
+     * [7]User Interface Defects Repaired in 10.5e
+     * [8]SystemVerilog Defects Repaired in 10.5e
+     * [9]VHDL Defects Repaired in 10.5e
+     * [10]SystemC Defects Repaired in 10.5e
+     * [11]SVA/PSL Defects Repaired in 10.5e
+     * [12]User Interface Enhancements in 10.5e
+     * [13]SystemVerilog Enhancements in 10.5e
+     * [14]Coverage Enhancements in 10.5e
+     * [15]Verification Management Enhancements in 10.5e
+     * [16]WLF and VCD logging Enhancements in 10.5e
+     * [17]Document Revision History in 10.5e
+   _______________________________________________________________________
+
+   Key Information
+     * (source) A bug related to Windows DLL symbol export is fixed in
+       10.5 and later. A side effect of the fix is that there may be
+       incompatibility on Windows platforms regarding existing DPI usage.
+       The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+     * The 10.5g Update Release will be the last release in the 10.5
+       series.
+   _______________________________________________________________________
+
+   Release Announcements in 10.5e
+     * In the next major release (10.6), support for Redhat Enterprise
+       Linux (RHEL) 5 and Suse Linux Enterprise Server (SLES) 10 will be
+       dropped.
+     * Release 10.5 uses FLEXnet v11.13.1.2 server, v11.13.0.2 client.
+       For floating licenses, it will be necessary to verify that the
+       vendor daemon (i.e., mgcld) and the license server (i.e., lmgrd)
+       have FLEXnet versions equal to or greater than 11.13.0.2. If the
+       current FLEXnet version of your vendor daemon and lmgrd are less
+       than 11.13.0.2 then it will be necessary to stop your license
+       server and restart it using the vendor daemon and lmgrd contained
+       in this release.
+       If you use node locked licenses you don't need to do anything. This
+       release will update licensing to MSL v2015_1_patch2 with MGLS
+       v9.13_5.4 and PCLS v9.13.5.2
+       In summary, this release uses the following license versions:
+          + FLEXnet v11.13.1.2 server, v11.13.0.2 client
+          + MSL v2015_1_patch2
+          + MGLS v9.13_5.4
+          + PCLS v9.13.5.2
+          + 10.5 release onwards, Questa will be using Microsoft Visual
+            Studio 12 a.k.a Visual Studio 13. This would mean that all the
+            executables shipped with the 10.5 release and onwards would be
+            linked in with "msvcr120.dll". If you have SystemC or
+            PLI/VPI/DPI/FLI libraries compiled with older release with any
+            gcc compiler shipped with the product, those will have to be
+            re-compiled with 10.5. Windows platform compiler details is as
+            follows:
+               o "gcc-4.2.1-mingw32vc9" has been replaced with
+                 "gcc-4.2.1-mingw32vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw64" has been replaced with
+                 "gcc-4.5.0-mingw64vc12" and is shipped with the product.
+               o "gcc-4.5.0-mingw32vc9" has been replaced with
+                 "gcc-4.5.0-mingw32vc12" and will be available for
+                 download on a request basis.
+                 Compiler versions have not been changed compared to
+                 previous release. Please refer to User's Manual for more
+                 details.
+               o (source) In the next major release (10.6)
+                    # support for Windows 8.0 will be dropped. No change
+                      for Windows 8.1
+                    # support for gcc-4.3.3-linux and
+                      gcc-4.3.3-linux_x86_64 will be dropped
+               o Due to enhanced security restrictions with web browser
+                 PDF plug-ins, some links do not function. Links in HTML
+                 documentation are fully functional.
+                 Clicking a link within a PDF viewed in a web browser may
+                 result in no action, or it may load the title page of the
+                 current PDF manual (instead of the intended target in the
+                 PDF manual). The unresolved link behavior occurs in all
+                 web browsers on Windows and Linux platforms. Because of
+                 this behavior, the navigational experience of PDF manuals
+                 is compromised. PDF is ideal for printing because of its
+                 page-oriented layout.
+                 Use the HTML manuals to search for topics, navigate
+                 between topics, and click links to examples, videos,
+                 reference material, and other related technical content.
+                 For information about Adobe's discontinued support of
+                 Adobe Reader on Linux platforms and your available
+                 options, refer to Knowledge Article MG596568 on
+                 SupportNet.
+                 Linux is a registered trademark of Linus Torvalds in the
+                 U.S. and other countries.
+               o In 10.8 major release, support for windows 7 and windows
+                 8.1 will be dropped.
+            ______________________________________________________________
+
+            Base Product Specifications in 10.5e
+          +
+            [Supported Platforms]
+            Linux RHEL 5 x86/x86-64
+            Linux RHEL 6 x86/x86-64
+            Linux RHEL 7 x86/x86-64
+            Linux SLES 10 x86/x86-64
+            Linux SLES 11 x86/x86-64
+            Windows 7 x86/x64
+            Windows 8.1 x86/x64
+            Windows 10 x86/x64
+            [Supported GCC Compilers (for SystemC)]
+            gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64
+            gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64
+            gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64
+            gcc-4.2.1-mingw32vc12
+            [OVL (shipped with product)]
+            v2.8.1
+            [VHDL OSVVM (shipped with product)]
+            v2014.07
+            [Licensing]
+            FLEXnet v11.13.1.2 server, v11.13.0.2 client
+            MSL v2015_1_patch2
+            MGLS v9.13_5.4
+            PCLS v9.13.5.2
+       ___________________________________________________________________
+
+       Compatibility Issues with Release 10.5e
+       Key Information Compatibility
+
+     * [nodvtid] - (source) A bug related to Windows DLL symbol export is
+       fixed in 10.5 and later. A side effect of the fix is that there may
+       be incompatibility on Windows platforms regarding existing DPI
+       usage. The required setup change is one of the followings:
+       1) Use vlog -dpiheader to generate DPI routine prototype
+       declarations. Include generated DPI header file in the DPI code.
+       OR
+       2) If DPI header is not being generated or used, one needs to
+       manually attach DPI_DLLESPEC in front of all DPI routines.
+       DPI_DLLESPEC is a standard macro defined inside svdpi.h
+       The generated DPI header flow is recommended. Failing to do the
+       above will incur the following warning at elab time
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+
+       and the fatal error at runtime:
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+
+   SystemVerilog Compatibility
+     * dvt96999 - (results) Optimized full timing gate-level cells could
+       drive incorrect values where 2 wired bufif0/bufif1/notif0/notif1
+       primitives with shared selects (select having an X or Z value)
+       drive a single output port.
+     * dvt97601 - (results) vsim crashed, when multiple specify paths or
+       multiple timing checks were present on the same line (in specify
+       block), and "-sdfreport" was specified on vsim command line.
+     * dvt97533 - (results) Interconnect delay was not correct for all to
+       X transitions as per 1364-2001 LRM.
+     * dvt32206 - (results) $nochange timing check did not work properly
+       in all cases.
+
+   VHDL Compatibility
+     * dvt98805 - (source) In case, case generate, selected signal
+       assignments, and selected variable assignments statements an error
+       was not reported if the selector expression was a range. For
+       example "CASE s'RANGE" would not result in an syntax error. It was
+       either treated as length of the range or an internal error was
+       reported from vcom or vopt.
+     * dvt98225 - (results) In certain conditions involving a VHDL
+       package, vopt issued an incorrect "(vopt-3369) Top-level design
+       unit specified more than once." error. This has been fixed.
+
+   General Compatibility
+     * dvt97602 - (results) If the file specified with vsim's "-f" switch
+       was a DOS format file containing line-continuation character(s)
+       '\', then vsim emitted incorrect "(vsim-3369) Top-level design unit
+       specified more than once" errors. The error message didn't contain
+       a module name, but just an empty '' containing a new-line
+       character.
+
+   Coverage Compatibility
+     * dvt91786 - (results) The Expression Coverage has been enhanced to
+       cover expressions that contain multi-bit sub-expressions but whose
+       resulting output is still single bit.
+       For example, expressions like (in1==in2) and (in1[2:0] &&
+       in2[2:0]), which were not covered earlier, are now identified as
+       single terminal expressions where the entire expression is regarded
+       as a single term for coverage.
+       To enable the feature, -coverFecSingleTerm switch (in addition to
+       other coverage switches) is needed in vopt.
+
+   Release Announcements Compatibility
+     * [nodvtid] - (source) In the next major release (10.6)
+          + support for Windows 8.0 will be dropped. No change for Windows
+            8.1
+          + support for gcc-4.3.3-linux and gcc-4.3.3-linux_x86_64 will be
+            dropped
+   _______________________________________________________________________
+
+   General Defects Repaired in 10.5e
+     * dvt97602 - (results) If the file specified with vsim's "-f" switch
+       was a DOS format file containing line-continuation character(s)
+       '\', then vsim emitted incorrect "(vsim-3369) Top-level design unit
+       specified more than once" errors. The error message didn't contain
+       a module name, but just an empty '' containing a new-line
+       character.
+     * dvt99930 - Transaction recording can crash the simulator when a
+       child transaction ends after it's parent transaction has ended. The
+       crash has been fix. (Note: this ordering of $transaction calls is
+       not technically correct; child transactions should be ended before
+       their parent.)
+   _______________________________________________________________________
+
+   User Interface Defects Repaired in 10.5e
+     * dvt97421 - The "compare annotate" command returns an error as
+       undefined, which is incorrect. The "compare" command help suggests
+       "annotation", which is incorrect. This problem has been solved,
+       "compare annotate" works, and the help text has been corrected.
+     * dvt97551 - Control+mouse wheel zooming in the Wave window would
+       incorrectly also scroll the view vertically. This problem has been
+       fixed, as well as other minor inconsistencies with mouse wheel
+       scrolling.
+     * dvt83149 - The Wave window analog display will correctly use user
+       defined fixed radix types when computing and displaying the analog
+       real or integer values.
+     * dvt98987 - With the Process window open and in Hierarchy mode, the
+       context ends up at the wrong process. Consequently, any inspection
+       of call stack for values is wrong or fails to work at all. This can
+       happen when one of the active process's parent threads has
+       terminated. When this is the case, the Process window will now
+       switch to "Active" mode in order to correctly display the current
+       selected active process.
+     * dvt100029 - The "when" command fails to trigger sometimes with some
+       expressions containing nets, vector nets, and multi-dimensional
+       nets. This issue has been resolved.
+     * dvt100318 - The $argv and $argc variables giving access to the
+       command line arguments is not available in -batch mode. This issue
+       has been resolved.
+   _______________________________________________________________________
+
+   SystemVerilog Defects Repaired in 10.5e
+     * dvt96999 - (results) Optimized full timing gate-level cells could
+       drive incorrect values where 2 wired bufif0/bufif1/notif0/notif1
+       primitives with shared selects (select having an X or Z value)
+       drive a single output port.
+     * dvt96162 - Simulation mismatch with different full optimization
+       when using delayed clocking Blocks.
+     * dvt97601 - (results) vsim crashed, when multiple specify paths or
+       multiple timing checks were present on the same line (in specify
+       block), and "-sdfreport" was specified on vsim command line.
+     * dvt97533 - (results) Interconnect delay was not correct for all to
+       X transitions as per 1364-2001 LRM.
+     * dvt99227 - Fixed a vopt crash when concatenation expression is used
+       in the let statement. The concatenation expression contain the
+       external declaration and let is in class task.
+     * dvt98818 - Fixed a vsim crash when a real number is displayed as
+       integer.
+     * dvt98214 - If a signal 'say reg r' is updated with #0.xxx delay in
+       a initial block which rounded to #0 delay and there is also an
+       always block on r. Then the always block will also be executed with
+       change in r.
+     * dvt97683 - Fixed an invalid vsim-8304 when passing struct element
+       to function ref argument through class virtual interface.
+     * dvt97692 - Fixed a vopt crash when replication constant is
+       calculated through some constant function with structure as
+       argument.
+     * dvt96735 - Fixed an invalid circular dependency error when value of
+       a parameter in interface is calculated through constant function
+       with argument as structure member.
+     * dvt99463 - Fixed memory leak when forces on optimized cell ports
+       are present.
+     * dvt32206 - (results) $nochange timing check did not work properly
+       in all cases.
+     * dvt100404 - In some rare cases, a constraint involving an
+       array.sum() constraint having a 'with' clause would trigger an
+       internal error during randomize() for multi-dimensional dynamic
+       arrays/queues. This issue has been fixed.
+     * dvt100497 - Fixed an internal error / crash during randomize() that
+       would occur for some scenarios involving 'dist' constraints on
+       random variables > 256 bits wide.
+   _______________________________________________________________________
+
+   VHDL Defects Repaired in 10.5e
+     * dvt98225 - (results) In certain conditions involving a VHDL
+       package, vopt issued an incorrect "(vopt-3369) Top-level design
+       unit specified more than once." error. This has been fixed.
+     * dvt97593 - Direct instantiation of an entity with a package
+       instantiation in one of the generic map associations could cause
+       incorrect code to be generated by the compiler, possibly leading to
+       a loading failure message from the simulator.
+     * dvt98805 - (source) In case, case generate, selected signal
+       assignments, and selected variable assignments statements an error
+       was not reported if the selector expression was a range. For
+       example "CASE s'RANGE" would not result in an syntax error. It was
+       either treated as length of the range or an internal error was
+       reported from vcom or vopt.
+     * dvt99166 - Writing a STRING to the FILE STD.TEXTIO.OUTPUT (which is
+       stdout) using the function STD.TEXTIO.WRITE[TEXT,STRING] could
+       result in a crash if the string contained two terminating LF (0x0a)
+       characters.
+     * dvt99443 - Record aggregate with OTHERS could result in a vcom or
+       vopt crash if the expression was not of the same subtype as the
+       record element(s) being associated.
+   _______________________________________________________________________
+
+   SystemC Defects Repaired in 10.5e
+     * dvt99466 - While trying to print the vsim-6577 error, for a
+       sc_module, sc_port or a sc_prim_channel global or static SystemC
+       object that is being destroyed at exit time, vsim might crash in
+       some odd scenarios. This issue is now fixed. vsim will report a
+       vsim-6522 warning instead and exit gracefully.
+   _______________________________________________________________________
+
+   SVA/PSL Defects Repaired in 10.5e
+     * dvt97896 - Some assertions clocked by a bit-select of a variable
+       woke up even when that bit of the variable is not changing.
+   _______________________________________________________________________
+
+   User Interface Enhancements in 10.5e
+     * dvt99074 - A preference setting has been added to disable export of
+       the Primary selection from the Structure and Objects windows. The
+       preference variable is PrefMain(exportTreeSelection). An "on"
+       (default) value makes the selected item available as the Primary
+       selection and can be pasted into other windows and applications. An
+       "off" will disable the export. Explicit copy operations will
+       continue to be supported in both modes.
+   _______________________________________________________________________
+
+   SystemVerilog Enhancements in 10.5e
+     * [nodvtid] - Vlog can optionally ignore commas, ",", and right
+       parens, ")", when found within a `" `" string that forms a list of
+       macro argument actuals within another macro expansion. The
+       -svext=+mtdl switch enables this behavior.
+     * dvt98467 - Added a SystemVerilog constrained-random language
+       extension to consider all fields of an unpacked struct as 'rand',
+       regardless of whether an explicit 'rand' attribute is specified for
+       the field or not. This extension is disabled by default. Enable
+       this extension using the vsim command line option
+       "-svrandext=+randstruct".
+     * dvt100020 - Added support for 'open_value_range' on the RHS of
+       'dist' operator -- this allows ranges with '$' as lower or upper
+       bound to be specified.
+   _______________________________________________________________________
+
+   Coverage Enhancements in 10.5e
+     * dvt91786 - (results) The Expression Coverage has been enhanced to
+       cover expressions that contain multi-bit sub-expressions but whose
+       resulting output is still single bit.
+       For example, expressions like (in1==in2) and (in1[2:0] &&
+       in2[2:0]), which were not covered earlier, are now identified as
+       single terminal expressions where the entire expression is regarded
+       as a single term for coverage.
+       To enable the feature, -coverFecSingleTerm switch (in addition to
+       other coverage switches) is needed in vopt.
+   _______________________________________________________________________
+
+   Verification Management Enhancements in 10.5e
+     * dvt66359 - VRM now supports parallel auto-merge. The feature is
+       activated by specifying "-parallelmerge <n>" where <n> is the
+       maximum number of concurrent merge operations allowed for a single
+       mergefile. In addition, the auto-merge algorithm will defer the
+       launching of merges with less than 5 input UCDBs until the minimum
+       of 5 UCDBs are queued or until 30 seconds pass with no additional
+       UCDBs being queued.
+     * [nodvtid] - VRM now supports modifying the mimetype and encoding of
+       emails sent from within vrun by modifying certain pre-defined
+       parameters in the RMDB.
+   _______________________________________________________________________
+
+   WLF and VCD logging Enhancements in 10.5e
+     * dvt94883 - In post-sim mode (vsim -view), The 'Cover Directives'
+       window is now populated.
+   _______________________________________________________________________
+
+   Document Revision History in 10.5e
+     * Revision - Changes - Status/Date
+          + 1.2 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/June 2017
+          + 1.1 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/March 2017
+          + 1.0 - Modifications to improve the readability and
+            comprehension of the content. Approved by Tim Peeke. All
+            technical enhancements, changes, and fixes are listed in this
+            document for all products in this release. Approved by Bryan
+            Ramirez. - Released/February 2017
+     * Author: In-house procedures and working practices require multiple
+       authors for documents. All associated authors for each topic within
+       this document are tracked within the document source.
+     * Revision History: Released documents maintain a revision history of
+       up to four revisions. For earlier revision history, refer to
+       earlier releases of documentation which are available on Support
+       Center (http://support.mentor.com).
+
+
+
+#Mentor Graphics Search Data
+#meta="doc.type.documentation.rn,product.version.10.5e,product.id.P11633"
+

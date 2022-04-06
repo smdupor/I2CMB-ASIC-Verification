@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Formal Data" />
+<meta name="abstract" content="A UCDB test is the result of functional verification analysis performed by a simulator or a formal verification tool. A formal test is a ucdbTestT object that is also associated with special information that describes a particular formal analysis session (ucdb_AssocFormalInfoTest)." />
+<meta name="description" content="A UCDB test is the result of functional verification analysis performed by a simulator or a formal verification tool. A formal test is a ucdbTestT object that is also associated with special information that describes a particular formal analysis session (ucdb_AssocFormalInfoTest)." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id87311a5d-310a-4f9e-81b3-2fa94d687b08" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Formal Data</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Formal Data" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id87311a5d-310a-4f9e-81b3-2fa94d687b08">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Formal Data</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A UCDB test
+is the result of functional verification analysis performed by a
+simulator or a formal verification tool. A formal test is a ucdbTestT
+object that is also associated with special information that describes
+a particular formal analysis session (ucdb_AssocFormalInfoTest).</span>
+</div>
+<p class="p">This formal analysis information
+describes the following factors:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idd5c054b8-81e7-4e6d-b5ab-af9f8d27bd1e"><p class="p">How, when, and where the formal test
+ran</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id146861fb-2a02-47ca-8399-98561a5e49e5"><p class="p">Scope of the formal analysis</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id2490fc5a-36b8-4023-856a-ac94b9ea909d"><p class="p">Location of detailed results</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id064fb763-0b73-4f02-b48b-586b7b96792a"><p class="p">Environment assumptions</p>
+</li>
+</ul>
+<p class="p">Formal analysis gives two types of results:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__ide96e14b2-133d-4018-960b-51e31e4a5f6c"><p class="p">Assertion information — Formal analysis
+of an assertion results in the formal status of the assertion based
+on the test assumptions for the scope of the assertion. For example:
+the assertion is proven; a counterexample exists that makes the assertion
+fail; or the formal analysis is inconclusive.</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id7e5be8eb-da06-4305-8dbc-f79fb5850d48"><p class="p">Coverage information — Formal analysis
+of a cover statement or an assertion returns coverage information
+such as cover statement coverage, line coverage, stimulus coverage,
+and assertion witnesses that the assertions can be exercised. You model
+this functionality using the same scopes and coverage items as for
+simulation, in conjunction with additional facilities for formal
+verification.</p>
+</li>
+</ul>
+<p class="p">A UCDB formal environment attribute indicates
+the context for interpreting the coverage data obtained from a formal
+analysis session. Coverage contexts support various formal coverage
+use models, for example:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idd055b3ff-694d-461b-a247-714191d48ce4"><p class="p">Coverage reachability is the primary
+objective of the formal analysis session, or it is an ancillary
+by-product of the formal analysis session.</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__ide9082fd2-bd2f-4c32-99f6-e5526f455a85"><p class="p">Coverage describes the controllability
+of the design based on the formal assumptions, or it indicates the
+design logic observable by assertions. </p>
+</li>
+</ul>
+<p class="p">Formal coverage context shows how different
+types of coverage information were obtained and how you should interpret
+them. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">In general, all
+arguments returned by the formal routines are only valid as long as
+the <span class="ph filepath">db</span> database remains open.
+Once the <span class="ph filepath">db</span> database is closed,
+these arguments are invalid and should not be accessed in any way.
+If a caller of the formal routines needs access to the returned
+values beyond the lifetime of the <span class="ph filepath">db</span> database,
+it must make copies of returned values.</p>
+</div>
+<div class="section Subsections" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__ide5326813-cdea-49ce-a0d3-57fa69da3148"><div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id26d7ea7b-b10d-4e08-a7b4-6e1438f39f14"><h2 class="title Subheading sectiontitle">Formal Status Enum</h2><pre class="pre codeblock leveled"><code>typedef enum { 
+	UCDB_FORMAL_NONE,         /* No formal info (default) */ 
+	UCDB_FORMAL_FAILURE,      /* Fails */ 
+	UCDB_FORMAL_PROOF,        /* Proven to never fail */ 
+	UCDB_FORMAL_VACUOUS,      /* Assertion is vacuous as defined by the 
+                                 assertion language */ 
+	UCDB_FORMAL_INCONCLUSIVE, /* Proof failed to complete */ 
+	UCDB_FORMAL_ASSUMPTION,   /* Assertion is an assume */ 
+	UCDB_FORMAL_CONFLICT      /* Data merge conflict */ 
+} ucdbFormalStatusT; </code></pre><p class="p">Formal
+test result for a particular asserted or assumed property.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idc7060e0e-c794-47fb-a138-b07b5eb67bcb"><h2 class="title Subheading sectiontitle">Formal Environment Type</h2><pre class="pre codeblock leveled"><code>typedef void* ucdbFormalEnvT;</code></pre></div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idbf0f6173-259e-43e8-b19d-821984db8b24"><h2 class="title Subheading sectiontitle">Formal Tool Info Type</h2><pre class="pre codeblock leveled"><code>typedef ucisFormalToolInfoT ucdbFormalToolInfoT;</code></pre><p class="p">Structure identifying the test as a formal
+test and indicating tool-specific information about the formal analysis
+run:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idafa0749b-8fd6-4b6a-802b-a030b792c01c"><p class="p">formal_tool — tool name</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id287e5f1a-94f6-4ca9-90a3-fe4f29566498"><p class="p">formal_tool_version — tool version</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id6e158e06-a807-4791-b8a6-8f2c8ec774d4"><p class="p">formal_tool_setup — setup file (text)</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id0a513400-e15b-4d14-b982-9fdb6f4fbfc6"><p class="p">formal_tool_db — database file (binary)</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idda6928bb-566f-4d0b-b7d7-a31f3096bbd9"><p class="p">formal_tool_rpt — report file (text)</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id200eaba0-08ad-4824-9815-7dbad30853df"><p class="p">formal_tool_log — log file (text)</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id26e80746-c9ef-4537-b2bd-395221fdf037"><h2 class="title Subheading sectiontitle">Formal Coverage Context</h2><pre class="pre codeblock leveled"><code>#define UCDB_FORMAL_COVERAGE_CONTEXT_STIMULUS \ 
+	"UCDB_FORMAL_COVERAGE_CONTEXT_STIMULUS" 
+#define UCDB_FORMAL_COVERAGE_CONTEXT_RESPONSE \ 
+	"UCDB_FORMAL_COVERAGE_CONTEXT_REPONSE" 
+#define UCDB_FORMAL_COVERAGE_CONTEXT_TARGETED \ 
+	"UCDB_FORMAL_COVERAGE_CONTEXT_TARGETED" 
+#define UCDB_FORMAL_COVERAGE_CONTEXT_ANCILLARY \ 
+	"UCDB_FORMAL_COVERAGE_CONTEXT_ANCILLARY" 
+#define UCDB_FORMAL_COVERAGE_CONTEXT_INCONCLUSIVE_ANALYSIS \ 
+	"UCDB_FORMAL_COVERAGE_CONTEXT_INCONCLUSIVE_ANALYSIS" </code></pre><p class="p">Formal coverage context is a string that indicates
+the context for interpreting formal coverage information. This string
+can be one of the following predefined UCDB formal context attribute
+values, a user-defined string specific to the tool/application,
+or NULL (that is, no formal coverage context specified).</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idb831473e-ee1f-4b8e-a89c-28f8c53c0244"><p class="p">UCDB_FORMAL_COVERAGE_CONTEXT_STIMULUS</p>
+<p class="p">Coverage information associated with the
+test approximates the set of legal stimuli permitted within the
+constraints of the formal verification run. For example, for this
+formal coverage context, you can check that the test’s formal assumptions
+do not over- or under-constrain the formal analysis. </p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id0e1a21f0-2439-4eca-933c-cc3f99139335"><p class="p">UCDB_FORMAL_COVERAGE_CONTEXT_RESPONSE</p>
+<p class="p">Coverage information associated with the
+test identifies the structures under observation by the assertions.
+For example, knowing the logic verified by formal analysis helps
+you determine the “completeness” of the assertion instrumentation
+of the design.</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id663efd7d-3b9e-4c02-98ae-f935475982d7"><p class="p">UCDB_FORMAL_COVERAGE_CONTEXT_TARGETED</p>
+<p class="p">Coverage information associated with the
+test is used for comprehensive coverage analysis. For example, one
+purpose might be to identify the controllable elements of the design.
+Another might be to evaluate the particular assumptions applied. </p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idaae0cf36-cb46-4d8e-99d9-6585c96c33b6"><p class="p">UCDB_FORMAL_COVERAGE_CONTEXT_ANCILLARY</p>
+<p class="p">Coverage information associated with the
+test is a by-product of formal analysis and is not the primary objective
+for the formal test. Results provide coverage information helpful
+in understanding what was exercised, but that information is not necessarily
+comprehensive. For example, the main objective of the formal verification test
+might be to prove assertions and find counterexamples. Here, parts
+of the design not in the fanin of the formal properties are typically
+ignored by the formal tool. So, coverage is a side effect of the
+formal analysis.</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id420ef5f0-27dc-4cab-8870-23edc3515565"><p class="p">UCDB_FORMAL_COVERAGE_CONTEXT_INCONCLUSIVE_ANALYSIS</p>
+<p class="p">Coverage information associated with the
+test helps you analyze assertions with inconclusive formal analysis
+results (that is, assertions with UCDB_FORMAL_INCONCLUSIVE status). </p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id5953bf0b-7fdb-4c01-8e77-9c9d4c43da0b"><h2 class="title Subheading sectiontitle">ucdb_SetFormalStatus</h2><pre class="pre codeblock leveled"><code>int ucdb_SetFormalStatus( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id8c44f814-b51c-41c7-bbcc-4ae639fc3d19" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_status</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Assert formal status</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Sets the formal status of the specified assertion
+with respect to the specified test. Not supported in read-streaming
+mode. This is a routine that sets a value, so in write-streaming mode
+this routine can only be called while the scope of the assertion
+is actively being written. Returns 0 if successful, or non-zero
+if error (and formal status is unchanged). Returns an error if any
+argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__ide2097257-95e1-425c-a5ea-bf5c33295889"><h2 class="title Subheading sectiontitle">ucdb_GetFormalStatus</h2><pre class="pre codeblock leveled"><code>int ucdb_GetFormalStatus( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id78367605-0561-4c3a-ada6-d1de6f437a13" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_status</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Assert formal status
+returned</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the formal status of the specified assertion
+with respect to the specified test. Not supported in write-streaming
+mode. This is a routine that gets a value, so in read-streaming mode
+this routine can only be called while the scope of the assertion
+is actively being read. Neither iteration of assertscopes paired
+with a given test nor iteration of test with a given assertscope
+is supported. Returns 0 if successful, or non-zero if error (and
+formal status is not returned). Returns an error if any argument
+is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id6d8ce3d7-f4d4-4c54-9a51-eed51a5b331c"><h2 class="title Subheading sectiontitle">ucdb_SetFormalRadius</h2><pre class="pre codeblock leveled"><code>int ucdb_SetFormalRadius( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, 
+    int                    radius, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idce11905d-69f1-421c-a136-c43227fcc06d" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">radius</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Radius returned (expressed
+in clock cycles)</p>
+<p class="p">Exact meaning depends on the assertion’s status:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idc9b9a18b-0a9f-45bc-8782-d1dfa23ed3f7"><p class="p">UCDB_FORMAL_INCONCLUSIVE</p>
+<p class="p">Proof radius (if a bounded proof is reported)
+or -1 (if no bounded proof is reported).</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id2c79a7de-9f92-4f57-ae22-f8aa1b9f9e9b"><p class="p">UCDB_FORMAL_FAILURE</p>
+<p class="p">Counterexample depth.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">clock</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Assertion clock specified
+as a hierarchical name string</p>
+<p class="p">Can be NULL.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Sets the formal radius (proof radius or counterexample
+depth) for the specified assertion with respect to the specified
+test. Not supported in read-streaming mode. This is a routine that sets
+a value, so in write-streaming mode this routine can only be called
+while the scope of the assertion is actively being written. Returns
+0 if successful, or non-zero if error (and formal radius is unchanged).
+Returns an error if any argument except clock is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id12679f44-31eb-4053-943b-e509b6a73ed3"><h2 class="title Subheading sectiontitle">ucdb_GetFormalRadius</h2><pre class="pre codeblock leveled"><code>int ucdb_GetFormalRadius( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, 
+    int*                   radius, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id12d90e20-5ae2-45f8-a243-0cfc5cd1dc9b" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">radius</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Radius returned (expressed
+in clock cycles)</p>
+<p class="p">Exact meaning depends on the assertion’s status:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id780fc128-abd3-44ef-860b-75ef664f8e1b"><p class="p">UCDB_FORMAL_INCONCLUSIVE</p>
+<p class="p">Proof radius (if a bounded proof is reported)
+or -1 (if no bounded proof is reported).</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idc7819c89-9f0b-42ed-a57e-318990f6d6cc"><p class="p">UCDB_FORMAL_FAILURE</p>
+<p class="p">Counterexample depth.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">clock</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Assertion clock returned
+(specified as a hierarchical name string)</p>
+<p class="p">If NULL, the clock is NULL or the formal radius
+was not set.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the formal radius for the specified assertion
+with respect to the specified test and gets the associated clock
+for the radius. Not supported in write-streaming mode. This is a routine
+that gets values, so in read-streaming mode this routine can only
+be called while the scope of the assertion is actively being read.
+Neither iteration of assertscopes paired with a given test nor iteration
+of test with a given assertscope is supported. Returns 0 if successful,
+or non-zero if error (and radius/clock are not returned). Returns
+an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id51f60221-3b5c-4343-af83-53e1f4e00ed7"><h2 class="title Subheading sectiontitle">ucdb_SetFormalWitness</h2><pre class="pre codeblock leveled"><code>int ucdb_SetFormalWitness( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id633d929e-f951-4cb7-845d-e78906f2cb65" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">witness_file_or_dir</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Path to a waveform file
+or directory containing waveform files, expressed as a string</p>
+<p class="p">Waveform files can be in any standard or widely-used format.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Sets witness waveforms for the specified assertion
+with respect to the specified test. A witness is a counterexample
+(for a failed property) or a sanity waveform (for a proven property). Not
+supported in read-streaming mode. This is a routine that sets a
+value, so in write-streaming mode this routine can only be called
+while the scope of the assertion is actively being written. Returns
+0 if successful, or non-zero if error (and witness waveform information
+is unchanged). Returns an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idd9de01eb-5e2c-40f1-a471-78b65a311bfb"><h2 class="title Subheading sectiontitle">ucdb_GetFormalWitness</h2><pre class="pre codeblock leveled"><code>int ucdb_GetFormalWitness( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             assertscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id0cf810f8-984d-4975-84b4-d61d5d2fcd81" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assertscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the assertion</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">witness_file_or_dir</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Witness string returned.
+String is the path to a witness waveform file or a directory containing
+witness waveform files (expressed in a standard or widely-used format)</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets witness waveforms for the specified assertion
+with respect to the specified test. A witness is a counterexample
+(for a failed property) or a sanity waveform (for a proven property). Not
+supported in write-streaming mode. This is a routine that gets a
+value, so in read-streaming mode this routine can only be called
+while the scope of the assertion is actively being read. Neither
+iteration of assertscopes paired with a given test nor iteration
+of test with a given assertscope is supported. Returns 0 if successful,
+or non-zero if error (and witness_file_or_dir is not returned).
+Returns an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id1839c9b1-d905-46f9-b4b8-92d020170df0"><h2 class="title Subheading sectiontitle">ucdb_SetFormallyUnreachableCoverTest</h2><pre class="pre codeblock leveled"><code>int ucdb_SetFormallyUnreachableCoverTest( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             coverscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idfe7a8f28-a709-4f3c-b179-a1e0997aa913" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the cover item</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverindex</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Index of the cover item
+in the cover scope</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Sets the formally-unreachable status flag for
+the specified cover item with respect to the specified test. Use
+this function in conjunction with ucdb_AssocCoverTest, which indicates whether
+or not the coverage item is reachable with respect to the test.
+With these two flags, you can indicate the status of the cover item
+with respect to a formal test covered by formal, proven unreachable,
+or unknown coverage status (that is, if both flags are clear).</p>
+<p class="p">Not supported in read-streaming mode. This
+is a routine that sets a value, so in write-streaming mode this
+routine can only be called while the scope of the cover item is
+actively being written. Returns 0 if successful, or non-zero if
+error (and formally-unreachable status flag is unchanged). Returns
+an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id2669fc7b-4215-435e-bbdb-a231aea59e8f"><h2 class="title Subheading sectiontitle">ucdb_ClearFormallyUnreachableCoverTest</h2><pre class="pre codeblock leveled"><code>int ucdb_ClearFormallyUnreachableCoverTest( 
+    ucdbT                  db, 
+    ucdbTestT              test, 
+    ucdbScopeT             coverscope, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__ida5792e63-e6cf-439b-8a1c-034f88ab44c4" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the cover item</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverindex</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Index of the cover item
+in the cover scope</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Clears the formally-unreachable status flag
+(ucdb_SetFormallyUnreachableCoverTest) for the specified cover item
+with respect to the specified test. Not supported in read-streaming mode.
+This is a routine that sets a value, so in write-streaming mode
+this routine can only be called while the scope of the cover item
+is actively being written. Returns 0 if successful, or non-zero
+if error (and formally-unreachable status flag is unchanged). Returns
+an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id8706bffb-a1a7-4f8a-b912-651d7553145b"><h2 class="title Subheading sectiontitle">ucdb_GetFormallyUnreachableCoverTest</h2><pre class="pre codeblock leveled"><code>int ucdb_GetFormallyUnreachableCoverTest( 
+    ucdbT                 db, 
+    ucdbTestT              test, 
+    ucdbScopeT             coverscope, 
+    int                    coverindex, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id0225273a-0a4e-43e9-9bc5-3c2589154fe9" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverscope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of the cover item</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">coverindex</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Index of the cover item
+in the cover scope</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">unreachable_flag</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Flag value returned:</p>
+<ul class="ul"><li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id13f7d99e-dd18-4dd5-9531-a5694fdf4ea3"><p class="p">0 — coverage item possibly reachable</p>
+</li>
+<li class="li" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id769c2f3b-c70c-4599-95b8-34b6f5de7589"><p class="p">1 — coverage item formally unreachable</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the formally-unreachable status flag for
+the specified cover item with respect to the specified test. Not
+supported in write-streaming mode. This is a routine that gets a
+value, so in read-streaming mode this routine can only be called
+while the scope of the cover item is actively being read. Neither
+iteration of coverscopes paired with a given test nor iteration
+of test with a given coverscope is supported.  Returns 0 if successful,
+or non-zero if error (and formally-unreachable status flag is not
+returned). Returns an error if any argument is NULL.</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idd45c621a-0696-49eb-9b61-49b927c402f0"><h2 class="title Subheading sectiontitle">ucdb_AddFormalEnv</h2><pre class="pre codeblock leveled"><code>ucdbFormalEnvT ucdb_AddFormalEnv( 
+    ucdbT                  db, 
+    const char*            name, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id8a0f2c65-57e6-4dc3-9c20-2a3afdef9670" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Environment name.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope indicating the
+part of the design analyzed by formal verification</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Creates a new formal environment object. A
+formal environment describes the scope of a formal test and the
+environmental assumptions used to perform the formal analysis. Returns
+the handle for the new environment (if successful); returns the
+handle for an existing environment (if name and scope match those
+of an existing formal environment); or returns NULL if error. Names
+of formal environments must be unique, so it is an error if name
+matches an existing formal environment’s name, but the two scopes
+do not match. Not supported in read-streaming mode. This is a routine
+that writes information, so in write-streaming mode this routine
+can only be called while the scope of the environment is actively
+being written. </p>
+<p class="p">Once a formal environment is created, use ucdb_AssocAssumptionFormalEnv
+repeatedly to associate assumption scopes with the environment.
+Then, use ucdb_AssocFormalInfoTest to associate the formal environment
+with formal tests run under those environmental constraints. </p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id25a0a084-d0f2-4173-9c7e-d34d6d9934b9"><h2 class="title Subheading sectiontitle">ucdb_AssocAssumptionFormalEnv</h2><pre class="pre codeblock leveled"><code>int ucdb_AssocAssumptionFormalEnv( 
+    ucdbT                 db, 
+    ucdbFormalEnvT        formal_env, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idbec1bd7b-988d-4960-a832-6013c1a6ea04" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assumption_scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of an assumption</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Adds the specified assumption to the specified
+formal environment (created with ucdb_AddFormalEnv). Not supported
+in read-streaming mode. This is a routine that writes a value, so
+in write-streaming mode this routine can only be called while the
+scope of the assumption is actively being written. Returns 0 if
+successful, or non-zero if error (and assumption is not added to
+the environment).</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id1b39d5f9-12df-4f99-962a-e728d9d2ed7e"><h2 class="title Subheading sectiontitle">ucdb_AssocFormalInfoTest</h2><pre class="pre codeblock leveled"><code>int ucdb_AssocFormalInfoTest( 
+    ucdbT                 db, 
+    ucdbTestT             test, 
+    ucdbFormalToolInfoT*  formal_tool_info, 
+    ucdbFormalEnvT        formal_env, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id3929e635-62bf-46fb-8de5-95022495bf56" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_tool_info</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Formal tool information</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_cov_context</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Formal coverage context</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Adds a formal environment, tool-specific information
+and a formal coverage context to the information for a test, which
+in effect makes test a formal test. Returns 0 if successful, or non-zero
+if error (and the formal information is not added to the test). </p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id505b6490-46fb-42a7-99c1-881cff383095"><h2 class="title Subheading sectiontitle">ucdb_NextFormalEnv</h2><pre class="pre codeblock leveled"><code>ucdbFormalEnvT ucdb_NextFormalEnv( 
+    ucdbT                   db, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id012dcef6-b56b-4617-9a01-4276c0aad2b9" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment
+(or NULL, to return the first formal environment)</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the handle for the first formal environment
+(if formal_env is NULL), or the next formal environment after formal_env,
+or NULL (if formal_env is the last environment added by ucdb_AddFormalEnv
+or if error).</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id381a8546-3a31-4f06-95be-cf0f0cd54a99"><h2 class="title Subheading sectiontitle">ucdb_NextFormalEnvAssumption</h2><pre class="pre codeblock leveled"><code>ucdbScopeT ucdb_AssocAssumptionFormalEnv( 
+    ucdbT                 db, 
+    ucdbFormalEnvT        formal_env, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idbfb79a21-2caf-4120-900a-5df9e2abda14" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">assumption_scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope of an assumption
+added to formal_env using ucdb_AssocAssumptionFormalEnv or NULL</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Returns the handle for the first assumption
+added to formal_env (if assumption_scope is NULL), or the next formal
+environment after formal_env, or NULL (if assumption_scope is the last
+assumption added to formal_env or if error). Not supported in streaming
+mode (only supported in memory mode). </p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id12af2d6d-ed19-430c-8f02-a88dc9c3e097"><h2 class="title Subheading sectiontitle">ucdb_FormalEnvGetData</h2><pre class="pre codeblock leveled"><code>int ucdb_FormalEnvGetData( 
+    ucdbT                   db, 
+    ucdbFormalEnvT          formal_env, 
+    const char**            name, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idbe82c528-9a42-40cc-baa7-d10b0d73da09" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">name</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Environment name returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">scope</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Scope returned indicating
+the part of the design analyzed by formal verification</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the name and scope of the specified formal
+environment. Not supported in streaming mode (only supported in
+memory mode). Returns 0 if successful, or non-zero if error (and
+the formal environment information is not updated).</p>
+</div>
+<div class="section Subsection" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__id6a095bed-a5a0-4320-98c2-922ea3dfd02d"><h2 class="title Subheading sectiontitle">ucdb_FormalTestGetInfo</h2><pre class="pre codeblock leveled"><code>int ucdb_FormalTestGetInfo( 
+    ucdbT                 db, 
+    ucdbTestT             test, 
+    ucdbFormalToolInfoT** formal_tool_info, 
+    ucdbFormalEnvT*       formal_env, </code></pre>
+<hr />
+<table cellpadding="4" cellspacing="0" summary="" id="id87311a5d-310a-4f9e-81b3-2fa94d687b08__idf2081fd4-112b-4523-9cca-b0a0b89dafa6" class="table" frame="above" border="0" rules="none"><colgroup><col style="width:1.875in" /><col style="width:4.625in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">db</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Database</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB test object</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_tool_info</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Formal tool information
+returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_env</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">UCDB formal environment
+returned</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">formal_cov_context</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">Formal coverage context
+returned</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p class="p">Gets the formal environment, tool information
+and formal coverage context for the specified formal test (from
+data created by ucdb_AssocFormalInfoTest). This function allocates and
+owns the memory for the returned values formal_tool_info and formal_cov_context,
+so the calling code should not “free” the memory these arguments
+point to. Returns 0 if successful, or non-zero if error (and the
+formal test information is not returned). </p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbApiFunctions_idffb846c1.html" title="This section defines the UCDB API functions by function group.">UCDB API Functions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Formal Data"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FormalData_id87311a5d.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

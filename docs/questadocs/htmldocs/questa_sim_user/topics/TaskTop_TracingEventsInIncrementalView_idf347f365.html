@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Tracing Events in the Incremental View" />
+<meta name="abstract" content="Event Traceback features allow you to trace root causes of various results, typically unknown values, in your design." />
+<meta name="description" content="Event Traceback features allow you to trace root causes of various results, typically unknown values, in your design." />
+<meta name="DC.subject" content="Event traceback, using schematic window, Tracing, events, schematic, Causality, in schematic" />
+<meta name="keywords" content="Event traceback, using schematic window, Tracing, events, schematic, Causality, in schematic" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf347f365-1836-4f2d-8335-7fa5456679e3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Tracing Events in the Incremental View</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Tracing Events in the Incremental View" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf347f365-1836-4f2d-8335-7fa5456679e3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Tracing Events in the Incremental View</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">Event Traceback
+features allow you to trace root causes of various results, typically
+unknown values, in your design.</p>
+<p class="p">You can use the Event Traceback feature to:</p>
+<ul class="ul"><li class="li" id="ida808331c-546e-4151-96b4-86ccc1c04f3c"><p class="p">trace an event to the first sequential
+process that caused the event – Show Cause</p>
+</li>
+<li class="li" id="id95a80c88-0722-4570-8c16-b9d3ed291222"><p class="p">trace an event to its immediate driving
+process – Show Driver</p>
+</li>
+<li class="li" id="iddcce57a8-a50f-4e90-acff-fcbf24c14bb6"><p class="p">trace an event to its root cause – Show
+Root Cause</p>
+</li>
+<li class="li" id="idca6257aa-ab0b-4fbb-bdc0-df84488e94ce"><p class="p">trace to the cause of an unknown value
+– Show ‘X’ Cause (ChaseX)</p>
+</li>
+<li class="li" id="id6725ca9b-6666-48ab-9370-75c279edfb0c"><p class="p">show all possible drivers of the selected
+net in the Source window – Show All Possible Drivers</p>
+</li>
+<li class="li" id="idbd96c53a-77df-4512-8827-00de4ba65b25"><p class="p">view path times bar in the Schematic
+Path Details window - View Path Times</p>
+</li>
+<li class="li" id="idd413e7a3-0ea4-452c-8419-d71d25bd30a0"><p class="p">trace to a driving event</p>
+</li>
+<li class="li" id="idb90f30e2-7058-46f3-bc05-b97d9c5c4e21"><p class="p">start a trace from the end time</p>
+</li>
+<li class="li" id="idcbd9eb45-410d-4955-aa13-2b9c8b328e3e"><p class="p">start a trace from the begin time</p>
+</li>
+</ul>
+<p class="p">These options are available when you right-click
+anywhere in the Incremental View and select Event Traceback from
+the popup menu (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__ide1f58562-d735-4497-9d37-876c0293160a">Figure 1</a>).</p>
+<div class="fig fignone" id="ide1f58562-d735-4497-9d37-876c0293160a"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Event Traceback Options</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/menu_event_traceback_options.gif" /></div><br /></div>
+<p class="p">The event trace begins at the current “active
+time,” which is set a number of different ways:</p>
+<ul class="ul"><li class="li" id="idaaaa8b65-309a-42c9-97e8-db77c6b9f905"><p class="p">with the selected cursor in the Wave
+window</p>
+</li>
+<li class="li" id="idfbbdf9d2-7902-4d6f-9e4c-76f72eedb35a"><p class="p">with the selected cursor in the Schematic
+window’s embedded Wave viewer</p>
+</li>
+<li class="li" id="ida39c5b96-0231-4364-b498-9fe65d72183e"><p class="p">or with the CurrentTime label in the
+Source or Schematic windows. </p>
+</li>
+</ul>
+<p class="p"><a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__id619688b2-e1a4-4e87-8903-bcb82524d8b7">Figure 2</a> shows the Current Time label in the
+upper right corner of the Incremental view. (This label is displayed
+by default. If you want to turn it off, select <span class="ph menucascade"><span class="ph uicontrol">Schematic</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Preferences</span></span> to
+open the Incremental Schematic Options dialog box and uncheck the
+“Current Time Label” box.)</p>
+<div class="fig fignone" id="id619688b2-e1a4-4e87-8903-bcb82524d8b7"><span class="figcap"><span class="fig--title-label">Figure 2. </span>CurrentTime Label in Incremental View</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/schematic_activetime.gif" /></div><br /></div>
+<p class="p">The
+CurrentTime label includes a minimize/maximize button that allows you
+to hide or display the label. </p>
+<p class="p">When a signal or net is selected, you can
+jump to the previous or next transition of that signal, with respect
+to the current time, by clicking the Find Previous/Next Transition
+buttons. </p>
+<p class="p">To change the Current Time, simply click the
+label and type in the time you want to examine in the Enter Value
+dialog box (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__idb028621e-c568-495f-9760-a62e6fe30dec">Figure 3</a>). The dialog box includes a check box
+that allows you to switch to Now time (the time the simulation ended)
+or Current time (if “Now” is displayed in the Current Time label.</p>
+<div class="fig fignone" id="idb028621e-c568-495f-9760-a62e6fe30dec"><span class="figcap"><span class="fig--title-label">Figure 3. </span>Enter Current Time Value</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/enter_active_time.gif" /></div><br /></div>
+<p class="p">Refer to “<a class="xref Link" href="../../questa_sim_gui_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'WindowTimeDisplay99Current Time Label', 'questa_sim_gui_ref'); return false;">Current Time Label</a>” in the GUI Reference Manual for details.</p>
+<p class="p">The recommended work flow for initiating an event trace from
+the Incremental view is as follows:</p>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id42d689d2-4fa9-4ed7-afda-e9a54a28573f"><span class="ph cmd">Add a process or signal of
+interest into the Incremental view (if adding a signal, include
+its driving process). </span></li>
+<li class="li step stepexpand" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id2761eaf4-eba4-4bf3-b24e-35f933c7dea5"><span class="ph cmd">Open the embedded wave viewer
+by clicking the Show Wave toolbar button. <img class="image fmdpi:100" src="../graphics/button_show_wave.gif" /></span></li>
+<li class="li step stepexpand" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id62433ea7-bd1f-4075-b2c3-47f7daaa49a0"><span class="ph cmd">In the Incremental view, click
+the process of interest so that all signals attached to the selected
+process will appear in the embedded wave viewer.</span></li>
+<li class="li step stepexpand" id="idf347f365-1836-4f2d-8335-7fa5456679e3__idb4960326-08df-4d5c-ab4d-466875d9f3c4"><span class="ph cmd">In the wave viewer, select
+a signal and place a cursor at an event of interest. In <a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__id1adec627-2b0c-40e6-b7f6-7c4ae5452ac4">Figure 4</a>, signal <span class="ph FontProperty emphasis">q</span> of
+the fifo module <span class="ph FontProperty emphasis">ff3</span> is
+selected and a cursor is placed on the transition at 670 ns.</span><div class="itemgroup info StepInfo"><div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id1adec627-2b0c-40e6-b7f6-7c4ae5452ac4"><span class="figcap"><span class="fig--title-label">Figure 4. </span>Signals for Selected
+Process in Embedded Wave Viewer</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/schematic_waveviewer2.gif" /></div><br /></div>
+</div></li>
+<li class="li step stepexpand" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id46e2775d-42a8-4851-876a-3552a17c8316"><span class="ph cmd">Right-click and select <span class="ph uicontrol">Event
+Traceback</span>, then one of the three traceback options,
+from the popup menu.</span></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p">A Source window opens with
+the cause of the event highlighted and driver information displayed
+in the Show Driver Control Bar at the top of the Source window.
+There are four buttons in the Show Drivers Control Bar: 1) the History
+button, 2) the List Menu button, 3) the Previous button, and 4)
+the Next button (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__iddd6df0c1-c882-4cf9-a22d-c6ae24a1959d">Figure 5</a>).</p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__iddd6df0c1-c882-4cf9-a22d-c6ae24a1959d"><span class="figcap"><span class="fig--title-label">Figure 5. </span>Show Drivers Control Bar Buttons</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/button_show_drivers.gif" /></div><br /></div>
+<p class="p">In <a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__iddd6df0c1-c882-4cf9-a22d-c6ae24a1959d">Figure 5</a>, the Show Drivers Control Bar displays
+“1/12 Drivers” to indicate that the first of twelve drivers is selected.
+When you click the List Menu button, a menu drops down showing all
+drivers with a checkmark beside the selected driver, which is highlighted
+in the Source window (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__id837a754d-9118-4a5a-b290-1d66d07d4968">Figure 6</a>). </p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id837a754d-9118-4a5a-b290-1d66d07d4968"><span class="figcap"><span class="fig--title-label">Figure 6. </span>Multiple Drivers in the Show
+Drivers Control Bar</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/source_12drivers.gif" /></div><br /></div>
+<p class="p">You can jump directly to the
+source code of any other driver in the list by simply clicking it.
+Or, use the Previous and Next buttons to navigate through the list
+of drivers.</p>
+<p class="p">The History button allows you
+to review past Show Drivers operations (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__idf9aacc38-124c-4cf0-bcd1-ffba7fcb2d27">Figure 7</a>). Click an item in the list to return
+to a previous operation.</p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__idf9aacc38-124c-4cf0-bcd1-ffba7fcb2d27"><span class="figcap"><span class="fig--title-label">Figure 7. </span>History Button Displays Past Operations</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/button_history.gif" /></div><br /></div>
+<p class="p">For more information about
+using the Show Drivers Control Bar see <a class="xref fm:HeadingOnly" href="Concept_MultipleDrivers_idf0aad097.html#idf0aad097-69e2-4de0-aa13-f997542fae7f__Concept_MultipleDrivers_idf0aad097.xml#idf0aad097-69e2-4de0-aa13-f997542fae7f" title="Depending on the complexity of the design, some signal events may be driven by multiple processes. When this occurs, the number of drivers is shown in the Show Drivers Control Bar at the top of the Source window.">Multiple Drivers</a>.</p>
+<p class="p">You can also display information
+about the sequential process(es) that caused the selected event
+by opening the Active Driver Path Details window (<a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__id9595842a-9644-4fbd-9f83-adccc5763afb">Figure 8</a>).</p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id9595842a-9644-4fbd-9f83-adccc5763afb"><span class="figcap"><span class="fig--title-label">Figure 8. </span>Active Driver Path
+Details for the <span class="ph FontProperty emphasis">q</span> Signal</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/path_details2.gif" /></div><br /></div>
+<p class="p">If you want to see the path details in the Schematic window,
+click the Schematic Window button at the bottom of the Active Driver
+Path Details Window.</p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__id3018f803-be12-4b12-ae8c-19d8bea8e4f3"><span class="figcap"><span class="fig--title-label">Figure 9. </span>Click Schematic Window
+Button to View Path Details</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/view_path_details.gif" /></div><br /></div>
+<p class="p">This will open a Schematic window with the title <span class="ph uicontrol">Schematic
+(Path Details)</span>. In <a class="xref fm:Figure" href="#idf347f365-1836-4f2d-8335-7fa5456679e3__idfa69d5e9-99e8-4017-a5fd-02c2bf757f57">Figure 10</a>, the <span class="ph FontProperty emphasis">q</span> signal
+event at 670 ns is traced to its root cause. All signals in the
+path to the root cause are displayed in the wave viewer, and the
+path through the schematic is highlighted in red. The wave viewer
+also displays two new cursors, labeled <span class="ph uicontrol">Trace Begin</span> and <span class="ph uicontrol">Trace
+End</span> to designate where the event trace started and ended.</p>
+<div class="fig fignone" id="idf347f365-1836-4f2d-8335-7fa5456679e3__idfa69d5e9-99e8-4017-a5fd-02c2bf757f57"><span class="figcap"><span class="fig--title-label">Figure 10. </span>Path to Root Cause</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/schematic_path_details2.gif" /></div><br /></div>
+<p class="p">For more details about event tracing see <a class="xref fm:HeadingOnly" href="MGCChap_UsingCausalityTraceback_idc8182eae.html#idc8182eae-7050-40a8-84ba-d9520ea26344__MGCChap_UsingCausalityTraceback_idc8182eae.xml#idc8182eae-7050-40a8-84ba-d9520ea26344" title="The Causality Traceback feature helps you determine the cause of any signal event or all possible drivers of a signal. It allows you to trace backward through simulation time to find both event drivers and the logic behind the drivers. Causality Traceback uses the Questa SIM optimization utility to detect combinatorial and sequential logic events, and saves data about those events to your working library in a .dbg file. The .dbg file is a connectivity and structure database you can use for current simulation and post simulation analysis.">Using Causality Traceback</a>.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CommonTasksSchematicDebugging_id183a27cf.html" title="Common tasks for current and post-simulation debugging using the Schematic window include adding objects to the Incremental View, exploring the schematic connectivity of the design, folding and unfolding instances, using abstract blocks, tracing events, and finding objects.">Common Tasks for Schematic Debugging</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Tracing Events in the Incremental View"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_TracingEventsInIncrementalView_idf347f365.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

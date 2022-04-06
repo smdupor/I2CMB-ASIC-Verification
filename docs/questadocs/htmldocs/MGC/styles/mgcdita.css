@@ -1,0 +1,1892 @@
+/* MGC CSS
+ *
+ * 2014-06-06
+ *
+ * Selectors created from element names in mgcdita.dtd
+ * Rules based on tags assigned by the EDD and mapped to rules in existing CSS.
+ *
+ * - Additional work needed where styling varies based on context
+ *
+ *
+ *
+ */
+
+/* Table cell colors 
+*/
+
+.mgc_green_376_45 {
+    background: #C5E08C;
+}
+
+.mgc_green_376_45_norule {
+    background: #C5E08C;
+    border: none;
+}
+
+.mgc_yellow_129_50 {
+    background: #F9E89E;
+}
+
+.mgc_yellow_129_50_norule {
+    background: #F9E89E;
+    border: none;
+}
+
+.mgc_grey_13 {
+    background: #DEDEDE;
+}
+
+.mgc_grey_13_norule {
+    background: #DEDEDE;
+    border: none;
+}
+
+.Red_45 {
+    background: #FF8C8C;
+}
+
+.Red_45_norule {
+    background: #FF8C8C;
+    border: none;
+}
+
+.ApplCommand {
+  /* ApplCmd */
+  /* varies based on context - RESEARCH */
+  font-size: 0.95em;
+  font-weight: bold;
+  margin-left: 0.375in;
+  margin-bottom: 8.0pt;
+  margin-top: 0;
+}
+.area {
+  /* assume this shouldn't display if exists (?) */
+  display: none;
+}
+.ArgOption {
+  /* no tag applied in EDD */
+}
+
+.Argument {
+  /* no tag applied in EDD */
+}
+.ArgumentDescription {
+  /* no tag applied in EDD */
+  margin-left: -1em;
+}
+
+.ArgumentDescription > ul {
+  list-style-type: circle;
+}
+
+.ArgumentDescription  ul:not(.ArgumentOptions)  .ul:not(.ArgumentOptions) {
+  list-style-type: disc;
+}
+
+.ArgumentDescription  ul:not(.ArgumentOptions)  .ul:not(.ArgumentOptions)  .ul:not(.ArgumentOptions) {
+  list-style-type: circle;
+}
+
+.p.Opt ~ ul:not(.ArgumentOptions) {
+  list-style-type: disc;
+}
+
+.ul.ArgumentOptions  .ul.ArgumentOptions  .p.Opt ~ ul:not(.ArgumentOptions) {
+  list-style-type: circle;
+}
+
+.ArgumentList {
+  /* no tag applied in EDD */
+}
+
+.ArgumentName {
+  /* zpt.Arg */
+  display: list-item;
+  font-size: 1.0em;
+  margin-left: -1em;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  font-weight: normal;
+}
+
+.ArgumentOptions {
+  /* no tag applied in EDD */
+}
+
+.ul.ArgumentOptions {
+  list-style-type: none;
+}
+
+
+.Arguments {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .FileRefBody > .Arguments:before {
+  content: "パラメータ"; /* Parameters */
+}
+
+:lang(cn) .FileRefBody > .Arguments:before {
+  content: "参数"; /* Parameters */
+}
+
+:lang(en) .FileRefBody > .Arguments:before {
+  content: "Parameters";
+}
+
+.FileRefBody > .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .Arguments:before {
+  content: "引数"; /* Arguments */
+}
+
+:lang(cn) .Arguments:before {
+  content: "变元"; /* Arguments */
+}
+
+:lang(en) .Arguments:before {
+  content: "Arguments";
+}
+
+.Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .GUIRefBody .Arguments:before {
+  content: "オブジェクト"; /* Objects */
+}
+
+:lang(cn) .GUIRefBody .Arguments:before {
+  content: "对象"; /* Objects */
+}
+
+:lang(en) .GUIRefBody .Arguments:before {
+  content: "Objects";
+}
+
+.GUIRefBody .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .usa-par  .Arguments:before {
+  content: "パラメータ"; /* Parameters */
+}
+
+:lang(cn) .usa-par  .Arguments:before {
+  content: "参数"; /* Parameters */
+}
+
+:lang(en) .usa-par  .Arguments:before {
+  content: "Parameters";
+}
+
+.usa-par  .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .usa-arg .Arguments:before {
+  content: "引数"; /* Arguments */
+}
+
+:lang(cn) .usa-arg .Arguments:before {
+  content: "变元"; /* Arguments */
+}
+
+:lang(en) .usa-arg .Arguments:before {
+  content: "Arguments";
+}
+
+.usa-arg .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .syn-par  .Arguments:before {
+  content: "パラメータ"; /* Parameters */
+}
+
+:lang(cn) .syn-par  .Arguments:before {
+  content: "参数"; /* Parameters */
+}
+
+:lang(en) .syn-par .Arguments:before {
+  content: "Parameters";
+}
+
+.syn-par  .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .syn-arg  .Arguments:before {
+  content: "引数"; /* Arguments */
+}
+
+:lang(cn) .syn-arg  .Arguments:before {
+  content: "变元"; /* Arguments */
+}
+
+:lang(en) .syn-arg  .Arguments:before {
+  content: "Arguments";
+}
+
+.syn-arg  .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .characteristics .Arguments:before {
+  content: "特性";/* Characteristics */
+}
+
+:lang(cn) .characteristics .Arguments:before {
+  content: "特性";/* Characteristics */
+}
+
+:lang(en) .characteristics .Arguments:before {
+  content: "Characteristics";
+}
+
+.characteristics .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .fields .Arguments:before {
+  content: "フィールド"; /* Fields */
+}
+
+:lang(cn) .fields .Arguments:before {
+  content: "字段"; /* Fields */
+}
+
+:lang(en) .fields .Arguments:before {
+  content: "Fields";
+}
+
+.fields .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+:lang(ja) .objects .Arguments:before {
+  content: "オブジェクト"; /* Objects */
+}
+
+:lang(cn) .objects .Arguments:before {
+  content: "对象"; /* Objects */
+}
+
+:lang(en) .objects .Arguments:before {
+  content: "Objects";
+}
+
+.objects .Arguments:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+.ArgumentSet {
+  /* no tag applied in EDD */
+}
+.ArgumentTable {
+  /* no tag applied in EDD */
+}
+.author {
+  /* prolog */
+}
+.AutoTitle {
+  /* varies based on context - RESEARCH */
+}
+
+.BlockIndent {
+  margin-left: 3em;
+}
+
+
+div#BodyContent {
+  margin-bottom: 1.5em;
+}
+
+caption {
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 5pt;
+  margin-bottom: 6pt;
+  text-align: center;
+}
+
+:lang(ja) .Causes:before {
+  content: "原因"; /* Causes */
+}
+
+:lang(cn) .Causes:before {
+  content: "原因"; /* Causes */
+}
+
+:lang(en) .Causes:before {
+  content: "Causes";
+}
+
+.Causes:before {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+}
+
+
+.Causes {
+}
+.cite {
+  /* prolog */
+}
+.ClassicAbstract {
+  /* no tag applied in EDD */
+}
+.ClassicBody {
+  /* no tag applied in EDD */
+}
+.ClassicTopic {
+  /* no tag applied in EDD */
+}
+.cmd {
+  /* body? */
+}
+
+.codeblock {
+  /* Code */
+  /* varies based on context - RESEARCH  #E8EEF2*/
+  font-family: "Courier New", monospace;
+  font-weight:normal;
+  text-align: left;
+  font-size: 1.0em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 0.5em;
+  -moz-tab-size:2;
+  -o-tab-size:2;
+  -webkit-tab-size:2;
+  tab-size:2;
+  /* margin-left: 0.38in; */
+  /* text-indent: 0; */
+  background-color: #F2F2F2;
+  border: 1px solid;
+  border-color: #DBDBDB;
+}
+
+/* No background color and no border when in table rows */
+.row .codeblock {
+  /* Code */
+  /* varies based on context - RESEARCH  #E8EEF2*/
+  font-family: "Courier New", monospace;
+  font-weight:normal;
+  text-align: left;
+  font-size: 1.0em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 0.5em;
+  -moz-tab-size:2;
+  -o-tab-size:2;
+  -webkit-tab-size:2;
+  tab-size:2;
+  background: none;
+  border : none;
+}
+
+
+.CodeHighlight.Bold {
+  font-weight: bold;
+}
+
+.CodeHighlight.green {
+  /* xcodeGreen */
+  color: #0D990D;
+  font-weight: bold;
+}
+.CodeHighlight.purple {
+  /* xcodePurple */
+  color: #51286E;
+  font-weight: bold;
+}
+.CodeHighlight.orange {
+  /* xcodeOrange */
+  color: #D46D00;
+  font-weight: bold;
+}
+.CodeHighlight.red {
+  /* xcodeRed */
+  color: #FF0000;
+  font-weight: bold;
+}
+.CodeHighlight.magenta {
+  /* xcodeMagenta */
+  color: #FF00FF;
+  font-weight: bold;
+}
+.CodeLine {
+  /* no matching tags in CSS - *CodeLine* */
+  font-weight: bold;
+}
+.CommandName {
+  /* no tag applied in EDD */
+}
+.CommandRefAbstract {
+  /* no tag applied in EDD */
+}
+.CommandRefBody {
+  /* no tag applied in EDD */
+}
+.CommandRefTopic {
+  /* no tag applied in EDD */
+}
+.ConceptAbstract {
+  /* no tag applied in EDD */
+}
+.ConceptBody {
+  /* no tag applied in EDD */
+}
+.ConceptTopic {
+  /* no tag applied in EDD */
+}
+.ContainerTopic {
+  /* no tag applied in EDD */
+}
+.ContainerTopicAbstract {
+  /* no tag applied in EDD */
+}
+.ContextMGC {
+  /* z.MiscInfo */
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+.coords {
+  /* area */
+}
+.created {
+  /* prolog */
+}
+.critdates {
+  /* prolog */
+}
+.data {
+  /* prolog */
+}
+.dd:not(.ArgumentDescription) {
+  /* no tag applied in EDD */
+  margin-left: 0em;
+
+}
+.Descriptions {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .Descriptions:before {
+  content:"説明"; /* Description */
+}
+
+:lang(cn) .Descriptions:before {
+  content:"描述"; /* Description */
+}
+
+:lang(en) .Descriptions:before {
+  content:"Description";
+}
+
+.Descriptions:before {
+  font-weight: bold;
+  color: #666666;
+  font-size:1.3em;
+}
+
+.dita {
+  /* no tag applied in EDD */
+}
+
+.dl {
+  /* no tag applied in EDD */
+  margin-left: 3em;
+}
+
+.dlentry {
+  /* no tag applied in EDD */
+}
+
+
+.steps .dlterm {
+  list-style-type: circle;
+}
+
+
+.dt:not(.ArgumentName) {
+  /* no matching tags in CSS - L1ElementTitle */
+    display: list-item;
+    margin-right: 0.5em;
+    float:left;
+    clear:left;
+    line-height: 1.2em;
+}
+
+.dt:not(.ArgumentName):after {
+  content:" \002014 ";
+}
+
+.Elements {
+  /* no tag applied in EDD */
+}
+.entry:not(.table) {
+   /* border : 2px solid black;  */
+  /* varies based on context - RESEARCH */
+}
+
+.Examples {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .Examples:before {
+  content: "例"; /* Examples */
+}
+
+:lang(cn) .Examples:before {
+  content: "描述"; /* Examples */
+}
+
+:lang(en) .Examples:before {
+  content: "Examples";
+}
+
+.Examples:before {
+  font-weight: bold;
+  color: #666666;
+  font-size: 1.3em;
+}
+
+.ExerciseAbstract {
+  /* no tag applied in EDD */
+}
+.ExerciseBody {
+  /* no tag applied in EDD */
+}
+.ExerciseTopic {
+  /* no tag applied in EDD */
+}
+
+.fig.Equation , .fig.EquationNum {
+  text-align: left;
+  margin-left: 0.875in;
+}
+
+.fig.Equation .imagecenter, .fig.EquationNum .imagecenter {
+  text-align: left;
+}
+
+.fig.EquationCenter {
+  text-align: center;
+  margin-left: 0;
+}
+
+
+.fig {
+  font-size: 1.0em;
+  font-weight: bold;
+  margin-bottom: 14pt;
+  margin-left: 0.13in;
+  margin-right: 0.13in;
+  margin-top: 14pt;
+  text-align: center;
+}
+
+.fig > br {
+  font-size: 5px;
+}
+
+.figcap {
+  font-style: normal;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+span.filepath {
+  font-style: italic;
+  font-family: inherit;
+}
+.FileRefAbstract {
+  /* no tag applied in EDD */
+}
+.FileRefBody {
+  /* no tag applied in EDD */
+}
+.FileRefTopic {
+  /* no tag applied in EDD */
+}
+.indexterm {
+  /* no tag applied in EDD */
+}
+.FMNotes {
+  /* no tag applied in EDD */
+}
+
+/* the colon character in the class name has to be escaped..Also, \: does not work with IE < 8, so we use \3A */
+a:link.fm\3ANumberOnlyBlack {
+  color: black;
+}
+
+a:link.fm\3APageNumberOnlyBlack {
+  color: black;
+}
+
+a:link.fm\3APageNumberBlack {
+  color: black;
+}
+
+a:link.fm\3ANumberOnlyBlackStepAndSubstep {
+  color: black;
+}
+
+
+.fn {
+  /* no tag applied in EDD */
+  /* margin-top: 1em; */
+}
+.FontProperty.emphasis {
+  /* Italic */
+  font-style: italic;
+}
+.FontProperty.equationvariable {
+  /* Italic */
+  font-style: italic;
+}
+
+.FontProperty.ManualTitle {
+  font-style: italic;
+}
+
+.FontProperty.HeadingLabel {
+  font-weight: bold;
+}
+
+.FontProperty.overline {
+  /* Overline */
+  text-decoration: overline;
+}
+.FontProperty.shellcommand {
+  /* Bold */
+  font-weight: bold;
+}
+
+.FontProperty.VariableSubScript {
+  font-size:0.8em;
+  vertical-align: sub;
+  font-style: italic;
+}
+
+.FontProperty.VariableSuperScript {
+  font-size: 0.8em;
+  vertical-align: super;
+  font-style: italic;
+}
+
+.FontProperty.LiteralSubScript {
+  font-size: 0.8em;
+  vertical-align: sub;
+}
+
+.FontProperty.LiteralSuperScript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.FontProperty.P10 {
+  font-size: 0.85em;
+ }
+
+.FontProperty.P9 {
+  font-size: 0.8em;
+ }
+
+.FontProperty.P8 {
+  font-size: 0.7em;
+ }
+
+.FontProperty.subscript {
+  /* SubScript */
+  font-size: 0.8em;
+  vertical-align: sub;
+}
+.FontProperty.superscript {
+  /* SuperScript */
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.FontStyle.equationvariable {
+  font-style: italic;
+}
+
+.FontStyle.subscript {
+  font-size: 0.8em;
+  vertical-align: sub;
+}
+
+.FontStyle.superscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.FontStyle.SubScriptItalic {
+  font-size: 0.8em;
+  vertical-align: sub;
+  font-style: italic;
+}
+
+.FontStyle.SuperScriptItalic {
+  font-size: 0.8em;
+  vertical-align: super;
+  font-style: italic;
+}
+
+
+.FontStyle.bold {
+  /* Bold */
+  font-weight: bold;
+}
+.FontStyle.bolditalic {
+  /* BoldItalic */
+  font-weight: bold;
+  font-style: italic;
+}
+.FontStyle.italic {
+  /* Italic */
+  font-style: italic;
+}
+.FontStyle.defaultfont {
+  /* DefaultFont */
+  /* need other "default" values? */
+  font-weight: normal;
+  font-style: normal;
+}
+.Formats {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .Formats:before {
+  content: "形式"; /* Format */
+}
+
+:lang(cn) .Formats:before {
+  content: "格式"; /* Format */
+}
+
+:lang(en) .Formats:before {
+  content: "Format";
+}
+
+.Formats:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+.GeneralRefAbstract {
+  /* no tag applied in EDD */
+}
+.GeneralRefBody {
+  /* no tag applied in EDD */
+}
+.GeneralRefTopic {
+  /* no tag applied in EDD */
+}
+.glossdef {
+  /* no tag applied in EDD */
+}
+.glossentry {
+  /* no tag applied in EDD */
+}
+.glossterm {
+  /* HTerm */
+  font-size: 1.0em;
+  margin-bottom: 0;
+  margin-top: 0.75em;
+  color: #5E82A3;
+  font-weight: bold;
+}
+.GrammarRules {
+  /* no tag applied in EDD */
+}
+.Guidelines {
+  /* no tag applied in EDD */
+}
+.GUIRefAbstract {
+  /* no tag applied in EDD */
+}
+.GUIRefBody {
+  /* no tag applied in EDD */
+}
+.GUIRefTopic {
+  /* no tag applied in EDD */
+}
+.image {
+
+}
+
+.keywords {
+  /* prolog */
+}
+
+
+.li {
+  padding-right: 0px;
+}
+
+
+.link {
+  /* varies based on context */
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+
+
+.related-links .link {
+  /* varies based on context */
+  font-size: 13px;
+  margin-bottom: 2pt;
+  margin-left: 0.25in;
+  margin-top: 2pt;
+}
+
+.LinkItalic {
+  font-style: italic;
+}
+
+.linktext {
+  /* no tag applied in EDD */
+}
+.menucascade {
+  /* no tag applied in EDD */
+}
+.metadata {
+  /* prolog */
+}
+.MGCAbstract {
+  /* no tag applied in EDD */
+}
+.MGCAppendix {
+  /* no tag applied in EDD */
+}
+.MGCChapter {
+  /* no tag applied in EDD */
+}
+.MGCBody {
+  /* no tag applied in EDD */
+}
+
+
+.MGCEquationCap {
+  float: right;
+}
+
+
+.MGCEquationNumTable {
+  width: 100%;
+}
+
+.MGCEquationNumTable th {
+  text-align: right;
+  vertical-align: center;
+}
+
+.MGCGlossary {
+  /* no tag applied in EDD */
+}
+.MGCImagemap {
+  /* no tag applied in EDD */
+}
+.MGCThirdParty {
+  /* no tag applied in EDD */
+}
+.MGCThirdPartyAbstract {
+  /* no tag applied in EDD */
+}
+.MGCThirdPartyBody {
+  /* no tag applied in EDD */
+}
+
+
+.note {
+  font-weight: normal;
+  padding-top: .5em;
+  padding-bottom: 0em;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+
+table  .note {
+  font-weight: normal;
+  padding-top: .5em;
+  padding-bottom: 0em;
+  border-top: none;
+  border-bottom: none;
+}
+
+
+.caution, .electricalhazardwarning, .electricalhazardcaution, .hazardcaution, .hazardwarning {
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+}
+
+.tiptitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background: url('../images/nicon_info.png') no-repeat;
+  background-position: left top;
+}
+
+.NoteListItem {
+  margin-left: 2em;
+}
+
+.notetitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background: url('../images/nicon_note.png') no-repeat;
+  background-position: left top;
+}
+
+.videotitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background: url('../images/video_icon.png') no-repeat;
+  background-position: left top;
+}
+
+.cautiontitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background: url('../images/nicon_note.png') no-repeat;
+  background-position: left top;
+}
+
+
+.unixtitle, .windowstitle, .linuxtitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background: url('../images/nicon_note.png') no-repeat;
+  background-position: left top;
+}
+
+.electricalhazardwarningtitle, .electricalhazardcautiontitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background-position: left top;
+  background: url('../images/nicon_electrical.png') no-repeat;
+}
+
+
+td  .cautiontitle, td .electricalhazardwarningtitle, td .electricalhazardcautiontitle, td .hazardcautiontitle, td .hazardwarningtitle {
+  color: red;
+}
+
+.hazardcautiontitle, .hazardwarningtitle {
+  font-weight: bold;
+  padding-left: 3em;
+  padding-bottom: 1em;
+  text-align: left;
+  line-height: 2em;
+  background-position: left top;
+  background: url('../images/nicon_hazard.png') no-repeat;
+}
+
+.note p, .tip p {
+  margin-bottom: 0.5em;
+  margin-left: 3em;
+  margin-top: 0em;
+}
+
+.NoteList {
+  /* no tag applied in EDD */
+}
+.NoteListItem {
+  /* varies based on context - RESEARCH */
+}
+.ol {
+  /* no tag applied in EDD */
+}
+
+.Opt:not(.li.ArgOption .p.Opt) {
+  /* zpt.Arg1 */
+  /* varies based on context - RESEARCH */
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-left: 0.81in;
+  margin-top: 5pt;
+  text-indent: -0.18in;
+}
+
+.li.ArgOption .p.Opt {
+  font-size: 1.0em;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  text-indent: -0.18in;
+}
+
+
+.OssItem {
+  /* no tag applied in EDD */
+}
+
+
+.OssItem .ul:first-of-type {
+  list-style-type: none;
+  padding: 0;
+}
+
+.OssItem  > .ul .ul  {
+  list-style-type: circle;
+  margin-left: 2em;
+}
+
+.OssInfo {
+  /* no tag applied in EDD */
+}
+.OssList {
+  /* no tag applied in EDD */
+}
+.p {
+  /* varies based on context - RESEARCH */
+}
+.ParameterName.Optional {
+  /* no matching tag in CSS - Optional */
+  font-weight: normal;
+  font-style: normal;
+}
+.ParameterName.OptionalDefault {
+  /* no matching tag in CSS - OptDflt */
+  font-weight: normal;
+  text-decoration: underline;
+}
+.ParameterName.OptionalReplaceable {
+  /* no matching tag in CSS - OptRpl */
+  font-weight: normal;
+  font-style: italic;
+}
+.ParameterName.OptionalReplaceableDefault {
+  /* no matching tag in CSS - OptRplDflt */
+  font-style: italic;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.ParameterName.Required {
+  /* no matching tag in CSS - Required */
+  font-weight: bold;
+}
+.ParameterName.RequiredDefault {
+  /* no matching tag in CSS - ReqDflt */
+  font-weight: bold;
+  text-decoration: underline;
+}
+.ParameterName.RequiredReplaceable {
+  /* no matching tag in CSS - ReqRpl */
+  font-weight: bold;
+  font-style: italic;
+}
+.ParameterName.RequiredReplaceableDefault {
+  /* no matching tag in CSS - ReqRplDflt */
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+.parentlink > .link {
+  margin-left: 0.5em;
+}
+
+
+.ParameterName.Overline {
+  text-decoration: overline;
+}
+.ph {
+  /* no tag applied in EDD */
+}
+x.Prerequisites {
+  /* z.Heading */
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+.prolog {
+  /* assume this shouldn't display if exists (?) */
+  display: none;
+}
+.q {
+  /* no matching tag in CSS - quote */
+}
+
+
+/* "Results" Not needed in 2.4 Stylesheet */
+/*
+:lang(ja) .section.result:before {
+  content: "結果";
+}
+
+:lang(cn) .section.result:before {
+  content: "结果";
+}
+
+:lang(en) .section.result:before {
+  content: "Results";
+}
+*/
+
+.section.result:before {
+  /* z.Heading */
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+}
+
+:lang(ja) .Restrictions:before {
+  content: "制限事項"; /* Restrictions and Limitations */
+}
+
+:lang(cn) .Restrictions:before {
+  content: "约束和限制"; /* Restrictions and Limitations */
+}
+
+:lang(en) .Restrictions:before {
+  content: "Restrictions and Limitations";
+}
+
+.Restrictions:before {
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 9pt;
+  margin-top: 4pt;
+}
+
+:lang(ja) .VideoProcedures:before {
+  content: "ビデオ"; /* Video */
+}
+
+:lang(cn) .VideoProcedures:before {
+  content: "视频"; /* Video */
+}
+
+:lang(en) .VideoProcedures:before {
+  content: "Video";
+}
+
+.VideoProcedures:before {
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 9pt;
+  margin-top: 4pt;
+}
+
+
+x.Restrictions {
+  /* z.Heading */
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 9pt;
+  margin-top: 4pt;
+  margin-left: -10px;
+}
+
+:lang(ja) .GUIRefBody ~ .related-links > .ullinks:before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .GUIRefBody ~ .related-links > .ullinks:before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .GUIRefBody ~ .related-links > .ullinks:before {
+  content: "Child Topics";
+}
+
+.GUIRefBody ~ .related-links > .ullinks:before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+
+:lang(ja) .GUIRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .GUIRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .GUIRefBody > .related-links > .ullinks:not(:empty):before {
+  content: "Child Topics";
+}
+
+.GUIRefBody > .related-links > .ullinks:not(:empty):before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+:lang(ja) .CommandRefBody ~ .related-links > .ullinks:before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .CommandRefBody ~ .related-links > .ullinks:before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .CommandRefBody ~ .related-links > .ullinks:before {
+  content: "Child Topics";
+}
+
+.CommandRefBody ~ .related-links > .ullinks:before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+
+:lang(ja) .CommandRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .CommandRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .CommandRefBody > .related-links > .ullinks:not(:empty):before {
+  content: "Child Topics";
+}
+
+.CommandRefBody > .related-links > .ullinks:not(:empty):before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+:lang(ja) .FileRefBody ~ .related-links > .ullinks:before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .FileRefBody ~ .related-links > .ullinks:before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .FileRefBody ~ .related-links > .ullinks:before {
+  content: "Child Topics";
+}
+
+.FileRefBody ~ .related-links > .ullinks:before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+:lang(ja) .FileRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子トピック"; /* Child Topics */
+}
+
+:lang(cn) .FileRefBody > .related-links > .ullinks:not(:empty):before  {
+  content: "子标题"; /* Child Topics */
+}
+
+:lang(en) .FileRefBody > .related-links > .ullinks:not(:empty):before {
+  content: "Child Topics";
+}
+
+.FileRefBody > .related-links > .ullinks:not(:empty):before  {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  margin-left: -11pt;
+  color: #666666;
+  font-size: 1em;
+}
+
+
+.related-links {
+  color: #666666;
+  font-size: 1.3em;
+}
+
+
+
+.relinfo div {
+    margin-left: -1em;
+}
+
+.ReturnedValues {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .ReturnedValues:before {
+  content: "戻り値"; /* Return Values */
+}
+
+:lang(cn) .ReturnedValues:before {
+  content: "返回的值"; /* Return Values */
+}
+
+:lang(en) .ReturnedValues:before {
+  content: "Return Values";
+}
+
+.ReturnedValues:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+.revised {
+  /* prolog */
+}
+.row {
+  border: 1px solid black;
+  /* no tag applied in EDD */
+}
+.shape {
+  /* area */
+}
+.ShellCommand {
+  /* ShellCmd */
+  /* varies based on context - RESEARCH */
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-left: 0.375in;
+  margin-bottom: 8pt;
+  margin-top: 0pt;
+}
+.shortdesc {
+  /* no matching tag in CSS - z.ShortDesc or OssBody */
+  /* varies based on context - RESEARCH */
+}
+
+:lang(ja) .Solutions:before {
+  content: "解決策"; /* Solution */
+}
+
+:lang(cn) .Solutions:before {
+  content: "解决方案"; /* Solution */
+}
+
+:lang(en) .Solutions:before {
+  content: "Solution";
+}
+
+.Solutions:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+.Solutions {
+}
+.Standards {
+  /* no tag applied in EDD */
+}
+
+.step {
+  /* no tag applied in EDD */
+}
+
+.step .table {
+  margin-top: 6px;
+}
+
+.StepInfo {
+  /* no tag applied in EDD */
+}
+
+.StepInfo .ul {
+  list-style-type: disc;
+}
+
+.stepresult {
+  margin-top: 1em;
+  /* varies based on context - RESEARCH */
+}
+x.steps {
+  /* z.Heading */
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 8pt;
+  margin-left: -10px;
+}
+
+.Subheading {
+  color: #666666;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  /* varies based on context - RESEARCH */
+}
+
+
+/* This accounts for multiple Subheadings (i.e. title elements) in a section. */
+/* The first one is taken as the section title and rendered at 1.1em. All following
+   Subheadings are rendered at 1em
+*/
+.title.Subheading.sectiontitle ~ .title.Subheading.sectiontitle {
+  color: #666666;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  /* varies based on context - RESEARCH */
+}
+
+
+.Subsection {
+  /* no tag applied in EDD */
+}
+.Subsections {
+  /* no tag applied in EDD */
+}
+.substep {
+  /* no tag applied in EDD */
+}
+.SubStepInfo {
+  /* no tag applied in EDD */
+}
+.substeps {
+  /* no tag applied in EDD */
+  margin-top: inherit;
+}
+
+:lang(ja) .Symptoms:before {
+  content: "症状"; /* Symptoms */
+}
+
+:lang(cn) .Symptoms:before {
+  content: "征兆"; /* Symptoms */
+}
+
+:lang(en) .Symptoms:before {
+  content: "Symptoms";
+}
+
+.Symptoms:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+
+.Symptoms {
+}
+.systemoutput {
+  /* DefaultFont */
+  /* need other "default" values? */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tablenoborder {
+  margin-bottom: 1em;
+}
+
+.table {
+    /* border: 2px solid black; */
+    margin: auto;
+    table-layout: auto;
+  /* no tag applied in EDD width: 60% */
+}
+
+
+/* The margin settings are on the caption element */
+.tablecap {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+h2.tasklabel {
+   font-size: 1.1em;
+}
+
+.TaskAbstract {
+  /* no tag applied in EDD */
+}
+.TaskBody {
+  /* no tag applied in EDD */
+}
+.TaskTopic {
+  /* no tag applied in EDD */
+}
+.tbody {
+  /* no tag applied in EDD */
+}
+.term {
+  /* Italic */
+  font-style: italic;
+}
+.tgroup {
+  /* no tag applied in EDD */
+}
+.thead {
+    background-color : #CCCCCC;
+    border: 2px solid black;
+  /* no tag applied in EDD */
+}
+
+table[rules="none"] th {
+    border-bottom: 2px solid black;
+}
+
+
+td .ul {
+  margin-left: -1.5em;
+}
+
+
+td .ol {
+  margin-left: -1.5em;
+}
+
+.tabletoc td  {
+  vertical-align: top;
+}
+
+
+th .p, td .p {
+  margin-top: 3pt;
+  margin-bottom: 3pt;
+}
+
+.title {
+  /* varies based on context - RESEARCH */
+  color: #5E82A3;
+}
+.tm {
+  /* add prefix or suffix?? */
+}
+.TopicTOC {
+  /* no tag applied in EDD */
+}
+.TPInternalAbstract {
+  /* no tag applied in EDD */
+}
+.TPInternalBody {
+  /* no tag applied in EDD */
+}
+.TPInternalTopic {
+  /* no tag applied in EDD */
+}
+.TroubleshootingAbstract {
+  /* no tag applied in EDD */
+}
+.TroubleshootingBody {
+  /* no tag applied in EDD */
+}
+.TroubleshootingTopic {
+  /* no tag applied in EDD */
+}
+.uicontrol {
+  /* Bold */
+  font-weight: bold;
+}
+
+.ullinks {
+   list-style-type: none;
+   padding-left: 0;
+   margin-left: 1em;
+   margin-bottom: 1em;
+   margin-top: 0em;
+}
+
+/*
+.ullinks:before {
+    content = "Subtopics"
+    font-weight: bold;
+    margin-left: 1em;
+}
+*/
+
+.ulchildlink a {
+    font-weight: normal;
+}
+
+.ul:not(.ArgumentOptions) {
+  /* no tag applied in EDD */
+}
+
+
+.Url {
+  /* URL */
+  /* varies based on context - RESEARCH */
+  font-family: "Courier New", monospace;
+  font-size: 1.0em;
+  margin-bottom: 6pt;
+  margin-left: 0;
+  margin-top: 6pt;
+}
+
+.Usages {
+
+}
+
+:lang(ja) .Usages:before {
+  content: "使用法"; /* Usage */
+}
+
+:lang(cn) .Usages:before {
+  content: "用法"; /* Usage */
+}
+
+:lang(en) .Usages:before {
+  content: "Usage";
+}
+
+.Usages:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+:lang(ja) .syn-par .Usages:before {
+  content: "シンタックス"; /* Syntax */
+}
+
+:lang(cn) .syn-par .Usages:before {
+  content: "语法"; /* Syntax */
+}
+
+:lang(en) .syn-par .Usages:before {
+  content: "Syntax";
+}
+
+.syn-par .Usages:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+:lang(ja) .syn-arg .Usages:before {
+  content: "シンタックス"; /* Syntax */
+}
+
+:lang(cn) .syn-arg .Usages:before {
+  content: "语法"; /* Syntax */
+}
+
+:lang(en) .syn-arg .Usages:before {
+  content: "Syntax";
+}
+
+.syn-arg .Usages:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+:lang(ja) .usa-par  .Usages:before {
+  content: "使用法"; /* Usage */
+}
+
+:lang(cn) .usa-par  .Usages:before {
+  content: "用法"; /* Usage */
+}
+
+:lang(en) .usa-par  .Usages:before {
+  content: "Usage";
+}
+
+.usa-par  .Usages:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+:lang(ja) .usa-arg  .Usages:before {
+  content: "使用法"; /* Usage */
+}
+
+:lang(cn) .usa-arg  .Usages:before {
+  content: "用法"; /* Usage */
+}
+
+:lang(en) .usa-arg  .Usages:before {
+  content: "Usage";
+}
+
+.usa-arg  .Usages:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+.UsageLine {
+  /* z.Usage */
+  font-size: 1.0em;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+  margin-left: 0.375in;
+  text-indent: -0.375in;
+}
+
+.UsageNotes {
+  /* no tag applied in EDD */
+}
+
+:lang(ja) .UsageNotes:before {
+  content: "使用上の注意"; /* Usage Notes */
+}
+
+:lang(cn) .UsageNotes:before {
+  content: "使用说明"; /* Usage Notes */
+}
+
+:lang(en) .UsageNotes:before {
+  content: "Usage Notes";
+}
+
+.UsageNotes:before {
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 9pt;
+  color: #666666;
+  font-size:1.3em;
+}
+
+.UsageSet {
+  /* no tag applied in EDD */
+}
+.userinput {
+  /* Bold */
+  font-weight: bold;
+}
+.varname {
+  font-style: italic;
+  /* no matching tag in CSS - soft.var.name */
+}
+
+.varname:before {
+  font-style: italic;
+  content:"<";
+}
+
+.varname:after {
+  font-style: italic;
+  content: ">";
+}
+
+
+.xref {
+  /* varies per scope */
+}
+
+
+/* fix for DITA-OT "Note:" prefix on line before note
+ * JCB turned off this setting as styles are now attached to .note divs and
+ * para elements.
+.note > .p:first-of-type { display: inline; }
+*/
+
+
+/* overrides for settings from commonltr.css */
+.topictitle1 { margin-top: 0pc; margin-bottom: .5em; font-size: 1.8em; }
+.sectiontitle { margin-top: 1em; margin-bottom: 0em; color: #666666; font-size: 1.1em; font-weight: bold;}

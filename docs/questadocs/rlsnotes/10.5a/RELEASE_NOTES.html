@@ -1,0 +1,334 @@
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>10.5a Release Notes</title>
+<meta name="attributes" content="product.name.questa_sim,doc.type.documentation.rn,product.version.10.5a" />
+</head>
+<body link="#0000EE" alink="#FF0000" vlink="#551A8B" bgcolor="#FFFFFF" text="#000000">
+<center><h1><a name="TOC"></a> Release Notes For Questa Sim 10.5a</h1></center>
+<center><b>Apr 04 2016</b> <br />
+ <br />
+ Copyright 1991-2016 Mentor Graphics Corporation<br />
+ All rights reserved.<br />
+ This document contains information that is proprietary to Mentor Graphics<br />
+ Corporation. The original recipient of this document may duplicate this<br />
+ document in whole or in part for internal business purposes only, provided<br />
+ that this entire notice appears in all copies. In duplicating any part of<br />
+ this document the recipient agrees to make every reasonable effort to<br />
+ prevent the unauthorized use and distribution of the proprietary<br />
+ information.<br />
+ <br />
+ TRADEMARKS: The trademarks, logos and service marks (&quot;Marks&quot;) used herein<br />
+ are the property of Mentor Graphics Corporation or other third parties.<br />
+ No one is permitted to use these Marks without the prior written consent<br />
+ of Mentor Graphics or the respective third-party owner. The use herein<br />
+ of a third-party Mark is not an attempt to indicate Mentor Graphics as a<br />
+ source of a product, but is intended to indicate a product from, or<br />
+ associated with, a particular third party. The following are trademarks of<br />
+ of Mentor Graphics Corporation: Questa, ModelSim, JobSpy, and Signal Spy.<br />
+ A current list of Mentor Graphics trademarks may be viewed at<br />
+ www.mentor.com/terms_conditions/trademarks.cfm.<br />
+ <br />
+ End-User License Agreement: You can print a copy of the End-User License<br />
+ Agreement from: www.mentor.com/terms_conditions/enduser.cfm.<br />
+ <br />
+</center>
+<p /><h4><hr width="100%" /></h4>
+<ul><li><b>How to Get Support</b>
+ <p /> For information on how to obtain technical support, visit the support page at<br />
+ <br />
+ <a href="http://supportnet.mentor.com">http://supportnet.mentor.com</a><br />
+ <br />
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<h3><b>Index to Release Notes</b></h3>
+<ul><li><a href="#keyinfo">Key Information</a></li>
+ <li><a href="#rlsannouncement">Release Announcements in 10.5a</a></li>
+ <li><a href="#baseproductspecs">Base Product Specifications in 10.5a</a></li>
+ <li><a href="#compatibility">Compatibility Issues with Release 10.5a</a></li>
+ <li><a href="#generaldefects">General Defects Repaired in 10.5a</a></li>
+ <li><a href="#verilogdefects">SystemVerilog Defects Repaired in 10.5a</a></li>
+ <li><a href="#vhdldefects">VHDL Defects Repaired in 10.5a</a></li>
+ <li><a href="#systemcdefects">SystemC Defects Repaired in 10.5a</a></li>
+ <li><a href="#assertiondefects">SVA/PSL Defects Repaired in 10.5a</a></li>
+ <li><a href="#mixeddefects">Mixed Language Defects Repaired in 10.5a</a></li>
+ <li><a href="#vmdefects">Verification Management Defects Repaired in 10.5a</a></li>
+ <li><a href="#generalenhancement">General Enhancements in 10.5a</a></li>
+ <li><a href="#systemverilogenhancement">SystemVerilog Enhancements in 10.5a</a></li>
+ <li><a href="#systemcenhancement">SystemC Enhancements in 10.5a</a></li>
+ <li><a href="#svapslenhancement">SVA/PSL Enhancements in 10.5a</a></li>
+ <li><a href="#paenhancement">Power Aware Enhancements in 10.5a</a></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="keyinfo"></a><font size="5"><b>Key Information</b></font>
+<ul><li>[nodvtid]  - (source) A bug related to Windows DLL symbol export is fixed in 10.5 and later. A side effect of the fix is that there may be incompatibility on Windows platforms regarding existing DPI usage. The required setup change is one of the followings:
+<br>
+1) Use vlog -dpiheader to generate DPI routine prototype declarations. Include generated DPI header file in the DPI code.
+<br>
+OR
+<br>
+2) If DPI header is not being generated or used, one needs to manually attach DPI_DLLESPEC in front of all DPI routines. DPI_DLLESPEC is a standard macro defined inside svdpi.h
+<br>
+The generated DPI header flow is recommended. Failing to do the above will incur the following warning at elab time
+<br>
+<pre>
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+</pre>
+and the fatal error at runtime:
+<pre>
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+</pre>
+</li>
+ <li>[nodvtid]  - (results) Designs that depend on the IEEE floating point package "float_generic_package" may require a refresh in some situations when simulated using 10.5a. Specifically:
+1.      If a design unit that uses functionality from the IEEE floating point package was compiled with an earlier 10.5* release of Questa using the command "vcom -novopt", it may need to be refreshed. If the "-novopt" switch was not used with vcom, then such design units will not need refreshing.
+2.      If a PDU generated using an earlier 10.5* release of Questa uses functionality from the IEEE floating point library, it may need to be refreshed.
+In these cases vsim would error out with error number 3274 in case a refresh is not done.
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="rlsannouncement"></a><font size="4"><b>Release Announcements in 10.5a</b></font>
+<ul><li>[nodvtid]  - In the next major release (10.6), support for Redhat Enterprise Linux (RHEL) 5 and Suse Linux Enterprise Server (SLES) 10 will be dropped.</li>
+ <li>[nodvtid]  - <p>
+Release 10.5 uses FLEXnet v11.13.1.2 server, v11.13.0.2 client.
+
+<p>
+For floating licenses, it will be necessary to verify that the vendor  daemon (i.e., mgcld) and the license server (i.e., lmgrd) have FLEXnet versions equal to or greater than 11.13.0.2. If the current FLEXnet version of your vendor daemon and lmgrd are less than 11.13.0.2 then it will be necessary to stop your license server and restart it using the vendor daemon and lmgrd contained in this release.
+
+<p>
+If you use node locked licenses you don't need to do anything. This 
+release will update licensing to MSL v2015_1_patch2 with MGLS v9.13_5.4 
+and PCLS v9.13.5.2
+
+<p>
+In summary, this release uses the following license versions:
+<ul>
+<li>FLEXnet v11.13.1.2 server, v11.13.0.2 client
+<li>MSL v2015_1_patch2
+<li>MGLS v9.13_5.4
+<li>PCLS v9.13.5.2</li>
+ <li>[nodvtid]  - <p>
+10.5 release onwards, Questa will be using Microsoft Visual Studio 12 a.k.a Visual Studio 13. This would mean that all the executables shipped with the 10.5 release and onwards would be linked in with "msvcr120.dll".
+If you have SystemC or PLI/VPI/DPI/FLI libraries compiled with older release with any gcc compiler shipped with the product, those will have to be re-compiled with 10.5. 
+Windows platform compiler details is as follows:
+<p>
+<ul>
+<li> "gcc-4.2.1-mingw32vc9" has been replaced with "gcc-4.2.1-mingw32vc12" and is shipped with the product. 
+<li> "gcc-4.5.0-mingw64" has been replaced with "gcc-4.5.0-mingw64vc12" and is shipped with the product.
+<li> "gcc-4.5.0-mingw32vc9" has been replaced with "gcc-4.5.0-mingw32vc12" and will be available for download on a request basis.
+<p>
+Compiler versions have not been changed compared to previous release. Please refer to User's Manual for more details.
+</li>
+ <li>[nodvtid]  - (source) In the next major release (10.6)<br>
+   <ul> 
+   <li>support for Windows 8.0 will be dropped. No change for Windows 8.1
+   <li>support for gcc-4.3.3-linux and gcc-4.3.3-linux_x86_64 will be dropped
+</ul></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="baseproductspecs"></a><font size="4"><b>Base Product Specifications in 10.5a</b></font>
+<ul><li>[nodvtid]  - <br>
+[Supported Platforms]<br>
+	Linux RHEL 5 x86/x86-64<br>
+	Linux RHEL 6 x86/x86-64<br>
+	Linux RHEL 7 x86/x86-64<br>
+	Linux SLES 10 x86/x86-64<br>
+	Linux SLES 11 x86/x86-64<br>
+	Windows 7 x86/x64<br>
+	Windows 8 x86/x64<br>
+        Windows 10 x86/x64<br>
+<br>
+[Supported GCC Compilers (for SystemC)]<br>
+	gcc-4.7.4-linux/gcc-4.7.4-linux_x86_64<br>
+	gcc-4.5.0-linux/gcc-4.5.0-linux_x86_64<br>
+	gcc-4.3.3-linux/gcc-4.3.3-linux_x86_64<br>
+	gcc-4.2.1-mingw32vc12<br>
+<br>
+[OVL (shipped with product)]<br>
+	v2.8.1<br>
+<br>
+[VHDL OSVVM (shipped with product)]<br>
+	v2014.07<br>
+<br>
+[Licensing]<br>
+	FLEXnet	v11.13.1.2 server, v11.13.0.2 client<br>
+	MSL 	v2015_1_patch2<br>
+	MGLS 	v9.13_5.4<br>
+	PCLS 	v9.13.5.2<br>
+<br></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="compatibility"></a><font size="4"><b>Compatibility Issues with Release 10.5a</b></font>
+<p /><dd><font size="3"><b>Key Information Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source) A bug related to Windows DLL symbol export is fixed in 10.5 and later. A side effect of the fix is that there may be incompatibility on Windows platforms regarding existing DPI usage. The required setup change is one of the followings:
+<br>
+1) Use vlog -dpiheader to generate DPI routine prototype declarations. Include generated DPI header file in the DPI code.
+<br>
+OR
+<br>
+2) If DPI header is not being generated or used, one needs to manually attach DPI_DLLESPEC in front of all DPI routines. DPI_DLLESPEC is a standard macro defined inside svdpi.h
+<br>
+The generated DPI header flow is recommended. Failing to do the above will incur the following warning at elab time
+<br>
+<pre>
+# ** Warning: (vsim-3770) Failed to find user specified function 'foo' in DPI
+C/C++ source files.
+</pre>
+and the fatal error at runtime:
+<pre>
+# ** Fatal: (vsim-160) test.sv(11): Null foreign function pointer encountered wh
+en calling 'foo'
+</pre>
+</li>
+ <li>[nodvtid]  - (results) Designs that depend on the IEEE floating point package "float_generic_package" may require a refresh in some situations when simulated using 10.5a. Specifically:
+1.      If a design unit that uses functionality from the IEEE floating point package was compiled with an earlier 10.5* release of Questa using the command "vcom -novopt", it may need to be refreshed. If the "-novopt" switch was not used with vcom, then such design units will not need refreshing.
+2.      If a PDU generated using an earlier 10.5* release of Questa uses functionality from the IEEE floating point library, it may need to be refreshed.
+In these cases vsim would error out with error number 3274 in case a refresh is not done.
+</li>
+</ul>
+<p /><dd><font size="3"><b>SystemVerilog  Compatibility</b></font></dd>
+<ul><li>dvt84871 - (results) vsim crashed when annotating SDF to a full specify path ( "*>") with path selects on source and destination terminals. This happened only when the specify block contained more than 64 paths and the width of the source and destination part-selects were different. E.g. (a[17:9] *> y[36:18]) = (0);</li>
+ <li>dvt84969 - (results) Specifying a VHDL instance to $asserton or $assertoff didn't affect the assert statements. It caused error (vsim-8111) to be emitted, indicating no matching object was found.</li>
+ <li>dvt83391 - (results) In some situations, a performance optimization for FSDB dumping caused pli errors:
+# ** Error: (vsim-PLI-3532) acc_vcl_add(): The object_handle parameter is not a 
+handle to a register, net, variable, port, terminal, or event.
+# ** Error: (vsim-PLI-3494) acc_fetch_size(): The object_handle parameter is
+not a handle to a net, register, or port, or a bit-select thereof.
+setting the env variable MTI_OPT_FSDB=0 will also workaround this problem.</li>
+ <li>dvt66421 - (results) When vsim was run with any "-radix" other than "binary", UVM backdoor functions uvm_hdl_deposit and uvm_hdl_force didn't deposit/force the correct value into VHDL data objects.</li>
+ <li>dvt85177 - (results) Improved the reporting of vsim arguments after loading an elaboration or checkpoint run.</li>
+ <li>dvt83519 - (results) Report vsim arguments with which elaboration or checkpoint was created.</li>
+ <li>dvt69035 - (results) Support of -seq_udp_delay <delay> added. Specify a constant delay for all sequential UDP's in the design and set all other structural delays to zero</li>
+</ul>
+<p /><dd><font size="3"><b>SystemC  Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (results) sccom would invoke scparse with the '--c++0x' option by default, which would enable the c++11 standard. The enabling of the c++11 standard by default would lead to scparse compilation errors in certain cases, while the g++ compilation would run fine. sccom has been fixed not to pass '--c++0x' by default. If a design has c++11 constructs, sccom needs to be invoked with the '-std=c++11' option so that both, g++ and scparse will run with the c++11 standard enabled during compilation.</li>
+</ul>
+<p /><dd><font size="3"><b>Verification Management  Compatibility</b></font></dd>
+<ul><li>dvt83252 - (results) A problem has been fixed that prevented parameters specified in a parent testplan from being correctly passed down to a child testplan.</li>
+</ul>
+<p /><dd><font size="3"><b>Release Announcements Compatibility</b></font></dd>
+<ul><li>[nodvtid]  - (source) In the next major release (10.6)<br>
+   <ul> 
+   <li>support for Windows 8.0 will be dropped. No change for Windows 8.1
+   <li>support for gcc-4.3.3-linux and gcc-4.3.3-linux_x86_64 will be dropped
+</ul></li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generaldefects"></a><font size="4"><b>General Defects Repaired in 10.5a</b></font>
+<ul><li>dvt84629 - [ModelSim Microsemi] Wrong license feature name 'actelmsimvlog' mentioned in licensing error message for expired licenses. Should have been 'microsemimsim'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="verilogdefects"></a><font size="4"><b>SystemVerilog Defects Repaired in 10.5a</b></font>
+<ul><li>dvt84871 - (results) vsim crashed when annotating SDF to a full specify path ( "*>") with path selects on source and destination terminals. This happened only when the specify block contained more than 64 paths and the width of the source and destination part-selects were different. E.g. (a[17:9] *> y[36:18]) = (0);</li>
+ <li>[nodvtid]  - Extended Mac OS new-line warning message to cover line comments when the line comments is the first text found within a source file.</li>
+ <li>dvt84969 - (results) Specifying a VHDL instance to $asserton or $assertoff didn't affect the assert statements. It caused error (vsim-8111) to be emitted, indicating no matching object was found.</li>
+ <li>dvt84189 - Inline randomization constraints with type casts would sometimes generate compilation errors like:<pre>
+** Error: test.sv(10): Illegal field 'my_type'</pre></li>
+ <li>dvt83391 - (results) In some situations, a performance optimization for FSDB dumping caused pli errors:
+# ** Error: (vsim-PLI-3532) acc_vcl_add(): The object_handle parameter is not a 
+handle to a register, net, variable, port, terminal, or event.
+# ** Error: (vsim-PLI-3494) acc_fetch_size(): The object_handle parameter is
+not a handle to a net, register, or port, or a bit-select thereof.
+setting the env variable MTI_OPT_FSDB=0 will also workaround this problem.</li>
+ <li>dvt85773 - vsim crashed with "+bitblast" when a module contained a wide port in $setuphold (or $recrem) but not corresponding delayed nets. For example, "$setuphold(posedge CLK, posedge A, 0,0,notify);" where A is a wide port. In comparison, "$setuphold(posedge CLK, posedge A, 0,0,notify,,, dCLK, dA);", which has the delayed nets specified, did not crash.</li>
+ <li>dvt85744 - Fixed a vopt crash when randomize with "with" is called on a class present in different package.</li>
+ <li>dvt85552 - Fixed a vopt crash when a structure parameter is passed to module and is also used to pass its one field to another module instance in a generate loop. </li>
+ <li>dvt85511 - Fixed a vopt crash when interface instance array element is passed as port in a generate loop.</li>
+ <li>dvt85354 - Fixed a vopt crash when interface array is passed as port in a module and size of the interface array is based on the parameter value passed to same module.</li>
+ <li>dvt85355 - Fixed a vopt invalid error when interface array element is passed as port and vopt is not able to evaluate the value of index.</li>
+ <li>dvt85027 - Fixed an invalid vsim error 3371 when a parameter is initialized with constant function and this parameter value is used as index while declaring a typedef.</li>
+ <li>dvt80327 - Fixed a vlog crash when default parameters are used for non parameterized class.</li>
+ <li>dvt84147 - Allowed the comma in the path given to -pli argument.</li>
+ <li>dvt84543 - Fixed a vlog error when a class is passed as argument to new operator.</li>
+ <li>dvt84512 - Corrected the output of $countbits when used on array size larger than 32 bits.</li>
+ <li>dvt84079 - An interface was showing all z's on port connection in a corner scenario when interface is instantiated inside generate and also used as virtual interface. This has been fixed now.</li>
+ <li>dvt80740 - Added an error check when constant variable defined inside interface is changed.</li>
+ <li>dvt83576 - Fixed a vopt crash when following type of expression is used. Expression:- array[index].element |= constant, where index is some external reference to a part-select expression.</li>
+ <li>dvt81993 - Added a warning when array dimension greater than the size of an int is declared.</li>
+ <li>dvt85884 - Fixed a bug which resulted in vsim crash when dynamic rand array is declared as field inside a structure.</li>
+ <li>dvt84049 - Fixed a bug which resulted in vopt assert failure when using interface instance before its instantiation in the same scope.</li>
+ <li>dvt85029 - Fixed a bug which resulted in weak output of a buf (weak1, weak0) primitive to be incorrectly converted to a strong output.</li>
+ <li>dvt78378 - Fixed a bug which resulted in wrong vsim time error while overriding parameters of unpacked structure type.</li>
+ <li>dvt33609 - Fixed a vopt-7063 suppressible error when bind instance is used in left hand side of defparam statement.</li>
+ <li>dvt66421 - (results) When vsim was run with any "-radix" other than "binary", UVM backdoor functions uvm_hdl_deposit and uvm_hdl_force didn't deposit/force the correct value into VHDL data objects.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vhdldefects"></a><font size="4"><b>VHDL Defects Repaired in 10.5a</b></font>
+<ul><li>dvt85740 - The compiler (vcom) would issue an Internal error message when an array aggregate expression was associated with a port of a direct instantiation (ENTITY) when that port was of an array-of-unconstrained array type and the port subtype was fully constrained at the inner array and the constraint depended on generics of the ENTITY, different from the ENTITY of the design unit that contains the direct instantiation statement.</li>
+ <li>dvt85842 - If a subprogram contained a formal of mode IN and of type TIME and the declaration of the formal included a default expression, then a call to the subprogram that had an explicit association element for that formal would result in the subprogram being called with the value of the default expression, not the value of the actual.</li>
+ <li>dvt86029 - The simulator would crash when a port map associated an array subelement of a record type signal with an array type port, when the array subelement was defined as an unconstrained array (i.e, the record type was record-with-unconstrained array subelement).
+</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcdefects"></a><font size="4"><b>SystemC Defects Repaired in 10.5a</b></font>
+<ul><li>[nodvtid]  - (results) sccom would invoke scparse with the '--c++0x' option by default, which would enable the c++11 standard. The enabling of the c++11 standard by default would lead to scparse compilation errors in certain cases, while the g++ compilation would run fine. sccom has been fixed not to pass '--c++0x' by default. If a design has c++11 constructs, sccom needs to be invoked with the '-std=c++11' option so that both, g++ and scparse will run with the c++11 standard enabled during compilation.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="assertiondefects"></a><font size="4"><b>SVA/PSL Defects Repaired in 10.5a</b></font>
+<ul><li>dvt84891 - Assertion having $past with clock gating fires incorrectly.</li>
+ <li>dvt85213 - Assertion with suffix implication having boolean LHS and RHS fired incorrectly after that assertion was disabled by $assertoff.</li>
+ <li>dvt85418 - Assertion fires incorrectly when using SVA 'not' operator over a sequence.</li>
+ <li>dvt85985 - vsim crashes during 'coverage save' with -assertcover.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="mixeddefects"></a><font size="4"><b>Mixed Language Defects Repaired in 10.5a</b></font>
+<ul><li>dvt84862 -  Fixed a bug which resulted in internal vopt error when nested Verilog module instantiates VHDL entity with generics override.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="vmdefects"></a><font size="4"><b>Verification Management Defects Repaired in 10.5a</b></font>
+<ul><li>dvt83252 - (results) A problem has been fixed that prevented parameters specified in a parent testplan from being correctly passed down to a child testplan.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="generalenhancement"></a><font size="4"><b>General Enhancements in 10.5a</b></font>
+<ul><li>dvt78423 - When the design unit being instantiated was contained inside library 'work', and the design unit of the scope
+of the instantiation statement was contained in a library that was not named 'work', vopt (and vsim in -novopt flow)
+would fail to find the instantiated design unit in spite of using -L work. Using -L ./work would make the test
+pass. This has been fixed, and now -L ./work is no longer required.</li>
+ <li>dvt85061 - Added a sub-option 'compress' to option -createlib to automatically create compressed missing libraries.
+i.e. whenever a new library is created based on -createlib option, it is created compressed. The syntax
+is -createlib=compress.</li>
+ <li>[nodvtid]  - Usability improvements and bug fixes have been made to Questa's library search features. There are no known incompatibilities with earlier library search operations. All working designs will continue to elaborate as they have in the past. 
+<br>
+The following new features have been added to Questa's library search algorithm:<br>
+1. A new option called -Ldir has been added to vopt and vsim.<br>
+This option allows users to pass container folders for the libraries specified with -L/-Lf options. Once a container folder has been specified, the libraries contained in this folder can be directly referenced using their logical names. When multiple -Ldir options are used, the tool searches in the order in which -Ldir paths are specified on the command line. $cwd is always searched before any -Ldir options, as if there was an implicit "-Ldir ." specified first on the command line.
+<br>
+2. Vopt now detects inconsistencies between its -L/-Lf options and the options passed to vlog. Any inconsistency that can possibly result in a difference in the composition of the design will generate a warning.<br>
+
+3. A new option -libverbose=libmap has been added to display library map pattern matching information during compilation.
+<br>
+4. Some design units were missing source information next to their loading messages with -libverbose=prlib. This has been fixed. All design units now consistently show their source libraries when -libverbose=prlib is used.<br>
+
+5. A new option -work has been added to vsim. This is an optional option; When used, it would override the library in which vsim writes the optimized design generated by the internally invoked vopt command in the 2-step flow.
+<br>
+6. Error messages vsim-19 and vopt-19, generated for non-existent -L/-Lf libraries, are now suppressible.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemverilogenhancement"></a><font size="4"><b>SystemVerilog Enhancements in 10.5a</b></font>
+<ul><li>dvt85541 - Improved performance of switch network simulation where HDL forces are present.</li>
+ <li>dvt85177 - (results) Improved the reporting of vsim arguments after loading an elaboration or checkpoint run.</li>
+ <li>dvt83519 - (results) Report vsim arguments with which elaboration or checkpoint was created.</li>
+ <li>dvt84276 - Support the initialization of dynamic array with '{default:expression}.</li>
+ <li>dvt80842 - Allowed the shuffle method on associative arrays with -svext=omaa</li>
+ <li>dvt69035 - (results) Support of -seq_udp_delay <delay> added. Specify a constant delay for all sequential UDP's in the design and set all other structural delays to zero</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="systemcenhancement"></a><font size="4"><b>SystemC Enhancements in 10.5a</b></font>
+<ul><li>dvt81904 - sccom has a new option '-uvmc' and a modelsim.ini option 'UseUvmc' that would enable automatic linking of the precompiled UVMC libraries shipped with the product. This option is a link time only option and should be specified with 'sccom -link'.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="svapslenhancement"></a><font size="4"><b>SVA/PSL Enhancements in 10.5a</b></font>
+<ul><li>dvt81633 - Added support for case..endcase type of property in SVA.</li>
+</ul>
+<p /><h4><hr width="100%" /></h4>
+<p /><a name="paenhancement"></a><font size="4"><b>Power Aware Enhancements in 10.5a</b></font>
+<ul><li>dvt84673 - Added support to report the "clamp_value" set on a signal by "set_port_attributes" UPF command. It will be reported under the section of isolation strategy in Questa PASim report files report.upf.txt and report.pa.txt.</li>
+</ul>
+
+</body>
+</html>

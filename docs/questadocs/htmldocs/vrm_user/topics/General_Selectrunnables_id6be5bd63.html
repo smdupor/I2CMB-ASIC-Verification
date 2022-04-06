@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="SelectRunnables" />
+<meta name="abstract" content="This procedure allows the user to capture the list of Runnables selected from the command line or to customize how Runnables are selected. This procedure is called immediately after the runlist (if any) is read and the command-line arguments have been processed into an include/exclude list (but just before the include/exclude list is expanded into the Runnable selection (sparse) tree)." />
+<meta name="description" content="This procedure allows the user to capture the list of Runnables selected from the command line or to customize how Runnables are selected. This procedure is called immediately after the runlist (if any) is read and the command-line arguments have been processed into an include/exclude list (but just before the include/exclude list is expanded into the Runnable selection (sparse) tree)." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>SelectRunnables</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="SelectRunnables" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">SelectRunnables</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">This procedure
+allows the user to capture the list of Runnables selected from the
+command line or to customize how Runnables are selected. This procedure
+is called immediately after the runlist (if any) is read and the
+command-line arguments have been processed into an include/exclude
+list (but just before the include/exclude list is expanded into
+the Runnable selection (sparse) tree). </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id7cb4d869-f294-4124-8878-f01e45a818bf"><p class="p">The list of selected Runnables is passed to
+this procedure in the <span class="ph FontProperty emphasis">eiselect</span> data
+element as a list of lists (see <a class="xref fm:Table" href="#id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id8ba96e04-cc8d-4270-a62b-a6776e11473c">Table 1</a>). This procedure can modify that list
+as it sees fit. If the modified list is to be used in place of the
+original list, this procedure should return a true (1) value. Otherwise,
+if a false value is returned, the original include/exclude list
+is used as is.</p>
+<p class="p">The include/exclude list is basically a list
+of sub-hierarchies to include in the run and other sub-hierarchies
+to exclude. Each element in this list is itself a list composed
+of two members. The first member of each leaf-level list is a single
+character indicating the purpose of the list element. The second
+member of each leaf-level list is a string interpreted according
+to <a class="xref fm:Table" href="#id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id8ba96e04-cc8d-4270-a62b-a6776e11473c">Table 1</a>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id8ba96e04-cc8d-4270-a62b-a6776e11473c" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Element Members for SelectRunnables</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64605e167"><p class="p">If 1st member is:</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64605e170"><p class="p">Then 2nd member is:</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e167 "><p class="p">I </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e170 "><p class="p">A context string representing
+a Runnable to be included in the run.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e167 "><p class="p">E </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e170 "><p class="p">A context string representing
+a Runnable to be excluded from the run.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e167 "><p class="p">T </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e170 "><p class="p">An absolute path to a
+file containing a list of Runnables to be included in the run.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e167 "><p class="p">S </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e170 "><p class="p">A comma/space separated
+list of keywords as is passed to the -select command-line option.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">For example, a typical include/exclude list
+might be as follows:</p>
+<pre class="pre codeblock leveled"><code>{{I nightly} {E nightly/test2}}</code></pre><p class="p">which would select for running the test hierarchy
+under the <span class="ph filepath">nightly</span> Runnable, with the exception
+of the <span class="ph filepath">nightly/test2</span> Runnable. Proper care
+must be taken to ensure that the list of lists is assembled properly
+before this procedure returns. If the <span class="ph FontProperty emphasis">eiselect</span> data member
+has been modified and the modifications are to be used in building
+the execution graph, this procedure must return a true (1) value.</p>
+</div>
+<div class="section Subsection" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__ide170d7df-49ff-4f15-b60b-26c9e9426fd0"><h2 class="title Subheading sectiontitle">Input Arguments</h2><p class="p">Also see <a class="xref fm:TableAndPage" href="Concept_CommonArgumentsPassedAllUserDefinableProcedures_id6d5dfc20.html#id6d5dfc20-f0ae-4cb2-be13-b56b99568ccb__idf094d055-d4c6-4358-813c-337667fd878c">Table 1</a>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id77a2f7ea-a69a-4d1d-80fa-c43f3521e26d" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>SelectRunnables Input Arguments</span></caption><colgroup><col style="width:1.600in" /><col style="width:3.600in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64605e234"><p class="p">Member</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d64605e237"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e234 "><p class="p">pass</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e237 "><p class="p">1 if this procedure is
+called before the initial run; 2 if called before the failure rerun
+phase.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e234 "><p class="p">eiselect</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d64605e237 "><p class="p">The include/exclude list
+as described in <a class="xref fm:Table" href="#id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id8ba96e04-cc8d-4270-a62b-a6776e11473c">Table 1</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__id9d04e188-575a-4a3c-b08f-6354be0a6ed2"><h2 class="title Subheading sectiontitle">Returns</h2><p class="p">True (1) if the <span class="ph FontProperty emphasis">eiselect</span> list
+has been modified, false (0) otherwise.</p>
+</div>
+<div class="section Subsection" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__idda4b42ac-e4bc-41d3-8b80-6ccb1d682b9d"><h2 class="title Subheading sectiontitle">Default Behavior</h2><p class="p">Returns false always.</p>
+</div>
+<div class="section Subsection" id="id6be5bd63-6fb9-41d5-8c78-38bcc82dff1e__idda8a8042-e6e0-49f9-a084-89dd2c64fcfc"><h2 class="title Subheading sectiontitle">Side Effects</h2><p class="p">If this procedure returns true (1), then the
+include/exclude list in the data array is used to build the execution
+graph instead of the original include/exclude list built from the
+command line options. This modified include/exclude list will also
+be copied out to the runlist, if one is enabled. It will also affect
+what is displayed as a result of the -show option or any of the
+graph dump options (that is, all downstream processing of selected
+Runnables will assume the include/exclude list returned from this
+procedure was build directly from the command-line options.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RegressionControlProcedures_id9bfa8932.html" title="The following procedures allow the user to customize the behavior of key portions of the VRM regression algorithm:">Regression Control Procedures</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "SelectRunnables"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_Selectrunnables_id6be5bd63.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

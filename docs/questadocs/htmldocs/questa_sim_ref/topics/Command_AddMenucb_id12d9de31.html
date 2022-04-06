@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="add_menucb" />
+<meta name="abstract" content="Creates a checkbox within the specified menu of the specified window. A checkbox is a small box with a label. Clicking on the box toggles the state from on to off, or off to on. When the box is &#34;on&#34;, the Tcl global variable &lt;var&gt; is set to &lt;onval&gt;. When the box is &#34;off&#34;, the global variable is set to &lt;offval&gt;. If any operation changes the global variable, the state of the checkbox also changes. Returns nothing." />
+<meta name="description" content="Creates a checkbox within the specified menu of the specified window. A checkbox is a small box with a label. Clicking on the box toggles the state from on to off, or off to on. When the box is &#34;on&#34;, the Tcl global variable &lt;var&gt; is set to &lt;onval&gt;. When the box is &#34;off&#34;, the global variable is set to &lt;offval&gt;. If any operation changes the global variable, the state of the checkbox also changes. Returns nothing." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id12d9de31-6b79-4dfd-ade8-2983a43e42a2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>add_menucb</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="add_menucb" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">add_menucb</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Creates a
+checkbox within the specified menu of the specified window. A checkbox
+is a small box with a label. Clicking on the box toggles the state from
+on to off, or off to on. </p>
+<p class="shortdesc">When
+the box is "on", the Tcl global variable &lt;var&gt; is set to &lt;onval&gt;.
+When the box is "off", the global variable is set to &lt;offval&gt;.
+If any operation changes the global variable, the state of the checkbox
+also changes. Returns nothing.</p>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">add_menucb <a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idf7b6a69b-10fb-406b-a03c-67361900822c">&lt;window_name&gt;</a> <a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__ide9bb7a7b-4a6d-4900-80ac-f80e1e17a6e4">&lt;menu_name&gt;</a> <a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idd5156316-5ce5-4277-9e2c-65c131c1cea9">&lt;text&gt;</a> [<a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id9a989d74-b348-4c21-999a-6b0fae682b82">-indicatoron {0 | 1}</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id75c8987d-85d5-4640-a3f4-c7a480170dc0">-onvalue &lt;onval&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id49c804f1-3a24-4dce-9330-6d3d8324eefc">-offvalue &lt;offval&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id12d9de31-6b79-4dfd-ade8-2983a43e42a2__ide09059a1-33d3-47d5-aec1-e377be48dbf5">-variable &lt;var&gt;</a>] </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id2f6fd9ca-6ed3-4c64-bf28-463f03556a48"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idf7b6a69b-10fb-406b-a03c-67361900822c">&lt;window_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the Tk path of the window to contain the menu. Must be
+the first argument to the add_menucb command.</p>
+<p class="p">To add a menu
+to the Main window you must express this value as: "". For example:</p>
+<pre class="pre codeblock leveled"><code>	add_menucb "" mymenu</code></pre><p class="p">To add a menu
+to any other window, you must determine the window_name by executing
+the view command, for example:</p>
+<pre class="pre codeblock leveled"><code>	view wave</code></pre><p class="p">Returns:</p>
+<pre class="pre codeblock leveled"><code># .main_pane.wave</code></pre><p class="p">Note that
+all windows, other than the Main window, begin with a period (.). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__ide9bb7a7b-4a6d-4900-80ac-f80e1e17a6e4">&lt;menu_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the name of the Tk menu widget. Must be the second argument
+to the add_menucb command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idd5156316-5ce5-4277-9e2c-65c131c1cea9">&lt;text&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+Specifies the text to display next to the checkbox. Must be the
+third argument to the add_menucb command.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id9a989d74-b348-4c21-999a-6b0fae682b82">-indicatoron {0 | 1}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies whether or not to display the status indicator.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idefa5ec2a-c55e-42bf-b199-4e2c89617981"><p class="p Opt">0 — off</p>
+</li>
+<li class="li ArgOption" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idc08040fb-95c0-4f2b-9574-c83913f6e2f7"><p class="p Opt">1 — (default) on</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id75c8987d-85d5-4640-a3f4-c7a480170dc0">-onvalue &lt;onval&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the value of the global Tcl variable when the box is "on". </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id6be7e9d8-afdc-440e-a22a-eaf164e41640"><p class="p Opt">&lt;onval&gt;
+— A value specific to the global Tcl variable specified in -variable.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id49c804f1-3a24-4dce-9330-6d3d8324eefc">-offvalue &lt;offval&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the value of the global Tcl variable when the box is "off". </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__id2e08eb62-51f9-4fc6-8c49-483c85fd961a"><p class="p Opt">&lt;offval&gt;
+— A value specific to the global Tcl variable specified in -variable.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__ide09059a1-33d3-47d5-aec1-e377be48dbf5">-variable &lt;var&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the global Tcl variable to be reflected and changed. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id12d9de31-6b79-4dfd-ade8-2983a43e42a2__idb0760dd4-089d-4cd7-a56c-3c9b8b5928a7"><p class="p Opt">&lt;var&gt;
+— A global Tcl variable.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><p class="lines ApplCommand">   add_menucb $wname mine.vars "Feature One" \<br />
+   -variable myglobalvar($wname:one) -onvalue 1 -offvalue 0 -indicatoron 1</p>
+<p class="p">This command is
+also used in the <a class="xref fm:HeadingOnly" href="Command_AddMenu_id19e425d4.html#id19e425d4-b751-44a0-8f0b-19c7640793c9__Command_AddMenu_id19e425d4.xml#id19e425d4-b751-44a0-8f0b-19c7640793c9" title="Adds a menu to the menu bar of the specified window, using the specified menu name. Use the add_menuitem, add_separator, add_menucb, and add_submenu commands to complete the menu. Returns the full Tk pathname of the new menu. You can change color and other Tk properties of the menu, after creation, with the Tk menu widget configure command.">add_menu</a> example.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_AddMenu_id19e425d4.html#id19e425d4-b751-44a0-8f0b-19c7640793c9__" title="Adds a menu to the menu bar of the specified window, using the specified menu name. Use the add_menuitem, add_separator, add_menucb, and add_submenu commands to complete the menu. Returns the full Tk pathname of the new menu. You can change color and other Tk properties of the menu, after creation, with the Tk menu widget configure command.">add_menu</a></div>
+<div><a class="link" href="../topics/Command_AddSeparator_id5bf1d4ea.html#id5bf1d4ea-eed9-4b61-9d3a-4720f80120fe__" title="Adds a separator as the next item in the specified menu path in the specified window. Returns nothing.">add_separator</a></div>
+<div><a class="link" href="../topics/Command_AddSubmenu_id01d81863.html#id01d81863-d666-4ca5-8245-fdaf05240208__" title="Creates a cascading submenu within the specified menu path of the specified window. Can be used within a submenu. Returns the full Tk path to the new submenu widget.">add_submenu</a></div>
+<div><a class="link" href="../topics/Command_ChangeMenuCmd_idbb617620.html#idbb617620-2b9a-442e-8c5f-97809f9242e5__" title="Changes the command executed by a specified menu item label, in a specified menu, in a specified window. Returns nothing.">change_menu_cmd</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "add_menucb"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_AddMenucb_id12d9de31.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

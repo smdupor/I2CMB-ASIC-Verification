@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Simulating Designs with Multiple Test Benches" />
+<meta name="abstract" content="When using multiple test benches to simulate a design, you typically use vopt -pdu to optimize each design under test (DUT) as a preoptimized design unit (PDU). You would then use the Three-Step simulation on the different test benches, which prevents having to optimize each DUT." />
+<meta name="description" content="When using multiple test benches to simulate a design, you typically use vopt -pdu to optimize each design under test (DUT) as a preoptimized design unit (PDU). You would then use the Three-Step simulation on the different test benches, which prevents having to optimize each DUT." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id871316ea-5dfc-4eda-a620-d4aca0321155" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Simulating Designs with Multiple Test Benches</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Simulating Designs with Multiple Test Benches" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id871316ea-5dfc-4eda-a620-d4aca0321155">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Simulating Designs with Multiple Test Benches</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">When
+using multiple test benches to simulate a design, you typically
+use vopt -pdu to optimize each design under test (DUT) as a preoptimized
+design unit (PDU). You would then use the Three-Step simulation
+on the different test benches, which prevents having to optimize
+each DUT. </p>
+<p class="p">The following steps demonstrate
+how to simulate and optimize Verilog test benches and DUTs. </p>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id871316ea-5dfc-4eda-a620-d4aca0321155__idb277aab8-71c5-447f-8bd7-8d8edc1a6e0f"><p class="p">Current
+working library.</p>
+</li>
+<li class="li" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id892f7230-bc5c-42b6-a070-95bba576385d"><p class="p">Assume
+the following library and file names: </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id994a285a-6ffe-44fa-b725-e1deef0b697b" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:2.112in" /><col style="width:2.112in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">work</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">asic_lib</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">cell_lib.v</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">netlist.v</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">opt_netlist</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">tb.v</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test1.v</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">test2.v</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">opt_tb</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">sim.do</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id275ae610-6c21-4ff0-ad72-f6c3ccff1137"><span class="ph cmd">Compile the work and design
+libraries. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vlib work</p>
+<p class="lines ApplCommand">vlib asic_lib </p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id4b770fbf-cdcf-47b7-992a-07ee0761864b"><span class="ph cmd">Compile the library and netlist. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vlog -work asic_lib cell_lib.v</p>
+<p class="lines ApplCommand">vlog netlist.v</p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id4d99a36d-16e0-4cda-b8cd-5600769c75b8"><span class="ph cmd">Optimize the netlist using
+the PDU capability (-pdu netlist). </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vopt -L asic_lib -debugCellOpt +checkALL -pdu netlist -o opt_netlist</p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__idbfde306a-4611-401f-a752-69f45f9bd035"><span class="ph cmd">Compile the remainder of the
+design. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vlog tb.v test1.v</p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__ideeb32330-36ba-4455-9e30-265242bee5e4"><span class="ph cmd">Optimize the test bench.</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vopt tb -o opt_tb</p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__idc3a47084-5916-45df-bac3-fec27edfe7b4"><span class="ph cmd">Simulate the first test bench.</span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vsim -c opt_tb -do sim.do</p>
+</div></li>
+<li class="li step stepexpand" id="id871316ea-5dfc-4eda-a620-d4aca0321155__id2e3e4ce5-feb3-456c-9d4a-c9f9b88738ae"><span class="ph cmd">Compile and optimize a second
+test and re-simulate without recompiling or optimizing the PDU netlist. </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand">vlog test2.v</p>
+<p class="lines ApplCommand">vopt tb -o opt_tb</p>
+<p class="lines ApplCommand">vsim -c opt_tb -do sim.do</p>
+</div></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PreoptimizingRegionsYourDesign_idb52a229b.html" title="A Preoptimized Design Unit (PDU) is a region of your design that you can identify for a one-time optimization by using the -pdu argument of the vopt command. You can then reuse the PDU and exclude it from being optimized. This reduces the amount of time for future optimization and simulation runs by preoptimizing (black-boxing) static or unchanging regions of your design.">Preoptimizing Regions of Your Design</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Simulating Designs with Multiple Test Benches"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_SimulatingDesignsMultipleTestBenches_id871316ea.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="IEEE Std 1800-2012 System Tasks and Functions" />
+<meta name="abstract" content="The following system tasks and functions are supported by Questa SIM and are described more completely in the Language Reference Manual (LRM) for SystemVerilog, IEEE Std 1800‑2012." />
+<meta name="description" content="The following system tasks and functions are supported by Questa SIM and are described more completely in the Language Reference Manual (LRM) for SystemVerilog, IEEE Std 1800‑2012." />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idcd423d80-29cb-47a9-9c67-fcaa6aea150e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>IEEE Std 1800-2012 System Tasks and Functions</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="IEEE Std 1800-2012 System Tasks and Functions" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">IEEE Std 1800-2012 System Tasks and Functions</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><p class="shortdesc">The following
+system tasks and functions are supported by <span class="ph fmvar:ProductName">Questa SIM</span> and are described
+more completely in the Language Reference Manual (LRM) for SystemVerilog,
+IEEE Std 1800‑2012. </p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">You can use the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'change', 'questa_sim_ref'); return false;">change</a> command
+to modify local variables in Verilog and SystemVerilog tasks and
+functions.</p>
+</div>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id9fd73c6d-b99d-4e7c-be67-6c9e740bff70"><h2 class="title Subheading sectiontitle">Utility System Tasks and
+Functions</h2>
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__idc3eebed9-d87d-44a0-8b15-6e916679ac3b" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Utility System Tasks and Functions</span></caption><colgroup><col style="width:1.625in" /><col style="width:1.625in" /><col style="width:1.625in" /><col style="width:1.625in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e171"><p class="p">Simulator control
+tasks</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e184"><p class="p">Simulation time functions</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e187"><p class="p">Timescale tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e190"><p class="p">Data query functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e171 "><p class="p">$finish</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e184 "><p class="p">$realtime</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e187 "><p class="p">$printtimescale</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e190 "><p class="p">$bits</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e171 "><p class="p">$stop</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e184 "><p class="p">$stime</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e187 "><p class="p">$timeformat</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e190 "><p class="p">$isunbounded</p>
+</td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e171 "><p class="p">$exit</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e184 "><p class="p">$time</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e187 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e190 "><p class="p">$typename</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id47396186-cbba-48bb-b18c-7d0757908f52" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Utility System Functions</span></caption><colgroup><col style="width:1.625in" /><col style="width:1.625in" /><col style="width:1.625in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e240"><p class="p">Conversion functions </p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e243"><p class="p">Array querying functions</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e246"><p class="p">Bit vector system functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$bitstoreal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$dimensions</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "><p class="p">countbits</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$bitstoshortreal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$left</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "><p class="p">countones</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$realtobits</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$right</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "><p class="p">$onehot</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$shortrealtobits</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$low</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "><p class="p">$onehot0</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$itor</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$high</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "><p class="p">$isunknown</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$rtoi</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$increment</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$signed</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "><p class="p">$size</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$unsigned</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e243 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e246 "> </td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e240 "><p class="p">$cast</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e243 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e246 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__idd4dcab05-dc4a-4d50-8c1f-b77389f249d3" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 3. </span>Utility System Math Functions</span></caption><colgroup><col style="width:1.544in" /><col style="width:1.544in" /><col style="width:1.544in" /><col style="width:1.544in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" colspan="4" style="vertical-align:top;" id="d157860e338"><p class="p">Math
+Functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$clog2</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$floor</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$acos</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$cosh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$ln</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$ceil</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$atan</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$tanh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$log10</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$sin</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$atan2</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$asinh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$exp</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$cos</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$hypot</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$acosh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$sqrt</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$tan</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$sinh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$atanh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$pow</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e338 "><p class="p">$asin</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e338 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e338 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__ide401a65b-3db1-4aca-aa87-19c9dcccb8f0" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 4. </span>Utility System Elaboration Tasks and
+Coverage Functions</span></caption><colgroup><col style="width:1.607in" /><col style="width:1.967in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e425"><p class="p">Elaboration tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e428"><p class="p">Coverage control functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "><p class="p">$fatal</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$coverage_control</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "><p class="p">$error</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$coverage_get</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "><p class="p">$warning</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$coverage_get_max</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "><p class="p">$info</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$coverage merge</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$coverage_save</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$get_coverage</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e425 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$load_coverage_db</p>
+</td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e425 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e428 "><p class="p">$set_coverage_db_name</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id84959022-fd73-4449-9200-248ff4836b91" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 5. </span>Utility System Severity and Assertion Tasks</span></caption><colgroup><col style="width:1.701in" /><col style="width:1.682in" /><col style="width:1.818in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e491"><p class="p">Severity tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" colspan="2" style="vertical-align:top;" id="d157860e494"><p class="p">Assertion
+control tasks</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e491 "><p class="p">$fatal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$asserton</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertoff</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e491 "><p class="p">$error</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertkill</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertcontrol</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e491 "><p class="p">$warning</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertpasson</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">assertpassoff</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e491 "><p class="p">$info</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertfailon</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">assertfailoff</p>
+</td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e491 "> </td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertnonvacuouson</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e494 "><p class="p">$assertvacuousoff</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__idcbca5c2e-1ef9-4cf2-bb1d-9cb81719a920" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 6. </span>Utility System Analysis Tasks and Functions</span></caption><colgroup><col style="width:1.625in" /><col style="width:1.625in" /><col style="width:1.625in" /><col style="width:1.625in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e557"><p class="p">Probabilistic distribution functions</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e560"><p class="p">Stochastic analysis
+tasks and functions</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e563"><p class="p">PLA modeling tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e566"><p class="p">Miscellaneous tasks
+and functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_chi_square</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "><p class="p">$q_add</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$and$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "><p class="p">$system</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_erlang</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "><p class="p">$q_exam</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$nand$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_exponential</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "><p class="p">$q_full</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$or$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_normal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "><p class="p">$q_initialize</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$nor$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_poisson</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "><p class="p">$q_remove</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$and$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_t</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$nand$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$dist_uniform</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$or$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "><p class="p">$random</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$async$nor$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$and$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$nand$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$or$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$nor$array</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$and$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$nand$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$or$plane</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e557 "> </td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e560 "> </td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e563 "><p class="p">$sync$nor$plane</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e566 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+</div>
+<div class="section Subsection" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__idd4ed9188-561c-47c3-874c-bfba02272c41"><h2 class="title Subheading sectiontitle">Input/Output System Tasks
+and Functions</h2>
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id4aba18dc-891f-4b03-bdb8-eaffc5a0bb13" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 7. </span>Input/Output System Tasks and Functions</span></caption><colgroup><col style="width:1.860in" /><col style="width:2.040in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e722"><p class="p">Display tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e725"><p class="p">Value change dump (VCD)
+file tasks</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$display</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpall</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$displayb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpfile</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$displayh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpflush</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$displayo</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumplimit</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitor</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpoff</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitorb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpon</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitorh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpvars</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitoro</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpportson</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitoroff</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpportsoff</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$monitoron</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpportsall</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$strobe</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpportsflush</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$strobeb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpports</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$strobeh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "><p class="p">$dumpportslimit</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$strobeo</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$write</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$writeb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$writeh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e725 "> </td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e722 "><p class="p">$writeo</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e725 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id55d6e9e7-78d9-4e7c-9d6c-9ca320879c4c" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 8. </span>Input/Output System Memory and Argument Tasks</span></caption><colgroup><col style="width:1.950in" /><col style="width:1.950in" /><col style="width:1.950in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e867"><p class="p">Memory load tasks</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e870"><p class="p">Memory dump tasks</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e873"><p class="p">Command line input</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e867 "><p class="p">$readmemb</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e870 "><p class="p">$writememb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e873 "><p class="p">$test$plusargs</p>
+</td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e867 "><p class="p">$readmemh</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e870 "><p class="p">$writememh</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e873 "><p class="p">$value$plusargs</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id5eb3ac04-6d20-40f1-9747-170ed3e7da7e" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 9. </span>Input/Output System File I/O Tasks</span></caption><colgroup><col style="width:2.058in" /><col style="width:2.058in" /><col style="width:2.058in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" colspan="3" style="vertical-align:top;" id="d157860e906"><p class="p">File
+I/O tasks</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fclose</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fmonitoro</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fwriteo</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fdisplay</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fopen</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$rewind</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fdisplayb</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fread</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$sdf_annotate</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fdisplayh</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fscanf</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$sformatf</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fdisplayo</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fseek</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$sscanf</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$feof</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fstrobe</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$swrite</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$ferror</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fstrobeb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$swriteb</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fflush</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fstrobeh</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$swriteh</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fgetc</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fstrobeo</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$swriteo</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fgets</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$ftell</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$ungetc</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fmonitor</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fwrite</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fmonitorb</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fwriteb</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e906 "> </td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fmonitorh</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e906 "><p class="p">$fwriteh</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e906 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+</div>
+<div class="section Subsection" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__idfb813267-1715-4185-9ec5-4f92d971b8a1"><h2 class="title Subheading sectiontitle">Other System Tasks and
+Functions</h2>
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="idcd423d80-29cb-47a9-9c67-fcaa6aea150e__id4799cb90-9c1a-4de5-a69f-0aea71ae3d46" class="table" border="0"><caption><span class="tablecap"><span class="table--title-label">Table 10. </span>Other System Tasks and Functions</span></caption><colgroup><col style="width:1.825in" /><col style="width:2.150in" /><col style="width:1.550in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e1047"><p class="p">Timing check tasks</p>
+</th>
+<th class="entry row-nocellborder default-entry" style="vertical-align:top;" id="d157860e1050"><p class="p">Random number functions</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d157860e1053"><p class="p">Other functions</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$hold</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "><p class="p">$urandom</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "><p class="p">$root</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$nochange</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "><p class="p">$urandom_range</p>
+</td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "><p class="p">$unit</p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$period</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$recovery</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$setup</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$setuphold</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$skew</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$width<a name="fnsrc_1" href="#fntarg_1"><sup>1</sup></a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$removal</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cell-norowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+<tr class="row"><td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e1047 "><p class="p">$recrem</p>
+</td>
+<td class="entry row-nocellborder default-entry" style="vertical-align:top;" headers="d157860e1050 "> </td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d157860e1053 "> </td>
+</tr>
+</tbody>
+</table>
+</td></tr></table>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemverilogSystemTasksFunctions_id7283c7df.html" title="SystemVerilog system tasks and functions are built into the simulator, although some designs depend on user-defined system tasks implemented with the various programming and procedural interfaces.">SystemVerilog System Tasks and Functions</a></div>
+</div>
+</div></div>
+<div class="fn"><a name="fntarg_1" href="#fnsrc_1"><sup>1</sup></a>  Verilog-XL ignores the threshold argument
+even though it is part of the Verilog spec. <span class="ph fmvar:ProductName">Questa SIM</span> does not ignore this argument. Do not set the threshold
+argument greater-than-or-equal to the limit argument, as that essentially
+disables the $width check. Also, note that you cannot override the
+threshold argument by using SDF annotation.</div></div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "IEEE Std 1800-2012 System Tasks and Functions"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_IeeeStd18002012SystemTasksFunctions_idcd423d80.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

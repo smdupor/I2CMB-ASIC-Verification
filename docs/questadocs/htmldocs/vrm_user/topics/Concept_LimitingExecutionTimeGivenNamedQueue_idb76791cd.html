@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Limiting the Execution Time of a Given Named Queue" />
+<meta name="abstract" content="A related but independent function is the ability to limit the “execution window” of a given named queue. If the window attribute is specified for a given execution method, that attribute is used to establish a window of time during which the jobs launched from that queue are allowed to run. The value of the window attribute is parsed into one or more semicolon-separated expressions. Each expression consists of a limit type identifier and a limit value string separated by a colon. The only limit type identifier defined at this time is “wall” that means wall-clock time measured from the time the first job is launched. The limit value string follows the rules outlined in the man page for the TCL clockscan command." />
+<meta name="description" content="A related but independent function is the ability to limit the “execution window” of a given named queue. If the window attribute is specified for a given execution method, that attribute is used to establish a window of time during which the jobs launched from that queue are allowed to run. The value of the window attribute is parsed into one or more semicolon-separated expressions. Each expression consists of a limit type identifier and a limit value string separated by a colon. The only limit type identifier defined at this time is “wall” that means wall-clock time measured from the time the first job is launched. The limit value string follows the rules outlined in the man page for the TCL clockscan command." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb76791cd-9003-4253-81b3-5f9e20445478" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Limiting the Execution Time of a Given Named Queue</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Limiting the Execution Time of a Given Named Queue" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb76791cd-9003-4253-81b3-5f9e20445478">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Limiting the Execution Time of a Given
+Named Queue</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">A related but
+independent function is the ability to limit the “execution window”
+of a given named queue. If the <span class="ph FontProperty emphasis">window</span> attribute
+is specified for a given execution method, that attribute is used
+to establish a window of time during which the jobs launched from
+that queue are allowed to run. The value of the <span class="ph FontProperty emphasis">window</span> attribute
+is parsed into one or more semicolon-separated expressions. Each
+expression consists of a limit type identifier and a limit value
+string separated by a colon. The only limit type identifier defined
+at this time is “wall” that means wall-clock time measured from
+the time the first job is launched. The limit value string follows the
+rules outlined in the man page for the TCL clockscan command. </span>
+</div>
+<p class="p">As an example, below is an execution
+method that is associated with the named queue “grid”. This execution
+method clubs together all eligible Actions in a single grid job
+(since the value of <span class="ph FontProperty emphasis">maxclubbing</span> is
+zero). It also specifies an execution window of 30 minutes from
+the time the first job is launched. </p>
+<pre class="pre codeblock leveled"><code>&lt;method name="lsfgrid" gridtype="lsf" queue="grid" maxclubbing="0" window="wall:30 mins"&gt;...&lt;/method&gt;</code></pre><p class="p">What this implies is that any job launched
+via this execution method must finish within 30 minutes of the time
+the first job was launched from this queue or it will be killed.
+Moreover, any jobs launched or any Actions queued during this 30
+minute window will also be killed or dropped when the execution
+window expires. Actions whose status is “executing” (that is, a <span class="ph FontProperty emphasis">start</span> message
+is received) is reported as “killed” while Actions that have not
+yet started (because they were never launched or the multi-Action
+script had not reached that point in the list) are reported as “skipped.”</p>
+<p class="p">The sequence is as follows:</p>
+<ol class="ol"><li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__id6a6c6dcb-ad9a-46e8-873c-bc659aab2d79"><p class="p">One or more Actions become eligible to run
+and are added to the named queue.</p>
+</li>
+<li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__iddeedadc8-3859-40bb-9f4e-6df25b92cf9f"><p class="p">The first Action (or clubbed group of Actions)
+to be launched from this named queue “opens” the execution window.</p>
+</li>
+<li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__id02ef2e17-84c0-4111-b7b2-63fda8a81de0"><p class="p">Subsequent Actions may be added to and/or
+launched from the named queue without affecting the execution window.</p>
+</li>
+<li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__idfdd85099-9ab1-4fb9-9034-18591f036297"><p class="p">When the execution window expires:</p>
+<ul class="ul"><li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__id22d2341d-fc57-4e0d-a061-eacc2bc66410"><p class="p">Any pending jobs launched from this
+named queue are killed, and</p>
+</li>
+<li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__idc7555c60-410a-4ad1-98b1-c21a5b23097b"><p class="p">Any queued Actions still in the queue
+are dropped (and reported as skipped).</p>
+</li>
+</ul>
+</li>
+<li class="li" id="idb76791cd-9003-4253-81b3-5f9e20445478__id77c8d58f-b612-4a9a-b795-9a4b6f395004"><p class="p">Once the execution window has expired, Actions
+subsequently added to the same named queue start the process anew.</p>
+</li>
+</ol>
+<p class="p">Note that the named queue itself is not disabled.
+It may be used to launch a subsequent set of Actions via the same
+execution method. However, since consistent behavior depends on
+the timing of the eligibility of the subsequent Actions, one should
+only consider this for cases where a clear dependency between several
+distinct sets of Actions is defined.</p>
+<p class="p">Note also that the execution window limit is
+independent of the multi-Action clubbing. One can take advantage
+of either without the other or of both together.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExecutionQueuesJobAggregation_idffbe9cb9.html" title="Tests and other user scripts are specified in the RMDB in terms of Actions. The content of the preScript, execScript, and postScript elements are examples of Actions specified in the RMDB.">Execution Queues and Job Aggregation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Limiting the Execution Time of a Given Named Queue"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_LimitingExecutionTimeGivenNamedQueue_idb76791cd.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

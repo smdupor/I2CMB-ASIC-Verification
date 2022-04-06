@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="mti_GetPhysicalData()" />
+<meta name="abstract" content="Gets the unit information of a physical type." />
+<meta name="description" content="Gets the unit information of a physical type." />
+<meta name="DC.subject" content="mti_GetPhysicalData()" />
+<meta name="keywords" content="mti_GetPhysicalData()" />
+<meta name="prodname" content="Foreign Language Interface Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® DE/SE and Questa® SIM" />
+<meta name="SourceHandle" content="fli" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Foreign Language Interface Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id6fdfb732-2218-4801-8597-4f523cd0e81d" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>mti_GetPhysicalData()</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="mti_GetPhysicalData()" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id6fdfb732-2218-4801-8597-4f523cd0e81d">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">mti_GetPhysicalData()</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Gets the
+unit information of a physical type.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><pre class="pre codeblock"><code>phys_data = mti_GetPhysicalData( type_id )</code></pre></div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table ArgumentTable" frame="void" border="0" rules="none"><colgroup><col style="width:1.815in" /><col style="width:1.863in" /><col style="width:2.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e159"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e162"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e165"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e159 "><p class="p">type_id</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e162 "><p class="p">mtiTypeIdT</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e165 "><p class="p">A handle to a VHDL physical type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section ReturnedValues"><h2 class="title Subheading sectiontitle">Return Values</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id6fdfb732-2218-4801-8597-4f523cd0e81d__id7f558cd7-3445-47ac-87bd-b8f585a87ca1" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:1.382in" /><col style="width:1.430in" /><col style="width:2.388in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e188"><p class="p">Name</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e191"><p class="p">Type</p>
+</th>
+<th class="entry nocellnorowborder default-entry" style="vertical-align:top;" id="d65029e194"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e188 "><p class="p">phys_data</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e191 "><p class="p">mtiPhysicalDataT *</p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;" headers="d65029e194 "><p class="p">A pointer to a linked
+list of structures each describing the name and position of a unit
+in the specified physical type</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">mti_GetPhysicalData()
+returns a pointer to a linked list of structures each describing
+the name and position of a unit in the specified physical type.
+The simulator traverses the linked list by using the next pointer
+in each structure and a NULL pointer terminates traversal. The caller is
+responsible for freeing each structure in the list with mti_Free().</p>
+<p class="p">mti_GetPhysicalData() returns NULL
+if the specified type is not a physical type.</p>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><div class="section Subsection" id="id6fdfb732-2218-4801-8597-4f523cd0e81d__id960cfc54-d8be-424a-9f95-94356126e52b"><h2 class="title Subheading sectiontitle">FLI code</h2><pre class="pre codeblock"><code><span class="ph FontProperty P9">#include &lt;mti.h&gt;
+
+typedef struct signalInfoT_tag {
+  struct signalInfoT_tag * next;
+  char                   * name;
+  mtiPhysicalDataT       * phys_data;
+  mtiSignalIdT             sigid;
+  mtiTypeIdT               typeid;
+} signalInfoT;
+
+typedef struct {
+  signalInfoT   * sig_info;     /* List of signals. */
+  mtiProcessIdT   proc;         /* Test process id. */
+} instanceInfoT;
+
+static void printExtraUnits( signalInfoT * siginfo, mtiInt32T value )
+{
+  char             * unit_name;
+  mtiInt32T          num_units;
+  mtiInt32T          position;
+  mtiInt32T          remainder;
+  mtiPhysicalDataT * pdp;
+
+  for ( pdp = siginfo-&gt;phys_data; pdp; pdp = pdp-&gt;next ) {
+   if ( value &lt; pdp-&gt;position ) {
+    break;
+   }
+   unit_name = pdp-&gt;unit_name;
+   position  = pdp-&gt;position;
+  }
+  num_units = value / position;
+  remainder = value % position;
+  mti_PrintFormatted( " and %d %s", num_units, unit_name );
+  if ( remainder ) {
+   printExtraUnits( siginfo, remainder );
+  }
+}
+
+static void checkValues( void *inst_info )
+{
+  char             * unit_name;
+  instanceInfoT    * inst_data = (instanceInfoT *)inst_info;
+  mtiInt32T          num_units;
+  mtiInt32T          position;
+  mtiInt32T          remainder;
+  mtiInt32T          sigval;
+  mtiPhysicalDataT * pdp;
+  signalInfoT      * siginfo;
+
+  mti_PrintFormatted( "Time [%d,%d]:\n", mti_NowUpper(), mti_Now() );
+
+  for ( siginfo = inst_data-&gt;sig_info; siginfo; siginfo = siginfo-&gt;next ) {
+   mti_PrintFormatted( "  Signal %s:", siginfo-&gt;name );
+   sigval = mti_GetSignalValue( siginfo-&gt;sigid );
+   for ( pdp = siginfo-&gt;phys_data; pdp; pdp = pdp-&gt;next ) {
+    if ( sigval &lt; pdp-&gt;position ) {
+     break;
+    }
+    unit_name = pdp-&gt;unit_name;
+    position  = pdp-&gt;position;
+   }
+   num_units = sigval / position;
+   remainder = sigval % position;
+   mti_PrintFormatted( "  %d = %d %s", sigval, num_units, unit_name );
+   if ( remainder ) {
+    printExtraUnits( siginfo, remainder );
+   }
+   mti_PrintFormatted( "\n" );
+  }
+
+  mti_ScheduleWakeup( inst_data-&gt;proc, 5 );
+}
+
+static signalInfoT * setupSignal( mtiSignalIdT sigid )
+{
+  char             * prev_unit_name;
+  mtiInt32T          num_units;
+  mtiInt32T          prev_position;
+  mtiPhysicalDataT * pdp;
+  signalInfoT      * siginfo = 0;
+
+  if ( mti_GetTypeKind( mti_GetSignalType( sigid )) == MTI_TYPE_PHYSICAL ) {
+   siginfo            = (signalInfoT *)mti_Malloc(sizeof(signalInfoT));
+   siginfo-&gt;sigid     = sigid;
+   siginfo-&gt;name      = mti_GetSignalNameIndirect( sigid, 0, 0 );
+   siginfo-&gt;typeid    = mti_GetSignalType( sigid );
+   siginfo-&gt;phys_data = mti_GetPhysicalData( siginfo-&gt;typeid );
+   siginfo-&gt;next      = 0;
+   mti_PrintFormatted( "Setting a watch on %s\n", siginfo-&gt;name );
+   mti_PrintFormatted( "  Physical Units are:\n" );
+   for ( pdp = siginfo-&gt;phys_data; pdp; pdp = pdp-&gt;next ) {
+    mti_PrintFormatted( "    %10s = %d %s",
+                       pdp-&gt;unit_name, pdp-&gt;position,
+                       siginfo-&gt;phys_data-&gt;unit_name );
+    if ( pdp != siginfo-&gt;phys_data ) {
+     num_units = pdp-&gt;position / prev_position;
+     mti_PrintFormatted( " = %d %s", num_units, prev_unit_name );
+    }
+    mti_PrintFormatted( "\n" );
+    prev_unit_name = pdp-&gt;unit_name;
+    prev_position  = pdp-&gt;position;
+   }
+  }
+  return( siginfo );
+}
+
+static void initInstance( void * param )
+{
+  instanceInfoT * inst_data;
+  mtiSignalIdT    sigid;
+  signalInfoT   * curr_info;
+  signalInfoT   * siginfo;
+
+  inst_data           = mti_Malloc( sizeof(instanceInfoT) );
+  inst_data-&gt;sig_info = 0;
+
+  for ( sigid = mti_FirstSignal( mti_GetTopRegion() );
+        sigid; sigid = mti_NextSignal() ) {
+   siginfo = setupSignal( sigid );
+   if ( siginfo ) {
+    if ( inst_data-&gt;sig_info == 0 ) {
+     inst_data-&gt;sig_info = siginfo; 
+    }
+    else {
+     curr_info-&gt;next = siginfo;
+    }
+    curr_info = siginfo;
+   }
+  }
+  inst_data-&gt;proc = mti_CreateProcess( "Test Process", checkValues,
+                                      (void *)inst_data );
+  mti_ScheduleWakeup( inst_data-&gt;proc, 4 );
+}
+
+void initForeign(
+  mtiRegionIdT       region,   /* The ID of the region in which this     */
+                               /* foreign architecture is instantiated.  */
+  char              *param,    /* The last part of the string in the     */
+                               /* foreign attribute.                     */
+  mtiInterfaceListT *generics, /* A list of generics for the foreign model.*/
+  mtiInterfaceListT *ports     /* A list of ports for the foreign model.   */
+)
+{
+  mti_AddLoadDoneCB( initInstance, 0 );
+}</span></code></pre></div>
+<div class="section Subsection" id="id6fdfb732-2218-4801-8597-4f523cd0e81d__id3d347bfb-4350-4702-a1fe-9638a4b8c1a5"><h2 class="title Subheading sectiontitle">HDL code</h2><pre class="pre codeblock"><code>entity for_model is
+end for_model;
+
+architecture a of for_model is
+  attribute foreign of a : architecture is "initForeign for_model.sl;";
+begin
+end a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity top is
+
+  type bigtime is range 0 to integer'high
+   units
+    hour;
+    day   = 24 hour;
+    week  = 7 day;
+    month = 4 week;
+    year  = 12 month;
+   end units;
+
+end top;
+
+architecture a of top is
+
+  signal phys_sig1 : bigtime := 3 day;
+  signal phys_sig2 : bigtime := 1 week;
+  signal phys_sig3 : bigtime := 1 year;
+
+  component for_model
+  end component;
+
+  for all : for_model use entity work.for_model(a);
+
+begin
+
+  inst1 : for_model;
+
+  phys_sig1 &lt;= phys_sig1 + 1 day after 5 ns;
+  phys_sig2 &lt;= phys_sig2 + 40 hour after 5 ns;
+  phys_sig3 &lt;= phys_sig3 + 80 hour after 5 ns;
+
+end a;</code></pre></div>
+<div class="section Subsection" id="id6fdfb732-2218-4801-8597-4f523cd0e81d__id2190e91d-c242-4532-bf05-767b924d4926"><h2 class="title Subheading sectiontitle">Simulation output</h2><pre class="pre codeblock"><code>% vsim -c top
+Reading .../modeltech/tcl/vsim/pref.tcl 
+
+# 5.4b
+
+# vsim -c top 
+# Loading .../modeltech/sunos5/../std.standard
+# Loading .../modeltech/sunos5/../ieee.std_logic_1164(body)
+# Loading work.top(a)
+# Loading work.for_model(a)
+# Loading ./for_model.sl
+# Setting a watch on phys_sig1
+#   Physical Units are:
+#           hour = 1 hour
+#            day = 24 hour = 24 hour
+#           week = 168 hour = 7 day
+#          month = 672 hour = 4 week
+#           year = 8064 hour = 12 month
+# Setting a watch on phys_sig2
+#   Physical Units are:
+#           hour = 1 hour
+#            day = 24 hour = 24 hour
+#           week = 168 hour = 7 day
+#          month = 672 hour = 4 week
+#           year = 8064 hour = 12 month
+# Setting a watch on phys_sig3
+#   Physical Units are:
+#           hour = 1 hour
+#            day = 24 hour = 24 hour
+#           week = 168 hour = 7 day
+#          month = 672 hour = 4 week
+#           year = 8064 hour = 12 month
+VSIM 1&gt; run 20
+# Time [0,4]:
+#   Signal phys_sig1:  72 = 3 day
+#   Signal phys_sig2:  168 = 1 week
+#   Signal phys_sig3:  8064 = 1 year
+# Time [0,9]:
+#   Signal phys_sig1:  96 = 4 day
+#   Signal phys_sig2:  208 = 1 week and 1 day and 16 hour
+#   Signal phys_sig3:  8144 = 1 year and 3 day and 8 hour
+# Time [0,14]:
+#   Signal phys_sig1:  120 = 5 day
+#   Signal phys_sig2:  248 = 1 week and 3 day and 8 hour
+#   Signal phys_sig3:  8224 = 1 year and 6 day and 16 hour
+# Time [0,19]:
+#   Signal phys_sig1:  144 = 6 day
+#   Signal phys_sig2:  288 = 1 week and 5 day
+#   Signal phys_sig3:  8304 = 1 year and 1 week and 3 day
+VSIM 2&gt; quit</code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_FliFunctionDefinitions_id33771d04.html" title="This chapter describes the FLI functions in detail, explaining their purpose, syntax, and usage.">FLI Function Definitions</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "fli"
+                DocTitle = "Foreign Language Interface Manual"
+                PageTitle = "mti_GetPhysicalData()"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_MtiGetphysicaldata_id6fdfb732.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Foreign Language Interface Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

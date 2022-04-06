@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Coverage Merging Use Models" />
+<meta name="abstract" content="By default, VRM supports three levels of automation for coverage merging, as described in the following sections." />
+<meta name="description" content="By default, VRM supports three levels of automation for coverage merging, as described in the following sections." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id78b6395c-551a-4cdd-abfd-920a92b905ca" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Coverage Merging Use Models</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Coverage Merging Use Models" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id78b6395c-551a-4cdd-abfd-920a92b905ca">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Coverage Merging
+Use Models</h1>
+<div class="abstract ContainerAbstract"><span class="shortdesc">By
+default, VRM supports three levels of automation for coverage merging,
+as described in the following sections. </span>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_DoItYourselfDiyMerging_ida9882171.html" title="Under the DIY merging flow, the user is responsible for calling vcover merge with the proper arguments at the proper time. Those execScript Actions that represent regression tests (that is, those which run simulations) should always generate a UCDB file at the location designated by the ucdbfile parameter in order to support automated pass/fail checking. However, VRM itself will not perform any automated merging. Any coverage merging is performed by the user’s code in one of two ways.">Do-It-Yourself (DIY) Merging</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ListBasedMerging_id614a9110.html" title="The list-based merging flow is similar to the DIY flow in that each simulation produces a UCDB file and the postScript Action of a higher-level Group must manually invoke the vcover merge command. The difference is that the postScript Action does not have to search for the UCDB files with a wildcard, as vrun maintains a list of UCDBs from tests that are eligible for merging. ">List-based Merging</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_IncrementalMerging_idefbdc997.html" title="The incremental merging flow automates one of the merging schemes mentioned in the previous section. This semi-automated use model serves mostly as a user convenience. Under this flow, parameters are used to point to the UCDB file for each individual regression test and to a target merge file. As before, the execScript Actions that represent regression tests (those which run simulations) each generate a UCDB file at the location designated by the ucdbfile parameter in order to support automated pass/fail checking. VRM then calls vcover merge as each execScript completes in order to merge the coverage of the individual tests into the target merge file.">Incremental Merging</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_QueuedMerging_idba1db00e.html" title="The queued merging flow is the default if both the ucdbfile and the mergefile parameters are defined for a given execScript Action.">Queued Merging</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_QueuedMergingExample_ide88928e6.html" title="Since the queued merging model differs from the incremental merging model only in the internal implementation details, the examples given for incremental merging are equally useful here.">Queued Merging Example</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Contain_AutoMergeTipsTraps_id4734a6fb.html" title="The following two subsections discuss tips and traps of auto-merging.">Auto-Merge Tips and Traps</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutomaticDeletionMergetriageFiles_id4bb9a859.html" title="The auto-merge and auto-triage algorithms can detect the first merge/triage operation directed at a specific mergefile or triagefile and to detect whether a file already exists at the target location. If so, then the existing file is assumed to be from a previous regression run and is deleted/cleared prior to the first merge/triage operation.">Automatic Deletion of Merge/Triage Files</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutoMergeAutoTriageUseInputsArgument_idfcb1108c.html" title="When queued auto-merge and/or queued auto-triage are enabled in a regression run, UCDBs representing Actions that completed during an active merge or triage operation are queued and clubbed together in a subsequent merge or triage operation. ">Auto-merge and Auto-triage Use of -inputs Argument</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_TestplanAutoImport_id90208d7f.html" title="Testplan auto-import is an optional adjunct to the auto-merge functionality in VRM. The testplan is usually represented as a XML file exported from a documentation application, such as Microsoft Excel or Microsoft Word. A Questa utility converts this XML file into UCDB format and the resulting UCDB is merged with the UCDB files generated from the individual tests. While there are any number of ways by which to accomplish the same task via commands in the VRM preScript and postScript Actions, the common case can be automated via parameters in the RMDB file.">Testplan Auto-import</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_EnablingDisablingCoverageMergeFlows_id7f42d7ed.html" title="This section summarizes how the various merge flows are triggered and who is responsible for the vcover merge command.">Enabling and/or Disabling Coverage Merge Flows</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutomatedResultsAnalysis_idf5e4b0a8.html" title="An automated flow is available for results analysis (triage). Triage is a means of collating messages from multiple verification tasks that make the regression into a single view. Through grouping and filtering, the user can easily determine common failures and patterns.">Automated Results Analysis</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_UcdbFileClubbingInAutomatedMergeAutomatedTriage_idceaba6d7.html" title="Under non-queued incremental auto-merge and auto-triage, each completed UCDB file results in a separate merge/triage operation to handle that specific file. Because of file locking, multiple concurrent merge and/or triage commands to the same target file can experience additional latency as the locking algorithm blocks all but one of the concurrent commands from accessing the target file at any given time. VRM supports queued versions of incremental auto-merge and auto-triage that avoid this file locking latency.">UCDB File “clubbing” in Automated Merge and Automated Triage</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutomatedTrendAnalysis_idee75d348.html" title="This functionality facilitates the tracking of verification plan coverage over time, specifically it allows you to monitor the changes in coverage information for merge files collected over different regression runs.">Automated Trend Analysis</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_PostExecutionAnalysis_id449d612e.html" title="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case.">Post-execution Analysis</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Coverage Merging Use Models"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_CoverageMergingUseModels_id78b6395c.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

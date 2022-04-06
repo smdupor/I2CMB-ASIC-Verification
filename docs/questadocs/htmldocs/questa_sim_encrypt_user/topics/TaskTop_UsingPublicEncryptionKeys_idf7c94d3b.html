@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Using Public Encryption Keys" />
+<meta name="abstract" content="As part of building an encryption recipe, you can use a pre-existing encryption envelope with the Mentor Graphics public key through a command line switch." />
+<meta name="description" content="As part of building an encryption recipe, you can use a pre-existing encryption envelope with the Mentor Graphics public key through a command line switch." />
+<meta name="prodname" content="" />
+<meta name="version" content="3.4" />
+<meta name="release" content="10.7b" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation" />
+<meta name="DC.Date.Created" content="2018-01-16" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for ModelSim® " />
+<meta name="SourceHandle" content="questa_sim_encrypt_user" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="ShowConditionIndicators" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="IncludeInInventory" content="Yes" />
+<meta name="IncludeDraftCommentsInChangeLog" content="none" />
+<meta name="HighlightColor" content="Pale%20Green" />
+<meta name="HighlightChanges" content="none" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="Draft" content="None" />
+<meta name="DraftDate" content="None" />
+<meta name="DocumentTitle" content="Questa® SIM Encryption User’s Manual" />
+<meta name="DocPackages" content="none" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="None" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Using Public Encryption Keys</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Using Public Encryption Keys" />
+<meta name="attributes" content="product.version.2020.4,sort.order.100,doc.type.documentation.ref,product.id.P10467,product.id.P10593,product.id.P11632,product.id.P11633" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Using Public Encryption Keys</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><span class="shortdesc">As part of building an encryption recipe,
+you can use a pre-existing encryption envelope with the Mentor Graphics
+public key through a command line switch.</span>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8__idebe8ca68-9dae-4845-894a-85baacb93b79"><p class="p">Access
+to the<span class="ph fmvar:ProductName">  Questa SIM</span> <span class="ph filepath">keyring</span> installation
+directory. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8__idd04a2949-8b9e-451d-a5e5-1d3b251d7db4"><span class="ph cmd">Create
+the following simple D-Flip Flop with a viewport pragma exposing
+the value of a register. The name of the file is <span class="ph filepath">flop.v</span></span><div class="itemgroup info StepInfo"><pre class="pre codeblock"><code>`pragma protect begin
+// D flip-flop
+module dff (clk, reset,d, q, qb);
+	input      clk;
+	input      reset;
+	input      d;
+	output     q;
+	output     qb;
+
+`pragma protect viewport
+reg        q;
+assign qb = ~q;
+always @(posedge clk or posedge reset)
+begin
+	if (reset) begin
+	// Asynchronous reset when reset goes high
+	q &lt;= 1'b0;
+end else begin
+// Assign D to Q on positive clock edge
+	q &lt;= d;
+	end
+endendmodule
+`pragma protect end</code></pre></div></li>
+<li class="li step stepexpand" id="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8__idefa6e04f-a3dd-45bc-9ed9-640a260f4ac2"><span class="ph cmd">Invoke
+the following command: </span><div class="itemgroup info StepInfo"><p class="lines ApplCommand"> vencrypt -toolblock MGC-VERIF-SIM-RSA-2 flop.v</p>
+<p class="p">The command searches the <span class="ph filepath">keyring/</span> directory
+and uses the Mentor Graphics public encryption key as a default.</p>
+<p class="p">Do not use the “.active” file extension on the command line.
+If the recipe has been deprecated, the command issues a warning.
+By not specifying the file type, your scripts can detect changes
+in the public encryption key if it were to be deprecated (the file
+type changed from active to deprecated).</p>
+<p class="p">If you do not specify a -toolblock argument, then the <span class="ph FontProperty shellcommand">vencrypt </span>command
+uses as a default the Mentor Graphics public encryption key. You
+can create your own encryption recipe file using a different public
+encryption key. The advantage of using the -toolblock argument is
+that you can manage your encryption information outside your source
+text files. This avoids populating your source with encryption directives
+across many files.</p>
+</div></li>
+<li class="li step stepexpand" id="idf7c94d3b-427b-4504-b88d-6c22ba1a55d8__idd118bfa3-3b4d-4171-a765-be53d1cf7f1d"><span class="ph cmd">View the
+resulting decryption envelope. When the command completes, it creates
+new file by adding a “p” to the file name suffix.</span><div class="itemgroup info StepInfo"><p class="p">Open file <span class="ph filepath">flop.vp</span>.</p>
+<pre class="pre codeblock"><code>`pragma protect begin_protected
+`pragma protect version = 2
+`pragma protect encrypt_agent = "ModelSim" , encrypt_agent_info = "QA Baseline: 10.7 Beta - 3229913"
+`pragma protect begin_commonblock
+`pragma protect end_commonblock
+`pragma protect begin_toolblock
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" )
+`pragma protect key_block
+GGSPk0eai1Asw2J8kgGqP5pBizVXnLIiQp8OSVRCACaZ6YhW1AQbH1il8/PQ9f5+
+uEtypFrWsDpNc4A7PUQJWmX8lYgSvzKHTRqq+UGh8PBEeJo3WftOSZCcw3sCCmGa
+dCa4iH1Q0yOyq3rZsMO1Ykfg+VbNXXYFg3+SQRlBMbFzjj45E8rdvmE88uyvngF
+yf9vnA/j7XEAGix4PKyESCNDn+h7bAYZTauv88E93xTl4F1wwn4eG0MNslJ6zi80
+iTrtCEpLpJe1VQy8/mIliCc+75n3DWyxIs3DoJLbYFpDyIN8NSjoavpE2TSDOTln
+YVmfeQqGuIFBjfNd+n+FYA==
+`pragma protect rights_digest_method = "sha256"
+`pragma protect end_toolblock="nH11KhiHxnz61HDLUSbihV/gOefK4XmvaamTefH+nPY="
+`pragma protect data_method = "aes128-cbc"`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 560 )
+`pragma protect data_block
+dYqploMU2jFIbdPwp3UNVDT8KCtXsyCy0EKkf/IldGq7/3jQdOfR9PK6cspnTgvD
+aUK6k2qbD18d2nPXYvKJ9O/IQLJyznoNDZJVgoH8JTArj489E/IpuswRJrn2Pdan
+86K5l9kkOW7UhEJr1cwQvn88zzF5y1add03e+bUTVSiPNpeCqrQAYV/JVErzN1yd
+Bw3KtRoYgrdUvV4XfXIspIlvlTL0kbiFp5P4gfHIf1WcbPbE+vjv8u3XRnONZwtv
+Ngm1ag2sJawyZriUb6yMvdZLPZM2zL5s7WSzW5pf5gf7PxboANR1InH6JE1B94VN
++bAUvJ1wLFJ63nxakBPrc5ks2rJ+q6ymt3sKtYId7iQMlM5+WQnf3Sh/Y8Y8tNaS
+Z40WMhBWf2Rx1TxvJ/+85ilKxIAgv1MzUOVbbDtTYnYYwCYJOuYhi/5Bc/eunomZ
+ngLtAsIv/Lfi8cMat3BCe2yT0Z9SLZEZFH0q5HoMrFyqq7yyrkkpstT/YcJawbwQ
+aZh5ToB2iYlJNNYV1bjLTf0rEe9oiIjxJplLilhkvByxarV9aqp7XF0388xAHKzo
+dca27KFRAo3FLMrvsTbC3HlKwRiU4hXqdtF+GbJ8w5fWhWW/tsH/xiQpnX15VVbw
+GpLPK4/X3aEghlhxFpfSuK9Jvap52sUVvAj91w967U15pZ1/gePp4PPncx7CVBo5
+Rv3F4/kpCQEIAW7Z5CKc7YIL7LAOBMmF/MEWPpTqgn4=
+`pragma protect end_protected</code></pre></div></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PublicEncryptionKeys_id39e88025.html" title="Questa SIM provides a public encryption key used by vencrypt and vhencrypt commands.">Public Encryption Keys</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_encrypt_user"
+                DocTitle = "Questa® SIM Encryption User’s Manual"
+                PageTitle = "Using Public Encryption Keys"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_UsingPublicEncryptionKeys_idf7c94d3b.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Encryption User’s Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

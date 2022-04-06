@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Controlling Jobs Remotely" />
+<meta name="abstract" content="Once the vrun application starts launching Action scripts, the only way to communicate with the vrun process is via the TCP/IP socket opened for communication with the wrapper scripts. The port@host on which any given vrun process is listening is published in the log output of that process (usually as the first message, except in -debug mode). Any process can connect to this socket and send one of the following messages to the running vrun process:" />
+<meta name="description" content="Once the vrun application starts launching Action scripts, the only way to communicate with the vrun process is via the TCP/IP socket opened for communication with the wrapper scripts. The port@host on which any given vrun process is listening is published in the log output of that process (usually as the first message, except in -debug mode). Any process can connect to this socket and send one of the following messages to the running vrun process:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idaa936e01-3ae5-4a11-8045-c2ba031147e2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Controlling Jobs Remotely</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Controlling Jobs Remotely" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idaa936e01-3ae5-4a11-8045-c2ba031147e2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Controlling Jobs
+Remotely</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Once
+the vrun application starts launching Action scripts, the only way
+to communicate with the vrun process is via the TCP/IP socket opened
+for communication with the wrapper scripts. The <span class="ph filepath">port@host </span>on
+which any given vrun process is listening is published in the log
+output of that process (usually as the first message, except in
+-debug mode). Any process can connect to this socket and send one
+of the following messages to the running vrun process:</span>
+</div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idaa936e01-3ae5-4a11-8045-c2ba031147e2__id499f5036-b19d-4274-900d-528033794672" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>vrun Messages</span></caption><colgroup><col style="width:1.504in" /><col style="width:3.696in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d54824e153"><p class="p">Message</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d54824e156"><p class="p">Action</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e153 "><p class="p">suspend [&lt;action&gt;
+[...]]</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e156 "><p class="p">Suspend the jobs associated
+with one or more Actions.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e153 "><p class="p">resume [&lt;action&gt; [...]]</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e156 "><p class="p">Resume the suspended
+jobs associated with one or more Actions.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e153 "><p class="p">kill [&lt;action&gt; [...]]</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e156 "><p class="p">Terminate the jobs associated
+with one or more Actions.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e153 "><p class="p">stop</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e156 "><p class="p">Stop launching jobs (no
+effect on already running jobs).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e153 "><p class="p">exit</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d54824e156 "><p class="p">Stop launching jobs and
+exit (no effect on already running jobs, except that their done
+message may fail to connect).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The suspend, resume, and kill messages
+can optionally include one or more Action context paths.</p>
+<ul class="ul"><li class="li" id="idaa936e01-3ae5-4a11-8045-c2ba031147e2__id3deab750-fb35-4623-9102-d6ff50831567"><p class="p">If any Action context paths are
+specified, the operation implied in the message applies only to
+those jobs associated with the named Actions (not to any other jobs
+or to the vrun process).</p>
+</li>
+<li class="li" id="idaa936e01-3ae5-4a11-8045-c2ba031147e2__id19625806-639f-49b5-9508-05af7f10af04"><p class="p">If no Action context paths are
+specified, the operation implied in the message is assumed to apply
+globally (that is, it applies to all currently running jobs and to
+the vrun process itself).</p>
+</li>
+</ul>
+<p class="p">For example, if a bare kill message is
+received by a running vrun process, it sends the necessary job control
+command/signal to kill every currently running job and then the
+vrun process itself will exit. If a bare suspend message is received
+by a running vrun process, it sends the necessary job control command/signal
+to suspend every currently running job and will then cease to launch
+any new Action scripts until a resume message is received or the
+vrun process is aborted.</p>
+<p class="p">If a vrun process has stopped launching
+new Action scripts as the result of a previous suspend or stop message,
+only a bare resume message or a start message causes the vrun process to
+resume launching jobs. That is, stopping the vrun process and all
+running jobs via a bare suspend message and then subsequently resuming
+only a select set of those jobs via a resume message will still
+leave the vrun launch algorithm in suspended mode because the selective resume
+message does not apply to the vrun process itself. Likewise, while
+a start message causes a stopped vrun process to resume its effort
+to launch new Action scripts, it will not cause the execution of
+jobs suspended by a previous suspend message to be resumed. A bare
+resume command will resume both the vrun process itself and any
+suspended jobs.</p>
+<p class="p">The optional Action context paths passed
+as part of the suspend, resume, and kill messages are considered
+regular expressions that are partially matched against the list
+of pending Actions according to the following rules:</p>
+<ol class="ol"><li class="li" id="idaa936e01-3ae5-4a11-8045-c2ba031147e2__id20caf32f-ea1d-4443-ad32-797c449c49d5"><p class="p">If a context path starts with a slash
+(/), the path only matches at the start of a pending Action. That
+is, while nightly matches any Action under the nightly group, regardless
+of whether the nightly group is named as a top-level Runnable, the context
+path /nightly only matches Actions under the top-level Runnable
+called nightly.</p>
+</li>
+<li class="li" id="idaa936e01-3ae5-4a11-8045-c2ba031147e2__id1050afa3-e1de-40b6-bd3b-d4fe0cbb216a"><p class="p">If the final component of a context
+path is not a script name (that is, <span class="ph FontProperty emphasis">*Script</span>),
+a <span class="ph FontProperty emphasis">/*Script</span> component
+is added to the context path.</p>
+</li>
+</ol>
+<p class="p">For example, if the following Actions
+are currently running:</p>
+<pre class="pre codeblock leveled"><code>nightly/test1/execScript</code></pre><pre class="pre codeblock leveled"><code>nightly/test2/execScript</code></pre><pre class="pre codeblock leveled"><code>nightly/test3/execScript </code></pre><p class="p">The message suspend nightly suspends
+all three Actions while the message suspend <span class="ph filepath">nightly/test1</span>,
+or simply suspend test1 suspends only the first Action and leaves
+the other two running. Since a suspend message has no effect on
+Actions that are already suspended, a subsequent suspend nightly
+would then suspend the other two Actions, as would suspend test[23]
+(using a regular expression).</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_CommandLineControlFromSecondVrunProcess_idf0296bfe.html" title="The vrun application has a mode via which it simply passes a message to another vrun command and then quits. This is a convenience feature designed to make it easier to control a running vrun process once launched. ">Command Line Control from a Second vrun Process</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AdjustTimeoutValuesAccountTimeSuspended_id2d6bbdbf.html" title="When an Action script is suspended, any non-zero timeout is temporarily suspended. For example, if an Action script launched with an execution timeout of 90 seconds is suspended after 30 seconds of runtime, in theory that Action still has 60 seconds of runtime remaining. If the suspension lasts longer than that, the Action will not timeout. Instead, when the Action script resumes execution, its timeout is adjusted such that it will not timeout until 60 seconds after the time it resumes execution. In other words, the Action script is always allowed to execute for the time specified in the execution timeout (timeoutQ) without penalty.">Adjust Timeout Values to Account for Time Suspended</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_ControllingGridJobs_id81e87ea4.html" title="The architecture of VRM is intentionally general. By default, Action scripts (preScript, execScript, postScript, and others) are launched as child processes on the local machine. The RMDB file can specify execution methods for all or a select group of Actions that cause the Action scripts to be launched in a user-specified manner. This can be used to launch remote processes on specific servers, to wrap a given Action script in another script, or to submit the Action script for execution on a compute grid or server farm. The user only needs to provide a template for the command necessary to launch a given script and vrun will follow the instructions set by the user when launching the scripts associated with that execution method.">Controlling Grid Jobs</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Controlling Jobs Remotely"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ControllingJobsRemotely_idaa936e01.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="triage query" />
+<meta name="abstract" content="Provides programmatic access to the contents of the triage database (TDB) for debug and scripting purposes." />
+<meta name="description" content="Provides programmatic access to the contents of the triage database (TDB) for debug and scripting purposes." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idbbde8b93-8060-4c6b-898b-217d3c3834e2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>triage query</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="triage query" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">triage query</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Provides
+programmatic access to the contents of the triage database (TDB)
+for debug and scripting purposes. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">triage query [-help] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2474d9e5-a9be-4cd7-971b-0e40f98e7087">-name &lt;tdb_filename&gt;</a>] &lt;options&gt;</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;options&gt;</h2><p class="lines UsageLine">&lt;options&gt; = <a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__idf691db39-a1b0-46d0-92e3-456bd5189c5a">-analyze</a> | &lt;sql_options&gt; | &lt;query_options&gt;</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;sql_options&gt;</h2><p class="lines UsageLine">&lt;sql_options&gt; = <a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id61c6e954-f49f-4181-9d23-3855c21685c9">-statement &lt;query_string&gt;</a> [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2e861949-e893-4b54-9061-3868a45f7bc0">-elapsed</a>]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;query_options&gt;</h2><p class="lines UsageLine">&lt;query_options&gt; = [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id778ae03f-05bc-4e0f-8ef4-322020aad904">-files</a>] [[<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__ida75d3490-a5d9-48ef-8d93-57a6dadfd00e">-unique</a> | <a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id5c3409a8-7a02-4078-82af-89d0376bd32d">-verbose</a>] &lt;table_options&gt;]</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;table_options&gt;</h2><p class="lines UsageLine">&lt;table_options&gt; = [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__ide505c15d-5f9e-4e31-959a-a322a276c070">-attributes</a>] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2883172a-cc3b-4c75-b149-8bdc4c859887">-fields</a>] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__idefae453b-9c88-4ffe-ab1d-088e89d02e6e">-history</a>] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__idb6fe6660-4c5b-46e8-abf8-e2a40a75d901">-messages</a>] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id46ce7782-f2b7-4a8d-bcd8-930a47abf4d4">-tests</a>] [<a class="xref fm:HeadingOnly" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id57d440fa-ba0c-45d2-b372-c886111eaf35">-properties</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The command has
+two forms: </p>
+<ul class="ul"><li class="li" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id1e4bcd0b-48f9-4462-9eb3-1643e89dca2a"><p class="p">You can use -statement
+to specify one or more SQL query statements to be run against the
+triage database. The results are returned as a TCL "list-of-lists",
+which is a list of records where each list member is a list of field
+results. You can use aliases to specify certain tables within the
+TCL code. See <a class="xref fm:Table" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id3a1b627d-b41e-4e14-bc1b-293646cccb28">Table 1</a> for a list of alias names. </p>
+</li>
+<li class="li" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id238a5a98-7094-4a78-90d7-5d589349acfd"><p class="p">If you do not specify
+a query with -statement, the triage query command returns the contents
+of any specified tables of data from the TDB. If you do not specify any
+tables, the content of all tables is returned. Each table's contents
+are in the "list-of-lists" format, and the returned result includes
+all fields in each table. When data is returned from multiple tables,
+it is shown in the order listed in <a class="xref fm:Table" href="#idbbde8b93-8060-4c6b-898b-217d3c3834e2__id3a1b627d-b41e-4e14-bc1b-293646cccb28">Table 1</a>. </p>
+</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id3a1b627d-b41e-4e14-bc1b-293646cccb28" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Alias for Tables</span></caption><colgroup><col style="width:2.014in" /><col style="width:1.918in" /><col style="width:1.918in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d97474e255"><p class="p">Table data returned...</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d97474e258"><p class="p">Alias (for use with -statement)</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d97474e261"><p class="p">Argument (use without
+-statement)</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">Attribute (user-defined)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%ATTRIBUTE%</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-attributes</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">Field (user-defined)</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%FIELDS% </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-fields</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">History</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%HISTORY% </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-history</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">Message </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%MESSAGES% </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-messages</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">Properties</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%PROPERTIES% </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-properties</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e255 "><p class="p">Test</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e258 "><p class="p">%TESTS% </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d97474e261 "><p class="p">-tests</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">You can run this command from either the shell command line or
+the vsim command prompt.</p>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id9659dddf-6ce7-4168-b178-d19f72abfaa7"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__idf691db39-a1b0-46d0-92e3-456bd5189c5a">-analyze</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional:
+Returns a number of record counts to help estimate the complexity
+of the TDB file contents. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__ide505c15d-5f9e-4e31-959a-a322a276c070">-attributes</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns a list-of-lists dump of user-defined attributes. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__idefae453b-9c88-4ffe-ab1d-088e89d02e6e">-history</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns a list-of-lists dump of previously executed <a class="xref fm:HeadingOnly" href="Command_TriageDbfile_id1180d2fd.html#id1180d2fd-ea15-4805-b541-50c7925002b0__Command_TriageDbfile_id1180d2fd.xml#id1180d2fd-ea15-4805-b541-50c7925002b0" title="Creates a database (questasim.tdb) of test data and/or simulation messages extracted from a UCDB, a WLF file, or a LOG file.">triage dbfile</a> and/or <a class="xref fm:HeadingOnly" href="Command_TriageDbinsert_id2b2b0942.html#id2b2b0942-6558-4940-b9c7-50959c56fce4__Command_TriageDbinsert_id2b2b0942.xml#id2b2b0942-6558-4940-b9c7-50959c56fce4" title="Places one or more messages directly into a triage database (TDB) file.">triage dbinsert</a> commands (that is, the "history"
+table). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2e861949-e893-4b54-9061-3868a45f7bc0">-elapsed</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns the amount of time a given query took (for investigating
+database performance). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2883172a-cc3b-4c75-b149-8bdc4c859887">-fields</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Returns a list-of-lists dump of the contents of the user-defined
+field table. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id778ae03f-05bc-4e0f-8ef4-322020aad904">-files</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Returns a list containing: a list of WLF/LOG files represented in
+the database, and a list of UCDB files represented in the database. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__idb6fe6660-4c5b-46e8-abf8-e2a40a75d901">-messages</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Returns a list-of-lists dump of the contents of the message table. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id2474d9e5-a9be-4cd7-971b-0e40f98e7087">-name &lt;tdb_filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Specifies the path/filename of the triage database (TDB) file. The
+default filename is <span class="ph filepath italic">default.tdb</span>. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id57d440fa-ba0c-45d2-b372-c886111eaf35">-properties</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Returns the database properties (that is, the contents of the "properties"
+table).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id61c6e954-f49f-4181-9d23-3855c21685c9">-statement &lt;query_string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Specifies an SQL query string to be applied to the database. This
+argument can appear multiple times in a single command. If you specify multiple
+-statement arguments, the triage query command returns a list of
+result tables in the order in which the query statements appear
+on the command line. Mutually exclusive with all other command arguments
+besides -elapsed. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id46ce7782-f2b7-4a8d-bcd8-930a47abf4d4">-tests</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Returns a list-of-lists dump of the contents of the tests table
+(that is, a list of imported UCDB test data records).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__ida75d3490-a5d9-48ef-8d93-57a6dadfd00e">-unique</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+Returns a list of unique values for the main field in that table
+(for example, msg in the case of the message table, testname in
+the case of the test table, and so on).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id5c3409a8-7a02-4078-82af-89d0376bd32d">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">Optional.
+In conjunction with any of the dumping arguments, it returns the
+table data in a more human-readable format.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id4c9e38ab-0bd3-4a01-bb94-078541412503"><p class="p">Query the
+TDB (default is <span class="ph filepath italic">./questasim.tdb</span>) with
+a specific SQL statement, and return a list of messages from the
+message table with a severity of “Error”.</p>
+<p class="lines ApplCommand">triage query -statement “SELECT mgs, testname FROM %MESSAGES% WHERE <br />
+   severity == 'Error'”</p>
+</li>
+<li class="li" id="idbbde8b93-8060-4c6b-898b-217d3c3834e2__id7f25070f-3642-438f-9c45-6cfae8f79dfe"><p class="p">Query the
+TDB and return a list of data from the Tests table.</p>
+<p class="lines ApplCommand">triage query -tests</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Analyzing Verification Results', 'questa_sim_vm'); return false;">Analyzing Verification Results [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_TriageDbfile_id1180d2fd.html#id1180d2fd-ea15-4805-b541-50c7925002b0__" title="Creates a database (questasim.tdb) of test data and/or simulation messages extracted from a UCDB, a WLF file, or a LOG file.">triage dbfile</a></div>
+<div><a class="link" href="../topics/Command_TriageDbinsert_id2b2b0942.html#id2b2b0942-6558-4940-b9c7-50959c56fce4__" title="Places one or more messages directly into a triage database (TDB) file.">triage dbinsert</a></div>
+<div><a class="link" href="../topics/Command_TriageDbrefresh_id21951d13.html#id21951d13-c5a8-4748-a7c5-851eaa80a24b__" title="Clears the old triage database, and re-creates the database using a saved history of previous &#34;triage dbfile&#34; and “triage dbinsert” commands.">triage dbrefresh</a></div>
+<div><a class="link" href="../topics/Command_TriageReport_id82531129.html#id82531129-afe5-4103-956f-4850683be6e2__" title="Reads in a triage database (.tdb) and prints out a text report, after applying specified filters.">triage report</a></div>
+<div><a class="link" href="../topics/Command_TriageView_idee1da1ef.html#idee1da1ef-3756-452e-bf5e-4744b7e900b1__" title="Loads a triage database (.tdb) into the Verification Results Analysis window.">triage view</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "triage query"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_TriageQuery_idbbde8b93.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="find insource" />
+<meta name="abstract" content="Searches for a string in the source files for the current design and prints the results to the Transcript window, with individual hotlinks to open the source and display the location of the string." />
+<meta name="description" content="Searches for a string in the source files for the current design and prints the results to the Transcript window, with individual hotlinks to open the source and display the location of the string." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida0780a29-1622-441a-94db-4fa2d5205541" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>find insource</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="find insource" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ida0780a29-1622-441a-94db-4fa2d5205541">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">find insource</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><p class="shortdesc">Searches for a string in the source files
+for the current design and prints the results to the Transcript
+window, with individual hotlinks to open the source and display
+the location of the string.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">When you execute this command
+in command-line mode from outside of the GUI, the results are sent
+to stdout with no hotlinks.</p>
+</div>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">find insource <a class="xref fm:HeadingOnly" href="#ida0780a29-1622-441a-94db-4fa2d5205541__idefe53bed-016c-4dd0-b8de-907e2cd3b84a">&lt;pattern&gt;</a> [<a class="xref fm:HeadingOnly" href="#ida0780a29-1622-441a-94db-4fa2d5205541__id06c0e554-67f3-481c-8da7-bd02d5342131">-exact | -glob | -regexp</a>] [<a class="xref fm:HeadingOnly" href="#ida0780a29-1622-441a-94db-4fa2d5205541__id63ce85fd-b5e3-4e79-83d3-f7869129adeb">-inline</a>] [<a class="xref fm:HeadingOnly" href="#ida0780a29-1622-441a-94db-4fa2d5205541__idef1d2d74-12d6-4cd6-b58f-da822ffb0e92">-nocase</a>] </p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="ida0780a29-1622-441a-94db-4fa2d5205541__id7f16b03d-23da-4498-97d2-313180ef65e4"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ida0780a29-1622-441a-94db-4fa2d5205541__idefe53bed-016c-4dd0-b8de-907e2cd3b84a">&lt;pattern&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required) The string you are searching for.
+You can use regular expression wildcards to further restrict the
+search. You must enclose &lt;pattern&gt; in quotation marks (“ ”) if
+it includes spaces. You must specify the &lt;pattern&gt; at the end
+of the command line; any switches specified after &lt;pattern&gt; are
+not registered.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida0780a29-1622-441a-94db-4fa2d5205541__id06c0e554-67f3-481c-8da7-bd02d5342131">-exact | -glob | -regexp</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Defines the style of regular expression used in the &lt;pattern&gt;</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="ida0780a29-1622-441a-94db-4fa2d5205541__id9e8b6788-a1fe-4390-aba8-db52868eb5ea"><p class="p Opt">-exact — Indicates that no characters have
+special meaning, disabling wildcard features.</p>
+</li>
+<li class="li ArgOption" id="ida0780a29-1622-441a-94db-4fa2d5205541__id93e475c2-7552-463d-aa83-29c8922dfff3"><p class="p Opt">-glob —
+(default) Allows glob-style wildcard characters. For more information
+refer to the Tcl documentation:</p>
+<p class="p">Help
+&gt; Tcl Man Pages</p>
+<p class="p">Select
+“Tcl Commands”, then “string”, then “string match”</p>
+</li>
+<li class="li ArgOption" id="ida0780a29-1622-441a-94db-4fa2d5205541__ida5471fbd-f69e-4796-9194-fefc775e9417"><p class="p Opt">-regexp
+— Allows Tcl regular expressions. For more information refer to
+the Tcl documentation:</p>
+<p class="p">Help
+&gt; Tcl Man Pages</p>
+<p class="p">Select
+“Tcl Commands”, then “re_syntax”.</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida0780a29-1622-441a-94db-4fa2d5205541__id63ce85fd-b5e3-4e79-83d3-f7869129adeb">-inline</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional) Returns the matches in the form
+of a Tcl list, which disables the hotlink feature, but can simplify
+post-processing.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida0780a29-1622-441a-94db-4fa2d5205541__idef1d2d74-12d6-4cd6-b58f-da822ffb0e92">-nocase</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Treats &lt;pattern&gt; as case-insensitive.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ida0780a29-1622-441a-94db-4fa2d5205541__idc110f6be-9ef3-45a5-8b98-0fab528351fc"><p class="p"><a class="xref fm:Figure" href="#ida0780a29-1622-441a-94db-4fa2d5205541__id57d63043-c381-44df-a48c-ccaa53318c0a">Figure 1</a> shows examples of the find insource
+command, including results. </p>
+<div class="fig fignone" id="ida0780a29-1622-441a-94db-4fa2d5205541__id57d63043-c381-44df-a48c-ccaa53318c0a"><span class="figcap"><span class="fig--title-label">Figure 1. </span>find insource Example</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:100" src="../graphics/find_insource.gif" /></div><br /></div>
+</li>
+<li class="li" id="ida0780a29-1622-441a-94db-4fa2d5205541__idb5171068-04c8-45e8-8640-e371f20e6e0d"><p class="p">Searching
+for two keywords with whitespace between them:</p>
+<p class="lines ApplCommand leveled">find insource -regexp {top_dut\s+dut}</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># top.sv:20:        top_dut                 dut (</code></pre></li>
+<li class="li" id="ida0780a29-1622-441a-94db-4fa2d5205541__id4a9a1eca-ef09-46f8-a289-3b01455a192b"><p class="p">Searching
+for string starting with 'dut' and ending with 'o':</p>
+<p class="lines ApplCommand leveled">find insource -regexp {dut.*o}</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># top.sv:17:        DUT_io dut_io(.clock(tb_clk), .reset(tb_reset));</code></pre></li>
+<li class="li" id="ida0780a29-1622-441a-94db-4fa2d5205541__idd7fe56d7-e424-40f1-9342-59eb565a5fee"><p class="p">Searching
+for string irrespective of case:</p>
+<p class="lines ApplCommand leveled">find insource -regexp -nocase {DUT}</p>
+<p class="p">returns:</p>
+<pre class="pre codeblock leveled"><code># test.sv:10:       virtual DUT_io dut_io;
+# test.sv:27:       this.dut_io = dut_io;</code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Setting Environment Variables', 'questa_sim_user'); return false;">DISABLE_ELAB_DEBUG [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "find insource"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_FindInsource_ida0780a29.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Finding the Runtime Files" />
+<meta name="abstract" content="VRM creates a VRMDATA directory in the current working directory. This is the root of a tree of working directories created to run the various tasks specified in the regression suite. Beneath this directory is a single nightly directory in which the “nightly” group is run. Beneath this are the directed and random directories and beneath each of these directories are subdirectories named for each leaf-level test. For example, the directory VRMDATA/nightly/random/randtest1 should contain the following files:" />
+<meta name="description" content="VRM creates a VRMDATA directory in the current working directory. This is the root of a tree of working directories created to run the various tasks specified in the regression suite. Beneath this directory is a single nightly directory in which the “nightly” group is run. Beneath this are the directed and random directories and beneath each of these directories are subdirectories named for each leaf-level test. For example, the directory VRMDATA/nightly/random/randtest1 should contain the following files:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idab277614-1d4c-4b36-bb4f-c24865627ecd" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Finding the Runtime Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Finding the Runtime Files" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idab277614-1d4c-4b36-bb4f-c24865627ecd">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Finding the Runtime Files</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">VRM creates
+a <span class="ph filepath">VRMDATA</span> directory in the current working
+directory. This is the root of a tree of working directories created
+to run the various tasks specified in the regression suite. Beneath
+this directory is a single <span class="ph filepath">nightly</span> directory
+in which the “nightly” group is run. Beneath this are the <span class="ph filepath">directed</span> and <span class="ph filepath">random</span> directories
+and beneath each of these directories are subdirectories named for
+each leaf-level test. For example, the directory <span class="ph filepath">VRMDATA/nightly/random/randtest1</span> should
+contain the following files:</span>
+</div>
+<pre class="pre codeblock leveled"><code>-rwxr-xr-x   1 name    group     140 Sep 26 15:43
+execScript.do*-rw-rw-r--   1 name    group    1027 Sep 26 15:43
+execScript.log-rw-rw-r--   1 name    group       0 Sep 26 15:43
+execScript.stderr-rw-rw-r--   1 name    group    1747 Sep 26 15:43
+execScript.stdout-rw-r--r--   1 name    group    1588 Sep 26 15:43
+execScript.wrap</code></pre><p class="p">The <span class="ph filepath">execScript.do</span> file
+contains the parameter-expanded version of the commands found in
+the <span class="ph FontProperty emphasis">execScript</span> element
+under the <span class="ph FontProperty emphasis">randtest1</span> runnable.
+The <span class="ph filepath">execScript.wrap</span> file contains the vsim
+wrapper used to launch the script. The <span class="ph filepath">execScript.log</span> file
+contains the log output of the <span class="ph filepath">execScript</span> script.</p>
+<p class="p">The <span class="ph filepath">execScript</span>.<span class="ph filepath">stdout</span> and <span class="ph filepath">execScript</span>.<span class="ph filepath">stderr</span> files
+contain the standard output and standard error output of the wrapper
+script, respectively. These two files can generally be ignored. </p>
+<p class="p">More files can be created depending on the
+design and the execution method, but these are the basic files generated
+for each action. The group directories can have a set of <span class="ph filepath">preScript</span> and/or <span class="ph filepath">postScript</span> files,
+depending on which of these actions is defined.</p>
+<p class="p">The final merge result is placed in the <span class="ph filepath">VRMDATA/nightly</span> directory
+under the name <span class="ph filepath">merge.ucdb</span>. </p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_RunInBatchModeDebugRegressionTests_id23c2ed5d.html" title="After you have created a VRM database you can execute the regressions and view the runtime files to investigate the results of the regression.">Run in Batch Mode and Debug Regression Tests</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Finding the Runtime Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FindingRuntimeFiles_idab277614.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

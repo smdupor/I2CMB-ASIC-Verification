@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Find Objects in a UCDB" />
+<meta name="abstract" content="The easiest way in the UCDB API to find particular objects by name in the database is the ucdb_PathCallBack() function. It has the added advantage of handling wildcards for multiple characters (*) and a single character (?) in individual path component names." />
+<meta name="description" content="The easiest way in the UCDB API to find particular objects by name in the database is the ucdb_PathCallBack() function. It has the added advantage of handling wildcards for multiple characters (*) and a single character (?) in individual path component names." />
+<meta name="prodname" content="UCDB API Reference" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="ucdbapi_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="mgc_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="UCDB API Reference" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id2bbd59d4-5f2f-443d-81ba-299eaac601bc" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Find Objects in a UCDB</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Find Objects in a UCDB" />
+<meta name="attributes" content="doc.type.documentation.ref,product.id.P10593,product.version.2020.4" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Find Objects
+in a UCDB</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The easiest
+way in the UCDB API to find particular objects by name in the database
+is the ucdb_PathCallBack() function. It has the added advantage
+of handling wildcards for multiple characters (*) and a single character
+(?) in individual path component names.</span>
+</div>
+<p class="p">You can find this C example in <span class="ph filepath">&lt;install_dir&gt;/examples/ucdb/userguide/use-cases/find-object/</span>.</p>
+<pre class="pre codeblock leveled"><code>ucdbCBReturnT 
+callback( 
+    void*           userdata, 
+    ucdbCBDataT*    cbdata) 
+{ 
+    switch (cbdata-&gt;reason) { 
+    case UCDB_REASON_SCOPE: 
+        print_scope(cbdata-&gt;db,(ucdbScopeT)(cbdata-&gt;obj)); 
+        break; 
+    case UCDB_REASON_CVBIN: 
+        print_coveritem(cbdata-&gt;db,(ucdbScopeT)(cbdata-&gt;obj), 
+                        cbdata-&gt;coverindex); 
+        break; 
+    default: break; 
+    } 
+    return UCDB_SCAN_CONTINUE; 
+} 
+ 
+void 
+example_code(const char* ucdbfile, const char* path) 
+{ 
+    ucdbT db = ucdb_Open(ucdbfile); 
+    if (db==NULL) 
+        return; 
+    ucdb_PathCallBack(db, 
+                      0,    /* do not recurse from found object */ 
+                      path, 
+                      NULL, /* design unit name does not apply */ 
+                      UCDB_NONTESTPLAN_SCOPE,   /* tree root type */ 
+                      -1,   /* match any scope type */ 
+                      -1,   /* match any coveritem type */ 
+                      callback, NULL); 
+    ucdb_Close(db); 
+} </code></pre><p class="p">The arguments
+to ucdb_PathCallBack(), in order, are the following:</p>
+<ul class="ul"><li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__id5a3555d9-fc87-413b-a683-d1b47398d0bf"><p class="p">A database handle that must be opened
+with ucdb_Open().</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__ide3fa233f-0154-4f75-bdc2-01e38355fbbc"><p class="p">A recursion flag. In this case, you are
+looking for scopes and not what is underneath them, so the recursion
+is false.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__id93862650-75f2-4b4e-90e3-aee9968bd3fd"><p class="p">The path passed in from the command line
+of the example.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__id5208752f-f8d4-4176-883a-e3fb792d152d"><p class="p">The design unit name is NULL because
+it does not apply to the intent here. Paths could be design-unit-relative.
+In that case, the design unit name must be given.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__idf4116531-8b23-4608-81be-5ae291315062"><p class="p">The tree root type must be given to distinguish
+between the two basic types of trees available in the UCDB: the
+testplan tree or the design instance tree.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__id7aed557e-3048-4771-9e6c-f2396df3aef8"><p class="p">The scope mask restricts the search to
+particular scope types; -1 in this case means all scope types.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__idd4720ac2-d826-48c3-8a63-654493927a8a"><p class="p">The cover mask restricts the search to
+particular coveritem types; -1 in this case means all coveritem
+types. An alternative is to set this value to 0, in which case only
+scopes would be matched and not coveritems at all.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__ide4ef3164-bce8-4f76-90e8-05d5717a0cf3"><p class="p">The callback function.</p>
+</li>
+<li class="li" id="id2bbd59d4-5f2f-443d-81ba-299eaac601bc__id1877a7a8-97d9-4876-988f-c80c3766c456"><p class="p">The private data for the callback function.</p>
+</li>
+</ul>
+<p class="p">The print_scope() and print_coveritem() functions
+use scope or coveritem names, types, and line numbers to display
+data about the object found in the database. Statement coveritems will
+never be found by this API because they have no names at all. Only
+a linear search by filename, line number, and token number could
+find a particular statement coveritem.</p>
+<p class="p">The “sink” design supplied with <span class="ph filepath">examples/ucdb/ucdbcrawl</span> has many
+different types of coverage in it. This design illustrates using
+the find_object example with a pattern that is known to have multiple
+matches:</p>
+<pre class="pre codeblock leveled"><code>./find_object ../../../ucdbcrawl/sink.ucdb '/top/mach/state/*' 
+Found scope '/top/mach/state/states': type=20000000 line=33 
+Found scope '/top/mach/state/trans': type=40000000 line=33 
+Found cover '/top/mach/state/st0': types=00000001/00000200 line=0 
+Found cover '/top/mach/state/st1': types=00000001/00000200 line=0 
+Found cover '/top/mach/state/st2': types=00000001/00000200 line=0 
+Found cover '/top/mach/state/st3': types=00000001/00000200 line=0 
+ </code></pre><p class="p">In this case, “/top/mach/state” is both an
+FSM scope and a toggle scope. When matching all children with “*”,
+this matches the transition and state child scopes of the FSM scope,
+and the enum toggle bins. Source information for toggles is stored
+at the scope level (not at the bin level). Therefore, the output
+for the toggle bins shows line=0.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UcdbUseCases_idb8452a48.html" title="Understanding the UCDB data models is a prerequisite to using the API. The API is more general than the specific data models used to represent specific kinds of coverage. It is also important to know how to use the API and understand some specific use scenarios.">UCDB Use Cases</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "ucdbapi_ref"
+                DocTitle = "UCDB API Reference"
+                PageTitle = "Find Objects in a UCDB"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FindObjectsInUcdb_id2bbd59d4.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">UCDB API Reference Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Context Chains" />
+<meta name="abstract" content="In many cases, the Actions defined in a given Runnable depend on context from ancestor Runnables (parents or parents-of-parents at any depth). For example, a parameter needed to resolve a command in an Action script can be defined at a higher level in the hierarchy. In such cases, it is possible for the user to supply the necessary parameter value directly on the command line. However, it is more common for the given Runnable to be executed “in context”. This means that when the Runnable is selected, its ancestors are also specified on the command line as follows:" />
+<meta name="description" content="In many cases, the Actions defined in a given Runnable depend on context from ancestor Runnables (parents or parents-of-parents at any depth). For example, a parameter needed to resolve a command in an Action script can be defined at a higher level in the hierarchy. In such cases, it is possible for the user to supply the necessary parameter value directly on the command line. However, it is more common for the given Runnable to be executed “in context”. This means that when the Runnable is selected, its ancestors are also specified on the command line as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Context Chains</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Context Chains" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Context Chains</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">In many cases,
+the Actions defined in a given Runnable depend on context from ancestor
+Runnables (parents or parents-of-parents at any depth). For example,
+a parameter needed to resolve a command in an Action script can
+be defined at a higher level in the hierarchy. In such cases, it
+is possible for the user to supply the necessary parameter value
+directly on the command line. However, it is more common for the
+given Runnable to be executed “in context”. This means that when
+the Runnable is selected, its ancestors are also specified on the
+command line as follows:</span>
+</div>
+<p class="lines ApplCommand">vrun nightly/unittests/test123</p>
+<p class="p">In this case, the only Task Runnable executed
+is <span class="ph FontProperty emphasis">test123</span>.
+But it runs as a member of the Group <span class="ph FontProperty emphasis">unittests</span> which,
+in turn, runs as a member of the Group <span class="ph FontProperty emphasis">nightly</span>.
+The <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+for both <span class="ph FontProperty emphasis">nightly </span>and <span class="ph FontProperty emphasis">unittests</span>,
+if defined, are also executed in their proper sequence. That means
+that any preprocessing (compilation) or post-processing (coverage
+merge) defined in the higher level Groups are executed along with
+the test itself; moreover, any parameters that are defined.</p>
+<p class="p">By controlling how much “context” is specified
+as part of the bareword argument on the command line, the user can
+control exactly which <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+run and how much context is visible from each Action's point-of-view.
+For example, the following command:</p>
+<p class="lines ApplCommand">vrun unittests/test123</p>
+<p class="p">runs the same <span class="ph FontProperty emphasis">test123 </span>Task
+and the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+defined in the <span class="ph FontProperty emphasis">unittests</span> Group.
+But the Actions defined in the <span class="ph FontProperty emphasis">nightly</span> Group
+will not be executed and any parameters defined in the <span class="ph FontProperty emphasis">nightly</span> Runnable
+will not be available for use in parameter expansions (again, values
+for the missing parameters can always be supplied on the command
+line). These path-like strings are known in VRM vernacular as “context
+chains”. The components of a context chain are, for the most part,
+the names of Runnables defined in the RMDB file.</p>
+<p class="p">Note that this notation is required because
+any given Runnable can be a member of multiple Groups. For example,
+a test can be a member of a Group called <span class="ph FontProperty emphasis">mode1</span> and,
+at the same time, can also be a member of another Group called <span class="ph FontProperty emphasis">mode2</span>.
+Because Actions scripts can be parametrized and parameters can be
+inherited from parent Runnables, this test can, in fact, run slightly
+different in its two incarnations. Therefore, the context under
+which a given Runnable is executed is a significant factor in determining
+exactly which tests run and how.</p>
+<p class="p">The trailing component of this path-like argument
+does not have to be a Task. The user can just as easily run all
+the random tests in their respective context by typing the following command:</p>
+<p class="lines ApplCommand">vrun nightly/randomtests</p>
+<p class="p">Except for the trailing component, all components
+of the context chain must be defined as Groups in the database (in
+other words, they must be capable of accepting a list of members). The
+trailing component can be either a Group or a Task. An error is
+reported if a Task name is followed by additional context chain
+components, as in the following:</p>
+<pre class="pre codeblock"><code>nightly/unittests/test123/smoketest</code></pre><p class="p">Any number of bareword arguments can be supplied
+on the vrun command line. The vrun application builds a complete
+picture of which Runnables are selected before executing anything.
+Overlapping selections do not result in multiple runs of the same
+test in the same context. Since the combination of the RMDB contents
+and the command-line options forms a static “configuration” at the
+time vrun is started, it is assumed that any Action can be uniquely defined
+by its context chain and that two Actions with the same context
+chain will run identically both times. For example, if a Task <span class="ph FontProperty emphasis">test123</span> is
+listed as a member of the <span class="ph FontProperty emphasis">unittests</span> Group,
+the following command:</p>
+<p class="lines ApplCommand">vrun nightly/unittests nightly/unittests/test123</p>
+<p class="p">runs the <span class="ph FontProperty emphasis">execScript</span> Action
+associated with the Task Runnable <span class="ph FontProperty emphasis">test123</span> only
+once, despite the fact that the entire contents of <span class="ph FontProperty emphasis">unittests</span> (including <span class="ph FontProperty emphasis">test123</span>)
+is also implicitly selected by the first bareword argument. The
+vrun application is smart enough to know that the second bareword
+argument overlaps the first so this does not result in unnecessarily
+redundant execution.</p>
+<p class="p">Overlapping, however, is based on the full
+context of the specified Runnables. In the following example command:</p>
+<p class="lines ApplCommand">vrun nightly/unittests unittests/test123</p>
+<p class="p">the two bareword arguments do not overlap because
+the second execution of <span class="ph FontProperty emphasis">test123</span> is
+under a different context (<span class="ph FontProperty emphasis">unittests</span>)
+than it was for the first execution (<span class="ph FontProperty emphasis">nightly/unittests</span>).
+In this case, the <span class="ph FontProperty emphasis">execScript</span> Action
+associated with the <span class="ph FontProperty emphasis">test123</span> Runnable
+is executed twice. </p>
+<div class="section Subsections"><div class="section Subsection" id="idb3ff80bd-e6aa-48b6-8973-2f94dfad5d46__idca70269b-d51a-4823-8090-d83ba8ef4915"><h2 class="title Subheading sectiontitle">Including and Excluding
+Context Subtrees</h2><p class="p">VRM allows the user to explicitly choose Runnables
+from a complex regression suite. </p>
+<p class="p">The -include and -exclude options to the vrun
+command (see <a class="xref fm:PageNumber" href="Command_VrunCommand_idc33b9896.html#idc33b9896-40ad-4485-9535-aeeba6f64082__Command_VrunCommand_idc33b9896.xml#idc33b9896-40ad-4485-9535-aeeba6f64082" title="The vrun command reads and records all command-line options before processing begins. In the case of options with the same semantic (that is, -loadtcl, -G, and so on), the semantic of the option can impose an order-based priority on the individual option values. Between options of different types and/or bareword arguments, there is no inherent order dependency.">vrun Command</a>) are used to run only select Runnables.</p>
+<p class="p">An excluded (deselected) Runnable and its descendant
+subtree are not considered selected for execution. Overlapping -include
+and -exclude options can cancel one another on the basis of the
+“most specific context chain”. The effect of this cancellation is
+static and does not depend on the sequence in which the options
+occur on the command line.</p>
+<p class="p">For example, given the following command:</p>
+<pre class="pre codeblock leveled"><code>% vrun -show -include nightly -exclude nightly/unittests -include 
+		 nightly/unittests/test123
+nightly
+nightly/directedtests/...
+nightly/randomtests/...
+nightly/unittests
+nightly/unittests/test123</code></pre><p class="p">The <span class="ph FontProperty emphasis">nightly</span> Group
+and all its descendants are selected, except for the <span class="ph FontProperty emphasis">unittests</span> Group
+that has explicitly been excluded from the list (-exclude nightly/unittests),
+except for the <span class="ph FontProperty emphasis">test123 </span>Task
+has been explicitly included (-include nightly/unittests/test123).
+The context chain associated with the <span class="ph FontProperty emphasis">test123</span> inclusion
+is more specific than either of the Group context chains so it overrides
+the exclusion of its parent Group. The exclusion on the <span class="ph FontProperty emphasis">unittests</span> Group
+is more specific than the inclusion on the <span class="ph FontProperty emphasis">nightly</span> Group
+so it overrides the more general inclusion.</p>
+<p class="p">By using a combination of -include and -exclude
+options, the user can choose specific blocks of tests for execution.
+It is also possible to simply list out the full context chain of
+every leaf-level Task Runnable (picking up the Groups automatically).
+However, in a complex regression suite, explicitly listing every
+test is likely to be more onerous than selection by Group.</p>
+<p class="p">The selection process can also be done in stages,
+displaying and saving the results of the selections made thus far
+in an external file, and only executing the selected list when the combination
+is just right. Refer to ““<a class="xref fm:HeadingAndPage" href="Contain_BatchModeUsabilityFunctions_iddd662531.html#iddd662531-a194-4f79-b287-7f89b181987b__Contain_BatchModeUsabilityFunctions_iddd662531.xml#iddd662531-a194-4f79-b287-7f89b181987b" title="The batch mode VRM vrun utility supports a number of command-line options aimed at making VRM more accessible to end users. The assumption is that the end-user (who might not be the same person who built-up the RMDB file) does not know which tests and/or parametric options are available to use without studying the RMDB file itself.">Batch Mode Usability Functions</a>”” for more details.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SpecifySelectedRunnables_id58f553e2.html" title="VRM database (RMDB file) generally contains data for one or more regression test suites arranged in a hierarchical tree topology that allows the user to group tests and other tasks in various ways. Each node in this tree is known as a “Runnable” because it could, in theory, be designated as one of the top-most nodes to be executed in any given regression run. Command-line options are used to designate which part(s) of this hierarchy are to be executed.">Specify Selected Runnables</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Context Chains"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ContextChains_idb3ff80bd.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

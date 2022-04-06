@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="coverage tag" />
+<meta name="abstract" content="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together." />
+<meta name="description" content="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>coverage tag</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="coverage tag" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">coverage tag</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates (or
+deletes) links (tags) between objects in a coverage database to
+specific coverage objects in a testplan. A tag is a simple string
+associated with the object, and objects sharing the same tag name
+are linked together. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><h2 class="title Subheading sectiontitle">Create
+links (tags)</h2><p class="lines UsageLine">coverage tag &lt;UCDB_portion&gt; <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idab2cd303-664d-47ab-b8db-705a67442d9e">-tagname &lt;name&gt;</a> [&lt;filters&gt;] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Remove
+links</h2><p class="lines UsageLine">coverage tag &lt;UCDB_portion&gt; <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id4060a44a-67fd-4b65-98e1-7c99789d8eae">-delete</a> <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idab2cd303-664d-47ab-b8db-705a67442d9e">-tagname &lt;name&gt;</a> [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idab2cd303-664d-47ab-b8db-705a67442d9e">-tagname &lt;name&gt;</a>]... [&lt;filters&gt;] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">Display
+links</h2><p class="lines UsageLine">coverage tag [&lt;UCDB_portion&gt;] [&lt;filters&gt;] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;UCDB_portion&gt; </h2><p class="lines UsageLine">(<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9a889562-a5ce-40f0-8a3b-b29f0501d11b">-plansection &lt;path&gt;</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id03af00e0-d468-40ff-94c0-f4e08ee81924">-testrecord &lt;test_name&gt;</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2be973dd-0bdd-4eda-aa4e-d2d99bfc1133">-path &lt;path&gt; [&lt;path&gt;...]</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idc03985d3-c471-4fc9-8a9d-a15d80111321">-duname &lt;lib&gt;.&lt;duname&gt;</a>) [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd4e8fc0e-ab76-4b18-a948-65755b04a987">-recursive</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;filters&gt;</h2><p class="lines UsageLine">Tag filter: </p>
+<p class="lines UsageLine">   [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idfdeb04c1-6a30-4cff-b00f-63ead4a0560a">-tagmatch &lt;string&gt;</a>] </p>
+<p class="lines UsageLine">Coverage type related filters: </p>
+<p class="lines UsageLine">   [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idf658a09b-5136-44c5-8f73-f68797d66d72">-assert</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id829d3221-df06-4e1b-b473-dc86947f949c">-code {b | c | e | s | f | t }...</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id21cf36e5-1880-4cde-9b95-6a1445b749e0">-codeAll</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id7d907da5-9112-4348-959b-6d50d121345c">-cvg</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id3d13b9fe-0089-4c4b-847d-1910be143a67">-directive</a>] </p>
+<p class="lines UsageLine">Path filters: </p>
+<p class="lines UsageLine">    ([<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idc313b28e-258a-4cc5-9ce1-498c92fc73c4">-select instance</a>] [&lt;pattern_filters&gt;]) | [&lt;bin_filters&gt;] </p>
+<p class="lines UsageLine">&lt;pattern_filters&gt; = ([<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idfdc517e7-6743-4c0b-a106-5021d7822d15">-match &lt;string&gt;</a>] | [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd3f4a374-dd19-4823-a078-e8ed5feb9a5f">-cvgmatch &lt;string&gt;</a>]) [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id49d38ca3-a10b-4e18-9d13-f27b1cdb5725">-cvginstmatch &lt;string&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd006a888-744a-43f0-bbe1-0220e308ad4d">-crossmatch &lt;string&gt;</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd006a888-744a-43f0-bbe1-0220e308ad4d">-crossmatch &lt;string&gt;</a>] </p>
+<p class="lines UsageLine">&lt;bin_filters&gt; = <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idaebd5585-e840-432a-9bcd-407da94ff20c">-bins</a> [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2d4055cc-e968-4454-bf02-9f20a584a858">-linerange [ln | ln-ln]...</a>] [<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id31dae3a1-46aa-4815-82b5-b32d3e1cb87f">-item [bces] [&lt;index&gt; | &lt;index&gt;-&lt;index&gt;]...</a>] </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">If
+you use the coverage tag command without the -tagname argument,
+it displays a list of tags, providing you with what is essentially a
+general purpose hierarchy browser.</p>
+<p class="p">You can also
+create links from the a coverage object back to the testplan through
+a process called “backlinking”. </p>
+<p class="p">Refer to “<a class="xref Link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Backlink Coverage Items to Plan with SV Attributes', 'questa_sim_vm'); return false;">Backlink Coverage Items to Plan with SV Attributes</a>”
+in the Verification Management User’s Manual for details. </p>
+<p class="p">This command
+is available only when you open a UCDB file with <a class="xref fm:HeadingOnly" href="Command_Vsim_id382a4cc6.html#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6__Command_Vsim_id382a4cc6.xml#id382a4cc6-e6b8-4d5f-9373-f63d82fd56f6" title="Invokes the VSIM simulator. Invoking this command with the ‑view argument enables you to view the results of a previous simulation run.">vsim</a> -viewcov
+during post-simulation processing. </p>
+<p class="p">The coverage
+tag command defines the following:</p>
+<ul class="ul"><li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9638e4fa-8181-4dfe-8d3b-e3d1519fe577"><p class="p">The portion of the
+UCDB to act upon. (Specify only one of the following for each use
+of the command): </p>
+<ul class="ul"><li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id4ed227e5-0f1b-4787-8a89-0bbebc7c78a6"><p class="p">the testplan
+(-plansection)</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd0cd90ef-7db3-4668-b158-18d7ff00a75f"><p class="p">the context
+tree within the specified UCDB (-path)</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idfe96c6d2-2724-4118-9b34-edace0004bd7"><p class="p">the testrecords
+(-testrecord)</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__ida0b6cf99-d3ce-4bd3-ab78-dd0fec1e41bc"><p class="p">the design
+units (-duname)</p>
+</li>
+</ul>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id084a7dce-c8b9-4d9c-b3ef-3074590da716"><p class="p">The action to be taken:</p>
+<ul class="ul"><li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__ida265deac-aacf-460a-8995-ef0f4d960ac7"><p class="p">display
+tags</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id84cf3f45-505f-4eb9-a6ea-ad372a2c248e"><p class="p">create tags
+(-tagname)</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id816fc5f1-e40e-431e-9e03-b46c8fc62502"><p class="p">delete tags
+(-delete with -tagname)</p>
+</li>
+</ul>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idbe115bec-c926-44c8-8949-c722d0371d1d"><p class="p">The objects to include
+in that action (filters). </p>
+</li>
+</ul>
+<p class="p">Usage notes:</p>
+<ul class="ul"><li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id03c74c99-fe5f-4ee9-b2e0-7a0f7afd2d5d"><p class="p">You can add multiple
+tags on any object to mark it as a member of different categories. </p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id6b1f0c8d-65be-4e57-9a61-ebd361f4a2b1"><p class="p">Tags can be used for
+primitive (non-hierarchical) grouping of coverage in the database.</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__iddc564928-5e51-4277-bbef-b4351d5095ef"><p class="p">If you use the -cvgmatch,
+-cvginstmatch, -cvpmatch, and/or -crossmatch switches together,
+the lowest-level object is tagged, but the higher-level matches
+must be satisfied, too, before they are tagged. Thus, the matching
+requirements of the multiple arguments are effectively ANDed. The
+order of matching from lowest to highest is: ‑cvpmatch, -crossmatch,
+-cvginstmatch, -cvgmatch. (Refer to the Examples section of this
+command.)</p>
+</li>
+</ul>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id47a426e4-73f6-42cb-bddc-fd46fe5563f1"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idf658a09b-5136-44c5-8f73-f68797d66d72">-assert</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to assertion data.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idaebd5585-e840-432a-9bcd-407da94ff20c">-bins</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+By default, bins/covers are not selected for tagging. The -bins
+switch enables the selection of bins and/or covers. Use of the -bins argument
+prevents any scope/test from being selected. In other words, ONLY
+bins/covers are selected when you use -bins. In order to select
+statement bins, you must also specify -code s.</p>
+<p class="p">Paths can
+contain wildcards, so take care not to select more than you intended.
+See Examples for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id829d3221-df06-4e1b-b473-dc86947f949c">-code {b | c | e | s | f | t }...</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to corresponding code coverage
+types: branch, condition, expression, statement, toggle, FSM. You
+can specify more than one coverage type with a single -code argument
+(example: “-code bce”). </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id21cf36e5-1880-4cde-9b95-6a1445b749e0">-codeAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to all coverage types. Equivalent
+to -code bcestf.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd006a888-744a-43f0-bbe1-0220e308ad4d">-crossmatch &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a match of a cover cross name against the specified covergroup
+instance or covergroup type. Allows wildcards. See “<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a>”
+description for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id7d907da5-9112-4348-959b-6d50d121345c">-cvg</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to covergroup data. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd3f4a374-dd19-4823-a078-e8ed5feb9a5f">-cvgmatch &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a match of a covergroup type against the specified pattern.
+This argument is implicitly recursive. See “<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a>”
+description for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id49d38ca3-a10b-4e18-9d13-f27b1cdb5725">-cvginstmatch &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a match of a covergroup instance name (&lt;option&gt;.&lt;name&gt;
+&lt;value&gt;) against the specified instance. Allows wildcards. See “<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a>”
+description for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__ide0d61fe4-8639-4f52-a089-49d1bdd95dbf">-cvpmatch &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a match of a coverpoint against the specified covergroup
+instance or covergroup type. Allows wildcards. See “<a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5" title="Creates (or deletes) links (tags) between objects in a coverage database to specific coverage objects in a testplan. A tag is a simple string associated with the object, and objects sharing the same tag name are linked together.">coverage tag</a>”
+description for further details.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id4060a44a-67fd-4b65-98e1-7c99789d8eae">-delete</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Removes the given tags from objects specified with the -tagname
+argument. If you wish to delete full or partial hierarchies of items,
+you must use the -recursive switch.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id3d13b9fe-0089-4c4b-847d-1910be143a67">-directive</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to cover directive data.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idc03985d3-c471-4fc9-8a9d-a15d80111321">-duname &lt;lib&gt;.&lt;duname&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required,
+unless specifying either -testrecord. -plansection, or used with
+-path) Appliess the command to the specified library.design_unit(s).
+Allows wildcards. Mutually exclusive with -testrecord, -plansection.
+If used with -path, the path specified must be relative to that
+library and design unit.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id31dae3a1-46aa-4815-82b5-b32d3e1cb87f">-item [bces] [&lt;index&gt; | &lt;index&gt;-&lt;index&gt;]...</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Must be used in conjunction with -linerange and -bins. Restricts
+the action of the command to all bins/covers that fall within the
+indicated range of lines and item numbers. &lt;index&gt; is the index
+number of the coverage item being specified. All ranges are inclusive.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2d4055cc-e968-4454-bf02-9f20a584a858">-linerange [ln | ln-ln]...</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the action of the command to all items that fall within
+the indicated range of lines without respect to item numbers. All
+ranges are inclusive.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idfdc517e7-6743-4c0b-a106-5021d7822d15">-match &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Recursively matches the given pattern against the specified coverage
+types in the entire instance tree. If -duname is specified, it matches against
+the specified coverage types in the design unit. Allows wildcards.
+This switch is mutually exclusive with the following other coverage
+tag arguments: ‑recursive, coverage type filters (-assert, -codeAll,
+-cvg, and so forth.), -cvgmatch, -cvpmatch, and -cvginstmatch.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2be973dd-0bdd-4eda-aa4e-d2d99bfc1133">-path &lt;path&gt; [&lt;path&gt;...]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required,
+unless specifying either -testrecord or -plansection, or used with
+-duname) Specifies a path to which the tag applies in the UCDB. You
+can specify more than one path. Allows wildcards. Mutually exclusive
+with -plansection and -testrecord. If used with -duname, the path
+specified must be relative to that design unit. </p>
+<p class="p">This argument
+is useful when path is specified in the Link column of a verification plan. <span class="ph">For more information, refer to “<a class="xref Link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'xml2ucdbini Configuration File', 'questa_sim_vm'); return false;">xml2ucdb.ini Configuration File</a>” in the Verification Management User’s Manual.</span> You
+can also use &lt;path&gt; to specify a dataset other than the current
+dataset. (See “<a class="xref fm:HeadingOnly" href="Concept_ObjectNameSyntax_idca58165f.html#idca58165f-4e03-4b27-b90b-3bcc36fc71bf__Concept_ObjectNameSyntax_idca58165f.xml#idca58165f-4e03-4b27-b90b-3bcc36fc71bf" title="To specify object names in Questa SIM, you use the following syntax:">Object Name Syntax</a>”
+for instructions on how to specify a dataset.) If no dataset is
+specified, the current dataset is used. You can use only one dataset
+name per command invocation, or an error results.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9a889562-a5ce-40f0-8a3b-b29f0501d11b">-plansection &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required,
+unless specifying either -testrecord. -duname, or -path) Specifies
+a testplan path to which the tag is applied. Mutually exclusive
+with -path, -duname and -testrecord. Allows wildcards.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idd4e8fc0e-ab76-4b18-a948-65755b04a987">-recursive </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Recursively selects objects under the given scope. Must be used
+with only one of the following per command invocation: <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9a889562-a5ce-40f0-8a3b-b29f0501d11b">-plansection &lt;path&gt;</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id03af00e0-d468-40ff-94c0-f4e08ee81924">-testrecord &lt;test_name&gt;</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2be973dd-0bdd-4eda-aa4e-d2d99bfc1133">-path &lt;path&gt; [&lt;path&gt;...]</a> | <a class="xref fm:HeadingOnly" href="#ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idc03985d3-c471-4fc9-8a9d-a15d80111321">-duname &lt;lib&gt;.&lt;duname&gt;</a>. </p>
+<p class="p">The following
+command:</p>
+<pre class="pre codeblock leveled"><code>coverage tag -path / -recursive</code></pre><p class="p">lists all
+of the scopes in the context tree along with their tags. It behaves
+as if -path /*, -path /*/*, -path /*/*/*, and so on, were specified
+for as many levels as are applicable. This switch is mutually exclusive
+with -match.</p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">Once a scope
+is tagged, none of its children or descendants will be, because
+coverage numbers always include descendants, so tagging descendants
+when writing a tag adds redundant coverage to a testplan.</p>
+</div>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idc313b28e-258a-4cc5-9ce1-498c92fc73c4">-select instance</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Restricts the command to apply to design instance scopes (VHDL architectures,
+interface instances, and so forth).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idfdeb04c1-6a30-4cff-b00f-63ead4a0560a">-tagmatch &lt;string&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Searches for an exact match to strings containing the specified
+tagname. Useful for determining all scopes (within the portion of
+the UCDB being acted upon) that share a particular tagname. Allows
+use of the “*” wildcard.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idab2cd303-664d-47ab-b8db-705a67442d9e">-tagname &lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the name of the tag to which the action is applied. Can
+be specified multiple times or not at all. Prints a list of all
+tags when &lt;name&gt; is not specified. If used for creation or deletion
+of tag(s) with -recursive, a coverage type filter is required (such
+as -cvg, ‑assert).</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id03af00e0-d468-40ff-94c0-f4e08ee81924">-testrecord &lt;test_name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required,
+unless specifying either -testrecord. -plansection, or -path) Specifies
+the name of the specific test record in the UCDB to be linked. This
+tag creates a link between an item in the testplan and the test
+record (name of individual test run) in the UCDB. Allows wildcards.
+Can be used only in conjunction with ‑tagname and -delete; mutually
+exclusive with all other arguments.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id3683d6ce-1d90-480a-89e3-94ba0fddd4d9"><p class="p">Display all
+scopes, recursively, in the entire design:</p>
+<p class="lines ApplCommand leveled">coverage tag -path / -r</p>
+<p class="p">Returns information
+such as the following:</p>
+<pre class="pre codeblock leveled"><code># /coverpkg/statecover [covergroup]: "2.2"
+# /coverpkg/statecover/cvpi [coverpoint] (no tags) 
+# /coverpkg/statecover/cvpstate [coverpoint] (no tags) 
+# /coverpkg/statecover/i_x_state [cross] (no tags)</code></pre></li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id5c17b974-1afa-4e6b-9c71-c62d89f32598"><p class="p">Display all
+bins, recursively, in the entire design:</p>
+<p class="lines ApplCommand leveled">coverage tag -path / -r -bins</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id2ef4852e-f1fd-41a0-a7bf-56a77fc54ff9"><p class="p">Display all
+testplan scopes, recursively, in the entire design:</p>
+<p class="lines ApplCommand leveled">coverage tag -plan / -r</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idf528e454-983e-41f0-8046-aed920e3070e"><p class="p">Display scope
+in the design that has been tagged with “testplan.1.2.1” tagname:</p>
+<p class="lines ApplCommand leveled">coverage tag -path / -r -tagmatch testplan.1.2.1 </p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idb68574e5-1bc8-43f5-bc31-6d2799714870"><p class="p">Display all
+bins in the design that have “plan” in the tagname:</p>
+<p class="lines ApplCommand leveled">coverage tag -path / -r -tagmatch *plan* -bins </p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__ide36181ea-b64b-4303-84c7-991ff5fda0ec"><p class="p">Display all
+testplan scopes that have “plan” in the tagname:</p>
+<p class="lines ApplCommand leveled">coverage tag -plan / -r -tagmatch *plan*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9a966adb-2ac5-4b04-ad90-ae29c1e1f1da"><p class="p">Tag a given
+covergroup "/a/b/cvg0" and a given instance "/a/d": </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -path /a/b/cvg0 /a/d</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idac4020f3-1807-45f0-83a5-79d5e42284f6"><p class="p">Tag all covergroups
+in the instance /a/b: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -cvg -path /a/b/*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id3adbd309-51c0-43dc-92b1-9a56c587bd0c"><p class="p">Tag all covergroups
+in the subtree rooted at /a/b: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -recursive -cvg -path /a/b</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idf9851126-0679-454b-bdba-fb274cd6f1f3"><p class="p">Tag all toggles
+whose names start with "d" inside the given design unit: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -code t -duname work.du3 -path d*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id6c07748f-4782-421c-8ec6-e3bc612e34ad"><p class="p">Tag all objects
+matching the pattern in all design units</p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -match a* -du *</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idb37c4ebe-cfd4-4bd9-bc55-6e81722c545f"><p class="p">Tag all branches
+in the given design unit; this implicitly recurses all paths in
+the design unit because the filter is given and there is no path
+with the -duname: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -code b -duname work.duname</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idb0a0ca39-c19b-42da-8ee5-06dfe4697309"><p class="p">Tag all branches
+in any test data records that start with the pattern “sample”: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -testrecord sample*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idbfad338b-e251-4c34-a6a5-591889e61817"><p class="p">Tag all covergroups
+whose type names start with the pattern "xactor": </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -cvgmatch xactor*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id905e9b7b-5cbf-4bae-872f-f4cf99d84836"><p class="p">Almost the
+same, but will tag coverpoint, cross, and covergroup instance scopes
+matching the pattern: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -cvg -match xactor*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id4baef5a8-e87f-46ef-bc91-2cfe2741b98b"><p class="p">Tag a coverpoint
+named "cvp1" that belongs to coverage instance "cvginst1" in covergroup
+"cvg1"; note this will not tag coverpoints named "cvp1" that happen
+to exist in other contexts. Accepts wildcard patterns, tagging any
+coverpoint-coverinstance-covergroup combination that matches: </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -cvgmatch cvg1 -cvginstmatch cvginst1 -cvpmatch cvp1</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id9f03a05b-e92e-4b1a-8eaf-30a3d8750a88"><p class="p">Tag a coverpoint
+or cross matching the given pattern inside a covergroup type named
+"cvgtype": </p>
+<p class="lines ApplCommand leveled">coverage tag -tagname T1 -cvgmatch cvgtype -cvpmatch *myvar*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idea650268-c357-4a00-9d2c-a5086e6aa186"><p class="p">Display all
+of the bins in a specified design tree: </p>
+<p class="lines ApplCommand leveled">coverage tag -bins -path / -recursive</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id0f8e92fa-a6f4-4410-a346-ff4f702677c5"><p class="p">Display all
+of the scopes under 'foo_scope': </p>
+<p class="lines ApplCommand leveled">coverage tag -path /top/foo_scope/*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id08db2842-9893-49fd-bb68-35a463afed97"><p class="p">Display the
+bin 'cover_1' under scope 'foo_scope': </p>
+<p class="lines ApplCommand leveled">coverage tag -bins -path /top/foo_scope/cover_1</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id721a2c12-9092-499b-a609-0e9167d8dd6d"><p class="p">Display all
+bins having the form 'cover_*' under scope 'foo_scope': </p>
+<p class="lines ApplCommand leveled">coverage tag -bins -path /top/foo_scope/cover_*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__idccbbd049-0470-4113-940e-87d10dc4af50"><p class="p">Display all
+of the bins under 'foo_scope': </p>
+<p class="lines ApplCommand leveled">coverage tag -bins -path /top/foo_scope/*</p>
+</li>
+<li class="li" id="ida641fa6e-6f76-46c6-a3c0-143d8e05d8d5__id822daef7-95c4-4b8f-b4cb-7b3dc2e3e6f9"><p class="p">Display all
+covers associated with the lines 200 through 500: </p>
+<p class="lines ApplCommand leveled">coverage tag -bins -recursive -path * -linerange 200-500</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsAM_idbb60d8f2.html" title="This chapter describes Questa SIM commands, listed alphabetically from A through M, that you can enter either on the command line of the Main window or in a DO file. Some commands are automatically entered on the command line when you use the graphical user interface.">Commands (A - M)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Code Coverage', 'questa_sim_user'); return false;">Code Coverage [Questa SIM User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_gui_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Verification Management Browser', 'questa_sim_gui_ref'); return false;">Verification Management Browser [Questa SIM GUI Reference Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'xml2ucdbini Configuration File', 'questa_sim_vm'); return false;">xml2ucdb.ini Configuration File [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Links Between the Plan Section and the Coverage Item', 'questa_sim_vm'); return false;">Links Between the Plan Section and the Coverage Item [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_CoverageAnalyze_id7d34fc00.html#id7d34fc00-f8d9-474c-9eeb-1b28ea95c37f__" title="Displays test information based on a merged UCDB created by a vcover merge operation.">coverage analyze</a></div>
+<div><a class="link" href="../topics/Command_CoverageAttribute_id3e20ed57.html#id3e20ed57-7dd7-489d-a4cf-61c62dcc6451__" title="Used to display, set, or delete object, test, and UCDB attributes in the currently loaded database.">coverage attribute</a></div>
+<div><a class="link" href="../topics/Command_CoverageExclude_id64d2cdcb.html#id64d2cdcb-a858-4623-8265-60bdc83e3452__" title="Enables you to exclude items from coverage statistics.">coverage exclude</a></div>
+<div><a class="link" href="../topics/Command_CoverageRanktest_id2ef5a9ce.html#id2ef5a9ce-7ff8-4543-91cf-ba7972765cbc__" title="Ranks coverage data contained in the current Coverage View dataset loaded with vsim -viewcov, according to each individual test’s contribution to cumulative coverage.">coverage ranktest</a></div>
+<div><a class="link" href="../topics/Command_CoverageGoal_id6d6e30a0.html#id6d6e30a0-c4d2-4583-a10c-0736d9f0fb5b__" title="Sets or displays the values for goals that affect bins, coverage items and specific scopes in the design hierarchy.">coverage goal</a></div>
+<div><a class="link" href="../topics/Command_CoverageReport_ida73cec86.html#ida73cec86-3177-4b46-9ecc-ea7bbc31050d__" title="Produces textual or HTML output of coverage statistics or exclusions.">coverage report</a></div>
+<div><a class="link" href="../topics/Command_CoverageSave_id35457f5f.html#id35457f5f-3c6d-4190-b918-b355bf6b1c56__" title="Saves the coverage results of the specified type from a simulation to the unified coverage database (UCDB). If no type is specified, saves all types into the database.">coverage save</a></div>
+<div><a class="link" href="../topics/Command_CoverageUnlinked_id31a2f8bd.html#id31a2f8bd-169b-48e1-80fe-1cdc59a6f838__" title="Reports on objects that are “unlinked,” for test traceability purposes.">coverage unlinked</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "coverage tag"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_CoverageTag_ida641fa6e.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

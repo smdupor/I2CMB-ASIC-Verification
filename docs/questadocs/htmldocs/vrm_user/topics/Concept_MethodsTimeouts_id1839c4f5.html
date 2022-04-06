@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Methods and Timeouts" />
+<meta name="abstract" content="Execution methods can specify a per-method minimum timeout by adding a mintimeout attribute onto the method element. The mintimeout attribute is read from the method element that actually supplied the command, even if the command is inherited from a base method element. In other words, even though the mintimeout attribute is actually attached to the method element, it is easier to think of it as being attached to the command element itself. For example, consider the following configuration elements:" />
+<meta name="description" content="Execution methods can specify a per-method minimum timeout by adding a mintimeout attribute onto the method element. The mintimeout attribute is read from the method element that actually supplied the command, even if the command is inherited from a base method element. In other words, even though the mintimeout attribute is actually attached to the method element, it is easier to think of it as being attached to the command element itself. For example, consider the following configuration elements:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id1839c4f5-c069-4269-a0a3-f38c30b5c1c0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Methods and Timeouts</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Methods and Timeouts" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id1839c4f5-c069-4269-a0a3-f38c30b5c1c0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Methods and Timeouts</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Execution methods
+can specify a per-method minimum timeout by adding a <span class="ph FontProperty emphasis">mintimeout</span> attribute
+onto the <span class="ph FontProperty emphasis">method</span> element.
+The <span class="ph FontProperty emphasis">mintimeout</span> attribute
+is read from the <span class="ph FontProperty emphasis">method</span> element
+that actually supplied the command, even if the command is inherited
+from a base <span class="ph FontProperty emphasis">method</span> element.
+In other words, even though the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+is actually attached to the <span class="ph FontProperty emphasis">method</span> element,
+it is easier to think of it as being attached to the <span class="ph FontProperty emphasis">command</span> element
+itself. For example, consider the following configuration elements:</span>
+</div>
+<pre class="pre codeblock leveled"><code>&lt;rmdb&gt;
+   &lt;runnable type="base" base="global"&gt;
+      &lt;method name="m1" mintimeout="30" base="m2"/&gt;
+      &lt;method name="m2" mintimeout="60"&gt;
+         &lt;command&gt;qsub -V -cwd -b yes (%WRAPPER%)&lt;/command&gt;
+      &lt;/method&gt;
+       ...
+   &lt;/runnable&gt;
+    ...
+&lt;/rmdb&gt;</code></pre><p class="p">Since the <span class="ph FontProperty emphasis">m1</span> <span class="ph FontProperty emphasis">method</span> is
+unconditional, any Actions for which a matching execution method
+is not otherwise found will use this top-level execution method.
+However, since the <span class="ph FontProperty emphasis">m1</span> <span class="ph FontProperty emphasis">method</span> element
+does not define a <span class="ph FontProperty emphasis">command</span> element,
+the execution method command is taken from the <span class="ph FontProperty emphasis">m2</span> base <span class="ph FontProperty emphasis">method</span> element.
+Because the <span class="ph FontProperty emphasis">command</span> is
+actually taken from the <span class="ph FontProperty emphasis">m2</span> <span class="ph FontProperty emphasis">method</span> element,
+the <span class="ph FontProperty emphasis">mintimeout</span> value
+attached to the <span class="ph FontProperty emphasis">m2</span> <span class="ph FontProperty emphasis">method</span> element
+is used as the per-method contribution to the timeout calculations.
+While this can seem like attribute inheritance (which is not allowed),
+it really is not. What is happening is that the <span class="ph FontProperty emphasis">command</span> element
+is being inherited via the base chain and the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+attached to the <span class="ph FontProperty emphasis">m2</span> <span class="ph FontProperty emphasis">method</span> element
+is actually considered to be attached to the <span class="ph FontProperty emphasis">command</span> element.</p>
+<p class="p">Note that there are technical reasons for not
+attaching the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+to the command element itself. The main reason is that this same <span class="ph FontProperty emphasis">command</span> element
+is used in the Action scripts, where there can be multiple <span class="ph FontProperty emphasis">command</span> elements.
+If the <span class="ph FontProperty emphasis">mintimeout</span> attribute
+is attached to a <span class="ph FontProperty emphasis">command</span> element
+within an Action script, then each <span class="ph FontProperty emphasis">command</span> element
+can provide a different value and then there would have to be complex
+rules for determining the timeout value for the Action itself. Eventually,
+the minimum timeout value can become an element in its own right,
+which would then allow timeouts to be properly inherited like any
+other bit of data.</p>
+<p class="p">The calculation of timeouts are discussed in
+detail in “<a class="xref fm:HeadingAndPage" href="Concept_Timeouts_id1afbe0e0.html#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9__Concept_Timeouts_id1afbe0e0.xml#id1afbe0e0-5a49-4566-bc4a-20da695fdfa9" title="When an Action is launched, VRM records the time by which the Action is expected to reach the next phase of execution. A background loop within vrun periodically checks for Actions that have not reached their next milestone in time. In this case, a “timeout” is declared and the Action is considered to have failed.">Timeouts</a>”.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ExecutionMethods_id70589e20.html" title="By default, the wrapper associated with each Action launched by VRM is executed by either vsim or vish as a child process of the initiating VRM process. The exact command used to launch this process depends on the value of the launch attribute of the element associated with the Action. For Actions whose launch attribute is set to vsim (or which do not have a launch attribute, since vsim is the default launch type), the following command is used:">Execution Methods</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Methods and Timeouts"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_MethodsTimeouts_id1839c4f5.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

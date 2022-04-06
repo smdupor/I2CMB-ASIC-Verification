@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Replaying Failed Actions" />
+<meta name="abstract" content="Failed Actions logged in the -faillog file from a previous run can be rerun by inserting the full context chains listed therein on a subsequent vrun command line as follows:" />
+<meta name="description" content="Failed Actions logged in the -faillog file from a previous run can be rerun by inserting the full context chains listed therein on a subsequent vrun command line as follows:" />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idf9a207fe-a320-4ffb-9931-d9675a9be4b5" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Replaying Failed Actions</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Replaying Failed Actions" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idf9a207fe-a320-4ffb-9931-d9675a9be4b5">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Replaying Failed Actions</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Failed Actions
+logged in the -faillog <span class="ph filepath">file</span> from a previous
+run can be rerun by inserting the full context chains listed therein
+on a subsequent vrun command line as follows:</span>
+</div>
+<p class="lines ApplCommand">vrun &lt;options&gt; `cat &lt;path-to-faillog&gt;`</p>
+<p class="p">or the path to the failure log file can be
+passed as the value of the -tasklist command-line option, which
+reads the context chains from the file (one-per-line) and treats
+them as if they had been passed as bare arguments on the command
+line as follows:</p>
+<p class="lines ApplCommand">vrun &lt;options&gt; -tasklist<br />
+&lt;path-to-faillog&gt;</p>
+<p class="p">Note that the -tasklist option expects to be
+passed a file that contains only Runnable context chains, one-per-line.
+It is not a general purpose option file.</p>
+<p class="p">Once the initial vrun regression run is complete,
+the failure log file should contain a list of the Runnables that
+must be re-executed to cover all the failing Actions. When this
+list is expanded to form the execution graph, the graph also includes
+all <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+defined in the intermediate Groups. In the example above, even if
+the <span class="ph FontProperty emphasis">execScript</span> for <span class="ph filepath">nightly/directedtests/test123</span> is
+the only failing Action, the following Actions, if defined, is re-executed
+in the sequence given as follows:</p>
+<pre class="pre codeblock leveled"><code>nightly/preScript
+nightly/directedtests/preScript
+nightly/directedtests/test123/execScript
+nightly/directedtests/postScript
+nightly/postScript</code></pre><p class="p">By placing critical compile commands in the <span class="ph FontProperty emphasis">preScript</span> and
+post-processing commands in the <span class="ph FontProperty emphasis">postScript</span>,
+rerunning a failed test also reruns the compile and post-processing
+steps in the proper sequence. If, however, the <span class="ph FontProperty emphasis">directedtests</span> Group
+is a sequential Group with other members occurring prior to <span class="ph FontProperty emphasis">test123</span> in
+the sequence, then the other Group members are not run automatically.</p>
+<p class="p">Note that this behavior is not unique to failure
+rerun. Anytime a context chain with multiple components is passed
+to vrun for execution, the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+for the intermediate Groups are included in the execution graph.</p>
+<p class="p">If the value of the -vrmdata option points
+to the same <span class="ph filepath">VRMDATA</span> area as was used in the
+previous run, the re-execution will take place in the same working directories
+as were used for the original run, and any UCDB files from previously
+passed tests can also participate in the generation of new merged
+coverage results. Since the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> are
+also executed for any Group in which a failing test was found, performing
+merge operations in the <span class="ph FontProperty emphasis">postScript</span> should
+cause the right thing to happen without any user intervention.</p>
+<p class="p">Since the faillog file is read by the -tasklist
+command before the actual execution begins, it is safe to use the
+-faillog option on the same command line as a -tasklist option pointing
+to the same file. By doing so, the user can create a script that
+tries rerunning the failing tests under different scenarios until
+the all pass.</p>
+<p class="p">Refer to “<a class="xref fm:HeadingAndPage" href="Concept_AutomatingFailureRerunMacroRunnable_id1804c84a.html#id1804c84a-aade-4aac-9a2f-4aafd9feca7b__Concept_AutomatingFailureRerunMacroRunnable_id1804c84a.xml#id1804c84a-aade-4aac-9a2f-4aafd9feca7b" title="Two or more vrun commands are required to implement a complete failure rerun scheme in semi-automatic mode. In order to encapsulate the required command-line options into the RMDB file, a macro Runnable can be defined that recursively calls vrun as many times as needed to complete the regression run. For example, suppose your regression environment requires that failing and/or timed out tests be rerun once with a slightly longer timeout (to weed out noisy failures) and those that still fail to be run with a debug-mode parameter set so the tests are ready to debug when the designer arrives the next morning. The set of three vrun commands might look like the following:">Automating Failure Rerun With a Macro Runnable</a>” for information on how these
+manual commands can be packaged as a macro Runnable in the RMDB
+file.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_GlobalCommandLineBasedMethod_ide78c0967.html" title="The vrun process can be instructed to dump out a log containing the full context path of the Runnable responsible for any Action that fails. Actions that encountered a timeout after launch are counted as failures, and Actions that did not run due to a failed dependency and/or a manual interrupt are also counted as failures.">Global (Command-line Based) Method</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Replaying Failed Actions"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_ReplayingFailedActions_idf9a207fe.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

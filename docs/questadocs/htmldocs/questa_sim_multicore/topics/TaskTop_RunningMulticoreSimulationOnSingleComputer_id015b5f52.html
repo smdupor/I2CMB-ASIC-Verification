@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="TaskTopic" />
+<meta name="DC.Title" content="Running Multi‑core Simulation on a Single Computer" />
+<meta name="abstract" content="Once you have fully completed multi‑core compilation on the design, it is ready for multi-core simulation. You run the simulation by specifying the -mc2 argument of the vsim command (along with any other necessary arguments of the vsim command that are specific to multi‑core simulation)." />
+<meta name="description" content="Once you have fully completed multi‑core compilation on the design, it is ready for multi-core simulation. You run the simulation by specifying the -mc2 argument of the vsim command (along with any other necessary arguments of the vsim command that are specific to multi‑core simulation)." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id015b5f52-4a42-405c-a4bc-14836decc4b0" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Running Multi‑core Simulation on a Single Computer</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Running Multi‑core Simulation on a Single Computer" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id015b5f52-4a42-405c-a4bc-14836decc4b0">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Running Multi‑core Simulation on a Single Computer</h1>
+<div class="body taskbody TaskBody"><div class="abstract TaskAbstract"><p class="shortdesc">Once you have
+fully completed multi‑core compilation on the design, it is ready
+for multi-core simulation. You run the simulation by specifying
+the -mc2 argument of the vsim command (along with any other necessary
+arguments of the vsim command that are specific to multi‑core simulation). </p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">By default, multi‑core
+simulation is run on multiple cores of single machine. However,
+you can run simulation on multiple machines connected over a network
+using the vsim ‑mc2network command — refer to “<a class="xref fm:HeadingOnly" href="TaskTop_RunningMultiComputerSimulation_idc50411ed.html#idc50411ed-bb02-47c9-ae3a-a402da5ad48c__TaskTop_RunningMultiComputerSimulation_idc50411ed.xml#idc50411ed-bb02-47c9-ae3a-a402da5ad48c" title="By default, multi‑core simulation is run on multiple cores of a single machine. However, you can run simulation on multiple machines connected over a network by using the ‑mc2network argument of vsim to specify a file containing a list of the hosts on which to run the simulation.">Running Multi-computer Simulation</a>.”</p>
+</div>
+<p class="p">Notes on the vsim command for multi-core simulation:</p>
+<ul class="ul"><li class="li" id="idd89d63a8-5fd8-4e3a-986d-f5f14326c931"><p class="p">The arguments of the vsim command that
+are specific to multi‑core simulation are described in the <a class="xref fm:HeadingOnly" href="Command_Vsim_id4cb976b3.html#id4cb976b3-c7d5-4fb1-8574-f608deccfa6e__Command_Vsim_id4cb976b3.xml#id4cb976b3-c7d5-4fb1-8574-f608deccfa6e" title="Questa SIM provides arguments for the vsim command that are specific to multi‑core simulation.">vsim</a> command reference section in Chapter <a class="xref fm:NumberOnly" href="MGCChap_ReferenceInformationPartitionFilesCommands_id32b2858a.html#id32b2858a-fdae-485c-b813-7b2600afe3a4__MGCChap_ReferenceInformationPartitionFilesCommands_id32b2858a.xml#id32b2858a-fdae-485c-b813-7b2600afe3a4" title="This chapter provides reference information for partition files and the commands used for multi-core simulation. This information includes a description of how to modify the default set of sync points based on the post-simulation analysis of the design.">Reference Information for Partition Files and Commands</a> of this manual. Refer to the <span class="ph fmvar:ProductName">Questa SIM</span><span class="ph FontProperty emphasis"> Reference Manual</span> for
+complete documentation of the vsim command. </p>
+</li>
+<li class="li" id="id8ef3d27f-2bcd-452b-9aca-25aac4ea6425"><p class="p">By default, each partition creates its
+own transcript file with the name <span class="ph FontProperty emphasis">&lt;partition_name&gt;.log</span>.
+You can override this default transcript file name by using the
+‑mc2vsimargs argument for each partition. In addition, a transcript
+file containing output from all partitions combined is generated,
+following the normal conventions for vsim transcript files. The
+default name for a vsim transcript file is <span class="ph FontProperty emphasis">transcript</span>.
+You can override the default transcript filename using vsim -l. </p>
+</li>
+<li class="li" id="idc6fc576e-531a-4ccf-ba4c-234a8d97960b"><p class="p">If you do not specify the -do argument,
+then by default, the following syntax is added for all partitions:</p>
+<p class="lines ApplCommand">-do 'run -a; quit -f' </p>
+<p class="p">You can override the default for all
+partitions by using the -do argument. You can override the default
+for a specific partition by using ‑mc2vsimargs argument. </p>
+</li>
+<li class="li" id="id9cc1648b-5002-4004-a91b-e8023c231318"><p class="p">When you partition a design, partitions
+can end up with different minimum time resolutions, resulting in
+a time resolution mismatch error after elaboration. Time resolutions
+for all partitions need to match in order to run simulation correctly.
+You can prevent the mismatch by specifying the -t option with the
+overall design's time resolution at the vsim command line.</p>
+</li>
+</ul>
+</div>
+<div class="section Restrictions"><h2 class="title Subheading sectiontitle">Restrictions and Limitations</h2><ul class="ul"><li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id8c873d7c-865e-48a1-9500-c6446766f058"><p class="p">If you override the ‑do
+argument for individual partitions, make sure that all of the partitions
+are executing the same run commands. Otherwise, problems may occur
+with the simulation. </p>
+</li>
+</ul>
+</div>
+<div class="section prereq Prerequisites p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Prerequisites</h2></div><ul class="ul"><li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__idf6f0c7e7-5a09-4443-898d-295d776eb382"><p class="p">Compile
+the design with the vcom or vlog command (<a class="xref fm:HeadingOnly" href="TaskTop_CompilingConventionalSimulation_id9748471f.html#id9748471f-e417-4302-9fce-522bd0a91fae__TaskTop_CompilingConventionalSimulation_id9748471f.xml#id9748471f-e417-4302-9fce-522bd0a91fae" title="To begin multi-core simulation, compile your design with either the vcom or the vlog command. Invoke either command from within the Questa SIM GUI or from the command prompt of your operating system.">Compiling for Conventional Simulation</a>). </p>
+</li>
+<li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id4001b6bf-5c60-4d8b-b691-23326b26133f"><p class="p">Compile
+the design with the mc2com command (<a class="xref fm:HeadingOnly" href="Contain_MulticoreCompilationPartitionsAnalysisOptimization_idb8936446.html#idb8936446-4f61-4a40-8303-b71f4e27a54d__Contain_MulticoreCompilationPartitionsAnalysisOptimization_idb8936446.xml#idb8936446-4f61-4a40-8303-b71f4e27a54d" title="To compile for multi-core simulation, use the mc2com command to partition the design. You can also use arguments for this command to analyze and optimize the partition.">Multi‑core Compilation: Partitions, Analysis, and Optimization</a>) or you have access to a partition
+file for the design. </p>
+</li>
+</ul>
+</div>
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id2b541030-e24c-4101-a54e-c37a54e99885"><span class="ph cmd">Run the vsim command using
+the -mc2 argument and any additional arguments you want to apply
+for simulation. </span></div>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><ul class="ul"><li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id161b9c56-1091-4e43-aac8-ee07e6edc61d"><p class="p">The simulator performs multi-core
+simulation on the top-level design named top_opt. </p>
+</li>
+<li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id01b00ac4-8b36-4627-81f7-67c0fcd8d530"><p class="p">Specifying -mc2synccntl=verilog
+enables the synch and nba sync controls for the sync points of the
+partition file. </p>
+</li>
+</ul>
+</div>
+<div class="section Examples" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id052c4959-e1b9-478a-8fa1-d5747d0fc7f8"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__idc568756a-d90d-46bd-86a5-171cde662144"><p class="p">The following vsim command
+uses the ‑mc2synccntl argument to override the default sync points
+of the partition by specifying the verilog alias for the Verilog
+partition boundary. </p>
+<p class="lines ApplCommand">vsim -mc2 top_opt -do run.do -mc2synccntl=verilog</p>
+</li>
+</ul>
+<ul class="ul"><li class="li" id="id015b5f52-4a42-405c-a4bc-14836decc4b0__id61c45c4d-2c62-484d-8ddc-53a83190e6f3"><p class="p">The following shows an example
+of the transcript displayed when running the vsim ‑mc2 command. </p>
+<pre class="pre codeblock leveled"><code>Reading /u/dvtbata/rkjain/mainline/modeltech/tcl/vsim/pref.tcl 
+ 
+# DEV 
+ 
+# Python 2.3.4 
+# Reading /u/dvtbata/rkjain/mainline/modeltech/tcl/vsim/pref.tcl 
+# 
+# // 
+# [MC2-STAT] Partition "p2", Proc Id = 1064 
+# vsim +nowarnTFMPC +nowarnTSCALE -do run.do -l p2.log -lib /u/dvtbata/rkjain/mainline-ws/tests_mp/base/param/param19/work/_mc2/p2_work -mc2partfile top_opt.part -c -wlf p2.wlf -wlfnoopt p2 
+# [MC2-STAT] Partition "p1", Proc Id = 1065 
+# vsim +nowarnTFMPC +nowarnTSCALE -do run.do -l p1.log -lib /u/dvtbata/rkjain/mainline-ws/tests_mp/base/param/param19/work/_mc2/p1_work -mc2partfile top_opt.part -c -wlf p1.wlf -wlfnoopt p1 
+# [MC2-STAT] Partition "master", Proc Id = 1063 
+# vsim +nowarnTFMPC +nowarnTSCALE -do run.do -l master.log -lib /u/dvtbata/rkjain/mainline-ws/tests_mp/base/param/param19/work/_mc2/master_work -mc2partfile top_opt.part -c -wlf master.wlf -wlfnoopt master 
+# Loading ./work.testbench(fast) 
+# Loading ./work.mod1(fast) 
+# Loading ./work.mod2(fast) 
+# Loading sv_std.std 
+# Loading work.p1_master__intf_1(fast) 
+# Loading work.p1__intf_3(fast) 
+# Loading work.p1__intf_8(fast) 
+# do run.do 
+# Loading ./work.testbench(fast) 
+# Loading ./work.mod2(fast) 
+# Loading ./work.mod3(fast) 
+# Loading sv_std.std 
+# Loading work.master_p1__intf_0(fast) 
+# Loading work.master__intf_2(fast) 
+# Loading work.master_p2__intf_4(fast) 
+# Loading work.master__intf_7(fast) 
+# do run.do 
+# Loading ./work.testbench(fast) 
+# Loading ./work.mod1(fast) 
+# Loading ./work.mod3(fast) 
+# Loading sv_std.std 
+# Loading work.p2_master__intf_5(fast) 
+# Loading work.p2__intf_6(fast) 
+# Loading work.p2__intf_9(fast) 
+# ** Note: (vsim-8840) The following MC2 sync controls will be used  verilog  
+# do run.do 
+#          0 testbench.mod1_inst p2=           3 
+#          5 testbench p1=           2 
+#          5 testbench.mod1_inst p2=           3 
+#         10 testbench p1=           2 
+#         10 testbench.mod1_inst p2=           3 
+#          0 testbench.mod1_inst.mod3_inst.inst3 p4=           7 
+#          0 testbench.mod1_inst.mod3_inst.inst2 p4=           6 
+#          0 testbench.mod1_inst.mod3_inst p3=           5 
+#          5 testbench.mod1_inst.mod3_inst p3=           5 
+#          6 testbench.mod1_inst.mod3_inst.inst2 p4=           6 
+#          7 testbench.mod1_inst.mod3_inst.inst3 p4=           7 
+#         10 testbench.mod1_inst.mod3_inst p3=           5 
+#          0 testbench.mod1_inst.mod2_inst.inst1 p4=         100 
+#          0 testbench.mod1_inst.mod2_inst p3=          20 
+#          5 testbench.mod1_inst.mod2_inst.inst1 p4=         100 
+#          5 testbench.mod1_inst.mod2_inst p3=          20 
+#         10 testbench.mod1_inst.mod2_inst.inst1 p4=         100 
+#         10 testbench.mod1_inst.mod2_inst p3=          20 
+# 
+# [MC2-STAT] Partition     p2 (2)=&gt; Value Triggers: 0, User Sync Events: 0, Total Sync Events: 15, Inout Sync Events: 0, Dataless Sync Events: 6, Idle Sync Events: 0, Max Sync Reloop: 2, Max Data Reloop: 1, Events: 13, Processes: 33, Suspend Opt : 0 
+# 
+# [MC2-STAT] Partition     p1 (1)=&gt; Value Triggers: 96, User Sync Events: 0, Total Sync Events: 15, Inout Sync Events: 0, Dataless Sync Events: 6, Idle Sync Events: 0, Max Sync Reloop: 2, Max Data Reloop: 1, Events: 13, Processes: 23, Suspend Opt : 0 
+# 
+# [MC2-STAT] Partition master (0)=&gt; Value Triggers: 576, User Sync Events: 0, Total Sync Events: 15, Inout Sync Events: 0, DatalessSync Events: 6, Idle Sync Events: 0, Max Sync Reloop: 2, Max Data Reloop: 1, Events: 18, Processes: 43, Suspend Opt : 0 
+# 
+# real  0m2.616s 
+# user  0m0.056s 
+# sys   0m0.014s 
+ </code></pre></li>
+</ul>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_HowPerformMultiCoreSimulation_idc049f316.html" title="Running Questa SIM multi‑core simulation consists of using three Questa SIM commands, plus an optional fourth command that you can use to analyze simulation results. Arguments for each command enable you to make modifications to the simulation procedure.">How to Perform Multi-Core Simulation</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "Running Multi‑core Simulation on a Single Computer"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/TaskTop_RunningMulticoreSimulationOnSingleComputer_id015b5f52.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

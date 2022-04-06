@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="UCDB File “clubbing” in Automated Merge and Automated Triage" />
+<meta name="abstract" content="Under non-queued incremental auto-merge and auto-triage, each completed UCDB file results in a separate merge/triage operation to handle that specific file. Because of file locking, multiple concurrent merge and/or triage commands to the same target file can experience additional latency as the locking algorithm blocks all but one of the concurrent commands from accessing the target file at any given time. VRM supports queued versions of incremental auto-merge and auto-triage that avoid this file locking latency." />
+<meta name="description" content="Under non-queued incremental auto-merge and auto-triage, each completed UCDB file results in a separate merge/triage operation to handle that specific file. Because of file locking, multiple concurrent merge and/or triage commands to the same target file can experience additional latency as the locking algorithm blocks all but one of the concurrent commands from accessing the target file at any given time. VRM supports queued versions of incremental auto-merge and auto-triage that avoid this file locking latency." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="idceaba6d7-cf83-4356-a147-b5b7f7e192ac" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>UCDB File “clubbing” in Automated Merge and Automated Triage</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="UCDB File “clubbing” in Automated Merge and Automated Triage" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="idceaba6d7-cf83-4356-a147-b5b7f7e192ac">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">UCDB File “clubbing” in Automated Merge
+and Automated Triage</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Under non-queued
+incremental auto-merge and auto-triage, each completed UCDB file
+results in a separate merge/triage operation to handle that specific file.
+Because of file locking, multiple concurrent merge and/or triage
+commands to the same target file can experience additional latency
+as the locking algorithm blocks all but one of the concurrent commands
+from accessing the target file at any given time. VRM supports queued versions
+of incremental auto-merge and auto-triage that avoid this file locking latency.</span>
+</div>
+<p class="p">The basic idea is simple. As long
+as a merge or triage is running against a particular target file
+(a “merge file” in the case of auto-merge or a “triage database”
+in the case of auto-triage), subsequent requests to merge/triage
+an individual UCDB result in the UCDB file being queued up internal
+to the vrun application. When the current merge/triage process completes,
+the queued UCDB files are then used to create another merge/triage
+Action on-the-fly and that Action is launched. Subsequent UCDB files
+becoming available for merge/triage while the new process is still
+running are likewise queued up to await the completion of the new merge
+or triage process. Besides avoiding the processing and latency overhead
+of file locking collisions, if more than one leaf-level UCDB happens
+to be waiting in the queue, all queued files are merged and/or inserted
+into the triage database with a single command, thus reducing the
+number of merge/triage commands that must be executed.</p>
+<p class="p">By default, UCDB input files are clubbed according
+to the script that must be executed in order to add them to the
+target merge/triage file. The script commands to be used in the <span class="ph FontProperty emphasis">mergeScript</span> or <span class="ph FontProperty emphasis">triageScript</span> Action
+are either generated internally by the auto-merge/triage process
+or come from the RMDB database RMDB file (if the user overrides the
+default <span class="ph FontProperty emphasis">mergeScript/triageScript</span> commands).
+These commands are parameter-expanded in the following manner:</p>
+<ol class="ol"><li class="li" id="idceaba6d7-cf83-4356-a147-b5b7f7e192ac__id8d9c58c2-836b-4b9f-9a51-464d28d4ee3c"><p class="p">Any (<span class="ph filepath">%mergefile%</span>) or (<span class="ph filepath">%triagefile%</span>)
+references are replaced with the current <span class="ph filepath">mergefile</span> or <span class="ph filepath">triagefile</span>, respectively.</p>
+</li>
+<li class="li" id="idceaba6d7-cf83-4356-a147-b5b7f7e192ac__idf51e2531-ad92-47f9-8d35-541cd0feba71"><p class="p">Any “(%ucdbfiles%)” references are replaced
+with the single string <span class="ph filepath">dummy.ucdb</span> (in order
+to allow Action scripts to match even if the UCDB file in question
+differs (which it always will).</p>
+</li>
+<li class="li" id="idceaba6d7-cf83-4356-a147-b5b7f7e192ac__id8e43f8fb-1087-4bfa-bab5-5ff219f88a3e"><p class="p">All other parameter references are expanded
+as they would be when the Action script file is generated and launched.</p>
+</li>
+</ol>
+<p class="p">The commands are then concatenated and run
+through an SHA-1 message digest generator. The digest string is
+used to identify unique Action scripts (see note below). Leaf-level
+UCDB files are only clubbed together if the commands that would
+be executed to perform the merge and/or triage operation are identical
+in all respects except for the leaf-level UCDB names (which by definition,
+are different). If the Action scripts defined for two or more UCDBs differ,
+or if parameter references (often used for command-line options)
+differ between the multiple Action scripts, the UCDBs in question
+are not clubbed together. Instead, VRM launches a merge/triage Action
+using the first of the queued UCDB files and any other queued UCDB
+files whose SHA-1 message digest value matches that of the first
+of the queued UCDB files. Any remaining files are re-queued in the
+order they were initially queued. When that merge/triage Action
+finishes, another is started using the first of the postponed UCDB
+files and any other UCDB files whose message digest matches that
+file. This ensures an equitable throughput of UCDBs without clubbing
+together files that cannot be merged and/or triaged with the same
+commands.</p>
+<p class="p">If the default auto-merge and auto-triage commands
+are not overridden in the RMDB file, and if there is only one defined
+value for both the <span class="ph FontProperty emphasis">mergeoptions</span> and <span class="ph FontProperty emphasis">triageoptions</span> parameters
+throughout the entire regression run, a minor performance increase
+can be realized by disabling the SHA-1 based clubbing algorithm.
+To do this, set the MTI_VRUN_CLUB_BY_TARGET environment variable.
+The value of the variable is irrelevant. If a variable by that name
+is set in the environment, only the target file name is used to
+determine how to club the UCDB files.</p>
+<p class="p">Note that while the use of a message digest
+algorithm such as SHA-1 does not guarantee that two script files
+will never hash to the same value, it is generally believed to be computationally
+infeasible to come up with more than one unique text string that
+all hash to the same message digest. </p>
+<p class="p">By default, there is no limit to how many UCDBs
+may be clubbed in a single merge/triage operation. The list of UCDB
+files is written to a text file in order to prevent the merge/triage
+command line from exceeding operating system limits.</p>
+<p class="p">The list of UCDB files is created in the same
+directory as the corresponding script file (<span class="ph filepath">mergeScript.do</span> or <span class="ph filepath">triageScript.do</span>).
+The default name for this file is either <span class="ph filepath">mergeScript.files</span> or <span class="ph filepath">triageScript.files</span>.
+The path to this list file is available as the parameter <span class="ph FontProperty emphasis">mergelist</span> (for
+auto-merge) or <span class="ph FontProperty emphasis">triagelist</span> (for
+auto-triage). In addition, if either parameter is defined by the
+user in the RMDB file, those user-specified paths will be used instead. </p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CoverageMergingUseModels_id78b6395c.html" title="By default, VRM supports three levels of automation for coverage merging, as described in the following sections.">Coverage Merging Use Models</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "UCDB File “clubbing” in Automated Merge and Automated Triage"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_UcdbFileClubbingInAutomatedMergeAutomatedTriage_idceaba6d7.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

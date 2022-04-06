@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Design Files for This Lesson" />
+<meta name="abstract" content="The design for this example is a clock-driven memory interleaver with an associated test bench." />
+<meta name="description" content="The design for this example is a clock-driven memory interleaver with an associated test bench." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Design Files for This Lesson</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Design Files for This Lesson" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Design
+Files for This Lesson</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The design
+for this example is a clock-driven memory interleaver with an associated
+test bench.</span>
+</div>
+<p class="p">The directory structure is located
+in the <span class="ph filepath">&lt;install_dir&gt;/examples/tutorials/pa_sim directory</span>,
+as shown below:</p>
+<pre class="pre codeblock leveled"><code>pa_sim 
+	| 
+	PA_tutorial 
+		| 
+		+-- Libraries								Verilog and SystemVerilog library source 
+		| 		| 
+		| 		+-- io 
+		| 		| 
+		| 		+-- isolation 
+		| 		| 
+		| 		+-- level_shift 
+		| 		| 
+		| 		+-- retention 
+		| 		| 
+		| 		+-- sram_256x16 
+		| 		| 
+		| 		+-- std_cell 
+		| 
+		+-- Questa										Simulation directory 
+		| 		| 
+		| 		+-- scripts								Compilation &amp; simulation commands 
+		| 				| 
+		| 				+-- tkgui   						Questa TKGUI scripts	
+		| 				| 		
+		| 				+-- visualizer 						Visualizer scripts	
+		|
+		+-- RTL								Source files for RTL design 
+		| 
+		+-- TB								Testbech for RTL/GLS designs 
+		| 
+		+-- GLS								Source files for GLS design 
+		| 
+		+-- UPF								UPF file for power intent 
+ </code></pre><p class="p">For this exercise, you run all simulations
+from the <span class="ph filepath">PA_tutorial</span> directory. </p>
+<div class="section Subsections"><div class="section Subsection" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id9c294523-7031-4275-89f2-4cf0e8ed23cb"><h2 class="title Subheading sectiontitle">Script Files</h2><p class="p">The <span class="ph filepath italic">Questa/scripts/</span> directory
+contains the following do files for compiling all simulations:</p>
+<ul class="ul"><li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id5a49fe3d-a851-4c8c-b2b1-9b6902738316"><p class="p"><span class="ph filepath">compile_rtl.do</span> —
+Compiles RTL source files.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__idb459a2cc-a9e5-4775-8570-74a8a22a3074"><p class="p"><span class="ph filepath">compile_gls.do</span> —
+Compiles GLS source files for the Liberty simulation.</p>
+</li>
+</ul>
+<p class="p">The <span class="ph filepath italic">Questa/scripts/tkgui/</span> directory
+contains the following do files for running all simulations:</p>
+<ul class="ul"><li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id19c2324d-1c3b-4ee0-a94e-e26943e8990b"><p class="p"><span class="ph filepath">analyze_config1.do</span> —
+Processes UPF files for the first Power Aware RTL simulation.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__idafc46663-072b-4b7f-b5c4-f86fa53b44cc"><p class="p"><span class="ph filepath">analyze_config2.do</span> —
+Processes UPF files for the second Power Aware RTL simulation.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id4ab3c709-6b76-4556-b5d6-984cdd2286e7"><p class="p"><span class="ph filepath">analyze_imp.do</span> —
+Processes UPF files for the third Power Aware RTL simulation.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id7595b35f-1eb5-4a4b-ae3e-baed140528fe"><p class="p"><span class="ph filepath">analyze_gls.do</span> —
+Processes UPF and Liberty files for Power Aware gate-level simulation
+(GLS).</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__ide8c46990-651e-4131-bf9e-59e734b86a92"><p class="p"><span class="ph filepath">liberty_gls.do</span> —
+Reads Liberty files and creates Liberty attribute library.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id77dff07f-0b81-4741-9cd2-5d42e6aac6bd"><p class="p"><span class="ph filepath">doit_rtl.do</span> —
+Configures the first two RTL Power Aware simulations, invokes the
+vsim command, and runs sim.do.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__id8ffa16c1-ecfb-4fbb-838a-ca970416261a"><p class="p"><span class="ph filepath">doit_imp.do</span> —
+Configures the third RTL and Liberty (GLS) Power Aware simulations, invokes
+the vsim command, and runs sim.do.</p>
+</li>
+<li class="li" id="id9a705d64-3db5-42e6-98d1-fd2a6d6dd6da__ide19b21a6-d677-4ee7-867b-405df1812e1a"><p class="p"><span class="ph filepath">sim.do</span> —
+In VSIM mode, sets up the Wave window display, specifies Power Aware messaging,
+and controls the RTL and GLS Power Aware simulations to completion.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerAwareTutorialConcepts_id1bb4e3ed.html" title="There are a few general concepts you should understand before starting on the interactive portion of the tutorial.">Power Aware Tutorial Concepts</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Design Files for This Lesson"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_DesignFilesLesson_id9a705d64.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

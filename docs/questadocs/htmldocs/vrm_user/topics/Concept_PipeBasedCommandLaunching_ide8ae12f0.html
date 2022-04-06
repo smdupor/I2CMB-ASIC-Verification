@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Pipe-based Command Launching" />
+<meta name="abstract" content="By default, VRM launches scripts as background processes. Their only means of communicating errors back to the launching vrun process is the TCP/IP port on which the vrun process is listening. If the process simply fails to launch (for example, if the vsim or vish processes cannot be found), VRM will detect a launch error and treat the corresponding Action as it would any other failed job. If, however, the wrapper command launches as expected but fails to execute the wrapper script (for example, in the case of an error originating in a faulty method command), VRM could miss the error. In this case, the only recourse is a timeoutQ violation (that is, the timeout window between launching the Action and receiving the “start” message from the wrapper). By default, this delay is 31 seconds. It must be made longer in the case of a grid-based method command. After a timeout, the offending error condition will most likely be reported in the (xxx)Script.stderr file that is also echoed to the vrun log output." />
+<meta name="description" content="By default, VRM launches scripts as background processes. Their only means of communicating errors back to the launching vrun process is the TCP/IP port on which the vrun process is listening. If the process simply fails to launch (for example, if the vsim or vish processes cannot be found), VRM will detect a launch error and treat the corresponding Action as it would any other failed job. If, however, the wrapper command launches as expected but fails to execute the wrapper script (for example, in the case of an error originating in a faulty method command), VRM could miss the error. In this case, the only recourse is a timeoutQ violation (that is, the timeout window between launching the Action and receiving the “start” message from the wrapper). By default, this delay is 31 seconds. It must be made longer in the case of a grid-based method command. After a timeout, the offending error condition will most likely be reported in the (xxx)Script.stderr file that is also echoed to the vrun log output." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide8ae12f0-9561-4c74-8adf-58f2ab5e6613" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Pipe-based Command Launching</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Pipe-based Command Launching" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ide8ae12f0-9561-4c74-8adf-58f2ab5e6613">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Pipe-based Command
+Launching</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">By default,
+VRM launches scripts as background processes. Their only means of
+communicating errors back to the launching vrun process is the TCP/IP port
+on which the vrun process is listening. If the process simply fails
+to launch (for example, if the vsim or vish processes cannot be
+found), VRM will detect a launch error and treat the corresponding
+Action as it would any other failed job. If, however, the wrapper
+command launches as expected but fails to execute the wrapper script
+(for example, in the case of an error originating in a faulty method
+command), VRM could miss the error. In this case, the only recourse
+is a timeoutQ violation (that is, the timeout window between launching
+the Action and receiving the “start” message from the wrapper).
+By default, this delay is 31 seconds. It must be made longer in
+the case of a grid-based method command. After a timeout, the offending
+error condition will most likely be reported in the <span class="ph filepath">(xxx)Script.stderr</span> file
+that is also echoed to the vrun log output.</span>
+</div>
+<p class="p">There is an alternative launching
+algorithm available. If the -pipelaunch command-line option is specified
+or the MTI_VRUN_PIPE_LAUNCH environment variable is set, then VRM
+will use pipes to launch the child processes rather than background
+mode. The child process runs in the background either way, but when
+pipes are used, the vrun process is able to verify the status of
+the launched job even before the wrapper takes control and sends
+the “start” message. This can be useful for debugging timeouts that
+occur due to various setup or system errors. Following are the two
+downsides to this algorithm:</p>
+<ul class="ul"><li class="li" id="ide8ae12f0-9561-4c74-8adf-58f2ab5e6613__id53df6944-b6ec-4cb7-aa75-9da9ebd18382"><p class="p">It requires one additional open file
+descriptor per running Action to monitor status.</p>
+</li>
+<li class="li" id="ide8ae12f0-9561-4c74-8adf-58f2ab5e6613__id21e201d8-cfdf-477e-9514-8f29d12102b3"><p class="p">The handles for the <span class="ph filepath">(xxx)Script.stdout</span> files
+for each running Action are owned by the vrun process instead of
+by the wrapper script process.</p>
+</li>
+</ul>
+<p class="p">Since most operating systems have both fixed
+global and user-setable per-process limits on the number of available
+file descriptors, the pipe-based launch algorithm is expected to
+result in a lower capacity with respect to concurrent Actions launched
+by VRM. For this reason, the pipe-based algorithm is an option that
+must be enabled. When enabled, the -j option should also be used
+to ensure that the total number of file descriptors used does not
+exceed the limits set by the operating system.</p>
+<p class="p">Note that in the case of a method command that
+queues Actions to a compute grid, the grid-submission command itself
+is short-lived. It generally registers the job with the grid management
+software and then exits. In this case, the launch pipe is only connected
+to the grid-submission command. As the grid-submission commands
+exit, the file descriptors are released, even before the grid job
+has actually executed. While that means pipe-based launching can
+be used without a significant reduction in capacity, it also means
+that the grid system itself opens a window of time in which an Action
+can fail to run (that is, an error detected by the grid subsystem
+after the job has been submitted), but the error is not detected
+by the launching vrun process. In this case, a non-zero timeoutQ
+value ensures that the Action eventually times out and VRM does
+not appear to hang as a result.</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ScriptExecutionTimeouts_idb739d4ac.html" title="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue.">Script Execution and Timeouts</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Pipe-based Command Launching"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PipeBasedCommandLaunching_ide8ae12f0.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

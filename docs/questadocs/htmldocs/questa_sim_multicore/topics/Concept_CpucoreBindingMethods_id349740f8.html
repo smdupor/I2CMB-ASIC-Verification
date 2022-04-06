@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="CPU/Core Binding Methods" />
+<meta name="abstract" content="You can control the CPU/core binding for multi-core simulation by using vsim ‑mc2binding." />
+<meta name="description" content="You can control the CPU/core binding for multi-core simulation by using vsim ‑mc2binding." />
+<meta name="prodname" content="Questa SIM Multi-Core Simulation User's Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="questa_sim_multicore" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Multi-Core Simulation User’s Guide" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="none" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id349740f8-e801-4d4a-8a13-69ba4002c84e" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>CPU/Core Binding Methods</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="CPU/Core Binding Methods" />
+<meta name="attributes" content="product.version.2020.4,sort.order.060,doc.type.documentation.sys,product.id.P10467" />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id349740f8-e801-4d4a-8a13-69ba4002c84e">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">CPU/Core Binding Methods</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can control
+the CPU/core binding for multi-core simulation by using vsim ‑mc2binding. </span>
+</div>
+<p class="p">The following binding methods
+are available for multi-core simulation:</p>
+<ul class="ul"><li class="li" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__ide5930263-0b95-4956-8253-ad581180e8c3"><p class="p">If you do not specify
+the -mc2binding argument — By default, the ‑mc2binding affinity
+argument is enabled. Each partition is bound to a specific core using
+taskset or numactl, based on the type of machine. Before starting
+simulation, the vsim command generates a file named <span class="ph FontProperty emphasis">.mc2.affine</span> in the
+current working directory. This generated file is specific to the
+machine the simulation is being run on. The <span class="ph FontProperty emphasis">.mc2.affine</span> file contains
+the setting to bind cores to individual partitions.</p>
+</li>
+<li class="li" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__id8b0672ef-0b6d-4d67-8dd7-a4f898db5cb3"><p class="p">If you specify the
+-mc2binding affinity:user argument — You must provide the <span class="ph FontProperty emphasis">.mc2.affine</span> file
+in the current working directory. You can manually create the <span class="ph FontProperty emphasis">.mc2.affine</span> file,
+modify a previous run on the same machine, or use the utility mc2_util
+affine to generate the file. When you use this argument, vsim does
+not generate the <span class="ph FontProperty emphasis">.mc2.affine </span>file.
+Instead, the simulation reads the existing <span class="ph FontProperty emphasis">.mc2.affine</span> file,
+and core binding is done as you specify.</p>
+</li>
+<li class="li" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__idaf3bbef8-66f2-4977-93b2-ad0cf0ae5781"><p class="p">If you specify the
+-mc2binding {core | socket | rr} argument — Partitions are bound
+to CPU/cores using MPICH2's built-in binding capability. Results
+with these binding methods can vary, based on machine configuration,
+and may provide better or worse performance when compared to the
+default affinity binding. You can use this argument if you are fine-tuning
+performance to see if it improves your results. </p>
+</li>
+<li class="li" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__id69ac8cb3-1865-4879-a0a8-1813d9595eae"><p class="p">If you specify -mc2binding
+none argument — CPU/core binding is disabled, and multi-core simulation
+is run with no core binding. This argument can affect performance.
+You might want to use this argument when more than one multi-core
+simulation is run at the same time on the same machine, and the
+number of cores on the machine is not equal to the sum of all partitions
+running for all multi-simulations on a machine.</p>
+</li>
+</ul>
+<div class="section Subsections"><div class="section Subsection" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__id888e8115-e3bc-4141-a730-a2fb0981d0d6"><h2 class="title Subheading sectiontitle">Auto-generated Binding (Default
+Method)</h2><p class="p">The <span class="ph fmvar:ProductName">Questa SIM</span> simulator can
+automatically generate binding information for a machine and use
+it during multi‑core simulation. Binding information is generated
+in the <span class="ph FontProperty emphasis">.mc2.affine</span> file.</p>
+<p class="p">Based on whether you have Intel or AMD CPUs,
+you use taskset or numactl commands to bind a CPU/core to a process
+during multi-core simulation. AMD CPUs are NUMA (Non-Uniform Memory
+Access) systems. Newer Intel CPUs are also NUMA systems, some earlier Intel
+architectures are UMA based.</p>
+<p class="p">On AMD machines, the control command is as
+follows:</p>
+<pre class="pre ShellCommand">numactl -c C[,C] -m M[,M] ...</pre>
+<p class="p">where -c specifies the CPU(s)/core(s) the process
+is to be run on, and -m specifies the CPU/core the memory is allocated
+from.</p>
+<div class="note tip"><span class="tiptitle">Tip</span> <p class="p">On
+some NUMA systems, numactl may not be functional. Use taskset in
+that situation.</p>
+</div>
+<p class="p">On an Intel machine, the
+control command is as follows:</p>
+<pre class="pre ShellCommand">taskset -c C[,C]</pre>
+<p class="p">where -c specifies the CPU(s)/core(s) the process
+runs on.</p>
+<p class="p">Refer to man pages of numactl and taskset for
+more information.</p>
+<p class="p">The following are example <span class="ph FontProperty emphasis">.mc2.affine</span> files
+for an AMD-based host and Intel-based host:</p>
+</div>
+<div class="section Subsection" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__id19679f2e-0b61-46f2-b1f5-0544a97dee49"><h2 class="title Subheading sectiontitle">AMD Host</h2><pre class="pre codeblock leveled"><code>MC2_AUTO_AFFINE_0="numactl --physcpubind 0 --membind 0" 
+export MC2_AUTO_AFFINE_0 
+ 
+MC2_AUTO_AFFINE_1="numactl --physcpubind 1 --membind 1" 
+export MC2_AUTO_AFFINE_1 
+ 
+MC2_AUTO_AFFINE_2="numactl --physcpubind 2 --membind 2" 
+export MC2_AUTO_AFFINE_2 
+ 
+MC2_AUTO_AFFINE_3="numactl --physcpubind 3 --membind 3" 
+export MC2_AUTO_AFFINE_3 </code></pre></div>
+<div class="section Subsection" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__id8bda6334-e2a8-4331-96c6-af162bbe3d5c"><h2 class="title Subheading sectiontitle">Intel Host</h2><pre class="pre codeblock leveled"><code>MC2_AUTO_AFFINE_0="taskset -c 7" 
+export MC2_AUTO_AFFINE_0 
+ 
+MC2_AUTO_AFFINE_1="taskset -c 6" 
+export MC2_AUTO_AFFINE_1 
+ 
+MC2_AUTO_AFFINE_2="taskset -c 4" 
+export MC2_AUTO_AFFINE_2 
+ 
+MC2_AUTO_AFFINE_3="taskset -c 5" 
+export MC2_AUTO_AFFINE_3</code></pre><p class="p">Binding information is generated in the <span class="ph FontProperty emphasis">.mc2.affine</span> file based
+on available cores on the machine with sequential number in the
+format MC2_AUTO_AFFINE&lt;num&gt;. Binding with number 0 is assigned
+to master partition. Binding with subsequent numbers (1, 2, 3…)
+are assigned to slave partitions in the order partitions are defined
+in the partition file. </p>
+</div>
+<div class="section Subsection" id="id349740f8-e801-4d4a-8a13-69ba4002c84e__idab85ebef-2d15-4611-8157-eb4fe3bf3a45"><h2 class="title Subheading sectiontitle">User-defined Binding</h2><p class="p">The core binding file generated
+by vsim (<span class="ph FontProperty emphasis">.mc2.affine</span>) or
+MPICH2's built-in binding assign binding based on the processor's
+architecture. The core binding file does not take into account dynamic
+loading among the cores/CPUs on the system. You may be able to improve
+performance by applying binding based on the current load on the machine.
+You can apply user-defined binding, if you think it will perform
+better than automatically generated binding. To specify user-defined
+binding, you can generate a new <span class="ph FontProperty emphasis">.mc2.affine</span> file
+using the mc2_util affine command, and then modify the existing <span class="ph FontProperty emphasis">.mc2.affine</span> file.</p>
+<p class="p">Before you modify the existing <span class="ph FontProperty emphasis">.mc2.affine</span> file,
+you should know the configuration of the system that you are running
+multi-core simulation on. The most important information is the
+number of cores and CPUs available on the system. You should also
+know how the cores are numbered and the core/CPU relation.</p>
+<div class="note linux"><span class="linuxtitle">Linux:</span> <p class="p">On
+most Linux installations, you can examine the file <span class="ph FontProperty emphasis">/proc/cpuinfo</span> to
+determine CPUs/cores configuration.</p>
+</div>
+<p class="p">For platforms containing multi-core CPUs, you
+should assign the master partition to the CPU where the least number
+of cores are being used to run the simulation. For example, assume you
+are running on a computer with dual Intel Quad-core CPUs, where
+one CPU administers all of the cores with odd numbers and the other
+CPU administers the cores with even numbers. If your multi-core
+simulation runs in five partitions, this rule suggests you should
+assign the master partition to 0, and one of the remaining partitions
+to core 2 (the same CPU as the master). Assign the remaining partitions
+to cores 1, 3, and 5 (a different CPU from the master).</p>
+<pre class="pre codeblock leveled"><code>MC2_AUTO_AFFINE_0="taskset -c 0" 
+MC2_AUTO_AFFINE_1="taskset -c 2" 
+MC2_AUTO_AFFINE_2="taskset -c 1" 
+MC2_AUTO_AFFINE_3="taskset -c 3" 
+MC2_AUTO_AFFINE_4="taskset -c 5" </code></pre><p class="p">By default,<span class="ph fmvar:ProductName">Questa SIM</span> uses multi-threading for WLF
+logging. Therefore, for each of the partitions where you are logging
+signals, results might be better if you assign those partitions
+to two cores from the same CPU. For example, if cores are assigned
+to CPUs using the even/odd method described above, and if the master
+partition is doing the logging, you could assign 0 and 2 to the
+master partition, as follows:</p>
+<pre class="pre codeblock leveled"><code>MC2_AUTO_AFFINE_0="taskset -c 0,2" 
+ </code></pre></div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CpuCoreBindingAffinity_id6a34e27b.html" title="Affinity is the process of binding a process or memory to a CPU or core on a multi-processor system.">CPU or Core Binding (Affinity)</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_multicore"
+                DocTitle = "Questa® SIM Multi-Core Simulation User’s Guide"
+                PageTitle = "CPU/Core Binding Methods"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_CpucoreBindingMethods_id349740f8.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Multi-Core Simulation User’s Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

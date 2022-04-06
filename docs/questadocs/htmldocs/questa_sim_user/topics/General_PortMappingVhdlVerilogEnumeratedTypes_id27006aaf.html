@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Port Mapping with VHDL and Verilog Enumerated Types" />
+<meta name="abstract" content="SystemVerilog infers an enumeration concept similar to VHDL enumerated types. In VHDL, the enumerated names are assigned to a fixed enumerated value, starting left-most with the value 0. In SystemVerilog, you can also explicitly define the enumerated values. As a result, you can use the bind construct for port mapping of VHDL enumerated types to Verilog port vectors." />
+<meta name="description" content="SystemVerilog infers an enumeration concept similar to VHDL enumerated types. In VHDL, the enumerated names are assigned to a fixed enumerated value, starting left-most with the value 0. In SystemVerilog, you can also explicitly define the enumerated values. As a result, you can use the bind construct for port mapping of VHDL enumerated types to Verilog port vectors." />
+<meta name="DC.subject" content="bind, to VHDL enumerated types" />
+<meta name="keywords" content="bind, to VHDL enumerated types" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id27006aaf-9a37-44cd-9871-f1914016fdbb" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Port Mapping with VHDL and Verilog Enumerated Types</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Port Mapping with VHDL and Verilog Enumerated Types" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id27006aaf-9a37-44cd-9871-f1914016fdbb">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Port Mapping with VHDL and
+Verilog Enumerated Types</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">SystemVerilog
+infers an enumeration concept similar to VHDL enumerated types.
+In VHDL, the enumerated names are assigned to a fixed enumerated value,
+starting left-most with the value 0. In SystemVerilog, you can also
+explicitly define the enumerated values. As a result, you can use
+the bind construct for port mapping of VHDL enumerated types to
+Verilog port vectors. </span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id70fab559-06dc-4756-8ad8-8981d5c79c69"><p class="p">Port mapping is supported for both input and
+output ports. <span class="ph fmvar:ProductName">Questa SIM</span> first
+converts the integer value of the enum to a bit vector before connecting
+to a Verilog formal port. Note that you cannot connect an enum value
+on port actual—it has to be signal. In addition, port vectors can
+be of any size less than or equal to 32. </p>
+<p class="p">This kind of port mapping between VHDL enum
+and Verilog vector is only allowed when the Verilog is instantiated
+under VHDL through the bind construct and is not supported for normal
+instances.</p>
+<p class="p"><a class="xref fm:Table" href="#id27006aaf-9a37-44cd-9871-f1914016fdbb__id90156dc1-7977-4e1d-aa97-a3c246c694f6">Table 1</a> shows the allowed VHDL
+types for port mapping to SystemVerilog port vectors. </p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id90156dc1-7977-4e1d-aa97-a3c246c694f6" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>VHDL Types Mapped To SystemVerilog Port Vectors</span></caption><colgroup><col style="width:1.399in" /><col style="width:1.576in" /><col style="width:1.576in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">bit </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">std_logic </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">vl_logic </p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">bit_vector </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">std_logic_vector </p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;"><p class="p">vl_logic_vector</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__idbc4a6c40-5674-4801-baa6-cc4ec0b79320"><h2 class="title Subheading sectiontitle">Example of Binding to
+VHDL Enumerated Types</h2><p class="p">Consider an example of using SystemVerilog
+assertions to monitor a VHDL finite state machine that uses enumerated
+types. With <span class="ph fmvar:ProductName">Questa SIM</span>,
+you can use the bind statement to map VHDL enumerated types directly
+to SystemVerilog enumerated types. </p>
+<p class="p">The following steps show how to follow the
+same type-sharing rules, which are applicable for direct instantiations
+at the SystemVerilog-VHDL mixed-language boundary (refer to <a class="xref fm:HeadingOnly" href="Contain_SharingUserDefinedTypes_id1fd77c2b.html#id1fd77c2b-286a-480e-818d-f052425cf367__Contain_SharingUserDefinedTypes_id1fd77c2b.xml#id1fd77c2b-286a-480e-818d-f052425cf367" title="You can use shared VHDL packages for both VHDL and Verilog/SystemVerilog. Each usage takes a different VHDL construct.">Sharing User-Defined Types</a>). </p>
+<div class="fig fignone ExampleTitle" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id2b4fbc25-0868-4c7c-9587-923946d66e68"><span class="figcap"><span class="fig--title-label">Example 1. </span>SystemVerilog Assertions Monitor a VHDL Finite State
+Machine</span></div>
+<p class="p">Consider the following enumerated type defined
+in a VHDL package:</p>
+<pre class="pre codeblock"><code>--/*----------pack.vhd---------------*/
+package pack is
+type fsm_state is(idle, send_bypass,
+load0,send0, load1,send1, load2,send2,
+load3,send3, load4,send4, load5,send5,
+load6,send6, load7,send7, load8,send8,
+load9,send9, load10,send10,
+load_bypass, wait_idle);
+end package;</code></pre><p class="p">The following procedure shows how to use this
+at the mixed-language boundary of SystemVerilog and VHDL. </p>
+<ol class="ol"><li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__iddbbb78bc-d923-40f8-9b0f-8d32d55656fe"><p class="p">Compile
+this package using the -mixedsvvh argument for the <a class="xref Link" href="../../questa_sim_ref/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'vcom', 'questa_sim_ref'); return false;">vcom</a> command:</p>
+<p class="lines ApplCommand">   vcom -mixedsvvh pack.vhd</p>
+</li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id0065f788-9c40-454f-9516-d11122700f25"><p class="p">Make
+the package available to the design in either of the following ways: </p>
+<ul class="ul"><li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id261d7126-6f67-442d-bead-834fb0885db6"><p class="p">Include this package in your VHDL target,
+like a normal VHDL package:</p>
+<pre class="pre codeblock"><code>use work.pack.all;
+...
+signal int_state : fsm_state;
+signal nxt_state : fsm_state;
+...</code></pre></li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id379c2b0d-0754-4067-aa24-472ee5af917e"><p class="p">Import this package to the SystemVerilog
+module containing the properties to be monitored, as if it were
+a SystemVerilog package. </p>
+<pre class="pre codeblock"><code>import pack::*;
+....
+input port:
+module interleaver_props (
+input clk, in_hs, out_hs,
+input fsm_state int_state 
+);
+...
+// Check for sync byte at the start of a every packet property
+pkt_start_check;
+- @(posedge clk) (int_state == idle &amp;&amp; in_hs) -&gt; (sync_in_valid);
+endproperty
+...</code></pre></li>
+</ul>
+</li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__idb665e662-1ac2-4627-b737-85c809b3c85f"><p class="p">Assume
+you want to implement functional coverage of the VHDL finite state
+machine states. With <span class="ph fmvar:ProductName">Questa SIM</span>,
+you can bind any SystemVerilog functionality, such as functional
+coverage, into a VHDL object. To do this, define the following covergroup
+in SystemVerilog: </p>
+<pre class="pre codeblock"><code>...
+covergroup sm_cvg @(posedge clk);
+    coverpoint int_state
+    {
+        bins idle_bin = {idle};
+        bins load_bins = {load_bypass, load0, load9, load10};
+        bins send_bins = {send_bypass, send0, send9, send10};
+        bins others = {wait_idle};
+        option.at_least = 500;
+    }
+    coverpoint in_hs;
+    in_hsXint_state: cross in_hs, int_state;
+endgroup
+sm_cvg sm_cvg_c1 = new;
+...</code></pre></li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id35bfd53a-70a3-408d-8dcb-df0502ef8aeb"><p class="p">As with
+monitoring VHDL components, you create a wrapper containing the
+bind statement to connect the SystemVerilog Assertions to the VHDL component:</p>
+<pre class="pre codeblock"><code>module interleaver_binds;
+...
+// Bind interleaver_props to a specific interleaver instance
+// and call this instantiate interleaver_props_bind<span class="ph FontProperty HeadingLabel">
+bind</span> interleaver_m0 interleaver_props interleaver_props_bind (
+    // connect the SystemVerilog ports to VHDL ports (clk)
+    // and to the internal signal (int_state)
+    .clk(clk), ..
+    .int_state(int_state)
+);
+...
+endmodule</code></pre></li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__idd83f85ec-caaf-4d9b-ad7b-9436b0a656c8"><p class="p">Use
+either of the following to perform the actual binding in <span class="ph fmvar:ProductName">Questa SIM</span>:</p>
+<ul class="ul"><li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__idd62fcd90-b2d6-475b-beeb-53ff7a3facb1"><p class="p">instantiation </p>
+</li>
+<li class="li" id="id27006aaf-9a37-44cd-9871-f1914016fdbb__id2bde4c22-3cb0-466d-a9ea-2106145ad78a"><p class="p">loading of multiple top modules into
+the simulator with the vsim command:</p>
+<p class="lines ApplCommand">vsim interleaver_tester interleaver_binds</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SystemverilogBindConstructInMixedLanguageDesigns_ide04c8136.html" title="The SystemVerilog bind construct allows you to bind a Verilog design unit to another Verilog design unit or to a VHDL design unit or to a SystemC module. This is especially useful for binding SystemVerilog assertions to your SystemC, VHDL, Verilog and mixed-language designs during verification.">The SystemVerilog bind Construct in Mixed-Language Designs</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Contain_SharingUserDefinedTypes_id1fd77c2b.html#id1fd77c2b-286a-480e-818d-f052425cf367__" title="You can use shared VHDL packages for both VHDL and Verilog/SystemVerilog. Each usage takes a different VHDL construct.">Sharing User-Defined Types</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Port Mapping with VHDL and Verilog Enumerated Types"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_PortMappingVhdlVerilogEnumeratedTypes_id27006aaf.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

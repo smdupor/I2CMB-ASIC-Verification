@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Top-Down Debugging (From the Test Bench)" />
+<meta name="abstract" content="You can run Power Aware analysis and debugging from the top of the design (test bench) with or without specifying an optimized design unit. These methods resemble the conventional two-step and three-step optimization flows." />
+<meta name="description" content="You can run Power Aware analysis and debugging from the top of the design (test bench) with or without specifying an optimized design unit. These methods resemble the conventional two-step and three-step optimization flows." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id428cf3a1-383f-4879-b609-b4f21a1edb1f" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Top-Down Debugging (From the Test Bench)</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Top-Down Debugging (From the Test Bench)" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id428cf3a1-383f-4879-b609-b4f21a1edb1f">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Top-Down Debugging (From the Test Bench)</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">You can run
+Power Aware analysis and debugging from the top of the design (test
+bench) with or without specifying an optimized design unit. These
+methods resemble the conventional two-step and three-step optimization
+flows. </span>
+</div>
+<ul class="ul"><li class="li" id="id428cf3a1-383f-4879-b609-b4f21a1edb1f__id2277b5a2-9eff-4055-94ff-e8f6eb6519b5"><p class="p">No optimized design unit — This flow
+resembles the conventional two-step flow, where you use the vopt
+command to specify a Power Aware simulation and debugging only;
+no optimization is performed. When you run the vsim command, it
+performs debugging and runs vopt internally to perform optimization
+(see <a class="xref fm:HeadingOnly" href="TaskTop_UsingTheTwoStepFlow_id864abe7b.html#id864abe7b-fc68-4d56-99ce-96c0c38b3555__TaskTop_UsingTheTwoStepFlow_id864abe7b.xml#id864abe7b-fc68-4d56-99ce-96c0c38b3555" title="In a two-step flow, you compile and simulate your design. The simulator implicitly optimizes the design before simulation. This flow may be useful in certain cases, such as automated scripts that assume only two steps are involved in building and running a simulation. You can pass optimization or UPF processing options to the optimization engine via the simulator.">Using the Two-Step Flow</a>). For example:</p>
+<pre class="pre codeblock leveled"><code>vlog design.v
+vcom design.vhdl 
+vopt -pa_upf &lt;config_file&gt;   -debugdb  tb 
+vsim tb -pa -debugdb [-vopt]</code></pre></li>
+<li class="li" id="id428cf3a1-383f-4879-b609-b4f21a1edb1f__id2eea2528-9b31-4de9-b9be-19f0b586c089"><p class="p">Optimized design unit
+— This flow resembles conventional three-step flow, where you use
+the vopt command to specify a Power Aware simulation, the name of
+the design unit to be optimized, and debugging. When you run the
+vsim command, it begins simulation on the optimized design unit
+and runs debugging (<a class="xref fm:HeadingOnly" href="Concept_PowerAwareSimulationCommands_id1529e8ba.html#id1529e8ba-cdb1-4ae2-823b-a0318d00900a__idfae8b7f0-07e4-4c98-90b1-a37610685bba">General Steps for Running Power Aware</a>). For example:</p>
+<pre class="pre codeblock leveled"><code>vlog design.v
+vcom design.vhdl
+vopt -o optdu -pa_upf &lt;config_file&gt;  -debugdb  tb  
+vsim optdu -pa -debugdb </code></pre></li>
+</ul>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerAwareSchematicDisplay_ide8058768.html" title="You can perform debugging at the same time you run a Power Aware simulation by adding the ‑debugdb argument to both the vopt and vsim commands. The results of both the Power Aware analysis and the debug operation are provided as Power Aware schematic in the Schematic window. You can also view a correlation between the UPF power intent and the design display in the Schematic window.">Power Aware Schematic Display</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Top-Down Debugging (From the Test Bench)"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_TopDownDebuggingFromTestBench_id428cf3a1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

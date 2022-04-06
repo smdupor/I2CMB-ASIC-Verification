@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Notes on Coverage and Optimization" />
+<meta name="abstract" content="The optimization process removes constructs in your design that are not functionally essential." />
+<meta name="description" content="The optimization process removes constructs in your design that are not functionally essential." />
+<meta name="DC.subject" content="code coverage, and optimization" />
+<meta name="keywords" content="code coverage, and optimization" />
+<meta name="prodname" content="Questa SIM User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM User's Manual" />
+<meta name="CSHelp" content="none" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id133ac4a9-8c1e-4581-a1f4-03145dc5bfcc" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Notes on Coverage and Optimization</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Notes on Coverage and Optimization" />
+<meta name="attributes" content="product.version.2020.4,sort.order.020,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id133ac4a9-8c1e-4581-a1f4-03145dc5bfcc">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Notes on Coverage and Optimization</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">The
+optimization process removes constructs in your design that are
+not functionally essential. </span>
+</div>
+<p class="p">An example of a non-essential construct is code in a
+procedure that is never called. Non-essential constructs can include
+statements, expressions, conditions, branches, and toggles. Removal
+of non-essential constructs requires you to consider the trade-offs
+between aggressive optimization levels and the ease with which your
+coverage results can be understood.</p>
+<p class="p">While aggressive levels of optimization
+make the simulation run fast, your results may give you the mistaken
+impression that your design is not fully covered because native
+code is not generated for all HDL source code. Those fragments of
+HDL code that do not result in native code generation are never
+instrumented for coverage, and do not participate in coverage collection,
+measurement, or reporting activities.</p>
+<p class="p">You can tell which statements
+do not participate in coverage activities by looking at the Statement
+and Branch Count columns on the left side of the Source window. Completely
+blank columns (no numbers or ‘X’ symbols at all) indicate that the
+associated statements have been optimized out of the simulation
+database, and will not participate in coverage activities.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_CustomizingOptimizationLevelCoverageRuns_id5c427682.html" title="It is possible to achieve 100% coverage in an optimized design, even if certain statements or constructs have been optimized away, because at the lowest level, all coverage calculations are of the form “Total Hits / Total Possible Hits = % Coverage”. ">Customizing Optimization Level for Coverage Runs</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_InteractionOptimizationCoverageArguments_id30bd88f5.html" title="The CoverOpt modelsim.ini variable corresponds to the number options of the vlog/vcom -coveropt command line option. The valid settings are 1 through 5. The lower the number, the fewer optimizations are enabled. Fewer optimizations translate into greater design visibility, but slower performance.">Interaction of Optimization and Coverage Arguments</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_CodeCoverageVerificationIp_id06652a6a.html" title="Questa SIM performance is affected by code coverage for designs using various IP. ">Code Coverage and Verification IP</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CodeCoverage_idbe4a8f76.html" title="Code coverage is the only verification metric generated automatically from design source in RTL or gates. While most verification plans require a high level of code coverage, it does not necessarily indicate correctness of your design. Code coverage measures only how often a suite of tests exercises certain aspects of the source.">Code Coverage</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_user"
+                DocTitle = "Questa® SIM User's Manual"
+                PageTitle = "Notes on Coverage and Optimization"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_NotesOnCoverageOptimization_id133ac4a9.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

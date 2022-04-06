@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="First-level Merge in Detail" />
+<meta name="abstract" content="The two first-level merges are more or less identical, so the merge under systemtest is used as an example for purposes of this discussion. The systemtest Runnable defines a parameter called group whose value is systemtest. This is only needed because systemtest and unittest share many configuration elements and the group parameter allows these shared elements to be parameterized to match the Group in question." />
+<meta name="description" content="The two first-level merges are more or less identical, so the merge under systemtest is used as an example for purposes of this discussion. The systemtest Runnable defines a parameter called group whose value is systemtest. This is only needed because systemtest and unittest share many configuration elements and the group parameter allows these shared elements to be parameterized to match the Group in question." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id9031af52-a9f6-4b94-9652-11a77204243a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>First-level Merge in Detail</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="First-level Merge in Detail" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id9031af52-a9f6-4b94-9652-11a77204243a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">First-level Merge in Detail</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">The two first-level
+merges are more or less identical, so the merge under <span class="ph filepath">systemtest</span> is
+used as an example for purposes of this discussion. The <span class="ph filepath">systemtest</span> Runnable
+defines a parameter called <span class="ph FontProperty emphasis">group</span> whose
+value is <span class="ph FontProperty emphasis">systemtest</span>.
+This is only needed because <span class="ph FontProperty emphasis">systemtest</span> and <span class="ph FontProperty emphasis">unittest </span>share
+many configuration elements and the <span class="ph FontProperty emphasis">group</span> parameter
+allows these shared elements to be parameterized to match the Group
+in question.</span>
+</div>
+<p class="p">The <span class="ph filepath">systemtest</span> Runnable
+invokes, as members, the <span class="ph filepath">systemtest_run</span> and <span class="ph filepath">systemtest_merge</span> Runnables.
+The former is responsible for running the concurrent simulations
+defined in the system-level subtree while the latter is responsible
+for managing the strip/install process and serving as a leaf node
+for the second-level merge. Since the merge can only be done after
+all the regression tests have run, this Group is marked as sequential
+(meaning <span class="ph filepath">systemtest_merge</span> will only run after <span class="ph filepath">systemtest_run</span> completes).</p>
+<p class="p">The <span class="ph filepath">systemtest_run</span> Runnable
+defines parameters for the top-level module (<span class="ph FontProperty emphasis">top</span>)
+and the testbench source file (<span class="ph filepath">tbsrc</span>). It also,
+via the <span class="ph filepath">firstlevel</span> base Runnable, defines the
+common merge file (<span class="ph filepath">mergefile</span>) for the Group
+and a template (<span class="ph filepath">ucdbfile</span>) for identifying the
+UCDB file associated with each test. As described in “<a class="xref fm:HeadingAndPage" href="Contain_CoverageMergeOptions_id977d1236.html#id977d1236-2ed1-4df0-bb50-800c2a9b9792__Contain_CoverageMergeOptions_id977d1236.xml#id977d1236-2ed1-4df0-bb50-800c2a9b9792" title="VRM supports several levels of automation of UCDB-based coverage merging. This functionality is a Questa specific value-added feature that must be enabled through the use of predefined parameters in the database. Coverage merging can also be performed manually via Action scripts defined by the user. The various coverage options available for merging coverage information follows.">Coverage Merge Options</a>”, it is the presence of a non-empty <span class="ph FontProperty emphasis">mergefile</span> parameter
+that triggers the auto-merge functionality.</p>
+<p class="p">Because the coverage from all the tests in
+the regression suite are merged into a single file as part of the
+regression process, the names assigned to the <span class="ph FontProperty emphasis">TESTNAME</span> attribute
+in the test data record must be unique across the entire suite.
+The <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+uses the template <span class="ph filepath">(%group%)_(%testname%)</span> to
+generate a testname that is based on the <span class="ph FontProperty emphasis">group</span> parameter (<span class="ph FontProperty emphasis">systemtest</span> or <span class="ph FontProperty emphasis">unittest</span>)
+and the name of the test itself. This is necessary because two of
+the three Runnables that represent tests are reused by the two groups
+(an example of employing configuration reuse in order to save typing).</p>
+<p class="p">A <span class="ph FontProperty emphasis">workpath</span> parameter
+is also defined. The value of this parameter is designed to point
+to the working directory for the top-most Runnable of the Group
+in question. This is needed because parameter references are expanded
+with respect to the Runnable on whose behalf the expansion is taking
+place (not the Runnable in which the parameter is defined). Because
+of inheritance, it is not possible to refer to the location of an ancestor
+Runnable's working directory using only parameter references.</p>
+<p class="p">As each test runs, it has a <span class="ph FontProperty emphasis">ucdbfile</span> parameter
+that points to the UCDB file for the test and a <span class="ph FontProperty emphasis">mergefile</span> parameter that
+points to the target merge file for the main Group in which that
+test is Running. For example, <span class="ph FontProperty emphasis">test1</span> of
+the <span class="ph FontProperty emphasis">systemtest</span> Group
+(which is actually a member of <span class="ph FontProperty emphasis">systemtest_run</span>)
+defines the following parameters (among others not mentioned):</p>
+<ul class="ul"><li class="li" id="id9031af52-a9f6-4b94-9652-11a77204243a__idb4c742c1-46d3-4d0b-8ec4-ac5f1b8598be"><p class="p"><span class="ph FontProperty emphasis">ucdbfile</span> parameter:</p>
+<p class="p"><span class="ph filepath">systemtest_test1.ucdb</span> (relative
+to the working directory for <span class="ph filepath">test1</span>)</p>
+</li>
+<li class="li" id="id9031af52-a9f6-4b94-9652-11a77204243a__id662554c8-5993-473c-be71-1bcd1fb1b022"><p class="p"><span class="ph FontProperty emphasis">mergefile</span> parameter:</p>
+<p class="p"><span class="ph filepath">/path/to/VRMDATA/nightly/systemtest/systemtest_run/systemtest.ucdb</span> (absolute)</p>
+</li>
+</ul>
+<p class="p">When the test completes, the auto-merge algorithm
+schedules <span class="ph filepath">systemtest_test1.ucdb</span> to be merged
+into the target merge file for the <span class="ph FontProperty emphasis">systemtest</span> sub-suite.
+The <span class="ph FontProperty emphasis">postScript</span> for
+the <span class="ph FontProperty emphasis">systemtest_run</span> Group
+becomes dependent on the completion of the scheduled merge process
+so that, by the time <span class="ph FontProperty emphasis">systemtest_run</span> has
+completed, the target merge file for the <span class="ph FontProperty emphasis">systemtest</span> Group
+is also complete.</p>
+<p class="p">Note that the value of the <span class="ph FontProperty emphasis">mergefile</span> parameter
+can be pretty much anything that is constant for all tests in the
+subtree to which the merge file in question applies and that can
+be easily found by the second-level merge. In this case, an argument
+can be made for putting the target merge file in <span class="ph filepath">nightly/systemtest</span> but,
+in the end, that is a matter of user preference (so long as the
+file can be located by both the first-level and second-level merge processes).</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_MultiLevelAutoMergeExample_idc750a11f.html" title="The example makes use of the queued auto-merge functionality in vrun. The merge is divided into two levels, the second-level merge being responsible for merging two merge files produced by the first-level merge. This example also illustrates how unit-level and system-level coverage can be merged into a single UCDB using VRM.">Multi-level Auto-merge Example</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "First-level Merge in Detail"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_FirstLevelMergeInDetail_id9031af52.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

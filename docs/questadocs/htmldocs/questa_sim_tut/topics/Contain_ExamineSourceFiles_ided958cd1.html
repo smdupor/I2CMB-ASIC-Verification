@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Examine the Source Files" />
+<meta name="abstract" content="Before getting started, let us look at the foreign.c file which contains the definitions for the two C functions we will be using to read our data values coming over from the Verilog world and print messages to let us know what is going on." />
+<meta name="description" content="Before getting started, let us look at the foreign.c file which contains the definitions for the two C functions we will be using to read our data values coming over from the Verilog world and print messages to let us know what is going on." />
+<meta name="prodname" content="Questa SIM Tutorial" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-03-05" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_tut" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Tutorial" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ided958cd1-b1f3-45f2-ad56-af80120f679a" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Examine the Source Files</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Examine the Source Files" />
+<meta name="attributes" content="product.version.2020.4,sort.order.040,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="ided958cd1-b1f3-45f2-ad56-af80120f679a">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Examine the Source Files</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Before
+getting started, let us look at the <span class="ph filepath">foreign.c</span> file
+which contains the definitions for the two C functions we will be
+using to read our data values coming over from the Verilog world
+and print messages to let us know what is going on. </span>
+</div>
+<p class="p">If you open the code
+for the <span class="ph filepath">foreign.c</span> file in a text editor it
+should look like the code in <a class="xref fm:Figure" href="#ided958cd1-b1f3-45f2-ad56-af80120f679a__id694419ec-4911-4deb-b40b-ddd45a85708a">Figure 1</a>.</p>
+<div class="fig fignone" id="ided958cd1-b1f3-45f2-ad56-af80120f679a__id694419ec-4911-4deb-b40b-ddd45a85708a"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Source Code for the foreign.c
+File - Data Passing Lab</span></div>
+<pre class="pre codeblock leveled"><code> <span class="ph FontProperty P9">1	#include "dpi_types.h"
+ 2	
+ 3	void print_int(int int_in)
+ 4	{
+ 5		printf("Just received a value of %d.\n", int_in);
+ 6	}
+ 7	
+ 8	void print_logic(svLogic logic_in)
+ 9	{
+10		switch (logic_in)
+11		{
+12			case sv_0: printf ("Just received a value of logic 0.\n");
+13				break;
+14			case sv_1: printf ("Just received a value of logic 1.\n");
+15				break;
+16			case sv_z: printf ("Just received a value of logic Z.\n");
+17				break;
+18			case sv_x: printf ("Just received a value of logic X.\n");
+19				break;
+20		}
+21	}
+22</span></code></pre><p class="p"><span class="ph FontProperty HeadingLabel">Line 1 – </span>We
+include a header file called <span class="ph filepath">dpi_types.h</span> which
+will help us with type conversions – more to come on that a bit
+later.</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 3 –</span> This
+is the definition for a function called <span class="ph filepath">print_int,</span> which
+simply takes an integer argument and prints its values. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Line 8 –</span> This
+is the definition for a function called <span class="ph filepath">print_logic</span> which
+takes an argument of type <span class="ph filepath">svLogic</span> and
+then checks to see what value it is and prints a message accordingly. </p>
+<p class="p">Now let us look at
+the SystemVerilog source code. If you open the <span class="ph filepath">test.sv</span> source
+file in a text editor it should look like the code in <a class="xref fm:Figure" href="#ided958cd1-b1f3-45f2-ad56-af80120f679a__id099502bc-c7b5-4318-b639-43c2225eff7e">Figure 2</a>.</p>
+<div class="fig fignone" id="ided958cd1-b1f3-45f2-ad56-af80120f679a__id099502bc-c7b5-4318-b639-43c2225eff7e"><span class="figcap"><span class="fig--title-label">Figure 2. </span>Source Code for the test.sv
+Module</span></div>
+<pre class="pre codeblock leveled"><code> <span class="ph FontProperty P9">1	module test ();
+ 2	
+ 3	import "DPI-C" context function void print_int (input int int_in);
+ 4	import "DPI-C" context function void print_logic (input logic logic_in );
+ 5	
+ 6	int int_var;
+ 7	bit bit_var;
+ 8	logic logic_var;
+ 9
+10	initial
+11	begin
+12			print_int(int_var);
+13			int_var = 1
+14			print_int(int_var);
+15			int_var = -12;
+16			print_int(int_var);</span> 
+<span class="ph FontProperty P9">17			print_int(bit_var);
+18			bit_var = 1’b1;</span> 
+<span class="ph FontProperty P9">19			print_int(bit_var);
+20			bit_var = 1’bx;
+21			print_int(bit_var);
+22			logic_var = 1'b1;
+23			print_int(logic_var);
+24			logic_var = 1'bx;
+25			print_int(logic_var);
+26			print_logic(logic_var);
+27			logic_var = 1'bz;
+28			print_logic(logic_var);
+29			logic_var = 1'b0;
+30			print_logic(logic_var);
+31	end
+32	
+33	endmodule</span> 
+<span class="ph FontProperty P9">34</span> </code></pre><p class="p"><span class="ph FontProperty HeadingLabel">Lines 3-4 – </span>These
+lines do not look like typical Verilog code. They start with the
+“import” keyword and are followed by additional information. These
+statements are referred to as import declarations. An import declaration
+is a mechanism used to inform the Verilog compiler that something
+needs to be handled in a special way. In the case of DPI, the special
+handling means that the specified task or function will be made
+visible to SystemVerilog from a foreign language and that its name
+will need to be placed in a special name space. </p>
+<p class="p">The syntax for
+these declarations is defined in the SystemVerilog LRM. There is
+a simple rule to remember regarding how they work: When running
+a SystemVerilog simulation, and using DPI in order to utilize foreign
+(C) code, the Verilog code should be thought of as the center of the
+universe (that is, everything revolves around the Verilog code). </p>
+<p class="p">If there is something
+from that foreign world that you want your Verilog code to see and
+have access to, you need to "import" it to Verilog. Similarly, when
+you wish to make something in Verilog visible to the foreign world,
+you need to "export" it to that world (see the previous lesson).
+So in these lines, we import the two functions that we have just
+defined over in the foreign world (<span class="ph filepath">print_int</span> &amp; <span class="ph filepath">print_logic</span>).</p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 6-8 – </span>Here,
+we declare three variables that will be used as arguments in the
+two functions. Note how they are defined as three different SystemVerilog
+types: int, bit, and logic. </p>
+<p class="p"><span class="ph FontProperty HeadingLabel">Lines 10-31 –</span> This
+initial block simply calls each function and sets values for each
+variable in a sequence that will be discussed when we run the design.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExploreMakefile_id0841333a.html" title="A Makefile has been included with this lesson to help UNIX and Linux®1users compile and simulate the design, or you can run &#34;make all&#34; to kick off the whole thing all at once. There is also a clean target to help you clean up the directory should you want to start over and run again. ">Explore the Makefile</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExploreWindowsBatFile_id28d931a5.html" title="A windows.bat file is included for Windows users. ">Explore the windows.bat File</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_UsingSystemverilogDpiDataPassing_id7187d651.html" title="This lesson is designed to build on your understanding of the Direct Programming Interface (DPI) for SystemVerilog. In the previous lesson, you were shown the basic elements of the interface and how to make simple function calls to/from Verilog and C. However, no data was passed across the boundary, which is a very important topic to understand. This lesson will focus on that aspect of the interface.">Using SystemVerilog DPI for Data Passing</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_tut"
+                DocTitle = "Questa® SIM Tutorial"
+                PageTitle = "Examine the Source Files"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ExamineSourceFiles_ided958cd1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Tutorial Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Semi-automatic (Two-command) Mode" />
+<meta name="abstract" content="This section describes a way to identify failing Actions from a previous run. The -select command-line option takes one or more status keywords and searches the event log from the immediately previous run for Actions that match the specified keywords. It then converts the Action context path into a Runnable context path and then selects that context path for execution as if it had been included directly on the vrun command line." />
+<meta name="description" content="This section describes a way to identify failing Actions from a previous run. The -select command-line option takes one or more status keywords and searches the event log from the immediately previous run for Actions that match the specified keywords. It then converts the Action context path into a Runnable context path and then selects that context path for execution as if it had been included directly on the vrun command line." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id56bd3845-5c38-4487-ab07-3d64398e0070" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Semi-automatic (Two-command) Mode</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Semi-automatic (Two-command) Mode" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id56bd3845-5c38-4487-ab07-3d64398e0070">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Semi-automatic (Two-command) Mode</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">This
+section describes a way to identify failing Actions from a previous
+run. The -select command-line option takes one or more status keywords
+and searches the event log from the immediately previous run for
+Actions that match the specified keywords. It then converts the
+Action context path into a Runnable context path and then selects that
+context path for execution as if it had been included directly on
+the vrun command line.</span>
+</div>
+<p class="p">Each vrun run emits an
+event log containing a record of every Action launched, when it
+started, and when (if ever) it completed. It also records events
+for Actions that were not executed, either due to a failing dependency
+or due to a manual interrupt. The status of the test is encoded
+into a “done” event in this log file. <a class="xref fm:Table" href="#id56bd3845-5c38-4487-ab07-3d64398e0070__id9eb5e991-2c9c-441b-8aad-2daf9c08495d">Table 1</a> contains the status types.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id56bd3845-5c38-4487-ab07-3d64398e0070__id9eb5e991-2c9c-441b-8aad-2daf9c08495d" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Status Test Keyword Types</span></caption><colgroup><col style="width:0.851in" /><col style="width:2.723in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d2904e156"><p class="p">Status</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d2904e159"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">passed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action passed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">failed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action failed.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">timeout</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action exceeded timeout.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">skipped</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action was not run due
+to earlier errors.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">killed</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action was killed by
+user intervention.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e156 "><p class="p">dropped</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e159 "><p class="p">Action was not run for
+unknown reason.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">The keywords that the -select
+command recognizes include any of the above status keywords or any
+of the following composite keywords (or any unique abbreviation
+of either). <a class="xref fm:Table" href="#id56bd3845-5c38-4487-ab07-3d64398e0070__id9793e129-4236-43d0-b24e-30da62eaf2a8">Table 2</a> contains the composite keywords.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id56bd3845-5c38-4487-ab07-3d64398e0070__id9793e129-4236-43d0-b24e-30da62eaf2a8" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 2. </span>Composite Keywords Recognized</span></caption><colgroup><col style="width:1.028in" /><col style="width:4.821in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d2904e219"><p class="p">Keyword</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d2904e222"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e219 "><p class="p">run</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e222 "><p class="p">All Actions that executed
+(passed + failed).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e219 "><p class="p">notrun</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e222 "><p class="p">All Actions that neither
+passed nor failed (timeout + skipped + killed + dropped).</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e219 "><p class="p">all</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d2904e222 "><p class="p">All Actions previously
+selected (run + notrun).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p">For example, if there are three
+failing Actions and two more that did not execute because of one
+of the failures, the following command selects all five tests for
+re-execution:</p>
+<p class="lines ApplCommand">vrun -select failed,notrun</p>
+<p class="p">The value passed to the -select
+option can be a comma or space separated list of keywords from the
+table above. If spaces are used, then the option value may have
+to be quoted, according to the rules of the command shell.</p>
+<p class="p">As in the manual mode, the <span class="ph FontProperty emphasis">preScript</span> and <span class="ph FontProperty emphasis">postScript</span> Actions
+of the intermediate Groups associated with the failing Actions are
+also selected for execution.</p>
+<p class="p">Refer to “<a class="xref fm:HeadingAndPage" href="Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.html#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa__Concept_ReuseRandomSeedsInAutomatedRerun_idde3bd160.xml#idde3bd160-a27e-4c94-aa0a-01f5c6ccb4aa" title="When running a random simulation, a random seed can be supplied to vsim via a command-line option. The simulator guarantees that the same design run twice with the same seed will produce the same results. This is known as “random stability” and is essential to allow bugs exhibited by purely random simulations to be reproduced and debugged. When a series of random simulations are executed for the purpose of locating seeds with good coverage (or which turn up corner-case bugs), it is common to pass the word “random” to the simulation as a seed, as opposed to a fixed numeric seed value. This tells the simulator to select a seed at random at the start of the simulation. Of course, if a test is run twice with the word “random” as the seed, the results of the second run will almost certainly not match the results of the original run.">Reuse of Random Seeds in Automated Rerun</a>” for information on the effect
+of failure rerun on random seeds.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_AutomatingFailureRerunMacroRunnable_id1804c84a.html" title="Two or more vrun commands are required to implement a complete failure rerun scheme in semi-automatic mode. In order to encapsulate the required command-line options into the RMDB file, a macro Runnable can be defined that recursively calls vrun as many times as needed to complete the regression run. For example, suppose your regression environment requires that failing and/or timed out tests be rerun once with a slightly longer timeout (to weed out noisy failures) and those that still fail to be run with a debug-mode parameter set so the tests are ready to debug when the designer arrives the next morning. The set of three vrun commands might look like the following:">Automating Failure Rerun With a Macro Runnable</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_FailureRerunFunctionality_ida240963a.html" title="One requirement of a good regression management system is the ability to rerun failed tests, possibly with additional debug output enabled. There are a number of ways in which VRM allows the user to rerun Actions from a previous run according to their status. The most obvious use for this function is to rerun tests that failed, either as is to filter out “noisy” failures or with different command-line options to enable additional debugging output.">Failure Rerun Functionality</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Semi-automatic (Two-command) Mode"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_SemiAutomaticTwoCommandMode_id56bd3845.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

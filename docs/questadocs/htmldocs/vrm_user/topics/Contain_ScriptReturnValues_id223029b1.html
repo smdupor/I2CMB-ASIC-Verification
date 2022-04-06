@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ContainerTopic" />
+<meta name="DC.Title" content="Script Return Values" />
+<meta name="abstract" content="Each Action script has a return value that indicates, at a coarse level, whether the commands contained in the script encountered any errors. This return value is communicated to the launching vrun instance for use in pass/fail analysis. This function can require some cooperation from the (user's) Action script in order to correctly communicate the status of commands contained in the Action script." />
+<meta name="description" content="Each Action script has a return value that indicates, at a coarse level, whether the commands contained in the script encountered any errors. This return value is communicated to the launching vrun instance for use in pass/fail analysis. This function can require some cooperation from the (user's) Action script in order to correctly communicate the status of commands contained in the Action script." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id223029b1-8c9d-4e51-8473-e975438f8f64" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Script Return Values</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Script Return Values" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id223029b1-8c9d-4e51-8473-e975438f8f64">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Script Return Values</h1>
+<div class="body MGCBody"><div class="abstract ContainerAbstract"><span class="shortdesc">Each
+Action script has a return value that indicates, at a coarse level,
+whether the commands contained in the script encountered any errors.
+This return value is communicated to the launching vrun instance
+for use in pass/fail analysis. This function can require some cooperation
+from the (user's) Action script in order to correctly communicate the
+status of commands contained in the Action script.</span>
+</div>
+<p class="p">In the case of a vsim mode Action
+script, the <span class="ph FontProperty emphasis">onerror</span> command
+can be used to trap errors that occur while the script is running.
+The wrapper itself uses <span class="ph FontProperty emphasis">onerror</span> to
+trap errors that can occur in the process of launching the Action
+script. For example,</p>
+<pre class="pre codeblock leveled"><code>onerror {runmgr::rm_status 1 {Script error}}</code></pre><p class="p">This <span class="ph FontProperty emphasis">onerror</span> handler
+takes advantage of a procedure defined within the wrapper as follows:</p>
+<pre class="pre codeblock leveled"><code>proc rm_status {stat {mesg {}}} {
+	variable rm_stat
+	variable rm_mesg
+	set rm_stat $stat
+	set rm_mesg $mesg
+	return
+}</code></pre><p class="p">The <span class="ph FontProperty emphasis">rm_stat</span> variable
+defaults to zero (0) and the <span class="ph FontProperty emphasis">rm_mesg</span> variable
+defaults to an empty string. These two values are passed to the
+invoking VRM instance via the “done” message just before the wrapper script
+terminates. If the user script calls the runmgr::rm_status function
+for any reason, it can supply its own status value and, if needed,
+an optional message that vrun adds to its own error message to log
+the failure. If this function is called multiple times from a single
+Action script, only the last set of values are passed, as there
+is only ever one “done” message sent from any one Action script
+wrapper to the invoking VRM.</p>
+<p class="p">In the case of an exec mode Action script,
+there is only a status (no optional message). If the Action script
+returns a non-zero value (that is, from an exit &lt;<span class="keyword ParameterName OptionalReplaceable">N</span>&gt;
+command), that status is sent to the invoking vrun instance with
+the “done” message. If the script failed but, for some reason, the
+exit status is not available, then a status of one (1) is returned.
+If the Action script runs successfully (that is, the return status
+is zero and no script execution errors have occurred), then a status
+of zero (0) is returned.</p>
+<p class="p">When the “done” message is received by
+the invoking vrun instance, a zero status is interpreted as success.
+If a message is returned by the Action wrapper script along with
+a zero status, a warning message containing that message is emitted
+to the VRM log output. If the return status is non-zero, then the
+Action is considered to have failed. An error message is emitted
+to the VRM log file, including the optional message, if specified,
+and a “fail” status is passed to the pass/fail analysis stage.</p>
+<p class="p">Note that for Actions that produce a
+UCDB file (simulation runs), the pass/fail analysis is a bit more
+complex. The script return value, however, is still taken into consideration
+in determining the success (or lack thereof) of the Action in question.
+See “<a class="xref fm:HeadingAndPage" href="MGCChap_PostExecutionAnalysis_id449d612e.html#id449d612e-5515-4308-9fa5-16ffa2ef6f58__MGCChap_PostExecutionAnalysis_id449d612e.xml#id449d612e-5515-4308-9fa5-16ffa2ef6f58" title="After generating the necessary files, vrun launches the Action and waits for the “done” message to arrive from the wrapper script for that Action, indicating that the user's script has exited and returned control to the wrapper. From this point until vrun continues with the next Action is called “post-execution analysis.” The behavior of VRM as it analyzes and reacts to the results of each completed Action is highly customized. Therefore, most of the steps involved in post-execution analysis are user-definable, with reasonable default behavior for the common case.">Post-execution Analysis</a>” for details on how vrun uses
+the returned status value.</p>
+</div>
+<div class="related-links TopicTOC levels:1">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ModifyingVsimModeUserScriptsReturnStatus_idae54a64c.html" title="A vsim mode script is executed via the do command in vsim, which does not return status. When an error occurs in a vsim TCL script, the interpreter executes the optional onerror handler. In order to trap errors and use them to modify the return status of the Action, the user must make use of the onerror handler. The wrapper script associated with the Action provides a procedure that can be called to set the return status and optional message string. The following example shows a preScript with the onerror handler set:">Modifying vsim Mode User Scripts to Return Status</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ModifyingExecModeUserScriptsReturnStatus_id45ad6fb9.html" title="An exec mode Action script is executed from the wrapper script for the associated Action via the exec command in vish (TCL). When a command in the Action script returns a non-zero status, or when the Action script itself exits with a non-zero status, that status is made available to the TCL exec command and is returned to the wrapper script and communicated to the invoking vrun process via the “done” event. Provided all the commands in the script return POSIX-like status values, there is no need to alter the Action script. However, if the user wants the script to exit at the first error, or on some error from a 3rd-party utility that does not return a non-zero status, the exit command can be used (assuming Borne-shell or C-shell; other scripting languages can have a different exit command). The following example exits with an error if the contents of a log file do not match a file containing the expected results for the simulation:">Modifying exec Mode User Scripts to Return Status</a></strong></li>
+<li class="link ulchildlink"><strong><a href="../topics/Concept_ExecutionModeSimulationsHang_id38847b8d.html" title="One possible reason for VRM hanging is an Action script that falls into the vsim command-line prompt after completion. Action scripts launched in “exec-mode” (the launch attribute is set to something other than vsim) are especially susceptible because the -do option in vsim does not exit the application when all of the specified commands have been executed. Be sure to put a “quit -f” command at the end of the -do command list. For example,">Execution Mode Simulations Hang</a></strong></li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_ScriptExecutionTimeouts_idb739d4ac.html" title="Once the RMDB database has been read and the requested Runnables have been expanded to form the execution graph, a completion event is posted to the special =init= Action. This causes one or more Actions to become eligible for execution (that is, their dependencies having been completed). The Actions directly dependent on the =init= Action are generally the preScript Actions of the top-most Group(s) selected via the command line. Actions that are eligible for execution are added to a run queue. An inner loop periodically removes Actions from this queue and executes them. A list of currently executing Actions is also maintained, in which the expected completion time (execution time plus the minimum timeout value for that Action) is recorded. As each Action reports completion, it is removed from the currently executing list and from the graph. The vertices of the graph beginning at the completed node are followed to determine what Actions, if any, can be eligible to run next. If a vertex from the completed Action happens to be the last such vertex into the node at the opposite end, that opposite-end node also becomes eligible to run and is added to the eligible Action run queue.">Script Execution and Timeouts</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Script Return Values"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Contain_ScriptReturnValues_id223029b1.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

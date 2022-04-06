@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="virtual signal" />
+<meta name="abstract" content="Creates a new signal, known only by the GUI (not the kernel), that consists of concatenations of the signals and sub-elements specified in &lt;expressionString&gt;." />
+<meta name="description" content="Creates a new signal, known only by the GUI (not the kernel), that consists of concatenations of the signals and sub-elements specified in &lt;expressionString&gt;." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id846292b8-b548-46f5-8bd2-408c9af74117" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>virtual signal</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="virtual signal" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id846292b8-b548-46f5-8bd2-408c9af74117">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">virtual signal</h1>
+<div class="body refbody CommandRefBody-Var1"><div class="abstract CommandRefAbstract"><span class="shortdesc">Creates
+a new signal, known only by the GUI (not the kernel), that consists
+of concatenations of the signals and sub-elements specified in &lt;expressionString&gt;. </span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">virtual signal [<a class="xref fm:HeadingOnly" href="#id846292b8-b548-46f5-8bd2-408c9af74117__id536d63ce-d8bf-4482-a8d7-56c9af820570">-env &lt;path&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id846292b8-b548-46f5-8bd2-408c9af74117__id29e8bbe4-3dc3-4b1e-a126-00822a6b96ce">-install &lt;path&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id846292b8-b548-46f5-8bd2-408c9af74117__id10cc4a3b-4ba5-4440-b762-91056f2b51af">-delay &lt;time&gt; &lt;unit&gt;</a>] <a class="xref fm:HeadingOnly" href="#id846292b8-b548-46f5-8bd2-408c9af74117__id2a6ed102-a320-4647-8203-5448aba15068">{&lt;expressionString&gt;}</a> <a class="xref fm:HeadingOnly" href="#id846292b8-b548-46f5-8bd2-408c9af74117__id9a3d5689-d4a7-4002-a1ff-3da49488bd49">&lt;name&gt;</a> </p>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">The
+virtual signal command cannot handle bit selects and slices of Verilog
+registers. Please see “<a class="xref fm:HeadingAndPage" href="Concept_ConcatenationSignalsSubelements_id5f315df0.html#id5f315df0-f35e-4ee8-b321-7ed1b9aef142__Concept_ConcatenationSignalsSubelements_id5f315df0.xml#id5f315df0-f35e-4ee8-b321-7ed1b9aef142" title="Elements in the concatenation that are arrays are expanded so that each element in the array becomes a top-level element of the concatenation. But for elements in the concatenation that are records, the entire record becomes one top-level element in the result.">Concatenation of Signals or Subelements</a>” for more
+details on syntax.</p>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">The virtual function
+and virtual signal commands are interchangeable. The GUI keeps track
+of whether you have created a signal or a function with the commands,
+and maintains them appropriately. We document both commands because
+the virtual save, virtual describe, and virtual define commands
+will reference your virtual objects using the correct command.</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id846292b8-b548-46f5-8bd2-408c9af74117__id16eadca1-4ad1-49c7-8c56-52b2fe8d8233"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id846292b8-b548-46f5-8bd2-408c9af74117__id536d63ce-d8bf-4482-a8d7-56c9af820570">-env &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies a hierarchical context in &lt;expressionString&gt; so that
+you do not have to enter a full path for each signal name.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id846292b8-b548-46f5-8bd2-408c9af74117__idfd14c058-b683-42e1-b5b7-7d7791a65241"><p class="p Opt">&lt;path&gt;
+— Specifies a relative path to the signal(s). On Windows systems
+the path separator is a forward slash (/).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id846292b8-b548-46f5-8bd2-408c9af74117__id29e8bbe4-3dc3-4b1e-a126-00822a6b96ce">-install &lt;path&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Causes the newly-created signal to become a child of the specified
+region. If you do not specify ‑install, the newly-created signal
+becomes a child of the nearest common ancestor of all objects appearing
+in &lt;expressionString&gt;. If the expression references more than
+one WLF file (dataset), the virtual signal is automatically placed
+in region virtuals:/Signals.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id846292b8-b548-46f5-8bd2-408c9af74117__idcadf879e-d7f1-4854-95e8-f9ecebe113eb"><p class="p Opt">&lt;path&gt;
+— Specifies a relative path to the signal(s). On Windows systems
+the path separator is a forward slash (/).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id846292b8-b548-46f5-8bd2-408c9af74117__id10cc4a3b-4ba5-4440-b762-91056f2b51af">-delay &lt;time&gt; &lt;unit&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies the value by which the virtual function is delayed. You
+can use negative values to look forward in time. Refer to the examples below
+for more details.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id846292b8-b548-46f5-8bd2-408c9af74117__id5f3e15e2-ac38-490a-a298-537133e78541"><p class="p Opt">&lt;time&gt;
+— Specified as an integer or decimal number. If you do not specify
+&lt;unit&gt;, the default is the current simulation units. </p>
+</li>
+<li class="li ArgOption" id="id846292b8-b548-46f5-8bd2-408c9af74117__id85634d38-04d7-414e-a648-aea3d897b98c"><p class="p Opt">&lt;unit&gt;
+— (optional) A suffix specifying a unit of time. The default is
+to specify the current simulation resolution by omitting &lt;unit&gt;.
+Valid VHDL time units are: fs, ps, ns, us, ms, sec, min, and hr.
+You must enclose &lt;time&gt; and &lt;unit&gt; within curly braces ({}).</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id846292b8-b548-46f5-8bd2-408c9af74117__id2a6ed102-a320-4647-8203-5448aba15068">{&lt;expressionString&gt;}</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+A text string expression, enclosed in curly braces ({ }) using the “<a class="xref fm:HeadingAndPage" href="Contain_GuiExpressionFormat_id1f1324bb.html#id1f1324bb-ab99-4132-a0df-42dcf8767a31__Contain_GuiExpressionFormat_id1f1324bb.xml#id1f1324bb-ab99-4132-a0df-42dcf8767a31" title="The GUI_expression_format is an option of several simulator commands that operate within the Questa SIM GUI environment. The expressions help you locate and examine objects within the List and Wave windows (expressions may also be used through the Edit &gt; Search menu in both windows). The commands that use the expression format are:">GUI_expression_format</a>”.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id846292b8-b548-46f5-8bd2-408c9af74117__id9a3d5689-d4a7-4002-a1ff-3da49488bd49">&lt;name&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(required)
+The name you define for the virtual signal. </p>
+<p class="p">Case is
+ignored, unless installed in a Verilog region. </p>
+<p class="p">Use alpha,
+numeric, and underscore characters only, unless you are using VHDL extended
+identifier notation. </p>
+<p class="p">If using
+VHDL extended identifier notation, &lt;name&gt; needs to enclosed in
+double quotes (" ") or curly braces ({ }).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Examples"><h2 class="title Subheading sectiontitle">Examples</h2><ul class="ul"><li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__idcd409ba1-4479-4868-9c59-0408890065d8"><p class="p">Reconstruct
+a bus sim:/chip/alu/a(4 downto 0), using VHDL notation, assuming
+that a_ii are all scalars of the same type.</p>
+<p class="lines ApplCommand leveled">virtual signal -env sim:/chip/alu { (concat_range (4 downto 0))(a_04 &amp; a_03 &amp; a_02 &amp; a_01 &amp; a_00) } a</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id65d6ce09-693c-45ac-b8f1-51ed9e811a1b"><p class="p">Reconstruct
+a bus sim:chip.alu.a[4:0], using Verilog notation. Note that the concatenation
+notation starts with "&amp;{" rather than "{".</p>
+<p class="lines ApplCommand leveled">virtual signal -env sim:chip.alu <br />
+{ (concat_range [4:0])&amp;{a_04, a_03, a_02, a_01, a_00} } a</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id6f59c293-8e2a-4955-95fc-c854cf60e27e"><p class="p">Create a
+signal sim:/testbench/stuff which is a record type with three fields corresponding
+to the three specified signals. The example assumes /chipa/mode
+is of type integer, /chipa/alu/a is of type std_logic_vector, and
+/chipa/decode/inst is a user-defined enumeration.</p>
+<p class="lines ApplCommand leveled">virtual signal -install sim:/testbench <br />
+{ /chipa/alu/a(19 downto 13) &amp; /chipa/decode/inst &amp; /chipa/mode } stuff</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id23fb8c23-d0de-42af-ad53-a0da3bdb775d"><p class="p">Create a
+virtual signal that is the same as /top/signalA except it is delayed by
+10 ps.</p>
+<p class="lines ApplCommand leveled">virtual signal -delay {10 ps} {/top/signalA} myDelayedSignalA</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id50c8df5a-5728-47e5-96b3-20b6aebc4510"><p class="p">Create a
+three-bit signal, chip.address_mode, as an alias to the specified bits.</p>
+<p class="lines ApplCommand leveled">virtual signal { chip.instruction[23:21] } address_mode</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id36c31e73-d6fe-41ac-8b5f-48bc7630a99c"><p class="p">Concatenate
+signals a, b, and c with the literal constant ‘000’.</p>
+<p class="lines ApplCommand leveled">virtual signal {a &amp; b &amp; c &amp; 3'b000} myextendedbus</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id9129b6ba-3b89-4f53-b039-8ef8ebb23bf2"><p class="p">Add three missing bits to the bus, num, creates
+a virtual signal, fullbus, and then adds that signal to the Wave
+window.</p>
+<p class="lines ApplCommand leveled">virtual signal {num &amp; "000"} fullbus<br />
+add wave -unsigned fullbus</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id69852c1b-e735-4d1a-915a-cb370a385330"><p class="p">Reconstruct
+a bus that was fragmented by synthesis and is missing the lower
+three bits. Note that you would have to type in the actual bit names
+(for example, num28, num27, and so on) represented by the … in the
+syntax above.</p>
+<p class="lines ApplCommand leveled">virtual signal { num31 &amp; num30 &amp; num29 &amp; ... &amp; num4 &amp; num3 &amp; "000" } fullbus<br />
+add wave -unsigned fullbus</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id89c408ba-2d1a-44ef-8c09-f1245b6a9dc4"><p class="p">Create a
+two-bit signal (with an enumerated type) based on the results of the
+subexpressions. For example, if aold equals anew, then the first
+bit is true (1). Alternatively, if bold does not equal bnew, the
+second bit is false (0). Each subexpression is evaluated independently.</p>
+<p class="lines ApplCommand leveled">virtual signal {(aold == anew) &amp; (bold == bnew)} myequalityvector</p>
+</li>
+<li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__id398c2b07-4f27-44fb-80e3-29df95d62c6e"><p class="p">Create signal
+newbus that is a concatenation of bus1 (bit-reversed) and bus2[7:4]
+(bit-reversed). Assuming bus1 has indices running 7 downto 0, the
+result will be newbus[11:0] with the upper 8 bits being bus1[0:7]
+and the lower 4 bits being bus2[4:7]. See “<a class="xref fm:HeadingAndPage" href="Concept_ConcatenationSignalsSubelements_id5f315df0.html#id5f315df0-f35e-4ee8-b321-7ed1b9aef142__Concept_ConcatenationSignalsSubelements_id5f315df0.xml#id5f315df0-f35e-4ee8-b321-7ed1b9aef142" title="Elements in the concatenation that are arrays are expanded so that each element in the array becomes a top-level element of the concatenation. But for elements in the concatenation that are records, the entire record becomes one top-level element in the result.">Concatenation of Signals or Subelements</a>” for further
+details.</p>
+<p class="lines ApplCommand leveled">virtual signal {(concat_reverse)(bus1 &amp; bus2[7:4])} newbus</p>
+</li>
+</ul>
+<div class="section Subsection" id="id846292b8-b548-46f5-8bd2-408c9af74117__id6280eaec-c85c-4c24-a3e2-28881c7734ff"><h2 class="title Subheading sectiontitle">Commands
+fully compatible with virtual signals</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id846292b8-b548-46f5-8bd2-408c9af74117__idc101bf26-b6f1-4452-83ec-c67a77cbe964" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:0.542in" /><col style="width:0.542in" /><col style="width:0.542in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_AddList_id7aa13ca0.html#id7aa13ca0-50bb-4131-843f-8438e9d96a61__Command_AddList_id7aa13ca0.xml#id7aa13ca0-50bb-4131-843f-8438e9d96a61" title="Adds objects and their values to the List window.">add list</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p">add log or <a class="xref fm:HeadingOnly" href="Command_Log_idb91ff318.html#idb91ff318-f079-4e2b-96fd-b25b874900f7__Command_Log_idb91ff318.xml#idb91ff318-f079-4e2b-96fd-b25b874900f7" title="Creates a wave log format (WLF) or qwavedb file containing simulation data for all HDL objects whose names match the provided specifications.">log</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_AddWave_id3418af0a.html#id3418af0a-f50c-420d-9773-e3bc09bcac47__Command_AddWave_id3418af0a.xml#id3418af0a-f50c-420d-9773-e3bc09bcac47" title="Adds objects to the Wave window.">add wave</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Delete_idb649a728.html#idb649a728-b051-4086-8362-78830453b0d1__Command_Delete_idb649a728.xml#idb649a728-b051-4086-8362-78830453b0d1" title="Removes objects from either the List or Wave window.">delete</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Describe_id9a9c6b38.html#id9a9c6b38-9d16-4ac8-af93-bad0f98d0a9f__Command_Describe_id9a9c6b38.xml#id9a9c6b38-9d16-4ac8-af93-bad0f98d0a9f" title="Displays information about simulation objects and design regions in the Transcript window.">describe</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Examine_idb018dfac.html#idb018dfac-afbf-45bb-9900-7f1439271808__Command_Examine_idb018dfac.xml#idb018dfac-afbf-45bb-9900-7f1439271808" title="Examines one or more objects and displays current values (or the values at a specified previous time) in the Transcript window.">examine</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Find_id60092334.html#id60092334-7305-4a87-8c67-9c5b7d53d739__Command_Find_id60092334.xml#id60092334-7305-4a87-8c67-9c5b7d53d739" title="Locates objects by type and name.">find</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Force_idc73e0ed3.html#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7__Command_Force_idc73e0ed3.xml#idc73e0ed3-9d4e-4d18-835c-9316f8eeaef7" title="Enables you to apply stimulus interactively to VHDL signals, Verilog nets and registers, and SystemC boundary types.">force</a> and <a class="xref fm:HeadingOnly" href="Command_Noforce_id871d157a.html#id871d157a-d256-4fba-b1b6-d8797f74e61e__Command_Noforce_id871d157a.xml#id871d157a-d256-4fba-b1b6-d8797f74e61e" title="Removes the effect of any active force commands on the selected HDL objects, and also causes the object’s value to be re-evaluated.">noforce</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Restart_id52630450.html#id52630450-c9c2-4188-8089-68c978b440b7__Command_Restart_id52630450.xml#id52630450-c9c2-4188-8089-68c978b440b7" title="Reloads the design elements and resets the simulation time to zero.">restart</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Searchlog_iddfa1e934.html#iddfa1e934-39a1-403a-9541-ae699e7cac87__Command_Searchlog_iddfa1e934.xml#iddfa1e934-39a1-403a-9541-ae699e7cac87" title="Searches one or more of the currently open logfiles for a specified condition.">searchlog</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Show_idfad68698.html#idfad68698-f5be-4354-a82a-0df9c98dc0a3__Command_Show_idfad68698.xml#idfad68698-f5be-4354-a82a-0df9c98dc0a3" title="Lists HDL objects and subregions visible from the current environment.">show</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Checkpoint_idda8de92c.html#idda8de92c-91f3-417a-9e45-fbcb60d7bd76__Command_Checkpoint_idda8de92c.xml#idda8de92c-91f3-417a-9e45-fbcb60d7bd76" title="Saves the state of your simulation as a checkpoint file that you can restore.">checkpoint</a> and <a class="xref fm:HeadingOnly" href="Command_Restore_id875136a3.html#id875136a3-277f-497a-b5c1-c3dc2cec4dff__Command_Restore_id875136a3.xml#id875136a3-277f-497a-b5c1-c3dc2cec4dff" title="Restores the state of a simulation that was saved with a checkpoint command during the current invocation of vsim (a “warm restore”).">restore</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Down_id0794409a.html#id0794409a-c15c-4999-a594-5be688a314c9__Command_Down_id0794409a.xml#id0794409a-c15c-4999-a594-5be688a314c9" title="Searches for object transitions or values in the specified List window.">down</a> and <a class="xref fm:HeadingOnly" href="Command_Up_iddbb68ea3.html#iddbb68ea3-ec65-49af-a9ab-6e3d861f1437__Command_Up_iddbb68ea3.xml#iddbb68ea3-ec65-49af-a9ab-6e3d861f1437" title="Searches for object transitions or values in the specified List window.">up</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Left_id12039420.html#id12039420-6f35-4ee5-be67-330094c0931d__Command_Left_id12039420.xml#id12039420-6f35-4ee5-be67-330094c0931d" title="Searches left (previous) for signal transitions or values in the specified Wave window.">left</a> and <a class="xref fm:HeadingOnly" href="Command_Right_id6341afaf.html#id6341afaf-8b52-4c26-827c-e647c7ba94b7__Command_Right_id6341afaf.xml#id6341afaf-8b52-4c26-827c-e647c7ba94b7" title="Searches right (next) for signal transitions or values in the specified Wave window.">right</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Search_ida7471ad1.html#ida7471ad1-98b6-46f0-8ac6-5f83190153be__Command_Search_ida7471ad1.xml#ida7471ad1-98b6-46f0-8ac6-5f83190153be" title="Searches the specified window for one or more objects matching the specified pattern(s).">search</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id846292b8-b548-46f5-8bd2-408c9af74117__id63f9e378-cbaf-4e9b-b6b8-c65a4ce555f2"><h2 class="title Subheading sectiontitle">Commands
+compatible with virtual signals using [virtual expand &lt;signal&gt;]</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id846292b8-b548-46f5-8bd2-408c9af74117__id8d4b93ab-4f48-43ec-a3bb-abc51c4e1b14" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:0.485in" /><col style="width:0.707in" /><col style="width:0.433in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_Drivers_id3ce6e18e.html#id3ce6e18e-5cd5-4d68-b4dd-fea6e88e41b2__Command_Drivers_id3ce6e18e.xml#id3ce6e18e-5cd5-4d68-b4dd-fea6e88e41b2" title="Displays the names and strength of all drivers of the specified object.">drivers</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_VcdAdd_id8e73a64a.html#id8e73a64a-9859-4d6e-9d45-7f91824a313e__Command_VcdAdd_id8e73a64a.xml#id8e73a64a-9859-4d6e-9d45-7f91824a313e" title="Adds the specified objects to a VCD file.">vcd add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckContentionAdd_id5f00b96d.html#id5f00b96d-acf0-49ab-9ed5-d8a8d35fd85f__Command_CheckContentionAdd_id5f00b96d.xml#id5f00b96d-acf0-49ab-9ed5-d8a8d35fd85f" title="Enables contention checking on the specified nodes. Allowed nodes are Verilog nets and VHDL signals of types std_logic and std_logic_vector. Ignores any other node types, and nodes that do not have multiple drivers.">check contention add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckContentionConfig_idd3fd35c5.html#idd3fd35c5-434f-443d-9ca8-8d85f53ac4f8__Command_CheckContentionConfig_idd3fd35c5.xml#idd3fd35c5-434f-443d-9ca8-8d85f53ac4f8" title="Allows you to write checking messages to a file. By default, any messages display on your screen. Also allows you to configure the contention time limit.">check contention config</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckContentionOff_idee8b3ca3.html#idee8b3ca3-220c-4c8a-b13f-9f69b36c7a2c__Command_CheckContentionOff_idee8b3ca3.xml#idee8b3ca3-220c-4c8a-b13f-9f69b36c7a2c" title="Disables contention checking for the specified nodes.">check contention off</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckFloatAdd_id721ddd6f.html#id721ddd6f-a1a3-41d5-a551-788ea8d6c59e__Command_CheckFloatAdd_id721ddd6f.xml#id721ddd6f-a1a3-41d5-a551-788ea8d6c59e" title="Enables float checking for the specified nodes.">check float add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckFloatConfig_id30ec02a4.html#id30ec02a4-1436-4970-a027-b78e6e91ae0f__Command_CheckFloatConfig_id30ec02a4.xml#id30ec02a4-1436-4970-a027-b78e6e91ae0f" title="Enables you to write checking messages to a file (messages display on your screen by default). Also enables you to configure the float time limit.">check float config</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckFloatOff_id9397eccf.html#id9397eccf-fb95-4bf1-8a01-c8bc7274851a__Command_CheckFloatOff_id9397eccf.xml#id9397eccf-fb95-4bf1-8a01-c8bc7274851a" title="Disables float checking for the specified nodes.">check float off</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckStableOn_id4ccd1bd7.html#id4ccd1bd7-c22c-4028-84c0-050777cb4aea__Command_CheckStableOn_id4ccd1bd7.xml#id4ccd1bd7-c22c-4028-84c0-050777cb4aea" title="Enables stability checking on the entire design.">check stable on</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_CheckStableOff_idf5d9a2ce.html#idf5d9a2ce-e528-49a3-ac9c-9b0335e8b575__Command_CheckStableOff_idf5d9a2ce.xml#idf5d9a2ce-e528-49a3-ac9c-9b0335e8b575" title="Disables stability checking. Clock cycle numbers and boundaries are still tracked, and you can later re-enable stability checking with check stable on.">check stable off</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_PowerAdd_id2a4fd103.html#id2a4fd103-a74d-4d2e-b650-d7c8da3020d0__Command_PowerAdd_id2a4fd103.xml#id2a4fd103-a74d-4d2e-b650-d7c8da3020d0" title="Specifies the signals or nets to monitor for power information.">power add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_PowerReport_idea0a3538.html#idea0a3538-f401-4928-ae51-a6c579600710__Command_PowerReport_idea0a3538.xml#idea0a3538-f401-4928-ae51-a6c579600710" title="Reports power information for the objects specified with the power add command.">power report</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_PowerReset_id0bd2175b.html#id0bd2175b-561f-4b78-8181-5cf527d7aa47__Command_PowerReset_id0bd2175b.xml#id0bd2175b-561f-4b78-8181-5cf527d7aa47" title="Selectively resets power information to zero for the signals or nets specified with the power add command.">power reset</a></p>
+</td>
+</tr>
+<tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_ToggleAdd_id6d760675.html#id6d760675-2635-4ddf-818d-0118e2534bf0__Command_ToggleAdd_id6d760675.xml#id6d760675-2635-4ddf-818d-0118e2534bf0" title="Enables collection of toggle statistics for the specified nodes.">toggle add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_ToggleAdd_id6d760675.html#id6d760675-2635-4ddf-818d-0118e2534bf0__Command_ToggleAdd_id6d760675.xml#id6d760675-2635-4ddf-818d-0118e2534bf0" title="Enables collection of toggle statistics for the specified nodes.">toggle add</a></p>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><p class="p"><a class="xref fm:HeadingOnly" href="Command_ToggleAdd_id6d760675.html#id6d760675-2635-4ddf-818d-0118e2534bf0__Command_ToggleAdd_id6d760675.xml#id6d760675-2635-4ddf-818d-0118e2534bf0" title="Enables collection of toggle statistics for the specified nodes.">toggle add</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section Subsection" id="id846292b8-b548-46f5-8bd2-408c9af74117__id39663b06-9674-4653-b01d-8183362adb1a"><h2 class="title Subheading sectiontitle">Commands
+not currently compatible with virtual signals</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id846292b8-b548-46f5-8bd2-408c9af74117__ide958349c-b7e6-4c46-ab87-a8b1a7b5a4c5" class="table" frame="void" border="0" rules="none"><colgroup><col style="width:0.542in" /><col style="width:0.542in" /><col style="width:0.542in" /></colgroup><tbody class="tbody"><tr class="row"><td class="entry nocellnorowborder default-entry" style="vertical-align:top;"><ul class="ul"><li class="li" id="id846292b8-b548-46f5-8bd2-408c9af74117__idf646ede8-31e6-4ffe-9019-35bd35ef88c1"><p class="p"><a class="xref fm:HeadingOnly" href="Command_When_idc392c769.html#idc392c769-7f1d-4e3e-ab8d-030f0dcf7cd1__Command_When_idc392c769.xml#idc392c769-7f1d-4e3e-ab8d-030f0dcf7cd1" title="Instructs Questa SIM to perform actions when specified conditions are met.">when</a></p>
+</li>
+</ul>
+</td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+<td class="entry nocellnorowborder default-entry" style="vertical-align:top;"> </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Command_VirtualCount_id23ce1f0d.html#id23ce1f0d-ec8c-4fe0-acce-a528bbb7b361__" title="Reports the number of currently defined virtuals that were not read in using a macro file.">virtual count</a></div>
+<div><a class="link" href="../topics/Command_VirtualDescribe_id3df9f3ac.html#id3df9f3ac-eafb-4b99-a2f6-aa4d53502665__" title="Prints a complete description of the data type of one or more virtual signals to the transcript. Similar to the describe command.">virtual describe</a></div>
+<div><a class="link" href="../topics/Command_VirtualLog_id6a39f710.html#id6a39f710-f6ff-4b52-9305-d23fe3fa1610__" title="Causes the kernel to log the simulation-mode dependent signals of the specified virtual signals.">virtual log</a></div>
+<div><a class="link" href="../topics/Command_VirtualRegion_id9bb1b129.html#id9bb1b129-f5d3-48aa-b415-e73040b60444__" title="Creates a new user-defined design hierarchy region.">virtual region</a></div>
+<div><a class="link" href="../topics/Command_VirtualFunction_ida1fd02b0.html#ida1fd02b0-e116-4407-8d73-f7d79e8be7bf__" title="Creates a new signal, used by the GUI (not the kernel), that consists of logical operations on existing signals and simulation time.">virtual function</a></div>
+<div><a class="link" href="../topics/Command_VirtualDefine_id794f7180.html#id794f7180-e55f-4ccf-9e66-e46c450b740e__" title="Prints the definition of the virtual signals, functions, or regions to the transcript, in the form of a command that can be used to re-create the object.">virtual define</a></div>
+<div><a class="link" href="../topics/Command_VirtualExpand_id5e745ac7.html#id5e745ac7-59fb-471b-a56a-5fb42d36679b__" title="Prints a list of all of the non-virtual objects contained in the specified virtual signal(s) to the transcript.">virtual expand</a></div>
+<div><a class="link" href="../topics/Command_VirtualNohide_id262b0988.html#id262b0988-6251-40bd-b409-c34c1cabe521__" title="Reverses the effect of a virtual hide command, causing the specified real or virtual signals to reappear the Objects window.">virtual nohide</a></div>
+<div><a class="link" href="../topics/Command_VirtualSave_id9794eb01.html#id9794eb01-5b8d-4094-8cd8-4646defb4f69__" title="Saves the definitions of virtuals to a file named virtual.do in the current directory.">virtual save</a></div>
+<div><a class="link" href="../topics/Command_VirtualType_id7960b26b.html#id7960b26b-1915-4d4b-9208-fb4b6be0f4bd__" title="Creates a new enumerated type known only by the GUI, not the kernel. Converts signal values to character strings.">virtual type</a></div>
+<div><a class="link" href="../topics/Command_VirtualDelete_id236d583f.html#id236d583f-e121-49c0-a541-f34d05e5283d__" title="Removes the matching virtuals.">virtual delete</a></div>
+<div><a class="link" href="../topics/Command_VirtualHide_idd0356abe.html#idd0356abe-5797-4459-a2b2-c48c9ec25ab3__" title="Hides the specified real or virtual signals from display in the Objects window.">virtual hide</a></div>
+<div><a class="link" href="../topics/Command_VirtualNolog_idb0caf71b.html#idb0caf71b-b647-46ef-810d-f541930cc8f3__" title="Reverses the effect of a virtual log command, causing the simulation-dependent signals of the specified virtual signals to be excluded (&#34;unlogged&#34;) by the kernel.">virtual nolog</a></div>
+<div><a class="link" href="../topics/Command_VirtualShow_idaa1d11eb.html#idaa1d11eb-d778-416b-b575-9f74faa9b513__" title="Lists the full path names of all explicitly defined virtuals.">virtual show</a></div>
+<div><a class="link" href="../../questa_sim_user/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Virtual Objects', 'questa_sim_user'); return false;">Virtual Objects [Questa SIM User's Manual]</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "virtual signal"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_VirtualSignal_id846292b8.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

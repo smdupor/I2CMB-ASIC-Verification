@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="sim_assertion_control" />
+<meta name="abstract" content="Controls the behavior of Verilog assertions during Power Aware simulation." />
+<meta name="description" content="Controls the behavior of Verilog assertions during Power Aware simulation." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id41f627cd-57b0-44ba-8d89-dcb839bae7bf" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>sim_assertion_control</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="sim_assertion_control" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">sim_assertion_control</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Controls the behavior of Verilog
+assertions during Power Aware simulation.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__id0e7b3298-537f-455a-8701-43636f83c961"><h2 class="title Subheading sectiontitle">Support
+for UPF Standard</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__id4796227f-1931-477c-8cca-d0e19b5b3b32" class="table" frame="border" border="1" rules="cols"><colgroup><col style="width:1.528in" /><col style="width:1.637in" /><col style="width:3.010in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26528e146"><p class="p">UPF Version</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26528e149"><p class="p">Support</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d26528e152"><p class="p">Comments</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e146 "><p class="p">UPF 3.1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e149 "><p class="p">Yes (partial)</p>
+</td>
+<td class="entry cellrowborder default-entry" rowspan="2" style="vertical-align:top;" headers="d26528e152 "><p class="p">Unsupported option: -exclude_elements</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e146 "><p class="p">UPF 3.0</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e149 "><p class="p">Not applicable</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e146 "><p class="p">UPF 2.1</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e149 "><p class="p">Not applicable</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e152 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e146 "><p class="p">UPF 2.0</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e149 "><p class="p">Not applicable</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e152 "> </td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e146 "><p class="p">UPF 1.0</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e149 "><p class="p">Not applicable</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d26528e152 "> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note note"><span class="notetitle">Note:</span> <p class="p">See “<a class="xref fm:Table" href="General_SupportedUPFVersions_id3bbd35f3.html#id3bbd35f3-22cc-4f04-b72d-dfa877068ef2__idc0c5f375-5f8f-4613-938a-232041cbe75f">Table 1</a>” to select the correct
+UPF version.</p>
+</div>
+</div>
+<div class="section Subsection" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__idb36f5379-4e0b-45a0-b646-3b50c9026563"><h2 class="title Subheading sectiontitle">Restrictions</h2><ul class="ul"><li class="li" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__id34230762-4a6e-4c1f-8636-66b448691ddc"><p class="p">The command
+controls only Verilog assertions.</p>
+</li>
+<li class="li" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__idc4cc0ea3-0342-4cb7-87fb-11c14c21cb5c"><p class="p">The command
+does not apply to assertions within instances instantiated by the bind_checker
+command.</p>
+</li>
+<li class="li" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__id12409afc-775c-4764-b330-ff6a50a4ea69"><p class="p">The tool disables
+the assertions only when the simstate of the primary supply of the controlling
+domain is CORRUPT.</p>
+</li>
+<li class="li" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__idd6c7bc49-5fd5-4f28-878c-95dddcb02eed"><p class="p">The -element
+option with the -model option does not refine the element list.</p>
+</li>
+</ul>
+</div>
+<div class="section Subsection" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__idab081cbb-d08f-486a-8bc1-1acfc95ab608"><h2 class="title Subheading sectiontitle">Examples</h2><p class="p">The following command selects the assertions L1/clock_not_x:</p>
+<pre class="pre codeblock"><code>sim_assertion_control -elements L1/clock_not_x -type kill</code></pre><p class="p">The following command selects all assertions inside the instances
+that belong to domain PD1:</p>
+<pre class="pre codeblock"><code>sim_assertion_control -domain PD1 -type suspend</code></pre><p class="p">The diagram below describes the hierarchy used for the subsequent
+examples:</p>
+<div class="fig fignone" id="id41f627cd-57b0-44ba-8d89-dcb839bae7bf__id0c707d07-326c-437b-a673-d091861cf477"><span class="figcap"><span class="fig--title-label">Figure 1. </span>Design
+Hierarchy</span><br /><div class="imagecenter"><img class="image imagecenter fmdpi:96" src="../graphics/hierarchy_sim_assertion_control.png" /></div><br /></div>
+<p class="p">The following command selects all assertions in module modA:</p>
+<pre class="pre codeblock"><code>sim_assertion_control –model modA -controlling_domain PD1</code></pre><p class="p">The command selects InstA/Assert1, InstA/InstX/Assert1, InstB/InstA2/Assert1
+and InstB/InstA2/instX/Assert1.</p>
+<p class="p">The following command selects all assertions labeled InstX/Assert1
+in the module modA:</p>
+<pre class="pre codeblock"><code>sim_assertion_control –model modA -elements InstX/Assert1</code></pre><p class="p">The command selects InstA/InstX/Assert1 and InstB/InstA2/InstX/Assert1.</p>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_SupportedUpfCommands_id9d2b8fa3.html" title="The tool supports various UPF commands that you use to express the power management architecture of your design.">Supported UPF Commands</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "sim_assertion_control"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_SimAssertionControl_id41f627cd.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

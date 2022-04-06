@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="CommandRefTopic" />
+<meta name="DC.Title" content="triage report" />
+<meta name="abstract" content="Reads in a triage database (.tdb) and prints out a text report, after applying specified filters." />
+<meta name="description" content="Reads in a triage database (.tdb) and prints out a text report, after applying specified filters." />
+<meta name="prodname" content="Questa SIM Command Reference Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-02" />
+<meta name="VariantPrefix" content="Q" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="Including Support for Questa SV/AFV" />
+<meta name="SourceHandle" content="questa_sim_ref" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.4" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® SIM Command Reference Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id82531129-afe5-4103-956f-4850683be6e2" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>triage report</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="triage report" />
+<meta name="attributes" content="product.version.2020.4,sort.order.030,doc.type.documentation.ref,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="syn-arg" id="id82531129-afe5-4103-956f-4850683be6e2">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">triage report</h1>
+<div class="body refbody CommandRefBody"><div class="abstract CommandRefAbstract"><span class="shortdesc">Reads in
+a triage database (<span class="ph filepath italic">.tdb</span>)
+and prints out a text report, after applying specified filters.</span>
+</div>
+<div class="section Usages"><h2 class="title Subheading sectiontitle">Syntax</h2><div class="section UsageSet"><p class="lines UsageLine">triage report [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id9b2924b6-23da-401e-9336-dba5f35a42d0">-verbose</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id4a229b5c-d6b0-4ceb-8b23-425650a10635">-name &lt;tdb_filename&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__ida676c98b-ffb1-410a-9a4f-d7eb92e19e3b">-append</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id10f6baa5-454d-4777-ac87-14dcef975fa5">-file &lt;outputfilename&gt;</a>] &lt;filteroptions&gt; &lt;formatoptions&gt; </p>
+<p class="lines UsageLine">where:</p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;filteroptions&gt;
+=</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__idf927b130-9be9-4cdd-98b6-15e8c85086ff">-teststatus [F|E|W|P|M|S]</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id4509acd7-77e4-4d94-9ef0-c24d23563f93">-teststatusAll</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id234e0bc5-5c92-4194-847a-39ae48ff9f51">-severity [I|F|E|W|N]</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id6dda523b-e219-41a6-906b-f5050fe136ca">-severityAll</a>] <br />
+[<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id7dbaf6b1-a6f2-4c44-8c02-72fcc8a8a5f4">-message &lt;globstr&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id3c7d760f-154d-4743-a736-43601c2915f3">-excludemsg &lt;globstr&gt;</a>] </p>
+</div>
+<div class="section UsageSet"><h2 class="title Subheading sectiontitle">&lt;formatoptions&gt;</h2><p class="lines UsageLine">[<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id3097bc5d-7498-450d-b103-8256b0323634">-nummsg &lt;int&gt;</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__idec4a67f0-e9c2-40f5-98d7-9ac729e931ed">-concise [T|F]</a> [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__id8ea2b30f-d529-4289-b5d6-88946cc24f80">-notruncation</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__idd6df3b1b-1cfa-427b-9b36-49a867fa58d7">-details [M|A|T|U]</a>] [<a class="xref fm:HeadingOnly" href="#id82531129-afe5-4103-956f-4850683be6e2__idda3ccc94-8532-452b-9232-c88bbc752136">-detailsAll</a>]</p>
+</div>
+</div>
+<div class="section Arguments"><h2 class="title Subheading sectiontitle">Arguments</h2><div class="section ArgumentSet" id="id82531129-afe5-4103-956f-4850683be6e2__id00328c96-d379-4636-96d0-3470a1442721"><dl class="dl ArgumentList"><dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__ida676c98b-ffb1-410a-9a4f-d7eb92e19e3b">-append</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Appends to output filename. If you do not specify -append, the old
+output filename is overwritten.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__idec4a67f0-e9c2-40f5-98d7-9ac729e931ed">-concise [T|F]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays additional information to the concise rows-and-columns
+format or the line-by-line -notruncation format. This argument is
+ignored if you use the -details argument.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id1fdbcc48-5b15-42a0-ad16-1e1c9e27b714"><p class="p Opt">T — testname</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id382a9661-dde5-4a12-8783-0464e085cad0"><p class="p Opt">F — filename</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__idd6df3b1b-1cfa-427b-9b36-49a867fa58d7">-details [M|A|T|U]</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays the following detailed information.</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id1a2ecc46-3126-480f-b98c-51cae0371cb7"><p class="p Opt">M — message</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__idef65720a-2871-4b69-807a-458f31987d71"><p class="p Opt">A — assertion</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id44363785-976d-4310-be5a-519beba9457d"><p class="p Opt">T —test
+record</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__idb6ae30e4-0158-41d6-9926-e88215832e6c"><p class="p Opt">U — user-defined</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__idda3ccc94-8532-452b-9232-c88bbc752136">-detailsAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Same as -details MATU.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id3c7d760f-154d-4743-a736-43601c2915f3">-excludemsg &lt;globstr&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Filter the display - do not show messages where &lt;globstr&gt; is
+found in the message string.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id10f6baa5-454d-4777-ac87-14dcef975fa5">-file &lt;outputfilename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specify the output filename. If you do not specify -file, the report
+is sent to stdout.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id7dbaf6b1-a6f2-4c44-8c02-72fcc8a8a5f4">-message &lt;globstr&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Filter the display - only shows messages where &lt;globstr&gt; is found
+within the message string.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id4a229b5c-d6b0-4ceb-8b23-425650a10635">-name &lt;tdb_filename&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Default filename is <span class="ph filepath italic">questasim.tdb</span>.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id8ea2b30f-d529-4289-b5d6-88946cc24f80">-notruncation</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Do not truncate display of minimal default data. Output is converted
+to line-by-line instead of rows-and-columns. This argument is ignored if
+you use the -details argument.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id3097bc5d-7498-450d-b103-8256b0323634">-nummsg &lt;int&gt;</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Limit the maximum number of the same message to the specified number.
+The default behavior of “1” compresses all identical messages into one
+message and prints the earliest time. The value of &lt;int&gt; must
+be a positive integer (it ignores “0” and generates a warning).
+When &lt;int&gt; is an integer greater than 1, the same message prints
+out the specified number of times, and each message displays the
+time it was issued. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id234e0bc5-5c92-4194-847a-39ae48ff9f51">-severity [I|F|E|W|N] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Filter the display — only show messages with the following severity.
+Default behavior is -severity IFEWN</p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id54e06b78-c30c-4bdb-84ac-535cdee0700c"><p class="p Opt">I — internal
+error</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id120e404a-a542-47f6-bbc6-1a8f3c317c02"><p class="p Opt">F — fatal,
+failure</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id266aeb67-8ba4-4af5-b565-c0bd146f5bc9"><p class="p Opt">E — error</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id6eb29ecf-3af1-43bc-9300-50ddc3065cbd"><p class="p Opt">W — warning</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__idcca3ffd1-cc95-4d9e-a0a7-c309ee4ec6c8"><p class="p Opt">N — note</p>
+</li>
+</ul>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id6dda523b-e219-41a6-906b-f5050fe136ca">-severityAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Displays messages with all known message severity codes. Identical
+behavior to -severity IFEWN. </p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__idf927b130-9be9-4cdd-98b6-15e8c85086ff">-teststatus [F|E|W|P|M|S] </dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Filter the display — show only messages where the tests have the
+specified status. Default behavior is -teststatus FEWPMS. </p>
+<ul class="ul ArgumentOptions"><li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id71ef70d3-7788-4182-83c3-73f331a50bc6"><p class="p Opt">F — fatal</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id6f30c867-a168-4e8e-9230-56061291e3ae"><p class="p Opt">E — error</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id315a490e-f992-43a8-ab33-f6f3597a4eae"><p class="p Opt">W — warning</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__idc7d80c96-77df-4160-a2d6-fac90214b226"><p class="p Opt">P — pass
+or OK</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id640b0503-0549-4d4f-88c9-3c5d6ea4122d"><p class="p Opt">M — merge
+error</p>
+</li>
+<li class="li ArgOption" id="id82531129-afe5-4103-956f-4850683be6e2__id294f660d-bf5e-457e-9e66-33b5cd5e3f91"><p class="p Opt">S — missing</p>
+</li>
+</ul>
+<p class="p">Test record
+information is printed for matches to the filtering. Test record
+information is displayed only when you also specify -details T. </p>
+<p class="p">If a UCDB
+file specified as the input file does not pass the teststatus filter,
+then the WLF or Log file that would have been automatically imported
+is discarded instead. This affects only the automatic import of
+WLF or Log files via a UCDB file.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id4509acd7-77e4-4d94-9ef0-c24d23563f93">-teststatusAll</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Specifies -teststatus FEWP.</p>
+</dd>
+<dt class="dt ArgumentName dlterm" id="id82531129-afe5-4103-956f-4850683be6e2__id9b2924b6-23da-401e-9336-dba5f35a42d0">-verbose</dt>
+<dd class="dd ArgumentDescription"><p class="p">(optional)
+Prints additional information to the screen.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section Descriptions"><h2 class="title Subheading sectiontitle">Description</h2><p class="p">You can run this command from either the shell command line or
+the vsim command prompt. The triage report lists messages from highest
+level of severity to lowest: messages with fatal or error severity
+are shown first, so that you can more easily focus on highest priority failures.</p>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/MGCChap_CommandsNZ_id3dbfc077e.html" title="This chapter describes Questa SIM commands, listed alphabetically from N through Z, that you can enter either on the command line of the Main window or in a DO file.">Commands (N - Z)</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../../questa_sim_vm/nsmgchelp.htm" target="_top" onclick="oT('STD_FM11', 'Analyzing Verification Results', 'questa_sim_vm'); return false;">Analyzing Verification Results [Questa Verification Management User's Manual]</a></div>
+<div><a class="link" href="../topics/Command_TriageDbfile_id1180d2fd.html#id1180d2fd-ea15-4805-b541-50c7925002b0__" title="Creates a database (questasim.tdb) of test data and/or simulation messages extracted from a UCDB, a WLF file, or a LOG file.">triage dbfile</a></div>
+<div><a class="link" href="../topics/Command_TriageDbinsert_id2b2b0942.html#id2b2b0942-6558-4940-b9c7-50959c56fce4__" title="Places one or more messages directly into a triage database (TDB) file.">triage dbinsert</a></div>
+<div><a class="link" href="../topics/Command_TriageDbrefresh_id21951d13.html#id21951d13-c5a8-4748-a7c5-851eaa80a24b__" title="Clears the old triage database, and re-creates the database using a saved history of previous &#34;triage dbfile&#34; and “triage dbinsert” commands.">triage dbrefresh</a></div>
+<div><a class="link" href="../topics/Command_TriageQuery_idbbde8b93.html#idbbde8b93-8060-4c6b-898b-217d3c3834e2__" title="Provides programmatic access to the contents of the triage database (TDB) for debug and scripting purposes.">triage query</a></div>
+<div><a class="link" href="../topics/Command_TriageView_idee1da1ef.html#idee1da1ef-3756-452e-bf5e-4744b7e900b1__" title="Loads a triage database (.tdb) into the Verification Results Analysis window.">triage view</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "questa_sim_ref"
+                DocTitle = "Questa® SIM Command Reference Manual"
+                PageTitle = "triage report"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Command_TriageReport_id82531129.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® SIM Command Reference Manual, v2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

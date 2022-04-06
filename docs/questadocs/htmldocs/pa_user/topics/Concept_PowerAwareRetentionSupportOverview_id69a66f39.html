@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Power Aware Retention Support Overview" />
+<meta name="abstract" content="Retention saves the value of a design element in a power domain prior to switching off the power to that element. The value is restored when power to the element is turned on." />
+<meta name="description" content="Retention saves the value of a design element in a power domain prior to switching off the power to that element. The value is restored when power to the element is turned on." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id69a66f39-1cf7-4408-bd00-714f37cb6c60" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Power Aware Retention Support Overview</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Power Aware Retention Support Overview" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id69a66f39-1cf7-4408-bd00-714f37cb6c60">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Power Aware Retention
+Support Overview</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Retention saves the
+value of a design element in a power domain prior to switching off
+the power to that element. The value is restored when power to the
+element is turned on.</span>
+</div>
+<p class="p">The set_retention
+(and in UPF 1.0 set_retention_control) UPF command determines which registers
+in a power domain are retention registers. The command sets the
+corresponding save and restore signals for the retention registers.
+You can specify the UPF_GENERIC_CLOCK and UPF_GENERIC_ASYNC_LOAD
+signals in the save, restore, and retention conditions.</p>
+<p class="p">In UPF, you specify a retention strategy where state preservation
+is required, such as a latch, flip-flop, or retention memory. </p>
+<p class="p">Following is the sequence for specifying retention
+in UPF:</p>
+<ol class="ol"><li class="li" id="id69a66f39-1cf7-4408-bd00-714f37cb6c60__id1127751f-4823-4321-aa31-485a9f66079f"><p class="p">Define
+your power domains:</p>
+<pre class="pre codeblock"><code><a class="xref fm:HeadingOnly" href="General_CreatePowerDomain_id36fcddd1.html#id36fcddd1-3bae-4229-aa7a-a88037cb45dc__General_CreatePowerDomain_id36fcddd1.xml#id36fcddd1-3bae-4229-aa7a-a88037cb45dc" title="Defines a power domain and its characteristics.">create_power_domain</a></code></pre></li>
+<li class="li" id="id69a66f39-1cf7-4408-bd00-714f37cb6c60__idb355ff29-8ab4-4371-b1cb-a2ad09687a6b"><p class="p">Specify the retention strategy (a set of registers
+in the domain requiring retention):</p>
+<pre class="pre codeblock"><code><a class="xref fm:HeadingOnly" href="General_SetRetention_id634b0a70.html#id634b0a70-96dd-4ba4-a3dc-0ef5447fb647__General_SetRetention_id634b0a70.xml#id634b0a70-96dd-4ba4-a3dc-0ef5447fb647" title="Specifies a retention strategy.">set_retention</a></code></pre></li>
+<li class="li" id="id69a66f39-1cf7-4408-bd00-714f37cb6c60__id36c89a20-d8f7-4d3d-ac93-f31fc02f3ec3"><p class="p">Specify the
+retention control signals for the strategy:</p>
+<pre class="pre codeblock"><code><a class="xref fm:HeadingOnly" href="General_SetRetention_id634b0a70.html#id634b0a70-96dd-4ba4-a3dc-0ef5447fb647__General_SetRetention_id634b0a70.xml#id634b0a70-96dd-4ba4-a3dc-0ef5447fb647" title="Specifies a retention strategy.">set_retention</a> (in UPF 2.0 and newer)
+<a class="xref fm:HeadingOnly" href="General_SetRetentionControl_idb446f827.html#idb446f827-33c3-45b9-ab84-32ff8b418728__General_SetRetentionControl_idb446f827.xml#idb446f827-33c3-45b9-ab84-32ff8b418728" title="Specifies the control signals and assertions for a previously defined retention strategy.">set_retention_control</a> (in UPF 1.0)</code></pre></li>
+</ol>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_PowerAwareRetentionSupport_idf6211a5d.html" title="Retention saves the value of a design element in a power domain before switching off the power to that element. When power is restored to that element, the value is retained. Based on the retention control signals specified in the UPF specification, Power Aware simulation automatically selects a model for retention.">Power Aware Retention Support</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Power Aware Retention Support Overview"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_PowerAwareRetentionSupportOverview_id69a66f39.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

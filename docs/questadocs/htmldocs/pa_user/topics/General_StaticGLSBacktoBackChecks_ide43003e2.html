@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="GeneralRefTopic" />
+<meta name="DC.Title" content="Static GLS Back-to-Back Checks" />
+<meta name="abstract" content="Static GLS back-to-back checks report any back-to-back cells in your gate-level design." />
+<meta name="description" content="Static GLS back-to-back checks report any back-to-back cells in your gate-level design." />
+<meta name="prodname" content="Power Aware Simulation User's Manual" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="pa_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="none" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Power Aware Simulation User's Manual" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="ide43003e2-235e-49b9-8dd2-d557394a50e3" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Static GLS Back-to-Back Checks</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Static GLS Back-to-Back Checks" />
+<meta name="attributes" content="product.version.2020.4,sort.order.050,doc.type.documentation.user,product.id.P10593,product.id.P11633,product.id.P11632," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body class="default" id="ide43003e2-235e-49b9-8dd2-d557394a50e3">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Static GLS Back-to-Back Checks</h1>
+<div class="body refbody GeneralRefBody"><div class="abstract GeneralRefAbstract"><span class="shortdesc">Static GLS back-to-back checks report
+any back-to-back cells in your gate-level design.</span>
+</div>
+<div class="section Subsections"><div class="section Subsection" id="ide43003e2-235e-49b9-8dd2-d557394a50e3__id682de42b-0f4a-4749-a05e-5b7c9612d960"><p class="p">To
+enable static GLS back-to-back checks, specify a value to the vopt
+-pa_glschecks command as shown in the following table. All static
+GLS back-to-back check results are written to the report file, <span class="ph filepath">report.static.txt</span>.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ide43003e2-235e-49b9-8dd2-d557394a50e3__idd62632ec-633e-4a39-8e7c-3efac15d8ac4" class="table" frame="border" border="1" rules="cols"><caption><span class="tablecap"><span class="table--title-label">Table 1. </span>Static
+GLS Back-to-Back Checks</span></caption><colgroup><col style="width:1.638in" /><col style="width:2.711in" /><col style="width:2.151in" /></colgroup><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d46735e153"><p class="p">vopt Argument</p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d46735e156"><p class="p">Mnemonic </p>
+</th>
+<th class="entry cellrowborder default-entry" style="vertical-align:top;" id="d46735e159"><p class="p">Description</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder default-entry" rowspan="2" style="vertical-align:top;" headers="d46735e153 "><p class="p"></p>
+<p class="p"></p>
+<p class="p">‑pa_glschecks=s+els</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">ISO_LS_B2B_CELLS</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back isolation-level shifter
+cells present in the design. They can be replaced with an ELS cell.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">LS_ISO_B2B_CELLS</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back level shifter-isolation
+cells present in the design. They can be replaced with an ELS cell.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" rowspan="5" style="vertical-align:top;" headers="d46735e153 "><p class="p"></p>
+<p class="p"></p>
+<p class="p"></p>
+<p class="p"></p>
+<p class="p"></p>
+<p class="p">‑pa_glschecks=s+b2b</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">LS_B2B_CELLS</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back level shifter cells
+present in the design. They can be replaced with a single level
+shifter cell.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">ISO_B2B_CELLS_CTRL_SAME</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back isolation cells with
+same or different control signal present in the design.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">ISO_B2B_CELLS_CTRL_UNK</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back isolation cells with
+unknown control signals present in the design.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">ISO_B2B_CELLS_CLAMP_SAME</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back isolation cells with
+the same clamp value present in the design.</p>
+</td>
+</tr>
+<tr class="row"><td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e156 "><p class="p">ISO_B2B_CELLS_CLAMP_DIFF</p>
+</td>
+<td class="entry cellrowborder default-entry" style="vertical-align:top;" headers="d46735e159 "><p class="p">Reports back-to-back isolation cells with
+different clamp values present in the design.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_StaticGLSChecks_idd2fe8dc2.html" title="Static GLS checks validate your gate-level design with the power intent defined in the UPF file. For static GLS checks, the tool analyzes the UPF file for power state tables (PSTs), power states added on power domains (by an add_power_state command), and supply sets. The purpose of this analysis is to detect the power domain relative ON/OFF condition and the relative operating voltages.">Static GLS Checks</a></div>
+</div>
+
+<div class="linklist linklist relinfo"><strong>Related Topics</strong><br />
+
+<div><a class="link" href="../topics/Concept_BackToBackChecks_idf74cf9dc.html" title="Back-to-back checks report back-to-back cells in your design. Replace the back-to-back cells with a single cell.">Back-to-Back Checks</a></div></div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "pa_user"
+                DocTitle = "Power Aware Simulation User's Manual"
+                PageTitle = "Static GLS Back-to-Back Checks"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/General_StaticGLSBacktoBackChecks_ide43003e2.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Power Aware Simulation User's Manual Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>

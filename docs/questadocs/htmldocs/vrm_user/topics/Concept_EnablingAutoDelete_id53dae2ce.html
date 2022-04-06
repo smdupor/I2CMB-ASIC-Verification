@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="copyright" content="(C) Copyright 2020" />
+<meta name="DC.rights.owner" content="(C) Copyright 2020" />
+<meta name="DC.Type" content="ConceptTopic" />
+<meta name="DC.Title" content="Enabling Auto-Delete" />
+<meta name="abstract" content="Auto-delete is enabled by overriding the user-definable procedure OkToDelete (see below for a detailed description of this procedure). The OkToDelete procedure is called upon the completion of every Action (except, of course, for the deleteScript pseudo-Action). The decision of whether or not to delete a given directory is based on a veto system. Each deleteScript pseudo-Action carries a flag that indicates whether or not the directory associated with that pseudo-Action is safe to delete. That flag is set to “yes” by default (that is, the directory is safe to delete). If the OkToDelete procedure returns a false value for any of the Actions associated with the same directory as the deleteScript pseudo-Action, that flag is set to “no”." />
+<meta name="description" content="Auto-delete is enabled by overriding the user-definable procedure OkToDelete (see below for a detailed description of this procedure). The OkToDelete procedure is called upon the completion of every Action (except, of course, for the deleteScript pseudo-Action). The decision of whether or not to delete a given directory is based on a veto system. Each deleteScript pseudo-Action carries a flag that indicates whether or not the directory associated with that pseudo-Action is safe to delete. That flag is set to “yes” by default (that is, the directory is safe to delete). If the OkToDelete procedure returns a false value for any of the Actions associated with the same directory as the deleteScript pseudo-Action, that flag is set to “no”." />
+<meta name="prodname" content="Verification Run Manager User Guide" />
+<meta name="version" content="2014.06" />
+<meta name="release" content="v2014.06" />
+<meta name="series" content="mgc_ih" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Creator" content="Mentor Graphics Corporation" />
+<meta name="DC.Publisher" content="Mentor Graphics Corporation 10 24 2014 10 24 2014 Fresh off the boat." />
+<meta name="DC.Date.Created" content="0000-00-00" />
+<meta name="DC.Date.Modified" content="2020-07-10" />
+<meta name="VariantPrefix" content="none" />
+<meta name="Tier" content="1" />
+<meta name="SubTitle" content="none" />
+<meta name="SourceHandle" content="vrm_user" />
+<meta name="SoftwareVersionNum" content="2020.4" />
+<meta name="SoftwareRelease" content="none" />
+<meta name="RevHist" content="5.3" />
+<meta name="PublicationDate" content="none" />
+<meta name="Platform" content="none" />
+<meta name="PartNumber" content="none" />
+<meta name="LicenseType" content="EULA" />
+<meta name="InfoHubHandle" content="questa_sim_ih" />
+<meta name="EclipsePluginName" content="none" />
+<meta name="DraftDate" content="none" />
+<meta name="Draft" content="none" />
+<meta name="DocumentTitle" content="Questa® Verification Run Manager User Guide" />
+<meta name="CSHelp" content="no" />
+<meta name="CSDSearchKeywords" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="Copyright" content="READONLY - Use: copyrfirst and copyrlast" />
+<meta name="ConditionFiltering" content="XML" />
+<meta name="ChecklinksRelease" content="mti2020" />
+<meta name="BookcaseHandle" content="_bk_questa_sim" />
+<meta name="Beta" content="none" />
+<meta name="Alpha" content="none" />
+<meta name="ActiveStatus" content="Active" />
+<meta name="GenerateOnlyChangedTopics" content="none" />
+<meta name="HighlightChanges" content="none" />
+<meta name="HighlightColor" content="Pale Green" />
+<meta name="IncludeInInventory" content="yes" />
+<meta name="SourceEDDVersion" content="12.2.10" />
+<meta name="DC.Format" content="XHTML" />
+<meta name="DC.Identifier" content="id53dae2ce-8e9a-454e-9929-1720c7f702d7" />
+<link rel="stylesheet" type="text/css" href="../commonltr.css" />
+<title>Enabling Auto-Delete</title>
+<link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /><noscript><link rel="StyleSheet" href="../../MGC/styles/body.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/catalog.css" type="text/css" /><link rel="StyleSheet" href="../../MGC/styles/document.css" type="text/css" /><link rel="stylesheet" href="../../MGC/styles/mgcdita-lang.css" type="text/css" /></noscript><meta name="mgc_html_doctitle" content="Enabling Auto-Delete" />
+<meta name="attributes" content="product.version.2020.4,doc.type.documentation.user,doc.type.documentation.ref,product.id.P10593," />
+<meta name="TEMPLATEBASE" content="mgc_mgchelp_v4.2.009" />
+<script type="text/javascript" language="JavaScript1.2" src="../../MGC/js/page.js"></script><script type="text/javascript" language="JavaScript1.2">
+            if(DetectChromeForBasic()){
+            writeNoScriptStyles();
+            }
+
+        </script><script type="text/javascript" language="JavaScript1.2">
+            // Set reference to top level help frame
+            //
+            if(!DetectChromeForBasic()){
+            javascriptTopicRedirect();
+            }
+        </script></head>
+<body id="id53dae2ce-8e9a-454e-9929-1720c7f702d7">
+<div id="bodycontent" class="BodyContent">
+<script type="text/javascript" language="JavaScript1.2">
+              var BC = new Array("TODO: Breadcrumb Title","title1","naV","naV","naV","naV","2");
+          </script>
+<noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../../MGC/html/noscript_header.htm" width="100%" height="100px;">xxx</iframe></noscript>
+<script type="text/javascript" language="JavaScript1.2">
+              if(DetectChromeForBasic()){
+              if(!(top.inEclipse)){
+              writeBasicHeader();
+              }
+              }
+          </script>
+<div id="BodyContent"><h1 class="title topictitle1">Enabling
+Auto-Delete</h1>
+<div class="body conbody ConceptBody"><div class="abstract ConceptAbstract"><span class="shortdesc">Auto-delete
+is enabled by overriding the user-definable procedure <span class="ph filepath">OkToDelete</span> (see
+below for a detailed description of this procedure). The <span class="ph filepath">OkToDelete</span> procedure
+is called upon the completion of every Action (except, of course,
+for the <span class="ph filepath">deleteScript</span> pseudo-Action). The decision
+of whether or not to delete a given directory is based on a veto
+system. Each <span class="ph filepath">deleteScript</span> pseudo-Action carries
+a flag that indicates whether or not the directory associated with
+that pseudo-Action is safe to delete. That flag is set to “yes”
+by default (that is, the directory is safe to delete). If the <span class="ph filepath">OkToDelete</span> procedure
+returns a false value for any of the Actions associated with the
+same directory as the <span class="ph filepath">deleteScript</span> pseudo-Action,
+that flag is set to “no”. </span>
+</div>
+<p class="p">For example, suppose the <span class="ph filepath">execScript</span> Action
+for <span class="ph filepath">nightly/test2</span> passed and the <span class="ph filepath">OkToDelete</span> procedure
+returned a true value (indicating there was no objection at that
+point to deleting the directory) but the subsequent <span class="ph filepath">mergeScript</span> failed,
+causing the <span class="ph filepath">OkToDelete</span> procedure to return
+a false value for that Action (indicating that the status of the <span class="ph filepath">mergeScript</span> was
+such that the directory should not be deleted). The flag on the <span class="ph filepath">deleteScript</span> associated
+with that Runnable would be set to “no” by the false return from <span class="ph filepath">OkToDelete</span> when
+called on behalf of the <span class="ph filepath">mergeScript</span> Action
+and the directory is not deleted. The type of Action and the pass/fail
+status are available to the <span class="ph filepath">OkToDelete</span> procedure
+so that the decision of whether to delete or preserve the directory
+may be based upon the results of the various Actions executed within
+that directory.</p>
+<p class="p">Following is an example of a typical <span class="ph filepath">OkToDelete</span> procedure: </p>
+<pre class="pre codeblock leveled"><code>proc OkToDelete {userdata} {
+	upvar $userdata data
+
+		passed  -
+		skipped -
+		killed  -
+		empty   {return 1}
+		default {return 0}
+	}
+}</code></pre><p class="p">This <span class="ph filepath">OkToDelete</span> procedure
+allows deletion if the Action on whose behalf it was called either
+passed, was skipped (that is, not executed because of a prior error),
+killed (that is, by an external termination request), or if the
+Action was empty (that is, had no commands defined). These are all
+safe completion results which would not normally require inspection
+of the logs and/or other collateral files. If the status is anything
+other than the four values listed, the <span class="ph filepath">OkToDelete</span> procedure
+returns a false value that prohibits deletion (presumably so the
+user could inspect the logs and/or other collateral files to determine
+the cause of any failures).</p>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent Topic:</strong> <a class="link" href="../topics/Contain_CollatePassfailUcdbFilesMergeTriage_id2bef435c.html" title="In the course of running a regression suite using VRM features, one ends up generating a large number of UCDB, WLF, and other log files that must be analyzed. Coverage information must be merged and/or ranked in order to get a handle on how well the entire regression suite tests the design. Error messages must be triaged in order to pinpoint the unique error messages resulting from that run. From the point of view of the VRM tool, it all boils down to collecting simulation collateral files, sorting them by test status, and making those file lists available to the user's post-regression analysis script.">Collate Pass/Fail UCDB Files for Merge and/or Triage</a></div>
+</div>
+</div></div>
+</div>
+<!--BeginFooterContent--><div class="BlankFooter" id="BlankFooter"> </div><div class="Footer" id="Footer"> </div><script type="text/javascript"><!--
+                PDFLinkTitle = "InfoHub.Help"
+                DocHandle = "vrm_user"
+                DocTitle = "Questa® Verification Run Manager User Guide"
+                PageTitle = "Enabling Auto-Delete"
+                Copyright = "2020"
+                ThisTopic = "PointingtoaCommoncustomerjsFile";
+                CurrentFile = "topics/Concept_EnablingAutoDelete_id53dae2ce.html"
+                CurrentFileID = "3";
+                topicFooter();
+            --></script><noscript><p class="MGCFooter">Questa® Verification Run Manager User Guide Software Version 2020.4<br />Unpublished work. © Siemens 2020<br /><a href="../../mgc_html_help/nsmgchelp.htm" target="_blank">Browser Requirements</a></p></noscript></body>
+</html>
