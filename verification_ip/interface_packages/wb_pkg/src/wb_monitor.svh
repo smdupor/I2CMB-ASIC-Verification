@@ -56,6 +56,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 	task check_command_assertions();
 		static T temp;
+		temp =new;
 		if(last_trans[0] != null)
 		if(last_trans[0].line == CMDR && last_trans[0].word[2:0] == M_I2C_START && monitored_trans.write == I2_READ) begin
 				this.bus.master_read(STATE, temp.word);
