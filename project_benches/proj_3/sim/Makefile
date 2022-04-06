@@ -15,18 +15,18 @@ clean:
 	rm -rf work *.wlf transcript
 
 comp_I2C_MB:
-	vcom ../rtl/iicmb_int_pkg.vhd
-	vcom ../rtl/iicmb_pkg.vhd
-	vcom ../rtl/mbyte.vhd
-	vcom ../rtl/mbit.vhd
-	vcom ../rtl/bus_state.vhd
-	vcom ../rtl/filter.vhd
-	vcom ../rtl/conditioner.vhd
-	vcom ../rtl/conditioner_mux.vhd
-	vcom ../rtl/iicmb_m.vhd
-	vcom ../rtl/regblock.vhd
-	vcom ../rtl/wishbone.vhd 
-	vcom ../rtl/iicmb_m_wb.vhd
+	vcom -cover bcefst ../rtl/iicmb_int_pkg.vhd
+	vcom -cover bcefst ../rtl/iicmb_pkg.vhd
+	vcom -cover bcefst ../rtl/mbyte.vhd
+	vcom -cover bcefst ../rtl/mbit.vhd
+	vcom -cover bcefst ../rtl/bus_state.vhd
+	vcom -cover bcefst ../rtl/filter.vhd
+	vcom -cover bcefst ../rtl/conditioner.vhd
+	vcom -cover bcefst ../rtl/conditioner_mux.vhd
+	vcom -cover bcefst ../rtl/iicmb_m.vhd
+	vcom -cover bcefst ../rtl/regblock.vhd
+	vcom -cover bcefst ../rtl/wishbone.vhd 
+	vcom -cover bcefst ../rtl/iicmb_m_wb.vhd
 
 
 comp_bench: comp_ncsu_pkg comp_i2c_pkg comp_wb_pkg comp_i2cmb_env
@@ -40,7 +40,7 @@ optimize:
 
 compile: comp_bench comp_I2C_MB optimize
 
-simulate:
+simulate: merge_coverage
 	#vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 	vsim -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 debug: clean compile simulate
