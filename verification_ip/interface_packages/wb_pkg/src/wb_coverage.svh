@@ -22,13 +22,20 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		bins EXPECT_ACKS = {1'b0};
 		bins EXPECT_NACKS = {1'b1};
 	}
-	config_x_nacks:	cross configuration_nacks, nacks;
 	
+
 	nacks:		coverpoint nacks
 	{
 		bins ACKS = {1'b0};
 		bins NACKS = {1'b1};
 	}
+	
+	config_x_nacks:	cross configuration_nacks, nacks
+	{
+		bins X_EXPECT_ACKS = binsof(1'b0) && binsof(1'b0);
+		bins X_EXPECT_NACKS= binsof(1'b1) && binsof(1'b1);
+	}
+
 	cmd_type:	coverpoint cmd_type
 	{
 		bins ENABLE_CORE_INTERRUPT = {ENABLE_CORE_INTERRUPT};
