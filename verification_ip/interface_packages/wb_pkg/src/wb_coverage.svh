@@ -7,6 +7,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	bit[1:0] reg_type;
 	bit we;
 	logic nacks;
+	logic expect_nacks;
 
 	//wb_mon_t mon_type;
 	logic [7:0] data_type;
@@ -17,7 +18,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     option.name = get_full_name();
 
 	explicit_wait_times:	coverpoint wait_time;
-	configuration_nacks: coverpoint configuration.expect_nacks
+
+	configuration_nacks: coverpoint expect_nacks
 	{
 		bins EXPECT_ACKS = {1'b0};
 		bins EXPECT_NACKS = {1'b1};
@@ -80,6 +82,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     super.new(name,parent);
     wb_transaction_cg = new;
 	nacks = 1'bx;
+	expect_nacks = configuration.expect_nacks;
   endfunction
 
   function void set_configuration(wb_configuration cfg);
