@@ -32,8 +32,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	
 	config_x_nacks:	cross configuration_nacks, nacks
 	{
-		bins X_EXPECT_ACKS = binsof(EXPECT_ACKS) && binsof(ACKS);
-		bins X_EXPECT_NACKS= binsof(EXPECT_NACKS) && binsof(NACKS);
+
 	}
 
 	cmd_type:	coverpoint cmd_type
