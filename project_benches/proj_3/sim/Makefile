@@ -58,23 +58,23 @@ silent: clean compile_sil
 	#@echo "  "
 	#diff transcript transcript.bak
 silent2: clean compile_sil
-	GEN_TRANS_TYPE = test_reg_crosscheck
+	GEN_TRANS_TYPE=test_reg_crosscheck
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = test_reg_accessctrl
+	GEN_TRANS_TYPE=test_reg_accessctrl
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = i2cmb_test_single_bus_default
+	GEN_TRANS_TYPE=i2cmb_test_single_bus_default
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = i2cmb_test_multi_bus_default
+	GEN_TRANS_TYPE=i2cmb_test_multi_bus_default
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = i2cmb_test_multi_bus_max
+	GEN_TRANS_TYPE="i2cmb_test_multi_bus_max"
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = i2cmb_test_multi_bus_range
+	GEN_TRANS_TYPE=i2cmb_test_multi_bus_range
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = test_arbitration
+	GEN_TRANS_TYPE=test_arbitration
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = test_interrupt_cycling
+	GEN_TRANS_TYPE=test_interrupt_cycling
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE = test_hard_reset_insertion
+	GEN_TRANS_TYPE=test_hard_reset_insertion
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 silent_super: clean compile_sil
