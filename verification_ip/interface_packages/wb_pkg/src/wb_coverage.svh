@@ -6,6 +6,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	logic[7:0] cmd_type;
 	bit[1:0] reg_type;
 	bit we;
+	logic nacks;
+
 	//wb_mon_t mon_type;
 	logic [7:0] data_type;
 	logic [3:0] wait_time;
@@ -15,7 +17,11 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     option.name = get_full_name();
 
 	explicit_wait_times:	coverpoint wait_time;
-
+	nacks:		coverpoint nacks
+	{
+		bins ACKS: {1'b0};
+		bins NACKS:{1'b1};
+	}
 	cmd_type:	coverpoint cmd_type
 	{
 		bins ENABLE_CORE_INTERRUPT = {ENABLE_CORE_INTERRUPT};
@@ -72,9 +78,11 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		 trans.cmd == READ_WITH_NACK) begin 
 			 data_type = trans.word;
 			 cmd_type = NONE;
+			 nacks = 1'bx;
 		 end
 	else begin 
 		cmd_type = trans.word;
+		nacks = trans.word[6];
 		data_type = NONE;
 	end
 	we = trans.write;

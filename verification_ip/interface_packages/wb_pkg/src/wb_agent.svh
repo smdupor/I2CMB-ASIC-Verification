@@ -67,6 +67,10 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 		fork monitor.run(); join_none
 	endtask
 
+	function void expect_nacks(bit expectation);
+		configuration.expect_nacks = expectation;
+	endfunction
+
 endclass
 
 

@@ -64,9 +64,13 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 				assert_fsm_byte_match_last_cmd: assert (1'b1==1'b1)//(temp.word[6:4]==last_trans[0].word[2:0])		// FSM Byte Command Match 
 				else $error("Assertion assert_fsm_byte_match failed!");
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
-					$display("HIT ASSERT");
+					//$display("HIT ASSERT");
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete
 					else $error("Assertion assert_done_raised_on_complete failed!, got word: %b", monitored_trans.word);
+
+					assert_nacks_when_expected: assert((monitored_trans.word[6]==configuration.expect_nacks)
+					else $error("Assertion assert_nacks_when_expected failed!");
+
 				end 
 				if(last_trans[0].word == SET_I2C_BUS) begin
 					this.bus.master_read(CSR, temp.word);

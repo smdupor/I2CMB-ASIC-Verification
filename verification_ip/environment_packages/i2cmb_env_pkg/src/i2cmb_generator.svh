@@ -32,7 +32,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	// ****************************************************************************
 	virtual task run();
 		generate_directed_project_2_test_transactions();
-
+		wb_agent_handle.expect_nacks(1'b0);
 		// Iterate through all generated transactions, passing each down to respective agents.
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);

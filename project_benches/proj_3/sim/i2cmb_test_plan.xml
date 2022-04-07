@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 12:18:37 AM -->
+ <!-- Date: 1/1/0001 12:04:58 -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -53,8 +53,8 @@
 				<Cell>1.3.2</Cell>
 				<Cell>CMDR[NACK]</Cell>
 				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
-				<Cell>test_disconnected_slave</Cell>
-				<Cell>test</Cell>
+				<Cell>assert_nacks_when_expected</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -432,6 +432,15 @@
 				<Cell>WB Register Coverage</Cell>
 				<Cell>Ensure reg coverg</Cell>
 				<Cell>wb_transaction_cg::reg_type</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11</Cell>
+				<Cell>Connected/Disconnected Slave</Cell>
+				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
+				<Cell>wb_transaction_cg::nacks</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
