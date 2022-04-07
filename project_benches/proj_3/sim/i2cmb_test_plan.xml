@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 12:01:39 AM -->
+ <!-- Date: 1/1/0001 12:18:37 AM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -251,7 +251,7 @@
 				<Cell>4.3.1</Cell>
 				<Cell>Wait Commands</Cell>
 				<Cell>Expect transfers to complete when explicit wait commands issues to DUT with subsequent operations</Cell>
-				<Cell>clockstretch_cg::explicit_wait_times</Cell>
+				<Cell>wb_transaction_cg::explicit_wait_times</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -377,7 +377,7 @@
 				<Cell>9.1</Cell>
 				<Cell>Coverage Covergroup</Cell>
 				<Cell>Ensure all coverpoints within primary TB covergroup reach full coverage</Cell>
-				<Cell>coverage_cg</Cell>
+				<Cell>i2c_transaction_cg</Cell>
 				<Cell>Covergroup</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -386,7 +386,7 @@
 				<Cell>9.2</Cell>
 				<Cell>Addresses</Cell>
 				<Cell>Ensure all addresses have been selected and used for successful transfers</Cell>
-				<Cell>coverage_cg::address</Cell>
+				<Cell>i2c_transaction_cg::address</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -395,7 +395,7 @@
 				<Cell>9.3</Cell>
 				<Cell>Data Values</Cell>
 				<Cell>Ensure all possible data values have been selected and used for successful transfer</Cell>
-				<Cell>coverage_cg::data</Cell>
+				<Cell>i2c_transaction_cg::data</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -404,7 +404,7 @@
 				<Cell>9.4</Cell>
 				<Cell>Bus Selection</Cell>
 				<Cell>Ensure all bus selections have been tested</Cell>
-				<Cell>coverage_cg::bus_sel</Cell>
+				<Cell>i2c_transaction_cg::bus_sel</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
