@@ -42,7 +42,7 @@ compile: comp_bench comp_I2C_MB optimize
 
 simulate: 
 	#vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
-	vsim -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a;coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb;" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a;coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb;" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 debug: clean compile simulate
 
 restart: clean compile
@@ -52,7 +52,7 @@ console: clean compile
 	
 silent: clean compile_sil
 	#vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
-	vsim  -c -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) optimized_debug_top_tb
 	@echo "********************************************************************************************"
 	@echo "  "
 	diff transcript transcript.bak
@@ -70,18 +70,18 @@ silent_max_verb: clean compile_sil
 	#diff transcript transcript.bak
 	
 comp_I2C_MB_sil:
-	vcom ../rtl/iicmb_int_pkg.vhd > /dev/null
-	vcom ../rtl/iicmb_pkg.vhd > /dev/null
-	vcom ../rtl/mbyte.vhd > /dev/null
-	vcom ../rtl/mbit.vhd > /dev/null
-	vcom ../rtl/bus_state.vhd > /dev/null
-	vcom ../rtl/filter.vhd > /dev/null
-	vcom ../rtl/conditioner.vhd > /dev/null
-	vcom ../rtl/conditioner_mux.vhd > /dev/null
-	vcom ../rtl/iicmb_m.vhd > /dev/null
-	vcom ../rtl/regblock.vhd > /dev/null
-	vcom ../rtl/wishbone.vhd  > /dev/null
-	vcom ../rtl/iicmb_m_wb.vhd > /dev/null
+	vcom -cover bcefst ../rtl/iicmb_int_pkg.vhd > /dev/null
+	vcom -cover bcefst ../rtl/iicmb_pkg.vhd > /dev/null
+	vcom -cover bcefst ../rtl/mbyte.vhd > /dev/null
+	vcom -cover bcefst ../rtl/mbit.vhd > /dev/null
+	vcom -cover bcefst ../rtl/bus_state.vhd > /dev/null
+	vcom -cover bcefst ../rtl/filter.vhd > /dev/null
+	vcom -cover bcefst ../rtl/conditioner.vhd > /dev/null
+	vcom -cover bcefst ../rtl/conditioner_mux.vhd > /dev/null
+	vcom -cover bcefst ../rtl/iicmb_m.vhd > /dev/null
+	vcom -cover bcefst ../rtl/regblock.vhd > /dev/null
+	vcom -cover bcefst ../rtl/wishbone.vhd  > /dev/null
+	vcom -cover bcefst ../rtl/iicmb_m_wb.vhd > /dev/null
 
 
 comp_bench_sil: comp_ncsu_pkg_sil comp_i2c_pkg_sil comp_wb_pkg_sil comp_i2cmb_env_sil

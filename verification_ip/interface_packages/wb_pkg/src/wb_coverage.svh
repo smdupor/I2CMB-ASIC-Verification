@@ -3,7 +3,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     wb_configuration configuration;
   		
 	// Wb coverage
-	bit[7:0] cmd_type;
+	logic[7:0] cmd_type;
 	bit[1:0] reg_type;
 	bit we;
 	//wb_mon_t mon_type;
