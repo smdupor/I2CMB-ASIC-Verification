@@ -5,7 +5,7 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	i2c_agent		i2c_agent_handle;
 	i2cmb_predictor         pred;
 	i2cmb_scoreboard        scbd;
-	coverage          coverage;
+	i2cmb_coverage          coverage;
 
 	// ****************************************************************************
 	// Construction, setters and getters
