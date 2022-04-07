@@ -66,6 +66,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   function new(string name = "", ncsu_component #(T) parent = null); 
     super.new(name,parent);
     wb_transaction_cg = new;
+	nacks = 1'bx;
   endfunction
 
   function void set_configuration(wb_configuration cfg);
