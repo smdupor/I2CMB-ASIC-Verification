@@ -82,11 +82,12 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     super.new(name,parent);
     wb_transaction_cg = new;
 	nacks = 1'bx;
-	expect_nacks = configuration.expect_nacks;
+	
   endfunction
 
   function void set_configuration(wb_configuration cfg);
     configuration = cfg;
+	expect_nacks = configuration.expect_nacks;
   endfunction
 
   virtual function void nb_put(T trans);
