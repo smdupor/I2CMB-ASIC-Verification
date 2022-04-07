@@ -17,6 +17,13 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     option.name = get_full_name();
 
 	explicit_wait_times:	coverpoint wait_time;
+	configuration_nacks: coverpoint configuration.expect_nacks
+	{
+		bins EXPECT_ACKS = {1'b0};
+		bins EXPECT_NACKS = {1'b1};
+	}
+	config_x_nacks:	cross configuration_nacks, nacks;
+	
 	nacks:		coverpoint nacks
 	{
 		bins ACKS = {1'b0};

@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 12:04:58 -->
+ <!-- Date: 1/1/0001 12:44:10 -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -442,6 +442,24 @@
 				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
 				<Cell>wb_transaction_cg::nacks</Cell>
 				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.1</Cell>
+				<Cell>Config Slave Connected/Disconnect</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request</Cell>
+				<Cell>wb_transaction_cg::configuration_nacks</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.2</Cell>
+				<Cell>Cross ConnSlv/ACK, DisconSlv/NACK</Cell>
+				<Cell>Ensure that both cases, connected leading to ACKS and disconnected leading to NACKS, are covered</Cell>
+				<Cell>wb_transaction_cg::config_x_nacks</Cell>
+				<Cell>Cross</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
