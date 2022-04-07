@@ -1,6 +1,6 @@
 export ECE745_PROJECT_HOME ?= $(PWD)/../../..
 
-GEN_TRANS_TYPE ?= i2c_transaction
+GTT ?= i2c_transaction
 TEST_SEED ?= 12345
 
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
@@ -42,8 +42,8 @@ optimize:
 compile: comp_bench comp_I2C_MB optimize
 
 simulate: 
-	#vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
-	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a;coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb;" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	#vsim  -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do"  +GTT=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do;run -a;coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb;" +GTT=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
 debug: clean compile simulate
 
 restart: clean compile
@@ -52,39 +52,39 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-	#vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	#vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GTT=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	#@echo "********************************************************************************************"
 	#@echo "  "
 	#diff transcript transcript.bak
 silent2: clean compile_sil
-	GEN_TRANS_TYPE ?= test_reg_crosscheck
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= test_reg_accessctrl
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= i2cmb_test_single_bus_default
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= i2cmb_test_multi_bus_default
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= i2cmb_test_multi_bus_max
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= i2cmb_test_multi_bus_range
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= test_arbitration
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= test_interrupt_cycling
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	GEN_TRANS_TYPE ?= test_hard_reset_insertion
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GEN_TRANS_TYPE); coverage save $(GEN_TRANS_TYPE).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := test_reg_crosscheck
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GT := test_reg_accessctrl
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := i2cmb_test_single_bus_default
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := i2cmb_test_multi_bus_default
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := i2cmb_test_multi_bus_max
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := i2cmb_test_multi_bus_range
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := test_arbitration
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := test_interrupt_cycling
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	GTT := test_hard_reset_insertion
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GTT=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 silent_super: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GTT=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
 	@echo "********************************************************************************************"
 	@echo "  "
 	diff transcript transcript.bak
 	
 silent_max_verb: clean compile_sil
-	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=DEBUG optimized_debug_top_tb
+	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GTT=$(GTT) +VERBOSITY_LEVEL=DEBUG optimized_debug_top_tb
 	#@echo "********************************************************************************************"
 	#@echo "  "
 	#diff transcript transcript.bak
@@ -127,4 +127,4 @@ report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
 
 show_coverage:
-	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do coverage_merge_and_report.do" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do coverage_merge_and_report.do" +GTT=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
