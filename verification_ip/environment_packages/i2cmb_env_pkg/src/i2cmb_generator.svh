@@ -15,8 +15,9 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
 			$fatal;
 		end
-		if(trans_name != "i2cmb_test_multi_bus_range") $fatal;
+		
 		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
+		if(trans_name != "i2cmb_test_multi_bus_range") $fatal;
 	endfunction
 
 	function void set_wb_agent(wb_agent agent);
