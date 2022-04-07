@@ -2,7 +2,7 @@ class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 
 	i2cmb_env_configuration  cfg;
 	i2cmb_environment        env;
-	generator        	  	 gen;
+	i2cmb_generator        	 gen;
 
 	// ****************************************************************************
 	// Create test members (configuration, environment, generator)

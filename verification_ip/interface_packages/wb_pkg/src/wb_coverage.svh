@@ -3,8 +3,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
     wb_configuration configuration;
   		
 	// Wb coverage
-	wb_cmd_t cmd_type;
-	wb_reg_t reg_type;
+	bit[7:0] cmd_type;
+	bit[1:0] reg_type;
 	bit we;
 	//wb_mon_t mon_type;
 	logic [7:0] data_type;
@@ -64,7 +64,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   endfunction
 
   virtual function void nb_put(T trans);
-	/*reg_type = trans.line;
+	reg_type = trans.line;
 	if(trans.cmd == I2C_WRITE || trans.cmd == READ_WITH_ACK ||
 		 trans.cmd == READ_WITH_NACK) begin 
 			 data_type = trans.word;
@@ -74,9 +74,9 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		cmd_type = trans.word;
 		data_type = NONE;
 	end
-	we = trans.we;
+	we = trans.write;
 
-    wb_transaction_cg.sample();*/
+    wb_transaction_cg.sample();
   endfunction
 
 endclass

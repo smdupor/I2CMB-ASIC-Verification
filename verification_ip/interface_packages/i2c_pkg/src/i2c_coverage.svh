@@ -11,24 +11,34 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
   	option.per_instance = 1;
     option.name = get_full_name();
 
-	/*data: coverpoint data
+
+		// TODO: Missing Bus Select
+	data: coverpoint data
 	{
-		bins data = {8'h00:8'hff};
+		//bins data = {8'h00:8'hff};
 	}
 	address: coverpoint address
 	{
-		bins address = {8'h00:8'hff};
-	}*/
+		//bins address = {8'h00:8'hff};
+	}
 	operation: coverpoint operation
 	{
 		bins I2_WRITE = {I2_WRITE};
 		bins I2_READ = {I2_READ};
 	}
+	operation_x_address: cross operation, address
+	{
+
+	}
+	operation_x_data: cross operation, data
+	{
+
+	}
   endgroup
 
   function new(string name = "", ncsu_component #(T) parent = null); 
     super.new(name,parent);
-  //  i2c_transaction_cg = new;
+    i2c_transaction_cg = new;
   endfunction
 
   function void set_configuration(i2c_configuration cfg);
@@ -38,10 +48,11 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
   virtual function void nb_put(T trans);
 	address = trans.address;
 	operation = trans.rw;
-
+	i2c_transaction_cg.sample();
+	
 	foreach(trans.data[i]) begin
 		data = trans.data[i];
-	   // i2c_transaction_cg.sample();
+	    i2c_transaction_cg.sample();
 	end
   endfunction
 
