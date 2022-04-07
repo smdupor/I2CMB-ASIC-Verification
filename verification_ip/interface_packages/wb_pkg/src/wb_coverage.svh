@@ -19,8 +19,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	explicit_wait_times:	coverpoint wait_time;
 	nacks:		coverpoint nacks
 	{
-		bins ACKS: {1'b0};
-		bins NACKS:{1'b1};
+		bins ACKS = {1'b0};
+		bins NACKS = {1'b1};
 	}
 	cmd_type:	coverpoint cmd_type
 	{
