@@ -105,3 +105,6 @@ merge_coverage:
 
 report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
+
+show_coverage:
+	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do coverage_merge_and_report.do" +GEN_TRANS_TYPE=$(GEN_TRANS_TYPE) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &

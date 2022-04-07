@@ -6,13 +6,15 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	logic [7:0] data;
 	logic [7:0] address;
 	i2c_op_t 	operation;
+	logic [3:0]  bus_sel;
 
   covergroup i2c_transaction_cg;
   	option.per_instance = 1;
     option.name = get_full_name();
 
 
-		// TODO: Missing Bus Select
+	bus_sel:	coverpoint bus_sel;
+	
 	data: coverpoint data
 	{
 		//bins data = {8'h00:8'hff};
@@ -49,7 +51,7 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	address = trans.address;
 	operation = trans.rw;
 	i2c_transaction_cg.sample();
-	
+
 	foreach(trans.data[i]) begin
 		data = trans.data[i];
 	    i2c_transaction_cg.sample();
