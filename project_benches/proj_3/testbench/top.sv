@@ -188,13 +188,15 @@ module top();
 			tst.set_global_verbosity(NCSU_MEDIUM);
 		end
 		else begin
+			$display(s);
+			//$fatal;
 			case(s)
 				"NONE":tst.set_global_verbosity(NCSU_NONE);
 				"LOW":tst.set_global_verbosity(NCSU_LOW);
 				"MEDIUM":tst.set_global_verbosity(NCSU_MEDIUM);
 				"HIGH":tst.set_global_verbosity(NCSU_HIGH);
 				"DEBUG":tst.set_global_verbosity(NCSU_DEBUG);
-				default: tst.set_global_verbosity(NCSU_MEDIUM);
+				default: tst.set_global_verbosity(NCSU_NONE);
 			endcase
 		end
 	endfunction

@@ -1,6 +1,7 @@
 class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
+		verbosity_level = global_verbosity_level;
 	endfunction
 
 	i2c_transaction lhs_trans_in[$], rhs_trans_in[$];
@@ -40,13 +41,13 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 		// Check the match on the transactions
 		lhs=lhs_trans_in.pop_front();
 		rhs=rhs_trans_in.pop_front();
-		ncsu_info("",{get_full_name()," nb_transport: expected transaction ",lhs.convert2string()},NCSU_LOW);
-		ncsu_info("",{get_full_name()," nb_put:       actual   transaction ",rhs.convert2string()},NCSU_LOW);
+		ncsu_info("",{get_full_name()," nb_transport: expected transaction ",lhs.convert2string()},NCSU_HIGH);
+		ncsu_info("",{get_full_name()," nb_put:       actual   transaction ",rhs.convert2string()},NCSU_HIGH);
 
 		// Check Passed
 		if ( lhs.compare(rhs) ) begin
 			passes.push_front(lhs);
-			ncsu_info("",{get_full_name()," transaction MATCH!"},NCSU_LOW);
+			ncsu_info("",{get_full_name()," transaction MATCH!"},NCSU_MEDIUM);
 		end
 
 		// Check Failed

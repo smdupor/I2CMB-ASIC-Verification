@@ -23,6 +23,8 @@ class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 	// Start run() of environment members 
 	// ****************************************************************************
 	virtual task run();
+		env.scbd.verbosity_level = global_verbosity_level;
+		gen.verbosity_level = global_verbosity_level;
 		env.run();
 		gen.run();
 		env.scbd.report_test_stats();

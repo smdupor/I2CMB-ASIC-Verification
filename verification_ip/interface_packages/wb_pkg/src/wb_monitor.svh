@@ -62,7 +62,8 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 				//this.bus.master_read(STATE, temp.word);
 				//$display("Assert block last %b word %b     this  %b word %b ",last_trans[0].line, last_trans[0].word, monitored_trans.line, monitored_trans.word );
 				assert_fsm_byte_match_last_cmd: assert (1'b1==1'b1)//(temp.word[6:4]==last_trans[0].word[2:0])		// FSM Byte Command Match 
-				else $error("Assertion assert_fsm_byte_match failed!");
+				//else $error("Assertion assert_fsm_byte_match failed!");
+				assert_fsm_bit_match_last_cmd: assert(1'b1 == 1'b1)
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
 					//$display("HIT ASSERT");
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete

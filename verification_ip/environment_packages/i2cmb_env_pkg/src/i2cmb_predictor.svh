@@ -19,6 +19,7 @@ class i2cmb_predictor extends ncsu_component;
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
+		verbosity_level = global_verbosity_level;
 	endfunction
 
 	function void set_configuration(i2cmb_env_configuration cfg);

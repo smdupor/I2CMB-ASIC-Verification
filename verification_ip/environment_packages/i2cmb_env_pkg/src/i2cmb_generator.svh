@@ -19,6 +19,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
 		if(trans_name != "i2cmb_test_multi_bus_range") $fatal;
 		trans_name = "i2c_transaction";
+		verbosity_level = global_verbosity_level;
 	endfunction
 
 	function void set_wb_agent(wb_agent agent);
@@ -41,7 +42,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 			foreach(wb_trans[i]) begin
 				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_MEDIUM);	// Print only pertinent WB transactions per project spec.
+				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH);	// Print only pertinent WB transactions per project spec.
 			end
 		join
 	endtask

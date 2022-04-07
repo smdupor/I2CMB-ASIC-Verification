@@ -1,6 +1,6 @@
 export ECE745_PROJECT_HOME ?= $(PWD)/../../..
 
-GTT ?= i2c_transaction
+GTT ?= i2cmb_test_multi_bus_range
 TEST_SEED ?= 12345
 
 include $(ECE745_PROJECT_HOME)/verification_ip/ncsu_pkg/Makefile
@@ -48,12 +48,15 @@ debug: clean compile simulate
 
 restart: clean compile
 
+run_gui: clean compile
+	vsim -i -classdebug -msgmode both -coverage -do "set NoQuitOnFinish 1;do wave.do;" optimized_debug_top_tb &	
+
 console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
 	#vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value i2cmb_test_multi_bus_range; coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=NONE optimized_debug_top_tb
 	#@echo "********************************************************************************************"
 	#@echo "  "
 	#diff transcript transcript.bak
