@@ -8,10 +8,13 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	bit we;
 	//wb_mon_t mon_type;
 	logic [7:0] data_type;
+	logic [3:0] wait_time;
 
   covergroup wb_transaction_cg;
   	option.per_instance = 1;
     option.name = get_full_name();
+
+	explicit_wait_times:	coverpoint wait_time;
 
 	cmd_type:	coverpoint cmd_type
 	{

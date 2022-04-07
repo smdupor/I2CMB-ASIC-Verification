@@ -4,6 +4,7 @@ class i2cmb_coverage extends ncsu_component#(.T(ncsu_transaction));
 	wb_transaction	 coverage_transaction;
 	bit enable_display;
 	int wb_str_del;
+	int i2c_str_del;
 
 	covergroup coverage_cg;
   		option.per_instance = 1;
@@ -14,7 +15,8 @@ class i2cmb_coverage extends ncsu_component#(.T(ncsu_transaction));
 		option.per_instance = 1;
     	option.name = get_full_name();
 	wb_stretch_delay:	coverpoint wb_str_del;
-
+	i2c_stretch_delay:	coverpoint i2c_str_del;
+	wb_x_i2c_delay: 	cross wb_stretch_delay, i2c_stretch_delay;
 
 	  endgroup
 
