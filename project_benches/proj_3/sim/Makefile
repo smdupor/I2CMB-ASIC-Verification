@@ -13,7 +13,6 @@ list:
 
 clean: 
 	rm -rf work *.wlf transcript
-	git pull
 
 comp_I2C_MB:
 	vcom -cover bcefst ../rtl/iicmb_int_pkg.vhd
