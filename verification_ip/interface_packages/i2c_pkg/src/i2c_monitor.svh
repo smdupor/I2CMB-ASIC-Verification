@@ -43,7 +43,7 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 			if(bus.stretch_qty > 0) monitored_trans.clock_stretch_qty = bus.stretch_qty;
 			else if(bus.read_stretch_qty > 0) monitored_trans.clock_stretch_qty = bus.read_stretch_qty;
 			counter +=1;
-
+			
 			agent.nb_put(monitored_trans);
 
 			print_local_transaction;

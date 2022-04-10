@@ -6,7 +6,7 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	logic [7:0] data;
 	logic [7:0] address;
 	i2c_op_t 	operation;
-	logic [3:0]  bus_sel;
+	int  bus_sel;
 	int stretch_qty;
 
   covergroup i2c_transaction_cg;
@@ -49,6 +49,13 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 		bins MEDIUM = {[8001:12000]};
 		bins LONG = {[12001:20000]};
 	}
+
+	bus_select: coverpoint bus_sel
+	{
+		bins BUSSES = {[0:15]};
+	}
+	stretch_x_bus_sel: cross stretch_qty, bus_select;
+
   endgroup
 
   function new(string name = "", ncsu_component #(T) parent = null); 
@@ -65,8 +72,10 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	address = trans.address;
 	operation = trans.rw;
 	stretch_qty = trans.clock_stretch_qty;
+	bus_sel = trans.selected_bus;
 
 	i2c_transaction_cg.sample();
+	clockstretch_cg.sample();
 
 	foreach(trans.data[i]) begin
 		data = trans.data[i];
