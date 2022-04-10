@@ -14,15 +14,18 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
     option.name = get_full_name();
 
 
-	bus_sel:	coverpoint bus_sel;
+	bus_sel:	coverpoint bus_sel
+	{
+		bins SELECTED[] = {[0:15]};
+	}
 	
 	data: coverpoint data
 	{
-		//bins data = {8'h00:8'hff};
+		bins data_nibbles[64] = {[0:255]};
 	}
 	address: coverpoint address
 	{
-		//bins address = {8'h00:8'hff};
+		bins address[] = {[0:127]};
 	}
 	operation: coverpoint operation
 	{
