@@ -9,6 +9,7 @@ package wb_pkg;
 
 	`include "src/wb_configuration.svh"
 	`include "src/wb_transaction.svh"
+	`include "src/wb_transaction_arb_loss.svh"
 	`include "src/wb_coverage.svh"
 	`include "src/wb_driver.svh"
 	`include "src/wb_monitor.svh"
