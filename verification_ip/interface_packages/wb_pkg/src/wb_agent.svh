@@ -36,6 +36,7 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 		monitor.build();
 		monitor.bus = this.bus;
 		coverage=new();
+		coverage.set_configuration(configuration);
 		connect_subscriber(coverage);
 	endfunction
 

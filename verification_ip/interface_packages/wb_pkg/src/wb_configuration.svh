@@ -5,6 +5,7 @@ class wb_configuration extends ncsu_configuration;
 	function new(string name="");
 		super.new(name);
 		this.collect_coverage=1'b0;
+		expect_nacks = 1'b0;
 	endfunction
 
 	virtual function string convert2string();

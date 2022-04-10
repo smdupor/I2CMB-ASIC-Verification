@@ -17,16 +17,21 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   	option.per_instance = 1;
     option.name = get_full_name();
 
-	explicit_wait_times:	coverpoint wait_time;
+	explicit_wait_times:	coverpoint wait_time
+	{
+		bins NO_WAIT = {0};
+		bins SHORT_LT_10ms = {[1:10]};
+		bins LONG_10ms_to_100ms = {[11:100]};
+	}
 
 	configuration_nacks: coverpoint expect_nacks
 	{
-		bins EXPECT_ACKS = {1'b0};
-		bins EXPECT_NACKS = {1'b1};
+		bins SLAVE_CONNECTED = {1'b0};
+		bins SLAVE_DISCONNECTED = {1'b1};
 	}
 	
 
-	nacks:		coverpoint nacks
+	nacks:	coverpoint nacks
 	{
 		bins ACKS = {1'b0};
 		bins NACKS = {1'b1};
@@ -34,7 +39,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	
 	config_x_nacks:	cross configuration_nacks, nacks
 	{
-
+		illegal_bins CONNxNACK = {SLAVE_CONNECTED, NACKS};
+		illegal_bins DISxACK = {SLAVE_DISCONNECTED, ACKS};
 	}
 
 	cmd_type:	coverpoint cmd_type
@@ -66,7 +72,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
 	data_type: 	coverpoint data_type
 	{
-		bins DATA_NIBBLES[64] = {[0:256]};
+		bins DATA_NIBBLES[64] = {[0:255]};
 	}
 
 	we_x_reg: cross we, reg_type
@@ -92,6 +98,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
   virtual function void nb_put(T trans);
 	reg_type = trans.line;
+	expect_nacks = configuration.expect_nacks;
 	if(trans.cmd == I2C_WRITE || trans.cmd == READ_WITH_ACK ||
 		 trans.cmd == READ_WITH_NACK) begin 
 			 data_type = trans.word;
@@ -100,7 +107,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		 end
 	else begin 
 		cmd_type = trans.word;
-		if(trans.line==CMDR && trans.read) nacks = trans.word[6];
+		if(trans.line==CMDR && !trans.write) nacks = trans.word[6];
 		else nacks = 1'bx;
 		data_type = NONE;
 	end
