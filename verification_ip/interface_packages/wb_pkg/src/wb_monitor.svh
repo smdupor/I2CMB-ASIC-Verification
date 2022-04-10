@@ -49,7 +49,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 			
 			check_command_assertions();
 				
-			agent.nb_put(monitored_trans);
+			if(!configuration.expect_arb_loss) agent.nb_put(monitored_trans);
 		end
 
 	endtask
@@ -57,6 +57,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 	task check_command_assertions();
 		static T temp;
 		temp =new;
+		if(configuration.expect_arb_loss) return;
 		if(last_trans[0] != null)
 		if(last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
 				//this.bus.master_read(STATE, temp.word);
@@ -71,6 +72,11 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 
 					assert_nacks_when_expected: assert(monitored_trans.word[6]==configuration.expect_nacks)
 					else $error("Assertion assert_nacks_when_expected failed!");
+
+					if(!configuration.expect_arb_loss) begin
+						assert_arbitration_won: assert(monitored_trans.word[5]==1'b0)
+						else $error("Assertion assert_arbitration_won failed!");
+					end
 
 				end 
 				if(last_trans[0].word == SET_I2C_BUS) begin

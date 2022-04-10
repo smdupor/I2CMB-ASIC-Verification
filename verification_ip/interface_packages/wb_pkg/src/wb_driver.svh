@@ -28,13 +28,14 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		bus.wait_for_reset();
 
 		if($cast(wb_arb_trans, trans)) begin 
+			$display("Found wb arb trasn");
 			bl_arb_put(wb_arb_trans);
-			$finish();
+		//	$finish();
 		end
 
 
 
-		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
+		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_LOW);
 
 		if(wb_trans.write) begin
 			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
@@ -56,11 +57,13 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	task bl_arb_put(wb_transaction_arb_loss wb_arb);
 		bit [7:0] buffer;
 		assert(wb_arb.write);
-		if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
-		if(wb_trans.line == DPR) bus.master_write(wb_trans.line, wb_trans.word);
-		while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
+		
+		if(wb_arb.line == CMDR || wb_arb.line == CSR) bus.master_write(wb_arb.line, wb_arb.cmd);
+		if(wb_arb.line == DPR) bus.master_write(wb_arb.line, wb_arb.word);
+		$display("Reach Arb Loss Loop");
+		#250 while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
 		assert_require_arb_loss_bit: assert(buffer[5] == 1'b1)
-		else $error("Assertion assert_require_arb_loss_bit failed!");
+		else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);
 
 	endtask
 endclass

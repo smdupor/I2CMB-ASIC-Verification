@@ -59,7 +59,7 @@ interface i2c_if       #(
 
 	int stretch_qty=0;
 	int read_stretch_qty=0;
-	int arbitration_wait_cycles=10000;
+	int arbitration_wait_cycles=1000000;
 
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
@@ -202,9 +202,24 @@ interface i2c_if       #(
 	// Release this state after arbitration_wait_cycles system cycles
 	// ****************************************************************************
 	task force_arbitration_loss();
-		sda_drive[bus_selector] <= 1'b1;
-		repeat(arbitration_wait_cycles) @(posedge clk_i);
+		//wait(driver_interrupt == RAISE_RESTART || driver_interrupt == RAISE_START)
+		//@(posedge scl_i);
+		@(posedge scl_i);
+		repeat(2) begin
+			@(posedge scl_i) sda_drive <= 16'hff;
+			@(negedge scl_i);
+		end
+		@(posedge scl_i);
+		repeat(2) begin
+			@(posedge scl_i) sda_drive <= 16'hff;
+			@(negedge scl_i);
+		end
+			//@(negedge clk_i) sda_drive <= 16'hff;
+		//end
+		//scl_drive <= 16'hff;
+		
 		sda_drive[bus_selector] <= 1'bz;
+		scl_drive[bus_selector] <= 1'bz;
 	endtask
 
 	//_____________________________________________________________________________________\\
