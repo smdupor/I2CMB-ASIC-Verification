@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 1:37:27 PM -->
+ <!-- Date: 1/1/0001 1:59:28 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -190,7 +190,7 @@
 				<Cell>In the presence of a simulated multi-master, expect DUT to lose arbitration when BFM writes 1&#39;b1 to sda before master is able to capture bus</Cell>
 				<Cell>test_arbitration</Cell>
 				<Cell>test</Cell>
-				<Cell>1</Cell>
+				<Cell>2</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
@@ -330,24 +330,6 @@
 			</Row>
 			<Row>
 				<Cell>7</Cell>
-				<Cell>FSM  Testing</Cell>
-				<Cell></Cell>
-				<Cell></Cell>
-				<Cell></Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>7.1</Cell>
-				<Cell>Bit-Level FSM</Cell>
-				<Cell>Expect bit-level FSM values in FSM Register to match most-recently-issued bit-level transaction</Cell>
-				<Cell>assert_fsm_bit_match_last_cmd</Cell>
-				<Cell>Assertion</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>8</Cell>
 				<Cell>FSM Testing and Code Coverage</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -356,7 +338,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>8.1</Cell>
+				<Cell>7.1</Cell>
 				<Cell>RTL Core ALL stmt, brnch, fsm, trans, expr</Cell>
 				<Cell>Require that all DUT units have 100% statement coverage and 100% branch coverage</Cell>
 				<Cell>/top/DUT</Cell>
@@ -365,16 +347,16 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>8.2</Cell>
+				<Cell>7.2</Cell>
 				<Cell>FSM Covg all State and Transition</Cell>
 				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT</Cell>
 				<Cell>/top/DUT</Cell>
 				<Cell>FSM</Cell>
-				<Cell>2</Cell>
+				<Cell>3</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9</Cell>
+				<Cell>8</Cell>
 				<Cell>I2C Protocol Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -383,7 +365,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.1</Cell>
+				<Cell>8.1</Cell>
 				<Cell>I2C Protocol Covergroup</Cell>
 				<Cell>Ensure all coverpoints within primary I2C Protocol covergroup reach full coverage</Cell>
 				<Cell>i2c_transaction_cg</Cell>
@@ -392,7 +374,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.2</Cell>
+				<Cell>8.2</Cell>
 				<Cell>I2C Addresses</Cell>
 				<Cell>Ensure all addresses have been selected and used for successful transfers</Cell>
 				<Cell>i2c_transaction_cg::address</Cell>
@@ -401,7 +383,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.3</Cell>
+				<Cell>8.3</Cell>
 				<Cell>I2C Data Values</Cell>
 				<Cell>Ensure all possible data values have been selected and used for successful transfer</Cell>
 				<Cell>i2c_transaction_cg::data</Cell>
@@ -410,7 +392,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.4</Cell>
+				<Cell>8.4</Cell>
 				<Cell>I2C Bus Selection</Cell>
 				<Cell>Ensure all available data busses have been properly tested</Cell>
 				<Cell>i2c_transaction_cg::bus_sel</Cell>
@@ -419,7 +401,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10</Cell>
+				<Cell>9</Cell>
 				<Cell>WB Protocol Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -428,7 +410,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10.1</Cell>
+				<Cell>9.1</Cell>
 				<Cell>WB Command Coverage</Cell>
 				<Cell>Ensure that all possible WB transactions and commands have been used as part of overall testplan</Cell>
 				<Cell>wb_transaction_cg::cmd_type</Cell>
@@ -437,7 +419,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10.2</Cell>
+				<Cell>9.2</Cell>
 				<Cell>WB Register Coverage</Cell>
 				<Cell>TODO TODO TODO</Cell>
 				<Cell>wb_transaction_cg::reg_type</Cell>
@@ -446,7 +428,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11</Cell>
+				<Cell>10</Cell>
 				<Cell>Connected and Disconnected Slave</Cell>
 				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
 				<Cell></Cell>
@@ -455,7 +437,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.1</Cell>
+				<Cell>10.1</Cell>
 				<Cell>Config Slave Connected or Disconnected</Cell>
 				<Cell>Expect NACK bit raised when no slave response to master request</Cell>
 				<Cell>wb_transaction_cg::configuration_nacks</Cell>
@@ -464,7 +446,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.2</Cell>
+				<Cell>10.2</Cell>
 				<Cell>Cross ConnSlv-ACK, DisconSlv-NACK</Cell>
 				<Cell>Ensure that both cases, connected leading to ACKS and disconnected leading to NACKS, are covered</Cell>
 				<Cell>wb_transaction_cg::config_x_nacks</Cell>
@@ -473,7 +455,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.3</Cell>
+				<Cell>10.3</Cell>
 				<Cell>Master Receipt of ACKs and NACKs</Cell>
 				<Cell>Ensure that WB interface accurately reports both ACKs and NACKs via CMDR[NACK] when expected.</Cell>
 				<Cell>wb_transaction_cg::nacks</Cell>
