@@ -69,7 +69,8 @@ module top();
 		.rst_i(rst),
 		.scl_i(scl), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
 		.sda_i(sda), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
-		.sda_o(sda) //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
+		.sda_o(sda), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
+		.scl_o(scl)
 	);
 
 	// ****************************************************************************
