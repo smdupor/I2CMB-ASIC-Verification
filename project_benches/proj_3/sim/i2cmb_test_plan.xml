@@ -1,12 +1,12 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 11:17:13 AM -->
+ <!-- Date: 1/1/0001 1:31:40 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
 			 <!-- I2CMB Testplan -->
 			<Row>
 				<Cell>1</Cell>  <!-- # -->
-				<Cell>Register </Cell>  <!-- Section -->
+				<Cell>Register Tests</Cell>  <!-- Section -->
 				<Cell></Cell>  <!-- Description -->
 				<Cell></Cell>  <!-- Link -->
 				<Cell></Cell>  <!-- Type -->
@@ -126,15 +126,6 @@
 				<Cell>FSMR Default</Cell>
 				<Cell>After &quot;soft reset&quot; expect FSMR == 8&#39;h00</Cell>
 				<Cell>assert_fsmr_default_on_enable</Cell>
-				<Cell>Assertion</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>1.5</Cell>
-				<Cell>FSM State Reg</Cell>
-				<Cell>Expect Byte-Level FSM Register to match most-recently-passed command on completion</Cell>
-				<Cell>assert_fsm_byte_match_last_cmd</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -478,6 +469,15 @@
 				<Cell>Ensure that both cases, connected leading to ACKS and disconnected leading to NACKS, are covered</Cell>
 				<Cell>wb_transaction_cg::config_x_nacks</Cell>
 				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.3</Cell>
+				<Cell>Master Receipt of ACKs and NACKs</Cell>
+				<Cell>Ensure that WB interface accurately reports both ACKs and NACKs via CMDR[NACK] when expected.</Cell>
+				<Cell>wb_transaction_cg::nacks</Cell>
+				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
