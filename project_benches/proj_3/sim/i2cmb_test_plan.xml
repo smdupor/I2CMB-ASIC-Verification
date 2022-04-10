@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 12:44:10 -->
+ <!-- Date: 1/1/0001 9:28:20 AM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -213,7 +213,7 @@
 			</Row>
 			<Row>
 				<Cell>4</Cell>
-				<Cell>Clock-Stretching</Cell>
+				<Cell>Clock-Stretching/Waits</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -222,33 +222,33 @@
 			</Row>
 			<Row>
 				<Cell>4.1</Cell>
-				<Cell>Master-End Clock Stretching</Cell>
-				<Cell>Expect transfers to complete when TB delays subsequent operations legally from the WB-interface</Cell>
-				<Cell>clockstretch_cg::wb_stretch_delay</Cell>
+				<Cell>Slave-End Clock Stretching  (Any Bus)</Cell>
+				<Cell>Expect transfers to complete when TB delays subsequent operations legally from the I2c-interface via I2c  Clock Stretching (scl held low at legal times (after receive address/data bit, after transmit ACK/NACK, Before transmit &quot;read&quot; data bit)</Cell>
+				<Cell>clockstretch_cg::i2c_stretch_delay</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
+				<Cell>4.1.1</Cell>
+				<Cell>Slave-End Clock Stretching  (All Busses)</Cell>
+				<Cell>Expect clockstretching to apply and work as described in 4.1, across all available busses</Cell>
+				<Cell>clockstretch_cg::stretch_x_bus_sel</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
 				<Cell>4.2</Cell>
-				<Cell>Slave-End Clock Stretching</Cell>
-				<Cell>Expect transfers to complete when TB delays subsequent operations legally from the I2c-interface</Cell>
-				<Cell>clockstretch_cg::wb_stretch_delay</Cell>
+				<Cell>Master-End Upstream Delays</Cell>
+				<Cell>Expect transfers to complete when TB delays operations on the WB end of the DUT, via stalling continued commands after a completed read or write. REQUIRE no extraneous starts/stops or clock cycles during these stalls.</Cell>
+				<Cell>wait_cg::wb_stretch_delay</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
 				<Cell>4.3</Cell>
-				<Cell>Both-End Clock Stretching</Cell>
-				<Cell>Expect transfers to complete when TB delays subsequent operations legally from both interfaces</Cell>
-				<Cell>clockstretch_cg::wb_x_i2c_delay</Cell>
-				<Cell>Cross</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>4.3.1</Cell>
 				<Cell>Wait Commands</Cell>
 				<Cell>Expect transfers to complete when explicit wait commands issues to DUT with subsequent operations</Cell>
 				<Cell>wb_transaction_cg::explicit_wait_times</Cell>
