@@ -60,7 +60,7 @@ silent: clean compile_sil
 	#@echo "  "
 	#diff transcript transcript.bak
 silent2: clean compile_sil
-	rm *.ucdb
+	#rm *.ucdb
 	$(eval GTT := test_reg_crosscheck)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval GTT := test_reg_accessctrl)
@@ -131,3 +131,9 @@ report_coverage:
 
 show_coverage:
 	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do coverage_merge_and_report.do" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+
+clean_ucdb:
+	rm *.ucdb
+
+clean_covg: clean_ucdb convert_testplan
+	rm -rf ./covhtmlreport/

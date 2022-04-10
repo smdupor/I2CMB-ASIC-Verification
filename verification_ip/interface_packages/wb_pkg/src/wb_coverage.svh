@@ -66,7 +66,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
 	data_type: 	coverpoint data_type
 	{
-		//bins  {8'h00:8'hff};
+		bins DATA_NIBBLES[64] = {[0:256]};
 	}
 
 	we_x_reg: cross we, reg_type
@@ -100,7 +100,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		 end
 	else begin 
 		cmd_type = trans.word;
-		nacks = trans.word[6];
+		if(trans.line==CMDR && trans.read) nacks = trans.word[6];
+		else nacks = 1'bx;
 		data_type = NONE;
 	end
 	we = trans.write;
