@@ -20,8 +20,9 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	explicit_wait_times:	coverpoint wait_time
 	{
 		bins NO_WAIT = {0};
-		bins SHORT_LT_10ms = {[1:10]};
-		bins LONG_10ms_to_100ms = {[11:100]};
+		bins SHORT_0_to_5ms = {[1:5]};
+		bins MED_6ms_to_10ms = {[6:10]};
+		bins LONG_11ms_to_15ms = {[11:15]};
 	}
 
 	configuration_nacks: coverpoint expect_nacks
@@ -39,8 +40,8 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	
 	config_x_nacks:	cross configuration_nacks, nacks
 	{
-		illegal_bins CONNxNACK = {SLAVE_CONNECTED, NACKS};
-		illegal_bins DISxACK = {SLAVE_DISCONNECTED, ACKS};
+		illegal_bins CONNxNACK = binsof(configuration_nacks.SLAVE_CONNECTED) && binsof(nacks.NACKS);
+		illegal_bins DISxACK = binsof(configuration_nacks.SLAVE_DISCONNECTED) && binsof(nacks.ACKS);
 	}
 
 	cmd_type:	coverpoint cmd_type
