@@ -52,9 +52,9 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 
 	bus_select: coverpoint bus_sel
 	{
-		bins BUSSES = {[0:15]};
+		bins BUSSES[] = {[0:15]};
 	}
-	stretch_x_bus_sel: cross stretch_qty, bus_select;
+	stretch_x_bus_sel: cross i2c_stretch_delay, bus_select;
 
   endgroup
 
