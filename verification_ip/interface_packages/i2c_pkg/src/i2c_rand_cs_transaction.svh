@@ -1,17 +1,21 @@
-class i2c_transaction extends ncsu_transaction;
+class i2c_rand_cs_transaction extends i2c_transaction;
 
-`ncsu_register_object(i2c_transaction)
+`ncsu_register_object(i2c_rand_cs_transaction)
 
 	bit [7:0] address;
 	bit [7:0] data [];
 	int selected_bus;
-	int clock_stretch_qty;
+	rand int clock_stretch_qty;
 	i2c_op_t rw;
 
 	// ****************************************************************************
-	// Constraints
+	// Constraints and Randomization
 	// ****************************************************************************
+	constraint clk_strtch_range{clock_stretch_qty dist{0 :/ 5, [5:8]:/3, [10:12]:/5};}
 
+	function void post_randomize();
+		clock_stretch_qty *= 1000;
+	endfunction
 
 	// ****************************************************************************
 	// Construction, setters and getters

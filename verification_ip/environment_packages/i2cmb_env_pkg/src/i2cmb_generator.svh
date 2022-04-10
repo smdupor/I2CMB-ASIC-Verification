@@ -18,7 +18,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		
 		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
 		if(trans_name != "i2cmb_test_multi_bus_range") $fatal;
-		trans_name = "i2c_transaction";
+		trans_name = "i2c_rand_cs_transaction";
 		verbosity_level = global_verbosity_level;
 	endfunction
 
@@ -107,6 +107,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 				--k;
 				issue_stop_command();
 			end
+			i2c_trans[i].randomize();
 		end
 	endfunction
 

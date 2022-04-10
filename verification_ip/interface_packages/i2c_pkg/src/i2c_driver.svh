@@ -3,7 +3,7 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 	virtual i2c_if bus;
 	i2c_configuration configuration;
 	i2c_transaction i2c_trans;
-
+	i2c_rand_cs_transaction i2c_rand_cs;
 
 	function new(string name = "", ncsu_component_base parent = null);
 		super.new(name,parent);
@@ -18,6 +18,11 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 		bit transfer_complete;
 
 		//$display({get_full_name()," ",trans.convert2string()});
+		if($cast(i2c_rand_cs, trans)) begin
+			if(i2c_rand_cs.rw == I2_WRITE) bus.stretch_qty = i2c_rand_cs.clock_stretch_qty;
+			else bus.read_stretch_qty = i2c_rand_cs.clock_stretch_qty;
+			$display("Clockstr qty %0d", i2c_rand_cs.clock_stretch_qty);
+		end
 
 		i2c_trans = trans;
 		bus.configure(i2c_trans.address, i2c_trans.selected_bus);

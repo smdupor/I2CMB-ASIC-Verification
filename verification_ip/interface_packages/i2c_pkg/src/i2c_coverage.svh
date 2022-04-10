@@ -7,6 +7,7 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	logic [7:0] address;
 	i2c_op_t 	operation;
 	logic [3:0]  bus_sel;
+	int stretch_qty;
 
   covergroup i2c_transaction_cg;
   	option.per_instance = 1;
@@ -38,9 +39,22 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	}
   endgroup
 
+	 covergroup clockstretch_cg;
+		option.per_instance = 1;
+    	option.name = get_full_name();
+	i2c_stretch_delay:	coverpoint stretch_qty
+	{
+		bins DISABLED = {0};
+		bins SHORT = {[5000:8000]};
+		bins MEDIUM = {[8001:12000]};
+		bins LONG = {[12001:20000]};
+	}
+  endgroup
+
   function new(string name = "", ncsu_component #(T) parent = null); 
     super.new(name,parent);
     i2c_transaction_cg = new;
+	clockstretch_cg = new;
   endfunction
 
   function void set_configuration(i2c_configuration cfg);
@@ -50,6 +64,8 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
   virtual function void nb_put(T trans);
 	address = trans.address;
 	operation = trans.rw;
+	stretch_qty = trans.clock_stretch_qty;
+
 	i2c_transaction_cg.sample();
 
 	foreach(trans.data[i]) begin
