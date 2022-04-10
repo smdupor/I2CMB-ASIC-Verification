@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 10:58:52 AM -->
+ <!-- Date: 1/1/0001 11:17:13 AM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -207,6 +207,15 @@
 				<Cell>CMDR[ARB_LOST]</Cell>
 				<Cell>Require &quot;Arbitration Lost&quot; bit in the CMDR to rise when master has lost arbitration negotiation</Cell>
 				<Cell>assert_require_arb_loss_bit</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.2</Cell>
+				<Cell>Arbitration Won CMDR[ARB_LOST]</Cell>
+				<Cell>In the presence of a real multi-master configuration, expect Arbitration lost bit of CMDR to be low upon arbitration win</Cell>
+				<Cell>assert_arbitration_won</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
