@@ -4,6 +4,7 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 	i2c_configuration configuration;
 	i2c_transaction i2c_trans;
 	i2c_rand_cs_transaction i2c_rand_cs;
+	i2c_arb_loss_transaction i2c_arb_loss;
 
 	function new(string name = "", ncsu_component_base parent = null);
 		super.new(name,parent);
@@ -24,6 +25,7 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 			$display("Clockstr qty %0d", i2c_rand_cs.clock_stretch_qty);
 		end
 
+		if(!$cast(i2c_arb_loss, trans)) begin
 		i2c_trans = trans;
 		bus.configure(i2c_trans.address, i2c_trans.selected_bus);
 
@@ -31,7 +33,10 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 			bus.wait_for_i2c_transfer(i2c_trans.rw,i2c_driver_buffer);
 			if(i2c_trans.rw == I2_READ) bus.provide_read_data(i2c_trans.data, transfer_complete);
 		join
-
+		end
+		else begin
+			bus.force_arbitration_loss();
+		end
 	endtask
 
 endclass
