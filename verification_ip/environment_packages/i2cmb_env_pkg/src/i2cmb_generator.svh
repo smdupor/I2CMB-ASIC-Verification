@@ -11,7 +11,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
-		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
+		/*if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
 			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
 			$fatal;
 		end
@@ -23,15 +23,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		else if(trans_name != "i2cmb_test_multi_bus_range" || trans_name == "i2c_arb_loss_transaction") begin $fatal; end
 		else begin
 			trans_name = "i2c_rand_cs_transaction";
-		end
+		end*/
 		verbosity_level = global_verbosity_level;
 	endfunction
 
-	function void set_wb_agent(wb_agent agent);
+	virtual function void set_wb_agent(wb_agent agent);
 		this.wb_agent_handle = agent;
 	endfunction
 
-	function void set_i2c_agent(i2c_agent agent);
+	virtual function void set_i2c_agent(i2c_agent agent);
 		this.i2c_agent_handle = agent;
 	endfunction
 
@@ -58,7 +58,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		join
 	endtask
 	
-	function void generate_arb_loss_flow();
+	virtual function void generate_arb_loss_flow();
 		int j=64;
 		int k=63;
 		int i=0;
@@ -94,7 +94,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	//				READ 100 -> 131
 	// 				WRITE/READ Alternating 64->127 interleave 63 -> 0 
 	// ****************************************************************************
-	function void generate_directed_project_2_test_transactions();
+	virtual function void generate_directed_project_2_test_transactions();
 		int i,j,k;
 		// Transaction to enable the DUT with interrupts enabled
 		enable_dut_with_interrupt();
@@ -174,7 +174,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	//			writes and reads, and used later in the generator to create 
 	//			the requisite wb_transactions.
 	// ****************************************************************************
-	function void create_explicit_data_series(input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
+	virtual function void create_explicit_data_series(input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
 		bit [7:0] init_data[$];
 		init_data.delete();
 
