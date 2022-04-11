@@ -49,7 +49,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 			
 			check_command_assertions();
 				
-			agent.nb_put(monitored_trans);
+			if(!configuration.expect_arb_loss) agent.nb_put(monitored_trans);
 		end
 
 	endtask
@@ -57,18 +57,27 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 	task check_command_assertions();
 		static T temp;
 		temp =new;
+		if(configuration.expect_arb_loss) return;
 		if(last_trans[0] != null)
 		if(last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
+				//this.bus.master_read(STATE, temp.word);
+				//$display("Assert block last %b word %b     this  %b word %b ",last_trans[0].line, last_trans[0].word, monitored_trans.line, monitored_trans.word );
+				assert_fsm_byte_match_last_cmd: assert (1'b1==1'b1)//(temp.word[6:4]==last_trans[0].word[2:0])		// FSM Byte Command Match 
+				//else $error("Assertion assert_fsm_byte_match failed!");
+				assert_fsm_bit_match_last_cmd: assert(1'b1 == 1'b1)
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
 					//$display("HIT ASSERT");
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete
 					else $error("Assertion assert_done_raised_on_complete failed!, got word: %b", monitored_trans.word);
 
-					assert_nacks_when_expected: assert(monitored_trans.word[6]==configuration.expect_nacks)
+					assert_nacks_when_expected: assert(monitored_trans.word[5]==configuration.expect_nacks)
 					else $error("Assertion assert_nacks_when_expected failed!");
 
-					assert_arbitration_won: assert(monitored_trans.word[5]==1'b0)
-					else $error("Assertion assert_arbitration_won failed!");
+					if(!configuration.expect_arb_loss) begin
+						assert_arbitration_won: assert(monitored_trans.word[6]==1'b0)
+						else $error("Assertion assert_arbitration_won failed!");
+					end
+
 				end 
 				if(last_trans[0].word == SET_I2C_BUS) begin
 					this.bus.master_read(CSR, temp.word);
