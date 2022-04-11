@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 4:45:30 PM -->
+ <!-- Date: 1/1/0001 4:53:15 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -366,15 +366,6 @@
 			</Row>
 			<Row>
 				<Cell>9.1</Cell>
-				<Cell>I2C Protocol Covergroup</Cell>
-				<Cell>Ensure all coverpoints within primary I2C Protocol covergroup reach full coverage</Cell>
-				<Cell>i2c_transaction_cg</Cell>
-				<Cell>Covergroup</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>9.2</Cell>
 				<Cell>I2C Addresses</Cell>
 				<Cell>Ensure all addresses have been selected and used for successful transfers</Cell>
 				<Cell>i2c_transaction_cg::address</Cell>
@@ -383,7 +374,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.3</Cell>
+				<Cell>9.2</Cell>
 				<Cell>I2C Data Values</Cell>
 				<Cell>Ensure all possible data values have been selected and used for successful transfer</Cell>
 				<Cell>i2c_transaction_cg::data</Cell>
@@ -392,7 +383,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.4</Cell>
+				<Cell>9.3</Cell>
 				<Cell>I2C Bus Selection</Cell>
 				<Cell>Ensure all available data busses have been properly tested</Cell>
 				<Cell>i2c_transaction_cg::bus_sel</Cell>
@@ -401,7 +392,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.5</Cell>
+				<Cell>9.4</Cell>
 				<Cell>I2C Operation Type</Cell>
 				<Cell>Ensure both reads and writes are covered</Cell>
 				<Cell>i2c_transaction_cg::operation</Cell>
@@ -410,7 +401,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.6</Cell>
+				<Cell>9.5</Cell>
 				<Cell>I2C Message Size (Single and Multi-Byte)</Cell>
 				<Cell>Ensure DUT properly handles Zero-data, single-byte, and multi-byte transactions</Cell>
 				<Cell>i2c_transaction_cg::msg_size</Cell>
@@ -419,7 +410,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.7</Cell>
+				<Cell>9.6</Cell>
 				<Cell>I2C START and RE-START</Cell>
 				<Cell>Ensure that DUT properly handles both START (from idle) and RE-START (From transaction-in-progress) initiations of new transactions.</Cell>
 				<Cell>predictor_cg::start_or_restart</Cell>
@@ -428,7 +419,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.8</Cell>
+				<Cell>9.7</Cell>
 				<Cell>Operation Vs Msg Size</Cell>
 				<Cell>Ensure that all message sizes are used in both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::msg_size_x_operation</Cell>
@@ -437,7 +428,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.9</Cell>
+				<Cell>9.8</Cell>
 				<Cell>Operation Vs Data</Cell>
 				<Cell>Ensure that all legal data values are covered across  both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::operation_x_data</Cell>
@@ -446,7 +437,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.10</Cell>
+				<Cell>9.9</Cell>
 				<Cell>Operation  Vs Address</Cell>
 				<Cell>Ensure that all valid address values are covered for  both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::operation_x_address</Cell>
@@ -455,7 +446,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.11</Cell>
+				<Cell>9.10</Cell>
 				<Cell>Operation vs Start-Restart</Cell>
 				<Cell>Ensure that start-restart conditions are covered for both read and write transaction types.</Cell>
 				<Cell>predictor_cg::restart_x_operation</Cell>
