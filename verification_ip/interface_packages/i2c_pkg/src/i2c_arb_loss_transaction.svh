@@ -23,7 +23,7 @@ class i2c_arb_loss_transaction extends i2c_transaction;
 	// ****************************************************************************
 	function new(string name="");
 		super.new(name);
-
+		lose_arb = 1'b1;
 	endfunction
 
 	function void set(bit [7:0] address,	bit [7:0] data [],i2c_op_t rw, int selected_bus);

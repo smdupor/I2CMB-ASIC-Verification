@@ -1,6 +1,7 @@
 class wb_configuration extends ncsu_configuration;
 	bit collect_coverage;
 	bit expect_nacks;
+	bit expect_arb_loss;
 	
 	function new(string name="");
 		super.new(name);

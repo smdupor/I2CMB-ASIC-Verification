@@ -59,7 +59,8 @@ interface i2c_if       #(
 
 	int stretch_qty=0;
 	int read_stretch_qty=0;
-	int arbitration_wait_cycles=10000;
+	int arbitration_wait_cycles=1000000;
+	bit cause_arbitration_loss;
 
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
@@ -202,9 +203,24 @@ interface i2c_if       #(
 	// Release this state after arbitration_wait_cycles system cycles
 	// ****************************************************************************
 	task force_arbitration_loss();
-		sda_drive[bus_selector] <= 1'b1;
-		repeat(arbitration_wait_cycles) @(posedge clk_i);
+		//wait(driver_interrupt == RAISE_RESTART || driver_interrupt == RAISE_START)
+		//@(posedge scl_i);
+		@(posedge scl_i);
+		repeat(7) begin
+			@(posedge scl_i) sda_drive <= 16'h00;
+			@(negedge scl_i);
+		end
+		@(posedge scl_i);
+		repeat(7) begin
+			@(posedge scl_i) sda_drive <= 16'h00;
+			@(negedge scl_i);
+		end
+			//@(negedge clk_i) sda_drive <= 16'hff;
+		//end
+		//scl_drive <= 16'hff;
+		
 		sda_drive[bus_selector] <= 1'bz;
+		scl_drive[bus_selector] <= 1'bz;
 	endtask
 
 	//_____________________________________________________________________________________\\
@@ -238,7 +254,7 @@ interface i2c_if       #(
 		static bit [7:0] write_buf[$];
 		// Read Address and opcode from serial bus
 		for(int i=MSB;i>=LSB;i--) begin
-			@(posedge scl_i[bus_selector]);
+			@(posedge scl_i[bus_selector]) if(cause_arbitration_loss) force_arbitration_loss();
 			driver_buffer[i] = sda_i[bus_selector];
 			@(negedge scl_i[bus_selector])begin
 				clockstretch();
