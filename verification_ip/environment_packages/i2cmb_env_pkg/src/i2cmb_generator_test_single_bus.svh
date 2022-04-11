@@ -1,10 +1,11 @@
-class i2cmb_generator_single_bus extends i2cmb_generator;
-`ncsu_register_object(i2cmb_generator_single_bus);
+class i2cmb_generator_test_single_bus extends i2cmb_generator;
+`ncsu_register_object(i2cmb_generator_test_single_bus);
 	// ****************************************************************************
 	// Constructor, setters and getters
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
+		$finish;
 		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
 			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
 			$fatal;

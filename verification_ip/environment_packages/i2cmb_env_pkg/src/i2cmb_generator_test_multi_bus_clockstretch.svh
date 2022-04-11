@@ -1,6 +1,6 @@
-class i2cmb_generator_multi_bus_clockstretch extends i2cmb_generator;
+class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 	
-	`ncsu_register_object(i2cmb_generator_multi_bus_clockstretch);
+	`ncsu_register_object(i2cmb_generator_test_multi_bus_clockstretch);
 	
 
 	// ****************************************************************************

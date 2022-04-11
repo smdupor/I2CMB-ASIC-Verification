@@ -41,10 +41,10 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 		end
 		end
 		else begin
-			if(!arb_loss_complete) begin
+			//if(!arb_loss_complete) begin
 					bus.force_arbitration_loss();
-					arb_loss_complete=1'b1;
-			end
+			//		arb_loss_complete=1'b1;
+			//end
 		end
 	endtask
 

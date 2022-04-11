@@ -108,7 +108,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		 end
 	else begin 
 		cmd_type = trans.word;
-		if(trans.line==CMDR && !trans.write) nacks = trans.word[6];
+		if(trans.line==CMDR && !trans.write) nacks = trans.word[5];
 		else nacks = 1'bx;
 		data_type = NONE;
 	end

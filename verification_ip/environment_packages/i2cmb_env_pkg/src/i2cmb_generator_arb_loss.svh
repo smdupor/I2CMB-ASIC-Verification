@@ -39,9 +39,12 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		// Iterate through all generated transactions, passing each down to respective agents.
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-			foreach(wb_trans[i]) begin
+			begin foreach(wb_trans[i]) begin
 				wb_agent_handle.bl_put(wb_trans[i]);
+				//if(i==15) #1000 $finish;
 				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH);	// Print only pertinent WB transactions per project spec.
+			end
+			# 1000 $finish;
 			end
 		join
 	endtask
@@ -50,30 +53,34 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		int j=64;
 		int k=63;
 		int i=0;
-		
-			$cast(i2c_trans[i],ncsu_object_factory::create(trans_name));
+			
+		for(i=0;i<=15;++i) begin
+			enable_dut_with_interrupt();
+			issue_wait(1);
+			$cast(trans,ncsu_object_factory::create(trans_name));
 		// Transaction to enable the DUT with interrupts enabled
-		enable_dut_with_interrupt();
+	
 			
 			// pick  a bus, sequentially picking a new bus for each major transaction
-			i2c_trans[i].selected_bus=0;
+			trans.selected_bus=i;
 			//arb_loss_select_bus
-			select_I2C_bus(i2c_trans[i].selected_bus);
+			select_I2C_bus(trans.selected_bus);
 			
 			// Send a start command
 			//arb_loss_start();
 			issue_start_command();
 			// pick an address
-			i2c_trans[i].address = 127;
+			trans.address = 127;
 
 			// WRITE ALL (Write 0 to 31 to remote Slave)
-			if(i==0) begin
-				//transmit_address_req_write(i2c_trans[i].address);
+			//if(i==0) begin
+				//transmit_address_req_write(trans.address);
 				//for(j=0;j<=31;j++) write_data_byte(byte'(j));
 				//create_explicit_data_series(0, 31, i, I2_WRITE);
-				arb_loss_address_req_write(i2c_trans[i].address);
-				issue_stop_command();
-			end
+				arb_loss_address_req_write(trans.address);
+				disable_dut();
+			//end
+		end
 	endfunction
 
 endclass

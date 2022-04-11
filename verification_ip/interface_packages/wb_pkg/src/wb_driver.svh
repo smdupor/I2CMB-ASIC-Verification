@@ -30,6 +30,7 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		if($cast(wb_arb_trans, trans)) begin 
 			$display("Found wb arb trasn");
 			bl_arb_put(wb_arb_trans);
+			return;
 		//	$finish();
 		end
 
@@ -68,6 +69,6 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		bus.master_read(CSR, buffer);
 		assert_bb_during_transaction: assert(buffer[5]==1'b1)						// Bus Busy during transaction
 		else $error("Assertion assert_bb_during_transaction failed!");
-		$finish;
+		//$finish;
 	endtask
 endclass

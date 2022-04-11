@@ -1,6 +1,7 @@
 class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
-	i2c_transaction i2c_trans[130];
+	i2c_transaction i2c_trans[$];
+	i2c_transaction trans;
 	wb_transaction wb_trans[$];
 	wb_agent wb_agent_handle;
 	i2c_agent i2c_agent_handle;
@@ -59,7 +60,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	endtask
 	
 	virtual function void generate_arb_loss_flow();
-		int j=64;
+		/*int j=64;
 		int k=63;
 		int i=0;
 		
@@ -85,7 +86,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 				//create_explicit_data_series(0, 31, i, I2_WRITE);
 				arb_loss_address_req_write(i2c_trans[i].address);
 				issue_stop_command();
-			end
+			end*/
 	endfunction
 
  	// ****************************************************************************
@@ -95,28 +96,34 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	// 				WRITE/READ Alternating 64->127 interleave 63 -> 0 
 	// ****************************************************************************
 	virtual function void generate_directed_project_2_test_transactions();
-		int i,j,k;
+		int i,j,k,use_bus;
+
+		start_restart_trans();
+
+		use_bus = 0;
 		// Transaction to enable the DUT with interrupts enabled
 		enable_dut_with_interrupt();
 
 		j=64;
 		k=63;
-		foreach (i2c_trans[i]) begin
-			$cast(i2c_trans[i],ncsu_object_factory::create(trans_name));
+		for(int i = 0; i<130;++i) begin// (i2c_trans[i]) begin
+			$cast(trans,ncsu_object_factory::create(trans_name));
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
-			i2c_trans[i].selected_bus=i % 15;
-			select_I2C_bus(i2c_trans[i].selected_bus);
-
+			trans.selected_bus=use_bus;
+			select_I2C_bus(trans.selected_bus);
+			$display("Selected bus %0d", trans.selected_bus);
+			++use_bus;
+			if(use_bus > 15) use_bus = 0;
 			// Send a start command
 			issue_start_command();
 
 			// pick an address
-			i2c_trans[i].address = (i % 18)+1;
+			trans.address = (i % 18)+1;
 
 			// WRITE ALL (Write 0 to 31 to remote Slave)
 			if(i==0) begin
-				transmit_address_req_write(i2c_trans[i].address);
+				transmit_address_req_write(trans.address);
 				for(j=0;j<=31;j++) write_data_byte(byte'(j));
 				create_explicit_data_series(0, 31, i, I2_WRITE);
 				issue_stop_command();
@@ -126,7 +133,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 			// READ ALL (Read 100 to 131 from remote slave)
 			if(i==1) begin
-				transmit_address_req_read(i2c_trans[i].address);
+				transmit_address_req_read(trans.address);
 				for(j=100;j<=130;j++) read_data_byte_with_continue();
 				read_data_byte_with_stop();
 				create_explicit_data_series(100, 131, i, I2_READ);
@@ -140,7 +147,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 			// Alternation EVEN (Handle the Write step in Write/Read Alternating TF)
 			if(i>1 && i % 2 == 0) begin // do a write
-				transmit_address_req_write(i2c_trans[i].address);
+				transmit_address_req_write(trans.address);
 				write_data_byte(byte'(j));
 				create_explicit_data_series(j, j, i, I2_WRITE);
 				++j;
@@ -148,17 +155,80 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			end
 			// Alternation ODD(Handle the Read step in Write/Read Alternating TF)
 			else if (i>1 && i % 2 == 1) begin // do a write
-				transmit_address_req_read(i2c_trans[i].address);
+				transmit_address_req_read(trans.address);
 				read_data_byte_with_stop();
 				create_explicit_data_series(k, k, i, I2_READ);
 				--k;
 				issue_stop_command();
 			end
-			i2c_trans[i].randomize();
+			trans.randomize();
+			i2c_trans.push_back(trans);
 		end
+		disable_dut();
+		enable_dut_polling();
+		disable_dut();
+
+
 	endfunction
 
+function start_restart_trans();
+int j;
+		enable_dut_with_interrupt();
+		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 
+			// pick  a bus, sequentially picking a new bus for each major transaction
+			trans.selected_bus=0;
+			select_I2C_bus(trans.selected_bus);
+			$display("Selected bus %0d", trans.selected_bus);
+			
+			
+
+		
+
+			// pick  a bus, sequentially picking a new bus for each major transaction
+			trans.selected_bus=0;
+			trans.address = (36)+1;
+
+			issue_start_command();
+
+
+
+			
+				transmit_address_req_write(trans.address);
+				for(j=0;j<=31;j++) write_data_byte(byte'(j));
+
+				
+
+
+
+
+				j=64;
+			i2c_trans.push_back(trans);
+	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+						// Send a start command
+			issue_start_command();
+
+			// pick an address
+			trans.address = (36)+1;
+
+			// WRITE ALL (Write 0 to 31 to remote Slave)
+
+				
+
+
+				transmit_address_req_read(trans.address);
+				for(j=100;j<=130;j++) read_data_byte_with_continue();
+				read_data_byte_with_stop();
+				create_explicit_data_series(100, 131, j, I2_READ);
+				//issue_stop_command();
+
+
+
+				// Send a start command
+				issue_stop_command();
+		i2c_trans.push_back(trans);
+		disable_dut();
+endfunction
 	//_____________________________________________________________________________________\\
 	//                           DATASET CREATION ABSTRACTION                              \\
 	//_____________________________________________________________________________________\\
@@ -188,8 +258,8 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 				init_data.push_back(byte'(i));
 			end
 		end
-		i2c_trans[trans_index].data=init_data;
-		i2c_trans[trans_index].rw = operation;
+		trans.data=init_data;
+		trans.rw = operation;
 		init_data.delete();
 	endfunction
 
@@ -226,6 +296,26 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.write = 1'b1;
 		t.line = CSR;
 		t.cmd = ENABLE_CORE_INTERRUPT;
+		t.word=8'b0;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=1000;
+		t.label("ENABLE DUT WITH INTERRUPT");
+		wb_trans.push_back(t);
+	endfunction
+
+	// ****************************************************************************
+	// Enable the DUT core. Effectively, a soft reset after a disable command
+	// 		NB: Also sets the enable_interrupt bit of the DUT such that we can use
+	// 			raised interrupts to determine DUT-ready rather than polling
+	//			DUT registers for readiness.
+	// ****************************************************************************
+	function void enable_dut_polling();
+		//master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT		
+		wb_transaction t = new("DUT_Enable");
+		t.write = 1'b1;
+		t.line = CSR;
+		t.cmd = ENABLE_CORE_POLLING;
 		t.word=8'b0;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;

@@ -1,7 +1,7 @@
 package wb_types_pkg;
 	// Device/Wishbone Configuration and Command Logics
 	typedef enum logic[7:0] {ENABLE_CORE_INTERRUPT=8'b11xxxxxx,
-							ENABLE_CORE_POLLING=8'b01xxxxxx,
+							ENABLE_CORE_POLLING=8'b10xxxxxx,
 							DISABLE_CORE=8'b0xxxxxxx,
 							SET_I2C_BUS=8'bxxxxx110, 
 							I2C_START=8'bxxxxx100, 
