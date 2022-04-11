@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 3:35:12 PM -->
+ <!-- Date: 1/1/0001 4:30:01 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -303,7 +303,7 @@
 			</Row>
 			<Row>
 				<Cell>6.1</Cell>
-				<Cell>Hard rst after transfers</Cell>
+				<Cell>Hard rst via rst signal between xfers</Cell>
 				<Cell>When a 133ns reset is raised after a completed transfer, expect subsequent enable-transfer flows to complete successfully</Cell>
 				<Cell>test_hard_reset_insertion</Cell>
 				<Cell>test</Cell>
@@ -311,17 +311,8 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>6.2</Cell>
-				<Cell>Hard rst During transfer</Cell>
-				<Cell>When a 133ns reset is raised while a transfer is in progress, expect subsequent enable-transfer flows to complete successfully</Cell>
-				<Cell>test_hard_reset_insertion</Cell>
-				<Cell>test</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
 				<Cell>7</Cell>
-				<Cell>FSM Testing and Code Coverage</Cell>
+				<Cell>FSM Testing</Cell>
 				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT, for all DUT FSMs</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -332,7 +323,7 @@
 				<Cell>7.1</Cell>
 				<Cell>Byte-Level FSM Coverage</Cell>
 				<Cell>State and Transition coverage for i2cmb Byte-Level FSM</Cell>
-				<Cell>/top/DUT/iicmb_m_inst0/mbyte_inst*/state</Cell>
+				<Cell>/top/DUT/iicmb_m_inst0/mbyte_inst0/state</Cell>
 				<Cell>FSM</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -341,7 +332,7 @@
 				<Cell>7.2</Cell>
 				<Cell>Bit-Level FSM Coverage</Cell>
 				<Cell>State and Transition coverage for i2cmb Bit-Level FSM</Cell>
-				<Cell>/top/DUT/iicmb_m_inst0/mbit_inst*/state</Cell>
+				<Cell>/top/DUT/iicmb_m_inst0/mbit_inst0/state</Cell>
 				<Cell>FSM</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -350,14 +341,14 @@
 				<Cell>7.3</Cell>
 				<Cell>Bus Conditioner FSMs</Cell>
 				<Cell>State and Transition Coverage for i2cmb Bus-Conditioner FSMs</Cell>
-				<Cell>/top/DUT/conditioner_mux_inst0/*/state</Cell>
+				<Cell>/top/DUT/iicmb_m_inst0/conditioner_mux_inst0/*</Cell>
 				<Cell>FSM</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
 				<Cell>8</Cell>
-				<Cell>Code Coverage</Cell>
+				<Cell>DUT Code Coverage</Cell>
 				<Cell>RTL Core ALL stmt, brnch, fsm, trans, expr. Require that all DUT units have 100% statement coverage and 100% branch coverage.</Cell>
 				<Cell>/top/DUT</Cell>
 				<Cell>Instance</Cell>
@@ -406,6 +397,69 @@
 				<Cell>Ensure all available data busses have been properly tested</Cell>
 				<Cell>i2c_transaction_cg::bus_sel</Cell>
 				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.5</Cell>
+				<Cell>I2C Operation Type</Cell>
+				<Cell>Ensure both reads and writes are covered</Cell>
+				<Cell>i2c_transaction_cg::operation</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.6</Cell>
+				<Cell>I2C Message Size (Single and Multi-Byte)</Cell>
+				<Cell>Ensure DUT properly handles Zero-data, single-byte, and multi-byte transactions</Cell>
+				<Cell>i2c_transaction_cg::msg_size</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.7</Cell>
+				<Cell>I2C START and RE-START</Cell>
+				<Cell>Ensure that DUT properly handles both START (from idle) and RE-START (From transaction-in-progress) initiations of new transactions.</Cell>
+				<Cell>i2c_transaction_cg::start_or_restart</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.8</Cell>
+				<Cell>Operation Vs Msg Size</Cell>
+				<Cell>Ensure that all message sizes are used in both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::msg_size_x_operation</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.9</Cell>
+				<Cell>Operation Vs Data</Cell>
+				<Cell>Ensure that all legal data values are covered across  both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::operation_x_data</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.10</Cell>
+				<Cell>Operation  Vs Address</Cell>
+				<Cell>Ensure that all valid address values are covered for  both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::operation_x_address</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.11</Cell>
+				<Cell>Operation vs Start-Restart</Cell>
+				<Cell>Ensure that start-restart conditions are covered for both read and write transaction types.</Cell>
+				<Cell>i2c_transaction_cg::restart_x_operation</Cell>
+				<Cell>Cross</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
