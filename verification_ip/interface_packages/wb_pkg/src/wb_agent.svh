@@ -14,14 +14,15 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
-		if ( !(ncsu_config_db#(virtual wb_if)::get("tst.env.wb_agent", this.bus))) begin;
-			$display("wb_agent::ncsu_config_db::get() call for BFM handle failed for name: %s ",get_full_name());
-			$finish;
-		end
+
 	endfunction
 
 	function void set_configuration(wb_configuration cfg);
 		configuration = cfg;
+		if ( !(ncsu_config_db#(virtual wb_if)::get(configuration.dut_select, this.bus))) begin;
+			$display("wb_agent::ncsu_config_db::get() call for BFM handle failed for name: %s ",get_full_name());
+			$finish;
+		end
 	endfunction
 
 	virtual function void build();
