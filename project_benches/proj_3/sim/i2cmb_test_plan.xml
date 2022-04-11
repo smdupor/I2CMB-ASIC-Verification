@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 5:58:07 PM -->
+ <!-- Date: 1/1/0001 6:00:07 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -520,7 +520,7 @@
 			<Row>
 				<Cell>11.4</Cell>
 				<Cell>Directed Test of Disconnected Slaves</Cell>
-				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Use Random bus selection and random operation type.</Cell>
+				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Expect NACKs raised after each data byte written. Use Random bus selection, random operation type, and in case of writes, random message length and data.</Cell>
 				<Cell>test_disconnected_slave_nacks</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
