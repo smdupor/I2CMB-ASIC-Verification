@@ -58,13 +58,8 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 		static T temp;
 		temp =new;
 		if(configuration.expect_arb_loss) return;
-		if(last_trans[0] != null)
-		if(last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
-				//this.bus.master_read(STATE, temp.word);
-				//$display("Assert block last %b word %b     this  %b word %b ",last_trans[0].line, last_trans[0].word, monitored_trans.line, monitored_trans.word );
-				assert_fsm_byte_match_last_cmd: assert (1'b1==1'b1)//(temp.word[6:4]==last_trans[0].word[2:0])		// FSM Byte Command Match 
-				//else $error("Assertion assert_fsm_byte_match failed!");
-				assert_fsm_bit_match_last_cmd: assert(1'b1 == 1'b1)
+
+		if(last_trans[0] != null && last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
 					//$display("HIT ASSERT");
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete
@@ -77,28 +72,31 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 						assert_arbitration_won: assert(monitored_trans.word[6]==1'b0)
 						else $error("Assertion assert_arbitration_won failed!");
 					end
-
-				end 
-				if(last_trans[0].word == SET_I2C_BUS) begin
+				/*if(monitored_trans.word[2:0] == M_SET_I2C_BUS) begin
 					this.bus.master_read(CSR, temp.word);
-					assert_bus_id_match: assert(temp.word[3:0]==last_trans[1].word[3:0])			// Captured Bus matches selected bus
+					assert_bus_id_match: assert(temp.word[3:0]==last_trans[0].word[3:0])			// Captured Bus matches selected bus
 					else $error("Assertion assert_bus_id_match failed!");
 
-					assert_bc_on_bus_capture: assert(temp.word[4]==1'b1)							// Bus capture bit raised on capture
-					else $error("Assertion assert_bc_on_bus_capture failed!");
+
 				end 
-				else if (last_trans[0].word == I2C_START || last_trans[0].word == I2C_WRITE || last_trans[0].word == READ_WITH_ACK ) begin
+				else if ( last_trans[0].word[2:0] == M_I2C_START ) begin
 					this.bus.master_read(CSR, temp.word);
-					assert_bb_during_transaction: assert(temp.word[5]==1'b1)						// Bus Busy during transaction
-					else $error("Assertion assert_bb_during_transaction failed!");
-				end
+
+					
+					assert_bc_on_bus_capture: assert(temp.word[4]==1'b0)							// Bus capture bit raised on capture
+					else $error("Assertion assert_bc_on_bus_capture failed!");
+				end*/
+
+				end 
+
 		end
 
 		// Check register default values on a DUT-enable
-		else if (monitored_trans.line == CSR && monitored_trans.word[7]==1'b1 && monitored_trans.write == I2_WRITE) begin
+		else if (monitored_trans.line == CSR && monitored_trans.write) begin
 			this.bus.master_read(CSR, temp.word);												//CSR Defaults
-			assert_csr_enable_defaults: assert(temp.word[7:6] == monitored_trans[7:6])
-			else $error("Assertion csr_intr_disable!");
+			assert_csr_enable_defaults: assert(temp.word[7:6] == monitored_trans.word[7:6]) 
+			//[7] == monitored_trans.word[7] && temp.word[6] == monitored_trans.word[6])
+			else $error("Assertion CSR defaults FAILED! GOT: %b   %b    %b    %b", temp.word[7:6], temp.word[6], monitored_trans.word[7:6], monitored_trans.word[6]);
 
 			this.bus.master_read(DPR, temp.word);												// DPR Default
 			assert_dpr_default_on_enable: assert(temp.word == 8'b0)
@@ -113,21 +111,5 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 			else $error("Assertion assert_fsmr_default_on_enable failed!");
 
 		end
-
-
-
 	endtask
-	/*
-	assert_csr_done_on_intr
-
-assert_bb_during_transaction
-assert_bc_on_bus_capture
-assert_bus_id_match
-
-assert_csr_intr_disable
-assert_csr_intr_enable
-assert_dpr_default_on_enable
-assert_cmdr_default_on_enable
-assert_fsm_byte_match_last_cmd
-*/
 endclass

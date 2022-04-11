@@ -9,14 +9,14 @@ package wb_types_pkg;
 							I2C_STOP=8'bxxxxx101, 
 							READ_WITH_NACK=8'bxxxxx011, 
 							READ_WITH_ACK=8'bxxxxx010, 
-							NONE=8'bxxxxxxxx} wb_cmd_t;
+							NONE=8'bxxxxxxxx, WB_WAIT=8'bxxxxx000} wb_cmd_t;
 
 	typedef enum logic[2:0] {M_SET_I2C_BUS=3'b110, 
 							M_I2C_START=3'b100, 
 							M_I2C_WRITE=3'b001,
 							M_I2C_STOP=3'b101, 
 							M_READ_WITH_NACK=3'b011, 
-							M_READ_WITH_ACK=3'b010} wb_cmd_mon_t;
+							M_READ_WITH_ACK=3'b010, M_WB_WAIT=3'b000} wb_cmd_mon_t;
 
 	typedef enum logic [1:0] {EN_INT=2'b11, EN_POLL=2'b10, NONE_TWO=2'bxx} csr_control;
 

@@ -64,6 +64,10 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		#250 while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
 		assert_require_arb_loss_bit: assert(buffer[6] == 1'b1)
 		else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);
+
+		bus.master_read(CSR, buffer);
+		assert_bb_during_transaction: assert(buffer[5]==1'b1)						// Bus Busy during transaction
+		else $error("Assertion assert_bb_during_transaction failed!");
 		$finish;
 	endtask
 endclass

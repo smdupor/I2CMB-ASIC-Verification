@@ -120,6 +120,8 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 				for(j=0;j<=31;j++) write_data_byte(byte'(j));
 				create_explicit_data_series(0, 31, i, I2_WRITE);
 				issue_stop_command();
+				disable_dut();
+				enable_dut_with_interrupt();
 			end
 
 			// READ ALL (Read 100 to 131 from remote slave)
@@ -129,8 +131,12 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 				read_data_byte_with_stop();
 				create_explicit_data_series(100, 131, i, I2_READ);
 				issue_stop_command();
+				issue_wait(1);
 				j=64;
 			end
+				
+
+
 
 			// Alternation EVEN (Handle the Write step in Write/Read Alternating TF)
 			if(i>1 && i % 2 == 0) begin // do a write
@@ -223,7 +229,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.word=8'b0;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
-		t.stall_cycles=0;
+		t.stall_cycles=1000;
 		t.label("ENABLE DUT WITH INTERRUPT");
 		wb_trans.push_back(t);
 	endfunction
@@ -300,10 +306,12 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.cmd=DISABLE_CORE;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
-		t.stall_cycles=2;
+		t.stall_cycles=120;
 		t.label("DISABLE DUT (SOFT RESET)");
 		wb_trans.push_back(t);
 	endfunction
+
+
 
 	// ****************************************************************************
 	// Send a start command to I2C nets via DUT
@@ -359,6 +367,39 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		wb_trans.push_back(t);
 
 		//wait_interrupt();
+		clear_interrupt();
+	endfunction
+
+	// ****************************************************************************
+	// Format incoming address byte and set R/W bit to request a WRITE.
+	// Transmit this formatted address byte on the I2C bus
+	// ****************************************************************************
+	function void issue_wait(int ms);
+		//master_write(DPR, addr);
+		wb_transaction t = new("emplace_wait_time");
+		t.write = 1'b1;
+		t.line = DPR;
+		t.word=byte'(ms);
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		t.label("WAIT TIIME");
+		wb_trans.push_back(t);
+
+
+		//master_write(CMDR, I2C_WRITE);
+		t = new("trigger_wait_transaction");
+		t.write = 1'b1;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=WB_WAIT;
+		t.wait_int_nack=1'b1;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		wb_trans.push_back(t);
+
+		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
 		clear_interrupt();
 	endfunction
 
