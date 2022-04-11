@@ -53,7 +53,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 			foreach(wb_trans[i]) begin
 				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_LOW);	// Print only pertinent WB transactions per project spec.
+				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH);	// Print only pertinent WB transactions per project spec.
 			end
 		join
 	endtask
@@ -69,17 +69,18 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			i2c_trans[i].selected_bus=0;
-			arb_loss_select_bus(i2c_trans[i].selected_bus);
-
+			//arb_loss_select_bus
+			select_I2C_bus(i2c_trans[i].selected_bus);
+			
 			// Send a start command
-			arb_loss_start();
-
+			//arb_loss_start();
+			issue_start_command();
 			// pick an address
-			i2c_trans[i].address = (i % 18)+1;
+			i2c_trans[i].address = 127;
 
 			// WRITE ALL (Write 0 to 31 to remote Slave)
 			if(i==0) begin
-				transmit_address_req_write(i2c_trans[i].address);
+				//transmit_address_req_write(i2c_trans[i].address);
 				//for(j=0;j<=31;j++) write_data_byte(byte'(j));
 				//create_explicit_data_series(0, 31, i, I2_WRITE);
 				arb_loss_address_req_write(i2c_trans[i].address);

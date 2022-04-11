@@ -35,7 +35,7 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 
 
 
-		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_LOW);
+		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
 
 		if(wb_trans.write) begin
 			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
@@ -62,8 +62,8 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		if(wb_arb.line == DPR) bus.master_write(wb_arb.line, wb_arb.word);
 		$display("Reach Arb Loss Loop");
 		#250 while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
-		assert_require_arb_loss_bit: assert(buffer[5] == 1'b1)
+		assert_require_arb_loss_bit: assert(buffer[6] == 1'b1)
 		else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);
-
+		$finish;
 	endtask
 endclass

@@ -70,11 +70,11 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete
 					else $error("Assertion assert_done_raised_on_complete failed!, got word: %b", monitored_trans.word);
 
-					assert_nacks_when_expected: assert(monitored_trans.word[6]==configuration.expect_nacks)
+					assert_nacks_when_expected: assert(monitored_trans.word[5]==configuration.expect_nacks)
 					else $error("Assertion assert_nacks_when_expected failed!");
 
 					if(!configuration.expect_arb_loss) begin
-						assert_arbitration_won: assert(monitored_trans.word[5]==1'b0)
+						assert_arbitration_won: assert(monitored_trans.word[6]==1'b0)
 						else $error("Assertion assert_arbitration_won failed!");
 					end
 

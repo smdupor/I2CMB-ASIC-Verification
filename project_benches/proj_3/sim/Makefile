@@ -84,6 +84,10 @@ test_arb_loss: clean compile_sil
 	$(eval GTT := i2c_arb_loss_transaction)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
+test_arb_gui: clean compile_sil
+	$(eval GTT := i2c_arb_loss_transaction)
+	vsim  -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
 silent_super: clean compile_sil
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
 	@echo "********************************************************************************************"
