@@ -26,7 +26,7 @@ package i2cmb_env_pkg;
 	`include "src/i2cmb_generator_test_multi_bus.svh"
 	`include "src/i2cmb_generator_test_reg_crosscheck.svh"
 	`include "src/i2cmb_generator_test_single_bus.svh"
-
+	`include "src/i2cmb_generator_disconnected_slave.svh"
 	`include "src/i2cmb_test.svh"
 
 

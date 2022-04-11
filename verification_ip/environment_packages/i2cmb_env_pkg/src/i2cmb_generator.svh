@@ -47,6 +47,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		end
 		else begin
 		generate_directed_project_2_test_transactions();
+		
 		wb_agent_handle.expect_nacks(1'b0);
 		end
 		// Iterate through all generated transactions, passing each down to respective agents.
@@ -60,33 +61,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	endtask
 	
 	virtual function void generate_arb_loss_flow();
-		/*int j=64;
-		int k=63;
-		int i=0;
-		
-			$cast(i2c_trans[i],ncsu_object_factory::create(trans_name));
-		// Transaction to enable the DUT with interrupts enabled
-		enable_dut_with_interrupt();
-			
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			i2c_trans[i].selected_bus=0;
-			//arb_loss_select_bus
-			select_I2C_bus(i2c_trans[i].selected_bus);
-			
-			// Send a start command
-			//arb_loss_start();
-			issue_start_command();
-			// pick an address
-			i2c_trans[i].address = 127;
 
-			// WRITE ALL (Write 0 to 31 to remote Slave)
-			if(i==0) begin
-				//transmit_address_req_write(i2c_trans[i].address);
-				//for(j=0;j<=31;j++) write_data_byte(byte'(j));
-				//create_explicit_data_series(0, 31, i, I2_WRITE);
-				arb_loss_address_req_write(i2c_trans[i].address);
-				issue_stop_command();
-			end*/
 	endfunction
 
  	// ****************************************************************************
@@ -106,7 +81,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 		j=64;
 		k=63;
-		for(int i = 0; i<130;++i) begin// (i2c_trans[i]) begin
+		for(int i = 0; i<200;++i) begin// (i2c_trans[i]) begin
 			$cast(trans,ncsu_object_factory::create(trans_name));
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
@@ -119,7 +94,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			issue_start_command();
 
 			// pick an address
-			trans.address = (i % 18)+1;
+			trans.address = (i % 126)+1;
 
 			// WRITE ALL (Write 0 to 31 to remote Slave)
 			if(i==0) begin
@@ -167,16 +142,39 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		disable_dut();
 		enable_dut_polling();
 		disable_dut();
+
 		enable_dut_with_interrupt();
+		issue_wait(11);
+		
+		no_data_trans();
+		
 		issue_start_command();
-			issue_stop_command();
-			//88.23, 79.03
+		issue_stop_command();
+		disable_dut();
 
 	endfunction
+
+function no_data_trans();
+	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+
+			// pick  a bus, sequentially picking a new bus for each major transaction
+			trans.selected_bus=0;
+			select_I2C_bus(trans.selected_bus);
+			$display("Selected bus %0d", trans.selected_bus);
+
+			// pick  a bus, sequentially picking a new bus for each major transaction
+			trans.selected_bus=0;
+			trans.address = (36)+1;
+			issue_start_command();
+				transmit_address_req_write(trans.address);
+			issue_stop_command();
+			i2c_trans.push_back(trans);
+endfunction
 
 function start_restart_trans();
 int j;
 		enable_dut_with_interrupt();
+		issue_wait(6);
 		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
@@ -192,9 +190,10 @@ int j;
 			issue_start_command();
 				transmit_address_req_write(trans.address);
 				for(j=0;j<=31;j++) write_data_byte(byte'(j));
+				write_data_byte_with_stall(byte'(j), 10);
 				j=64;
 			i2c_trans.push_back(trans);
-	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+			$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 						// Send a start command
 			issue_start_command();
 
@@ -219,6 +218,7 @@ int j;
 
 			transmit_address_req_write(trans.address);
 				for(j=0;j<=31;j++) write_data_byte(byte'(j));
+				write_data_byte_with_stall(byte'(j), 101);
 			i2c_trans.push_back(trans);
 
 		disable_dut();
@@ -620,6 +620,40 @@ endfunction
 		//wait_interrupt_with_NACK();
 		clear_interrupt();
 	endfunction
+
+		// ****************************************************************************
+	// Write a single byte of data to a previously-addressed I2C Slave
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	function void write_data_byte_with_stall(input bit [7:0] data, int stll);
+		//master_write(DPR, data);
+		wb_transaction t = new("emplace_data_for_write");
+		t.write = 1'b1;
+		t.line = DPR;
+		t.word=data;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=stll;
+		t.label("WRITE BYTE");
+		wb_trans.push_back(t);
+
+
+		//master_write(CMDR, I2C_WRITE);
+		t = new("trigger_byte_write_trans");
+		t.write = 1'b1;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=I2C_WRITE;
+		t.wait_int_nack=1'b1;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		wb_trans.push_back(t);
+
+		//wait_interrupt_with_NACK();
+		clear_interrupt();
+	endfunction
+
 
 	// ****************************************************************************
 	// READ a single byte of data from a previously-addressed I2C Slave,

@@ -11,7 +11,7 @@ class i2c_rand_cs_transaction extends i2c_transaction;
 	// ****************************************************************************
 	// Constraints and Randomization
 	// ****************************************************************************
-	constraint clk_strtch_range{clock_stretch_qty dist{0 :/ 5, [5:8]:/3, [10:12]:/5};}
+	constraint clk_strtch_range{clock_stretch_qty dist{0 :/ 4, [1:4]:/4, [6:9]:/4, [11:12]:/4};}
 
 	function void post_randomize();
 		clock_stretch_qty *= 1000;

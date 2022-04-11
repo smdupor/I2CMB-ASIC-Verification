@@ -8,6 +8,8 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	i2c_op_t 	operation;
 	int  bus_sel;
 	int stretch_qty;
+	int msg_size;
+	logic is_restart;
 
   covergroup i2c_transaction_cg;
   	option.per_instance = 1;
@@ -40,6 +42,16 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	{
 
 	}
+
+	msg_size:	coverpoint msg_size
+	{
+		bins NO_DATA = {0};
+		bins SINGLE_BYTE = {1};
+		bins MULTI_BYTE = {[2:$]};
+	}
+
+	msg_size_x_operation: 	cross msg_size, operation;
+
   endgroup
 
 	 covergroup clockstretch_cg;
@@ -48,9 +60,9 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	i2c_stretch_delay:	coverpoint stretch_qty
 	{
 		bins DISABLED = {0};
-		bins SHORT = {[5000:8000]};
-		bins MEDIUM = {[8001:12000]};
-		bins LONG = {[12001:20000]};
+		bins SHORT = {[1000:5000]};
+		bins MEDIUM = {[5001:10000]};
+		bins LONG = {[10001:20000]};
 	}
 
 	bus_select: coverpoint bus_sel
@@ -76,10 +88,12 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	operation = trans.rw;
 	stretch_qty = trans.clock_stretch_qty;
 	bus_sel = trans.selected_bus;
+	msg_size = trans.data.size();
+	is_restart = trans.is_restart;
 
 	i2c_transaction_cg.sample();
 	clockstretch_cg.sample();
-
+	
 	foreach(trans.data[i]) begin
 		data = trans.data[i];
 	    i2c_transaction_cg.sample();

@@ -89,7 +89,9 @@ silent2: clean compile_sil
 	$(eval TN := test_hard_reset_insertion)
 	$(eval GTT := i2cmb_generator_test_hard_reset_insertion)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-
+	$(eval TN := test_disconnected_slave_nacks)
+	$(eval GTT := i2cmb_generator_disconnected_slave)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
@@ -140,20 +142,20 @@ compile_sil: comp_bench_sil comp_I2C_MB_sil optimize_sil
 
 convert_testplan:
 	xml2ucdb -format Excel ./i2cmb_test_plan.xml ./i2cmb_test_plan.ucdb
-	add testbrowser ./*.ucdb
 	
 merge_coverage:
 	vcover merge -stats=none -strip 0 -totals sim_and_testplan_merged.ucdb ./*.ucdb 
-	coverage open ./sim_and_testplan_merged.ucdb
 
 report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
 
 show_coverage:
-	vsim -i -classdebug -msgmode both -coverage -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do coverage_merge_and_report.do" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb &
+	vsim -i -do "set NoQuitOnFinish 1;do load_ucdbs_and_merge_with_test_plan.do" &
 
 clean_ucdb:
 	rm *.ucdb
 
 clean_covg:	clean_ucdb convert_testplan
 	rm -rf ./covhtmlreport/
+
+merge_coverage_with_test_plan: show_coverage

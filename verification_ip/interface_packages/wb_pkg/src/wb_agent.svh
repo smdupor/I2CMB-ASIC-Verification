@@ -51,6 +51,7 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 	// Handle transactions from generator and pass to driver
 	// ****************************************************************************
 	virtual task bl_put(T trans);
+		if(trans.stall_cycles > 0) coverage.wb_str_del = trans.stall_cycles;
 		driver.bl_put(trans);
 	endtask
 

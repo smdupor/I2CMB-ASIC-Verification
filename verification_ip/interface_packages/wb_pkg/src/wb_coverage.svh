@@ -8,6 +8,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	bit we;
 	logic nacks;
 	logic expect_nacks;
+	int wb_str_del;
 
 	//wb_mon_t mon_type;
 	logic [7:0] data_type;
@@ -17,12 +18,11 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
   	option.per_instance = 1;
     option.name = get_full_name();
 
-	explicit_wait_times:	coverpoint wait_time
+	wb_stretch_delay:	coverpoint wb_str_del
 	{
-		bins NO_WAIT = {0};
-		bins SHORT_0_to_5ms = {[1:5]};
-		bins MED_6ms_to_10ms = {[6:10]};
-		bins LONG_11ms_to_15ms = {[11:15]};
+		bins NONE_0_CYCLES = {0};
+		bins SHORT_1_to_100_CYCLES = {[1:100]};
+		bins LONG_gt_101_CYCLES = {[101:$]};
 	}
 
 	configuration_nacks: coverpoint expect_nacks
@@ -46,15 +46,16 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
 	cmd_type:	coverpoint cmd_type
 	{
-		bins ENABLE_CORE_INTERRUPT = {ENABLE_CORE_INTERRUPT};
-		bins ENABLE_CORE_POLLING = {ENABLE_CORE_POLLING};
-		bins DISABLE_CORE = {DISABLE_CORE};
-		bins SET_I2C_BUS = {SET_I2C_BUS};
-		bins I2C_START = {I2C_START};
-		bins I2C_STOP = {I2C_STOP};
-		bins I2C_WRITE = {I2C_WRITE};
-		bins READ_WITH_ACK = {READ_WITH_ACK};
-		bins READ_WITH_NACK = {READ_WITH_NACK};
+		bins ENABLE_CORE_INTERRUPT = {8'b11000000};
+		bins ENABLE_CORE_POLLING = {8'b10000000};
+		bins DISABLE_CORE = {8'b0000_0000};
+		bins SET_I2C_BUS = {8'b0000_0110};
+		bins I2C_START = {8'b0000_0100};
+		bins I2C_STOP = {8'b0000_0101};
+		bins I2C_WRITE = {8'b0000_0001};
+		bins READ_WITH_ACK = {8'b0000_0011};
+		bins READ_WITH_NACK = {8'b0000_0010};
+		bins WAIT_COMMAND = {8'b0000_0000};
 	}
 
 	reg_type:	coverpoint reg_type
@@ -115,6 +116,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	we = trans.write;
 
     wb_transaction_cg.sample();
+	wb_str_del = 0;
   endfunction
 
 endclass
