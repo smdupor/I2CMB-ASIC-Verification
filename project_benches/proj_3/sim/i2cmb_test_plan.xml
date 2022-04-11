@@ -1,5 +1,5 @@
- <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 5:36:55 PM -->
+ <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
+ <!-- Date: 1/1/0001 5:58:07 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -124,7 +124,7 @@
 			<Row>
 				<Cell>2.1</Cell>
 				<Cell>Base Single-Bus Test</Cell>
-				<Cell>Expect completed transactions with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with single bus configured to default Speed (100kHz). Use RANDOM addresses, data, and operations types.</Cell>
+				<Cell>Expect completed transactions with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with single bus configured to default Speed (100kHz). Use RANDOM addresses, data, message length(zero/single/multibyte) and operations types.</Cell>
 				<Cell>test_single_bus_default_speed</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
@@ -133,7 +133,7 @@
 			<Row>
 				<Cell>2.2</Cell>
 				<Cell>Base Multi-Bus Test</Cell>
-				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with each bus configured to default Speed (100kHz). Use RANDOM Bus Selection, addresses, data, and operations types.</Cell>
+				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with each bus configured to default Speed (100kHz). Use RANDOM Bus Selection, addresses, data, message length(zero/single/multibyte), and operations types.</Cell>
 				<Cell>test_multi_bus_default_speed</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
@@ -142,7 +142,7 @@
 			<Row>
 				<Cell>2.3</Cell>
 				<Cell>Multi-Bus Max Speed Test</Cell>
-				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with each bus configured to Maximum Speed (100kHz). Use RANDOM Bus Selection, addresses, data, and operations types.</Cell>
+				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with each bus configured to Maximum Speed (100kHz). Use RANDOM Bus Selection, addresses, data,  message length(zero/single/multibyte), and operations types.</Cell>
 				<Cell>test_multi_bus_max_speed</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
@@ -151,7 +151,7 @@
 			<Row>
 				<Cell>2.4</Cell>
 				<Cell>Multi-Bus Varying Speeds Test</Cell>
-				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with busses configured to a range from (400kHz) to (10kHz) Use RANDOM Bus Selection, addresses, data, and operations types.</Cell>
+				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with busses configured to a range from (400kHz) to (10kHz) Use RANDOM Bus Selection, addresses, data,  message length(zero/single/multibyte), and operations types.</Cell>
 				<Cell>test_multi_bus_ranged_speed</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
@@ -169,7 +169,7 @@
 			<Row>
 				<Cell>3.1</Cell>
 				<Cell>Arbitration Lost (All Busses)</Cell>
-				<Cell>In the presence of a simulated multi-master transmitting at the same time (simulated write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
+				<Cell>In the presence of a simulated multi-master transmitting at the same time (BFM write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
 				<Cell>test_arbitration_lost_scenario</Cell>
 				<Cell>test</Cell>
 				<Cell>2</Cell>
@@ -514,6 +514,15 @@
 				<Cell>Ensure that WB interface accurately reports both ACKs and NACKs via CMDR[NACK] when expected.</Cell>
 				<Cell>wb_transaction_cg::nacks</Cell>
 				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.4</Cell>
+				<Cell>Directed Test of Disconnected Slaves</Cell>
+				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Use Random bus selection and random operation type.</Cell>
+				<Cell>test_disconnected_slave_nacks</Cell>
+				<Cell>test</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
