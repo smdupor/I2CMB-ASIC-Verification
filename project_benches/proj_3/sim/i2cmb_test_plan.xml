@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\2i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 1:30:50 PM -->
+ <!-- Date: 1/1/0001 3:23:41 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -125,7 +125,7 @@
 				<Cell>2.1</Cell>
 				<Cell>Base Single-Bus Test</Cell>
 				<Cell>Expect completed transactions with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with single bus configured to default Speed (100kHz)</Cell>
-				<Cell>single_bus_default_speed</Cell>
+				<Cell>test_single_bus_default_speed</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -168,8 +168,8 @@
 			</Row>
 			<Row>
 				<Cell>3.1</Cell>
-				<Cell>Arbitration Lost</Cell>
-				<Cell>In the presence of a simulated multi-master, expect DUT to lose arbitration when BFM writes 1&#39;b1 to sda before master is able to capture bus</Cell>
+				<Cell>Arbitration Lost (All Busses)</Cell>
+				<Cell>In the presence of a simulated multi-master transmitting at the same time (simulated write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
 				<Cell>test_arbitration_lost_scenario</Cell>
 				<Cell>test</Cell>
 				<Cell>2</Cell>
@@ -323,7 +323,34 @@
 				<Cell>7</Cell>
 				<Cell>FSM Testing and Code Coverage</Cell>
 				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT, for all DUT FSMs</Cell>
-				<Cell>/top/DUT</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>7.1</Cell>
+				<Cell>Byte-Level FSM Coverage</Cell>
+				<Cell>State and Transition coverage for i2cmb Byte-Level FSM</Cell>
+				<Cell>/top/DUT/iicmb_m_inst0/mbyte_inst*/state</Cell>
+				<Cell>FSM</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>7.2</Cell>
+				<Cell>Bit-Level FSM Coverage</Cell>
+				<Cell>State and Transition coverage for i2cmb Bit-Level FSM</Cell>
+				<Cell>/top/DUT/iicmb_m_inst0/mbit_inst*/state</Cell>
+				<Cell>FSM</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>7.3</Cell>
+				<Cell>Bus Conditioner FSMs</Cell>
+				<Cell>State and Transition Coverage for i2cmb Bus-Conditioner FSMs</Cell>
+				<Cell>/top/DUT/conditioner_mux_inst*/*/state</Cell>
 				<Cell>FSM</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
