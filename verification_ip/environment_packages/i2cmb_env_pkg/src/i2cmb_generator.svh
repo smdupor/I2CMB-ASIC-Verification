@@ -67,7 +67,6 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			i2c_trans[i].selected_bus=i % 15;
 			select_I2C_bus(i2c_trans[i].selected_bus);
 
-			//issue_start_arb();
 			// Send a start command
 			issue_start_command();
 
@@ -254,23 +253,6 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 		//wait_interrupt();
 		clear_interrupt();
-	endfunction
-
-		function void issue_start_arb();
-		//master_write(CMDR, I2C_START);
-		wb_transaction_arb_loss t = new("send_start_command");
-		t.write = 1'b1;
-		t.line = CMDR;
-		t.word=8'b0;
-		t.cmd=I2C_START;
-		t.wait_int_nack=1'b0;
-		t.wait_int_ack=1'b0;
-		t.stall_cycles=0;
-		t.label("SEND START");
-		wb_trans.push_back(t);
-
-		//wait_interrupt();
-		//clear_interrupt();
 	endfunction
 
 	// ****************************************************************************
