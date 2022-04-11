@@ -181,6 +181,16 @@ interface i2c_if       #(
 	endtask
 
 	// ****************************************************************************
+	// Force a clockstretch at an illegal time, for a long period, in order to
+	// cause an arbitration loss.
+	// ****************************************************************************
+	task clockstretch_force();
+		#15 scl_drive[bus_selector] = 1'b0;
+		repeat(10000) @(posedge clk_i);
+		scl_drive[bus_selector] = 1'bz;
+	endtask
+
+	// ****************************************************************************
 	// During a DATA READ, the clock may be stretched before the first bit, and
 	// between each subsequent bit until the final bit is written. Clockstretching
 	// must end at this final bit, allowing the master to retake control of the 
@@ -251,9 +261,11 @@ interface i2c_if       #(
 			// SEND THE ACK Back to master upon a match
 			//driver_transmit_ACK();
 			sda_drive[bus_selector] = 1'b0;
+			
 			@(posedge scl_i[bus_selector]);
 		
 			@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
+
 			// Determine the operation code
 			op = driver_buffer[1]? I2_READ : I2_WRITE;
 
@@ -360,6 +372,7 @@ interface i2c_if       #(
 			clockstretch_read();
 			@(posedge scl_i[bus_selector]);
 			@(negedge scl_i[bus_selector]); 
+			
 		end
 	endtask
 

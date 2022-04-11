@@ -5,6 +5,8 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	endfunction
 
 	virtual wb_if bus;
+	virtual wb_if bus_1;
+
 	wb_configuration configuration;
 	wb_transaction wb_trans;
 	wb_transaction_arb_loss wb_arb_trans;
@@ -24,20 +26,26 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	// ****************************************************************************
 	virtual task bl_put(T trans);
 		bit [7:0] buffer;
+		bit arbT;
 		wb_trans = trans;
 		bus.wait_for_reset();
+		arbT = $cast(wb_arb_trans, trans);
 
-		if($cast(wb_arb_trans, trans)) begin 
+		fork
+		if(arbT) begin 
 			bl_arb_put(wb_arb_trans);
 			$finish();
 		end
+		join_none
 
-
-
-		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
+		if(!arbT) begin
+			
+		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_LOW);
 
 		if(wb_trans.write) begin
-			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
+			if(wb_trans.line == CMDR)bus.master_write(wb_trans.line, wb_trans.cmd);
+			if( wb_trans.line == CSR) begin bus.master_write(wb_trans.line, wb_trans.cmd);
+			bus_1.master_write(wb_trans.line, wb_trans.cmd); end
 			if(wb_trans.line == DPR) bus.master_write(wb_trans.line, wb_trans.word);
 			if(wb_trans.wait_int_ack) bus.wait_interrupt();
 			if(wb_trans.wait_int_nack) bus.wait_interrupt_with_NACK();
@@ -51,16 +59,21 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 			if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);
 
 		end
+		end
+		
 	endtask
 
 	task bl_arb_put(wb_transaction_arb_loss wb_arb);
 		bit [7:0] buffer;
 		assert(wb_arb.write);
-		if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
-		if(wb_trans.line == DPR) bus.master_write(wb_trans.line, wb_trans.word);
-		while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
+		$display("Issuing Arb'd XMD");
+		if(wb_arb.line == CMDR || wb_arb.line == CSR) #20 bus_1.master_write(wb_arb.line, wb_arb.cmd);
+		if(wb_arb.line == DPR)#20 bus_1.master_write(wb_arb.line, wb_arb.word);
+		$display("Entering ARB Poll");
+		while(buffer[7:5] == 3'b000) bus_1.master_read(CMDR, buffer);
 		assert_require_arb_loss_bit: assert(buffer[5] == 1'b1)
 		else $error("Assertion assert_require_arb_loss_bit failed!");
+		$display("Arb Polling done");
 
 	endtask
 endclass
