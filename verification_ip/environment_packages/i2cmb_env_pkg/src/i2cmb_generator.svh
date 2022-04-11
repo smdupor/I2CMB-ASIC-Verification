@@ -167,7 +167,10 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		disable_dut();
 		enable_dut_polling();
 		disable_dut();
-
+		enable_dut_with_interrupt();
+		issue_start_command();
+			issue_stop_command();
+			//88.23, 79.03
 
 	endfunction
 
@@ -180,28 +183,15 @@ int j;
 			trans.selected_bus=0;
 			select_I2C_bus(trans.selected_bus);
 			$display("Selected bus %0d", trans.selected_bus);
-			
-			
-
-		
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			trans.selected_bus=0;
 			trans.address = (36)+1;
 
+
 			issue_start_command();
-
-
-
-			
 				transmit_address_req_write(trans.address);
 				for(j=0;j<=31;j++) write_data_byte(byte'(j));
-
-				
-
-
-
-
 				j=64;
 			i2c_trans.push_back(trans);
 	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
@@ -212,21 +202,25 @@ int j;
 			trans.address = (36)+1;
 
 			// WRITE ALL (Write 0 to 31 to remote Slave)
-
-				
-
-
 				transmit_address_req_read(trans.address);
 				for(j=100;j<=130;j++) read_data_byte_with_continue();
 				read_data_byte_with_stop();
 				create_explicit_data_series(100, 131, j, I2_READ);
-				//issue_stop_command();
-
-
 
 				// Send a start command
-				issue_stop_command();
 		i2c_trans.push_back(trans);
+
+		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+						// Send a start command
+			issue_start_command();
+
+			// pick an address
+			trans.address = (36)+1;
+
+			transmit_address_req_write(trans.address);
+				for(j=0;j<=31;j++) write_data_byte(byte'(j));
+			i2c_trans.push_back(trans);
+
 		disable_dut();
 endfunction
 	//_____________________________________________________________________________________\\
