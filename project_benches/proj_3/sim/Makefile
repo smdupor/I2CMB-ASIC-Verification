@@ -73,12 +73,20 @@ silent2: clean compile_sil
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval GTT := i2cmb_test_multi_bus_range)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	$(eval GTT := test_arbitration)
+	$(eval GTT := i2c_arb_loss_transaction)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval GTT := test_interrupt_cycling)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval GTT := test_hard_reset_insertion)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+test_arb_loss: clean compile_sil
+	$(eval GTT := i2c_arb_loss_transaction)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+test_arb_gui: clean compile_sil
+	$(eval GTT := i2c_arb_loss_transaction)
+	vsim  -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do; run -a; coverage attribute -name TESTNAME -value $(GTT); coverage save $(GTT).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 silent_super: clean compile_sil
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
@@ -135,5 +143,5 @@ show_coverage:
 clean_ucdb:
 	rm *.ucdb
 
-clean_covg: clean_ucdb convert_testplan
+clean_covg:	clean_ucdb convert_testplan
 	rm -rf ./covhtmlreport/
