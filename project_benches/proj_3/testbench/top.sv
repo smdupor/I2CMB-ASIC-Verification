@@ -219,7 +219,7 @@ module top();
 	.g_f_scl_d(I2C_MAX_BUS_RATE),
 	.g_f_scl_e(I2C_MAX_BUS_RATE),
 	.g_f_scl_f(I2C_MAX_BUS_RATE)
-		) DUT
+	) DUT_16_max
 	(
 		// ------------------------------------
 		// -- Wishbone signals:

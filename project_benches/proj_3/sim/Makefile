@@ -84,9 +84,11 @@ silent2: clean compile_sil
 	$(eval TN := test_multi_bus_max_speed)
 	$(eval GTT := i2cmb_generator_test_multi_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 54321)
 	$(eval TN := test_multi_bus_ranged_speed)
 	$(eval GTT := i2cmb_generator_test_multi_bus_ranged)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 12345)
 	$(eval TN := test_clockstretching)
 	$(eval GTT := i2cmb_generator_test_multi_bus_clockstretch)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb

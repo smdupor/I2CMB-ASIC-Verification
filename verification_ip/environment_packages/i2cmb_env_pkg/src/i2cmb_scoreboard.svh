@@ -52,7 +52,7 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 
 		// Check Failed
 		else begin
-			ncsu_warning("",{get_full_name()," transaction MISMATCH!","\n nb_transport: expected transaction ",lhs.convert2string(),
+			ncsu_error("",{get_full_name()," transaction MISMATCH!","\n nb_transport: expected transaction ",lhs.convert2string(),
 				"\n nb_put:       actual   transaction ",rhs.convert2string()});
 			fails.push_front(lhs);
 		end

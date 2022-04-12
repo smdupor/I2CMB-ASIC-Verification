@@ -59,7 +59,7 @@ interface i2c_if       #(
 
 	int stretch_qty=0;
 	int read_stretch_qty=0;
-	bit enable_cs=0;
+	bit enable_cs=1;
 	int arbitration_wait_cycles=1000000;
 	bit cause_arbitration_loss;
 
