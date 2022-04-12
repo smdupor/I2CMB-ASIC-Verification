@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 6:49:00 PM -->
+ <!-- Date: 1/1/0001 7:53:00 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -42,7 +42,7 @@
 			</Row>
 			<Row>
 				<Cell>1.3.1</Cell>
-				<Cell>CMDR[DONE]</Cell>
+				<Cell>CMDR[7] DONE  Accuracy</Cell>
 				<Cell>Expect DONE bit raised when DUT command operation completed</Cell>
 				<Cell>assert_done_raised_on_complete</Cell>
 				<Cell>Assertion</Cell>
@@ -51,16 +51,7 @@
 			</Row>
 			<Row>
 				<Cell>1.3.2</Cell>
-				<Cell>CMDR[NACK]</Cell>
-				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
-				<Cell>assert_nacks_when_expected</Cell>
-				<Cell>Assertion</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>1.3.3</Cell>
-				<Cell>CMDR[ARB_LOST]</Cell>
+				<Cell>CMDR[6] ARB_LOST Accuracy</Cell>
 				<Cell>Expect ARBITRATION_LOST bit raised when DUT has lost arbitration, and low when DUT has won arbitration</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -68,7 +59,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>1.3.3.1</Cell>
+				<Cell>1.3.2.1</Cell>
 				<Cell>Arbitration Lost When Expected</Cell>
 				<Cell>Require &quot;Arbitration Lost&quot; bit in the CMDR to rise when master has lost arbitration negotiation</Cell>
 				<Cell>assert_require_arb_loss_bit</Cell>
@@ -77,10 +68,37 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>1.3.3.2</Cell>
+				<Cell>1.3.2.2</Cell>
 				<Cell>Arbitration Won When Expected</Cell>
 				<Cell>In the presence of a real multi-master configuration, expect Arbitration lost bit of CMDR to be low upon arbitration win</Cell>
 				<Cell>assert_arbitration_won</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3</Cell>
+				<Cell>CMDR[5] NACK Accuracy</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell>assert_nacks_when_expected</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4</Cell>
+				<Cell>CMDR[4] ERROR Accuracy</Cell>
+				<Cell>Expect Error bit raised when an unavailable (non-existent) bus is selected</Cell>
+				<Cell>assert_bus_mismatch_raised_on_unavailable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.5</Cell>
+				<Cell>CMDR[2:0] COMMAND Accuracy</Cell>
+				<Cell>Expect these bits to reflect the previously issued command, when an interrupt is cleared or the DONE bit is checked.</Cell>
+				<Cell>assert_CMDR_holds_last_CMD</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
