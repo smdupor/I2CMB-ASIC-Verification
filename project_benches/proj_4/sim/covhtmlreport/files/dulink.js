@@ -1,0 +1,2 @@
+var g_data = {"22":["work.bus_state(rtl)",92.59,1],"20":["work.conditioner(str)",100.00,1],"19":["work.conditioner_mux(str)",100.00,1],"21":["work.filter(rtl)",100.00,1],"10":["work.i2c_pkg",99.12,1],"11":["work.i2cmb_env_pkg",100.00,1],"16":["work.iicmb_m(str)",98.72,1],"13":["work.iicmb_m_wb(str)",96.25,1],"2":["work.iicmb_pkg",0.00,1],"18":["work.mbit(rtl)",80.36,1],"17":["work.mbyte(rtl)",87.12,1],"15":["work.regblock(rtl)",84.52,1],"8":["work.wb_pkg",85.31,1],"14":["work.wishbone(rtl)",83.24,1]};
+processDuLinks(g_data);

@@ -1,0 +1,49 @@
+# //  Questa Sim
+# //  Version 2020.4_1 linux Nov  6 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# set NoQuitOnFinish 1
+# 1
+# do load_ucdbs_and_merge_with_test_plan.do
+# Format 'Excel' read from parameter file.
+# 57 testplan section(s) added.
+# Database './i2cmb_test_plan.ucdb' written.
+# Merging file ./test_register_crosschecking.12345.ucdb
+# Merging file ./test_register_access_control.12345.ucdb
+# Merging file ./test_single_bus_default_speed.12345.ucdb
+# Merging file ./test_multi_bus_max_speed.12345.ucdb
+# Merging file ./test_multi_bus_ranged_speed.54321.ucdb
+# Merging file ./test_clockstretching.12345.ucdb
+# Merging file ./test_arbitration_lost_scenario.12345.ucdb
+# Merging file ./test_enable_disable_enable_intr_x_poll.12345.ucdb
+# Merging file ./test_hard_reset_insertion.12345.ucdb
+# Merging file ./test_disconnected_slave_nacks.12345.ucdb
+# Merging file ./i2cmb_test_plan.ucdb
+# Writing merged result to sim_and_testplan_merged.ucdb
+# 
+# Applying tag commands ...
+# All tags are applied successfully.
+# coverage read -dataset sim_and_testplan_merged ./sim_and_testplan_merged.ucdb
+# ./sim_and_testplan_merged.ucdb opened as coverage dataset "sim_and_testplan_merged"
+# QuestaSim vcover 2020.4_1 Coverage Utility 2020.11 Nov  6 2020
+# Start time: 14:59:47 on Apr 12,2022
+# vcover report -detail -html -output covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb 
+# 
+# End time: 14:59:49 on Apr 12,2022, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# 
+# stdin: <EOF>
+coverage open /afs/unity.ncsu.edu/users/s/smdupor/verification-proj1/project_benches/proj_3/sim/sim_and_testplan_merged.ucdb
+# coverage read -dataset sim_and_testplan_merged1 /afs/unity.ncsu.edu/users/s/smdupor/verification-proj1/project_benches/proj_3/sim/sim_and_testplan_merged.ucdb
+# /afs/unity.ncsu.edu/users/s/smdupor/verification-proj1/project_benches/proj_3/sim/sim_and_testplan_merged.ucdb opened as coverage dataset "sim_and_testplan_merged1"
+quit
