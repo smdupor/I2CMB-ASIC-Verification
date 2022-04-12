@@ -3,18 +3,18 @@ class wb_transaction_arb_loss extends wb_transaction;
 `ncsu_register_object(wb_transaction_arb_loss)
 
 	// Transaction Parameters
-	bit [7:0] word;		// Data to / from the DPR
-	bit [1:0] line;		// Which register to read/write to/fromo
-	bit write;			// Whether this xation is a write or read
-	wb_cmd_t cmd;		// The wb command associated with this xaction
-	bit wait_int_ack;	// Whether this xaction should cause an interrupt
-	bit wait_int_nack;	// Whether this xaction should cause an interrupt requiring nack-checking
-	int stall_cycles;	// How many cycles to stall after this xaction
+	bit [7:0] word; // Data to / from the DPR
+	bit [1:0] line; // Which register to read/write to/fromo
+	bit write; // Whether this xation is a write or read
+	wb_cmd_t cmd; // The wb command associated with this xaction
+	bit wait_int_ack; // Whether this xaction should cause an interrupt
+	bit wait_int_nack; // Whether this xaction should cause an interrupt requiring nack-checking
+	int stall_cycles; // How many cycles to stall after this xaction
 	bit expect_arb_loss;
 
 	// Printing Controls
-	bit en_printing;		// Enable printing of this transaction at the generator
-	string pretty_print_id;	// Pretty print ID
+	bit en_printing; // Enable printing of this transaction at the generator
+	string pretty_print_id; // Pretty print ID
 
 	// ****************************************************************************
 	// Transaction Constructions

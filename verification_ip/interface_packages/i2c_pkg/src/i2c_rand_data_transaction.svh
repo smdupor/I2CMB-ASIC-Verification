@@ -12,8 +12,8 @@ class i2c_rand_data_transaction extends i2c_transaction;
 
 
 	// Coverage Only
-	logic is_restart;	// x for N/a, 0 For "START", 1 for "RE-START"
-	int explicit_wait_ms;	// This was preceeded by an explicit "Wait" Command
+	logic is_restart; // x for N/a, 0 For "START", 1 for "RE-START"
+	int explicit_wait_ms; // This was preceeded by an explicit "Wait" Command
 
 	// ****************************************************************************
 	// Constraints and Randomization
@@ -21,10 +21,10 @@ class i2c_rand_data_transaction extends i2c_transaction;
 	constraint bus_sel_range{tmp_bus dist{[0:15]};}
 	constraint adr_range{tmp_addr dist{[0:127]};}
 	constraint op_wt{tmp_op dist{[0:50] :/ 5, [51:100] :/ 5};}
-	
-	
+
+
 	function void pre_randomize();
-		
+
 		size = $urandom_range(1,2);
 		for(int i=0;i<size;++i) tmp_data.push_back(byte'(8'hff));
 		data=tmp_data;

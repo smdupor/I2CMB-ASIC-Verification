@@ -12,7 +12,7 @@ class i2c_arb_loss_transaction extends i2c_transaction;
 	// ****************************************************************************
 	// Constraints and Randomization
 	// ****************************************************************************
-	
+
 
 	function void post_randomize();
 		clock_stretch_qty *= 1000;

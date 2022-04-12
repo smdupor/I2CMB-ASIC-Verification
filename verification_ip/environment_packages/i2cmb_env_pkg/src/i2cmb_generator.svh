@@ -24,7 +24,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		this.i2c_agent_handle = agent;
 	endfunction
 
- 	// ****************************************************************************
+	// ****************************************************************************
 	// run the transaction generator; Create all transactions, then, pass trans-
 	//		actions to agents, in order, in parallel. 
 	// ****************************************************************************
@@ -33,135 +33,135 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	endtask
 
 
-////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-//                NB: Below Functions MUST be refactored, but are working placeholders. Thanks.
-//////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////
+	//                NB: Below Functions MUST be refactored, but are working placeholders. Thanks.
+	//////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 
-virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
-	if(add_bus_sel) select_I2C_bus(t.selected_bus);
-	issue_start_command();
-	if(t.rw == I2_WRITE) begin
-		transmit_address_req_write(t.address);
-		foreach(t.data[i]) write_data_byte(byte'(t.data[i]));
-	end 
-	else begin
-		transmit_address_req_read(t.address);
-		for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
-		read_data_byte_with_stop();
-	end
-	if(add_stop) issue_stop_command();
-endfunction
-
-virtual function void convert_rand_i2c_trans(i2c_rand_data_transaction t, bit add_bus_sel, bit add_stop);
-	if(add_bus_sel) select_I2C_bus(t.selected_bus);
-	issue_start_command();
-	if(t.rw == I2_WRITE) begin
-		transmit_address_req_write(t.address);
-		foreach(t.data[i]) begin 
-			write_data_byte(byte'(t.data[i]));
+	virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
+		if(add_bus_sel) select_I2C_bus(t.selected_bus);
+		issue_start_command();
+		if(t.rw == I2_WRITE) begin
+			transmit_address_req_write(t.address);
+			foreach(t.data[i]) write_data_byte(byte'(t.data[i]));
 		end
-	end 
-	else begin
-		transmit_address_req_read(t.address);
-		for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
-		read_data_byte_with_stop();
-	end
-	if(add_stop) issue_stop_command();
-endfunction
+		else begin
+			transmit_address_req_read(t.address);
+			for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
+			read_data_byte_with_stop();
+		end
+		if(add_stop) issue_stop_command();
+	endfunction
 
-virtual function void generate_random_base_flow(int qty, bit change_busses);
+	virtual function void convert_rand_i2c_trans(i2c_rand_data_transaction t, bit add_bus_sel, bit add_stop);
+		if(add_bus_sel) select_I2C_bus(t.selected_bus);
+		issue_start_command();
+		if(t.rw == I2_WRITE) begin
+			transmit_address_req_write(t.address);
+			foreach(t.data[i]) begin
+				write_data_byte(byte'(t.data[i]));
+			end
+		end
+		else begin
+			transmit_address_req_read(t.address);
+			for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
+			read_data_byte_with_stop();
+		end
+		if(add_stop) issue_stop_command();
+	endfunction
+
+	virtual function void generate_random_base_flow(int qty, bit change_busses);
 		int i,j,k,use_bus;
 		i2c_rand_data_transaction rand_trans;
 		use_bus = 0;
 		// Transaction to enable the DUT with interrupts enabled
 		enable_dut_with_interrupt();
 
-		for(int i = 0; i<qty;++i) begin// (i2c_trans[i]) begin
+		for(int i = 0; i<qty;++i) begin // (i2c_trans[i]) begin
 			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));
-				
-				rand_trans.randomize();
-				i2c_trans.push_back(rand_trans);
-			 	convert_rand_i2c_trans(rand_trans, 1, 1);		
+
+			rand_trans.randomize();
+			i2c_trans.push_back(rand_trans);
+			convert_rand_i2c_trans(rand_trans, 1, 1);
 		end
 	endfunction
 
 
-function void no_data_trans();
-	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+	function void no_data_trans();
+		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=0;
-			select_I2C_bus(trans.selected_bus);
-		
+		// pick  a bus, sequentially picking a new bus for each major transaction
+		trans.selected_bus=0;
+		select_I2C_bus(trans.selected_bus);
 
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=0;
-			trans.address = (36)+1;
-			issue_start_command();
-				transmit_address_req_write(trans.address);
-			issue_stop_command();
-			i2c_trans.push_back(trans);
-endfunction
 
-function void start_restart_trans();
-int j;
+		// pick  a bus, sequentially picking a new bus for each major transaction
+		trans.selected_bus=0;
+		trans.address = (36)+1;
+		issue_start_command();
+		transmit_address_req_write(trans.address);
+		issue_stop_command();
+		i2c_trans.push_back(trans);
+	endfunction
+
+	function void start_restart_trans();
+		int j;
 		enable_dut_with_interrupt();
 		issue_wait(6);
 		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=0;
-			select_I2C_bus(trans.selected_bus);
-			
-
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=0;
-			trans.address = (36)+1;
+		// pick  a bus, sequentially picking a new bus for each major transaction
+		trans.selected_bus=0;
+		select_I2C_bus(trans.selected_bus);
 
 
-			issue_start_command();
-				transmit_address_req_write(trans.address);
-				for(j=0;j<=31;j++) write_data_byte(byte'(j));
-				write_data_byte_with_stall(byte'(j), 10);
-				j=64;
-			i2c_trans.push_back(trans);
-			$cast(trans,ncsu_object_factory::create("i2c_transaction"));
-						// Send a start command
-			issue_start_command();
+		// pick  a bus, sequentially picking a new bus for each major transaction
+		trans.selected_bus=0;
+		trans.address = (36)+1;
 
-			// pick an address
-			trans.address = (36)+1;
 
-			// WRITE ALL (Write 0 to 31 to remote Slave)
-				transmit_address_req_read(trans.address);
-				for(j=100;j<=130;j++) read_data_byte_with_continue();
-				read_data_byte_with_stop();
-				create_explicit_data_series(100, 131, j, I2_READ);
+		issue_start_command();
+		transmit_address_req_write(trans.address);
+		for(j=0;j<=31;j++) write_data_byte(byte'(j));
+		write_data_byte_with_stall(byte'(j), 10);
+		j=64;
+		i2c_trans.push_back(trans);
+		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
+		// Send a start command
+		issue_start_command();
 
-				// Send a start command
+		// pick an address
+		trans.address = (36)+1;
+
+		// WRITE ALL (Write 0 to 31 to remote Slave)
+		transmit_address_req_read(trans.address);
+		for(j=100;j<=130;j++) read_data_byte_with_continue();
+		read_data_byte_with_stop();
+		create_explicit_data_series(100, 131, j, I2_READ);
+
+		// Send a start command
 		i2c_trans.push_back(trans);
 
 		$cast(trans,ncsu_object_factory::create("i2c_transaction"));
-						// Send a start command
-			issue_start_command();
+		// Send a start command
+		issue_start_command();
 
-			// pick an address
-			trans.address = (36)+1;
+		// pick an address
+		trans.address = (36)+1;
 
-			transmit_address_req_write(trans.address);
-				for(j=0;j<=31;j++) write_data_byte(byte'(j));
-				write_data_byte_with_stall(byte'(j), 101);
-			i2c_trans.push_back(trans);
+		transmit_address_req_write(trans.address);
+		for(j=0;j<=31;j++) write_data_byte(byte'(j));
+		write_data_byte_with_stall(byte'(j), 101);
+		i2c_trans.push_back(trans);
 
 		disable_dut();
-endfunction
+	endfunction
 	//_____________________________________________________________________________________\\
 	//                           DATASET CREATION ABSTRACTION                              \\
 	//_____________________________________________________________________________________\\
 
- 	// ****************************************************************************
+	// ****************************************************************************
 	// Create a series of one or more bytes of data, from <start_value> to <end_value>,
 	// and assign them  to the i2c transaction at <trans_index>, indicating whether
 	// this transaction shall be an I2C_WRITE or I2C_READ based on <operation> enum.
@@ -192,7 +192,7 @@ endfunction
 	endfunction
 
 
-		virtual function void rnd_create_explicit_data_series(i2c_rand_data_transaction trns, input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
+	virtual function void rnd_create_explicit_data_series(i2c_rand_data_transaction trns, input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
 		bit [7:0] init_data[$];
 		init_data.delete();
 
@@ -371,7 +371,7 @@ endfunction
 		clear_interrupt();
 	endfunction
 
-		function void arb_loss_start();
+	function void arb_loss_start();
 		//master_write(CMDR, I2C_START);
 		wb_transaction_arb_loss t = new("send_start_command");
 		t.write = 1'b1;
@@ -476,7 +476,7 @@ endfunction
 		clear_interrupt();
 	endfunction
 
-		function void arb_loss_address_req_write(input bit [7:0] addr);
+	function void arb_loss_address_req_write(input bit [7:0] addr);
 		//master_write(DPR, addr);
 		wb_transaction_arb_loss u;
 		wb_transaction t = new("emplace_address_req_write");
@@ -575,7 +575,7 @@ endfunction
 		clear_interrupt();
 	endfunction
 
-		// ****************************************************************************
+	// ****************************************************************************
 	// Write a single byte of data to a previously-addressed I2C Slave
 	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
 	// ****************************************************************************
