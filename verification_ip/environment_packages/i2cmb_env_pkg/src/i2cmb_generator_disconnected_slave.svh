@@ -7,7 +7,7 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
-		$finish;
+		
 		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
 			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
 			$fatal;

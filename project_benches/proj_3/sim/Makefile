@@ -173,3 +173,5 @@ clean_covg:	clean_ucdb convert_testplan
 	rm -rf ./covhtmlreport/
 
 merge_coverage_with_test_plan: show_coverage
+
+run_all_tests: silent2
