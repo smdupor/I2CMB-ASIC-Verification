@@ -29,8 +29,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	//		actions to agents, in order, in parallel. 
 	// ****************************************************************************
 	virtual task run();
-
+		// STUB
 	endtask
+
+
+////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+//                NB: Below Functions MUST be refactored, but are working placeholders. Thanks.
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
 
 virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
 	if(add_bus_sel) select_I2C_bus(t.selected_bus);
@@ -74,7 +81,6 @@ virtual function void generate_random_base_flow(int qty, bit change_busses);
 		for(int i = 0; i<qty;++i) begin// (i2c_trans[i]) begin
 			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));
 				
-				//rnd_create_explicit_data_series(rand_trans,0, 31, 3, I2_WRITE);
 				rand_trans.randomize();
 				i2c_trans.push_back(rand_trans);
 			 	convert_rand_i2c_trans(rand_trans, 1, 1);		
