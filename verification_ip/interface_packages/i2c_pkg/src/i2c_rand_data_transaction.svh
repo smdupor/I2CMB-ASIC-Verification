@@ -2,12 +2,14 @@ class i2c_rand_data_transaction extends i2c_transaction;
 
 `ncsu_register_object(i2c_rand_data_transaction)
 
-	bit [7:0] address;
-	bit [7:0] data [$];
+	rand bit [7:0] tmp_addr;
+	rand int tmp_op;
+	rand int tmp_bus;
+	rand bit [7:0] tmp_data[$];
 	int size;
-	int selected_bus;
+
 	int clock_stretch_qty;
-	i2c_op_t rw;
+
 
 	// Coverage Only
 	logic is_restart;	// x for N/a, 0 For "START", 1 for "RE-START"
@@ -16,22 +18,27 @@ class i2c_rand_data_transaction extends i2c_transaction;
 	// ****************************************************************************
 	// Constraints and Randomization
 	// ****************************************************************************
-	constraint bus_sel_range{selected_bus dist{[0:15]};}
-	constraint adr_range{address dist{[0:127]};}
+	constraint bus_sel_range{tmp_bus dist{[0:15]};}
+	constraint adr_range{tmp_addr dist{[0:127]};}
+	constraint op_wt{tmp_op dist{[0:50] :/ 5, [51:100] :/ 5};}
+	
 	
 	function void pre_randomize();
 		
-		//size = ({$random} % 2 )+1;
-	//	for(int i=0;i<=size;++i) data.push_back(byte'(8'hff));
+		size = $urandom_range(1,2);
+		for(int i=0;i<size;++i) tmp_data.push_back(byte'(8'hff));
+		data=tmp_data;
 	endfunction
 
 	function void post_randomize();
-		rw=I2_WRITE;
-		selected_bus = 0;
-		address = 8'h03;
-		data.push_back(8'h22);
-		data.push_back(8'h44);
+		foreach(tmp_data[i]) data[i]=tmp_data[i];
+		address = tmp_addr;
+		selected_bus = tmp_bus;
+		if(tmp_op > 50) rw=I2_WRITE;
+		else rw=I2_READ;
+
 	endfunction
+
 
 	// ****************************************************************************
 	// Construction, setters and getters

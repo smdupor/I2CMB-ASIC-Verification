@@ -73,23 +73,11 @@ virtual function void generate_random_base_flow(int qty, bit change_busses);
 
 		for(int i = 0; i<qty;++i) begin// (i2c_trans[i]) begin
 			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));
-
-			// pick  a bus, sequentially picking a new bus for each major transaction
-			//rand_trans.selected_bus=use_bus;
-			
-			//select_I2C_bus(trans.selected_bus);
-
-			
-			
-			rand_trans.randomize();
-			
-				i2c_rand_trans.push_back(rand_trans);
-
-				if(change_busses) 	convert_rand_i2c_trans(rand_trans, 1, 1);
-				else begin
-				//	rand_trans.selected_bus = use_bus;
-					convert_rand_i2c_trans(rand_trans, 1, 1); // Effectively, a restart
-				end
+				
+				//rnd_create_explicit_data_series(rand_trans,0, 31, 3, I2_WRITE);
+				rand_trans.randomize();
+				i2c_trans.push_back(rand_trans);
+			 	convert_rand_i2c_trans(rand_trans, 1, 1);		
 		end
 	endfunction
 
@@ -194,6 +182,26 @@ endfunction
 		end
 		trans.data=init_data;
 		trans.rw = operation;
+		init_data.delete();
+	endfunction
+
+
+		virtual function void rnd_create_explicit_data_series(i2c_rand_data_transaction trns, input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
+		bit [7:0] init_data[$];
+		init_data.delete();
+
+		if(end_value >= start_value) begin
+			for(int i=start_value;i<=end_value;i++) begin
+				init_data.push_back(byte'(i));
+			end
+		end
+		else begin
+			for(int i=start_value;i>=end_value;i--) begin
+				init_data.push_back(byte'(i));
+			end
+		end
+		trns.data=init_data;
+		trns.rw = operation;
 		init_data.delete();
 	endfunction
 
