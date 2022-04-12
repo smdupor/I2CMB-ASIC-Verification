@@ -1,5 +1,5 @@
-# vsim -c -sv_seed 12345 -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value test_enable_disable_enable_intr_x_poll; coverage save test_enable_disable_enable_intr_x_poll.12345.ucdb; quit -f" "+GEN_TRANS_TYPE=i2cmb_generator_interrupt_cycling" "+VERBOSITY_LEVEL=LOW" optimized_debug_top_tb 
-# Start time: 16:48:23 on Apr 12,2022
+# vsim -c -sv_seed 54321 -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value test_multi_bus_ranged_speed; coverage save test_multi_bus_ranged_speed.54321.ucdb; quit -f" "+GEN_TRANS_TYPE=i2cmb_generator_test_multi_bus_ranged" "+VERBOSITY_LEVEL=LOW" optimized_debug_top_tb 
+# Start time: 19:46:03 on Apr 12,2022
 # //  Questa Sim
 # //  Version 2020.4_1 linux Nov  6 2020
 # //
@@ -96,10 +96,10 @@
 # NCSU_INFO:Time                    0:ncsu_component::build():  of tst.env.pred called
 # NCSU_INFO:Time                    0:ncsu_component::build():  of tst.env.scbd called
 # NCSU_INFO:Time                    0:ncsu_component::build():  of tst.env.coverage called
-# i2cmb_env_pkg.i2cmb_generator_interrupt_cycling.new found +GEN_TRANS_TYPE=i2cmb_generator_interrupt_cycling
+# i2cmb_env_pkg.i2cmb_generator_test_multi_bus_ranged.new found +GEN_TRANS_TYPE=i2cmb_generator_test_multi_bus_ranged
 # LOW
 # _______________________________________________________________________________
-# 		ALL TESTS PASSED, 179 tests cases checked.
+# 		ALL TESTS PASSED, 199 tests cases checked.
 # _______________________________________________________________________________
 # _______________________________________________________________________________
 # 			NCSU ECE745 SPRING 2022 Project Author:
@@ -117,12 +117,12 @@
 # 
 # 
 # ** Note: $finish    : ../testbench/top.sv(308)
-#    Time: 11461010 ns  Iteration: 1  Instance: /top
+#    Time: 62017100 ns  Iteration: 1  Instance: /top
 # 1
 # Break in NamedBeginStat test_flow at ../testbench/top.sv line 308
 # Stopped at ../testbench/top.sv line 308
-#  coverage attribute -name TESTNAME -value test_enable_disable_enable_intr_x_poll
-#  coverage save test_enable_disable_enable_intr_x_poll.12345.ucdb
+#  coverage attribute -name TESTNAME -value test_multi_bus_ranged_speed
+#  coverage save test_multi_bus_ranged_speed.54321.ucdb
 #  quit -f
-# End time: 16:48:28 on Apr 12,2022, Elapsed time: 0:00:05
+# End time: 19:46:27 on Apr 12,2022, Elapsed time: 0:00:24
 # Errors: 0, Warnings: 0

@@ -23,6 +23,7 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 			reworked_directed_project_2_test_transactions();
 
 			wb_agent_handle.expect_nacks(1'b0);
+			i2c_agent_handle.configuration.sample_clockstretch_coverage = 1'b1;
 
 			// Iterate through all generated transactions, passing each down to respective agents.
 			fork

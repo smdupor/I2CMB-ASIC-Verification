@@ -11,6 +11,7 @@ class i2c_transaction extends ncsu_transaction;
 	// Coverage Only
 	logic is_restart;	// x for N/a, 0 For "START", 1 for "RE-START"
 	int explicit_wait_ms;	// This was preceeded by an explicit "Wait" Command
+	int measured_clock;
 
 	// ****************************************************************************
 	// Constraints

@@ -10,6 +10,7 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	int stretch_qty;
 	int msg_size;
 	logic is_restart;
+	int measured_clock_sma;
 
   covergroup i2c_transaction_cg;
   	option.per_instance = 1;
@@ -61,7 +62,18 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	 covergroup clockstretch_cg;
 		option.per_instance = 1;
     	option.name = get_full_name();
-	i2c_stretch_delay:	coverpoint stretch_qty
+
+	measured_i2c_delay: coverpoint measured_clock_sma
+	{
+		// NB: These measurements, for accuracy, are taken from the scl_i low ranges only.
+		// Hence, these measurements will be lower than  the "configured" values.
+		bins DISABLED = {[1:1000]};
+		bins SHORT = {[1000:4000]};
+		bins MEDIUM = {[4001:8000]};
+		bins LONG = {[8001:20000]};
+	}
+
+	configured_i2c_delay:	coverpoint stretch_qty
 	{
 		bins DISABLED = {0};
 		bins SHORT = {[1000:5000]};
@@ -69,11 +81,14 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 		bins LONG = {[10001:20000]};
 	}
 
+	measured_x_configured_i2c_delay:	cross measured_i2c_delay, configured_i2c_delay;
+
 	bus_select: coverpoint bus_sel
 	{
 		bins BUSSES[] = {[0:15]};
 	}
-	stretch_x_bus_sel: cross i2c_stretch_delay, bus_select;
+	stretch_x_bus_sel: cross configured_i2c_delay, bus_select;
+	measured_x_bus_sel: cross measured_i2c_delay, bus_select;
 
   endgroup
 
@@ -94,9 +109,10 @@ class i2c_coverage extends ncsu_component#(.T(i2c_transaction));
 	bus_sel = trans.selected_bus;
 	msg_size = trans.data.size();
 	is_restart = trans.is_restart;
+	measured_clock_sma = trans.measured_clock;
 
 	i2c_transaction_cg.sample();
-	clockstretch_cg.sample();
+	if(configuration.sample_clockstretch_coverage) clockstretch_cg.sample();
 	
 	foreach(trans.data[i]) begin
 		data = trans.data[i];

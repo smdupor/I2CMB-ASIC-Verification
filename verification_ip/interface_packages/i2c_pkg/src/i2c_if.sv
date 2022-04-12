@@ -57,21 +57,57 @@ interface i2c_if       #(
 	logic [NUM_I2C_BUSSES-1:0] scl_drive=16'bz;
 	assign scl_o = scl_drive;
 
+	longint clk_count;
+	bit not_first_measure;
+
+	always @(posedge clk_i) ++clk_count;
+	always @(negedge scl_i[bus_selector]) begin 
+		clk_count = 0;
+		@(posedge scl_i[bus_selector]) rst_clock();
+	end
+	// Clockstretching and arb parameters
 	int stretch_qty=0;
 	int read_stretch_qty=0;
+
+	parameter int AVG_LEN=3;
+	longint measured_clock[AVG_LEN];
+
 	bit enable_cs=1;
 	int arbitration_wait_cycles=1000000;
 	bit cause_arbitration_loss;
-
+	function void reset_counters(); 
+	foreach(measured_clock[i])measured_clock[i]=0;
+	not_first_measure = 1'b1;
+	endfunction
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
 	//_____________________________________________________________________________________\\
+	// ****************************************************************************
+	// Reset the internal  clock counter and maintain sma
+	// ****************************************************************************
+	function void rst_clock();
+	int i;
+	longint sum;
+	sum = 0;
+	if(!not_first_measure) begin 
+		if(clk_count == 0) return;
+		for(i=0; i<AVG_LEN;++i) measured_clock[i] = clk_count;
+		not_first_measure=1'b1;
+	end
+	for(i=AVG_LEN; i>0;--i) measured_clock[i] = measured_clock[i-1];
+	measured_clock[0] = clk_count;
+	clk_count = 0;
+	for(i=0; i<AVG_LEN;++i) sum += measured_clock[i];
+	measured_clock[0] = sum/AVG_LEN;
+	endfunction
+
 
 	// ****************************************************************************
 	// Reset the Slave BFM and configure it to hold input_addr address.
 	// Reset task automatically starts the sampler for detecting start/stop
 	// ****************************************************************************
 	task reset_and_configure(input bit [8:0] input_addr, input int sel_bus);
+	
 		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
 		slave_address = (input_addr << 2);
 		transfer_in_progress = STOP;
@@ -83,6 +119,7 @@ interface i2c_if       #(
 	endtask
 
 	task reset();
+		
 		bus_selector = 0;
 		slave_address = 0;
 		transfer_in_progress = STOP;
@@ -242,6 +279,7 @@ interface i2c_if       #(
 		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
 		);
 		driver_interrupt = INTR_CLEAR; // Reset the interrupt on detected
+
 		driver_receive_address(op, write_data); // Handle the request
 	endtask
 
@@ -402,7 +440,7 @@ interface i2c_if       #(
 		static bit ack;
 		static bit [7:0] monitor_data[$];
 		monitor_data.delete;
-
+		reset_counters();
 		wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART));
 		monitor_interrupt = INTR_CLEAR; // Reset the interrupt on detected
 

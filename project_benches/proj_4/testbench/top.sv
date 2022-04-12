@@ -271,10 +271,10 @@ module top();
 		// ------------------------------------
 		// ------------------------------------
 		// -- I2C interfaces:
-		.scl_i(scl[0]), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Clock inputs
-		.sda_i(sda[0]), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Data inputs
-		.scl_o(scl[0]), //   out std_logic_vector(0 to g_bus_num - 1); -- I2C Clock outputs
-		.sda_o(sda[0]) //   out std_logic_vector(0 to g_bus_num - 1)  -- I2C Data outputs
+		.scl_i(scl[15]), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Clock inputs
+		.sda_i(sda[15]), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Data inputs
+		.scl_o(scl[15]), //   out std_logic_vector(0 to g_bus_num - 1); -- I2C Clock outputs
+		.sda_o(sda[15]) //   out std_logic_vector(0 to g_bus_num - 1)  -- I2C Data outputs
 		// ------------------------------------
 	);
 

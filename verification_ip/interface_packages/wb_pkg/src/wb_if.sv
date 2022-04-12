@@ -47,15 +47,6 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	endtask
 
 	// ****************************************************************************              
-	task wait_for_interrupt();
-		@(posedge irq_i);
-		if(!disable_interrupts) begin
-			assertion_expect_interrupt_when_enabled: assert(irq_i == 1'b1)
-			else $error("Assertion assertion_expect_NO_interrupt_when_disabled Failed! ");
-		end
-	endtask
-
-	// ****************************************************************************              
 	task reset_bus();
 		cyc_o <= 1'b0;
 		stb_o <= 1'b0;
@@ -134,16 +125,9 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// ****************************************************************************
 	task wait_interrupt();
 		wait(irq_i ==1'b1);
+		if(!disable_interrupts) begin
+			assertion_expect_interrupt_when_enabled: assert(irq_i == 1'b1)
+			else $error("Assertion assertion_expect_NO_interrupt_when_disabled Failed! ");
+		end
 	endtask
-
-	// ****************************************************************************
-	// Wait for, and clear, interrupt rising from WB-end of DUT. 
-	// Check status register and alert user to problem if a NACK was received.
-	// ****************************************************************************
-	task wait_interrupt_with_NACK();
-		wait(irq_i ==1'b1);
-	endtask
-
-
-
 endinterface

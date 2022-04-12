@@ -4,4 +4,4 @@ add testbrowser ./*.ucdb
 #add testbrowser ./sim_and_testplan_merged.ucdb
 coverage open ./sim_and_testplan_merged.ucdb
 rm -rf ./covhtmlreport/
-vcover report -detail -html -output covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
+#vcover report -detail -html -output covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
