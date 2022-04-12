@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 7:49:49 PM -->
+ <!-- Date: 1/1/0001 6:09:16 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -107,8 +107,26 @@
 				<Cell>1.5</Cell>
 				<Cell>Require Interrupts from Regblock</Cell>
 				<Cell>When enabled, Require interrupts to be raised by the regblock when DUT has completed operation. Directed and random testflows from the test_multi_bus group will all require an interrupt to be raised when DUT is reporting done.</Cell>
-				<Cell>test_multi_bus_*</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.5.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.5.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -197,7 +215,7 @@
 				<Cell>4.1</Cell>
 				<Cell>Slave-End Clock Stretching  (Any Bus)</Cell>
 				<Cell>Expect transfers to complete when TB delays subsequent operations legally from the I2c-interface via I2c  Clock Stretching (scl held low at legal times (after receive address/data bit, after transmit ACK/NACK, Before transmit &quot;read&quot; data bit)</Cell>
-				<Cell>clockstretch_cg::i2c_stretch_delay</Cell>
+				<Cell>clockstretch_cg::configured_i2c_delay</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -213,6 +231,15 @@
 			</Row>
 			<Row>
 				<Cell>4.3</Cell>
+				<Cell>SMA Average Clock Cycles Measured By Monitor</Cell>
+				<Cell>Validate using i2c interface monitor, that the clock is actually being stretched as configured, by maintaining a simple moving average measurement of the clock rate across all transactions.</Cell>
+				<Cell>clockstretch_cg::measured_i2c_delay</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.4</Cell>
 				<Cell>Master-End Upstream Delays</Cell>
 				<Cell>Expect transfers to complete when TB delays operations on the WB end of the DUT, via stalling continued commands after a completed read or write. REQUIRE no extraneous starts/stops or clock cycles during these stalls.</Cell>
 				<Cell>wb_transaction_cg::wb_stretch_delay</Cell>
@@ -221,7 +248,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>4.4</Cell>
+				<Cell>4.5</Cell>
 				<Cell>Wait Commands</Cell>
 				<Cell>Expect transfers to complete when explicit wait commands issues to DUT with subsequent operations</Cell>
 				<Cell>wait_cg::explicit_wait_times</Cell>
@@ -230,7 +257,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>4.5</Cell>
+				<Cell>4.6</Cell>
 				<Cell>Directed Clockstretching Test</Cell>
 				<Cell>Initiate required clockstretched transfers to meet coverage in all coverpoints and crosses for Clockstretching group. Use randomized time quantities for clocks to be slowed. Require successful transfers in single, multi-byte, and bidirectional, in the presence of stretched clocks. Use RANDOM Bus Selection, addresses, data, and operations types. Use RANDOM CLOCKSTRETCH DURATIONS. Insert RANDOM WB-end delays. Insert RANDOM explicit WAIT commands via DUT. </Cell>
 				<Cell>test_clockstretching</Cell>
@@ -257,11 +284,38 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
+				<Cell>5.1.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
 				<Cell>5.2</Cell>
 				<Cell>Intr-Poll Reset</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts enabled for first command, and disabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -275,11 +329,38 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
+				<Cell>5.3.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.3.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
 				<Cell>5.4</Cell>
 				<Cell>Poll-Poll Reset</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts DISabled for first command, and DISabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.4.1</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -474,7 +555,7 @@
 			</Row>
 			<Row>
 				<Cell>11</Cell>
-				<Cell>Connected and Disconnected Slave</Cell>
+				<Cell>Connected and Disconnected Slave(NACK)</Cell>
 				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
