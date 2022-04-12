@@ -202,7 +202,7 @@ module top();
 		// ------------------------------------
 	);
 
-		\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES),
+	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES),
 	.g_f_scl_0(I2C_MAX_BUS_RATE),
 	.g_f_scl_1(I2C_MAX_BUS_RATE),
 	.g_f_scl_2(I2C_MAX_BUS_RATE),
@@ -219,7 +219,7 @@ module top();
 	.g_f_scl_d(I2C_MAX_BUS_RATE),
 	.g_f_scl_e(I2C_MAX_BUS_RATE),
 	.g_f_scl_f(I2C_MAX_BUS_RATE)
-		) DUT_16_max
+		) DUT
 	(
 		// ------------------------------------
 		// -- Wishbone signals:

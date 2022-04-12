@@ -35,14 +35,9 @@ class i2cmb_generator_test_hard_reset_insertion extends i2cmb_generator;
 	//		actions to agents, in order, in parallel. 
 	// ****************************************************************************
 	virtual task run();
-		if(trans_name == "i2c_arb_loss_transaction") begin
-			generate_arb_loss_flow();
-			wb_agent_handle.configuration.expect_arb_loss = 1'b1;
-		end
-		else begin
-		generate_directed_project_2_test_transactions();
-		wb_agent_handle.expect_nacks(1'b0);
-		end
+
+		$fatal;  // This test is not yet implemented
+
 		// Iterate through all generated transactions, passing each down to respective agents.
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);

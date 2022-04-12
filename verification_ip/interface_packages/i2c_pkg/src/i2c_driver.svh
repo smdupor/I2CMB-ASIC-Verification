@@ -5,6 +5,7 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 	i2c_transaction i2c_trans;
 	i2c_rand_cs_transaction i2c_rand_cs;
 	i2c_arb_loss_transaction i2c_arb_loss;
+	i2c_rand_data_transaction i2c_rand_dat;
 	bit arb_loss_complete;
 
 	function new(string name = "", ncsu_component_base parent = null);
@@ -30,7 +31,15 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 			else bus.read_stretch_qty = i2c_rand_cs.clock_stretch_qty;
 			$display("Clockstr qty %0d", i2c_rand_cs.clock_stretch_qty);
 		end
+		if($cast(i2c_rand_dat, trans)) begin
+		fork
+			bus.wait_for_i2c_transfer(i2c_rand_dat.rw,i2c_driver_buffer);
+			if(i2c_trans.rw == I2_READ) bus.provide_read_data(i2c_rand_dat.data, transfer_complete);
+		join
 
+
+			return;
+		end
 		
 
 		if(trans != null) begin

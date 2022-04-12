@@ -43,8 +43,8 @@ compile: comp_bench comp_I2C_MB optimize
 
 simulate: 
 	$(eval TN := test_clockstretching)
-	$(eval GTT := i2cmb_generator_multi_bus_clockstretch)
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN);" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval GTT := i2cmb_generator_test_multi_bus_clockstretch)
+	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "do wave.do;set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN);" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 debug: clean compile simulate
 
 restart: clean compile
@@ -56,10 +56,22 @@ console: clean compile
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
-		$(eval GTT := i2cmb_generator_test_multi_bus_clockstretch)
-		$(eval TN := test_clockstretching)
+	$(eval GTT := i2cmb_generator_test_multi_bus_clockstretch)
+	$(eval TN := test_clockstretching)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+mulbus: clean compile_sil
+	$(eval TN := test_multi_bus_max_speed)
+	$(eval GTT := i2cmb_generator_test_multi_bus)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+debug_mulbus: 
+	$(eval TN := test_multi_bus_max_speed)
+	$(eval GTT := i2cmb_generator_test_multi_bus)
+	vsim  -i -sv_seed $(TEST_SEED)-classdebug -msgmode both -coverage -do "do wave.do;set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN);" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
 silent2: clean compile_sil
+	date +"%T" > .timelog
 	$(eval TN := test_register_crosschecking)
 	$(eval GTT := i2cmb_generator_test_reg_crosscheck)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -69,14 +81,11 @@ silent2: clean compile_sil
 	$(eval TN := test_single_bus_default_speed)
 	$(eval GTT := i2cmb_generator_test_single_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	$(eval TN := test_multi_bus_default_speed)
-	$(eval GTT := i2cmb_generator_test_multi_bus)
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TN := test_multi_bus_max_speed)
 	$(eval GTT := i2cmb_generator_test_multi_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TN := test_multi_bus_ranged_speed)
-	$(eval GTT := i2cmb_generator_test_multi_bus)
+	$(eval GTT := i2cmb_generator_test_multi_bus_ranged)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TN := test_clockstretching)
 	$(eval GTT := i2cmb_generator_test_multi_bus_clockstretch)
@@ -93,6 +102,8 @@ silent2: clean compile_sil
 	$(eval TN := test_disconnected_slave_nacks)
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	date +"%T" >> .timelog
+	cat .timelog
 test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)

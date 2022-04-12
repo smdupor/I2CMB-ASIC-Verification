@@ -37,11 +37,12 @@ class i2c_transaction extends ncsu_transaction;
 	// ****************************************************************************
 	function string convert2string_legacy();
 		string s,temp;
+		temp.itoa(integer'(selected_bus));
 		if(rw == I2_WRITE) begin
-			s = "I2C_BUS WRITE Transfer To   Address: ";
+			s = {"I2C_BUS ", temp, " WRITE Transfer To   Address: "};
 		end
 		else begin
-			s = "I2C_BUS READ  Transfer From Address: ";
+			s = {"I2C_BUS ", temp, " READ  Transfer From Address: "};
 		end
 
 		// Add ADDRESS associated with transfer to string, followed by "Data: " tag

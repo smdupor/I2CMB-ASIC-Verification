@@ -1,6 +1,7 @@
 class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 	i2c_transaction i2c_trans[$];
+	i2c_rand_data_transaction i2c_rand_trans[$];
 	i2c_transaction trans;
 	wb_transaction wb_trans[$];
 	wb_agent wb_agent_handle;
@@ -12,19 +13,6 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	// ****************************************************************************
 	function new(string name = "", ncsu_component_base  parent = null);
 		super.new(name,parent);
-		/*if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
-			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
-			$fatal;
-		end
-		
-		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
-		if(trans_name == "i2c_arb_loss_transaction") begin
-
-		end
-		else if(trans_name != "i2cmb_test_multi_bus_range" || trans_name == "i2c_arb_loss_transaction") begin $fatal; end
-		else begin
-			trans_name = "i2c_rand_cs_transaction";
-		end*/
 		verbosity_level = global_verbosity_level;
 	endfunction
 
@@ -41,126 +29,78 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	//		actions to agents, in order, in parallel. 
 	// ****************************************************************************
 	virtual task run();
-		if(trans_name == "i2c_arb_loss_transaction") begin
-			generate_arb_loss_flow();
-			wb_agent_handle.configuration.expect_arb_loss = 1'b1;
-		end
-		else begin
-		generate_directed_project_2_test_transactions();
-		
-		wb_agent_handle.expect_nacks(1'b0);
-		end
-		// Iterate through all generated transactions, passing each down to respective agents.
-		fork
-			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-			foreach(wb_trans[i]) begin
-				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH);	// Print only pertinent WB transactions per project spec.
-			end
-		join
+
 	endtask
-	
-	virtual function void generate_arb_loss_flow();
 
-	endfunction
+virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
+	if(add_bus_sel) select_I2C_bus(t.selected_bus);
+	issue_start_command();
+	if(t.rw == I2_WRITE) begin
+		transmit_address_req_write(t.address);
+		foreach(t.data[i]) write_data_byte(byte'(t.data[i]));
+	end 
+	else begin
+		transmit_address_req_read(t.address);
+		for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
+		read_data_byte_with_stop();
+	end
+	if(add_stop) issue_stop_command();
+endfunction
 
- 	// ****************************************************************************
-	// Create all required transactions for the project 2 directed tests, 
-	//  Including 	WRITE 0 -> 31
-	//				READ 100 -> 131
-	// 				WRITE/READ Alternating 64->127 interleave 63 -> 0 
-	// ****************************************************************************
-	virtual function void generate_directed_project_2_test_transactions();
+virtual function void convert_rand_i2c_trans(i2c_rand_data_transaction t, bit add_bus_sel, bit add_stop);
+	if(add_bus_sel) select_I2C_bus(t.selected_bus);
+	issue_start_command();
+	if(t.rw == I2_WRITE) begin
+		transmit_address_req_write(t.address);
+		foreach(t.data[i]) begin 
+			write_data_byte(byte'(t.data[i]));
+		end
+	end 
+	else begin
+		transmit_address_req_read(t.address);
+		for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
+		read_data_byte_with_stop();
+	end
+	if(add_stop) issue_stop_command();
+endfunction
+
+virtual function void generate_random_base_flow(int qty, bit change_busses);
 		int i,j,k,use_bus;
-
-		start_restart_trans();
-
+		i2c_rand_data_transaction rand_trans;
 		use_bus = 0;
 		// Transaction to enable the DUT with interrupts enabled
 		enable_dut_with_interrupt();
 
-		j=64;
-		k=63;
-		for(int i = 0; i<200;++i) begin// (i2c_trans[i]) begin
-			$cast(trans,ncsu_object_factory::create(trans_name));
+		for(int i = 0; i<qty;++i) begin// (i2c_trans[i]) begin
+			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=use_bus;
-			select_I2C_bus(trans.selected_bus);
-			$display("Selected bus %0d", trans.selected_bus);
-			++use_bus;
-			if(use_bus > 15) use_bus = 0;
-			// Send a start command
-			issue_start_command();
+			//rand_trans.selected_bus=use_bus;
+			
+			//select_I2C_bus(trans.selected_bus);
 
-			// pick an address
-			trans.address = (i % 126)+1;
+			
+			
+			rand_trans.randomize();
+			
+				i2c_rand_trans.push_back(rand_trans);
 
-			// WRITE ALL (Write 0 to 31 to remote Slave)
-			if(i==0) begin
-				transmit_address_req_write(trans.address);
-				for(j=0;j<=31;j++) write_data_byte(byte'(j));
-				create_explicit_data_series(0, 31, i, I2_WRITE);
-				issue_stop_command();
-				disable_dut();
-				enable_dut_with_interrupt();
-			end
-
-			// READ ALL (Read 100 to 131 from remote slave)
-			if(i==1) begin
-				transmit_address_req_read(trans.address);
-				for(j=100;j<=130;j++) read_data_byte_with_continue();
-				read_data_byte_with_stop();
-				create_explicit_data_series(100, 131, i, I2_READ);
-				issue_stop_command();
-				issue_wait(1);
-				j=64;
-			end
-				
-
-
-
-			// Alternation EVEN (Handle the Write step in Write/Read Alternating TF)
-			if(i>1 && i % 2 == 0) begin // do a write
-				transmit_address_req_write(trans.address);
-				write_data_byte(byte'(j));
-				create_explicit_data_series(j, j, i, I2_WRITE);
-				++j;
-				issue_stop_command();
-			end
-			// Alternation ODD(Handle the Read step in Write/Read Alternating TF)
-			else if (i>1 && i % 2 == 1) begin // do a write
-				transmit_address_req_read(trans.address);
-				read_data_byte_with_stop();
-				create_explicit_data_series(k, k, i, I2_READ);
-				--k;
-				issue_stop_command();
-			end
-			trans.randomize();
-			i2c_trans.push_back(trans);
+				if(change_busses) 	convert_rand_i2c_trans(rand_trans, 1, 1);
+				else begin
+				//	rand_trans.selected_bus = use_bus;
+					convert_rand_i2c_trans(rand_trans, 1, 1); // Effectively, a restart
+				end
 		end
-		disable_dut();
-		enable_dut_polling();
-		disable_dut();
-
-		enable_dut_with_interrupt();
-		issue_wait(11);
-		
-		no_data_trans();
-		
-		issue_start_command();
-		issue_stop_command();
-		disable_dut();
-
 	endfunction
 
-function no_data_trans();
+
+function void no_data_trans();
 	$cast(trans,ncsu_object_factory::create("i2c_transaction"));
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			trans.selected_bus=0;
 			select_I2C_bus(trans.selected_bus);
-			$display("Selected bus %0d", trans.selected_bus);
+		
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			trans.selected_bus=0;
@@ -171,7 +111,7 @@ function no_data_trans();
 			i2c_trans.push_back(trans);
 endfunction
 
-function start_restart_trans();
+function void start_restart_trans();
 int j;
 		enable_dut_with_interrupt();
 		issue_wait(6);
@@ -180,7 +120,7 @@ int j;
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			trans.selected_bus=0;
 			select_I2C_bus(trans.selected_bus);
-			$display("Selected bus %0d", trans.selected_bus);
+			
 
 			// pick  a bus, sequentially picking a new bus for each major transaction
 			trans.selected_bus=0;

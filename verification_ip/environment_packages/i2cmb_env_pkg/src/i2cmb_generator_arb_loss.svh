@@ -28,14 +28,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 	//		actions to agents, in order, in parallel. 
 	// ****************************************************************************
 	virtual task run();
-		if(trans_name == "i2c_arb_loss_transaction") begin
-			generate_arb_loss_flow();
-			wb_agent_handle.configuration.expect_arb_loss = 1'b1;
-		end
-		else begin
-		generate_directed_project_2_test_transactions();
-		wb_agent_handle.expect_nacks(1'b0);
-		end
+		generate_arb_loss_flow();
+		wb_agent_handle.configuration.expect_arb_loss = 1'b1;
+		
 		// Iterate through all generated transactions, passing each down to respective agents.
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
@@ -44,7 +39,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 				//if(i==15) #1000 $finish;
 				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH);	// Print only pertinent WB transactions per project spec.
 			end
-			# 1000 $finish;
+			$finish;
 			end
 		join
 	endtask

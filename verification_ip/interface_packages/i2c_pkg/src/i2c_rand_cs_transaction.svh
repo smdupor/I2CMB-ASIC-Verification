@@ -37,11 +37,13 @@ class i2c_rand_cs_transaction extends i2c_transaction;
 	// ****************************************************************************
 	function string convert2string_legacy();
 		string s,temp;
+
+		temp.itoa(integer'(this.selected_bus));
 		if(rw == I2_WRITE) begin
-			s = "I2C_BUS WRITE Transfer To   Address: ";
+			s = {"I2C_BUS ", temp, " WRITE Transfer To  randcs Address: "};
 		end
 		else begin
-			s = "I2C_BUS READ  Transfer From Address: ";
+			s = {"I2C_BUS ", temp, " READ  Transfer From randcs Address: "};
 		end
 
 		// Add ADDRESS associated with transfer to string, followed by "Data: " tag

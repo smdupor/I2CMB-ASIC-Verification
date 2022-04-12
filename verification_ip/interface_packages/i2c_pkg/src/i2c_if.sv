@@ -59,6 +59,7 @@ interface i2c_if       #(
 
 	int stretch_qty=0;
 	int read_stretch_qty=0;
+	bit enable_cs=0;
 	int arbitration_wait_cycles=1000000;
 	bit cause_arbitration_loss;
 
@@ -176,6 +177,7 @@ interface i2c_if       #(
 	// stretch_qty must be set by system driver.
 	// ****************************************************************************
 	task clockstretch();
+	if(!enable_cs) return;
 		#15 scl_drive[bus_selector] = 1'b0;
 		repeat(stretch_qty) @(posedge clk_i);
 		scl_drive[bus_selector] = 1'bz;
@@ -189,6 +191,7 @@ interface i2c_if       #(
 	// read_stretch_qty system cycles; read_stretch_qty must be set by system driver.
 	// ****************************************************************************
 	task clockstretch_read();
+	if(!enable_cs) return;
 		#15 scl_drive[bus_selector] = 1'b0;
 		repeat(read_stretch_qty) @(posedge clk_i);
 		scl_drive[bus_selector] = 1'bz;

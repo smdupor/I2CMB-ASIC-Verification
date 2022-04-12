@@ -33,8 +33,6 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 			return;
 		end
 
-
-
 		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
 
 		if(wb_trans.write) begin

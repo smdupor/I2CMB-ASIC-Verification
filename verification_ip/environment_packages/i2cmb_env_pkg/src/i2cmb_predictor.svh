@@ -16,6 +16,7 @@ class i2cmb_predictor extends ncsu_component;
 	int most_recent_wait;
 	i2c_op_t cov_op;
 	logic is_restart;
+	int sel_bus;
 
 	
 	  covergroup wait_cg;
@@ -93,6 +94,7 @@ class i2cmb_predictor extends ncsu_component;
 				else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) process_address_transaction(); 							// Which Contains an address transmit action
 				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) capture_next_read = 1'b1; 		// Which is intrupt clear for a I2C_READ expected on next task call 
 				if(dat_mon[2:0] == M_WB_WAIT) most_recent_wait = last_dpr;
+				if(dat_mon[2:0] == M_SET_I2C_BUS) sel_bus = last_dpr;
 			end
 			default: process_state_register_transaction(); // Caught a state debug register transaction
 		endcase
@@ -135,7 +137,7 @@ class i2cmb_predictor extends ncsu_component;
 		end
 																	// Then, Create a new Transaction
 		monitored_trans = new({"i2c_trans(", itoalpha(counter++),")"});
-
+		monitored_trans.selected_bus = sel_bus;
 		if(most_recent_wait > 0) begin
 			monitored_trans.explicit_wait_ms = most_recent_wait;
 			//most_recent_wait = 0;
