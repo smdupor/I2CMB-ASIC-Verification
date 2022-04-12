@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 6:12:52 PM -->
+ <!-- Date: 1/1/0001 6:34:22 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -276,7 +276,7 @@
 			</Row>
 			<Row>
 				<Cell>5.1</Cell>
-				<Cell>Intr-Intr Reset</Cell>
+				<Cell>Transx with Interrupts -SoftReset- Transx with Interrupts</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts enabled for both enable commands, expect subsequent transfers to complete successfully, with interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
@@ -294,7 +294,7 @@
 			</Row>
 			<Row>
 				<Cell>5.2</Cell>
-				<Cell>Intr-Poll Reset</Cell>
+				<Cell>Transx with Interrupts -SoftReset- Transx with Interrupt Disabled</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts enabled for first command, and disabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
@@ -314,14 +314,14 @@
 				<Cell>5.2.2</Cell>
 				<Cell>Require NO Interrupt  When Disabled</Cell>
 				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
-				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
 				<Cell>5.3</Cell>
-				<Cell>Poll-Intr Reset</Cell>
+				<Cell> Transx with Interrupt Disabled -SoftReset- Transx with Interrupts</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts DISabled for first command, and ENabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITH Interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
@@ -341,14 +341,14 @@
 				<Cell>5.3.2</Cell>
 				<Cell>Require NO Interrupt  When Disabled</Cell>
 				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
-				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
 				<Cell>5.4</Cell>
-				<Cell>Poll-Poll Reset</Cell>
+				<Cell> Transx w Interrupt Disabled -SoftReset- Transx w Interrupt Disabled</Cell>
 				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts DISabled for first command, and DISabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
 				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
 				<Cell>test</Cell>
@@ -359,31 +359,13 @@
 				<Cell>5.4.1</Cell>
 				<Cell>Require NO Interrupt  When Disabled</Cell>
 				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
-				<Cell>assertion_expect_NO_interrput_when_disabled</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
 			<Row>
 				<Cell>6</Cell>
-				<Cell>Hard Resets</Cell>
-				<Cell></Cell>
-				<Cell></Cell>
-				<Cell></Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>6.1</Cell>
-				<Cell>Hard rst via rst signal between xfers</Cell>
-				<Cell>When a 133ns reset is raised after a completed transfer, expect subsequent enable-transfer flows to complete successfully</Cell>
-				<Cell>test_hard_reset_insertion</Cell>
-				<Cell>test</Cell>
-				<Cell>1</Cell>
-				<Cell>100</Cell>
-			</Row>
-			<Row>
-				<Cell>7</Cell>
 				<Cell>FSM Testing</Cell>
 				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT, for all DUT FSMs</Cell>
 				<Cell></Cell>
@@ -392,7 +374,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>7.1</Cell>
+				<Cell>6.1</Cell>
 				<Cell>Byte-Level FSM Coverage</Cell>
 				<Cell>State and Transition coverage for i2cmb Byte-Level FSM</Cell>
 				<Cell>/top/DUT_16_max/iicmb_m_inst*/mbyte_inst0/state</Cell>
@@ -401,7 +383,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>7.2</Cell>
+				<Cell>6.2</Cell>
 				<Cell>Bit-Level FSM Coverage</Cell>
 				<Cell>State and Transition coverage for i2cmb Bit-Level FSM</Cell>
 				<Cell>/top/DUT_16_max/iicmb_m_inst*/mbit_inst0/state</Cell>
@@ -410,7 +392,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>7.3</Cell>
+				<Cell>6.3</Cell>
 				<Cell>Bus Conditioner FSMs</Cell>
 				<Cell>State and Transition Coverage for i2cmb Bus-Conditioner FSMs</Cell>
 				<Cell>/top/DUT_16_max/iicmb_m_inst*/conditioner_mux_inst0/*</Cell>
@@ -419,7 +401,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>8</Cell>
+				<Cell>7</Cell>
 				<Cell>DUT Code Coverage</Cell>
 				<Cell>RTL Core ALL stmt, brnch, fsm, trans, expr. Require that all DUT units have 100% statement coverage and 100% branch coverage.</Cell>
 				<Cell>/top/DUT_16_max</Cell>
@@ -428,7 +410,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9</Cell>
+				<Cell>8</Cell>
 				<Cell>I2C Protocol Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -437,7 +419,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.1</Cell>
+				<Cell>8.1</Cell>
 				<Cell>I2C Addresses</Cell>
 				<Cell>Ensure all addresses have been selected and used for successful transfers</Cell>
 				<Cell>i2c_transaction_cg::address</Cell>
@@ -446,7 +428,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.2</Cell>
+				<Cell>8.2</Cell>
 				<Cell>I2C Data Values</Cell>
 				<Cell>Ensure all possible data values have been selected and used for successful transfer</Cell>
 				<Cell>i2c_transaction_cg::data</Cell>
@@ -455,7 +437,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.3</Cell>
+				<Cell>8.3</Cell>
 				<Cell>I2C Bus Selection</Cell>
 				<Cell>Ensure all available data busses have been properly tested</Cell>
 				<Cell>i2c_transaction_cg::bus_sel</Cell>
@@ -464,7 +446,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.4</Cell>
+				<Cell>8.4</Cell>
 				<Cell>I2C Operation Type</Cell>
 				<Cell>Ensure both reads and writes are covered</Cell>
 				<Cell>i2c_transaction_cg::operation</Cell>
@@ -473,7 +455,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.5</Cell>
+				<Cell>8.5</Cell>
 				<Cell>I2C Message Size (Single and Multi-Byte)</Cell>
 				<Cell>Ensure DUT properly handles Zero-data, single-byte, and multi-byte transactions</Cell>
 				<Cell>i2c_transaction_cg::msg_size</Cell>
@@ -482,7 +464,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.6</Cell>
+				<Cell>8.6</Cell>
 				<Cell>I2C START and RE-START</Cell>
 				<Cell>Ensure that DUT properly handles both START (from idle) and RE-START (From transaction-in-progress) initiations of new transactions.</Cell>
 				<Cell>predictor_cg::start_or_restart</Cell>
@@ -491,7 +473,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.7</Cell>
+				<Cell>8.7</Cell>
 				<Cell>Operation Vs Msg Size</Cell>
 				<Cell>Ensure that all message sizes are used in both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::msg_size_x_operation</Cell>
@@ -500,7 +482,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.8</Cell>
+				<Cell>8.8</Cell>
 				<Cell>Operation Vs Data</Cell>
 				<Cell>Ensure that all legal data values are covered across  both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::operation_x_data</Cell>
@@ -509,7 +491,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.9</Cell>
+				<Cell>8.9</Cell>
 				<Cell>Operation  Vs Address</Cell>
 				<Cell>Ensure that all valid address values are covered for  both I2C Read and Write transaction types</Cell>
 				<Cell>i2c_transaction_cg::operation_x_address</Cell>
@@ -518,7 +500,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>9.10</Cell>
+				<Cell>8.10</Cell>
 				<Cell>Operation vs Start-Restart</Cell>
 				<Cell>Ensure that start-restart conditions are covered for both read and write transaction types.</Cell>
 				<Cell>predictor_cg::restart_x_operation</Cell>
@@ -527,7 +509,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10</Cell>
+				<Cell>9</Cell>
 				<Cell>WB Protocol Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -536,7 +518,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10.1</Cell>
+				<Cell>9.1</Cell>
 				<Cell>WB Command Coverage</Cell>
 				<Cell>Ensure that all possible WB transactions and commands have been used as part of overall testplan</Cell>
 				<Cell>wb_transaction_cg::cmd_type</Cell>
@@ -545,7 +527,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>10.2</Cell>
+				<Cell>9.2</Cell>
 				<Cell>WB Register Coverage</Cell>
 				<Cell>TODO TODO TODO</Cell>
 				<Cell>wb_transaction_cg::reg_type</Cell>
@@ -554,7 +536,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11</Cell>
+				<Cell>10</Cell>
 				<Cell>Connected and Disconnected Slave(NACK)</Cell>
 				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
 				<Cell></Cell>
@@ -563,7 +545,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.1</Cell>
+				<Cell>10.1</Cell>
 				<Cell>Config Slave Connected or Disconnected</Cell>
 				<Cell>Expect NACK bit raised when no slave response to master request</Cell>
 				<Cell>wb_transaction_cg::configuration_nacks</Cell>
@@ -572,7 +554,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.2</Cell>
+				<Cell>10.2</Cell>
 				<Cell>Cross ConnSlv-ACK, DisconSlv-NACK</Cell>
 				<Cell>Ensure that both cases, connected leading to ACKS and disconnected leading to NACKS, are covered</Cell>
 				<Cell>wb_transaction_cg::config_x_nacks</Cell>
@@ -581,7 +563,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.3</Cell>
+				<Cell>10.3</Cell>
 				<Cell>Master Receipt of ACKs and NACKs</Cell>
 				<Cell>Ensure that WB interface accurately reports both ACKs and NACKs via CMDR[NACK] when expected.</Cell>
 				<Cell>wb_transaction_cg::nacks</Cell>
@@ -590,7 +572,7 @@
 				<Cell>100</Cell>
 			</Row>
 			<Row>
-				<Cell>11.4</Cell>
+				<Cell>10.4</Cell>
 				<Cell>Directed Test of Disconnected Slaves</Cell>
 				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Expect NACKs raised after each data byte written. Use Random bus selection, random operation type, and in case of writes, random message length and data.</Cell>
 				<Cell>test_disconnected_slave_nacks</Cell>
