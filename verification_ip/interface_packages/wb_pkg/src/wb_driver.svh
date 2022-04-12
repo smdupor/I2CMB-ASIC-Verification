@@ -7,6 +7,7 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 	virtual wb_if bus;
 	wb_configuration configuration;
 	wb_transaction wb_trans;
+	wb_transaction_arb_loss wb_arb_trans;
 	bit dut_enable;
 	logic [7:0] tf_buffer;
 
@@ -26,6 +27,12 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		wb_trans = trans;
 		bus.wait_for_reset();
 
+		if($cast(wb_arb_trans, trans)) begin 
+			ncsu_info("\n", {"Reached Arbitration Loss transaction ",trans.convert2string()},NCSU_HIGH);
+			bl_arb_put(wb_arb_trans);
+			return;
+		end
+
 		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
 
 		if(wb_trans.write) begin
@@ -43,5 +50,21 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 			if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);
 
 		end
+	endtask
+
+	// Test Arbitration LOSS condition
+	task bl_arb_put(wb_transaction_arb_loss wb_arb);
+		bit [7:0] buffer;
+		assert(wb_arb.write);
+		
+		if(wb_arb.line == CMDR || wb_arb.line == CSR) bus.master_write(wb_arb.line, wb_arb.cmd);
+		if(wb_arb.line == DPR) bus.master_write(wb_arb.line, wb_arb.word);
+		#250 while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
+		assert_require_arb_loss_bit: assert(buffer[6] == 1'b1)
+		else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);
+
+		bus.master_read(CSR, buffer);
+		assert_bb_during_transaction: assert(buffer[5]==1'b1)						// Bus Busy during transaction
+		else $error("Assertion assert_bb_during_transaction failed!");
 	endtask
 endclass

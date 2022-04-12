@@ -11,9 +11,10 @@ interface i2c_if       #(
 	input wire clk_i,
 	input wire rst_i,
 	// Master signals
-	input wire [NUM_I2C_BUSSES-1:0] scl_i,
+	input triand [NUM_I2C_BUSSES-1:0] scl_i,
 	input triand [NUM_I2C_BUSSES-1:0] sda_i,
-	output wire [NUM_I2C_BUSSES-1:0] sda_o
+	output wire [NUM_I2C_BUSSES-1:0] sda_o, 
+	output wire [NUM_I2C_BUSSES-1:0] scl_o 
 );
 	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
@@ -53,6 +54,14 @@ interface i2c_if       #(
 	logic [NUM_I2C_BUSSES-1:0] sda_drive=16'bz;
 	assign sda_o = sda_drive;
 
+	logic [NUM_I2C_BUSSES-1:0] scl_drive=16'bz;
+	assign scl_o = scl_drive;
+
+	int stretch_qty=0;
+	int read_stretch_qty=0;
+	bit enable_cs=1;
+	int arbitration_wait_cycles=1000000;
+	bit cause_arbitration_loss;
 
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
@@ -159,6 +168,66 @@ interface i2c_if       #(
 	endtask
 
 	//_____________________________________________________________________________________\\
+	//                       CLOCKSTRETCHING IMPLEMENTATION TASKS                          \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// During a ADRESS WRITE or DATA WRITE, the clock may be stretched between each bit,  
+	// Slowing the bus speed. Force clock level low for stretch_qty system clock cycles
+	// stretch_qty must be set by system driver.
+	// ****************************************************************************
+	task clockstretch();
+	if(!enable_cs) return;
+		#15 scl_drive[bus_selector] = 1'b0;
+		repeat(stretch_qty) @(posedge clk_i);
+		scl_drive[bus_selector] = 1'bz;
+	endtask
+
+	// ****************************************************************************
+	// During a DATA READ, the clock may be stretched before the first bit, and
+	// between each subsequent bit until the final bit is written. Clockstretching
+	// must end at this final bit, allowing the master to retake control of the 
+	// system to transmit it's ACK or NACK. Clock shall be stretched between bits by
+	// read_stretch_qty system cycles; read_stretch_qty must be set by system driver.
+	// ****************************************************************************
+	task clockstretch_read();
+	if(!enable_cs) return;
+		#15 scl_drive[bus_selector] = 1'b0;
+		repeat(read_stretch_qty) @(posedge clk_i);
+		scl_drive[bus_selector] = 1'bz;
+	endtask
+
+	//_____________________________________________________________________________________\\
+	//                       ARBITRATION OVERRIDE TASKS 		                           \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// Excplicitly cause a system state where arbitration shall be lost by the master. 
+	// Release this state after arbitration_wait_cycles system cycles
+	// ****************************************************************************
+	task force_arbitration_loss();
+		//wait(driver_interrupt == RAISE_RESTART || driver_interrupt == RAISE_START)
+		//@(posedge scl_i);
+//		repeat(300) begin
+			@(posedge scl_i);
+			@(posedge scl_i) sda_drive <= 16'h00;
+			@(negedge scl_i) sda_drive <= 16'hzz;
+
+		//end
+		/*@(posedge scl_i);
+		repeat(15) begin
+			@(posedge scl_i) sda_drive <= 16'h00;
+			@(negedge scl_i);
+		end*/
+			//@(negedge clk_i) sda_drive <= 16'hff;
+		//end
+		//scl_drive <= 16'hff;
+		
+		//sda_drive[bus_selector] <= 1'bz;
+		//scl_drive[bus_selector] <= 1'bz;
+	endtask
+
+	//_____________________________________________________________________________________\\
 	//                       I2C DRIVER IMPLEMENTATION TASKS                               \\
 	//_____________________________________________________________________________________\\
 
@@ -189,16 +258,22 @@ interface i2c_if       #(
 		static bit [7:0] write_buf[$];
 		// Read Address and opcode from serial bus
 		for(int i=MSB;i>=LSB;i--) begin
-			@(posedge scl_i[bus_selector]);
+			@(posedge scl_i[bus_selector]) if(cause_arbitration_loss) force_arbitration_loss();
 			driver_buffer[i] = sda_i[bus_selector];
-			@(negedge scl_i[bus_selector]) if(intr_raised()) return;
+			@(negedge scl_i[bus_selector])begin
+				clockstretch();
+				 if(intr_raised()) return;
+			end
 		end
 
 		// Determine whether address matches configured slave address OR the All-Call address
 		if(driver_buffer[MSB:2]==slave_address[MSB:2] || driver_buffer[MSB:2]==7'b000_0000) begin
 			// SEND THE ACK Back to master upon a match
-			driver_transmit_ACK();
-
+			//driver_transmit_ACK();
+			sda_drive[bus_selector] = 1'b0;
+			@(posedge scl_i[bus_selector]);
+		
+			@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
 			// Determine the operation code
 			op = driver_buffer[1]? I2_READ : I2_WRITE;
 
@@ -207,7 +282,7 @@ interface i2c_if       #(
 			else driver_transmit_read_data();
 
 		end
-		driver_interrupt = INTR_CLEAR;
+		//driver_interrupt = INTR_CLEAR;
 		// Copy queued captured write data into return array.
 		write_data = write_buf;
 	endtask
@@ -221,7 +296,7 @@ interface i2c_if       #(
 		forever begin
 			// Read a byte from the data bus
 			driver_read_single_byte();
-
+			if(intr_raised()) return;
 			// Check to ensure we have not encountered a stop/restart condition, if so, 
 			// return control to caller for next transfer to begin
 			if(!intr_raised()) driver_transmit_ACK();
@@ -245,9 +320,12 @@ interface i2c_if       #(
 	task driver_read_single_byte();
 		for(int i=MSB;i>=LSB;i--) begin
 			// Capture the value
-			@(posedge scl_i[bus_selector]) driver_buffer[i] = sda_i[bus_selector];
+			while(scl_i[bus_selector] == 1'b0 && !intr_raised()) #1 if(intr_raised()) return;
+			driver_buffer[i] = sda_i[bus_selector];
+			//@(posedge scl_i[bus_selector]) driver_buffer[i] = sda_i[bus_selector];
 			// Sample/Watch for a possible restart/stop signal until negedge scl_i[bus_selector]
-			while(scl_i[bus_selector] ==1'b1)	#10	if(intr_raised()) return;
+			while(scl_i[bus_selector] ==1'b1)	#1	if(intr_raised()) return;
+			clockstretch();
 		end
 	endtask
 
@@ -258,7 +336,9 @@ interface i2c_if       #(
 	task driver_transmit_ACK();
 		sda_drive[bus_selector] = 1'b0;
 		@(posedge scl_i[bus_selector]);
+		
 		@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
+		clockstretch();
 	endtask
 
 
@@ -285,6 +365,7 @@ interface i2c_if       #(
 
 			// Check for NACK/DONE or STOP/RESTART CONDTION
 			if(local_ack==NACK) return;
+			
 			@(negedge scl_i[bus_selector]) if(intr_raised()) return;
 		end
 	endtask
@@ -298,8 +379,9 @@ interface i2c_if       #(
 	task driver_transmit_single_byte();
 		for(int i=MSB;i>=LSB;i--) begin
 			sda_drive[bus_selector] <= driver_buffer[i];
+			clockstretch_read();
 			@(posedge scl_i[bus_selector]);
-			@(negedge scl_i[bus_selector]);
+			@(negedge scl_i[bus_selector]); 
 		end
 	endtask
 

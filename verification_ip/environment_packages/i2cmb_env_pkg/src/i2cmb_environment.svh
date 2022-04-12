@@ -5,7 +5,7 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	i2c_agent		i2c_agent_handle;
 	i2cmb_predictor         pred;
 	i2cmb_scoreboard        scbd;
-	coverage          coverage;
+	i2cmb_coverage          coverage;
 
 	// ****************************************************************************
 	// Construction, setters and getters
@@ -17,8 +17,8 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	function void set_configuration(i2cmb_env_configuration cfg);
 		configuration = cfg;
 	endfunction
-	
- 	// ****************************************************************************
+
+	// ****************************************************************************
 	// Build the environment and connect all subscribers 
 	// ****************************************************************************
 	virtual function void build();
@@ -50,7 +50,7 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 		return i2c_agent_handle;
 	endfunction
 
- 	// ****************************************************************************
+	// ****************************************************************************
 	// Start both environment agent run tasks when environment is run()
 	// ****************************************************************************
 	virtual task run();

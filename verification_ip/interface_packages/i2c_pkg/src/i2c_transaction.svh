@@ -5,7 +5,17 @@ class i2c_transaction extends ncsu_transaction;
 	bit [7:0] address;
 	bit [7:0] data [];
 	int selected_bus;
+	int clock_stretch_qty;
 	i2c_op_t rw;
+
+	// Coverage Only
+	logic is_restart;	// x for N/a, 0 For "START", 1 for "RE-START"
+	int explicit_wait_ms;	// This was preceeded by an explicit "Wait" Command
+
+	// ****************************************************************************
+	// Constraints
+	// ****************************************************************************
+
 
 	// ****************************************************************************
 	// Construction, setters and getters
@@ -27,11 +37,12 @@ class i2c_transaction extends ncsu_transaction;
 	// ****************************************************************************
 	function string convert2string_legacy();
 		string s,temp;
+		temp.itoa(integer'(selected_bus));
 		if(rw == I2_WRITE) begin
-			s = "I2C_BUS WRITE Transfer To   Address: ";
+			s = {"I2C_BUS ", temp, " WRITE Transfer To   Address: "};
 		end
 		else begin
-			s = "I2C_BUS READ  Transfer From Address: ";
+			s = {"I2C_BUS ", temp, " READ  Transfer From Address: "};
 		end
 
 		// Add ADDRESS associated with transfer to string, followed by "Data: " tag
