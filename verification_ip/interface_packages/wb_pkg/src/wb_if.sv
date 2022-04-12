@@ -22,6 +22,9 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 );
 	import wb_types_pkg::*;
 
+	int num_clocks;
+	always @(posedge clk_i) ++num_clocks;
+
 	initial reset_bus();
 
 	// ****************************************************************************              

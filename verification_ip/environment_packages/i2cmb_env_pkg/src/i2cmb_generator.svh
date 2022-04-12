@@ -8,6 +8,20 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	i2c_agent i2c_agent_handle;
 	string trans_name;
 
+	//POLLING DEFAULTS
+	const int sel_pause = 15;
+	const int start_pause = 150;
+	const int data_pause = 2500;
+	const int stop_pause =190;
+
+	bit enable_polling;
+
+	//bus_select = 11
+	// start = 		138
+	// write/rd =	2278
+	// stop   =		171
+
+
 	// ****************************************************************************
 	// Constructor, setters and getters
 	// ****************************************************************************
@@ -250,6 +264,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.stall_cycles=1000;
 		t.label("ENABLE DUT WITH INTERRUPT");
 		wb_trans.push_back(t);
+		enable_polling = 1'b0;
 	endfunction
 
 	// ****************************************************************************
@@ -270,6 +285,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.stall_cycles=1000;
 		t.label("ENABLE DUT WITH INTERRUPT");
 		wb_trans.push_back(t);
+		enable_polling = 1'b1;
 	endfunction
 
 	// ****************************************************************************
@@ -294,9 +310,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=SET_I2C_BUS;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b1;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=sel_pause;
+end 
 		wb_trans.push_back(t);
 
 		//wait_interrupt();
@@ -361,9 +383,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_START;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b1;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=start_pause;
+end 
 		t.label("SEND START");
 		wb_trans.push_back(t);
 
@@ -398,9 +426,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_STOP;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b1;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=stop_pause;
+end 
 		t.label("SEND STOP");
 		wb_trans.push_back(t);
 
@@ -467,9 +501,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_WRITE;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+		end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+		end 	
 		wb_trans.push_back(t);
 
 		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
@@ -533,9 +573,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_WRITE;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+end 
 		wb_trans.push_back(t);
 
 		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack
@@ -566,9 +612,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_WRITE;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+end 
 		wb_trans.push_back(t);
 
 		//wait_interrupt_with_NACK();
@@ -599,9 +651,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=I2C_WRITE;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+end
 		wb_trans.push_back(t);
 
 		//wait_interrupt_with_NACK();
@@ -621,9 +679,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=READ_WITH_ACK;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+end 
 		t.label("READ BYTE");
 		wb_trans.push_back(t);
 
@@ -655,9 +719,15 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.line = CMDR;
 		t.word=8'b0;
 		t.cmd=READ_WITH_NACK;
+		if(!enable_polling) begin
 		t.wait_int_nack=1'b1;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=0;
+		end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+		end 
 		t.label("READ BYTE");
 		wb_trans.push_back(t);
 

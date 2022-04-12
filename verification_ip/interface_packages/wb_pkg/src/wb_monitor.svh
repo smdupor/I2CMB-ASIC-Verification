@@ -60,6 +60,9 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 		if(configuration.expect_arb_loss) return;
 
 		if(last_trans[0] != null && last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
+			//	$display(last_trans[1].convert2string());
+		//		$display("Elapsed Cycle: %0d", bus.num_clocks);
+				bus.num_clocks = 0;
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
 					//$display("HIT ASSERT");
 					assert_done_raised_on_complete: assert (monitored_trans.word[7]==1'b1)				// Done Bit was raised signaling complete
