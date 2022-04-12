@@ -9,10 +9,10 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	string trans_name;
 
 	//POLLING DEFAULTS
-	const int sel_pause = 15;
+	const int sel_pause = 20;
 	const int start_pause = 150;
 	const int data_pause = 2500;
-	const int stop_pause =190;
+	const int stop_pause =250;
 
 	bit enable_polling;
 
@@ -89,8 +89,6 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		int i,j,k,use_bus;
 		i2c_rand_data_transaction rand_trans;
 		use_bus = 0;
-		// Transaction to enable the DUT with interrupts enabled
-		enable_dut_with_interrupt();
 
 		for(int i = 0; i<qty;++i) begin // (i2c_trans[i]) begin
 			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));

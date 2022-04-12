@@ -5,7 +5,7 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 		// Constructor, setters and getters
 		// ****************************************************************************
 		function new(string name = "", ncsu_component_base  parent = null);
-			super.new(name,parent);
+		super.new(name,parent);
 
 			if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
 				$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
@@ -13,13 +13,10 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 			end
 
 			$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
-			if(trans_name == "i2c_arb_loss_transaction") begin
-
+			if(trans_name == "i2cmb_generator_interrupt_cycling") begin
+				trans_name = "i2c_rand_data_transaction";
 			end
-			else if(trans_name != "i2cmb_test_multi_bus_range" || trans_name == "i2c_arb_loss_transaction") begin $fatal; end
-			else begin
-				trans_name = "i2c_rand_cs_transaction";
-			end
+			else $fatal;
 			verbosity_level = global_verbosity_level;
 		endfunction
 
@@ -28,9 +25,26 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 		//		actions to agents, in order, in parallel. 
 		// ****************************************************************************
 		virtual task run();
+		// Transaction to enable the DUT with interrupts enabled
+		enable_dut_with_interrupt();
+		generate_random_base_flow(30, 1);
+		disable_dut();
+		enable_dut_with_interrupt();
+		generate_random_base_flow(30, 1);
+		disable_dut();
+		enable_dut_polling();
+		generate_random_base_flow(30, 1);
+		disable_dut();
+		enable_dut_polling();
+		generate_random_base_flow(30, 1);
+		disable_dut();
+		enable_dut_with_interrupt();
+		generate_random_base_flow(30, 1);
+		disable_dut();
+		enable_dut_polling();
+		generate_random_base_flow(30, 1);
 
-			$fatal; // This test is not yet implemented
-
+			wb_agent_handle.expect_nacks(1'b0);
 			// Iterate through all generated transactions, passing each down to respective agents.
 			fork
 				foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);

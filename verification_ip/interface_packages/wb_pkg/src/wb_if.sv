@@ -25,6 +25,15 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	int num_clocks;
 	always @(posedge clk_i) ++num_clocks;
 
+	bit disable_interrupts;
+
+	always @(posedge clk_i) begin
+		if(disable_interrupts) begin
+			assertion_expect_NO_interrupt_when_disabled: assert(irq_i == 1'b0)
+			else $error("Assertion assertion_expect_NO_interrupt_when_disabled Failed! ");
+		end
+	end
+
 	initial reset_bus();
 
 	// ****************************************************************************              
@@ -40,6 +49,10 @@ interface wb_if #(int ADDR_WIDTH = 2, int DATA_WIDTH = 8)(
 	// ****************************************************************************              
 	task wait_for_interrupt();
 		@(posedge irq_i);
+		if(!disable_interrupts) begin
+			assertion_expect_interrupt_when_enabled: assert(irq_i == 1'b1)
+			else $error("Assertion assertion_expect_NO_interrupt_when_disabled Failed! ");
+		end
 	endtask
 
 	// ****************************************************************************              

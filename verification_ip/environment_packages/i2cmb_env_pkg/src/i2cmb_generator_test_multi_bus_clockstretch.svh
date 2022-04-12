@@ -17,6 +17,9 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 		//		actions to agents, in order, in parallel. 
 		// ****************************************************************************
 		virtual task run();
+		// Transaction to enable the DUT with interrupts enabled
+		enable_dut_with_interrupt();
+		
 			reworked_directed_project_2_test_transactions();
 
 			wb_agent_handle.expect_nacks(1'b0);

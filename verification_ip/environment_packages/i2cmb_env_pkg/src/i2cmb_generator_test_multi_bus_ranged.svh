@@ -26,7 +26,9 @@ class i2cmb_generator_test_multi_bus_ranged extends i2cmb_generator;
 		//		actions to agents, in order, in parallel. 
 		// ****************************************************************************
 		virtual task run();
-
+		// Transaction to enable the DUT with interrupts enabled
+		enable_dut_with_interrupt();
+		
 			generate_random_base_flow(200, 1);
 
 			// Iterate through all generated transactions, passing each down to respective agents.

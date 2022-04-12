@@ -33,6 +33,10 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 			return;
 		end
 
+		//Enable assertion detecting NO Interrupt signal when disabled
+		if(wb_trans.write && wb_trans.line == CSR &&wb_trans.word[7] == 1'b0) bus.disable_interrupts = 1'b1;
+		else bus.disable_interrupts = 1'b0;
+
 		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
 
 		if(wb_trans.write) begin
