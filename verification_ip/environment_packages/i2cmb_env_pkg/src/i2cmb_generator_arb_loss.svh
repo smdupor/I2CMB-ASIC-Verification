@@ -39,9 +39,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 						//if(i==15) #1000 $finish;
 						if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 					end
-					$finish;
+					#1000 $finish;
 				end
-			join
+			join_any
 		endtask
 
 		function void generate_arb_loss_flow();
@@ -52,7 +52,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 			for(i=0;i<=15;++i) begin
 				enable_dut_with_interrupt();
 				issue_wait(1);
-				$cast(trans,ncsu_object_factory::create(trans_name));
+				if(!$cast(trans,ncsu_object_factory::create(trans_name))) $display({"\n\nTRANS CAST FAILED\n\n", trans.convert2string()});
 				// Transaction to enable the DUT with interrupts enabled
 
 
@@ -74,6 +74,8 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 				//create_explicit_data_series(0, 31, i, I2_WRITE);
 				arb_loss_address_req_write(trans.address);
 				disable_dut();
+				i2c_trans.push_back(trans);
+				i2c_trans.push_back(trans);
 				//end
 			end
 		endfunction

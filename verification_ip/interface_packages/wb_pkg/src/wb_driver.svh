@@ -64,9 +64,11 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		if(wb_arb.line == CMDR || wb_arb.line == CSR) bus.master_write(wb_arb.line, wb_arb.cmd);
 		if(wb_arb.line == DPR) bus.master_write(wb_arb.line, wb_arb.word);
 		#250 while(buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
-		assert_require_arb_loss_bit: assert(buffer[6] == 1'b1)
+		assert_require_arb_loss_bit: assert(buffer[5] == 1'b1)
 		else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);
 
+		if(buffer[5]) ncsu_info("\n",{get_full_name(),$sformatf(" ARBITRATION LOSS ATTEMPTED: CMDR REPORTED: %b : ARBITRATION WAS LOST", buffer)},NCSU_LOW);
+		
 		bus.master_read(CSR, buffer);
 		assert_bb_during_transaction: assert(buffer[5]==1'b1)						// Bus Busy during transaction
 		else $error("Assertion assert_bb_during_transaction failed!");

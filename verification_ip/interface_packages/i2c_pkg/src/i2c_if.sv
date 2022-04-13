@@ -244,25 +244,9 @@ interface i2c_if       #(
 	// Release this state after arbitration_wait_cycles system cycles
 	// ****************************************************************************
 	task force_arbitration_loss();
-		//wait(driver_interrupt == RAISE_RESTART || driver_interrupt == RAISE_START)
-		//@(posedge scl_i);
-//		repeat(300) begin
-			@(posedge scl_i);
-			@(posedge scl_i) sda_drive <= 16'h00;
-			@(negedge scl_i) sda_drive <= 16'hzz;
-
-		//end
-		/*@(posedge scl_i);
-		repeat(15) begin
-			@(posedge scl_i) sda_drive <= 16'h00;
-			@(negedge scl_i);
-		end*/
-			//@(negedge clk_i) sda_drive <= 16'hff;
-		//end
-		//scl_drive <= 16'hff;
-		
-		//sda_drive[bus_selector] <= 1'bz;
-		//scl_drive[bus_selector] <= 1'bz;
+			@(scl_i) sda_drive = 16'h00;
+			repeat(997) @(posedge clk_i);
+			sda_drive = 16'hzz;
 	endtask
 
 	//_____________________________________________________________________________________\\

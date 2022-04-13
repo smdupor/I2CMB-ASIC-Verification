@@ -138,7 +138,7 @@ test_arb_loss: clean compile_sil
 test_arb_gui: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
-	vsim  -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	vsim  -i -classdebug -msgmode both -sv_seed $(TEST_SEED) -do "set NoQuitOnFinish 1;do wave.do; run 50ms; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 silent_super: clean compile_sil
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 40ms; exit" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb > /dev/null
