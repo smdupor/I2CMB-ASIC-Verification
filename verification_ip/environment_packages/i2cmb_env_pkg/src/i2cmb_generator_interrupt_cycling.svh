@@ -49,6 +49,8 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 			fork
 				foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 				foreach(wb_trans[i]) begin
+					if(wb_trans[i].label == "ENABLE DUT POLLING") env_cfg.disable_interrupts = 1'b1;
+					else if(wb_trans[i].label == "ENABLE DUT INTERRUPT") env_cfg.disable_interrupts = 1'b0;
 					wb_agent_handle.bl_put(wb_trans[i]);
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 				end

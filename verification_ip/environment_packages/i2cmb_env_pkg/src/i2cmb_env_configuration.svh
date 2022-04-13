@@ -3,6 +3,9 @@ class i2cmb_env_configuration extends ncsu_configuration;
 	wb_configuration wb_agent_config;
 	i2c_configuration i2c_agent_config;
 	string trans_name;
+	bit disable_bus_checking;
+	bit disable_interrupts;
+	
 	// ****************************************************************************
 	//	Constructor, setters and getters 
 	// ****************************************************************************

@@ -1,5 +1,6 @@
 class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
+	i2cmb_env_configuration env_cfg;
 	i2c_transaction i2c_trans[$];
 	i2c_rand_data_transaction i2c_rand_trans[$];
 	i2c_transaction trans;
@@ -7,6 +8,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	wb_agent wb_agent_handle;
 	i2c_agent i2c_agent_handle;
 	string trans_name;
+	i2cmb_predictor pd;
 
 	//POLLING DEFAULTS
 	const int sel_pause = 20;
@@ -82,7 +84,11 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 			for(int i=0;i<t.data.size-1;i++) read_data_byte_with_continue();
 			read_data_byte_with_stop();
 		end
-		if(add_stop) issue_stop_command();
+		inject_csr_read();
+		if(add_stop) begin 
+		issue_stop_command();
+		inject_csr_read();
+		end
 	endfunction
 
 	virtual function void generate_random_base_flow(int qty, bit change_busses);
@@ -260,9 +266,28 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=1000;
-		t.label("ENABLE DUT WITH INTERRUPT");
+		t.label("ENABLE DUT INTERRUPT");
 		wb_trans.push_back(t);
 		enable_polling = 1'b0;
+	endfunction
+
+
+	// ****************************************************************************
+	// Inject a CSR Read
+	// ****************************************************************************
+	function void inject_csr_read();
+		//master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT		
+		wb_transaction t = new("csr_read");
+		t.write = 1'b0;
+		t.line = CSR;
+		t.cmd = ENABLE_CORE_INTERRUPT;
+		t.word=8'b0;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		t.label("CSR Read");
+		wb_trans.push_back(t);
+		
 	endfunction
 
 	// ****************************************************************************
@@ -281,7 +306,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=1000;
-		t.label("ENABLE DUT WITH INTERRUPT");
+		t.label("ENABLE DUT POLLING");
 		wb_trans.push_back(t);
 		enable_polling = 1'b1;
 	endfunction

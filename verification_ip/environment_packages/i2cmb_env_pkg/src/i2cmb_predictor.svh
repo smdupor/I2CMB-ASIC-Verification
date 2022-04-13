@@ -18,6 +18,9 @@ class i2cmb_predictor extends ncsu_component;
 	logic is_restart;
 	int sel_bus;
 
+	//Coverage switches
+	bit disable_bus_checking;
+
 	
 	  covergroup wait_cg;
 		option.per_instance = 1;
@@ -105,8 +108,35 @@ class i2cmb_predictor extends ncsu_component;
 	// Handle any actions passed to the (Control Status Register), eg DUT Enable/Disables 
 	// ****************************************************************************
 	function void process_csr_transaction();
-				// For Now, simply SWALLOW CSR Transactions 
-				//(Only used for DUT Enable/Disable at this time)
+		if(we_mon == 1'b0) begin
+			assert_csr_enabled: assert(dat_mon[7] == 1'b1)
+			else $error("Asssertion assert_csr_enabled failed with %b", dat_mon);
+
+			if(!configuration.disable_interrupts) begin
+			assert_interrupt_bit_high: assert(dat_mon[6] == 1'b1)
+			else $error("Asssertion assert_interrupt_bit_high failed with %b", dat_mon);
+			end
+			else begin
+			assert_interrupt_bit_low: assert(dat_mon[6] == 1'b1)
+			else $error("Asssertion assert_interrupt_bit_low failed with %b", dat_mon);
+			end
+
+			if(transaction_in_progress) begin
+			assert_csr_bc_captured: assert(dat_mon[4]==1'b1)
+			else $error("Asssertion assert_bc_captured failed with %b", dat_mon);
+			assert_csr_bb_busy: assert(dat_mon[5]==1'b1)
+			else $error("Asssertion assert_bb_bus_busy busy failed with %b", dat_mon);
+			end else begin
+			assert_csr_bc_free: assert(dat_mon[4]==1'b0)
+			else $error("Asssertion assert_bc_free failed with %b", dat_mon);
+			assert_csr_bb_free: assert(dat_mon[5]==1'b1)
+			else $error("Asssertion assert_bb_bus_busy_free failed with %b", dat_mon);
+			end
+
+			if(!configuration.disable_bus_checking) assert_csr_bus_sel_accuracy: assert(dat_mon[3:0] == sel_bus)
+			else $error("Asssertion assert_csr_bus_sel_accuracy failed with %b vs %b", dat_mon, sel_bus);
+
+		end
 	endfunction
 
 	// ****************************************************************************

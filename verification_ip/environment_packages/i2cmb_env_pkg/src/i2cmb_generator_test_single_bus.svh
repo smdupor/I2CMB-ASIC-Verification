@@ -26,7 +26,7 @@ class i2cmb_generator_test_single_bus extends i2cmb_generator;
 		virtual task run();
 		// Transaction to enable the DUT with interrupts enabled
 			enable_dut_with_interrupt();
-			generate_single_random_base_flow(75, 0);
+			generate_single_random_base_flow(75, 1);
 
 			wb_agent_handle.expect_nacks(1'b0);
 			wb_agent_handle.configuration.expect_bus_mismatch = 1'b0;
@@ -47,7 +47,7 @@ class i2cmb_generator_test_single_bus extends i2cmb_generator;
 			foreach(i2c_trans[i]) i2c_trans[i].selected_bus = 0;
 			
 			wb_agent_handle.configuration.expect_bus_mismatch = 1'b1;
-		
+			env_cfg.disable_bus_checking = 1'b1;
 		
 			
 			// Iterate through all generated transactions, passing each down to respective agents.

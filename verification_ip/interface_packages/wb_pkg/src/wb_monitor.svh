@@ -65,9 +65,12 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 				if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
 
 					
-					if((configuration.expect_bus_mismatch && !last_trans[0].word[2:0] == M_SET_I2C_BUS)||!configuration.expect_bus_mismatch)
+					if((configuration.expect_bus_mismatch && !last_trans[0].word[2:0] == M_SET_I2C_BUS)||!configuration.expect_bus_mismatch) begin
 						assert_done_raised_on_complete: assert (monitored_trans.word[7]== 1'b1)				// Done Bit was raised signaling complete
 						else $error("Assertion assert_done_raised_on_complete failed!, got word: %b", monitored_trans.word);
+						assert_error_low: assert(monitored_trans.word[4]==1'b0)
+						else $error("Assertion assert_error_low failed! Got %b", monitored_trans.word);
+					end
 					if(configuration.expect_bus_mismatch && last_trans[0].word[2:0] == M_SET_I2C_BUS) begin
 						assert_bus_mismatch_raised_on_unavailable: assert(monitored_trans.word[4]== 1'b1)
 						else $error("Assertion assert_bus_mismatch_raised_on_unavailable failed! Got: %b", monitored_trans.word);
