@@ -40,6 +40,7 @@ class i2cmb_test extends ncsu_component#(.T(i2c_transaction));
 			$error("TESTNAME Not found by factory"); $fatal;
 		end
 		gen.env_cfg = cfg;
+		gen.pd = env.pred;
 		gen.set_wb_agent(env.get_wb_agent());
 		gen.set_i2c_agent(env.get_i2c_agent());
 	endfunction

@@ -20,6 +20,7 @@ class i2cmb_predictor extends ncsu_component;
 
 	//Coverage switches
 	bit disable_bus_checking;
+	bit disable_intr;
 
 	
 	  covergroup wait_cg;
@@ -109,15 +110,17 @@ class i2cmb_predictor extends ncsu_component;
 	// ****************************************************************************
 	function void process_csr_transaction();
 		if(we_mon == 1'b0) begin
+
+			
 			assert_csr_enabled: assert(dat_mon[7] == 1'b1)
 			else $error("Asssertion assert_csr_enabled failed with %b", dat_mon);
 
-			if(!configuration.disable_interrupts) begin
+			if(disable_intr) begin
 			assert_interrupt_bit_high: assert(dat_mon[6] == 1'b1)
 			else $error("Asssertion assert_interrupt_bit_high failed with %b", dat_mon);
 			end
 			else begin
-			assert_interrupt_bit_low: assert(dat_mon[6] == 1'b1)
+			assert_interrupt_bit_low: assert(dat_mon[6] == 1'b0)
 			else $error("Asssertion assert_interrupt_bit_low failed with %b", dat_mon);
 			end
 
@@ -138,6 +141,8 @@ class i2cmb_predictor extends ncsu_component;
 			if(!configuration.disable_bus_checking) assert_csr_bus_sel_accuracy: assert(dat_mon[3:0] == sel_bus)
 			else $error("Asssertion assert_csr_bus_sel_accuracy failed with %b vs %b", dat_mon, sel_bus);
 
+		end else begin
+			disable_intr = dat_mon[6];
 		end
 	endfunction
 
