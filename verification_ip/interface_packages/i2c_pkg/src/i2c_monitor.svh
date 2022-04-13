@@ -58,11 +58,11 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 	// Print contents of detected transaction for debug purposes
 	// ****************************************************************************
 	function void print_local_transaction();
-		if(enable_transaction_viewing)  $display(monitored_trans.convert2string_legacy());
+		if(enable_transaction_viewing) begin $display(monitored_trans.convert2string_legacy());
 
 		// In the case of a multi-line transfer, print a horizontal rule to make clear where 
 		// this transfer transcript message ends
-		if(monitored_trans.convert2string_legacy().len>60) display_hrule;
+		if(monitored_trans.convert2string_legacy().len>60) display_hrule; end
 	endfunction
 
 endclass
