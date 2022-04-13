@@ -189,6 +189,10 @@ class i2cmb_predictor extends ncsu_component;
 							 process_stop_transaction();		//		Which indicated STOP
 							 state = IDLE;
 						end
+						if(dat_mon[2:0] == M_I2C_START) begin
+							 process_start_transaction();		//		Which indicated STOP
+							 state = START_ISSUED_WAIT_DONE;
+						end
 						if(dat_mon[2:0] == M_I2C_WRITE) begin
 							 words_transferred.push_back(last_dpr);
 							state = WRITE_WAIT_DONE;
@@ -303,7 +307,7 @@ class i2cmb_predictor extends ncsu_component;
 
 
  	// ****************************************************************************
-	// Handle any actions passed to the (Command Register), CDMDR
+	// Handle any actions passed to the (Control Status Register) CSR
 	// ****************************************************************************
 	function void fsm_process_csr_transaction();
 		if(is_write) begin
