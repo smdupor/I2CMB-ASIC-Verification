@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 7:53:00 PM -->
+ <!-- Date: 1/1/0001 8:44:48 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -88,8 +88,26 @@
 			<Row>
 				<Cell>1.3.4</Cell>
 				<Cell>CMDR[4] ERROR Accuracy</Cell>
+				<Cell>Expect Error bit raised under error condition, else low.</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4.1</Cell>
+				<Cell>CMDR[4] ERROR Raised</Cell>
 				<Cell>Expect Error bit raised when an unavailable (non-existent) bus is selected</Cell>
 				<Cell>assert_bus_mismatch_raised_on_unavailable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4.2</Cell>
+				<Cell>CMDR[4] ERROR Low</Cell>
+				<Cell>Expect Error bit never raised when there is no system error.</Cell>
+				<Cell>assert_error_low</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -99,6 +117,105 @@
 				<Cell>CMDR[2:0] COMMAND Accuracy</Cell>
 				<Cell>Expect these bits to reflect the previously issued command, when an interrupt is cleared or the DONE bit is checked.</Cell>
 				<Cell>assert_CMDR_holds_last_CMD</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.6</Cell>
+				<Cell>CSR[7] ENABLED Accuracy</Cell>
+				<Cell>Expect high when DUT enabled, Else low</Cell>
+				<Cell>assert_csr_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7</Cell>
+				<Cell>CSR[6] INTERRUPT ENABLED Accuracy</Cell>
+				<Cell>Expect high When DUT enabled with interrupts enabled, else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7.1</Cell>
+				<Cell>CSR[6] INTERRUPT ENABLED</Cell>
+				<Cell>Expect high When DUT enabled with interrupts enabled,</Cell>
+				<Cell>assert_interrupt_bit_high</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7.2</Cell>
+				<Cell>CSR[6] INTERRUPT DISABLED</Cell>
+				<Cell>Expect Low when DUT enabled without interrupts</Cell>
+				<Cell>assert_interrupt_bit_low</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8</Cell>
+				<Cell>CSR[5] BUS BUSY Accuracy</Cell>
+				<Cell>Expect High when selected bus is currently busy (eg, finishing a transaction), else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8.1</Cell>
+				<Cell>CSR[5] BUS BUSY - Busy</Cell>
+				<Cell>Expect High when selected bus is currently busy (eg, finishing a transaction)</Cell>
+				<Cell>assert_csr_bb_busy</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8.2</Cell>
+				<Cell>CSR[5] BUS BUSY - Free</Cell>
+				<Cell>Expect Low when selected bus is free.</Cell>
+				<Cell>assert_csr_bb_free</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9</Cell>
+				<Cell>CSR[4] BUS CAPTURED Accuracy</Cell>
+				<Cell>Expect High When DUT has successfully captured a bus, else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9.1</Cell>
+				<Cell>CSR[4] BUS CAPTURED - Captured</Cell>
+				<Cell>Expect high when DUT has successfully captured a bus</Cell>
+				<Cell>assert_csr_bc_captured</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9.2</Cell>
+				<Cell>CSR[4] BUS CAPTURED - Free</Cell>
+				<Cell>Expect low when DUT was not able to capture a bus</Cell>
+				<Cell>assert_csr_bc_free</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.10</Cell>
+				<Cell>CSR[3:0] BUS SELECTION Accuracy</Cell>
+				<Cell>Expect to match most-recently selected bus</Cell>
+				<Cell>assert_csr_bus_sel_accuracy</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
