@@ -1,9 +1,33 @@
 class i2cmb_predictor extends ncsu_component;
 
+	typedef enum int {RESET, 					// Initial State
+						DISABLED,				// DUT Manually disabled
+						IDLE, 					// DUT ENABLED AND IDLE
+						BUS_NUM_EMPLACED,		//DPR WR
+						BUS_SEL_WAIT_DONE,		// CMDR RD
+						START_ISSUED_WAIT_DONE, //CMDR WR
+						START_DONE,				//CMDR RD
+						ADDRESS_EMPLACED_READ,	//DPR WR
+						ADDRESS_EMPLACED_WRITE, 	//DPR WR
+						ADDRESS_WAIT_DONE,        //CMDR RD
+						TRANSACTION_IN_PROG_IDLE,	
+						BYTE_EMPLACED_WRITE,		// DPR WR
+						WRITE_WAIT_DONE,			//CMDR WR
+						// TRANSACTION IN PROGRESS IDLE
+						READ_ACK_WAIT_DONE,			//CMDR RD
+						READ_NACK_WAIT_DONE, 		// CMDR RD
+						READ_DATA_READY,
+						// TRANSACTION IN PROGRESS IDLE
+						EXPLICIT_WAIT_WAITING		//TBD
+						 } pred_states;
+	enum int {DONE=7, ARB=6, NACK=5, ERR=4} cmdr_bit_locs;
+	enum int {ENBL=7, INTR=6} csr_bit_locs;
+
 	ncsu_component scoreboard;
 	ncsu_transaction transport_trans;
 	i2cmb_env_configuration configuration;
-	
+	pred_states state;
+
 	// Internal persistent Storage Buffers
 	i2c_transaction monitored_trans;
 	bit capture_next_read, expect_i2c_address, transaction_in_progress;
@@ -17,6 +41,7 @@ class i2cmb_predictor extends ncsu_component;
 	i2c_op_t cov_op;
 	logic is_restart;
 	int sel_bus;
+	bit is_write;
 
 	//Coverage switches
 	bit disable_bus_checking;
@@ -28,15 +53,13 @@ class i2cmb_predictor extends ncsu_component;
     	option.name = get_full_name();
 
 
-	explicit_wait_times:	coverpoint most_recent_wait
-	{
+		explicit_wait_times:	coverpoint most_recent_wait
+		{
 		
-		bins SHORT_1_to_5ms = {[1:5]};
-		bins MED_6ms_to_10ms = {[6:10]};
-		bins LONG_11ms_to_15ms = {[11:15]};
-	}
-	//wb_x_i2c_delay: 	cross wb_stretch_delay, clockstretch_cg.i2c_stretch_delay;
-
+			bins SHORT_1_to_5ms = {[1:5]};
+			bins MED_6ms_to_10ms = {[6:10]};
+			bins LONG_11ms_to_15ms = {[11:15]};
+		}
 	  endgroup
 
   covergroup predictor_cg;
@@ -64,6 +87,7 @@ class i2cmb_predictor extends ncsu_component;
 		super.new(name,parent);
 		predictor_cg = new();
 		wait_cg = new();
+		state=DISABLED;
 		verbosity_level = global_verbosity_level;
 	endfunction
 
@@ -86,12 +110,14 @@ class i2cmb_predictor extends ncsu_component;
 		adr_mon = itrans.line;
 		dat_mon = itrans.word;
 		we_mon = itrans.write;
+		is_write = itrans.write;
 
 		//Based on REGISTER Address of received transaction, process transaction data accordingly
 		case(adr_mon)
-			CSR: process_csr_transaction(); 												// Caught a CSR (Control Status Register) Transaction
-			DPR: process_dpr_transaction(); 												// Caught a DPR (Data / Parameter Register) Transaction
-			CMDR: begin 																	// Caught a CMDR (Command Register) Transaction
+			CSR: fsm_process_csr_transaction(); 												// Caught a CSR (Control Status Register) Transaction
+			DPR: fsm_process_dpr_transaction(); 												// Caught a DPR (Data / Parameter Register) Transaction
+			CMDR: fsm_process_cmdr_transaction();
+			/*begin 																	// Caught a CMDR (Command Register) Transaction
 				if(dat_mon[2:0] == M_I2C_START && we_mon) process_start_transaction();		// 		Which indicated START
 				if(dat_mon[2:0] == M_I2C_STOP && we_mon) process_stop_transaction();		//		Which indicated STOP
 				if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !expect_i2c_address) words_transferred.push_back(last_dpr); // Which Contains data write action, capture the data
@@ -99,10 +125,194 @@ class i2cmb_predictor extends ncsu_component;
 				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) capture_next_read = 1'b1; 		// Which is intrupt clear for a I2C_READ expected on next task call 
 				if(dat_mon[2:0] == M_WB_WAIT) most_recent_wait = last_dpr;
 				if(dat_mon[2:0] == M_SET_I2C_BUS) sel_bus = last_dpr;
-			end
+			end*/
 			default: process_state_register_transaction(); // Caught a state debug register transaction
 		endcase
 
+	endfunction
+
+ 	// ****************************************************************************
+	// Handle any actions passed to the (Command Register), CDMDR
+	// ****************************************************************************
+	function void fsm_process_cmdr_transaction();
+		if(is_write)
+			case(state)
+				RESET: begin					// Initial State
+						// Illegal Write
+						end
+				DISABLED: begin 					// DUT Manually disabled
+						// Illegal Write
+						end
+				IDLE: begin 						// DUT ENABLED AND IDLE
+						if(dat_mon[2:0] == M_I2C_START) begin
+							process_start_transaction();		// 		Which indicated START
+							state = START_ISSUED_WAIT_DONE; end
+						end
+				BUS_NUM_EMPLACED: begin 			//DPR WR
+						// Starting the bus select action
+						if(dat_mon[2:0] == M_SET_I2C_BUS) sel_bus = last_dpr;
+						state=BUS_SEL_WAIT_DONE;
+						end
+				BUS_SEL_WAIT_DONE: begin 			// CMDR RD
+						// Illegal
+						end
+				START_ISSUED_WAIT_DONE: begin 	//CMDR WR
+								// illegal		
+					end
+				START_DONE: begin					// Start issued then immediate stop
+					if(dat_mon[2:0] == M_I2C_STOP) begin process_stop_transaction();		//		Which indicated STOP
+						state = IDLE;
+					end
+					if(dat_mon[2:0] == M_I2C_WRITE) begin  // Writing an address to the default value (0)
+						last_dpr = 8'b0;
+						process_address_transaction(); 							// Which Contains an address transmit action			
+						state=ADDRESS_WAIT_DONE;
+					end	
+				end
+				ADDRESS_EMPLACED_READ: begin		//DPR WR
+					if(dat_mon[2:0] == M_I2C_WRITE) begin
+						process_address_transaction(); 							// Which Contains an address transmit action			
+						state=ADDRESS_WAIT_DONE;
+					end				
+					end
+				ADDRESS_EMPLACED_WRITE: begin 	//DPR WR
+					if(dat_mon[2:0] == M_I2C_WRITE) begin
+						process_address_transaction(); 							// Which Contains an address transmit action			
+						state=ADDRESS_WAIT_DONE;
+					end					
+					end
+				ADDRESS_WAIT_DONE: begin      	//CMDR RD
+							// Illegal			
+					end
+				TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
+						if(dat_mon[2:0] == M_I2C_STOP) begin
+							 process_stop_transaction();		//		Which indicated STOP
+							 state = IDLE;
+						end
+						if(dat_mon[2:0] == M_I2C_WRITE) begin
+							 words_transferred.push_back(last_dpr);
+							state = WRITE_WAIT_DONE;
+						end
+						if(dat_mon[2:0] == M_READ_WITH_ACK) state = READ_ACK_WAIT_DONE;
+						if(dat_mon[2:0] == M_READ_WITH_NACK) state = READ_NACK_WAIT_DONE; 	
+					end
+				BYTE_EMPLACED_WRITE: begin		// DPR WR
+						if(dat_mon[2:0] == M_I2C_WRITE) begin
+							 words_transferred.push_back(last_dpr);	
+							state = WRITE_WAIT_DONE;
+						end				
+					end
+				WRITE_WAIT_DONE: begin			//CMDR WR
+						// Illegal				// TRANSACTION IN PROGRESS IDLE
+					end																		
+				READ_ACK_WAIT_DONE: begin			//CMDR RD
+					// Illegal									
+					end
+				READ_NACK_WAIT_DONE: begin 		// CMDR RD
+					if(dat_mon[2:0] == M_WB_WAIT) begin 
+						most_recent_wait = last_dpr;											// TRANSACTION IN PROGRESS IDLE
+						state = EXPLICIT_WAIT_WAITING;
+					end
+				end
+				READ_DATA_READY: begin
+					// Legal, but data destructive.
+				end
+				EXPLICIT_WAIT_WAITING: begin		//TBD
+					// Illegal																	
+					end
+			endcase
+		else // THIS IS A READ TO CMDR
+			case(state)
+				RESET: begin					// Initial State
+						// Check Default CMDR
+						end
+				DISABLED: begin 					// DUT Manually disabled
+						// Check Default CMDR
+						end
+				IDLE: begin 						// DUT ENABLED AND IDLE
+						// Check Idle Values
+						end
+				BUS_NUM_EMPLACED: begin 			//DPR WR
+						// Check Idle Values
+						end
+				BUS_SEL_WAIT_DONE: begin 			// CMDR RD
+						// An Interrupt Clear
+						if(dat_mon[DONE]) state = IDLE;
+						end
+				START_ISSUED_WAIT_DONE: begin 	//CMDR WR
+					// An Interrupt Clear
+						if(dat_mon[DONE]) state = START_DONE;
+					end
+				START_DONE: begin					//CMDR RD
+					// Value Check
+					end
+				ADDRESS_EMPLACED_READ: begin		//DPR WR
+					// Value Check
+					end
+				ADDRESS_EMPLACED_WRITE: begin 	//DPR WR
+					// Value Check					
+					end
+				ADDRESS_WAIT_DONE: begin      	//CMDR RD
+					// An Interrupt Clear
+						if(dat_mon[DONE]) state = TRANSACTION_IN_PROG_IDLE;					
+					end
+				TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
+					// Value Check				
+					end
+				BYTE_EMPLACED_WRITE: begin		// DPR WR
+					// Value Check		
+					end
+				WRITE_WAIT_DONE: begin			//CMDR WR
+					// An Interrupt Clear
+					if(dat_mon[DONE]) state = TRANSACTION_IN_PROG_IDLE;
+					end																		
+				READ_ACK_WAIT_DONE: begin			//CMDR RD
+					// An Interrupt  Clear
+					if(dat_mon[DONE]) state = READ_DATA_READY;
+					end
+				READ_NACK_WAIT_DONE: begin 		// CMDR RD
+					// An Interrupt  Clear
+					if(dat_mon[DONE]) state = READ_DATA_READY;
+					end
+				READ_DATA_READY: begin
+					// Value Check
+				end
+				EXPLICIT_WAIT_WAITING: begin		//TBD
+					// An Interrupt  Clear
+					if(dat_mon[DONE]) state = IDLE;
+					
+					end
+			endcase
+	endfunction
+
+	function void check_cmdr_default();
+
+	endfunction
+
+
+ 	// ****************************************************************************
+	// Handle any actions passed to the (Command Register), CDMDR
+	// ****************************************************************************
+	function void fsm_process_csr_transaction();
+		if(is_write) begin
+				if(dat_mon[ENBL]) begin 
+						 state=IDLE;
+						 disable_intr = dat_mon[INTR];
+					end
+					else state=DISABLED;
+		end
+		else // THIS IS A READ TO CSR
+			case(state)
+				RESET: begin					// Initial State
+						// DEFAULT VALUE CHECK
+						end
+				DISABLED: begin 					// DUT Manually disabled
+						// DISABLED VALUE  CHECK
+						end
+				default: begin 						// DUT ENABLED AND IDLE
+						process_csr_transaction();
+						end
+			endcase
 	endfunction
 
  	// ****************************************************************************
@@ -156,6 +366,159 @@ class i2cmb_predictor extends ncsu_component;
 			capture_next_read = 1'b0;								// Let Predictor know that the next transaction will be a command of some form.
 			words_transferred.push_back(last_dpr);					// Capture the data
 		end
+	endfunction
+
+	// ****************************************************************************
+	// Handle any actions passed to the (Command Register), CDMDR
+	// ****************************************************************************
+	function void fsm_process_dpr_transaction();
+		if(is_write) begin
+			last_dpr = dat_mon;
+			case(state)
+				RESET: begin					// Initial State
+				// illegal		
+						end
+				DISABLED: begin 					// DUT Manually disabled
+				// illegal
+						end
+				IDLE: begin 						// DUT ENABLED AND IDLE
+					sel_bus = dat_mon;
+					state = BUS_NUM_EMPLACED;
+						end
+				BUS_NUM_EMPLACED: begin 			//DPR WR
+					sel_bus = dat_mon;
+					state = BUS_NUM_EMPLACED;
+						end
+				BUS_SEL_WAIT_DONE: begin 			// CMDR RD
+					// Illegal
+						end
+				START_ISSUED_WAIT_DONE: begin 	//CMDR WR
+					// Illegal										
+					end
+				START_DONE: begin					//CMDR RD
+					monitored_trans.address=last_dpr[7:1];						// Extract the Address
+					if(last_dpr[0]==1'b0) begin
+						 monitored_trans.rw = I2_WRITE; 		// Address Transmit was requesting a write
+						 state = ADDRESS_EMPLACED_WRITE;
+					end
+					else begin
+						 monitored_trans.rw = I2_READ; 							// Address Transmit was requesting a read
+						 state = ADDRESS_EMPLACED_READ;
+					end
+					//expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
+					cov_op = monitored_trans.rw;
+					end
+				ADDRESS_EMPLACED_READ: begin		//Write after Write
+					monitored_trans.address=last_dpr[7:1];						// Extract the Address
+					if(last_dpr[0]==1'b0) begin
+						 monitored_trans.rw = I2_WRITE; 		// Address Transmit was requesting a write
+						 state = ADDRESS_EMPLACED_WRITE;
+					end
+					else begin
+						 monitored_trans.rw = I2_READ; 							// Address Transmit was requesting a read
+						 state = ADDRESS_EMPLACED_READ;
+					end
+					//expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
+					cov_op = monitored_trans.rw;
+					end				
+
+				ADDRESS_EMPLACED_WRITE: begin 	// Write after write
+					monitored_trans.address=last_dpr[7:1];						// Extract the Address
+					if(last_dpr[0]==1'b0) begin
+						 monitored_trans.rw = I2_WRITE; 		// Address Transmit was requesting a write
+						 state = ADDRESS_EMPLACED_WRITE;
+					end
+					else begin
+						 monitored_trans.rw = I2_READ; 							// Address Transmit was requesting a read
+						 state = ADDRESS_EMPLACED_READ;
+					end
+					//expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
+					cov_op = monitored_trans.rw;
+					end					
+
+				ADDRESS_WAIT_DONE: begin      	//CMDR RD
+						// Illegal				
+					end
+				TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
+					state = BYTE_EMPLACED_WRITE;				
+					end
+				BYTE_EMPLACED_WRITE: begin		// DPR WR
+					state = BYTE_EMPLACED_WRITE;				
+					end
+				WRITE_WAIT_DONE: begin			//CMDR WR
+					// Illegal
+					end																		
+				READ_ACK_WAIT_DONE: begin			//CMDR RD
+					// Illegal							
+					end
+				READ_NACK_WAIT_DONE: begin 		// CMDR RD
+					// Illegal			
+					end
+				READ_DATA_READY: begin
+					// Legal But data destructive
+				end
+				EXPLICIT_WAIT_WAITING: begin		//TBD
+					// Illegal							
+					end
+			endcase
+		end
+		else // THIS IS A READ TO DPR
+		case(state)
+				RESET: begin					// Initial State
+					// DEFAULT Value check							
+						end
+				DISABLED: begin 					// DUT Manually disabled
+					// DEFAULT Value check	
+						end
+				IDLE: begin 						// DUT ENABLED AND IDLE
+					// Value check	
+						end
+				BUS_NUM_EMPLACED: begin 			//DPR WR
+					// Value check	
+						end
+				BUS_SEL_WAIT_DONE: begin 			// CMDR RD
+					// Value check	
+						end
+				START_ISSUED_WAIT_DONE: begin 	//CMDR WR
+					// Value check		
+					end
+				START_DONE: begin					//CMDR RD
+					// Value check		
+					end
+				ADDRESS_EMPLACED_READ: begin		//DPR WR
+					// Value check					
+					end
+				ADDRESS_EMPLACED_WRITE: begin 	//DPR WR
+					// Value check				
+					end
+				ADDRESS_WAIT_DONE: begin      	//CMDR RD
+					// Value check		
+					end
+				TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
+					// Value check		
+					end
+				BYTE_EMPLACED_WRITE: begin		// DPR WR
+					// Value check		
+					end
+				WRITE_WAIT_DONE: begin			//CMDR WR
+					// Value check	
+					end																		
+				READ_ACK_WAIT_DONE: begin			//CMDR RD
+					// Value check							
+					end
+				READ_NACK_WAIT_DONE: begin 		// CMDR RD
+					// Value check					
+					end
+				READ_DATA_READY: begin
+
+				words_transferred.push_back(dat_mon); // Which Contains data write action, capture the data
+				state = TRANSACTION_IN_PROG_IDLE;
+				end
+				EXPLICIT_WAIT_WAITING: begin		//TBD
+					// Value check									
+					end
+			endcase
+			
 	endfunction
 
 	// ****************************************************************************
