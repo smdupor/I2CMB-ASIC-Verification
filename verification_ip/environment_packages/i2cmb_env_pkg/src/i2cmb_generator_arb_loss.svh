@@ -36,10 +36,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 				foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 				begin foreach(wb_trans[i]) begin
 						wb_agent_handle.bl_put(wb_trans[i]);
-						//if(i==15) #1000 $finish;
 						if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 					end
-					#1000 $finish;
+					$finish;
 				end
 			join_any
 		endtask

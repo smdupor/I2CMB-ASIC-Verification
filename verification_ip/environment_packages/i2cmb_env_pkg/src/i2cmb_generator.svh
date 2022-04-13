@@ -278,7 +278,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.word=8'b0;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
-		t.stall_cycles=1000;
+		t.stall_cycles=100;
 		t.label("ENABLE DUT INTERRUPT");
 		wb_trans.push_back(t);
 		enable_polling = 1'b0;
@@ -318,7 +318,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.word=8'b0;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
-		t.stall_cycles=1000;
+		t.stall_cycles=100;
 		t.label("ENABLE DUT POLLING");
 		wb_trans.push_back(t);
 		enable_polling = 1'b1;
@@ -402,7 +402,7 @@ end
 		t.cmd=DISABLE_CORE;
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
-		t.stall_cycles=120;
+		t.stall_cycles=20;
 		t.label("DISABLE DUT (SOFT RESET)");
 		wb_trans.push_back(t);
 	endfunction
