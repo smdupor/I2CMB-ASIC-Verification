@@ -255,6 +255,13 @@ class i2cmb_predictor extends ncsu_component;
 				ADDRESS_WAIT_DONE: begin      	//CMDR RD
 					// An Interrupt Clear
 						if(dat_mon[DONE]) state = TRANSACTION_IN_PROG_IDLE;					
+						if(configuration.expect_nacks) begin
+							assert_adr_nacks_when_expected: assert(dat_mon[6]==configuration.expect_nacks)
+							else $error("Assertion assert_adr_nacks_when_expected failed!");
+							if(dat_mon[6]) monitored_trans.contained_nack = 1'b1;
+							state = TRANSACTION_IN_PROG_IDLE;	
+						end
+
 					end
 				TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
 					// Value Check				
@@ -265,6 +272,11 @@ class i2cmb_predictor extends ncsu_component;
 				WRITE_WAIT_DONE: begin			//CMDR WR
 					// An Interrupt Clear
 					if(dat_mon[DONE]) state = TRANSACTION_IN_PROG_IDLE;
+					if(configuration.expect_nacks) begin
+							assert_dat_nacks_when_expected: assert(dat_mon[6]==configuration.expect_nacks)
+							else $error("Assertion assert_dat_nacks_when_expected failed!");
+					 	state = TRANSACTION_IN_PROG_IDLE;
+					end
 					end																		
 				READ_ACK_WAIT_DONE: begin			//CMDR RD
 					// An Interrupt  Clear
@@ -397,6 +409,8 @@ class i2cmb_predictor extends ncsu_component;
 					end
 				START_DONE: begin					//CMDR RD
 					monitored_trans.address=last_dpr[7:1];						// Extract the Address
+					monitored_trans.address += configuration.get_address_shift();
+					if(monitored_trans.address > 127) monitored_trans.address = 0+configuration.get_address_shift()-1;
 					if(last_dpr[0]==1'b0) begin
 						 monitored_trans.rw = I2_WRITE; 		// Address Transmit was requesting a write
 						 state = ADDRESS_EMPLACED_WRITE;

@@ -40,8 +40,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	
 	config_x_nacks:	cross configuration_nacks, nacks
 	{
-		illegal_bins CONNxNACK = binsof(configuration_nacks.SLAVE_CONNECTED) && binsof(nacks.NACKS);
-		illegal_bins DISxACK = binsof(configuration_nacks.SLAVE_DISCONNECTED) && binsof(nacks.ACKS);
+
 	}
 
 	cmd_type:	coverpoint cmd_type
@@ -109,7 +108,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		 end
 	else begin 
 		cmd_type = trans.word;
-		if(trans.line==CMDR && !trans.write) nacks = trans.word[5];
+		if(trans.line==CMDR && !trans.write) nacks = trans.word[6];
 		else nacks = 1'bx;
 		data_type = NONE;
 	end

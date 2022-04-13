@@ -37,7 +37,7 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 		if(wb_trans.write && wb_trans.line == CSR &&wb_trans.word[7] == 1'b0) bus.disable_interrupts = 1'b1;
 		else bus.disable_interrupts = 1'b0;
 
-		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_DEBUG);
+		ncsu_info("\n",{get_full_name()," ",trans.convert2string()},NCSU_HIGH);
 
 		if(wb_trans.write) begin
 			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);

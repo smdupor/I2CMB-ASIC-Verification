@@ -33,13 +33,15 @@ class i2c_monitor extends ncsu_component#(.T(i2c_transaction));
 		int i2cmon_bus;
 		string s,temp;
 		int counter;
+		bit nack;
 
 		s = "";
 		forever begin
 			// Request transfer info from i2c BFM
-			bus.monitor(i2mon_addr, i2mon_op, i2mon_data, i2cmon_bus);
+			bus.monitor(i2mon_addr, i2mon_op, i2mon_data, i2cmon_bus, nack);
 			monitored_trans = new({"i2c_trans(", itoalpha(counter),")"}); //$sformatf("%0d",counter)});
 			monitored_trans.measured_clock = bus.measured_clock[0];
+			monitored_trans.contained_nack = nack;
 			i2cmon_bus = 15 - i2cmon_bus;
 			monitored_trans.set(i2mon_addr, i2mon_data,i2mon_op,i2cmon_bus);
 			if(bus.stretch_qty > 0) monitored_trans.clock_stretch_qty = bus.stretch_qty;

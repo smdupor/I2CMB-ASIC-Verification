@@ -56,11 +56,18 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	//////////////////////////////////////////////////////////
 
 	virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
+		int address = t.address;
+		if(env_cfg.get_address_shift() != 0) begin 
+			address -= env_cfg.get_address_shift();
+			if(address < 0) address = 127 - env_cfg.get_address_shift() + 1;
+		end
 		if(add_bus_sel) select_I2C_bus(t.selected_bus);
 		issue_start_command();
-		if(t.rw == I2_WRITE) begin
-			transmit_address_req_write(t.address);
-			foreach(t.data[i]) write_data_byte(byte'(t.data[i]));
+		if(t.rw == I2_WRITE || env_cfg.get_address_shift() != 0) begin
+			transmit_address_req_write(address);
+			foreach(t.data[i]) begin
+				write_data_byte(byte'(t.data[i]));
+			end
 		end
 		else begin
 			transmit_address_req_read(t.address);
@@ -71,10 +78,16 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	endfunction
 
 	virtual function void convert_rand_i2c_trans(i2c_rand_data_transaction t, bit add_bus_sel, bit add_stop);
+		int address = t.address;
+		if(env_cfg.get_address_shift() != 0) begin 
+			address -= env_cfg.get_address_shift();
+			if(address < 0) address = 127 - env_cfg.get_address_shift() + 1;
+		end
 		if(add_bus_sel) select_I2C_bus(t.selected_bus);
 		issue_start_command();
-		if(t.rw == I2_WRITE) begin
-			transmit_address_req_write(t.address);
+		
+		if(t.rw == I2_WRITE || env_cfg.get_address_shift() != 0) begin
+			transmit_address_req_write(address);
 			foreach(t.data[i]) begin
 				write_data_byte(byte'(t.data[i]));
 			end

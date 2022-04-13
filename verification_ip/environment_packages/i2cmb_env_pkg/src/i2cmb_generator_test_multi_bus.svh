@@ -29,8 +29,9 @@ class i2cmb_generator_test_multi_bus extends i2cmb_generator;
 		// ****************************************************************************
 		virtual task run();
 		// Transaction to enable the DUT with interrupts enabled
-		enable_dut_with_interrupt();
+			enable_dut_with_interrupt();
 			generate_random_base_flow(200, 1);
+//			env_cfg.set_address_shift(666);
 
 			wb_agent_handle.expect_nacks(1'b0);
 			// Iterate through all generated transactions, passing each down to respective agents.
@@ -41,7 +42,6 @@ class i2cmb_generator_test_multi_bus extends i2cmb_generator;
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 				end
 			join
-		#10000 $display("Exiting!");
 		endtask
 		
 	endclass

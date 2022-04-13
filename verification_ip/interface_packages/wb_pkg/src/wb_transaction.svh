@@ -42,9 +42,9 @@ class wb_transaction extends ncsu_transaction;
 			CMDR: s = {s, "CMDR "};
 			CSR: s = {s, "CSR "};
 		endcase
-		if(line == CSR ||  line==CMDR) s = {s, "Value(0x): ", cmd};
-		else if(line==DPR && (name == "emplace_address_req_write" || name == "emplace_address_req_read")) s = {s, "Value: ", word>>1};
-		else if(line==DPR) s = {s, "Value: ", word};
+		if(line == CSR ||  line==CMDR) s = {s, $sformatf("Value: %b",  cmd)};
+		else if(line==DPR && (name == "emplace_address_req_write" || name == "emplace_address_req_read")) s = {s, $sformatf("Value: %b", word>>1)};
+		else if(line==DPR) s = {s, $sformatf("Value: %b", word)};
 		return {super.convert2string(),s};
 	endfunction
 

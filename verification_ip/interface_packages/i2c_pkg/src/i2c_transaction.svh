@@ -7,6 +7,7 @@ class i2c_transaction extends ncsu_transaction;
 	int selected_bus;
 	int clock_stretch_qty;
 	i2c_op_t rw;
+	bit contained_nack;
 
 	// Coverage Only
 	logic is_restart;	// x for N/a, 0 For "START", 1 for "RE-START"
@@ -57,7 +58,9 @@ class i2c_transaction extends ncsu_transaction;
 			temp.itoa(integer'(data[i]));
 			s = {s,temp,","};
 		end
-		return s.substr(0,s.len-2);
+		s = s.substr(0,s.len-2);
+		if(contained_nack) s = {s, " + NACKED"};
+		return s;
 
 	endfunction
 
