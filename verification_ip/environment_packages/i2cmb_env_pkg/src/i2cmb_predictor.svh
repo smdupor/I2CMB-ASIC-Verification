@@ -126,7 +126,9 @@ class i2cmb_predictor extends ncsu_component;
 			else $error("Asssertion assert_bc_captured failed with %b", dat_mon);
 			assert_csr_bb_busy: assert(dat_mon[5]==1'b1)
 			else $error("Asssertion assert_bb_bus_busy busy failed with %b", dat_mon);
-			end else begin
+			end 
+			
+			else begin
 			assert_csr_bc_free: assert(dat_mon[4]==1'b0)
 			else $error("Asssertion assert_bc_free failed with %b", dat_mon);
 			assert_csr_bb_free: assert(dat_mon[5]==1'b1)
