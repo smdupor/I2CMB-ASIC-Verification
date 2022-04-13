@@ -41,5 +41,7 @@ class i2cmb_generator_test_multi_bus extends i2cmb_generator;
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 				end
 			join
+		#10000 $display("Exiting!");
 		endtask
+		
 	endclass

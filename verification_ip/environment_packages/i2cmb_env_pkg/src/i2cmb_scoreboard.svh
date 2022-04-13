@@ -1,13 +1,16 @@
 class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
-	function new(string name = "", ncsu_component_base  parent = null);
-		super.new(name,parent);
-		verbosity_level = global_verbosity_level;
-	endfunction
-
 	i2c_transaction lhs_trans_in[$], rhs_trans_in[$];
 	i2c_transaction passes[$], fails[$];
 	i2c_transaction trans_in;
 	T trans_out;
+	int count_pred, count_bfm;
+
+	function new(string name = "", ncsu_component_base  parent = null);
+		super.new(name,parent);
+		verbosity_level = global_verbosity_level;
+		count_pred=0;
+		count_bfm=0;
+	endfunction
 
  	// ****************************************************************************
 	// Called from the Predictor, to capture predicted transactions
@@ -17,6 +20,9 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 		lhs_trans_in.push_back(trans_in); // Catch transaction and store it for checking
 		output_trans = trans_out;
 		check(); // Pass control to checker
+			++count_pred;
+			$display("pred sent # %0d", count_pred);
+		ncsu_info("\n", {"PREDICT:",this.trans_in.convert2string()},NCSU_HIGH);
 	endfunction
 
  	// ****************************************************************************
@@ -27,6 +33,9 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 		$cast(chk, trans);
 		rhs_trans_in.push_back(chk); // Catch transaction and store it for checking
 		check(); // Pass control to checker
+						++count_bfm;
+			$display("bfm sent # %0d", count_bfm);
+			ncsu_info("\n", {"BFM:",chk.convert2string()},NCSU_HIGH);
 	endfunction
 
  	// ****************************************************************************

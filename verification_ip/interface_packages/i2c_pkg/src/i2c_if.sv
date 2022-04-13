@@ -468,12 +468,15 @@ interface i2c_if       #(
 	task monitor_record_data(output bit [I2C_DATA_WIDTH-1:0] monitor_data [$], input i2c_op_t op);
 		static bit [8:0] rec_dat_mon_buf;
 		monitor_data.delete; // Clear static buffer of data from prior calls
+		@(negedge scl_i[bus_selector]);
+
 		forever begin
 			for(int i=MSB;i>=0;i--) begin
 				if(mon_intr_raised()) return;
-				@(posedge scl_i[bus_selector]) rec_dat_mon_buf[i] = sda_i[bus_selector];
-
-				wait(scl_i[bus_selector] == 1'b0 || mon_intr_raised());
+				wait(scl_i[bus_selector] == 1'b1 ||monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART);
+				if(mon_intr_raised()) return;
+				rec_dat_mon_buf[i] = sda_i[bus_selector];
+				wait(scl_i[bus_selector] == 1'b0 || monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART);
 				if(monitor_interrupt == RAISE_STOP) return;
 			end
 			monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
