@@ -1,5 +1,5 @@
- <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_3\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 8:44:48 PM -->
+ <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_4\sim\i2cmb_test_plan.xls -->
+ <!-- Date: 1/1/0001 1:12:53 AM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -17,8 +17,44 @@
 				<Cell>1.1</Cell>
 				<Cell>Register Cross-Checking</Cell>
 				<Cell>Require that writes to one of three writeable registers does not alter values of other registers, except for commands which alter the FSM-States Register, and status response bits in the CMDR</Cell>
-				<Cell>test_register_crosschecking</Cell>
+				<Cell>test_register_block</Cell>
 				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.1</Cell>
+				<Cell>CSR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_csr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.2</Cell>
+				<Cell>DPR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_dpr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.3</Cell>
+				<Cell>CMDR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_cmdr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.4</Cell>
+				<Cell>FSMR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_fsmr_cross</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -26,8 +62,35 @@
 				<Cell>1.2</Cell>
 				<Cell>Register Access Control Testing</Cell>
 				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
-				<Cell>test_register_access_control</Cell>
+				<Cell>test_register_block</Cell>
 				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.1</Cell>
+				<Cell>CSR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_csr_ro</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.2</Cell>
+				<Cell>CMDR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_cmdr_ro</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.3</Cell>
+				<Cell>FSMR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_fsmr_ro</Cell>
+				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
@@ -80,7 +143,25 @@
 				<Cell>1.3.3</Cell>
 				<Cell>CMDR[5] NACK Accuracy</Cell>
 				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
-				<Cell>assert_nacks_when_expected</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3.1</Cell>
+				<Cell>NACK Raised on Address Write</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell>assert_adr_nacks_when_expected</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3.2</Cell>
+				<Cell>NACK Raised on Data Write</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell>assert_dat_nacks_when_expected</Cell>
 				<Cell>Assertion</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
