@@ -64,12 +64,12 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 		reg_read(CSR);
 		reg_read(DPR);
 		reg_read(CMDR);
-		reg_read(STATE);
+		reg_read(FSMR);
 	endfunction
 	function void generate_access_ctrl_testing();
 		reg_write(CSR, 8'b0011_1111);
 		reg_write(CMDR, 8'b0111_1000);
-		reg_write(STATE, 8'hff);
+		reg_write(FSMR, 8'hff);
 		generate_default_testing();
 	endfunction
 	function void generate_crosschecking();
