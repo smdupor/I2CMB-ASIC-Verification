@@ -22,7 +22,7 @@ package wb_types_pkg;
 
 
 
-	typedef enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10, STATE = 2'b11} wb_reg_t;
+	typedef enum bit [1:0] {CSR=2'b00, DPR=2'b01, CMDR=2'b10, FSMR = 2'b11} wb_reg_t;
 
 	typedef enum bit {STOP=1'b0, RESTART=1'b1} close_on_complete_t;
 

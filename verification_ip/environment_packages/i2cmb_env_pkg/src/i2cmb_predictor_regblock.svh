@@ -61,7 +61,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 			CMDR: assert_cmdr_default_on_enable: assert(dat_mon == default_values[adr_mon])
 			else $error("Assertion assert_cmdr_default value failed! GOT: %b", dat_mon);
 		
-			STATE: begin 
+			FSMR: begin 
 				assert_fsmr_default_on_enable: assert(dat_mon == default_values[adr_mon])
 				else $error("Assertion assert_fsmr_default_on_enable failed! GOT: %b", dat_mon);
 				state = ACCESS_CONTROL;
@@ -90,7 +90,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 				else $error("Assertion assert_cmdr_ro failed! GOT: %b", dat_mon);
 				reg_file[adr_mon] = default_values[adr_mon];	
 			end
-			STATE: begin 
+			FSMR: begin 
 				assert_fsmr_ro: assert(dat_mon == default_values[adr_mon])
 				else $error("Assertion assert_fsmr_ro failed! GOT: %b", dat_mon);
 				state = CROSSCHECKING;
@@ -120,7 +120,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 			CMDR: assert_cmdr_cross: assert(dat_mon == reg_file[adr_mon]) 
 			else $error("Assertion assert_cmdr_cross failed! GOT: %b Expect: %b", dat_mon, reg_file[adr_mon]);
 		
-			STATE: begin 
+			FSMR: begin 
 				assert_fsmr_cross: assert(dat_mon == reg_file[adr_mon]) 
 				else $error("Assertion assert_fsmr_cross failed! GOT: %b EXPECTED: %b", dat_mon, reg_file[adr_mon]);
 			end
