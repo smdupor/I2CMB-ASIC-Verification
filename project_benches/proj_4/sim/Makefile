@@ -96,14 +96,15 @@ discon_slv_dbg: clean compile_sil
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
 
+regblock: clean compile_sil
+	$(eval TN := test_register_block)
+	$(eval GTT := i2cmb_generator_test_reg)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 silent2: clean clean_ucdb compile_sil
 	date +"%T" > .timelog
-	$(eval TN := test_register_crosschecking)
-	$(eval GTT := i2cmb_generator_test_reg_crosscheck)
-	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	$(eval TN := test_register_access_control)
-	$(eval GTT := i2cmb_generator_accessctrl)
+	$(eval TN := test_register_block)
+	$(eval GTT := i2cmb_generator_test_reg)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TEST_SEED := 65989)
 	$(eval TN := test_single_bus_default_speed)

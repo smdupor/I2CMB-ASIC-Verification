@@ -7,6 +7,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 	bit [7:0] reg_file[4];
 	pred_reg_states state;
 	int transaction_count;
+	wb_transaction itrans;
 
 	// ****************************************************************************
 	// Construction, setters, and getters 
@@ -20,7 +21,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 	// Called from wb_agent, process all incoming monitored wb transactions.
 	// ****************************************************************************
 	virtual function void nb_put(ncsu_transaction trans);
-		wb_transaction itrans;
+		
 		
 		$cast(itrans, trans); // Grab incoming transaction process
 
@@ -30,8 +31,10 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 		we_mon = itrans.write;
 		is_write = itrans.write;
 
+			 ncsu_info("",{"        ",get_full_name(),itrans.to_s_uglyprint_dat()},NCSU_LOW); // Print only pertinent WB transactions per project spec.
+
 		//Based on REGISTER Address of received transaction, process transaction data accordingly
-		case(adr_mon)
+		case(state)
 			DEFAULT_TESTING: process_default_testing();
 			ACCESS_CONTROL:	process_access_ctrl_testing();
 			CROSSCHECKING: process_crosschecking();
@@ -42,7 +45,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 
 	function void process_default_testing();
 
-		assert(!we_mon && transaction_count < 4) else $error("REGBLOCK TESTFLOW ERROR, UNEXPECTED WRITE Transaction %0d", transaction_count);
+		//assert(!we_mon && transaction_count < 4) else $error("REGBLOCK TESTFLOW ERROR, UNEXPECTED WRITE Transaction %0d", transaction_count);
 
 		case(adr_mon)
 	
@@ -51,11 +54,11 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 
 		
 			DPR: assert_dpr_default_on_enable: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_dpr_default_on_enable failed! GOT: %b", dat_mon);
+			else $error("Assertion assert_dpr_default value failed! GOT: %b", dat_mon);
 
 		
 			CMDR: assert_cmdr_default_on_enable: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_cmdr_default_on_enable failed! GOT: %b", dat_mon);
+			else $error("Assertion assert_cmdr_default value failed! GOT: %b", dat_mon);
 		
 			STATE: begin 
 				assert_fsmr_default_on_enable: assert(dat_mon == default_values[adr_mon])
@@ -68,55 +71,59 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 
 	function void process_access_ctrl_testing();
 		if(!we_mon) begin
-			assert(transaction_count > 7 && transaction_count < 12) 
-			else $error("REGBLOCK TESTFLOW ERROR, ACCESS CONTROL OUT OF BOUNDS, Transaction %0d", transaction_count);
+
 		case(adr_mon)
 	
-			CSR: assert_csr_ro: assert(dat_mon == default_values[adr_mon]) 
-			else $error("Assertion assert_csr_ro FAILED! GOT: %b", dat_mon);
-
-		
-			DPR: assert_dpr_ro: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_dpr_ro failed! GOT: %b", dat_mon);
-
-		
-			CMDR: assert_cmdr_ro: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_cmdr_ro failed! GOT: %b", dat_mon);
-		
+			CSR: begin
+			 	assert_csr_ro: assert(dat_mon == default_values[adr_mon]) 
+				else $error("Assertion assert_csr_ro FAILED! GOT: %b", dat_mon);
+				reg_file[adr_mon] = default_values[adr_mon];	
+			end
+			DPR: begin
+				 assert_dpr_ro: assert(dat_mon == default_values[adr_mon])
+				else $error("Assertion assert_dpr_ro failed! GOT: %b", dat_mon);
+				reg_file[adr_mon] = default_values[adr_mon];	
+			end		
+			CMDR: begin 
+				assert_cmdr_ro: assert(dat_mon == default_values[adr_mon])
+				else $error("Assertion assert_cmdr_ro failed! GOT: %b", dat_mon);
+				reg_file[adr_mon] = default_values[adr_mon];	
+			end
 			STATE: begin 
 				assert_fsmr_ro: assert(dat_mon == default_values[adr_mon])
 				else $error("Assertion assert_fsmr_ro failed! GOT: %b", dat_mon);
 				state = CROSSCHECKING;
+				reg_file[adr_mon] = default_values[adr_mon];	
 			end
+		endcase
 		end
 	endfunction
 
 	function void process_crosschecking();
-		assert(transaction_count > 13) 
-			else $error("REGBLOCK TESTFLOW ERROR, CROSSCHECKING OUT OF BOUNDS, Transaction %0d", transaction_count);
+
 		// Accept the written value into predictor's copy of the register fiile
 		if(we_mon) begin
-			reg_file[adr_mon] = dat_mon;
+			if(adr_mon!= DPR) reg_file[adr_mon] = dat_mon;		// DPR Values are flushed on a completed write to the lower-level FSM
+			if(adr_mon == CMDR) reg_file[CMDR] = 8'b0001_0111;	// A write to CMDR with an illegal DPR value will cause the CMDR Error bit to rise
 		end
 
-		else begin
+		else begin 
+		// On the following reads, ensure the predicted register file still matches the DUT registers.
 		case(adr_mon)
-			CSR: assert_csr_ro: assert(dat_mon == default_values[adr_mon]) 
-			else $error("Assertion assert_csr_ro FAILED! GOT: %b", dat_mon);
-
+			CSR: assert_csr_cross: assert(dat_mon == reg_file[adr_mon]) 
+			else $error("Assertion assert_csr_cross FAILED! GOT: %b Expect: %b", dat_mon, reg_file[adr_mon]);
 		
-			DPR: assert_dpr_ro: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_dpr_ro failed! GOT: %b", dat_mon);
-
+			DPR: assert_dpr_cross: assert(dat_mon == reg_file[adr_mon]) 
+			else $error("Assertion assert_dpr_cross failed! GOT: %b Expect: %b", dat_mon, reg_file[adr_mon]);
 		
-			CMDR: assert_cmdr_ro: assert(dat_mon == default_values[adr_mon])
-			else $error("Assertion assert_cmdr_ro failed! GOT: %b", dat_mon);
+			CMDR: assert_cmdr_cross: assert(dat_mon == reg_file[adr_mon]) 
+			else $error("Assertion assert_cmdr_cross failed! GOT: %b Expect: %b", dat_mon, reg_file[adr_mon]);
 		
 			STATE: begin 
-				assert_fsmr_ro: assert(dat_mon == default_values[adr_mon])
-				else $error("Assertion assert_fsmr_ro failed! GOT: %b", dat_mon);
-				state = CROSSCHECKING;
+				assert_fsmr_cross: assert(dat_mon == reg_file[adr_mon]) 
+				else $error("Assertion assert_fsmr_cross failed! GOT: %b EXPECTED: %b", dat_mon, reg_file[adr_mon]);
 			end
+		endcase
 		end
 
 	endfunction

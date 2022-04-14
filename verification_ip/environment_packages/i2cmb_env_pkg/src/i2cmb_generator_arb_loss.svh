@@ -79,4 +79,162 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 			end
 		endfunction
 
+
+	function void arb_loss_select_bus(input bit [7:0] selected_bus);
+		//master_write(DPR, selected_bus);
+		wb_transaction t = new("select_i2c_bus");
+		wb_transaction_arb_loss u;
+		t.write = 1'b1;
+		t.line = DPR;
+		t.word=selected_bus;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		t.label("SELECT BUS");
+		wb_trans.push_back(t);
+
+		//master_write(CMDR, SET_I2C_BUS);
+		u = new("trigger_selection_i2c_bus-ARB_ARB");
+		u.write = 1'b1;
+		u.line = CMDR;
+		u.word=8'b0;
+		u.cmd=SET_I2C_BUS;
+		u.wait_int_nack=1'b0;
+		u.wait_int_ack=1'b0;
+		u.stall_cycles=0;
+		wb_trans.push_back(u);
+
+		//wait_interrupt();
+		clear_interrupt();
+	endfunction
+
+		function void arb_loss_start();
+		//master_write(CMDR, I2C_START);
+		wb_transaction_arb_loss t = new("send_start_command");
+		t.write = 1'b1;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=I2C_START;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		t.label("SEND START");
+		wb_trans.push_back(t);
+
+		//wait_interrupt();
+		clear_interrupt();
+	endfunction
+
+		function void arb_loss_address_req_write(input bit [7:0] addr);
+		//master_write(DPR, addr);
+		wb_transaction_arb_loss u;
+		wb_transaction t = new("emplace_address_req_write");
+		addr = addr << 1;
+		addr[0]=1'b0;
+		t.write = 1'b1;
+		t.line = DPR;
+		t.word=addr;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		t.label("SEND ADDRESS REQ WRITE");
+		wb_trans.push_back(t);
+
+
+		//master_write(CMDR, I2C_WRITE);
+		u = new("trigger_address_transmission_arb");
+		u.write = 1'b1;
+		u.line = CMDR;
+		u.word=8'b0;
+		u.cmd=I2C_WRITE;
+		u.wait_int_nack=1'b1;
+		u.wait_int_ack=1'b0;
+		u.stall_cycles=0;
+		wb_trans.push_back(u);
+
+		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
+		clear_interrupt();
+	endfunction
+
+	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that this is the LAST BYTE of this transfer, and the next
+	// 		bus action will be a STOP signal.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	function void read_data_byte_with_stop();
+		//master_write(CMDR, READ_WITH_NACK);
+		wb_transaction t = new("trigger_final_byte_read");
+		t.write = 1'b1;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=READ_WITH_NACK;
+		if(!enable_polling) begin
+		t.wait_int_nack=1'b1;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+		end 
+		t.label("READ BYTE");
+		wb_trans.push_back(t);
+
+		//wait_interrupt_with_NACK();
+		clear_interrupt();
+
+		//	master_read(DPR, iobuf);
+		t = new("retrieve_data_post_read");
+		t.write = 1'b0;
+		t.line = DPR;
+		t.word=8'b0;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		wb_trans.push_back(t);
+	endfunction	// ****************************************************************************
+	// READ a single byte of data from a previously-addressed I2C Slave,
+	//      Indicating that this is the LAST BYTE of this transfer, and the next
+	// 		bus action will be a STOP signal.
+	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	// ****************************************************************************
+	function void arb_loss_read_data_byte_with_stop();
+		//master_write(CMDR, READ_WITH_NACK);
+		wb_transaction t = new("trigger_final_byte_read");
+		t.write = 1'b1;
+		t.line = CMDR;
+		t.word=8'b0;
+		t.cmd=READ_WITH_NACK;
+		if(!enable_polling) begin
+		t.wait_int_nack=1'b1;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		end else begin
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=data_pause;
+		end 
+		t.label("READ BYTE");
+		wb_trans.push_back(t);
+
+		//wait_interrupt_with_NACK();
+		clear_interrupt();
+
+		//	master_read(DPR, iobuf);
+		t = new("retrieve_data_post_read");
+		t.write = 1'b0;
+		t.line = DPR;
+		t.word=8'b0;
+		t.cmd=NONE;
+		t.wait_int_nack=1'b0;
+		t.wait_int_ack=1'b0;
+		t.stall_cycles=0;
+		wb_trans.push_back(t);
+	endfunction
+
+
 	endclass

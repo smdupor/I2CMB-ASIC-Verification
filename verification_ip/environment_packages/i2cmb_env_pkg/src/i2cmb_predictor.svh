@@ -104,6 +104,7 @@ class i2cmb_predictor extends ncsu_component;
 	// ****************************************************************************
 	virtual function void nb_put(ncsu_transaction trans);
 		wb_transaction itrans;
+		if(configuration.disable_predictor) return;
 		$cast(itrans, trans); // Grab incoming transaction process
 
 		// Copy incoming transaction data into persistent data structure

@@ -32,7 +32,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 	// agent
 	// ****************************************************************************
 	virtual task run();
-		static bit [2:0] adr_mon;
+		static bit [1:0] adr_mon;
 		static bit [7:0] dat_mon;
 		static bit  we_mon;
 
@@ -47,7 +47,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 			monitored_trans.word = dat_mon;
 			monitored_trans.write = we_mon;
 			
-			check_command_assertions();
+			if(!configuration.register_testing) check_command_assertions();
 				
 			if(!configuration.expect_arb_loss) agent.nb_put(monitored_trans);
 		end
@@ -57,6 +57,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 	task check_command_assertions();
 		static T temp;
 		temp =new;
+		
 		if(configuration.expect_arb_loss) return;	// Arbitration loss is checked directly at the driver
 
 		if(last_trans[0] != null && last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
@@ -85,30 +86,7 @@ class wb_monitor extends ncsu_component#(.T(wb_transaction));
 						assert_arbitration_won: assert(monitored_trans.word[5]==1'b0)
 						else $error("Assertion assert_arbitration_won failed!");
 					end
-
 				end 
-
-		end
-
-		// Check register default values on a DUT-enable
-		else if (monitored_trans.line == CSR && monitored_trans.write) begin
-			this.bus.master_read(CSR, temp.word);												//CSR Defaults
-			assert_csr_enable_defaults: assert(temp.word[7:6] == monitored_trans.word[7:6]) 
-			//[7] == monitored_trans.word[7] && temp.word[6] == monitored_trans.word[6])
-			else $error("Assertion CSR defaults FAILED! GOT: %b   %b    %b    %b", temp.word[7:6], temp.word[6], monitored_trans.word[7:6], monitored_trans.word[6]);
-
-			this.bus.master_read(DPR, temp.word);												// DPR Default
-			assert_dpr_default_on_enable: assert(temp.word == 8'b0)
-			else $error("Assertion assert_dpr_default_on_enable failed!");
-
-			this.bus.master_read(CMDR, temp.word);
-			assert_cmdr_default_on_enable: assert(temp.word == 8'b1000_0000)					// CMDR Default
-			else $error("Assertion assert_cmdr_default_on_enable failed!");
-
-			this.bus.master_read(STATE, temp.word);
-			assert_fsmr_default_on_enable: assert(temp.word == 8'h0)
-			else $error("Assertion assert_fsmr_default_on_enable failed!");
-
 		end
 	endtask
 endclass

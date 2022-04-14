@@ -4,8 +4,10 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 	wb_agent         wb_agent_handle;
 	i2c_agent		i2c_agent_handle;
 	i2cmb_predictor         pred;
+	i2cmb_predictor_regblock pred_reg;
 	i2cmb_scoreboard        scbd;
 	i2cmb_coverage          coverage;
+	string trans_name;
 
 	// ****************************************************************************
 	// Construction, setters and getters
@@ -28,7 +30,15 @@ class i2cmb_environment extends ncsu_component#(.T(i2c_transaction));
 		i2c_agent_handle = new("i2c_agent",this);
 		i2c_agent_handle.set_configuration(configuration.i2c_agent_config);
 		i2c_agent_handle.build();
-		pred  = new("pred", this);
+		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
+				$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
+				$fatal;
+			end
+		if(trans_name == "i2cmb_generator_test_reg") begin
+			pred_reg = new("pred", this);
+			pred = pred_reg;
+		end 
+		else pred  = new("pred", this);
 		pred.set_configuration(configuration);
 		pred.build();
 		scbd  = new("scbd", this);

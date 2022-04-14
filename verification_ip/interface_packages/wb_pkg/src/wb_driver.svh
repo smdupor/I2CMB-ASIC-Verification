@@ -41,14 +41,14 @@ class wb_driver extends ncsu_component#(.T(wb_transaction));
 
 		if(wb_trans.write) begin
 			if(wb_trans.line == CMDR || wb_trans.line == CSR) bus.master_write(wb_trans.line, wb_trans.cmd);
-			if(wb_trans.line == DPR) bus.master_write(wb_trans.line, wb_trans.word);
+			if(wb_trans.line == DPR || wb_trans.line == STATE) bus.master_write(wb_trans.line, wb_trans.word);
 			if(wb_trans.wait_int_ack) bus.wait_interrupt();
 			if(wb_trans.wait_int_nack) bus.wait_interrupt();
 			if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);
 		end
 		else begin
 			if(wb_trans.line == CMDR ||  wb_trans.line == CSR) bus.master_read(wb_trans.line, buffer);
-			if(wb_trans.line==DPR) bus.master_read(wb_trans.line, buffer);
+			if(wb_trans.line==DPR || wb_trans.line==STATE) bus.master_read(wb_trans.line, buffer);
 			if(wb_trans.wait_int_ack) bus.wait_interrupt();
 			if(wb_trans.wait_int_nack) bus.wait_interrupt();
 			if(wb_trans.stall_cycles > 0) bus.wait_for_num_clocks(wb_trans.stall_cycles);

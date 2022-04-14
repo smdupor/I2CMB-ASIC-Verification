@@ -7,6 +7,9 @@ class i2cmb_env_configuration extends ncsu_configuration;
 	bit disable_interrupts;
 	int address_shift;
 	bit expect_nacks;
+	bit disable_predictor;
+	bit disable_scoreboard;
+	
 	
 	// ****************************************************************************
 	//	Constructor, setters and getters 
@@ -29,6 +32,15 @@ class i2cmb_env_configuration extends ncsu_configuration;
 
 		address_shift=0;
 		i2c_agent_config = new("i2c_agent_config");
+	endfunction
+
+	function void disable_coverage();
+		wb_agent_config.collect_coverage = 1'b0;
+		disable_scoreboard = 1'b1;
+	endfunction
+
+	function void enable_register_testing();
+		wb_agent_config.register_testing = 1'b1;
 	endfunction
 
 	// ****************************************************************************

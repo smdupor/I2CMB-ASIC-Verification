@@ -6,7 +6,7 @@ class wb_transaction extends ncsu_transaction;
 	bit [7:0] word;		// Data to / from the DPR
 	bit [1:0] line;		// Which register to read/write to/fromo
 	bit write;			// Whether this xation is a write or read
-	wb_cmd_t cmd;		// The wb command associated with this xaction
+	logic [7:0] cmd;		// The wb command associated with this xaction
 	bit wait_int_ack;	// Whether this xaction should cause an interrupt
 	bit wait_int_nack;	// Whether this xaction should cause an interrupt requiring nack-checking
 	int stall_cycles;	// How many cycles to stall after this xaction
@@ -64,6 +64,22 @@ class wb_transaction extends ncsu_transaction;
 		s={" ",super.convert2string()};
 		if(line == DPR && (name == "emplace_address_req_write" || name == "emplace_address_req_read")) s = {s, $sformatf("Value: %0d", word>>1)};
 		else if(line==DPR) s = {s, $sformatf("Value: %0d", word)};
+		return s;
+	endfunction
+
+	virtual function string to_s_uglyprint();
+		string s;
+		s= {" ",super.convert2string()};
+		if(!this.write) s = {s, $sformatf("Adr: %0b  read", line)};
+		else s = {s, $sformatf("Adr: %0b  Word: %b write", line, word)};
+		return s;
+	endfunction
+
+		virtual function string to_s_uglyprint_dat();
+		string s;
+		s= {" ",super.convert2string()};
+		if(!this.write) s = {s, $sformatf("Adr: %0b Word: %b read", line, word)};
+		else s = {s, $sformatf("Adr: %0b  Word: %b write", line, word)};
 		return s;
 	endfunction
 

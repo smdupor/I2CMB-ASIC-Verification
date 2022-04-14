@@ -66,8 +66,8 @@ class i2cmb_scoreboard extends ncsu_component#(.T(ncsu_transaction));
 	// ****************************************************************************
 	function void report_test_stats();
 		display_h_lowbar();
-
-		if(fails.size == 0) $display("\t\tALL TESTS PASSED, %0d tests cases checked.", passes.size);
+		if(passes.size == 0 && fails.size == 0)  $display("\t\tTests complete. There were NO scoreboarded transactions this run.");
+		else if(fails.size == 0) $display("\t\tALL TESTS PASSED, %0d tests cases checked.", passes.size);
 		else				$display("\t\tTESTS FAILED! %d tests cases failing. TESTS FAILED!", fails.size);
 
 		display_h_lowbar();

@@ -286,7 +286,8 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 
 
 	// ****************************************************************************
-	// Inject a CSR Read
+	// Inject a CSR Read into the testflow. Permits checking for Bus Selection, 
+	// Bus Busy/ Bus Captured Bit checking
 	// ****************************************************************************
 	function void inject_csr_read();
 		//master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT		
@@ -300,7 +301,6 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 		t.stall_cycles=0;
 		t.label("CSR Read");
 		wb_trans.push_back(t);
-		
 	endfunction
 
 	// ****************************************************************************
@@ -361,34 +361,6 @@ end
 		clear_interrupt();
 	endfunction
 
-	function void arb_loss_select_bus(input bit [7:0] selected_bus);
-		//master_write(DPR, selected_bus);
-		wb_transaction t = new("select_i2c_bus");
-		wb_transaction_arb_loss u;
-		t.write = 1'b1;
-		t.line = DPR;
-		t.word=selected_bus;
-		t.cmd=NONE;
-		t.wait_int_nack=1'b0;
-		t.wait_int_ack=1'b0;
-		t.stall_cycles=0;
-		t.label("SELECT BUS");
-		wb_trans.push_back(t);
-
-		//master_write(CMDR, SET_I2C_BUS);
-		u = new("trigger_selection_i2c_bus-ARB_ARB");
-		u.write = 1'b1;
-		u.line = CMDR;
-		u.word=8'b0;
-		u.cmd=SET_I2C_BUS;
-		u.wait_int_nack=1'b0;
-		u.wait_int_ack=1'b0;
-		u.stall_cycles=0;
-		wb_trans.push_back(u);
-
-		//wait_interrupt();
-		clear_interrupt();
-	endfunction
 
 	// ****************************************************************************
 	// Disable the DUT and STALL for 2 system cycles
@@ -423,28 +395,12 @@ end
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b1;
 		t.stall_cycles=0;
-end else begin
+		end 
+		else begin
 		t.wait_int_nack=1'b0;
 		t.wait_int_ack=1'b0;
 		t.stall_cycles=start_pause;
-end 
-		t.label("SEND START");
-		wb_trans.push_back(t);
-
-		//wait_interrupt();
-		clear_interrupt();
-	endfunction
-
-	function void arb_loss_start();
-		//master_write(CMDR, I2C_START);
-		wb_transaction_arb_loss t = new("send_start_command");
-		t.write = 1'b1;
-		t.line = CMDR;
-		t.word=8'b0;
-		t.cmd=I2C_START;
-		t.wait_int_nack=1'b0;
-		t.wait_int_ack=1'b0;
-		t.stall_cycles=0;
+		end 
 		t.label("SEND START");
 		wb_trans.push_back(t);
 
@@ -479,8 +435,7 @@ end
 	endfunction
 
 	// ****************************************************************************
-	// Format incoming address byte and set R/W bit to request a WRITE.
-	// Transmit this formatted address byte on the I2C bus
+	// Issue an explicit WAIT command to the DUT, in milliseconds.
 	// ****************************************************************************
 	function void issue_wait(int ms);
 		//master_write(DPR, addr);
@@ -547,38 +502,6 @@ end
 		t.stall_cycles=data_pause;
 		end 	
 		wb_trans.push_back(t);
-
-		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
-		clear_interrupt();
-	endfunction
-
-	function void arb_loss_address_req_write(input bit [7:0] addr);
-		//master_write(DPR, addr);
-		wb_transaction_arb_loss u;
-		wb_transaction t = new("emplace_address_req_write");
-		addr = addr << 1;
-		addr[0]=1'b0;
-		t.write = 1'b1;
-		t.line = DPR;
-		t.word=addr;
-		t.cmd=NONE;
-		t.wait_int_nack=1'b0;
-		t.wait_int_ack=1'b0;
-		t.stall_cycles=0;
-		t.label("SEND ADDRESS REQ WRITE");
-		wb_trans.push_back(t);
-
-
-		//master_write(CMDR, I2C_WRITE);
-		u = new("trigger_address_transmission_arb");
-		u.write = 1'b1;
-		u.line = CMDR;
-		u.word=8'b0;
-		u.cmd=I2C_WRITE;
-		u.wait_int_nack=1'b1;
-		u.wait_int_ack=1'b0;
-		u.stall_cycles=0;
-		wb_trans.push_back(u);
 
 		//wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
 		clear_interrupt();

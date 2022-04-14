@@ -114,7 +114,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	end
 	we = trans.write;
 
-    wb_transaction_cg.sample();
+    if(configuration.collect_coverage) wb_transaction_cg.sample();
 	wb_str_del = 0;
   endfunction
 
