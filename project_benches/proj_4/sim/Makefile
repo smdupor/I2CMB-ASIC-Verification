@@ -105,9 +105,11 @@ silent2: clean clean_ucdb compile_sil
 	$(eval TN := test_register_access_control)
 	$(eval GTT := i2cmb_generator_accessctrl)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 65989)
 	$(eval TN := test_single_bus_default_speed)
 	$(eval GTT := i2cmb_generator_test_single_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 37915)
 	$(eval TN := test_multi_bus_max_speed)
 	$(eval GTT := i2cmb_generator_test_multi_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -126,6 +128,7 @@ silent2: clean clean_ucdb compile_sil
 	$(eval TN := test_enable_disable_enable_intr_x_poll)
 	$(eval GTT := i2cmb_generator_interrupt_cycling)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 12345)
 	$(eval TN := test_disconnected_slave_nacks)
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -195,7 +198,7 @@ show_coverage:
 	vsim -i -do "set NoQuitOnFinish 1;do load_ucdbs_and_merge_with_test_plan.do" &
 
 clean_ucdb:
-	rm *.ucdb
+	rm -f *.ucdb
 
 clean_covg:	clean_ucdb convert_testplan
 	rm -rf ./covhtmlreport/

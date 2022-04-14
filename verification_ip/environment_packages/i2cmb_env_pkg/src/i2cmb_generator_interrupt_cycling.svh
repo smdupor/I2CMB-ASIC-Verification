@@ -27,14 +27,14 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 		virtual task run();
 		// Transaction to enable the DUT with interrupts enabled
 		enable_dut_with_interrupt();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		disable_dut();
 
 		send_xactions();
 		
 
 		enable_dut_with_interrupt();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		disable_dut();
 		
 		send_xactions();
@@ -42,27 +42,27 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 
 
 		enable_dut_polling();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		disable_dut();
 		
 		send_xactions();
 		
 
 		enable_dut_polling();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		disable_dut();
 
 		send_xactions();
 	//	pd.disable_interrupts = 1'b0;
 
 		enable_dut_with_interrupt();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		disable_dut();
 		send_xactions();
 	//	pd.disable_interrupts = 1'b1;
 
 		enable_dut_polling();
-		generate_random_base_flow(30, 1);
+		generate_random_base_flow(40, 1);
 		send_xactions();
 	//	pd.disable_interrupts = 1'b1;
 		endtask

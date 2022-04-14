@@ -134,8 +134,12 @@ class i2cmb_predictor extends ncsu_component;
  	// ****************************************************************************
 	// Handle any actions passed to the (Command Register), CDMDR
 	// ****************************************************************************
-	function void fsm_process_cmdr_transaction();
-		if(is_write)
+	virtual function void fsm_process_cmdr_transaction();
+		if(is_write) begin
+			if(dat_mon[2:0] == M_WB_WAIT) begin 		// Handle injected wait commands regardless of FSM state
+						most_recent_wait = last_dpr;
+						wait_cg.sample();
+			end
 			case(state)
 				RESET: begin					// Initial State
 						// Illegal Write
@@ -153,6 +157,11 @@ class i2cmb_predictor extends ncsu_component;
 							most_recent_wait = last_dpr;
 							state = EXPLICIT_WAIT_WAITING;
 						end
+						if(dat_mon[2:0] == M_WB_WAIT) begin 
+						most_recent_wait = last_dpr;											// TRANSACTION IN PROGRESS IDLE
+						wait_cg.sample();
+						state = EXPLICIT_WAIT_WAITING;
+					end
 				end
 				BUS_NUM_EMPLACED: begin 			//DPR WR
 						// Starting the bus select action
@@ -219,10 +228,7 @@ class i2cmb_predictor extends ncsu_component;
 					// Illegal									
 					end
 				READ_NACK_WAIT_DONE: begin 		// CMDR RD
-					if(dat_mon[2:0] == M_WB_WAIT) begin 
-						most_recent_wait = last_dpr;											// TRANSACTION IN PROGRESS IDLE
-						state = EXPLICIT_WAIT_WAITING;
-					end
+					// Illegal
 				end
 				READ_DATA_READY: begin
 					// Legal, but data destructive.
@@ -231,6 +237,7 @@ class i2cmb_predictor extends ncsu_component;
 					// Illegal																	
 					end
 			endcase
+			end
 		else // THIS IS A READ TO CMDR
 			case(state)
 				RESET: begin					// Initial State
@@ -303,13 +310,14 @@ class i2cmb_predictor extends ncsu_component;
 					// An Interrupt  Clear
 					if(dat_mon[DONE]) begin
 						wait_cg.sample();
+						most_recent_wait = 0;
 						state = IDLE;
 					end
 				end
 			endcase
 	endfunction
 
-	function void check_cmdr_default();
+	virtual function void check_cmdr_default();
 
 	endfunction
 
@@ -317,7 +325,7 @@ class i2cmb_predictor extends ncsu_component;
  	// ****************************************************************************
 	// Handle any actions passed to the (Control Status Register) CSR
 	// ****************************************************************************
-	function void fsm_process_csr_transaction();
+	virtual function void fsm_process_csr_transaction();
 		if(is_write) begin
 				if(dat_mon[ENBL]) begin 
 						 state=IDLE;
@@ -342,7 +350,7 @@ class i2cmb_predictor extends ncsu_component;
  	// ****************************************************************************
 	// Handle any actions passed to the (Control Status Register), eg DUT Enable/Disables 
 	// ****************************************************************************
-	function void process_csr_transaction();
+	virtual function void process_csr_transaction();
 		if(we_mon == 1'b0) begin
 
 			
@@ -384,7 +392,7 @@ class i2cmb_predictor extends ncsu_component;
 	// Handle any actions on the (Data / Parameter Register), in particular, 
 	// 		capturing data received from an I2C_READ.
 	// ****************************************************************************
-	function void process_dpr_transaction();
+	virtual function void process_dpr_transaction();
 		last_dpr = dat_mon;
 		if(capture_next_read) begin 								// The Predictor is expecting data from a READ transaction; 
 			capture_next_read = 1'b0;								// Let Predictor know that the next transaction will be a command of some form.
@@ -395,7 +403,7 @@ class i2cmb_predictor extends ncsu_component;
 	// ****************************************************************************
 	// Handle any actions passed to the (Command Register), CDMDR
 	// ****************************************************************************
-	function void fsm_process_dpr_transaction();
+	virtual function void fsm_process_dpr_transaction();
 		if(is_write) begin
 			last_dpr = dat_mon;
 			case(state)
@@ -558,16 +566,16 @@ class i2cmb_predictor extends ncsu_component;
 			words_transferred.delete();		
 			predictor_cg.sample();
 			wait_cg.sample();
-			most_recent_wait = 0;						// and pass data from it to scoreboard
+			//most_recent_wait = 0;						// and pass data from it to scoreboard
 			scoreboard.nb_transport(monitored_trans,transport_trans);
 		end
 																	// Then, Create a new Transaction
 		monitored_trans = new({"i2c_trans(", itoalpha(counter++),")"});
 		monitored_trans.selected_bus = sel_bus;
-		if(most_recent_wait > 0) begin
-			monitored_trans.explicit_wait_ms = most_recent_wait;
+		//if(most_recent_wait > 0) begin
+			//monitored_trans.explicit_wait_ms = most_recent_wait;
 			//most_recent_wait = 0;
-		end
+	//	end
 		transaction_in_progress = 1'b1; 							// Advise state machine that a transaction is now in progress
 		expect_i2c_address = 1'b1; 									// Advise state machine that the next transaction should contain an I2C address
 	endfunction
@@ -600,7 +608,7 @@ class i2cmb_predictor extends ncsu_component;
  	// ****************************************************************************
 	// Handle any actions on the State Register
 	// ****************************************************************************
-	function void process_state_register_transaction();
+	virtual function void process_state_register_transaction();
 		// SWALLOW reads of the debug state register
 	endfunction
 
