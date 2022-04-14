@@ -32,6 +32,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 			generate_arb_loss_flow();
 			//92.12, 94.11, 82.25
 			//arb_loss_start();
+						//92.12, 94.11, 82.25	// Both one flow
+			//91.14, 91.17, 82.25, 86.85 // Reads removed
+			//92.12, 94.11, 82.25, 87.03
 			wb_agent_handle.configuration.expect_arb_loss = 1'b1;
 
 			// Iterate through all generated transactions, passing each down to respective agents.

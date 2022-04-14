@@ -39,14 +39,7 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 			
 			generate_random_base_flow(50, 1);
 			
-			// Iterate through all generated transactions, passing each down to respective agents.
-			fork
-				foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-				foreach(wb_trans[i]) begin
-					wb_agent_handle.bl_put(wb_trans[i]);
-					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
-				end
-			join
+			super.run();
 		endtask
 
 

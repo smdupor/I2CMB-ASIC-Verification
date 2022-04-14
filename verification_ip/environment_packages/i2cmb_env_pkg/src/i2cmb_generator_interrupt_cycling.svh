@@ -25,46 +25,37 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 		//		actions to agents, in order, in parallel. 
 		// ****************************************************************************
 		virtual task run();
-		// Transaction to enable the DUT with interrupts enabled
+
+		// Do a small flow using interrupts
 		enable_dut_with_interrupt();
 		generate_random_base_flow(40, 1);
 		disable_dut();
 
-		send_xactions();
-		
-
+	// Do a small flow using interrupts
 		enable_dut_with_interrupt();
 		generate_random_base_flow(40, 1);
 		disable_dut();
-		
-		send_xactions();
-	//	pd.disable_interrupts = 1'b1;
 
-
-		enable_dut_polling();
-		generate_random_base_flow(40, 1);
-		disable_dut();
-		
-		send_xactions();
-		
-
+// Do a small flow using polling		
 		enable_dut_polling();
 		generate_random_base_flow(40, 1);
 		disable_dut();
 
-		send_xactions();
-	//	pd.disable_interrupts = 1'b0;
+// Do a small flow using polling
+		enable_dut_polling();
+		generate_random_base_flow(40, 1);
+		disable_dut();
 
+// Do a small flow using interrupts
 		enable_dut_with_interrupt();
 		generate_random_base_flow(40, 1);
 		disable_dut();
-		send_xactions();
-	//	pd.disable_interrupts = 1'b1;
 
+// Do a small flow using polling
 		enable_dut_polling();
 		generate_random_base_flow(40, 1);
-		send_xactions();
-	//	pd.disable_interrupts = 1'b1;
+
+		super.run();
 		endtask
 
 		task send_xactions();
