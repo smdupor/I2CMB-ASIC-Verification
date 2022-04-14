@@ -122,7 +122,7 @@ class i2cmb_predictor extends ncsu_component;
 			CSR: fsm_process_csr_transaction(); 			// Caught a CSR (Control Status Register) Transaction
 			DPR: fsm_process_dpr_transaction(); 			// Caught a DPR (Data / Parameter Register) Transaction
 			CMDR: fsm_process_cmdr_transaction();			// Caught a CMDR (Command Register) Transaction
-			STATE: process_state_register_transaction(); 	// Caught a state debug register transaction
+			FSMR: process_state_register_transaction(); 	// Caught a state debug register transaction
 		endcase
 
 	endfunction
