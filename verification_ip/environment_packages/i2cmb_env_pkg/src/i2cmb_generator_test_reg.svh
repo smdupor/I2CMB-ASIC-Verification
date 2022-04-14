@@ -34,6 +34,17 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 			
 		generate_crosschecking();
 
+		// Iterate through all generated transactions, passing each down to respective agents.
+		fork
+				foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
+				foreach(wb_trans[i]) begin
+					wb_agent_handle.bl_put(wb_trans[i]);
+					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_uglyprint},NCSU_LOW); 
+				end
+			join
+
+		env_cfg.enable_error_testing = 1'b1;
+		generate_error_testing();
 
 			// Iterate through all generated transactions, passing each down to respective agents.
 			fork
@@ -43,6 +54,9 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_uglyprint},NCSU_LOW); 
 				end
 			join
+
+
+
 		endtask
 
 
@@ -65,6 +79,27 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 		generate_default_testing();
 		reg_write(CMDR, 8'b1000_0111);
 		generate_default_testing();
+	endfunction
+
+	function void generate_error_testing();
+
+	disable_dut();
+	enable_dut_with_interrupt();
+
+	select_I2C_bus(0);
+	issue_start_command();
+	// Bus Sel after start illegal
+	select_I2C_bus(3);
+
+		disable_dut();
+	enable_dut_with_interrupt();
+	
+		select_I2C_bus(0);
+	issue_start_command();
+	// Wait after start illegal
+	issue_wait(1);
+	
+	disable_dut();
 	endfunction
 
 

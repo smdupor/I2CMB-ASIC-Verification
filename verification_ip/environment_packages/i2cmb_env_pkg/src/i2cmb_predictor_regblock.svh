@@ -1,6 +1,6 @@
 class i2cmb_predictor_regblock extends i2cmb_predictor;
 
-	typedef enum int {DEFAULT_TESTING, ACCESS_CONTROL, CROSSCHECKING } pred_reg_states;
+	typedef enum int {DEFAULT_TESTING, ACCESS_CONTROL, CROSSCHECKING, ERROR_TESTING} pred_reg_states;
 
 	wb_transaction last_trans[$]; // Keep a historic buffer of recent xations
 	const bit [7:0] default_values [4] = {8'h0, 8'h0, 8'b1000_0000, 8'h0};
@@ -21,7 +21,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 	// Called from wb_agent, process all incoming monitored wb transactions.
 	// ****************************************************************************
 	virtual function void nb_put(ncsu_transaction trans);
-		
+		if(configuration.enable_error_testing) state= ERROR_TESTING;
 		
 		$cast(itrans, trans); // Grab incoming transaction process
 
@@ -38,6 +38,7 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 			DEFAULT_TESTING: process_default_testing();
 			ACCESS_CONTROL:	process_access_ctrl_testing();
 			CROSSCHECKING: process_crosschecking();
+			ERROR_TESTING: process_error_testing();
 		endcase
 		++transaction_count;
 		last_trans.push_back(itrans);
@@ -126,6 +127,14 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
 		endcase
 		end
 
+	endfunction
+
+	function void process_error_testing();
+// Accept the written value into predictor's copy of the register fiile
+		if(!we_mon && adr_mon == CMDR) begin
+			assert_cmdr_done_or_error: assert((dat_mon[7] == 1'b1 || dat_mon[4] == 1'b1)) 
+			else $error("Assertion assert_cmdr_done_or_error failed! GOT: %b", dat_mon);
+		end
 	endfunction
  	
 

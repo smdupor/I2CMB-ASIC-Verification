@@ -101,6 +101,10 @@ class i2cmb_predictor extends ncsu_component;
 
  	// ****************************************************************************
 	// Called from wb_agent, process all incoming monitored wb transactions.
+	//
+	// For THIS PREDICTOR, nb_put models the register block in the DUT. Based on the
+	// address of the WB Transaction, the transaction is passed to the approprate
+	// register handler.
 	// ****************************************************************************
 	virtual function void nb_put(ncsu_transaction trans);
 		wb_transaction itrans;
@@ -113,21 +117,12 @@ class i2cmb_predictor extends ncsu_component;
 		we_mon = itrans.write;
 		is_write = itrans.write;
 
-		//Based on REGISTER Address of received transaction, process transaction data accordingly
+		//Based on REGISTER Address of received transaction, process transaction by passing it to appropriate register handler
 		case(adr_mon)
-			CSR: fsm_process_csr_transaction(); 												// Caught a CSR (Control Status Register) Transaction
-			DPR: fsm_process_dpr_transaction(); 												// Caught a DPR (Data / Parameter Register) Transaction
-			CMDR: fsm_process_cmdr_transaction();
-			/*begin 																	// Caught a CMDR (Command Register) Transaction
-				if(dat_mon[2:0] == M_I2C_START && we_mon) process_start_transaction();		// 		Which indicated START
-				if(dat_mon[2:0] == M_I2C_STOP && we_mon) process_stop_transaction();		//		Which indicated STOP
-				if(dat_mon[2:0] == M_I2C_WRITE && we_mon && !expect_i2c_address) words_transferred.push_back(last_dpr); // Which Contains data write action, capture the data
-				else if(dat_mon[2:0] == M_I2C_WRITE && we_mon) process_address_transaction(); 							// Which Contains an address transmit action
-				if(dat_mon[2:0] == M_READ_WITH_ACK || dat_mon[2:0] == M_READ_WITH_NACK) capture_next_read = 1'b1; 		// Which is intrupt clear for a I2C_READ expected on next task call 
-				if(dat_mon[2:0] == M_WB_WAIT) most_recent_wait = last_dpr;
-				if(dat_mon[2:0] == M_SET_I2C_BUS) sel_bus = last_dpr;
-			end*/
-			default: process_state_register_transaction(); // Caught a state debug register transaction
+			CSR: fsm_process_csr_transaction(); 			// Caught a CSR (Control Status Register) Transaction
+			DPR: fsm_process_dpr_transaction(); 			// Caught a DPR (Data / Parameter Register) Transaction
+			CMDR: fsm_process_cmdr_transaction();			// Caught a CMDR (Command Register) Transaction
+			STATE: process_state_register_transaction(); 	// Caught a state debug register transaction
 		endcase
 
 	endfunction

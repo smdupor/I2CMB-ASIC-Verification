@@ -9,6 +9,7 @@ class i2cmb_env_configuration extends ncsu_configuration;
 	bit expect_nacks;
 	bit disable_predictor;
 	bit disable_scoreboard;
+	bit enable_error_testing;
 	
 	
 	// ****************************************************************************
