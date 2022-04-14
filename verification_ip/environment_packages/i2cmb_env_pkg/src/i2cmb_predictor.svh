@@ -146,8 +146,14 @@ class i2cmb_predictor extends ncsu_component;
 				IDLE: begin 						// DUT ENABLED AND IDLE
 						if(dat_mon[2:0] == M_I2C_START) begin
 							process_start_transaction();		// 		Which indicated START
-							state = START_ISSUED_WAIT_DONE; end
+							state = START_ISSUED_WAIT_DONE; 
+							end
+						
+						if(dat_mon[2:0] == M_WB_WAIT) begin 
+							most_recent_wait = last_dpr;
+							state = EXPLICIT_WAIT_WAITING;
 						end
+				end
 				BUS_NUM_EMPLACED: begin 			//DPR WR
 						// Starting the bus select action
 						if(dat_mon[2:0] == M_SET_I2C_BUS) sel_bus = last_dpr;
@@ -293,11 +299,13 @@ class i2cmb_predictor extends ncsu_component;
 				READ_DATA_READY: begin
 					// Value Check
 				end
-				EXPLICIT_WAIT_WAITING: begin		//TBD
+				EXPLICIT_WAIT_WAITING: begin		
 					// An Interrupt  Clear
-					if(dat_mon[DONE]) state = IDLE;
-					
+					if(dat_mon[DONE]) begin
+						wait_cg.sample();
+						state = IDLE;
 					end
+				end
 			endcase
 	endfunction
 

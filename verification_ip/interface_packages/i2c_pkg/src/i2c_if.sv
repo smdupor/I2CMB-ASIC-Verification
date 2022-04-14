@@ -308,7 +308,7 @@ interface i2c_if       #(
 			else driver_transmit_read_data();
 		end else begin
 			address_mismatch = 1'b1;
-			@(posedge scl_i[bus_selector]); $display("PASSING OFF THE NACK \n"); // Allow nack to pass;
+			@(posedge scl_i[bus_selector]); // Allow nack to pass to the master
 			@(negedge scl_i[bus_selector]);
 						op = driver_buffer[1]? I2_READ : I2_WRITE;
 
@@ -316,7 +316,7 @@ interface i2c_if       #(
 			if(op==I2_WRITE) driver_receive_write_data(write_buf);
 			else driver_transmit_read_data();
 		end
-		//driver_interrupt = INTR_CLEAR;
+		
 		// Copy queued captured write data into return array.
 		write_data = write_buf;
 	endtask

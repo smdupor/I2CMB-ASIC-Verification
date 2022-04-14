@@ -40,7 +40,7 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 	
 	config_x_nacks:	cross configuration_nacks, nacks
 	{
-
+		illegal_bins CONNECTED_NACKS_SLV_MUST_ALWAYS_ACK = binsof(configuration_nacks.SLAVE_CONNECTED) && binsof(nacks.NACKS);
 	}
 
 	cmd_type:	coverpoint cmd_type

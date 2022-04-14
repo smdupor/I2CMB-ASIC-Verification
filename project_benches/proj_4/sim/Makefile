@@ -97,7 +97,7 @@ discon_slv_dbg: clean compile_sil
 	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=MEDIUM optimized_debug_top_tb
 
 
-silent2: clean compile_sil
+silent2: clean clean_ucdb compile_sil
 	date +"%T" > .timelog
 	$(eval TN := test_register_crosschecking)
 	$(eval GTT := i2cmb_generator_test_reg_crosscheck)
@@ -122,6 +122,7 @@ silent2: clean compile_sil
 	$(eval TN := test_arbitration_lost_scenario)
 	$(eval GTT := i2cmb_generator_arb_loss)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	$(eval TEST_SEED := 98765)
 	$(eval TN := test_enable_disable_enable_intr_x_poll)
 	$(eval GTT := i2cmb_generator_interrupt_cycling)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -129,7 +130,10 @@ silent2: clean compile_sil
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	date +"%T" >> .timelog
+	echo "***************************************************************************************************"
+	echo "    TEST RUNTIME"
 	cat .timelog
+	echo "***************************************************************************************************"
 test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
