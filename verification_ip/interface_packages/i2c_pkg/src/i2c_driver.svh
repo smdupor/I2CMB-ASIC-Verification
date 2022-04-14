@@ -48,11 +48,22 @@ class i2c_driver extends ncsu_component#(.T(i2c_transaction));
 		end
 		end
 		else begin
-		
-			//if(!arb_loss_complete) begin
-					bus.force_arbitration_loss();
-			//		arb_loss_complete=1'b1;
-			//end
+			if(i2c_arb_loss.on_read) begin
+				$display("REACHED IN THE DRIVER");
+				bus.enable_read_arb = 1'b1;
+				fork
+					bus.wait_for_i2c_transfer(i2c_arb_loss.rw,i2c_driver_buffer);
+					bus.provide_read_data(i2c_arb_loss.data, transfer_complete);
+				join_any
+				bus.enable_read_arb = 1'b0;
+				$display("Exiting driver");
+			end
+			else if(i2c_arb_loss.on_start) begin
+				$display("DDRIVER START");
+				 bus.force_arbitration_loss_start();
+			$display("DDRIVER DONE");
+			end
+			else bus.force_arbitration_loss();
 		end
 	endtask
 

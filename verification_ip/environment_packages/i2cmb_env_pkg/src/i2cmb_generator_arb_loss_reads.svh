@@ -1,6 +1,6 @@
-class i2cmb_generator_arb_loss extends i2cmb_generator;
+class i2cmb_generator_arb_loss_reads extends i2cmb_generator;
 		
-`ncsu_register_object(i2cmb_generator_arb_loss);
+`ncsu_register_object(i2cmb_generator_arb_loss_reads);
 
 		// ****************************************************************************
 		// Constructor, setters and getters
@@ -13,7 +13,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 			end
 
 			$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
-			if(trans_name == "i2cmb_generator_arb_loss") begin
+			if(trans_name == "i2cmb_generator_arb_loss_reads") begin
 				trans_name="i2c_arb_loss_transaction";
 			end
 			else if(trans_name != "i2cmb_test_multi_bus_range" || trans_name == "i2c_arb_loss_transaction") begin $fatal; end
@@ -29,9 +29,13 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		// ****************************************************************************
 		virtual task run();
 			generate_arb_loss_reads();
+			//generate_arb_loss_start();
 			generate_arb_loss_flow();
-			//92.12, 94.11, 82.25
-			//arb_loss_start();
+			//92.12, 94.11, 82.25	// Both one flow
+			//91.14, 91.17, 82.25, 86.85 // Reads removed
+			//92.12, 94.11, 82.25, 87.03
+			
+
 			wb_agent_handle.configuration.expect_arb_loss = 1'b1;
 
 			// Iterate through all generated transactions, passing each down to respective agents.
@@ -42,7 +46,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 						if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 						
 					end
-					#10000 $finish();
+					$finish();
 				end
 			join
 			
@@ -103,11 +107,27 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 
 				transmit_address_req_read(trans.address);
 				arb_loss_read_data_byte_with_stop();
-				disable_dut();
+				
 				i2c_trans.push_back(trans);
 			
 		endfunction
 
+
+		function void generate_arb_loss_start();
+		i2c_arb_loss_transaction trans;
+			bit [7:0] init_data[$];
+			enable_dut_with_interrupt();
+if(!$cast(trans,ncsu_object_factory::create(trans_name))) $display({"\n\nTRANS CAST FAILED\n\n", trans.convert2string()});
+				// pick  a bus, sequentially picking a new bus for each major transaction
+				trans.selected_bus=0;
+				trans.set_arb_start();
+				trans.rw=I2_WRITE;
+				init_data.push_back(8'b0101_1010);
+				trans.data = init_data;
+				select_I2C_bus(trans.selected_bus);
+		i2c_trans.push_back(trans);
+		arb_loss_start();
+		endfunction
 
 		function void arb_loss_start();
 		//master_write(CMDR, I2C_START);

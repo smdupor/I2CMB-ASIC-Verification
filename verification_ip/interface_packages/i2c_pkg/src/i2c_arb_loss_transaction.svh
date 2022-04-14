@@ -8,6 +8,8 @@ class i2c_arb_loss_transaction extends i2c_transaction;
 	int clock_stretch_qty;
 	i2c_op_t rw;
 	bit lose_arb;
+	bit on_read;
+	bit on_start;
 
 	// ****************************************************************************
 	// Constraints and Randomization
@@ -77,6 +79,14 @@ class i2c_arb_loss_transaction extends i2c_transaction;
 			if(this.data[i]!=other.data[i]) return 0;
 		end
 		return 1;
+	endfunction
+
+	function void set_arb_read();
+		this.on_read = 1'b1;
+	endfunction
+
+		function void set_arb_start();
+		this.on_start = 1'b1;
 	endfunction
 
 endclass

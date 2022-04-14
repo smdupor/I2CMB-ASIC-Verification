@@ -76,6 +76,8 @@ interface i2c_if       #(
 	bit enable_cs=1;
 	int arbitration_wait_cycles=1000000;
 	bit cause_arbitration_loss;
+	bit enable_read_arb;
+
 	function void reset_counters(); 
 	foreach(measured_clock[i])measured_clock[i]=0;
 	not_first_measure = 1'b1;
@@ -245,8 +247,43 @@ interface i2c_if       #(
 	// ****************************************************************************
 	task force_arbitration_loss();
 			@(scl_i) sda_drive = 16'h00;
+			driver_interrupt = RAISE_STOP;
+			transfer_in_progress = STOP;
 			repeat(997) @(posedge clk_i);
 			sda_drive = 16'hzz;
+	endtask
+
+	task force_arbitration_loss_start();
+	$display("REACHED IN IF");
+			@( sda_i) sda_drive = 16'hffff;
+	$display("DONE IN IF");
+	endtask
+
+	// ****************************************************************************
+	// Excplicitly cause a system state where arbitration shall be lost by the master. 
+	// Release this state after arbitration_wait_cycles system cycles
+	// ****************************************************************************
+	task force_arbitration_loss_read();
+	
+			if(enable_read_arb) begin
+				$display("Readed arb read");
+				@(scl_i) sda_drive = 16'h00;
+				repeat(10000) @(posedge clk_i);
+			sda_drive = 16'hzzzz;
+			end
+	endtask
+
+
+	// ****************************************************************************
+	// Excplicitly cause a system state where arbitration shall be lost by the master. 
+	// Release this state after arbitration_wait_cycles system cycles
+	// ****************************************************************************
+	task force_arbitration_loss_permanent();
+			@(scl_i) sda_drive = 16'h00;
+	endtask
+	
+	task disable_arbitration_loss();
+		sda_drive = 16'hzz;
 	endtask
 
 	//_____________________________________________________________________________________\\
@@ -264,7 +301,7 @@ interface i2c_if       #(
 		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
 		);
 		driver_interrupt = INTR_CLEAR; // Reset the interrupt on detected
-
+		
 		driver_receive_address(op, write_data); // Handle the request
 	endtask
 
@@ -400,6 +437,7 @@ interface i2c_if       #(
 	task driver_transmit_read_data();
 		static bit local_ack;
 		local_ack = 0;
+		if(enable_read_arb) force_arbitration_loss_permanent();
 		while(slave_transmit_buffer.size > 0) begin
 			// Get data out of transmit buffer to send
 			driver_buffer[MSB:LSB] = slave_transmit_buffer.pop_front();
@@ -410,7 +448,10 @@ interface i2c_if       #(
 			// Check for ack/NACK from master
 			sda_drive[bus_selector] <= 1'bz;
 			@(posedge scl_i[bus_selector]) local_ack = sda_i[bus_selector];
-
+			
+			if(enable_read_arb) begin
+				 #100 disable_arbitration_loss(); 
+				 return; end
 			// Check for NACK/DONE or STOP/RESTART CONDTION
 			if(local_ack==NACK) return;
 			
@@ -430,6 +471,7 @@ interface i2c_if       #(
 			clockstretch_read();
 			@(posedge scl_i[bus_selector]);
 			@(negedge scl_i[bus_selector]); 
+			force_arbitration_loss_read();
 		end
 	endtask
 

@@ -125,6 +125,9 @@ silent2: clean clean_ucdb compile_sil
 	$(eval TN := test_arbitration_lost_scenario)
 	$(eval GTT := i2cmb_generator_arb_loss)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+# 	$(eval TN := i2cmb_generator_arb_loss_reads)
+# 	$(eval GTT := i2cmb_generator_arb_loss_reads)
+# 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TEST_SEED := 98765)
 	$(eval TN := test_enable_disable_enable_intr_x_poll)
 	$(eval GTT := i2cmb_generator_interrupt_cycling)
@@ -142,6 +145,16 @@ test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+test_arb_loss_reads: clean compile_sil
+	$(eval TN := i2cmb_generator_arb_loss_reads)
+	$(eval GTT := i2cmb_generator_arb_loss_reads)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+
+test_arb_loss_reads_gui: clean compile_sil
+	$(eval TN := i2cmb_generator_arb_loss_reads)
+	$(eval GTT := i2cmb_generator_arb_loss_reads)
+	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1;do wave.do; run 3ms; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 test_arb_gui: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
