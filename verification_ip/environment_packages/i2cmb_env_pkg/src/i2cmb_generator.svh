@@ -105,9 +105,7 @@ class i2cmb_generator extends ncsu_component#(.T(i2c_transaction));
 	endfunction
 
 	virtual function void generate_random_base_flow(int qty, bit change_busses);
-		int i,j,k,use_bus;
 		i2c_rand_data_transaction rand_trans;
-		use_bus = 0;
 
 		for(int i = 0; i<qty;++i) begin // (i2c_trans[i]) begin
 			$cast(rand_trans,ncsu_object_factory::create("i2c_rand_data_transaction"));

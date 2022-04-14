@@ -104,8 +104,35 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 					--k;
 				end
 			end
-			disable_dut();
-			enable_dut_polling();
+
+			// Directed test, specific scenario
+			$cast(trans,ncsu_object_factory::create("i2c_rand_cs_transaction"));
+
+				// pick  a bus, sequentially picking a new bus for each major transaction
+				trans.selected_bus=8;
+
+				// pick an address
+				trans.address = 36;
+				create_explicit_data_series(36, 38, i, I2_WRITE);
+					trans.randomize();
+					trans.clock_stretch_qty = 7000;
+					i2c_trans.push_back(trans);
+					convert_i2c_trans(trans, 1, 1);
+
+			// Directed test, specific scenario
+			$cast(trans,ncsu_object_factory::create("i2c_rand_cs_transaction"));
+
+				// pick  a bus, sequentially picking a new bus for each major transaction
+				trans.selected_bus=5;
+
+				// pick an address
+				trans.address = 42;
+				create_explicit_data_series(101, 103, i, I2_WRITE);
+					trans.randomize();
+					trans.clock_stretch_qty = 3500;
+					i2c_trans.push_back(trans);
+					convert_i2c_trans(trans, 1, 1);
+
 			disable_dut();
 
 			enable_dut_with_interrupt();

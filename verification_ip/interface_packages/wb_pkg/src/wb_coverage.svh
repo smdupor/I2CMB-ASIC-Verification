@@ -62,7 +62,6 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 		bins CSR = {CSR};
 		bins DPR = {DPR};
 		bins CMDR = {CMDR};
-		bins STATE = {STATE};
 	}
 
 	we:		coverpoint we
@@ -78,9 +77,6 @@ class wb_coverage extends ncsu_component#(.T(wb_transaction));
 
 	we_x_reg: cross we, reg_type
 	{
-		illegal_bins writes_to_state_illegal = 
-  	           binsof(we.I2_WRITE) && 
-  	           binsof(reg_type.STATE);
 		
 	}
   endgroup
