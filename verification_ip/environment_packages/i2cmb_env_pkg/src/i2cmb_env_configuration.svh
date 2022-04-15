@@ -11,8 +11,9 @@ class i2cmb_env_configuration extends ncsu_configuration;
 	bit disable_scoreboard;
 	bit enable_error_testing;
 	bit collect_coverage;
-	bit expect_bus_mismatch = 1'b0;
-    bit register_testing = 1'b0;
+	bit expect_bus_mismatch;
+    bit register_testing;
+	bit expect_arb_loss;
 	
 	
 	// ****************************************************************************

@@ -56,6 +56,9 @@ class wb_monitor extends ncsu_component #(
 
   endtask
 
+//*************************************************************************
+// Perform basic assertions on common values requiring access to the agent.
+//*************************************************************************
   task check_command_assertions();
     static T temp;
     temp = new;
@@ -63,12 +66,9 @@ class wb_monitor extends ncsu_component #(
     if (configuration.expect_arb_loss)
       return;  // Arbitration loss is checked directly at the driver
 
-    if(last_trans[0] != null && last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin// && monitored_trans.line==CMDR) begin 	//	The last transaction was a command, and we are clearing the interrupt
-
+    if(last_trans[0] != null && last_trans[0].line == CMDR && last_trans[0].write && !monitored_trans.write) begin
       bus.num_clocks = 0;
       if(last_trans[0].word[2:0] != M_READ_WITH_NACK && last_trans[0].word[2:0] != M_READ_WITH_ACK) begin
-
-
         if((configuration.expect_bus_mismatch && !last_trans[0].word[2:0] == M_SET_I2C_BUS)||!configuration.expect_bus_mismatch) begin
           if (!configuration.expect_nacks) begin
             assert_done_raised_on_complete :

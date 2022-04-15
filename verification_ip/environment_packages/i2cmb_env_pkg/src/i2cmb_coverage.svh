@@ -14,8 +14,6 @@ class i2cmb_coverage extends ncsu_component #(
   logic nacks;
   logic expect_nacks;
   int wb_str_del;
-
-  //wb_mon_t mon_type;
   logic [7:0] data_type;
   logic [3:0] wait_time;
 
@@ -54,6 +52,8 @@ covergroup wb_transaction_cg;
     data_type: coverpoint data_type {bins DATA_NIBBLES[64] = {[0 : 255]};}
 
     we_x_reg: cross we, reg_type{}
+
+    we_x_data: cross we, data_type;
   endgroup
 
 
@@ -82,7 +82,7 @@ covergroup wb_transaction_cg;
     $cast(coverage_transaction, trans);
       reg_type = coverage_transaction.line;
     expect_nacks = configuration.expect_nacks;
-    if (coverage_transaction.cmd == I2C_WRITE || coverage_transaction.cmd == READ_WITH_ACK || coverage_transaction.cmd == READ_WITH_NACK) begin
+    if (coverage_transaction.line == DPR) begin
       data_type = coverage_transaction.word;
       cmd_type = NONE;
       nacks = 1'bx;

@@ -47,12 +47,12 @@ simulate:
 	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "do wave.do;set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN);" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 debug: clean compile simulate
 
-restart: clean compile
+restart: clean compile_sil
 
-run_gui: clean compile
+run_gui: clean compile_sil
 	vsim -i -classdebug -msgmode both -coverage -do "set NoQuitOnFinish 1;do wave.do;" optimized_debug_top_tb &	
 
-console: clean compile
+console: clean compile_sil
 	vsim  -c -classdebug -msgmode both -do "set NoQuitOnFinish 1; run 100ms; exit" optimized_debug_top_tb
 	
 silent: clean compile_sil
@@ -101,8 +101,9 @@ regblock: clean compile_sil
 	$(eval GTT := i2cmb_generator_test_reg)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
-silent2: clean clean_ucdb compile_sil
-	date +"%T" > .timelog
+run_all_tests: clean compile_sil
+	echo "Test Suite Started at:" > .timelog
+	date +"%T" >> .timelog
 	$(eval TN := test_register_block)
 	$(eval GTT := i2cmb_generator_test_reg)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -125,9 +126,6 @@ silent2: clean clean_ucdb compile_sil
 	$(eval TN := test_arbitration_lost_scenario)
 	$(eval GTT := i2cmb_generator_arb_loss)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-# 	$(eval TN := i2cmb_generator_arb_loss_reads)
-# 	$(eval GTT := i2cmb_generator_arb_loss_reads)
-# 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TEST_SEED := 98765)
 	$(eval TN := test_enable_disable_enable_intr_x_poll)
 	$(eval GTT := i2cmb_generator_interrupt_cycling)
@@ -136,11 +134,8 @@ silent2: clean clean_ucdb compile_sil
 	$(eval TN := test_disconnected_slave_nacks)
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	echo "Test Suite Ended At: " >> .timelog
 	date +"%T" >> .timelog
-	echo "***************************************************************************************************"
-	echo "    TEST RUNTIME"
-	cat .timelog
-	echo "***************************************************************************************************"
 test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
@@ -219,4 +214,4 @@ clean_covg:	clean_ucdb convert_testplan
 
 merge_coverage_with_test_plan: show_coverage
 
-run_all_tests: silent2
+silent2: clean_ucdb run_all_tests
