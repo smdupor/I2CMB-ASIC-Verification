@@ -266,26 +266,48 @@ interface i2c_if #(
   // Override state lasts forever.
 	// ****************************************************************************
   task force_arbitration_loss_start();
-    $display("REACHED IN IF");
+    int count, negcount;
+    $display("Forcing an Arb Loss on a RESTART");
     forever begin 
-      sda_drive <= 16'hffff;
-      
-      scl_drive <= 16'h0000;
-      
-      #1 sda_drive <= 16'h0000;
-      #2 scl_drive <= 16'hffff;
+      @(negedge scl_i[bus_selector]) negcount++;
+    //   $display("Negedge count: %0d", negcount);
+     @(posedge scl_i[bus_selector]) count++;
+     if(count == 9) begin
+
+       force_arbitration_loss_permanent();
+     end
+   //  $display("Posedge Cycle : %0d", count);
     end
-    $display("DONE IN IF");
   endtask
+
+  /*# Negedge count: 1
+# Cycle : 1
+# Negedge count: 2
+# Cycle : 2
+# Negedge count: 3
+# Cycle : 3
+# Negedge count: 4
+# Cycle : 4
+# Negedge count: 5
+# Cycle : 5
+# Negedge count: 6
+# Cycle : 6
+# Negedge count: 7
+# Cycle : 7
+# Negedge count: 8
+# Cycle : 8
+# Negedge count: 9
+# Cycle : 9
+# Negedge count: 10*/
 
   // ****************************************************************************
   // Force an arbitration loss during a READ with NACK transaction.
   // ****************************************************************************
   task force_arbitration_loss_read();
     if (enable_read_arb) begin
-      $display("Readed arb read");
+      $display("Read arb read");
       @(scl_i) sda_drive = 16'h00;
-      repeat (10000) @(posedge clk_i);
+      repeat (1) @(posedge clk_i);
       sda_drive = 16'hzzzz;
     end
   endtask

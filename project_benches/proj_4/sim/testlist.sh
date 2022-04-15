@@ -28,6 +28,10 @@
 #   TEST_SEED := 12345
 #   GTT := i2cmb_generator_arb_loss
 #
+# NAME:i2cmb_generator_arb_loss_restart   -- Check the restart edge case
+#   TEST_SEED := 12345
+#   GTT := i2cmb_generator_arb_loss
+#
 # NAME:test_enable_disable_enable_intr_x_poll
 #   TEST_SEED := 98765
 #   GTT := i2cmb_generator_interrupt_cycling

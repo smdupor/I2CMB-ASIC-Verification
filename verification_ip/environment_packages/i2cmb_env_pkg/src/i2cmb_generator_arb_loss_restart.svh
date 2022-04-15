@@ -1,6 +1,6 @@
-class i2cmb_generator_arb_loss_copy extends i2cmb_generator;
+class i2cmb_generator_arb_loss_restart extends i2cmb_generator;
 
-`ncsu_register_object(i2cmb_generator_arb_loss_copy);
+`ncsu_register_object(i2cmb_generator_arb_loss_restart);
 
 	// ****************************************************************************
 	// Constructor, setters and getters
@@ -13,7 +13,7 @@ class i2cmb_generator_arb_loss_copy extends i2cmb_generator;
 		end
 
 		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
-		if(trans_name == "i2cmb_generator_arb_loss_copy") begin
+		if(trans_name == "i2cmb_generator_arb_loss_restart") begin
 			trans_name="i2c_arb_loss_transaction";
 		end
 		else if(trans_name != "i2cmb_test_multi_bus_range" || trans_name == "i2c_arb_loss_transaction") begin $fatal; end
@@ -31,13 +31,8 @@ class i2cmb_generator_arb_loss_copy extends i2cmb_generator;
 	// During / at the end of READS with NACK, where arbitration is lost at the NACK
 	// ****************************************************************************
 	virtual task run();
-	i2c_arb_loss_transaction trans;
-	enable_dut_with_interrupt();
-		if(!$cast(trans,ncsu_object_factory::create("i2c_arb_loss_transaction"))) $display({"\n\nTRANS CAST FAILED\n\n", trans.convert2string()});
-		trans.on_start = 1'b1;
-		i2c_trans.push_back(trans);
-		arb_loss_start();
-		arb_loss_start();
+
+		generate_arb_loss_restart();
 		
 		wb_agent_handle.configuration.expect_arb_loss = 1'b1;
 
@@ -45,7 +40,7 @@ class i2cmb_generator_arb_loss_copy extends i2cmb_generator;
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 			begin foreach(wb_trans[i]) begin
-					#10000 wb_agent_handle.bl_put(wb_trans[i]);
+					wb_agent_handle.bl_put(wb_trans[i]);
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 				end
 			end
@@ -110,6 +105,40 @@ class i2cmb_generator_arb_loss_copy extends i2cmb_generator;
 		transmit_address_req_read(trans.address);
 		arb_loss_read_data_byte_with_stop();
 		disable_dut();
+		i2c_trans.push_back(trans);
+
+	endfunction
+
+	// ****************************************************************************
+	// Generate a flow where arbitration will  be  lost on attempting a transaction RE_START
+	// ****************************************************************************
+	function void generate_arb_loss_restart();
+		i2c_arb_loss_transaction trans;
+		bit [7:0] init_data[$];
+
+		int i;
+		init_data.delete();
+
+		enable_dut_with_interrupt();
+		if(!$cast(trans,ncsu_object_factory::create(trans_name))) $display({"\n\nTRANS CAST FAILED\n\n", trans.convert2string()});
+		// pick  a bus, sequentially picking a new bus for each major transaction
+		trans.selected_bus=0;
+		trans.on_start = 1'b1;
+		trans.rw=I2_WRITE;
+		init_data.push_back(8'b0101_0101);
+		trans.data = init_data;
+		select_I2C_bus(trans.selected_bus);
+
+		// Send a start command
+
+		issue_start_command();
+		// pick an address
+		trans.address = 127;
+		// Send a legal address, successfully
+		transmit_address_req_write(trans.address);
+
+		// The re-start command
+		arb_loss_start();
 		i2c_trans.push_back(trans);
 
 	endfunction
