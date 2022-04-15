@@ -1,5 +1,7 @@
 class i2cmb_predictor extends ncsu_component;
-
+  //_____________________________________________________________________________________\\
+	//                         STATES and BIT VECTOR LOCATIONS                             \\
+	//_____________________________________________________________________________________\\
   typedef enum int {
     RESET,                     // Initial State (on hard reset)
     DISABLED,                  // DUT Manually disabled (a soft reset)
@@ -23,6 +25,9 @@ class i2cmb_predictor extends ncsu_component;
   enum int {DONE = 7, ARB  = 6, NACK = 5, ERR  = 4} cmdr_bit_locs;  // Bit vector locations of key status bits in CMDR
   enum int {ENBL = 7, INTR = 6} csr_bit_locs;                       // Bit vector locations of key status bits is CSR
 
+  //_____________________________________________________________________________________\\
+	//                           CLASS-WIDE VARIABLES                                      \\
+	//_____________________________________________________________________________________\\
   // Connections to other testbench components
   ncsu_component scoreboard;
   ncsu_transaction transport_trans;
@@ -41,7 +46,7 @@ class i2cmb_predictor extends ncsu_component;
   bit [7:0] words_transferred[$];
 
   // Counters and multi-state behavioural flags
-  bit capture_next_read, expect_i2c_address, transaction_in_progress;
+  bit capture_next_read, transaction_in_progress;
   int transaction_counter;
   int most_recent_wait;             // From an explicit WAIT command
   i2c_op_t cov_op;                  // This I2C Operation for coverage purposes
@@ -53,8 +58,14 @@ class i2cmb_predictor extends ncsu_component;
   bit disable_bus_checking;         // Bus addresses from WB **WILL** be purposely mismatched, correct when enabled.
   bit disable_intr;                 // DUT Configured with Interrupts OFF
 
+  //_____________________________________________________________________________________\\
+	//                                COVERAGE ITEMS                                       \\
+	//_____________________________________________________________________________________\\
+
+  // ****************************************************************************
   // Cover wait values here, as the main Coverage module cannot "remember" past states
   // in an effective manner such that it can monitor the values from WAIT commands
+  // ****************************************************************************
   covergroup wait_cg;
     option.per_instance = 1;
     option.name = get_full_name();
@@ -65,10 +76,12 @@ class i2cmb_predictor extends ncsu_component;
     }
   endgroup
 
+  // ****************************************************************************
   // Cover operations vs start/restarts here, because the main coverage module
   // does not have "oracle" knowledge of whether the past transaction was 
   // concluded with a STOP (hence, this is a START) or, concluded
   // without sending STOP, hence this is a RE-START.
+  // ****************************************************************************
   covergroup predictor_cg;
     option.per_instance = 1;
     option.name = get_full_name();
@@ -77,6 +90,9 @@ class i2cmb_predictor extends ncsu_component;
     restart_x_operation: cross operation, start_or_restart;
   endgroup
 
+  //_____________________________________________________________________________________\\
+	//                                CONSTRUCTION AND ACCESS                              \\
+	//_____________________________________________________________________________________\\
   // ****************************************************************************
   // Construction, setters, and getters 
   // ****************************************************************************
@@ -95,6 +111,10 @@ class i2cmb_predictor extends ncsu_component;
   virtual function void set_scoreboard(ncsu_component scoreboard);
     this.scoreboard = scoreboard;
   endfunction
+
+  //_____________________________________________________________________________________\\
+	//                     MODEL OF THE REGBLOCK PORT                                      \\
+	//_____________________________________________________________________________________\\
 
   // ****************************************************************************
   // Called from wb_agent, process all incoming monitored wb transactions.
@@ -125,30 +145,32 @@ class i2cmb_predictor extends ncsu_component;
 
   endfunction
 
+  //_____________________________________________________________________________________\\
+	//                         MODEL THE PORTS TO THE CMDR                                 \\
+	//_____________________________________________________________________________________\\
+
   // ****************************************************************************
   // Handle any actions passed to the (Command Register), CDMDR
   // ****************************************************************************
   virtual function void process_cmdr_transaction();
-    if (is_write) begin
-      if (dat_mon[2:0] == M_WB_WAIT) begin  // Handle injected wait commands regardless of FSM state
-        most_recent_wait = last_dpr;
+    if (is_write) begin                             // THIS IS A WRITE TO THE CMDR
+      if (dat_mon[2:0] == M_WB_WAIT) begin
+        most_recent_wait = last_dpr;                // Handle injected wait commands regardless of FSM state
         wait_cg.sample();
       end
-      case (state)
-        RESET: begin // Illegal Write
+      case (state)                                  // HANDLE WRITES FOR EACH MACHINE STATE
+        RESET: begin                                // Illegal Write
         end
-        DISABLED: begin // Illegal Write
+        DISABLED: begin                             // Illegal Write
         end
-        IDLE: begin  // DUT ENABLED AND IDLE
+        IDLE: begin                                 // DUT ENABLED AND IDLE
           if (dat_mon[2:0] == M_I2C_START) begin
-            process_start_transaction();          // Incoming trans indicated START
+            process_start_transaction();             // Incoming trans indicated START, send to the start processor and wait for DONE/intr
             state = START_ISSUED_WAIT_DONE;
           end
 
           if (dat_mon[2:0] == M_WB_WAIT) begin
-            most_recent_wait = last_dpr;          //Incoming trans indicated WAIT
-            wait_cg.sample();
-            state = EXPLICIT_WAIT_WAITING;
+            state = EXPLICIT_WAIT_WAITING;            //Incoming trans indicated WAIT, wait for DONE/intr
           end
          if (dat_mon[2:0] == M_SET_I2C_BUS) begin selected_bus = last_dpr; // A bus select was run without first emplacing a new bus num
           state = BUS_SEL_WAIT_DONE; 
@@ -158,9 +180,9 @@ class i2cmb_predictor extends ncsu_component;
           if (dat_mon[2:0] == M_SET_I2C_BUS) selected_bus = last_dpr;   // A  bus select is being executed
           state = BUS_SEL_WAIT_DONE;
         end
-        BUS_SEL_WAIT_DONE: begin  // Illegal write
+        BUS_SEL_WAIT_DONE: begin                        // Illegal write
         end
-        START_ISSUED_WAIT_DONE: begin  // Illegal write
+        START_ISSUED_WAIT_DONE: begin                   // Illegal write
         end
         START_DONE: begin           
           if (dat_mon[2:0] == M_I2C_STOP) begin         // Start issued then immediate stop (No adress No Data transaction)
@@ -185,7 +207,7 @@ class i2cmb_predictor extends ncsu_component;
             state = ADDRESS_WAIT_DONE;
           end
         end
-        ADDRESS_WAIT_DONE: begin // Illegal Write
+        ADDRESS_WAIT_DONE: begin                        // Illegal Write
         end
         TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, and a complete address is done or a complete read/write is done.
           if (dat_mon[2:0] == M_I2C_STOP) begin
@@ -209,15 +231,15 @@ class i2cmb_predictor extends ncsu_component;
             state = WRITE_WAIT_DONE;
           end
         end
-        WRITE_WAIT_DONE: begin  // Illegal Write
+        WRITE_WAIT_DONE: begin                            // Illegal Write
         end
-        READ_ACK_WAIT_DONE: begin  // Illegal	Write
+        READ_ACK_WAIT_DONE: begin                         // Illegal	Write
         end
-        READ_NACK_WAIT_DONE: begin  // Illegal Write
+        READ_NACK_WAIT_DONE: begin                        // Illegal Write
         end
-        READ_DATA_READY: begin // A Legal action, but will destroy the data in the DPR that was just received from a remote slave.
-        end
-        EXPLICIT_WAIT_WAITING: begin // Illegal Write
+        READ_DATA_READY: begin                            // A write here is a Legal action, but will destroy 
+        end                                               //      the data in the DPR that was just received from a remote slave.
+        EXPLICIT_WAIT_WAITING: begin                      // Illegal Write
         end
       endcase
     end 
@@ -239,7 +261,6 @@ class i2cmb_predictor extends ncsu_component;
             if (dat_mon[6]) monitored_trans.contained_nack = 1'b1;
             state = TRANSACTION_IN_PROG_IDLE;
           end
-
         end
         WRITE_WAIT_DONE: begin                                            // An interrupt clear, we are done writing. check that 
           if (dat_mon[DONE]) state = TRANSACTION_IN_PROG_IDLE;            // remote slave sent an ACK/NACK
@@ -257,23 +278,26 @@ class i2cmb_predictor extends ncsu_component;
           if (dat_mon[DONE]) state = READ_DATA_READY;                     // The READ was completed and data is ready to be read from
         end                                                               // the DPR
         EXPLICIT_WAIT_WAITING: begin
-          if (dat_mon[DONE]) begin                                        // An explict WAIT has completed, ensure that the 
-            wait_cg.sample();                                             // value of this WAIT is sampled, and clear the 
-            most_recent_wait = 0;                                         // Long-term storage value
+          if (dat_mon[DONE]) begin                                        // An explict WAIT has completed, ensure that DONE was reached
+            most_recent_wait = 0;                                         // and clear the long-term storage value
             state = IDLE;
           end
         end
       endcase
   endfunction
 
+  //_____________________________________________________________________________________\\
+	//                         MODEL THE PORT TO THE CSR                                   \\
+	//_____________________________________________________________________________________\\
+
   // ****************************************************************************
   // Handle any actions passed to the (Control Status Register) CSR
   // ****************************************************************************
   virtual function void process_csr_transaction();
-    if (is_write) begin
+    if (is_write) begin // THIS IS A WRITE TO THE CSR
       if (dat_mon[ENBL]) begin                        // CSR has been written to enable/disable the DUT
         state = IDLE;
-        disable_intr = dat_mon[INTR];                 // Decide whether or not to use interrupts or poll the DONE bit.
+        disable_intr = dat_mon[INTR];                 // Decide whether to use interrupts or poll the DONE bit.
       end else state = DISABLED;
     end 
     else  // THIS IS A READ TO CSR
@@ -288,196 +312,137 @@ class i2cmb_predictor extends ncsu_component;
       endcase
   endfunction
 
+
+  //_____________________________________________________________________________________\\
+	//                           MODEL THE PORT TO THE DPR                                 \\
+	//_____________________________________________________________________________________\\
   // ****************************************************************************
-  // Handle any actions passed to the (Data/Parameter Register), CDMDR
+  // Handle any actions passed to the (Data/Parameter Register), DPR
   // ****************************************************************************
   virtual function void process_dpr_transaction();
-    if (is_write) begin
-      last_dpr = dat_mon;
+    if (is_write) begin //THIS IS A WRITE TO THE DPR
+      last_dpr = dat_mon;   // Save the value of this write for use by other blocks in other states.
       case (state)
-        RESET: begin  // Initial State
-          // illegal		
+        RESET: begin  // Illegal write, swallow.
         end
-        DISABLED: begin  // DUT Manually disabled
-          // illegal
+        DISABLED: begin  // Illegal write, swallow.
         end
-        IDLE: begin  // DUT ENABLED AND IDLE
-          selected_bus = dat_mon;
+        IDLE: begin                                               // DUT Idle, this is most likely a Bus Number
+          selected_bus = dat_mon;                                 // To be selected. For a WAIT millisecond value, 
+          state   = BUS_NUM_EMPLACED;                             // it is captured at the top of this function.
+        end
+        BUS_NUM_EMPLACED: begin                                   // User has written a different Bus Number before
+          selected_bus = dat_mon;                                 // Executing the bus select command, update our value.
           state   = BUS_NUM_EMPLACED;
         end
-        BUS_NUM_EMPLACED: begin  
-          selected_bus = dat_mon;
-          state   = BUS_NUM_EMPLACED;
+        BUS_SEL_WAIT_DONE: begin  // Illegal Write, swallow.
         end
-        BUS_SEL_WAIT_DONE: begin  
-          // Illegal
-        end
-        START_ISSUED_WAIT_DONE: begin  
-          // Illegal										
+        START_ISSUED_WAIT_DONE: begin  // Illegal Write, swallow.
         end
         START_DONE: begin  
-          monitored_trans.address = last_dpr[7:1];  // Extract the Address
-          monitored_trans.address += configuration.get_address_shift();
-          if (monitored_trans.address > 127)
+          monitored_trans.address = last_dpr[7:1];             // Start is completed, next data will be the address.
+          monitored_trans.address += configuration.get_address_shift();  // If we are doing disconnected slaves, counter the offset
+          if (monitored_trans.address > 127)                                    // Wrap the offset
             monitored_trans.address = 0 + configuration.get_address_shift() - 1;
-          if (last_dpr[0] == 1'b0) begin
-            monitored_trans.rw = I2_WRITE;  // Address Transmit was requesting a write
+          if (last_dpr[0] == 1'b0) begin                        //For all normal transactions, check bit 0 and determine READ or WRITE
+            monitored_trans.rw = I2_WRITE;                      // Address Transmit was requesting a write
             state = ADDRESS_EMPLACED_WRITE;
           end else begin
-            monitored_trans.rw = I2_READ;  // Address Transmit was requesting a read
+            monitored_trans.rw = I2_READ;                       // Address Transmit was requesting a read
             state              = ADDRESS_EMPLACED_READ;
           end
-          //expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
-          cov_op = monitored_trans.rw;
+          cov_op = monitored_trans.rw;                          // Capture the operation for recording coverage
         end
-        ADDRESS_EMPLACED_READ: begin  //Write after Write
-          monitored_trans.address = last_dpr[7:1];  // Extract the Address
+        ADDRESS_EMPLACED_READ: begin                            // WAW Case, the user is changing addresses before issuing cmd
+          monitored_trans.address = last_dpr[7:1];              // Extract the Address
           if (last_dpr[0] == 1'b0) begin
-            monitored_trans.rw = I2_WRITE;  // Address Transmit was requesting a write
+            monitored_trans.rw = I2_WRITE;                      // Address Transmit was requesting a write
             state = ADDRESS_EMPLACED_WRITE;
           end else begin
-            monitored_trans.rw = I2_READ;  // Address Transmit was requesting a read
+            monitored_trans.rw = I2_READ;                       // Address Transmit was requesting a read
             state              = ADDRESS_EMPLACED_READ;
           end
-          //expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
-          cov_op = monitored_trans.rw;
+          cov_op = monitored_trans.rw;                          // Update coverage with WAW Value
         end
 
-        ADDRESS_EMPLACED_WRITE: begin  // Write after write
-          monitored_trans.address = last_dpr[7:1];  // Extract the Address
+        ADDRESS_EMPLACED_WRITE: begin                           // WAW case, the user is changing addresses before issuing cmd
+          monitored_trans.address = last_dpr[7:1];              // Extract the Address
           if (last_dpr[0] == 1'b0) begin
-            monitored_trans.rw = I2_WRITE;  // Address Transmit was requesting a write
+            monitored_trans.rw = I2_WRITE;                      // Address Transmit was requesting a write
             state = ADDRESS_EMPLACED_WRITE;
           end else begin
-            monitored_trans.rw = I2_READ;  // Address Transmit was requesting a read
+            monitored_trans.rw = I2_READ;                       // Address Transmit was requesting a read
             state              = ADDRESS_EMPLACED_READ;
           end
-          //expect_i2c_address = 1'b0;								// Indicate that the address has been captured and next transaction will carry data
-          cov_op = monitored_trans.rw;
+          cov_op = monitored_trans.rw;                          //Update coverage with WAW Value
         end
 
-        ADDRESS_WAIT_DONE: begin  
-          // Illegal				
+        ADDRESS_WAIT_DONE: begin  // Illegal Write, swallow.
         end
-        TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
+        TRANSACTION_IN_PROG_IDLE: begin	                        // A byte of data to be transmitted has been written to the DPR.
           state = BYTE_EMPLACED_WRITE;
         end
-        BYTE_EMPLACED_WRITE: begin  
+        BYTE_EMPLACED_WRITE: begin  	                        //WAW Case A byte of data to be transmitted has been re-written to the DPR.
           state = BYTE_EMPLACED_WRITE;
         end
-        WRITE_WAIT_DONE: begin  
-          // Illegal
+        WRITE_WAIT_DONE: begin                                // Illegal write, swallow.
         end
-        READ_ACK_WAIT_DONE: begin  
-          // Illegal							
+        READ_ACK_WAIT_DONE: begin                             // Illegal write, swallow.
         end
-        READ_NACK_WAIT_DONE: begin  
-          // Illegal			
+        READ_NACK_WAIT_DONE: begin                            // Illegal write, swallow.
         end
-        READ_DATA_READY: begin
-          // Legal But data destructive
+        READ_DATA_READY: begin    // A legal action, but it will overwrite data in the DPR that was just received from a remote slave.
         end
-        EXPLICIT_WAIT_WAITING: begin  //TBD
-          // Illegal							
+        EXPLICIT_WAIT_WAITING: begin                          // Illegal write, swallow.
         end
       endcase
     end else  // THIS IS A READ TO DPR
       case (state)
-        RESET: begin  // Initial State
-          // DEFAULT Value check							
-        end
-        DISABLED: begin  // DUT Manually disabled
-          // DEFAULT Value check	
-        end
-        IDLE: begin  // DUT ENABLED AND IDLE
-          // Value check	
-        end
-        BUS_NUM_EMPLACED: begin  
-          // Value check	
-        end
-        BUS_SEL_WAIT_DONE: begin  
-          // Value check	
-        end
-        START_ISSUED_WAIT_DONE: begin  
-          // Value check		
-        end
-        START_DONE: begin  
-          // Value check		
-        end
-        ADDRESS_EMPLACED_READ: begin  
-          // Value check					
-        end
-        ADDRESS_EMPLACED_WRITE: begin  
-          // Value check				
-        end
-        ADDRESS_WAIT_DONE: begin  
-          // Value check		
-        end
-        TRANSACTION_IN_PROG_IDLE: begin	// Transaction is happening, but a complete address is done or a complete read/write is done.
-          // Value check		
-        end
-        BYTE_EMPLACED_WRITE: begin  
-          // Value check		
-        end
-        WRITE_WAIT_DONE: begin  
-          // Value check	
-        end
-        READ_ACK_WAIT_DONE: begin  
-          // Value check							
-        end
-        READ_NACK_WAIT_DONE: begin  
-          // Value check					
-        end
-        READ_DATA_READY: begin
-
-          words_transferred.push_back(
-              dat_mon);  // Which Contains data write action, capture the data
+                      // NB: READS to the DPR are legal in all states, but only have meaning in one: 
+                      // When data is ready after a remote slave has sent us data from an I2C READ. Hence,
+                      // We will swallow all other reads to the DPR.
+        READ_DATA_READY: begin            
+          words_transferred.push_back(dat_mon);                // Data from a remote read is ready, capture it.
           state = TRANSACTION_IN_PROG_IDLE;
         end
-        EXPLICIT_WAIT_WAITING: begin  //TBD
-          // Value check									
-        end
       endcase
-
   endfunction
+
+  //_____________________________________________________________________________________\\
+	//                       UTILITY FUNCTIONS FOR CERTAIN COMMANDS                        \\
+	//_____________________________________________________________________________________\\
 
   // ****************************************************************************
   // Handle a START or a RE-START action 
   // ****************************************************************************
   function void process_start_transaction();
-    is_restart = 1'b0;
-    if (transaction_in_progress) begin
-      is_restart           = 1'b1;  // Detect a re-start condition,
-      monitored_trans.data = words_transferred;  // conclude last transaction 
-      words_transferred.delete();
-      predictor_cg.sample();
-      wait_cg.sample();
-      //most_recent_wait = 0;						// and pass data from it to scoreboard
-      scoreboard.nb_transport(monitored_trans, transport_trans);
+    is_restart = 1'b0;                                  // Assume this is NOT a re-start
+    if (transaction_in_progress) begin                  // Detect a re-start condition,
+      is_restart           = 1'b1;                      // Update is_restart to reflect that this IS a restart
+      monitored_trans.data = words_transferred;         // conclude last transaction and record all data transmitted/received
+      words_transferred.delete();                       // Flush  local data buffer
+      predictor_cg.sample();                            // Sample coverages for the last transactions
+      scoreboard.nb_transport(monitored_trans, transport_trans);  // Send completed transaction to predictor
     end
+
     // Then, Create a new Transaction
-    monitored_trans = new({"i2c_trans(", itoalpha(transaction_counter++), ")"});
-    monitored_trans.selected_bus = selected_bus;
-    //if(most_recent_wait > 0) begin
-    //monitored_trans.explicit_wait_ms = most_recent_wait;
-    //most_recent_wait = 0;
-    //	end
-    transaction_in_progress = 1'b1;  // Advise state machine that a transaction is now in progress
-    expect_i2c_address = 1'b1; 									// Advise state machine that the next transaction should contain an I2C address
+    monitored_trans = new({"i2c_trans(", 
+          itoalpha(transaction_counter++), ")"});
+    monitored_trans.selected_bus = selected_bus;        // Record the bus that was captured using this transaction
+    transaction_in_progress = 1'b1;                     // Separate from machine states, note that an end-end transaction has started.
   endfunction
 
   // ****************************************************************************
   // Handle a STOP action 
   // ****************************************************************************
   function void process_stop_transaction();
-    transaction_in_progress = 1'b0;  // Advise state machine that transactions are concluded.
-    monitored_trans.data = words_transferred;  // Copy complete dataset into monitored transaction
-    words_transferred.delete();
-    predictor_cg.sample();
-    wait_cg.sample();
-    most_recent_wait = 0;  // Clear predictor buffer
+    transaction_in_progress = 1'b0;                     // Advise state machine and assertion checker that the transaction is done.
+    monitored_trans.data = words_transferred;           // Record all data transmitted/received during last transaction.
+    words_transferred.delete();                         // Flush local data buffer.
+    predictor_cg.sample();                              // Sample coverages from last transaction
+    most_recent_wait = 0;                               // Flush most recent wait value, if not already done.
     scoreboard.nb_transport(monitored_trans,
-                            transport_trans);  // Send completed transaction to scoreboard
+                            transport_trans);           // Send completed transaction to scoreboard
   endfunction
 
   // ****************************************************************************
@@ -485,20 +450,27 @@ class i2cmb_predictor extends ncsu_component;
   // (I2C_READ or I2C_WRITE)
   // ****************************************************************************
   function void process_address_transaction();
-    monitored_trans.address = last_dpr[7:1];  // Extract the Address
-    if (last_dpr[0] == 1'b0)
-      monitored_trans.rw = I2_WRITE;  // Address Transmit was requesting a write
-    else monitored_trans.rw = I2_READ;  // Address Transmit was requesting a read
-    expect_i2c_address = 1'b0;									// Indicate that the address has been captured and next transaction will carry data
+    monitored_trans.address = last_dpr[7:1];            // Extract the Address that we received and record it
+    if (last_dpr[0] == 1'b0)                            // Extract the read/write bit and record it
+      monitored_trans.rw = I2_WRITE;                    // Address Transmission was requesting a write
+    else monitored_trans.rw = I2_READ;                  // Address Transmission was requesting a read
     cov_op = monitored_trans.rw;
   endfunction
 
+
+  //_____________________________________________________________________________________\\
+	//                    CSR ACCURACY VERIFICATION                                        \\
+	//_____________________________________________________________________________________\\
 
   // ****************************************************************************
   // Handle any actions passed to the (Control Status Register), eg DUT Enable/Disables 
   // ****************************************************************************
   virtual function void assert_csr_expected_values();
-    if (we_mon == 1'b0) begin
+    if (we_mon == 1'b1) begin   // THIS IS A WRITE TO THE CSR
+      disable_intr = dat_mon[6];    // We have received a DUT Enable, capture whether interrupt assertions
+                                    // Should expect interrupt mode or polling mode.
+    end
+     begin
       assert_csr_enabled :
       assert (dat_mon[7] == 1'b1)
       else $error("Asssertion assert_csr_enabled failed with %b", dat_mon);   // Expect DUT ENABLED High when In  use
@@ -515,14 +487,15 @@ class i2cmb_predictor extends ncsu_component;
       end
 
       // Assert that the Bus Captured and Bus Busy bits are low and high when these states are false and true.
-      if (transaction_in_progress) begin
+      if (transaction_in_progress) begin    // Captured and busy when transaction in progress
         assert_csr_bc_captured :
         assert (dat_mon[4] == 1'b1)
         else $error("Asssertion assert_bc_captured failed with %b", dat_mon);
         assert_csr_bb_busy :
         assert (dat_mon[5] == 1'b1)
         else $error("Asssertion assert_bb_bus_busy busy failed with %b", dat_mon);
-      end else if (!configuration.disable_bus_checking) begin
+      end 
+      else if (!configuration.disable_bus_checking) begin   // Captured -> free but busy as STOP action is resolving.
         assert_csr_bc_free :
         assert (dat_mon[4] == 1'b0)
         else $error("Asssertion assert_bc_free failed with %b", dat_mon);
@@ -537,16 +510,18 @@ class i2cmb_predictor extends ncsu_component;
         assert (dat_mon[3:0] == selected_bus)
         else
           $error("Asssertion assert_csr_bus_sel_accuracy failed with %b vs %b", dat_mon, selected_bus);
-    end else begin
-      disable_intr = dat_mon[6];    // IMPORTANT! We have received a DUT Enable, capture whether
-    end                             // It was configured to use interrupts or not.
+    end                          
   endfunction
 
+  //_____________________________________________________________________________________\\
+	//                       MODEL THE PORT TO THE FSMR                                    \\
+	//_____________________________________________________________________________________\\
+
   // ****************************************************************************
-  // Handle any actions on the State Register
+  // Handle any actions on the FSMR State Register
   // ****************************************************************************
   virtual function void process_fsmr_register_transaction();
-    // SWALLOW reads of the debug state register
+    // SWALLOW reads of the debug FSM state register
   endfunction
 
 endclass
