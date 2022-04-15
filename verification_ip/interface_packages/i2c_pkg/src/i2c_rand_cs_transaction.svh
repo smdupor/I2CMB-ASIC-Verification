@@ -21,7 +21,7 @@ class i2c_rand_cs_transaction extends i2c_transaction;
   }
 
   function void post_randomize();
-    clock_stretch_qty *= 1000;
+    clock_stretch_qty *= 1000;    // Convert to system clock cycle count
   endfunction
 
   // ****************************************************************************

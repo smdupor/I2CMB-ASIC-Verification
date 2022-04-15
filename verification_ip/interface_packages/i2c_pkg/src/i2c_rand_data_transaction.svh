@@ -18,31 +18,31 @@ class i2c_rand_data_transaction extends i2c_transaction;
   // ****************************************************************************
   // Constraints and Randomization
   // ****************************************************************************
-  constraint bus_sel_range {
+  constraint bus_sel_range {    // Legal bus values
     tmp_bus dist {
       [0 : 15]
     };
   }
-  constraint adr_range {
+  constraint adr_range {     // Legal address range
     tmp_addr dist {
       [0 : 127]
     };
   }
-  constraint op_wt {
+  constraint op_wt {          // Weight towards read/write operations
     tmp_op dist {
       [ 0 :  50] :/ 5,
       [51 : 100] :/ 5
     };
   }
 
-
+  // Randomize the number of bytes of data in this transaction, whether it be single or burst
   function void pre_randomize();
-
     size = $urandom_range(1, 2);
     for (int i = 0; i < size; ++i) tmp_data.push_back(byte'(8'hff));
     data = tmp_data;
   endfunction
 
+// Handle the randomized data including operation selection
   function void post_randomize();
     foreach (tmp_data[i]) data[i] = tmp_data[i];
     address = tmp_addr;

@@ -10,6 +10,9 @@ class i2cmb_env_configuration extends ncsu_configuration;
 	bit disable_predictor;
 	bit disable_scoreboard;
 	bit enable_error_testing;
+	bit collect_coverage;
+	bit expect_bus_mismatch = 1'b0;
+    bit register_testing = 1'b0;
 	
 	
 	// ****************************************************************************
@@ -33,10 +36,14 @@ class i2cmb_env_configuration extends ncsu_configuration;
 
 		address_shift=0;
 		i2c_agent_config = new("i2c_agent_config");
+		collect_coverage = 1'b1;
+    	expect_bus_mismatch = 1'b0;
+    	register_testing = 1'b0;
 	endfunction
 
 	function void disable_coverage();
 		wb_agent_config.collect_coverage = 1'b0;
+		this.collect_coverage = 1'b0;
 		disable_scoreboard = 1'b1;
 	endfunction
 

@@ -71,6 +71,9 @@ interface i2c_if #(
   logic [NUM_I2C_BUSSES-1:0] scl_drive = 16'bz;
   assign scl_o = scl_drive;
 
+	// ****************************************************************************
+	// Clockstretching and arbitration loss storage and clock counter helper threads
+	// ****************************************************************************
   longint clk_count;
   bit not_first_measure;
 
@@ -79,7 +82,7 @@ interface i2c_if #(
     clk_count = 0;
     @(posedge scl_i[bus_selector]) rst_clock();
   end
-  // Clockstretching and arb parameters
+  // Clockstretching and arbitration loss additional parameters
   int stretch_qty = 0;
   int read_stretch_qty = 0;
 
@@ -95,11 +98,15 @@ interface i2c_if #(
     foreach (measured_clock[i]) measured_clock[i] = 0;
     not_first_measure = 1'b1;
   endfunction
+
   //_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
 	//_____________________________________________________________________________________\\
 	// ****************************************************************************
-	// Reset the internal  clock counter and maintain sma
+	// Reset the internal  clock counter and maintain simple moving average.
+  // These statistics are used to verify numerically that stretched clocks,
+  // in the presence of the CLOCK-STRETCHING functionality, are indeed being
+  // stretched.
 	// ****************************************************************************
 	function void rst_clock();
     int i;
@@ -117,25 +124,10 @@ interface i2c_if #(
     measured_clock[0] = sum / AVG_LEN;
   endfunction
 
-
-  // ****************************************************************************
-  // Reset the Slave BFM and configure it to hold input_addr address.
-  // Reset task automatically starts the sampler for detecting start/stop
-  // ****************************************************************************
-  task reset_and_configure(input bit [8:0] input_addr, input int sel_bus);
-
-    bus_selector = NUM_I2C_BUSSES - sel_bus - 1;
-    slave_address = (input_addr << 2);
-    transfer_in_progress = STOP;
-    sampler_running = STOP;
-    enable_driver = MONITOR_ONLY;  // Assume that we only need monitor until driver is called
-    driver_interrupt = INTR_CLEAR;
-    monitor_interrupt = INTR_CLEAR;
-    connection_negotiation_sampler();
-  endtask
-
+	// ****************************************************************************
+	// Reset the entire bfm and start the sampler.
+	// ****************************************************************************
   task reset();
-
     bus_selector = 0;
     slave_address = 0;
     transfer_in_progress = STOP;
@@ -146,6 +138,9 @@ interface i2c_if #(
     connection_negotiation_sampler();
   endtask
 
+	// ****************************************************************************
+	// Set the BFM Bus and the address of this slave
+	// ****************************************************************************
   task configure(input bit [8:0] input_addr, input int sel_bus);
     bus_selector  = NUM_I2C_BUSSES - sel_bus - 1;
     slave_address = (input_addr << 2);
@@ -256,8 +251,7 @@ interface i2c_if #(
 	//_____________________________________________________________________________________\\
 
 	// ****************************************************************************
-	// Excplicitly cause a system state where arbitration shall be lost by the master. 
-	// Release this state after arbitration_wait_cycles system cycles
+	// Force an arbitration loss during a WRITE based on movement on the scl_i
 	// ****************************************************************************
 	task force_arbitration_loss();
     @(scl_i) sda_drive = 16'h00;
@@ -267,6 +261,10 @@ interface i2c_if #(
     sda_drive = 16'hzz;
   endtask
 
+	// ****************************************************************************
+	// Force an arbitration loss directly after stimulus on any scl_i line. 
+  // Override state lasts forever.
+	// ****************************************************************************
   task force_arbitration_loss_start();
     $display("REACHED IN IF");
     @(sda_i) sda_drive = 16'hffff;
@@ -274,11 +272,9 @@ interface i2c_if #(
   endtask
 
   // ****************************************************************************
-  // Excplicitly cause a system state where arbitration shall be lost by the master. 
-  // Release this state after arbitration_wait_cycles system cycles
+  // Force an arbitration loss during a READ with NACK transaction.
   // ****************************************************************************
   task force_arbitration_loss_read();
-
     if (enable_read_arb) begin
       $display("Readed arb read");
       @(scl_i) sda_drive = 16'h00;
@@ -289,13 +285,15 @@ interface i2c_if #(
 
 
   // ****************************************************************************
-  // Excplicitly cause a system state where arbitration shall be lost by the master. 
-  // Release this state after arbitration_wait_cycles system cycles
+  // Permanently pull all busses low to force an arbitration loss
   // ****************************************************************************
   task force_arbitration_loss_permanent();
     @(scl_i) sda_drive = 16'h00;
   endtask
 
+	// ****************************************************************************
+	// Release control of all busses upon arbitration loss completing
+	// ****************************************************************************
   task disable_arbitration_loss();
     sda_drive = 16'hzz;
   endtask
