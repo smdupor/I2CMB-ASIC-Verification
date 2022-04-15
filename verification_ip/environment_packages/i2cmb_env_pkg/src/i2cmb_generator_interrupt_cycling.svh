@@ -21,8 +21,10 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	//  Perform tests where the DUT is configured first to use interrupts, 
+	//  then without interrupts, and switches between these modes, verifying that
+	// 	interrupts are raised as expected, and not when not expected, and that 
+	// 	switching of modes is successful.
 	// ****************************************************************************
 	virtual task run();
 
@@ -56,22 +58,6 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 		generate_random_base_flow(40, 1);
 
 		super.run();
-	endtask
-
-	task send_xactions();
-		wb_agent_handle.expect_nacks(1'b0);
-		// Iterate through all generated transactions, passing each down to respective agents.
-		fork
-			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-			foreach(wb_trans[i]) begin
-				if(wb_trans[i].line == CSR && wb_trans[i].write && wb_trans[i].cmd[6] ==  1'b0) env_cfg.disable_interrupts = 1'b1;
-				else if(wb_trans[i].line == CSR && wb_trans[i].write && wb_trans[i].cmd[6] ==  1'b1) env_cfg.disable_interrupts = 1'b0;
-				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
-			end
-		join
-		i2c_trans.delete();
-		wb_trans.delete();
 	endtask
 
 endclass

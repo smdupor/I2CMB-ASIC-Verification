@@ -14,8 +14,10 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Perform tests of CLOCK-STRETCHING functionality, using starts and re-starts,
+	// burst and single byte transactions, writes and reads, ALL OF WHICH must  be 
+	// clockstretched by the I2C SLAVE BFM on a randomized range from ZERO stretching
+	// up to 3x stretching.
 	// ****************************************************************************
 	virtual task run();
 		// Transaction to enable the DUT with interrupts enabled
@@ -51,6 +53,10 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 
 		super.run();
 	endtask
+
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
 
 	// ****************************************************************************
 	//  Create a test flow inspired by prior tests, with data bursts as well as 

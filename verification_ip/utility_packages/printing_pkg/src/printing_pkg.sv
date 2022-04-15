@@ -25,18 +25,9 @@ package printing_pkg;
 		//display_hstars();
 		display_h_lowbar();
 		$display("\t\t\tNCSU ECE745 SPRING 2022 Project Author:\n");
-		$display("\tStevan Dupor : smdupor@ncsu.edu : Section 001\n");
+		$display("\tStevan Dupor : smdupor@ncsu.edu : Section 001");
 		display_h_lowbar();
-		display_authors_note();
-		display_h_lowbar();
-		$display("\n\n\n");
-	endfunction
-
-	function void display_authors_note();
-		string s;
-		s = {"AUTHORS NOTE: In this test flow, a DIFFERENT BUS and a DIFFERENT ADDRESS are \n\t sequentially picked for each transaction.\n",
-		" Note that each output bus is also configured for a different clock period, and \n\t hence, waveforms show different transfer rates for each major transaction."};
-		$display("%s",s);
+		$display("\n\n");
 	endfunction
 
  	// ****************************************************************************

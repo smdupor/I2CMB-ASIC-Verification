@@ -24,17 +24,16 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Test the arbitration functionality, where the BFM forces the DUT to lose 
+	// an arbitration contest. Test this happening during the legal regions of
+	// After START, on address transmission
+	// During WRITES
+	// During / at the end of READS with NACK, where arbitration is lost at the NACK
 	// ****************************************************************************
 	virtual task run();
-		generate_arb_loss_reads();
-		generate_arb_loss_flow();
-		//92.12, 94.11, 82.25
-		//arb_loss_start();
-		//92.12, 94.11, 82.25	// Both one flow
-		//91.14, 91.17, 82.25, 86.85 // Reads removed
-		//92.12, 94.11, 82.25, 87.03
+		generate_arb_loss_reads_w_nack();
+		generate_arb_loss_addresses();
+
 		wb_agent_handle.configuration.expect_arb_loss = 1'b1;
 
 		// Iterate through all generated transactions, passing each down to respective agents.
@@ -43,49 +42,48 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 			begin foreach(wb_trans[i]) begin
 					wb_agent_handle.bl_put(wb_trans[i]);
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
-
 				end
-				#10000 $finish();
 			end
-		join
-
-
+		join_any
 	endtask
+  	
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
 
-	function void generate_arb_loss_flow();
+	// ****************************************************************************
+	// Generate a write transaction for each bus which will end in arbitration loss.
+	// ****************************************************************************
+	function void generate_arb_loss_addresses();
 		int i=0;
-
 		for(i=0;i<=15;++i) begin
 			enable_dut_with_interrupt();
-			//issue_wait(1);
 			if(!$cast(trans,ncsu_object_factory::create(trans_name))) $display({"\n\nTRANS CAST FAILED\n\n", trans.convert2string()});
 			// pick  a bus, sequentially picking a new bus for each major transaction
-			trans.selected_bus=i;
+			trans.selected_bus = i;
 
 			select_I2C_bus(trans.selected_bus);
 
-			// Send a start command
-			//arb_loss_start();
+			// Send a (NORMAL) start command
 			issue_start_command();
-			// pick an address
 			trans.address = 127;
-
-			arb_loss_address_req_write(trans.address);
+			arb_loss_address_req_write(trans.address);		// Signal to the driver that, for this special case, expect arb loss
 			disable_dut();
 			i2c_trans.push_back(trans);
 			i2c_trans.push_back(trans);
 		end
-
 	endfunction
 
-	// Ensure that a read with NAK can be terminated with an arb loss
-	function void generate_arb_loss_reads();
+	// ****************************************************************************
+	// Generate a Read-with-NACK transaction for each bus which will end in 
+	// arbitration loss.
+	// ****************************************************************************
+	function void generate_arb_loss_reads_w_nack();
 		i2c_arb_loss_transaction trans;
 		bit [7:0] init_data[$];
 
 		int i;
 		init_data.delete();
-
 
 		enable_dut_with_interrupt();
 		//issue_wait(1);
@@ -99,7 +97,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		select_I2C_bus(trans.selected_bus);
 
 		// Send a start command
-		//arb_loss_start();
+
 		issue_start_command();
 		// pick an address
 		trans.address = 127;
@@ -111,7 +109,13 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 
 	endfunction
 
+	//_____________________________________________________________________________________\\
+	//                                TRANSACTION CREATORS                                 \\
+	//_____________________________________________________________________________________\\
 
+	// ****************************************************************************
+	// TRIGGER A START ACTION THAT WILL END IN ARBITRATION LOSS
+	// ****************************************************************************
 	function void arb_loss_start();
 		//master_write(CMDR, I2C_START);
 		wb_transaction_arb_loss t = new("send_start_command");
@@ -129,6 +133,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		clear_interrupt();
 	endfunction
 
+	// ****************************************************************************
+	// SEND AN ADDRESS BYTE THAT WILL END IN ARBITRATION LOSS, requuesting WRITE
+	// ****************************************************************************
 	function void arb_loss_address_req_write(input bit [7:0] addr);
 		//master_write(DPR, addr);
 		wb_transaction_arb_loss u;
@@ -161,6 +168,9 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 		clear_interrupt();
 	endfunction
 
+	// ****************************************************************************
+	// SEND AN ADDRESS BYTE THAT WILL END IN ARBITRATION LOSS, requuesting READ
+	// ****************************************************************************
 	function void arb_loss_address_req_read(input bit [7:0] addr);
 		//master_write(DPR, addr);
 		wb_transaction_arb_loss u;
@@ -195,9 +205,7 @@ class i2cmb_generator_arb_loss extends i2cmb_generator;
 
 	// ****************************************************************************
 	// READ a single byte of data from a previously-addressed I2C Slave,
-	//      Indicating that this is the LAST BYTE of this transfer, and the next
-	// 		bus action will be a STOP signal.
-	// Check to ensure we didn't get a NACK/ Got the ACK from the slave.
+	//      EXPECTING ARBITRATION LOSS AT THE DRIVER
 	// ****************************************************************************
 	function void arb_loss_read_data_byte_with_stop();
 		//master_write(CMDR, READ_WITH_NACK);

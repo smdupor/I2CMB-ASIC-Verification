@@ -21,8 +21,7 @@ class i2cmb_generator_test_multi_bus extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Base Multi-bus test flow: Test randomized transactions in a 16-bus DUT
 	// ****************************************************************************
 	virtual task run();
 		enable_dut_with_interrupt();
@@ -32,7 +31,11 @@ class i2cmb_generator_test_multi_bus extends i2cmb_generator;
 		super.run();
 	endtask
 
-	// Target several specific scenarios needing cover
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
+
+	// Target several specific scenarios needing coverage in the multi-bus base configuration
 	function void generate_directed_targets();
 		i2c_rand_data_transaction rand_trans;
 

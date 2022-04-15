@@ -1,6 +1,4 @@
-class i2cmb_generator extends ncsu_component #(
-    .T(i2c_transaction)
-);
+class i2cmb_generator extends ncsu_component #(.T(i2c_transaction));
 
   i2cmb_env_configuration env_cfg;
   i2c_transaction i2c_trans[$];
@@ -12,19 +10,12 @@ class i2cmb_generator extends ncsu_component #(
   string trans_name;
   i2cmb_predictor pd;
 
-  //POLLING DEFAULTS
+  //  POLLING DEFAULTS for 400kHz MAX SPEED busses
   const int sel_pause = 20;
   const int start_pause = 150;
   const int data_pause = 2500;
   const int stop_pause = 250;
-
   bit enable_polling;
-
-  //bus_select = 11
-  // start = 		138
-  // write/rd =	2278
-  // stop   =		171
-
 
   // ****************************************************************************
   // Constructor, setters and getters
@@ -43,8 +34,9 @@ class i2cmb_generator extends ncsu_component #(
   endfunction
 
   // ****************************************************************************
-  // run the transaction generator; Requires that a series of transactions has 
-  // been created
+  //  Run the base generator: Send a series of transactions to the agents. 
+  //
+  // Transaction flows are created by child objects of this class.
   // ****************************************************************************
   virtual task run();
     fork
@@ -56,13 +48,55 @@ class i2cmb_generator extends ncsu_component #(
 		join
   endtask
 
+  //_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
 
-  ////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////
-  //                NB: Below Functions MUST be refactored, but are working placeholders. Thanks.
-  //////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////
+	// ****************************************************************************
+	// Create a series of (qty) RANDOMIZED I2C Transactions, indicating whether
+  // either the prior or subsequent transaction will take place on a different
+  // bus, meaning: A bus selection action must take place AND each transaction
+  // must conclude in a STOP action.
+	// ****************************************************************************
+  virtual function void generate_random_base_flow(int qty, bit change_busses);
+    i2c_rand_data_transaction rand_trans;
 
+    for (int i = 0; i < qty; ++i) begin  // (i2c_trans[i]) begin
+      $cast(rand_trans, ncsu_object_factory::create("i2c_rand_data_transaction"));
+
+      rand_trans.randomize();
+      i2c_trans.push_back(rand_trans);
+      convert_rand_i2c_trans(rand_trans, change_busses, change_busses);
+    end
+  endfunction
+
+
+	// ****************************************************************************
+	// Create a simple NO-DATA transaction, where a connection is opened, the 
+  // address and operation are transmitted, then the connection is closed.
+	// ****************************************************************************
+  function void no_data_trans();
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
+    // Select a bus for the no-data transaction
+    trans.selected_bus = 0;
+    select_I2C_bus(trans.selected_bus);
+
+    // Send the start, send the address, then close the connection.
+    trans.address = (36) + 1;
+    issue_start_command();
+    transmit_address_req_write(trans.address);
+    issue_stop_command();
+    i2c_trans.push_back(trans);
+  endfunction
+
+  //_____________________________________________________________________________________\\
+	//                                TRANSACTION CONVERTERS                               \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// Convert a DIRECTED (non-random) I2C Transaction into the requisite Wishbone 
+  // transactions to be executed on the wishbone end of the DUT
+	// ****************************************************************************
   virtual function void convert_i2c_trans(i2c_transaction t, bit add_bus_sel, bit add_stop);
     int address = t.address;
     // Support address-mismatched (Slave Disconnected) Transactions
@@ -93,6 +127,10 @@ class i2cmb_generator extends ncsu_component #(
     if (add_stop) issue_stop_command();
   endfunction
 
+	// ****************************************************************************
+	// Convert a RANDOMIZED I2C Transaction into the requisite Wishbone transactions
+  // to be executed on the wishbone end of the DUT
+	// ****************************************************************************
   virtual function void convert_rand_i2c_trans(i2c_rand_data_transaction t, bit add_bus_sel,
                                                bit add_stop);
     int address = t.address;
@@ -129,34 +167,6 @@ class i2cmb_generator extends ncsu_component #(
       inject_csr_read();      //CSR Reads are used by the predictor to verify CSR values based on predictor state.
     end
   endfunction
-
-  virtual function void generate_random_base_flow(int qty, bit change_busses);
-    i2c_rand_data_transaction rand_trans;
-
-    for (int i = 0; i < qty; ++i) begin  // (i2c_trans[i]) begin
-      $cast(rand_trans, ncsu_object_factory::create("i2c_rand_data_transaction"));
-
-      rand_trans.randomize();
-      i2c_trans.push_back(rand_trans);
-      convert_rand_i2c_trans(rand_trans, 1, 1);
-    end
-  endfunction
-
-
-  function void no_data_trans();
-    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
-    // Select a bus for the no-data transaction
-    trans.selected_bus = 0;
-    select_I2C_bus(trans.selected_bus);
-
-    // Send the start, send the address, then close the connection.
-    trans.address = (36) + 1;
-    issue_start_command();
-    transmit_address_req_write(trans.address);
-    issue_stop_command();
-    i2c_trans.push_back(trans);
-  endfunction
-
   
   //_____________________________________________________________________________________\\
 	//                           DATASET CREATION ABSTRACTION                              \\
@@ -166,13 +176,7 @@ class i2cmb_generator extends ncsu_component #(
 	// Create a series of one or more bytes of data, from <start_value> to <end_value>,
 	// and assign them  to the i2c transaction at <trans_index>, indicating whether
 	// this transaction shall be an I2C_WRITE or I2C_READ based on <operation> enum.
-	//
-	// 		NB: Data values for "writes" are ultimately swallowed by the testbench,
-	//			as they are not necessary on the I2C-Slave end of the bench.
-	//			They are here initialized for a consistent interface between
-	//			writes and reads, and used later in the generator to create 
-	//			the requisite wb_transactions.
-	// ****************************************************************************
+		// ****************************************************************************
 	virtual function void create_explicit_data_series(
       input int start_value, input int end_value, input int trans_index, input i2c_op_t operation);
     bit [7:0] init_data[$];
@@ -193,7 +197,10 @@ class i2cmb_generator extends ncsu_component #(
   endfunction
 
 
-  // Insert a series of NON randomized data into a random transaction such that we can test directed data with
+	// ****************************************************************************
+	// Inject a directed series of NON-RANDOMIZED data into a RANDOM transaction
+  // such that specific, directed edge cases may be covered.	
+	// ****************************************************************************
   virtual function void rnd_create_explicit_data_series(
       i2c_rand_data_transaction trns, input int start_value, input int end_value,
       input int trans_index, input i2c_op_t operation);

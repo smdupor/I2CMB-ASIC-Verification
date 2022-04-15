@@ -21,8 +21,11 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Perform register and error tests on the DUT:
+	// DEFAULT VALUES
+	// READ-ONLY REGIONS are actually READ-ONLY
+	// WRITES to one register do not change the values of others
+	// DUT Error conditions from illegal operations
 	// ****************************************************************************
 	virtual task run();
 
@@ -35,46 +38,42 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 
 		generate_crosschecking();
 
-		// Iterate through all generated transactions, passing each down to respective agents.
-		/*fork
-			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-			foreach(wb_trans[i]) begin
-				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_uglyprint},NCSU_LOW);
-			end
-		join*/
 		super.run();
 
 		env_cfg.enable_error_testing = 1'b1;
 		generate_error_testing();
 
-		// Iterate through all generated transactions, passing each down to respective agents.
-		/*fork
-			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-			foreach(wb_trans[i]) begin
-				wb_agent_handle.bl_put(wb_trans[i]);
-				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_uglyprint},NCSU_LOW);
-			end
-		join*/
 		super.run();
-
-
-
 	endtask
 
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
 
+	// ****************************************************************************
+	// Test the default values of each register at initialization
+	// ****************************************************************************
 	function void generate_default_testing();
 		reg_read(CSR);
 		reg_read(DPR);
 		reg_read(CMDR);
 		reg_read(FSMR);
 	endfunction
+		
+		
+	// ****************************************************************************
+	// Test that all read-only regions are, indeed, read-only, of all DUT registers.
+	// ****************************************************************************
 	function void generate_access_ctrl_testing();
 		reg_write(CSR, 8'b0011_1111);
 		reg_write(CMDR, 8'b0111_1000);
 		reg_write(FSMR, 8'hff);
 		generate_default_testing();
 	endfunction
+
+	// ****************************************************************************
+	// Verify that writes to one register do not change the values of other registers.
+	// ****************************************************************************
 	function void generate_crosschecking();
 		reg_write(CSR, 8'b1100_0000);
 		generate_default_testing();
@@ -84,6 +83,12 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 		generate_default_testing();
 	endfunction
 
+	// ****************************************************************************
+	// Explicitly create error conditions while the NON-I2C PREDICTOR is connected.
+	// Verify that DUT raises error bit in the error scenarios:
+	// Select bus AFTER start DURING transaction
+	// Initiate WAIT command AFTER start DURING transaction
+	// ****************************************************************************
 	function void generate_error_testing();
 
 		disable_dut();
@@ -106,8 +111,12 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 	endfunction
 
 
+	//_____________________________________________________________________________________\\
+	//                                TRANSACTION CREATORS                                 \\
+	//_____________________________________________________________________________________\\
+
 	// ****************************************************************************
-	// Send an explicit transaction to the DUT, requesting a READ of register
+	// Send an explicit transaction to the DUT, requesting a READ of a register
 	// ****************************************************************************
 	function void reg_read(input bit [1:0] adr);
 		//master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT		
@@ -124,7 +133,7 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// Send an explicit transaction to the DUT, requesting a WRITE of register
+	// Send an explicit transaction to the DUT, requesting a WRITE of a register
 	// ****************************************************************************
 	function void reg_write(input bit [2:0] adr, input bit [7:0] data);
 		//master_write(CSR, ENABLE_CORE_INTERRUPT); // Enable DUT		

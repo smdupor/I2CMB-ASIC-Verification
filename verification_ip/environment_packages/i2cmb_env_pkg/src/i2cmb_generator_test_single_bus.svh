@@ -20,8 +20,7 @@ class i2cmb_generator_test_single_bus extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// TEST FOR A DUT INSTANCE WITH ONLY ONE BUS. TEST LEGAL AND ILLEGAL BUS SELECTIONS.
 	// ****************************************************************************
 	virtual task run();
 		enable_dut_with_interrupt();
@@ -43,6 +42,15 @@ class i2cmb_generator_test_single_bus extends i2cmb_generator;
 		super.run();
 	endtask
 
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
+
+	// ****************************************************************************
+	// In a DUT with only one bus, selecting a bus with number > 0 will raise a 
+  	// bus select error bit, but, will default to using the existing bus 0.
+	// Create random verification transactions initiating this particular flow.
+	// ****************************************************************************
 	virtual function void generate_random_bus_error_flow(int qty, bit change_busses);
 		i2c_rand_data_transaction rand_trans;
 
@@ -55,6 +63,10 @@ class i2cmb_generator_test_single_bus extends i2cmb_generator;
 		end
 	endfunction
 
+	// ****************************************************************************
+	// Create a series of random transactions, overriding randomization of bus 
+	// selection to validate correct-bus-selection on a single bus DUT.
+	// ****************************************************************************
 	virtual function void generate_single_bus_random_base_flow(int qty, bit change_busses);
 		i2c_rand_data_transaction rand_trans;
 

@@ -51,9 +51,6 @@ class i2cmb_predictor_regblock extends i2cmb_predictor;
   endfunction
 
   function void process_default_testing();
-
-    //assert(!we_mon && transaction_count < 4) else $error("REGBLOCK TESTFLOW ERROR, UNEXPECTED WRITE Transaction %0d", transaction_count);
-
     case (adr_mon)
 
       CSR:

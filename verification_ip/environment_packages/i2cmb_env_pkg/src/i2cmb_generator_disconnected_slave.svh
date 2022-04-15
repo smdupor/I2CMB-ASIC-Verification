@@ -22,8 +22,10 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Test DUT behavior in the presence of a "Disconnected" Slave, or an I2C slave
+	// which never ACKs communications from the master as expected. Expect DUT to 
+	// raise NACK bits when these disconnected transactions occur, but to complete
+	//  (The ADDRESS and WRITE) transactions successfully, albeit with NACKs.
 	// ****************************************************************************
 	virtual task run();
 
@@ -41,7 +43,10 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 
 		super.run();
 	endtask
-
+	
+	//_____________________________________________________________________________________\\
+	//                                TEST FLOW GENERATION                                 \\
+	//_____________________________________________________________________________________\\
 
 	virtual function void generate_random_base_flow(int qty, bit change_busses);
 		int i,j,k,use_bus;

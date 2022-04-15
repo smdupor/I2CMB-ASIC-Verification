@@ -22,8 +22,9 @@ class i2cmb_generator_test_multi_bus_ranged extends i2cmb_generator;
 	endfunction
 
 	// ****************************************************************************
-	// run the transaction generator; Create all transactions, then, pass trans-
-	//		actions to agents, in order, in parallel. 
+	// Test randomized transactions in the presence of a DUT with 16 Busses, 
+	//    	each of which has been instantiated to a different speed, ranging from
+	//     400kHz (Maximum) at bus 0 to 32kHz at bus 15.
 	// ****************************************************************************
 	virtual task run();
 		enable_dut_with_interrupt();
