@@ -1,5 +1,5 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_4\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 1:12:53 AM -->
+ <!-- Date: 1/1/0001 2:07:06 AM -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -485,7 +485,7 @@
 				<Cell>4.4</Cell>
 				<Cell>Master-End Upstream Delays</Cell>
 				<Cell>Expect transfers to complete when TB delays operations on the WB end of the DUT, via stalling continued commands after a completed read or write. REQUIRE no extraneous starts/stops or clock cycles during these stalls.</Cell>
-				<Cell>wb_transaction_cg::wb_stretch_delay</Cell>
+				<Cell>wb_stretch_cg::wb_stretch_delay</Cell>
 				<Cell>Coverpoint</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
@@ -772,9 +772,36 @@
 			<Row>
 				<Cell>9.2</Cell>
 				<Cell>WB Register Coverage</Cell>
-				<Cell>TODO TODO TODO</Cell>
+				<Cell>Ensure that all WB Registers have been tested</Cell>
 				<Cell>wb_transaction_cg::reg_type</Cell>
 				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.3</Cell>
+				<Cell>WB Register Read - Write</Cell>
+				<Cell>Ensure that All registers have been both written to and read from </Cell>
+				<Cell>wb_transaction_cg::we_x_reg</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.4</Cell>
+				<Cell>WB DPR Data Values</Cell>
+				<Cell>Ensure that all possible data values have been used in the DPR</Cell>
+				<Cell>wb_transaction_cg::data_type</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.5</Cell>
+				<Cell>WB DPR Data vs Read -Write</Cell>
+				<Cell>Ensure that all possible data values have been BOTH written to AND read from the DPR</Cell>
+				<Cell>wb_transaction_cg::we_x_data</Cell>
+				<Cell>Cross</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
