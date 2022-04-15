@@ -2,45 +2,45 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 
 `ncsu_register_object(i2cmb_generator_disconnected_slave);
 
-		// ****************************************************************************
-		// Constructor, setters and getters
-		// ****************************************************************************
-		function new(string name = "", ncsu_component_base  parent = null);
-			super.new(name,parent);
-			
-			if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
-				$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
-				$fatal;
-			end
+	// ****************************************************************************
+	// Constructor, setters and getters
+	// ****************************************************************************
+	function new(string name = "", ncsu_component_base  parent = null);
+		super.new(name,parent);
 
-			$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
-			if(trans_name == "i2cmb_generator_disconnected_slave") begin
-				trans_name = "i2c_rand_data_transaction";
-			end
-			else $fatal;
-			verbosity_level = global_verbosity_level;
-		endfunction
+		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
+			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
+			$fatal;
+		end
 
-		// ****************************************************************************
-		// run the transaction generator; Create all transactions, then, pass trans-
-		//		actions to agents, in order, in parallel. 
-		// ****************************************************************************
-		virtual task run();
+		$display("%m found +GEN_TRANS_TYPE=%s", trans_name);
+		if(trans_name == "i2cmb_generator_disconnected_slave") begin
+			trans_name = "i2c_rand_data_transaction";
+		end
+		else $fatal;
+		verbosity_level = global_verbosity_level;
+	endfunction
 
-			// Transaction to enable the DUT with interrupts enabled
-			enable_dut_with_interrupt();
+	// ****************************************************************************
+	// run the transaction generator; Create all transactions, then, pass trans-
+	//		actions to agents, in order, in parallel. 
+	// ****************************************************************************
+	virtual task run();
 
-			// Ensure that addresses will be mismatched, so BFM does not respond (causing NACKs). 
-			// Predictor will un-do the mismatched addresses by the same amount to confirm 
-			// transactions are accurate.
-			env_cfg.set_address_shift(1);
-			env_cfg.expect_nacks = 1'b1;
-			wb_agent_handle.expect_nacks(1'b1);
-			
-			generate_random_base_flow(50, 1);
-			
-			super.run();
-		endtask
+		// Transaction to enable the DUT with interrupts enabled
+		enable_dut_with_interrupt();
+
+		// Ensure that addresses will be mismatched, so BFM does not respond (causing NACKs). 
+		// Predictor will un-do the mismatched addresses by the same amount to confirm 
+		// transactions are accurate.
+		env_cfg.set_address_shift(1);
+		env_cfg.expect_nacks = 1'b1;
+		wb_agent_handle.expect_nacks(1'b1);
+
+		generate_random_base_flow(50, 1);
+
+		super.run();
+	endtask
 
 
 	virtual function void generate_random_base_flow(int qty, bit change_busses);
@@ -58,4 +58,4 @@ class i2cmb_generator_disconnected_slave extends i2cmb_generator;
 		end
 	endfunction
 
-	endclass
+endclass
