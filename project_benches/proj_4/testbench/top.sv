@@ -21,6 +21,7 @@ module top();
 	// Physical DUT Interface networks
 	bit  clk;
 	bit  rst;
+	tri rst_o;
 	wire cyc[3];
 	wire stb[3];
 	wire we[3];
@@ -51,9 +52,27 @@ module top();
 	// Hard Reset: Reset BOTH the DUT and the I2C Slave BFM
 	// ****************************************************************************
 	initial begin : rst_generator
-		fork i2c_bus.reset(); join_none;
-		rst <= 1;
-		#133 rst = ~rst;
+		string trans_name;
+		if ( !$value$plusargs("GEN_TRANS_TYPE=%s", trans_name)) begin
+			$display("FATAL: +GEN_TRANS_TYPE plusarg not found on command line");
+			$fatal;
+		end
+		
+		fork i2c_bus.reset(); join_none;		// Tell the i2c bfm to reset.
+
+		fork
+		begin rst <= 1;							// Only used by components listening to this
+			#133 rst = ~rst;					// Bit. DUTs actually listen to interface 
+			#10 rst = 1'bz;						// driven resets.
+		end
+		wb_bus_16_range.force_hard_reset();		// Allow interfaces to power DUT resets
+		wb_bus_16_max.force_hard_reset();		// so that reset signals can be injected
+		wb_bus_1_max.force_hard_reset();		// into the overall test flow
+		join
+		if(trans_name == "i2cmb_generator_arb_loss_restart") begin
+			wb_bus_1_max.disable_rst_driver();		// But only use on certain tests, where
+			wb_bus_16_range.disable_rst_driver();	// Only one interface may drive a reset
+		end											// at a time.
 	end
 
 	//_____________________________________________________________________________________\\
@@ -68,7 +87,7 @@ module top();
 	)
 	i2c_bus (
 		.clk_i(clk),
-		.rst_i(rst),
+		.rst_i(rst_o),
 		.scl_i(scl), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
 		.sda_i(sda), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1]),
 		.sda_o(sda), //[NUM_I2C_BUSSES-SELECTED_I2C_BUS-1])
@@ -85,6 +104,7 @@ module top();
 		// System sigals
 		.clk_i(clk),
 		.rst_i(rst),
+		.rst_o(rst_o),
 		.irq_i(irq[0]),
 		// Master signals
 		.cyc_o(cyc[0]),
@@ -111,6 +131,7 @@ module top();
 		// System sigals
 		.clk_i(clk),
 		.rst_i(rst),
+		.rst_o(rst_o),
 		.irq_i(irq[1]),
 		// Master signals
 		.cyc_o(cyc[1]),
@@ -137,6 +158,7 @@ module top();
 		// System sigals
 		.clk_i(clk),
 		.rst_i(rst),
+		.rst_o(rst_o),
 		.irq_i(irq[2]),
 		// Master signals
 		.cyc_o(cyc[2]),
@@ -179,7 +201,7 @@ module top();
 		// ------------------------------------
 		// -- Wishbone signals:
 		.clk_i(clk), // in    std_logic;                            -- Clock
-		.rst_i(rst), // in    std_logic;                            -- Synchronous reset (active high)
+		.rst_i(rst_o), // in    std_logic;                            -- Synchronous reset (active high)
 		// -------------
 		.cyc_i(cyc[0]), // in    std_logic;                            -- Valid bus cycle indication
 		.stb_i(stb[0]), // in    std_logic;                            -- Slave selection
@@ -224,7 +246,7 @@ module top();
 		// ------------------------------------
 		// -- Wishbone signals:
 		.clk_i(clk), // in    std_logic;                            -- Clock
-		.rst_i(rst), // in    std_logic;                            -- Synchronous reset (active high)
+		.rst_i(rst_o), // in    std_logic;                            -- Synchronous reset (active high)
 		// -------------
 		.cyc_i(cyc[1]), // in    std_logic;                            -- Valid bus cycle indication
 		.stb_i(stb[1]), // in    std_logic;                            -- Slave selection
@@ -255,7 +277,7 @@ module top();
 		// ------------------------------------
 		// -- Wishbone signals:
 		.clk_i(clk), // in    std_logic;                            -- Clock
-		.rst_i(rst), // in    std_logic;                            -- Synchronous reset (active high)
+		.rst_i(rst_o), // in    std_logic;                            -- Synchronous reset (active high)
 		// -------------
 		.cyc_i(cyc[2]), // in    std_logic;                            -- Valid bus cycle indication
 		.stb_i(stb[2]), // in    std_logic;                            -- Slave selection

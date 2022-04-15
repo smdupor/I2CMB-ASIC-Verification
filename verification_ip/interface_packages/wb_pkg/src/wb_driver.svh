@@ -63,12 +63,23 @@ class wb_driver extends ncsu_component #(
   // Test Arbitration LOSS condition
   task bl_arb_put(wb_transaction_arb_loss wb_arb);
     bit [7:0] buffer;
-    assert (wb_arb.write);
+    static int hit_count;
 
+    assert (wb_arb.write);
+    
     if (wb_arb.line == CMDR || wb_arb.line == CSR) bus.master_write(wb_arb.line, wb_arb.cmd);
     if (wb_arb.line == DPR) bus.master_write(wb_arb.line, wb_arb.word);
-    
-    #250 while (buffer[7:5] == 3'b000) #50 bus.master_read(CMDR, buffer);
+      ++hit_count;
+    #250 while (buffer[7:5] == 3'b000) begin
+      
+      if(!configuration.expect_hard_reset ||(hit_count != 2 && configuration.expect_hard_reset)) #50 bus.master_read(CMDR, buffer);
+      if(hit_count == 2 && configuration.expect_hard_reset) begin
+        #30000 bus.force_hard_reset();
+        #30000 bus.force_hard_reset();
+        $display("HARD RESET!");
+        return;
+      end
+    end
     assert_require_arb_loss_bit :
     assert (buffer[5] == 1'b1)
     else $error("Assertion assert_require_arb_loss_bit failed with %b!", buffer);

@@ -274,7 +274,9 @@ interface i2c_if #(
      @(posedge scl_i[bus_selector]) count++;
      if(count == 9) begin
        force_arbitration_loss_permanent();
+        #2230 disable_arbitration_loss();
      end
+
    //  $display("Posedge Cycle : %0d", count);
     end
   endtask

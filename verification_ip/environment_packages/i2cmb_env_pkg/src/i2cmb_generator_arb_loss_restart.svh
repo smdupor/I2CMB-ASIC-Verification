@@ -40,6 +40,7 @@ class i2cmb_generator_arb_loss_restart extends i2cmb_generator;
 		fork
 			foreach(i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
 			begin foreach(wb_trans[i]) begin
+					if(i==2) wb_agent_handle.configuration.expect_hard_reset = 1'b1;
 					wb_agent_handle.bl_put(wb_trans[i]);
 					if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 				end
@@ -139,6 +140,8 @@ class i2cmb_generator_arb_loss_restart extends i2cmb_generator;
 
 		// The re-start command
 		arb_loss_start();
+		arb_loss_start();
+		disable_dut();
 		i2c_trans.push_back(trans);
 
 	endfunction

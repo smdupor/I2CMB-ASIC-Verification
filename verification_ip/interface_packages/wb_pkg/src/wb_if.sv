@@ -1,3 +1,5 @@
+`timescale 1ns / 10ps
+
 interface wb_if #(
     int ADDR_WIDTH = 2,
     int DATA_WIDTH = 8
@@ -6,6 +8,7 @@ interface wb_if #(
     // System sigals
     input wire clk_i,
     input wire rst_i,
+    output tri rst_o,
     input wire irq_i,
     // Master signals
     output reg cyc_o,
@@ -29,6 +32,8 @@ interface wb_if #(
   always @(posedge clk_i)++num_clocks;
 
   bit disable_interrupts;
+  logic hard_resetter;
+  assign rst_o = hard_resetter;
 
   always @(posedge clk_i) begin
     if (disable_interrupts) begin
@@ -39,6 +44,15 @@ interface wb_if #(
   end
 
   initial reset_bus();
+
+  task force_hard_reset();
+    hard_resetter <= 1'b1;
+    #133 hard_resetter <= 1'b0;
+  endtask
+
+  task disable_rst_driver();
+    hard_resetter <= 1'bz;
+  endtask
 
   // ****************************************************************************              
   task wait_for_reset();

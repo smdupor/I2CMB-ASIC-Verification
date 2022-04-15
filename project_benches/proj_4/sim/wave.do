@@ -7,6 +7,7 @@ add wave -noupdate -divider I2C_MB
 add wave -noupdate -divider {WB Signals}
 add wave -noupdate /top/DUT_16_max/clk_i
 add wave -noupdate /top/DUT_16_max/rst_i
+add wave -noupdate /top/DUT_16_max/rst_o
 add wave -noupdate /top/DUT_16_max/cyc_i
 add wave -noupdate /top/DUT_16_max/stb_i
 add wave -noupdate /top/DUT_16_max/ack_o

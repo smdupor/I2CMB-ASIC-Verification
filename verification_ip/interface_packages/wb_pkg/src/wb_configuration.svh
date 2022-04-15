@@ -4,6 +4,7 @@ class wb_configuration extends ncsu_configuration;
   bit expect_arb_loss;
   bit expect_bus_mismatch;
   bit register_testing;
+  bit expect_hard_reset;
   string dut_select;
 
   function new(string name = "");

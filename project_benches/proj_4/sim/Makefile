@@ -207,6 +207,7 @@ report_coverage:
 	vcover report -details -html -htmldir covhtmlreport -assert -directive -cvg -code bcefst -threshL 50 -threshH 90 ./sim_and_testplan_merged.ucdb
 
 show_coverage:
+	rm -f sim_and_testplan_merged.ucdb
 	vsim -i -do "set NoQuitOnFinish 1;do load_ucdbs_and_merge_with_test_plan.do" &
 
 clean_ucdb:
