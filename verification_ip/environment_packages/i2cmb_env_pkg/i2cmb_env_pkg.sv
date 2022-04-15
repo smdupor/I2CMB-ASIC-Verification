@@ -21,6 +21,7 @@ package i2cmb_env_pkg;
 
   `include "src/i2cmb_generator_test_reg.svh"
   `include "src/i2cmb_generator_arb_loss.svh"
+  `include "src/i2cmb_generator_arb_loss_restart.svh"
   `include "src/i2cmb_generator_interrupt_cycling.svh"
   `include "src/i2cmb_generator_test_multi_bus_clockstretch.svh"
   `include "src/i2cmb_generator_test_multi_bus.svh"

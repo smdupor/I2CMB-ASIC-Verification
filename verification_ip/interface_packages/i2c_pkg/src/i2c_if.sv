@@ -262,13 +262,21 @@ interface i2c_if #(
   endtask
 
 	// ****************************************************************************
-	// Force an arbitration loss directly after stimulus on any scl_i line. 
-  // Override state lasts forever.
+	// Force an arbitration loss on a RESTART command, after ONE START and 
+  //     ONE ADDRESS WRITE
 	// ****************************************************************************
   task force_arbitration_loss_start();
-    $display("REACHED IN IF");
-    @(sda_i) sda_drive = 16'hffff;
-    $display("DONE IN IF");
+    int count, negcount;
+    $display("Forcing an Arb Loss on a RESTART");
+    forever begin 
+      @(negedge scl_i[bus_selector]) negcount++;
+    //   $display("Negedge count: %0d", negcount);
+     @(posedge scl_i[bus_selector]) count++;
+     if(count == 9) begin
+       force_arbitration_loss_permanent();
+     end
+   //  $display("Posedge Cycle : %0d", count);
+    end
   endtask
 
   // ****************************************************************************
@@ -276,9 +284,9 @@ interface i2c_if #(
   // ****************************************************************************
   task force_arbitration_loss_read();
     if (enable_read_arb) begin
-      $display("Readed arb read");
+      $display("Read arb read");
       @(scl_i) sda_drive = 16'h00;
-      repeat (10000) @(posedge clk_i);
+      repeat (1) @(posedge clk_i);
       sda_drive = 16'hzzzz;
     end
   endtask
