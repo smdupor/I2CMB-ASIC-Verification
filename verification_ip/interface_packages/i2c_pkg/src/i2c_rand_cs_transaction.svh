@@ -32,6 +32,21 @@ class i2c_rand_cs_transaction extends i2c_transaction;
 
   endfunction
 
+  function void set_clock_stretch_qty(int qty);
+    this.clock_stretch_qty = qty;
+    super.clock_stretch_qty = qty;
+  endfunction
+
+  function void set_op(i2c_op_t op);
+    this.rw = op;
+    super.rw = op;
+  endfunction
+
+  function void set_address(int adr);
+    this.address = adr;
+    super.address = adr;
+  endfunction
+
   function void set(bit [7:0] address, bit [7:0] data[], i2c_op_t rw, int selected_bus);
     this.address = address;
     this.data = data;

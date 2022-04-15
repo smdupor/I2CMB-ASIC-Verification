@@ -64,9 +64,9 @@ class i2cmb_predictor extends ncsu_component;
 
     explicit_wait_times: coverpoint most_recent_wait {
 
-      bins SHORT_1_to_5ms = {[1 : 5]};
-      bins MED_6ms_to_10ms = {[6 : 10]};
-      bins LONG_11ms_to_15ms = {[11 : 15]};
+      bins SHORT_1_to_5ms = {[1 : 2]};
+      bins MED_6ms_to_10ms = {[3 : 5]};
+      bins LONG_11ms_to_15ms = {[6 : 8]};
     }
   endgroup
 

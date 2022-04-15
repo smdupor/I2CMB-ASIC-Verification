@@ -1,8 +1,7 @@
 class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 
   `ncsu_register_object(i2cmb_generator_test_multi_bus_clockstretch);
-
-
+  i2c_rand_cs_transaction rnd_trans;
   // ****************************************************************************
   // Constructor, setters and getters
   // ****************************************************************************
@@ -22,36 +21,49 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
     // Transaction to enable the DUT with interrupts enabled
     enable_dut_with_interrupt();
 
-    clockstretch_directed_flow();
+    // Starts and restarts in presence of clockstretching
+    start_restart_with_explicit_waits();
 
+    // Burst and single byte transactions in presence of clockstretching
+    burst_burst_alternating_directed_flow();
+
+    // Cover an edge case in this test scenario
+    edge_case_clockstretch_scenario();
+
+    // Perform a soft reset
+    disable_dut();
+    enable_dut_with_interrupt();
+
+    // Issue a LONG explicit wait to cover the LONG edge case.
+    issue_wait(4);
+
+    // Issue a transaction with an address match But NO DATA
+    no_data_trans();
+
+    // Issue a transaction with NO address and NO data
+    issue_start_command();
+    issue_stop_command();
+    disable_dut();
+
+    // Configure agents and coverage to sample clockstretching values.
     wb_agent_handle.expect_nacks(1'b0);
     i2c_agent_handle.configuration.sample_clockstretch_coverage = 1'b1;
 
-    // Iterate through all generated transactions, passing each down to respective agents.
-    fork
-      foreach (i2c_trans[i]) i2c_agent_handle.bl_put(i2c_trans[i]);
-      foreach (wb_trans[i]) begin
-        wb_agent_handle.bl_put(wb_trans[i]);
-        if (wb_trans[i].en_printing)
-          ncsu_info("", {get_full_name(), wb_trans[i].to_s_prettyprint},
-                    NCSU_HIGH);  // Print only pertinent WB transactions per project spec.
-      end
-    join
+    super.run();
   endtask
 
   // ****************************************************************************
-  // Create all required transactions for the project 2 directed tests, 
-  //  Including 	WRITE 0 -> 31
-  //				READ 100 -> 131
-  // 				WRITE/READ Alternating 64->127 interleave 63 -> 0 
+  //  Create a test flow inspired by prior tests, with data bursts as well as 
+  //  single bytes, for which clocks may be
+  //  NOT Stretched
+  //  Stretched slightly      (<25% Longer)
+  //  Stretched Significantly (25%-100% Longer)
+  //  Stretched Extremely     (>100% Longer, Eg. a 400kHz clock will be reduced below Default (<100kHz))
   // ****************************************************************************
-  virtual function void clockstretch_directed_flow();
-    int i, j, k, use_bus;
-
-    start_restart_with_explicit_waits();
-
+  function void burst_burst_alternating_directed_flow();
+    int i,j,k, use_bus;
     use_bus = 0;
-    // Transaction to enable the DUT with interrupts enabled
+
     enable_dut_with_interrupt();
 
     j = 64;
@@ -60,17 +72,15 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
       $cast(trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
 
       // pick  a bus, sequentially picking a new bus for each major transaction
-      trans.selected_bus = use_bus;
+      trans.selected_bus = use_bus++;
 
-      //select_I2C_bus(trans.selected_bus);
-
-      ++use_bus;
+      //++use_bus;
       if (use_bus > 15) use_bus = 0;
 
       // pick an address
       trans.address = (i % 126) + 1;
 
-      // WRITE ALL (Write 0 to 31 to remote Slave)
+      // Start with a WRITE BURST, randomly clockstretched.
       if (i == 0) begin
         create_explicit_data_series(0, 31, i, I2_WRITE);
         trans.randomize();
@@ -80,25 +90,25 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
         enable_dut_with_interrupt();
       end
 
-      // READ ALL (Read 100 to 131 from remote slave)
+      // THEN, perform a READ BURST, randomly clockstretched.
       if (i == 1) begin
         create_explicit_data_series(100, 131, i, I2_READ);
         trans.randomize();
         i2c_trans.push_back(trans);
         convert_i2c_trans(trans, 1, 1);
-        issue_wait(1);
+        issue_wait(6);
         j = 64;
       end
 
-      // Alternation EVEN (Handle the Write step in Write/Read Alternating TF)
+      // THEN, perform alternating actions, randomly clockstretched.
       if (i > 1 && i % 2 == 0) begin  // do a write
         create_explicit_data_series(j, j, i, I2_WRITE);
         trans.randomize();
         i2c_trans.push_back(trans);
         convert_i2c_trans(trans, 1, 1);
         ++j;
-      end  // Alternation ODD(Handle the Read step in Write/Read Alternating TF)
-      else if (i > 1 && i % 2 == 1) begin  // do a write
+      end  
+      else if (i > 1 && i % 2 == 1) begin  // do a read
         create_explicit_data_series(k, k, i, I2_READ);
         trans.randomize();
         i2c_trans.push_back(trans);
@@ -106,90 +116,116 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
         --k;
       end
     end
-
-    // Directed test, specific scenario
-    $cast(trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
-
-    // pick  a bus, sequentially picking a new bus for each major transaction
-    trans.selected_bus = 7;
-
-    // pick an address
-    trans.address = 36;
-    create_explicit_data_series(36, 38, i, I2_WRITE);
-    trans.randomize();
-    trans.clock_stretch_qty = 4500;
-    i2c_trans.push_back(trans);
-    convert_i2c_trans(trans, 1, 1);
-
-    // Directed test, specific scenario
-    $cast(trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
-
-    // pick  a bus, sequentially picking a new bus for each major transaction
-    trans.selected_bus = 5;
-
-    // pick an address
-    trans.address = 42;
-    create_explicit_data_series(101, 103, i, I2_WRITE);
-    trans.randomize();
-    trans.clock_stretch_qty = 1800;
-    i2c_trans.push_back(trans);
-    convert_i2c_trans(trans, 1, 1);
-
-    disable_dut();
-
-    enable_dut_with_interrupt();
-    issue_wait(11);
-
-    no_data_trans();
-
-    issue_start_command();
-    issue_stop_command();
-    disable_dut();
-
   endfunction
 
+// ****************************************************************************
+  // Cover any specific edge cases not caught by prior randomized transactions,
+  // With clockstretching enabled.
+  // ****************************************************************************
+function edge_case_clockstretch_scenario();
 
+    // Directed test, specific scenario
+    $cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
+    // pick  a bus, sequentially picking a new bus for each major transaction
+    rnd_trans.selected_bus = 11;
+
+    // pick an address
+    rnd_trans.set_address(106);
+    rnd_trans.set_op(I2_WRITE);
+    rnd_trans.randomize();
+    rnd_trans.set_clock_stretch_qty(1800);
+    create_explicit_data_series(36, 38, 0, I2_WRITE);
+    rnd_trans.data=trans.data;
+    i2c_trans.push_back(rnd_trans);
+    convert_i2c_trans(rnd_trans, 1, 1);
+
+    // Directed test, specific scenario
+    $cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
+    // pick  a bus, sequentially picking a new bus for each major transaction
+    rnd_trans.selected_bus = 4;
+
+    // pick an address
+    rnd_trans.set_address(50);
+    rnd_trans.set_op(I2_WRITE);
+    rnd_trans.randomize();
+    rnd_trans.set_clock_stretch_qty(8500);
+    create_explicit_data_series(101, 103,0, I2_WRITE);
+    rnd_trans.data=trans.data;
+    i2c_trans.push_back(rnd_trans);
+    convert_i2c_trans(rnd_trans, 1, 1);
+
+        // Directed test, specific scenario
+    $cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
+    // pick  a bus, sequentially picking a new bus for each major transaction
+    rnd_trans.selected_bus = 4;
+
+    // pick an address
+    rnd_trans.set_address(50);
+    rnd_trans.set_op(I2_WRITE);
+    rnd_trans.randomize();
+    rnd_trans.set_clock_stretch_qty(12000);
+    create_explicit_data_series(101, 103,0, I2_WRITE);
+    rnd_trans.data=trans.data;
+    i2c_trans.push_back(rnd_trans);
+    convert_i2c_trans(rnd_trans, 1, 1);
+
+
+        // Directed test, specific scenario
+    $cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
+    // pick  a bus, sequentially picking a new bus for each major transaction
+    rnd_trans.selected_bus = 4;
+
+    // pick an address
+    rnd_trans.set_address(67);
+    rnd_trans.set_op(I2_WRITE);
+    rnd_trans.randomize();
+    rnd_trans.set_clock_stretch_qty(13000);
+    create_explicit_data_series(101, 103,0, I2_WRITE);
+    rnd_trans.data=trans.data;
+    i2c_trans.push_back(rnd_trans);
+    convert_i2c_trans(rnd_trans, 1, 1);
+endfunction
+
+  // ****************************************************************************
+  //  Cover a start-restart transactions in the presence of clockstretching, with
+  // Explicit WAIT commands also performed.
+  // ****************************************************************************
 function void start_restart_with_explicit_waits();
     int j;
     enable_dut_with_interrupt();
-    issue_wait(6);
+    
+    // INJECT AN EXPLICIT WAIT HERE of MEDIUM SIZE.
+    issue_wait(1);
+  
+    // Perform start-restart transactions
     $cast(trans, ncsu_object_factory::create("i2c_transaction"));
 
-    // pick  a bus, sequentially picking a new bus for each major transaction
-    trans.selected_bus = 0;
-    select_I2C_bus(trans.selected_bus);
+     trans.selected_bus = 14;
+    trans.address = 37;
 
+        create_explicit_data_series(0, 31, 0, I2_WRITE);
+        i2c_trans.push_back(trans);
+        convert_i2c_trans(trans, 1, 0);
 
-    // pick  a bus, sequentially picking a new bus for each major transaction
-    trans.selected_bus = 0;
-    trans.address = (36) + 1;
+    // Do A simple re-start on the same bus
+    $cast(trans, ncsu_object_factory::create("i2c_transaction"));  
+    trans.selected_bus = 14;
+    trans.address = 50;
+    
+        create_explicit_data_series(100, 131, 0, I2_READ);
+        i2c_trans.push_back(trans);
+        convert_i2c_trans(trans, 0, 0);
 
-
-    issue_start_command();
-    transmit_address_req_write(trans.address);
-    for (j = 0; j <= 31; j++) write_data_byte(byte'(j));
-    write_data_byte_with_stall(byte'(j), 10);
-    j = 64;
-    i2c_trans.push_back(trans);
-    $cast(trans, ncsu_object_factory::create("i2c_transaction"));
-    // Send a start command
-    issue_start_command();
-
-    // pick an address
-    trans.address = (36) + 1;
-
-    // WRITE ALL (Write 0 to 31 to remote Slave)
-    transmit_address_req_read(trans.address);
-    for (j = 100; j <= 130; j++) read_data_byte_with_continue();
-    read_data_byte_with_stop();
-    create_explicit_data_series(100, 131, j, I2_READ);
-
-    // Send a start command
-    i2c_trans.push_back(trans);
-
+  // Do another restart transaction BUT ADD AN WISHBONE END UPSTREAM STALL
     $cast(trans, ncsu_object_factory::create("i2c_transaction"));
     // Send a start command
     issue_start_command();
+
+    trans.selected_bus = 14;
 
     // pick an address
     trans.address = (36) + 1;
@@ -198,7 +234,7 @@ function void start_restart_with_explicit_waits();
     for (j = 0; j <= 31; j++) write_data_byte(byte'(j));
     write_data_byte_with_stall(byte'(j), 101);
     i2c_trans.push_back(trans);
-
+    issue_stop_command();
     disable_dut();
   endfunction
 endclass

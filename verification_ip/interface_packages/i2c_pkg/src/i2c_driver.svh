@@ -31,7 +31,7 @@ class i2c_driver extends ncsu_component #(
       if ($cast(i2c_rand_cs, trans)) begin
         if (i2c_rand_cs.rw == I2_WRITE) bus.stretch_qty = i2c_rand_cs.clock_stretch_qty;
         else bus.read_stretch_qty = i2c_rand_cs.clock_stretch_qty;
-        $display("Clockstr qty %0d", i2c_rand_cs.clock_stretch_qty);
+        ncsu_info("", {get_full_name(), $sformatf(" ---- CLOCK WAS STRETCHED BY %0d SYSTEM CYCLES. ", i2c_rand_cs.clock_stretch_qty)}, NCSU_LOW);
       end
       if ($cast(i2c_rand_dat, trans)) begin
         fork
