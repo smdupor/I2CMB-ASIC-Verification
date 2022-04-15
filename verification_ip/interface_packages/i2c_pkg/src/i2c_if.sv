@@ -267,7 +267,14 @@ interface i2c_if #(
 	// ****************************************************************************
   task force_arbitration_loss_start();
     $display("REACHED IN IF");
-    @(sda_i) sda_drive = 16'hffff;
+    forever begin 
+      sda_drive <= 16'hffff;
+      
+      scl_drive <= 16'h0000;
+      
+      #1 sda_drive <= 16'h0000;
+      #2 scl_drive <= 16'hffff;
+    end
     $display("DONE IN IF");
   endtask
 
