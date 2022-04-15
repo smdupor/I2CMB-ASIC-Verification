@@ -262,8 +262,8 @@ interface i2c_if #(
   endtask
 
 	// ****************************************************************************
-	// Force an arbitration loss directly after stimulus on any scl_i line. 
-  // Override state lasts forever.
+	// Force an arbitration loss on a RESTART command, after ONE START and 
+  //     ONE ADDRESS WRITE
 	// ****************************************************************************
   task force_arbitration_loss_start();
     int count, negcount;
@@ -273,32 +273,11 @@ interface i2c_if #(
     //   $display("Negedge count: %0d", negcount);
      @(posedge scl_i[bus_selector]) count++;
      if(count == 9) begin
-
        force_arbitration_loss_permanent();
      end
    //  $display("Posedge Cycle : %0d", count);
     end
   endtask
-
-  /*# Negedge count: 1
-# Cycle : 1
-# Negedge count: 2
-# Cycle : 2
-# Negedge count: 3
-# Cycle : 3
-# Negedge count: 4
-# Cycle : 4
-# Negedge count: 5
-# Cycle : 5
-# Negedge count: 6
-# Cycle : 6
-# Negedge count: 7
-# Cycle : 7
-# Negedge count: 8
-# Cycle : 8
-# Negedge count: 9
-# Cycle : 9
-# Negedge count: 10*/
 
   // ****************************************************************************
   // Force an arbitration loss during a READ with NACK transaction.
