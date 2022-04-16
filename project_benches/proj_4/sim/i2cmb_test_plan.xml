@@ -1,12 +1,12 @@
  <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_4\sim\i2cmb_test_plan.xls -->
- <!-- Date: 1/1/0001 2:07:06 AM -->
+ <!-- Date: 1/1/0001 12:21:00 PM -->
 <Workbook>
 	<Worksheet>
 		<Table>
 			 <!-- I2CMB Testplan -->
 			<Row>
 				<Cell>1</Cell>  <!-- # -->
-				<Cell>Register Tests</Cell>  <!-- Section -->
+				<Cell>Register Testing</Cell>  <!-- Section -->
 				<Cell></Cell>  <!-- Description -->
 				<Cell></Cell>  <!-- Link -->
 				<Cell></Cell>  <!-- Type -->
@@ -411,7 +411,7 @@
 			</Row>
 			<Row>
 				<Cell>3</Cell>
-				<Cell>Arbitration</Cell>
+				<Cell>Arbitration Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -420,7 +420,7 @@
 			</Row>
 			<Row>
 				<Cell>3.1</Cell>
-				<Cell>Arbitration Lost (All Busses)</Cell>
+				<Cell>Arbitration Lost (All Busses) During WRITE or READ w NAK</Cell>
 				<Cell>In the presence of a simulated multi-master transmitting at the same time (BFM write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
 				<Cell>test_arbitration_lost_scenario</Cell>
 				<Cell>test</Cell>
@@ -438,6 +438,15 @@
 			</Row>
 			<Row>
 				<Cell>3.2</Cell>
+				<Cell>Arbitration Lost during RE-START</Cell>
+				<Cell>In the presence of a simulated multi-master transmitting at the same time (BFM write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
+				<Cell>test_arbitration_loss_on_restart</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.3</Cell>
 				<Cell>Arbitration Won CMDR[ARB_LOST]</Cell>
 				<Cell>In the presence of a real multi-master configuration, expect Arbitration lost bit of CMDR to be low upon arbitration win</Cell>
 				<Cell>assert_arbitration_won</Cell>
@@ -447,7 +456,7 @@
 			</Row>
 			<Row>
 				<Cell>4</Cell>
-				<Cell>Clock-Stretching and WB Waits</Cell>
+				<Cell>Clock-Stretching and Wait Command Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -510,7 +519,7 @@
 			</Row>
 			<Row>
 				<Cell>5</Cell>
-				<Cell>Soft Resets and Interrupts</Cell>
+				<Cell>Soft Resets, Interrupts Enabled-Disabled Testing</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -609,7 +618,7 @@
 			</Row>
 			<Row>
 				<Cell>6</Cell>
-				<Cell>FSM Testing</Cell>
+				<Cell>FSM Testing -- TRANSITION and STATE -- byte, bit, bus FSMs</Cell>
 				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT, for all DUT FSMs</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -645,7 +654,7 @@
 			</Row>
 			<Row>
 				<Cell>7</Cell>
-				<Cell>DUT Code Coverage</Cell>
+				<Cell>DUT Code Coverage (-cover bcefst) Across Instance</Cell>
 				<Cell>RTL Core ALL stmt, brnch, fsm, trans, expr. Require that all DUT units have 100% statement coverage and 100% branch coverage.</Cell>
 				<Cell>/top/DUT_16_max</Cell>
 				<Cell>Instance</Cell>
@@ -654,7 +663,7 @@
 			</Row>
 			<Row>
 				<Cell>8</Cell>
-				<Cell>I2C Protocol Testing</Cell>
+				<Cell>I2C Protocol Coverage</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -753,7 +762,7 @@
 			</Row>
 			<Row>
 				<Cell>9</Cell>
-				<Cell>WB Protocol Testing</Cell>
+				<Cell>Wishbone Protocol Coverage</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -807,7 +816,7 @@
 			</Row>
 			<Row>
 				<Cell>10</Cell>
-				<Cell>Connected and Disconnected Slave(NACK)</Cell>
+				<Cell>NACK Testing (Connected and Disconnected Slaves)</Cell>
 				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
 				<Cell></Cell>
 				<Cell></Cell>
@@ -846,6 +855,42 @@
 				<Cell>Directed Test of Disconnected Slaves</Cell>
 				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Expect NACKs raised after each data byte written. Use Random bus selection, random operation type, and in case of writes, random message length and data.</Cell>
 				<Cell>test_disconnected_slave_nacks</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11</Cell>
+				<Cell>Hard Reset Injection (Drive rst wire) During X-action Critical Sections</Cell>
+				<Cell>Inject 133ns resets during transactions, targeting critical sections, and verify DUT recovery. See spec page 11 and 12 for region definitions.</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.1</Cell>
+				<Cell>Inject 133ns (rst) into START A, START B, START C</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.2</Cell>
+				<Cell>Inject 133ns (rst) into RE-START A, RE-START B, RE-START C</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.3</Cell>
+				<Cell>Inject 133ns (rst) into RW A, RW B, RW C, RW D, RW E</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
 				<Cell>test</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
