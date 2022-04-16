@@ -5,6 +5,7 @@ class i2c_configuration extends ncsu_configuration;
   bit sample_clockstretch_coverage;
   int override_bus_select;
   bit override_bus_enable;
+  bit flush_next_transaction;
 
   function new(string name = "");
     super.new(name);

@@ -8,6 +8,7 @@ class i2c_transaction extends ncsu_transaction;
   int clock_stretch_qty;
   i2c_op_t rw;
   bit contained_nack;
+  bit is_hard_reset;
 
   // Coverage Only
   logic is_restart;  // x for N/a, 0 For "START", 1 for "RE-START"

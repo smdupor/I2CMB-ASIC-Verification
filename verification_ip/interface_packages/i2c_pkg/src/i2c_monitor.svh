@@ -36,11 +36,12 @@ class i2c_monitor extends ncsu_component #(
     string s, temp;
     int counter;
     bit nack;
+    bit rst;
 
     s = "";
     forever begin
       // Request transfer info from i2c BFM
-      bus.monitor(i2mon_addr, i2mon_op, i2mon_data, i2cmon_bus, nack);
+      bus.monitor(i2mon_addr, i2mon_op, i2mon_data, i2cmon_bus, nack,rst);
       monitored_trans = new({"i2c_trans(", itoalpha(counter), ")"});  //$sformatf("%0d",counter)});
       monitored_trans.measured_clock = bus.measured_clock[0];
       monitored_trans.contained_nack = nack;
@@ -49,9 +50,7 @@ class i2c_monitor extends ncsu_component #(
       if (bus.stretch_qty > 0) monitored_trans.clock_stretch_qty = bus.stretch_qty;
       else if (bus.read_stretch_qty > 0) monitored_trans.clock_stretch_qty = bus.read_stretch_qty;
       counter += 1;
-
-      agent.nb_put(monitored_trans);
-
+      if(!rst) agent.nb_put(monitored_trans); // If not a HARD RESET, send to agent
       print_local_transaction;
     end
   endtask

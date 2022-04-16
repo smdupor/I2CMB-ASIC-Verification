@@ -75,7 +75,7 @@ interface wb_if #(
 
   // ****************************************************************************              
   task master_write(input bit [ADDR_WIDTH-1:0] addr, input bit [DATA_WIDTH-1:0] data);
-
+  
     @(posedge clk_i);
     adr_o <= addr;
     dat_o <= data;

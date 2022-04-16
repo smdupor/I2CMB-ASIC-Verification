@@ -40,6 +40,17 @@
 #   TEST_SEED := 12345
 #   GTT := i2cmb_generator_disconnected_slave
 #
+# NAME: i2cmb_generator_test_resets
+#	TEST_SEED := 12345
+#   TN := i2cmb_generator_test_resets
+#	GTT := i2cmb_generator_test_resets
+#
+#
+#
+#
+#
+#
+#
 make run_all_tests
 echo " "
 echo " "

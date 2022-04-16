@@ -189,6 +189,11 @@ interface i2c_if #(
       #10 samples[2] = sda_i[bus_selector];
       samples[3] = scl_i[bus_selector];
 
+      if(rst_i == 1'b1) begin
+          transfer_in_progress = STOP;
+          //@(negedge rst_i) #10;
+      end
+
       // If we find a valid transition indicating start/stop/restart, Store values in control
       if (samples[1] == 1'b1 && samples[3] == 1'b1) begin
         control[0] = samples[0];
@@ -320,12 +325,13 @@ interface i2c_if #(
 	task wait_for_i2c_transfer(
       output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data[]);
     enable_driver <= MONITOR_AND_DRIVER; // Tell The monitor/sampler that there is also a driver in parallel
-    wait(transfer_in_progress == START &&
+    wait(transfer_in_progress == START && rst_i == 1'b0 &&
 		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
 		);
     driver_interrupt = INTR_CLEAR;  // Reset the interrupt on detected
 
     driver_receive_address(op, write_data);  // Handle the request
+    
   endtask
 
   // ****************************************************************************
@@ -341,44 +347,58 @@ interface i2c_if #(
     static bit [7:0] write_buf[$];
 
     address_mismatch = 1'b0;
-
+ 
     // Read Address and opcode from serial bus
     for (int i = MSB; i >= LSB; i--) begin
-      @(posedge scl_i[bus_selector]) if (cause_arbitration_loss) force_arbitration_loss();
+     // wait(scl_i[bus_selector] == 1'b1 || rst_i==1'b1);
+      //@(posedge scl_i[bus_selector]) 
+      @(posedge scl_i[bus_selector] or posedge rst_i);
+      if(rst_i) return;
+     //while (scl_i[bus_selector] == 1'b0 && !intr_raised()) #1;
+      if (cause_arbitration_loss) force_arbitration_loss();
       driver_buffer[i] = sda_i[bus_selector];
-      @(negedge scl_i[bus_selector]) begin
+     // wait(scl_i[bus_selector] == 1'b0 || rst_i==1'b1) 
+      @(negedge scl_i[bus_selector] or posedge rst_i)
+      //while (scl_i[bus_selector] == 1'b1 && !intr_raised() && !rst_i) #1;
+       begin
         clockstretch();
-        if (intr_raised()) return;
+        if (intr_raised()||rst_i) return;       // CHANGED
       end
     end
 
+
     // Determine whether address matches configured slave address OR the All-Call address
+    if(!intr_raised() && rst_i == 1'b0) begin
+
     if (driver_buffer[MSB:2] == slave_address[MSB:2] || driver_buffer[MSB:2] == 7'b000_0000) begin
       // SEND THE ACK Back to master upon a match
       //driver_transmit_ACK();
-      sda_drive[bus_selector] = 1'b0;
-      @(posedge scl_i[bus_selector]);
 
-      @(negedge scl_i[bus_selector]) sda_drive[bus_selector] = 1'bz;
+      sda_drive[bus_selector] = 1'b0;
+      @(posedge scl_i[bus_selector] or posedge rst_i);
+        
+      @(negedge scl_i[bus_selector] or posedge rst_i) sda_drive[bus_selector] = 1'bz;
       // Determine the operation code
       op = driver_buffer[1] ? I2_READ : I2_WRITE;
 
       // Branch to handle requested operation
-      if (op == I2_WRITE) driver_receive_write_data(write_buf);
+      if (op == I2_WRITE && !rst_i) driver_receive_write_data(write_buf);
       else driver_transmit_read_data();
-    end else begin
+    end else if(!rst_i) begin
       address_mismatch = 1'b1;
-      @(posedge scl_i[bus_selector]);  // Allow nack to pass to the master
-      @(negedge scl_i[bus_selector]);
+      @(posedge scl_i[bus_selector] or posedge rst_i);  // Allow nack to pass to the master
+      @(negedge scl_i[bus_selector] or posedge rst_i);
       op = driver_buffer[1] ? I2_READ : I2_WRITE;
 
       // Branch to handle requested operation
-      if (op == I2_WRITE) driver_receive_write_data(write_buf);
-      else driver_transmit_read_data();
+      if (op == I2_WRITE && !rst_i) driver_receive_write_data(write_buf);
+      else if(!rst_i) driver_transmit_read_data();
     end
-
+    end
     // Copy queued captured write data into return array.
-    write_data = write_buf;
+    if(rst_i==1'b0) write_data = write_buf;
+
+    
   endtask
 
   // ****************************************************************************
@@ -388,6 +408,7 @@ interface i2c_if #(
   // ****************************************************************************
   task driver_receive_write_data(output bit [I2C_DATA_WIDTH-1:0] write_data[$]);
     forever begin
+
       // Read a byte from the data bus
       driver_read_single_byte();
       if (intr_raised()) return;
@@ -464,22 +485,22 @@ interface i2c_if #(
     while (slave_transmit_buffer.size > 0) begin
       // Get data out of transmit buffer to send
       driver_buffer[MSB:LSB] = slave_transmit_buffer.pop_front();
-
+      if(rst_i) return;
       //Send a byte on sda while clock is high			
       driver_transmit_single_byte();
 
       // Check for ack/NACK from master
       sda_drive[bus_selector] <= 1'bz;
-      @(posedge scl_i[bus_selector]) local_ack = sda_i[bus_selector];
-
+      @(posedge scl_i[bus_selector] or posedge rst_i) local_ack = sda_i[bus_selector];
+      if(rst_i) return;
       if (enable_read_arb) begin
         #100 disable_arbitration_loss();
         return;
       end
       // Check for NACK/DONE or STOP/RESTART CONDTION
-      if (local_ack == NACK) return;
+      if (local_ack == NACK || rst_i) return;
 
-      @(negedge scl_i[bus_selector]) if (intr_raised()) return;
+      @(negedge scl_i[bus_selector] or posedge rst_i) if (intr_raised() || rst_i) return;
     end
   endtask
 
@@ -493,8 +514,11 @@ interface i2c_if #(
     for (int i = MSB; i >= LSB; i--) begin
       sda_drive[bus_selector] <= driver_buffer[i];
       clockstretch_read();
-      @(posedge scl_i[bus_selector]);
-      @(negedge scl_i[bus_selector]);
+      if(rst_i) return;
+      @(posedge scl_i[bus_selector] or posedge rst_i);
+      if(rst_i) return;
+      @(negedge scl_i[bus_selector] or posedge rst_i);
+      if(rst_i) return;
       force_arbitration_loss_read();
     end
   endtask
@@ -512,20 +536,21 @@ interface i2c_if #(
 	// ****************************************************************************
 	task monitor(
       output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op,
-      output bit [I2C_DATA_WIDTH-1:0] data[], output int sel_bus, output bit nack);
+      output bit [I2C_DATA_WIDTH-1:0] data[], output int sel_bus, output bit nack, output bit rst);
 
     static bit ack;
     static bit [7:0] monitor_data[$];
     monitor_data.delete;
     reset_counters();
-    wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART));
+    wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART) && rst_i ==1'b0);
     monitor_interrupt = INTR_CLEAR;  // Reset the interrupt on detected
 
     sel_bus = bus_selector;
 
     // Capture the incoming address, operation, and ack
     for (int i = MSB; i >= 0; i--) begin
-      @(posedge scl_i[bus_selector]);
+      @(posedge scl_i[bus_selector] or posedge rst_i);
+      if(rst_i) break;
       monitor_buffer[i] = sda_i[bus_selector];
     end
     addr = monitor_buffer[MSB:2];
@@ -537,6 +562,9 @@ interface i2c_if #(
 
     // Copy transferred data to output array
     data = monitor_data;
+    if(rst_i) begin
+      rst=1'b1;
+    end else rst=1'b0;
   endtask
 
   // ****************************************************************************
@@ -547,19 +575,21 @@ interface i2c_if #(
     static bit [8:0] rec_dat_mon_buf;
     int i;
     monitor_data.delete;  // Clear static buffer of data from prior calls
-    @(negedge scl_i[bus_selector]);
+    if(rst_i) return;
+    @(negedge scl_i[bus_selector] or posedge rst_i);
 
     forever begin
       for (i = MSB; i >= 0; i--) begin
-        if (mon_intr_raised()) break;
-        wait(scl_i[bus_selector] == 1'b1 ||monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART);
-        if (mon_intr_raised()) break;
+        if (mon_intr_raised() || rst_i) break;
+        wait(scl_i[bus_selector] == 1'b1 ||monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART ||rst_i==1'b1);
+        if (mon_intr_raised()|| rst_i) break;
         rec_dat_mon_buf[i] = sda_i[bus_selector];
-        wait(scl_i[bus_selector] == 1'b0 || monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART);
-        if (monitor_interrupt == RAISE_STOP) break;
+        wait(scl_i[bus_selector] == 1'b0 || monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART ||rst_i==1'b1);
+        if (monitor_interrupt == RAISE_STOP|| rst_i) break;
       end
       nack = rec_dat_mon_buf[0];
       if (i == 0 || i == -1) monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
+      if(rst_i) return;
       if (mon_intr_raised()) return;
       if (op == I2_READ && rec_dat_mon_buf[0] == NACK)
         return;  // Return on Read op and NACK (End Call)

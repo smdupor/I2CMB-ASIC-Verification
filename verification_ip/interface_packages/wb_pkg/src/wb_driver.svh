@@ -35,6 +35,10 @@ class wb_driver extends ncsu_component #(
       return;
     end
 
+    if(wb_trans.is_hard_reset) begin
+      bus.force_hard_reset();
+      return;
+    end
     //Enable assertion detecting NO Interrupt signal when disabled
     if (wb_trans.write && wb_trans.line == CSR && wb_trans.word[7] == 1'b0)
       bus.disable_interrupts = 1'b1;

@@ -10,6 +10,7 @@ class wb_transaction extends ncsu_transaction;
   bit wait_int_ack;  // Whether this xaction should cause an interrupt
   bit wait_int_nack;  // Whether this xaction should cause an interrupt requiring nack-checking
   int stall_cycles;  // How many cycles to stall after this xaction
+  bit is_hard_reset;
 
   // Used for coverage only
   int explicit_wait_ms;  //Number of milliseconds in an explicit "WAIT" command

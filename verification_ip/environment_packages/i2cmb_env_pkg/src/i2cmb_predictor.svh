@@ -126,8 +126,14 @@ class i2cmb_predictor extends ncsu_component;
   virtual function void nb_put(ncsu_transaction trans);
     wb_transaction itrans;
     if (configuration.disable_predictor) return;  // Guard against disabled predictor for directed tests.
+    
+    $cast(itrans, trans);                         // Grab incoming transaction 
 
-    $cast(itrans, trans);  // Grab incoming transaction 
+    if(itrans.is_hard_reset) begin                // If we received a hard reset, reset the model
+      state = RESET;
+      transaction_in_progress = 1'b0;
+      return;
+    end
 
     // Copy incoming transaction data into persistent data structure
     adr_mon  = itrans.line;

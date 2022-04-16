@@ -18,7 +18,7 @@ package i2cmb_env_pkg;
   `include "src/i2cmb_environment.svh"
 
   `include "src/i2cmb_generator.svh"
-
+  `include "src/i2cmb_generator_test_resets.svh"
   `include "src/i2cmb_generator_test_reg.svh"
   `include "src/i2cmb_generator_arb_loss.svh"
   `include "src/i2cmb_generator_arb_loss_restart.svh"
