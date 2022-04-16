@@ -46,6 +46,8 @@ class i2cmb_generator extends ncsu_component #(.T(i2c_transaction));
 				if(wb_trans[i].en_printing) ncsu_info("",{get_full_name(),wb_trans[i].to_s_prettyprint},NCSU_HIGH); // Print only pertinent WB transactions per project spec.
 			end
 		join
+    wb_trans.delete();
+    i2c_trans.delete();
   endtask
 
   //_____________________________________________________________________________________\\

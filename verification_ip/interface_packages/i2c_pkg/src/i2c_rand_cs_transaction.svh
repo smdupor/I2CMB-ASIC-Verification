@@ -22,6 +22,7 @@ class i2c_rand_cs_transaction extends i2c_transaction;
 
   function void post_randomize();
     clock_stretch_qty *= 1000;    // Convert to system clock cycle count
+    super.clock_stretch_qty = this.clock_stretch_qty;
   endfunction
 
   // ****************************************************************************
@@ -45,6 +46,11 @@ class i2c_rand_cs_transaction extends i2c_transaction;
   function void set_address(int adr);
     this.address = adr;
     super.address = adr;
+  endfunction
+
+  function void set_bus(int bus);
+    this.selected_bus = bus;
+    super.selected_bus = bus;
   endfunction
 
   function void set(bit [7:0] address, bit [7:0] data[], i2c_op_t rw, int selected_bus);

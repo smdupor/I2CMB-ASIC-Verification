@@ -134,7 +134,7 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 		$cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
 		$cast(trans, ncsu_object_factory::create("i2c_transaction"));
 		// pick  a bus, sequentially picking a new bus for each major transaction
-		rnd_trans.selected_bus = 11;
+		rnd_trans.set_bus(11);
 
 		// pick an address
 		rnd_trans.set_address(106);
@@ -150,7 +150,7 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 		$cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
 		$cast(trans, ncsu_object_factory::create("i2c_transaction"));
 		// pick  a bus, sequentially picking a new bus for each major transaction
-		rnd_trans.selected_bus = 4;
+		rnd_trans.set_bus(4);
 
 		// pick an address
 		rnd_trans.set_address(50);
@@ -166,30 +166,14 @@ class i2cmb_generator_test_multi_bus_clockstretch extends i2cmb_generator;
 		$cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
 		$cast(trans, ncsu_object_factory::create("i2c_transaction"));
 		// pick  a bus, sequentially picking a new bus for each major transaction
-		rnd_trans.selected_bus = 4;
+		
 
 		// pick an address
 		rnd_trans.set_address(50);
 		rnd_trans.set_op(I2_WRITE);
 		rnd_trans.randomize();
+		rnd_trans.set_bus(4);
 		rnd_trans.set_clock_stretch_qty(12000);
-		create_explicit_data_series(101, 103,0, I2_WRITE);
-		rnd_trans.data=trans.data;
-		i2c_trans.push_back(rnd_trans);
-		convert_i2c_trans(rnd_trans, 1, 1);
-
-
-		// Directed test, specific scenario
-		$cast(rnd_trans, ncsu_object_factory::create("i2c_rand_cs_transaction"));
-		$cast(trans, ncsu_object_factory::create("i2c_transaction"));
-		// pick  a bus, sequentially picking a new bus for each major transaction
-		rnd_trans.selected_bus = 4;
-
-		// pick an address
-		rnd_trans.set_address(67);
-		rnd_trans.set_op(I2_WRITE);
-		rnd_trans.randomize();
-		rnd_trans.set_clock_stretch_qty(13000);
 		create_explicit_data_series(101, 103,0, I2_WRITE);
 		rnd_trans.data=trans.data;
 		i2c_trans.push_back(rnd_trans);

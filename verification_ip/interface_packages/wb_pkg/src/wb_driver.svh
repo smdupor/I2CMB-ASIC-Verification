@@ -36,7 +36,7 @@ class wb_driver extends ncsu_component #(
     end
 
     if(wb_trans.is_hard_reset) begin
-      bus.force_hard_reset();
+      bus.force_hard_reset();//bus.wait_for_num_clocks(300);
       return;
     end
     //Enable assertion detecting NO Interrupt signal when disabled

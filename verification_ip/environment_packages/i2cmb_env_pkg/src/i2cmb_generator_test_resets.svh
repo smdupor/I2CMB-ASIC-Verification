@@ -20,67 +20,72 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 		verbosity_level = global_verbosity_level;
 	endfunction
 
-
-	// Start progress:
-	//94.62, 83.87, 87.59
-
 	// ****************************************************************************
-	// Base Multi-bus test flow: Test randomized transactions in a 16-bus DUT
+	// BIT LEVEL FSM INJECTION OF HARD RESETS INTO CRITICAL TIMING REGIONS
+	// For each critical timing region in the detailed timing diagrams on Spec Page 11
+	// and spec page 12, inject a hard reset into each region (causes bit level fsm
+	// to take the transition arc to-idle) and verify that the DUT resets and recovers
+	// as expected, successfully sending normal data after the reset.
 	// ****************************************************************************
 	virtual task run();
 		enable_dut_with_interrupt();
 
-		issue_start_command_w_hard_reset(8);	//start a
+		issue_start_command_w_hard_reset(8);						// Inject reset into START A
 		
 		generate_directed_targets();
 
 		enable_dut_with_interrupt();
-		issue_start_command_w_hard_reset(117);	//start b
+		issue_start_command_w_hard_reset(117);						// Inject reset into START B
 		
 		generate_directed_targets();
 
 		generate_directed_targets();
-		reset_write_flow_with_hard_reset(7'b1111_1111, 58);
+		reset_write_flow_with_hard_reset(7'b1111_1111, 58);			// Inject reset into WRITE A
 		
 		generate_directed_targets();
-		reset_write_flow_with_hard_reset(7'b000_0000, 90);
+		reset_write_flow_with_hard_reset(7'b000_0000, 90);			// Inject reset into WRITE B
 
 		generate_directed_targets();
-		reset_write_flow_with_hard_reset(7'b111_1111, 194);
+		reset_write_flow_with_hard_reset(7'b111_1111, 194);			// Inject reset into WRITE C
 		
 		generate_directed_targets();
-		reset_write_flow_with_hard_reset(7'b111_1111, 260);
+		reset_write_flow_with_hard_reset(7'b111_1111, 260);			// Inject reset into WRITE E
 		
 		generate_directed_targets();
 
-		reset_write_flow_with_hard_reset_intr(7'b111_1111, 200);		// rw E
+		reset_write_flow_with_hard_reset_intr(7'b111_1111, 200);	// Inject reset into WRITE D
 		generate_directed_targets();
 
 		disable_dut();
 		generate_directed_targets_restart();
-		issue_start_command_w_hard_reset(300);	//start b
+		issue_restart_command_w_hard_reset(8);						// Inject reset into RESTART A
+		
 		disable_dut();
 		enable_dut_with_interrupt();
-		generate_directed_targets();
-		generate_directed_targets_restart();
-		issue_start_command_w_hard_reset(400);	//start b
-		generate_directed_targets();
-		generate_directed_targets_restart();
-		issue_stop_command_w_wait(117);
-
-		generate_directed_targets();
-		generate_directed_targets_restart();
-		issue_stop_command_w_wait(58);
 		
 		generate_directed_targets();
 		generate_directed_targets_restart();
-		issue_stop_command_w_wait(90);
+		issue_restart_command_w_hard_reset(90);						// Inject reset into RESTART B
+
+		disable_dut();
+		enable_dut_with_interrupt();
+
+		generate_directed_targets();
+		generate_directed_targets_restart();
+		issue_stop_command_w_wait(117);								// Inject reset into STOP C
+
+		generate_directed_targets();
+		generate_directed_targets_restart();
+		issue_stop_command_w_wait(58);								// Inject reset into STOP A
+		
+		generate_directed_targets();
+		generate_directed_targets_restart();
+		issue_stop_command_w_wait(90);								// Inject reset into STOP B
 		
 		generate_directed_targets();
 		generate_directed_targets_restart();
 	
 		wb_agent_handle.expect_nacks(1'b0);
-		//foreach(i2c_trans[i]) $display(i2c_trans[i].convert2string());
 		super.run();
 	endtask
 
@@ -135,6 +140,32 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
     t.label("SEND START");
     wb_trans.push_back(t);
 	i2c_trans.push_back(u);
+
+  issue_hard_reset();
+  endfunction
+
+    function void issue_restart_command_w_hard_reset(int wait_cyc);
+	wb_transaction t ;
+	i2c_transaction u;
+	
+	$cast(u, ncsu_object_factory::create("i2c_transaction"));
+	u.is_hard_reset = 1'b1;
+	u.address = 13;
+	u.rw = I2_WRITE;
+	u.selected_bus = 0;
+	
+	t = new("send_start_command");
+    t.write = 1'b1;
+    t.line  = CMDR;
+    t.word  = 8'b0;
+    t.cmd   = I2C_START;
+      t.wait_int_nack = 1'b0;
+      t.wait_int_ack  = 1'b0;
+      t.stall_cycles  = wait_cyc;
+
+    t.label("SEND START");
+    wb_trans.push_back(t);
+	//i2c_trans.push_back(u);
 
   issue_hard_reset();
   endfunction

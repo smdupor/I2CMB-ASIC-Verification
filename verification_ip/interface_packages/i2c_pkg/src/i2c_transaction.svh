@@ -9,6 +9,7 @@ class i2c_transaction extends ncsu_transaction;
   i2c_op_t rw;
   bit contained_nack;
   bit is_hard_reset;
+  bit swallow;
 
   // Coverage Only
   logic is_restart;  // x for N/a, 0 For "START", 1 for "RE-START"
@@ -54,7 +55,6 @@ class i2c_transaction extends ncsu_transaction;
       s = {s, temp, ","};
     end
     s = s.substr(0, s.len - 2);
-    if (contained_nack) s = {s, " + NACKED"};
     return s;
 
   endfunction

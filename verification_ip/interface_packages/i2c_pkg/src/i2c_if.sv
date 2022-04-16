@@ -324,12 +324,14 @@ interface i2c_if #(
 	// ****************************************************************************
 	task wait_for_i2c_transfer(
       output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data[]);
+      static bit stall_aftr_rst;
     enable_driver <= MONITOR_AND_DRIVER; // Tell The monitor/sampler that there is also a driver in parallel
-    wait(transfer_in_progress == START && rst_i == 1'b0 &&
-		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
-		);
+  //  $display("Top Of i2c Transfer adr %d, rst: %b, intr: %b", slave_address[MSB:2], rst_i, driver_interrupt);
+   
+    wait((transfer_in_progress == START && rst_i == 1'b0 &&
+		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)));//||rst_i == 1'b1);
     driver_interrupt = INTR_CLEAR;  // Reset the interrupt on detected
-
+    // if(rst_i) @(negedge rst_i) return;
     driver_receive_address(op, write_data);  // Handle the request
     
   endtask
@@ -345,13 +347,12 @@ interface i2c_if #(
   // ****************************************************************************
   task driver_receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data[]);
     static bit [7:0] write_buf[$];
-
+    driver_buffer = 9'h00;
     address_mismatch = 1'b0;
  
     // Read Address and opcode from serial bus
     for (int i = MSB; i >= LSB; i--) begin
-     // wait(scl_i[bus_selector] == 1'b1 || rst_i==1'b1);
-      //@(posedge scl_i[bus_selector]) 
+      //  $display("Top Adr Bit %0d, expect adr %0d", i,slave_address[MSB:2]);
       @(posedge scl_i[bus_selector] or posedge rst_i);
       if(rst_i) return;
      //while (scl_i[bus_selector] == 1'b0 && !intr_raised()) #1;
@@ -364,6 +365,7 @@ interface i2c_if #(
         clockstretch();
         if (intr_raised()||rst_i) return;       // CHANGED
       end
+   //   $display("Bottom Adr Bit %0d, current buf %0d", i, driver_buffer>>2);
     end
 
 
@@ -565,6 +567,10 @@ interface i2c_if #(
     if(rst_i) begin
       rst=1'b1;
     end else rst=1'b0;
+  endtask
+
+  task wait_for_num_clocks(int num_clocks);
+    repeat (num_clocks) @(posedge clk_i);
   endtask
 
   // ****************************************************************************

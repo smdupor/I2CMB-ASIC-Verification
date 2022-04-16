@@ -85,7 +85,9 @@ class i2c_coverage extends ncsu_component #(
     measured_clock_sma = trans.measured_clock;
 
     i2c_transaction_cg.sample();
-    if (configuration.sample_clockstretch_coverage) clockstretch_cg.sample();
+    if (configuration.sample_clockstretch_coverage) begin
+       clockstretch_cg.sample();
+    end
 
     foreach (trans.data[i]) begin
       data = trans.data[i];
