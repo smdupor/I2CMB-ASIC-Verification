@@ -40,9 +40,9 @@
 #   TEST_SEED := 12345
 #   GTT := i2cmb_generator_disconnected_slave
 #
-# NAME: i2cmb_generator_test_resets
+# NAME: test_hard_reset_injection
 #	TEST_SEED := 12345
-#   TN := i2cmb_generator_test_resets
+#   TN := test_hard_reset_injection
 #	GTT := i2cmb_generator_test_resets
 #
 #

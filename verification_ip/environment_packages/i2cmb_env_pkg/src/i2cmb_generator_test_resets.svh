@@ -28,6 +28,25 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 	// as expected, successfully sending normal data after the reset.
 	// ****************************************************************************
 	virtual task run();
+
+	test_start_critical_regions();
+	test_rw_critical_regions();
+		test_re_start_critical_regions();
+		test_stop_critical_regions();
+
+
+	
+		wb_agent_handle.expect_nacks(1'b0);
+		super.run();
+	endtask
+
+	//_____________________________________________________________________________________\\
+	//                     TEST FLOW GENERATION (Embedded resets)        		           \\
+	//_____________________________________________________________________________________\\
+	// ****************************************************************************
+  // Inject hard resets into the critical sections (See spec pg 11+12) of a START
+  // ****************************************************************************
+	function void test_start_critical_regions();
 		enable_dut_with_interrupt();
 
 		issue_start_command_w_hard_reset(8);						// Inject reset into START A
@@ -38,7 +57,12 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 		issue_start_command_w_hard_reset(117);						// Inject reset into START B
 		
 		generate_directed_targets();
+	endfunction
 
+	// ****************************************************************************
+  // Inject hard resets into the critical sections (See spec pg 11+12) of a READ/WRITE
+  // ****************************************************************************
+	function void test_rw_critical_regions();
 		generate_directed_targets();
 		reset_write_flow_with_hard_reset(7'b1111_1111, 58);			// Inject reset into WRITE A
 		
@@ -57,7 +81,13 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 		generate_directed_targets();
 
 		disable_dut();
-		generate_directed_targets_restart();
+	endfunction
+	
+		// ****************************************************************************
+  // Inject hard resets into the critical sections (See spec pg 11+12) of a RE-START
+  // ****************************************************************************
+	function void test_re_start_critical_regions();
+generate_directed_targets_restart();
 		issue_restart_command_w_hard_reset(8);						// Inject reset into RESTART A
 		
 		disable_dut();
@@ -69,7 +99,12 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 
 		disable_dut();
 		enable_dut_with_interrupt();
+	endfunction
 
+	// ****************************************************************************
+  // Inject hard resets into the critical sections (See spec pg 11+12) of a STOP
+  // ****************************************************************************
+	function void test_stop_critical_regions();
 		generate_directed_targets();
 		generate_directed_targets_restart();
 		issue_stop_command_w_wait(117);								// Inject reset into STOP C
@@ -84,93 +119,11 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 		
 		generate_directed_targets();
 		generate_directed_targets_restart();
-	
-		wb_agent_handle.expect_nacks(1'b0);
-		super.run();
-	endtask
+	endfunction
 
-	//_____________________________________________________________________________________\\
-	//                                TEST FLOW GENERATION                                 \\
-	//_____________________________________________________________________________________\\
-
-
+	 // ****************************************************************************
+  // Create a testflow to inject a reset into bit fsm regions R/W A,B,C,D,E (<<NO>> INTERRUPT)
   // ****************************************************************************
-  // Send a stop command to I2C Nets via DUT
-  // ****************************************************************************
-  function void issue_stop_command_w_wait(int wait_cyc);
-    //master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
-    wb_transaction t = new("send_stop_command");
-    t.write = 1'b1;
-    t.line  = CMDR;
-    t.word  = 8'b0;
-    t.cmd   = I2C_STOP;
-      t.wait_int_nack = 1'b0;
-      t.wait_int_ack  = 1'b0;
-      t.stall_cycles  = wait_cyc;
-
-    t.label("SEND STOP");
-    wb_trans.push_back(t);
-
-	issue_hard_reset();
-    //wait_interrupt();
-   // clear_interrupt();
-  endfunction
-  // ****************************************************************************
-  // Send a start command to I2C nets via DUT
-  // ****************************************************************************
-  function void issue_start_command_w_hard_reset(int wait_cyc);
-	wb_transaction t ;
-	i2c_transaction u;
-	
-	$cast(u, ncsu_object_factory::create("i2c_transaction"));
-	u.is_hard_reset = 1'b1;
-	u.address = 13;
-	u.rw = I2_WRITE;
-	u.selected_bus = 0;
-	
-	t = new("send_start_command");
-    t.write = 1'b1;
-    t.line  = CMDR;
-    t.word  = 8'b0;
-    t.cmd   = I2C_START;
-      t.wait_int_nack = 1'b0;
-      t.wait_int_ack  = 1'b0;
-      t.stall_cycles  = wait_cyc;
-
-    t.label("SEND START");
-    wb_trans.push_back(t);
-	i2c_trans.push_back(u);
-
-  issue_hard_reset();
-  endfunction
-
-    function void issue_restart_command_w_hard_reset(int wait_cyc);
-	wb_transaction t ;
-	i2c_transaction u;
-	
-	$cast(u, ncsu_object_factory::create("i2c_transaction"));
-	u.is_hard_reset = 1'b1;
-	u.address = 13;
-	u.rw = I2_WRITE;
-	u.selected_bus = 0;
-	
-	t = new("send_start_command");
-    t.write = 1'b1;
-    t.line  = CMDR;
-    t.word  = 8'b0;
-    t.cmd   = I2C_START;
-      t.wait_int_nack = 1'b0;
-      t.wait_int_ack  = 1'b0;
-      t.stall_cycles  = wait_cyc;
-
-    t.label("SEND START");
-    wb_trans.push_back(t);
-	//i2c_trans.push_back(u);
-
-  issue_hard_reset();
-  endfunction
-
-
 	function reset_write_flow_with_hard_reset(bit [6:0] adr, int cyc_wait);
 	i2c_transaction t;
 	int address;
@@ -194,13 +147,9 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 	i2c_trans.push_back(t);
 	endfunction
 
-function void issue_hard_reset();
-    wb_transaction t = new("hard_reset");
-	t.is_hard_reset = 1'b1;
-    
-    wb_trans.push_back(t);
-endfunction
-
+  // ****************************************************************************
+  // Create a testflow to inject a reset into bit fsm regions R/W A,B,C,D,E (WITH)
+  // ****************************************************************************
 function reset_write_flow_with_hard_reset_intr(bit [6:0] adr, int cyc_wait);
 	i2c_transaction t;
 	int address;
@@ -209,9 +158,6 @@ function reset_write_flow_with_hard_reset_intr(bit [6:0] adr, int cyc_wait);
 	t.address = adr;
 	t.rw = I2_WRITE;
 	t.selected_bus = 0;
-	
-	
-	
 	address = t.address;
 
      // Send the start command
@@ -220,62 +166,23 @@ function reset_write_flow_with_hard_reset_intr(bit [6:0] adr, int cyc_wait);
     // Send the address request, and subsequent data, if applicable for a READ or a WRITE.
     if (t.rw == I2_WRITE) begin
       transmit_address_req_write(address);
-	  
-      /*foreach (t.data[i]) begin
-        write_data_byte(byte'(t.data[i]));
-      end*/
     end else begin
      transmit_address_req_write(address);
-     // for (int i = 0; i < t.data.size - 1; i++) read_data_byte_with_continue();
-      //read_data_byte_with_stop();
     end
+	// Inject the HARD RESET
 	issue_hard_reset();
-    // If we are testing RE-starts, do not add a stop transaction, otherwise if busses are changing, must add a STOP.
-   // if (add_stop) issue_stop_command();
 	i2c_trans.push_back(t);
 	endfunction
 
 
-
+	//_____________________________________________________________________________________\\
+	//                     TEST FLOW GENERATION (Normal Random xations)   		           \\
+	//_____________________________________________________________________________________\\
 
   // ****************************************************************************
-  // Format incoming address byte and set R/W bit to request a WRITE.
-  // Transmit this formatted address byte on the I2C bus
+  // Generate a short NORMAL randomized transaction test-flow to be run before 
+  // and after hard resets are issued. Verifies DUT has recovered from critical resets.
   // ****************************************************************************
-  function void rst_transmit_address_req_write(input bit [7:0] addr, int pause);
-    //master_write(DPR, addr);
-    wb_transaction t = new("emplace_address_req_write");
-    addr = addr << 1;
-    addr[0] = 1'b0;
-    t.write = 1'b1;
-    t.line = DPR;
-    t.word = addr;
-    t.cmd = NONE;
-    t.wait_int_nack = 1'b0;
-    t.wait_int_ack = 1'b0;
-    t.stall_cycles = 0;
-    t.label("SEND ADDRESS REQ WRITE");
-    wb_trans.push_back(t);
-
-
-    //master_write(CMDR, I2C_WRITE);
-    t = new("trigger_address_transmission");
-    t.write = 1'b1;
-    t.line = CMDR;
-    t.word = 8'b0;
-    t.cmd = I2C_WRITE;
-      t.wait_int_nack = 1'b0;
-      t.wait_int_ack  = 1'b0;
-      t.stall_cycles  = pause;
-
-    wb_trans.push_back(t);
-
-    //wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
-   // clear_interrupt();
-  endfunction
-
-
-	// Target several specific scenarios needing coverage in the multi-bus base configuration
 	function void generate_directed_targets();
 		i2c_rand_data_transaction rand_trans;
 
@@ -307,7 +214,13 @@ function reset_write_flow_with_hard_reset_intr(bit [6:0] adr, int cyc_wait);
 		convert_rand_i2c_trans(rand_trans, 0, 1);
 	endfunction
 
-		// Target several specific scenarios needing coverage in the multi-bus base configuration
+  // ****************************************************************************
+  // Generate a short NORMAL randomized transaction test-flow to be run before 
+  // and after hard resets are issued. Verifies DUT has recovered from critical resets.
+  //
+  // Same as generate_directed_targets <<BUT>> DOES NOT END IN A STOP. So we can
+  // 		issue a re-start with hard reset injected.
+  // ****************************************************************************
 	function void generate_directed_targets_restart();
 		i2c_rand_data_transaction rand_trans;
 
@@ -338,4 +251,135 @@ function reset_write_flow_with_hard_reset_intr(bit [6:0] adr, int cyc_wait);
 		i2c_trans.push_back(rand_trans);
 		convert_rand_i2c_trans(rand_trans, 0, 0);
 	endfunction
+
+	
+	//_____________________________________________________________________________________\\
+	//              GENERATE WISHBONE TRANSACTIONS WITH EMBEDDED HARD RESETS               \\
+	//_____________________________________________________________________________________\\
+
+  // ****************************************************************************
+  // Tell the wishbone interface to drive the rst wire for the configured reset time
+  // ****************************************************************************
+	function void issue_hard_reset();
+		wb_transaction t = new("hard_reset");
+		t.is_hard_reset = 1'b1;
+		wb_trans.push_back(t);
+	endfunction
+
+  // ****************************************************************************
+  // Send a start command, followed by a pause of wait_cyc, followed by <<<driving rst>>>
+  // high for 133ns
+  // ****************************************************************************
+  function void issue_start_command_w_hard_reset(int wait_cyc);
+	wb_transaction t ;
+	i2c_transaction u;
+	
+	$cast(u, ncsu_object_factory::create("i2c_transaction"));
+	u.is_hard_reset = 1'b1;
+	u.address = 13;
+	u.rw = I2_WRITE;
+	u.selected_bus = 0;
+	
+	t = new("send_start_command");
+    t.write = 1'b1;
+    t.line  = CMDR;
+    t.word  = 8'b0;
+    t.cmd   = I2C_START;
+    t.wait_int_nack = 1'b0;
+    t.wait_int_ack  = 1'b0;
+    t.stall_cycles  = wait_cyc;
+
+    t.label("SEND START");
+    wb_trans.push_back(t);
+	i2c_trans.push_back(u);
+
+  issue_hard_reset();
+  endfunction
+
+  // ****************************************************************************
+  // Send a RE-start command, followed by a pause of wait_cyc, followed by <<<driving rst>>>
+  // high for 133ns
+  // ****************************************************************************
+    function void issue_restart_command_w_hard_reset(int wait_cyc);
+	wb_transaction t ;
+	i2c_transaction u;
+	
+	$cast(u, ncsu_object_factory::create("i2c_transaction"));
+	u.is_hard_reset = 1'b1;
+	u.address = 13;
+	u.rw = I2_WRITE;
+	u.selected_bus = 0;
+	
+	t = new("send_start_command");
+    t.write = 1'b1;
+    t.line  = CMDR;
+    t.word  = 8'b0;
+    t.cmd   = I2C_START;
+      t.wait_int_nack = 1'b0;
+      t.wait_int_ack  = 1'b0;
+      t.stall_cycles  = wait_cyc;
+
+    t.label("SEND START");
+    wb_trans.push_back(t);
+	//i2c_trans.push_back(u);
+
+  issue_hard_reset();
+  endfunction
+
+  // ****************************************************************************
+  // Send a stop command, followed by a pause of wait_cyc, followed by <<<driving rst>>>
+  // high for 133ns
+  // ****************************************************************************
+  function void issue_stop_command_w_wait(int wait_cyc);
+    //master_write(CMDR, I2C_STOP); // Stop the transaction/Close connection
+    wb_transaction t = new("send_stop_command");
+    t.write = 1'b1;
+    t.line  = CMDR;
+    t.word  = 8'b0;
+    t.cmd   = I2C_STOP;
+      t.wait_int_nack = 1'b0;
+      t.wait_int_ack  = 1'b0;
+      t.stall_cycles  = wait_cyc;
+
+    t.label("SEND STOP");
+    wb_trans.push_back(t);
+
+	issue_hard_reset();
+    //wait_interrupt();
+   // clear_interrupt();
+  endfunction
+
+  // ****************************************************************************
+  // Format incoming address byte and set R/W bit to request a WRITE.
+  // Transmit this formatted address byte on the I2C bus, followed by a pause of wait_cyc, 
+  // followed by <<<driving rst>>> high for 133ns
+  // ****************************************************************************
+  function void rst_transmit_address_req_write(input bit [7:0] addr, int pause);
+    //master_write(DPR, addr);
+    wb_transaction t = new("emplace_address_req_write");
+    addr = addr << 1;
+    addr[0] = 1'b0;
+    t.write = 1'b1;
+    t.line = DPR;
+    t.word = addr;
+    t.cmd = NONE;
+    t.wait_int_nack = 1'b0;
+    t.wait_int_ack = 1'b0;
+    t.stall_cycles = 0;
+    t.label("SEND ADDRESS REQ WRITE");
+    wb_trans.push_back(t);
+
+    //master_write(CMDR, I2C_WRITE);
+    t = new("trigger_address_transmission");
+    t.write = 1'b1;
+    t.line = CMDR;
+    t.word = 8'b0;
+    t.cmd = I2C_WRITE;
+      t.wait_int_nack = 1'b0;
+      t.wait_int_ack  = 1'b0;
+      t.stall_cycles  = pause;
+    wb_trans.push_back(t);
+    //wait_interrupt_with_NACK(); // In case of a down/unresponsive slave, we'd get a nack	
+   // clear_interrupt();
+  endfunction
 endclass
