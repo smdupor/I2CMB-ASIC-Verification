@@ -126,7 +126,7 @@ run_all_tests: clean compile_sil
 	$(eval TN := test_arbitration_lost_scenario)
 	$(eval GTT := i2cmb_generator_arb_loss)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	$(eval TN := i2cmb_generator_arb_loss_restart)
+	$(eval TN := test_arbitration_loss_on_restart)
 	$(eval GTT := i2cmb_generator_arb_loss_restart)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	$(eval TEST_SEED := 98765)
@@ -137,7 +137,7 @@ run_all_tests: clean compile_sil
 	$(eval TN := test_disconnected_slave_nacks)
 	$(eval GTT := i2cmb_generator_disconnected_slave)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	$(eval TN := i2cmb_generator_test_resets)
+	$(eval TN := test_hard_reset_injection)
 	$(eval GTT := i2cmb_generator_test_resets)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 	echo "Test Suite Ended At: " >> .timelog
@@ -148,22 +148,22 @@ test_arb_loss: clean compile_sil
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 test_arb_loss_restart: clean compile_sil
-	$(eval TN := i2cmb_generator_arb_loss_restart)
+	$(eval TN := test_arbitration_loss_on_restart)
 	$(eval GTT := i2cmb_generator_arb_loss_restart)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 test_arb_loss_restart_gui: clean compile_sil
-	$(eval TN := i2cmb_generator_arb_loss_restart)
+	$(eval TN := test_arbitration_loss_on_restart)
 	$(eval GTT := i2cmb_generator_arb_loss_restart)
 	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1;do wave.do; run 3ms; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 test_reset: clean compile_sil
-	$(eval TN := i2cmb_generator_test_resets)
+	$(eval TN := test_hard_reset_injection)
 	$(eval GTT := i2cmb_generator_test_resets)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 test_reset_gui: clean compile_sil
-	$(eval TN := i2cmb_generator_test_resets)
+	$(eval TN := test_hard_reset_injection)
 	$(eval GTT := i2cmb_generator_test_resets)
 	vsim  -i -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1;do wave.do; run 3ms; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
