@@ -28,14 +28,10 @@ class i2cmb_generator_test_resets extends i2cmb_generator;
 		// as expected, successfully sending normal data after the reset.
 		// ****************************************************************************
 		virtual task run();
-
 			test_start_critical_regions();
 			test_rw_critical_regions();
 			test_re_start_critical_regions();
 			test_stop_critical_regions();
-
-
-
 			wb_agent_handle.expect_nacks(1'b0);
 			super.run();
 		endtask
