@@ -16,18 +16,18 @@ clean:
 	rm -rf ./covhtmlreport/
 
 comp_I2C_MB:
-	vcom -cover bcefst ../rtl/iicmb_int_pkg.vhd
-	vcom -cover bcefst ../rtl/iicmb_pkg.vhd
-	vcom -cover bcefst ../rtl/mbyte.vhd
-	vcom -cover bcefst ../rtl/mbit.vhd
-	vcom -cover bcefst ../rtl/bus_state.vhd
-	vcom -cover bcefst ../rtl/filter.vhd
-	vcom -cover bcefst ../rtl/conditioner.vhd
-	vcom -cover bcefst ../rtl/conditioner_mux.vhd
-	vcom -cover bcefst ../rtl/iicmb_m.vhd
-	vcom -cover bcefst ../rtl/regblock.vhd
-	vcom -cover bcefst ../rtl/wishbone.vhd 
-	vcom -cover bcefst ../rtl/iicmb_m_wb.vhd
+	vcom +cover=bcefst ../rtl/iicmb_int_pkg.vhd
+	vcom +cover=bcefst ../rtl/iicmb_pkg.vhd
+	vcom +cover=bcefst ../rtl/mbyte.vhd
+	vcom +cover=bcefst ../rtl/mbit.vhd
+	vcom +cover=bcefst ../rtl/bus_state.vhd
+	vcom +cover=bcefst ../rtl/filter.vhd
+	vcom +cover=bcefst ../rtl/conditioner.vhd
+	vcom +cover=bcefst ../rtl/conditioner_mux.vhd
+	vcom +cover=bcefst ../rtl/iicmb_m.vhd
+	vcom +cover=bcefst ../rtl/regblock.vhd
+	vcom +cover=bcefst ../rtl/wishbone.vhd 
+	vcom +cover=bcefst ../rtl/iicmb_m_wb.vhd
 
 
 comp_bench: comp_ncsu_pkg comp_i2c_pkg comp_wb_pkg comp_i2cmb_env
@@ -65,6 +65,12 @@ mulbus: clean compile_sil
 	$(eval GTT := i2cmb_generator_test_multi_bus)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
+mulbus_slow: clean compile_sil_99
+	$(eval TEST_SEED := 86753)
+	$(eval TN := test_multi_bus_slow_speed)
+	$(eval GTT := i2cmb_generator_test_multi_bus_slow)
+	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
+	
 debug_mulbus: 
 	$(eval TN := test_multi_bus_max_speed)
 	$(eval GTT := i2cmb_generator_test_multi_bus)
@@ -102,8 +108,6 @@ regblock: clean compile_sil
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
 
 run_all_tests: clean compile_sil
-	echo "Test Suite Started at:" > .timelog
-	date +"%T" >> .timelog
 	$(eval TN := test_register_block)
 	$(eval GTT := i2cmb_generator_test_reg)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
@@ -140,8 +144,7 @@ run_all_tests: clean compile_sil
 	$(eval TN := test_hard_reset_injection)
 	$(eval GTT := i2cmb_generator_test_resets)
 	vsim  -c -sv_seed $(TEST_SEED) -coverage -do "set NoQuitOnFinish 1; run -a; coverage attribute -name TESTNAME -value $(TN); coverage save $(TN).$(TEST_SEED).ucdb; quit -f" +GEN_TRANS_TYPE=$(GTT) +VERBOSITY_LEVEL=LOW optimized_debug_top_tb
-	echo "Test Suite Ended At: " >> .timelog
-	date +"%T" >> .timelog
+
 test_arb_loss: clean compile_sil
 	$(eval TN := i2cmb_generator_arb_loss)
 	$(eval GTT := i2cmb_generator_arb_loss)
@@ -185,19 +188,18 @@ silent_max_verb: clean compile_sil
 	#diff transcript transcript.bak
 	
 comp_I2C_MB_sil:
-	vcom -cover bcefst ../rtl/iicmb_int_pkg.vhd > /dev/null
-	vcom -cover bcefst ../rtl/iicmb_pkg.vhd > /dev/null
-	vcom -cover bcefst ../rtl/mbyte.vhd > /dev/null
-	vcom -cover bcefst ../rtl/mbit.vhd > /dev/null
-	vcom -cover bcefst ../rtl/bus_state.vhd > /dev/null
-	vcom -cover bcefst ../rtl/filter.vhd > /dev/null
-	vcom -cover bcefst ../rtl/conditioner.vhd > /dev/null
-	vcom -cover bcefst ../rtl/conditioner_mux.vhd > /dev/null
-	vcom -cover bcefst ../rtl/iicmb_m.vhd > /dev/null
-	vcom -cover bcefst ../rtl/regblock.vhd > /dev/null
-	vcom -cover bcefst ../rtl/wishbone.vhd  > /dev/null
-	vcom -cover bcefst ../rtl/iicmb_m_wb.vhd > /dev/null
-
+	vcom +cover=bcefst ../rtl/iicmb_int_pkg.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/iicmb_pkg.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/mbyte.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/mbit.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/bus_state.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/filter.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/conditioner.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/conditioner_mux.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/iicmb_m.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/regblock.vhd > /dev/null
+	vcom +cover=bcefst ../rtl/wishbone.vhd  > /dev/null
+	vcom +cover=bcefst ../rtl/iicmb_m_wb.vhd > /dev/null
 
 comp_bench_sil: comp_ncsu_pkg_sil comp_i2c_pkg_sil comp_wb_pkg_sil comp_i2cmb_env_sil
 	vlog ../testbench/top.sv > /dev/null
@@ -206,9 +208,15 @@ comp_bench_sil: comp_ncsu_pkg_sil comp_i2c_pkg_sil comp_wb_pkg_sil comp_i2cmb_en
 #	vlog ../testbench/top.sv > /dev/null
 
 optimize_sil:
-	vopt +acc top -o optimized_debug_top_tb > /dev/null
+	vopt top -o optimized_debug_top_tb > /dev/null
+
+optimize_sil_99hkz:
+	vopt -GI2C_MAX_BUS_RATE=99 top -o optimized_debug_top_tb > /dev/null
+
 
 compile_sil: comp_bench_sil comp_I2C_MB_sil optimize_sil
+
+compile_sil_99: comp_bench_sil comp_I2C_MB_sil optimize_sil_99hkz
 
 convert_testplan:
 	xml2ucdb -format Excel ./i2cmb_test_plan.xml ./i2cmb_test_plan.ucdb

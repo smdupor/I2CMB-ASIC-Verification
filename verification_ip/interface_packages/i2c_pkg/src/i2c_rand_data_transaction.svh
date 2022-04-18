@@ -2,9 +2,9 @@ class i2c_rand_data_transaction extends i2c_transaction;
 
   `ncsu_register_object(i2c_rand_data_transaction)
 
-  rand bit [7:0] tmp_addr;
+  randc bit [7:0] tmp_addr;
   rand int tmp_op;
-  rand int tmp_bus;
+  randc int tmp_bus;
   rand bit [7:0] tmp_data[$];
   int size;
 

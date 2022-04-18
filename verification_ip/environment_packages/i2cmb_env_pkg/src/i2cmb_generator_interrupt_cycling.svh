@@ -30,32 +30,32 @@ class i2cmb_generator_interrupt_cycling extends i2cmb_generator;
 
 		// Do a small flow using interrupts
 		enable_dut_with_interrupt();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 		disable_dut();
 
 		// Do a small flow using interrupts
 		enable_dut_with_interrupt();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 		disable_dut();
 
 		// Do a small flow using polling		
 		enable_dut_polling();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 		disable_dut();
 
 		// Do a small flow using polling
 		enable_dut_polling();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 		disable_dut();
 
 		// Do a small flow using interrupts
 		enable_dut_with_interrupt();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 		disable_dut();
 
 		// Do a small flow using polling
 		enable_dut_polling();
-		generate_random_base_flow(40, 1);
+		generate_random_base_flow(20, 1);
 
 		super.run();
 	endtask

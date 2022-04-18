@@ -8,15 +8,15 @@
 #   TEST_SEED := 65989
 #   GTT := i2cmb_generator_test_reg
 #
-# NAME:test_single_bus_default_speed
+# NAME:test_single_bus_default_speed            # Test on a single-bus instatiation
 #   TEST_SEED := 65989
 #   GTT := i2cmb_generator_test_single_bus
 #
-# NAME:test_multi_bus_max_speed
+# NAME:test_multi_bus_max_speed                 #Test with all busses at 400kHz
 #   TEST_SEED := 37915
 #   GTT := i2cmb_generator_test_multi_bus
 #
-# NAME:test_multi_bus_ranged_speed
+# NAME:test_multi_bus_ranged_speed              #Test with busses cfg'd from 400kHz to 40kHz in same instantiation
 #   TEST_SEED := 54321
 #   GTT := i2cmb_generator_test_multi_bus_ranged
 #
@@ -45,13 +45,19 @@
 #   TN := test_hard_reset_injection
 #	GTT := i2cmb_generator_test_resets
 #
+# NAME:test_multi_bus_slow_speed                #Test with all 16 busses < 100kHz default rate to cover bus conditioner slow branches.
+#   TEST_SEED := 86753
+#   GTT := i2cmb_generator_test_multi_bus_slow
 #
 #
 #
 #
 #
 #
+start=$SECONDS
 make run_all_tests
+make mulbus_slow
+duration=$(( SECONDS - start ))
 echo " "
 echo " "
 echo " "
@@ -60,6 +66,7 @@ echo "**************************************************************************
 echo "***************************************************************************************************"
 echo "    TEST RUNTIME INFORMATION:"
 echo " "
-cat .timelog
+echo " TEST SUITE RAN IN $duration seconds."
+echo " "
 echo "***************************************************************************************************"
 echo "***************************************************************************************************"

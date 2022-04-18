@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module top();
+module top(); //#(I2C_MAX_BUS_RATE = 400);
 	import i2c_types_pkg::*;
 	import printing_pkg::*;
 	import ncsu_pkg::*;
@@ -14,7 +14,7 @@ module top();
 	parameter int TOP_I2C_ADDR_WIDTH = 7;
 	parameter int TOP_I2C_DATA_WIDTH = 8;
 	parameter int NUM_I2C_BUSSES = 16;
-	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,80,72,60,50,42,35,30,100}; // Bus clocks in kHz for testing at various speeds
+	parameter int I2C_BUS_RATES[16] = {400,350,300,250,200,150,100,90,85,80,75,70,60,50,40,99}; // Bus clocks in kHz for testing at various speeds
 	parameter int I2C_MAX_BUS_RATE = 400;
 	parameter int I2C_STD_BUS_RATE = 400;
 
@@ -35,6 +35,8 @@ module top();
 
 	// Test Objects
 	i2cmb_test tst;
+
+	//15214930
 
 	//_____________________________________________________________________________________\\
 	//                           SYSTEM-LEVEL SIGNAL GENERATORS                            \\
@@ -177,53 +179,10 @@ module top();
 		.dat_i(dat_rd_i[2])
 	);
 
+
 	// ****************************************************************************
 	// Instantiate the DUT - I2C Multi-Bus Controller
-	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES),
-	.g_f_scl_0(I2C_BUS_RATES[0]),
-	.g_f_scl_1(I2C_BUS_RATES[1]),
-	.g_f_scl_2(I2C_BUS_RATES[2]),
-	.g_f_scl_3(I2C_BUS_RATES[3]),
-	.g_f_scl_4(I2C_BUS_RATES[4]),
-	.g_f_scl_5(I2C_BUS_RATES[5]),
-	.g_f_scl_6(I2C_BUS_RATES[6]),
-	.g_f_scl_7(I2C_BUS_RATES[7]),
-	.g_f_scl_8(I2C_BUS_RATES[8]),
-	.g_f_scl_9(I2C_BUS_RATES[9]),
-	.g_f_scl_a(I2C_BUS_RATES[10]),
-	.g_f_scl_b(I2C_BUS_RATES[11]),
-	.g_f_scl_c(I2C_BUS_RATES[12]),
-	.g_f_scl_d(I2C_BUS_RATES[13]),
-	.g_f_scl_e(I2C_BUS_RATES[14]),
-	.g_f_scl_f(I2C_BUS_RATES[15])
-	) DUT_16_ranged
-	(
-		// ------------------------------------
-		// -- Wishbone signals:
-		.clk_i(clk), // in    std_logic;                            -- Clock
-		.rst_i(rst_o[0]), // in    std_logic;                            -- Synchronous reset (active high)
-		// -------------
-		.cyc_i(cyc[0]), // in    std_logic;                            -- Valid bus cycle indication
-		.stb_i(stb[0]), // in    std_logic;                            -- Slave selection
-		.ack_o(ack[0]), //   out std_logic;                            -- Acknowledge output
-		.adr_i(adr[0]), // in    std_logic_vector(1 downto 0);         -- Low bits of Wishbone address
-		.we_i(we[0]), // in    std_logic;                            -- Write enable
-		.dat_i(dat_wr_o[0]), // in    std_logic_vector(7 downto 0);         -- Data input
-		.dat_o(dat_rd_i[0]), //   out std_logic_vector(7 downto 0);         -- Data output
-		// ------------------------------------
-		// ------------------------------------
-		// -- Interrupt request:
-		.irq(irq[0]), //   out std_logic;                            -- Interrupt request
-		// ------------------------------------
-		// ------------------------------------
-		// -- I2C interfaces:
-		.scl_i(scl), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Clock inputs
-		.sda_i(sda), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Data inputs
-		.scl_o(scl), //   out std_logic_vector(0 to g_bus_num - 1); -- I2C Clock outputs
-		.sda_o(sda) //   out std_logic_vector(0 to g_bus_num - 1)  -- I2C Data outputs
-		// ------------------------------------
-	);
-
+	// All busses MAX BUS RATE (cmdline configurable)
 	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES),
 	.g_f_scl_0(I2C_MAX_BUS_RATE),
 	.g_f_scl_1(I2C_MAX_BUS_RATE),
@@ -269,7 +228,53 @@ module top();
 		// ------------------------------------
 	);
 
+	// Instance with all busses at different rates
+	\work.iicmb_m_wb(str) #(.g_bus_num(NUM_I2C_BUSSES),
+	.g_f_scl_0(I2C_BUS_RATES[0]),
+	.g_f_scl_1(I2C_BUS_RATES[1]),
+	.g_f_scl_2(I2C_BUS_RATES[2]),
+	.g_f_scl_3(I2C_BUS_RATES[3]),
+	.g_f_scl_4(I2C_BUS_RATES[4]),
+	.g_f_scl_5(I2C_BUS_RATES[5]),
+	.g_f_scl_6(I2C_BUS_RATES[6]),
+	.g_f_scl_7(I2C_BUS_RATES[7]),
+	.g_f_scl_8(I2C_BUS_RATES[8]),
+	.g_f_scl_9(I2C_BUS_RATES[9]),
+	.g_f_scl_a(I2C_BUS_RATES[10]),
+	.g_f_scl_b(I2C_BUS_RATES[11]),
+	.g_f_scl_c(I2C_BUS_RATES[12]),
+	.g_f_scl_d(I2C_BUS_RATES[13]),
+	.g_f_scl_e(I2C_BUS_RATES[14]),
+	.g_f_scl_f(I2C_BUS_RATES[15])
+	) DUT_16_speed_ranged
+	(
+		// ------------------------------------
+		// -- Wishbone signals:
+		.clk_i(clk), // in    std_logic;                            -- Clock
+		.rst_i(rst_o[0]), // in    std_logic;                            -- Synchronous reset (active high)
+		// -------------
+		.cyc_i(cyc[0]), // in    std_logic;                            -- Valid bus cycle indication
+		.stb_i(stb[0]), // in    std_logic;                            -- Slave selection
+		.ack_o(ack[0]), //   out std_logic;                            -- Acknowledge output
+		.adr_i(adr[0]), // in    std_logic_vector(1 downto 0);         -- Low bits of Wishbone address
+		.we_i(we[0]), // in    std_logic;                            -- Write enable
+		.dat_i(dat_wr_o[0]), // in    std_logic_vector(7 downto 0);         -- Data input
+		.dat_o(dat_rd_i[0]), //   out std_logic_vector(7 downto 0);         -- Data output
+		// ------------------------------------
+		// ------------------------------------
+		// -- Interrupt request:
+		.irq(irq[0]), //   out std_logic;                            -- Interrupt request
+		// ------------------------------------
+		// ------------------------------------
+		// -- I2C interfaces:
+		.scl_i(scl), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Clock inputs
+		.sda_i(sda), // in    std_logic_vector(0 to g_bus_num - 1); -- I2C Data inputs
+		.scl_o(scl), //   out std_logic_vector(0 to g_bus_num - 1); -- I2C Clock outputs
+		.sda_o(sda) //   out std_logic_vector(0 to g_bus_num - 1)  -- I2C Data outputs
+		// ------------------------------------
+	);
 
+	// Instance with just a single bus.
 		\work.iicmb_m_wb(str) #(.g_bus_num(1),
 			.g_f_scl_0(I2C_MAX_BUS_RATE)
 		) DUT_1_max

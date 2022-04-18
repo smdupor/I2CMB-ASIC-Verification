@@ -29,7 +29,7 @@ class i2cmb_generator_test_multi_bus_ranged extends i2cmb_generator;
 	virtual task run();
 		enable_dut_with_interrupt();
 
-		generate_random_base_flow(200, 1);
+		generate_random_base_flow(100, 1);
 
 		super.run();
 	endtask
