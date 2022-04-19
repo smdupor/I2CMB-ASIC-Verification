@@ -286,6 +286,12 @@ interface i2c_if #(
 		end
 	endtask
 
+	task x_driver();
+		sda_drive = 16'bxxxx;
+		repeat(5000) @(posedge clk_i);
+		sda_drive = 16'bzzzz;
+	endtask
+
 	// ****************************************************************************
 	// Force an arbitration loss during a READ with NACK transaction.
 	// ****************************************************************************

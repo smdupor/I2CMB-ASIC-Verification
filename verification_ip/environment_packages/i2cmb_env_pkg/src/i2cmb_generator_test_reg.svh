@@ -28,7 +28,7 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 	// DUT Error conditions from illegal operations
 	// ****************************************************************************
 	virtual task run();
-
+		i2c_transaction t;
 		env_cfg.disable_coverage();
 		env_cfg.enable_register_testing();
 
@@ -43,6 +43,26 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 		env_cfg.enable_error_testing = 1'b1;
 		generate_error_testing();
 
+		super.run();
+		$assertoff();
+		issue_start_command();
+		issue_start_command();
+		disable_dut();
+		enable_dut_with_interrupt();
+		disable_dut();
+		super.run();
+
+		$cast(t, ncsu_object_factory::create("i2c_transaction"));
+		t.is_x_driver = 1'b1;
+		i2c_trans.push_back(t);
+
+		enable_dut_polling();
+		issue_start_command();
+		read_data_byte_with_continue();
+		write_data_byte(8'b0);
+		super.run();
+		$asserton();
+		generate_error_testing();
 		super.run();
 	endtask
 
@@ -106,8 +126,7 @@ class i2cmb_generator_test_reg extends i2cmb_generator;
 		issue_start_command();
 		// Wait after start illegal
 		issue_wait(1);
-
-		disable_dut();
+	
 	endfunction
 
 

@@ -9,6 +9,7 @@ class i2c_transaction extends ncsu_transaction;
   i2c_op_t rw;
   bit contained_nack;
   bit is_hard_reset;
+  bit is_x_driver;
   bit swallow;
 
   // Coverage Only

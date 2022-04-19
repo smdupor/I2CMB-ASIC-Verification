@@ -26,6 +26,11 @@ class i2c_driver extends ncsu_component #(
       i2c_trans = trans;
       bus.configure(i2c_trans.address, i2c_trans.selected_bus);
       configuration.flush_next_transaction = i2c_trans.is_hard_reset;
+
+      if(trans.is_x_driver) begin
+        bus.x_driver();
+        return;
+      end
     end
 
     if (!$cast(i2c_arb_loss, trans)) begin

@@ -75,14 +75,15 @@ interface wb_if #(
 
   // ****************************************************************************              
   task master_write(input bit [ADDR_WIDTH-1:0] addr, input bit [DATA_WIDTH-1:0] data);
-  
-    @(posedge clk_i);
+      @(posedge clk_i);
     adr_o <= addr;
     dat_o <= data;
     cyc_o <= 1'b1;
     stb_o <= 1'b1;
     we_o  <= 1'b1;
     while (!ack_i) @(posedge clk_i);
+@(posedge clk_i);
+    @(posedge clk_i);
     cyc_o <= 1'b0;
     stb_o <= 1'b0;
     adr_o <= 'bx;
@@ -94,7 +95,6 @@ interface wb_if #(
 
   // ****************************************************************************              
   task master_read(input bit [ADDR_WIDTH-1:0] addr, output bit [DATA_WIDTH-1:0] data);
-
     @(posedge clk_i);
     adr_o <= addr;
     dat_o <= 'bx;
@@ -103,6 +103,8 @@ interface wb_if #(
     we_o  <= 1'b0;
     @(posedge clk_i);
     while (!ack_i) @(posedge clk_i);
+    @(posedge clk_i);
+    @(posedge clk_i);
     cyc_o <= 1'b0;
     stb_o <= 1'b0;
     adr_o <= 'bx;
