@@ -39,7 +39,7 @@ comp_bench: comp_ncsu_pkg comp_i2c_pkg comp_wb_pkg comp_i2cmb_env
 optimize:
 	vopt +acc top -o optimized_debug_top_tb
 
-compile: comp_bench comp_I2C_MB optimize
+compile: compile_sil
 
 simulate: 
 	$(eval TN := test_clockstretching)
