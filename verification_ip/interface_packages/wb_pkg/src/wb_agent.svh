@@ -53,6 +53,11 @@ class wb_agent extends ncsu_component#(.T(wb_transaction));
 	// ****************************************************************************
 	virtual task bl_put(T trans);
 		if(trans.stall_cycles > 0) coverage.wb_str_del = trans.stall_cycles;
+		if(trans.is_hard_reset) begin 
+			foreach (subscribers[i]) subscribers[i].nb_put(trans);
+			configuration.is_hard_reset = 1'b1; 
+			end
+			else configuration.is_hard_reset = 1'b0;
 		driver.bl_put(trans);
 	endtask
 

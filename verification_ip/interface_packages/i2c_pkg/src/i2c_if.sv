@@ -1,11 +1,10 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
 
-interface i2c_if       #(
+interface i2c_if #(
 	int I2C_ADDR_WIDTH = 7,
 	int I2C_DATA_WIDTH = 8,
 	int NUM_I2C_BUSSES = 16
-)
-(
+) (
 
 	// System signals
 	input wire clk_i,
@@ -13,16 +12,30 @@ interface i2c_if       #(
 	// Master signals
 	input triand [NUM_I2C_BUSSES-1:0] scl_i,
 	input triand [NUM_I2C_BUSSES-1:0] sda_i,
-	output wire [NUM_I2C_BUSSES-1:0] sda_o, 
-	output wire [NUM_I2C_BUSSES-1:0] scl_o 
+	output wire [NUM_I2C_BUSSES-1:0] sda_o,
+	output wire [NUM_I2C_BUSSES-1:0] scl_o
 );
 	// Types and Enum Switches for Interrupts
 	import i2c_types_pkg::*;
 	import printing_pkg::*;
-	enum bit [1:0] {INTR_CLEAR=2'b00,RAISE_START=2'b01, RAISE_STOP=2'b10, RAISE_RESTART=2'b11} intrs;
-	enum bit {STOP, START} stst;
-	enum bit {ACK, NACK} aknk;
-	enum bit {MONITOR_AND_DRIVER, MONITOR_ONLY} mntr;
+	enum bit [1:0] {
+		INTR_CLEAR = 2'b00,
+		RAISE_START = 2'b01,
+		RAISE_STOP = 2'b10,
+		RAISE_RESTART = 2'b11
+	} intrs;
+	enum bit {
+		STOP,
+		START
+	} stst;
+	enum bit {
+		ACK,
+		NACK
+	} aknk;
+	enum bit {
+		MONITOR_AND_DRIVER,
+		MONITOR_ONLY
+	} mntr;
 
 	// Configured address of this Slave
 	bit [8:0] slave_address;
@@ -37,6 +50,7 @@ interface i2c_if       #(
 	bit slv_write_response;
 	bit [7:0] slave_receive_buffer[$];
 	bit [7:0] slave_transmit_buffer[$];
+	bit address_mismatch;
 
 	// Internal Monitor Signals and Buffers
 	bit enable_driver;
@@ -44,44 +58,75 @@ interface i2c_if       #(
 	bit [8:0] monitor_buffer;
 
 	// Indices of MSB and LSB of a Byte in a larger buffer
-	parameter int MSB=8;
-	parameter int LSB=1;
+	parameter int MSB = 8;
+	parameter int LSB = 1;
 
 	// Registers and logic to select I2C Wires from Multiline Bus
 	int bus_selector;
 
 	// Register for driving Serial Data Line by Slave BFM
-	logic [NUM_I2C_BUSSES-1:0] sda_drive=16'bz;
+	logic [NUM_I2C_BUSSES-1:0] sda_drive = 16'bz;
 	assign sda_o = sda_drive;
 
-	logic [NUM_I2C_BUSSES-1:0] scl_drive=16'bz;
+	logic [NUM_I2C_BUSSES-1:0] scl_drive = 16'bz;
 	assign scl_o = scl_drive;
 
-	int stretch_qty=0;
-	int read_stretch_qty=0;
-	bit enable_cs=1;
-	int arbitration_wait_cycles=1000000;
+	// ****************************************************************************
+	// Clockstretching and arbitration loss storage and clock counter helper threads
+	// ****************************************************************************
+	longint clk_count;
+	bit not_first_measure;
+
+	always @(posedge clk_i)++clk_count;
+	always @(negedge scl_i[bus_selector]) begin
+		clk_count = 0;
+		@(posedge scl_i[bus_selector]) rst_clock();
+	end
+	// Clockstretching and arbitration loss additional parameters
+	int stretch_qty = 0;
+	int read_stretch_qty = 0;
+
+	parameter int AVG_LEN = 3;
+	longint measured_clock[AVG_LEN];
+
+	bit enable_cs = 1;
+	int arbitration_wait_cycles = 1000000;
 	bit cause_arbitration_loss;
+	bit enable_read_arb;
+
+	function void reset_counters();
+		foreach (measured_clock[i]) measured_clock[i] = 0;
+		not_first_measure = 1'b1;
+	endfunction
 
 	//_____________________________________________________________________________________\\
 	//                      RESET, CONFIGURE, and BYPASS TASKS                             \\
 	//_____________________________________________________________________________________\\
+	// ****************************************************************************
+	// Reset the internal  clock counter and maintain simple moving average.
+	// These statistics are used to verify numerically that stretched clocks,
+	// in the presence of the CLOCK-STRETCHING functionality, are indeed being
+	// stretched.
+	// ****************************************************************************
+	function void rst_clock();
+		int i;
+		longint sum;
+		sum = 0;
+		if (!not_first_measure) begin
+			if (clk_count == 0) return;
+			for (i = 0; i < AVG_LEN; ++i) measured_clock[i] = clk_count;
+			not_first_measure = 1'b1;
+		end
+		for (i = AVG_LEN; i > 0; --i) measured_clock[i] = measured_clock[i-1];
+		measured_clock[0] = clk_count;
+		clk_count = 0;
+		for (i = 0; i < AVG_LEN; ++i) sum += measured_clock[i];
+		measured_clock[0] = sum / AVG_LEN;
+	endfunction
 
 	// ****************************************************************************
-	// Reset the Slave BFM and configure it to hold input_addr address.
-	// Reset task automatically starts the sampler for detecting start/stop
+	// Reset the entire bfm and start the sampler.
 	// ****************************************************************************
-	task reset_and_configure(input bit [8:0] input_addr, input int sel_bus);
-		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
-		slave_address = (input_addr << 2);
-		transfer_in_progress = STOP;
-		sampler_running = STOP;
-		enable_driver = MONITOR_ONLY; // Assume that we only need monitor until driver is called
-		driver_interrupt = INTR_CLEAR;
-		monitor_interrupt = INTR_CLEAR;
-		connection_negotiation_sampler();
-	endtask
-
 	task reset();
 		bus_selector = 0;
 		slave_address = 0;
@@ -93,8 +138,11 @@ interface i2c_if       #(
 		connection_negotiation_sampler();
 	endtask
 
+	// ****************************************************************************
+	// Set the BFM Bus and the address of this slave
+	// ****************************************************************************
 	task configure(input bit [8:0] input_addr, input int sel_bus);
-		bus_selector = NUM_I2C_BUSSES-sel_bus-1;
+		bus_selector  = NUM_I2C_BUSSES - sel_bus - 1;
 		slave_address = (input_addr << 2);
 	endtask
 
@@ -111,9 +159,10 @@ interface i2c_if       #(
 	// 		BYPASS TASK: Bypasses DUT and BFM implementation to deposit read data directly
 	// 					into driver's memory, which is then sent back via I2C and DUT.
 	// ****************************************************************************
-	task provide_read_data(input bit [I2C_DATA_WIDTH-1:0] read_data [], output bit transfer_complete);
-		foreach(read_data[i]) slave_transmit_buffer.push_back(read_data[i]);
-		wait(slave_transmit_buffer.size == 0);
+	task provide_read_data(input bit [I2C_DATA_WIDTH-1:0] read_data[],
+		output bit transfer_complete);
+		foreach (read_data[i]) slave_transmit_buffer.push_back(read_data[i]);
+		wait (slave_transmit_buffer.size == 0);
 		transfer_complete = 1'b1;
 	endtask
 
@@ -129,35 +178,40 @@ interface i2c_if       #(
 	// and monitor are busy with other tasks.
 	// ****************************************************************************
 	task connection_negotiation_sampler();
-		static bit [1:0] control;
+		static bit   [1:0] control;
 		static logic [3:0] samples;
 		sampler_running = START;
 		@(posedge clk_i); // Wait for Serial clock to rise to 
 		forever begin
 			// Continuously sample sda and scl at 100MHz
-			samples[0]=sda_i[bus_selector];
-			samples[1]=scl_i[bus_selector];
-			#10 samples[2]=sda_i[bus_selector];
-			samples[3]=scl_i[bus_selector];
+			samples[0] = sda_i[bus_selector];
+			samples[1] = scl_i[bus_selector];
+			#10 samples[2] = sda_i[bus_selector];
+			samples[3] = scl_i[bus_selector];
+
+			if(rst_i == 1'b1) begin
+				transfer_in_progress = STOP;
+				//@(negedge rst_i) #10;
+			end
 
 			// If we find a valid transition indicating start/stop/restart, Store values in control
-			if(samples[1]==1'b1 && samples[3]==1'b1) begin
+			if (samples[1] == 1'b1 && samples[3] == 1'b1) begin
 				control[0] = samples[0];
 				control[1] = samples[2];
 			end
 
 			// Check control and raise relevant interrupt code to rest of system if conditions met
-			case(control)
+			case (control)
 				2'b01: begin // start or Re-start
-					if(transfer_in_progress== STOP) begin // Not Running, Start Detected
-						driver_interrupt = RAISE_START;
+					if (transfer_in_progress == STOP) begin // Not Running, Start Detected
+						driver_interrupt  = RAISE_START;
 						monitor_interrupt = RAISE_START;
-					end
-					else begin // Already running, Restart detected
-						driver_interrupt = RAISE_RESTART;
+					end else begin // Already running, Restart detected
+						driver_interrupt  = RAISE_RESTART;
 						monitor_interrupt = RAISE_RESTART;
 					end
-					transfer_in_progress = START;end
+					transfer_in_progress = START;
+				end
 				2'b10: begin // Stop Condition Detected
 					driver_interrupt = RAISE_STOP;
 					monitor_interrupt = RAISE_STOP;
@@ -177,9 +231,9 @@ interface i2c_if       #(
 	// stretch_qty must be set by system driver.
 	// ****************************************************************************
 	task clockstretch();
-	if(!enable_cs) return;
+		if (!enable_cs) return;
 		#15 scl_drive[bus_selector] = 1'b0;
-		repeat(stretch_qty) @(posedge clk_i);
+		repeat (stretch_qty) @(posedge clk_i);
 		scl_drive[bus_selector] = 1'bz;
 	endtask
 
@@ -191,9 +245,9 @@ interface i2c_if       #(
 	// read_stretch_qty system cycles; read_stretch_qty must be set by system driver.
 	// ****************************************************************************
 	task clockstretch_read();
-	if(!enable_cs) return;
+		if (!enable_cs) return;
 		#15 scl_drive[bus_selector] = 1'b0;
-		repeat(read_stretch_qty) @(posedge clk_i);
+		repeat (read_stretch_qty) @(posedge clk_i);
 		scl_drive[bus_selector] = 1'bz;
 	endtask
 
@@ -202,29 +256,67 @@ interface i2c_if       #(
 	//_____________________________________________________________________________________\\
 
 	// ****************************************************************************
-	// Excplicitly cause a system state where arbitration shall be lost by the master. 
-	// Release this state after arbitration_wait_cycles system cycles
+	// Force an arbitration loss during a WRITE based on movement on the scl_i
 	// ****************************************************************************
 	task force_arbitration_loss();
-		//wait(driver_interrupt == RAISE_RESTART || driver_interrupt == RAISE_START)
-		//@(posedge scl_i);
-//		repeat(300) begin
-			@(posedge scl_i);
-			@(posedge scl_i) sda_drive <= 16'h00;
-			@(negedge scl_i) sda_drive <= 16'hzz;
+		@(scl_i) sda_drive = 16'h00;
+		driver_interrupt = RAISE_STOP;
+		transfer_in_progress = STOP;
+		repeat (997) @(posedge clk_i);
+		sda_drive = 16'hzz;
+	endtask
 
-		//end
-		/*@(posedge scl_i);
-		repeat(15) begin
-			@(posedge scl_i) sda_drive <= 16'h00;
-			@(negedge scl_i);
-		end*/
-			//@(negedge clk_i) sda_drive <= 16'hff;
-		//end
-		//scl_drive <= 16'hff;
-		
-		//sda_drive[bus_selector] <= 1'bz;
-		//scl_drive[bus_selector] <= 1'bz;
+	// ****************************************************************************
+	// Force an arbitration loss on a RESTART command, after ONE START and 
+	//     ONE ADDRESS WRITE
+	// ****************************************************************************
+	task force_arbitration_loss_start();
+		int count, negcount;
+		$display("Forcing an Arb Loss on a RESTART");
+		forever begin
+			@(negedge scl_i[bus_selector]) negcount++;
+			//   $display("Negedge count: %0d", negcount);
+			@(posedge scl_i[bus_selector]) count++;
+			if(count == 9) begin
+				force_arbitration_loss_permanent();
+				#2230 disable_arbitration_loss();
+			end
+
+			//  $display("Posedge Cycle : %0d", count);
+		end
+	endtask
+
+	task x_driver();
+		sda_drive = 16'bxxxx;
+		repeat(5000) @(posedge clk_i);
+		sda_drive = 16'bzzzz;
+	endtask
+
+	// ****************************************************************************
+	// Force an arbitration loss during a READ with NACK transaction.
+	// ****************************************************************************
+	task force_arbitration_loss_read();
+		if (enable_read_arb) begin
+			$display("Read arb read");
+			@(scl_i) sda_drive = 16'h00;
+			repeat (1) @(posedge clk_i);
+			sda_drive = 16'hzzzz;
+		end
+	endtask
+
+
+	// ****************************************************************************
+	// Permanently pull all busses low to force an arbitration loss
+	// ****************************************************************************
+	task force_arbitration_loss_permanent();
+		@(scl_i) sda_drive = 16'h00;
+	endtask
+
+	// ****************************************************************************
+	// Release control of all busses upon arbitration loss completing
+	// ****************************************************************************
+	task disable_arbitration_loss();
+		sda_drive = 16'hzz;
 	endtask
 
 	//_____________________________________________________________________________________\\
@@ -236,13 +328,18 @@ interface i2c_if       #(
 	// (as signaled by the sampler) and proceeds to transfer control to the 
 	// next step of the internal request handler (address detection).
 	// ****************************************************************************
-	task wait_for_i2c_transfer(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+	task wait_for_i2c_transfer(
+		output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data[]);
+		static bit stall_aftr_rst;
 		enable_driver <= MONITOR_AND_DRIVER; // Tell The monitor/sampler that there is also a driver in parallel
-		wait(transfer_in_progress == START &&
-		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART)
-		);
+		//  $display("Top Of i2c Transfer adr %d, rst: %b, intr: %b", slave_address[MSB:2], rst_i, driver_interrupt);
+
+		wait((transfer_in_progress == START && rst_i == 1'b0 &&
+		(driver_interrupt == RAISE_START || driver_interrupt == RAISE_RESTART))); //||rst_i == 1'b1);
 		driver_interrupt = INTR_CLEAR; // Reset the interrupt on detected
+		// if(rst_i) @(negedge rst_i) return;
 		driver_receive_address(op, write_data); // Handle the request
+
 	endtask
 
 	// ****************************************************************************
@@ -254,37 +351,62 @@ interface i2c_if       #(
 	// On match, Interpret operation code, and branch control to the correct handler
 	// for READS or WRITES, and pass data buffer through in case of WRITES.
 	// ****************************************************************************
-	task driver_receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data []);
+	task driver_receive_address(output i2c_op_t op, output bit [I2C_DATA_WIDTH-1:0] write_data[]);
 		static bit [7:0] write_buf[$];
+		driver_buffer = 9'h00;
+		address_mismatch = 1'b0;
+
 		// Read Address and opcode from serial bus
-		for(int i=MSB;i>=LSB;i--) begin
-			@(posedge scl_i[bus_selector]) if(cause_arbitration_loss) force_arbitration_loss();
+		for (int i = MSB; i >= LSB; i--) begin
+			//  $display("Top Adr Bit %0d, expect adr %0d", i,slave_address[MSB:2]);
+			@(posedge scl_i[bus_selector] or posedge rst_i);
+			if(rst_i) return;
+			//while (scl_i[bus_selector] == 1'b0 && !intr_raised()) #1;
+			if (cause_arbitration_loss) force_arbitration_loss();
 			driver_buffer[i] = sda_i[bus_selector];
-			@(negedge scl_i[bus_selector])begin
+			// wait(scl_i[bus_selector] == 1'b0 || rst_i==1'b1) 
+			@(negedge scl_i[bus_selector] or posedge rst_i)
+			//while (scl_i[bus_selector] == 1'b1 && !intr_raised() && !rst_i) #1;
+			begin
 				clockstretch();
-				 if(intr_raised()) return;
+				if (intr_raised()||rst_i) return; // CHANGED
 			end
+			//   $display("Bottom Adr Bit %0d, current buf %0d", i, driver_buffer>>2);
 		end
+
 
 		// Determine whether address matches configured slave address OR the All-Call address
-		if(driver_buffer[MSB:2]==slave_address[MSB:2] || driver_buffer[MSB:2]==7'b000_0000) begin
-			// SEND THE ACK Back to master upon a match
-			//driver_transmit_ACK();
-			sda_drive[bus_selector] = 1'b0;
-			@(posedge scl_i[bus_selector]);
-		
-			@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
-			// Determine the operation code
-			op = driver_buffer[1]? I2_READ : I2_WRITE;
+		if(!intr_raised() && rst_i == 1'b0) begin
 
-			// Branch to handle requested operation
-			if(op==I2_WRITE) driver_receive_write_data(write_buf);
-			else driver_transmit_read_data();
+			if (driver_buffer[MSB:2] == slave_address[MSB:2] || driver_buffer[MSB:2] == 7'b000_0000) begin
+				// SEND THE ACK Back to master upon a match
+				//driver_transmit_ACK();
 
+				sda_drive[bus_selector] = 1'b0;
+				@(posedge scl_i[bus_selector] or posedge rst_i);
+
+				@(negedge scl_i[bus_selector] or posedge rst_i) sda_drive[bus_selector] = 1'bz;
+				// Determine the operation code
+				op = driver_buffer[1] ? I2_READ : I2_WRITE;
+
+				// Branch to handle requested operation
+				if (op == I2_WRITE && !rst_i) driver_receive_write_data(write_buf);
+				else driver_transmit_read_data();
+			end else if(!rst_i) begin
+				address_mismatch = 1'b1;
+				@(posedge scl_i[bus_selector] or posedge rst_i); // Allow nack to pass to the master
+				@(negedge scl_i[bus_selector] or posedge rst_i);
+				op = driver_buffer[1] ? I2_READ : I2_WRITE;
+
+				// Branch to handle requested operation
+				if (op == I2_WRITE && !rst_i) driver_receive_write_data(write_buf);
+				else if(!rst_i) driver_transmit_read_data();
+			end
 		end
-		//driver_interrupt = INTR_CLEAR;
 		// Copy queued captured write data into return array.
-		write_data = write_buf;
+		if(rst_i==1'b0) write_data = write_buf;
+
+
 	endtask
 
 	// ****************************************************************************
@@ -292,14 +414,16 @@ interface i2c_if       #(
 	// Continuously accept data until connection is terminated, sending an ACK 
 	// after each complete byte. Branch to invidual-byte and ack-sending tasks.
 	// ****************************************************************************
-	task driver_receive_write_data(output bit [I2C_DATA_WIDTH-1:0] write_data [$]);
+	task driver_receive_write_data(output bit [I2C_DATA_WIDTH-1:0] write_data[$]);
 		forever begin
+
 			// Read a byte from the data bus
 			driver_read_single_byte();
-			if(intr_raised()) return;
+			if (intr_raised()) return;
 			// Check to ensure we have not encountered a stop/restart condition, if so, 
 			// return control to caller for next transfer to begin
-			if(!intr_raised()) driver_transmit_ACK();
+			if (!intr_raised() && !address_mismatch) driver_transmit_ACK();
+			else if (!intr_raised() && address_mismatch) driver_transmit_NACK();
 			else return;
 
 			// Reply with the ACK of this byte
@@ -318,13 +442,13 @@ interface i2c_if       #(
 	//			system buffer and return.
 	// ****************************************************************************
 	task driver_read_single_byte();
-		for(int i=MSB;i>=LSB;i--) begin
+		for (int i = MSB; i >= LSB; i--) begin
 			// Capture the value
-			while(scl_i[bus_selector] == 1'b0 && !intr_raised()) #1 if(intr_raised()) return;
+			while (scl_i[bus_selector] == 1'b0 && !intr_raised()) #1 if (intr_raised()) return;
 			driver_buffer[i] = sda_i[bus_selector];
 			//@(posedge scl_i[bus_selector]) driver_buffer[i] = sda_i[bus_selector];
 			// Sample/Watch for a possible restart/stop signal until negedge scl_i[bus_selector]
-			while(scl_i[bus_selector] ==1'b1)	#1	if(intr_raised()) return;
+			while (scl_i[bus_selector] == 1'b1) #1 if (intr_raised()) return;
 			clockstretch();
 		end
 	endtask
@@ -336,8 +460,21 @@ interface i2c_if       #(
 	task driver_transmit_ACK();
 		sda_drive[bus_selector] = 1'b0;
 		@(posedge scl_i[bus_selector]);
-		
-		@(negedge scl_i[bus_selector]) sda_drive[bus_selector] =1'bz;
+
+		@(negedge scl_i[bus_selector]) sda_drive[bus_selector] = 1'bz;
+		clockstretch();
+	endtask
+
+
+	// ****************************************************************************
+	// Take control  of the I2C Data bus for one scl cycle, sending  an explicit NACK
+	// back to the master during this cycle. Release control and return.
+	// ****************************************************************************
+	task driver_transmit_NACK();
+		sda_drive[bus_selector] = 1'b1;
+		@(posedge scl_i[bus_selector]);
+
+		@(negedge scl_i[bus_selector]) sda_drive[bus_selector] = 1'bz;
 		clockstretch();
 	endtask
 
@@ -352,21 +489,26 @@ interface i2c_if       #(
 	task driver_transmit_read_data();
 		static bit local_ack;
 		local_ack = 0;
-		while(slave_transmit_buffer.size > 0) begin
+		if (enable_read_arb) force_arbitration_loss_permanent();
+		while (slave_transmit_buffer.size > 0) begin
 			// Get data out of transmit buffer to send
 			driver_buffer[MSB:LSB] = slave_transmit_buffer.pop_front();
-
+			if(rst_i) return;
 			//Send a byte on sda while clock is high			
 			driver_transmit_single_byte();
 
 			// Check for ack/NACK from master
 			sda_drive[bus_selector] <= 1'bz;
-			@(posedge scl_i[bus_selector]) local_ack = sda_i[bus_selector];
-
+			@(posedge scl_i[bus_selector] or posedge rst_i) local_ack = sda_i[bus_selector];
+			if(rst_i) return;
+			if (enable_read_arb) begin
+				#100 disable_arbitration_loss();
+				return;
+			end
 			// Check for NACK/DONE or STOP/RESTART CONDTION
-			if(local_ack==NACK) return;
-			
-			@(negedge scl_i[bus_selector]) if(intr_raised()) return;
+			if (local_ack == NACK || rst_i) return;
+
+			@(negedge scl_i[bus_selector] or posedge rst_i) if (intr_raised() || rst_i) return;
 		end
 	endtask
 
@@ -377,11 +519,15 @@ interface i2c_if       #(
 	//					to executing this task.
 	// ****************************************************************************
 	task driver_transmit_single_byte();
-		for(int i=MSB;i>=LSB;i--) begin
+		for (int i = MSB; i >= LSB; i--) begin
 			sda_drive[bus_selector] <= driver_buffer[i];
 			clockstretch_read();
-			@(posedge scl_i[bus_selector]);
-			@(negedge scl_i[bus_selector]); 
+			if(rst_i) return;
+			@(posedge scl_i[bus_selector] or posedge rst_i);
+			if(rst_i) return;
+			@(negedge scl_i[bus_selector] or posedge rst_i);
+			if(rst_i) return;
+			force_arbitration_loss_read();
 		end
 	endtask
 
@@ -396,50 +542,69 @@ interface i2c_if       #(
 	// such that the monitor can be run on systems with externally driven signal.
 	// Detects start, captures any address and opcode, and branches to data handler, monitor_record_data()
 	// ****************************************************************************
-	task monitor(output bit[I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op,
-		output bit [I2C_DATA_WIDTH-1:0] data [], output int sel_bus);
+	task monitor(
+		output bit [I2C_ADDR_WIDTH-1:0] addr, output i2c_op_t op,
+		output bit [I2C_DATA_WIDTH-1:0] data[], output int sel_bus, output bit nack, output bit rst);
 
 		static bit ack;
 		static bit [7:0] monitor_data[$];
 		monitor_data.delete;
-
-		wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART));
+		reset_counters();
+		wait(transfer_in_progress == START && (monitor_interrupt == RAISE_START || monitor_interrupt == RAISE_RESTART) && rst_i ==1'b0);
 		monitor_interrupt = INTR_CLEAR; // Reset the interrupt on detected
 
 		sel_bus = bus_selector;
 
 		// Capture the incoming address, operation, and ack
-		for(int i=MSB;i>=0;i--) begin
-			@(posedge scl_i[bus_selector]);
+		for (int i = MSB; i >= 0; i--) begin
+			@(posedge scl_i[bus_selector] or posedge rst_i);
+			if(rst_i) break;
 			monitor_buffer[i] = sda_i[bus_selector];
 		end
 		addr = monitor_buffer[MSB:2];
-		op = monitor_buffer[1]? I2_READ : I2_WRITE;
-		ack = monitor_buffer[0];
+		op   = monitor_buffer[1] ? I2_READ : I2_WRITE;
+		ack  = monitor_buffer[0];
 
 		// Record the transferred data
-		monitor_record_data(monitor_data, op);
+		monitor_record_data(monitor_data, op, nack);
 
 		// Copy transferred data to output array
-		data=monitor_data;
+		data = monitor_data;
+		if(rst_i) begin
+			rst=1'b1;
+		end else rst=1'b0;
+	endtask
+
+	task wait_for_num_clocks(int num_clocks);
+		repeat (num_clocks) @(posedge clk_i);
 	endtask
 
 	// ****************************************************************************
 	// Continuously record bytes of data until a transaction is completed. 
 	// ****************************************************************************
-	task monitor_record_data(output bit [I2C_DATA_WIDTH-1:0] monitor_data [$], input i2c_op_t op);
+	task monitor_record_data(output bit [I2C_DATA_WIDTH-1:0] monitor_data[$], input i2c_op_t op,
+		output bit nack);
 		static bit [8:0] rec_dat_mon_buf;
+		int i;
 		monitor_data.delete; // Clear static buffer of data from prior calls
-		forever begin
-			for(int i=MSB;i>=0;i--) begin
-				if(mon_intr_raised()) return;
-				@(posedge scl_i[bus_selector]) rec_dat_mon_buf[i] = sda_i[bus_selector];
+		if(rst_i) return;
+		@(negedge scl_i[bus_selector] or posedge rst_i);
 
-				wait(scl_i[bus_selector] == 1'b0 || mon_intr_raised());
-				if(monitor_interrupt == RAISE_STOP) return;
+		forever begin
+			for (i = MSB; i >= 0; i--) begin
+				if (mon_intr_raised() || rst_i) break;
+				wait(scl_i[bus_selector] == 1'b1 ||monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART ||rst_i==1'b1);
+				if (mon_intr_raised()|| rst_i) break;
+				rec_dat_mon_buf[i] = sda_i[bus_selector];
+				wait(scl_i[bus_selector] == 1'b0 || monitor_interrupt == RAISE_STOP||monitor_interrupt == RAISE_START||monitor_interrupt == RAISE_RESTART ||rst_i==1'b1);
+				if (monitor_interrupt == RAISE_STOP|| rst_i) break;
 			end
-			monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
-			if(op==I2_READ && rec_dat_mon_buf[0]==NACK) return; // Return on Read op and NACK (End Call)
+			nack = rec_dat_mon_buf[0];
+			if (i == 0 || i == -1) monitor_data.push_back(rec_dat_mon_buf[MSB:LSB]);
+			if(rst_i) return;
+			if (mon_intr_raised()) return;
+			if (op == I2_READ && rec_dat_mon_buf[0] == NACK)
+				return; // Return on Read op and NACK (End Call)
 
 		end
 	endtask
@@ -469,7 +634,8 @@ interface i2c_if       #(
 	//_____________________________________________________________________________________\\		
 
 	// Getter for debug: Retrieve an entry from the driver's received-data buffer
-	function byte get_receive_entry(int i);
+	function byte get_receive_entry(
+		int i);
 		return slave_receive_buffer[i];
 	endfunction
 

@@ -1,0 +1,900 @@
+ <!-- WorkBook Path: C:\Users\turker\Desktop\verification-proj1\project_benches\proj_4\sim\i2cmb_test_plan.xls -->
+ <!-- Date: 1/1/0001 12:21:00 PM -->
+<Workbook>
+	<Worksheet>
+		<Table>
+			 <!-- I2CMB Testplan -->
+			<Row>
+				<Cell>1</Cell>  <!-- # -->
+				<Cell>Register Testing</Cell>  <!-- Section -->
+				<Cell></Cell>  <!-- Description -->
+				<Cell></Cell>  <!-- Link -->
+				<Cell></Cell>  <!-- Type -->
+				<Cell>1</Cell>  <!-- Weight -->
+				<Cell>100</Cell>  <!-- Goal -->
+			</Row>
+			<Row>
+				<Cell>1.1</Cell>
+				<Cell>Register Cross-Checking</Cell>
+				<Cell>Require that writes to one of three writeable registers does not alter values of other registers, except for commands which alter the FSM-States Register, and status response bits in the CMDR</Cell>
+				<Cell>test_register_block</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.1</Cell>
+				<Cell>CSR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_csr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.2</Cell>
+				<Cell>DPR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_dpr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.3</Cell>
+				<Cell>CMDR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_cmdr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.1.4</Cell>
+				<Cell>FSMR Unaffected By Other Writes</Cell>
+				<Cell></Cell>
+				<Cell>assert_fsmr_cross</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2</Cell>
+				<Cell>Register Access Control Testing</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>test_register_block</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.1</Cell>
+				<Cell>CSR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_csr_ro</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.2</Cell>
+				<Cell>CMDR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_cmdr_ro</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2.3</Cell>
+				<Cell>FSMR Read-Only Sections Not Writeable</Cell>
+				<Cell>Expect that writes to read-only regions of registers do not change the values stored at these read-only bits</Cell>
+				<Cell>assert_fsmr_ro</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3</Cell>
+				<Cell>Register Field Accuracy</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.1</Cell>
+				<Cell>CMDR[7] DONE  Accuracy</Cell>
+				<Cell>Expect DONE bit raised when DUT command operation completed</Cell>
+				<Cell>assert_done_raised_on_complete</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.2</Cell>
+				<Cell>CMDR[6] ARB_LOST Accuracy</Cell>
+				<Cell>Expect ARBITRATION_LOST bit raised when DUT has lost arbitration, and low when DUT has won arbitration</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.2.1</Cell>
+				<Cell>Arbitration Lost When Expected</Cell>
+				<Cell>Require &quot;Arbitration Lost&quot; bit in the CMDR to rise when master has lost arbitration negotiation</Cell>
+				<Cell>assert_require_arb_loss_bit</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.2.2</Cell>
+				<Cell>Arbitration Won When Expected</Cell>
+				<Cell>In the presence of a real multi-master configuration, expect Arbitration lost bit of CMDR to be low upon arbitration win</Cell>
+				<Cell>assert_arbitration_won</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3</Cell>
+				<Cell>CMDR[5] NACK Accuracy</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3.1</Cell>
+				<Cell>NACK Raised on Address Write</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell>assert_adr_nacks_when_expected</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.3.2</Cell>
+				<Cell>NACK Raised on Data Write</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request; else low</Cell>
+				<Cell>assert_dat_nacks_when_expected</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4</Cell>
+				<Cell>CMDR[4] ERROR Accuracy</Cell>
+				<Cell>Expect Error bit raised under error condition, else low.</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4.1</Cell>
+				<Cell>CMDR[4] ERROR Raised</Cell>
+				<Cell>Expect Error bit raised when an unavailable (non-existent) bus is selected</Cell>
+				<Cell>assert_bus_mismatch_raised_on_unavailable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.4.2</Cell>
+				<Cell>CMDR[4] ERROR Low</Cell>
+				<Cell>Expect Error bit never raised when there is no system error.</Cell>
+				<Cell>assert_error_low</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.5</Cell>
+				<Cell>CMDR[2:0] COMMAND Accuracy</Cell>
+				<Cell>Expect these bits to reflect the previously issued command, when an interrupt is cleared or the DONE bit is checked.</Cell>
+				<Cell>assert_CMDR_holds_last_CMD</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.6</Cell>
+				<Cell>CSR[7] ENABLED Accuracy</Cell>
+				<Cell>Expect high when DUT enabled, Else low</Cell>
+				<Cell>assert_csr_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7</Cell>
+				<Cell>CSR[6] INTERRUPT ENABLED Accuracy</Cell>
+				<Cell>Expect high When DUT enabled with interrupts enabled, else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7.1</Cell>
+				<Cell>CSR[6] INTERRUPT ENABLED</Cell>
+				<Cell>Expect high When DUT enabled with interrupts enabled,</Cell>
+				<Cell>assert_interrupt_bit_high</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.7.2</Cell>
+				<Cell>CSR[6] INTERRUPT DISABLED</Cell>
+				<Cell>Expect Low when DUT enabled without interrupts</Cell>
+				<Cell>assert_interrupt_bit_low</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8</Cell>
+				<Cell>CSR[5] BUS BUSY Accuracy</Cell>
+				<Cell>Expect High when selected bus is currently busy (eg, finishing a transaction), else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8.1</Cell>
+				<Cell>CSR[5] BUS BUSY - Busy</Cell>
+				<Cell>Expect High when selected bus is currently busy (eg, finishing a transaction)</Cell>
+				<Cell>assert_csr_bb_busy</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.8.2</Cell>
+				<Cell>CSR[5] BUS BUSY - Free</Cell>
+				<Cell>Expect Low when selected bus is free.</Cell>
+				<Cell>assert_csr_bb_free</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9</Cell>
+				<Cell>CSR[4] BUS CAPTURED Accuracy</Cell>
+				<Cell>Expect High When DUT has successfully captured a bus, else low</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9.1</Cell>
+				<Cell>CSR[4] BUS CAPTURED - Captured</Cell>
+				<Cell>Expect high when DUT has successfully captured a bus</Cell>
+				<Cell>assert_csr_bc_captured</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.9.2</Cell>
+				<Cell>CSR[4] BUS CAPTURED - Free</Cell>
+				<Cell>Expect low when DUT was not able to capture a bus</Cell>
+				<Cell>assert_csr_bc_free</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3.10</Cell>
+				<Cell>CSR[3:0] BUS SELECTION Accuracy</Cell>
+				<Cell>Expect to match most-recently selected bus</Cell>
+				<Cell>assert_csr_bus_sel_accuracy</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.4</Cell>
+				<Cell>Default Register Values</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.4.1</Cell>
+				<Cell>CSR Defaults</Cell>
+				<Cell>On a DUT &quot;soft reset&quot; with interrupt disabled (Disable-Enable) Expect CSR == 8&#39;b1000_0000, With Interrupt enabled CSR == 8&#39;b1100_0000</Cell>
+				<Cell>assert_csr_enable_defaults</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.4.2</Cell>
+				<Cell>DPR Default</Cell>
+				<Cell>After &quot;soft reset&quot; expect DPR == 8&#39;h00</Cell>
+				<Cell>assert_dpr_default_on_enable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.4.3</Cell>
+				<Cell>CMDR Default</Cell>
+				<Cell>After &quot;soft reset&quot; expect CMDR == 8&#39;b1000_0000</Cell>
+				<Cell>assert_cmdr_default_on_enable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.4.4</Cell>
+				<Cell>FSMR Default</Cell>
+				<Cell>After &quot;soft reset&quot; expect FSMR == 8&#39;h00</Cell>
+				<Cell>assert_fsmr_default_on_enable</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.5</Cell>
+				<Cell>Require Interrupts Generated By Regblock</Cell>
+				<Cell>When enabled, Require interrupts to be raised by the regblock when DUT has completed operation. Directed and random testflows from the test_multi_bus group will all require an interrupt to be raised when DUT is reporting done.</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.5.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.5.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2</Cell>
+				<Cell>Compulsory Tests</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.1</Cell>
+				<Cell>Base Single-Bus Test</Cell>
+				<Cell>Expect completed transactions with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with single bus configured to default Speed (100kHz). Use RANDOM addresses, data, message length(zero/single/multibyte) and operations types. Randomly, inject illegal bus selections (bus &gt; 0) and verify DUT operation with illegal selection.</Cell>
+				<Cell>test_single_bus_default_speed</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.2</Cell>
+				<Cell>Multi-Bus Max Speed Test</Cell>
+				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with each bus configured to Maximum Speed (400kHz). Use RANDOM Bus Selection, addresses, data,  message length(zero/single/multibyte), and operations types.</Cell>
+				<Cell>test_multi_bus_max_speed</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.3</Cell>
+				<Cell>Multi-Bus Simultaneous Ranged Speeds Test</Cell>
+				<Cell>Expect completed transactions on multiple busses with single and multiple bytes,both read and write, with both start-stop and start-restart-stop conditions to complete successfully, with busses configured to a range from (400kHz) to (10kHz) Use RANDOM Bus Selection, addresses, data,  message length(zero/single/multibyte), and operations types.</Cell>
+				<Cell>test_multi_bus_ranged_speed</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3</Cell>
+				<Cell>Arbitration Testing</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.1</Cell>
+				<Cell>Arbitration Lost (All Busses) During WRITE or READ w NAK</Cell>
+				<Cell>In the presence of a simulated multi-master transmitting at the same time (BFM write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
+				<Cell>test_arbitration_lost_scenario</Cell>
+				<Cell>test</Cell>
+				<Cell>2</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.1.1</Cell>
+				<Cell>CMDR[ARB_LOST]</Cell>
+				<Cell>Require &quot;Arbitration Lost&quot; bit in the CMDR to rise when master has lost arbitration negotiation</Cell>
+				<Cell>assert_require_arb_loss_bit</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.2</Cell>
+				<Cell>Arbitration Lost during RE-START</Cell>
+				<Cell>In the presence of a simulated multi-master transmitting at the same time (BFM write 0, DUT write 1), expect DUT to lose arbitration. Require behavior across all available i2c busses.</Cell>
+				<Cell>test_arbitration_loss_on_restart</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.3</Cell>
+				<Cell>Arbitration Won CMDR[ARB_LOST]</Cell>
+				<Cell>In the presence of a real multi-master configuration, expect Arbitration lost bit of CMDR to be low upon arbitration win</Cell>
+				<Cell>assert_arbitration_won</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4</Cell>
+				<Cell>Clock-Stretching and Wait Command Testing</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.1</Cell>
+				<Cell>Slave-End Clock Stretching  (Any Bus)</Cell>
+				<Cell>Expect transfers to complete when TB delays subsequent operations legally from the I2c-interface via I2c  Clock Stretching (scl held low at legal times (after receive address/data bit, after transmit ACK/NACK, Before transmit &quot;read&quot; data bit)</Cell>
+				<Cell>clockstretch_cg::configured_i2c_delay</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.2</Cell>
+				<Cell>Slave-End Clock Stretching  (All Busses)</Cell>
+				<Cell>Expect clockstretching to apply and work as described in 4.1, across all available busses</Cell>
+				<Cell>clockstretch_cg::stretch_x_bus_sel</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.3</Cell>
+				<Cell>SMA Average Clock Cycles Measured By Monitor</Cell>
+				<Cell>Validate using i2c interface monitor, that the clock is actually being stretched as configured, by maintaining a simple moving average measurement of the clock rate across all transactions.</Cell>
+				<Cell>clockstretch_cg::measured_i2c_delay</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.4</Cell>
+				<Cell>Master-End Upstream Delays</Cell>
+				<Cell>Expect transfers to complete when TB delays operations on the WB end of the DUT, via stalling continued commands after a completed read or write. REQUIRE no extraneous starts/stops or clock cycles during these stalls.</Cell>
+				<Cell>wb_stretch_cg::wb_stretch_delay</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.5</Cell>
+				<Cell>Wait Commands</Cell>
+				<Cell>Expect transfers to complete when explicit wait commands issues to DUT with subsequent operations</Cell>
+				<Cell>wait_cg::explicit_wait_times</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.6</Cell>
+				<Cell>Directed Clockstretching Test</Cell>
+				<Cell>Initiate required clockstretched transfers to meet coverage in all coverpoints and crosses for Clockstretching group. Use randomized time quantities for clocks to be slowed. Require successful transfers in single, multi-byte, and bidirectional, in the presence of stretched clocks. Use RANDOM Bus Selection, addresses, data, and operations types. Use RANDOM CLOCKSTRETCH DURATIONS. Insert RANDOM WB-end delays. Insert RANDOM explicit WAIT commands via DUT. </Cell>
+				<Cell>test_clockstretching</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5</Cell>
+				<Cell>Soft Resets, Interrupts Enabled-Disabled Testing</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.1</Cell>
+				<Cell>Transx with Interrupts -SoftReset- Transx with Interrupts</Cell>
+				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts enabled for both enable commands, expect subsequent transfers to complete successfully, with interrupt signal being raised by DUT to signal done</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.1.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2</Cell>
+				<Cell>Transx with Interrupts -SoftReset- Transx with Interrupt Disabled</Cell>
+				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts enabled for first command, and disabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.3</Cell>
+				<Cell> Transx with Interrupt Disabled -SoftReset- Transx with Interrupts</Cell>
+				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts DISabled for first command, and ENabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITH Interrupt signal being raised by DUT to signal done</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.3.1</Cell>
+				<Cell>Require Interrupt When Enabled</Cell>
+				<Cell>The Regblock shall always raise an interrupt when done, when the DUT is configured to use interrupts.</Cell>
+				<Cell>assertion_expect_interrupt_when_enabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.3.2</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.4</Cell>
+				<Cell> Transx w Interrupt Disabled -SoftReset- Transx w Interrupt Disabled</Cell>
+				<Cell>After an Enable-Transfers-Disable-Enable, with interrupts DISabled for first command, and DISabled for second &quot;enable&quot; command, expect subsequent transfers to complete successfully, WITHOUT Interrupt signal being raised by DUT to signal done</Cell>
+				<Cell>test_enable_disable_enable_intr_x_poll</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.4.1</Cell>
+				<Cell>Require NO Interrupt  When Disabled</Cell>
+				<Cell>The Regblock must never raise an interrupt, at any time, when the DUT is configured NOT to use interrupts</Cell>
+				<Cell>assertion_expect_NO_interrupt_when_disabled</Cell>
+				<Cell>Assertion</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>6</Cell>
+				<Cell>FSM Testing -- TRANSITION and STATE -- byte, bit, bus FSMs</Cell>
+				<Cell>Require that code coverage reports 100% FSM State and Transition arc coverage within DUT, for all DUT FSMs</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>6.1</Cell>
+				<Cell>Byte-Level FSM Coverage</Cell>
+				<Cell>State and Transition coverage for i2cmb Byte-Level FSM</Cell>
+				<Cell>/top/DUT_16_max/iicmb_m_inst*/mbyte_inst0/state</Cell>
+				<Cell>FSM</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>6.2</Cell>
+				<Cell>Bit-Level FSM Coverage</Cell>
+				<Cell>State and Transition coverage for i2cmb Bit-Level FSM</Cell>
+				<Cell>/top/DUT_16_max/iicmb_m_inst*/mbit_inst0/state</Cell>
+				<Cell>FSM</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>6.3</Cell>
+				<Cell>Bus Conditioner FSMs</Cell>
+				<Cell>State and Transition Coverage for i2cmb Bus-Conditioner FSMs</Cell>
+				<Cell>/top/DUT_16_max/iicmb_m_inst*/conditioner_mux_inst0/*</Cell>
+				<Cell>FSM</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>7</Cell>
+				<Cell>DUT Code Coverage (-cover bcefst) Across Instance</Cell>
+				<Cell>RTL Core ALL stmt, brnch, fsm, trans, expr. Require that all DUT units have 100% statement coverage and 100% branch coverage.</Cell>
+				<Cell>/top/DUT_16_max</Cell>
+				<Cell>Instance</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8</Cell>
+				<Cell>I2C Protocol Coverage</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.1</Cell>
+				<Cell>I2C Addresses</Cell>
+				<Cell>Ensure all addresses have been selected and used for successful transfers</Cell>
+				<Cell>i2c_transaction_cg::address</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.2</Cell>
+				<Cell>I2C Data Values</Cell>
+				<Cell>Ensure all possible data values have been selected and used for successful transfer</Cell>
+				<Cell>i2c_transaction_cg::data</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.3</Cell>
+				<Cell>I2C Bus Selection</Cell>
+				<Cell>Ensure all available data busses have been properly tested</Cell>
+				<Cell>i2c_transaction_cg::bus_sel</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.4</Cell>
+				<Cell>I2C Operation Type</Cell>
+				<Cell>Ensure both reads and writes are covered</Cell>
+				<Cell>i2c_transaction_cg::operation</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.5</Cell>
+				<Cell>I2C Message Size (Single and Multi-Byte)</Cell>
+				<Cell>Ensure DUT properly handles Zero-data, single-byte, and multi-byte transactions</Cell>
+				<Cell>i2c_transaction_cg::msg_size</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.6</Cell>
+				<Cell>I2C START and RE-START</Cell>
+				<Cell>Ensure that DUT properly handles both START (from idle) and RE-START (From transaction-in-progress) initiations of new transactions.</Cell>
+				<Cell>predictor_cg::start_or_restart</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.7</Cell>
+				<Cell>Operation Vs Msg Size</Cell>
+				<Cell>Ensure that all message sizes are used in both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::msg_size_x_operation</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.8</Cell>
+				<Cell>Operation Vs Data</Cell>
+				<Cell>Ensure that all legal data values are covered across  both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::operation_x_data</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.9</Cell>
+				<Cell>Operation  Vs Address</Cell>
+				<Cell>Ensure that all valid address values are covered for  both I2C Read and Write transaction types</Cell>
+				<Cell>i2c_transaction_cg::operation_x_address</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8.10</Cell>
+				<Cell>Operation vs Start-Restart</Cell>
+				<Cell>Ensure that start-restart conditions are covered for both read and write transaction types.</Cell>
+				<Cell>predictor_cg::restart_x_operation</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9</Cell>
+				<Cell>Wishbone Protocol Coverage</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.1</Cell>
+				<Cell>WB Command Coverage</Cell>
+				<Cell>Ensure that all possible WB transactions and commands have been used as part of overall testplan</Cell>
+				<Cell>wb_transaction_cg::cmd_type</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.2</Cell>
+				<Cell>WB Register Coverage</Cell>
+				<Cell>Ensure that all WB Registers have been tested</Cell>
+				<Cell>wb_transaction_cg::reg_type</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.3</Cell>
+				<Cell>WB Register Read - Write</Cell>
+				<Cell>Ensure that All registers have been both written to and read from </Cell>
+				<Cell>wb_transaction_cg::we_x_reg</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.4</Cell>
+				<Cell>WB DPR Data Values</Cell>
+				<Cell>Ensure that all possible data values have been used in the DPR</Cell>
+				<Cell>wb_transaction_cg::data_type</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>9.5</Cell>
+				<Cell>WB DPR Data vs Read -Write</Cell>
+				<Cell>Ensure that all possible data values have been BOTH written to AND read from the DPR</Cell>
+				<Cell>wb_transaction_cg::we_x_data</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>10</Cell>
+				<Cell>NACK Testing (Connected and Disconnected Slaves)</Cell>
+				<Cell>Ensure NACKs are passed to WB interface when no slave response detected; otherwise, expect ACKS on WB-End</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>10.1</Cell>
+				<Cell>Config Slave Connected or Disconnected</Cell>
+				<Cell>Expect NACK bit raised when no slave response to master request</Cell>
+				<Cell>wb_transaction_cg::configuration_nacks</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>10.2</Cell>
+				<Cell>Cross ConnSlv-ACK, DisconSlv-NACK</Cell>
+				<Cell>Ensure that both cases, connected leading to ACKS and disconnected leading to NACKS, are covered</Cell>
+				<Cell>wb_transaction_cg::config_x_nacks</Cell>
+				<Cell>Cross</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>10.3</Cell>
+				<Cell>Master Receipt of ACKs and NACKs</Cell>
+				<Cell>Ensure that WB interface accurately reports both ACKs and NACKs via CMDR[NACK] when expected.</Cell>
+				<Cell>wb_transaction_cg::nacks</Cell>
+				<Cell>Coverpoint</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>10.4</Cell>
+				<Cell>Directed Test of Disconnected Slaves</Cell>
+				<Cell>Expect in a multi-bus DUT with no responsive slave or an address mismatch, on an address transmission requesting either read or write, to receive a raised nack at the wb-bus when no slave ACKs the request. Expect NACKs raised after each data byte written. Use Random bus selection, random operation type, and in case of writes, random message length and data.</Cell>
+				<Cell>test_disconnected_slave_nacks</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11</Cell>
+				<Cell>Hard Reset Injection (Drive rst wire) During X-action Critical Sections</Cell>
+				<Cell>Inject 133ns resets during transactions, targeting critical sections, and verify DUT recovery. See spec page 11 and 12 for region definitions.</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.1</Cell>
+				<Cell>Inject 133ns (rst) into START A, START B, START C</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.2</Cell>
+				<Cell>Inject 133ns (rst) into RE-START A, RE-START B, RE-START C</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>11.3</Cell>
+				<Cell>Inject 133ns (rst) into RW A, RW B, RW C, RW D, RW E</Cell>
+				<Cell>Inject 133ns resets in the middle of transactions, targeting critical sections, and verify DUT recovery</Cell>
+				<Cell>test_hard_reset_injection</Cell>
+				<Cell>test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+		</Table>
+	</Worksheet>
+</Workbook>
